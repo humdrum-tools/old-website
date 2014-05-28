@@ -1,0 +1,228 @@
+Chapter40
+=========
+
+
+--------
+
+
+Conclusion
+==========
+
+--------
+
+In `Chapter 1,`_ we noted that computers are quite limited in what they are
+able to do. We noted in particular that computers are not good at
+*interpreting* data. Because so much music scholarship hinges on
+interpretations, this would seem to preclude computers from being of much
+use. However, as we have seen, there are some things that computers do well,
+and when a skilled user intervenes to make a few crucial interpretations, the
+resulting computer/human interaction can lead to pretty sophisticated
+results.
+
+The lucid use of Humdrum depends on understanding how each of the tools works
+and how it is possible to connect the tools to perform particular tasks. The
+power and creativity of Humdrum truly lies in the hands of the user.
+
+As we've seen, there are two parts to Humdrum: the *Humdrum syntax* and the
+*Humdrum toolkit.* The Humdrum syntax simply provides a formal framework for
+representing any kind of sequential symbolic data. A number of representation
+schemes are pre-defined in Humdrum, but you are free to construct your own
+representations as demanded by the tasks. In several of the tutorial examples
+in the previous chapters we saw various *ad hoc* representations that were
+concocted as temporary or intermediate representations. You should now feel
+comfortable with the possibilities of devising your own representations to
+assist you in whatever task you are interested.
+
+The *Humdrum Toolkit* is a set of inter-related software tools. These tools
+manipulate text data conforming to the Humdrum syntax. If the data represents
+music-related information, then we can say that the Humdrum tools manipulate
+music-related information. Each Humdrum tool carries out a fairly modest
+process.
+
+By way of review, we can group the various Humdrum (and UNIX) tools according
+to the type of operation. There are roughly a dozen or so classes of tasks:
+
+-   ***Displaying things.*** The **ms** command can be used to print or
+    display musical notation.
+-   ***Auditing.*** MIDI sound output can be generated using the
+    `**midi**`_ and `**perform**`_ commands.
+-   ***Searching for things.*** When searching for things within
+    specified files, appropriate commands include: **grep**, **egrep**,
+    `**yank -m**,`_ `**patt**,`_ `**pattern**,`_ `**correl**,`_ `**simil**`_
+    and `**humdrum -v**.`_ When searching for files that meet certain
+    conditions, appropriate commands include **grep -l**, **egrep -l** and
+    **find**. Most of these search tools rely extensively on regular
+    expressions to define patterns of characters.
+-   ***Counting things.*** Appropriate commands include: **wc**, **wc
+    -l**, **grep -c**, **egrep -c**, `**census**`_ and **census -k**.
+    Eliminating unnecessary or confounding information can be achieved using
+    `**rid**,`_ `**extract**,`_ **grep -v**, **sed** and `**humsed**.`_
+-   ***Editing things.*** Manual editing may be done using any text
+    editor, such as **emacs** or **vi**. Automated (or "stream") editing may
+    be done using **sed** and `**humsed**.`_
+-   ***Editorializing.*** E.g., add an editorial footnote to a specified
+    note or passage; indicate that a passage differs from the composer's
+    autograph.
+-   ***Transforming or translating between representations.***
+    Appropriate commands include: `**cents**,`_ `**deg**,`_ `**degree**,`_
+    **dur**, `**freq**,`_ `**hint**,`_ `**humsed**,`_ `**iv**,`_ `**kern**,`_
+    `**mint**,`_ `**pc**,`_ `**pf**,`_ `**pitch**,`_ `**reihe**,`_
+    `**semits**,`_ `**solfa**,`_ `**solfg**,`_ **text**, `**tonh**,`_
+    `**trans**`_ and `**vox**.`_
+-   ***Arithmetic transformations of representations.*** Manipulating
+    numerical values can be done using `**xdelta**,`_ `**ydelta**,`_
+    `**recode**`_ and **awk**.
+-   ***Extracting or selecting information.*** Appropriate commands
+    include: `**extract**,`_ `**yank**,`_ **grep**, **egrep**, `**yank
+    -m**,`_ `**thru**,`_ `**strophe**,`_ `**rend**`_ and **csplit**.
+-   ***Linking or joining information.*** Appropriate commands include:
+    `**assemble**,`_ **cat**, `**cleave**,`_ `**timebase**,`_ `**context**,`_
+    `**ditto**`_ and **join**.
+-   ***Generating inventories of things.*** Appropriate commands include:
+    **sort** and **uniq**. Once again, unnecessary or confounding information
+    can be eliminated using `**rid**,`_ `**extract**,`_ **grep -v**, `**yank
+    -m**,`_ **sed** or `**humsed**.`_
+-   ***Classifying things.*** Numerical values can be classified using
+    `**recode**;`_ non-numerical data can be classified using `**humsed**.`_
+-   ***Labelling things.*** Appropriate commands include: `**patt -t**,`_
+    `**recode**,`_ `**humsed**`_ and `**timebase**.`_
+-   ***Comparing whether things are the same or similar.*** Appropriate
+    commands include: **diff**, **diff3**, **cmp**, `**correl**`_ and
+    `**simil**.`_
+-   ***Capturing data.*** MIDI data can be input via `**encode**`_ and
+    `**record.**`_
+-   ***Trouble-shooting.*** Appropriate commands include: `**humdrum**,`_
+    `**humdrum -v**,`_ `**proof**,`_ `**proof -k**,`_ `**veritas**,`_
+    `**midi**`_ and `**perform**.`_
+
+Not all of the existing Humdrum Tools were covered in this book. Nor were all
+of the available options described for all of the tools discussed. Exploring
+the *Humdrum Reference Manual* is recommended for readers interested in
+continuing to develop facility with Humdrum.
+
+
+Pursuing a Project with Humdrum
+-------------------------------
+
+If you have made it this far in the book, you will now have a fairly
+sophisticated knowledge of Humdrum. With this background, we might review
+some general principles and specific tips for making effective use of Humdrum
+when pursuing some musicological project. The following seven questions
+provide useful guidelines:
+
+-   *What do I want my final output to look like?*
+Do I want a count or inventory?
+
+    ``115 instances of ...
+28 instances of ...``
+
+    Do I want to output a found pattern?
+
+    ``pattern found in line ...
+pattern not found ...``
+
+    Do I want a comparison?
+
+    ``file X is the same as file Y
+X is similar to Y
+X and Y are different``
+
+-   *What materials are available for processing?*
+
+    > Use **find** and **grep** to locate useful materials.
+
+-   *What materials do I need to create?*
+
+    > Use `**encode**`_ to create new data. Use `**humdrum**`_ and
+    `**proof**`_ to check the data. If necessary, define your own Humdrum
+    representation for a given purpose.
+
+-   *How do I transform my data so it is easier to process?*
+
+    > Use `**recode**`_ and `**humsed**`_ to classify data into various
+    classes -- such as *up*, *down*, *leap*, *long*, *short*, *difficult*,
+    *easy*, *clarion register*, *dominant*, etc.
+>
+>     Use translating/transforming commands such as `**mint**,`_
+`**ydelta**,`_ `**pcset**,`_ etc to translate the data to a different
+representation.
+
+-   *What data should I eliminate?*
+
+    > Use `**rid**,`_ `**extract**,`_ `**yank**,`_ **sed**,
+    `**humsed**,`_ **uniq**, **uniq -d** and **grep -v** to eliminate
+    selective materials.
+
+-   *What data do I need to coordinate?*
+
+    > Use `**context**`_ to generate contextual information. Use
+    `**assemble**,`_ `**rend**`_ and `**cleave**`_ to link information
+    together.
+
+-   *How do I know my results are worthwhile?*
+
+    > Use comparative tests whenever you can. Use `**scramble**`_ -r,
+    **scramble -t**, **tac** and `**reihe**`_ -s to generate control groups.
+
+--------
+
+
+
+
+-   ` **Previous Chapter**`_
+-   ` **Table of Contents**`_
+-   ` **Detailed Contents**`_
+
+(C) Copyright 1999 David Huron
+
+.. _Previous Chapter: guide39.html
+.. _Contents: guide.toc.html
+.. _Chapter 1,: guide01.html
+.. _midi: commands/midi.html
+.. _perform: commands/perform.html
+.. _,: commands/yank.html
+.. _,: commands/patt.html
+.. _,: commands/pattern.html
+.. _,: commands/correl.html
+.. _simil: commands/simil.html
+.. _.: commands/humdrum.html
+.. _census: commands/census.html
+.. _,: commands/rid.html
+.. _,: commands/extract.html
+.. _.: commands/humsed.html
+.. _,: commands/cents.html
+.. _,: commands/deg.html
+.. _,: commands/degree.html
+.. _,: commands/freq.html
+.. _,: commands/hint.html
+.. _,: commands/iv.html
+.. _,: commands/kern.html
+.. _,: commands/mint.html
+.. _,: commands/pc.html
+.. _,: commands/pf.html
+.. _,: commands/pitch.html
+.. _,: commands/reihe.html
+.. _,: commands/semits.html
+.. _,: commands/solfa.html
+.. _,: commands/solfg.html
+.. _,: commands/tonh.html
+.. _trans: commands/trans.html
+.. _.: commands/vox.html
+.. _,: commands/xdelta.html
+.. _,: commands/ydelta.html
+.. _recode: commands/recode.html
+.. _,: commands/thru.html
+.. _,: commands/strophe.html
+.. _rend: commands/rend.html
+.. _,: commands/assemble.html
+.. _,: commands/cleave.html
+.. _,: commands/timebase.html
+.. _,: commands/context.html
+.. _ditto: commands/ditto.html
+.. _encode: commands/encode.html
+.. _record.: commands/record.html
+.. _,: commands/proof.html
+.. _,: commands/veritas.html
+.. _,: commands/pcset.html
+.. _scramble: commands/scramble.html
+.. _Detailed Contents: guide.toc.detailed.html

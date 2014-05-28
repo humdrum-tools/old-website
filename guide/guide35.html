@@ -1,0 +1,427 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapter35 &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../index.html"/>
+        <link rel="up" title="The Humdrum User Guide" href="index.html"/>
+        <link rel="next" title="&lt;no title&gt;" href="guide36.html"/>
+        <link rel="prev" title="Chapter34" href="guide34.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><em>The Humdrum User Guide</em></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="guide01.html">Chapter1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide01.html#humdrum-a-brief-tour">Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02.html#representing-music-using-kern-i">Representing Music Using <strong>***kern*</strong> (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide03.html">Chapter3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide03.html#some-initial-processing">Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide04.html">Chapter4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide04.html#basic-pitch-translations">Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide05.html">Chapter5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide05.html#the-humdrum-syntax">The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide06.html">Chapter6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide06.html#representing-music-using-kern-ii">Representing Music Using ***kern*(II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide06.html#tuplets">Tuplets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide07.html">Chapter7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide08.html">Chapter8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide09.html">Chapter9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide10.html">Chapter10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide11.html">Chapter11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide12.html">Chapter12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide13.html">Chapter13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide14.html">Chapter14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide15.html">Chapter15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide16.html">Chapter16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide17.html">Chapter17</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide18.html">Chapter18</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide19.html">Chapter19</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide20.html">Chapter20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide21.html">Chapter21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide21.html#searching-for-patterns">Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide22.html">Chapter22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide23.html">Chapter23</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide23.html#rhythm">Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide24.html">Chapter24</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide24.html#the-shell-iii">The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide25.html">Chapter25</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide25.html#similarity">Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide26.html">Chapter26</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide26.html#moving-signifiers-between-spines">Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide27.html">Chapter27</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide29.html">Chapter29</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide29.html#differences-and-commonalities">Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide30.html">Chapter30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide30.html#midi-input-tools">MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide31.html">Chapter31</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide31.html#repertories-and-links">Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide32.html">Chapter32</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide32.html#the-shell-iv">The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide34.html">Chapter34</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide34.html#serial-processing">Serial Processing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Chapter35</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#layers">Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37.html">Chapter37</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37.html#electronic-music-editing">Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide38.html">Chapter38</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide38.html#systematic-musicology">Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide39.html">Chapter39</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide39.html#trouble-shooting">Trouble-Shooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide40.html">Chapter40</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide40.html#conclusion">Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bibliography.html">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.more.html">Supplementary Humdrum Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.toc.html">Humdrum Command Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="humdrum.problems.html">HUMDRUM PROBLEMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux.perform.html">Installing and Using the Humdrum &#8220;perform&#8221; Command under Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.bibliog.html"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.bibliog.html#bibliography">Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07.html">Humdrum Developer&#8217;s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a.html"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a.html#humdrum-representation-development">Humdrum Representation Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a.html#representation-assumptions">Representation Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a.html#creating-new-humdrum-representations">Creating New Humdrum Representations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a.html#defining-a-new-humdrum-interpretation-a-sample-problem">Defining a New Humdrum Interpretation: A Sample Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07b.html"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07b.html#humdrum-software-development">Humdrum Software Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07b.html#standard-program-skeleton">Standard Program Skeleton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="musedata2kern.html"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="musedata2kern.html#how-to-translate-musedata-files-to-humdrum">How To Translate MuseData Files to Humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="musedata2kern.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problems.html">Sample Problems Using the Humdrum Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projects.html">Sample Research Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="representations.toc.html">Humdrum Representation Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html">Online Resources:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample.problems.html">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sappExtras.html">Humdrum Extras</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook.html#syntax-coloring-in-vim">Syntax Coloring in Vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook.html#projects-using-humdrum">Projects using Humdrum</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html"><em>The Humdrum User Guide</em></a> &raquo;</li>
+      
+    <li>Chapter35</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/guide/guide35.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="chapter35">
+<h1>Chapter35<a class="headerlink" href="#chapter35" title="Permalink to this headline">¶</a></h1>
+</div>
+<hr class="docutils" />
+<div class="section" id="layers">
+<h1>Layers<a class="headerlink" href="#layers" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<p>In <a class="reference external" href="guide11.html">Chapters 11</a> and <a class="reference external" href="guide15.html">15</a> we examined different kinds of intervals,
+including both harmonic and melodic intervals. A number of different types of
+intervals were distinguished and we learned how to calculate such intervals.
+One type of melodic interval mentioned in <a href="#id46"><span class="problematic" id="id47">`Chapter 11`_</span></a> is the <em>distance
+interval</em> &#8211; an interval between pitches which are separated by intervening
+musical materials. In this chapter we consider more sophisticated ways of
+determining distance intervals. These types of intervals are the foundation
+of various notions of hierarchies or &#8220;layers&#8221; of pitch analysis.</p>
+<p>This chapter also visits a related issue of implied harmony. Many melodic
+passages outline clear harmonic progressions which are also implicated in
+layer-related analyses.</p>
+<div class="section" id="implied-harmony">
+<h2>Implied Harmony<a class="headerlink" href="#implied-harmony" title="Permalink to this headline">¶</a></h2>
+<p>Example 35.1 shows a two-phrase trumpet solo from Aaron Copland&#8217;s <em>El Salon
+Mexico</em>. Harmonic progressions may be evident only when arpeggiated figures
+are collapsed. In this case, an implicit harmony may is evident where a G
+major chord is followed by a D dominant seventh chord. The barlines provide
+convenient ways of parsing the harmonies.</p>
+<p><strong>Example 35.1</strong> Aaron Copland, <em>El Salon Mexico</em>.</p>
+<p>&gt; .. image:: guide.figures/guide35.4.gif</p>
+<p>A <a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id48"><span class="problematic" id="id49">`**kern```_</span></a> encoding of the passage is given below:</p>
+<p>`` !!!COM: Copland, A.
+`` !!!OTL: El Salon Mexico
+`` <a href="#id3"><span class="problematic" id="id4">**</span></a>kern
+`` <a href="#id5"><span class="problematic" id="id6">*</span></a>Itromp
+`` <a href="#id7"><span class="problematic" id="id8">*</span></a>clefG2
+`` <a href="#id9"><span class="problematic" id="id10">*</span></a>k[]
+`` <a href="#id11"><span class="problematic" id="id12">*</span></a>M4/4
+`` =29
+`` 2r
+`` 8r
+`` {8d
+`` 8g
+`` 8b
+`` =30
+`` 28dd
+`` 28b
+`` 28dd
+`` 28b
+`` 28dd
+`` 28b
+`` 28dd
+`` 8b
+`` 8dd
+`` 8gg
+`` 8dd
+`` 8b
+`` 8g
+`` =31
+`` 8cc
+`` [4.a
+`` 8a]}
+`` {8d
+`` 8f#
+`` 8a
+`` =32
+`` 4cc
+`` 8a
+`` 8f#
+`` 8d
+`` 4dd
+`` 8dd
+`` =33
+`` 8ff#}~
+`` 8r
+`` 4r
+`` 2r;
+`` =
+`` <a href="#id13"><span class="problematic" id="id14">*</span></a>-``</p>
+<p>We can collapse the arpeggiated chords using the <strong>context</strong> command:</p>
+<p>`` context -b = -o = copland``</p>
+<p>Identify the chords is facilitated by using the pitch-class (<a href="#id15"><span class="problematic" id="id16">``</span></a><a href="#id50"><span class="problematic" id="id51">`**pc```_</span></a>)
+representation described in <a href="#id52"><span class="problematic" id="id53">`Chapter 34.`_</span></a></p>
+<p>`` context -b = -o = copland | pc -a | rid -d``</p>
+<p>The corresponding output is:</p>
+<p>`` !!!COM: Copland, A.
+`` !!!OTL: El Salon Mexico
+`` <a href="#id17"><span class="problematic" id="id18">**</span></a>pc
+`` <a href="#id19"><span class="problematic" id="id20">*</span></a>Itromp
+`` <a href="#id21"><span class="problematic" id="id22">*</span></a>clefG2
+`` <a href="#id23"><span class="problematic" id="id24">*</span></a>k[]
+`` <a href="#id25"><span class="problematic" id="id26">*</span></a>M4/4
+`` 2 B 2 B 2 B 2 B 2 7 2 B 7
+`` 0 9 9 2 6 9
+`` 0 9 6 2 2 2
+`` 6 r r r
+`` <a href="#id27"><span class="problematic" id="id28">*</span></a>-``</p>
+<p>In order to identify these as G major and D dominant chords it would be
+convenient to reduce the sets to (2,7,B) and (0,2,6,9) respectively. For this
+task, we can use a The following awk script eliminates repeated tokens within
+a record: (huniq: We might call this script <strong>huniq</strong> since it acts like a
+horizontal version of the <strong>uniq</strong> command:</p>
+<p>`` awk &#8216;{
+&gt;
+&gt;&gt; # A script to eliminate repeated tokens within a record.
+if ($0 ~ /^[!*]/) {print $0; next}
+else
+&gt;&gt;
+&gt;&gt;&gt; { array[$1] = line = $1
+for (i=2; i&lt;=NF; i++)
+&gt;&gt;&gt;
+&gt;&gt;&gt;&gt; {
+if (array[$i] == &#8220;&#8221;) {array[$i]=$i; line = line &#8221; &#8221; $i}
+}
+&gt;&gt;&gt;
+&gt;&gt;&gt; print line
+for (i in array) delete array[i]
+}
+&gt;&gt;
+&gt;&gt; }&#8217; $1``</p>
+<p>Applying this script to our output !!!COM: Copland, A. !!!OTL: El Salon
+Mexico <a href="#id29"><span class="problematic" id="id30">**</span></a>pc <em>Itromp *clefG2 *k[] *M4/4 r 2 7 B 2 B 7 0 9 2 6 0 9 6 2 6 r *-
+Identifying implicit harmonic intervals can be a little more taxing. Let&#8217;s
+begin by considering a monophonic passage that exhibits a pseudo-polyphonic
+or compound melodic tendency. A passage from Bach&#8217;s &#8220;Gigue&#8221; from the solo
+&#8216;cello *Suite No. 3</em> is shown in Example 35.1.</p>
+<p><a href="#id31"><span class="problematic" id="id32">**</span></a>Example 35.1* J.S. Bach, &#8220;Gigue&#8221; from <em>Suite No. 3</em> for solo &#8216;cello
+(excerpt).</p>
+<p>&gt; .. image:: guide.figures/guide35.1.gif</p>
+<p>`` <a href="#id33"><span class="problematic" id="id34">**</span></a>kern
+`` <a href="#id35"><span class="problematic" id="id36">*</span></a>M3/8
+`` =88
+`` (16F#
+`` 16c)
+`` (16E
+`` 16c)
+`` (16D
+`` 16c)
+`` =89
+`` (16B
+`` 16D)
+`` (16A
+`` 16D)
+`` (16B
+`` 16D)
+`` =90
+`` (16c
+`` 16D)
+`` (16B
+`` 16D)
+`` (16A
+`` 16D)
+`` =91
+`` (16B
+`` 16D)``</p>
+<p>&gt; .. image:: guide.figures/guide35.2.gif</p>
+<p>&gt; .. image:: guide.figures/guide35.3.gif</p>
+<hr class="docutils" />
+<ul class="simple">
+<li>` <a href="#id37"><span class="problematic" id="id38">**</span></a>Next Chapter**`_</li>
+<li>` <a href="#id39"><span class="problematic" id="id40">**</span></a>Previous Chapter**`_</li>
+<li>` <a href="#id41"><span class="problematic" id="id42">**</span></a>Table of Contents**`_</li>
+<li>` <a href="#id43"><span class="problematic" id="id44">**</span></a>Detailed Contents**`_</li>
+</ul>
+<ol class="upperalpha simple" start="3">
+<li>Copyright 1999 David Huron</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="guide36.html" class="btn btn-neutral float-right" title="&lt;no title&gt;"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="guide34.html" class="btn btn-neutral" title="Chapter34"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Humdrum Community.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

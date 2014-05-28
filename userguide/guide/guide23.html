@@ -1,0 +1,648 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Chapter23 &mdash; humdrum-tools 1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">humdrum-tools 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Chapter23</a></li>
+<li><a class="reference internal" href="#rhythm">Rhythm</a><ul>
+<li><a class="reference internal" href="#the-recip-representation">The **<em>recip</em> Representation</a></li>
+<li><a class="reference internal" href="#the-dur-command">The <em>dur</em> Command</a></li>
+<li><a class="reference internal" href="#classifying-durations">Classifying Durations</a></li>
+<li><a class="reference internal" href="#using-yank-with-the-timebase-command">Using <em>yank</em> with the <em>timebase</em> Command</a></li>
+<li><a class="reference internal" href="#the-metpos-command">The <em>metpos</em> Command</a></li>
+<li><a class="reference internal" href="#changes-of-stress">Changes of Stress</a></li>
+<li><a class="reference internal" href="#reprise">Reprise</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/userguide/guide/guide23.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <img alt="" src="userguide/guide/../HumdrumIcon.gif" />
+<img alt="Humdrum" src="userguide/guide/../HumdrumHeader.gif" />
+<img alt="" src="userguide/guide/../HumdrumSpacer.gif" />
+<div class="section" id="chapter23">
+<h1>Chapter23<a class="headerlink" href="#chapter23" title="Permalink to this headline">¶</a></h1>
+<p>[<a href="#id34"><span class="problematic" id="id35">`*Previous Chapter*`_</span></a>] [<a href="#id36"><span class="problematic" id="id37">`*Contents*`_</span></a>] [<a href="#id38"><span class="problematic" id="id39">`*Next Chapter*`_</span></a>]</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="rhythm">
+<h1>Rhythm<a class="headerlink" href="#rhythm" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<p>The subject of rhythm touches on nearly every aspect of music. Musical
+elements such as pitch, harmony, and dynamics can all be regarded from the
+point-of-view of temporal patterns of events. A number of complex tasks arise
+from rhythm-related In this chapter, two rhythm-related tools are introduced:
+<a href="#id40"><span class="problematic" id="id41">`**dur**`_</span></a> and <a href="#id42"><span class="problematic" id="id43">`**metpos**`_</span></a>.</p>
+<div class="section" id="the-recip-representation">
+<h2>The <a href="#id1"><span class="problematic" id="id2">**</span></a><em>recip</em> Representation<a class="headerlink" href="#the-recip-representation" title="Permalink to this headline">¶</a></h2>
+<p>For many types of processing tasks it is helpful to have a representation
+that encodes rhythmic information only. The <tt class="docutils literal"><span class="pre">`**recip```_</span> <span class="pre">representation</span> <span class="pre">is</span>
+<span class="pre">simply</span> <span class="pre">a</span> <span class="pre">subset</span> <span class="pre">of</span> <span class="pre">```**kern```_</span> <span class="pre">that</span> <span class="pre">excludes</span> <span class="pre">all</span> <span class="pre">information</span> <span class="pre">apart</span> <span class="pre">from</span> <span class="pre">the</span>
+<span class="pre">nominal</span> <span class="pre">note</span> <span class="pre">durations</span> <span class="pre">and</span> <span class="pre">common</span> <span class="pre">system</span> <span class="pre">barlines.</span> <span class="pre">In</span> <span class="pre">addition,</span> <span class="pre">``**recip</span></tt>
+distinguishes rests from notes by including the <tt class="docutils literal"><span class="pre">`r</span></tt>&#8216; signifier. Without an
+accompanying <tt class="docutils literal"><span class="pre">`r</span></tt>&#8216; a duration is assumed to pertain to a note.</p>
+<p>Generating <tt class="docutils literal"><span class="pre">**recip</span></tt> data from <tt class="docutils literal"><span class="pre">**kern</span></tt> is straightforward using
+<a href="#id44"><span class="problematic" id="id45">`**humsed**`_</span></a>. For a single-spine input, the following command will make the
+translation:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'/^[^=]/s/[^0-9.r</span> <span class="pre">]//g;</span> <span class="pre">s/^$/./'</span> <span class="pre">input.krn</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">sed</span> <span class="pre">'s/\*\*kern/**recip/'</span></tt></p>
+<p>The first <strong>humsed</strong> substitution eliminates all data other than the numbers
+0 to 9, the period, the lower-case <tt class="docutils literal"><span class="pre">r</span></tt>, and the space (for multiple-stops).
+Barlines remain untouched in the output. The second <strong>humsed</strong> substitution
+changes any empty lines to null data tokens; this might be necessary in the
+case of grace notes. The ensuing <strong>sed</strong> command is used simply to change the
+exclusive interpretation from <tt class="docutils literal"><span class="pre">**kern</span></tt> to <tt class="docutils literal"><span class="pre">**recip</span></tt>.</p>
+<p>A simple type of processing might entail creating an inventory of rhythmic
+patterns. Suppose we wanted to determine the most common rhythmic pattern
+spanning a measure. Using a monophonic <tt class="docutils literal"><span class="pre">**recip</span></tt> input, we could use
+<a href="#id46"><span class="problematic" id="id47">`**context**`_</span></a> to amalgamate the appropriate data tokens:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">^=</span> <span class="pre">-o</span> <span class="pre">^=</span> <span class="pre">input.recip</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-nr</span></tt></p>
+<p>The output for the combined voices of Bach&#8217;s two-part Invention No. 5 shows
+just seven patterns. The most characteristic patterns are the second one:
+<tt class="docutils literal"><span class="pre">8r</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">8</span> <span class="pre">8</span> <span class="pre">4</span> <span class="pre">4</span></tt> and the fourth one:
+<tt class="docutils literal"><span class="pre">8</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">8</span> <span class="pre">8</span> <span class="pre">4</span> <span class="pre">4</span></tt>.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">3016</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">16</span>
+<span class="pre">&gt;</span> <span class="pre">128r</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">8</span> <span class="pre">8</span> <span class="pre">4</span> <span class="pre">4</span>
+<span class="pre">&gt;</span> <span class="pre">118</span> <span class="pre">8</span> <span class="pre">8</span> <span class="pre">8</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">8</span> <span class="pre">8</span>
+<span class="pre">&gt;</span> <span class="pre">88</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">8</span> <span class="pre">8</span> <span class="pre">4</span> <span class="pre">4</span>
+<span class="pre">&gt;</span> <span class="pre">18</span> <span class="pre">8</span> <span class="pre">8</span> <span class="pre">8</span> <span class="pre">2</span>
+<span class="pre">&gt;</span> <span class="pre">18</span> <span class="pre">32</span> <span class="pre">32</span> <span class="pre">32</span> <span class="pre">32</span> <span class="pre">4</span> <span class="pre">2</span>
+<span class="pre">&gt;</span> <span class="pre">14</span> <span class="pre">4</span> <span class="pre">16r</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">16</span> <span class="pre">16</span></tt></p>
+</div>
+<div class="section" id="the-dur-command">
+<h2>The <em>dur</em> Command<a class="headerlink" href="#the-dur-command" title="Permalink to this headline">¶</a></h2>
+<p>The <a href="#id48"><span class="problematic" id="id49">`**dur**`_</span></a> command produces <tt class="docutils literal"><span class="pre">`**dur```_</span> <span class="pre">output</span> <span class="pre">from</span> <span class="pre">either</span> <span class="pre">a</span> <span class="pre">``**kern</span></tt>
+or <tt class="docutils literal"><span class="pre">**recip</span></tt> input. The <tt class="docutils literal"><span class="pre">**dur</span></tt> representation scheme consists simply of
+the elapsed duration of notes and rests, expressed in seconds. The following
+example shows a simple <tt class="docutils literal"><span class="pre">**dur</span></tt> representation (right spine) with a
+corresponding <tt class="docutils literal"><span class="pre">**kern</span></tt> input:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">**kern**dur</span>
+<span class="pre">&gt;</span> <span class="pre">**MM60</span>
+<span class="pre">&gt;</span> <span class="pre">=1=1</span>
+<span class="pre">&gt;</span> <span class="pre">12g0.3333</span>
+<span class="pre">&gt;</span> <span class="pre">12g0.3333</span>
+<span class="pre">&gt;</span> <span class="pre">12g0.3333</span>
+<span class="pre">&gt;</span> <span class="pre">4g1.0000</span>
+<span class="pre">&gt;</span> <span class="pre">4r1.0000r</span>
+<span class="pre">&gt;</span> <span class="pre">8g0.5000</span>
+<span class="pre">&gt;</span> <span class="pre">8g0.5000</span>
+<span class="pre">&gt;</span> <span class="pre">4g1.0000</span>
+<span class="pre">&gt;</span> <span class="pre">=2=2</span>
+<span class="pre">&gt;</span> <span class="pre">*-*-</span></tt></p>
+<p>As in the case of <tt class="docutils literal"><span class="pre">**recip</span></tt>, the <tt class="docutils literal"><span class="pre">**dur</span></tt> representation designates rests
+via the lower-case <tt class="docutils literal"><span class="pre">r</span></tt> and uses the common system for barlines. Notice that
+<tt class="docutils literal"><span class="pre">**dur</span></tt> assumes a metronome indication of quarter-note equals 60 beats per
+minute if no other metronome marking is given.</p>
+<p>Suppose that we wanted to estimate the total duration of some monophonic
+passage (ignoring rubato). We can do this by translating the score to
+<tt class="docutils literal"><span class="pre">**dur</span></tt>, eliminating everything but notes and rests, and sending the output
+to the <strong>stats</strong> command:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">dur</span> <span class="pre">-d</span> <span class="pre">inputfile.krn</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">'^='</span> <span class="pre">|</span> <span class="pre">stats</span></tt></p>
+<p>The <strong>-d</strong> option for <strong>dur</strong> suppresses the outputting of duplicate
+durations arising from multiple-stops. Note that outputs from <strong>dur</strong> will
+adapt to any changes of metronome marking found in the input, so if the work
+accelerates the durations will be reduced proportionally.</p>
+<p>The <strong>-M</strong> option will over-ride any metronome markings found in the input
+stream. For example, if we wanted to estimate the duration of a monophonic
+passage for a metronome marking of 72 quarter-notes per minute we could use
+the command:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">dur</span> <span class="pre">-M</span> <span class="pre">72</span> <span class="pre">-d</span> <span class="pre">input.krn</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">'^='</span> <span class="pre">|</span> <span class="pre">stats</span></tt></p>
+<p>Of course, the duration of a passage is not the same as the length of time a
+given instrument sounds. Suppose, for example, that we wanted to compare the
+duration of trumpet activity in the final movements of Beethoven&#8217;s
+symphonies. We need to make a distinction between the duration of notes and
+the duration of rests. Since the duration values for rests are distinguished
+by the trailing letter <a href="#id3"><span class="problematic" id="id4">`</span></a>r&#8217;, we can use <strong>grep -v</strong> to eliminate all rest
+tokens.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*Itromp'</span> <span class="pre">inputfile.krn</span> <span class="pre">|</span> <span class="pre">dur</span> <span class="pre">-d</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">'^='</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">r</span> <span class="pre">|</span> <span class="pre">stats</span></tt></p>
+<p>The <a href="#id50"><span class="problematic" id="id51">`**dur**`_</span></a> command provides a <strong>-e</strong> option that allows the user to echo
+specified signifiers in the output. The <strong>-e</strong> option is followed by a
+regular expression indicating what patterns are to be passed to the output.
+This option allows us to &#8220;mark&#8221; notes of special interest. For example,
+suppose we wanted to determine the longest duration note for which Mozart had
+marked a staccato.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">dur</span> <span class="pre">-e</span> <span class="pre">\'</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">\'</span> <span class="pre">|</span> <span class="pre">sed</span> <span class="pre">'s/\'//'</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">stats</span></tt></p>
+<p>The <strong>-e</strong> option ensures that <tt class="docutils literal"><span class="pre">**kern</span></tt> staccato marks (&#8216;) are passed along
+to the output. The <a href="#id52"><span class="problematic" id="id53">`**rid**`_</span></a> command eliminates everything but Humdrum data
+records. Then <strong>grep</strong> is used to isolate only those notes containing a
+staccato mark. The <strong>sed</strong> script is used to eliminate the apostrophe, and
+finally the numbers are passed to the <strong>stats</strong> command. The <tt class="docutils literal"><span class="pre">max</span></tt> value
+from <strong>stats</strong> will identify the duration (in seconds) of the longest note
+marked staccato.</p>
+<p>This same basic pipeline can be used for a variety of similar problems.
+Suppose, for example, that we want to determine whether notes at the ends of
+phrases tend to be longer than notes at the beginnings of phrases &#8211; and if
+so, how much longer? In this case, we want to have <strong>dur</strong> echo phrase-
+related signifiers:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">dur</span> <span class="pre">-e</span> <span class="pre">'{'</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'{'</span> <span class="pre">|</span> <span class="pre">sed</span> <span class="pre">'s/{//'</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">stats</span></tt>
+&gt;
+&gt;
+<tt class="docutils literal"><span class="pre">dur</span> <span class="pre">-e</span> <span class="pre">'}'</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'{'</span> <span class="pre">|</span> <span class="pre">sed</span> <span class="pre">'s/{//'</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">stats</span></tt></p>
+<p>Similarly, do semitone trills tend to be shorter than whole-tone trills?</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">dur</span> <span class="pre">-e</span> <span class="pre">'t'</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'t'</span> <span class="pre">|</span> <span class="pre">sed</span> <span class="pre">'s/{//'</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">stats</span></tt>
+&gt;
+&gt;
+<tt class="docutils literal"><span class="pre">dur</span> <span class="pre">-e</span> <span class="pre">'T'</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'T'</span> <span class="pre">|</span> <span class="pre">sed</span> <span class="pre">'s/{//'</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">stats</span></tt></p>
+<p>Of course, we can also use <a href="#id54"><span class="problematic" id="id55">`**dur**`_</span></a> in conjunction with <a href="#id56"><span class="problematic" id="id57">`**yank**`_</span></a> in
+order to investigate particular musical segments or passages. How much
+shorter is the recapitulation compared with the original exposition?</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-s</span> <span class="pre">'Exposition'</span> <span class="pre">-r</span> <span class="pre">1</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">dur</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">'='</span> <span class="pre">|</span> <span class="pre">stats</span></tt>
+&gt;
+&gt;
+<tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-s</span> <span class="pre">'Recapituation'</span> <span class="pre">-r</span> <span class="pre">1</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">dur</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">'='</span> <span class="pre">|</span> <span class="pre">stats</span></tt></p>
+<p>Do initial phrases in Schubert&#8217;s vocal works tend to be shorter than final
+phrases?</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-m</span> <span class="pre">{</span> <span class="pre">-r</span> <span class="pre">1</span> <span class="pre">lied</span> <span class="pre">|</span> <span class="pre">dur</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">^=</span> <span class="pre">|</span> <span class="pre">stats</span></tt>
+<tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-m</span> <span class="pre">{</span> <span class="pre">-r</span> <span class="pre">$</span> <span class="pre">lied</span> <span class="pre">|</span> <span class="pre">dur</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">^=</span> <span class="pre">|</span> <span class="pre">stats</span></tt></p>
+<p>How much longer is a passage if all the repeats are played?</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">thru</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">dur</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLID</span> <span class="pre">|</span> <span class="pre">stats</span> <span class="pre">-o</span> <span class="pre">^=</span></tt></p>
+<p>Recall that the <a href="#id58"><span class="problematic" id="id59">`**xdelta**`_</span></a> command can be used to calculate numerical
+differences between successive values. If the input to <strong>xdelta</strong> is
+<tt class="docutils literal"><span class="pre">**dur</span></tt> duration information, then we can determine rates of change of
+duration. Most music exhibits lengthy passages of similar duration notes &#8211;
+as in a sequence of sixteenth notes. In French overtures, successive notes
+are often of highly contrasting durations (longer, very-short, long, etc.).
+Using <strong>xdelta</strong> we can identify such large changes of duration. For example,
+the following pipeline can be used to determine the magnitude of the
+<em>differences</em> between successive notes.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">dur</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">xdelta</span> <span class="pre">-s</span> <span class="pre">^=</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">stats</span> <span class="pre">-o</span> <span class="pre">^=</span></tt></p>
+<p>A small <tt class="docutils literal"><span class="pre">mean</span></tt> from <strong>stats</strong> will be indicative of works that tend to have
+smoother or less angular note-to-note rhythms.</p>
+</div>
+<div class="section" id="classifying-durations">
+<h2>Classifying Durations<a class="headerlink" href="#classifying-durations" title="Permalink to this headline">¶</a></h2>
+<p>We can use the <a href="#id60"><span class="problematic" id="id61">`**recode**`_</span></a> command to classify durations into a finite set
+of categories. Suppose, for example, we wish to create a inventory of
+long/short rhythmic patterns. We might use <strong>recode</strong> with reassignments such
+as the following:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">&gt;=0.4long</span>
+<span class="pre">&gt;</span> <span class="pre">elseshort</span></tt></p>
+<p>For a monophonic input, we can create an inventory of (say) 3-note long/short
+rhythmic patterns as follows:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">dur</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">recode</span> <span class="pre">-f</span> <span class="pre">reassign</span> <span class="pre">-i</span> <span class="pre">'**dur'</span> <span class="pre">-s</span> <span class="pre">^=</span> <span class="pre">|</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">context</span> <span class="pre">-n</span> <span class="pre">3</span> <span class="pre">-o</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span></tt></p>
+<p>A typical output might appears as follows:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">230long</span> <span class="pre">long</span> <span class="pre">long</span>
+<span class="pre">&gt;</span> <span class="pre">3422short</span> <span class="pre">short</span> <span class="pre">short</span>
+<span class="pre">&gt;</span> <span class="pre">114long</span> <span class="pre">long</span> <span class="pre">short</span>
+<span class="pre">&gt;</span> <span class="pre">202short</span> <span class="pre">short</span> <span class="pre">long</span>
+<span class="pre">&gt;</span> <span class="pre">38long</span> <span class="pre">short</span> <span class="pre">long</span>
+<span class="pre">&gt;</span> <span class="pre">117short</span> <span class="pre">long</span> <span class="pre">long</span>
+<span class="pre">&gt;</span> <span class="pre">194long</span> <span class="pre">short</span> <span class="pre">short</span>
+<span class="pre">&gt;</span> <span class="pre">114short</span> <span class="pre">long</span> <span class="pre">short</span></tt></p>
+<p>Notice that we might do a similar inventory based on durational <em>differences</em>
+rather than on durations. For example, the <a href="#id62"><span class="problematic" id="id63">`**xdelta**`_</span></a> command will allow
+us to distinguish short*er* note relationships from long*er* relationships.
+Our reassignment file would be as follows:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">==0equal</span>
+<span class="pre">&gt;</span> <span class="pre">&gt;0shorter</span>
+<span class="pre">&gt;</span> <span class="pre">&lt;0longer</span></tt></p>
+<p>And our processing would be:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">dur</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">xdelta</span> <span class="pre">-s</span> <span class="pre">^=</span> <span class="pre">|</span> <span class="pre">recode</span> <span class="pre">-f</span> <span class="pre">reassign</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">-i</span> <span class="pre">'**Xdur'</span> <span class="pre">-s</span> <span class="pre">^=</span> <span class="pre">|</span> <span class="pre">context</span> <span class="pre">-n</span> <span class="pre">2</span> <span class="pre">-o</span> <span class="pre">=</span> <span class="pre">\</span>
+<span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span></tt></p>
+</div>
+<div class="section" id="using-yank-with-the-timebase-command">
+<h2>Using <em>yank</em> with the <em>timebase</em> Command<a class="headerlink" href="#using-yank-with-the-timebase-command" title="Permalink to this headline">¶</a></h2>
+<p>Recall that the <a href="#id64"><span class="problematic" id="id65">`**timebase**`_</span></a> command can be used to reformat an input so
+that each data record represents an equivalent elapsed duration. For example,
+in a 4/4 meter, the following command will format the output so that each
+full measure consists of precisely 16 data records (not including the barline
+itself):</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">timebase</span> <span class="pre">-t</span> <span class="pre">16</span> <span class="pre">input.krn</span></tt></p>
+<p>Suppose we wanted to isolate all sonorities in a 4/4 work that occur only on
+the fourth beat of a measure. If we use <strong>timebase</strong>, we can ensure that the
+fourth beat always occurs a certain number of data records following the
+barline. For example, with the following command, the onset of the fourth
+beat will always occur 4 records follow the barline:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">timebase</span> <span class="pre">-t</span> <span class="pre">4</span> <span class="pre">input.krn</span></tt></p>
+<p>We can now use <strong>yank -m</strong> to extract all appropriate sonorities. The
+&#8220;marker&#8221; is the barline and the &#8220;range&#8221; is 4 records following the marker,
+hence:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">timebase</span> <span class="pre">-t</span> <span class="pre">4</span> <span class="pre">input.krn</span> <span class="pre">|</span> <span class="pre">yank</span> <span class="pre">-m</span> <span class="pre">^=</span> <span class="pre">-r</span> <span class="pre">4</span></tt></p>
+<p>Note that this process will extract only those notes that begin sounding with
+the onset of the fourth beat. Some notes may have begun prior to the fourth
+beat and yet are sustained into the beat. If we want to extract the <em>sounded</em>
+sonority, we can use the <a href="#id66"><span class="problematic" id="id67">`**ditto**`_</span></a> command. Begin by expanding the work
+with a timebase that ensures all notes are present. For a work whose shortest
+note is a 32nd note, we can use an appropriately small timebase value. Then
+use the <strong>ditto</strong> command to propagate all sustained notes forward through
+the successive sonorities:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">timebase</span> <span class="pre">-t</span> <span class="pre">32</span> <span class="pre">input.krn</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">^=</span></tt></p>
+<p>Now we can yank the data records that are of interest. Notice that the <strong>-r</strong>
+(range) option for <strong>yank -m</strong> allows us to select more than one record. This
+might allow us, say, to extract only those sonorities that occur on off-
+beats. For example, the following command extracts all notes played by the
+horns during beats 2 and 4 in a 4/4 meter work:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*Icor'</span> <span class="pre">input.krn</span> <span class="pre">|</span> <span class="pre">timebase</span> <span class="pre">-t</span> <span class="pre">16</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">yank</span> <span class="pre">-m</span> <span class="pre">^=</span> <span class="pre">-r</span> <span class="pre">5-8,13-16</span></tt></p>
+<p>In some cases, we would like to yank materials that do not themselves contain
+explicit durational information. Suppose, for example, that for a waltz
+repertory, we want to contrast those chord functions that tend to occur on
+the first beat with those that happen on the third beat. We will need to have
+an input that includes both a <tt class="docutils literal"><span class="pre">`**harm```_</span> <span class="pre">spine</span> <span class="pre">encoding</span> <span class="pre">the</span> <span class="pre">Roman</span> <span class="pre">numeral</span>
+<span class="pre">harmonic</span> <span class="pre">analysis,</span> <span class="pre">as</span> <span class="pre">well</span> <span class="pre">as</span> <span class="pre">one</span> <span class="pre">or</span> <span class="pre">more</span> <span class="pre">``**kern</span></tt> or <tt class="docutils literal"><span class="pre">**recip</span></tt> spines
+that include the durational information. We can use the <strong>timebase</strong> command
+to expand the output accordingly &#8211; cuing on the duration information
+provided by <tt class="docutils literal"><span class="pre">**kern</span></tt> or <tt class="docutils literal"><span class="pre">**recip</span></tt>. Having suitable expanded the input, we
+can dispense with everything but the <tt class="docutils literal"><span class="pre">**harm</span></tt> spine. For works in 3/4
+meter, the following pipeline would provide an inventory of chords occurring
+on the first beat of each bar:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">timebase</span> <span class="pre">-t</span> <span class="pre">8</span> <span class="pre">input</span> <span class="pre">|</span> <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**harm'</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">yank</span> <span class="pre">-m</span> <span class="pre">^=</span> <span class="pre">-r</span> <span class="pre">1</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span></tt></p>
+<p>And the following variation would provide an inventory of chords occurring on
+the third beat of each bar. (There are 6 eighth durations in a bar of 3/4,
+therefore the beginning of the third beat will coincide with the 5th eighth
+&#8211; hence the range <tt class="docutils literal"><span class="pre">-r</span> <span class="pre">5</span></tt>:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">timebase</span> <span class="pre">-t</span> <span class="pre">8</span> <span class="pre">input</span> <span class="pre">|</span> <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**harm'</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">yank</span> <span class="pre">-m</span> <span class="pre">^=</span> <span class="pre">-r</span> <span class="pre">5</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span></tt></p>
+</div>
+<div class="section" id="the-metpos-command">
+<h2>The <em>metpos</em> Command<a class="headerlink" href="#the-metpos-command" title="Permalink to this headline">¶</a></h2>
+<p>The <a href="#id68"><span class="problematic" id="id69">`**metpos**`_</span></a> command generates a <a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id70"><span class="problematic" id="id71">`**metpos```_</span></a> output spine containing
+numbers that indicate the metric strength of each sonority. By &#8220;metric
+position&#8221; we mean the position of importance in the metric hierarchy for a
+measure.</p>
+<p>The highest position in any given metric hierarchy is given by the value <cite>1&#8217;.
+This value is assigned to the first event at the beginning of each measure.
+In duple and quadruple meters, the second level in the metric hierarchy
+occurs in the middle of the measure and is assigned the output value `2&#8217;. (In
+triple meters, **metpos** assumes that the second and third beats in the
+measure are both assigned to the second level in the metric hierarchy.) All
+other metric positions in the measure (beats, sub-beats, sub-sub-beats, etc.)
+are assigned successively increasing numerical values according to their
+placement in the metric hierarchy. In summary, larger ``**metpos`</cite> values
+signify sonorities of <em>lesser</em> metric significance.</p>
+<p>By way of illustration, consider the case of successive eighth notes in a 2/4
+meter. The metric hierarchy values for successive eighths are: 1, 3, 2, 3. In
+the case of successive sixteenth notes in 2/4, the metric hierarchy values
+are: 1,4,3,4,2,4,3,4. In the case of 6/8 meter, successive sixteenth
+durations exhibit a metric hierarchy of: 1,4,3,4,3,4,2,4,3,4,3,4.</p>
+<p>For correct operation, the <strong>metpos</strong> command must be supplied with an input
+that has been formatted using the <a href="#id72"><span class="problematic" id="id73">`**timebase**`_</span></a> command. That is, each data
+record (ignoring barlines) must represent an equivalent duration of time. In
+addition, <strong>metpos</strong> must be informed of both the <em>meter signature</em> and the
+<em>timebase</em> for the given input passage. This information can be specified via
+the command line, however it is usually available in the input stream via
+appropriate tandem interpretations.</p>
+<p>The following extract from Bartok&#8217;s &#8220;Two-Part Study&#8221; No. 121 from
+<em>Mikrokosmos</em> demonstrates the effect of the <strong>metpos</strong> command. The two
+left-most columns show the original input; all three columns show the
+corresponding output from <strong>metpos</strong>:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">**kern**kern**metpos</span>
+<span class="pre">&gt;</span> <span class="pre">*tb8*tb8*tb8</span>
+<span class="pre">&gt;</span> <span class="pre">=16=16=16</span>
+<span class="pre">&gt;</span> <span class="pre">*M6/4*M6/4*M6/4</span>
+<span class="pre">&gt;</span> <span class="pre">8Gn8b-1</span>
+<span class="pre">&gt;</span> <span class="pre">8A8ccn4</span>
+<span class="pre">&gt;</span> <span class="pre">8B-8cc#}3</span>
+<span class="pre">&gt;</span> <span class="pre">8cn{8f#4</span>
+<span class="pre">&gt;</span> <span class="pre">8c#}8gn3</span>
+<span class="pre">&gt;</span> <span class="pre">{8F#8a4</span>
+<span class="pre">&gt;</span> <span class="pre">8G8b-2</span>
+<span class="pre">&gt;</span> <span class="pre">8A8ccn4</span>
+<span class="pre">&gt;</span> <span class="pre">8B-4b-3</span>
+<span class="pre">&gt;</span> <span class="pre">8cn.4</span>
+<span class="pre">&gt;</span> <span class="pre">8c#}8fn}3</span>
+<span class="pre">&gt;</span> <span class="pre">8r8r4</span>
+<span class="pre">&gt;</span> <span class="pre">=17=17=17</span>
+<span class="pre">&gt;</span> <span class="pre">*M4/4*M4/4*M4/4</span>
+<span class="pre">&gt;</span> <span class="pre">8d2r1</span>
+<span class="pre">&gt;</span> <span class="pre">4.d.4</span>
+<span class="pre">&gt;</span> <span class="pre">..3</span>
+<span class="pre">&gt;</span> <span class="pre">..4</span>
+<span class="pre">&gt;</span> <span class="pre">{2d_8dd2</span>
+<span class="pre">&gt;</span> <span class="pre">.4.dd4</span>
+<span class="pre">&gt;</span> <span class="pre">..3</span>
+<span class="pre">&gt;</span> <span class="pre">..4</span>
+<span class="pre">&gt;</span> <span class="pre">=18=18=18</span>
+<span class="pre">&gt;</span> <span class="pre">8d{1dd_1</span>
+<span class="pre">&gt;</span> <span class="pre">8A.4</span>
+<span class="pre">&gt;</span> <span class="pre">8F#.3</span>
+<span class="pre">&gt;</span> <span class="pre">8E.4</span>
+<span class="pre">&gt;</span> <span class="pre">8D.2</span>
+<span class="pre">&gt;</span> <span class="pre">8BB.4</span>
+<span class="pre">&gt;</span> <span class="pre">8D.3</span>
+<span class="pre">&gt;</span> <span class="pre">8E}.4</span>
+<span class="pre">&gt;</span> <span class="pre">=19=19=19</span>
+<span class="pre">&gt;</span> <span class="pre">*M3/2*M3/2*M3/2</span>
+<span class="pre">&gt;</span> <span class="pre">{8F#8dd1</span>
+<span class="pre">&gt;</span> <span class="pre">8A8ffn4</span>
+<span class="pre">&gt;</span> <span class="pre">8c#8aa3</span>
+<span class="pre">&gt;</span> <span class="pre">8A8ff4</span>
+<span class="pre">&gt;</span> <span class="pre">8F#8dd2</span>
+<span class="pre">&gt;</span> <span class="pre">8A8ff4</span>
+<span class="pre">&gt;</span> <span class="pre">8F#8dd3</span>
+<span class="pre">&gt;</span> <span class="pre">8E8ccn4</span>
+<span class="pre">&gt;</span> <span class="pre">8D8b-2</span>
+<span class="pre">&gt;</span> <span class="pre">8BBn8gn4</span>
+<span class="pre">&gt;</span> <span class="pre">8D8b-3</span>
+<span class="pre">&gt;</span> <span class="pre">8E}8cc4</span>
+<span class="pre">&gt;</span> <span class="pre">=20=20=20</span>
+<span class="pre">&gt;</span> <span class="pre">*-*-*-</span></tt></p>
+<p>Notice that <a href="#id74"><span class="problematic" id="id75">`**metpos**`_</span></a> adapts to changing meter signatures, and correctly
+distinguishes between metric accent patterns such as 6/4 (measure 16) and 3/2
+(measure 19).</p>
+<p>The <a href="#id7"><span class="problematic" id="id8">``</span></a><a href="#id76"><span class="problematic" id="id77">`**metpos```_</span></a> values provide additional ways of addressing various
+rhythmic questions. We might use <a href="#id78"><span class="problematic" id="id79">`**recode**`_</span></a> for example, to recode the
+numerical outputs from <strong>metpos</strong> into a smaller set of discrete categories.
+For example, we might classify metric positions using the following
+reassignment file:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">==1strong</span>
+<span class="pre">&gt;</span> <span class="pre">&gt;=3secondary</span>
+<span class="pre">&gt;</span> <span class="pre">elseweak</span></tt></p>
+<p>The words <a href="#id9"><span class="problematic" id="id10">`</span></a>strong&#8217;, <a href="#id11"><span class="problematic" id="id12">`</span></a>secondary&#8217;, and <a href="#id13"><span class="problematic" id="id14">`</span></a>weak&#8217; can then be sought by <strong>grep</strong> or
+<strong>yank -m</strong>, allowing us to isolate points of particular metric stress. Since
+<strong>metpos</strong> adapts to changing meters, we can confidently process inputs that
+may contain mixtures of meters.</p>
+</div>
+<div class="section" id="changes-of-stress">
+<h2>Changes of Stress<a class="headerlink" href="#changes-of-stress" title="Permalink to this headline">¶</a></h2>
+<p>Once again we can make use of <a href="#id80"><span class="problematic" id="id81">`**xdelta**`_</span></a> to identify relationships between
+successive metric position values. Suppose we had a collection of Hungarian
+melodies and we wanted to determine how each degree is approached in terms of
+metric strength. That is, we would like to count the number of tonic pitches
+that are approached by a weak-to-strong context versus the number of tonic
+pitches approached by a strong-to-weak context. We also want similar measures
+for supertonic, mediant, subdominant, etc. scale degrees.</p>
+<p>This task involves creating an inventory where fourteen different items are
+possible: (1) tonic strong-to-weak, (2) tonic weak-to-strong, (3) supertonic,
+strong-to-weak, etc. A suitable inventory will involve creating two spines of
+information &#8211; scale-degree and relative metric strength.</p>
+<p>Assuming that our Hungarian melodies encode key information, creating a
+<a href="#id15"><span class="problematic" id="id16">``</span></a><a href="#id82"><span class="problematic" id="id83">`**deg```_</span></a> spine is straightforward. Recall that the <strong>-a</strong> option for
+<a href="#id84"><span class="problematic" id="id85">`**deg**`_</span></a> avoids distinguishing the direction of approach (from above or
+below):</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">deg</span> <span class="pre">-a</span> <span class="pre">magyar*.krn</span> <span class="pre">&gt;</span> <span class="pre">magyar.deg</span></tt></p>
+<p>Creating a spine encoding relative metric strength will be more involved.
+First we need to expand our input according to the shortest note. We use
+<a href="#id86"><span class="problematic" id="id87">`**census -k**`_</span></a> to determine the shortest duration, and then expand our
+input using <strong>timebase</strong>.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">census</span> <span class="pre">-k</span> <span class="pre">magyar*.krn</span></tt>
+<tt class="docutils literal"><span class="pre">timebase</span> <span class="pre">-t</span> <span class="pre">16</span> <span class="pre">magyar*.krn</span> <span class="pre">&gt;</span> <span class="pre">magyar.tb</span></tt></p>
+<p>Using <strong>metpos</strong> will allow us to create a spine with the metric position
+data.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">metpos</span> <span class="pre">magyar.tb</span> <span class="pre">&gt;</span> <span class="pre">magyar.mp</span></tt></p>
+<p>Note that <strong>metpos</strong> automatically echoes the input along with the new
+<tt class="docutils literal"><span class="pre">**metpos</span></tt> spine. At this point, the result might look as follows:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">!!!OTL:</span> <span class="pre">Graf</span> <span class="pre">Friedrich</span> <span class="pre">In</span> <span class="pre">Oesterraaich</span> <span class="pre">sin</span> <span class="pre">di</span> <span class="pre">Gassen</span> <span class="pre">sou</span> <span class="pre">enge</span>
+<span class="pre">&gt;</span> <span class="pre">``**kern``**metpos</span>
+<span class="pre">&gt;</span> <span class="pre">``*ICvox``*</span>
+<span class="pre">&gt;</span> <span class="pre">``*Ivox``*</span>
+<span class="pre">&gt;</span> <span class="pre">``*M3/4``*M3/4</span>
+<span class="pre">&gt;</span> <span class="pre">``*k[f#]``*</span>
+<span class="pre">&gt;</span> <span class="pre">``*G:``*</span>
+<span class="pre">&gt;</span> <span class="pre">``*tb16``*tb16</span>
+<span class="pre">&gt;</span> <span class="pre">``{8g``2</span>
+<span class="pre">&gt;</span> <span class="pre">``.``4</span>
+<span class="pre">&gt;</span> <span class="pre">``8b``3</span>
+<span class="pre">&gt;</span> <span class="pre">``.``4</span>
+<span class="pre">&gt;</span> <span class="pre">``=1``=1</span>
+<span class="pre">&gt;</span> <span class="pre">``8dd``1</span>
+<span class="pre">&gt;</span> <span class="pre">``.``4</span></tt>
+&gt; etc.</p>
+<p>We want to be able to say that the relationship between the first eighth-note
+G and the eighth-note B is &#8220;strong-to-weak&#8221; and that the relationship between
+the eighth-note B and the eighth-note D is &#8220;weak-to-strong.&#8221; In order to
+procede we need to eliminate all of the data records that contain only a
+metpos value &#8211; that is, there is no pitch present in the <a href="#id17"><span class="problematic" id="id18">``</span></a><a href="#id88"><span class="problematic" id="id89">`**kern```_</span></a>
+spine. We can do this using <strong>humsed</strong>; we simply delete all lines that begin
+with a period character:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'/^\./d'</span> <span class="pre">magyar.mp</span></tt></p>
+<p>The result is as follows:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">!!!OTL:</span> <span class="pre">Graf</span> <span class="pre">Friedrich</span> <span class="pre">In</span> <span class="pre">Oesterraaich</span> <span class="pre">sin</span> <span class="pre">di</span> <span class="pre">Gassen</span> <span class="pre">sou</span> <span class="pre">enge</span>
+<span class="pre">&gt;</span> <span class="pre">``**kern``**metpos</span>
+<span class="pre">&gt;</span> <span class="pre">``*ICvox``*</span>
+<span class="pre">&gt;</span> <span class="pre">``*Ivox``*</span>
+<span class="pre">&gt;</span> <span class="pre">``*M3/4``*M3/4</span>
+<span class="pre">&gt;</span> <span class="pre">``*k[f#]``*</span>
+<span class="pre">&gt;</span> <span class="pre">``*G:``*</span>
+<span class="pre">&gt;</span> <span class="pre">``*tb16``*tb16</span>
+<span class="pre">&gt;</span> <span class="pre">``{8g``2</span>
+<span class="pre">&gt;</span> <span class="pre">``8b``3</span>
+<span class="pre">&gt;</span> <span class="pre">``=1``=1</span>
+<span class="pre">&gt;</span> <span class="pre">``8dd``1</span></tt>
+&gt; etc.</p>
+<p>Notice that the successive <tt class="docutils literal"><span class="pre">**metpos</span></tt> values will now allow us to
+characterize the changes in stress between successive notes: 2 followed by 3
+indicates a strong-to-weak change of metric position, 3 followed by 1
+indicates a weak-to-strong change of metric position. We can use
+<a href="#id90"><span class="problematic" id="id91">`**xdelta**`_</span></a> to calculate the differences in metric position values:
+positive differences will indicate weak-to-strong changes and negative
+differences will indicate strong-to-weak changes. If both values have the
+same metric position value, then the successive notes hold equal positions in
+the metric hierarchy. Before using <strong>xdelta</strong> we need to isolate the
+<tt class="docutils literal"><span class="pre">**metpos</span></tt> spine using <strong>extract</strong>:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'/^\./d'</span> <span class="pre">magyar.mp</span> <span class="pre">|</span> <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**metpos'</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">xdelta</span> <span class="pre">-s</span> <span class="pre">^=</span></tt></p>
+<p>The result is:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">!!!OTL:</span> <span class="pre">Graf</span> <span class="pre">Friedrich</span> <span class="pre">In</span> <span class="pre">Oesterraaich</span> <span class="pre">sin</span> <span class="pre">di</span> <span class="pre">Gassen</span> <span class="pre">sou</span> <span class="pre">enge</span>
+<span class="pre">&gt;</span> <span class="pre">``**Xmetpos</span>
+<span class="pre">&gt;</span> <span class="pre">``*</span>
+<span class="pre">&gt;</span> <span class="pre">``*</span>
+<span class="pre">&gt;</span> <span class="pre">``*M3/4</span>
+<span class="pre">&gt;</span> <span class="pre">``*</span>
+<span class="pre">&gt;</span> <span class="pre">``*</span>
+<span class="pre">&gt;</span> <span class="pre">``*tb16</span>
+<span class="pre">&gt;</span> <span class="pre">``.</span>
+<span class="pre">&gt;</span> <span class="pre">``1</span>
+<span class="pre">&gt;</span> <span class="pre">``=1</span>
+<span class="pre">&gt;</span> <span class="pre">``-2</span></tt>
+&gt; etc.</p>
+<p>Now we can use <a href="#id92"><span class="problematic" id="id93">`**recode**`_</span></a> to classify the changes of metric position
+according. Our reassignment file (named <tt class="docutils literal"><span class="pre">reassign</span></tt>):</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">&gt;0strong-to-weak</span>
+<span class="pre">&gt;</span> <span class="pre">&lt;0weak-to-strong</span>
+<span class="pre">&gt;</span> <span class="pre">==0equal</span></tt></p>
+<p>Appending the appropriate command:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'/^\./d'</span> <span class="pre">magyar.mp</span> <span class="pre">|</span> <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**metpos'</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">xdelta</span> <span class="pre">-s</span> <span class="pre">^=</span> <span class="pre">|</span> <span class="pre">recode</span> <span class="pre">-f</span> <span class="pre">reassign</span> <span class="pre">-i</span> <span class="pre">'**Xmetpos'</span> <span class="pre">-s</span> <span class="pre">^=</span> <span class="pre">&gt;</span> <span class="pre">magyar.xmp</span></tt></p>
+<p>Now we can assemble the resulting metric change spine with our original
+<a href="#id19"><span class="problematic" id="id20">``</span></a><a href="#id94"><span class="problematic" id="id95">`**deg```_</span></a> spine. Each data record will contain the scale degree in the
+first spine and the change of metric position data in the second spine. The
+final task is to create an inventory using <a href="#id96"><span class="problematic" id="id97">`**rid**`_</span></a>, <strong>sort</strong> and <strong>uniq</strong>:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">magyar.deg</span> <span class="pre">magyar.xmp</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">^=</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></tt></p>
+<p>The final result will appear as below. The first output line indicates that
+there were three instances of a tonic pitch approached by a note of
+equivalent position in the metric hierarchy. The second line indicates that
+there were twenty-five instances of a tonic pitch approached by a note having
+a stronger metric position:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">31equal</span>
+<span class="pre">&gt;</span> <span class="pre">251strong-to-weak</span>
+<span class="pre">&gt;</span> <span class="pre">301weak-to-strong</span>
+<span class="pre">&gt;</span> <span class="pre">32equal</span>
+<span class="pre">&gt;</span> <span class="pre">142strong-to-weak</span>
+<span class="pre">&gt;</span> <span class="pre">132weak-to-strong</span>
+<span class="pre">&gt;</span> <span class="pre">13equal</span>
+<span class="pre">&gt;</span> <span class="pre">393strong-to-weak</span>
+<span class="pre">&gt;</span> <span class="pre">343weak-to-strong</span>
+<span class="pre">&gt;</span> <span class="pre">34equal</span>
+<span class="pre">&gt;</span> <span class="pre">264strong-to-weak</span>
+<span class="pre">&gt;</span> <span class="pre">174weak-to-strong</span>
+<span class="pre">&gt;</span> <span class="pre">135equal</span>
+<span class="pre">&gt;</span> <span class="pre">495strong-to-weak</span>
+<span class="pre">&gt;</span> <span class="pre">425weak-to-strong</span>
+<span class="pre">&gt;</span> <span class="pre">16equal</span>
+<span class="pre">&gt;</span> <span class="pre">136strong-to-weak</span>
+<span class="pre">&gt;</span> <span class="pre">146weak-to-strong</span>
+<span class="pre">&gt;</span> <span class="pre">37strong-to-weak</span>
+<span class="pre">&gt;</span> <span class="pre">67weak-to-strong</span>
+<span class="pre">&gt;</span> <span class="pre">17-weak-to-strong</span>
+<span class="pre">&gt;</span> <span class="pre">3requal</span>
+<span class="pre">&gt;</span> <span class="pre">10rstrong-to-weak</span></tt></p>
+<p>Instead of scale degree, any other Humdrum spine might be used. For example,
+if the input contained functional harmony data (<a href="#id21"><span class="problematic" id="id22">**</span></a>harm) then the output
+inventory would identify how particular chord functions tend to be
+approached. For example, we could establish whether the submediant chord is
+more likely to be approached in a strong-to-weak or weak-to-strong rhythmic
+context. Similarly, this same technique can be used to determine whether
+particular melodic or harmonic intervals tend to be approached using
+particular stress relationships.</p>
+<p>In addition, our input spine might also be transformed via the <strong>context</strong>
+command. Given a <strong>harm spine, for example, **context</strong> could be used to
+generate two-chord harmonic progressions. This would permit us to determine,
+for example, whether a specific progression such as <em>ii-V</em> tends to fall in
+strong-to-weak or weak-to-strong contexts.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="reprise">
+<h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
+<p>There are a vast number of issues raised in rhythm-related processing. In
+this chapter we have touched on a few of the more basic tasks. These include
+identifying the durations of various passages using <strong>dur</strong>; classifying and
+contextualizing durations using <a href="#id98"><span class="problematic" id="id99">`**recode**`_</span></a> and <a href="#id100"><span class="problematic" id="id101">`**context**`_</span></a>; isolating
+particular rhythmic moments using <a href="#id102"><span class="problematic" id="id103">`**timebase**`_</span></a> and <a href="#id104"><span class="problematic" id="id105">`**yank**`_</span></a> <strong>-m</strong>;
+determining relative metric positions using <a href="#id106"><span class="problematic" id="id107">`**metpos**`_</span></a>; and characterizing
+metric syncopation using <a href="#id108"><span class="problematic" id="id109">`**synco**`_</span></a>.</p>
+<p>Processing data that does not explicitly contain duration-related information
+(such as <tt class="docutils literal"><span class="pre">**harm</span></tt> or <tt class="docutils literal"><span class="pre">**deg</span></tt>) often requires some preparation. It is
+often useful to maintain a coordinated file where the spines of interest are
+linked with duration-related spines that assist in processing.</p>
+<p>One further topic related to rhythm remains to be discussed. The <strong>accent</strong>
+command allows the user to distinguish notes according to their estimated
+perceptual importance. We will consider <strong>accent</strong> in <a class="reference external" href="guide31.html">Chapter 31.</a></p>
+<hr class="docutils" />
+<ul class="simple">
+<li>` <a href="#id23"><span class="problematic" id="id24">**</span></a>Next Chapter**`_</li>
+<li>` <a href="#id25"><span class="problematic" id="id26">**</span></a>Previous Chapter**`_</li>
+<li>` <a href="#id27"><span class="problematic" id="id28">**</span></a>Table of Contents**`_</li>
+<li>` <a href="#id29"><span class="problematic" id="id30">**</span></a>Detailed Contents**`_</li>
+</ul>
+<ol class="upperalpha simple" start="3">
+<li>Copyright 1999 David Huron</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">humdrum-tools 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Humdrum Community.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

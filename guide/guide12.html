@@ -1,0 +1,863 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapter12 &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../index.html"/>
+        <link rel="up" title="The Humdrum User Guide" href="index.html"/>
+        <link rel="next" title="Chapter13" href="guide13.html"/>
+        <link rel="prev" title="Chapter11" href="guide11.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><em>The Humdrum User Guide</em></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="guide01.html">Chapter1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide01.html#humdrum-a-brief-tour">Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02.html#representing-music-using-kern-i">Representing Music Using <strong>***kern*</strong> (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide03.html">Chapter3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide03.html#some-initial-processing">Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide04.html">Chapter4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide04.html#basic-pitch-translations">Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide05.html">Chapter5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide05.html#the-humdrum-syntax">The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide06.html">Chapter6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide06.html#representing-music-using-kern-ii">Representing Music Using ***kern*(II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide06.html#tuplets">Tuplets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide07.html">Chapter7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide08.html">Chapter8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide09.html">Chapter9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide10.html">Chapter10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide11.html">Chapter11</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Chapter12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide13.html">Chapter13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide14.html">Chapter14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide15.html">Chapter15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide16.html">Chapter16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide17.html">Chapter17</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide18.html">Chapter18</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide19.html">Chapter19</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide20.html">Chapter20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide21.html">Chapter21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide21.html#searching-for-patterns">Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide22.html">Chapter22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide23.html">Chapter23</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide23.html#rhythm">Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide24.html">Chapter24</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide24.html#the-shell-iii">The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide25.html">Chapter25</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide25.html#similarity">Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide26.html">Chapter26</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide26.html#moving-signifiers-between-spines">Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide27.html">Chapter27</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide29.html">Chapter29</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide29.html#differences-and-commonalities">Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide30.html">Chapter30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide30.html#midi-input-tools">MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide31.html">Chapter31</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide31.html#repertories-and-links">Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide32.html">Chapter32</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide32.html#the-shell-iv">The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide34.html">Chapter34</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide34.html#serial-processing">Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide35.html">Chapter35</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide35.html#layers">Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37.html">Chapter37</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37.html#electronic-music-editing">Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide38.html">Chapter38</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide38.html#systematic-musicology">Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide39.html">Chapter39</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide39.html#trouble-shooting">Trouble-Shooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide40.html">Chapter40</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide40.html#conclusion">Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bibliography.html">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.more.html">Supplementary Humdrum Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.toc.html">Humdrum Command Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="humdrum.problems.html">HUMDRUM PROBLEMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux.perform.html">Installing and Using the Humdrum &#8220;perform&#8221; Command under Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.bibliog.html"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.bibliog.html#bibliography">Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07.html">Humdrum Developer&#8217;s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a.html"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a.html#humdrum-representation-development">Humdrum Representation Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a.html#representation-assumptions">Representation Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a.html#creating-new-humdrum-representations">Creating New Humdrum Representations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a.html#defining-a-new-humdrum-interpretation-a-sample-problem">Defining a New Humdrum Interpretation: A Sample Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07b.html"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07b.html#humdrum-software-development">Humdrum Software Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07b.html#standard-program-skeleton">Standard Program Skeleton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="musedata2kern.html"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="musedata2kern.html#how-to-translate-musedata-files-to-humdrum">How To Translate MuseData Files to Humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="musedata2kern.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problems.html">Sample Problems Using the Humdrum Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projects.html">Sample Research Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="representations.toc.html">Humdrum Representation Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html">Online Resources:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample.problems.html">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sappExtras.html">Humdrum Extras</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook.html#syntax-coloring-in-vim">Syntax Coloring in Vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook.html#projects-using-humdrum">Projects using Humdrum</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html"><em>The Humdrum User Guide</em></a> &raquo;</li>
+      
+    <li>Chapter12</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/guide/guide12.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="chapter12">
+<h1>Chapter12<a class="headerlink" href="#chapter12" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="selecting-musical-parts-and-passages">
+<h2>Selecting Musical Parts and Passages<a class="headerlink" href="#selecting-musical-parts-and-passages" title="Permalink to this headline">¶</a></h2>
+<p>A Humdrum file may contain an encoding of a full score, or even of a large
+collection of scores. Often, we would like to isolate or extract particular
+parts or segments from a file or input stream. For example, we might want to
+extract a particular instrumental part, or select a group of related
+instruments; we might want to isolate a particular passage, remove certain
+measures, or extract a specific phrase; we might want to pull out a labelled
+section of a score (such as a <em>Coda</em> or <em>Da Capo</em>), or we might want to
+select a particular verse in a strophic song. In addition, we might want to
+isolate specific types of information, such as the figured bass, melodic
+interval information, or vocal text.</p>
+<p>In this chapter we will explore two Humdrum tools for extracting material:
+<a href="#id146"><span class="problematic" id="id147">`**extract**`_</span></a> and <a href="#id148"><span class="problematic" id="id149">`**yank**`_</span></a>.</p>
+<p>We know that Humdrum representations are structured like a grid with
+horizontal data (&#8220;records&#8221;) representing concurrent information, and vertical
+data (&#8220;spines&#8221;) representing sequentially occuring information. The Humdrum
+<strong>extract</strong> command can be used to isolate columns or spines of information.
+The <strong>yank</strong> command can be used to isolate rows or records. The <strong>extract</strong>
+command can be used to extract musical parts or other types of information
+that might be represented in individual spines. The <strong>yank</strong> command can be
+used to isolate passages or segments from an input, such as specified
+measures, phrases, or sections.</p>
+</div>
+<div class="section" id="extracting-spines-the-extract-command">
+<h2>Extracting Spines: The <em>extract</em> Command<a class="headerlink" href="#extracting-spines-the-extract-command" title="Permalink to this headline">¶</a></h2>
+<p>The <a href="#id150"><span class="problematic" id="id151">`**extract**`_</span></a> command allows the user to select one or more spines from
+a Humdrum input. The command is typically used to extract parts (such as a
+tuba part) from some multi-part score. However, <strong>extract</strong> can also be used
+to isolate dynamic markings, musical lyrics, or any other stream of
+information that has been encoded as a separate Humdrum spine.</p>
+<p>The <strong>extract&#8221; ** command has several modes of operation. With the **-f</strong>
+option, the user may specify a given data column (spine) or &#8220;field&#8221; to
+extract. Consider the opening of Bach&#8217;s second Brandenburg Concerto shown in
+Example 12.1.</p>
+<p><strong>Example 12.1.</strong> J.S. Bach <em>Brandenburg Concerto No. 2</em>, mov. 1.</p>
+<p>`` !!!COM: Bach, Johann Sebastian
+`` !!!OPR: Six Concerts Avec plusieurs ... le prince regnant d&#8217;Anhalt-
+Coethen
+`` !!!OTL: Brandenburgische Konzerte F
+`` !!!XEN: Brandenburg Concerto No. 2 in F major.
+`` !!!OMV: Movement 1.
+`` !!!SCT: BWV 1047
+`` !! [Allegro]
+`` <strong>kern**kern**kern**kern**kern**kern**kern**kern**kern**kern
+`` *ICklav*ICstr*ICstr*ICstr*ICstr*ICstr*ICstr*ICww*ICww*ICbras
+`` *Icemba*Icello*Icbass*Iviola*Ivioln*Ivioln*Ivioln*Ioboe*Ifltds*Itromp
+`` *IGcont*IGcont******</strong>
+`` <em>IGripn*IGripn*IGripn*IGripn*IGripn*IGripn*IGconc*IGconc*IGconc*IGconc
+`` !cembal!&#8217;cello!Bd&#8217;rip!Vd&#8217;rip!v&#8217;lin2!v&#8217;lin1!v&#8217;lino!oboe!flauto!tromba
+`` *k[b-]*k[b-]*k[b-]*k[b-]*k[b-]*k[b-]*k[b-]*k[b-]*k[b-]*k[]
+`` *F:*F:*F:*F:*F:*F:*F:*F:*F:*F:
+`` *M2/2*M2/2*M2/2*M2/2*M2/2*M2/2*M2/2*M2/2*M2/2*M2/2
+`` *MM54*MM54*MM54*MM54*MM54*MM54*MM54*MM54*MM54*MM54
+`` *clefF4*clefF4*clefF4*clefC3*clefG2*clefG2*clefG2*clefG2*clefG2*clefG2
+`` 8FF/8FF/8FFF/8a8cc8ff8ff8ff8ff8f/
+`` =1=1=1=1=1=1=1=1=1=1
+`` 16FLL16FLL16FFLL8fL8a/L8ccL8ccL8ccL8ccL8a/L
+`` 16G16G16GG.......
+`` 16A16A16AA8c16f/LL16aLL16aLL16aLL16aLL8cc/
+`` 16GJJ16GJJ16GGJJ.16g/JJ16b-JJ16b-JJ16b-JJ16b-JJ.
+`` 16FLL16FLL16FFLL8f8a/L8ccL8ccL8ccL8ccL8a/
+`` 16G16G16GG.......
+`` 16A16A16AA8cJ16f/LL16aLL16aLL16aLL16aLL8f/J
+`` 16GJJ16GJJ16GGJJ.16g/JJ16b-JJ16b-JJ16b-JJ16b-JJ.
+`` 16FLL16FLL16FFLL8fL8a/L8ccL8ccL8ccL8ccL8a/L
+`` 16E16E16EE.......
+`` 16F16F16FF8a8cc/8ff8ff8ff8ff8cc/
+`` 16GJJ16GJJ16GGJJ.......
+`` 16ALL16ALL16AALL8cc8f/8cc8cc8cc8cc8ff/
+`` 16B-16B-16BB-.......
+`` 16A16A16AA8cJ8cc/J8ffJ8ffJ8ffJ8ffJ8cc/J
+`` 16GJJ16GJJ16GGJJ.......
+`` =2=2=2=2=2=2=2=2=2=2
+`` *-</em>-<em>-</em>-<em>-</em>-<em>-</em>-<em>-</em>-``</p>
+<p>Suppose we wanted to extract the &#8216;cello part. In the above encoding, the
+&#8216;cello occupies the second spine (second field) from the left, hence:</p>
+<p>`` extract -f 2 brandenburg2.krn``</p>
+<p>The resulting output would begin as follows:</p>
+<p>`` !!!COM: Bach, Johann Sebastian
+&gt; !!!OPR: Six Concerts Avec plusieurs ... le prince regnant d&#8217;Anhalt-Coethen
+&gt; !!!OTL: Brandenburgische Konzerte F
+&gt; !!!XEN: Brandenburg Concerto No. 2 in F major.
+&gt; !!!OMV: Movement 1.
+&gt; !!!SCT: BWV 1047
+&gt; !! [Allegro]
+&gt; <a href="#id1"><span class="problematic" id="id2">**</span></a>kern
+&gt; <a href="#id3"><span class="problematic" id="id4">*</span></a>ICstr
+&gt; <a href="#id5"><span class="problematic" id="id6">*</span></a>Icello
+&gt; <a href="#id7"><span class="problematic" id="id8">*</span></a>IGcont
+&gt; <a href="#id9"><span class="problematic" id="id10">*</span></a>IGripn
+&gt; !&#8217;cello
+&gt; <a href="#id11"><span class="problematic" id="id12">*</span></a>k[b-]
+&gt; <a href="#id13"><span class="problematic" id="id14">*</span></a>F:
+&gt; <a href="#id15"><span class="problematic" id="id16">*</span></a>M2/2
+&gt; <a href="#id17"><span class="problematic" id="id18">*</span></a>MM54
+&gt; <a href="#id19"><span class="problematic" id="id20">*</span></a>clefF4
+&gt; 8FF/
+&gt; =1
+&gt; 16FLL
+&gt; 16G``
+&gt; etc.</p>
+<p>Notice that the <strong>extract</strong> command outputs all global comments. In the case
+of local comments, <strong>extract</strong> outputs only those local comments that belong
+to the output spine.</p>
+<p>The oboe and flauto dolce parts are encoded in spines 8 and 9. So we could
+extract the <a href="#id21"><span class="problematic" id="id22">`</span></a>cello, oboe and flauto dolce parts by submitting a list of the
+corresponding fields. Spine numbers are separated by commas:</p>
+<p>`` extract -f 2,8,9 brandenburg2.krn``</p>
+<p>Numerical <strong>ranges</strong> can be specified using the dash. For example, if we
+wanted to extract all of the string parts (spines 2 through 7):</p>
+<p>`` extract -f 2-7 brandenburg2.krn``</p>
+<p>With the <strong>-f</strong> option, field specifications may also be made with respect to
+the right-most field. The dollars-sign character (<a href="#id23"><span class="problematic" id="id24">``</span></a><a href="#id25"><span class="problematic" id="id26">``</span></a>) refers to the right-
+most field in the input. The trumpet part can be extracted as follows:</p>
+<p>`` extract -f &#8216;$&#8217; brandenburg2.krn``</p>
+<p>(Notice the use of the single quotes to ensure that the shell doesn&#8217;t
+misinterpret the dollar sign.) Simple arithmetic expressions are also
+permitted; for example <tt class="docutils literal"><span class="pre">`-1</span></tt>&#8216; refers to the right-most field minus one,
+etc. By way of example, the command</p>
+<p>`` extract -f &#8216;$-2&#8217; brandenburg2.krn``</p>
+<p>will extract the oboe part.</p>
+</div>
+<div class="section" id="extraction-by-interpretation">
+<h2>Extraction by Interpretation<a class="headerlink" href="#extraction-by-interpretation" title="Permalink to this headline">¶</a></h2>
+<p>Typically, it is inconvenient to have to determine the numerical position of
+various spines in order to extract them. With the <strong>-i</strong> option, <strong>extract</strong>
+outputs all spines containing a specified <em>interpretation.</em> Suppose we had a
+file containing a Schubert song, including vocal score, piano accompaniment
+and vocal text (encoded using <tt class="docutils literal"><span class="pre">`**text```_).</span> <span class="pre">The</span> <span class="pre">vocal</span> <span class="pre">text</span> <span class="pre">from</span> <span class="pre">the</span> <span class="pre">file</span>
+<span class="pre">``</span> <span class="pre">lieder</span></tt> can be extracted as follows:</p>
+<p>`` extract -i &#8216;<a href="#id27"><span class="problematic" id="id28">**</span></a>text&#8217; lieder``</p>
+<p>(Notice again the need for single quotes in order to avoid the asterisk being
+interpreted by the shell.) Several different types of data can be extracted
+simultaneously. For example:</p>
+<p>`` extract -i &#8216;<a href="#id29"><span class="problematic" id="id30">**</span></a>semits,**MIDI&#8217; hildegard``</p>
+<p>will extract all spines in the file <tt class="docutils literal"><span class="pre">hildegard</span></tt> containing <a href="#id31"><span class="problematic" id="id32">``</span></a><a href="#id152"><span class="problematic" id="id153">`**semits```_</span></a>
+or <a href="#id33"><span class="problematic" id="id34">``</span></a><a href="#id154"><span class="problematic" id="id155">`**MIDI```_</span></a> data.</p>
+<p>An important use of the <strong>-i</strong> option for <strong>extract</strong> is to ensure that a
+particular input contains only a specified type of information. For example,
+the lower-case letter <tt class="docutils literal"><span class="pre">`r</span></tt>&#8216; represents a rest in the <tt class="docutils literal"><span class="pre">`**kern```_</span>
+<span class="pre">representation.</span> <span class="pre">If</span> <span class="pre">we</span> <span class="pre">wish</span> <span class="pre">to</span> <span class="pre">determine</span> <span class="pre">which</span> <span class="pre">sonorities</span> <span class="pre">contain</span> <span class="pre">rests,</span> <span class="pre">we</span>
+<span class="pre">might</span> <span class="pre">want</span> <span class="pre">to</span> <span class="pre">use</span> <span class="pre">**grep**</span> <span class="pre">to</span> <span class="pre">search</span> <span class="pre">for</span> <span class="pre">this</span> <span class="pre">letter.</span> <span class="pre">However,</span> <span class="pre">the</span> <span class="pre">input</span>
+<span class="pre">might</span> <span class="pre">contain</span> <span class="pre">other</span> <span class="pre">Humdrum</span> <span class="pre">interpretations</span> <span class="pre">(such</span> <span class="pre">as</span> <span class="pre">``**text</span></tt>) where the
+presence of the letter <tt class="docutils literal"><span class="pre">`r</span></tt>&#8216; does not signify a rest. We can ensure that
+our search is limited to <tt class="docutils literal"><span class="pre">**kern</span></tt> data by using the <strong>extract</strong> command:</p>
+<p>`` extract -i &#8216;<a href="#id35"><span class="problematic" id="id36">**</span></a>kern&#8217; | grep ...``</p>
+<p>Both exclusive interpretations and tandem interpretations can be specified
+with the <strong>-i</strong> option. For example, the following command will extract any
+<em>transposing</em> instruments in the score <tt class="docutils literal"><span class="pre">albeniz</span></tt>:</p>
+<p>`` extract -i &#8216;<a href="#id37"><span class="problematic" id="id38">*</span></a>ITr&#8217; albeniz``</p>
+<p>Tandem interpretations are commonly used to designate instrument classes and
+groups, so different configurations of instruments are easily extracted. The
+Brandenburg Concerto shown in Example 12.1 illustrates a number of tandem
+interpretations related to instrumentation classes and groups. For example,
+the interpretation <tt class="docutils literal"><span class="pre">*ICww</span></tt> identifies woodwind instruments; <tt class="docutils literal"><span class="pre">*ICbras</span></tt>
+identifies brass instruments; <tt class="docutils literal"><span class="pre">*ICstr</span></tt> identifies string instruments. In
+addition, <tt class="docutils literal"><span class="pre">*IGcont</span></tt> identifies &#8220;continuo&#8221; instruments; <tt class="docutils literal"><span class="pre">*IGripn</span></tt>
+identifies &#8220;ripieno&#8221; instruments; and <tt class="docutils literal"><span class="pre">*IGconc</span></tt> identifies &#8220;concertino&#8221;
+instruments. The following three commands extract (1) the woodwind
+instruments, (2) the ripieno instruments, and (3) any vocal parts,
+respectively.</p>
+<p>`` extract -i &#8216;<a href="#id39"><span class="problematic" id="id40">*</span></a>ICww&#8217; concerto4``
+`` extract -i &#8216;<a href="#id41"><span class="problematic" id="id42">*</span></a>IGrip&#8217; brandenburg2``
+`` extract -i &#8216;<a href="#id43"><span class="problematic" id="id44">*</span></a>ICvox&#8217; symphony9``</p>
+<p>Once again, more than one interpretation can be extracted simultaneously. The
+following command will extract the instrument-class &#8220;strings&#8221; and the
+instrument &#8220;oboe&#8221; from the file <tt class="docutils literal"><span class="pre">milhaud</span></tt>.</p>
+<p>`` extract -i &#8216;<a href="#id45"><span class="problematic" id="id46">*</span></a>ICstr,*Ioboe&#8217; milhaud``</p>
+<p>Similarly, the following command will extract the shamisen and shakuhachi
+parts from a score:</p>
+<p>`` extract -i &#8216;<a href="#id47"><span class="problematic" id="id48">*</span></a>Ishami,*Ishaku&#8217; hito.uta``</p>
+<p>The behavior of <strong>extract</strong> is subtly different for tandem interpretations
+versus exclusive interpretations. Remember that exclusive interpretations are
+mutually exclusive, whereas tandem interpretations are not. Consider the
+following Humdrum representation:</p>
+<p>`` <a href="#id49"><span class="problematic" id="id50">**</span></a>foo
+&gt; a
+&gt; b
+&gt; <a href="#id51"><span class="problematic" id="id52">**</span></a>bar
+&gt; x
+&gt; y
+&gt; z
+&gt; <a href="#id53"><span class="problematic" id="id54">*</span></a>-``</p>
+<p>The command</p>
+<p>`` extract -i &#8216;<a href="#id55"><span class="problematic" id="id56">**</span></a>foo&#8217;``</p>
+<p>will result in the output:</p>
+<p>`` <a href="#id57"><span class="problematic" id="id58">**</span></a>foo
+&gt; a
+&gt; b
+&gt; <a href="#id59"><span class="problematic" id="id60">*</span></a>-``</p>
+<p>Whereas the command</p>
+<p>`` extract -i &#8216;<a href="#id61"><span class="problematic" id="id62">**</span></a>bar&#8217;``</p>
+<p>will result in the output:</p>
+<p>`` <a href="#id63"><span class="problematic" id="id64">**</span></a>bar
+&gt; x
+&gt; y
+&gt; z
+&gt; <a href="#id65"><span class="problematic" id="id66">*</span></a>-``</p>
+<p>The <tt class="docutils literal"><span class="pre">**foo</span></tt> and <tt class="docutils literal"><span class="pre">**bar</span></tt> data are mutually exclusive. Now consider an
+input file where <tt class="docutils literal"><span class="pre">foo</span></tt> and <tt class="docutils literal"><span class="pre">bar</span></tt> are tandem interpretations:</p>
+<p>`` <a href="#id67"><span class="problematic" id="id68">**</span></a>foobar
+&gt; <a href="#id69"><span class="problematic" id="id70">*</span></a>foo
+&gt; a
+&gt; b
+&gt; <a href="#id71"><span class="problematic" id="id72">*</span></a>bar
+&gt; x
+&gt; y
+&gt; z
+&gt; <a href="#id73"><span class="problematic" id="id74">*</span></a>-``</p>
+<p>The command</p>
+<p>`` extract -i &#8216;<a href="#id75"><span class="problematic" id="id76">*</span></a>foo&#8217;``</p>
+<p>will result in the output:</p>
+<p>`` <a href="#id77"><span class="problematic" id="id78">**</span></a>foobar
+&gt; <a href="#id79"><span class="problematic" id="id80">*</span></a>foo
+&gt; a
+&gt; b
+&gt; <a href="#id81"><span class="problematic" id="id82">*</span></a>bar
+&gt; x
+&gt; y
+&gt; <a href="#id83"><span class="problematic" id="id84">*</span></a>-``</p>
+<p>Whereas the command</p>
+<p>`` extract -i &#8216;<a href="#id85"><span class="problematic" id="id86">*</span></a>bar&#8217;``</p>
+<p>will result in the output:</p>
+<p>`` <a href="#id87"><span class="problematic" id="id88">**</span></a>foobar
+&gt; <a href="#id89"><span class="problematic" id="id90">*</span></a>foo
+&gt; <a href="#id91"><span class="problematic" id="id92">*</span></a>bar
+&gt; x
+&gt; y
+&gt; z
+&gt; <a href="#id93"><span class="problematic" id="id94">*</span></a>-``</p>
+<p>When searching for a particular exclusive interpretation, <strong>extract</strong> resets
+each time a new exclusive interpretation is encountered. By contrast, when
+<strong>extract</strong> finds a target tandem interpretation, it begins outputting and
+doesn&#8217;t stop until the spine is terminated.</p>
+</div>
+<div class="section" id="using-extract-in-pipelines">
+<h2>Using <em>extract</em> in Pipelines<a class="headerlink" href="#using-extract-in-pipelines" title="Permalink to this headline">¶</a></h2>
+<p>Of course the output from <strong>extract</strong> can be used to generate inputs for
+other Humdrum tools. Here are a few examples.</p>
+<p>Recall that the <a href="#id156"><span class="problematic" id="id157">`**census**`_</span></a> command tells us basic information about a
+file. With the <strong>-k</strong> option, <strong>census</strong> will tell us the number of barlines,
+the number of rests, the number of notes, the highest and lowest notes, and
+the longest and shortest notes for a <a href="#id95"><span class="problematic" id="id96">**</span></a>kern input. The following commands can
+be used to determine this information for (1) a bassoon part, (2) all
+woodwind parts:</p>
+<p>`` extract -i &#8216;<a href="#id97"><span class="problematic" id="id98">*</span></a>Ifagot&#8217; ives | census -k``
+`` extract -i &#8216;<a href="#id99"><span class="problematic" id="id100">*</span></a>ICww&#8217; ives | census -k``</p>
+<p>With the <a href="#id158"><span class="problematic" id="id159">`**midi**`_</span></a> and <a href="#id160"><span class="problematic" id="id161">`**perform**`_</span></a> commands, <strong>extract</strong> allows the user
+to hear particular parts. For example, the following command extracts the
+bass and soprano voices, translates them to <a href="#id101"><span class="problematic" id="id102">``</span></a><a href="#id162"><span class="problematic" id="id163">`**MIDI```_</span></a> data, and plays the
+output:</p>
+<p>`` extract -i &#8216;<a href="#id103"><span class="problematic" id="id104">*</span></a>Ibass,*Isopran&#8217; lassus | midi | perform``</p>
+<p>We might extract a particular part (such as the trumpet part) and use the
+<a href="#id164"><span class="problematic" id="id165">`**trans**`_</span></a> command to transpose it to another key:</p>
+<p>`` extract -i &#8216;<a href="#id105"><span class="problematic" id="id106">*</span></a>Itromp&#8217; purcell | trans -d +1 -c +2``</p>
+<p>In addition, we might extract a particular instrument or group of instruments
+for notational display using the <strong>ms</strong> command. The following command will
+extract the string parts and create a postscript file for displaying or
+printing.</p>
+<p>`` extract -i &#8216;<a href="#id107"><span class="problematic" id="id108">*</span></a>ICstr&#8217; brahms | ms &gt; brahms.ps``</p>
+<p>The UNIX <strong>lpr</strong> command can be used to print a file or input stream. Suppose
+we want to transpose the piano accompaniment for a song by Hugo Wolf up an
+augmented second, and then print the transposed part:</p>
+<p>`` extract -i &#8216;<a href="#id109"><span class="problematic" id="id110">*</span></a>IGacmp&#8217; wolf | trans -d +1 -c +3 | ms | lpr``</p>
+</div>
+<div class="section" id="extracting-spines-that-meander">
+<h2>Extracting Spines that Meander<a class="headerlink" href="#extracting-spines-that-meander" title="Permalink to this headline">¶</a></h2>
+<p>As we saw in <a class="reference external" href="guide05.html">Chapter 5,</a> spines can move around via various spine-path
+interpretations. Changes of spine position will cause havoc when extracting
+by fields (the <strong>-f</strong> option); <strong>extract</strong> will generate an error message and
+terminate. With the <strong>-i</strong> option, <strong>extract</strong> will follow the material
+throughout the input.</p>
+<p>Consider the following input:</p>
+<p>`` <strong>mip**dip**dip**blip
+&gt; Aabx
+&gt; Aabx
+&gt; **^</strong>
+&gt; Aa1a2bx
+&gt; Aa1a2bx
+&gt; Aa1a2bx
+&gt; <em>-</em>-<em>-</em>-<a href="#id111"><span class="problematic" id="id112">*</span></a>-``</p>
+<p>Suppose we want to extract the second spine (the first <tt class="docutils literal"><span class="pre">**dip</span></tt>) spine.
+Using the field option (<strong>-f</strong>) will generate an error message since this
+spine splits. Similarly, using the interpretation (<strong>-i</strong>) option will fail
+because the output will contain <em>all</em> of the <tt class="docutils literal"><span class="pre">**dip</span></tt> spines.</p>
+<p>The <strong>extract</strong> command provides a third <strong>-p</strong> option that traces specific
+spine <em>paths.</em> Like the <strong>-f</strong> option, the <strong>-p</strong> option requires one or more
+numbers indicating the <em>beginning</em> field position for the spine. The command</p>
+<p>`` extract -p 2 <a href="#id113"><span class="problematic" id="id114">``</span></a>...</p>
+<p>will generate the following output:</p>
+<p>`` <a href="#id115"><span class="problematic" id="id116">**</span></a>dip
+&gt; a
+&gt; a
+&gt; <em>^
+&gt; a1a2
+&gt; a1a2
+&gt; a1a2
+&gt; *-</em>-``</p>
+<p>In <em>spine-path mode,</em> the <a href="#id117"><span class="problematic" id="id118">**</span></a>extract&#8221; ** command follows a given spine
+starting at the beginning of the file, and traces the course of that spine
+throughout the input stream. If spine-path changes are encountered in the
+input (such as spine exchanges, spine merges, or spine splits) the output
+adapts accordingly. If the &#8220;nth&#8221; spine is selected, the output consists of
+the nth spine and follows the path of that spine throughout the input until
+it is terminated or the end-of-file is encountered. What begins as the nth
+column, may end up as some other column (or columns) in the input.</p>
+<p>There are complex circumstances where the <strong>-p</strong> option will not guarantee an
+output that conforms to the Humdrum syntax. When using the <strong>-p</strong> option it
+is prudent to check the output using the <a href="#id166"><span class="problematic" id="id167">`**humdrum**`_</span></a> command in order to
+ensure that the output is valid. A full discussion of the <strong>-p</strong> option is
+given in the <em>Humdrum Reference Manual.</em></p>
+</div>
+<div class="section" id="field-trace-extracting">
+<h2>Field-Trace Extracting<a class="headerlink" href="#field-trace-extracting" title="Permalink to this headline">¶</a></h2>
+<p>For circumstances where the input is very complex, <strong>extract</strong> provides a
+<em>field-trace mode</em> (<strong>-t</strong> option) that allows the user to select any
+combination of data tokens from the input stream. The field-trace option is
+rarely used when extracting spines. Refer to the <em>Humdrum Reference Manual</em>
+for further information.</p>
+</div>
+<div class="section" id="extracting-passages-the-yank-command">
+<h2>Extracting Passages: The <em>yank</em> Command<a class="headerlink" href="#extracting-passages-the-yank-command" title="Permalink to this headline">¶</a></h2>
+<p>A useful companion to the <strong>extract</strong> command is the Humdrum <a href="#id168"><span class="problematic" id="id169">`**yank**`_</span></a>
+command. The <strong>yank</strong> command can be used to selectively extract segments or
+passages from a Humdrum input. The yanked material can be identified by
+absolute line numbers, or relative to some marker. In addition, <strong>yank</strong> is
+able to output logical segments, such as measures, phrases, or labelled
+sections, and is able to output material according to content. The output
+always consists of complete records; <strong>yank</strong> never outputs partial contents
+of a given input record.</p>
+<p>The <strong>yank</strong> command provides five different ways of extracting material. The
+simplest way of yanking material is by specifying ranges of line numbers. In
+the following command, the <strong>-l</strong> option invokes the line-number operation.
+The <strong>-r</strong> option is used to specify the range. Ranges are defined by
+integers separated by commas, or with a dash indicating a range of
+consecutive values.  For example, the following command selects lines, 5, 13,
+23, 24, 25 and 26 from the file named <tt class="docutils literal"><span class="pre">casella</span></tt>:</p>
+<p>`` yank -l -r 5,13,23-26 casella``</p>
+<p>The dollar sign ($) can be used to refer to the last record in the input. For
+example, the following command yanks the first and last records from the file
+`` mosolov``.</p>
+<p>`` yank -l -r &#8216;1,$&#8217; mosolov``</p>
+<p>Once again note that single quotes are needed here in order to prevent the
+shell from misinterpreting characters such as the dollar sign or the
+asterisk. Records close to the end of the input can be specified by
+subtracting some value from $. For example, the following command yanks the
+first 20 records from the last 30 records contained in the file
+`` ginastera``. Notice that the dash/minus sign is used both to convey a range
+and as an arithmetic operator.</p>
+<p>`` yank -l -r &#8216;$-30-$-10&#8217; ginastera``</p>
+<p>If <strong>yank</strong> is given a Humdrum input, it always produces a syntactically
+correct Humdrum output. All interpretations prior to and within the yanked
+material are echoed in the output. The <strong>yank</strong> command also appends the
+appropriate spine-path terminators at the end of the yanked segment. By way
+of example, if we yanked line 10 (containing 4 spines) and line 100
+(containing 5 spines), <strong>yank</strong> will include in the output the appropriate
+spine-path interpretations that specify how 4 spines became 5 spines.</p>
+</div>
+<div class="section" id="yanking-by-marker">
+<h2>Yanking by Marker<a class="headerlink" href="#yanking-by-marker" title="Permalink to this headline">¶</a></h2>
+<p>Alternatively, <a href="#id170"><span class="problematic" id="id171">`**yank**`_</span></a> can output lines relative to some user-defined
+<em>marker.</em> This mode of operation can be invoked using the <strong>-m</strong> option.
+Markers are specified using regular expressions. The range option (<strong>-r</strong>)
+specifies which lines are to be output whenever a marker is encountered.  For
+example, the following command outputs the first and third data records
+following each occurrence of the string &#8220;XXX&#8221; in the file <tt class="docutils literal"><span class="pre">wieck</span></tt>.</p>
+<p>`` yank -m XXX -r 1,3 wieck``</p>
+<p>If the value zero is specified in the range, the record containing the marker
+is itself output.</p>
+<p>Since markers are interpreted by <strong>yank</strong> as regular expressions, complex
+markers can be defined. For example, the following command yanks the first
+data record following any record in the file <tt class="docutils literal"><span class="pre">franck</span></tt> beginning with a
+letter and ending with a number:</p>
+<p>`` yank -m &#8216;^[a-zA-Z].*[0-9]$&#8217; -r 1 franck``</p>
+<p>Using <strong>yank -m</strong> with a range defined as zero is an especially useful
+construction:</p>
+<p>`` yank -m <em>regexp</em> -r 0``</p>
+<p>This command is analogous to the familiar <strong>grep</strong> command. However, the
+output from <strong>yank</strong> will preserve all of the appropriate interpretations. In
+short, <strong>yank</strong> guarantees that the output conforms to the Humdrum syntax,
+whereas <strong>grep</strong> does not.</p>
+<p>Suppose, for example, that we wanted to calculate the pitch intervals between
+notes that either begin or end a phrase in a monophonic input. If we use
+<strong>grep</strong> to search for <a href="#id119"><span class="problematic" id="id120">``</span></a><a href="#id172"><span class="problematic" id="id173">`**kern```_</span></a> phrase indicators, we will be unable to
+process the resulting (non-Humdrum) output, since it will typically consist
+of just data records:</p>
+<p>`` grep [{}] sibelius``</p>
+<p>By contrast, the comparable <strong>yank</strong> command preserves the Humdrum syntax and
+so allows us to pipe the output to the melodic interval command:</p>
+<p>`` yank -m [{}] -r 0 sibelius | mint``</p>
+</div>
+<div class="section" id="yanking-by-delimiters">
+<h2>Yanking by Delimiters<a class="headerlink" href="#yanking-by-delimiters" title="Permalink to this headline">¶</a></h2>
+<p>It is often convenient to yank material according to logical segments such as
+measures or phrases. In order to access such segments, the user must specify
+a segment <em>delimiter</em> using the <strong>-o</strong> option or the <strong>-o</strong> and <strong>-e</strong>
+options. For example, common system barlines are represented by the presence
+of an equals sign (=) at the beginning of a data token. Thus the user might
+yank specific measures from a file by defining the appropriate barline
+delimiter and providing a range of (measure) numbers. Consider the following
+command:</p>
+<p>`` yank -o ^= -r 1,12-13,25 joplin``</p>
+<p>This command will extract the first, twelfth, thirteenth and twenty-fifth
+measures from the file <tt class="docutils literal"><span class="pre">joplin</span></tt>. Unlike the <strong>-m</strong> option, the <strong>-o</strong>
+option interprets the range list as <em>ordinal</em> occurrences of segments
+delineated by the delimiter. Whole segments are output rather than specified
+records as is the case with <strong>-m.</strong> As in the case of markers, delimiters are
+interpreted according to regular expression syntax. Each input record
+containing the delimiter is regarded as the <em>start</em> of the next logical
+segment. In the above command, the range (<strong>-r</strong>) specifies that the first,
+twelfth, thirteenth, and twenty-fifth logical segments (measures) are to be
+yanked. All records starting with the delimiter record are output up to, but
+not including, the next occurrence of a delimiter record.</p>
+<p>Where the input stream contains data prior to the first delimiter record,
+this data may be addressed as logical segment &#8220;zero.&#8221; For example,</p>
+<p>`` yank -o ^= -r 0 mahler``</p>
+<p>can be used to yank all records prior to the first common system barline.
+Notice that <em>actual</em> measure numbers are irrelevant with the <strong>-o</strong> option:
+<a href="#id174"><span class="problematic" id="id175">`**yank**`_</span></a> selects segments according to their <em>ordinal</em> position in the
+input stream rather than according to their <em>cardinal</em> label.</p>
+<p>Not all segments are defined by a single marker. For example, unlike
+barlines, <tt class="docutils literal"><span class="pre">**kern</span></tt> phrases are marked by separate phrase-begin signifiers
+(<cite>{&#8216;) and phrase-end signifiers (</cite>}&#8217;). The <strong>-e</strong> option for <strong>yank</strong> can be
+used to explicitly identify markers that <em>end</em> a segment. For example, the
+following command extracts the first four phrases in the file
+`` tailleferre``:</p>
+<p>`` yank -o { -e } -r &#8216;1-4&#8217; tailleferre``</p>
+<p>When the <strong>-n</strong> option is invoked, however, <strong>yank</strong> expects a numerical
+value to be present in the input immediately following the user-specified
+delimiter. In this case, <strong>yank</strong> selects segments based on their numbered
+label rather than their ordinal position in the input. For example,</p>
+<p>`` yank -n ^= -r 12 goldberg``</p>
+<p>will yank all segments beginning with the label <tt class="docutils literal"><span class="pre">=12</span></tt> in the input file
+`` goldberg``. If more than one segment carries the specified segment
+number(s), all such segments are output. That is, if there are five measures
+labelled &#8220;measure 12&#8221;, all five measures will be output. Note that the dollar
+sign anchor cannot be used in the range expression for the <strong>-n</strong> option.
+Note also that input tokens containing non-numeric characters appended to the
+number will have no effect on the pattern match. For example, input tokens
+such as <tt class="docutils literal"><span class="pre">=12a,</span> <span class="pre">=12b</span></tt>, or <tt class="docutils literal"><span class="pre">=12</span></tt>; will be treated as equivalent to <tt class="docutils literal"><span class="pre">=12</span></tt>.</p>
+<p>As in the case of the <strong>-o</strong> option, a range of zero (<cite>0&#8217;) addresses material
+prior to the first delimiter record. (N.B. This behavior is unlike the **-m**
+option where zero addresses the record itself.) Like the **-o** option, the
+value zero may be reused for each specified input file. Thus, if ``file1`</cite>,
+`` file2`` and <tt class="docutils literal"><span class="pre">file3</span></tt> are Humdrum files:</p>
+<p>`` yank -n ^= -r 0 file1 file2 file3``</p>
+<p>will yank any leading (anacrusis) material in each of the three files.</p>
+</div>
+<div class="section" id="yanking-by-section">
+<h2>Yanking by Section<a class="headerlink" href="#yanking-by-section" title="Permalink to this headline">¶</a></h2>
+<p>When the <strong>-s</strong> option is invoked, <a href="#id176"><span class="problematic" id="id177">`**yank**`_</span></a> extracts passages according to
+Humdrum section labels encoded in the input. Humdrum section labels will be
+described fully in <a class="reference external" href="guide20.html">Chapter 20.</a> For now, we can simply note that section
+labels are tandem interpretations that conform to the syntax:</p>
+<p>`` <a href="#id121"><span class="problematic" id="id122">*</span></a>&gt;*label_name*``</p>
+<p>Label names can include any character except the tab. Labels are frequently
+used to indicate formal divisions, such as coda, exposition, bridge, second
+ending, trio, minuet, etc. The following command yanks the second instance of
+a section labelled <tt class="docutils literal"><span class="pre">First</span> <span class="pre">Theme</span></tt> in the file <tt class="docutils literal"><span class="pre">mendelssohn</span></tt>:</p>
+<p>`` yank -s &#8216;First Theme&#8217; -r 2 mendelssohn``</p>
+<p>Note that with &#8220;through-composed&#8221; Humdrum files it is possible to have more
+than one section containing the same section-label. Such situations are
+described in <a class="reference external" href="guide20.html">Chapter 20.</a></p>
+</div>
+<div class="section" id="examples-using-yank">
+<h2>Examples Using <em>yank</em><a class="headerlink" href="#examples-using-yank" title="Permalink to this headline">¶</a></h2>
+<p>As mentioned earlier, <strong>yank</strong> will always produce a syntactically correct
+Humdrum output if given a proper Humdrum input. All interpretations prior to,
+and within, the yanked material are echoed in the output.</p>
+<p>Any <em>comments</em> prior to the yanked passage may be included in the output by
+specifying the <strong>-c</strong> option.</p>
+<p>The following examples illustrate how the <strong>yank</strong> command may be used.</p>
+<p>`` yank -l -r 1120 messiaen``</p>
+<p>yanks line 1120 in the file <tt class="docutils literal"><span class="pre">messiaen</span></tt>.</p>
+<p>`` yank -n ^= -r 27 sinfonia``</p>
+<p>yanks numbered measures 27 from the <tt class="docutils literal"><span class="pre">**kern</span></tt> file <tt class="docutils literal"><span class="pre">sinfonia</span></tt>.</p>
+<p>`` yank -n ^= -r 10-20 minuet waltz``</p>
+<p>yanks numbered measures 10 to 20 from both the <tt class="docutils literal"><span class="pre">**kern</span></tt> files <tt class="docutils literal"><span class="pre">minuet</span></tt>
+and <tt class="docutils literal"><span class="pre">waltz</span></tt>.</p>
+<p>`` yank -o ^= -r &#8216;0,$&#8217; fugue ricercar``</p>
+<p>yanks any initial anacrusis material plus the final measure of both <tt class="docutils literal"><span class="pre">fugue</span></tt>
+and <tt class="docutils literal"><span class="pre">ricercar</span></tt>.</p>
+<p>`` cat fugue ricercar | yank -o ^= -r &#8216;0,$&#8217;``</p>
+<p>yanks any initial anacrusis material from the file <tt class="docutils literal"><span class="pre">fugue</span></tt> followed by the
+final measure of <tt class="docutils literal"><span class="pre">ricercar</span></tt>.</p>
+<p>`` yank -n &#8216;Rehearsal Marking &#8216; -r 5-7 fugue ricercar``</p>
+<p>yanks segments beginning with the labels <tt class="docutils literal"><span class="pre">&quot;Rehearsal</span> <span class="pre">Marking</span> <span class="pre">5&quot;,</span> <span class="pre">&quot;Rehearsal</span>
+<span class="pre">Marking</span> <span class="pre">6&quot;</span></tt>, and <tt class="docutils literal"><span class="pre">&quot;Rehearsal</span> <span class="pre">Marking</span> <span class="pre">7&quot;</span></tt>. Segments are deemed to end when
+a record is encountered containing the text <tt class="docutils literal"><span class="pre">&quot;Rehearsal</span> <span class="pre">Marking</span> <span class="pre">&quot;</span></tt>.</p>
+<p>`` yank -o { -e } -r &#8216;1-$&#8217; webern``</p>
+<p>yanks all segments in the file <tt class="docutils literal"><span class="pre">webern</span></tt> beginning with a record containing
+&#8220;{&#8221; and ending with a record containing &#8220;}.&#8221; The command:</p>
+<p>`` yank -o { -e } -r &#8216;1-4,$-3-$&#8217; faure``</p>
+<p>yanks the first four and last four segments in the file <tt class="docutils literal"><span class="pre">faure</span></tt>, where
+segments begin with an open brace ({) and end with a closed brace (}). In the
+`` <a href="#id123"><span class="problematic" id="id124">**</span></a>kern`` representation, this would extract the first four and last four
+phrases in the file.</p>
+<p>`` yank -s Coda -r 1 stamitz``</p>
+<p>will yank the first occurrence of a section labelled <tt class="docutils literal"><span class="pre">Coda</span></tt> in the file
+`` stamitz``.</p>
+<p>Note that yanked segments are output in exactly the order they appear in the
+input file. For example, assuming that measure numbers in an input stream
+increase sequentially, <strong>yank</strong> is unable to output measure number 6 prior to
+outputting measure number 5. The order of output material can be rearranged
+by invoked the <strong>yank</strong> command more than once (e.g. <tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-l</span> <span class="pre">-r</span> <span class="pre">100</span> <span class="pre">...;</span>
+<span class="pre">yank</span> <span class="pre">-l</span> <span class="pre">-r</span> <span class="pre">99</span> <span class="pre">...;</span> <span class="pre">yank</span> <span class="pre">-l</span> <span class="pre">-r</span> <span class="pre">98</span> <span class="pre">...</span></tt>).</p>
+</div>
+<div class="section" id="using-yank-in-pipelines">
+<h2>Using <em>yank</em> in Pipelines<a class="headerlink" href="#using-yank-in-pipelines" title="Permalink to this headline">¶</a></h2>
+<p>Like the other tools we have examined, <strong>yank</strong> can be profitably used in
+conjunction with other Humdrum tools. It is often useful to employ more than
+one <strong>yank</strong> in a pipeline. In the following command, the first <strong>yank</strong>
+isolates the <a href="#id125"><span class="problematic" id="id126">`</span></a>Trio&#8217; section from the input file, and the second <strong>yank</strong>
+isolates the first four measures of the extracted Trio:</p>
+<p>`` yank -s Trio dvorak | yank -o ^= 1-4``</p>
+<p>Similarly, we can link two <strong>yank</strong> commands to extract particular phrases
+from specified sections. For example, suppose we wanted to compare the first
+phrase of the exposition with the first phrase of the recapitulation:</p>
+<p>`` yank -s Exposition haydn | yank -o { -e } -r 1 &gt; Ephrase``
+`` yank -s Recapitulation haydn | yank -o { -e } -r 1 &gt; Rphrase``</p>
+<p>Suppose we want to know how many notes there are in measures 8-16 in a
+`` <a href="#id127"><span class="problematic" id="id128">**</span></a>kern`` file named <tt class="docutils literal"><span class="pre">borodin</span></tt>.</p>
+<p>`` yank -n = -r 8-16 borodin | census -k``</p>
+<p>Are there any subdominant chords between measures 80 and 86?</p>
+<p>`` yank -n = -r 80-86 elgar | solfa | grep fa | grep la | grep do``</p>
+<p>How frequent is the dominant pitch in Strauss&#8217; horn parts?</p>
+<p>`` extract -i &#8216;<a href="#id129"><span class="problematic" id="id130">*</span></a>Icor&#8217; strauss | solfa | grep -c so``</p>
+<p>Combining <strong>yank</strong> and <strong>extract</strong> can be especially useful. What is the
+highest note in the trumpet part in measure 29?</p>
+<p>`` extract -i &#8216;<a href="#id131"><span class="problematic" id="id132">*</span></a>Itromp&#8217; tallis | yank -n = -r 29 | census -k``</p>
+<p>Also, we can combine <strong>yank</strong> with the <a href="#id178"><span class="problematic" id="id179">`**midi**`_</span></a> and <a href="#id180"><span class="problematic" id="id181">`**perform**`_</span></a>
+commands to hear particular sections. Play the Trio section in a Waldteufel
+waltz:</p>
+<p>`` yank -s &#8216;Trio&#8217; -r 1 waldteufel | midi | perform``</p>
+<p>Listen to the soprano clarinet part in the fourth and eighth phrases.</p>
+<p>`` extract -i &#8216;<a href="#id133"><span class="problematic" id="id134">*</span></a>Iclars&#8217; quintet | yank -o { -e } -r 4,8 &gt;
+&gt;&gt; | midi | perform``</p>
+<p>Note that when using <strong>yank</strong> to retrieve passages by markers (such as phrase
+marks), care must be taken since markers may be miscoordinated between
+several concurrent parts. Example 12.2 shows a passage that has overlapping
+phrases. When trying to extract a particular phrase for a particular part,
+the outputs will differ significantly depending on whether the <strong>yank</strong>
+command is invoked <em>before</em> or <em>after</em> the <strong>extract</strong> command.</p>
+<p><strong>Example 12.2.</strong> A Passage Containing Unsynchronized Phrases.</p>
+<p>`` <a href="#id135"><span class="problematic" id="id136">**</span></a>kern**kern
+&gt; =1-=1-
+&gt; 2r8r
+`` .{8g
+`` .8a
+`` .8b
+&gt; =2=2
+&gt; 8r4cc
+&gt; {8e.
+&gt; 8f4dd}
+&gt; 8a.
+&gt; =3=3
+&gt; 8g{4ee
+&gt; 8e.
+&gt; 4d}4ff
+&gt; =4=4
+&gt; <em>-</em>-``</p>
+<p>The order of execution for some commands may cause some subtle differences.
+Suppose we wanted to identify the melodic intervals present in measures 8-32
+for a work by Toru Takemitsu. The following two commands are likely to
+produce different results:</p>
+<p>`` yank -n = -r 8-32 takemitsu | mint``
+`` mint takemitsu | yank -n = -r 8-32``</p>
+<p>In the second case, an interval will probably be calculated between between
+the last note of measure 7 and the first note of measure 8. This interval
+will be absent in the first case.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="reprise">
+<h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
+<p>In this chapter we have learned how to extract musical parts using
+<strong>extract</strong> and how to grab musical passages using <a href="#id182"><span class="problematic" id="id183">`**yank**`_</span></a>. We saw that
+the <a href="#id184"><span class="problematic" id="id185">`**extract**`_</span></a> command is also useful for isolating specific types of
+information, such as the lyrics, or ensuring that no other type of
+information is present in a data stream. In the case of <strong>yank</strong> we saw that
+passages can be extracted by defining arbitrary delimiters. In addition to
+extracting by measures, by sonorities, or by labelled sections, we can
+extract by rests, phrase marks &#8211; in fact, by any user-defined marker. We
+also saw how the command <strong>yank -m *regular-expression* -r 0</strong> can be used as
+a more sophisticated version of <strong>grep</strong> &#8211; a search tool that ensures the
+output will conform to the Humdrum syntax.</p>
+<p>In the next chapter we will discuss how segments of music can be put back
+together again.</p>
+<hr class="docutils" />
+<ul class="simple">
+<li>` <a href="#id137"><span class="problematic" id="id138">**</span></a>Next Chapter**`_</li>
+<li>` <a href="#id139"><span class="problematic" id="id140">**</span></a>Previous Chapter**`_</li>
+<li>` <a href="#id141"><span class="problematic" id="id142">**</span></a>Table of Contents**`_</li>
+<li>` <a href="#id143"><span class="problematic" id="id144">**</span></a>Detailed Contents**`_</li>
+</ul>
+<ol class="upperalpha simple" start="3">
+<li>Copyright 1999 David Huron</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="guide13.html" class="btn btn-neutral float-right" title="Chapter13"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="guide11.html" class="btn btn-neutral" title="Chapter11"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Humdrum Community.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

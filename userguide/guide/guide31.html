@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Chapter31 &mdash; humdrum-tools 1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">humdrum-tools 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Chapter31</a></li>
+<li><a class="reference internal" href="#repertories-and-links">Repertories and Links</a><ul>
+<li><a class="reference internal" href="#the-find-command">The <em>find</em> Command</a></li>
+<li><a class="reference internal" href="#content-searching">Content Searching</a></li>
+<li><a class="reference internal" href="#using-find-with-the-xargs-command">Using <em>find</em> with the <em>xargs</em> Command</a></li>
+<li><a class="reference internal" href="#repertories-as-file-links">Repertories As File Links</a></li>
+<li><a class="reference internal" href="#reprise">Reprise</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/userguide/guide/guide31.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <img alt="" src="userguide/guide/../HumdrumIcon.gif" />
+<img alt="Humdrum" src="userguide/guide/../HumdrumHeader.gif" />
+<img alt="" src="userguide/guide/../HumdrumSpacer.gif" />
+<div class="section" id="chapter31">
+<h1>Chapter31<a class="headerlink" href="#chapter31" title="Permalink to this headline">¶</a></h1>
+<p>[<a href="#id9"><span class="problematic" id="id10">`*Previous Chapter*`_</span></a>] [<a href="#id11"><span class="problematic" id="id12">`*Contents*`_</span></a>] [<a href="#id13"><span class="problematic" id="id14">`*Next Chapter*`_</span></a>]</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="repertories-and-links">
+<h1>Repertories and Links<a class="headerlink" href="#repertories-and-links" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<p>In initiating a research project, we often begin by selecting a suitable
+repertory for study. A common approach is to focus on a particular composer,
+period, style, or culture. For example, a researcher might focus on 17th
+century canons, or on Beethoven&#8217;s compositions prior to Opus 20, or on
+Ojibway songs transcribed in the 1900s. Depending on the research task, the
+user may wish to locate works that conform to highly complex criteria &#8211; such
+as solo Baroque flute works written in compound meters, or slow Russian
+symphonic movements that don&#8217;t include any wind instruments and are written
+in minor keys.</p>
+<p>In this chapter, we discuss how to search entire file-systems for Humdrum
+scores that conform to user-specified criteria. With large musical databases,
+automated methods for locating specific repertories become important. As we
+will see, in most cases, one or two commands are all that is necessary to
+assemble a repertory list of works conforming to complex selection criteria.</p>
+<div class="section" id="the-find-command">
+<h2>The <em>find</em> Command<a class="headerlink" href="#the-find-command" title="Permalink to this headline">¶</a></h2>
+<p>The UNIX <strong>find</strong> command traverses through a file hierarchy, and finds all
+files that match certain conditions. The <strong>find</strong> command takes the following
+syntax:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span></tt> * *</p>
+<p>The <em>PATH</em> is a directory from which the search <em>commences.</em> All files in the
+specified directory are examined including all files in the subdirectories,
+sub-subdirectories, and so on.</p>
+<p>The path</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">/</span></tt></p>
+<p>means the &#8220;root&#8221; directory containing all files on a computer system. Even
+single-user systems are apt to have several thousand files subsumed under the
+root directory.</p>
+<p>The path</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">/scores</span></tt></p>
+<p>means all files under the <tt class="docutils literal"><span class="pre">scores</span></tt> directory, whereas</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">/scores/bach</span></tt></p>
+<p>means all files under the <tt class="docutils literal"><span class="pre">scores/bach</span></tt> directory. The period character:</p>
+<p>&gt; `` .``</p>
+<p>tells <strong>find</strong> to commence searching from the current directory.</p>
+<p>Since <strong>find</strong> searches all files under the given path, its operation may be
+quite slow when there are thousands of files to search. It&#8217;s wise to restrict
+the search by choosing a reasonable starting point. For example, specifying
+the path <tt class="docutils literal"><span class="pre">/scores/bach/chorales</span></tt> may save a great deal of time compared
+with the path <tt class="docutils literal"><span class="pre">/scores</span></tt>. Although we won&#8217;t discuss them in this book, the
+<strong>find</strong> command provides a number of options that help to restrict the depth
+of searches or otherwise &#8220;prune&#8221; the search. When first trying <strong>find</strong> it&#8217;s
+a good idea to limit the searches to small segments of the file system.</p>
+<p>When searching through the specific <em>PATH</em>, <strong>find</strong> is able to carry out a
+wide variety of possible tests on each file. One simple action is to test
+whether the file-name conforms to a given regular expression. Consider, for
+example, the goal of identifying all files representing pitch-class
+(<tt class="docutils literal"><span class="pre">`**pc```_)</span> <span class="pre">information.</span> <span class="pre">The</span> <span class="pre">Humdrum</span> <span class="pre">convention</span> <span class="pre">is</span> <span class="pre">to</span> <span class="pre">identify</span> <span class="pre">these</span> <span class="pre">files</span>
+<span class="pre">by</span> <span class="pre">adding</span> <span class="pre">the</span> <span class="pre">``.pc</span></tt> extension to the filename &#8211; such as <tt class="docutils literal"><span class="pre">opus24.pc</span></tt>. The
+following <strong>find</strong> command will traverse through the <tt class="docutils literal"><span class="pre">/scores</span></tt> directory
+(and all sub-directories) searching for files that contain the <tt class="docutils literal"><span class="pre">pc</span></tt> file
+extension:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-name</span> <span class="pre">*.pc</span></tt></p>
+<p>The above command uses the <strong>-name</strong> option followed by the appropriate
+regular expression. This command is unusual in that it has no explicit
+<em>action</em>. In such cases, the implied action is to print or display the name
+of all files whose names match the regular expression.</p>
+<p>Note that regular expressions may be literal strings. This means we can
+locate a specific named file. For example, the following command will locate
+all files named <tt class="docutils literal"><span class="pre">findme</span></tt>:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">/</span> <span class="pre">-name</span> <span class="pre">findme</span></tt></p>
+<p>An example of an explicit <em>ACTION</em> might be to delete files conforming to a
+particular criterion. For example, the following command searches the
+<tt class="docutils literal"><span class="pre">/scores</span></tt> path for files whose names contain the <tt class="docutils literal"><span class="pre">.tmp</span></tt> extension. Any
+matching file is then deleted using the UNIX <strong>rm</strong> command:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-name</span> <span class="pre">*.tmp</span> <span class="pre">-exec</span> <span class="pre">rm</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<p>This command illustrates a number of features of the <strong>find</strong> command. The
+search begins from the <em>path</em> <tt class="docutils literal"><span class="pre">/scores</span></tt>. The <em>option</em> <tt class="docutils literal"><span class="pre">-name</span> <span class="pre">*.tmp</span></tt>
+identifies the search condition. The <tt class="docutils literal"><span class="pre">-exec</span></tt> flag identifies the <em>action</em>
+as that of executing a command. The arguments between <tt class="docutils literal"><span class="pre">-exec</span></tt> and the semi-
+colon are treated as the command to be executed. Each time a file is found
+with the <tt class="docutils literal"><span class="pre">.tmp</span></tt> extension, the <tt class="docutils literal"><span class="pre">-exec</span></tt> action is executed. The paired
+curly braces {} have a special significance to <strong>find.</strong> The braces are
+replaced by the filename found to match the regular expression. For example,
+if the first file found is named <tt class="docutils literal"><span class="pre">xyz.tmp</span></tt> the braces will be replaced by
+the string <tt class="docutils literal"><span class="pre">xyz.tmp</span></tt>. The quotation marks around the braces and around the
+semi-colon are necessary in order to prevent the UNIX shell interpreter from
+substituting inappropriate information before passing the command line to
+<strong>rm</strong>.</p>
+<p>Note that the <strong>-name</strong> option defaults to filenames only; it does not apply
+to directory names. The above command is equivalent to the more explicit
+form:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">-name</span> <span class="pre">*.tmp</span> <span class="pre">-exec</span> <span class="pre">rm</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<p>The <strong>-type</strong> option can be used to match regular files (<strong>f</strong>), directories
+(<strong>d</strong>), or network files (<strong>n</strong>). By way of example, the following command
+deletes all directories whose names have the <tt class="docutils literal"><span class="pre">.tmp</span></tt> extension.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-type</span> <span class="pre">d</span> <span class="pre">-name</span> <span class="pre">*.tmp</span> <span class="pre">-exec</span> <span class="pre">rmdir</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+</div>
+<div class="section" id="content-searching">
+<h2>Content Searching<a class="headerlink" href="#content-searching" title="Permalink to this headline">¶</a></h2>
+<p>For most music research applications, we are interested in identifying files
+on the basis of their contents. That is, we&#8217;d like to know what&#8217;s inside the
+file before we take any action.</p>
+<p>The <strong>grep</strong> command is especially useful in determining whether certain
+items of information are present in a file. For example, the following
+command identifies all files in the path <tt class="docutils literal"><span class="pre">/scores</span></tt> that contain passages in
+7/8 meter:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'\*M7/8'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<p>Recall that the <strong>-l</strong> option for <strong>grep</strong> causes the output to consist only
+of names of files that contain the sought regular expression. Note that the
+<strong>-type f</strong> option has been specified in order to ensure that the <strong>grep</strong>
+command is only executed for files.</p>
+<p>The structure of the above command can be used to search for all sorts of
+pertinent musical information. For example, recall that the <tt class="docutils literal"><span class="pre">*IC</span></tt> tandem
+interpretation is used to encode instrument classes such as strings, voice,
+percussion, etc. The following command searches all files in the path
+<tt class="docutils literal"><span class="pre">scores</span></tt> and generates a list of those files that encode scores containing
+one or more brass instruments:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">scores</span> <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'\*ICbras'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<p>The following command identifies all files in the path <tt class="docutils literal"><span class="pre">/scores</span></tt>, that
+contain passages in the key of C major:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'\*C:'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<p>The following command identifies all files in the path <tt class="docutils literal"><span class="pre">/scores</span></tt>, that
+contain passages in any minor key:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'\*[a-g][#-]*:'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<p>Humdrum reference records are ideal targets for such searches since reference
+records encode information such as the composer&#8217;s name, composer&#8217;s dates,
+title of work, date of composition, movement number, instrumentation, meter
+classification, and so on. For example, the following command identifies all
+files in the path <tt class="docutils literal"><span class="pre">/scores</span></tt> that are composed by Franck:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'!!!COM.*Franck'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<p>The following command identifies all files in the path <tt class="docutils literal"><span class="pre">/scores</span></tt> that are
+written in compound meters:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'!!!AMT.*compound'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<p>The following command identifies all files beginning from the current
+directory that are rondos:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">.</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-il</span> <span class="pre">'!!!AFR.*rondo'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<p>Recall that the <strong>-i</strong> option for <strong>grep</strong> makes the pattern-match
+insensitive to upper- or lower-case.</p>
+<p>The following command identifies all files in the path <tt class="docutils literal"><span class="pre">non-western</span></tt> that
+have been designated as having heterophonic textures:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">non-western</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-il</span> <span class="pre">'!!!AST.*heterophony'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<p>In the path <tt class="docutils literal"><span class="pre">/scores/jazz</span></tt>, we might want to identify all files that
+contain the style-designation &#8220;bebop:&#8221;</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores/jazz</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-il</span> <span class="pre">'!!!AST.*bebop'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<p>The following command identifies all files in the path <tt class="docutils literal"><span class="pre">18th-century</span></tt>, that
+include French horns and oboes:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">18th-century</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-il</span> <span class="pre">'!!!AIN.*cor.*oboe'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<p>Of course, more complex regular expressions can be also be defined. For
+example, the following command identifies all works composed between 1805 and
+1809:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">/</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'!!!ODT.*180[5-9]'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<p>There is no restriction on the complexity of the regular expression. The
+following command identifies all works composed between 1812 and 1840:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">/</span> <span class="pre">-exec</span> <span class="pre">egrep</span> <span class="pre">-l</span> <span class="pre">'!!!ODT.*18(1[2-9])|([23][0-9])|(40)'</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<p>Often the <strong>find</strong> command can be used to answer research questions more
+directly. Suppose we wanted to determine whether German drinking songs more
+likely to be in triple meter. There are over four thousand German folksongs
+encoded in Helmut Schaffrath&#8217;s <em>Essen Folksong Collection</em>. These works
+contain genre-related tags encoded as &#8220;<tt class="docutils literal"><span class="pre">AGN</span></tt>&#8221; reference records. One of the
+genres distinguished is &#8220;Trinklied&#8221; (drinking song).</p>
+<p>In order to answer our question, we need to search the file system for all
+works that have the &#8220;Trinklied&#8221; designation, and then generate an inventory
+of meter classifications (available in &#8220;AMT&#8221; records).</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'!!AGN.*Trinklied'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">&quot;;&quot;</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'!!!AMT.*'</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></tt></p>
+<p>For the entire database, the output is as follows:</p>
+<p>&gt; `` 1 !!!AMT: compound duple
+4 !!!AMT: irregular
+14 !!!AMT: simple quadruple
+5 !!!AMT: simple triple``</p>
+<p>There are just 24 drinking songs in the Essen collection and only five are in
+triple meters. The proportion of drinking songs in triple meters turns out to
+be no different than the distribution of triple meters in general for German
+folksongs. In other words, according to the <em>Essen Folksong Collection</em>, it
+is not the case that German drinking songs are more likely to be in triple
+meters.</p>
+</div>
+<div class="section" id="using-find-with-the-xargs-command">
+<h2>Using <em>find</em> with the <em>xargs</em> Command<a class="headerlink" href="#using-find-with-the-xargs-command" title="Permalink to this headline">¶</a></h2>
+<p>As we saw in <a class="reference external" href="guide10.html">Chapter 10,</a> the <strong>xargs</strong> command can be used to propagate
+file names from command to command within a pipeline. Using <strong>xargs</strong> in
+conjunction with <strong>find</strong> provides a powerful means for finding works that
+conform to highly complex criteria. For example, the following command
+identifies all files in the path <tt class="docutils literal"><span class="pre">/corelli</span></tt> that contain a change of meter
+signature:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">/corelli</span> <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">-name</span> <span class="pre">'*'</span> <span class="pre">|</span> <span class="pre">xargs</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'^\*M[0-9]'</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">':[01]$'</span></tt></p>
+<p>The output specifies each filename followed by a colon, followed by the
+number of meter signatures in the corresponding file. For example, in the
+following output, the third movement from Opus 1, No. 5 by Corelli is
+identified as containing 6 meter signatures at different points in the score:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">/corelli/opus1n5c.krn:6</span>
+<span class="pre">/corelli/opus1n9a.krn:3</span>
+<span class="pre">/corelli/opus1n9b.krn:2</span>
+<span class="pre">/corelli/opus1n9d.krn:2</span></tt></p>
+<p>Similarly, the following command identifies all works that contain a change
+of key signature:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">-name</span> <span class="pre">'*'</span> <span class="pre">|</span> <span class="pre">xargs</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'^\*k\['</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">':[01]$'</span></tt></p>
+<p>As a further example of the use of <strong>xargs</strong>, consider the following
+extension of the above pipeline. The <strong>grep -v</strong> command causes only those
+files containing more than one key signature to be passed. The <strong>sed</strong>
+command eliminates the colon and the number appended to the filenames. The
+ensuing <strong>grep -c</strong> counts the number of meter signatures in each file. The
+final <strong>grep -v</strong> passes only those filenames containing 2 or more meter
+signatures.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">/</span> <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">-name</span> <span class="pre">'*'</span> <span class="pre">|</span> <span class="pre">xargs</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'^\*k\['</span> <span class="pre">|</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">':[01]$'</span> <span class="pre">|</span> <span class="pre">sed</span> <span class="pre">'s/:.*$//'</span> <span class="pre">|</span> <span class="pre">\</span>
+<span class="pre">xargs</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'^\*M[0-9]'</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">':[01]$'</span></tt></p>
+<p>In summary, the above pipeline identifies all scores that contain both a
+change of key signature as well as a change of meter signature.</p>
+<p>The <strong>xargs</strong> command can also be used to process a list of files &#8211; where
+the list has been stored in a file. For example, suppose we used the <strong>find</strong>
+command to locate all scores in compound meters written for woodwind quintet:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">.</span> <span class="pre">-name</span> <span class="pre">'*'</span> <span class="pre">|</span> <span class="pre">xargs</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'!!!AMT:.*compound'</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">xargs</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'!!!AIN:</span> <span class="pre">clars</span> <span class="pre">cor</span> <span class="pre">fagot</span> <span class="pre">flt</span> <span class="pre">oboe'</span> <span class="pre">&gt;</span> <span class="pre">scorelist</span></tt></p>
+<p>The resulting list of files can be used for further processing. For example,
+we might search these files for any scores containing changes of key:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">cat</span> <span class="pre">scorelist</span> <span class="pre">|</span> <span class="pre">xargs</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'^\*[A-Ga-g][#-]*:'</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">':[01]$'</span></tt></p>
+<p>The output identifies all scores in compound meters written for woodwind
+quintet that contain changes of key.</p>
+</div>
+<div class="section" id="repertories-as-file-links">
+<h2>Repertories As File Links<a class="headerlink" href="#repertories-as-file-links" title="Permalink to this headline">¶</a></h2>
+<p>Rather than applying commands to files stored in a list, it is often helpful
+to have all of the files accessible in one location. That is, we might create
+a directory containing only those score-files that meet our selection
+criteria. it is often helpful to have all of the files accessible in one
+location. We might simply make copies of the files in a special directory.
+However, UNIX systems make it possible to create &#8220;links&#8221; to files in other
+directories without having to make duplicate copies of already existing
+files.</p>
+<p>Suppose you wanted to make a directory of all scores containing vocal parts.
+The following command creates a file (<tt class="docutils literal"><span class="pre">vocalfiles</span></tt>) listing all files in
+the path <tt class="docutils literal"><span class="pre">/scores</span></tt> that contain one or more vocal parts:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'!!!AIN.*vox'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span> <span class="pre">&gt;</span> <span class="pre">vocalfiles</span></tt></p>
+<p>The contents of <tt class="docutils literal"><span class="pre">vocalfiles</span></tt> might look like the following:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">/scores/bach/cantatas/cant140.krn</span>
+<span class="pre">/scores/bach/chorales/chor217.krn</span>
+<span class="pre">/scores/bach/chorales/midi/chor368.hmd</span></tt>
+etc.</p>
+<p>We can create an appropriate new directory using the <strong>mkdir</strong> command.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">mkdir</span> <span class="pre">vocal</span></tt></p>
+<p>Next, edit the file containing the list of filenames as follows. Insert <strong>ln
+-s</strong> prior to each filename, and append the directory name <tt class="docutils literal"><span class="pre">vocal</span></tt> at the
+end of each line.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">ln</span> <span class="pre">-s</span> <span class="pre">/scores/bach/cantatas/cant140.krn</span> <span class="pre">vocal</span>
+<span class="pre">ln</span> <span class="pre">-s</span> <span class="pre">/scores/bach/chorales/chor217.krn</span> <span class="pre">vocal</span>
+<span class="pre">ln</span> <span class="pre">-s</span> <span class="pre">/scores/bach/chorales/midi/chor368.hmd</span> <span class="pre">vocal</span></tt>
+etc.</p>
+<p>(The <strong>-s</strong> option for <strong>ln</strong> is used to create a so-called &#8220;symbolic&#8221; link.)</p>
+<p>Using the <strong>chmod</strong> command, we can make this file executable, and then we
+can execute it:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">vocalfiles</span>
+<span class="pre">./vocalfiles</span></tt></p>
+<p>We now have a new directory whose files contain scores with vocal parts.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="reprise">
+<h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>find</strong> command provides a convenient way to traverse through an entire
+file-system looking for files that conform to specific criteria. In
+musicological tasks, the <strong>find</strong> command is especially well suited to
+assembling a repertory of scores that exhibit some characteristic(s) of
+interest. Multiple selection criteria can be accommodated by using one or
+more pipes in conjunction with the <strong>grep</strong> command.</p>
+<p>For convenience, it is often helpful to create a new directory that holds all
+of works selected for a study repertory. On UNIX systems, file &#8220;links&#8221; can be
+created, so that there is no need to make multiple copies of the same score.
+This means that several concurrent directory structures can be created
+without duplicating files. For example, a given score may be accessed in one
+directory structure via <em>composer</em>, in another directory via
+<em>instrumentation</em>, in a third directory via <em>genre</em>, and so on.</p>
+<hr class="docutils" />
+<ul class="simple">
+<li>` <a href="#id1"><span class="problematic" id="id2">**</span></a>Next Chapter**`_</li>
+<li>` <a href="#id3"><span class="problematic" id="id4">**</span></a>Previous Chapter**`_</li>
+<li>` <a href="#id5"><span class="problematic" id="id6">**</span></a>Table of Contents**`_</li>
+<li>` <a href="#id7"><span class="problematic" id="id8">**</span></a>Detailed Contents**`_</li>
+</ul>
+<ol class="upperalpha simple" start="3">
+<li>Copyright 1999 David Huron</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">humdrum-tools 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Humdrum Community.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

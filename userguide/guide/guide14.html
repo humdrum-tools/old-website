@@ -1,0 +1,510 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Chapter14 &mdash; humdrum-tools 1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">humdrum-tools 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Chapter14</a></li>
+<li><a class="reference internal" href="#stream-editing">Stream Editing</a><ul>
+<li><a class="reference internal" href="#the-sed-and-humsed-commands">The <em>sed</em> and <em>humsed</em> Commands</a></li>
+<li><a class="reference internal" href="#simple-substitutions">Simple Substitutions</a></li>
+<li><a class="reference internal" href="#selective-elimination-of-data">Selective Elimination of Data</a></li>
+<li><a class="reference internal" href="#the-stats-command">The <em>stats</em> Command</a></li>
+<li><a class="reference internal" href="#eliminate-everything-but">Eliminate Everything But ...</a></li>
+<li><a class="reference internal" href="#deleting-data-records">Deleting Data Records</a></li>
+<li><a class="reference internal" href="#adding-information">Adding Information</a></li>
+<li><a class="reference internal" href="#multiple-substitutions">Multiple Substitutions</a></li>
+<li><a class="reference internal" href="#switching-signifiers">Switching Signifiers</a></li>
+<li><a class="reference internal" href="#executing-from-a-file">Executing from a File</a></li>
+<li><a class="reference internal" href="#writing-to-a-file">Writing to a File</a></li>
+<li><a class="reference internal" href="#reading-a-file-as-input">Reading a File as Input</a></li>
+<li><a class="reference internal" href="#reprise">Reprise</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/userguide/guide/guide14.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <img alt="" src="userguide/guide/../HumdrumIcon.gif" />
+<img alt="Humdrum" src="userguide/guide/../HumdrumHeader.gif" />
+<img alt="" src="userguide/guide/../HumdrumSpacer.gif" />
+<div class="section" id="chapter14">
+<h1>Chapter14<a class="headerlink" href="#chapter14" title="Permalink to this headline">¶</a></h1>
+<p>[<a href="#id51"><span class="problematic" id="id52">`*Previous Chapter*`_</span></a>] [<a href="#id53"><span class="problematic" id="id54">`*Contents*`_</span></a>] [<a href="#id55"><span class="problematic" id="id56">`*Next Chapter*`_</span></a>]</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="stream-editing">
+<h1>Stream Editing<a class="headerlink" href="#stream-editing" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<p>Most computer users are familiar with editing an electronic document using an
+interactive word-processor or text editor. <em>Stream editors</em> are non-
+interactive editors that automatically process a given input according to a
+user-specified set of editing instructions. A stream editor can be used, for
+example, to automatically transform a document from British spelling to
+American spelling. Stream editors are especially useful when processing large
+numbers of documents &#8211; such as a series of files encoding some musical
+repertory. In this chapter we will introduce two stream editors: <strong>sed</strong> and
+<a href="#id57"><span class="problematic" id="id58">`**humsed**`_</span></a>.</p>
+<div class="section" id="the-sed-and-humsed-commands">
+<h2>The <em>sed</em> and <em>humsed</em> Commands<a class="headerlink" href="#the-sed-and-humsed-commands" title="Permalink to this headline">¶</a></h2>
+<p>The <a href="#id59"><span class="problematic" id="id60">`**humsed**`_</span></a> command is simply a Humdrum version of the UNIX <strong>sed</strong>
+stream editor. The syntax and operation of <strong>sed</strong> and <strong>humsed</strong> are
+virtually identical. However, <strong>humsed</strong> will modify only Humdrum data
+records, whereas <strong>sed</strong> will modify any type of record, including Humdrum
+comments and interpretations. Both stream editors provide operations for
+<em>substitution</em>, <em>insertion</em>, <em>deletion</em>, <em>transliteration</em>, <em>file-read</em> and
+<em>file-write</em>. When used in combination, these operations can completely
+transform an input stream or document.</p>
+</div>
+<div class="section" id="simple-substitutions">
+<h2>Simple Substitutions<a class="headerlink" href="#simple-substitutions" title="Permalink to this headline">¶</a></h2>
+<p>The most frequently used stream-editing operation is substitution. Both
+<strong>humsed</strong> and <strong>sed</strong> designate substitutions by the lower-case letter
+<tt class="docutils literal"><span class="pre">s</span></tt>. Substitutions require two strings: the <em>target string</em> to be replaced,
+and the <em>replacement string</em> to be introduced. The syntax for substitutions
+is as follows:</p>
+<p>&gt; <strong>s**</strong></p>
+<p>No spaces are permitted between these elements. The delimiter can be any
+character; however, the same delimiter character must be used throughout the
+operation. The following substitution command causes occurrences of the
+letter <a href="#id1"><span class="problematic" id="id2">`</span></a>A&#8217; to be replaced by the letter <a href="#id3"><span class="problematic" id="id4">`</span></a>B&#8217;:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">s/A/B/</span></tt></p>
+<p>Since the slash character (/) appears immediately following the <tt class="docutils literal"><span class="pre">s</span></tt>, it
+becomes the delimiter for the rest of the operation. In this case no option
+has been given at the end of the substitution. Since the delimiter can be any
+character, the above command is functionally identical to the following:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">sxAxBx</span></tt></p>
+<p>If it is necessary to use the delimiter character (as a literal) within
+either the target string or the replacement string it can be escaped using
+the backslash character.</p>
+<p>There are two ways to execute a substition operation such as given above. One
+way is to give the substitution as a command-line argument to <strong>sed</strong> or
+<strong>humsed</strong>:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">s%A%B%</span> <span class="pre">filename</span></tt></p>
+<p>Alternatively, the operation can be placed in a file (for example, named
+<tt class="docutils literal"><span class="pre">revise</span></tt>):</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">s%A%B%</span></tt></p>
+<p>Then the stream editor can be invoked to execute the operations contained in
+this file using the <strong>-f</strong> option:</p>
+<p>&gt; <a href="#id5"><span class="problematic" id="id6">``</span></a>humsed -f revise <a href="#id7"><span class="problematic" id="id8">``</span></a><em>inputfile</em></p>
+<p>By default the output will be displayed on the screen. Using file-redirection
+(&gt;) the output can be placed in some other file. Note that you should never
+redirect the output to the same file as the input &#8211; this will destroy the
+original input file. If necessary, send the output to a temporary file, and
+then use the UNIX <strong>mv</strong> command to rename the output.</p>
+<p>Suppose that you had encoded a musical work in the <tt class="docutils literal"><span class="pre">**kern</span></tt> representation.
+Having finished the encoding, you realize that what you thought were
+<em>pizzicato</em> marks are really <em>spiccato</em> marks. In the <tt class="docutils literal"><span class="pre">`**kern```_</span>
+<span class="pre">representation,</span> <span class="pre">pizzicatos</span> <span class="pre">are</span> <span class="pre">indicated</span> <span class="pre">by</span> <span class="pre">the</span> <span class="pre">double</span> <span class="pre">quote</span> <span class="pre">(</span></tt>&#8220;<tt class="docutils literal"><span class="pre">)</span> <span class="pre">whereas</span>
+<span class="pre">spiccatos</span> <span class="pre">are</span> <span class="pre">represented</span> <span class="pre">by</span> <span class="pre">the</span> <span class="pre">lower-case</span> <span class="pre">letter</span> <span class="pre">``s</span></tt>. We can change all
+pizzicato marks to spiccato marks using the following command:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/&quot;/s/g'</span></tt> <em>inputfile</em></p>
+<p>Since the double quote is interpreted as a special character by the UNIX
+shell, we have escaped the entire substitution operation by placing it in
+single quotes. (Alternatively, we could place a backslash immediately before
+the double-quote character.) Note also the presence of the <tt class="docutils literal"><span class="pre">g</span></tt> option at
+the end of the string. Permissible options include any positive integer or
+the letter <tt class="docutils literal"><span class="pre">g</span></tt>. Without any option, the <strong>sed</strong> and <strong>humsed</strong> substitute
+(s) operation will replace only the <em>first</em> occurrence of the string in each
+data record. The <tt class="docutils literal"><span class="pre">g</span></tt> option specifies a &#8220;global&#8221; substitution, in that all
+occurrences on a given data record are replaced. If the option consisted of
+the number <a href="#id9"><span class="problematic" id="id10">`</span></a>3&#8217;, then only the third instance of the target string would be
+replaced on each line.</p>
+</div>
+<div class="section" id="selective-elimination-of-data">
+<h2>Selective Elimination of Data<a class="headerlink" href="#selective-elimination-of-data" title="Permalink to this headline">¶</a></h2>
+<p>The <em>target string</em> in substitution operations is actually a regular
+expression. This means that we can specify patterns using the full power of
+regular expression syntax. Frequently, it is useful to eliminate certain
+kinds of information from a file. For example, we can eliminate all sharps
+and flats from a <tt class="docutils literal"><span class="pre">**kern</span></tt>-format file as follows:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">s/[#-]//g</span></tt> <em>inputfile</em></p>
+<p>Suppose we wanted to eliminate all beaming information in a score. In the
+<tt class="docutils literal"><span class="pre">**kern</span></tt> representation, open and closed beams are represented by <tt class="docutils literal"><span class="pre">L</span></tt> and
+<tt class="docutils literal"><span class="pre">J</span></tt> respectively; partial beams are represented by <tt class="docutils literal"><span class="pre">K</span></tt> and <tt class="docutils literal"><span class="pre">k</span></tt>.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">s/[JLkK]//g</span></tt> <em>inputfile</em></p>
+<p>Alternatively, we might want to eliminate all data except for the beaming
+information:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">s/[^JLkK]//g</span></tt> <em>inputfile</em></p>
+<p>Sometimes we need to restrict the circumstances where the data are
+eliminated. For example, we might want to eliminate all measure numbers.
+Eliminating all numbers from a <tt class="docutils literal"><span class="pre">**kern</span></tt> file will have the undesirable
+consequence of eliminating all note durations as well. Most <a href="#id61"><span class="problematic" id="id62">`**humsed**`_</span></a>
+operations can be <em>preceded</em> by a regular expression delineated by slashes.
+This tells <strong>humsed</strong> to execute this substitution only if the data record
+matches the leading regular expression. For example, the following command
+eliminates measure numbers but not note durations:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">/^=/sX[0-9]*XXg</span></tt> <em>inputfile</em></p>
+<p>The operation may be interpreted as follows: look for lines that match a
+pattern where the first character in the line is an equals sign; if you find
+this pattern look for zero or more instances of any number between zero and
+nine, and replace that by an empty string; do this substitution for all
+numbers on the current data record.</p>
+<p>Incidentally, Humdrum provides a <a href="#id63"><span class="problematic" id="id64">`**num**`_</span></a> command that can be used to
+insert numbers in data records. The <a href="#id65"><span class="problematic" id="id66">`**num**`_</span></a> command supports an elaborate
+set of options, but is not used often, so we won&#8217;t describe it here. The
+following command renumbers all of the barlines in an input so that the first
+measure begins with the number 72. (Refer to the <em>Humdrum Reference Manual</em>
+for details regarding <strong>num</strong>.)</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">/^=/sX=[0-9]*X=Xg</span></tt> <a href="#id11"><span class="problematic" id="id12">*</span></a>inputfile*`` | num -n ^= -x == -p = -o 72``</p>
+<p>Suppose we wanted to eliminate all octave numbers from a <a href="#id13"><span class="problematic" id="id14">``</span></a><a href="#id67"><span class="problematic" id="id68">`**pitch```_</span></a>
+representation. In this case we want to delete all numbers except when they
+occur in conjunction with a barline. Our substitution should occur only when
+the current record does not match a leading equals sign:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">/^[^=]/s%[0-9]%%g</span></tt> <em>inputfile</em></p>
+<p>Suppose we wanted to determine which of two MIDI performances exhibits more
+dynamic range &#8211; that is, which performance has a greater variability in key-
+down velocities. Recall from <a class="reference external" href="guide07.html">Chapter 7</a> that MIDI data tokens consist of
+three elements separated by slashes (/). The third element is the key
+velocity. First, we want to eliminate key-up data tokens. These tokens can be
+distinguished by the minus sign associated with the second data element. An
+appropriate substutition is:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">s%[0-9][0-9]*/-[0-9][0-9]*/[0-9]*</span> <span class="pre">*%%g</span></tt></p>
+<p>(That is, replace by nothing any data that matches the following: a numerical
+digit followed by zero or more digits, followed by a slash, followed by a
+minus sign, followed by a digit, followed by zero or more digits, followed by
+a slash, followed by zero or more digits, followed by zero or more spaces.)</p>
+<p>Having isolated only the key-down data tokens, we now need to eliminate
+everything but the third data element, the MIDI key-down velocities:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">s%[0-9][0-9]*/[0-9][0-9]*/%%g</span></tt></p>
+</div>
+<div class="section" id="the-stats-command">
+<h2>The <em>stats</em> Command<a class="headerlink" href="#the-stats-command" title="Permalink to this headline">¶</a></h2>
+<p>We can determine the range or variance of these velocity values by piping the
+output to the <strong>stats</strong> command. The <strong>stats</strong> command calculates basic
+statistical information for any input consisting of a column of numbers. A
+sample output from <strong>stats</strong> might appear as follows:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">n:124</span>
+<span class="pre">&gt;</span> <span class="pre">total:5700</span>
+<span class="pre">&gt;</span> <span class="pre">mean:45.9677</span>
+<span class="pre">&gt;</span> <span class="pre">min:9</span>
+<span class="pre">&gt;</span> <span class="pre">max:102</span>
+<span class="pre">&gt;</span> <span class="pre">S.D.:232.37</span></tt></p>
+<p>The value <tt class="docutils literal"><span class="pre">n</span></tt> indicates the total number of numerical values found in the
+input; the <tt class="docutils literal"><span class="pre">total</span></tt> specifies the sum of these numbers; the <tt class="docutils literal"><span class="pre">mean</span></tt>
+identifies the average; the <tt class="docutils literal"><span class="pre">min</span></tt> and <tt class="docutils literal"><span class="pre">max</span></tt> report the minimum and
+maximum values encountered, and the <tt class="docutils literal"><span class="pre">S.D.</span></tt> represents the standard
+deviation. The standard deviation provides a useful way of characterizing
+which performance has greater variability in key-down velocities.</p>
+<p>Assuming that the above two stream-editing substitutions are kept in a file
+called <tt class="docutils literal"><span class="pre">revise</span></tt> we can compare the dynamic range for the two performances
+as follows:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**MIDI'</span> <span class="pre">perform1</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">^=</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">-r</span> <span class="pre">revise</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">stats</span></tt>
+&gt;
+&gt;
+<tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**MIDI'</span> <span class="pre">perform2</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">^=</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">-r</span> <span class="pre">revise</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">stats</span></tt></p>
+<p>The <strong>extract</strong> command has been added to ensure that we only process
+<a href="#id15"><span class="problematic" id="id16">``</span></a><a href="#id69"><span class="problematic" id="id70">`**MIDI```_</span></a> data; the <strong>grep</strong> command ensures that possible barlines are
+eliminated, and the <strong>rid</strong> command eliminates comments and interpretations
+prior to passing the data to the <strong>stats</strong> command.</p>
+</div>
+<div class="section" id="eliminate-everything-but">
+<h2>Eliminate Everything But ...<a class="headerlink" href="#eliminate-everything-but" title="Permalink to this headline">¶</a></h2>
+<p>A common use for <a href="#id71"><span class="problematic" id="id72">`**humsed**`_</span></a> is to eliminate signifiers that are not of
+interest. Stream editors like <strong>sed</strong> and <strong>humsed</strong> can be used to
+dramatically simplify a representation.</p>
+<p>Did Monteverdi use equivalent numbers of sharps and flats? Or did he favor
+one accidental over the other? A simple way to determine this is to throw
+away everything but the sharps and flats. We can generate an inventory of
+just sharps and flats:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/[^#-]//g'</span> <span class="pre">montev*</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></tt></p>
+<p>In some tasks, we might wish to transform a <tt class="docutils literal"><span class="pre">**kern</span></tt>-format file so that
+only pitch-related information is preserved:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/[^a-gA-G#-]//g'</span></tt> <em>inputfile</em></p>
+<p>In extreme cases, we may wish to eliminate all Humdrum data from an input.
+The following command replaces all data tokens by null tokens:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/[^</span> <span class="pre">][^</span> <span class="pre">]*/./g'</span></tt> <em>inputfile</em></p>
+<p>(That is, globally substitute all instances of the string not-a-tab followed
+by zero or more instances of not-a-tab characters, by a single period
+character.) This sort of command can be useful in generating a file that
+maintains the <em>structure</em> but not the <em>content</em> of some document.
+Incidentally, neither the <strong>sed</strong> nor the <strong>humsed</strong> commands support
+extended regular expressions, so we are not able to use the <tt class="docutils literal"><span class="pre">+</span></tt>
+metacharacter in the above substitution.</p>
+</div>
+<div class="section" id="deleting-data-records">
+<h2>Deleting Data Records<a class="headerlink" href="#deleting-data-records" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes it is useful to delete entire data records rather than simply
+eliminating certain kinds of information. The <tt class="docutils literal"><span class="pre">d</span></tt> operation causes lines to
+be deleted. Normally, it is preceded by a regular expression that identifies
+which records should be eliminated. Deleting barlines can be done using the
+following command:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">/^=/d</span></tt> <em>inputfile</em></p>
+<p>Note that this is functionally equivalent to:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">^=</span></tt> <em>inputfile</em></p>
+<p>In the general case, <strong>humsed /.../d</strong> is preferable to <strong>grep -v</strong>. Remember
+that <a href="#id73"><span class="problematic" id="id74">`**humsed**`_</span></a> only manipulates Humdrum data records; it never touches
+comments or interpretations. The <strong>grep</strong> command has no such restriction.
+Consider, for example, the following command to eliminate grace notes
+(acciaccaturas) from a <tt class="docutils literal"><span class="pre">**kern</span></tt>-format file.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'/q/d'</span></tt> <em>inputfile</em></p>
+<p>By contrast, the command:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">q</span></tt> <em>inputfile</em></p>
+<p>would also eliminate any comments or interpretation records containing the
+letter <a href="#id17"><span class="problematic" id="id18">`</span></a>q&#8217;.</p>
+<p>Suppose that we wanted to know whether a melody still evokes a certain key
+perception even if we eliminate all the tonic pitches. First we translate the
+representation to scale degree and assemble this file with the original
+<tt class="docutils literal"><span class="pre">**kern</span></tt> representation for the melody.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">deg</span></tt> <a href="#id19"><span class="problematic" id="id20">*</span></a>input*`` &gt; temp``
+<tt class="docutils literal"><span class="pre">assemble</span></tt> <a href="#id21"><span class="problematic" id="id22">*</span></a>input*`` temp | humsed &#8216;/1$/d&#8217; | midi | perform``</p>
+<p>Of course deleting all of the tonic notes will disrupt the original rhythm.
+An alternative is to replace all tonic pitches by rests:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">deg</span> <span class="pre">``*input*</span></tt> &gt; temp``
+<tt class="docutils literal"><span class="pre">assemble</span></tt> <a href="#id23"><span class="problematic" id="id24">*</span></a>input*`` temp | humsed &#8216;/1$/s%[A-Ga-g#-]*%r%&#8217; | midi &gt;
+&gt;&gt; | perform``</p>
+<p>Perhaps we might want to eliminate all the pitch information, and simply
+listen to the rhythmic structure of a work. That is, we might change all of
+the pitches in a work to a single pitch &#8211; in the following case, middle C:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/[A-Ga-g#-]*/c/'</span> <span class="pre">|</span> <span class="pre">midi</span> <span class="pre">|</span> <span class="pre">perform</span></tt></p>
+</div>
+<div class="section" id="adding-information">
+<h2>Adding Information<a class="headerlink" href="#adding-information" title="Permalink to this headline">¶</a></h2>
+<p>The substitute command can also be used to add information to points in a
+Humdrum input. For example, we might wish to add an explicit breath-mark
+(<tt class="docutils literal"><span class="pre">,</span></tt>) to the end of each phrase in a <tt class="docutils literal"><span class="pre">**kern</span></tt>-format input:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">s/}/},/g</span></tt> <em>inputfile</em></p>
+<p>Any occurrence of the ampersand (<tt class="docutils literal"><span class="pre">&amp;</span></tt>) in the replacement string of a
+substitution is a standard stream-editing convention which means &#8220;the matched
+string.&#8221; Suppose we want to add a tenuto mark to every quarter-note in a
+work. The following substitution seeks the number <a href="#id75"><span class="problematic" id="id76">`4&#8217; followed by any
+character that is not a digit or period. This pattern is replaced by itself
+(&amp;) followed by a tilde (~), the ```**kern```_</span></a> signifier for a tenuto mark:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">s/4[^0-9.]/&amp;~/g</span></tt> <em>inputfile</em></p>
+</div>
+<div class="section" id="multiple-substitutions">
+<h2>Multiple Substitutions<a class="headerlink" href="#multiple-substitutions" title="Permalink to this headline">¶</a></h2>
+<p>Some tasks may require more than one substitution command. Multiple
+operations can be invoked by separating each operation by a semicolon. In the
+following example, we change all <tt class="docutils literal"><span class="pre">**kern</span></tt> quarter-notes to eighth-note
+durations:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/4[A-Ga-g]/8&amp;/g;</span> <span class="pre">s/84/8/g'</span></tt> <em>inputfile</em></p>
+<p>The first substitution finds strings that match the number <a href="#id25"><span class="problematic" id="id26">`</span></a>4&#8217; followed by an
+upper- or lower-case letter from A to G. The matched string is then output
+preceded by the number <a href="#id27"><span class="problematic" id="id28">`</span></a>8&#8217;. This operation will change all quarter notes and
+rests to eighty-fourth durations. The ensuing substitution operation changes
+<a href="#id29"><span class="problematic" id="id30">`</span></a>84&#8217; to <a href="#id31"><span class="problematic" id="id32">`</span></a>8&#8217; and so completes the transformation.</p>
+</div>
+<div class="section" id="switching-signifiers">
+<h2>Switching Signifiers<a class="headerlink" href="#switching-signifiers" title="Permalink to this headline">¶</a></h2>
+<p>In some situations, we will want to switch two or more signifiers &#8211; make all
+A&#8217;s B&#8217;s and all B&#8217;s A&#8217;s. These sorts of tasks require three substitutions and
+involve creating a unique temporary string. For example, the following
+command changes all <a href="#id33"><span class="problematic" id="id34">``</span></a><a href="#id77"><span class="problematic" id="id78">`**kern```_</span></a> up-bows to down-bows and vice versa.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/u/ABC/g;</span> <span class="pre">s/v/u/g;</span> <span class="pre">s/ABC/v/g'</span></tt> <em>inputfile</em></p>
+<p>The first substitution changes down-bows (<tt class="docutils literal"><span class="pre">`u</span></tt>&#8216;) to the unique temporary
+string <tt class="docutils literal"><span class="pre">ABC</span></tt>. (In the <tt class="docutils literal"><span class="pre">**kern</span></tt> representation <tt class="docutils literal"><span class="pre">ABC</span></tt> is an illegal pitch
+representation, so it is bound to be a unique character string.) The second
+substitution changes up-bows (<tt class="docutils literal"><span class="pre">v</span></tt>) to down-bows. The third substitution
+changes occurrences of the temporary string <tt class="docutils literal"><span class="pre">ABC</span></tt> to up-bows.</p>
+</div>
+<div class="section" id="executing-from-a-file">
+<h2>Executing from a File<a class="headerlink" href="#executing-from-a-file" title="Permalink to this headline">¶</a></h2>
+<p>When several instructions are involved in stream editing, it can be
+inconvenient to type multiple operations on the command line. It is easier to
+place the editing instructions in a file, and use the <strong>-f</strong> option (with
+either <strong>sed</strong> or <a href="#id79"><span class="problematic" id="id80">`**humsed**`_</span></a>) to execute from the file. Consider, for
+example, the task of rhythmic diminution, where the durations of notes are
+halved. We might create a file called <tt class="docutils literal"><span class="pre">diminute</span></tt> containing the following
+operations:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">s/[0-9][0-9]\*/&amp;XXX/g</span>
+<span class="pre">s/64XXX/128/g</span>
+<span class="pre">s/32XXX/64/g</span>
+<span class="pre">s/16XXX/32/g</span>
+<span class="pre">s/8XXX/16/g</span>
+<span class="pre">s/4XXX/8/g</span>
+<span class="pre">s/2XXX/4/g</span>
+<span class="pre">s/1XXX/2/g</span>
+<span class="pre">s/0XXX/1/g</span></tt></p>
+<p>Each substitution command is applied (in order) to every line or data record
+in the file. The first substitution adds the unique string <tt class="docutils literal"><span class="pre">XXX</span></tt> to every
+number. The ensuing substitutions transform these numbers to appropriate
+diminution values. We can execute these commands as follows:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">-f</span> <span class="pre">diminute</span></tt> <em>inputfile</em></p>
+</div>
+<div class="section" id="writing-to-a-file">
+<h2>Writing to a File<a class="headerlink" href="#writing-to-a-file" title="Permalink to this headline">¶</a></h2>
+<p>A useful feature of <a href="#id81"><span class="problematic" id="id82">`**humsed**`_</span></a> is the &#8220;write&#8221; or <tt class="docutils literal"><span class="pre">w</span></tt> operation. This
+operation causes a line to be written to the end of a specified file.
+Suppose, for example, we wanted to collect all seventh chords into a separate
+file called <tt class="docutils literal"><span class="pre">sevenths</span></tt>. With a <a href="#id35"><span class="problematic" id="id36">``</span></a><a href="#id83"><span class="problematic" id="id84">`**harm```_</span></a>-format input, the appropriate
+command would be:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'/7/w</span> <span class="pre">sevenths'</span></tt> <em>inputfile.hrm</em></p>
+<p>Each line containing the number 7 wll be written to a file named
+<tt class="docutils literal"><span class="pre">sevenths</span></tt>.</p>
+<p>Similarly, we could copy all sonorities containing pauses to the file
+<tt class="docutils literal"><span class="pre">pauses</span></tt>.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'/;/w</span> <span class="pre">pauses'</span></tt> <em>inputfile</em></p>
+<p>Of course there are other ways of achieving the same goal:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-m</span> <span class="pre">';'</span> <span class="pre">0</span></tt> <a href="#id37"><span class="problematic" id="id38">*</span></a>inputfile*`` &gt; pauses``</p>
+<p>Or even:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">grep</span> <span class="pre">';'</span></tt> <em>inputfile*`` | grep -v &#8216;^[!</em>]&#8217; &gt; pauses``</p>
+<p>In some cases, a stream editor can be used to eliminate or modify data that
+will confound subsequent processing. For example, suppose we wanted to count
+the number of phrases that begin on the subdominant and the number of phrases
+that end on the subdominant. The <a href="#id85"><span class="problematic" id="id86">`**deg**`_</span></a> command will allow us to identify
+subdominant pitches (via the number <cite>4&#8217;). Since we would like to maintain the
+phrase indicators, we will avoid the **-x** option for **deg**. However, the
+**-x** option will pass *all* of the non-pitch related signifiers, including
+the duration data which encodes numbers. Hence, we will not be able to
+distinguish the subdominant (`4&#8217;) pitch from a ``**kern`</cite> quarter-note (<a href="#id39"><span class="problematic" id="id40">`</span></a>4&#8217;).
+The problem is resolved by first eliminating all of the duration information
+(numbers) from the original input:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/[0-9.]//g'</span> <span class="pre">input.krn</span> <span class="pre">|</span> <span class="pre">deg</span> <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">-c</span> <span class="pre">'({.*4)|4.*{)'</span></tt>
+<tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/[0-9.]//g'</span> <span class="pre">input.krn</span> <span class="pre">|</span> <span class="pre">deg</span> <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">-c</span> <span class="pre">'(}.*4)|4.*})'</span></tt></p>
+<p>In texts for vocal works, identify the number of notes per syllable.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**kern'</span></tt> <em>input*`` | humsed &#8216;s/X//g&#8217; &gt; tune``
+``extract -i &#8216;`**silbe`_&#8217;`` *input*`` | humsed &#8216;s/[a-zA-Z]</em>/X/&#8217; &gt; lyrics``
+<tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">tune</span> <span class="pre">lyrics</span> <span class="pre">|</span> <span class="pre">cleave</span> <span class="pre">-i</span> <span class="pre">'**kern,**silbe'</span> <span class="pre">-o</span> <span class="pre">'**new'</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">&gt;</span> <span class="pre">combined</span></tt>
+&gt;
+&gt; <tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">X</span> <span class="pre">-o</span> <span class="pre">'[r=]'</span> <span class="pre">combined</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">awk</span> <span class="pre">'{print</span> <span class="pre">NF}'</span></tt></p>
+<p>Identify the number of notes per word rather than per syllable.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**kern'</span></tt> <em>input*`` &gt; tune``
+``extract -i &#8216;**silbe&#8217;`` *input*`` | humsed &#8216;s/^[^-].*[^-]$/BEGIN_END/;
+s/-.*[^-]$/END/; s/^[^-].</em>-/BEGIN/&#8217; &gt; lyrics``
+<tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">tune</span> <span class="pre">lyrics</span> <span class="pre">|</span> <span class="pre">cleave</span> <span class="pre">-i</span> <span class="pre">'**kern,**silbe'</span> <span class="pre">-o</span> <span class="pre">'**new'</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">&gt;</span> <span class="pre">combined</span></tt>
+&gt;
+&gt; <tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">BEGIN</span> <span class="pre">-e</span> <span class="pre">END</span> <span class="pre">-o</span> <span class="pre">'[r=]'</span> <span class="pre">combined</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">awk</span> <span class="pre">'{print</span> <span class="pre">NF}'</span></tt></p>
+</div>
+<div class="section" id="reading-a-file-as-input">
+<h2>Reading a File as Input<a class="headerlink" href="#reading-a-file-as-input" title="Permalink to this headline">¶</a></h2>
+<p>Another useful feature is the <a href="#id87"><span class="problematic" id="id88">`**humsed**`_</span></a> &#8220;read&#8221; or <tt class="docutils literal"><span class="pre">r</span></tt> operation.
+Whenever a leading regular expression is matched, a file is read in at that
+point. Suppose, for example, that we want to annotate a file with Humdrum
+comments identifying the presence of cadential 6-4 chords. First, we might
+create a file &#8211; <tt class="docutils literal"><span class="pre">comment.6-4</span></tt> &#8211; containing the following Humdrum comment:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">!!</span> <span class="pre">A</span> <span class="pre">likely</span> <span class="pre">cadential</span> <span class="pre">6-4</span> <span class="pre">progression.</span></tt></p>
+<p>We can use the Humdrum <a href="#id89"><span class="problematic" id="id90">`**pattern**`_</span></a> command (to be described in <a class="reference external" href="guide21.html">Chapter
+21</a>), as follows:</p>
+<p>File <tt class="docutils literal"><span class="pre">template</span></tt>:</p>
+<p>&gt; `` .*``
+<tt class="docutils literal"><span class="pre">Ic</span></tt>
+<tt class="docutils literal"><span class="pre">^\.</span> <span class="pre">*</span></tt>
+<tt class="docutils literal"><span class="pre">=</span> <span class="pre">*</span></tt>
+<tt class="docutils literal"><span class="pre">V[^I]</span></tt></p>
+<p>Command:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">pattern</span> <span class="pre">-f</span> <span class="pre">template</span></tt> <a href="#id41"><span class="problematic" id="id42">*</span></a>inputfile*`` &gt; output``
+<tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'cadential-64/r</span> <span class="pre">comment.6-4'</span> <span class="pre">output</span> <span class="pre">&gt;</span> <span class="pre">commented.output</span></tt></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="reprise">
+<h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>sed</strong> and <a href="#id91"><span class="problematic" id="id92">`**humsed**`_</span></a> commands provide stream editors that can
+automatically edit a data stream. We&#8217;ve seen that multiple operations can be
+carried out, either from the command line or from a file containing editing
+instructions. It should be noted that the <strong>sed</strong> and <strong>humsed</strong> commands
+provide many more editing facilities than those discussed in this chapter.
+Some 25 operations are provided by <strong>sed</strong> and <strong>humsed</strong>. For example,
+segments of text can be stored in various buffers, the contents of these
+buffers modified, and the results placed anywhere in the output text. Markers
+can be set at particular points and conditional branch statements executed.
+Stream-editing scripts have been written to execute programs of considerable
+complexity. However, for most tasks, the simple substitute (<strong>s</strong>) and delete
+(<strong>d</strong>) operations are the most useful. For further information about stream
+editing using <strong>sed</strong>, refer to the book on <strong>sed</strong> and <strong>awk</strong> written by
+Dale Dougherty (listed in the bibliography).</p>
+<hr class="docutils" />
+<ul class="simple">
+<li>` <a href="#id43"><span class="problematic" id="id44">**</span></a>Next Chapter**`_</li>
+<li>` <a href="#id45"><span class="problematic" id="id46">**</span></a>Previous Chapter**`_</li>
+<li>` <a href="#id47"><span class="problematic" id="id48">**</span></a>Table of Contents**`_</li>
+<li>` <a href="#id49"><span class="problematic" id="id50">**</span></a>Detailed Contents**`_</li>
+</ul>
+<ol class="upperalpha simple" start="3">
+<li>Copyright 1999 David Huron</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">humdrum-tools 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Humdrum Community.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

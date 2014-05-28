@@ -1,0 +1,498 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Chapter17 &mdash; humdrum-tools 1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">humdrum-tools 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Chapter17</a></li>
+<li><a class="reference internal" href="#creating-inventories">Creating Inventories</a><ul>
+<li><a class="reference internal" href="#filter-sort-count">Filter, Sort, Count</a></li>
+<li><a class="reference internal" href="#filtering-data-with-the-rid-command">Filtering Data with the <em>rid</em> Command</a></li>
+<li><a class="reference internal" href="#inventories-for-multi-spine-inputs">Inventories for Multi-spine Inputs</a></li>
+<li><a class="reference internal" href="#sorting-by-frequency-of-occurrence">Sorting By Frequency of Occurrence</a></li>
+<li><a class="reference internal" href="#counting-with-the-wc-command">Counting with the <em>wc</em> Command</a></li>
+<li><a class="reference internal" href="#excluding-or-seeking-rare-events">Excluding or Seeking Rare Events</a></li>
+<li><a class="reference internal" href="#transforming-and-editing-inventory-data">Transforming and Editing Inventory Data</a></li>
+<li><a class="reference internal" href="#further-examples">Further Examples</a></li>
+<li><a class="reference internal" href="#reprise">Reprise</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/userguide/guide/guide17.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <img alt="" src="userguide/guide/../HumdrumIcon.gif" />
+<img alt="Humdrum" src="userguide/guide/../HumdrumHeader.gif" />
+<img alt="" src="userguide/guide/../HumdrumSpacer.gif" />
+<div class="section" id="chapter17">
+<h1>Chapter17<a class="headerlink" href="#chapter17" title="Permalink to this headline">¶</a></h1>
+<p>[<a href="#id29"><span class="problematic" id="id30">`*Previous Chapter*`_</span></a>] [<a href="#id31"><span class="problematic" id="id32">`*Contents*`_</span></a>] [<a href="#id33"><span class="problematic" id="id34">`*Next Chapter*`_</span></a>]</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="creating-inventories">
+<h1>Creating Inventories<a class="headerlink" href="#creating-inventories" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<p>Many research problems can be addressed by building an <em>inventory</em> &#8211; that
+is, identifying the number of occurrences of various types of data. Questions
+such as the following all pertain to the generation of inventories:</p>
+<ul class="simple">
+<li>Does Liszt use a greater variety of harmonies than Chopin?</li>
+<li>What is the most frequently used dynamic marking in Beethoven, and
+how does Beethoven&#8217;s practice compare with that of Brahms?</li>
+<li>Are flats more common than sharps in Monteverdi?</li>
+<li>Did Bartok&#8217;s preferred articulation marks change over his lifetime?</li>
+<li>Is there a tendency to use the subdominant pitch less often in pop
+melodies than in (say) French chanson?</li>
+<li>How frequent are light-related words such as &#8220;lumen&#8221; or &#8220;lumine&#8221; in
+the different monastic offices for Thomas of Canterbury?</li>
+<li>Is it true that 90 percent of the notes in a given work by Bach use
+just two durations (such as eighths and sixteenths, or eighths and
+quarters)?</li>
+<li>What is the most common instrumental combination for orchestral works
+by Mussorgsky?</li>
+</ul>
+<p>At the end of this chapter we will show the Humdrum commands needed to answer
+each of the above questions.</p>
+<p>The above questions are all variations of one of the following forms:</p>
+<p>&gt; How many different types of _____ are there?
+What is the most/least common _____?
+What is the frequency of occurrence for various _____s?</p>
+<p>In some cases, we&#8217;re asked to compare two or more repertories when answering
+one of these basic questions.</p>
+<p>For illustration purposes, consider the case of a Humdrum file named
+<tt class="docutils literal"><span class="pre">alpha</span></tt> containing the following simple input:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">**alpha</span>
+<span class="pre">&gt;</span> <span class="pre">``A</span>
+<span class="pre">&gt;</span> <span class="pre">``B</span>
+<span class="pre">&gt;</span> <span class="pre">``A</span>
+<span class="pre">&gt;</span> <span class="pre">``A</span>
+<span class="pre">&gt;</span> <span class="pre">``C</span>
+<span class="pre">&gt;</span> <span class="pre">``B</span>
+<span class="pre">&gt;</span> <span class="pre">``*-</span></tt></p>
+<p>It doesn&#8217;t matter what the data represent. The &#8220;<tt class="docutils literal"><span class="pre">A</span></tt>&#8221;, &#8220;<tt class="docutils literal"><span class="pre">B</span></tt>&#8221;, and &#8220;<tt class="docutils literal"><span class="pre">C</span></tt>&#8221;
+might signify different articulation marks, chords, harmonic intervals, or
+instrumental configurations. Whatever is represented, the process of
+generating an inventory is the same. Ultimately, we&#8217;d like to produce a
+simple distribution that indicates:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">3</span> <span class="pre">occurrences</span> <span class="pre">of</span> <span class="pre">&quot;A&quot;</span>
+<span class="pre">2</span> <span class="pre">occurrences</span> <span class="pre">of</span> <span class="pre">&quot;B&quot;</span>
+<span class="pre">1</span> <span class="pre">occurrence</span> <span class="pre">of</span> <span class="pre">&quot;C&quot;</span></tt></p>
+<div class="section" id="filter-sort-count">
+<h2>Filter, Sort, Count<a class="headerlink" href="#filter-sort-count" title="Permalink to this headline">¶</a></h2>
+<p>Building an inventory is a three-step process. First we need to <em>filter</em> the
+input so only the data of interest is present. Second we need to <em>sort</em> like-
+with-like. And third we need to <em>count</em> the number of occurrences of each
+type of data token.</p>
+<p>Let&#8217;s begin by discussing the second process. In <a class="reference external" href="guide03.html">Chapter 3</a> we saw how the
+UNIX <strong>sort</strong> command will rearrange lines of data so that they are in
+alphabetical/numerical order. The command:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">sort</span> <span class="pre">alpha</span> <span class="pre">&gt;</span> <span class="pre">sorted.alpha</span></tt></p>
+<p>will sort the file <tt class="docutils literal"><span class="pre">alpha</span></tt> and place the results in a file named
+<tt class="docutils literal"><span class="pre">sorted.alpha</span></tt>. The file <tt class="docutils literal"><span class="pre">sorted.alpha</span></tt> will contain the following:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">**alpha</span>
+<span class="pre">&gt;</span> <span class="pre">``*-</span>
+<span class="pre">&gt;</span> <span class="pre">``A</span>
+<span class="pre">&gt;</span> <span class="pre">``A</span>
+<span class="pre">&gt;</span> <span class="pre">``A</span>
+<span class="pre">&gt;</span> <span class="pre">``B</span>
+<span class="pre">&gt;</span> <span class="pre">``B</span>
+<span class="pre">&gt;</span> <span class="pre">``C</span></tt></p>
+<p>Notice that the asterisk is treated as alphabetically prior to the the letter
+<a href="#id1"><span class="problematic" id="id2">`</span></a>A&#8217;, so all the Humdrum interpretation records have been moved to the
+beginning of the output. Notice also that all of the lines beginning with the
+letter <a href="#id3"><span class="problematic" id="id4">`</span></a>A&#8217; are now collected on successive lines in the output. Similarly,
+the <a href="#id5"><span class="problematic" id="id6">`</span></a>B&#8217;s have been rearranged on successive lines.</p>
+<p>The third step in generating an inventory is to count the number of
+occurrences of each unique data token. The <strong>uniq</strong> command described in
+<a class="reference external" href="guide03.html">Chapter 3</a> will eliminate successive duplicate lines. For example, if we
+type:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">uniq</span> <span class="pre">sorted.alpha</span></tt></p>
+<p>The output will be as follows:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">**alpha</span>
+<span class="pre">&gt;</span> <span class="pre">``*-</span>
+<span class="pre">&gt;</span> <span class="pre">``A</span>
+<span class="pre">&gt;</span> <span class="pre">``B</span>
+<span class="pre">&gt;</span> <span class="pre">``C</span></tt></p>
+<p>Notice that repetitions of the data &#8220;A&#8221; and &#8220;B&#8221; have disappeared. The simple
+<strong>uniq</strong> command is useful for telling us <em>how many different things</em> there
+are in an input. For example, the above output identifies just five different
+records &#8211; and three different types of data records.</p>
+<p>Recall that the <strong>-c</strong> option for <strong>uniq</strong> will cause a <a href="#id7"><span class="problematic" id="id8">`</span></a>count&#8217; to be
+prepended to each output line. The command:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">sorted.alpha</span> <span class="pre">&gt;</span> <span class="pre">unique.alpha</span></tt></p>
+<p>will produce the following output:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">1**alpha</span>
+<span class="pre">&gt;</span> <span class="pre">``1*-</span>
+<span class="pre">&gt;</span> <span class="pre">``3A</span>
+<span class="pre">&gt;</span> <span class="pre">``2B</span>
+<span class="pre">&gt;</span> <span class="pre">``1C</span></tt></p>
+<p>The prepended counts tell us that <a href="#id9"><span class="problematic" id="id10">`</span></a>A&#8217; occurs three times, <a href="#id11"><span class="problematic" id="id12">`</span></a>B&#8217; occurs twice,
+and all other records occur just once.</p>
+<p>In the above output, <tt class="docutils literal"><span class="pre">**alpha</span></tt>, and <tt class="docutils literal"><span class="pre">*-</span></tt> are Humdrum interpretations
+rather than data, so we probably don&#8217;t want them to appear in our inventory.
+If our file had contained comments, or null data records, then these would
+have also appeared in our output, although we are not likely to be interested
+in them. This leads us to what is normally the first step in generating an
+inventory &#8211; <em>filtering</em> the input in order to eliminate records that we&#8217;d
+prefer to omit from our final output.</p>
+</div>
+<div class="section" id="filtering-data-with-the-rid-command">
+<h2>Filtering Data with the <em>rid</em> Command<a class="headerlink" href="#filtering-data-with-the-rid-command" title="Permalink to this headline">¶</a></h2>
+<p>As we saw in <a class="reference external" href="guide13.html">Chapter 13,</a> the <a href="#id35"><span class="problematic" id="id36">`**rid**`_</span></a> command can be used to eliminate
+various classes of Humdrum records. For example, <strong>rid -G</strong> eliminates all
+global comments; <strong>rid -D</strong> eliminates all data records, etc. The option
+combination <strong>-GLId</strong> is very common with <strong>rid</strong> since only data records are
+retained in the output. That is, eliminating all global and local comments,
+omitting all interpretations, and deleting all null data records will result
+in an output consisting only of non-null data records.</p>
+<p>Returning to our <tt class="docutils literal"><span class="pre">**alpha</span></tt> data, we can eliminate everything but data
+records as follows:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">alpha</span> <span class="pre">&gt;</span> <span class="pre">filtered.alpha</span></tt></p>
+<p>By way of summary, generating an inventory is a three-step process. First we
+<em>filter</em> the input so only the data of interest is present. Typically, this
+means using the <strong>rid</strong> command with one or more options to eliminate
+comments, interpretations, and perhaps null data records. Second we <em>sort</em>
+the data using the <strong>sort</strong> command so that identical records are amalgamated
+as neighbors. Finally, we use the <strong>uniq -c</strong> to <em>count</em> the number of
+occurrences of each type of data token. All three steps can be amalgamated
+into a single pipeline:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">alpha</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">&gt;</span> <span class="pre">inventory.alpha</span></tt></p>
+<p>Notice that the inventory will pertain to whatever data was provided in the
+original input. We&#8217;ve been using the abstract data &#8220;A&#8221;, &#8220;B&#8221;, and &#8220;C&#8221;.
+However, this data might represent any type of discrete data, such as Latin
+text, piano fingerings, or dance steps.</p>
+</div>
+<div class="section" id="inventories-for-multi-spine-inputs">
+<h2>Inventories for Multi-spine Inputs<a class="headerlink" href="#inventories-for-multi-spine-inputs" title="Permalink to this headline">¶</a></h2>
+<p>In the above example, we assumed that the input consists of a single Humdrum
+spine (i.e. a single column of data). However, Humdrum files can have any
+number of spines, and each spine might represent radically different types of
+data. For example, the following file (named <tt class="docutils literal"><span class="pre">alphabet</span></tt>) contains two
+spines, one with &#8220;alpha&#8221; data, and the second with &#8220;bet&#8221; data. These data
+types might represent melodic intervals and fingering information, or dynamic
+markings and stem-directions, or whatever.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">**alpha**bet</span>
+<span class="pre">&gt;</span> <span class="pre">``A$50</span>
+<span class="pre">&gt;</span> <span class="pre">``B$50</span>
+<span class="pre">&gt;</span> <span class="pre">``A$50</span>
+<span class="pre">&gt;</span> <span class="pre">``A$200</span>
+<span class="pre">&gt;</span> <span class="pre">``C$50</span>
+<span class="pre">&gt;</span> <span class="pre">``B$50</span>
+<span class="pre">&gt;</span> <span class="pre">``*-*-</span></tt></p>
+<p>If we apply our above inventory-generating commands for the file &#8220;alphabet,&#8221;
+the result will be as follows:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">1A$200</span>
+<span class="pre">&gt;</span> <span class="pre">``2A$50</span>
+<span class="pre">&gt;</span> <span class="pre">``2B$50</span>
+<span class="pre">&gt;</span> <span class="pre">``1C$50</span></tt></p>
+<p>Notice that the inventory is based on <em>entire records</em> containing both
+&#8220;alpha&#8221; and &#8220;bet&#8221; data. This is the reason why the alpha-bet data-pair &#8220;<tt class="docutils literal"><span class="pre">A</span>
+<span class="pre">$50</span></tt>&#8221; is considered different from alpha-bet data &#8220;<tt class="docutils literal"><span class="pre">A</span> <span class="pre">$200</span></tt>&#8221;. Depending on
+the user&#8217;s goal, this may or may not be the most appropriate output.</p>
+<p>A situation where this approach might be desired arises when we are counting
+the number of different spellings of chords (e.g., how many different
+sonorous arrangements are there?). If <a href="#id13"><span class="problematic" id="id14">**</span></a>alpha and <a href="#id15"><span class="problematic" id="id16">**</span></a>bet represent pitches in
+two concurrent voices, then it may be important to have both concurrent data
+tokens participating in the inventory.</p>
+<p>In other circumstances, we may not want this. For example, if we are
+interested only in alpha-related data, we need to eliminate the irrelevant
+<strong>bet data so it won&#8217;t interfere. This can be done using the Humdrum
+**extract</strong> command.</p>
+<p>For example, we can create an inventory of just the <tt class="docutils literal"><span class="pre">**bet</span></tt> data:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**bet'</span> <span class="pre">alphabet</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">&gt;</span> <span class="pre">inventory.bet</span></tt></p>
+<p>The resulting <tt class="docutils literal"><span class="pre">inventory.bet</span></tt> file will contain:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">1$200</span>
+<span class="pre">&gt;</span> <span class="pre">``5$50</span></tt></p>
+<p>&#8211; meaning 5 occurrences of the data &#8220;$50&#8221; and 1 occurrence of &#8220;$200&#8221;.</p>
+<p>Sometimes it is useful to create an aggregate inventory of the data in each
+separate spine. In such cases, we will need to use <strong>extract</strong> several times
+so that each spine is placed in a separate file:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**alpha'</span> <span class="pre">alphabet</span> <span class="pre">&gt;</span> <span class="pre">justalpha</span></tt>
+<tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**bet'</span> <span class="pre">alphabet</span> <span class="pre">&gt;</span> <span class="pre">justbet</span></tt></p>
+<p>The <strong>cat</strong> command can then be used to concatenate the files end-to-end so
+they form a single column of data. With each data token of interest is on its
+own line, we can generate the appropriate inventory:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">cat</span> <span class="pre">justalpha</span> <span class="pre">justbet</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></tt></p>
+</div>
+<div class="section" id="sorting-by-frequency-of-occurrence">
+<h2>Sorting By Frequency of Occurrence<a class="headerlink" href="#sorting-by-frequency-of-occurrence" title="Permalink to this headline">¶</a></h2>
+<p>When the output inventory list is short, it is easy to identify which records
+are the most common and which records are the least common. Frequently
+inventory lists will contain dozens or hundreds of items so it may be more
+difficult to scan through the output to find the most frequent or least
+frequent occurrences. For such long outputs, it might be more convenient to
+produce an output sorted according to frequency of occurrence. Notice that
+each output record from <strong>uniq -c</strong> begins with a number, and so the output
+is ideally suited for numerical sorting. We&#8217;ve already learned that the
+<strong>sort</strong> command rearranges input records in alphabetic/numeric order.</p>
+<p>If we type</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">sort</span> <span class="pre">inventory.alpha</span></tt></p>
+<p>The output will be as follows:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">1C</span>
+<span class="pre">&gt;</span> <span class="pre">``2B</span>
+<span class="pre">&gt;</span> <span class="pre">``3A</span></tt></p>
+<p>Now the output is sorted so that the least frequent occurrences are at the
+beginning, and the most frequent occurrences are at the end of the output.
+Incidentally, <strong>sort</strong> has a <strong>-r</strong> option that causes the output to be
+sorted in reverse order. If we use <strong>sort -r</strong>, then the most common
+occurrences will be placed at the beginning of the output:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">sort</span> <span class="pre">-r</span> <span class="pre">inventory.alpha</span></tt></p>
+<p>produces the following output:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">3A</span>
+<span class="pre">&gt;</span> <span class="pre">``2B</span>
+<span class="pre">&gt;</span> <span class="pre">``1C</span></tt></p>
+<p>Once again, we can amalgamate all of the required commands into a single
+pipeline. The following pipeline produces an inventory for any type of
+Humdrum input, sorted from the most common to the least common data:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">alpha</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-r</span> <span class="pre">&gt;</span> <span class="pre">inventory.alpha</span></tt></p>
+</div>
+<div class="section" id="counting-with-the-wc-command">
+<h2>Counting with the <em>wc</em> Command<a class="headerlink" href="#counting-with-the-wc-command" title="Permalink to this headline">¶</a></h2>
+<p>In other circumstances, it may be helpful to determine the proportion or
+percentage values rather than the actual numerical count. This can be
+calculated by dividing each of the inventory count numbers by the total
+number of data records processed. A convenient way to count records is via
+the UNIX <strong>wc</strong> (word count) command. The <strong>wc</strong> command provides three
+options. With the <strong>-c</strong> option, <strong>wc</strong> counts the number of characters in an
+input. With the <strong>-w</strong> option, <strong>wc</strong> counts the number of words in an input.
+A &#8220;word&#8221; is defined as any sequence of characters delineated by white space,
+such as spaces, tabs or new lines. With the <strong>-l</strong> option, <strong>wc</strong> counts the
+nmber of lines or records in the input.</p>
+<p>We can count the total number of non-null data records in a Humdrum input
+using the following pipeline:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">alpha</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l</span></tt></p>
+<p>This will give us the total number of items in our inventory. Simple division
+will generate the percentages for each type of data record.</p>
+<p>Suppose, for example, that the total number of data records was determined to
+be 874. Using the UNIX <strong>awk</strong> command will allow us to easily generate the
+percentages for each data type via the command:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">awk</span> <span class="pre">'{print</span> <span class="pre">$1/847*100</span> <span class="pre">&quot;\t&quot;</span> <span class="pre">$2}'</span> <span class="pre">inventory.alpha</span></tt></p>
+<p>This will create a two-column output. The first column will indicate the
+percentage of occurrence, and the second column will identify the
+corresponding type of data.</p>
+</div>
+<div class="section" id="excluding-or-seeking-rare-events">
+<h2>Excluding or Seeking Rare Events<a class="headerlink" href="#excluding-or-seeking-rare-events" title="Permalink to this headline">¶</a></h2>
+<p>Recall from <a class="reference external" href="guide03.html">Chapter 3</a> that the <strong>uniq</strong> command provides other options
+(besides the <strong>-c</strong> option). The <strong>-d</strong> option causes <strong>uniq</strong> to output
+<em>only</em> those records that are duplicated. In other words, records that occur
+only once are eliminated from the input. This option can be useful when there
+are a lot of single-occurrence data tokens and you are only interested in
+those data records that occur more frequently.</p>
+<p>By contrast, the <strong>uniq -u</strong> option causes <em>only</em> those records that are
+unique (occur only once) to be output. This option can be useful when looking
+for rare circumstances in our data.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">alpha</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-u</span></tt> (output only the rare events)
+<tt class="docutils literal"><span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">alpha</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-d</span></tt> (eliminate all the rare events)</p>
+</div>
+<div class="section" id="transforming-and-editing-inventory-data">
+<h2>Transforming and Editing Inventory Data<a class="headerlink" href="#transforming-and-editing-inventory-data" title="Permalink to this headline">¶</a></h2>
+<p>Notice that two data records must be identical in order for them to be
+considered &#8220;the same&#8221; by <strong>sort</strong> and <strong>uniq</strong>. This means that records such
+as the following are considered entirely different:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">ABC</span>
+<span class="pre">&gt;</span> <span class="pre">``abc</span>
+<span class="pre">&gt;</span> <span class="pre">``Abc</span>
+<span class="pre">&gt;</span> <span class="pre">``&quot;ABC&quot;</span>
+<span class="pre">&gt;</span> <span class="pre">``ABC.</span>
+<span class="pre">&gt;</span> <span class="pre">``CBA</span></tt></p>
+<p>Remember that step #1 in generating inventories requires that we filter the
+data so only the data of interest is passed to <strong>sort</strong> and <strong>uniq</strong>. This
+means we must be careful about the state of the input. Depending on your
+goal, we will either want to <em>translate</em> the input to some other more
+appropriate representation, or <em>edit</em> the existing representation in order to
+discard or transform otherwise confounding data.</p>
+<p><em>Translating</em> data involves changing from one type of information to another
+&#8211; that is, changing the exclusive interpretations. For example, if we want
+to produce an inventory of melodic intervals, then we might use the
+<a href="#id37"><span class="problematic" id="id38">`**mint**`_</span></a> or <a href="#id39"><span class="problematic" id="id40">`**xdelta**`_</span></a> commands to generate a suitable representation.
+Alternatively, we might want to generate an inventory of scale degrees using
+the <a href="#id41"><span class="problematic" id="id42">`**deg**`_</span></a> or <a href="#id43"><span class="problematic" id="id44">`**solfa**`_</span></a> commands.</p>
+<p>Instead of translating our data, we might wish to edit the data using the
+<strong>sed</strong> or <a href="#id45"><span class="problematic" id="id46">`**humsed**`_</span></a> stream editors. Suppose we had a file (named
+&#8220;notes&#8221;) consisting of pitch information, and we wanted to create an
+inventory of the diatonic pitch-letter names. Our input might look like this:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">**notes</span>
+<span class="pre">&gt;</span> <span class="pre">``A</span>
+<span class="pre">&gt;</span> <span class="pre">``B</span>
+<span class="pre">&gt;</span> <span class="pre">``B</span>
+<span class="pre">&gt;</span> <span class="pre">``D</span>
+<span class="pre">&gt;</span> <span class="pre">``F#</span>
+<span class="pre">&gt;</span> <span class="pre">``D#</span>
+<span class="pre">&gt;</span> <span class="pre">``E</span>
+<span class="pre">&gt;</span> <span class="pre">``*-</span></tt></p>
+<p>Without modification, our inventory would appear as follows:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">1A</span>
+<span class="pre">&gt;</span> <span class="pre">``2B</span>
+<span class="pre">&gt;</span> <span class="pre">``1D</span>
+<span class="pre">&gt;</span> <span class="pre">``1D#</span>
+<span class="pre">&gt;</span> <span class="pre">``1E</span>
+<span class="pre">&gt;</span> <span class="pre">``1F#</span></tt></p>
+<p>But this inventory distinguishes D-sharp from D-natural &#8211; which is not what
+we want. The answer is to filter our input so that the sharps are removed.</p>
+<p>Adding the appropriate <a href="#id47"><span class="problematic" id="id48">`**humsed**`_</span></a> command to our pipe:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/#//'</span> <span class="pre">notes</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></tt></p>
+<p>&#8211; will produce the following output:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">1A</span>
+<span class="pre">&gt;</span> <span class="pre">``2B</span>
+<span class="pre">&gt;</span> <span class="pre">``2D</span>
+<span class="pre">&gt;</span> <span class="pre">``1E</span>
+<span class="pre">&gt;</span> <span class="pre">``1F</span></tt></p>
+</div>
+<div class="section" id="further-examples">
+<h2>Further Examples<a class="headerlink" href="#further-examples" title="Permalink to this headline">¶</a></h2>
+<p>Given your current background, you should now be able to generate inventories
+to answer a wide variety of questions. You should now understand how the
+commands given below can be used to solve the question posed:</p>
+<p><em>Does Liszt use a greater variety of harmonies than Chopin?</em></p>
+<p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'`**harm`_'</span> <span class="pre">liszt*</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l</span></tt>
+<tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**harm'</span> <span class="pre">chopin*</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l</span></tt></p>
+<p><em>What is the most frequently used dynamic marking in Beethoven,</em> <em>and how
+does Beethoven&#8217;s practice compare with that of Brahms?</em></p>
+<p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'`**dynam`_'</span> <span class="pre">beeth*</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-r</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-1</span></tt>
+&gt;
+&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**dynam'</span> <span class="pre">brahm*</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-r</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-1</span></tt></p>
+<p><em>Are flats more common than sharps in Monteverdi?</em> Let&#8217;s presume that the
+input is monophonic <tt class="docutils literal"><span class="pre">**kern</span></tt> data.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/[^#-]//g'</span> <span class="pre">montev*</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></tt></p>
+<p><em>Did Bartok&#8217;s preferred articulation marks change</em> <em>over his lifetime?</em>
+Assume that copies of early and late works have been concatenated to the
+files <tt class="docutils literal"><span class="pre">early</span></tt> and <tt class="docutils literal"><span class="pre">late</span></tt>. The <a href="#id49"><span class="problematic" id="id50">`**humsed**`_</span></a> command here eliminates all
+data with the exception of <a href="#id17"><span class="problematic" id="id18">``</span></a><a href="#id51"><span class="problematic" id="id52">`**kern```_</span></a> articulation marks. (See <a class="reference external" href="guide06.html">Chapter
+6</a> for details on <a href="#id19"><span class="problematic" id="id20">**</span></a>kern articulation marks.)</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**kern'</span> <span class="pre">early</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/[^&quot;`~^:I]//g'</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></tt>
+&gt;
+&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**kern'</span> <span class="pre">late</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/[^&quot;`~^:I]//g'</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></tt></p>
+<p><em>Is there a tendency to use the subdominant pitch less often</em> <em>in pop
+melodies than in (say) French chanson?</em> Once again assume that the inputs are
+monophonic.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">deg</span> <span class="pre">-t</span> <span class="pre">pop*</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'4'</span></tt>
+<tt class="docutils literal"><span class="pre">deg</span> <span class="pre">-t</span> <span class="pre">chanson*</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'4'</span></tt></p>
+<p><em>How frequent are light-related words such as &#8220;lumen&#8221;</em> <em>or &#8220;lumine&#8221; in the
+different monastic offices for</em> Thomas of Canterbury? Familiarity with
+regular expressions helps:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'`**text`_'</span> <span class="pre">office*</span> <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">-ic</span> <span class="pre">'lum.+n[e]*$'</span></tt></p>
+<p><em>Is it true that 90 percent of the notes in a given work by Bach</em> <em>use just
+two durations (such as eighths and sixteenths, or</em> <em>eighths and quarters)?</em></p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/[^0-9.]//g'</span> <span class="pre">bach</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></tt> (Repeat the
+above command for each work and inspect the results.)</p>
+<p><em>What is the most common instrumental combination for sonorities</em> <em>by
+Mussorgsky?</em></p>
+<p>&gt; This problem is addressed in <a class="reference external" href="guide36.html">Chapter 36.</a></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="reprise">
+<h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
+<p>In this chapter we have discussed how to answer questions that involve the
+creation of inventories. Creating an inventory typically entails <em>filtering</em>
+some data so only the information of interest is preserved, <em>sorting</em> the
+data so that like data are amalgamated, and then <em>counting</em> each instance of
+each data type.</p>
+<p>In later chapters we will see how classifying data, identifying musical
+contexts, and marking occurrences of patterns can be used to significantly
+enhance the inventory-building tools described in this chapter.</p>
+<hr class="docutils" />
+<ul class="simple">
+<li>` <a href="#id21"><span class="problematic" id="id22">**</span></a>Next Chapter**`_</li>
+<li>` <a href="#id23"><span class="problematic" id="id24">**</span></a>Previous Chapter**`_</li>
+<li>` <a href="#id25"><span class="problematic" id="id26">**</span></a>Table of Contents**`_</li>
+<li>` <a href="#id27"><span class="problematic" id="id28">**</span></a>Detailed Contents**`_</li>
+</ul>
+<ol class="upperalpha simple" start="3">
+<li>Copyright 1999 David Huron</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">humdrum-tools 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Humdrum Community.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

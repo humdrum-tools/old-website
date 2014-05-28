@@ -1,0 +1,503 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapter16 &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../index.html"/>
+        <link rel="up" title="The Humdrum User Guide" href="index.html"/>
+        <link rel="next" title="Chapter17" href="guide17.html"/>
+        <link rel="prev" title="Chapter15" href="guide15.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><em>The Humdrum User Guide</em></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="guide01.html">Chapter1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide01.html#humdrum-a-brief-tour">Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02.html#representing-music-using-kern-i">Representing Music Using <strong>***kern*</strong> (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide03.html">Chapter3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide03.html#some-initial-processing">Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide04.html">Chapter4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide04.html#basic-pitch-translations">Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide05.html">Chapter5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide05.html#the-humdrum-syntax">The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide06.html">Chapter6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide06.html#representing-music-using-kern-ii">Representing Music Using ***kern*(II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide06.html#tuplets">Tuplets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide07.html">Chapter7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide08.html">Chapter8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide09.html">Chapter9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide10.html">Chapter10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide11.html">Chapter11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide12.html">Chapter12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide13.html">Chapter13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide14.html">Chapter14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide15.html">Chapter15</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Chapter16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide17.html">Chapter17</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide18.html">Chapter18</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide19.html">Chapter19</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide20.html">Chapter20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide21.html">Chapter21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide21.html#searching-for-patterns">Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide22.html">Chapter22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide23.html">Chapter23</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide23.html#rhythm">Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide24.html">Chapter24</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide24.html#the-shell-iii">The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide25.html">Chapter25</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide25.html#similarity">Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide26.html">Chapter26</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide26.html#moving-signifiers-between-spines">Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide27.html">Chapter27</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide29.html">Chapter29</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide29.html#differences-and-commonalities">Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide30.html">Chapter30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide30.html#midi-input-tools">MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide31.html">Chapter31</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide31.html#repertories-and-links">Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide32.html">Chapter32</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide32.html#the-shell-iv">The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide34.html">Chapter34</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide34.html#serial-processing">Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide35.html">Chapter35</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide35.html#layers">Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37.html">Chapter37</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37.html#electronic-music-editing">Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide38.html">Chapter38</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide38.html#systematic-musicology">Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide39.html">Chapter39</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide39.html#trouble-shooting">Trouble-Shooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide40.html">Chapter40</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide40.html#conclusion">Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bibliography.html">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.more.html">Supplementary Humdrum Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.toc.html">Humdrum Command Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="humdrum.problems.html">HUMDRUM PROBLEMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux.perform.html">Installing and Using the Humdrum &#8220;perform&#8221; Command under Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.bibliog.html"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.bibliog.html#bibliography">Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07.html">Humdrum Developer&#8217;s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a.html"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a.html#humdrum-representation-development">Humdrum Representation Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a.html#representation-assumptions">Representation Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a.html#creating-new-humdrum-representations">Creating New Humdrum Representations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a.html#defining-a-new-humdrum-interpretation-a-sample-problem">Defining a New Humdrum Interpretation: A Sample Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07b.html"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07b.html#humdrum-software-development">Humdrum Software Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07b.html#standard-program-skeleton">Standard Program Skeleton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="musedata2kern.html"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="musedata2kern.html#how-to-translate-musedata-files-to-humdrum">How To Translate MuseData Files to Humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="musedata2kern.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problems.html">Sample Problems Using the Humdrum Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projects.html">Sample Research Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="representations.toc.html">Humdrum Representation Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html">Online Resources:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample.problems.html">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sappExtras.html">Humdrum Extras</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook.html#syntax-coloring-in-vim">Syntax Coloring in Vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook.html#projects-using-humdrum">Projects using Humdrum</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html"><em>The Humdrum User Guide</em></a> &raquo;</li>
+      
+    <li>Chapter16</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/guide/guide16.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="chapter16">
+<h1>Chapter16<a class="headerlink" href="#chapter16" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-shell-ii">
+<h2>The Shell (II)<a class="headerlink" href="#the-shell-ii" title="Permalink to this headline">¶</a></h2>
+<p>In <a class="reference external" href="guide08.html">Chapter 8</a> we introduced some of the shell special characters. By way of
+review, we learned that the shell interprets the octothorpe (#) as the
+beginning of a comment. By itself, the asterisk (*) is &#8220;expanded&#8221; by the
+shell to the names of all files in the current directory. When linked with
+other characters, such as <tt class="docutils literal"><span class="pre">A*</span></tt> or <tt class="docutils literal"><span class="pre">*B</span></tt>, the shell expands the expression
+to the names of all files beginning with A or ending with B. The greather-
+than sign (&gt;) directs the output to a named file. The vertical bar or pipe
+(|) allows the output of one command to be directed to the input of the
+following command. When placed at the end of a command line, the ampersand
+(&amp;) causes the shell to execute the command as a background process, and
+immediately returns a prompt so the user can execute other commands. The
+semicolon (;) indicates the end of a command; this allows more than one
+command to be placed on a single line. The backslash () escapes the special
+meaning of the immediately following character so it is treated literally.
+The single quote or apostrophe (&#8216;) can escape the special meaning of all
+characters up to the appearance of a matching single quote.</p>
+<p>In this chapter we will continue to describe shell special characters and
+identify their functions. In addition, we will learn about the shell <em>alias</em>
+function.</p>
+</div>
+<div class="section" id="shell-special-characters">
+<h2>Shell Special Characters<a class="headerlink" href="#shell-special-characters" title="Permalink to this headline">¶</a></h2>
+<p>The remaining special shell characters include the following: the dollars
+sign ($), the greve (`), the less-than sign (&lt;), the question mark (?), and
+the double quote (&#8221;). We&#8217;ll consider the function of each of these characters
+in turn.</p>
+</div>
+<div class="section" id="shell-variables">
+<h2>Shell Variables<a class="headerlink" href="#shell-variables" title="Permalink to this headline">¶</a></h2>
+<p>Like any programming language, the shell allows information to be stored and
+retrieved through shell <em>variables</em>. Variables can be given all sorts of
+names, such as <tt class="docutils literal"><span class="pre">value</span></tt>, <tt class="docutils literal"><span class="pre">Meter</span></tt>, <tt class="docutils literal"><span class="pre">A34x</span></tt> and <tt class="docutils literal"><span class="pre">BARLINE3</span></tt>. In order to
+retrieve information from a variable, the variable name is preceded by a
+dollars sign. For example, the string <tt class="docutils literal"><span class="pre">VARIABLE</span></tt> means &#8220;the current value
+of the variable named <tt class="docutils literal"><span class="pre">VARIABLE</span></tt>. Suppose you had a file named $FILE in the
+current directory ($FILE is a legitimate filename on UNIX systems). If you
+type:</p>
+<p>`` sort $FILE``</p>
+<p>The shell will assume that there is a variable named FILE, and retrieve its
+contents. Since the contents are likely to be empty, the above command is
+identical to typing:</p>
+<p>`` sort``</p>
+<p>In order to sort the file named $FILE, the dollars sign would need to be
+escaped:</p>
+<p>`` sort $FILE``</p>
+<p>Depending on the type of shell, variables can be assigned numerical or string
+values in various ways. For most shells, variables can be assigned using the
+equals sign (with no intervening spaces). For example, the integer 7 can be
+assigned to the variable X as follows:</p>
+<p>`` X=7``</p>
+<p>Or the string &#8220;hello&#8221; can be assigned to a variable by placing the string in
+quotation marks:</p>
+<p>`` X=&#8221;hello&#8221;``</p>
+<p>Single quotation marks can also be used:</p>
+<p>`` X=&#8217;hello&#8217;``</p>
+<p>If you had a file named <tt class="docutils literal"><span class="pre">hello</span></tt> in the current directory, and if the
+variable <tt class="docutils literal"><span class="pre">X</span></tt> had been assigned as above, then the following command would
+sort this file:</p>
+<p>`` sort $X``</p>
+</div>
+<div class="section" id="the-shell-greve">
+<h2>The Shell Greve<a class="headerlink" href="#the-shell-greve" title="Permalink to this headline">¶</a></h2>
+<p>It is often useful to be able to save the results of some operation in a
+shell variable. Suppose for example, that we want to sort a file containing
+the word <tt class="docutils literal"><span class="pre">zebra</span></tt>. But we&#8217;re not certain what file (or files) contain this
+word. Manually, we would need to carry out two operations. First we would
+search for any file(s) containing the word:</p>
+<p>`` grep -l zebra <a href="#id1"><span class="problematic" id="id2">*</span></a><a href="#id3"><span class="problematic" id="id4">``</span></a></p>
+<p>We might find that the word &#8220;zebra&#8221; appears in the files <tt class="docutils literal"><span class="pre">animals</span></tt> and
+`` mammals``. Having determine what files to sort, now we would actually carry
+out the appropriate sort command:</p>
+<p>`` sort animals mammals``</p>
+<p>If we found that word &#8220;zebra&#8221; occurred in 50 files, then typing the
+appropriate sort command would require a lot of typing. Alternatively, we
+could use a shell variable to store the results of the first command, and
+then retrieve the filenames in the second command. For this, we must use the
+greve character (<tt class="docutils literal"><span class="pre">`</span></tt>). UNIX shells will execute whatever command(s) appear
+between two greve characters; the result of the operation can then be treated
+as a string which may be assigned to a shell variable or used in some other
+way. In the following commands, the filenames produced by the <strong>grep</strong>
+command are assigned to a shell variable named <tt class="docutils literal"><span class="pre">FILES</span></tt>. In the subsequent
+command a dollars sign instructs the shell to retrieve the contents of this
+variable:</p>
+<p>`` FILES=`grep -l zebra <a href="#id5"><span class="problematic" id="id6">*</span></a><tt class="docutils literal"><span class="pre">`</span>
+<span class="pre">``</span> <span class="pre">sort</span> <span class="pre">$FILES</span></tt></p>
+<p>Alternatively, we can avoid the <tt class="docutils literal"><span class="pre">FILES</span></tt> variable altogether, and execute
+the following command:</p>
+<p>`` sort <cite>grep -l zebra *``</cite></p>
+<p>The shell interprets the above command as follows: First it recognizes the
+presence of the command delineated by greves. This command is executed
+<em>before</em> the <strong>sort</strong> command. The <strong>grep -l</strong> command will generate as
+output a string of filenames. This output will replace the material
+delineated by greves. Finally, the <strong>sort</strong> command will be executed &#8211; using
+the filenames generated by the <strong>grep</strong> command.</p>
+<p>This command structure is useful in a variety of circumstances. For example,
+suppose we wanted to identify any encoded works that are composed by Josquin
+and are also in triple meter:</p>
+<p>`` grep -l &#8216;!!!COM: Josquin&#8217; <cite>grep -l &#8216;!!!AMT:.*triple&#8217; *``</cite></p>
+<p>Here we have imbedded one <strong>grep</strong> &#8220;inside&#8221; another. Remember that the
+command delineated by the greve is executed first. In this case, we begin by
+searching all of the files in the current directory for an <tt class="docutils literal"><span class="pre">AMT</span></tt> reference
+record containing the keyword &#8220;<tt class="docutils literal"><span class="pre">triple</span></tt>.&#8221; The <strong>-l</strong> option causes the
+output to consist of only filenames. Then the second <strong>grep</strong> is executed. It
+looks for files that contain a <tt class="docutils literal"><span class="pre">COM</span></tt> reference record containing the
+keyword &#8220;<tt class="docutils literal"><span class="pre">Josquin</span></tt>.&#8221; But this second <strong>grep</strong> only searches those filenames
+passed to it by the first <strong>grep</strong>. In other words, the composer search is
+restricted to only those files that have a triple meter designation.</p>
+<p>Consider another way of using the greve structure. Suppose we have a file
+named <tt class="docutils literal"><span class="pre">opus16</span></tt>. We would like to know what other works contain the same
+instrumentation as <tt class="docutils literal"><span class="pre">opus16</span></tt>, but we&#8217;ve forgotten what the precise
+instrumentation is. We can first seach <tt class="docutils literal"><span class="pre">opus16</span></tt> for the instrumentation
+data (encoded in the <tt class="docutils literal"><span class="pre">AIN:</span></tt> reference record), and then search for this
+information in all files in the current directory. This task can be carried
+out using a single command line:</p>
+<p>`` grep -l <cite>grep &#8216;!!!AIN:&#8217; opus16</cite> <a href="#id7"><span class="problematic" id="id8">*</span></a><a href="#id9"><span class="problematic" id="id10">``</span></a></p>
+<p>In this example, the imbedded command provides the regular expression rather
+than the files to be searched.</p>
+</div>
+<div class="section" id="single-quotes-double-quotes">
+<h2>Single Quotes, Double Quotes<a class="headerlink" href="#single-quotes-double-quotes" title="Permalink to this headline">¶</a></h2>
+<p>In <a class="reference external" href="guide08.html">Chapter 8</a> we learned that single quotation marks can be used to escape
+the special meanings of reserved shell characters &#8211; such as * and $. Double
+quotation marks (<tt class="docutils literal"><span class="pre">&quot;</span></tt>) have a similar effect with one important exception.
+The dollars sign continues to retain its special meaning inside double
+quotes.</p>
+<p>The UNIX <strong>echo</strong> command causes information to be printed or displayed.
+Consider the following three commands:</p>
+<p>&gt; echo $A
+echo &#8220;$A&#8221;
+echo &#8216;$A&#8217;</p>
+<p>In the first and second commands, the shell looks for a variable named <tt class="docutils literal"><span class="pre">A</span></tt>
+and attempts to echo the contents of this variable on the display. Unless
+`` A`` happens to be a defined shell variable, only an empty line will be
+displayed. In the third command, the string <tt class="docutils literal"><span class="pre">A</span></tt> is treated literally, and
+is echoed back to the display. There are circumstances where the double
+quotes are more useful, but for most casual users, the single quotes provide
+the best means for disengaging the meanings of special characters.</p>
+</div>
+<div class="section" id="using-shell-variables">
+<h2>Using Shell Variables<a class="headerlink" href="#using-shell-variables" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s consider an example where shell variables prove to be useful in Humdrum
+processing. Suppose for some score that we want to change the stem-directions
+in measures 34 through 38 from up-stems to down-stems. First, we need to
+establish the line number corresponding to the beginning of measure 34 and
+the line number corresponding to the end of measure 38 (i.e. beginning of
+measure 39). In the following script, <strong>grep</strong> is used to assign these line
+numbers to the shell variables <tt class="docutils literal"><span class="pre">A</span></tt> and <cite>B`</cite>.</p>
+<p>`` A=`grep -n ^=34```
+`` B=`grep -n ^=39```</p>
+<p>Now we can construct an appropriate <a href="#id21"><span class="problematic" id="id22">`**humsed**`_</span></a> command. Recall that each
+substitute (<tt class="docutils literal"><span class="pre">s</span></tt>) command in <strong>humsed</strong> can be preceded by a range
+indication. In the following command, the <tt class="docutils literal"><span class="pre">A</span></tt> and <cite>B`</cite> variables convey
+the appropriate range to each substitution. This means that the substitutions
+are limited to the line numbers ranging between <tt class="docutils literal"><span class="pre">A</span></tt> and <cite>B`</cite>.</p>
+<p>`` humsed &#8220;$A,$Bs//XXX/g; $A,$Bs////g; $A,$Bs/XXX///g&#8221;`` <em>inputfile</em></p>
+<p>Notice that we have used double quotes (&#8221;) rather than single quotes. The
+quotation marks are necessary to pass all three substitutions as an argument
+to <strong>humsed</strong>. Using singe quotes, however, would have caused <tt class="docutils literal"><span class="pre">A</span></tt> and
+`` $B`` to be treated as literal strings rather than shell variables.</p>
+</div>
+<div class="section" id="aliases">
+<h2>Aliases<a class="headerlink" href="#aliases" title="Permalink to this headline">¶</a></h2>
+<p>An alias is an alternative name for something. The shell provides a way of
+defining aliases, and these aliases can prove very convenient.</p>
+<p>Consider, by way of example, the following common pipeline:</p>
+<p>`` sort inputfile | uniq -c | sort -n``</p>
+<p>In <a href="#id23"><span class="problematic" id="id24">`Chapter 17`_</span></a> we will see that this is a useful way for generating
+inventories. Typically, this sequence occurs at the end of a pipeline where
+some preliminary processing has taken place, such as:</p>
+<p>`` timebase -t 8 input | ditto | hint | rid -GLI &gt;
+&gt;&gt; | sort | uniq -c | sort -n``</p>
+<p>Since the construction <tt class="docutils literal"><span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span></tt> is so common, we might
+want to define an alias for it. To do so, we simply execute the <strong>alias</strong>
+command. In this case, we&#8217;ve defined a new command called <tt class="docutils literal"><span class="pre">inventory</span></tt>:</p>
+<p>`` alias inventory=&#8221;sort | uniq -c | sort -n&#8221;``</p>
+<p>Having defined this alias, we can now make use of it. Any time we type the
+word <tt class="docutils literal"><span class="pre">inventory</span></tt>, the shell will expand it to &#8220;<tt class="docutils literal"><span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">|</span> <span class="pre">sort</span>
+<span class="pre">-n</span></tt>&#8221;. The above command can be shortened as follows:</p>
+<p>`` timebase -t 8 input | ditto | hint | rid -GLI | inventory``</p>
+<p>Another common task is eliminating barlines. Frequently, we need to use the
+construction:</p>
+<p>`` grep -v ^=``</p>
+<p>Actually, this is not the most prudent construction. Depending on the spines
+present in a document, sometimes barlines will be mixed with null tokens in
+other spines that do not encode explicit barlines. E.g.</p>
+<p>`` .=23=23..=23``</p>
+<p>A more careful way of eliminating barlines would use the following regular
+expression:</p>
+<p>`` egrep -v &#8216;^(. )*=&#8217;``</p>
+<p>That is, eliminate all lines that either begin with an equals-sign, or have
+one or more leading null tokens followed by a token with a leading equals-
+sign. Since this is somewhat complicated to remember, we might alias it. In
+the following command, we have created a new command called <tt class="docutils literal"><span class="pre">nobarlines</span></tt>:</p>
+<p>`` alias nobarlines=&#8217;egrep -v &#8216;^(. )*=&#8217;``</p>
+<p>In Humdrum, a good use of aliases is to define commonly used regular
+expressions. Consider the regular expression used to define tandem
+interpretations that encode meter signatures. Here we are searching for an
+asterisk at the beginning of a line, followed by the upper-case letter <a href="#id11"><span class="problematic" id="id12">`</span></a>M&#8217;
+followed by a digit, followed by zero or more digits, followed by a slash,
+followed by a digit:</p>
+<p>`` grep &#8216;^*M[0-9][0-9]*/[0-9]&#8217; inputfile``</p>
+<p>Actually, this regular expression will fail to find any meter signature that
+is not in the first spine. A more circumspect regular expression will include
+the possibility of a leading tab:</p>
+<p>`` grep &#8216; <em>*M[0-9][0-9]</em>/[0-9]&#8217; inputfile``</p>
+<p>Since this is a cumbersome regular expression, it can help to provide an
+alias. Here we have aliased the regular expression to the name <tt class="docutils literal"><span class="pre">metersig</span></tt>:</p>
+<p>`` alias metersig=&#8221;&#8217; <em>*M[0-9][0-9]</em>/[0-9]&#8217;&#8221;``</p>
+<p>Now we can search for meter signatures as follows:</p>
+<p>`` grep metersig inputfile``</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="reprise">
+<h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
+<p>In this chapter we have discussed how the shell interprets the dollars sign
+($), the greve (`), and the double quote (&#8221;). When followed by printable
+characters, the dollars sign is interpreted as designating the value of a
+shell variable. Any command enclosed between two greve characters is executed
+by the shell first, and the returned output of the command is available as an
+input parameter to some other command. Like single quotes, double quotes can
+be used to escape special shell characters; however, an important difference
+is that the dollars-sign retains its special meaning within the double
+quotes. This allows shell variables to be embedded into text strings.</p>
+<p>We have also learned that the shell <strong>alias</strong> command can be used to provide
+a convenient short-hand or way of abbreviating a complex pipeline or regular
+expression into a single user-defined keyword.</p>
+<hr class="docutils" />
+<ul class="simple">
+<li>` <a href="#id13"><span class="problematic" id="id14">**</span></a>Next Chapter**`_</li>
+<li>` <a href="#id15"><span class="problematic" id="id16">**</span></a>Previous Chapter**`_</li>
+<li>` <a href="#id17"><span class="problematic" id="id18">**</span></a>Table of Contents**`_</li>
+<li>` <a href="#id19"><span class="problematic" id="id20">**</span></a>Detailed Contents**`_</li>
+</ul>
+<ol class="upperalpha simple" start="3">
+<li>Copyright 1999 David Huron</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="guide17.html" class="btn btn-neutral float-right" title="Chapter17"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="guide15.html" class="btn btn-neutral" title="Chapter15"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Humdrum Community.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

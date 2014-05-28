@@ -1,0 +1,683 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Chapter13 &mdash; humdrum-tools 1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">humdrum-tools 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Chapter13</a></li>
+<li><a class="reference internal" href="#assembling-scores">Assembling Scores</a><ul>
+<li><a class="reference internal" href="#the-cat-command">The <em>cat</em> Command</a></li>
+<li><a class="reference internal" href="#the-rid-command">The <em>rid</em> Command</a></li>
+<li><a class="reference internal" href="#assembling-parts-using-the-assemble-command">Assembling Parts Using the <em>assemble</em> Command</a></li>
+<li><a class="reference internal" href="#aligning-durations-using-the-timebase-command">Aligning Durations Using the <em>timebase</em> Command</a></li>
+<li><a class="reference internal" href="#assembling-n-tuplets">Assembling N-tuplets</a></li>
+<li><a class="reference internal" href="#checking-an-assembled-score-using-proof">Checking an Assembled Score Using <em>proof</em></a></li>
+<li><a class="reference internal" href="#other-uses-for-the-timebase-command">Other Uses for the <em>timebase</em> Command</a></li>
+<li><a class="reference internal" href="#additional-uses-of-assemble-and-timebase">Additional Uses of <em>assemble</em> and <em>timebase</em></a></li>
+<li><a class="reference internal" href="#reprise">Reprise</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/userguide/guide/guide13.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <img alt="" src="userguide/guide/../HumdrumIcon.gif" />
+<img alt="Humdrum" src="userguide/guide/../HumdrumHeader.gif" />
+<img alt="" src="userguide/guide/../HumdrumSpacer.gif" />
+<div class="section" id="chapter13">
+<h1>Chapter13<a class="headerlink" href="#chapter13" title="Permalink to this headline">¶</a></h1>
+<p>[<a href="#id25"><span class="problematic" id="id26">`*Previous Chapter*`_</span></a>] [<a href="#id27"><span class="problematic" id="id28">`*Contents*`_</span></a>] [<a href="#id29"><span class="problematic" id="id30">`*Next Chapter*`_</span></a>]</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="assembling-scores">
+<h1>Assembling Scores<a class="headerlink" href="#assembling-scores" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<p>In the previous chapter we learned how to extract parts and passages from
+Humdrum files. In this chapter we discuss the reverse procedures: how to
+assemble and coordinate larger documents from individual segments and parts.
+We will discuss four tools: the UNIX <strong>cat</strong> command, and the Humdrum
+<a href="#id31"><span class="problematic" id="id32">`**assemble**`_</span></a>, <a href="#id33"><span class="problematic" id="id34">`**timebase**`_</span></a> and <a href="#id35"><span class="problematic" id="id36">`**rid**`_</span></a> commands.</p>
+<div class="section" id="the-cat-command">
+<h2>The <em>cat</em> Command<a class="headerlink" href="#the-cat-command" title="Permalink to this headline">¶</a></h2>
+<p>The UNIX <strong>cat</strong> command allows two or more inputs to be concatenated
+together. If we concatenate two files, the output will consist of the
+contents of the first file, followed immediately by the contents of the
+second file. For example, the following command will concatenate together the
+files <tt class="docutils literal"><span class="pre">mov.1</span></tt>, <tt class="docutils literal"><span class="pre">mov.2</span></tt> and <tt class="docutils literal"><span class="pre">mov.3</span></tt> and place the result in the file
+<tt class="docutils literal"><span class="pre">complete</span></tt>. The order of concatenation is the same as the order of file
+names given on the command line:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">cat</span> <span class="pre">mov.1</span> <span class="pre">mov.2</span> <span class="pre">mov.3</span> <span class="pre">&gt;</span> <span class="pre">complete</span></tt></p>
+<p>If each of the concatenated files conforms to the Humdrum syntax, then the
+resulting combined file is guaranteed to conform to the Humdrum syntax.
+However, in many cases, there may be redundant information present in the
+concatenated output. Suppose we had three files, each of which encoded a
+single measure of music. Concatenating them together might result in an
+output such as the following:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">!!</span> <span class="pre">File</span> <span class="pre">1</span>
+<span class="pre">&gt;</span> <span class="pre">``**kern**kern**kern**kern</span>
+<span class="pre">&gt;</span> <span class="pre">``*M4/4*M4/4*M4/4*M4/4</span>
+<span class="pre">&gt;</span> <span class="pre">``*G:*G:*G:*G:</span>
+<span class="pre">&gt;</span> <span class="pre">``*k[f#]*k[f#]*k[f#]*k[f#]</span>
+<span class="pre">&gt;</span> <span class="pre">``4GG4B4d4g</span>
+<span class="pre">&gt;</span> <span class="pre">``=1=1=1=1</span>
+<span class="pre">&gt;</span> <span class="pre">``4GG4d4g4b</span>
+<span class="pre">&gt;</span> <span class="pre">``4FF#4d[4a4dd</span>
+<span class="pre">&gt;</span> <span class="pre">``8GG4d8a]4b</span>
+<span class="pre">&gt;</span> <span class="pre">``8BB.[8g.</span>
+<span class="pre">&gt;</span> <span class="pre">``4D4d8g]4a</span>
+<span class="pre">&gt;</span> <span class="pre">``..8f#.</span>
+<span class="pre">&gt;</span> <span class="pre">``*-*-*-*-</span>
+<span class="pre">&gt;</span> <span class="pre">``!!</span> <span class="pre">File</span> <span class="pre">2</span>
+<span class="pre">&gt;</span> <span class="pre">``**kern**kern**kern**kern</span>
+<span class="pre">&gt;</span> <span class="pre">``*M4/4*M4/4*M4/4*M4/4</span>
+<span class="pre">&gt;</span> <span class="pre">``*k[f#]*k[f#]*k[f#]*k[f#]</span>
+<span class="pre">&gt;</span> <span class="pre">``=2=2=2=2</span>
+<span class="pre">&gt;</span> <span class="pre">``8G4d4g4b</span>
+<span class="pre">&gt;</span> <span class="pre">``8F#...</span>
+<span class="pre">&gt;</span> <span class="pre">``4E4e4g4cc#</span>
+<span class="pre">&gt;</span> <span class="pre">``4D;4A;4f#;4dd;</span>
+<span class="pre">&gt;</span> <span class="pre">``8A4cn4a4ee</span>
+<span class="pre">&gt;</span> <span class="pre">``8G...</span>
+<span class="pre">&gt;</span> <span class="pre">``*-*-*-*-</span>
+<span class="pre">&gt;</span> <span class="pre">``!!</span> <span class="pre">File</span> <span class="pre">3</span>
+<span class="pre">&gt;</span> <span class="pre">``**kern**kern**kern**kern</span>
+<span class="pre">&gt;</span> <span class="pre">``*M4/4*M4/4*M4/4*M4/4</span>
+<span class="pre">&gt;</span> <span class="pre">``*k[f#]*k[f#]*k[f#]*k[f#]</span>
+<span class="pre">&gt;</span> <span class="pre">``*k[f#]*k[f#]*k[f#]*k[f#]</span>
+<span class="pre">&gt;</span> <span class="pre">``=3=3=3=3</span>
+<span class="pre">&gt;</span> <span class="pre">``4F#4d[4a8dd</span>
+<span class="pre">&gt;</span> <span class="pre">``...8cc</span>
+<span class="pre">&gt;</span> <span class="pre">``4G4d8a]4b</span>
+<span class="pre">&gt;</span> <span class="pre">``..[8g.</span>
+<span class="pre">&gt;</span> <span class="pre">``8C#8e8g]4a</span>
+<span class="pre">&gt;</span> <span class="pre">``8D#4B8f#.</span>
+<span class="pre">&gt;</span> <span class="pre">``8E.8e8g</span>
+<span class="pre">&gt;</span> <span class="pre">``8F#8A8d8a</span>
+<span class="pre">&gt;</span> <span class="pre">``*-*-*-*-</span></tt></p>
+<p>Notice that each complete measure ends with spine-path terminators and that
+the <a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id37"><span class="problematic" id="id38">`**kern```_</span></a> exclusive interpretations are repeated. This organization
+has a number of repercussions for various Humdrum tools. For example, the
+<a href="#id39"><span class="problematic" id="id40">`**mint**`_</span></a> command calculates melodic intervals between successive notes
+within a spine. However, <strong>mint</strong> will not calculate intervals between
+pitches that are separated by a spine-path terminator. In other words, in the
+above output, <strong>mint</strong> will fail to calculate the melodic intervals between
+notes in successive measures.</p>
+</div>
+<div class="section" id="the-rid-command">
+<h2>The <em>rid</em> Command<a class="headerlink" href="#the-rid-command" title="Permalink to this headline">¶</a></h2>
+<p>This problem can be resolved by using the Humdrum <a href="#id41"><span class="problematic" id="id42">`**rid**`_</span></a> command. The
+<strong>rid</strong> command can be used to eliminate various kinds of records. Each
+option for <strong>rid</strong> eliminates a different class of records. Here are the
+record classes with their associated options:</p>
+<p>&gt; -Geliminate all global comments
+&gt; -geliminate only global comments that are empty
+&gt; -Leliminate all local comments
+&gt; -leliminate only local comments that are empty
+&gt; -Ieliminate all interpretations
+&gt; -ieliminate only null interpretations
+&gt; -Deliminate all data records
+&gt; -deliminate only null data records
+&gt; -Teliminate all tandem interpretations
+&gt; -teliminate duplicate (repeated) tandem interpretations
+&gt; -Ueliminate unnecessary exclusive interpretations (see below)
+&gt; -usame as -U</p>
+<p>Null records are devoid of content. For example, null interpretations consist
+of a single asterisk in each spine; null data record consists of just null
+data tokens (.) in each spine; null local comments consist of a single
+exclamation mark in each spine. Null global comments contain just two
+exclamation marks at the beginning of a record.</p>
+<p>Upper- and lower-case options are used to distinguish <em>all</em> records of a
+certain class (upper-case) from <em>empty</em>, <em>null</em> or <em>repeated</em> records of a
+certain class (lower-case).</p>
+<p>By way of example, the following command will eliminate all global comments
+(including reference records) from the input:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">rid</span> <span class="pre">-G</span> <span class="pre">Saint-Saens</span></tt></p>
+<p>Similarly, the following command will eliminate all tandem interpretations
+from an input:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">rid</span> <span class="pre">-T</span> <span class="pre">Vaughan-Williams</span></tt></p>
+<p>Options can be combined. The following command eliminates all global and
+local comments, interpretations, and null data records:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">rid</span> <span class="pre">-GLId</span></tt></p>
+<p>The option combination <strong>-GLId</strong> is very common with <strong>rid</strong> since only non-
+null data records are retained in the output.</p>
+<p>With the <strong>-u</strong> option, <strong>rid</strong> will remove &#8220;unnecessary&#8221; exclusive
+interpretations. Exclusive interpretations are deemed unnecessary if they
+don&#8217;t change the current status of the data. In the following example, the
+second <tt class="docutils literal"><span class="pre">**psaltery</span></tt> interpretation is redundant. The <strong>rid -u</strong> command
+would remove the first spine-path terminator and the second exclusive
+interpretation &#8211; leaving a continuous data spine.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">**psaltery</span>
+<span class="pre">&gt;</span> <span class="pre">``.</span></tt>
+&gt; <tt class="docutils literal"><span class="pre">.</span></tt>
+&gt; <tt class="docutils literal"><span class="pre">.</span></tt>
+&gt; <tt class="docutils literal"><span class="pre">*-</span></tt>
+&gt; <tt class="docutils literal"><span class="pre">**psaltery</span>
+<span class="pre">&gt;</span> <span class="pre">``.</span></tt>
+&gt; <tt class="docutils literal"><span class="pre">*-</span></tt></p>
+<p>In addition, <strong>rid</strong> provides a <strong>-t</strong> option which removes &#8220;duplicate&#8221; or
+repeated tandem interpretations. In the above example there is no need to
+repeat the meter signature and key signature in each measure.  The following
+command will concatenate each of the three measures together, and then
+eliminate the unwanted interpretations:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">cat</span> <span class="pre">bar1</span> <span class="pre">bar2</span> <span class="pre">bar3</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-ut</span></tt></p>
+<p>The resulting output is given below:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">!!</span> <span class="pre">File</span> <span class="pre">1</span>
+<span class="pre">&gt;</span> <span class="pre">``**kern**kern**kern**kern</span>
+<span class="pre">&gt;</span> <span class="pre">``*M4/4*M4/4*M4/4*M4/4</span>
+<span class="pre">&gt;</span> <span class="pre">``*k[f#]*k[f#]*k[f#]*k[f#]</span>
+<span class="pre">&gt;</span> <span class="pre">``4GG4B4d4g</span>
+<span class="pre">&gt;</span> <span class="pre">``=1=1=1=1</span>
+<span class="pre">&gt;</span> <span class="pre">``4GG4d4g4b</span>
+<span class="pre">&gt;</span> <span class="pre">``4FF#4d[4a4dd</span>
+<span class="pre">&gt;</span> <span class="pre">``8GG4d8a]4b</span>
+<span class="pre">&gt;</span> <span class="pre">``8BB.[8g.</span>
+<span class="pre">&gt;</span> <span class="pre">``4D4d8g]4a</span>
+<span class="pre">&gt;</span> <span class="pre">``..8f#.</span>
+<span class="pre">&gt;</span> <span class="pre">``!!</span> <span class="pre">File</span> <span class="pre">2</span>
+<span class="pre">&gt;</span> <span class="pre">``=2=2=2=2</span>
+<span class="pre">&gt;</span> <span class="pre">``8G4d4g4b</span>
+<span class="pre">&gt;</span> <span class="pre">``8F#...</span>
+<span class="pre">&gt;</span> <span class="pre">``4E4e4g4cc#</span>
+<span class="pre">&gt;</span> <span class="pre">``4D;4A;4f#;4dd;</span>
+<span class="pre">&gt;</span> <span class="pre">``8A4cn4a4ee</span>
+<span class="pre">&gt;</span> <span class="pre">``8G...</span>
+<span class="pre">&gt;</span> <span class="pre">``!!</span> <span class="pre">File</span> <span class="pre">3</span>
+<span class="pre">&gt;</span> <span class="pre">``=3=3=3=3</span>
+<span class="pre">&gt;</span> <span class="pre">``4F#4d[4a8dd</span>
+<span class="pre">&gt;</span> <span class="pre">``...8cc</span>
+<span class="pre">&gt;</span> <span class="pre">``4G4d8a]4b</span>
+<span class="pre">&gt;</span> <span class="pre">``..[8g.</span>
+<span class="pre">&gt;</span> <span class="pre">``8C#8e8g]4a</span>
+<span class="pre">&gt;</span> <span class="pre">``8D#4B8f#.</span>
+<span class="pre">&gt;</span> <span class="pre">``8E.8e8g</span>
+<span class="pre">&gt;</span> <span class="pre">``8F#8A8d8a</span>
+<span class="pre">&gt;</span> <span class="pre">``*-*-*-*-</span></tt></p>
+<p>Of course care should be exercised when concatenating inputs together.
+Although an output may conform to the Humdrum syntax, the result can
+nevertheless violate conventions for a specific representation such as
+<tt class="docutils literal"><span class="pre">**kern</span></tt>. For example, if we were to concatenate measure 85 to measure 87,
+it is possible that tied-notes won&#8217;t match up, or that phrases will begin
+without ending, etc. These anomalies may cause problems with subsequent
+processing.</p>
+</div>
+<div class="section" id="assembling-parts-using-the-assemble-command">
+<h2>Assembling Parts Using the <em>assemble</em> Command<a class="headerlink" href="#assembling-parts-using-the-assemble-command" title="Permalink to this headline">¶</a></h2>
+<p>Assembling parts into a full score is slightly more challenging than
+concatenating together musical segments. The principle tool for joining
+spines together is the <a href="#id43"><span class="problematic" id="id44">`**assemble**`_</span></a> command. Consider the following two
+files:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">!!</span> <span class="pre">Assemble</span> <span class="pre">example</span>
+<span class="pre">&gt;</span> <span class="pre">``!!</span> <span class="pre">File</span> <span class="pre">1</span>
+<span class="pre">&gt;</span> <span class="pre">``**Letters</span>
+<span class="pre">&gt;</span> <span class="pre">``!</span> <span class="pre">A</span> <span class="pre">to</span> <span class="pre">E</span>
+<span class="pre">&gt;</span> <span class="pre">``A</span>
+<span class="pre">&gt;</span> <span class="pre">``B</span>
+<span class="pre">&gt;</span> <span class="pre">``C</span>
+<span class="pre">&gt;</span> <span class="pre">``D</span>
+<span class="pre">&gt;</span> <span class="pre">``E</span>
+<span class="pre">&gt;</span> <span class="pre">``*-</span></tt></p>
+<p>&gt; <tt class="docutils literal"><span class="pre">!!</span> <span class="pre">Assemble</span> <span class="pre">example</span>
+<span class="pre">&gt;</span> <span class="pre">``!!</span> <span class="pre">File</span> <span class="pre">2</span>
+<span class="pre">&gt;</span> <span class="pre">``**Numbers</span>
+<span class="pre">&gt;</span> <span class="pre">``!</span> <span class="pre">1</span> <span class="pre">to</span> <span class="pre">5</span>
+<span class="pre">&gt;</span> <span class="pre">``1</span>
+<span class="pre">&gt;</span> <span class="pre">``2</span>
+<span class="pre">&gt;</span> <span class="pre">``3</span>
+<span class="pre">&gt;</span> <span class="pre">``4</span>
+<span class="pre">&gt;</span> <span class="pre">``5</span>
+<span class="pre">&gt;</span> <span class="pre">``*-</span></tt></p>
+<p>These two files can be aligned side by side using <strong>assemble</strong>:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">letters</span> <span class="pre">numbers</span></tt></p>
+<p>The resulting output is:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">!!</span> <span class="pre">Assemble</span> <span class="pre">example</span>
+<span class="pre">&gt;</span> <span class="pre">``!!</span> <span class="pre">File</span> <span class="pre">1</span>
+<span class="pre">&gt;</span> <span class="pre">``!!</span> <span class="pre">File</span> <span class="pre">2</span>
+<span class="pre">&gt;</span> <span class="pre">``**Letters**Numbers</span>
+<span class="pre">&gt;</span> <span class="pre">``!</span> <span class="pre">A</span> <span class="pre">to</span> <span class="pre">E!</span> <span class="pre">1</span> <span class="pre">to</span> <span class="pre">5</span>
+<span class="pre">&gt;</span> <span class="pre">``A1</span>
+<span class="pre">&gt;</span> <span class="pre">``B2</span>
+<span class="pre">&gt;</span> <span class="pre">``C3</span>
+<span class="pre">&gt;</span> <span class="pre">``D4</span>
+<span class="pre">&gt;</span> <span class="pre">``E5</span>
+<span class="pre">&gt;</span> <span class="pre">``*-*-</span></tt></p>
+<p>Note the following: (1) The spines are joined side by side from left to right
+in the same order as specified on the command line. (2) Local comments are
+preserved in their appropriate spines. (3) When identical global comments
+occur at the same location in both files, only a single instance of the
+comment is output. (4) Dissimilar global comments are output successively.</p>
+<p>The files joined by <strong>assemble</strong> are not confined to a single spine. For
+example, one input file may contain 2 spines and a second file may contain 20
+spines. The resulting output will contain 22 spines. There is no limit to the
+number of files that can be assembled at one time.</p>
+<p>In many cases, the input files will have dissimilar lengths. The <strong>assemble</strong>
+command will correctly terminate the appropriate spines. For example, in the
+above case, if the <tt class="docutils literal"><span class="pre">numbers</span></tt> file contained only the numbers 1 to 3, the
+assembled output would appear as follows:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">!!</span> <span class="pre">Assemble</span> <span class="pre">example</span>
+<span class="pre">&gt;</span> <span class="pre">``!!</span> <span class="pre">File</span> <span class="pre">1</span>
+<span class="pre">&gt;</span> <span class="pre">``!!</span> <span class="pre">File</span> <span class="pre">2</span>
+<span class="pre">&gt;</span> <span class="pre">``**Letters**Numbers</span>
+<span class="pre">&gt;</span> <span class="pre">``!</span> <span class="pre">A</span> <span class="pre">to</span> <span class="pre">E!</span> <span class="pre">1</span> <span class="pre">to</span> <span class="pre">3</span>
+<span class="pre">&gt;</span> <span class="pre">``A1</span>
+<span class="pre">&gt;</span> <span class="pre">``B2</span>
+<span class="pre">&gt;</span> <span class="pre">``C3</span>
+<span class="pre">&gt;</span> <span class="pre">``**-</span>
+<span class="pre">&gt;</span> <span class="pre">``D</span>
+<span class="pre">&gt;</span> <span class="pre">``E</span>
+<span class="pre">&gt;</span> <span class="pre">``*-</span></tt></p>
+<p>If the order of the input files was reversed, <strong>assemble</strong> would produce an
+output with the appropriate spine-path changes:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">!!</span> <span class="pre">Assemble</span> <span class="pre">example</span>
+<span class="pre">&gt;</span> <span class="pre">``!!</span> <span class="pre">File</span> <span class="pre">2</span>
+<span class="pre">&gt;</span> <span class="pre">``!!</span> <span class="pre">File</span> <span class="pre">1</span>
+<span class="pre">&gt;</span> <span class="pre">``**Numbers**Letters</span>
+<span class="pre">&gt;</span> <span class="pre">``!</span> <span class="pre">1</span> <span class="pre">to</span> <span class="pre">3!</span> <span class="pre">A</span> <span class="pre">to</span> <span class="pre">E</span>
+<span class="pre">&gt;</span> <span class="pre">``1A</span>
+<span class="pre">&gt;</span> <span class="pre">``2B</span>
+<span class="pre">&gt;</span> <span class="pre">``3C</span>
+<span class="pre">&gt;</span> <span class="pre">``*-*</span>
+<span class="pre">&gt;</span> <span class="pre">``D</span>
+<span class="pre">&gt;</span> <span class="pre">``E</span>
+<span class="pre">&gt;</span> <span class="pre">``*-</span></tt></p>
+<p>Note that if all of the input files conform to the Humdrum syntax, then
+<a href="#id45"><span class="problematic" id="id46">`**assemble**`_</span></a> guarantees that the assembled output will also conform to the
+Humdrum syntax.</p>
+</div>
+<div class="section" id="aligning-durations-using-the-timebase-command">
+<h2>Aligning Durations Using the <em>timebase</em> Command<a class="headerlink" href="#aligning-durations-using-the-timebase-command" title="Permalink to this headline">¶</a></h2>
+<p>Suppose now that we wanted to join two hypothetical files containing
+<a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id47"><span class="problematic" id="id48">`**kern```_</span></a> data. The first file contains two quarter notes, whereas the
+second file contains four eighth notes:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">!!</span> <span class="pre">File</span> <span class="pre">1</span>
+<span class="pre">&gt;</span> <span class="pre">``**kern</span>
+<span class="pre">&gt;</span> <span class="pre">``4c</span>
+<span class="pre">&gt;</span> <span class="pre">``4d</span>
+<span class="pre">&gt;</span> <span class="pre">``*-</span></tt></p>
+<p>&gt; <tt class="docutils literal"><span class="pre">!!</span> <span class="pre">File</span> <span class="pre">2</span>
+<span class="pre">&gt;</span> <span class="pre">``**kern</span>
+<span class="pre">&gt;</span> <span class="pre">``8e</span>
+<span class="pre">&gt;</span> <span class="pre">``8g</span>
+<span class="pre">&gt;</span> <span class="pre">``8f</span>
+<span class="pre">&gt;</span> <span class="pre">``8g</span>
+<span class="pre">&gt;</span> <span class="pre">``*-</span></tt></p>
+<p>Using <strong>assemble</strong> to paste them together will clearly lead to an
+uncoordinated result. The two quarter notes in file 1 will be incorrectly
+matched with the first two eighth notes in file 2.</p>
+<p>The Humdrum <a href="#id49"><span class="problematic" id="id50">`**timebase**`_</span></a> command can be used to reformat either
+<a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id51"><span class="problematic" id="id52">`**kern```_</span></a> or <a href="#id7"><span class="problematic" id="id8">``</span></a><a href="#id53"><span class="problematic" id="id54">`**recip```_</span></a> inputs so that each output data record
+represents an equivalent slice (elapsed duration) of time. (Barlines are
+ignored by <strong>timebase</strong>.) The <strong>timebase</strong> command achieves this by padding
+an input with null data records. In the above case, we would preprocess file
+1 as follows:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">timebase</span> <span class="pre">-t</span> <span class="pre">8</span> <span class="pre">file1</span> <span class="pre">&gt;</span> <span class="pre">file1.tb</span></tt></p>
+<p>The new file would look like this:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">!!</span> <span class="pre">File</span> <span class="pre">1</span>
+<span class="pre">&gt;</span> <span class="pre">``**kern</span>
+<span class="pre">&gt;</span> <span class="pre">``4c</span>
+<span class="pre">&gt;</span> <span class="pre">``.</span>
+<span class="pre">&gt;</span> <span class="pre">``4d</span>
+<span class="pre">&gt;</span> <span class="pre">``.</span>
+<span class="pre">&gt;</span> <span class="pre">``*-</span></tt></p>
+<p>The <strong>-t</strong> option is used to indicate the &#8220;time base&#8221; &#8211; in this case, an
+eighth duration. Since all non-barline data records in both files represent
+elapsed durations of an eighth-note, we can continue by using the
+<strong>assemble</strong> command as before. The command:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">file1.tb</span> <span class="pre">file2</span></tt></p>
+<p>will result in the following two-part score:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">!!</span> <span class="pre">File</span> <span class="pre">1</span>
+<span class="pre">&gt;</span> <span class="pre">``!!</span> <span class="pre">File</span> <span class="pre">2</span>
+<span class="pre">&gt;</span> <span class="pre">``**kern**kern</span>
+<span class="pre">&gt;</span> <span class="pre">``4c8e</span>
+<span class="pre">&gt;</span> <span class="pre">``.8g</span>
+<span class="pre">&gt;</span> <span class="pre">``4d8f</span>
+<span class="pre">&gt;</span> <span class="pre">``.8g</span>
+<span class="pre">&gt;</span> <span class="pre">``*-*-</span></tt></p>
+<p>Suppose that <tt class="docutils literal"><span class="pre">file2</span></tt> also contained a quarter-note. For example, consider a
+revised <tt class="docutils literal"><span class="pre">file2</span></tt>:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">!!</span> <span class="pre">File</span> <span class="pre">2</span>
+<span class="pre">&gt;</span> <span class="pre">``**kern</span>
+<span class="pre">&gt;</span> <span class="pre">``8e</span>
+<span class="pre">&gt;</span> <span class="pre">``8g</span>
+<span class="pre">&gt;</span> <span class="pre">``4f</span>
+<span class="pre">&gt;</span> <span class="pre">``*-</span></tt></p>
+<p>Before assembling the two parts, we would need to apply the <strong>timebase</strong>
+command to this file (using the same 8th-note time-base value). Assembling
+the two &#8220;time-based&#8221; files would produce the following result:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">!!</span> <span class="pre">File</span> <span class="pre">1</span>
+<span class="pre">&gt;</span> <span class="pre">``!!</span> <span class="pre">File</span> <span class="pre">2</span>
+<span class="pre">&gt;</span> <span class="pre">``**kern**kern</span>
+<span class="pre">&gt;</span> <span class="pre">``4c8e</span>
+<span class="pre">&gt;</span> <span class="pre">``.8g</span>
+<span class="pre">&gt;</span> <span class="pre">``4d4f</span>
+<span class="pre">&gt;</span> <span class="pre">``..</span>
+<span class="pre">&gt;</span> <span class="pre">``*-*-</span></tt></p>
+<p>Notice that we have a spurious null data record in the last line; both parts
+encode null tokens. For most processing, the presence of null data records is
+inconsequential. However, if we wish, these null data records can be
+eliminated using the <strong>rid</strong> command with the <strong>-d</strong> option. In fact it is
+common to follow an <strong>assemble</strong> command with <strong>rid -d</strong> to strip away
+unnecessary null data records. The command:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">file1.tb</span> <span class="pre">file2.tb</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-d</span></tt></p>
+<p>would result in the following output:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">!!</span> <span class="pre">File</span> <span class="pre">1</span>
+<span class="pre">&gt;</span> <span class="pre">``!!</span> <span class="pre">File</span> <span class="pre">2</span>
+<span class="pre">&gt;</span> <span class="pre">``**kern**kern</span>
+<span class="pre">&gt;</span> <span class="pre">``4c8e</span>
+<span class="pre">&gt;</span> <span class="pre">``.8g</span>
+<span class="pre">&gt;</span> <span class="pre">``4d4f</span>
+<span class="pre">&gt;</span> <span class="pre">``*-*-</span></tt></p>
+<p>The <a href="#id55"><span class="problematic" id="id56">`**timebase**`_</span></a> command can be applied to multi-spine inputs as well as
+single-spine inputs. Consider, the following input:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">**kern**kern**kern**kern**commentary</span>
+<span class="pre">&gt;</span> <span class="pre">``4g8.r8.cc16ee2nd</span> <span class="pre">inversion</span>
+<span class="pre">&gt;</span> <span class="pre">``...8ff.</span>
+<span class="pre">&gt;</span> <span class="pre">``.32b16cc16ggclash</span>
+<span class="pre">&gt;</span> <span class="pre">``.32a...</span>
+<span class="pre">&gt;</span> <span class="pre">``8f8cc8dd8ffsuspension</span>
+<span class="pre">&gt;</span> <span class="pre">``*-*-*-*-*-</span></tt></p>
+<p>The following command will cause the addition of null data records so that
+each data record represents an elapsed time of a 32nd duration. Incidentally,
+notice that any spine contain non-rhythmic data &#8211; such as the
+<tt class="docutils literal"><span class="pre">**commentary</span></tt> spine in the above example &#8211; is also transformed so that
+synchronous data is maintained.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">timebase</span> <span class="pre">-t</span> <span class="pre">32</span> <span class="pre">Corelli</span></tt></p>
+<p>The corresponding output is as follows.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">**kern**kern**kern**kern**commentary</span>
+<span class="pre">&gt;</span> <span class="pre">``*tb32*tb32*tb32*tb32*tb32</span>
+<span class="pre">&gt;</span> <span class="pre">``4g8.r8.cc16ee2nd</span> <span class="pre">inversion</span>
+<span class="pre">&gt;</span> <span class="pre">``.....</span>
+<span class="pre">&gt;</span> <span class="pre">``...8ff.</span>
+<span class="pre">&gt;</span> <span class="pre">``.....</span>
+<span class="pre">&gt;</span> <span class="pre">``.....</span>
+<span class="pre">&gt;</span> <span class="pre">``.....</span>
+<span class="pre">&gt;</span> <span class="pre">``.32b16cc16ggclash</span>
+<span class="pre">&gt;</span> <span class="pre">``.32a...</span>
+<span class="pre">&gt;</span> <span class="pre">``8f8cc8dd8ffsuspension</span>
+<span class="pre">&gt;</span> <span class="pre">``.....</span>
+<span class="pre">&gt;</span> <span class="pre">``.....</span>
+<span class="pre">&gt;</span> <span class="pre">``.....</span>
+<span class="pre">&gt;</span> <span class="pre">``*-*-*-*-*-</span></tt></p>
+<p>Notice that <strong>timebase</strong> has added a tandem interpretation (<tt class="docutils literal"><span class="pre">*tb32</span></tt>). This
+indicates that the output has been processed so that each non-barline data
+record represents an elapsed duration equivalent to a thirty-second note.</p>
+</div>
+<div class="section" id="assembling-n-tuplets">
+<h2>Assembling N-tuplets<a class="headerlink" href="#assembling-n-tuplets" title="Permalink to this headline">¶</a></h2>
+<p>Typically, one can simply use the shortest duration present as a guide for a
+suitable time-base value. The shortest duration can be determined using the
+<a href="#id57"><span class="problematic" id="id58">`**census**`_</span></a> -k command described in <a class="reference external" href="guide04.html">Chapter 4.</a> However, tuplets require
+a little more sophistication. Suppose we wanted to assemble two parts, one
+containing just eighth-notes and the other containing just quarter-note
+triplets. (The quarter-note triplets will be encoded as three notes in the
+time of a half-note, or &#8220;6th&#8221; notes.) We need to create an output whose
+rhythmic structure will appear as follows:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">**kern**kern</span>
+<span class="pre">&gt;</span> <span class="pre">``*M2/4*M2/4</span>
+<span class="pre">&gt;</span> <span class="pre">``=1=1</span>
+<span class="pre">&gt;</span> <span class="pre">``68</span>
+<span class="pre">&gt;</span> <span class="pre">``.8</span>
+<span class="pre">&gt;</span> <span class="pre">``6.</span>
+<span class="pre">&gt;</span> <span class="pre">``.8</span>
+<span class="pre">&gt;</span> <span class="pre">``6.</span>
+<span class="pre">&gt;</span> <span class="pre">``.8</span>
+<span class="pre">&gt;</span> <span class="pre">``=2=2</span>
+<span class="pre">&gt;</span> <span class="pre">``68</span>
+<span class="pre">&gt;</span> <span class="pre">``.8</span>
+<span class="pre">&gt;</span> <span class="pre">``6.</span>
+<span class="pre">&gt;</span> <span class="pre">``.8</span>
+<span class="pre">&gt;</span> <span class="pre">``6.</span>
+<span class="pre">&gt;</span> <span class="pre">``.8</span>
+<span class="pre">&gt;</span> <span class="pre">``=3=3</span>
+<span class="pre">&gt;</span> <span class="pre">``*-*-</span></tt></p>
+<p>In this case, choosing a time-base according to the shortest duration (8th)
+will not work since a 6th note is not an integral multiple of the eighth
+duration. We need to find a <em>common duration factor</em> for both values. The
+shortest common duration is a 24th note (there are three 24th notes in an 8th
+note, and four 24th notes in a 6th note). Applying the time-base value <a href="#id9"><span class="problematic" id="id10">`</span></a>24&#8217;
+to both files will allow us to coordinate them properly. Remember that <strong>rid
+-d</strong> can be used to eliminate unnecessary null data records once we have
+finished assembling the spines. In the worst case, you can determine a common
+duration factor by simply multiplying together the shortest notes in the
+files to be assembled. For example, 6 x 8 = 48; so a time-base of 48 will be
+guaranteed to work for both files.</p>
+</div>
+<div class="section" id="checking-an-assembled-score-using-proof">
+<h2>Checking an Assembled Score Using <em>proof</em><a class="headerlink" href="#checking-an-assembled-score-using-proof" title="Permalink to this headline">¶</a></h2>
+<p>In assembling any score from a set of parts, there is always the danger of
+using the wrong time-base value. When parts are miscoordinated, it is
+typically the consequence of one or more notes being discarded by
+<strong>timebase</strong>. Fortunately, such miscoordinations are easily detected by
+applying the <a href="#id59"><span class="problematic" id="id60">`**proof**`_</span></a> command to any assembled <tt class="docutils literal"><span class="pre">**kern</span></tt> output. The
+<strong>proof</strong> utility checks <tt class="docutils literal"><span class="pre">**kern</span></tt> representations for a wide variety of
+possible encoding errors or ambiguities:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">proof</span> <span class="pre">fullscore</span></tt></p>
+<p>By way of summary, creating a full score from a set of <a href="#id11"><span class="problematic" id="id12">``</span></a><a href="#id61"><span class="problematic" id="id62">`**kern```_</span></a> parts
+involves the following five tasks: (1) Identify a common duration factor for
+all the parts. Use <a href="#id63"><span class="problematic" id="id64">`**census**`_</span></a> to determine the shortest duration; if any
+of the parts contains an N-tuplet, then the common duration factor may be
+smaller than the shortest note. (2) Use the <a href="#id65"><span class="problematic" id="id66">`**timebase**`_</span></a> command to expand
+each input file separately using the common duration factor. (3) Assemble the
+parts using <a href="#id67"><span class="problematic" id="id68">`**assemble**.`_</span></a> (4) If desired, eliminate unnecessary null data
+records usingi <a href="#id69"><span class="problematic" id="id70">`**rid -d**.`_</span></a> (5) Check the assembled score for rhythmic
+coherence using the <a href="#id71"><span class="problematic" id="id72">`**proof**`_</span></a> command.</p>
+</div>
+<div class="section" id="other-uses-for-the-timebase-command">
+<h2>Other Uses for the <em>timebase</em> Command<a class="headerlink" href="#other-uses-for-the-timebase-command" title="Permalink to this headline">¶</a></h2>
+<p>The most common use of <strong>timebase</strong> is as a way of expanding a file by
+padding it with null data records. However, <strong>timebase</strong> can also be used to
+contract a file, giving us only those sonorities that lie a fixed duration
+apart. For example, specifying a time-base of <strong>-t 2</strong> will cause only those
+sonorities that are separated by a half-note duration to be output. This sort
+of rhythmic reduction can be useful in certain circumstances. For example,
+suppose you suspect there may be a hemiola tendency in a given work by
+Brahms, where the duration separating hemiola notes is a dotted-quarter. The
+command:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">timebase</span> <span class="pre">-t</span> <span class="pre">4.</span> <span class="pre">brahms</span></tt></p>
+<p>can be used to extract only those sonorities that are separated by a dotted-
+quarter duration.</p>
+<p>Similarly, suppose we want to extract all sonorities falling on the third
+beat of a waltz written in 3/2 meter. First we would edit the input file so
+it begins on the third beat of some measure. Then we could use the following
+command:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">^=</span> <span class="pre">waltz</span> <span class="pre">|</span> <span class="pre">timebase</span> <span class="pre">-t</span> <span class="pre">1.</span> <span class="pre">&gt;</span> <span class="pre">3rd_beat</span></tt></p>
+<p>Note that the use of <strong>grep</strong> here is essential in order to eliminate
+barlines. The <strong>timebase</strong> command resets itself with each barline, so time-
+base durations are calculated from the beginning of the bar. When barlines
+are eliminated, <strong>timebase</strong> cannot synchronize to the beginning of each bar
+and so simply floats along at the fixed time-base.</p>
+</div>
+<div class="section" id="additional-uses-of-assemble-and-timebase">
+<h2>Additional Uses of <em>assemble</em> and <em>timebase</em><a class="headerlink" href="#additional-uses-of-assemble-and-timebase" title="Permalink to this headline">¶</a></h2>
+<p>Although we normally assemble parts together, sometimes it is useful to
+assemble entire scores together. Suppose we wanted to listen to a theme at
+the same time as one of its variations. We might first use <a href="#id73"><span class="problematic" id="id74">`**yank**`_</span></a> to
+extract the appropriate sections. At the same time we might determine a
+common duration factor and expand them using <strong>timebase</strong>.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-s</span> <span class="pre">Theme</span> <span class="pre">-r</span> <span class="pre">1</span> <span class="pre">blacksmith</span> <span class="pre">|</span> <span class="pre">timebase</span> <span class="pre">-t</span> <span class="pre">32</span> <span class="pre">&gt;</span> <span class="pre">temp1</span></tt>
+<tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-s</span> <span class="pre">'Variation</span> <span class="pre">1'</span> <span class="pre">-r</span> <span class="pre">1</span> <span class="pre">blacksmith</span> <span class="pre">|</span> <span class="pre">timebase</span> <span class="pre">-t</span> <span class="pre">32</span> <span class="pre">&gt;</span> <span class="pre">temp2</span></tt></p>
+<p>Then we assemble the two sections together, translate to the <a href="#id13"><span class="problematic" id="id14">``</span></a><a href="#id75"><span class="problematic" id="id76">`**MIDI```_</span></a>
+representation and use <a href="#id77"><span class="problematic" id="id78">`**perform**`_</span></a> to listen to both sections at the same
+time:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">temp1</span> <span class="pre">temp2</span> <span class="pre">|</span> <span class="pre">midi</span> <span class="pre">|</span> <span class="pre">perform</span></tt></p>
+<p>Similarly, suppose we would like to compare the bass lines for each variation
+in some set. We might extract each of the bass lines, assemble them into a
+single score, and then use the <strong>ms</strong> and <strong>ghostview</strong> commands to allow us
+to see all of the bass lines for all of the variations concurrently.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-s</span> <span class="pre">'Variation</span> <span class="pre">1'</span> <span class="pre">-r</span> <span class="pre">1</span> <span class="pre">goldberg</span> <span class="pre">|</span> <span class="pre">timebase</span> <span class="pre">-t</span> <span class="pre">16</span> <span class="pre">&gt;</span> <span class="pre">temp1</span></tt>
+<tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-s</span> <span class="pre">'Variation</span> <span class="pre">2'</span> <span class="pre">-r</span> <span class="pre">1</span> <span class="pre">goldberg</span> <span class="pre">|</span> <span class="pre">timebase</span> <span class="pre">-t</span> <span class="pre">16</span> <span class="pre">&gt;</span> <span class="pre">temp2</span></tt>
+etc. ...
+<tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">temp1</span> <span class="pre">temp2</span> <span class="pre">temp3</span> <span class="pre">...</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-d</span> <span class="pre">|</span> <span class="pre">ms</span> <span class="pre">&gt;</span> <span class="pre">basslines.ps</span></tt>
+<tt class="docutils literal"><span class="pre">ghostview</span> <span class="pre">basslines.ps</span></tt></p>
+<p>The most common use of <strong>assemble</strong> is not to assemble parts, but to assemble
+different types of concurrent information. Suppose we would like to determine
+whether descending minor seconds are more likely to be <em>fa-mi</em> rather than
+<em>do-ti</em>. We can use the <a href="#id79"><span class="problematic" id="id80">`**mint**`_</span></a> command to characterize melodic
+intervals, and the <a href="#id81"><span class="problematic" id="id82">`**solfa**`_</span></a> command to characterize scale degrees. Assume
+that our input is monophonic:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">mint</span> <span class="pre">melodies</span> <span class="pre">&gt;</span> <span class="pre">temp1</span></tt>
+<tt class="docutils literal"><span class="pre">solfa</span> <span class="pre">melodies</span> <span class="pre">&gt;</span> <span class="pre">temp2</span></tt></p>
+<p>The files <tt class="docutils literal"><span class="pre">temp1</span></tt> and <tt class="docutils literal"><span class="pre">temp2</span></tt> will have the same length, so we can
+assemble them together. This will generate an output consisting of two
+spines, <tt class="docutils literal"><span class="pre">`**mint```_</span> <span class="pre">and</span> <span class="pre">```**solfa```_.</span> <span class="pre">In</span> <span class="pre">effect,</span> <span class="pre">the</span> <span class="pre">``**mint</span></tt> spine
+data will tell us the interval used to approach the scale degree encoded in
+the <tt class="docutils literal"><span class="pre">**solfa</span></tt> spine. We can use <strong>grep</strong> to search for the appropriate
+combinations of interval and scale degree and count the number of
+occurrences:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">temp1</span> <span class="pre">temp2</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'-m2.*mi'</span></tt>
+<tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">temp1</span> <span class="pre">temp2</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'-m2.*ti'</span></tt></p>
+<p>This same approach can be used to address (innumerable) questions pertaining
+to concurrent patterns. For example, suppose we have a <tt class="docutils literal"><span class="pre">`**harm```_</span> <span class="pre">spine</span>
+<span class="pre">that</span> <span class="pre">identifies</span> <span class="pre">the</span> <span class="pre">`Roman</span> <span class="pre">numeral'</span> <span class="pre">functional</span> <span class="pre">harmony</span> <span class="pre">for</span> <span class="pre">some</span> <span class="pre">choral</span> <span class="pre">work.</span>
+<span class="pre">We</span> <span class="pre">can</span> <span class="pre">identify</span> <span class="pre">complex</span> <span class="pre">situations</span> <span class="pre">such</span> <span class="pre">as</span> <span class="pre">the</span> <span class="pre">following:</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">soprano</span>
+<span class="pre">voice,</span> <span class="pre">count</span> <span class="pre">how</span> <span class="pre">many</span> <span class="pre">subdominant</span> <span class="pre">pitches</span> <span class="pre">are</span> <span class="pre">approached</span> <span class="pre">by</span> <span class="pre">an</span> <span class="pre">interval</span> <span class="pre">of</span> <span class="pre">a</span>
+<span class="pre">rising</span> <span class="pre">third</span> <span class="pre">or</span> <span class="pre">a</span> <span class="pre">rising</span> <span class="pre">sixth</span> <span class="pre">and</span> <span class="pre">coincide</span> <span class="pre">with</span> <span class="pre">a</span> <span class="pre">dominant</span> <span class="pre">seventh</span> <span class="pre">chord.</span>
+<span class="pre">First,</span> <span class="pre">let's</span> <span class="pre">extract</span> <span class="pre">the</span> <span class="pre">soprano</span> <span class="pre">line</span> <span class="pre">and</span> <span class="pre">create</span> <span class="pre">a</span> <span class="pre">corresponding</span> <span class="pre">scale</span> <span class="pre">degree</span>
+<span class="pre">representation</span> <span class="pre">using</span> <span class="pre">**deg**.</span> <span class="pre">We</span> <span class="pre">can</span> <span class="pre">use</span> <span class="pre">the</span> <span class="pre">**-a**</span> <span class="pre">option</span> <span class="pre">to</span> <span class="pre">avoid</span>
+<span class="pre">outputting</span> <span class="pre">the</span> <span class="pre">melodic</span> <span class="pre">direction</span> <span class="pre">signifiers</span> <span class="pre">(``^</span></tt> and <tt class="docutils literal"><span class="pre">v</span></tt>):</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*Isopran'</span> <span class="pre">howells</span> <span class="pre">|</span> <span class="pre">deg</span> <span class="pre">-a</span> <span class="pre">&gt;</span> <span class="pre">temp1</span></tt></p>
+<p>Next, let&#8217;s again extract the soprano voice and create a corresponding
+melodic interval representation using <strong>mint</strong>. Since we are not interested
+in interval qualities we can invoke the <strong>-d</strong> option to output only diatonic
+interval sizes.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*Isopran'</span> <span class="pre">howells</span> <span class="pre">|</span> <span class="pre">mint</span> <span class="pre">-d</span> <span class="pre">&gt;</span> <span class="pre">temp2</span></tt>
+<tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**harm'</span> <span class="pre">howells</span> <span class="pre">&gt;</span> <span class="pre">temp3</span></tt></p>
+<p>We have also extracted the <tt class="docutils literal"><span class="pre">**harm</span></tt> spine and placed it in the file
+<tt class="docutils literal"><span class="pre">temp3</span></tt>. If we assemble together our three temporary files, the result will
+have three spines: <tt class="docutils literal"><span class="pre">**deg</span></tt>, <tt class="docutils literal"><span class="pre">**mint</span></tt> and <tt class="docutils literal"><span class="pre">**harm</span></tt>. We can now use
+<strong>grep</strong> to search and count all instances of subdominant pitches that are
+approached by ascending thirds/sixths and that coincide with dominant seventh
+chords (in the <tt class="docutils literal"><span class="pre">**kern</span></tt> representation: <tt class="docutils literal"><span class="pre">`V7</span></tt>&#8216;):</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">temp1</span> <span class="pre">temp2</span> <span class="pre">temp3</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'^4``**``+[36]``**``V7</span></tt></p>
+<p>The <strong>timebase</strong> command can also be used for tasks other than assembling
+parts together. Suppose we would like to determine whether secondary dominant
+chords are more likely to appear on the third beat than other beats in a
+triple meter work. The <strong>timebase</strong> command can be used to reformat a score
+so that each measure occupies the same number of data records. For example,
+in a 3/4 meter, an eighth-note time-base will mean that each measure will
+contain six data records, and the fifth data record will correspond to the
+onset of the third beat. Recall from <a href="#id83"><span class="problematic" id="id84">`Chapter 12`_</span></a> that the <strong>yank -m</strong>
+command allows us to extract particular data records following a specified
+marker. In the following command, we have defined the marker as a barline
+(<tt class="docutils literal"><span class="pre">-m</span> <span class="pre">^=</span></tt>) and instructed <strong>yank</strong> to fetch the fifth line following each
+occurrence of the marker (<tt class="docutils literal"><span class="pre">-r</span> <span class="pre">5</span></tt>). In our example, the <strong>grep</strong> command is
+being used to count V/V chords occurring on third beats:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">timebase</span> <span class="pre">-t</span> <span class="pre">8</span> <span class="pre">strauss</span> <span class="pre">|</span> <span class="pre">solfa</span> <span class="pre">|</span> <span class="pre">yank</span> <span class="pre">-m</span> <span class="pre">=</span> <span class="pre">-r</span> <span class="pre">5</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">re</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">fe</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">la</span></tt></p>
+<p>We can repeat this command for beats one and two by changing the <strong>-r</strong>
+parameter to 1 and 3 respectively.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="reprise">
+<h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
+<p>In this chapter we have learned how to concatenate musical passages together
+using the <strong>cat</strong> command. We also learned how to eliminate redundant
+exclusive and tandem interpretations from concatenated outputs using the
+<strong>-u</strong> and <strong>-t</strong> options for <a href="#id85"><span class="problematic" id="id86">`**rid**`_</span></a>. In addition, we learned how to
+assemble two or more spines into a single output file using <a href="#id87"><span class="problematic" id="id88">`**assemble**`_</span></a>.
+In the case of <tt class="docutils literal"><span class="pre">`**kern```_</span> <span class="pre">and</span> <span class="pre">```**recip```_</span> <span class="pre">representations,</span> <span class="pre">we</span> <span class="pre">learned</span>
+<span class="pre">how</span> <span class="pre">to</span> <span class="pre">use</span> <span class="pre">the</span> <span class="pre">`**timebase**`_</span> <span class="pre">command</span> <span class="pre">to</span> <span class="pre">preprocess</span> <span class="pre">each</span> <span class="pre">constituent</span> <span class="pre">file</span> <span class="pre">so</span>
+<span class="pre">that</span> <span class="pre">all</span> <span class="pre">data</span> <span class="pre">records</span> <span class="pre">represent</span> <span class="pre">equivalent</span> <span class="pre">elapsed</span> <span class="pre">durations.</span> <span class="pre">Having</span>
+<span class="pre">assembled</span> <span class="pre">a</span> <span class="pre">full</span> <span class="pre">score</span> <span class="pre">from</span> <span class="pre">parts,</span> <span class="pre">**rid**</span> <span class="pre">**-d**</span> <span class="pre">can</span> <span class="pre">be</span> <span class="pre">used</span> <span class="pre">to</span> <span class="pre">eliminate</span>
+<span class="pre">any</span> <span class="pre">residual</span> <span class="pre">or</span> <span class="pre">unnecessary</span> <span class="pre">null</span> <span class="pre">data</span> <span class="pre">records.</span> <span class="pre">The</span> <span class="pre">`**proof**`_</span> <span class="pre">command</span> <span class="pre">can</span>
+<span class="pre">be</span> <span class="pre">used</span> <span class="pre">to</span> <span class="pre">ensure</span> <span class="pre">that</span> <span class="pre">any</span> <span class="pre">assembled</span> <span class="pre">``**kern</span></tt> data is correctly aligned.</p>
+<p>Finally, we learned that the <strong>timebase</strong> command can be used for other
+analytic purposes. Specifically, it can be used to reduce a score
+rhythmically so only particular onset points or beats are retained. In
+<a class="reference external" href="guide23.html">Chapter 23</a> we will see additional uses of <strong>timebase</strong> for a variety of
+types of rhythmic tasks.</p>
+<hr class="docutils" />
+<ul class="simple">
+<li>` <a href="#id15"><span class="problematic" id="id16">**</span></a>Next Chapter**`_</li>
+<li>` <a href="#id17"><span class="problematic" id="id18">**</span></a>Previous Chapter**`_</li>
+<li>` <a href="#id19"><span class="problematic" id="id20">**</span></a>Table of Contents**`_</li>
+<li>` <a href="#id21"><span class="problematic" id="id22">**</span></a>Detailed Contents**`_</li>
+</ul>
+<ol class="upperalpha simple" start="3">
+<li>Copyright 1999 David Huron</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">humdrum-tools 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Humdrum Community.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
