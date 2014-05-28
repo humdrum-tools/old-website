@@ -1,0 +1,222 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The Humdrum Cookbook &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="simple">
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sappExtras.html">Humdrum Extras</a></li>
+</ul>
+<ul class="simple">
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>The Humdrum Cookbook</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/cookbook/cookbook.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="the-humdrum-cookbook">
+<h1>The Humdrum Cookbook<a class="headerlink" href="#the-humdrum-cookbook" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="syntax-coloring-in-vim">
+<h2>Syntax Coloring in Vim<a class="headerlink" href="#syntax-coloring-in-vim" title="Permalink to this headline">¶</a></h2>
+<p>Users of VIM rejoice! You can work with Humdrum files with the
+wonderful addition of syntax highlighting. Your days of monochromatic
+editing are gone!</p>
+<p>Simply download the following file <a class="reference external" href="http://www.ccarh.org/software/humdrum/vi/syntax/humdrum.vim">humdrum.vim</a>
+to use in the editor program <em>vim</em> for coloring while editing the different components of the Humdrum data format.</p>
+<p>There are several ways one might use this:</p>
+<ul>
+<li><p class="first"><em>Manual loading</em>: you can load the colorizing for Humdrum data manually by typing one of the following commands inside the vim editor:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">:source</span> <span class="pre">humdrum.vim</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">so</span> <span class="pre">humdrum.vim</span></tt></li>
+</ul>
+</li>
+<li><p class="first"><em>Automatic Loading</em></p>
+<ul>
+<li><dl class="first docutils">
+<dt>First, add these lines to a file in your home directory called <tt class="docutils literal"><span class="pre">.vimrc:</span></tt></dt>
+<dd><ul class="first simple">
+<li><tt class="docutils literal"><span class="pre">syntax</span> <span class="pre">on</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">au</span> <span class="pre">BufRead,BufNewFile</span> <span class="pre">*.hmd</span> <span class="pre">set</span> <span class="pre">filetpye=humdrum</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">au!</span> <span class="pre">Syntax</span> <span class="pre">humdrum</span> <span class="pre">source</span> <span class="pre">~/.vim/humdrum.vim</span></tt></li>
+</ul>
+<p class="last">This basically tells vim to turn on the
+syntax highlighting for filetypes <strong>.hmd</strong> and <strong>.krn</strong>.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Then copy the humdrum.vim file into the location ~/.vim/humdrum.vim</p>
+</li>
+</ul>
+<p>All done!</p>
+</li>
+</ul>
+<a class="reference internal image-reference" href="cookbook/images/vimhighlighting.png"><img alt="cookbook/images/vimhighlighting.png" class="align-right" src="cookbook/images/vimhighlighting.png" /></a>
+<p>Here we have an example of syntax highlighting in vim using the following coloring conventions:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Green: Bibliographic Records</li>
+<li>Light Blue: Global Comments</li>
+<li>Blue: Local Comments</li>
+<li>Pink: Tandem Interpretations</li>
+<li>Red: Exclusive Interpretations</li>
+<li>Red Background: Invalid Tabs</li>
+</ul>
+</div></blockquote>
+<p>Some more highlighting designed for the <tt class="docutils literal"><span class="pre">**kern</span></tt> representation:</p>
+<blockquote>
+<div><ul class="simple">
+<li>White Background: Measure Lines</li>
+<li>White Background: Chords</li>
+<li>Blue Background: Invalid Chording Spaces</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="projects-using-humdrum">
+<h2>Projects using Humdrum<a class="headerlink" href="#projects-using-humdrum" title="Permalink to this headline">¶</a></h2>
+<p>Selected publications and studies that employ Humdrum:</p>
+<ul class="simple">
+<li>coming soon...</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Humdrum Community.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
