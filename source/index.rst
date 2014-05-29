@@ -4,7 +4,6 @@ The Humdrum Toolkit: Software for Music Research
 Welcome
 ----------
 
-Back up!
 Welcome to the new website for the Humdrum tools 
 for computational music analysis.
 Here you will find instructions on downloading, 
@@ -45,7 +44,7 @@ The Humdrum User Guide
    :maxdepth: 1
 
    
-   guide/
+   guide/index
 
 Humdrum Extras
 ---------------------
@@ -61,5 +60,13 @@ The Humdrum Cookbook
 .. toctree::
    :maxdepth: 2
 
-   cookbook/
+   cookbook/index
+
+Reference Manual
+----------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   referencemanual/index
 
