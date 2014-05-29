@@ -1,10 +1,6 @@
-Chapter7
-========
-
-
-
-MIDI Output Tools
----------------------
+=================================
+Chapter 7: MIDI Output Tools
+=================================
 
 MIDI is a standard method for exchanging information between sound
 synthesizers and controlling computers. Humdrum provides a number of MIDI-
