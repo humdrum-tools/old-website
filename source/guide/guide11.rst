@@ -1,9 +1,7 @@
-Chapter11
-=========
 
-
-Melodic Intervals
------------------------
+===============================
+Chapter 11: Melodic Intervals
+===============================
 
 A musical interval is the distance between two pitches. When the pitches are
 consecutive the distance is referred to as a *melodic interval;* when the

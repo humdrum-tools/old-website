@@ -1,9 +1,7 @@
-Chapter12
-=========
+=====================================================
+Chapter 12: Selecting Musical Parts and Passages
+=====================================================
 
-
-Selecting Musical Parts and Passages
---------------------------------------------
 
 A Humdrum file may contain an encoding of a full score, or even of a large
 collection of scores. Often, we would like to isolate or extract particular
@@ -46,56 +44,56 @@ Example 12.1.
 
 **Example 12.1.** J.S. Bach *Brandenburg Concerto No. 2*, mov. 1.
 
-`` !!!COM: Bach, Johann Sebastian
-`` !!!OPR: Six Concerts Avec plusieurs ... le prince regnant d'Anhalt-
+``!!!COM: Bach, Johann Sebastian
+``!!!OPR: Six Concerts Avec plusieurs ... le prince regnant d'Anhalt-
 Coethen
-`` !!!OTL: Brandenburgische Konzerte F
-`` !!!XEN: Brandenburg Concerto No. 2 in F major.
-`` !!!OMV: Movement 1.
-`` !!!SCT: BWV 1047
-`` !! [Allegro]
-`` **kern**kern**kern**kern**kern**kern**kern**kern**kern**kern
-`` *ICklav*ICstr*ICstr*ICstr*ICstr*ICstr*ICstr*ICww*ICww*ICbras
-`` *Icemba*Icello*Icbass*Iviola*Ivioln*Ivioln*Ivioln*Ioboe*Ifltds*Itromp
-`` *IGcont*IGcont********
-`` *IGripn*IGripn*IGripn*IGripn*IGripn*IGripn*IGconc*IGconc*IGconc*IGconc
-`` !cembal!'cello!Bd'rip!Vd'rip!v'lin2!v'lin1!v'lino!oboe!flauto!tromba
-`` *k[b-]*k[b-]*k[b-]*k[b-]*k[b-]*k[b-]*k[b-]*k[b-]*k[b-]*k[]
-`` *F:*F:*F:*F:*F:*F:*F:*F:*F:*F:
-`` *M2/2*M2/2*M2/2*M2/2*M2/2*M2/2*M2/2*M2/2*M2/2*M2/2
-`` *MM54*MM54*MM54*MM54*MM54*MM54*MM54*MM54*MM54*MM54
-`` *clefF4*clefF4*clefF4*clefC3*clefG2*clefG2*clefG2*clefG2*clefG2*clefG2
-`` 8FF/8FF/8FFF/8a\8cc\8ff\8ff\8ff\8ff\8f/
-`` =1=1=1=1=1=1=1=1=1=1
-`` 16F\LL16F\LL16FF\LL8f\L8a/L8cc\L8cc\L8cc\L8cc\L8a/L
-`` 16G\16G\16GG\.......
-`` 16A\16A\16AA\8c\16f/LL16a\LL16a\LL16a\LL16a\LL8cc/
-`` 16G\JJ16G\JJ16GG\JJ.16g/JJ16b-\JJ16b-\JJ16b-\JJ16b-\JJ.
-`` 16F\LL16F\LL16FF\LL8f\8a/L8cc\L8cc\L8cc\L8cc\L8a/
-`` 16G\16G\16GG\.......
-`` 16A\16A\16AA\8c\J16f/LL16a\LL16a\LL16a\LL16a\LL8f/J
-`` 16G\JJ16G\JJ16GG\JJ.16g/JJ16b-\JJ16b-\JJ16b-\JJ16b-\JJ.
-`` 16F\LL16F\LL16FF\LL8f\L8a/L8cc\L8cc\L8cc\L8cc\L8a/L
-`` 16E\16E\16EE\.......
-`` 16F\16F\16FF\8a\8cc/8ff\8ff\8ff\8ff\8cc/
-`` 16G\JJ16G\JJ16GG\JJ.......
-`` 16A\LL16A\LL16AA\LL8cc\8f/8cc\8cc\8cc\8cc\8ff/
-`` 16B-\16B-\16BB-\.......
-`` 16A\16A\16AA\8c\J8cc/J8ff\J8ff\J8ff\J8ff\J8cc/J
-`` 16G\JJ16G\JJ16GG\JJ.......
-`` =2=2=2=2=2=2=2=2=2=2
-`` *-*-*-*-*-*-*-*-*-*-``
+``!!!OTL: Brandenburgische Konzerte F
+``!!!XEN: Brandenburg Concerto No. 2 in F major.
+``!!!OMV: Movement 1.
+``!!!SCT: BWV 1047
+``!! [Allegro]
+``**kern**kern**kern**kern**kern**kern**kern**kern**kern**kern
+``*ICklav*ICstr*ICstr*ICstr*ICstr*ICstr*ICstr*ICww*ICww*ICbras
+``*Icemba*Icello*Icbass*Iviola*Ivioln*Ivioln*Ivioln*Ioboe*Ifltds*Itromp
+``*IGcont*IGcont********
+``*IGripn*IGripn*IGripn*IGripn*IGripn*IGripn*IGconc*IGconc*IGconc*IGconc
+``!cembal!'cello!Bd'rip!Vd'rip!v'lin2!v'lin1!v'lino!oboe!flauto!tromba
+``*k[b-]*k[b-]*k[b-]*k[b-]*k[b-]*k[b-]*k[b-]*k[b-]*k[b-]*k[]
+``*F:*F:*F:*F:*F:*F:*F:*F:*F:*F:
+``*M2/2*M2/2*M2/2*M2/2*M2/2*M2/2*M2/2*M2/2*M2/2*M2/2
+``*MM54*MM54*MM54*MM54*MM54*MM54*MM54*MM54*MM54*MM54
+``*clefF4*clefF4*clefF4*clefC3*clefG2*clefG2*clefG2*clefG2*clefG2*clefG2
+``8FF/8FF/8FFF/8a\8cc\8ff\8ff\8ff\8ff\8f/
+``=1=1=1=1=1=1=1=1=1=1
+``16F\LL16F\LL16FF\LL8f\L8a/L8cc\L8cc\L8cc\L8cc\L8a/L
+``16G\16G\16GG\.......
+``16A\16A\16AA\8c\16f/LL16a\LL16a\LL16a\LL16a\LL8cc/
+``16G\JJ16G\JJ16GG\JJ.16g/JJ16b-\JJ16b-\JJ16b-\JJ16b-\JJ.
+``16F\LL16F\LL16FF\LL8f\8a/L8cc\L8cc\L8cc\L8cc\L8a/
+``16G\16G\16GG\.......
+``16A\16A\16AA\8c\J16f/LL16a\LL16a\LL16a\LL16a\LL8f/J
+``16G\JJ16G\JJ16GG\JJ.16g/JJ16b-\JJ16b-\JJ16b-\JJ16b-\JJ.
+``16F\LL16F\LL16FF\LL8f\L8a/L8cc\L8cc\L8cc\L8cc\L8a/L
+``16E\16E\16EE\.......
+``16F\16F\16FF\8a\8cc/8ff\8ff\8ff\8ff\8cc/
+``16G\JJ16G\JJ16GG\JJ.......
+``16A\LL16A\LL16AA\LL8cc\8f/8cc\8cc\8cc\8cc\8ff/
+``16B-\16B-\16BB-\.......
+``16A\16A\16AA\8c\J8cc/J8ff\J8ff\J8ff\J8ff\J8cc/J
+``16G\JJ16G\JJ16GG\JJ.......
+``=2=2=2=2=2=2=2=2=2=2
+``*-*-*-*-*-*-*-*-*-*-``
 
 Suppose we wanted to extract the 'cello part. In the above encoding, the
 'cello occupies the second spine (second field) from the left, hence:
 
-`` extract -f 2 brandenburg2.krn``
+``extract -f 2 brandenburg2.krn``
 
 The resulting output would begin as follows:
 
 
 
-`` !!!COM: Bach, Johann Sebastian
+``!!!COM: Bach, Johann Sebastian
 > !!!OPR: Six Concerts Avec plusieurs ... le prince regnant d'Anhalt-Coethen
 > !!!OTL: Brandenburgische Konzerte F
 > !!!XEN: Brandenburg Concerto No. 2 in F major.
@@ -127,25 +125,25 @@ The oboe and flauto dolce parts are encoded in spines 8 and 9. So we could
 extract the `cello, oboe and flauto dolce parts by submitting a list of the
 corresponding fields. Spine numbers are separated by commas:
 
-`` extract -f 2,8,9 brandenburg2.krn``
+``extract -f 2,8,9 brandenburg2.krn``
 
 Numerical **ranges** can be specified using the dash. For example, if we
 wanted to extract all of the string parts (spines 2 through 7):
 
-`` extract -f 2-7 brandenburg2.krn``
+``extract -f 2-7 brandenburg2.krn``
 
 With the **-f** option, field specifications may also be made with respect to
-the right-most field. The dollars-sign character (````) refers to the right-
+the right-most field. The dollars-sign character (```) refers to the right-
 most field in the input. The trumpet part can be extracted as follows:
 
-`` extract -f '$' brandenburg2.krn``
+``extract -f '$' brandenburg2.krn``
 
 (Notice the use of the single quotes to ensure that the shell doesn't
 misinterpret the dollar sign.) Simple arithmetic expressions are also
-permitted; for example ```-1``' refers to the right-most field minus one,
+permitted; for example ``-1``' refers to the right-most field minus one,
 etc. By way of example, the command
 
-`` extract -f '$-2' brandenburg2.krn``
+``extract -f '$-2' brandenburg2.krn``
 
 will extract the oboe part.
 
@@ -157,36 +155,36 @@ Typically, it is inconvenient to have to determine the numerical position of
 various spines in order to extract them. With the **-i** option, **extract**
 outputs all spines containing a specified *interpretation.* Suppose we had a
 file containing a Schubert song, including vocal score, piano accompaniment
-and vocal text (encoded using ```**text```_). The vocal text from the file
-`` lieder`` can be extracted as follows:
+and vocal text (encoded using ``**text``_). The vocal text from the file
+``lieder`` can be extracted as follows:
 
-`` extract -i '**text' lieder``
+``extract -i '**text' lieder``
 
 (Notice again the need for single quotes in order to avoid the asterisk being
 interpreted by the shell.) Several different types of data can be extracted
 simultaneously. For example:
 
-`` extract -i '**semits,**MIDI' hildegard``
+``extract -i '**semits,**MIDI' hildegard``
 
-will extract all spines in the file ``hildegard`` containing ```**semits```_
-or ```**MIDI```_ data.
+will extract all spines in the file ``hildegard`` containing ``**semits``_
+or ``**MIDI``_ data.
 
 An important use of the **-i** option for **extract** is to ensure that a
 particular input contains only a specified type of information. For example,
-the lower-case letter ```r``' represents a rest in the ```**kern```_
+the lower-case letter ``r``' represents a rest in the ``**kern``_
 representation. If we wish to determine which sonorities contain rests, we
 might want to use **grep** to search for this letter. However, the input
 might contain other Humdrum interpretations (such as ``**text``) where the
-presence of the letter ```r``' does not signify a rest. We can ensure that
+presence of the letter ``r``' does not signify a rest. We can ensure that
 our search is limited to ``**kern`` data by using the **extract** command:
 
-`` extract -i '**kern' | grep ...``
+``extract -i '**kern' | grep ...``
 
 Both exclusive interpretations and tandem interpretations can be specified
 with the **-i** option. For example, the following command will extract any
 *transposing* instruments in the score ``albeniz``:
 
-`` extract -i '*ITr' albeniz``
+``extract -i '*ITr' albeniz``
 
 Tandem interpretations are commonly used to designate instrument classes and
 groups, so different configurations of instruments are easily extracted. The
@@ -200,27 +198,27 @@ instruments. The following three commands extract (1) the woodwind
 instruments, (2) the ripieno instruments, and (3) any vocal parts,
 respectively.
 
-`` extract -i '*ICww' concerto4``
-`` extract -i '*IGrip' brandenburg2``
-`` extract -i '*ICvox' symphony9``
+``extract -i '*ICww' concerto4``
+``extract -i '*IGrip' brandenburg2``
+``extract -i '*ICvox' symphony9``
 
 Once again, more than one interpretation can be extracted simultaneously. The
 following command will extract the instrument-class "strings" and the
 instrument "oboe" from the file ``milhaud``.
 
-`` extract -i '*ICstr,*Ioboe' milhaud``
+``extract -i '*ICstr,*Ioboe' milhaud``
 
 Similarly, the following command will extract the shamisen and shakuhachi
 parts from a score:
 
-`` extract -i '*Ishami,*Ishaku' hito.uta``
+``extract -i '*Ishami,*Ishaku' hito.uta``
 
 The behavior of **extract** is subtly different for tandem interpretations
 versus exclusive interpretations. Remember that exclusive interpretations are
 mutually exclusive, whereas tandem interpretations are not. Consider the
 following Humdrum representation:
 
-`` **foo
+``**foo
 > a
 > b
 > **bar
@@ -231,22 +229,22 @@ following Humdrum representation:
 
 The command
 
-`` extract -i '**foo'``
+``extract -i '**foo'``
 
 will result in the output:
 
-`` **foo
+``**foo
 > a
 > b
 > *-``
 
 Whereas the command
 
-`` extract -i '**bar'``
+``extract -i '**bar'``
 
 will result in the output:
 
-`` **bar
+``**bar
 > x
 > y
 > z
@@ -255,7 +253,7 @@ will result in the output:
 The ``**foo`` and ``**bar`` data are mutually exclusive. Now consider an
 input file where ``foo`` and ``bar`` are tandem interpretations:
 
-`` **foobar
+``**foobar
 > *foo
 > a
 > b
@@ -267,11 +265,11 @@ input file where ``foo`` and ``bar`` are tandem interpretations:
 
 The command
 
-`` extract -i '*foo'``
+``extract -i '*foo'``
 
 will result in the output:
 
-`` **foobar
+``**foobar
 > *foo
 > a
 > b
@@ -282,11 +280,11 @@ will result in the output:
 
 Whereas the command
 
-`` extract -i '*bar'``
+``extract -i '*bar'``
 
 will result in the output:
 
-`` **foobar
+``**foobar
 > *foo
 > *bar
 > x
@@ -313,33 +311,33 @@ the longest and shortest notes for a **kern input. The following commands can
 be used to determine this information for (1) a bassoon part, (2) all
 woodwind parts:
 
-`` extract -i '*Ifagot' ives | census -k``
-`` extract -i '*ICww' ives | census -k``
+``extract -i '*Ifagot' ives | census -k``
+``extract -i '*ICww' ives | census -k``
 
 With the `**midi**`_ and `**perform**`_ commands, **extract** allows the user
 to hear particular parts. For example, the following command extracts the
-bass and soprano voices, translates them to ```**MIDI```_ data, and plays the
+bass and soprano voices, translates them to ``**MIDI``_ data, and plays the
 output:
 
-`` extract -i '*Ibass,*Isopran' lassus | midi | perform``
+``extract -i '*Ibass,*Isopran' lassus | midi | perform``
 
 We might extract a particular part (such as the trumpet part) and use the
 `**trans**`_ command to transpose it to another key:
 
-`` extract -i '*Itromp' purcell | trans -d +1 -c +2``
+``extract -i '*Itromp' purcell | trans -d +1 -c +2``
 
 In addition, we might extract a particular instrument or group of instruments
 for notational display using the **ms** command. The following command will
 extract the string parts and create a postscript file for displaying or
 printing.
 
-`` extract -i '*ICstr' brahms | ms > brahms.ps``
+``extract -i '*ICstr' brahms | ms > brahms.ps``
 
 The UNIX **lpr** command can be used to print a file or input stream. Suppose
 we want to transpose the piano accompaniment for a song by Hugo Wolf up an
 augmented second, and then print the transposed part:
 
-`` extract -i '*IGacmp' wolf | trans -d +1 -c +3 | ms | lpr``
+``extract -i '*IGacmp' wolf | trans -d +1 -c +3 | ms | lpr``
 
 
 Extracting Spines that Meander
@@ -353,7 +351,7 @@ throughout the input.
 
 Consider the following input:
 
-`` **mip**dip**dip**blip
+``**mip**dip**dip**blip
 > Aabx
 > Aabx
 > **^**
@@ -371,11 +369,11 @@ The **extract** command provides a third **-p** option that traces specific
 spine *paths.* Like the **-f** option, the **-p** option requires one or more
 numbers indicating the *beginning* field position for the spine. The command
 
-`` extract -p 2 ``...
+``extract -p 2 ``...
 
 will generate the following output:
 
-`` **dip
+``**dip
 > a
 > a
 > *^
@@ -430,23 +428,23 @@ integers separated by commas, or with a dash indicating a range of
 consecutive values.  For example, the following command selects lines, 5, 13,
 23, 24, 25 and 26 from the file named ``casella``:
 
-`` yank -l -r 5,13,23-26 casella``
+``yank -l -r 5,13,23-26 casella``
 
 The dollar sign ($) can be used to refer to the last record in the input. For
 example, the following command yanks the first and last records from the file
-`` mosolov``.
+``mosolov``.
 
-`` yank -l -r '1,$' mosolov``
+``yank -l -r '1,$' mosolov``
 
 Once again note that single quotes are needed here in order to prevent the
 shell from misinterpreting characters such as the dollar sign or the
 asterisk. Records close to the end of the input can be specified by
 subtracting some value from $. For example, the following command yanks the
 first 20 records from the last 30 records contained in the file
-`` ginastera``. Notice that the dash/minus sign is used both to convey a range
+``ginastera``. Notice that the dash/minus sign is used both to convey a range
 and as an arithmetic operator.
 
-`` yank -l -r '$-30-$-10' ginastera``
+``yank -l -r '$-30-$-10' ginastera``
 
 If **yank** is given a Humdrum input, it always produces a syntactically
 correct Humdrum output. All interpretations prior to and within the yanked
@@ -467,7 +465,7 @@ specifies which lines are to be output whenever a marker is encountered.  For
 example, the following command outputs the first and third data records
 following each occurrence of the string "XXX" in the file ``wieck``.
 
-`` yank -m XXX -r 1,3 wieck``
+``yank -m XXX -r 1,3 wieck``
 
 If the value zero is specified in the range, the record containing the marker
 is itself output.
@@ -477,12 +475,12 @@ markers can be defined. For example, the following command yanks the first
 data record following any record in the file ``franck`` beginning with a
 letter and ending with a number:
 
-`` yank -m '^[a-zA-Z].*[0-9]$' -r 1 franck``
+``yank -m '^[a-zA-Z].*[0-9]$' -r 1 franck``
 
 Using **yank -m** with a range defined as zero is an especially useful
 construction:
 
-`` yank -m *regexp* -r 0``
+``yank -m *regexp* -r 0``
 
 This command is analogous to the familiar **grep** command. However, the
 output from **yank** will preserve all of the appropriate interpretations. In
@@ -491,16 +489,16 @@ whereas **grep** does not.
 
 Suppose, for example, that we wanted to calculate the pitch intervals between
 notes that either begin or end a phrase in a monophonic input. If we use
-**grep** to search for ```**kern```_ phrase indicators, we will be unable to
+**grep** to search for ``**kern``_ phrase indicators, we will be unable to
 process the resulting (non-Humdrum) output, since it will typically consist
 of just data records:
 
-`` grep [{}] sibelius``
+``grep [{}] sibelius``
 
 By contrast, the comparable **yank** command preserves the Humdrum syntax and
 so allows us to pipe the output to the melodic interval command:
 
-`` yank -m [{}] -r 0 sibelius | mint``
+``yank -m [{}] -r 0 sibelius | mint``
 
 
 Yanking by Delimiters
@@ -515,7 +513,7 @@ yank specific measures from a file by defining the appropriate barline
 delimiter and providing a range of (measure) numbers. Consider the following
 command:
 
-`` yank -o ^= -r 1,12-13,25 joplin``
+``yank -o ^= -r 1,12-13,25 joplin``
 
 This command will extract the first, twelfth, thirteenth and twenty-fifth
 measures from the file ``joplin``. Unlike the **-m** option, the **-o**
@@ -532,7 +530,7 @@ not including, the next occurrence of a delimiter record.
 Where the input stream contains data prior to the first delimiter record,
 this data may be addressed as logical segment "zero." For example,
 
-`` yank -o ^= -r 0 mahler``
+``yank -o ^= -r 0 mahler``
 
 can be used to yank all records prior to the first common system barline.
 Notice that *actual* measure numbers are irrelevant with the **-o** option:
@@ -544,19 +542,19 @@ barlines, ``**kern`` phrases are marked by separate phrase-begin signifiers
 (`{') and phrase-end signifiers (`}'). The **-e** option for **yank** can be
 used to explicitly identify markers that *end* a segment. For example, the
 following command extracts the first four phrases in the file
-`` tailleferre``:
+``tailleferre``:
 
-`` yank -o { -e } -r '1-4' tailleferre``
+``yank -o { -e } -r '1-4' tailleferre``
 
 When the **-n** option is invoked, however, **yank** expects a numerical
 value to be present in the input immediately following the user-specified
 delimiter. In this case, **yank** selects segments based on their numbered
 label rather than their ordinal position in the input. For example,
 
-`` yank -n ^= -r 12 goldberg``
+``yank -n ^= -r 12 goldberg``
 
 will yank all segments beginning with the label ``=12`` in the input file
-`` goldberg``. If more than one segment carries the specified segment
+``goldberg``. If more than one segment carries the specified segment
 number(s), all such segments are output. That is, if there are five measures
 labelled "measure 12", all five measures will be output. Note that the dollar
 sign anchor cannot be used in the range expression for the **-n** option.
@@ -568,9 +566,9 @@ As in the case of the **-o** option, a range of zero (`0') addresses material
 prior to the first delimiter record. (N.B. This behavior is unlike the **-m**
 option where zero addresses the record itself.) Like the **-o** option, the
 value zero may be reused for each specified input file. Thus, if ``file1``,
-`` file2`` and ``file3`` are Humdrum files:
+``file2`` and ``file3`` are Humdrum files:
 
-`` yank -n ^= -r 0 file1 file2 file3``
+``yank -n ^= -r 0 file1 file2 file3``
 
 will yank any leading (anacrusis) material in each of the three files.
 
@@ -583,14 +581,14 @@ Humdrum section labels encoded in the input. Humdrum section labels will be
 described fully in `Chapter 20.`_ For now, we can simply note that section
 labels are tandem interpretations that conform to the syntax:
 
-`` *>*label_name*``
+``*>*label_name*``
 
 Label names can include any character except the tab. Labels are frequently
 used to indicate formal divisions, such as coda, exposition, bridge, second
 ending, trio, minuet, etc. The following command yanks the second instance of
 a section labelled ``First Theme`` in the file ``mendelssohn``:
 
-`` yank -s 'First Theme' -r 2 mendelssohn``
+``yank -s 'First Theme' -r 2 mendelssohn``
 
 Note that with "through-composed" Humdrum files it is possible to have more
 than one section containing the same section-label. Such situations are
@@ -609,51 +607,51 @@ specifying the **-c** option.
 
 The following examples illustrate how the **yank** command may be used.
 
-`` yank -l -r 1120 messiaen``
+``yank -l -r 1120 messiaen``
 
 yanks line 1120 in the file ``messiaen``.
 
-`` yank -n ^= -r 27 sinfonia``
+``yank -n ^= -r 27 sinfonia``
 
 yanks numbered measures 27 from the ``**kern`` file ``sinfonia``.
 
-`` yank -n ^= -r 10-20 minuet waltz``
+``yank -n ^= -r 10-20 minuet waltz``
 
 yanks numbered measures 10 to 20 from both the ``**kern`` files ``minuet``
 and ``waltz``.
 
-`` yank -o ^= -r '0,$' fugue ricercar``
+``yank -o ^= -r '0,$' fugue ricercar``
 
 yanks any initial anacrusis material plus the final measure of both ``fugue``
 and ``ricercar``.
 
-`` cat fugue ricercar | yank -o ^= -r '0,$'``
+``cat fugue ricercar | yank -o ^= -r '0,$'``
 
 yanks any initial anacrusis material from the file ``fugue`` followed by the
 final measure of ``ricercar``.
 
-`` yank -n 'Rehearsal Marking ' -r 5-7 fugue ricercar``
+``yank -n 'Rehearsal Marking ' -r 5-7 fugue ricercar``
 
 yanks segments beginning with the labels ``"Rehearsal Marking 5", "Rehearsal
 Marking 6"``, and ``"Rehearsal Marking 7"``. Segments are deemed to end when
 a record is encountered containing the text ``"Rehearsal Marking "``.
 
-`` yank -o { -e } -r '1-$' webern``
+``yank -o { -e } -r '1-$' webern``
 
 yanks all segments in the file ``webern`` beginning with a record containing
 "{" and ending with a record containing "}." The command:
 
-`` yank -o { -e } -r '1-4,$-3-$' faure``
+``yank -o { -e } -r '1-4,$-3-$' faure``
 
 yanks the first four and last four segments in the file ``faure``, where
 segments begin with an open brace ({) and end with a closed brace (}). In the
-`` **kern`` representation, this would extract the first four and last four
+``**kern`` representation, this would extract the first four and last four
 phrases in the file.
 
-`` yank -s Coda -r 1 stamitz``
+``yank -s Coda -r 1 stamitz``
 
 will yank the first occurrence of a section labelled ``Coda`` in the file
-`` stamitz``.
+``stamitz``.
 
 Note that yanked segments are output in exactly the order they appear in the
 input file. For example, assuming that measure numbers in an input stream
@@ -672,42 +670,42 @@ one **yank** in a pipeline. In the following command, the first **yank**
 isolates the `Trio' section from the input file, and the second **yank**
 isolates the first four measures of the extracted Trio:
 
-`` yank -s Trio dvorak | yank -o ^= 1-4``
+``yank -s Trio dvorak | yank -o ^= 1-4``
 
 Similarly, we can link two **yank** commands to extract particular phrases
 from specified sections. For example, suppose we wanted to compare the first
 phrase of the exposition with the first phrase of the recapitulation:
 
-`` yank -s Exposition haydn | yank -o { -e } -r 1 > Ephrase``
-`` yank -s Recapitulation haydn | yank -o { -e } -r 1 > Rphrase``
+``yank -s Exposition haydn | yank -o { -e } -r 1 > Ephrase``
+``yank -s Recapitulation haydn | yank -o { -e } -r 1 > Rphrase``
 
 Suppose we want to know how many notes there are in measures 8-16 in a
-`` **kern`` file named ``borodin``.
+``**kern`` file named ``borodin``.
 
-`` yank -n = -r 8-16 borodin | census -k``
+``yank -n = -r 8-16 borodin | census -k``
 
 Are there any subdominant chords between measures 80 and 86?
 
-`` yank -n = -r 80-86 elgar | solfa | grep fa | grep la | grep do``
+``yank -n = -r 80-86 elgar | solfa | grep fa | grep la | grep do``
 
 How frequent is the dominant pitch in Strauss' horn parts?
 
-`` extract -i '*Icor' strauss | solfa | grep -c so``
+``extract -i '*Icor' strauss | solfa | grep -c so``
 
 Combining **yank** and **extract** can be especially useful. What is the
 highest note in the trumpet part in measure 29?
 
-`` extract -i '*Itromp' tallis | yank -n = -r 29 | census -k``
+``extract -i '*Itromp' tallis | yank -n = -r 29 | census -k``
 
 Also, we can combine **yank** with the `**midi**`_ and `**perform**`_
 commands to hear particular sections. Play the Trio section in a Waldteufel
 waltz:
 
-`` yank -s 'Trio' -r 1 waldteufel | midi | perform``
+``yank -s 'Trio' -r 1 waldteufel | midi | perform``
 
 Listen to the soprano clarinet part in the fourth and eighth phrases.
 
-`` extract -i '*Iclars' quintet | yank -o { -e } -r 4,8 \
+``extract -i '*Iclars' quintet | yank -o { -e } -r 4,8 \
 >
 >> | midi | perform``
 
@@ -720,12 +718,12 @@ command is invoked *before* or *after* the **extract** command.
 
 **Example 12.2.** A Passage Containing Unsynchronized Phrases.
 
-`` **kern**kern
+``**kern**kern
 > =1-=1-
 > 2r8r
-`` .{8g
-`` .8a
-`` .8b
+``.{8g
+``.8a
+``.8b
 > =2=2
 > 8r4cc
 > {8e.
@@ -743,8 +741,8 @@ Suppose we wanted to identify the melodic intervals present in measures 8-32
 for a work by Toru Takemitsu. The following two commands are likely to
 produce different results:
 
-`` yank -n = -r 8-32 takemitsu | mint``
-`` mint takemitsu | yank -n = -r 8-32``
+``yank -n = -r 8-32 takemitsu | mint``
+``mint takemitsu | yank -n = -r 8-32``
 
 In the second case, an interval will probably be calculated between between
 the last note of measure 7 and the first note of measure 8. This interval

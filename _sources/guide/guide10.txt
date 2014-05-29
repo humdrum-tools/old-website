@@ -1,10 +1,7 @@
 
-Chapter10
-=========
-
-
-Musical Uses of Regular Expressions
-------------------------------------------
+====================================================
+Chapter 10: Musical Uses of Regular Expressions
+====================================================
 
 Now that you have a better understanding of regular expressions, let's apply
 them. This chapter provides many examples of how regular expressions may be

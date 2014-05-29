@@ -1,9 +1,6 @@
-Chapter19
-=========
-
-
-Musical Contexts
----------------------
+==============================
+Chapter 19: Musical Contexts
+==============================
 
 Much of what makes an event of interest is the context of the event. We may
 be interested in what precedes or follows a note or chord. We have already
@@ -26,7 +23,7 @@ through 6 on successive lines. A null token is interposed between the numbers
 
 
 
-````
+```
 $ 
 > **numbers
 > 1
@@ -40,13 +37,13 @@ $
 
 The command
 
-`` context -n 3 input``
+``context -n 3 input``
 
 will produce the following output:
 
 
 
-````
+```
 $ 
 > **numbers
 > 1 2 3
@@ -80,11 +77,11 @@ the `**hint**`_ command to generate the harmonic intervals for each
 successive sonority. To calculate all *passing intervals*, we will preprocess
 using `**ditto**`_:
 
-`` ditto inventions* | hint``
+``ditto inventions* | hint``
 
 Typical outputs might look like this:
 
-`` M3
+``M3
 > M6
 > A4
 > =12
@@ -118,7 +115,7 @@ In short, we are interested in data records that end with ``P8``. The
 dollars-sign can be used in a regular expression to anchor the pattern to the
 end of the line. Hence:
 
-`` ditto inventions* | hint | context -n 2 -o = | grep ' P8$'``
+``ditto inventions* | hint | context -n 2 -o = | grep ' P8$'``
 
 The **-o =** option tells **context** to omit any data tokens matching the
 equals-sign -- that is, to omit barlines from the amalgamated multiple stops.
@@ -128,7 +125,7 @@ equals-sign.) The **grep** command grabs all of the lines ending with ``P8``.
 We can now create an inventory of harmonic interval pairs and order them from
 least common to most common:
 
-`` ditto inventions* | hint | context -n 2 -o = \
+``ditto inventions* | hint | context -n 2 -o = \
 
 >
 >> | grep ' P8$' | sort | uniq -c | sort -rn``
@@ -137,7 +134,7 @@ In the case of Bach's fifteen two-part *Inventions* the results look as
 follows:
 
 >
-`` 24 m10 P8
+``24 m10 P8
 24 M10 P8
 23 m7 P8
 21 M6 P8
@@ -153,10 +150,10 @@ minor and major tenths rather than expanding from a major sixth interval.
 
 This same basic process can be used to address a variety of similar problems.
 For example, suppose we wanted to determine the most common word following
-"gloria" in Gregorian chant texts. We first extract the ```**text```_ spine,
+"gloria" in Gregorian chant texts. We first extract the ``**text``_ spine,
 use **context** to create pairs of words, and search in the normal way:
 
-`` extract -i '**text' chants* | context -n 2 \
+``extract -i '**text' chants* | context -n 2 \
 
 >
 >> | grep -i ' gloria$' | sort | uniq -c | sort -nr``
@@ -166,17 +163,17 @@ determine what word typically *follows* after the word "gloria." In this
 case, we need to anchor the word "gloria" to the beginning of the line by
 using the caret (^).
 
-`` extract -i '**text' chants* | context -n 2 \
+``extract -i '**text' chants* | context -n 2 \
 
 >
 >> | grep -i '^gloria ' | sort | uniq -c | sort -nr``
 
 Suppose we wanted to determine what scale degree most commonly precedes the
 dominant pitch in a sample of Czech folksongs. First we translate the
-folksongs to the ```**deg```_ representation using the **deg** command, and
+folksongs to the ``**deg``_ representation using the **deg** command, and
 then process as above:
 
-`` deg Czech* | context -n 2 -o = | grep '5 ' | sort \
+``deg Czech* | context -n 2 -o = | grep '5 ' | sort \
 
 >
 >> | uniq -c | sort -nr``
@@ -188,13 +185,13 @@ Harmonic Progressions
 The V-I progression is the most common chord progression in Western tonal
 music. After the V-I progression, what is the most common chord progression
 in Bach's chorale harmonizations? We will assume that a Roman numeral
-`` `**harm```_ spine already exists. First we extract the appropriate spine.
+``**harm``_ spine already exists. First we extract the appropriate spine.
 Then we create context records holding pairs of harmony data (omitting
 barlines). Then we eliminate global and local comments, interpretations, and
 null data. We then sort the data records, eliminate duplicates while
 counting, and then sort by numerical count in reverse order.
 
-`` extract -i '**harm' chorales* | context -n 2 -o = \
+``extract -i '**harm' chorales* | context -n 2 -o = \
 
 >
 >> | rid -GLId | sort | uniq -c | sort -nr``
@@ -204,7 +201,7 @@ tokens (i.e. **-n 2**) as we have done in the above example. Given a database
 of melodies, we can determine the most common sequence of five melodic
 intervals as follows:
 
-`` mint melodies* | context -n 5 -o = | rid -GLId | sort \
+``mint melodies* | context -n 5 -o = | rid -GLId | sort \
 
 >
 >> | uniq -c | sort -nr``
@@ -229,14 +226,14 @@ the slurs are particularly useful delineators. The **-b** option for
 *beginning* of each collection of data tokens. Consider the following
 command:
 
-`` context -b '(' Anderson``
+``context -b '(' Anderson``
 
 Whenever a data record contains an open parenthesis a new amalgamation
 begins. The appropriate output for measure 1 of Example 19.1 would be:
 
 
 
-`` **kern
+``**kern
 > *clefG2
 > *k[b-]
 > *d:
@@ -269,13 +266,13 @@ the grouping boundaries by also including the **-e** option for
 that marks the *end* of each collection of data tokens. A suitably revised
 command would be:
 
-`` context -b '(' -e ')' Anderson``
+``context -b '(' -e ')' Anderson``
 
 The resulting output would begin as follows:
 
 
 
-`` **kern
+``**kern
 > *clefG2
 > *k[b-]
 > *d:
@@ -305,7 +302,7 @@ We could pipe this output to the **ms** command in order to display the re-
 arranged passage. We place the output in a postscript file and use a display
 tool such as **ghostview** to display the output:
 
-`` context -b '(' -e ')' Anderson | ms > output.ps``
+``context -b '(' -e ')' Anderson | ms > output.ps``
 
 **Example 19.2 Arpeggio Amalgamation.**
 
@@ -321,7 +318,7 @@ translating the data to another representation. For example, we might use the
 might allow us to search for particular harmonic patterns such as (say) an
 augmented sixth chord:
 
-`` context -b '(' -e ')' Anderson | deg | grep '6-' | grep '4+' \
+``context -b '(' -e ')' Anderson | deg | grep '6-' | grep '4+' \
 >
 >> | grep '1'``
 
@@ -332,23 +329,23 @@ sixty-fourth notes. We might want to know whether the sixty-fourth notes all
 tend to happen in one or two measures, or whether they occur throughout the
 work. Just how many measures contain sixty-fourth notes?
 
-`` context -b = inputfile | rid -GLId | grep -c '64'``
+``context -b = inputfile | rid -GLId | grep -c '64'``
 
-Similarly, for ```**kern```_ inputs, the following command counts the number
+Similarly, for ``**kern``_ inputs, the following command counts the number
 of measures that contain at least one trill:
 
-`` context -b = inputfile | grep -c '^=.*[Tt]'``
+``context -b = inputfile | grep -c '^=.*[Tt]'``
 
 In ``**kern`` representations, the beginnings and endings of beams are
-indicated by the letters ```L``' and ```J``' respectively. We might group
+indicated by the letters ``L``' and ``J``' respectively. We might group
 notes according to the beaming:
 
-`` context -b L -e J inputfile``
+``context -b L -e J inputfile``
 
 For example, the following command determines the location of any beams that
 cross over phrase boundaries:
 
-`` context -b L -e J inputfile | grep -n '}.*{'``
+``context -b L -e J inputfile | grep -n '}.*{'``
 
 As in the case of the **-b** option, the **-e** option can be used by itself.
 This option might prove useful, for example, when collecting all chord
@@ -357,12 +354,12 @@ cadences are conveniently marked by a pause. In the ``**harm``
 representation, pauses are indicated by the semicolon (``;``). We can create
 phrase related harmonic sequences as follows:
 
-`` context -o = -e ';' input``
+``context -o = -e ';' input``
 
 For example, we might count the number of harmonic functions in each phrase
 as follows:
 
-`` context -o = -e ';' input | rid -GLId | awk '{print $NF}'``
+``context -o = -e ';' input | rid -GLId | awk '{print $NF}'``
 
 In `Chapter 22`_ we will learn how to classify data into discrete categories.
 Using the `**recode**`_ command described in that chapter, we might group
@@ -378,7 +375,7 @@ for **context**. Suppose we wanted to identify by measure number those
 measures that contain a *iii-V* progression. Given a ``**harm`` input, we
 would first amalgamate all harmony tokens for each measure.
 
-`` context -b ^= inputfile | grep 'iii V' | sed 's/ .*//; s/=//'``
+``context -b ^= inputfile | grep 'iii V' | sed 's/ .*//; s/=//'``
 
 Here we have used **grep** to isolate all those records that contain the
 character sequence ``iii V``. We have then used **sed** to eliminate all data
@@ -392,7 +389,7 @@ Humdrum syntax. This is the reason why we used **sed** rather than
 the Humdrum syntax. If we wanted to maintain the Humdrum syntax, an
 equivalent to the above command would be:
 
-`` context -b ^= inputfile | yank -m 'iii V' -r 0 \
+``context -b ^= inputfile | yank -m 'iii V' -r 0 \
 >
 >> | humsed 's/ .*//; s/=//'``
 
@@ -400,7 +397,7 @@ The range option (**-r**) specifies that we grab the current record (0) that
 matches the marker (``iii V``). However, we are free to specify any other
 range. Consider the following command variation:
 
-`` context -b ^= inputfile | rid -d | yank -m 'iii V' -r 1 \
+``context -b ^= inputfile | rid -d | yank -m 'iii V' -r 1 \
 >
 >> | grep 'ii IV' | humsed 's/ .*//; s/=//'``
 
@@ -418,13 +415,13 @@ double-stops. The first note of the double-stop will be the first note of the
 phrase, and the second note of the double-stop will be the last note of the
 same phrase:
 
-`` context -b { -e } file | humsed 's/ .* / /'``
+``context -b { -e } file | humsed 's/ .* / /'``
 
 We can continue processing by piping the output to the `**semits**`_ command.
 This will leave pairs of numbers representing the semitone distances from
 middle C. We might then isolate the data records by using `**rid**`_.
 
-``  . . . | semits | rid -GLId | awk '{print $2-$1}'``
+`` . . . | semits | rid -GLId | awk '{print $2-$1}'``
 
 Finally, we have used the UNIX **awk** utility to carry out some simple
 numerical processing: in this case, substracting the first semitone value
@@ -437,7 +434,7 @@ need only to reverse the begin (**-b**) and end (**-e**) criteria. That is,
 we will amalgamate the last note of one phrase with the first note in the
 subsequent phrase. The full pipeline would be as follows:
 
-`` context -b { -e } file | humsed 's/ .* / /' | semits \
+``context -b { -e } file | humsed 's/ .* / /' | semits \
 >
 >> | rid -GLId | awk '{print $2-$1}'``
 
@@ -455,7 +452,7 @@ the first phrase in our input begins as follows:
 
 
 
-`` **kern
+``**kern
 > *F:
 > *M3/4
 > {8Bn
@@ -475,22 +472,22 @@ the first phrase in our input begins as follows:
 We need to pursue two independent lines of processing. First we creat a
 temporary file of scale degree information:
 
-`` mint inputfile > temp.mnt``
+``mint inputfile > temp.mnt``
 
 Then we amalgamate the pitch data according the phrasing information, and
-translate the resulting data to the ```**deg```_ representation:
+translate the resulting data to the ``**deg``_ representation:
 
-`` context -b { -e } -o ^= inputfile | deg > temp.deg``
+``context -b { -e } -o ^= inputfile | deg > temp.deg``
 
 Next we assemble the two temporary files together to form a single document.
 
-`` assemble temp.mnt temp.deg``
+``assemble temp.mnt temp.deg``
 
 The first phrase output will appear as follows:
 
 
 
-`` **mint**deg
+``**mint**deg
 > *F:*F:
 > *M3/4*M3/4
 > [B]4+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
@@ -515,7 +512,7 @@ will generate the following output:
 
 
 
-`` **mint**deg
+``**mint**deg
 > *F:*F:
 > *M3/4*M3/4
 > [B]4+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
@@ -534,7 +531,7 @@ will generate the following output:
 
 Finally, we use **grep** to search for the composite data:
 
-`` assemble temp.mnt temp.deg | ditto | grep '^+M6.*5$'``
+``assemble temp.mnt temp.deg | ditto | grep '^+M6.*5$'``
 
 In addition to linking together different types of data, sometimes we may
 also need to use a stream editor to modify the data in some way. Suppose we
@@ -549,9 +546,9 @@ approach the tonic, and one for intervals that follow the tonic. We already
 know how to create an inventory of intervals approaching a particular scale-
 degree:
 
-`` deg -a inputfile > temp1``
-`` mint inputfile > temp2``
-`` assemble temp1 temp2 | grep '^[v^]*1 ' | sort | uniq -c \
+``deg -a inputfile > temp1``
+``mint inputfile > temp2``
+``assemble temp1 temp2 | grep '^[v^]*1 ' | sort | uniq -c \
 >
 >> | sort -rn > inventory.pre``
 
@@ -560,15 +557,15 @@ This will create pairs of intervals: the first interval will indicate the
 approach, and the second interval in each pair will indicate the
 continuation.
 
-`` deg -a inputfile > temp1``
-`` mint inputfile | context -n 2 -o ^= > temp2``
-`` humsed 's/ .*//' temp2 > intervals.pre``
-`` humsed 's/.* //' temp2 > intervals.post``
-`` assemble temp1 intervals.pre | grep '^1 ' | sort | uniq -c \
+``deg -a inputfile > temp1``
+``mint inputfile | context -n 2 -o ^= > temp2``
+``humsed 's/ .*//' temp2 > intervals.pre``
+``humsed 's/.* //' temp2 > intervals.post``
+``assemble temp1 intervals.pre | grep '^1 ' | sort | uniq -c \
 >
 >> | sort -rn > inventory.pre``
 >
-`` assemble temp1 intervals.post | grep '^1 ' | sort | uniq -c \
+``assemble temp1 intervals.post | grep '^1 ' | sort | uniq -c \
 >
 >> | sort -rn > inventory.post``
 
@@ -579,12 +576,12 @@ voice but not in another voice within a brief period of time. One approach is
 to extract each voice, translate to scale-degree and create brief contexts of
 (say) 2 or 3 notes. E.g.
 
-`` extract -f 1 inputfile | deg | context -n 3 -o ^= > lower.tmp``
-`` extract -f 2 inputfile | deg | context -n 3 -o ^= > upper.tmp``
+``extract -f 1 inputfile | deg | context -n 3 -o ^= > lower.tmp``
+``extract -f 2 inputfile | deg | context -n 3 -o ^= > upper.tmp``
 
 We can then assemble the two contexts together:
 
-`` assemble lower.tmp upper.tmp``
+``assemble lower.tmp upper.tmp``
 
 Suppose our inputs consisted of an ascending C major scale played in the
 lower voice concurrent with an E major scale in the upper voice. Our output
@@ -592,7 +589,7 @@ would look as follows:
 
 
 
-`` **deg**deg
+``**deg**deg
 > *C:*C:
 > 1 ^2 ^33 ^4+ ^5+
 > ^2 ^3 ^4^4+ ^5+ ^6
@@ -610,7 +607,7 @@ scale degrees that are both modified and unmodified concurrently. For
 example, in the case of the subdominant pitch, we could search for such
 instances as follows:
 
-`` assemble lower.tmp upper.tmp | rid -GLId \
+``assemble lower.tmp upper.tmp | rid -GLId \
 >
 >> | egrep '4[+-].* .*4([^+-])|$'``
 
@@ -621,7 +618,7 @@ use of the tab character in the regular expressions to specify the precise
 voice being searched. We would also need to test for the reverse situation,
 where the modified pitch is in the upper voice:
 
-`` assemble lower.tmp upper.tmp | rid -GLId \
+``assemble lower.tmp upper.tmp | rid -GLId \
 >
 >> | egrep '4[^+-].* .*4[+-]'``
 
@@ -643,7 +640,7 @@ the input and the right-hand spine represents the output where the option
 
 
 
-`` **kern**kern
+``**kern**kern
 > *C:*C:
 > cc d
 > dd e
@@ -658,13 +655,13 @@ the input and the right-hand spine represents the output where the option
 Now consider the effect of adding the **-p** option. In this case, the
 complete command is:
 
-`` context -n 2 -p 1``
+``context -n 2 -p 1``
 
 The corresponding result is:
 
 
 
-`` **kern**kern
+``**kern**kern
 > *C:*C:
 > c.
 > dc d
@@ -680,13 +677,13 @@ The data records have been pushed forward by one line: a null token now
 appears at the beginning of the output spine rather than at the end.
 Similarly, consider the effect of the following command:
 
-`` context -n 4 -p 2``
+``context -n 4 -p 2``
 
 The corresponding result is:
 
 
 
-`` **kern**kern
+``**kern**kern
 > *C:*C:
 > c.
 > d.
@@ -708,14 +705,14 @@ that follows it.
 
 By way of example, suppose we are looking for a submediant pitch that is
 approached by two melodic intervals of an ascending major third followed by a
-descending major second. First, we generate independent ```**mint```_ and
-`` `**deg```_ outputs. Next we process the ``**mint`` data using **context**
+descending major second. First, we generate independent ``**mint``_ and
+``**deg``_ outputs. Next we process the ``**mint`` data using **context**
 to create pairs of successive intervals. Without the **-p** option, the
 assembled output might look as follows:
 
 
 
-`` **deg**mint
+``**deg**mint
 > *C:*C:
 > 3[e] +m2
 > ^4+m2 +M2
@@ -730,7 +727,7 @@ With **-p 1** the output becomes:
 
 
 
-`` **deg**mint
+``**deg**mint
 > *C:*C:
 > 3.
 > ^4[e] +m2
@@ -743,7 +740,7 @@ With **-p 1** the output becomes:
 
 Now we can search directly for the situation of interest:
 
-`` grep '6 +M3 -M2$'``
+``grep '6 +M3 -M2$'``
 
 --------
 

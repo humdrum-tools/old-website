@@ -1,8 +1,6 @@
-Chapter15
-=========
-
-Harmonic Intervals
-------------------------
+===================================
+Chapter 15: Harmonic Intervals
+===================================
 
 In `Chapter 11`_ we examined Humdrum tools related to melodic pitch
 intervals. This chapter returns to the discussion of intervals by focussing

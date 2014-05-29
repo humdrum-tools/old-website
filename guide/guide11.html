@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Chapter11 &mdash; humdrum-tools 1 documentation</title>
+  <title>Chapter 11: Melodic Intervals &mdash; humdrum-tools 1 documentation</title>
   
 
   
@@ -31,8 +31,8 @@
   
     <link rel="top" title="humdrum-tools 1 documentation" href="../index.html"/>
         <link rel="up" title="The Humdrum User Guide" href="index.html"/>
-        <link rel="next" title="Chapter12" href="guide12.html"/>
-        <link rel="prev" title="Chapter10" href="guide10.html"/> 
+        <link rel="next" title="Chapter 12: Selecting Musical Parts and Passages" href="guide12.html"/>
+        <link rel="prev" title="Chapter 10: Musical Uses of Regular Expressions" href="guide10.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -76,16 +76,16 @@
 <li class="toctree-l2"><a class="reference internal" href="guide07.html">Chapter 7: MIDI Output Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide08.html">Chapter 8: The Shell (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide09.html">Chapter 9: Searching with Regular Expressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide10.html">Chapter10</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Chapter11</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide12.html">Chapter12</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide13.html">Chapter13</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide14.html">Chapter14</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide15.html">Chapter15</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide16.html">Chapter16</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide17.html">Chapter17</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide18.html">Chapter18</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide19.html">Chapter19</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide10.html">Chapter 10: Musical Uses of Regular Expressions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Chapter 11: Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide12.html">Chapter 12: Selecting Musical Parts and Passages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide13.html">Chapter 13: Assembling Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide14.html">Chapter 14: Stream Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide15.html">Chapter 15: Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide16.html">Chapter 16: The Shell (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide17.html">Chapter 17: Creating Inventories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide18.html">Chapter 18: Fingers, Footsteps and Frets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide19.html">Chapter 19: Musical Contexts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide20.html">Chapter20</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide21.html">Chapter21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide21.html#searching-for-patterns">Searching for Patterns</a></li>
@@ -188,7 +188,7 @@
       
           <li><a href="index.html"><em>The Humdrum User Guide</em></a> &raquo;</li>
       
-    <li>Chapter11</li>
+    <li>Chapter 11: Melodic Intervals</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../_sources/guide/guide11.txt" rel="nofollow"> View page source</a>
@@ -199,10 +199,8 @@
 </div>
           <div role="main">
             
-  <div class="section" id="chapter11">
-<h1>Chapter11<a class="headerlink" href="#chapter11" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="melodic-intervals">
-<h2>Melodic Intervals<a class="headerlink" href="#melodic-intervals" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="chapter-11-melodic-intervals">
+<h1>Chapter 11: Melodic Intervals<a class="headerlink" href="#chapter-11-melodic-intervals" title="Permalink to this headline">¶</a></h1>
 <p>A musical interval is the distance between two pitches. When the pitches are
 consecutive the distance is referred to as a <em>melodic interval;</em> when the
 pitches are concurrent the distance is referred to as a <em>harmonic interval.</em></p>
@@ -211,7 +209,6 @@ determination of pitch intervals can be surprisingly complicated. In this
 chapter we will discuss Humdrum tools related to melodic pitch intervals &#8211;
 specifically the <a href="#id84"><span class="problematic" id="id85">`**mint**`_</span></a> (melodic interval) and <a href="#id86"><span class="problematic" id="id87">`**xdelta**`_</span></a> commands.
 Discussion of harmonic intervals will be delayed until <a class="reference external" href="guide15.html">Chapter 15.</a></p>
-</div>
 <div class="section" id="types-of-melodic-intervals">
 <h2>Types of Melodic Intervals<a class="headerlink" href="#types-of-melodic-intervals" title="Permalink to this headline">¶</a></h2>
 <p>Example 11.1 provides a contrived illustration of seven different types of
@@ -676,10 +673,10 @@ useful in many other applications apart from calculating pitch distances.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="guide12.html" class="btn btn-neutral float-right" title="Chapter12"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="guide12.html" class="btn btn-neutral float-right" title="Chapter 12: Selecting Musical Parts and Passages"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="guide10.html" class="btn btn-neutral" title="Chapter10"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="guide10.html" class="btn btn-neutral" title="Chapter 10: Musical Uses of Regular Expressions"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

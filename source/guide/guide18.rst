@@ -1,16 +1,13 @@
-Chapter18
-=========
 
-
-
-Fingers, Footsteps and Frets
------------------------------------
+============================================
+Chapter 18: Fingers, Footsteps and Frets
+============================================
 
 Throughout this book, our examples have tended to rely on just a handful of
 Humdrum representations -- ``**kern`` in particular. Of course the Humdrum
 syntax provides opportunities for an unlimited number of representations. In
 this chapter, we will consider some less common representations. Most of the
-chapter will deal with the ```**fret```_ representation -- a pre-defined
+chapter will deal with the ``**fret``_ representation -- a pre-defined
 Humdrum representation for fretted instrument tablatures. However, we will
 begin with a grab-bag of unorthodox representations.
 
@@ -30,119 +27,119 @@ In research activities, it is common to create representation schemes for a
 specific task. A user might define a spine that represents the heart-rate (in
 beats per minute) of a music listener:
 
-`` **cardio
-`` 76
-`` 76
-`` 74
-`` 73
-`` 73
-`` *-``
+``**cardio
+``76
+``76
+``74
+``73
+``73
+``*-``
 
 A scheme might be created to represent different types of contrapuntal
 motion:
 
-`` **motion
-`` similar
-`` contrary
-`` parallel
-`` oblique
-`` *-``
+``**motion
+``similar
+``contrary
+``parallel
+``oblique
+``*-``
 
 Chords might be classified -- using words:
 
-`` **chords
-`` minor
-`` .
-`` augmented
-`` major
-`` *-``
+``**chords
+``minor
+``.
+``augmented
+``major
+``*-``
 
 Or using abbreviations:
 
-`` **chords
-`` m
-`` .
-`` A
-`` M
-`` *-``
+``**chords
+``m
+``.
+``A
+``M
+``*-``
 
 Fingerings might be represented. Each hand may have a separate spine:
 
-`` **finger**finger
-`` *left*right
-`` .1
-`` 1 52
-`` .3
-`` .5
-`` 1 52 5
-`` *-*-``
+``**finger**finger
+``*left*right
+``.1
+``1 52
+``.3
+``.5
+``1 52 5
+``*-*-``
 
 Or the hands might be combined in a single spine:
 
-`` **finger
-`` R1
-`` L1 L5 R2
-`` R3
-`` 5
-`` L1 L5 R2 R5
-`` *-``
+``**finger
+``R1
+``L1 L5 R2
+``R3
+``5
+``L1 L5 R2 R5
+``*-``
 
 Time-scales might be large:
 
-`` **Periods
-`` Medieval
-`` Renaissance
-`` Baroque
-`` Classical
-`` Romantic
-`` *-``
+``**Periods
+``Medieval
+``Renaissance
+``Baroque
+``Classical
+``Romantic
+``*-``
 
 Or miniscule:
 
-`` **milliseconds
-`` 0.03
-`` 0.8
-`` 23.2
-`` 31.6
-`` *-``
+``**milliseconds
+``0.03
+``0.8
+``23.2
+``31.6
+``*-``
 
 A user might define a highly refined special-purpose representation. For
 example, the following scheme is fashioned after the Benesh dance notation:
 
-`` !! Kellom Tomlinson's``Gavot of 1720.
-`` !! Transcribed from``Feuillet's notation.
-`` **kern``**Benesh
-`` *MM120``*MM120
-`` *M2/2``*M2
-`` *e:``*
-`` !! First Couplet
-`` !``! Half Coupee
-`` 4.gg`` | |u| | |
-`` .``%|+| | | |
-`` .`` |=|v| | |
-`` .``(| | | | |
-`` .``(|-| | | |{
-`` 8ff#`` |_| | | |2
-`` =1``-----------
-`` 2ee``m| | | | |}
-`` !``! Bound
-`` .``_|^| | | |{
-`` .``(|+| | | |
-`` 4.b``-| | | | |
-`` .``(|+| | | |}
-`` .``_| | | | |{
-`` 8a``_|+|+| | |
-`` =2``-----------
-`` !``! Bouree
-`` 4g`` | | | | |
-`` .`` |=| | | |
-`` 4e`` |=| | | |}
-`` .``_|=| | | |
-`` 4g`` |o| | | |
-`` !``! Bouree
-`` 4a``_|+|+| | |
-`` =3``-----------
-`` *-``*-``
+``!! Kellom Tomlinson's``Gavot of 1720.
+``!! Transcribed from``Feuillet's notation.
+``**kern``**Benesh
+``*MM120``*MM120
+``*M2/2``*M2
+``*e:``*
+``!! First Couplet
+``!``! Half Coupee
+``4.gg`` | |u| | |
+``.``%|+| | | |
+``.`` |=|v| | |
+``.``(| | | | |
+``.``(|-| | | |{
+``8ff#`` |_| | | |2
+``=1``-----------
+``2ee``m| | | | |}
+``!``! Bound
+``.``_|^| | | |{
+``.``(|+| | | |
+``4.b``-| | | | |
+``.``(|+| | | |}
+``.``_| | | | |{
+``8a``_|+|+| | |
+``=2``-----------
+``!``! Bouree
+``4g`` | | | | |
+``.`` |=| | | |
+``4e`` |=| | | |}
+``.``_|=| | | |
+``4g`` |o| | | |
+``!``! Bouree
+``4a``_|+|+| | |
+``=3``-----------
+``*-``*-``
 
 Depending on the task, user-defined schemes can be either carefully designed,
 or "throw-away" concoctions created for momentary purposes. The *Humdrum
@@ -159,7 +156,7 @@ have relied on for most of the examples in this book.
 The ***fret* Representation
 ---------------
 
-The ```**fret```_ representation is a pre-defined Humdrum scheme that
+The ``**fret``_ representation is a pre-defined Humdrum scheme that
 provides a comprehensive system for representing performance aspects for
 fretted instruments. The ``**fret`` scheme is suitable for representing
 tablature information for most fretted instruments, such as various guitars,
@@ -184,12 +181,12 @@ the lowest string using the ``*AT:`` tandem interpretation. For the common
 six-string guitar, the lowest pitch is normally tuned to E2, and so would be
 encoded with the following tandem interpretation:
 
-`` *AT:E2``
+``*AT:E2``
 
-The ``*AT:`` interpretation makes use of ```**pitch```_-type pitch
+The ``*AT:`` interpretation makes use of ``**pitch``_-type pitch
 designations and may also include cents deviation. For example, an instrument
 tuned 45 cents sharp might be represented as ``*AT:E2+45``. Encoding the
-absolute tuning is optional with ```**fret```_; when absent, a default tuning
+absolute tuning is optional with ``**fret``_; when absent, a default tuning
 of E2 will be assumed by various processing tools.
 
 A second tandem interpretation (``*RT:``) specifies the relative tuning as
@@ -214,23 +211,23 @@ the lowest string.
 > .. image:: guide.figures/guide18.1a.gif
 
 
-`` *AT:E2``
-`` *RT:0:5:10:15:19:24``
+``*AT:E2``
+``*RT:0:5:10:15:19:24``
 
 (b) Common 12-string guitar.
 
 > .. image:: guide.figures/guide18.1b.gif
 
 
-`` *AT:E2``
-`` *RT:0,12:5,17:10,22:15,27:19,19:24,24``
+``*AT:E2``
+``*RT:0,12:5,17:10,22:15,27:19,19:24,24``
 
 (c) Vieil accord lute.
 
 > .. image:: guide.figures/guide18.1c.gif
 
-`` *AT:G2``
-`` *RT:0,12:5,17:10,22:14,14:19,19:24,24``
+``*AT:G2``
+``*RT:0,12:5,17:10,22:14,14:19,19:24,24``
 
 Example (b) defines the most common relative tuning for the 12-string guitar.
 The six courses are delineated by colons and the tuning of strings withint
@@ -247,13 +244,13 @@ For non-Western and other instruments, it is possible to encode non-integer
 semitone values for various strings, such as a string tuned 9.91 semitones
 above the lowest string.
 
-In addition to the absolute and relative tunings, ```**fret```_ also allows
+In addition to the absolute and relative tunings, ``**fret``_ also allows
 the user to specify the tuning of successive frets using the ``FT:`` tandem
 interpretation. In Western instruments, frets are normally placed in semitone
 increments. For a 12-fret instrument, this semitone arrangement may be
 explicitly represented using the following tandem interpretation:
 
-`` *FT:1,2,3,4,5,6,7,8,9,10,11,12``
+``*FT:1,2,3,4,5,6,7,8,9,10,11,12``
 
 Each successive numerical value indicates the number of semitones above the
 open string for successive fret positions. The interpretation begins with the
@@ -263,14 +260,14 @@ increase of precisely one-- itone for each successive fret. The default fret
 tuning is not limited to 12 frets as in the above example. An instrument
 constructed with nine 1/4-tone fret positions can be encoded as follows:
 
-`` *FT:.5,1,1.5,2,2.5,3,3.5,4,4.5``
+``*FT:.5,1,1.5,2,2.5,3,3.5,4,4.5``
 
 The only restriction imposed by ``*FT:`` is that all strings must have
 identical fret distances. That is, if the first fret is positioned 1 semitone
 above the open string, then this relative pitch arrangement must be true of
 all strings.
 
-The ```**fret```_ representation distinguishes three types of data tokens:
+The ``**fret``_ representation distinguishes three types of data tokens:
 tablature-tokens, rests, and barlines. *Tablature-tokens* encode information
 regarding the fret/finger positions, the manner by which individual strings
 are plucked (or bowed), pitch-bending, vibrato, damping, harmonics, and other
@@ -281,14 +278,14 @@ courses/strings. A six-string (or six-course) instrument will require six
 subtokens in each tablature-token. For example, the following tablature token
 encodes the plucking of the first and sixth string:
 
-`` | - - - - |``
+``| - - - - |``
 
 Subtokens consist of up to five component elements: (1) the string/course
 status, (2) fret position, (3) bowing/strumming, (4) finger action, and (5)
 percussive effects. In addition, the tablature-token can encode bowing and
 strumming information.
 
-In the ```**fret```_ representation, the status of a string/course can occupy
+In the ``**fret``_ representation, the status of a string/course can occupy
 one of sixteen states. An *inactive* string is signified by th-nus sign
 (``-``). An ordinary *plucked* string is represented by the vertical line
 (``|``). Plucking near the bridge (*plucked ponticello*) is represented by
@@ -296,23 +293,23 @@ the slash character (``/``). Plucking near the tone-hole (*plucked sul
 tasto*) is represented by the backslash character (``\``). The repeated
 *plucked-tremolo* (commonly used on the mandoline) is represented using the
 octothorpe or hash character (``#``). *Pizzicato* is represented by the small
-letter ```z``'. Normal bowing of a string is represented by the plus sign
-(``+``); *ponticello* bowing is represented by the open parenthesis ```(``'
-whereas *sul tasto* bowing is represented by the closed parenthesis ```)``'.
-*Spiccato* (bouncing the bow) is represented by the open curly brace ```{``'.
+letter ``z``'. Normal bowing of a string is represented by the plus sign
+(``+``); *ponticello* bowing is represented by the open parenthesis ``(``'
+whereas *sul tasto* bowing is represented by the closed parenthesis ``)``'.
+*Spiccato* (bouncing the bow) is represented by the open curly brace ``{``'.
 *Col legno* (using the wood of the bow) is represented by the closed curly
 brace '``}``'. *Tremolo bowing* is represented by the ampersand (``&``).
 *Natural harmonics* and *artificial harmonics* are represented by the lower-
-case ```o``' and upper-case ```O``' respectively. String *ringing* is denoted
+case ``o``' and upper-case ``O``' respectively. String *ringing* is denoted
 by the colon (``:``), and the *damping* of a string is denoted by the small
-letter ```x``'.
+letter ``x``'.
 
 By way of illustration, the following tablature-token represents a six-string
 or six-course instrument, where the first through sixth strings are
 respectively (1 and 2) plucked, (3) damped, (4) bowed, (5) plucked sul tasto,
 (6) inactive.
 
-`` | | x + \ -``
+``| | x + \ -``
 
 Note that the layout of the strings in a tablature-token always corresponds
 to the tuning specified in the relative-tuning interpretation. In most
@@ -325,13 +322,13 @@ immediately to the right of their respective string/course. For example, the
 following tablature-token encodes a six-string/course instrument in which the
 second and third strings are both stopped at the second fret.
 
-`` | |2 |2 | | |``
+``| |2 |2 | | |``
 
 Example 18.2 shows a sample passage for guitar with a corresponding
-`` **fret`` representation displayed beneath. The ``**fret`` representation
+``**fret`` representation displayed beneath. The ``**fret`` representation
 does not encode duration information. It is common to join the ``**fret``
-spine with a ```**recip```_ spine representing the nominal duration data. In
-example 18.2 a ```**kern```_ spine is also shown indicating the pitches in
+spine with a ``**recip``_ spine representing the nominal duration data. In
+example 18.2 a ``**kern``_ spine is also shown indicating the pitches in
 the ``**fret`` representation.
 
 **Example 18.2.** J.S. Bach, *Anna Magdalena Bach Notebook* Menuet II. Guitar
@@ -339,30 +336,29 @@ arr.
 
 > .. image:: guide.figures/guide18.2.gif
 
-`` ``**recip``**kern``**fret
-`` **``*AT:G2
-`` **``*RT:0,12:5,17:10,22:14,14:19,19:24,24
-`` *M3/4``*``*M3/4
-`` =1``=1``=1
-`` 4``E e g``- |4 - - - |0
-`` 8``c``- : : |3 : :
-`` 8``d``- : : : |0 x
-`` 8``D d e``- |2 : : |2 :
-`` 8``f``- : : : |3 :
-`` =2``=2``=2
-`` 4``E e g``- |4 : : : |0
-`` 4``c``- : : |3 : :
-`` 4``c``- : : |3 : x
-`` =3``=3``=3
-`` 4``F f a``- |5 : : : |2W
-`` 8``f``- : : : |3 :
-`` 8``g``- : : : : |0
-`` 8``a``- : : : : |2
-`` 8``b``- : : : : |4
-`` =4``=4``=4
-`` 2``E e cc``- |4 : : : |5v
-`` *-``*-``*-``
-
+`**recip``**kern``**fret
+``**``*AT:G2
+``**``*RT:0,12:5,17:10,22:14,14:19,19:24,24
+``*M3/4``*``*M3/4
+``=1``=1``=1
+``4``E e g``- |4 - - - |0
+``8``c``- : : |3 : :
+``8``d``- : : : |0 x
+``8``D d e``- |2 : : |2 :
+``8``f``- : : : |3 :
+``=2``=2``=2
+``4``E e g``- |4 : : : |0
+``4``c``- : : |3 : :
+``4``c``- : : |3 : x
+``=3``=3``=3
+``4``F f a``- |5 : : : |2W
+``8``f``- : : : |3 :
+``8``g``- : : : : |0
+``8``a``- : : : : |2
+``8``b``- : : : : |4
+``=4``=4``=4
+``2``E e cc``- |4 : : : |5v
+``*-``*-``*-`
 The ``**fret`` representation also provides several short-hand abbreviations
 for common ornaments and effects. Trills are indicated by the letters `t'
 (one semitone) and `T' (two semitones). Mordents are indicated by the letters
@@ -375,7 +371,7 @@ lateral vibrato. Pitch bending is signified by the tilde (~).
 Apart from tablature-tokens, ``**fret`` also permits the encoding of rests
 and barlines. Rests tokens are denoted simply by the lower-case letter `r'.
 Barlines are represented using the "common system" for barlines used by
-`` **kern`` and other representations.
+``**kern`` and other representations.
 
 
 Additional Features of ***fret*
@@ -387,7 +383,7 @@ the left and right angle brackets: ``>`` means to bow/strum from the strings
 on the left side of the representation toward the strings on the right side
 of the representation. (On most instruments this means strumming "downward"
 -- from the lowest- to the highest-pitched strings.) The left angle bracket:
-`` <`` means to strum in the opposite direction. A rough indication of the
+``<`` means to strum in the opposite direction. A rough indication of the
 speed of bowing/strumming can be represented by duplicating these signifiers.
 For example, ``>>`` means a slower "downward" bow/strum, and ``<<<`` means an
 especially slow "upward" bow/strum. The percent sign (%) is used to signify
@@ -396,14 +392,14 @@ signifiers appear at the beginning of a tablature-token -- whenever they are
 encoded. Strumming all 6 open strings downward on a commonly-tuned guitar is
 represented as:
 
-`` *AT:E2
+``*AT:E2
 *RT:0:5:10:15:19:24
 >| | | | | |``
 
 Notice that there is no space between the right angle bracket and the first
 vertical bar.
 
-The ```**fret```_ representation also permits the optional encoding of
+The ``**fret``_ representation also permits the optional encoding of
 *fingering* information. For the plucking-hand (normally right hand),
 traditional musical abbreviations are used: *P* (pollex) for the thumb, *I*
 (index) for the index finger, *M* (medius) for the middle finger, *A*
@@ -417,7 +413,7 @@ immediately to the right of the string to which the information applies. By
 way of illustration, the finger actions used in the above example may be made
 explicit as follows:
 
-`` >|P |2bP |2cP |P |P |P``
+``>|P |2bP |2cP |P |P |P``
 
 The strum is carried out by the thumb, while the index and middle fingers of
 the fret-hand stop the second and third courses/strings at the second fret.
@@ -425,7 +421,7 @@ In the following continuation of this representation, the first course/string
 is replucked by the thumb. With the exception of the second and third
 courses/strings, the other strings are allows to ring.
 
-`` >|P |2bP |2cP |P |P |P
+``>|P |2bP |2cP |P |P |P
 >|P xIM xIM : : :``
 
 Notice that in damping the vibrations of the second and third strings, both
@@ -435,14 +431,14 @@ On rare occasions, guitarists will substitute fingers on the fret-board while
 a string remains sounding. The following example illustrates such a finger-
 substitution where the middle finger is replaced by the ring finger:
 
-`` | |2b |2c | | |
+``| |2b |2c | | |
 : :2b :2d : : :``
 
 Note that in the ``**fret`` representation, no special signifiers are
 provided for so-called `hammer-on' or (ascending-slur), nor for the so-called
 `pull-off' or (descending-slur). During the ascending-slur, the sound is
 produced simply by engaging the next fret. This can be represented in
-`` **fret`` by using the "let ring" signifier (:) in conjunction with the
+``**fret`` by using the "let ring" signifier (:) in conjunction with the
 appropriate fret notation. The descending-slur can be similarly notated.
 
 Four types of "percussion effects" can be represented using ``**fret``. The
@@ -455,7 +451,7 @@ alone, these signifiers appear on a line by themselves. When sounded in
 conjunction with a plucked or (uncommonly) bowed string, these signifiers
 appear at the beginning of the tablature-token.
 
-The complete system of signifiers used by ```**fret```_ is summarized in
+The complete system of signifiers used by ``**fret``_ is summarized in
 Table 18.1.
 
 **Table 18.1.* Signifiers used by ***fret*.
@@ -530,7 +526,7 @@ inputs, including `**cents**,`_ `**freq**,`_ `**kern**,`_ `**pitch**,`_
 Reprise
 -------
 
-In this chapter we have tried to reinforce the lesson that ```**kern```_ is
+In this chapter we have tried to reinforce the lesson that ``**kern``_ is
 only one of an unbounded number of existing and possible Humdrum
 representations. As a Humdrum user, you are free to concoct your own
 representations to better address the kinds of information you are interested

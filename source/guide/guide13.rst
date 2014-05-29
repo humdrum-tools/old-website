@@ -1,9 +1,6 @@
-Chapter13
-=========
-
-
-Assembling Scores
-------------------------
+================================
+Chapter 13: Assembling Scores
+================================
 
 In the previous chapter we learned how to extract parts and passages from
 Humdrum files. In this chapter we discuss the reverse procedures: how to

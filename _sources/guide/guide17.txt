@@ -1,11 +1,6 @@
-Chapter17
-=========
-
-
-
-
-Creating Inventories
---------------------------
+=======================================
+Chapter 17: Creating Inventories
+=======================================
 
 Many research problems can be addressed by building an *inventory* -- that
 is, identifying the number of occurrences of various types of data. Questions
@@ -39,18 +34,18 @@ In some cases, we're asked to compare two or more repertories when answering
 one of these basic questions.
 
 For illustration purposes, consider the case of a Humdrum file named
-`` alpha`` containing the following simple input:
+``alpha`` containing the following simple input:
 
 
 
-`` **alpha
-`` A
-`` B
-`` A
-`` A
-`` C
-`` B
-`` *-``
+``**alpha
+``A
+``B
+``A
+``A
+``C
+``B
+``*-``
 
 It doesn't matter what the data represent. The "``A``", "``B``", and "``C``"
 might signify different articulation marks, chords, harmonic intervals, or
@@ -58,7 +53,7 @@ instrumental configurations. Whatever is represented, the process of
 generating an inventory is the same. Ultimately, we'd like to produce a
 simple distribution that indicates:
 
-`` 3 occurrences of "A"
+``3 occurrences of "A"
 2 occurrences of "B"
 1 occurrence of "C"``
 
@@ -75,21 +70,21 @@ Let's begin by discussing the second process. In `Chapter 3`_ we saw how the
 UNIX **sort** command will rearrange lines of data so that they are in
 alphabetical/numerical order. The command:
 
-`` sort alpha > sorted.alpha``
+``sort alpha > sorted.alpha``
 
 will sort the file ``alpha`` and place the results in a file named
-`` sorted.alpha``. The file ``sorted.alpha`` will contain the following:
+``sorted.alpha``. The file ``sorted.alpha`` will contain the following:
 
 
 
-`` **alpha
-`` *-
-`` A
-`` A
-`` A
-`` B
-`` B
-`` C``
+``**alpha
+``*-
+``A
+``A
+``A
+``B
+``B
+``C``
 
 Notice that the asterisk is treated as alphabetically prior to the the letter
 `A', so all the Humdrum interpretation records have been moved to the
@@ -102,17 +97,17 @@ occurrences of each unique data token. The **uniq** command described in
 `Chapter 3`_ will eliminate successive duplicate lines. For example, if we
 type:
 
-`` uniq sorted.alpha``
+``uniq sorted.alpha``
 
 The output will be as follows:
 
 
 
-`` **alpha
-`` *-
-`` A
-`` B
-`` C``
+``**alpha
+``*-
+``A
+``B
+``C``
 
 Notice that repetitions of the data "A" and "B" have disappeared. The simple
 **uniq** command is useful for telling us *how many different things* there
@@ -122,17 +117,17 @@ records -- and three different types of data records.
 Recall that the **-c** option for **uniq** will cause a `count' to be
 prepended to each output line. The command:
 
-`` uniq -c sorted.alpha > unique.alpha``
+``uniq -c sorted.alpha > unique.alpha``
 
 will produce the following output:
 
 
 
-`` 1**alpha
-`` 1*-
-`` 3A
-`` 2B
-`` 1C``
+``1**alpha
+``1*-
+``3A
+``2B
+``1C``
 
 The prepended counts tell us that `A' occurs three times, `B' occurs twice,
 and all other records occur just once.
@@ -160,7 +155,7 @@ in an output consisting only of non-null data records.
 Returning to our ``**alpha`` data, we can eliminate everything but data
 records as follows:
 
-`` rid -GLId alpha > filtered.alpha``
+``rid -GLId alpha > filtered.alpha``
 
 By way of summary, generating an inventory is a three-step process. First we
 *filter* the input so only the data of interest is present. Typically, this
@@ -171,7 +166,7 @@ as neighbors. Finally, we use the **uniq -c** to *count* the number of
 occurrences of each type of data token. All three steps can be amalgamated
 into a single pipeline:
 
-`` rid -GLId alpha | sort | uniq -c > inventory.alpha``
+``rid -GLId alpha | sort | uniq -c > inventory.alpha``
 
 Notice that the inventory will pertain to whatever data was provided in the
 original input. We've been using the abstract data "A", "B", and "C".
@@ -192,24 +187,24 @@ markings and stem-directions, or whatever.
 
 
 
-`` **alpha**bet
-`` A$50
-`` B$50
-`` A$50
-`` A$200
-`` C$50
-`` B$50
-`` *-*-``
+``**alpha**bet
+``A$50
+``B$50
+``A$50
+``A$200
+``C$50
+``B$50
+``*-*-``
 
 If we apply our above inventory-generating commands for the file "alphabet,"
 the result will be as follows:
 
 
 
-`` 1A$200
-`` 2A$50
-`` 2B$50
-`` 1C$50``
+``1A$200
+``2A$50
+``2B$50
+``1C$50``
 
 Notice that the inventory is based on *entire records* containing both
 "alpha" and "bet" data. This is the reason why the alpha-bet data-pair "``A
@@ -229,7 +224,7 @@ interested only in alpha-related data, we need to eliminate the irrelevant
 
 For example, we can create an inventory of just the ``**bet`` data:
 
-`` extract -i '**bet' alphabet | rid -GLId | sort | uniq -c \
+``extract -i '**bet' alphabet | rid -GLId | sort | uniq -c \
 >
 >> > inventory.bet``
 
@@ -237,8 +232,8 @@ The resulting ``inventory.bet`` file will contain:
 
 
 
-`` 1$200
-`` 5$50``
+``1$200
+``5$50``
 
 -- meaning 5 occurrences of the data "$50" and 1 occurrence of "$200".
 
@@ -246,14 +241,14 @@ Sometimes it is useful to create an aggregate inventory of the data in each
 separate spine. In such cases, we will need to use **extract** several times
 so that each spine is placed in a separate file:
 
-`` extract -i '**alpha' alphabet > justalpha``
-`` extract -i '**bet' alphabet > justbet``
+``extract -i '**alpha' alphabet > justalpha``
+``extract -i '**bet' alphabet > justbet``
 
 The **cat** command can then be used to concatenate the files end-to-end so
 they form a single column of data. With each data token of interest is on its
 own line, we can generate the appropriate inventory:
 
-`` cat justalpha justbet | rid -GLId | sort | uniq -c``
+``cat justalpha justbet | rid -GLId | sort | uniq -c``
 
 
 Sorting By Frequency of Occurrence
@@ -271,15 +266,15 @@ is ideally suited for numerical sorting. We've already learned that the
 
 If we type
 
-`` sort inventory.alpha``
+``sort inventory.alpha``
 
 The output will be as follows:
 
 
 
-`` 1C
-`` 2B
-`` 3A``
+``1C
+``2B
+``3A``
 
 Now the output is sorted so that the least frequent occurrences are at the
 beginning, and the most frequent occurrences are at the end of the output.
@@ -287,21 +282,21 @@ Incidentally, **sort** has a **-r** option that causes the output to be
 sorted in reverse order. If we use **sort -r**, then the most common
 occurrences will be placed at the beginning of the output:
 
-`` sort -r inventory.alpha``
+``sort -r inventory.alpha``
 
 produces the following output:
 
 
 
-`` 3A
-`` 2B
-`` 1C``
+``3A
+``2B
+``1C``
 
 Once again, we can amalgamate all of the required commands into a single
 pipeline. The following pipeline produces an inventory for any type of
 Humdrum input, sorted from the most common to the least common data:
 
-`` rid -GLId alpha | sort | uniq -c | sort -r > inventory.alpha``
+``rid -GLId alpha | sort | uniq -c | sort -r > inventory.alpha``
 
 
 Counting with the *wc* Command
@@ -321,7 +316,7 @@ nmber of lines or records in the input.
 We can count the total number of non-null data records in a Humdrum input
 using the following pipeline:
 
-`` rid -GLId alpha | wc -l``
+``rid -GLId alpha | wc -l``
 
 This will give us the total number of items in our inventory. Simple division
 will generate the percentages for each type of data record.
@@ -330,7 +325,7 @@ Suppose, for example, that the total number of data records was determined to
 be 874. Using the UNIX **awk** command will allow us to easily generate the
 percentages for each data type via the command:
 
-`` awk '{print $1/847*100 "\t" $2}' inventory.alpha``
+``awk '{print $1/847*100 "\t" $2}' inventory.alpha``
 
 This will create a two-column output. The first column will indicate the
 percentage of occurrence, and the second column will identify the
@@ -351,8 +346,8 @@ By contrast, the **uniq -u** option causes *only* those records that are
 unique (occur only once) to be output. This option can be useful when looking
 for rare circumstances in our data.
 
-`` rid -GLId alpha | sort | uniq -u`` (output only the rare events)
-`` rid -GLId alpha | sort | uniq -d`` (eliminate all the rare events)
+``rid -GLId alpha | sort | uniq -u`` (output only the rare events)
+``rid -GLId alpha | sort | uniq -d`` (eliminate all the rare events)
 
 
 Transforming and Editing Inventory Data
@@ -364,12 +359,12 @@ as the following are considered entirely different:
 
 
 
-`` ABC
-`` abc
-`` Abc
-`` "ABC"
-`` ABC.
-`` CBA``
+``ABC
+``abc
+``Abc
+``"ABC"
+``ABC.
+``CBA``
 
 Remember that step #1 in generating inventories requires that we filter the
 data so only the data of interest is passed to **sort** and **uniq**. This
@@ -392,43 +387,43 @@ inventory of the diatonic pitch-letter names. Our input might look like this:
 
 
 
-`` **notes
-`` A
-`` B
-`` B
-`` D
-`` F#
-`` D#
-`` E
-`` *-``
+``**notes
+``A
+``B
+``B
+``D
+``F#
+``D#
+``E
+``*-``
 
 Without modification, our inventory would appear as follows:
 
 
 
-`` 1A
-`` 2B
-`` 1D
-`` 1D#
-`` 1E
-`` 1F#``
+``1A
+``2B
+``1D
+``1D#
+``1E
+``1F#``
 
 But this inventory distinguishes D-sharp from D-natural -- which is not what
 we want. The answer is to filter our input so that the sharps are removed.
 
 Adding the appropriate `**humsed**`_ command to our pipe:
 
-`` humsed 's/#//' notes | rid -GLId | sort | uniq -c``
+``humsed 's/#//' notes | rid -GLId | sort | uniq -c``
 
 -- will produce the following output:
 
 
 
-`` 1A
-`` 2B
-`` 2D
-`` 1E
-`` 1F``
+``1A
+``2B
+``2D
+``1E
+``1F``
 
 
 Further Examples
@@ -440,36 +435,36 @@ commands given below can be used to solve the question posed:
 
 *Does Liszt use a greater variety of harmonies than Chopin?*
 
-`` extract -i '`**harm`_' liszt* | rid -GLId | sort | uniq | wc -l``
-`` extract -i '**harm' chopin* | rid -GLId | sort | uniq | wc -l``
+``extract -i '`**harm`_' liszt* | rid -GLId | sort | uniq | wc -l``
+``extract -i '**harm' chopin* | rid -GLId | sort | uniq | wc -l``
 
 *What is the most frequently used dynamic marking in Beethoven,* *and how
 does Beethoven's practice compare with that of Brahms?*
 
-`` extract -i '`**dynam`_' beeth* | rid -GLId | sort | uniq -c \
+``extract -i '`**dynam`_' beeth* | rid -GLId | sort | uniq -c \
 >
 >> | sort -r | head -1``
 >
-`` extract -i '**dynam' brahm* | rid -GLId | sort | uniq -c \
+``extract -i '**dynam' brahm* | rid -GLId | sort | uniq -c \
 >
 >> | sort -r | head -1``
 
 *Are flats more common than sharps in Monteverdi?* Let's presume that the
 input is monophonic ``**kern`` data.
 
-`` humsed 's/[^#-]//g' montev* | rid -GLId | sort | uniq -c``
+``humsed 's/[^#-]//g' montev* | rid -GLId | sort | uniq -c``
 
 *Did Bartok's preferred articulation marks change* *over his lifetime?*
 Assume that copies of early and late works have been concatenated to the
 files ``early`` and ``late``. The `**humsed**`_ command here eliminates all
-data with the exception of ```**kern```_ articulation marks. (See `Chapter
+data with the exception of ``**kern``_ articulation marks. (See `Chapter
 6`_ for details on **kern articulation marks.)
 
-`` extract -i '**kern' early | humsed 's/[^"`~^:I]//g' \
+``extract -i '**kern' early | humsed 's/[^"`~^:I]//g' \
 >
 >> | rid -GLId | sort | uniq -c``
 >
-`` extract -i '**kern' late | humsed 's/[^"`~^:I]//g' \
+``extract -i '**kern' late | humsed 's/[^"`~^:I]//g' \
 >
 >> | rid -GLId | sort | uniq -c``
 
@@ -477,19 +472,19 @@ data with the exception of ```**kern```_ articulation marks. (See `Chapter
 melodies than in (say) French chanson?* Once again assume that the inputs are
 monophonic.
 
-`` deg -t pop* | grep -c '4'``
-`` deg -t chanson* | grep -c '4'``
+``deg -t pop* | grep -c '4'``
+``deg -t chanson* | grep -c '4'``
 
 *How frequent are light-related words such as "lumen"* *or "lumine" in the
 different monastic offices for* Thomas of Canterbury? Familiarity with
 regular expressions helps:
 
-`` extract -i '`**text`_' office* | egrep -ic 'lum.+n[e]*$'``
+``extract -i '`**text`_' office* | egrep -ic 'lum.+n[e]*$'``
 
 *Is it true that 90 percent of the notes in a given work by Bach* *use just
 two durations (such as eighths and sixteenths, or* *eighths and quarters)?*
 
-`` humsed 's/[^0-9.]//g' bach | rid -GLId | sort | uniq -c`` (Repeat the
+``humsed 's/[^0-9.]//g' bach | rid -GLId | sort | uniq -c`` (Repeat the
 above command for each work and inspect the results.)
 
 *What is the most common instrumental combination for sonorities* *by
