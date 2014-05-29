@@ -20,34 +20,32 @@ There are several ways one might use this:
 
           - First, add these lines to a file in your home directory called ``.vimrc:``
                     - ``syntax on``
-                              - ``au BufRead,BufNewFile *.hmd set filetpye=humdrum``
-                                        - ``au! Syntax humdrum source ~/.vim/humdrum.vim``
+                    - ``au BufRead,BufNewFile *.hmd set filetpye=humdrum``
+                    - ``au! Syntax humdrum source ~/.vim/humdrum.vim``
 
-                                                This basically tells vim to turn on the 
-                                                        syntax highlighting for filetypes **.hmd** and **.krn**.
+          This basically tells vim to turn on the 
+          syntax highlighting for filetypes **.hmd** and **.krn**.
 
-                                                          - Then copy the humdrum.vim file into the location ~/.vim/humdrum.vim
+          - Then copy the humdrum.vim file into the location ~/.vim/humdrum.vim
 
+All done!
 
-                                                            All done!
-
-
-                                                            .. image:: images/vimhighlighting.png
-                                                               :align: right
-                                                                  :scale: 80%
+.. image:: images/vimhighlighting.png
+   :align: right
+   :scale: 80%
 
 
-                                                               Here we have an example of syntax highlighting in vim using the following coloring conventions:
+Here we have an example of syntax highlighting in 
+vim using the following coloring conventions:
 
-                                                                       - Green: Bibliographic Records
-                                                                                 - Light Blue: Global Comments
-                                                                                           - Blue: Local Comments
-                                                                                                     - Pink: Tandem Interpretations
-                                                                                                               - Red: Exclusive Interpretations
-                                                                                                                         - Red Background: Invalid Tabs
+- Green: Bibliographic Records
+- Light Blue: Global Comments
+- Blue: Local Comments
+- Pink: Tandem Interpretations
+- Red Background: Invalid Tabs
 
-                                                                                                                         Some more highlighting designed for the ``**kern`` representation:
+Some more highlighting designed for the ``**kern`` representation:
 
-                                                                                                                                 - White Background: Measure Lines
-                                                                                                                                           - White Background: Chords
-                                                                                                                                                     - Blue Background: Invalid Chording Spaces
+- White Background: Measure Lines
+- White Background: Chords
+- Blue Background: Invalid Chording Spaces
