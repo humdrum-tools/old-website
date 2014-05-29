@@ -1,14 +1,6 @@
-Chapter39
-=========
-
-
---------
-
-
-Trouble-Shooting
-================
-
---------
+==============================
+Chapter 39: Troubleshooting
+==============================
 
 Computers have an unbounded capacity to generate nonsense. Even when commands
 appear to execute correctly, there is no guarantee that the results are

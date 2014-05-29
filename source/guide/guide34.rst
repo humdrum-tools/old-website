@@ -1,15 +1,8 @@
-
-Chapter34
-=========
-
-
---------
+===============================
+Chapter 34: Serial Processing
+===============================
 
 
-Serial Processing
-=================
-
---------
 
 Humdrum provides a handful of specialized tools for serial and serial-
 inspired analytic processing. In this chapter we introduce the `**reihe**`_,
@@ -28,7 +21,7 @@ Pitch-Class Representation
 
 In set theoretic applications it is common to use pitch-class
 representations. The `**pc**`_ command can be used to transform pitch-related
-representations (such as ```**pitch```_, ```**freq```_ and ```**kern```_) to
+representations (such as ``**pitch``_, ``**freq``_ and ``**kern``_) to
 a conventional pitch-class notation where pitch-class C is represented by the
 value zero. With the **-a** option, **pc** will generate outputs where the pc
 values `10' and `11' are rendered by the alphabetic characters `A' and `B'
@@ -54,62 +47,62 @@ Figure 34.1. Examples of PC set forms.
 > .. image:: guide.figures/guide34.1.gif
 
 
-The `**pcset**`_ command identifies pitch-class sets from ```**pc```_ or
-`` `**semits```_ input. Illustrated below are the corresponding ```**kern```_,
-`` `**pc```_ and ```**pcset```_ representations for Example 34.1.
+The `**pcset**`_ command identifies pitch-class sets from ``**pc``_ or
+``**semits``_ input. Illustrated below are the corresponding ``**kern``_,
+``**pc``_ and ``**pcset``_ representations for Example 34.1.
 
-`` **kern``**pc``**pcset
-`` 4c``0``1-1
-`` 4c 4d``0 2``2-2
-`` 4c 4e 4g``0 4 7``3-11
-`` 4e 4g 4cc``4 7 0``3-11
-`` 4g 4cc 4ee``7 0 4``3-11
-`` 4c 4e- 4g``0 3 7``3-11
-`` 4c 4e 4g 4b-``0 4 7 10``4-27
-`` 4c# 4e# 4g# 4b``1 5 8 11``4-27
-`` 4f 4b 4dd# 4gg#``5 11 3 8 ``4-27
-`` *-``*-``*-``
+``**kern``**pc``**pcset
+``4c``0``1-1
+``4c 4d``0 2``2-2
+``4c 4e 4g``0 4 7``3-11
+``4e 4g 4cc``4 7 0``3-11
+``4g 4cc 4ee``7 0 4``3-11
+``4c 4e- 4g``0 3 7``3-11
+``4c 4e 4g 4b-``0 4 7 10``4-27
+``4c# 4e# 4g# 4b``1 5 8 11``4-27
+``4f 4b 4dd# 4gg#``5 11 3 8 ``4-27
+``*-``*-``*-``
 
 Suppose we wanted to identify the pc sets for successive vertical sonorities
 in the first movement of Webern's Opus 24 concerto. First, we translate the
 input to a pitch-class representation, and then we apply the **pcset**
 command:
 
-`` pc opus24 | pcset``
+``pc opus24 | pcset``
 
 Of course this command will only identify the set forms for pitches that have
 concurrent attacks. If any pitch is sustained, `**pcset**`_ won't know that
 some null tokens indicate sustained pitch activity. We can rectify this by
 using the `**ditto**`_ command (`Chapter 15`_) to fill-out the null tokens:
 
-`` pc opus24 | ditto -s ^= | pcset``
+``pc opus24 | ditto -s ^= | pcset``
 
-If we wanted, we could assemble the resulting ```**pcset```_ spine to the
+If we wanted, we could assemble the resulting ``**pcset``_ spine to the
 original input. This would allow us to search for particular patterns that
 are coordinated with certain pitch-class sets. For example, we might be
 interested in comparing the pitch-class sets that coincide with the
 beginnings of slurs/phrases versus those pitch-class sets coinciding with the
 ends of slurs/phrases. First we generate the ``**pcset`` spine:
 
-`` pc opus24 | ditto -s ^= | pcset > opus24.pcs``
+``pc opus24 | ditto -s ^= | pcset > opus24.pcs``
 
 Then we assemble this spine to the original input score:
 
-`` assemble opus24 opus24.pcs > opus24.all``
+``assemble opus24 opus24.pcs > opus24.all``
 
 Now we can search for data records containing phrase (`{}') or slur ('()')
 markers. Using `**yank**`_ **-m ... -r 0** rather than **grep** assures that
 the output retains the Humdrum syntax (see `Chapter 12`_). Maintaining the
 Humdrum syntax will allow us to use `**extract**`_ to isolate just the
-`` **pcset`` data. Finally, we create an inventory of the pc sets. The process
+``**pcset`` data. Finally, we create an inventory of the pc sets. The process
 is repeated -- once for beginning slurs/phrases, and once for ends of
 slurs/phrases.
 
-`` yank -m '[{(]' -r 0 opus24.all | extract -i '**pcset' \
+``yank -m '[{(]' -r 0 opus24.all | extract -i '**pcset' \
 >
 >> | rid -GLId | sort | uniq -c``
 >
-`` yank -m '[)}]' -r 0 opus24.all | extract -i '**pcset' \
+``yank -m '[)}]' -r 0 opus24.all | extract -i '**pcset' \
 >
 >> | rid -GLId | sort | uniq -c``
 
@@ -132,32 +125,32 @@ Suppose we wanted to count the proportion of phrase endings in music by Alban
 Berg where the phrase ends on either a major or minor chord. First, we locate
 all works composed by Berg:
 
-`` BERG=`find /scores -type f -exec grep -l '!!!COM.*Berg,' "{}" ";"```
+``BERG=`find /scores -type f -exec grep -l '!!!COM.*Berg,' "{}" ";"``
 
 Let's put all the Berg works in a single temporary file:
 
-`` cat $BERG > AllBerg``
+``cat $BERG > AllBerg``
 
 Next we generate the normal set forms:
 
-`` pc AllBerg | ditto -s ^= | nf > AllBerg.nf``
+``pc AllBerg | ditto -s ^= | nf > AllBerg.nf``
 
-Assemble the ```**nf```_ spine with the original scores:
+Assemble the ``**nf``_ spine with the original scores:
 
-`` assemble AllBerg AllBerg.nf > AllBerg.all``
+``assemble AllBerg AllBerg.nf > AllBerg.all``
 
 Now we're ready to count the number of phrases that match the appropriate
 patterns. First, count the total number of phrases:
 
-`` grep -c '}' AllBerg.all``
+``grep -c '}' AllBerg.all``
 
 Count the number of phrases that end with a major chord:
 
-`` grep -c '}.*\t(047)' AllBerg.all``
+``grep -c '}.*\t(047)' AllBerg.all``
 
 And count the number of phrases that end with a minor chord:
 
-`` grep -c '}.*\t(037)' AllBerg.all``
+``grep -c '}.*\t(037)' AllBerg.all``
 
 
 Interval Vectors Using the *iv* Command
@@ -166,19 +159,19 @@ Interval Vectors Using the *iv* Command
 Interval vectors identify the frequency of occurrence of various interval-
 classes for a given pitch-class set. The `**iv**`_ command generates the six-
 element interval vector for any of several types of inputs -- including
-semitones (```**semits```_), pitch-class (```**pc```_), normal form
-(```**nf```_), prime form (```**pf```_), and pitch-class set
-(```**pcset```_). The following example shows several different pitch-class
+semitones (``**semits``_), pitch-class (``**pc``_), normal form
+(``**nf``_), prime form (``**pf``_), and pitch-class set
+(``**pcset``_). The following example shows several different pitch-class
 sets, their corresponding pitch-class sets and (right-most spine), the
 associated interval vector.
 
-`` ``**pc``**pcset``**name**iv
-`` 0``1-1``tone``<000000>
-`` 0 2``2-2``major second<010000>
-`` 0 3 7``3-11``minor triad<001110>
-`` 0 4 7``3-11``major triad<001110>
-`` 0 4 7 10``4-27``dominant seventh<012111>
-`` 1 5 8 11``4-27``dominant seventh<012111>
+```**pc``**pcset``**name**iv
+``0``1-1``tone``<000000>
+``0 2``2-2``major second<010000>
+``0 3 7``3-11``minor triad<001110>
+``0 4 7``3-11``major triad<001110>
+``0 4 7 10``4-27``dominant seventh<012111>
+``1 5 8 11``4-27``dominant seventh<012111>
 > *-*-``*-``*-``
 
 Suppose we wanted to determine whether Arnold Schoenberg tended to use
@@ -190,8 +183,8 @@ vectors without semitone relations will have a zero in the first vector
 position (i.e., <0.....>) whereas interval vectors without tritone relations
 will have a zero in the last position (i.e., <.....0>).
 
-`` pc schoenberg* | ditto -s ^= | iv | grep -c '<0.....>'``
-`` pc schoenberg* | ditto -s ^= | iv | grep -c '<.....0>'``
+``pc schoenberg* | ditto -s ^= | iv | grep -c '<0.....>'``
+``pc schoenberg* | ditto -s ^= | iv | grep -c '<.....0>'``
 
 
 Segmentation Using the *context* Command
@@ -219,24 +212,24 @@ to specify regular expressions that match the beginning and end
 command, translate the output to a pitch-class representation, and then use
 the `**pcset**`_ command to identify the set names:
 
-`` context -b '[{(]' -e '[})]' syrinx | pc | pcset``
+``context -b '[{(]' -e '[})]' syrinx | pc | pcset``
 
 Perhaps we might consider gathering groups of three successive notes
 together, and then generating an inventory of the set forms associated with
 such a segmentation:
 
-`` context -n 3 -o '[=r]' syrinx | pc | pcset | rid -GLId \
+``context -n 3 -o '[=r]' syrinx | pc | pcset | rid -GLId \
 >
 >> | sort | uniq -c``
 
 Another possibility is to treat rests as segmentation boundaries.
 
-`` context -e r syrinx | pc | pcset``
+``context -e r syrinx | pc | pcset``
 
 When a work consists of more than one instrument or part, useful
 segmentations can be made by extracting each instrument individually, using
 `**context**`_ to generate musically-pertinent sets, and then assembling all
-of the ```**pcset```_ spines into a single file.
+of the ``**pcset``_ spines into a single file.
 
 
 The *reihe* Command
@@ -251,33 +244,33 @@ retrogrades (**-R** option) and for retrograde-inversions (**-RI** option).
 Inputs do not have to be 12-tone rows. The 5-tone row used in Igor
 Stravinsky's "Dirge-Canons" from *In Memoriam Dylan Thomas* is as follows:
 
-`` **pc
-`` 2
-`` 3
-`` 6
-`` 5
-`` 4
-`` *-``
+``**pc
+``2
+``3
+``6
+``5
+``4
+``*-``
 
 The following command will generate a prime transposition of the tone-row so
 that it begins on pitch-class 6:
 
-`` reihe -P 6 memoriam``
+``reihe -P 6 memoriam``
 
 The result is:
 
-`` **pc
-`` 6
-`` 7
-`` 10
-`` 9
-`` 8
-`` *-``
+``**pc
+``6
+``7
+``10
+``9
+``8
+``*-``
 
 Generating the inversion beginning at pitch-class 2 would be carried out
 using the following command.
 
-`` reihe -a -I 2 memoriam``
+``reihe -a -I 2 memoriam``
 
 The **-a** option causes the values `10' and `11' to be rendered
 alphabetically as `A' and `B'.
@@ -286,18 +279,18 @@ The `**reihe**`_ command also provides a *shift* operation (**-S**) that is
 useful for shifting the serial order of data tokens forward or backward.
 Consider the following command:
 
-`` reihe -S -1 memoriam``
+``reihe -S -1 memoriam``
 
 This shifts all of the data tokens back one position so the data begins with
 the second value in the input, and the first value is moved to the end:
 
-`` **pc
-`` 3
-`` 6
-`` 5
-`` 4
-`` 2
-`` *-``
+``**pc
+``3
+``6
+``5
+``4
+``2
+``*-``
 
 The shift option for **reihe** can be used to shift *any* type of data -- not
 just pitches of pitch-classes. For example, one might use the shift option to
@@ -327,7 +320,7 @@ that is, we can store (say) only the first 5 notes in each tone row file.
 This feature will also prove useful when doing an automatic search.
 
 >
-`` ###################################################################
+``###################################################################
 # MATRIX
 # This script generates a tone-row matrix for a specified prime row.
 # The -n option is used to specify the number of pitches to be out-
@@ -375,7 +368,7 @@ The first part of the script simply checks to ensure that all of the row
 variant files are present:
 
 >
-`` ###################################################################
+``###################################################################
 # ROWFIND
 #
 # This script carries a preliminary tone-row search in a specified
@@ -427,7 +420,7 @@ and then all rests are changed to null tokens using the `**humsed**`_
 command. Notice the use of the **-a** option for `**pc**`_ in order to use
 the alpha-numeric pitch-class representation.
 
-`` pc -at $1 > temp.pc
+``pc -at $1 > temp.pc
 humsed 's/r/./g' temp.pc > score.tmp``
 
 The main searching task is done by **patt**. The `**patt**`_ command is
@@ -439,7 +432,7 @@ option invokes the multi-record matching mode -- which allows **patt** to
 recognize row statements where several nominally successive pitches are
 collapsed into a vertical chord:
 
-`` # Search for instances of each tone-row variant.
+``# Search for instances of each tone-row variant.
 X=0
 while [ $X -ne 12 ]
 do
@@ -489,7 +482,7 @@ output file. It would be convenient to reduce all 48 ``**patt`` spines into a
 single aggregate spine. This can be done using the `**assemble**`_ and
 `**cleave**`_ commands:
 
-`` # Now we have a lot of files to assemble:
+``# Now we have a lot of files to assemble:
 assemble P*.pat > prime.pat
 cleave -d ' ' -i '**patt' -o '**rows' prime.pat > analysis.1
 

@@ -1,13 +1,6 @@
-Chapter37
-=========
-
---------
-
-
-Electronic Music Editing
-========================
-
---------
+========================================
+Chapter 37: Electronic Music Editing
+========================================
 
 The preparation of encoded musical materials for processing is an essential
 part of computer-assisted musicology. Without electronic data to process,
@@ -136,7 +129,7 @@ parties. It is likely to take decades before the financial and legal issues
 are satisfactorily addressed.
 
 In some cases, you will be translating from one electronic format to another
--- such as from MIDI to ```**kern```_. Once again, be conscious of any
+-- such as from MIDI to ``**kern``_. Once again, be conscious of any
 copyright issues that are raised. Few experiences are more discouraging than
 discovering that your work cannot be distributed because you failed to
 consider seriously the copyright issues involved.
@@ -223,11 +216,11 @@ transpose the result using the Humdrum `**trans**`_ command. For example,
 material for B-flat trumpet or B-flat clarinet can be transposed using the
 following command:
 
-`` trans -d -1 -c -2``
+``trans -d -1 -c -2``
 
 In the case of clarinet in A, a suitable transposition would be:
 
-`` trans -d -2 -c -3``
+``trans -d -2 -c -3``
 
 The **trans** command adds a transposition interpretation to the output in
 order to identify that the material has been shifted. In the ``**kern``
@@ -238,11 +231,11 @@ by adding the upper-case letter `I' prior to the `T' in the appropriate
 tandem interpretation. In the case of a horn in F for example, the
 transpostion interpretation would be modified from
 
-`` *Trd-4c-7``
+``*Trd-4c-7``
 
 to:
 
-`` *ITrd-4c-7``
+``*ITrd-4c-7``
 
 
 Instrument Identification
@@ -252,12 +245,12 @@ Humdrum provides standardized instrumentation indicators. Three different
 types of indication are appropriate: (1) the instrument name as indicated in
 the source, (2) standardized instrument name, and (3) instrument class.
 Standardized instrument names can be found in `**Appendix II**`_. For
-example, the standard indicator for "harpsichord" is ```*Icemba```_.
+example, the standard indicator for "harpsichord" is ``*Icemba``_.
 
 Standardized instrument class designators include ``*ICklav`` for keyboard
 instruments and ``*ICidio`` for percussion instruments, etc., and instrument
 grouping designators -- such as ``*IGripn`` for *ripieno* instruments and
-`` *IGacmp`` for accompaniment instruments. These instrument class designators
+``*IGacmp`` for accompaniment instruments. These instrument class designators
 can also be found in Appendix II.
 
 In addition, the original instrument name (as found in the score) should also
@@ -273,7 +266,7 @@ it is appropriate to encode an "invisible" first barline. For a hypothetical
 file containing five spines, we would need to insert the following line just
 before the first note(s) in the work:
 
-`` =1-=1-=1-=1-=1-``
+``=1-=1-=1-=1-=1-``
 
 Recall that the common system for representing barlines makes a distinction
 between the logical *function* of a barline and it's visual or *orthographic*
@@ -292,12 +285,12 @@ The specific visual appearance may be encoded following the equals sign(s).
 The vertical line (|) represents a `thin' line and the exclamation mark (!)
 represents a `thick' line. A typical final double bar would be encoded:
 
-`` ==|!``
+``==|!``
 
 Most mid-movement double bars are encoded with two thin lines and so would be
 encoded:
 
-`` =||``
+``=||``
 
 A common encoding error is to render mid-movement double barlines as
 *functional* rather than *orthographic* double-bars.
@@ -326,8 +319,8 @@ followed by an eighth-note.
 All appoggiaturas must be re-encoded in a way that reflects their likely
 performance. At the same time, the two notes forming the appoggiatura must be
 marked in the kern representation: the initial note of the appoggiatura is
-marked by the upper-case letter ```P``' and the final (second) note of the
-appoggiatura is marked by a lower-case letter ```p``'.
+marked by the upper-case letter ``P``' and the final (second) note of the
+appoggiatura is marked by a lower-case letter ``p``'.
 
 
 Editing Sections
@@ -346,7 +339,7 @@ Where appropriate, suitable section labels should be created and encoded
 using the Humdrum Section Label designator. Remember that section labels can
 include the space character:
 
-`` *>1st Theme``
+``*>1st Theme``
 
 If you include section labels, you must also include a Humdrum "Expansion
 List" to indicate how the sections are connected. The Humdrum `**thru**`_
@@ -354,7 +347,7 @@ command causes a through-composed version of a file to be generated according
 to the expansion list. For example, an expansion list for a simple binary
 work may be encoded as:
 
-`` *>[A,B]``
+``*>[A,B]``
 
 Remember that expansion lists ought to be encoded prior to the first section
 label.
@@ -369,12 +362,12 @@ practice involves repeating all sections of both the minuet and trio, but
 then avoiding the repeats in the minuet following the Da Capo. A suitable
 expansion list might be:
 
-`` *>[Minuet,Minuet,Trio,Trio,,Minuet]``
+``*>[Minuet,Minuet,Trio,Trio,,Minuet]``
 
 An alternative expansion list might be encoded as follows (notice the
 expansion-list-label *ossia*):
 
-`` *>ossia[Minuet,Minuet,Trio,Trio,,Minuet,Minuet]``
+``*>ossia[Minuet,Minuet,Trio,Trio,,Minuet,Minuet]``
 
 
 Editorialisms in the ***kern* Representation
@@ -385,7 +378,7 @@ editorial footnotes, local comments, global comments, interpretation data,
 *sic* and *ossia* designations, version labels, sectional labels, and
 expansion lists.
 
-The ```**kern```_ representation provides several special-purpose signifiers
+The ``**kern``_ representation provides several special-purpose signifiers
 to help make explicit various classes of editorial amendments,
 interpretations, or commentaries. Five types of editorial signifiers are
 available: (1) *sic* (information is encoded literally, but is questionable)
@@ -393,7 +386,7 @@ signified by the ``Y`` character; (2) *invisible symbol* (Unprinted note,
 rest or barline, but logically implied) signified by the ``y`` character; (3)
 *editorial interpretation*, (a "modest" editorial act of interpretation --
 such as the interpretation of accidentals in *musica ficta*) signified by the
-`` x`` character; (4) *editorial intervention* (a "significant" editorial
+``x`` character; (4) *editorial intervention* (a "significant" editorial
 intervention) signified by the ``X`` character; (5) *footnote* (accompanying
 local or global comment provides a text commentary pertaining to specified
 data token) signified by ``?``.
@@ -415,19 +408,19 @@ One of the advantages of computers is that it is possible for documents to
 undergo continuous revision. In research, it is common for documents to be
 reinterpreted, annotated, or recast in light of newly found documents.
 
-The kern ```x``' signifies an "editorial interpretation" -- that the
-immediately preceding signifier is interpreted. The kern ```xx``' also
+The kern ``x``' signifies an "editorial interpretation" -- that the
+immediately preceding signifier is interpreted. The kern ``xx``' also
 signifies an editorial interpretation where the immediately preceding data
-token is interpreted. The kern ```X``' signifies an "editorial intervention"
+token is interpreted. The kern ``X``' signifies an "editorial intervention"
 -- that the immediately preceding signifier is an editorial addition. The
-kern ```XX``' also signifies an editorial intervention where the immediately
-preceding data token is an editorial addition. The kern ```y``' designates a
+kern ``XX``' also signifies an editorial intervention where the immediately
+preceding data token is an editorial addition. The kern ``y``' designates a
 invisible symbol -- such as an unprinted note or rest that is logically
-implied. The kern ```Y``' signifies an editorial *sic* marking -- that the
-information is encoded literally, but is questionable. The kern ```?``'
+implied. The kern ``Y``' signifies an editorial *sic* marking -- that the
+information is encoded literally, but is questionable. The kern ``?``'
 signifies an editorial footnote where the immediately preceding signifier has
 an accompanying editorial footnote (located in a comment record). The kern
-`` `??``' signifies an editorial footnote where the immediately preceding data
+``??``' signifies an editorial footnote where the immediately preceding data
 token has an accompanying editorial footnote (located in a comment record).
 
 
@@ -442,41 +435,41 @@ As many reference records should be added as possible since these are
 immensely useful to Humdrum users. Essential reference records include the
 following:
 
-`` !!!COM:```composer's name`_
-`` !!!CDT:```composer's dates`_
-`` !!!OTL:```title (in original language)`_
-`` !!!OMV:```movement number (if appropriate)`_
-`` !!!OPS:```opus number (if appropriate)`_
-`` !!!ODT:```date of composition`_
-`` !!!OPC:```place of composition`_
-`` !!!YEP:```publisher of electronic edition`_
-`` !!!YEC:```date & owner of electronic copyright`_
-`` !!!YER:```date electronic edition released`_
-`` !!!YEM:```copyright message`_
-`` !!!YEN:```country of copyright`_
-`` !!!EED:```electronic editor`_
-`` !!!ENC:```encoder of document`_
-`` !!!EEV:```electronic edition version`_
-`` !!!EFL:```file number, e.g. 1 or 4 (1/4)`_
-`` !!!VTS:```checksum validation number (see below)`_
-`` !!!AMT:```metric classification`_
-`` !!!AIN:```instrumentation`_
+``!!!COM:``composer's name`_
+``!!!CDT:``composer's dates`_
+``!!!OTL:``title (in original language)`_
+``!!!OMV:``movement number (if appropriate)`_
+``!!!OPS:``opus number (if appropriate)`_
+``!!!ODT:``date of composition`_
+``!!!OPC:``place of composition`_
+``!!!YEP:``publisher of electronic edition`_
+``!!!YEC:``date & owner of electronic copyright`_
+``!!!YER:``date electronic edition released`_
+``!!!YEM:``copyright message`_
+``!!!YEN:``country of copyright`_
+``!!!EED:``electronic editor`_
+``!!!ENC:``encoder of document`_
+``!!!EEV:``electronic edition version`_
+``!!!EFL:``file number, e.g. 1 or 4 (1/4)`_
+``!!!VTS:``checksum validation number (see below)`_
+``!!!AMT:``metric classification`_
+``!!!AIN:``instrumentation`_
 
 Where appropriate, the following reference records should also be included:
 
-`` !!!CNT:```composer's nationality`_
-`` !!!XEN:```title (English translation)`_
-`` !!!OPR:```title of larger (or parent) work`_
-`` !!!ODE:```dedication`_
-`` !!!OCY:```country of composition`_
-`` !!!PPR:```first publisher`_
-`` !!!PDT:```date first published`_
-`` !!!PPP:```place first published`_
-`` !!!SCT:```scholarly catalogue name & number`_
-`` !!!SMA:```manuscript acknowledgement`_
-`` !!!AFR:```form of work`_
-`` !!!AGN:```genre of work`_
-`` !!!AST:```style of period`_
+``!!!CNT:``composer's nationality`_
+``!!!XEN:``title (English translation)`_
+``!!!OPR:``title of larger (or parent) work`_
+``!!!ODE:``dedication`_
+``!!!OCY:``country of composition`_
+``!!!PPR:``first publisher`_
+``!!!PDT:``date first published`_
+``!!!PPP:``place first published`_
+``!!!SCT:``scholarly catalogue name & number`_
+``!!!SMA:``manuscript acknowledgement`_
+``!!!AFR:``form of work`_
+``!!!AGN:``genre of work`_
+``!!!AST:``style of period`_
 
 In general, place essential reference records at the beginning of a document.
 These will include the composer, title of the work, etc. Less important
@@ -495,12 +488,12 @@ Once you have encoded your document, you should create a error-checking
 strategy. The Humdrum `**humdrum**`_ command can be used to identify whether
 the final encoded output conforms to the Humdrum syntax:
 
-`` humdrum full.krn``
+``humdrum full.krn``
 
 Use the Humdrum `**proof`_** **-k** command to identify any syntactical
 errors in any encoded ``**kern`` data:
 
-`` proof -k full.krn``
+``proof -k full.krn``
 
 One of the best ways to ensure that musical data makes sense is to listen to
 it. The Humdrum `**midi**`_ and `**perform**`_ commands can be used to listen
@@ -508,7 +501,7 @@ to your data. The **-c** option for **midi** causes the Humdrum data to be
 displayed while the MIDI data is performed. This can further help in locating
 errors.
 
-`` midi -c full.krn | perform``
+``midi -c full.krn | perform``
 
 The **perform** command allows you to *pause* (press the space bar), to
 *move* to a particular measure (type a measure number followed by enter), to
@@ -545,7 +538,7 @@ In order to calculate the checksum value for a given file, use the following
 command:
 
 > Open the original file and move to the bottom of the document. Then read in
-the calculated checksum value. Finally, insert the ```!!!VTS: ``' reference
+the calculated checksum value. Finally, insert the ``!!!VTS: ``' reference
 record designator.
 
 You can check that everything is fine by invoking the **veritas** command:

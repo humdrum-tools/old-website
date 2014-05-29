@@ -1,14 +1,8 @@
-Chapter38
-=========
 
+=======================================
+Chapter 38: Systematic Musicology
+=======================================
 
---------
-
-
-Systematic Musicology
-=====================
-
---------
 
 Much of music research centers on the task of describing things. A researcher
 might offer a description of "House" style, or Wagner's orchestration,
