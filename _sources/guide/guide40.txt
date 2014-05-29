@@ -1,14 +1,9 @@
-Chapter40
-=========
+
+============================
+Chapter 40: Conclusion
+============================
 
 
---------
-
-
-Conclusion
-==========
-
---------
 
 In `Chapter 1,`_ we noted that computers are quite limited in what they are
 able to do. We noted in particular that computers are not good at
