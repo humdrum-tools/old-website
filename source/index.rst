@@ -52,6 +52,7 @@ Humdrum Extras
 .. toctree::
    :maxdepth: 2
 
+   extras/index
    sappExtras.rst
 
 The Humdrum Cookbook
