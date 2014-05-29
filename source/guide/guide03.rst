@@ -1,15 +1,8 @@
 
-Chapter3
-========
+========================================
+Chapter 3: Some Initial Processing
+========================================
 
-
---------
-
-
-Some Initial Processing
-=======================
-
---------
 
 Now that we have learned some things about Humdrum representations (and the
 `**kern`representation in particular), let's explore some basic processing

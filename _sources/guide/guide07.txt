@@ -36,12 +36,12 @@ In addition, MIDI does not represent rests.
 A simple ```**MIDI```_ example is given below. It consists just a single note
 (middle C):
 
-`` !! A single MIDI note.
-`` **MIDI
-`` *Ch1
-`` 54/60/64
-`` 80/-60/64
-`` *-``
+``!! A single MIDI note.
+``**MIDI
+``*Ch1
+``54/60/64
+``80/-60/64
+``*-``
 
 Notice that there are two ``**MIDI`` data tokens: one to specify note-on and
 one to specify note-off events. Each ``**MIDI`` data token consists of three
@@ -57,7 +57,7 @@ beginning to send the first data in a stream. The leading pause prevents a
 
 The second element in a data token represents the ``**MIDI`` key number.
 Successive numbers refer to semitone pitches where middle C is designated key
-`` 60``. Key-off events are represented by negative integers, so ``-60`` means
+``60``. Key-off events are represented by negative integers, so ``-60`` means
 turn off key ``60``. Key numbers range between 1 and 127.
 
 The third element in a data token represents the ``**MIDI`` key velocity.
@@ -72,12 +72,12 @@ C-major triad. The ```**kern```_ data is shown in the left spine with the
 corresponding ``**MIDI`` data in the right spine. Notice that each data token
 consists of three subtokens, one for each note:
 
-`` !! A C-majortriad.
-`` **kern**MIDI
-`` **Ch1
-`` 2c 2e 2g72/60/64 72/64/64 72/67/64
-`` .144/-60/64 144/-64/64 144/-67/64
-`` *-*-``
+``!! A C-majortriad.
+``**kern**MIDI
+``**Ch1
+``2c 2e 2g72/60/64 72/64/64 72/67/64
+``.144/-60/64 144/-64/64 144/-67/64
+``*-*-``
 
 Middle C corresponds to MIDI key 60; The pitches E4 and G4 correspond to MIDI
 keys 64 and 67 respectively. The half-note durations result in a delay of 144
@@ -89,13 +89,13 @@ begins at the same time that the C major triad ends. This results in five
 subtokens in the corresponding ``**MIDI`` data record. Three key-off events
 are synchronous with two key-on events:
 
-`` !! Two chords.
-`` **kern**MIDI
-`` **Ch1
-`` 2c 2e 2g72/60/64 72/64/64 72/67/64
-`` 4d 4f144/-60/64 144/-64/64 144/-67/64 144/62/64 144/65/64
-`` .72/-62/64 72/-65/64
-`` *-*-``
+``!! Two chords.
+``**kern**MIDI
+``**Ch1
+``2c 2e 2g72/60/64 72/64/64 72/67/64
+``4d 4f144/-60/64 144/-64/64 144/-67/64 144/62/64 144/65/64
+``.72/-62/64 72/-65/64
+``*-*-``
 
 Notice that the difference in duration between the half-notes and quarter-
 notes is reflected when the notes are turned *off* rather than when the notes
@@ -109,33 +109,33 @@ Darius Milhaud's *Touches Blanches*.
 > .. image:: guide.figures/guide07.1.gif
 
 
-`` !!!: Milhaud, D.
-`` !!!OTL: TouchesBlanches
-`` **kern**kern**MIDI**MIDI
-`` *staff2*staff1*Ch1*Ch1
-`` *clefF4*clefG2*clefF4*clefG2
-`` *k[]*k[]*k[]*k[]
-`` *M3/4*M3/4*M3/4*M3/4
-`` =1-=1-=1-=1-
-`` 4e(4g72/64/6472/67/64
-`` 4c2a)72/-64/64 72/60/6472/-67/64 72/69/64
-`` 4F.72/-60/64 72/53/64.
-`` =2=2=2=2
-`` 4f(8a72/-53/64 72/65/6472/-69/64 72/69/64
-`` .8b.36/-69/64 36/71/64
-`` 4d2g)36/-65/64 36/62/6436/-71/64 36/67/64
-`` 4G.72/-62/64 72/55/64.
-`` =3=3=3=3
-`` 4e(4g72/-55/64 72/64/6472/-67/64 72/67/64
-`` 4c2a)72/-64/64 72/60/6472/-67/64 72/69/64
-`` 4F.72/-60/64 72/53/64.
-`` =4=4=4=4
-`` 4f(8a72/-53/64 72/65/6472/-69/64 72/69/64
-`` .8b.36/-69/64 36/71/64
-`` 4d2g)36/-65/64 36/62/6436/-71/64 36/67/64
-`` 4G.72/-62/64 72/55/64.
-`` ..72/-55/6472/-67/64
-`` *-*-*-*-``
+``!!!: Milhaud, D.
+``!!!OTL: TouchesBlanches
+``**kern**kern**MIDI**MIDI
+``*staff2*staff1*Ch1*Ch1
+``*clefF4*clefG2*clefF4*clefG2
+``*k[]*k[]*k[]*k[]
+``*M3/4*M3/4*M3/4*M3/4
+``=1-=1-=1-=1-
+``4e(4g72/64/6472/67/64
+``4c2a)72/-64/64 72/60/6472/-67/64 72/69/64
+``4F.72/-60/64 72/53/64.
+``=2=2=2=2
+``4f(8a72/-53/64 72/65/6472/-69/64 72/69/64
+``.8b.36/-69/64 36/71/64
+``4d2g)36/-65/64 36/62/6436/-71/64 36/67/64
+``4G.72/-62/64 72/55/64.
+``=3=3=3=3
+``4e(4g72/-55/64 72/64/6472/-67/64 72/67/64
+``4c2a)72/-64/64 72/60/6472/-67/64 72/69/64
+``4F.72/-60/64 72/53/64.
+``=4=4=4=4
+``4f(8a72/-53/64 72/65/6472/-69/64 72/69/64
+``.8b.36/-69/64 36/71/64
+``4d2g)36/-65/64 36/62/6436/-71/64 36/67/64
+``4G.72/-62/64 72/55/64.
+``..72/-55/6472/-67/64
+``*-*-*-*-``
 
 The ```**MIDI```_ representation always expects a tandem interpretation
 indicating the MIDI channel assignment. In Example 7.1 both parts have been
@@ -148,13 +148,13 @@ The *midi* Command
 --------
 
 The `**midi**`_ command converts Humdrum ```**kern```_ data into Humdrum
-`` **MIDI`` data. By way of example, the above ``**MIDI`` data can be
+``**MIDI`` data. By way of example, the above ``**MIDI`` data can be
 generated as follows:
 
-`` midi inven05.krn > inven05.hmd``
+``midi inven05.krn > inven05.hmd``
 
 The ``.hmd`` filename extension is a common way of designating Humdrum
-`` MIDI`` data.
+``MIDI`` data.
 
 Since the ``**kern`` representation does not encode key-velocity information,
 the **midi** command assumes a default key velocity of 64 (from a range of 1
@@ -165,7 +165,7 @@ be represented without durations. The following command takes a file
 containing a 12-tone row (pitch information only) and produces a ``**MIDI``
 output where all notes assigned to a quarter duration:
 
-`` midi -d 4 tonerow > tonerow.hmd``
+``midi -d 4 tonerow > tonerow.hmd``
 
 The most common use of ``**MIDI`` data is to create a standard MIDI file
 using the **smf** command, or to listen to the output using the **perform**
@@ -182,7 +182,7 @@ simple interactive environment suitable for proof-listening and other
 audition tasks.
 
 The **perform** command accepts any Humdrum input; however, only
-`` `**MIDI```_ spines present in the input stream are performed. Non-MIDI
+```**MIDI```_ spines present in the input stream are performed. Non-MIDI
 spines are simply ignored and do not affect the sound output. The **perform**
 command generates serial MIDI data which are sent directly to a MIDI
 controller card or on-board sound-card.
@@ -191,7 +191,7 @@ The **perform** command is typically the last command in a pipe preceded by
 the **midi** command. For example, a ``**kern``-format score can be heard
 using the following command:
 
-`` midi clara.krn | perform``
+``midi clara.krn | perform``
 
 When invoked, the **perform** command reads in the entire input into memory.
 This allows the user to move freely both forward and backward through the
@@ -222,7 +222,7 @@ an input contains a global comment containing the character string "``Second
 theme``," then the user can move immediately to this position in the input by
 entering the following command:
 
-`` /Second theme``
+``/Second theme``
 
 Similarly, backward searches can be carried out by typing the question mark
 (``?``) rather than the slash. If the search is successful, playback
@@ -236,38 +236,38 @@ The **midi** command provides a useful **-c** option that causes each data
 record to be repeated as a comment. For example, when the **-c** option is
 used a sequence of data records such as the following:
 
-`` 4C4E4G4c
-`` 4D4F4G4B
-`` 4AA4E4A4c``
+``4C4E4G4c
+``4D4F4G4B
+``4AA4E4A4c``
 
 is transformed to:
 
-`` 4C4E4G4c
-`` !!4C4E4G4c
-`` 4D4F4G4B
-`` !!4D4F4G4B
-`` 4AA4E4A4c
-`` !!4AA4E4A4c``
+``4C4E4G4c
+``!!4C4E4G4c
+``4D4F4G4B
+``!!4D4F4G4B
+``4AA4E4A4c
+``!!4AA4E4A4c``
 
 Since, by default, the **perform** command echoes all global comments on the
 screen during playback, this means that the Humdrum data will also appear on
 the screen as it is being played. In addition, the commented data records are
 accessible to the forward- and backward-search commands. For example, in the
-`` `**kern```_ representation, pauses are indicated by a semicolon; hence the
+```**kern```_ representation, pauses are indicated by a semicolon; hence the
 user might search for the next pause symbol by typing:
 
-`` /;``
+``/;``
 
 Similarly, the user could search for a particular pitch, e.g.
 
-`` /gg#``
+``/gg#``
 
 Since the **perform** command accepts any Humdrum input, other Humdrum data
 may be used for searching. For example, the input data might contain melodic
 interval data (see `Chapter 11`_), allowing the user to search for a
 particular interval such as a diminished octave:
 
-`` /d8``
+``/d8``
 
 If the string pattern is found in the input, **perform** will move
 immediately forward (or backward) to the next occurrence and begin playing
@@ -285,7 +285,7 @@ The tempo may be specified on the command line by using the **-t** option.
 For example, the following command causes the file ``Andean`` to be performed
 at half tempo:
 
-`` midi Andean | perform -t 0.5``
+``midi Andean | perform -t 0.5``
 
 Performing at fast speeds can often be useful when scanning for a particular
 passage.
@@ -324,10 +324,10 @@ platforms, including sequencer programs and most music notation packages.
 
 The **smf** command translates only ``**MIDI`` input spines; all
 non-``**MIDI`` spines are simply ignored. Suppose we begin with a
-`` **kern``-format file named ``joplin``. We can create a standard MIDI file
+``**kern``-format file named ``joplin``. We can create a standard MIDI file
 as follows:
 
-`` midi joplin | smf > joplin.smf``
+``midi joplin | smf > joplin.smf``
 
 The **smf** command provides two options. The **-t** option allows the user
 to set the tempo, whereas the **-v** option allows the user to specify a
@@ -359,27 +359,3 @@ data into Humdrum.
 
 
 
--   ` **Next Chapter**`_
--   ` **Previous Chapter**`_
--   ` **Table of Contents**`_
--   ` **Detailed Contents**`_
-
-(C) Copyright 1999 David Huron
-
-.. _Previous Chapter: guide06.html
-.. _Contents: guide.toc.html
-.. _Next Chapter: guide08.html
-.. _midi: commands/midi.html
-.. _perform: commands/perform.html
-.. _smf: commands/smf.html
-.. _tacet: commands/tacet.html
-.. _Chapter 30.: guide30.html
-.. _**MIDI: representations/MIDI.rep.html
-.. _**kern: representations/kern.rep.html
-.. _Chapter 11: guide11.html
-.. _Chapter 12,: guide12.html
-.. _extract: commands/extract.html
-.. _yank: commands/yank.html
-.. _Chapter 21: guide21.html
-.. _patt: commands/patt.html
-.. _Detailed Contents: guide.toc.detailed.html

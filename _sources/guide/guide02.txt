@@ -1,13 +1,6 @@
-
-Chapter2
-========
-
-
---------
-
-
-Representing Music Using *****kern*** (I)
-====
+========================================================
+Chapter 2: Representing Music Using `*`*kern (I)
+========================================================
 
 --------
 
@@ -65,7 +58,7 @@ next.
 
 Lines that begin with an equals-sign indicate *logical* barlines. Musical
 works may begin with either a complete measure or a partial measure. In the
-`` **kern`` representation, the beginning of the first measure is explicitly
+``**kern`` representation, the beginning of the first measure is explicitly
 indicated. In Example 2.1, the encoding for the first barline (``=-``) is a
 functional encoding that doesn't correspond to anything in the printed score.
 The minus sign following the equals-sign indicates that the barline is
@@ -102,7 +95,7 @@ naturals are mutually exclusive in ``**kern``, so tokens such as "``cc#n``"
 and "``GG-#``" are illegal.
 
 In Example 2.2, two musical parts are encoded. In the corresponding
-`` **kern`` encoding, each musical part or voice has been assigned to a
+``**kern`` encoding, each musical part or voice has been assigned to a
 different musical staff -- labelled ``*staff1`` and ``*staff2``. Notice that
 the upper part has been encoded in the right-most column. The layout is
 exactly as though the musical score were turned sideways.
@@ -164,7 +157,7 @@ a sustained pitch while another part is moving.
 Rests are encoded by the lower-case letter ```r``'. Notice that the first
 rest in the lower part has not been encoded as a whole rest. Instead, it has
 been rendered as a dotted half rest. This is a good illustration of how
-`` **kern`` is intended to be a *functional* rather than *orthographic*
+``**kern`` is intended to be a *functional* rather than *orthographic*
 (visual) representation. Nevertheless, users can explicitly indicate that the
 rest is visually rendered as a whole rest by adding a second lower-case
 letter ``r``.
@@ -194,7 +187,7 @@ case ```m``' for semitone mordents. Inverted mordents are similarly encoded
 using the letter ```W``'. In Example 2.2, it is not clear whether the mordent
 should be a semitone (consistent with a G harmonic minor figure) or a whole-
 tone mordent (consistent with a G melodic minor figure). The signifier
-`` `Ww``' is a special representation indicating that the ornament may be
+```Ww``' is a special representation indicating that the ornament may be
 either one.
 
 Also evident in Example 2.2 are the upper-case letters ```L``' and ```J``'.
@@ -204,7 +197,7 @@ beams and partial beams are discussed in Example 2.4.
 
 Example 2.3 shows a four-part chorale harmonization by Bach. In this example,
 two musical parts share each of the two staves. Notice how the corresponding
-`` **kern`` encoding assigns each part to a separate column, but links the
+``**kern`` encoding assigns each part to a separate column, but links the
 appropriate parts using the ``*staff`` indicators.
 
 **Example 2.3.** *Nun danket alle Gott*, arr. J.S. Bach.
@@ -265,14 +258,14 @@ representing "curved lines" found in printed scores. Since ``**kern`` is a
 explicitly interpreted as either *ties, slurs* or *phrases.*
 
 The open brace ``{`` denotes the beginning of a phrase. The closed brace
-`` }`` denotes the end of a phrase.
+``}`` denotes the end of a phrase.
 
 The open parenthesis ``(`` and closed parenthesis ``)`` signify the beginning
 and end of a slur respectively.
 
 The open square bracket ``[`` denotes the first note of a tie. The closed
 square bracket ``]`` denotes the last note of a tie. The underscore character
-`` _`` denotes middle notes (if any) of a tie.
+``_`` denotes middle notes (if any) of a tie.
 
 Slurs and phrase markings can be *nested* (e.g. slurs within slurs) and may
 also be *elided* (e.g. overlapping phrases) to a single depth. *Nested
@@ -302,15 +295,15 @@ that there are no sharps or flats in the key signature.
 
 The upper-most part in the first measure shows the use of partial beams.
 Partial beams that extend to the left are encoded by the lower-case letter
-`` `k``'. Partial beams that extend to the right are encoded by the upper-case
-`` `K``'. Letters are repeated for each partial beam present. In this case,
+```k``'. Partial beams that extend to the right are encoded by the upper-case
+```K``'. Letters are repeated for each partial beam present. In this case,
 only a single partial beam is used, so only a single ```k``' is encoded.
 Notice that the signifiers ```L``' and ```J``' are used only to encode
 complete beams.
 
 In the second-last measure, double beams are used to join the sixteenth-note
 pairs. As a result, the beams are started with ```LL``' and end with
-`` `JJ``'.
+```JJ``'.
 
 **Example 2.4.** Franz Joseph Haydn, *Sonata in C major, Hob. XVI: 35*.
 
@@ -408,25 +401,25 @@ spine. *Global comments* by contrast completely ignore the spines.
 ````
 $ 
 
-`` !! Ojibway Indian Song
-`` !! Transcribed by Frances Densmore
-`` !! No. 84 "The Sioux Follow Me"
-`` **kern**lyrics
-`` !! In Ojibway
-`` *clefF4*
-`` *M3/4*
-`` *k[b-e-a-d-g-]*
-`` 8.d-Ma-
-`` 16d--gi-
-`` =1=1
-`` 8d--ja-
-`` 16A--go
-`` 16A-ic-
-`` 4d--kew-
-`` 4d--yan
-`` =2=2
-`` etc.etc.
-`` *-*-``
+``!! Ojibway Indian Song
+``!! Transcribed by Frances Densmore
+``!! No. 84 "The Sioux Follow Me"
+``**kern**lyrics
+``!! In Ojibway
+``*clefF4*
+``*M3/4*
+``*k[b-e-a-d-g-]*
+``8.d-Ma-
+``16d--gi-
+``=1=1
+``8d--ja-
+``16A--go
+``16A-ic-
+``4d--kew-
+``4d--yan
+``=2=2
+``etc.etc.
+``*-*-``
 
 ````
 $ 
@@ -446,19 +439,19 @@ number, followed by a colon, followed by some text. The following example
 provides a set of reference records related to the "Augurs of Spring" section
 from Stravinsky's *Rite of Spring.* Example 2.6.
 
-`` !!!COM: Stravinsky, Igor Fyodorovich
-`` !!!CDT: 1882/6/17/-1971/4/6
-`` !!!ODT: 1911//-1913//; 1947//
-`` !!!OPT@@RUS: Vesna svyashchennaya
-`` !!!OPT@FRE: Le sacre du printemps
-`` !!!OPT@ENG: Rite of Spring
-`` !!!OTL@FRE: Les augures printaniers
-`` !!!PUB: Boosey & Hawkes
-`` !!!YEC: 1945 Boosey & Hawkes
-`` !!!AGN: ballet
-`` !!!AST: neo-classical
-`` !!!AMT: irregular
-`` !!!AIN: clars corno fagot flt oboe``
+``!!!COM: Stravinsky, Igor Fyodorovich
+``!!!CDT: 1882/6/17/-1971/4/6
+``!!!ODT: 1911//-1913//; 1947//
+``!!!OPT@@RUS: Vesna svyashchennaya
+``!!!OPT@FRE: Le sacre du printemps
+``!!!OPT@ENG: Rite of Spring
+``!!!OTL@FRE: Les augures printaniers
+``!!!PUB: Boosey & Hawkes
+``!!!YEC: 1945 Boosey & Hawkes
+``!!!AGN: ballet
+``!!!AST: neo-classical
+``!!!AMT: irregular
+``!!!AIN: clars corno fagot flt oboe``
 
 Reference records need not be in any particular order. The most important
 reference records (composer, title, etc.) are typically placed at the very
@@ -482,7 +475,7 @@ encoded using the original language.
 
 Language designations are explicitly indicated by following a reference code
 with one or two "at" signs (@) followed by a three letter language code. The
-`` `OPT@ENG``' code is used to provide an English translation. In this case,
+```OPT@ENG``' code is used to provide an English translation. In this case,
 the Russian title (*Vesna svyashchennaya*) is translated as *Rite of Spring*.
 The double "at" sign (@@) is used to designate the original, primary, or
 preferred language.
@@ -521,7 +514,7 @@ records always specify the instrumentation in alphabetical order by
 instrument abbrevation separated by a single space. For example, the
 instrumentation for a woodwind quintet is given as:
 
-`` !!!AIN: clars corno fagot flt oboe``
+``!!!AIN: clars corno fagot flt oboe``
 
 In our discussion here we have only identified some of the more common types
 of reference records. A complete description of reference records is given in

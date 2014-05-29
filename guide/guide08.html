@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Chapter8 &mdash; humdrum-tools 1 documentation</title>
+  <title>Chapter 8: The Shell (I) &mdash; humdrum-tools 1 documentation</title>
   
 
   
@@ -29,7 +29,10 @@
   
 
   
-    <link rel="top" title="humdrum-tools 1 documentation" href="../index.html"/> 
+    <link rel="top" title="humdrum-tools 1 documentation" href="../index.html"/>
+        <link rel="up" title="The Humdrum User Guide" href="index.html"/>
+        <link rel="next" title="Chapter 9: Searching with Regular Expressions" href="guide09.html"/>
+        <link rel="prev" title="Chapter7" href="guide07.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -56,12 +59,110 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
         
-            <ul class="simple">
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../installationguide/index.html">Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installationguide/downloading.html">Downloading Humdrum</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><em>The Humdrum User Guide</em></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="guide01.html">Chapter 1: Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using `*`*kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide03.html">Chapter 3: Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide04.html">Chapter 4:Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide05.html">Chapter 5: The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide06.html">Chapter 6: Representing Music Using ***kern*(II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide07.html">Chapter7</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Chapter 8: The Shell (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide09.html">Chapter 9: Searching with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide10.html">Chapter10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide11.html">Chapter11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide12.html">Chapter12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide13.html">Chapter13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide14.html">Chapter14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide15.html">Chapter15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide16.html">Chapter16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide17.html">Chapter17</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide18.html">Chapter18</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide19.html">Chapter19</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide20.html">Chapter20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide21.html">Chapter21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide21.html#searching-for-patterns">Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide22.html">Chapter22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide23.html">Chapter23</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide23.html#rhythm">Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide24.html">Chapter24</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide24.html#the-shell-iii">The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide25.html">Chapter25</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide25.html#similarity">Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide26.html">Chapter26</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide26.html#moving-signifiers-between-spines">Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide27.html">Chapter27</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide29.html">Chapter29</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide29.html#differences-and-commonalities">Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide30.html">Chapter30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide30.html#midi-input-tools">MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide31.html">Chapter31</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide31.html#repertories-and-links">Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide32.html">Chapter32</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide32.html#the-shell-iv">The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide34.html">Chapter34</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide34.html#serial-processing">Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide35.html">Chapter35</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide35.html#layers">Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37.html">Chapter37</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37.html#electronic-music-editing">Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide38.html">Chapter38</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide38.html#systematic-musicology">Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide39.html">Chapter39</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide39.html#trouble-shooting">Trouble-Shooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide40.html">Chapter40</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide40.html#conclusion">Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bibliography.html">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.more.html">Supplementary Humdrum Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.toc.html">Humdrum Command Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="humdrum.problems.html">HUMDRUM PROBLEMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux.perform.html">Installing and Using the Humdrum &#8220;perform&#8221; Command under Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.bibliog.html"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.bibliog.html#bibliography">Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07.html">Humdrum Developer&#8217;s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a.html"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a.html#humdrum-representation-development">Humdrum Representation Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a.html#representation-assumptions">Representation Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a.html#creating-new-humdrum-representations">Creating New Humdrum Representations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a.html#defining-a-new-humdrum-interpretation-a-sample-problem">Defining a New Humdrum Interpretation: A Sample Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07b.html"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07b.html#humdrum-software-development">Humdrum Software Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07b.html#standard-program-skeleton">Standard Program Skeleton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="musedata2kern.html"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="musedata2kern.html#how-to-translate-musedata-files-to-humdrum">How To Translate MuseData Files to Humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="musedata2kern.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problems.html">Sample Problems Using the Humdrum Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projects.html">Sample Research Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="representations.toc.html">Humdrum Representation Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html">Online Resources:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample.problems.html">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../sappExtras.html">Humdrum Extras</a></li>
 </ul>
-<ul class="simple">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook/index.html">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/vimHighlighting.html">Syntax Coloring in Vim</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencemanual/index.html">Humdrum Reference Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../referencemanual/assemble.html">Assemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../referencemanual/hint.html">hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../referencemanual/mint.html">mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../referencemanual/key.html">key</a></li>
+</ul>
+</li>
 </ul>
 
         
@@ -85,7 +186,9 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Chapter8</li>
+          <li><a href="index.html"><em>The Humdrum User Guide</em></a> &raquo;</li>
+      
+    <li>Chapter 8: The Shell (I)</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../_sources/guide/guide08.txt" rel="nofollow"> View page source</a>
@@ -96,10 +199,8 @@
 </div>
           <div role="main">
             
-  <div class="section" id="chapter8">
-<h1>Chapter8<a class="headerlink" href="#chapter8" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="the-shell-i">
-<h2>The Shell (I)<a class="headerlink" href="#the-shell-i" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="chapter-8-the-shell-i">
+<h1>Chapter 8: The Shell (I)<a class="headerlink" href="#chapter-8-the-shell-i" title="Permalink to this headline">¶</a></h1>
 <p>When you type commands, they are interpreted by a command <em>shell.</em> The shell
 is a program that interprets user commands before passing them along to be
 executed. Command shells are quite sophisticated and provide a number of
@@ -120,7 +221,6 @@ DOS, Macintosh, Windows, Windows 98 and many other operating systems.</p>
 <p>Shells themselves are advanced programming languages that provide complex
 control structures. When you type a command, you are already writing a
 program &#8211; although most of your programs are just one line in length.</p>
-</div>
 <div class="section" id="shell-special-characters">
 <h2>Shell Special Characters<a class="headerlink" href="#shell-special-characters" title="Permalink to this headline">¶</a></h2>
 <p>The shell interprets a number of characters in a special manner. When you
@@ -137,8 +237,8 @@ than sign (&lt;), the question-mark (?), the double-quote (&#8221;), and the bac
 greater-than-sign (&gt;) is a <em>file redirection operator.</em> It must be followed
 by a user-specified filename; any output from the preceding command is placed
 in the specified file. For example, the following command sorts the file
-`` inputfile`` and places the sorted result in the file named <tt class="docutils literal"><span class="pre">outputfile</span></tt>:</p>
-<p>`` sort inputfile &gt; outputfile``</p>
+<tt class="docutils literal"><span class="pre">inputfile</span></tt> and places the sorted result in the file named <tt class="docutils literal"><span class="pre">outputfile</span></tt>:</p>
+<p><tt class="docutils literal"><span class="pre">sort</span> <span class="pre">inputfile</span> <span class="pre">&gt;</span> <span class="pre">outputfile</span></tt></p>
 <p>If the file <tt class="docutils literal"><span class="pre">outputfile</span></tt> already existed, its contents will be destroyed
 and over-written with the new output. Be careful not to assign the output to
 the same file as the input, since this will destroy the original input file.</p>
@@ -148,7 +248,7 @@ appended to any data already in the named file. For example, the following
 command sorts the file <tt class="docutils literal"><span class="pre">inputfile</span></tt> and adds the sorted lines to the end of
 the file named <tt class="docutils literal"><span class="pre">outputfile</span></tt>. If the <tt class="docutils literal"><span class="pre">outputfile</span></tt> does not already exist,
 the command will create it.</p>
-<p>`` sort inputfile &gt;&gt; outputfile``</p>
+<p><tt class="docutils literal"><span class="pre">sort</span> <span class="pre">inputfile</span> <span class="pre">&gt;&gt;</span> <span class="pre">outputfile</span></tt></p>
 </div>
 <div class="section" id="pipe">
 <h2>Pipe (|)<a class="headerlink" href="#pipe" title="Permalink to this headline">¶</a></h2>
@@ -156,10 +256,10 @@ the command will create it.</p>
 to join the output of one command to the input of a subsequent command. For
 example, in the following construction, the output of ``command1`</cite> is routed
 as the input to <tt class="docutils literal"><span class="pre">command2</span></tt>:</p>
-<p>`` command1 | command2``</p>
+<p><tt class="docutils literal"><span class="pre">command1</span> <span class="pre">|</span> <span class="pre">command2</span></tt></p>
 <p>There is no practical limit to the length of a pipeline. Several pipes can be
 used to connect successive outputs to ensuing commands:</p>
-<p>`` command1 | command2 | command3 | command4``</p>
+<p><tt class="docutils literal"><span class="pre">command1</span> <span class="pre">|</span> <span class="pre">command2</span> <span class="pre">|</span> <span class="pre">command3</span> <span class="pre">|</span> <span class="pre">command4</span></tt></p>
 </div>
 <div class="section" id="shell-wildcard">
 <h2>Shell Wildcard (*)<a class="headerlink" href="#shell-wildcard" title="Permalink to this headline">¶</a></h2>
@@ -167,9 +267,9 @@ used to connect successive outputs to ensuing commands:</p>
 appears by itself, the asterisk is <cite>expanded&#8217; by the shell to a list of all
 files in the current directory (in alphabetical order). For example, if the
 current directory contained just three files: ``alice`</cite>, <tt class="docutils literal"><span class="pre">barry</span></tt> and
-`` chris`` &#8211; then the following command would be applied to all three files
+<tt class="docutils literal"><span class="pre">chris</span></tt> &#8211; then the following command would be applied to all three files
 in consecutive order:</p>
-<p>`` command * &gt; people``</p>
+<p><tt class="docutils literal"><span class="pre">command</span> <span class="pre">*</span> <span class="pre">&gt;</span> <span class="pre">people</span></tt></p>
 <p>The file expansion occurs at the moment when the command is invoked. So
 although the file <tt class="docutils literal"><span class="pre">people</span></tt> is added to the current directory, it is not
 included as its own input. However, if the above command was executed a
@@ -182,58 +282,58 @@ as input is never a good idea.</p>
 <p>The octothorpe character (#) indicates a shell <em>comment</em>. Any characters
 following the # (up to the end of the line) are simply ignored by the shell.
 The following is not a command:</p>
-<p>`` #grep OTL: filename``</p>
+<p><tt class="docutils literal"><span class="pre">#grep</span> <span class="pre">OTL:</span> <span class="pre">filename</span></tt></p>
 <p>The comment can begin anywhere in the line. Here the comment begins after the
 filename:</p>
-<p>`` grep OTL: filename # (Search for Humdrum titles.)``</p>
+<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">OTL:</span> <span class="pre">filename</span> <span class="pre">#</span> <span class="pre">(Search</span> <span class="pre">for</span> <span class="pre">Humdrum</span> <span class="pre">titles.)</span></tt></p>
 </div>
 <div class="section" id="escape-character">
 <h2>Escape Character ()<a class="headerlink" href="#escape-character" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes we would like to have a special character treated literally. For
 example, suppose we wanted to search for records containing sharps in a
-`` <a href="#id15"><span class="problematic" id="id16">`**kern```_</span></a> file. The following command will not work because the shell
+<a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id17"><span class="problematic" id="id18">`**kern``_</span></a> file. The following command will not work because the shell
 will insist on interpreting the octothorpe as beginning a comment:</p>
-<p>`` grep # filename``</p>
+<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">#</span> <span class="pre">filename</span></tt></p>
 <p>There are several ways to &#8220;turn off&#8221; the special meaning of a character. The
 simplest way is to precede the character by a backslash () as in the
 following command:</p>
-<p>`` grep # filename``</p>
+<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">\#</span> <span class="pre">filename</span></tt></p>
 <p>The backslash character itself can be treated literally by preceding it with
 another backslash. For example, the following command searches for down-stems
 in a <tt class="docutils literal"><span class="pre">**kern</span></tt> file:</p>
-<p>`` grep \ filename``</p>
+<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">\\</span> <span class="pre">filename</span></tt></p>
 <p>Escape Quotations (<tt class="docutils literal"><span class="pre">'...</span></tt>&#8216;)
 &#8211;</p>
 <p>Another way of escaping the special meaning of shell characters is to place
 the material in single quotes. For example, we can escape the meaning of the
 octothorpe (#) by preceding and following it by single quotes:</p>
-<p>`` grep &#8216;#&#8217; filename``</p>
+<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'#'</span> <span class="pre">filename</span></tt></p>
 <p>Single quotes are especially useful for binding spaces. For example, the
 following command searches for the phrase &#8220;Lennon and McCartney&#8221; in a file
 named <tt class="docutils literal"><span class="pre">beatles</span></tt>:</p>
-<p>`` grep &#8216;Lennon and McCartney&#8217; beatles``</p>
+<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'Lennon</span> <span class="pre">and</span> <span class="pre">McCartney'</span> <span class="pre">beatles</span></tt></p>
 <p>If the single quotes are omitted, the command means something completely
 different. The following command searches for the string &#8220;Lennon&#8221; in three
 files named <tt class="docutils literal"><span class="pre">and</span></tt>, <tt class="docutils literal"><span class="pre">McCartney</span></tt> and <tt class="docutils literal"><span class="pre">beatles</span></tt>:</p>
-<p>`` grep Lennon and McCartney beatles``</p>
+<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">Lennon</span> <span class="pre">and</span> <span class="pre">McCartney</span> <span class="pre">beatles</span></tt></p>
 <p>A common mistake is to fail to match quotation marks in a command. The shell
 will assume that the command is incomplete until all quotation marks are
 matched (both single quotes and double quotes). In the following example, we
 have failed to match the quotation mark. When we press the return key, the
 shell responds with a change of prompt indicating that it is waiting for us
 to complete the command.</p>
-<p>`` grep &#8216;# inputfile &gt; outputfile
-&gt;``</p>
+<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'#</span> <span class="pre">inputfile</span> <span class="pre">&gt;</span> <span class="pre">outputfile</span>
+<span class="pre">&gt;</span></tt></p>
 </div>
 <div class="section" id="command-delimiter">
 <h2>Command Delimiter (;)<a class="headerlink" href="#command-delimiter" title="Permalink to this headline">¶</a></h2>
 <p>The semicolon (;) indicates the end of a command. Its presence allows more
 than one command to be typed on a single line. For example, the following
 line:</p>
-<p>`` command1 ; command2``</p>
+<p><tt class="docutils literal"><span class="pre">command1</span> <span class="pre">;</span> <span class="pre">command2</span></tt></p>
 <p>is logically identical to:</p>
-<p>`` command1``
-`` command2``</p>
+<p><tt class="docutils literal"><span class="pre">command1</span></tt>
+<tt class="docutils literal"><span class="pre">command2</span></tt></p>
 <p>When both commands appear on the same line, they are still executed
 sequentially, so the second command doesn&#8217;t begin until the first is
 completed. Although the ability to place two or more commands on a single
@@ -267,32 +367,32 @@ a common command:</p>
 <li>one or more input file names,</li>
 <li>output redirection.</li>
 </ul>
-<p>Each of these components is separated by <a href="#id17"><span class="problematic" id="id18">`blank space&#8217; (tabs or spaces). A
+<p>Each of these components is separated by <a href="#id19"><span class="problematic" id="id20">`blank space&#8217; (tabs or spaces). A
 command begins with the command name &#8211; such as **uniq**, **sort**, or
 `**pitch**.`_</span></a> A command argument is a special requirement of only some
 commands. A good example of a command argument is the search pattern given to
 the <strong>grep</strong> command. In the following command, <strong>grep</strong> is the command name,
 &#8220;Lennon&#8221; is the command argument and <tt class="docutils literal"><span class="pre">beatles</span></tt> is the input file name:</p>
-<p>`` grep Lennon beatles``</p>
+<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">Lennon</span> <span class="pre">beatles</span></tt></p>
 <p>For most commands, it is possible to process more than one input file. These
 files are simply listed at the end of the command. For example, the following
 <strong>grep</strong> command searches for the string &#8220;McCartney&#8221; in the file <tt class="docutils literal"><span class="pre">beatles</span></tt>
 and in the file <tt class="docutils literal"><span class="pre">wings</span></tt>:</p>
-<p>`` grep McCartney beatles wings``</p>
+<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">McCartney</span> <span class="pre">beatles</span> <span class="pre">wings</span></tt></p>
 <p>Most commands provide <em>options</em> that modify the behavior of the command in
 some way. Command options are designated by a leading dash character. The
 specific option is usually indicated by a single alphabetic letter, such as
 the <strong>-b</strong> option (spoken: &#8220;dash-B&#8221; option). In the <strong>uniq</strong> command, the
 <strong>-c</strong> option causes a count to be prepended to each output line. In the
 following command, <strong>uniq</strong> is the command name, <strong>-c</strong> is the option, and
-`` ghana32`` is the name of the input file:</p>
-<p>`` uniq -c ghana32``</p>
+<tt class="docutils literal"><span class="pre">ghana32</span></tt> is the name of the input file:</p>
+<p><tt class="docutils literal"><span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">ghana32</span></tt></p>
 <p>In many cases, the option is followed by a <em>parameter</em> that specifies further
 information pertaining to the invoked option. In the following command,
-<a href="#id19"><span class="problematic" id="id20">`**recode**`_</span></a> is the command name, <strong>-f</strong> is the option, <strong>reassign</strong> is the
+<a href="#id21"><span class="problematic" id="id22">`**recode**`_</span></a> is the command name, <strong>-f</strong> is the option, <strong>reassign</strong> is the
 parameter used by the <strong>-f</strong> option, and <strong>gagaku</strong> is the name of the input
 file:</p>
-<p>`` recode -f reassign gagaku``</p>
+<p><tt class="docutils literal"><span class="pre">recode</span> <span class="pre">-f</span> <span class="pre">reassign</span> <span class="pre">gagaku</span></tt></p>
 <p>Options and their accompanying parameters must be separated by blank space
 (i.e. one or more spaces and/or tabs). If more than one option is invoked,
 and none of the invoked options require a parameter, then the option-letters
@@ -300,15 +400,15 @@ may be combined. For example, the <strong>-a</strong> and <strong>-b</strong> op
 as <strong>-ab</strong> (or as <strong>-ba)</strong> &#8211; provided neither option requires a parameter.</p>
 <p>Whenever an option requires a parameter, the option must be specified alone
 and followed immediately by the appropriate parameter. For example, in the
-following command, the command name is <a href="#id21"><span class="problematic" id="id22">`**trans**,`_</span></a> the <strong>-d</strong> option is
+following command, the command name is <a href="#id23"><span class="problematic" id="id24">`**trans**,`_</span></a> the <strong>-d</strong> option is
 followed by the numerical parameter <strong>3</strong>; the parameter for the <strong>-c</strong>
 option is the number <strong>4</strong> and the input file is named <strong>gambia21</strong>.</p>
-<p>`` trans -d 3 -c 4 gambia21``</p>
+<p><tt class="docutils literal"><span class="pre">trans</span> <span class="pre">-d</span> <span class="pre">3</span> <span class="pre">-c</span> <span class="pre">4</span> <span class="pre">gambia21</span></tt></p>
 <p>Since numerical parameters can sometimes be negative, it can be difficult to
 discern whether a negative number is a parameter or another option. In the
 following example, the <strong>-3</strong> is a parameter to the <strong>-d</strong> option rather than
 an option by itself.</p>
-<p>`` trans -d -3 -c 2 gambia21``</p>
+<p><tt class="docutils literal"><span class="pre">trans</span> <span class="pre">-d</span> <span class="pre">-3</span> <span class="pre">-c</span> <span class="pre">2</span> <span class="pre">gambia21</span></tt></p>
 </div>
 <div class="section" id="output-redirection">
 <h2>Output Redirection<a class="headerlink" href="#output-redirection" title="Permalink to this headline">¶</a></h2>
@@ -319,17 +419,17 @@ typed manually at the terminal, or from the output of preceding commands.
 When input text is entered manually it must be terminated with an end-of-file
 character (control-D) on a separate line. (On Microsoft operating systems the
 end-of-file character is control-Z.) When input is received from preceding
-commands, the output is sent via a UNIX pipe (<a href="#id1"><span class="problematic" id="id2">`</span></a><a href="#id3"><span class="problematic" id="id4">|</span></a>&#8216;) as discussed above.</p>
+commands, the output is sent via a UNIX pipe (<a href="#id3"><span class="problematic" id="id4">`</span></a><a href="#id5"><span class="problematic" id="id6">|</span></a>&#8216;) as discussed above.</p>
 <p>The different ways of providing input to a command are illustrated in the
 following examples. In the first example, the input (if any) is taken from
 the terminal (keyboard). In the second example, the input is <em>explicitly</em>
 taken from a file named <tt class="docutils literal"><span class="pre">input</span></tt>. In the third example, the input is
 <em>implicitly</em> taken from a file named <tt class="docutils literal"><span class="pre">input</span></tt>. In the fourth example, the
 input to <strong>command2</strong> comes from the output of <strong>command1</strong>.</p>
-<p>`` command``
-`` command &lt; input``
-`` command input``
-`` command1 | command2``</p>
+<p><tt class="docutils literal"><span class="pre">command</span></tt>
+<tt class="docutils literal"><span class="pre">command</span> <span class="pre">&lt;</span> <span class="pre">input</span></tt>
+<tt class="docutils literal"><span class="pre">command</span> <span class="pre">input</span></tt>
+<tt class="docutils literal"><span class="pre">command1</span> <span class="pre">|</span> <span class="pre">command2</span></tt></p>
 <p>Outputs produced by commands may similarly be directed to a variety of
 locations. The default output from most commands is sent to the terminal
 screen. Alternatively, the output can be sent to another process (i.e.
@@ -342,10 +442,10 @@ contents will be overwritten. In the third example, the output is appended to
 the end of the file <tt class="docutils literal"><span class="pre">outfile</span></tt>; if the file <tt class="docutils literal"><span class="pre">outfile</span></tt> does not already
 exist, it will be created. In the fourth example, the output is sent as input
 to the command <strong>command2</strong>.</p>
-<p>`` command
-command &gt; outfile
-command &gt;&gt; outfile
-command1 | command2``</p>
+<p><tt class="docutils literal"><span class="pre">command</span>
+<span class="pre">command</span> <span class="pre">&gt;</span> <span class="pre">outfile</span>
+<span class="pre">command</span> <span class="pre">&gt;&gt;</span> <span class="pre">outfile</span>
+<span class="pre">command1</span> <span class="pre">|</span> <span class="pre">command2</span></tt></p>
 <p>When two or more commands have their inputs and outputs linked together using
 the pipe operator (<tt class="docutils literal"><span class="pre">|</span></tt>), the entire command line is known as a <em>pipeline.</em>
 Pipelines occur frequently in Humdrum applications.</p>
@@ -362,10 +462,10 @@ the file <tt class="docutils literal"><span class="pre">outfile1</span></tt>; if
 will be overwritten. In the third example, the append option (<strong>-a</strong>) for
 <strong>tee</strong> has been invoked &#8211; meaning that the output from <tt class="docutils literal"><span class="pre">command</span></tt> will be
 added to the end of any existing data in the file <tt class="docutils literal"><span class="pre">outfile</span></tt>. If the file
-`` outfile`` does not already exist, it will be created.</p>
-<p>`` command | tee outfile
-command1 | tee outfile1 | command2 &gt; outfile2
-command | tee -a outfile``</p>
+<tt class="docutils literal"><span class="pre">outfile</span></tt> does not already exist, it will be created.</p>
+<p><tt class="docutils literal"><span class="pre">command</span> <span class="pre">|</span> <span class="pre">tee</span> <span class="pre">outfile</span>
+<span class="pre">command1</span> <span class="pre">|</span> <span class="pre">tee</span> <span class="pre">outfile1</span> <span class="pre">|</span> <span class="pre">command2</span> <span class="pre">&gt;</span> <span class="pre">outfile2</span>
+<span class="pre">command</span> <span class="pre">|</span> <span class="pre">tee</span> <span class="pre">-a</span> <span class="pre">outfile</span></tt></p>
 <p>The <strong>tee</strong> command is a useful way of recording or diverting some
 intermediate data in the middle of a pipeline.</p>
 </div>
@@ -383,10 +483,10 @@ components such as the <em>command name</em>, <em>options</em>, <em>parameters</
 arguments</em>, <em>input files</em> and <em>output redirection</em>.</p>
 <hr class="docutils" />
 <ul class="simple">
-<li>` <a href="#id5"><span class="problematic" id="id6">**</span></a>Next Chapter**`_</li>
-<li>` <a href="#id7"><span class="problematic" id="id8">**</span></a>Previous Chapter**`_</li>
-<li>` <a href="#id9"><span class="problematic" id="id10">**</span></a>Table of Contents**`_</li>
-<li>` <a href="#id11"><span class="problematic" id="id12">**</span></a>Detailed Contents**`_</li>
+<li>` <a href="#id7"><span class="problematic" id="id8">**</span></a>Next Chapter**`_</li>
+<li>` <a href="#id9"><span class="problematic" id="id10">**</span></a>Previous Chapter**`_</li>
+<li>` <a href="#id11"><span class="problematic" id="id12">**</span></a>Table of Contents**`_</li>
+<li>` <a href="#id13"><span class="problematic" id="id14">**</span></a>Detailed Contents**`_</li>
 </ul>
 <ol class="upperalpha simple" start="3">
 <li>Copyright 1999 David Huron</li>
@@ -397,6 +497,15 @@ arguments</em>, <em>input files</em> and <em>output redirection</em>.</p>
 
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="guide09.html" class="btn btn-neutral float-right" title="Chapter 9: Searching with Regular Expressions"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="guide07.html" class="btn btn-neutral" title="Chapter7"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

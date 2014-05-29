@@ -1,10 +1,7 @@
+=========================
+Chapter 8: The Shell (I)
+=========================
 
-Chapter8
-========
-
-
-The Shell (I)
----------------------
 
 When you type commands, they are interpreted by a command *shell.* The shell
 is a program that interprets user commands before passing them along to be
@@ -49,9 +46,9 @@ Some of the special shell characters have already been discussed. The
 greater-than-sign (>) is a *file redirection operator.* It must be followed
 by a user-specified filename; any output from the preceding command is placed
 in the specified file. For example, the following command sorts the file
-`` inputfile`` and places the sorted result in the file named ``outputfile``:
+``inputfile`` and places the sorted result in the file named ``outputfile``:
 
-`` sort inputfile > outputfile``
+``sort inputfile > outputfile``
 
 If the file ``outputfile`` already existed, its contents will be destroyed
 and over-written with the new output. Be careful not to assign the output to
@@ -64,7 +61,7 @@ command sorts the file ``inputfile`` and adds the sorted lines to the end of
 the file named ``outputfile``. If the ``outputfile`` does not already exist,
 the command will create it.
 
-`` sort inputfile >> outputfile``
+``sort inputfile >> outputfile``
 
 
 Pipe (|)
@@ -75,12 +72,12 @@ to join the output of one command to the input of a subsequent command. For
 example, in the following construction, the output of ``command1`` is routed
 as the input to ``command2``:
 
-`` command1 | command2``
+``command1 | command2``
 
 There is no practical limit to the length of a pipeline. Several pipes can be
 used to connect successive outputs to ensuing commands:
 
-`` command1 | command2 | command3 | command4``
+``command1 | command2 | command3 | command4``
 
 
 Shell Wildcard (*)
@@ -90,10 +87,10 @@ The asterisk is interpreted by the shell as a "filename wildcard." When it
 appears by itself, the asterisk is `expanded' by the shell to a list of all
 files in the current directory (in alphabetical order). For example, if the
 current directory contained just three files: ``alice``, ``barry`` and
-`` chris`` -- then the following command would be applied to all three files
+``chris`` -- then the following command would be applied to all three files
 in consecutive order:
 
-`` command * > people``
+``command * > people``
 
 The file expansion occurs at the moment when the command is invoked. So
 although the file ``people`` is added to the current directory, it is not
@@ -110,12 +107,12 @@ The octothorpe character (#) indicates a shell *comment*. Any characters
 following the # (up to the end of the line) are simply ignored by the shell.
 The following is not a command:
 
-`` #grep OTL: filename``
+``#grep OTL: filename``
 
 The comment can begin anywhere in the line. Here the comment begins after the
 filename:
 
-`` grep OTL: filename # (Search for Humdrum titles.)``
+``grep OTL: filename # (Search for Humdrum titles.)``
 
 
 Escape Character (\)
@@ -123,22 +120,22 @@ Escape Character (\)
 
 Sometimes we would like to have a special character treated literally. For
 example, suppose we wanted to search for records containing sharps in a
-`` `**kern```_ file. The following command will not work because the shell
+```**kern``_ file. The following command will not work because the shell
 will insist on interpreting the octothorpe as beginning a comment:
 
-`` grep # filename``
+``grep # filename``
 
 There are several ways to "turn off" the special meaning of a character. The
 simplest way is to precede the character by a backslash (\) as in the
 following command:
 
-`` grep \# filename``
+``grep \# filename``
 
 The backslash character itself can be treated literally by preceding it with
 another backslash. For example, the following command searches for down-stems
 in a ``**kern`` file:
 
-`` grep \\ filename``
+``grep \\ filename``
 
 
 Escape Quotations (``'...``')
@@ -148,19 +145,19 @@ Another way of escaping the special meaning of shell characters is to place
 the material in single quotes. For example, we can escape the meaning of the
 octothorpe (#) by preceding and following it by single quotes:
 
-`` grep '#' filename``
+``grep '#' filename``
 
 Single quotes are especially useful for binding spaces. For example, the
 following command searches for the phrase "Lennon and McCartney" in a file
 named ``beatles``:
 
-`` grep 'Lennon and McCartney' beatles``
+``grep 'Lennon and McCartney' beatles``
 
 If the single quotes are omitted, the command means something completely
 different. The following command searches for the string "Lennon" in three
 files named ``and``, ``McCartney`` and ``beatles``:
 
-`` grep Lennon and McCartney beatles``
+``grep Lennon and McCartney beatles``
 
 A common mistake is to fail to match quotation marks in a command. The shell
 will assume that the command is incomplete until all quotation marks are
@@ -169,7 +166,7 @@ have failed to match the quotation mark. When we press the return key, the
 shell responds with a change of prompt indicating that it is waiting for us
 to complete the command.
 
-`` grep '# inputfile > outputfile
+``grep '# inputfile > outputfile
 >``
 
 
@@ -180,12 +177,12 @@ The semicolon (;) indicates the end of a command. Its presence allows more
 than one command to be typed on a single line. For example, the following
 line:
 
-`` command1 ; command2``
+``command1 ; command2``
 
 is logically identical to:
 
-`` command1``
-`` command2``
+``command1``
+``command2``
 
 When both commands appear on the same line, they are still executed
 sequentially, so the second command doesn't begin until the first is
@@ -232,14 +229,14 @@ commands. A good example of a command argument is the search pattern given to
 the **grep** command. In the following command, **grep** is the command name,
 "Lennon" is the command argument and ``beatles`` is the input file name:
 
-`` grep Lennon beatles``
+``grep Lennon beatles``
 
 For most commands, it is possible to process more than one input file. These
 files are simply listed at the end of the command. For example, the following
 **grep** command searches for the string "McCartney" in the file ``beatles``
 and in the file ``wings``:
 
-`` grep McCartney beatles wings``
+``grep McCartney beatles wings``
 
 Most commands provide *options* that modify the behavior of the command in
 some way. Command options are designated by a leading dash character. The
@@ -247,9 +244,9 @@ specific option is usually indicated by a single alphabetic letter, such as
 the **-b** option (spoken: "dash-B" option). In the **uniq** command, the
 **-c** option causes a count to be prepended to each output line. In the
 following command, **uniq** is the command name, **-c** is the option, and
-`` ghana32`` is the name of the input file:
+``ghana32`` is the name of the input file:
 
-`` uniq -c ghana32``
+``uniq -c ghana32``
 
 In many cases, the option is followed by a *parameter* that specifies further
 information pertaining to the invoked option. In the following command,
@@ -257,7 +254,7 @@ information pertaining to the invoked option. In the following command,
 parameter used by the **-f** option, and **gagaku** is the name of the input
 file:
 
-`` recode -f reassign gagaku``
+``recode -f reassign gagaku``
 
 Options and their accompanying parameters must be separated by blank space
 (i.e. one or more spaces and/or tabs). If more than one option is invoked,
@@ -271,14 +268,14 @@ following command, the command name is `**trans**,`_ the **-d** option is
 followed by the numerical parameter **3**; the parameter for the **-c**
 option is the number **4** and the input file is named **gambia21**.
 
-`` trans -d 3 -c 4 gambia21``
+``trans -d 3 -c 4 gambia21``
 
 Since numerical parameters can sometimes be negative, it can be difficult to
 discern whether a negative number is a parameter or another option. In the
 following example, the **-3** is a parameter to the **-d** option rather than
 an option by itself.
 
-`` trans -d -3 -c 2 gambia21``
+``trans -d -3 -c 2 gambia21``
 
 
 Output Redirection
@@ -300,10 +297,10 @@ taken from a file named ``input``. In the third example, the input is
 *implicitly* taken from a file named ``input``. In the fourth example, the
 input to **command2** comes from the output of **command1**.
 
-`` command``
-`` command < input``
-`` command input``
-`` command1 | command2``
+``command``
+``command < input``
+``command input``
+``command1 | command2``
 
 Outputs produced by commands may similarly be directed to a variety of
 locations. The default output from most commands is sent to the terminal
@@ -318,7 +315,7 @@ the end of the file ``outfile``; if the file ``outfile`` does not already
 exist, it will be created. In the fourth example, the output is sent as input
 to the command **command2**.
 
-`` command
+``command
 command > outfile
 command >> outfile
 command1 | command2``
@@ -341,9 +338,9 @@ the file ``outfile1``; if the file ``outfile1`` already exists, its contents
 will be overwritten. In the third example, the append option (**-a**) for
 **tee** has been invoked -- meaning that the output from ``command`` will be
 added to the end of any existing data in the file ``outfile``. If the file
-`` outfile`` does not already exist, it will be created.
+``outfile`` does not already exist, it will be created.
 
-`` command | tee outfile
+``command | tee outfile
 command1 | tee outfile1 | command2 > outfile2
 command | tee -a outfile``
 

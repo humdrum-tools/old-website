@@ -1,14 +1,7 @@
-Chapter6
-========
 
-
---------
-
-
-Representing Music Using ***kern*(II)
-====
-
---------
+========================================================
+Chapter 6: Representing Music Using ***kern*(II)
+========================================================
 
 In this chapter we return to consider several more advanced topics related to
 the ``**kern`` representation.
@@ -197,7 +190,7 @@ An important restriction for multiple stops in the ``**kern`` representation
 is that they must encode notes of the same duration. In the above example,
 the left and right components of the multiple stop always share the same
 duration. (Note that this is a restriction of multiple stops in the
-`` **kern`` representation only, and does not necessarily apply to other
+``**kern`` representation only, and does not necessarily apply to other
 Humdrum representations.)
 
 Notice that multiple stops are represented with a single spine (that is,
@@ -288,8 +281,8 @@ should be encoded for each note in the multiple stop. By contrast, phrase
 marks, slurs, and beamings should be encoded once for the entire multiple
 stop. Example 6.3 provides a contrived example that illustrates these
 conventions. Notice that the first double stop encodes a single open phrase
-(i.e. ```{``') and the last double stop encodes a single close phrase
-(```}``'). Similarly, the slur in the middle of the phrase has been encoded
+(i.e. ``{``') and the last double stop encodes a single close phrase
+(``}``'). Similarly, the slur in the middle of the phrase has been encoded
 once. However, the staccato markings have been encoded for both notes in each
 of the double stops. Similarly, separate ties have been encoded for both
 notes in the double stop.
@@ -327,7 +320,7 @@ equals 96 beats per minute.
 Two grace-notes are evident in the passage. The first occurs just after the
 double-bar, and the second occurs three measures later. These notes have been
 encoded with duration values, but are designated by the lower-case letter
-`` `q``'. Notice that grace-notes are always treated as "durationless" notes.
+``q``'. Notice that grace-notes are always treated as "durationless" notes.
 Grace notes must always be encoded on a separate data record. Concurrent
 grace notes can be encoded on the same data record, but grace notes must
 never share the same data record with a regular note. Another peculiarity of
@@ -452,7 +445,7 @@ This chapter completes our survey of the ``**kern`` representation. We have
 noted an number of subtleties related to encoding tuplets, multiple stops,
 gruppettos, acciaccaturas, elided phrases, and spine path changes.
 
-A more complete description of the ```**kern```_ representation may be found
+A more complete description of the ``**kern``_ representation may be found
 in the *Humdrum Reference Manual.*
 
 --------

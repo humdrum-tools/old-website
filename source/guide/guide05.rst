@@ -1,16 +1,10 @@
 
-Chapter5
-========
-
-
-
-The Humdrum Syntax
-==================
-
---------
+================================
+Chapter 5: The Humdrum Syntax
+================================
 
 In the previous chapters we have seen several examples of pre-defined Humdrum
-representations, such as ```**kern```_, ```**solfa```_ and ```**MIDI```_.
+representations, such as ``**kern``_, ``**solfa``_ and ``**MIDI``_.
 These representations exhibit a number of common properties, including the
 manner in which the data are organized in spines. In this chapter, we provide
 a complete description of the Humdrum representation syntax. This chapter
@@ -145,7 +139,7 @@ Consider, for example, the following file: ``
 > .XX
 > X.X
 
-``  This file consists of three vertical spines and four horizontal records.
+`` This file consists of three vertical spines and four horizontal records.
 The first and third spines begin with data tokens, while the second spine
 begins with a null token. Without the presence of interpretations, the
 meaning of this file is indeterminate. The file below contains two spines
@@ -159,7 +153,7 @@ that have been labelled using Humdrum interpretations: ``
 > X.
 > *-*-
 
-``  The user has defined two interpretations: "left" and "right." The
+`` The user has defined two interpretations: "left" and "right." The
 intention is to represent the footfalls of a person's left and right feet.
 The representation simply encodes that the left and right feet have
 alternating events, such as might be produced by walking or running. Notice
@@ -188,7 +182,7 @@ tandem interpretations. Consider the following example: ``
 > X..X
 > *-*-*-*-
 
-``  In this case the categories "left" and "right" have been transformed to
+`` In this case the categories "left" and "right" have been transformed to
 tandem interpretations. The first spine is interpreted both as "left" and as
 "foot." The exclusive interpretation (double asterisks) takes conceptual
 precedence over the tandem interpretation (single asterisk). That is, tandem
@@ -223,7 +217,7 @@ first data record of the following example, the first spine contains two sub-
 tokens whereas the third spine contains three sub-tokens. Sub-tokens do not
 have their own spine organization and can appear and disappear as necessary:
 
-`` **spine1**spine2**spine3
+``**spine1**spine2**spine3
 > A BJX Y Z
 > ABJXYZ
 > A B C.X Z
@@ -259,7 +253,7 @@ following sequence of Humdrum-like data records: ``
 > AB
 > AB
 
-``  At the point where three spines are reduced to two spines the continuity
+`` At the point where three spines are reduced to two spines the continuity
 is ambiguous: Has spine `3' been discontinued? Or is spine `B' a continuation
 of spine `3' with spine `A' a continuation of spine `1' or `2'? For some
 representations such questions will be of little concern; however, in other
@@ -287,19 +281,19 @@ lower-case letter `v' (join spines), and the lower-case letter `x' (exchange
 spines). In addition to these, a *null interpretation* exists whose purpose
 is merely to act as a place-holder in interpretation records:
 
-`` *+``add a new spine (to the right of the current spine)
-`` *-``terminate a current spine
-`` *^``split a spine (into two)
-`` *v``join (two or more) spines into one
-`` *x``exchange the position of two spines
-`` *``null interpretation (place holder)
+``*+``add a new spine (to the right of the current spine)
+``*-``terminate a current spine
+``*^``split a spine (into two)
+``*v``join (two or more) spines into one
+``*x``exchange the position of two spines
+``*``null interpretation (place holder)
 
 *Spine Path Interpretations* Spine paths are types of interpretations, so the
 spine path indicators are encoded as Humdrum interpretations, using the
 asterisk signifier (*). The following examples illustrate a few possible path
 changes:
 
-````
+```
 $ 
 
 > 123
@@ -315,7 +309,7 @@ $
 > **v*v``(amalgamation of spines #2 and #3)``
 > 12&3
 
-``  Notice that in cases where two or more spines are amalgamated, the spines
+`` Notice that in cases where two or more spines are amalgamated, the spines
 must be adjacent neighbors. For example, the arrangement below is forbidden
 by the Humdrum syntax since it is not clear whether spines #1 and #3
 amalgamate into spine `A' or spine `B'. ``
@@ -324,7 +318,7 @@ amalgamate into spine `A' or spine `B'. ``
 > *v**v``(syntactically illegal)``
 > AB
 
-``  In such cases, amalgamating the two outer spines can be accomplished by
+`` In such cases, amalgamating the two outer spines can be accomplished by
 first using the exchange path signifier. Here we exchange spines #2 and #3
 before amalgamating the original first and third spines: ``
 
@@ -333,7 +327,7 @@ before amalgamating the original first and third spines: ``
 > *v*v*
 > 1&32
 
-``  In cases where the user wishes to amalgamate several spines, a number of
+`` In cases where the user wishes to amalgamate several spines, a number of
 interpretation records may be necessary. In the following example, spines #1
 and #2 are first joined together (momentarily defining three spines: 1&2, 3,
 4). In the subsequent interpretation record, spine #2 (previous spine #3) and
@@ -344,19 +338,19 @@ spine #3 (previous spine #4) are then joined: ``
 > **v*v
 > 1&23&4
 
-``  In addition, it is possible to join more than two spines at the same time:
-````
+`` In addition, it is possible to join more than two spines at the same time:
+```
 $ 
 
 > 1234
 > *v*v*v*v
 > 1&2&3&4
 
-``  In cases where a new spine is introduced, it is essential to indicate the
+`` In cases where a new spine is introduced, it is essential to indicate the
 exclusive interpretation that applies to the new data. Thus an `add spine'
 indication must be followed by a second interpretation record:
 
-`` 123
+``123
 > **+*``(add a new spine.)``
 > ****inter*``(define exclusive interpretation for the new spine)``
 > 12new3
@@ -371,10 +365,10 @@ redefinitions: ``
 > *v*v*^*^
 > 1&23a3b4a4b
 
-````
+```
 $ 
 
-````
+```
 $ 
 
 > 12345
@@ -382,10 +376,10 @@ $
 > *v*v*v
 > 1&3&5
 
-````
+```
 $ 
 
-````
+```
 $ 
 
 > 12345
@@ -394,10 +388,10 @@ $
 > *v*v****
 > 1&34a4b5new
 
-````
+```
 $ 
 
-````
+```
 $ 
 
 > 1234
@@ -406,36 +400,36 @@ $
 > ***x*x
 > 2341
 
-``  Note that with judicious planning, the user can completely reconfigure all
+`` Note that with judicious planning, the user can completely reconfigure all
 spines within a Humdrum file.
 
 Syntactically, some path constructions are illegal; here are some examples of
 illegal constructions:
 
-`` 123``
-`` *v**v``(The join-spine indication in spine #1 does not adjoin
+``123``
+``*v**v``(The join-spine indication in spine #1 does not adjoin
 > spine #3.)
-`` 123``
-`` *x*x*x``(No more than two exchange interpretations at a time.)
-`` 123``
-`` *x**``(Must have two exchange interpretations together.)
-`` 123``
-`` *v**``(Must have two or more join interpretations at a time.)
-`` 123``
-`` **``(Spine eliminated without using a termination interpretation.)
-`` 12``
-`` 123``
-`` ***+``(Adding a new spine should result in 4 interpretations.)
-`` 123``
-`` 12``
-`` ***-``(Cannot eliminate non-existent spine.)
-`` 12``
-`` *+*``
-`` 1new2``(New spine started without specifying new interpretation.)
-`` 12``
-`` **+``
-`` ***inter*``(Interpretation labels the wrong spine.)
-`` ABC``
+``123``
+``*x*x*x``(No more than two exchange interpretations at a time.)
+``123``
+``*x**``(Must have two exchange interpretations together.)
+``123``
+``*v**``(Must have two or more join interpretations at a time.)
+``123``
+``**``(Spine eliminated without using a termination interpretation.)
+``12``
+``123``
+``***+``(Adding a new spine should result in 4 interpretations.)
+``123``
+``12``
+``***-``(Cannot eliminate non-existent spine.)
+``12``
+``*+*``
+``1new2``(New spine started without specifying new interpretation.)
+``12``
+``**+``
+``***inter*``(Interpretation labels the wrong spine.)
+``ABC``
 
 
 The Humdrum Syntax: A Formal Definition
@@ -535,7 +529,7 @@ Humdrum format.
 The examples given below provide further illustrations of Humdrum
 representations:
 
-`` **form
+``**form
 > Introduction
 > Exposition
 > Development
@@ -543,27 +537,27 @@ representations:
 > Coda
 > *-``
 
-`` **American**British
+``**American**British
 > quartercrotchet
 > eighthquaver
 > dotted halfdotted minim
 > *-*-``
 
-`` **Opus/No**Year
+``**Opus/No**Year
 > 23/11821
 > 23/21821
 > 23/31822?
 > 241822
 > *-*-``
 
-`` **recip**diaton**accidental**stem-dir**kern
+``**recip**diaton**accidental**stem-dir**kern
 > 4c#/4c#/
 > 8d./8d/
 > 8e./8e/
 > 2f#/8f#/
 > *-*-*-*-*-``
 
-`` **heart-rate
+``**heart-rate
 > 74
 > 73
 > 74
@@ -571,7 +565,7 @@ representations:
 > 78``
 > *-
 
-`` **foreground
+``**foreground
 > flute
 > *^
 > fluteviolin1
@@ -589,7 +583,7 @@ representations:
 > trombonetrumpet
 > *-*-``
 
-````
+```
 $ 
 
 --------
