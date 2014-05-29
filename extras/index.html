@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Syntax Coloring in Vim &mdash; humdrum-tools 1 documentation</title>
+  <title>Humdrum Extras &mdash; humdrum-tools 1 documentation</title>
   
 
   
@@ -30,9 +30,8 @@
 
   
     <link rel="top" title="humdrum-tools 1 documentation" href="../index.html"/>
-        <link rel="up" title="The Humdrum Cookbook" href="index.html"/>
-        <link rel="next" title="Humdrum Reference Manual" href="../referencemanual/index.html"/>
-        <link rel="prev" title="The Humdrum Cookbook" href="index.html"/> 
+        <link rel="next" title="Introduction" href="intro.html"/>
+        <link rel="prev" title="Sample Problems Using the Humdrum Toolkit" href="../guide/sample.problems.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -140,24 +139,24 @@
 </ul>
 </li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../extras/index.html">Humdrum Extras</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../extras/intro.html">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../extras/dataEntry.html">Data Entry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../extras/melody.html">Melody Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../extras/harmony.html">Harmony</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../extras/rhythm.html">Rhythm Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../extras/musicSearching.html">Music Searching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../extras/MIDIrendering.html">MIDI Rendering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../extras/graphicalNotation.html">Graphical Musical Notation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../extras/otherUtilities.html">Other Useful Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../extras/programmingTutorial.html">Programming Tutorial</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Humdrum Extras</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dataEntry.html">Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="melody.html">Melody Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="harmony.html">Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rhythm.html">Rhythm Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="musicSearching.html">Music Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MIDIrendering.html">MIDI Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graphicalNotation.html">Graphical Musical Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otherUtilities.html">Other Useful Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programmingTutorial.html">Programming Tutorial</a></li>
 </ul>
 </li>
 </ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">The Humdrum Cookbook</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">Syntax Coloring in Vim</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook/index.html">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/vimHighlighting.html">Syntax Coloring in Vim</a></li>
 </ul>
 </li>
 </ul>
@@ -192,12 +191,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="index.html">The Humdrum Cookbook</a> &raquo;</li>
-      
-    <li>Syntax Coloring in Vim</li>
+    <li>Humdrum Extras</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/cookbook/vimHighlighting.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/extras/index.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -205,67 +202,22 @@
 </div>
           <div role="main">
             
-  <div class="section" id="syntax-coloring-in-vim">
-<h1>Syntax Coloring in Vim<a class="headerlink" href="#syntax-coloring-in-vim" title="Permalink to this headline">¶</a></h1>
-<p>Users of VIM rejoice! You can work with Humdrum files with the
-wonderful addition of syntax highlighting. Your days of monochromatic
-editing are gone!</p>
-<p>Simply download the following file <a class="reference external" href="http://www.ccarh.org/software/humdrum/vi/syntax/humdrum.vim">humdrum.vim</a>
-to use in the editor program <em>vim</em> for coloring while editing the different components of the Humdrum data format.</p>
-<p>There are several ways one might use this:</p>
+  <div class="section" id="humdrum-extras">
+<h1>Humdrum Extras<a class="headerlink" href="#humdrum-extras" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
 <ul>
-<li><p class="first"><em>Manual loading</em>: you can load the colorizing for Humdrum data manually by typing one of the following commands inside the vim editor:</p>
-<blockquote>
-<div><ul>
-<li><dl class="first docutils">
-<dt><tt class="docutils literal"><span class="pre">:source</span> <span class="pre">humdrum.vim</span></tt></dt>
-<dd><ul class="first last">
-<li><p class="first"><tt class="docutils literal"><span class="pre">so</span> <span class="pre">humdrum.vim</span></tt></p>
-</li>
-<li><p class="first"><em>Automatic Loading</em></p>
-<ul>
-<li><dl class="first docutils">
-<dt>First, add these lines to a file in your home directory called <tt class="docutils literal"><span class="pre">.vimrc:</span></tt></dt>
-<dd><ul class="first last simple">
-<li><tt class="docutils literal"><span class="pre">syntax</span> <span class="pre">on</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">au</span> <span class="pre">BufRead,BufNewFile</span> <span class="pre">*.hmd</span> <span class="pre">set</span> <span class="pre">filetpye=humdrum</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">au!</span> <span class="pre">Syntax</span> <span class="pre">humdrum</span> <span class="pre">source</span> <span class="pre">~/.vim/humdrum.vim</span></tt></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataEntry.html">Data Entry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="melody.html">Melody Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="harmony.html">Harmony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rhythm.html">Rhythm Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="musicSearching.html">Music Searching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MIDIrendering.html">MIDI Rendering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphicalNotation.html">Graphical Musical Notation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="otherUtilities.html">Other Useful Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programmingTutorial.html">Programming Tutorial</a></li>
 </ul>
-</dd>
-</dl>
-</li>
-</ul>
-<p>This basically tells vim to turn on the
-syntax highlighting for filetypes <strong>.hmd</strong> and <strong>.krn</strong>.</p>
-<ul class="simple">
-<li>Then copy the humdrum.vim file into the location ~/.vim/humdrum.vim</li>
-</ul>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-<p>All done!</p>
-<a class="reference internal image-reference" href="cookbook/images/vimhighlighting.png"><img alt="cookbook/images/vimhighlighting.png" class="align-right" src="cookbook/images/vimhighlighting.png" /></a>
-<p>Here we have an example of syntax highlighting in
-vim using the following coloring conventions:</p>
-<ul class="simple">
-<li>Green: Bibliographic Records</li>
-<li>Light Blue: Global Comments</li>
-<li>Blue: Local Comments</li>
-<li>Pink: Tandem Interpretations</li>
-<li>Red Background: Invalid Tabs</li>
-</ul>
-<p>Some more highlighting designed for the <tt class="docutils literal"><span class="pre">**kern</span></tt> representation:</p>
-<ul class="simple">
-<li>White Background: Measure Lines</li>
-<li>White Background: Chords</li>
-<li>Blue Background: Invalid Chording Spaces</li>
-</ul>
+</div>
 </div>
 
 
@@ -274,10 +226,10 @@ vim using the following coloring conventions:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../referencemanual/index.html" class="btn btn-neutral float-right" title="Humdrum Reference Manual"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="intro.html" class="btn btn-neutral float-right" title="Introduction"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="The Humdrum Cookbook"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../guide/sample.problems.html" class="btn btn-neutral" title="Sample Problems Using the Humdrum Toolkit"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
