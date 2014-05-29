@@ -4,7 +4,7 @@
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    guide01.rst
    guide02.rst
