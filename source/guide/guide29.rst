@@ -1,14 +1,6 @@
-Chapter29
-=========
-
-
---------
-
-
-Differences and Commonalities
-=============================
-
---------
+==================================================
+Chapter 29: Differences and Commonalities
+==================================================
 
 In `Chapter 25`_ we introduced the problem of similarity via the Humdrum
 `**simil**`_ and `**correl**`_ commands. This chapter revisits the problem of
@@ -25,12 +17,12 @@ Comparing Files Using *cmp*
 The **cmp** command does a character-by-character comparison and indicates
 whether or not two files are identical.
 
-`` cmp file1 file2``
+``cmp file1 file2``
 
 If the two files differ, **cmp** generates a message indicating the first
 point where the two files differ. E.g.,
 
-`` file1 file2 differ: char 4, line 10``
+``file1 file2 differ: char 4, line 10``
 
 If the two files are identical, **cmp** simply outputs nothing ("silence is
 golden").
@@ -41,63 +33,63 @@ The encoded files may differ only in that the ``!!!COM:`` reference records
 are different. We can pre-process the files using `**rid**`_ in order to
 determine whether the scores are otherwise identical.
 
-`` rid -G file1 > temp1``
-`` rid -G file2 > temp2``
-`` cmp temp1 temp2``
+``rid -G file1 > temp1``
+``rid -G file2 > temp2``
+``cmp temp1 temp2``
 
 Of course one of the works might be transposed with respect to the other. We
 can circumvent this problem by translating the data to some key-independent
 representation such as ``solfa`` or ``deg``:
 
-`` rid -GL file1 | solfa > temp1``
-`` rid -GL file2 | solfa > temp2``
-`` cmp temp1 temp2``
+``rid -GL file1 | solfa > temp1``
+``rid -GL file2 | solfa > temp2``
+``cmp temp1 temp2``
 
 Two songs might have different melodies but employ the same lyrics. We can
 test whether they are identical by extracting and comparing any text-related
 spines. Since there may be differences due to melismas, we might also use
 **rid -d** to eliminate null data records.
 
-`` extract -i '**silbe' file 1 | rid -GLd > temp1``
-`` extract -i '**silbe' file 2 | rid -GLd > temp2``
-`` cmp temp1 temp2``
+``extract -i '**silbe' file 1 | rid -GLd > temp1``
+``extract -i '**silbe' file 2 | rid -GLd > temp2``
+``cmp temp1 temp2``
 
 Similarly, two works might have identical harmonies:
 
-`` extract -i '**harm' file 1 | rid -GLd > temp1``
-`` extract -i '**harm' file 2 | rid -GLd > temp2``
-`` cmp temp1 temp2``
+``extract -i '**harm' file 1 | rid -GLd > temp1``
+``extract -i '**harm' file 2 | rid -GLd > temp2``
+``cmp temp1 temp2``
 
 By further reducing the inputs, we can focus on quite specific elements, such
 as whether two songs have the same rhythm. In the following script, we first
 eliminate bar numbers, and then eliminate all data except for durations and
 barlines.
 
-`` extract -i '**kern' file 1 | humsed '/=/s/[0-9]//; \
+``extract -i '**kern' file 1 | humsed '/=/s/[0-9]//; \
 >
 >> s/[^0-9.=]//g' | rid -GLd > temp1``
 >
 >
-`` extract -i '**kern' file 1 | humsed '/=/s/[0-9]//; \
+``extract -i '**kern' file 1 | humsed '/=/s/[0-9]//; \
 >
 >> s/[^0-9.=]//g' | rid -GLd > temp2``
 >
 >
-`` cmp temp1 temp2``
+``cmp temp1 temp2``
 
 For some tasks, we might focus on just a handful of records. For example, we
 might ask whether two works have the same changes of key.
 
-`` grep '^*[a-gA-G][#-]*:' file 1 > temp1``
-`` grep '^*[a-gA-G][#-]*:' file 2 > temp2``
-`` cmp temp1 temp2``
+``grep '^*[a-gA-G][#-]*:' file 1 > temp1``
+``grep '^*[a-gA-G][#-]*:' file 2 > temp2``
+``cmp temp1 temp2``
 
 In the extreme case, we might compare just a single line of information. For
 example, we might identify whether two works have identical instrumentation:
 
-`` grep '^!!!AIN:' file 1 > temp1``
-`` grep '^!!!AIN:' file 2 > temp2``
-`` cmp temp1 temp2``
+``grep '^!!!AIN:' file 1 > temp1``
+``grep '^!!!AIN:' file 2 > temp2``
+``cmp temp1 temp2``
 
 
 Comparing Files Using *diff*
@@ -111,7 +103,7 @@ to another file. The output from **diff** entails editing commands
 reminiscent of the **ed** text editor. For example, two latin texts that
 differ at line 40, might generate the following output:
 
-`` 40c40
+``40c40
 < es quiambulas
 ---
 > es quisedes``
@@ -123,7 +115,7 @@ case characters. The **diff** command provides a **-i** option that ignores
 distinctions between upper- and lower-case characters. Punctuation marks can
 be eliminated by adding a suitable `**humsed**`_ filter.
 
-`` extract -i '**silbe' file1 | text | humsed 's/[^a-zA-Z ]//g' \
+``extract -i '**silbe' file1 | text | humsed 's/[^a-zA-Z ]//g' \
 >
 >> | rid -GLId > temp1
 >
@@ -147,7 +139,7 @@ the number of output lines can provide a rough estimate of the magnitude of
 the differences between the two files. A suitable revision to the last line
 of the above script would be:
 
-`` diff -i file1 file2 | wc -l``
+``diff -i file1 file2 | wc -l``
 
 One problem with this approach is that it assumes that we know which two
 files we want to compare. A more common problem is looking for *any* work
@@ -160,7 +152,7 @@ script outputs each filename in turn with the a count of the number of output
 lines generated by **diff**.
 
 >
-`` extract -i '**silbe' $1 | text | humsed 's/[^a-zA-Z ]//g' \
+``extract -i '**silbe' $1 | text | humsed 's/[^a-zA-Z ]//g' \
 
 >
 >>
@@ -217,11 +209,11 @@ technique is to focus on the similarity of the word inventories. In the
 following script, we simply create a list of words used in both the original
 and comparison files.
 
-`` extract -i '**silbe' file1 | text | humsed 's/[.,;:!?]//g' \
+``extract -i '**silbe' file1 | text | humsed 's/[.,;:!?]//g' \
 >
 >> | rid -GLId | tr A-Z a-z | sort -d > inventory1``
 >
-`` extract -i '**silbe' file2 | humsed 's/[.,;:!?]//g' | tr A-Z a-z | text \
+``extract -i '**silbe' file2 | humsed 's/[.,;:!?]//g' | tr A-Z a-z | text \
 >
 >> | rid -GLId | sort | uniq -c | sort -nr > inventory2``
 
@@ -256,13 +248,13 @@ only those lines that are present in the second file, and the third column
 identifies those lines that are present in both files. In the case of our two
 Latin texts, the command:
 
-`` comm inventory1 inventory2``
+``comm inventory1 inventory2``
 
 will produce the following output. The first and second columns identify
 words unique to ``inventory1`` and ``inventory1``, respectively. The third
 column identifies the common lines:
 
-`` a
+``a
 > coronasti
 > domine
 > et
@@ -295,12 +287,12 @@ do this using the word-count command, **wc**. The first command counts the
 total number of words and the second command counts the total number of
 shared words:
 
-`` comm inventory1 inventory2 | wc -l``
-`` comm -3 inventory1 inventory2 | wc -l``
+``comm inventory1 inventory2 | wc -l``
+``comm -3 inventory1 inventory2 | wc -l``
 
 An important point about **comm** is that the order of materials is important
 in the input files. If the word *filio* occurs near the beginning of
-`` inventory1`` but near the end of ``inventory2`` then **comm** will not
+``inventory1`` but near the end of ``inventory2`` then **comm** will not
 consider the record common to both files. This is the reason why we used an
 alphabetical sort (**sort -d**) in our original processing.
 

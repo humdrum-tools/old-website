@@ -1,10 +1,6 @@
-Chapter21
-=========
-
-Searching for Patterns
-======================
-
---------
+=====================================
+Chapter 21: Searching for Patterns
+=====================================
 
 The **grep** and **egrep** commands are useful for identifying patterns that
 occur on single lines. As we saw in `Chapter 19,`_ the `**context**`_ command

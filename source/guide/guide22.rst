@@ -1,5 +1,6 @@
-Chapter22
-=========
+==========================
+Chapter 22: Classifying
+==========================
 
 Classifying
 --------------------
@@ -256,7 +257,7 @@ voices. Our reassignment file might be as follows:
 > ``>12open``
 
 We will need to extract the soprano and tenor voices, translate the pitch
-representation to ```**semits```_ and use `**ydelta**`_ to calculate the
+representation to ``**semits``_ and use `**ydelta**`_ to calculate the
 semitone distance between the two voices. In the following set of commands,
 we have also added the `**ditto**`_ command to ensure that there are semitone
 values for each sonority.
@@ -306,7 +307,7 @@ Fingerings are shown only for the first octave (from C4 to C5):
 Suppose we wanted to determine what kinds of fingering *transitions* occur in
 Joachim Quantz's flute concertos. Since instrument fingerings are insensitive
 to enharmonic spelling, an appropriate input representation would be
-`` **semits``. Having used `**recode**`_ to translate the pitches to
+``**semits``. Having used `**recode**`_ to translate the pitches to
 fingerings, we can then use **context -n 2** to generate diads of successive
 finger combinations.
 
@@ -325,14 +326,14 @@ processing:
 
 We could create a similar reassignment file containing fingers pertaining to
 the pre-Boehm flute. Suppose the revised reassignment file was called
-`` premodern``. We could determine how the finger transitions differ between
+``premodern``. We could determine how the finger transitions differ between
 the pre-Boehm traverse flute and the modern flute. In `Chapter 29`_ we will
 see how the **diff** command can be used to identify differences between two
 spines. This will allow us to identify specific places in the score where
 Baroque and modern fingerings differ.
 
 The **recode** command can be used for innumerable other kinds of
-classifications. For example, ```**kern```_ durations might be expressed in
+classifications. For example, ``**kern``_ durations might be expressed in
 seconds (using the `**dur**`_ command), and the elapsed times then classified
 as *long*, *short* and *medium* (say). Sound pressure levels (in decibels)
 might be classified as dynamic markings (***ff***, ***mf***, ***mp***,
@@ -375,7 +376,7 @@ succinct **humsed** script would deal with fingering transitions rather than
 pitch transitions.
 
 >
-`` s/X-XXXO-XOOX X-XXXO-OOOX/easy/
+``s/X-XXXO-XOOX X-XXXO-OOOX/easy/
 s/X-XXXO-XXOX X-XXOO-OOOX/moderate/
 s/O-XOOO-OOOX X-OXXO-XXXO/difficult/``
 etc.
@@ -400,14 +401,14 @@ Classifying Cadences
 --------------------
 
 Consider another application where we use **humsed** to classify cadences.
-Suppose we have Roman-numeral harmonic data (as provided by the ```**harm```_
+Suppose we have Roman-numeral harmonic data (as provided by the ``**harm``_
 representation). In the case of Bach's chorale harmonizations, for example,
 cadences are clearly evident by the presence of pauses (designated by the
 semicolon). We can easily create a spine that identifies only cadences.
 Consider a suitable reassignment file (dubbed ``cadences``):
 
 >
-`` s/V I;/authentic/
+``s/V I;/authentic/
 s/V7 I;/authentic/
 s/V i;/authentic/
 s/V7 i;/authentic/
@@ -419,7 +420,7 @@ s/V VI;/deceptive/``
 
 etc.
 
-`` s/^[IiVv].*$/./``
+``s/^[IiVv].*$/./``
 
 (The precise file will depend on your preferred way of labeling cadences.)
 Remember that, unlike the **recode** command, all of the substitutions in a
@@ -439,7 +440,7 @@ sequence of two-chord progressions using **context** -- taking care to omit
 barlines (``-o =``). We then use **humsed** to run the script of cadence-name
 substitutions. Finally, we use the **sed** command to change the name of the
 exclusive interpretation from ``**harm`` to something more suitable --
-`` **cadences``.
+``**cadences``.
 
 Many more sophisticated variants of this sort of procedure may be used. For
 example, one could first classify harmonies more broadly. In so-called
@@ -464,7 +465,7 @@ the lower-case letter ``r`` (i.e., rests) with the string ``-viola``. The
 second substitution changes any record that does not begin with either a
 minus sign or an equals sign to the string ``+viola``. In effect, we've
 transformed the viola part so that all data tokens encode either ``+viola``,
-`` -viola`` or are barlines.
+``-viola`` or are barlines.
 
 > ``extract -i '*Iviola' symphony1 | ditto -s = \
 >
@@ -542,17 +543,17 @@ Excluding *tutti* sections, do the trumpet and flute tend to "repell" each
 others' presence?
 
 > ``grep '\-' orchestra | grep -c '+tromp.*-flt' orchestra``
-`` grep '\-' orchestra | grep -c '+tromp.*+flt' orchestra``
-`` grep '\-' orchestra | grep -c '-tromp.*-flt' orchestra``
-`` grep '\-' orchestra | grep -c '-tromp.*+flt' orchestra``
+``grep '\-' orchestra | grep -c '+tromp.*+flt' orchestra``
+``grep '\-' orchestra | grep -c '-tromp.*-flt' orchestra``
+``grep '\-' orchestra | grep -c '-tromp.*+flt' orchestra``
 
 When all of the woodwinds are playing, which of the remaining instruments is
 Beethoven most likely to omit from the texture?
 
 > ``grep '+fagot.*+clars.*+oboe.*+flt' orchestra | grep -c '-cbass'``
-`` grep '+fagot.*+clars.*+oboe.*+flt' orchestra | grep -c '-cello'``
-`` grep '+fagot.*+clars.*+oboe.*+flt' orchestra | grep -c '-viola'``
-`` grep '+fagot.*+clars.*+oboe.*+flt' orchestra | grep -c '-violn'``
+``grep '+fagot.*+clars.*+oboe.*+flt' orchestra | grep -c '-cello'``
+``grep '+fagot.*+clars.*+oboe.*+flt' orchestra | grep -c '-viola'``
+``grep '+fagot.*+clars.*+oboe.*+flt' orchestra | grep -c '-violn'``
 etc.
 
 Many refinements can be added to this basic approach. For example, instead of

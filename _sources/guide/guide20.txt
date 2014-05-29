@@ -1,9 +1,6 @@
-Chapter20
-=========
-
-
-Strophes, Verses and Repeats
------------------------------------
+============================================
+Chapter 20: Strophes, Verses, and Repeats
+============================================
 
 We often tend to think of musical information as a linear stream of
 successive events. However, there are many circumstances where musical
@@ -33,7 +30,7 @@ that consists of a single asterisk, followed by a greater-than sign, followed
 by a keyword that labels the section. The following are examples of section
 labels.
 
-``  *>Coda
+`` *>Coda
 *>1st Ending
 *>Refrain
 *>Exposition>2nd Theme ``
@@ -58,7 +55,7 @@ expansion lists begin with an asterisk followed by a greater-than sign. In
 effect, the expansion list indicates how the abbreviated file should be
 expanded to a full-length encoding. Consider the following expansion list:
 
-``  *>[verse1,refrain,verse2,refrain] ``
+`` *>[verse1,refrain,verse2,refrain] ``
 
 This list indicates that the abbreviated file contains (at least) three
 sections, labelled "``verse1``," "``verse2``" and "``refrain``." When the
@@ -74,7 +71,7 @@ We encountered the `**yank**`_ command earlier in `Chapter 12.`_ Recall that
 option. For example, if the appropriate section is labelled, we might extract
 the coda of a work as follows:
 
-`` yank -s Coda -r 1`` *file*
+``yank -s Coda -r 1`` *file*
 
 Recall that the **-r** option is mandatory with **yank**; in this case, it
 identifies the *first* occurrence of a section labelled ``Coda``.
@@ -110,7 +107,7 @@ achieved simply by encoding more than one expansion list. In order to
 distinguish different versions, each expansion list is given a unique
 *version label*.  Consider the following expansion lists:
 
-``  *>Gould1982[A,A,B]
+`` *>Gould1982[A,A,B]
 *>Landowska[A,A,B,B] ``
 
 Here we see two expansion lists, one carries the version label ``Gould1982``
@@ -129,35 +126,35 @@ unlabelled, a second is labelled ``long`` and a third is labelled ``weird``.
 
 
 
-`` **example``**example
-`` *>[A,B,A,C]``*>[A,B,A,C]
-`` *>long[A,A,B,A,C]``*>long[A,A,B,A,C]
-`` *>weird[C,A,C]``*>weird[C,A,C]
-`` *>A``*>A
-`` data-A``data-A
-`` *>B``*>B
-`` data-B``data-B
-`` *>C``*>C
-`` data-C``data-C
-`` *-``*-``
+``**example``**example
+``*>[A,B,A,C]``*>[A,B,A,C]
+``*>long[A,A,B,A,C]``*>long[A,A,B,A,C]
+``*>weird[C,A,C]``*>weird[C,A,C]
+``*>A``*>A
+``data-A``data-A
+``*>B``*>B
+``data-B``data-B
+``*>C``*>C
+``data-C``data-C
+``*-``*-``
 
 Consider the following command:
 
-`` thru -v weird file``
+``thru -v weird file``
 
 The corresponding "through-composed" output would be as follows:
 
 
 
-`` **example``**example
-`` *thru``*thru
-`` *>C``*>C
-`` data-C``data-C
-`` *>A``*>A
-`` data-A``data-A
-`` *>C``*>C
-`` data-C``data-C
-`` *-``*-``
+``**example``**example
+``*thru``*thru
+``*>C``*>C
+``data-C``data-C
+``*>A``*>A
+``data-A``data-A
+``*>C``*>C
+``data-C``data-C
+``*-``*-``
 
 Notice that all expansion-list records have been eliminated from the output.
 A ``*thru`` tandem interpretation has been added to all output spines
@@ -171,7 +168,7 @@ the *unlabelled* (default) expansion list. So the following command would
 result in an output consisting of section A, followed by section B, followed
 by section A (again), followed by section C:
 
-`` thru file``
+``thru file``
 
 
 Section Types
@@ -188,17 +185,17 @@ Jones:
 
 
 
-`` **Example
-`` *>Smith>A
-`` *>Jones>A
-`` data1
-`` *>Jones>B
-`` data2
-`` *>Smith>B
-`` data3
-`` *>Jones>C
-`` data4``
-`` *-
+``**Example
+``*>Smith>A
+``*>Jones>A
+``data1
+``*>Jones>B
+``data2
+``*>Smith>B
+``data3
+``*>Jones>C
+``data4``
+``*-
 
 Both Smith and Jones label the work as beginning with section `A'. Later
 Jones's `B' section begins; then Smith's `B' section; then Jones's `C'
@@ -211,18 +208,18 @@ ignore all section labels except for a specified type. We could extract
 Smith's `B' section by using the **-t** option to limit extraction to
 "Smith"-type section labels:
 
-`` yank -t Smith -s B``
+``yank -t Smith -s B``
 
 This command would produce the following output:
 
 
 
-`` **Example
-`` *>Smith>B
-`` data3
-`` *>Jones>C
-`` data4``
-`` *-
+``**Example
+``*>Smith>B
+``data3
+``*>Jones>C
+``data4``
+``*-
 
 Without the **-t** option, **yank** will simply extract material up to the
 occurrence of the next section label. Note that section types can be used to
@@ -240,23 +237,23 @@ following:
 
 
 
-`` **Example
-`` *>Form>Exposition
-`` data1
-`` *>Form>>1st Theme
-`` data2
-`` *>Form>>2nd Theme
-`` data3
-`` *>Form>Development
-`` data4
-`` *>Form>Recapitulation
-`` *>Form>>1st Theme
-`` data5
-`` *>Form>>2nd Theme
-`` data6
-`` *>Form>Coda
-`` data7
-`` *-
+``**Example
+``*>Form>Exposition
+``data1
+``*>Form>>1st Theme
+``data2
+``*>Form>>2nd Theme
+``data3
+``*>Form>Development
+``data4
+``*>Form>Recapitulation
+``*>Form>>1st Theme
+``data5
+``*>Form>>2nd Theme
+``data6
+``*>Form>Coda
+``data7
+``*-
 
 All of the above section labels are identified as type ``Form``. However, two
 levels are distinguished (denoted by ``>`` and ``>>``). Subsections are
@@ -266,18 +263,18 @@ section up to the next section of comparable level. The operation is
 illustrated in the following sample commands: indicating the first and second
 themes.
 
-`` yank -t Form -s '1st Theme' -r 1(``extracts up to ``>Form>>2nd Theme``)
-`` yank -t Form -s '2nd Theme' -r 1(``extracts up to ``>Form>Development``)
-`` yank -t Form -s 'Exposition' -r 1(``extracts up to ``>Form>Development``)
+``yank -t Form -s '1st Theme' -r 1(``extracts up to ``>Form>>2nd Theme``)
+``yank -t Form -s '2nd Theme' -r 1(``extracts up to ``>Form>Development``)
+``yank -t Form -s 'Exposition' -r 1(``extracts up to ``>Form>Development``)
 
 For example, the second theme from the recapitulation can be extracted as
 follows:
 
-`` yank -t Form -s '2nd Theme' -r 2``
+``yank -t Form -s '2nd Theme' -r 2``
 
 Alternatively:
 
-`` yank -t Form -s Recapitulation`` *file*`` | yank -t Form -s '2nd Theme'
+``yank -t Form -s Recapitulation`` *file*`` | yank -t Form -s '2nd Theme'
 -r 1``
 
 
@@ -289,42 +286,42 @@ illustration, here are a few pipeline processes involving section labels.
 First, we might ask the question -- how does the user know what sections
 labels are present in a document? This is a task for **grep**:
 
-`` grep '^\*>'`` *file*
+``grep '^\*>'`` *file*
 
 This command will also output any expansion-lists. If we want to restrict our
 output to identifying which *versions* are available for a document we would
 look for the presence of square brackets:
 
-`` grep '^\*>.*\[.*\]'`` *file*
+``grep '^\*>.*\[.*\]'`` *file*
 
 How many notes are there in the exposition?
 
-`` yank -t Form -s Exposition -r 1`` *file*`` | census*``
+``yank -t Form -s Exposition -r 1`` *file*`` | census*``
 
 How many phrases are there in the development?
 
-`` yank -t Form -s Development -r 1`` *file*`` | grep -c '{'``
+``yank -t Form -s Development -r 1`` *file*`` | grep -c '{'``
 
 Extract the figured bass for the third recitative:
 
-`` yank -s Recitativo -r 3`` *file*`` | extract -i '**B-num'``
+``yank -s Recitativo -r 3`` *file*`` | extract -i '**B-num'``
 
 Compare the estimated key for the second theme in the exposition versus the
 estimated key for the second theme in the recapitulation:
 
-`` yank -t Form -s '2nd Theme' -r 1`` *file*`` | key``
-`` yank -t Form -s '2nd Theme' -r 2`` *file*`` | key``
+``yank -t Form -s '2nd Theme' -r 1`` *file*`` | key``
+``yank -t Form -s '2nd Theme' -r 2`` *file*`` | key``
 
 Determine the nominal (non-rubato) duration of Gould's performance of the
 work:
 
-`` thru -v Gould1982`` *file*`` | extract -i '**kern' | extract -f 1 \
+``thru -v Gould1982`` *file*`` | extract -i '**kern' | extract -f 1 \
 >
 >> | dur -d | rid -GLId | grep -v '^=' | stats | grep -i total``
 
 Perform the first three measures from the second section of a binary form:
 
-`` yank -s B`` *file*`` | yank -o = -r 1-3 | midi | perform``
+``yank -s B`` *file*`` | yank -o = -r 1-3 | midi | perform``
 
 
 Strophic Representations
@@ -363,53 +360,53 @@ Wandern" from *Die Schoene Muellerin* by Schubert:
 
 
 
-````
+```
 $ 
-`` !! Franz``Schubert,```Das Wandern' from "Die Schoene Muellerin"
-`` **kern``**silbe
-`` *k[b-e-]``*Deutsch
-`` *``*solo
-`` *>[1,1,1,1]``*>[1,1,1,1]
-`` *>1``*>1
-`` *``*strophe
-`` *``*^
-`` *``*^``*^
-`` *``*S/1``*S/2``*S/3``*S/4
-`` 8f``Das``Vom``Das``Die
-`` =5``=5``=5``=5``=5
-`` 8f``Wan-``Was-``sehn``Stei-
-`` 8b-``-dern``-ser``wir``-ne
-`` 8a``ist``ha-``auch``selbst,
-`` 8ee-``des``-ben``den``so
-`` =6``=6``=6``=6``=6
-`` (16dd``Mul-``wir's``Ra-
-`` 16ff)``|``|``|``|
-`` (16dd``-lers``ge-``-dern``sie
-`` 16b-)``|``|``|``|
-`` 8f``Lust,``-lernt,``ab,``sind,
-`` 8dd``das``vom``den``die
-`` =7``=7``=7``=7``=7
-`` (8.cc``Wan-``Was-``Ra-``Stei-
-`` 16a)``|``|``|``|
-`` 8b-``-dern!``-ser!``-dern!``-ne!
-`` 8r``%``%``%``%
-`` *``*S/fin``*S/fin``*S/fin``*S/fin
-`` *``*v``*v``*v``*v
-`` *``*S-
-`` *-``*-
+``!! Franz``Schubert,``Das Wandern' from "Die Schoene Muellerin"
+``**kern``**silbe
+``*k[b-e-]``*Deutsch
+``*``*solo
+``*>[1,1,1,1]``*>[1,1,1,1]
+``*>1``*>1
+``*``*strophe
+``*``*^
+``*``*^``*^
+``*``*S/1``*S/2``*S/3``*S/4
+``8f``Das``Vom``Das``Die
+``=5``=5``=5``=5``=5
+``8f``Wan-``Was-``sehn``Stei-
+``8b-``-dern``-ser``wir``-ne
+``8a``ist``ha-``auch``selbst,
+``8ee-``des``-ben``den``so
+``=6``=6``=6``=6``=6
+``(16dd``Mul-``wir's``Ra-
+``16ff)``|``|``|``|
+``(16dd``-lers``ge-``-dern``sie
+``16b-)``|``|``|``|
+``8f``Lust,``-lernt,``ab,``sind,
+``8dd``das``vom``den``die
+``=7``=7``=7``=7``=7
+``(8.cc``Wan-``Was-``Ra-``Stei-
+``16a)``|``|``|``|
+``8b-``-dern!``-ser!``-dern!``-ne!
+``8r``%``%``%``%
+``*``*S/fin``*S/fin``*S/fin``*S/fin
+``*``*v``*v``*v``*v
+``*``*S-
+``*-``*-
 
-``  Notice that this file contains a single section labelled `1' and that an
+`` Notice that this file contains a single section labelled `1' and that an
 expansion list occurs near the beginning of the file that indicates section 1
 is to be repeated 4 times in total.
 
 The strophic passage pertains only to the spine marked ``**silbe``. The
-`` `**silbe```_ representation pertains to syllabic text encoding and is a
+```**silbe``_ representation pertains to syllabic text encoding and is a
 pre-defined representation in Humdrum. The ``**silbe`` representation is
 discussed in `Chapter 27.`_ Following the strophic passage indicator
 (``*strophe``), the spine is split apart until the required number of verses
 are generated. Then each spine is labelled with its own strophe label. Since
 the verses have an order, it is appropriate to label them with numbers:
-`` *S/1, *S/2,`` and so on. The individual verses are terminated with strophe
+``*S/1, *S/2,`` and so on. The individual verses are terminated with strophe
 end indicators (``*S/fin``), the spines rejoin, and then a strophic passage
 terminator (``*S-``) marks the end of the strophic passage.
 
@@ -422,13 +419,13 @@ strophic data. The **-x** option for **strophe** allows the user to extract a
 particular labelled strophe. Consider, for example the effect of the
 following command:
 
-`` strophe -x 3 schubert``
+``strophe -x 3 schubert``
 
 Using the above data, the result is:
 
 
 
-`` !! Franz Schubert, `Das Wandern' from "Die Schoene Muellerin"
+``!! Franz Schubert, `Das Wandern' from "Die Schoene Muellerin"
 > **kern**silbe
 > *k[b-e-]*Deutsch
 > *>[1,1,1,1]*>[1,1,1,1]
@@ -458,12 +455,12 @@ Notice that all of the tandem interpretations related to the strophe
 organization are eliminated from the output.
 
 Suppose that we wanted to create a through-composed version of the entire
-work. We would expect as output, just two spines -- the ```**kern```_ spine
+work. We would expect as output, just two spines -- the ``**kern``_ spine
 and the ``**silbe`` spine. First, we need to create the full length version
 using the **thru** command. This will take the default expansion list, and
 repeat the appropriate section for each successive verse.
 
-`` thru schubert``
+``thru schubert``
 
 The effect of this will be to simply repeat section 1 four times. However,
 each repetition will contain all four verses. We can use the **strophe**
@@ -475,7 +472,7 @@ will preserve strophe #2 (``*S/2``). And so on. In summary, the follow
 command will create a proper through-composed rendition of the Schubert
 lieder illustrated above.
 
-`` thru schubert | strophe``
+``thru schubert | strophe``
 
 Incidentally, the input passage need not necessary begin with strophe #1. The
 **strophe** command will adapt to the input, and use the lowest previously
@@ -490,7 +487,7 @@ interpretations of a single work. Suppose for example that we had two
 editions of the Bach chorale harmonizations: Erk and Reimenschneider. We
 could select the Erk edition as follows:
 
-`` strophe -x Erk chorale166``
+``strophe -x Erk chorale166``
 
 In a strophic song, suppose we would like to compare the number of syllables
 in the first and second verses. We begin by selecting the appropriate verse,
@@ -498,11 +495,11 @@ extract the syllable spine, eliminate all non-data records, eliminate any
 other special signifiers (like barlines), and finally count the number of
 remaining records. We repeat this procedure for both verses:
 
-`` strophe -x 1`` *file*`` | extract -i '**silbe' | rid -GLId \
+``strophe -x 1`` *file*`` | extract -i '**silbe' | rid -GLId \
 >
 >> | grep -v [=\|%] | wc -l``
 >
-`` strophe -x 2`` *file*`` | extract -i '**silbe' | rid -GLId \
+``strophe -x 2`` *file*`` | extract -i '**silbe' | rid -GLId \
 >
 >> | grep -v [=\|%] | wc -l``
 
@@ -545,12 +542,12 @@ of
 > than ``*>type>name``
 > abbreviated formatHumdrum document encoded using expansion lists
 > through-composedHumdrum document encoded without expansion lists
-`` thru``command to create a through-composed document from an
+``thru``command to create a through-composed document from an
 > abbrevatiated format
-`` thru -v``command to create a particular version of a through-composed
+``thru -v``command to create a particular version of a through-composed
 > document
-`` yank -s``command to extract sections
-`` yank -t -s``command to extract sections limited to sections of a
+``yank -s``command to extract sections
+``yank -t -s``command to extract sections limited to sections of a
 particular type
 > strophe1. alternative spine path, 2. command for extracting a particular
 > strophe

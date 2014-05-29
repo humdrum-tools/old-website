@@ -1,14 +1,6 @@
-Chapter25
-=========
-
-
---------
-
-
-Similarity
-==========
-
---------
+===========================
+Chapter 25: Similarity
+===========================
 
 There is no precise way to measure similarity. However, there are several
 useful techniques that can be used to estimate the degree of similarity
@@ -777,30 +769,3 @@ The tools described in this chapter complement the pattern searching tools
 
 
 
-
--   ` **Next Chapter**`_
--   ` **Previous Chapter**`_
--   ` **Table of Contents**`_
--   ` **Detailed Contents**`_
-
-(C) Copyright 1999 David Huron
-
-.. _Previous Chapter: guide24.html
-.. _Contents: guide.toc.html
-.. _Next Chapter: guide26.html
-.. _correl: commands/correl.html
-.. _simil: commands/simil.html
-.. _ditto: commands/ditto.html
-.. _**solfg: representations/solfg.rep.html
-.. _**semits: representations/semits.rep.html
-.. _**correl: representations/correl.rep.html
-.. _recode: commands/recode.html
-.. _**simil: representations/simil.rep.html
-.. _**fret: representations/fret.rep.html
-.. _humsed: commands/humsed.html
-.. _**kern: representations/kern.rep.html
-.. _**accent: representations/accent.rep.html
-.. _yank: commands/yank.html
-.. _patt: commands/patt.html
-.. _pattern: commands/pattern.html
-.. _Detailed Contents: guide.toc.detailed.html

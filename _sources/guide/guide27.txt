@@ -1,9 +1,7 @@
 
-Chapter27
-=========
-
-Text and Lyrics
-------------------
+===============================
+Chapter 27: Text and Lyrics
+===============================
 
 Musical texts include lyrics, librettos, stage directions, recitativo and
 other collections of words. It goes without saying that words provide
@@ -13,9 +11,9 @@ sonorous dimension of music, including rhyme schemes, word-rhythms, and
 phonetic and syllabic effects such as alliteration, vowel-coloration.
 
 Humdrum provides three pre-defined representations pertinent to text or
-lyrics. The ```**text```_ representation can be used to represent *words*;
-the ```**silbe```_ representation can be used to represent *syllables*; and
-the ```**IPA```_ representation can be used to represent *phonemes* (via the
+lyrics. The ``**text``_ representation can be used to represent *words*;
+the ``**silbe``_ representation can be used to represent *syllables*; and
+the ``**IPA``_ representation can be used to represent *phonemes* (via the
 International Phonetic Alphabet). Discussion of the ``**IPA`` representation
 will be delayed until `Chapter 34.`_ In this chapter we will look at various
 representational and processing issues related to the manipulation of words
@@ -98,13 +96,13 @@ spine can be generated from the ``**silbe`` representation.
 >> *-*-*-``
 
 Note that all three representations in Example 27.1 make use of the common
-system for representing barlines. In the ```**text```_ representation tokens
+system for representing barlines. In the ``**text``_ representation tokens
 represent individual words. In some scores, several words will be associated
 with a single moment (or pitch), as in the case of *recitativo* passages.
 Multi-word tokens are encoded as Humdrum multiple-stops with a space
 separating each word on a record.
 
-In the ```**silbe```_ representation tokens represent individual syllables.
+In the ``**silbe``_ representation tokens represent individual syllables.
 In ``**silbe`` the hyphen (-) is used explicitly to signify syllable
 boundaries and the tilde (~) is used to signify boundaries between hyphenated
 words (necessarily also a syllable boundary). In other words, four types of
@@ -150,8 +148,8 @@ sample signifiers are shown in Table 26.2
 > ``##``end of laughing voice
 > ``@``laughter (no text)
 > ``&``sob or cry (no text)
-> ````beginning of emotional voice
-> ```end of emotional voice
+> ```beginning of emotional voice
+> ``end of emotional voice
 > ``*``follows stressed word (``**test``) or stressed syllable (``**silbe``)
 
 *Signifiers common to ****text** and ****silbe***
@@ -165,7 +163,7 @@ rather than a word-oriented representation. The ``**silbe`` representation is
 typically a better representation of the score than ``**text``. However, for
 many analytic applications, words often prove to be more convenient. The
 Humdrum **text** command can be used to translate ``**silbe`` data to
-`` **text`` data. In general, syllabic information is useful for addressing
+``**text`` data. In general, syllabic information is useful for addressing
 questions related to rhythm and rhyme, whereas text information is more
 useful for addressing questions related to semantics, metaphor, word-
 painting, etc.
@@ -176,12 +174,12 @@ Invoking the **text** command is straightforward:
 
 A simple text-related task might be looking for occurrences of a particular
 word, such as the German "Liebe" (love). If the lyrics are encoded in the
-`` `**text```_ representation, then a simple **grep** will suffice:
+```**text``_ representation, then a simple **grep** will suffice:
 
 > ``grep -n 'Liebe' schubert``
 
 Recall that the **-n** option gives the line number of any occurrences found.
-If the input is encoded in the ```**silbe```_ representation, then the output
+If the input is encoded in the ``**silbe``_ representation, then the output
 of **text** can be piped to **grep**:
 
 > ``extract -i '**silbe' schubert | text | grep -n 'Liebe'``
@@ -235,7 +233,7 @@ line. The default line-length is 72 characters. The above pipeline produces
 the following output:
 
 >
-`` A solis ortus cardine ad usque terrae limitem,
+``A solis ortus cardine ad usque terrae limitem,
 Christum canamus principem, natum Maria Virgine.
 Beatus auctor saeculi servile corpus induit: ut
 carne carnem liberans, ne perderet quos condidit.
@@ -256,7 +254,7 @@ punctuation mark:
 The corresponding output is:
 
 >
-`` A solis ortus cardine ad usque terrae limitem,
+``A solis ortus cardine ad usque terrae limitem,
 Christum canamus principem,
 natum Maria Virgine.
 Beatus auctor saeculi servile corpus induit:
@@ -270,13 +268,13 @@ intacta nesciens virum,
 concepit alvo filium.``
 
 Yet another way of arranging the text output would be to parse the text
-according to explicit phrase marks in the ```**kern```_ data. This will
+according to explicit phrase marks in the ``**kern``_ data. This will
 require a little more work, but it's worth going through the steps since the
 same process can be applied to any representation. First, we will need to
-transfer the end-of-phrase signifier (```}``') from the ``**kern`` spine to
+transfer the end-of-phrase signifier (``}``') from the ``**kern`` spine to
 the ``**silbe`` spine. This transfer entails four steps. (1) Extract the
 monophonic ``**kern`` spine and eliminate all data signifiers except closing
-curly braces (```}``'). Store the result in a temporary file:
+curly braces (``}``'). Store the result in a temporary file:
 
 > ``extract -i '**kern' chant12 | humsed 's/[^}]*//; s/^$/./' \
 >
@@ -340,8 +338,8 @@ becomes:
 >> > temp1``
 >
 >
-`` extract -i '**silbe' chant12 > temp2``
-`` assemble temp1 temp2 | cleave -i '**kern,**silbe' \
+``extract -i '**silbe' chant12 > temp2``
+``assemble temp1 temp2 | cleave -i '**kern,**silbe' \
 >
 >> -o '**silbe' > temp3``
 >
@@ -387,7 +385,7 @@ following script counts the number of syllables in successive phrases for a
 single input file.
 
 >
-`` # SYLLABLE - count the number of syllables in each phrase
+``# SYLLABLE - count the number of syllables in each phrase
 #
 # Usage: syllable filename [ > outputfile]
 #
@@ -421,7 +419,7 @@ syllables in each phrase, where the value ``0`` indicates an unstressed
 syllable and ``1`` indicates a stressed syllable:
 
 >
-`` 0 1 0 1 0 1 0 0
+``0 1 0 1 0 1 0 0
 0 0 0 1 0 1 0 0
 1 0 0 1 0 1 0 0
 1 0 0 1 0 1 0 0
@@ -452,7 +450,7 @@ rhythms.
 With the following results:
 
 >
-`` 5 0 1 0 1 0 1 0 0
+``5 0 1 0 1 0 1 0 0
 4 1 0 0 1 0 1 0 0
 2 0 1 0 0 0 1 0 0
 1 0 1 0 1 0 0 1 0
@@ -470,9 +468,9 @@ command. Fields are delineated by white space (tabs or spaces). For example,
 results to the **stats** utility in order to calculate the numerical total.
 For example,
 
-> `` . . . | cut -f 1 | stats | grep 'total'``
-``  . . . | cut -f 2 | stats | grep 'total'``
-``  . . . | cut -f 3 | stats | grep 'total'``
+``. . . | cut -f 1 | stats | grep 'total'``
+``. . . | cut -f 2 | stats | grep 'total'``
+``. . . | cut -f 3 | stats | grep 'total'``
 etc
 
 For the chant *O Solis Ortus* the results are as follows:
@@ -542,7 +540,7 @@ is carried out in a while-loop that cycles through all of the files provided
 when the command is invoked.
 
 >
-`` while [ $# -ne 0 ]
+``while [ $# -ne 0 ]
 do
 
 >
@@ -577,7 +575,7 @@ number, and context fields are separated by tabs. We can ignore the first two
 fields by eliminating everything up to the last tab in the line. Since words
 are separated by blank space, the expression ``[^ ]+`` will match a word not
 containing spaces. In short, the regular expression "``^.**tab*[^ ]+ [^ ]+
-`` " will match everything up to the first tab, followed by two additional
+``" will match everything up to the first tab, followed by two additional
 words. All we need to do is paste our keyword to the end of this expression.
 
 Below is a simple one-line script for a command called **keyword.** The user
@@ -587,7 +585,7 @@ we've used the extended regular expression character `+' -- we must invoke
 **egrep** rather than **grep** in our script:
 
 >
-`` # KEYWORD - A script for searching a master concordance file
+``# KEYWORD - A script for searching a master concordance file
 #
 # Usage: keyword
 #
@@ -680,9 +678,9 @@ of the words high/hoch/haut and determine the average pitch. We can then
 contrast this average pitch with the average pitch for the repertory as a
 whole. Any significant difference might alert us to possible word painting.
 
-First we translate any pitch data to ```**semits```_ and any ``**silbe`` data
+First we translate any pitch data to ``**semits``_ and any ``**silbe`` data
 to ``**text``. We will also filter the outputs to ensure that only
-`` **semits`` and ``**text`` are present.
+``**semits`` and ``**text`` are present.
 
 > ``semits * | text | extract -i '**semits,**text'``
 
@@ -701,7 +699,7 @@ Next, we can use **egrep** to search for the words of interest:
 Notice the addition of the expression ``^\*`` in the search pattern. This
 expression will match any Humdrum interpretation records and so ensures that
 the output conforms to the Humdrum syntax. We can now isolate the
-`` **semits`` data and pass the output to **stats** in order to determine the
+``**semits`` data and pass the output to **stats** in order to determine the
 average pitch for the words coinciding with the words high/hoch/haut:
 
 > ``semits * | text | extract -i '**semits,**text' | ditto -s = \
@@ -880,7 +878,7 @@ Reprise
 -------
 
 In this chapter we have introduced two text-related representations:
-`` `**text```_ and ```**silbe```_. We have examined the **text** command
+```**text``_ and ``**silbe``_. We have examined the **text** command
 (which translates from ``**silbe`` to ``**text``). We have also been exposed
 to the UNIX **fmt** command (a simple text formatter), the **cut** command
 (similar to **extract -f**), and the **head** and **tail** commands.
