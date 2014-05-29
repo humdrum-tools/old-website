@@ -31,17 +31,17 @@ a list of studies and publications that have used the toolkit.
 Getting Started
 -------------------
 
-At the moment, one of the better ways to install the 
-Humdrum Toolkit is through Pedro Kroger's Github repository:
+.. toctree::
+   :maxdepth: 2
 
-``git clone https://github.com/kroger/humdrum.git``
+   installationguide/index
 
 The Humdrum User Guide
 --------------------------
 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    
    guide/index
