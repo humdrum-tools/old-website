@@ -34,6 +34,7 @@ provides a predefined ISO-like representation called **pitch**
 illustrated below. Here we see an ascending chromatic scale in the left
 spine, with a concurrent descending chromatic scale in the right spine:
 
+CODE HERE:
 .. code-block:: kern
    **kern  **kern
    C4      C5      
