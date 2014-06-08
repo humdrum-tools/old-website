@@ -40,15 +40,18 @@ spine, with a concurrent descending chromatic scale in the right spine:
         C#4     B4
         D4      Bb4
         D#4     A4
+        =       =
         E4      Ab4
         F4      G4
         F#4     Gb4
         G4      F4
+        =       =
         G#4     E4
         A4      Eb4
         A#4     D4
         B4      Db4
-        C5      C4
+        =       =
+        C1      C1
         *-      *-
 
 Notice that only upper-case letters are used for pitch-name and that the flat
