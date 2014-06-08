@@ -35,7 +35,8 @@ illustrated below. Here we see an ascending chromatic scale in the left
 spine, with a concurrent descending chromatic scale in the right spine:
 
 .. code-block:: kern
-   **kern  **kern
+
+   **pitch  **pitch
    C4      C5      
    C#4     B4
    D4      Bb4
@@ -71,14 +72,16 @@ Other pitch representations (such as ``**kern``) can be translated to the
 ISO-inspired ``**pitch`` representation by invoking the `**pitch**`_ command.
 For example, consider the following ``**kern`` input:
 
-> ``**kern
-> =1
-> 4g
-> 4g#
-> 4a
-> 4cc
-> =2
-> *-``
+.. code-block:: kern
+
+    **kern
+    =1
+    4g
+    4g#
+    4a
+    4cc
+    =2
+    *-
 
 It can be translated to this ``**pitch`` output:
 
