@@ -51,7 +51,7 @@ C#4 is 100 cents. For example, the pitch corresponding to a tuning of A-435
 Hz is 19 cents flat compared with the standard A-440, hence it is represented
 in ``**pitch`` as:
 
-> ``A4-19``
+``A4-19``
 
 Other pitch representations (such as ``**kern``) can be translated to the
 ISO-inspired ``**pitch`` representation by invoking the `**pitch**`_ command.
@@ -70,18 +70,21 @@ For example, consider the following ``**kern`` input:
 
 It can be translated to this ``**pitch`` output:
 
-> ``**pitch
-> =1
-> G4
-> G#4
-> A4
-> C5
-> =2
-> *-``
+
+.. code-block:: kern
+
+    **pitch
+    =1
+    G4
+    G#4
+    A4
+    C5
+    =2
+    *-
 
 using the following command:
 
-> ``pitch filename``
+``pitch filename``
 
 Notice that the ``**pitch``_ representation uses the same system for
 representing barlines as ``**kern``. In fact, all of the pitch-related
@@ -112,7 +115,7 @@ signature used by Dmitri Shostakovich (`D-S-C-H').
 Data in the ``**pitch``_ or ``**kern``_ representations can be translated
 to ``**Tonh``_ via the `**tonh**`_ command:
 
-> ``tonh filename``
+``tonh filename``
 
 
 French Solfege
@@ -187,16 +190,19 @@ The ``**solfa`` representation represents pitch according to tonic solfa
 syllables. Pitches are designated by the syllables *do, re, mi, fa, so, la*
 and *ti* or their chromatic alterations as indicated in the following table:
 
-> basicraisedlowered
-> do (*doe*)di (*dee*)de (*day*)
-> re (*ray*)ri (*ree*)ra (*raw*)
-> mi (*me*)my (*my*)me (*may*)
-> fa (*fah*)fi (*fee*)fe (*fay*)
-> so (*so*)si (*see*)se (*say*)
-> la (*la*)li (*lee*)le (*lay*)
-> ti (*tee*)ty (*tie*)te (*tay*)
 
-> *Summary of **solfa** Signifiers*
+.. code-block:: kern
+
+    basic       raised          lowered
+    do (*doe*)  di (*dee*)      de (*day*)
+    re (*ray*)  ri (*ree*)      ra (*raw*)
+    mi (*me*)   my (*my*)       me (*may*)
+    fa (*fah*)  fi (*fee*)      fe (*fay*)
+    so (*so*)   si (*see*)      se (*say*)
+    la (*la*)   li (*lee*)      le (*lay*)
+    ti (*tee*)  ty (*tie*)      te (*tay*)
+
+*Summary of **solfa** Signifiers*
 
 The ``**deg``_ representation identifies scale-degrees by the numbers 1
 (tonic) to 7 (leading-tone). These values may be chromatically altered by
