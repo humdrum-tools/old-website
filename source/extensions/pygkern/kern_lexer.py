@@ -10,13 +10,14 @@ class KernLexer(RegexLexer):
 
     tokens = {
         'root': [
-            (r'\t', Token.KernTab),
             (r'^!!![a-zA-Z@#0-9]+:.*', Token.KernTitle),
-            (r'^!.*', Token.KernGlobalComment),
-            (r'\*[^\t]*', Token.KernExclusive),
-            (r'\*\*[^\t]*', Token.KernInterpretation),
-            (r'=[0-9]*[:!|]*\t?', Token.KernBar),
+            (r'^!.*$', Token.KernGlobalComment),
+            (r'\*[\S]+', Token.KernExclusive),
+            (r'\*\*[\S]+', Token.KernInterpretation),
+            (r'=[0-9]*[:!|-]*[\t ]*', Token.KernBar),
             (r'[0-9.]+[a-grA-G#n-]+', Token.KernNotes),
             (r'\.', Token.KernDot),
+            (r'\t', Token.KernTab),
+            (r' ', Whitespace),
         ]
     }
