@@ -64,7 +64,7 @@ release = '1'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = []
+exclude_patterns = ['_build']
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None
@@ -101,6 +101,15 @@ html_theme = 'sphinx_rtd_theme'
 # Add any paths that contain custom themes here, relative to this directory.
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
+###pedro's extensions
+sys.path.insert(0, os.path.abspath('extensions'))
+
+pygments_style = 'pygkern.kern_style.KernStyle'
+
+def setup(sphinx):
+	from pygkern.kern_style import KernStyle
+	from pygkern.kern_lexer import KernLexer
+	sphinx.add_lexer("kern", KernLexer())
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
 #html_title = None

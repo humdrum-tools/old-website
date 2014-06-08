@@ -30,25 +30,26 @@ International Standards Organization (ISO) format consisting of a letter
 (A-G) followed by an optional sharp or flat, followed by an octave number.
 According to the ISO representation middle C is designated C4. Octave numbers
 change between B and C so that the B a semitone below C4 is B3. Humdrum
-provides a predefined ISO-like representation called ``**pitch``_
+provides a predefined ISO-like representation called **pitch**
 illustrated below. Here we see an ascending chromatic scale in the left
 spine, with a concurrent descending chromatic scale in the right spine:
 
-> ``**pitch**pitch
-> C4C5
-> C#4B4
-> D4Bb4
-> D#4A4
-> E4Ab4
-> F4G4
-> F#4Gb4
-> G4F4
-> G#4E4
-> A4Eb4
-> A#4D4
-> B4Db4
-> C5C4
-> *-*-``
+..code-block:: kern
+        **kern  **kern
+        C4      C5      
+        C#4     B4
+        D4      Bb4
+        D#4     A4
+        E4      Ab4
+        F4      G4
+        F#4     Gb4
+        G4      F4
+        G#4     E4
+        A4      Eb4
+        A#4     D4
+        B4      Db4
+        C5      C4
+        *-      *-
 
 Notice that only upper-case letters are used for pitch-name and that the flat
 is represented by the lower-case letter ``b``'. The small letter ``x``' can
