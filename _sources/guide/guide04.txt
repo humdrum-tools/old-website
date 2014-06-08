@@ -35,24 +35,24 @@ illustrated below. Here we see an ascending chromatic scale in the left
 spine, with a concurrent descending chromatic scale in the right spine:
 
 .. code-block:: kern
-        **kern  **kern
-        C4      C5      
-        C#4     B4
-        D4      Bb4
-        D#4     A4
-        =       =
-        E4      Ab4
-        F4      G4
-        F#4     Gb4
-        G4      F4
-        =       =
-        G#4     E4
-        A4      Eb4
-        A#4     D4
-        B4      Db4
-        =       =
-        C1      C1
-        *-      *-
+   **kern  **kern
+   C4      C5      
+   C#4     B4
+   D4      Bb4
+   D#4     A4
+   =       =
+   E4      Ab4
+   F4      G4
+   F#4     Gb4
+   G4      F4
+   =       =
+   G#4     E4
+   A4      Eb4
+   A#4     D4
+   B4      Db4
+   =       =
+   C1      C1
+   *-      *-
 
 Notice that only upper-case letters are used for pitch-name and that the flat
 is represented by the lower-case letter ``b``'. The small letter ``x``' can
