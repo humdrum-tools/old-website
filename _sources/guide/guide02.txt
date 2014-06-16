@@ -20,6 +20,7 @@ Consider the opening motive from J.S. Bach's *Art of Fugue* shown in Example
 
 
 .. code-block:: kern
+
    **kern
    *clefG2
    *k[b-]
