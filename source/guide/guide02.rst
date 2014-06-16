@@ -15,7 +15,7 @@ Consider the opening motive from J.S. Bach's *Art of Fugue* shown in Example
 2.1. A corresponding **kern    representation is given below the notation.
 
 **Example 2.1.** J.S. Bach *Die Kunst der Fuge*
-
+this
 .. image:: examples/ex2-1.svg
 
 
