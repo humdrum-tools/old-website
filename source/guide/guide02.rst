@@ -182,7 +182,7 @@ beams and partial beams are discussed in Example 2.4.
 
 Example 2.3 shows a four-part chorale harmonization by Bach. In this example,
 two musical parts share each of the two staves. Notice how the corresponding
-``**kern  encoding assigns each part to a separate column, but links the
+``**kern`` encoding assigns each part to a separate column, but links the
 appropriate parts using the ``*staff  indicators.
 
 **Example 2.3.** *Nun danket alle Gott*, arr. J.S. Bach.
@@ -499,7 +499,7 @@ records always specify the instrumentation in alphabetical order by
 instrument abbrevation separated by a single space. For example, the
 instrumentation for a woodwind quintet is given as:
 
-``!!!AIN: clars corno fagot flt oboe 
+``!!!AIN: clars corno fagot flt oboe`` 
 
 In our discussion here we have only identified some of the more common types
 of reference records. A complete description of reference records is given in
