@@ -19,26 +19,8 @@ Consider the opening motive from J.S. Bach's *Art of Fugue* shown in Example
 .. image:: examples/ex2-1.svg
 
 
-.. code-block:: kern
-
-   **kern
-   *clefG2
-   *k[b-]
-   *M2/2
-   =-
-   2d/
-   2a/
-   =
-   2f/
-   2d/
-   =
-   2c#/
-   4d/
-   4e/
-   =
-   2f/
-   2r
-   *-
+.. literalinclude:: ex2-1.krn 
+   :language: kern
 
 In general, ``**kern    is intended to represent the underlying *functional*
 information conveyed by a musical score rather than the visual or
