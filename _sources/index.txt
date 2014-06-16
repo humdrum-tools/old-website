@@ -10,7 +10,7 @@ Here you will find instructions on downloading,
 installing, and using the Humdrum Toolkit.
 
 We've split the site into the `Humdrum User Guide <http://humdrum-tools.github.io/humdrum-tools/guide/index.html>`_
-(Huron, 1995), an explanation of the Craig Sapp's Humdrum
+(Huron, 1995), an explanation of Craig Sapp's Humdrum
 Extras, and a Humdrum Cookbook.
 
 

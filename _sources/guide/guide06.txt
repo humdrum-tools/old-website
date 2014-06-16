@@ -333,109 +333,108 @@ beginning of the second phrase. The phrases are said to be "elided"
 (overlapping). Since ``**kern`` phrases are represented by open and close
 braces, the ampersand character is used to indicate elisions.
 
-Notice that the `inner' accompaniment chords have been encoded as double
+Notice that the "inner" accompaniment chords have been encoded as double
 stops. This is possible because the notes in these double stops are all the
 same duration.
 
-Finally, notice how the triplet eighth-notes (encoded as duration `12') have
+Finally, notice how the triplet eighth-notes (encoded as duration "12") have
 been interleaved with the concurrent eighth-note figures so that the onsets
 are ordered in the correct temporal sequence.
 
-**Example 6.4.** Chopin, *Etude* Op. 27, No. 7.
+**Example 6.4.** Chopin, *Etude* Op. 25, No. 7.
 
-> > ``!! Lento
-|  **kern**kern**kern
-|  *staff2*staff1*staff1
-|  *clefF4*clefG2*clefG2
-|  {4GG#Q..
-|  4.D#Q..
-|  8C#Q..
-|  8C#Q..
-|  8BB#Q..
-|  4.AQ..
-|  8G#Q..
-|  16F##Q..
-|  16G#Q..
-|  16AQ..
-|  16G#Q..
-|  16BnQ..
-|  16AQ..
-|  16EQ..
-|  16E#Q..
-|  16F#Q..
-|  16E#Q..
-|  16G#Q..
-|  16F#Q..
-|  16AQ..
-|  16G#Q..
-|  16C#Q..
-|  16D#Q..
-|  =||=||=||
-|  *MM66*MM66*MM66
-|  *M3/4*M3/4*M3/4
-|  &{(Enq}..
-|  2e)8r2.r
-|  ``.8g# 8cc#.
-|  ``.8g# 8cc#.
-|  ``.8g# 8cc#.
-|  8.d#8g# 8cc#.
-|  ``.8g# 8cc#.
-|  16c#..
-|  =3=3=3
-|  4..cc#8e 8a{2ee
-|  ``.8e 8a.
-|  ``.8e 8a.
-|  ``.8e 8a.
-|  32d#..
-|  32c#..
-|  ``.8e 8a8.dd#
-|  ``.8e 8a.
-|  ``..16cc#
-|  =4=4=4
-|  [4A8d# 8f#4cc#
-|  ``.8d# 8f#.
-|  16A]8d# 8f#4b#
-|  16G#..
-|  16F##8d# 8f#.
-|  16G#..
-|  16Bn8d# 8f#4cc#
-|  16A..
-|  16F#8d# 8f#.
-|  16D#..
-|  =5=5=5
-|  4BB#}8d# 8f#4dd#
-|  ``.8d# 8f#.
-|  8r8d# 8f#4..g#}
-|  {16FF##^8d# 8f#.
-|  16GG#..
-|  BBnq..
-|  16AA8B# 8f#.
-|  16GG#..
-|  16C#8B# 8f#.
-|  16D#.{16g#
-|  =6=6=6
-|  4E8r4g#
-|  ``.8c#.
-|  4CC#}8c# 8e4cc#
-|  ``.8c# 8e.
-|  (8.G#8c# 8e4bn
-|  ``.8c# 8e.
-|  16.G#
-|  =7=7=7
-|  4G#)8c# 8e4b
-|  ``.8c# 8e.
-|  (12FF#8c# 8e4a
-|  12C#..
-|  ``.8c# 8e.
-|  12F#..
-|  12G#8c# 8e4g#
-|  12B..
-|  ``.8c# 8e.
-|  12A..
-|  =8=8=8
-|  *-*-*-``
-
---------
+.. code-block:: kern
+   !! Lento
+   **kern       **kern          **kern
+   *staff2      *staff1         *staff1
+   *clefF4      *clefG2         *clefG2
+   {4GG#Q       .               .
+   4.D#Q        .               .
+   8C#Q         .               .
+   8C#Q         .               .
+   8BB#Q        .               .
+   4.AQ         .               .
+   8G#Q         .               .
+   16F##Q       .               .
+   16G#Q        .               .
+   16AQ         .               .
+   16G#Q        .               .
+   16BnQ        .               .
+   16AQ         .               .
+   16EQ         .               .
+   16E#Q        .               .
+   16F#Q        .               .
+   16E#Q        .               .
+   16G#Q        .               .
+   16F#Q        .               .
+   16AQ         .               .
+   16G#Q        .               .
+   16C#Q        .               .
+   16D#Q        .               .
+   =||          =||             =||
+   *MM66        *MM66           *MM66
+   *M3/4        *M3/4           *M3/4
+   &{(Enq}      .               .
+   2e)          8r              2.r
+   8g#          8cc#            .
+   8g#          8cc#            .
+   8g#          8cc#            .
+   8.d#         8g#             8cc#
+   8g#          8cc#            .
+   16c#         .               .
+   =3           =3              =3
+   4..          cc#             8e 8a{2ee
+   .            8e              8a.
+   8e           8a              .
+   8e           8a              .
+   32d#         .               .
+   32c#         .               .
+   8e           8a              8.dd#
+   .            8e              8a.
+   .            .               16cc#
+   =4           =4              =4
+   [4A8d#       8f#             4cc#
+   .            8d#             8f#.
+   16A]         8d#             8f#4b#
+   16G#         .               .
+   16F##        8d#             8f#.
+   16G#         .               .
+   16Bn         8d#             8f#4cc#
+   16A          .               .
+   16F#         8d#             8f#.
+   16D#         .               .
+   =5           =5              =5
+   4BB#}        8d#             8f#4dd#
+   .            8d#             8f#.
+   8r           8d#             8f#4..g#}
+   {16FF##      ^8d#            8f#.
+   16GG#        .               .
+   BBnq         .               .
+   16AA         8B#             8f#.
+   16GG#        .               .
+   16C#         8B#             8f#.
+   16D#         .               {16g#
+   =6           =6              =6
+   4E           8r              4g#
+   .            8c#             .
+   4CC#}        8c#             8e4cc#
+   .            8c#             8e.
+   (8.G#        8c#             8e4bn
+   .            8c#             8e.
+   16.G#        .               .
+   =7           =7              =7
+   4G#)         8c#             8e4b
+   .            8c#             8e.
+   (12FF#       8c#             8e4a
+   12C#         .               .
+   .            8c#             8e.
+   12F#         .               .
+   12G#         8c#             8e4g#
+   12B          .               .
+   .            8c#             8e.
+   12A          .               .
+   =8           =8              =8
+   *-           *-              *-
 
 
 Reprise

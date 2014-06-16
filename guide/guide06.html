@@ -201,7 +201,7 @@
 the <tt class="docutils literal"><span class="pre">**kern</span></tt> representation.</p>
 <div class="section" id="tuplets">
 <h2>Tuplets<a class="headerlink" href="#tuplets" title="Permalink to this headline">¶</a></h2>
-<p>As we saw in <a href="#id13"><span class="problematic" id="id14">`Chapter 2,`_</span></a> <tt class="docutils literal"><span class="pre">**kern</span></tt> durations are represented using a
+<p>As we saw in <a href="#id9"><span class="problematic" id="id10">`Chapter 2,`_</span></a> <tt class="docutils literal"><span class="pre">**kern</span></tt> durations are represented using a
 reciprocal number notation. With the exception of the value zero, durations
 are represented by reciprocal numerical values corresponding to the American
 duration names: &#8220;1&#8221; for whole note, &#8220;8&#8221; for eighth, &#8220;32&#8221; for thirty-second,
@@ -314,7 +314,7 @@ durations, but all such notes are also designated by the upper-case letter
 <p>When processed by various tools in the Humdrum Toolkit, these notes may be
 treated as equivalent to their notated durations. Alternatively, in some
 types of processing these notes may be discarded. For example, the Humdrum
-<a href="#id15"><span class="problematic" id="id16">`**timebase**`_</span></a> command (described in <a href="#id17"><span class="problematic" id="id18">`Chapter 13)`_</span></a> eliminates acciaccaturas
+<a href="#id11"><span class="problematic" id="id12">`**timebase**`_</span></a> command (described in <a href="#id13"><span class="problematic" id="id14">`Chapter 13)`_</span></a> eliminates acciaccaturas
 and gruppetto notes. Note that data records containing acciaccaturas or
 gruppetto notes must <em>not</em> also include normal notes.</p>
 <p>In the case of <em>appoggiaturas,</em> <tt class="docutils literal"><span class="pre">**kern</span></tt> requires that they be encoded as
@@ -479,112 +479,20 @@ the grace note.</p>
 beginning of the second phrase. The phrases are said to be &#8220;elided&#8221;
 (overlapping). Since <tt class="docutils literal"><span class="pre">**kern</span></tt> phrases are represented by open and close
 braces, the ampersand character is used to indicate elisions.</p>
-<p>Notice that the <a href="#id5"><span class="problematic" id="id6">`</span></a>inner&#8217; accompaniment chords have been encoded as double
+<p>Notice that the &#8220;inner&#8221; accompaniment chords have been encoded as double
 stops. This is possible because the notes in these double stops are all the
 same duration.</p>
-<p>Finally, notice how the triplet eighth-notes (encoded as duration <a href="#id7"><span class="problematic" id="id8">`</span></a>12&#8217;) have
+<p>Finally, notice how the triplet eighth-notes (encoded as duration &#8220;12&#8221;) have
 been interleaved with the concurrent eighth-note figures so that the onsets
 are ordered in the correct temporal sequence.</p>
-<p><strong>Example 6.4.</strong> Chopin, <em>Etude</em> Op. 27, No. 7.</p>
-<p>&gt; &gt; <tt class="docutils literal"><span class="pre">!!</span> <span class="pre">Lento</span>
-<span class="pre">|</span>&nbsp; <span class="pre">**kern**kern**kern</span>
-<span class="pre">|</span>&nbsp; <span class="pre">*staff2*staff1*staff1</span>
-<span class="pre">|</span>&nbsp; <span class="pre">*clefF4*clefG2*clefG2</span>
-<span class="pre">|</span>&nbsp; <span class="pre">{4GG#Q..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">4.D#Q..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">8C#Q..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">8C#Q..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">8BB#Q..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">4.AQ..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">8G#Q..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16F##Q..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16G#Q..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16AQ..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16G#Q..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16BnQ..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16AQ..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16EQ..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16E#Q..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16F#Q..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16E#Q..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16G#Q..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16F#Q..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16AQ..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16G#Q..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16C#Q..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16D#Q..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">=||=||=||</span>
-<span class="pre">|</span>&nbsp; <span class="pre">*MM66*MM66*MM66</span>
-<span class="pre">|</span>&nbsp; <span class="pre">*M3/4*M3/4*M3/4</span>
-<span class="pre">|</span>&nbsp; <span class="pre">&amp;{(Enq}..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">2e)8r2.r</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.8g#</span> <span class="pre">8cc#.</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.8g#</span> <span class="pre">8cc#.</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.8g#</span> <span class="pre">8cc#.</span>
-<span class="pre">|</span>&nbsp; <span class="pre">8.d#8g#</span> <span class="pre">8cc#.</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.8g#</span> <span class="pre">8cc#.</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16c#..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">=3=3=3</span>
-<span class="pre">|</span>&nbsp; <span class="pre">4..cc#8e</span> <span class="pre">8a{2ee</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.8e</span> <span class="pre">8a.</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.8e</span> <span class="pre">8a.</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.8e</span> <span class="pre">8a.</span>
-<span class="pre">|</span>&nbsp; <span class="pre">32d#..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">32c#..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.8e</span> <span class="pre">8a8.dd#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.8e</span> <span class="pre">8a.</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``..16cc#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">=4=4=4</span>
-<span class="pre">|</span>&nbsp; <span class="pre">[4A8d#</span> <span class="pre">8f#4cc#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.8d#</span> <span class="pre">8f#.</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16A]8d#</span> <span class="pre">8f#4b#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16G#..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16F##8d#</span> <span class="pre">8f#.</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16G#..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16Bn8d#</span> <span class="pre">8f#4cc#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16A..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16F#8d#</span> <span class="pre">8f#.</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16D#..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">=5=5=5</span>
-<span class="pre">|</span>&nbsp; <span class="pre">4BB#}8d#</span> <span class="pre">8f#4dd#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.8d#</span> <span class="pre">8f#.</span>
-<span class="pre">|</span>&nbsp; <span class="pre">8r8d#</span> <span class="pre">8f#4..g#}</span>
-<span class="pre">|</span>&nbsp; <span class="pre">{16FF##^8d#</span> <span class="pre">8f#.</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16GG#..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">BBnq..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16AA8B#</span> <span class="pre">8f#.</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16GG#..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16C#8B#</span> <span class="pre">8f#.</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16D#.{16g#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">=6=6=6</span>
-<span class="pre">|</span>&nbsp; <span class="pre">4E8r4g#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.8c#.</span>
-<span class="pre">|</span>&nbsp; <span class="pre">4CC#}8c#</span> <span class="pre">8e4cc#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.8c#</span> <span class="pre">8e.</span>
-<span class="pre">|</span>&nbsp; <span class="pre">(8.G#8c#</span> <span class="pre">8e4bn</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.8c#</span> <span class="pre">8e.</span>
-<span class="pre">|</span>&nbsp; <span class="pre">16.G#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">=7=7=7</span>
-<span class="pre">|</span>&nbsp; <span class="pre">4G#)8c#</span> <span class="pre">8e4b</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.8c#</span> <span class="pre">8e.</span>
-<span class="pre">|</span>&nbsp; <span class="pre">(12FF#8c#</span> <span class="pre">8e4a</span>
-<span class="pre">|</span>&nbsp; <span class="pre">12C#..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.8c#</span> <span class="pre">8e.</span>
-<span class="pre">|</span>&nbsp; <span class="pre">12F#..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">12G#8c#</span> <span class="pre">8e4g#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">12B..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.8c#</span> <span class="pre">8e.</span>
-<span class="pre">|</span>&nbsp; <span class="pre">12A..</span>
-<span class="pre">|</span>&nbsp; <span class="pre">=8=8=8</span>
-<span class="pre">|</span>&nbsp; <span class="pre">*-*-*-</span></tt></p>
+<p><strong>Example 6.4.</strong> Chopin, <em>Etude</em> Op. 25, No. 7.</p>
 </div>
-<hr class="docutils" />
 <div class="section" id="reprise">
 <h3>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h3>
 <p>This chapter completes our survey of the <tt class="docutils literal"><span class="pre">**kern</span></tt> representation. We have
 noted an number of subtleties related to encoding tuplets, multiple stops,
 gruppettos, acciaccaturas, elided phrases, and spine path changes.</p>
-<p>A more complete description of the <a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">**</span></a>kern``_ representation may be found
+<p>A more complete description of the <a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">**</span></a>kern``_ representation may be found
 in the <em>Humdrum Reference Manual.</em></p>
 <hr class="docutils" />
 </div>

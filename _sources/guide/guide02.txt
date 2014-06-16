@@ -405,7 +405,7 @@ spine. *Global comments* by contrast completely ignore the spines.
   4d--                kew-
   4d-                 -yan
   =2                  =2
-  etc.                etc.
+  ! etc.              ! etc.
   *-                  *-
 
 Reference Records
