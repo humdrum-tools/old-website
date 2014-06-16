@@ -295,6 +295,8 @@ pairs. As a result, the beams are started with `LL`` and end with
 
 .. image:: examples/ex2-4.svg
 
+.. code-block:: kern
+
    **kern               **kern          **kern
    *staff2              *staff2         *staff1
    *clefG2              *clefG2         *clefG2
