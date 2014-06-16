@@ -374,17 +374,3 @@ directory structure via *composer*, in another directory via
 
 
 
-
--   ` **Next Chapter**`_
--   ` **Previous Chapter**`_
--   ` **Table of Contents**`_
--   ` **Detailed Contents**`_
-
-(C) Copyright 1999 David Huron
-
-.. _Previous Chapter: guide30.html
-.. _Contents: guide.toc.html
-.. _Next Chapter: guide32.html
-.. _**pc: representations/pc.rep.html
-.. _Chapter 10,: guide10.html
-.. _Detailed Contents: guide.toc.detailed.html

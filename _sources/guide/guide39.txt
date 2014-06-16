@@ -273,27 +273,3 @@ cultivate a skeptical attitude; wise users are wary users.
 --------
 
 
-
-
--   ` **Next Chapter**`_
--   ` **Previous Chapter**`_
--   ` **Table of Contents**`_
--   ` **Detailed Contents**`_
-
-(C) Copyright 1999 David Huron
-
-.. _Previous Chapter: guide38.html
-.. _Contents: guide.toc.html
-.. _Next Chapter: guide40.html
-.. _humdrum: commands/humsed.html
-.. _humdrum: commands/humdrum.html
-.. _proof: commands/proof.html
-.. _**kern: representations/kern.rep.html
-.. _midi: commands/midi.html
-.. _perform: commands/perform.html
-.. _thru: commands/thru.html
-.. _rid: commands/rid.html
-.. _extract: commands/extract.html
-.. _humver: commands/humver.html
-.. _assemble: commands/assemble.html
-.. _Detailed Contents: guide.toc.detailed.html

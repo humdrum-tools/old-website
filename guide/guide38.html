@@ -68,7 +68,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html"><em>The Humdrum User Guide</em></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="guide01.html">Chapter 1: Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using `*`*kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using kern (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide03.html">Chapter 3: Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide04.html">Chapter 4:Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide05.html">Chapter 5: The Humdrum Syntax</a></li>
@@ -263,14 +263,14 @@ the same proportion of major/minor keys. One might similarly match
 instrumentation, date or period of composition, duration of work, tempi, and
 so on.</p>
 <p>Humdrum users can use the <strong>find</strong> and <strong>grep</strong> commands to identify works
-that match particular controlled characteristics (see <a class="reference external" href="guide33.html">Chapter 33</a>). For
+that match particular controlled characteristics (see <a href="#id23"><span class="problematic" id="id24">`Chapter 33`_</span></a>). For
 example, the following command might locate all files that contain scores in
 triple meter. The results are placed in a file called <tt class="docutils literal"><span class="pre">control</span></tt>:</p>
 <p>`` find /scores -type f -exec grep -l &#8216;!!!AMT.*triple&#8217; &#8220;{}&#8221; &#8221;;&#8221; &gt;
 &gt;&gt; &gt; control``</p>
 <p>In some cases, the number of possible control works is excessively large. In
 this case one can make a random selection from the control list using the
-<a href="#id31"><span class="problematic" id="id32">`**scramble**`_</span></a> command described later.</p>
+<a href="#id25"><span class="problematic" id="id26">`**scramble**`_</span></a> command described later.</p>
 <p>Note that in many instances it is difficult to establish a good comparison
 repertory. For example, suppose we find significant differences between
 Beethoven melodies and Kanartic folk melodies. How should we interpret these
@@ -307,10 +307,10 @@ such hypotheses can be tested using a randomizing procedure. We can
 illustrate this procedure by working through the problem of small melodic
 intervals.</p>
 <p>We begin by measuring the average melodic interval size in semitones for a
-sample of actual melodies. We can use the <a href="#id33"><span class="problematic" id="id34">`**semits**`_</span></a> command to translate
-data to semitone representations and then use the <a href="#id35"><span class="problematic" id="id36">`**xdelta**`_</span></a> command to
+sample of actual melodies. We can use the <a href="#id27"><span class="problematic" id="id28">`**semits**`_</span></a> command to translate
+data to semitone representations and then use the <a href="#id29"><span class="problematic" id="id30">`**xdelta**`_</span></a> command to
 calculate numerical differences. The <strong>-a</strong> option for <strong>xdelta</strong> causes only
-absolute (unsigned) values to be calculated. The <a href="#id37"><span class="problematic" id="id38">`**rid**`_</span></a> command can be
+absolute (unsigned) values to be calculated. The <a href="#id31"><span class="problematic" id="id32">`**rid**`_</span></a> command can be
 used to eliminate everything but data records and the <strong>grep</strong> command can be
 used to eliminate barlines and rests. We can then calculate the average
 interval size by piping the output to the <strong>stats</strong> command. For typical folk
@@ -322,7 +322,7 @@ this using the Humdrum <strong>scramble</strong> command.</p>
 </div>
 <div class="section" id="using-the-scramble-command">
 <h2>Using the <em>scramble</em> Command<a class="headerlink" href="#using-the-scramble-command" title="Permalink to this headline">¶</a></h2>
-<p>The <a href="#id39"><span class="problematic" id="id40">`**scramble**`_</span></a> command is useful for randomizing the arrangement of
+<p>The <a href="#id33"><span class="problematic" id="id34">`**scramble**`_</span></a> command is useful for randomizing the arrangement of
 Humdrum data. Suppose we had the following Humdrum input:</p>
 <p>`` <a href="#id1"><span class="problematic" id="id2">**</span></a>numbers
 `` 1
@@ -343,7 +343,7 @@ randomized. A possible output might look like this:</p>
 `` 4
 `` <a href="#id7"><span class="problematic" id="id8">*</span></a>-``</p>
 <p>Notice that only data records are scrambled: comments and interpretations
-stay put. Each time <a href="#id41"><span class="problematic" id="id42">`**scramble**`_</span></a> is invoked, it produces a different
+stay put. Each time <a href="#id35"><span class="problematic" id="id36">`**scramble**`_</span></a> is invoked, it produces a different
 random ordering.</p>
 <p>Returning to our melodic interval problem, we can now generate an inventory
 of melodic intervals for our original repertory, where the order of the notes
@@ -393,8 +393,8 @@ B-A-C-H pitch pattern in some repertory. Are these patterns intentional on
 the part of the composer? Or should we expect a fair number of such patterns
 to occur simply by chance?</p>
 <p>One way of determining the chance frequency of B-A-C-H might be to randomize
-the order of pitches using the <a href="#id43"><span class="problematic" id="id44">`**scramble**`_</span></a> command, and then use
-<a href="#id45"><span class="problematic" id="id46">`**patt**`_</span></a> to count the number of occurrences in the reordered melodies.
+the order of pitches using the <a href="#id37"><span class="problematic" id="id38">`**scramble**`_</span></a> command, and then use
+<a href="#id39"><span class="problematic" id="id40">`**patt**`_</span></a> to count the number of occurrences in the reordered melodies.
 Unfortunately, we already know that musical lines tend to be constructed
 using small intervals, and the pitches B-A-C-H are very close together. Since
 random reordering of the pitches will reduce the proportion of small
@@ -436,7 +436,7 @@ little?</p>
 <p>One approach to answering this question is to use an <em>autophase procedure</em>
 (Huron, 1991a). The essence of this approach is to shift two spines with
 respect to each other.</p>
-<p>Recall that the <a href="#id47"><span class="problematic" id="id48">`**reihe**`_</span></a> command (<a class="reference external" href="guide35.html">Chapter 35</a>) provides a <strong>-s</strong> option
+<p>Recall that the <a href="#id41"><span class="problematic" id="id42">`**reihe**`_</span></a> command (<a href="#id43"><span class="problematic" id="id44">`Chapter 35`_</span></a>) provides a <strong>-s</strong> option
 that causes a shift in the serial position of data tokens. For example,
 suppose we had an input consisting of the numbers 1 through 5. The following
 command:</p>
@@ -452,11 +452,11 @@ data token to be moved to the beginning:</p>
 `` <a href="#id15"><span class="problematic" id="id16">*</span></a>-``</p>
 <p>Let&#8217;s apply this technique to our problem of whether a given composer tends
 to avoid octaves between the soprano and bass voices. First, we extract each
-of the voices. Let&#8217;s also eliminate barlines and use <a href="#id49"><span class="problematic" id="id50">`**ditto**`_</span></a> to
+of the voices. Let&#8217;s also eliminate barlines and use <a href="#id45"><span class="problematic" id="id46">`**ditto**`_</span></a> to
 replicate the pitch values through null tokens.</p>
 <p>`` extract -i &#8216;<a href="#id17"><span class="problematic" id="id18">*</span></a>sopran&#8217; composition | grep -v = | ditto &gt; voice1``
 `` extract -i &#8216;<a href="#id19"><span class="problematic" id="id20">*</span></a>bass&#8217; composition | grep -v = | ditto &gt; voice2``</p>
-<p>Now let&#8217;s shift one part with respect to the other using <a href="#id51"><span class="problematic" id="id52">`**reihe**`_</span></a> <strong>-s</strong>.</p>
+<p>Now let&#8217;s shift one part with respect to the other using <a href="#id47"><span class="problematic" id="id48">`**reihe**`_</span></a> <strong>-s</strong>.</p>
 <p>`` reihe -s voice1 &gt; voice1.shifted``</p>
 <p>Now we reassemble the parts, determine the harmonic intervals present, and
 count the number of octave intervals:</p>
@@ -511,15 +511,6 @@ compare how music is actually organized with how it might be organized. In
 certain cases, such contrasts allow us to infer aspects of musical
 organization that would otherwise be difficult or impossible to decipher.</p>
 <hr class="docutils" />
-<ul class="simple">
-<li>` <a href="#id23"><span class="problematic" id="id24">**</span></a>Next Chapter**`_</li>
-<li>` <a href="#id25"><span class="problematic" id="id26">**</span></a>Previous Chapter**`_</li>
-<li>` <a href="#id27"><span class="problematic" id="id28">**</span></a>Table of Contents**`_</li>
-<li>` <a href="#id29"><span class="problematic" id="id30">**</span></a>Detailed Contents**`_</li>
-</ul>
-<ol class="upperalpha simple" start="3">
-<li>Copyright 1999 David Huron</li>
-</ol>
 </div>
 </div>
 

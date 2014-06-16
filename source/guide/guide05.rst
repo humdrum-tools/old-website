@@ -614,21 +614,3 @@ anywhere, but must be preceded in the spine by some exclusive interpretation.
 --------
 
 
-
-
--   ` **Next Chapter**`_
--   ` **Previous Chapter**`_
--   ` **Table of Contents**`_
--   ` **Detailed Contents**`_
-
-(C) Copyright 1999 David Huron
-
-.. _Previous Chapter: guide04.html
-.. _Contents: guide.toc.html
-.. _Next Chapter: guide06.html
-.. _**kern: representations/kern.rep.html
-.. _**solfa: representations/solfa.rep.html
-.. _**MIDI: representations/MIDI.rep.html
-.. _Chapter 2,: guide02.html
-.. _humdrum: commands/humdrum.html
-.. _Detailed Contents: guide.toc.detailed.html

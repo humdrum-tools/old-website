@@ -68,7 +68,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html"><em>The Humdrum User Guide</em></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="guide01.html">Chapter 1: Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using `*`*kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using kern (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide03.html">Chapter 3: Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide04.html">Chapter 4:Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide05.html">Chapter 5: The Humdrum Syntax</a></li>
@@ -218,7 +218,7 @@ cases, an electronic edition may be prepared from another electronic form &#8211
 such as MIDI. When translating between two formats, it is important to be
 familiar with both representations. Descriptions of a number of popular
 electronic music formats may be found in Eleanor Selfridge-Field&#8217;s
-encyclopedic <a href="#id169"><span class="problematic" id="id170">`*Handbook of Musical Codes*`_</span></a> (1997).</p>
+encyclopedic <a href="#id161"><span class="problematic" id="id162">`*Handbook of Musical Codes*`_</span></a> (1997).</p>
 <p>The principal processes involved in electronic editing include identifying
 possible sources and alternative versions, selecting and encoding the
 material, proofing the material (using both automated and manual methods),
@@ -241,7 +241,7 @@ Accordingly we might omit stem-direction, beaming, textual underlay, and even
 pitch information.</p>
 <p>Note that it is always possible to incorporate additional information at a
 later date. Additional information can be inserted into a Humdrum encoding by
-using the <a href="#id171"><span class="problematic" id="id172">`**assemble**`_</span></a> and <a href="#id173"><span class="problematic" id="id174">`**cleave**`_</span></a> commands. In general, it is
+using the <a href="#id163"><span class="problematic" id="id164">`**assemble**`_</span></a> and <a href="#id165"><span class="problematic" id="id166">`**cleave**`_</span></a> commands. In general, it is
 important that the encoding of electronic documents not consume all of a
 researcher&#8217;s efforts and resources. The most common problem that beset early
 projects in computational musicology was that researchers rarely got past the
@@ -354,7 +354,7 @@ bias, it is also prudent to encode the selected materials in a random order.</p>
 <p>Once you have established your materials and have decided on the type of
 encoding, you can go ahead and begin encoding the documents in random order.
 Use whatever resources are available to you. These might include scanning
-software, MIDI performance capture, or the Humdrum <a href="#id175"><span class="problematic" id="id176">`**encode**`_</span></a> command.
+software, MIDI performance capture, or the Humdrum <a href="#id167"><span class="problematic" id="id168">`**encode**`_</span></a> command.
 Begin by encoding a sample section or sections. Spend some time determining
 ways to increase your productivity.</p>
 <p>As you encode the selected materials, editorial problems or questions will
@@ -374,7 +374,7 @@ all parts into a single full score.</p>
 <h2>Transposing Instruments<a class="headerlink" href="#transposing-instruments" title="Permalink to this headline">¶</a></h2>
 <p>In the case of the <tt class="docutils literal"><span class="pre">**kern</span></tt> representation, all parts are represented at
 concert pitch. It is typically easier to encode the parts as written and then
-transpose the result using the Humdrum <a href="#id177"><span class="problematic" id="id178">`**trans**`_</span></a> command. For example,
+transpose the result using the Humdrum <a href="#id169"><span class="problematic" id="id170">`**trans**`_</span></a> command. For example,
 material for B-flat trumpet or B-flat clarinet can be transposed using the
 following command:</p>
 <p><tt class="docutils literal"><span class="pre">trans</span> <span class="pre">-d</span> <span class="pre">-1</span> <span class="pre">-c</span> <span class="pre">-2</span></tt></p>
@@ -397,7 +397,7 @@ transpostion interpretation would be modified from</p>
 <p>Humdrum provides standardized instrumentation indicators. Three different
 types of indication are appropriate: (1) the instrument name as indicated in
 the source, (2) standardized instrument name, and (3) instrument class.
-Standardized instrument names can be found in <a href="#id179"><span class="problematic" id="id180">`**Appendix II**`_</span></a>. For
+Standardized instrument names can be found in <a href="#id171"><span class="problematic" id="id172">`**Appendix II**`_</span></a>. For
 example, the standard indicator for &#8220;harpsichord&#8221; is <a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">*</span></a>Icemba``_.</p>
 <p>Standardized instrument class designators include <tt class="docutils literal"><span class="pre">*ICklav</span></tt> for keyboard
 instruments and <tt class="docutils literal"><span class="pre">*ICidio</span></tt> for percussion instruments, etc., and instrument
@@ -473,7 +473,7 @@ using the Humdrum Section Label designator. Remember that section labels can
 include the space character:</p>
 <p><tt class="docutils literal"><span class="pre">*&gt;1st</span> <span class="pre">Theme</span></tt></p>
 <p>If you include section labels, you must also include a Humdrum &#8220;Expansion
-List&#8221; to indicate how the sections are connected. The Humdrum <a href="#id181"><span class="problematic" id="id182">`**thru**`_</span></a>
+List&#8221; to indicate how the sections are connected. The Humdrum <a href="#id173"><span class="problematic" id="id174">`**thru**`_</span></a>
 command causes a through-composed version of a file to be generated according
 to the expansion list. For example, an expansion list for a simple binary
 work may be encoded as:</p>
@@ -593,14 +593,14 @@ types and format for different reference records.</p>
 <div class="section" id="proof-reading-materials">
 <h2>Proof-reading Materials<a class="headerlink" href="#proof-reading-materials" title="Permalink to this headline">¶</a></h2>
 <p>Once you have encoded your document, you should create a error-checking
-strategy. The Humdrum <a href="#id183"><span class="problematic" id="id184">`**humdrum**`_</span></a> command can be used to identify whether
+strategy. The Humdrum <a href="#id175"><span class="problematic" id="id176">`**humdrum**`_</span></a> command can be used to identify whether
 the final encoded output conforms to the Humdrum syntax:</p>
 <p><tt class="docutils literal"><span class="pre">humdrum</span> <span class="pre">full.krn</span></tt></p>
 <p>Use the Humdrum <cite>**proof`_** **-k** command to identify any syntactical
 errors in any encoded ``**kern`</cite> data:</p>
 <p><tt class="docutils literal"><span class="pre">proof</span> <span class="pre">-k</span> <span class="pre">full.krn</span></tt></p>
 <p>One of the best ways to ensure that musical data makes sense is to listen to
-it. The Humdrum <a href="#id185"><span class="problematic" id="id186">`**midi**`_</span></a> and <a href="#id187"><span class="problematic" id="id188">`**perform**`_</span></a> commands can be used to listen
+it. The Humdrum <a href="#id177"><span class="problematic" id="id178">`**midi**`_</span></a> and <a href="#id179"><span class="problematic" id="id180">`**perform**`_</span></a> commands can be used to listen
 to your data. The <strong>-c</strong> option for <strong>midi</strong> causes the Humdrum data to be
 displayed while the MIDI data is performed. This can further help in locating
 errors.</p>
@@ -620,7 +620,7 @@ status of a document. Is this the original distribution file? Did I make some
 modification to this file that I&#8217;ve forgotten about? Has someone tampered
 with this data?</p>
 <p>Humdrum provides a means for ensuring that a particular file is what it
-purports to be. The <a href="#id189"><span class="problematic" id="id190">`**veritas**`_</span></a> command provides a formal means for
+purports to be. The <a href="#id181"><span class="problematic" id="id182">`**veritas**`_</span></a> command provides a formal means for
 verifying that a given Humdrum file is identical to the original distribution
 file and has not been modified in some way.</p>
 <p>The <strong>veritas</strong> command works by looking for a VTS reference record in the
@@ -679,15 +679,6 @@ edition version 2.1, checksum 891678772.</p>
 <p>In this chapter we have reviewed the principal issues involved in preparing
 electronic music documents in Humdrum.</p>
 <hr class="docutils" />
-<ul class="simple">
-<li>` <a href="#id161"><span class="problematic" id="id162">**</span></a>Next Chapter**`_</li>
-<li>` <a href="#id163"><span class="problematic" id="id164">**</span></a>Previous Chapter**`_</li>
-<li>` <a href="#id165"><span class="problematic" id="id166">**</span></a>Table of Contents**`_</li>
-<li>` <a href="#id167"><span class="problematic" id="id168">**</span></a>Detailed Contents**`_</li>
-</ul>
-<ol class="upperalpha simple" start="3">
-<li>Copyright 1999 David Huron</li>
-</ol>
 </div>
 </div>
 

@@ -68,7 +68,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html"><em>The Humdrum User Guide</em></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="guide01.html">Chapter 1: Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using `*`*kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using kern (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide03.html">Chapter 3: Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide04.html">Chapter 4:Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide05.html">Chapter 5: The Humdrum Syntax</a></li>
@@ -287,7 +287,7 @@ filename:</p>
 <h2>Escape Character ()<a class="headerlink" href="#escape-character" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes we would like to have a special character treated literally. For
 example, suppose we wanted to search for records containing sharps in a
-<a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id17"><span class="problematic" id="id18">`**kern``_</span></a> file. The following command will not work because the shell
+<a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id7"><span class="problematic" id="id8">`**kern``_</span></a> file. The following command will not work because the shell
 will insist on interpreting the octothorpe as beginning a comment:</p>
 <p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">#</span> <span class="pre">filename</span></tt></p>
 <p>There are several ways to &#8220;turn off&#8221; the special meaning of a character. The
@@ -363,7 +363,7 @@ a common command:</p>
 <li>one or more input file names,</li>
 <li>output redirection.</li>
 </ul>
-<p>Each of these components is separated by <a href="#id19"><span class="problematic" id="id20">`blank space&#8217; (tabs or spaces). A
+<p>Each of these components is separated by <a href="#id9"><span class="problematic" id="id10">`blank space&#8217; (tabs or spaces). A
 command begins with the command name &#8211; such as **uniq**, **sort**, or
 `**pitch**.`_</span></a> A command argument is a special requirement of only some
 commands. A good example of a command argument is the search pattern given to
@@ -385,7 +385,7 @@ following command, <strong>uniq</strong> is the command name, <strong>-c</strong
 <p><tt class="docutils literal"><span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">ghana32</span></tt></p>
 <p>In many cases, the option is followed by a <em>parameter</em> that specifies further
 information pertaining to the invoked option. In the following command,
-<a href="#id21"><span class="problematic" id="id22">`**recode**`_</span></a> is the command name, <strong>-f</strong> is the option, <strong>reassign</strong> is the
+<a href="#id11"><span class="problematic" id="id12">`**recode**`_</span></a> is the command name, <strong>-f</strong> is the option, <strong>reassign</strong> is the
 parameter used by the <strong>-f</strong> option, and <strong>gagaku</strong> is the name of the input
 file:</p>
 <p><tt class="docutils literal"><span class="pre">recode</span> <span class="pre">-f</span> <span class="pre">reassign</span> <span class="pre">gagaku</span></tt></p>
@@ -396,7 +396,7 @@ may be combined. For example, the <strong>-a</strong> and <strong>-b</strong> op
 as <strong>-ab</strong> (or as <strong>-ba)</strong> &#8211; provided neither option requires a parameter.</p>
 <p>Whenever an option requires a parameter, the option must be specified alone
 and followed immediately by the appropriate parameter. For example, in the
-following command, the command name is <a href="#id23"><span class="problematic" id="id24">`**trans**,`_</span></a> the <strong>-d</strong> option is
+following command, the command name is <a href="#id13"><span class="problematic" id="id14">`**trans**,`_</span></a> the <strong>-d</strong> option is
 followed by the numerical parameter <strong>3</strong>; the parameter for the <strong>-c</strong>
 option is the number <strong>4</strong> and the input file is named <strong>gambia21</strong>.</p>
 <p><tt class="docutils literal"><span class="pre">trans</span> <span class="pre">-d</span> <span class="pre">3</span> <span class="pre">-c</span> <span class="pre">4</span> <span class="pre">gambia21</span></tt></p>
@@ -478,15 +478,6 @@ discuss the remaining special characters: the dollar-sign ($), the apostrophe
 components such as the <em>command name</em>, <em>options</em>, <em>parameters</em>, <em>command
 arguments</em>, <em>input files</em> and <em>output redirection</em>.</p>
 <hr class="docutils" />
-<ul class="simple">
-<li>` <a href="#id7"><span class="problematic" id="id8">**</span></a>Next Chapter**`_</li>
-<li>` <a href="#id9"><span class="problematic" id="id10">**</span></a>Previous Chapter**`_</li>
-<li>` <a href="#id11"><span class="problematic" id="id12">**</span></a>Table of Contents**`_</li>
-<li>` <a href="#id13"><span class="problematic" id="id14">**</span></a>Detailed Contents**`_</li>
-</ul>
-<ol class="upperalpha simple" start="3">
-<li>Copyright 1999 David Huron</li>
-</ol>
 </div>
 </div>
 

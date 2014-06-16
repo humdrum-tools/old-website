@@ -367,22 +367,3 @@ differences, commonalities, and similarities.
 
 --------
 
-
-
-
--   ` **Next Chapter**`_
--   ` **Previous Chapter**`_
--   ` **Table of Contents**`_
--   ` **Detailed Contents**`_
-
-(C) Copyright 1999 David Huron
-
-.. _Previous Chapter: guide28.html
-.. _Contents: guide.toc.html
-.. _Next Chapter: guide30.html
-.. _Chapter 25: guide25.html
-.. _simil: commands/simil.html
-.. _correl: commands/correl.html
-.. _rid: commands/rid.html
-.. _humsed: commands/humsed.html
-.. _Detailed Contents: guide.toc.detailed.html

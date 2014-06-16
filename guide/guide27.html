@@ -68,7 +68,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html"><em>The Humdrum User Guide</em></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="guide01.html">Chapter 1: Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using `*`*kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using kern (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide03.html">Chapter 3: Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide04.html">Chapter 4:Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide05.html">Chapter 5: The Humdrum Syntax</a></li>
@@ -208,7 +208,7 @@ lyrics. The <tt class="docutils literal"><span class="pre">**text``_</span> <spa
 <span class="pre">the</span> <span class="pre">``**silbe``_</span> <span class="pre">representation</span> <span class="pre">can</span> <span class="pre">be</span> <span class="pre">used</span> <span class="pre">to</span> <span class="pre">represent</span> <span class="pre">*syllables*;</span> <span class="pre">and</span>
 <span class="pre">the</span> <span class="pre">``**IPA``_</span> <span class="pre">representation</span> <span class="pre">can</span> <span class="pre">be</span> <span class="pre">used</span> <span class="pre">to</span> <span class="pre">represent</span> <span class="pre">*phonemes*</span> <span class="pre">(via</span> <span class="pre">the</span>
 <span class="pre">International</span> <span class="pre">Phonetic</span> <span class="pre">Alphabet).</span> <span class="pre">Discussion</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">``**IPA</span></tt> representation
-will be delayed until <a class="reference external" href="guide34.html">Chapter 34.</a> In this chapter we will look at various
+will be delayed until <a href="#id99"><span class="problematic" id="id100">`Chapter 34.`_</span></a> In this chapter we will look at various
 representational and processing issues related to the manipulation of words
 and syllables.</p>
 <div class="section" id="the-text-and-silbe-representations">
@@ -348,7 +348,7 @@ painting, etc.</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">text</span> <span class="pre">inputfile</span> <span class="pre">&gt;</span> <span class="pre">outputfile</span></tt></p>
 <p>A simple text-related task might be looking for occurrences of a particular
 word, such as the German &#8220;Liebe&#8221; (love). If the lyrics are encoded in the
-<a href="#id33"><span class="problematic" id="id34">``</span></a><a href="#id107"><span class="problematic" id="id108">`**text``_</span></a> representation, then a simple <strong>grep</strong> will suffice:</p>
+<a href="#id33"><span class="problematic" id="id34">``</span></a><a href="#id101"><span class="problematic" id="id102">`**text``_</span></a> representation, then a simple <strong>grep</strong> will suffice:</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-n</span> <span class="pre">'Liebe'</span> <span class="pre">schubert</span></tt></p>
 <p>Recall that the <strong>-n</strong> option gives the line number of any occurrences found.
 If the input is encoded in the <a href="#id35"><span class="problematic" id="id36">``</span></a><strong>silbe``_ representation, then the output
@@ -359,7 +359,7 @@ of **text</strong> can be piped to <strong>grep</strong>:</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**silbe'</span> <span class="pre">song</span> <span class="pre">|</span> <span class="pre">text</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span></tt></p>
 <p>Frequently, it is useful to search for a group of words rather than
 individual words. Suppose we are looking for the phrase &#8220;white Pangur.&#8221; The
-<a href="#id109"><span class="problematic" id="id110">`**context**`_</span></a> command can be used to amalgamate words as multiple stops. If
+<a href="#id103"><span class="problematic" id="id104">`**context**`_</span></a> command can be used to amalgamate words as multiple stops. If
 we are looking for a phrase consisting of just two words, we might use the
 <strong>-n 2</strong> option for <strong>context</strong>:</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">text</span> <span class="pre">barber</span> <span class="pre">|</span> <span class="pre">context</span> <span class="pre">-n</span> <span class="pre">2</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-i</span> <span class="pre">'white</span> <span class="pre">Pangur'</span></tt></p>
@@ -375,7 +375,7 @@ punctuated phrases (one per line) that contain the phrase &#8220;white Pangur.&#
 <h2>The <em>fmt</em> Command<a class="headerlink" href="#the-fmt-command" title="Permalink to this headline">¶</a></h2>
 <p>Another common task is simply to provide a readable text of the text or
 lyrics of a work. Given a <tt class="docutils literal"><span class="pre">**text</span></tt> representation, we can use the
-<a href="#id111"><span class="problematic" id="id112">`**rid**`_</span></a> command to eliminate all records except non-null data records.
+<a href="#id105"><span class="problematic" id="id106">`**rid**`_</span></a> command to eliminate all records except non-null data records.
 This will result in a list of words &#8211; one word per line. UNIX provides a
 simple text formatter called <strong>fmt</strong> that will assemble words or lines into a
 block text where all output lines are roughly the same width.  Consider the
@@ -398,7 +398,7 @@ the following output:</p>
 <span class="pre">Domus</span> <span class="pre">pudici</span> <span class="pre">pectoris</span> <span class="pre">tem</span> <span class="pre">plum</span> <span class="pre">repente</span> <span class="pre">fit</span> <span class="pre">Dei:</span>
 <span class="pre">intacta</span> <span class="pre">nesciens</span> <span class="pre">virum,</span> <span class="pre">concepit</span> <span class="pre">alvo</span> <span class="pre">filium.</span></tt></p>
 <p>Another useful output would have the text arranged with one sentence or
-phrase on each line. As before we can use the <a href="#id113"><span class="problematic" id="id114">`**context**`_</span></a> command with the
+phrase on each line. As before we can use the <a href="#id107"><span class="problematic" id="id108">`**context**`_</span></a> command with the
 <strong>-e</strong> option to amalgamate words, where each amalgamated line ends with a
 punctuation mark:</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**silbe'</span> <span class="pre">chant12</span> <span class="pre">|</span> <span class="pre">text</span> <span class="pre">|</span> <span class="pre">context</span> <span class="pre">-e</span> <span class="pre">'[.,;:?!]'</span> <span class="pre">\</span>
@@ -429,14 +429,14 @@ curly braces (<tt class="docutils literal"><span class="pre">}</span></tt>&#8216
 <p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**kern'</span> <span class="pre">chant12</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/[^}]*//;</span> <span class="pre">s/^$/./'</span> <span class="pre">\</span>
 <span class="pre">&gt;</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">&gt;</span> <span class="pre">temp1</span></tt></p>
-<p>Notice that <a href="#id115"><span class="problematic" id="id116">`**humsed**`_</span></a> has been given two substitution commands. The first
+<p>Notice that <a href="#id109"><span class="problematic" id="id110">`**humsed**`_</span></a> has been given two substitution commands. The first
 eliminates all data signifiers except the close curly brace. The second
 substitution transforms empty output lines to null data records by adding a
 single period.</p>
 <p>(2) Extract the <tt class="docutils literal"><span class="pre">**silbe</span></tt> spine, translate it to <tt class="docutils literal"><span class="pre">**text</span></tt> and store the
 result in another temporary file:</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**silbe'</span> <span class="pre">chant12</span> <span class="pre">|</span> <span class="pre">text</span> <span class="pre">&gt;</span> <span class="pre">temp2</span></tt></p>
-<p>(3) Assemble the two temporary files together and use the <a href="#id117"><span class="problematic" id="id118">`**cleave**`_</span></a>
+<p>(3) Assemble the two temporary files together and use the <a href="#id111"><span class="problematic" id="id112">`**cleave**`_</span></a>
 command to join the end-of-phrase marker to the syllable representation.</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">temp1</span> <span class="pre">temp2</span> <span class="pre">|</span> <span class="pre">cleave</span> <span class="pre">-i</span> <span class="pre">'**kern,**text'</span> <span class="pre">\</span>
 <span class="pre">&gt;</span>
@@ -562,7 +562,7 @@ syllable and <tt class="docutils literal"><span class="pre">1</span></tt> indica
 <span class="pre">1</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span>
 <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span>
 <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span> <span class="pre">0</span></tt></p>
-<p>The above output was generated using the <a href="#id119"><span class="problematic" id="id120">`**humsed**`_</span></a> command. Any syllable
+<p>The above output was generated using the <a href="#id113"><span class="problematic" id="id114">`**humsed**`_</span></a> command. Any syllable
 containing a trailing asterisk (<tt class="docutils literal"><span class="pre">*</span></tt>) is re-written as a <a href="#id49"><span class="problematic" id="id50">`</span></a>1&#8217;, otherwise as a
 <a href="#id51"><span class="problematic" id="id52">`</span></a>0&#8217;.</p>
 <p>&gt; `` . . . | humsed &#8216;s/[^ ][^ ]**/1/g; s/[^1][^1]*$/0/g&#8217;``</p>
@@ -582,7 +582,7 @@ rhythms.</p>
 <p>We can create a summary rhythmic pattern by adding together the values in
 each column &#8211; that is, counting the number of accented syllables that occur
 in each syllable position within the phrase. We can isolate each column using
-the UNIX <strong>cut</strong> command; <strong>cut</strong> is analogous to the Humdrum <a href="#id121"><span class="problematic" id="id122">`**extract**`_</span></a>
+the UNIX <strong>cut</strong> command; <strong>cut</strong> is analogous to the Humdrum <a href="#id115"><span class="problematic" id="id116">`**extract**`_</span></a>
 command. Fields are delineated by white space (tabs or spaces). For example,
 <strong>cut -f 1</strong> will isolate the first column of numbers. We can then pipe the
 results to the <strong>stats</strong> utility in order to calculate the numerical total.
@@ -640,9 +640,9 @@ a context of 5 words (<strong>-n 5</strong>) making sure to omit barlines (<stro
 also pad the amalgamated line with three null tokens (<strong>-p 3</strong>) so the
 context is centered near the third word in the sequence. In the second pass,
 we generate a new spine (<tt class="docutils literal"><span class="pre">**nums</span></tt>) that contains only bar numbers. The
-<a href="#id123"><span class="problematic" id="id124">`**ditto**`_</span></a> command is used to ensure that every data record contains a bar
+<a href="#id117"><span class="problematic" id="id118">`**ditto**`_</span></a> command is used to ensure that every data record contains a bar
 number. To ensure that pick-up bars are numbered with the value 0, we&#8217;ve used
-<a href="#id125"><span class="problematic" id="id126">`**humsed**`_</span></a> to replace any leading null-tokens with the number 0. In the
+<a href="#id119"><span class="problematic" id="id120">`**humsed**`_</span></a> to replace any leading null-tokens with the number 0. In the
 third pass, we replace every data token with the name of the file. Finally,
 we assemble all three of these spines, eliminate everything but data records,
 and also eliminate lines that don&#8217;t contain any text. All of this processing
@@ -713,7 +713,7 @@ input. For each occurrence of these words, suppose that we would like to
 output a line that places the word in context &#8211; specifically the preceding
 and following four words.</p>
 <p>First we transform and isolate the text data using the <strong>text</strong> and
-<a href="#id127"><span class="problematic" id="id128">`**extract**`_</span></a> commands:</p>
+<a href="#id121"><span class="problematic" id="id122">`**extract**`_</span></a> commands:</p>
 <p>&gt; <a href="#id77"><span class="problematic" id="id78">``</span></a>text inputfile | extract -i &#8216;<a href="#id79"><span class="problematic" id="id80">**</span></a>text&#8217; ``</p>
 <p>Since the input may contain multiple-stops, we might consider the precaution
 of ensuring no more than one word per data record. For this we can use
@@ -735,7 +735,7 @@ dashes (<tt class="docutils literal"><span class="pre">--</span></tt>) to segreg
 ten lines of output are typically given. In order to generate our final
 output, we need to transform the linear list of words into a horizontal list
 where each line represents a single match for &#8220;like&#8221; or &#8220;as.&#8221;</p>
-<p>The <a href="#id129"><span class="problematic" id="id130">`**context**`_</span></a> command would enable us to do this. Unfortunately,
+<p>The <a href="#id123"><span class="problematic" id="id124">`**context**`_</span></a> command would enable us to do this. Unfortunately,
 however, the output from <strong>egrep</strong> fails to conform to the Humdrum syntax. In
 particular, adding <tt class="docutils literal"><span class="pre">^\*</span></tt> to the regular expression will fail to ensure a
 proper Humdrum output since preceding and following contextual lines will
@@ -750,7 +750,7 @@ contains empty lines, then they will be changed to null data records.</p>
 <span class="pre">&gt;</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">-4</span> <span class="pre">'^|(like)|(as)$'</span> <span class="pre">|</span> <span class="pre">hum</span></tt></p>
 <p>Now we can make use of the <strong>context</strong> command. Each context ends with the
-double-dash delimiters generated by <strong>egrep</strong>. The <a href="#id131"><span class="problematic" id="id132">`**rid**`_</span></a> command can be
+double-dash delimiters generated by <strong>egrep</strong>. The <a href="#id125"><span class="problematic" id="id126">`**rid**`_</span></a> command can be
 used to eliminate the interpretations added by <strong>hum</strong>.</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">text</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**text'</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/</span> <span class="pre">*/\^M/g'</span> <span class="pre">\</span>
 <span class="pre">&gt;</span>
@@ -773,7 +773,7 @@ to <tt class="docutils literal"><span class="pre">**text</span></tt>. We will al
 <tt class="docutils literal"><span class="pre">**semits</span></tt> and <tt class="docutils literal"><span class="pre">**text</span></tt> are present.</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">semits</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">text</span> <span class="pre">|</span> <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**semits,**text'</span></tt></p>
 <p>Since a word may be sustained through more than one pitch, and a pitch may be
-intoned for more than one word, we should use the <a href="#id133"><span class="problematic" id="id134">`**ditto**`_</span></a> command to
+intoned for more than one word, we should use the <a href="#id127"><span class="problematic" id="id128">`**ditto**`_</span></a> command to
 ensure that null tokens are filled-in.</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">semits</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">text</span> <span class="pre">|</span> <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**semits,**text'</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span></tt></p>
 <p>Next, we can use <strong>egrep</strong> to search for the words of interest:</p>
@@ -819,7 +819,7 @@ automatically search a large database and identify those vocal works whose
 lyrics are most emotionally charged. One way to generate a crude index of
 emotionality is to measure the average ratings for the ten most emotion-laden
 words in a given input.</p>
-<p>The <a href="#id135"><span class="problematic" id="id136">`**humsed**`_</span></a> command provides an appropriate place to start. In effect,
+<p>The <a href="#id129"><span class="problematic" id="id130">`**humsed**`_</span></a> command provides an appropriate place to start. In effect,
 we would take a table (such as Table 26.4) and use it to create a series of
 substitutions. Emotionally-charged words would be replaced by a numerical
 rating. Our <strong>humsed</strong> script would have the following form. Notice that the
@@ -926,18 +926,9 @@ record used to identify genres.</p>
 <span class="pre">(which</span> <span class="pre">translates</span> <span class="pre">from</span> <span class="pre">``**silbe</span></tt> to <tt class="docutils literal"><span class="pre">**text</span></tt>). We have also been exposed
 to the UNIX <strong>fmt</strong> command (a simple text formatter), the <strong>cut</strong> command
 (similar to <strong>extract -f</strong>), and the <strong>head</strong> and <strong>tail</strong> commands.</p>
-<p>In <a href="#id137"><span class="problematic" id="id138">`Chapter 34`_</span></a> we will examine further representations and processes
+<p>In <a href="#id131"><span class="problematic" id="id132">`Chapter 34`_</span></a> we will examine further representations and processes
 related to phonetic data.</p>
 <hr class="docutils" />
-<ul class="simple">
-<li>` <a href="#id99"><span class="problematic" id="id100">**</span></a>Next Chapter**`_</li>
-<li>` <a href="#id101"><span class="problematic" id="id102">**</span></a>Previous Chapter**`_</li>
-<li>` <a href="#id103"><span class="problematic" id="id104">**</span></a>Table of Contents**`_</li>
-<li>` <a href="#id105"><span class="problematic" id="id106">**</span></a>Detailed Contents**`_</li>
-</ul>
-<ol class="upperalpha simple" start="3">
-<li>Copyright 1999 David Huron</li>
-</ol>
 </div>
 </div>
 

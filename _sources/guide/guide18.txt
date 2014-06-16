@@ -538,26 +538,3 @@ manipulate your data.
 
 
 
-
--   ` **Next Chapter**`_
--   ` **Previous Chapter**`_
--   ` **Table of Contents**`_
--   ` **Detailed Contents**`_
-
-(C) Copyright 1999 David Huron
-
-.. _Previous Chapter: guide17.html
-.. _Contents: guide.toc.html
-.. _Next Chapter: guide19.html
-.. _**fret: representations/fret.rep.html
-.. _**pitch: representations/pitch.rep.html
-.. _**recip: representations/recip.rep.html
-.. _**kern: representations/kern.rep.html
-.. _,: commands/cents.html
-.. _,: commands/freq.html
-.. _,: commands/kern.html
-.. _,: commands/pitch.html
-.. _,: commands/semits.html
-.. _,: commands/solfg.html
-.. _.: commands/tonh.html
-.. _Detailed Contents: guide.toc.detailed.html

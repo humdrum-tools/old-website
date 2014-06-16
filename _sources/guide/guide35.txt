@@ -181,19 +181,3 @@ or compound melodic tendency. A passage from Bach's "Gigue" from the solo
 
 
 
-
--   ` **Next Chapter**`_
--   ` **Previous Chapter**`_
--   ` **Table of Contents**`_
--   ` **Detailed Contents**`_
-
-(C) Copyright 1999 David Huron
-
-.. _Previous Chapter: guide34.html
-.. _Contents: guide.toc.html
-.. _Next Chapter: guide36.html
-.. _Chapters 11: guide11.html
-.. _15: guide15.html
-.. _**kern: representations/kern.rep.html
-.. _**pc: representations/pc.rep.html
-.. _Detailed Contents: guide.toc.detailed.html

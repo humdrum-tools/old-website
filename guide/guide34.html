@@ -68,7 +68,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html"><em>The Humdrum User Guide</em></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="guide01.html">Chapter 1: Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using `*`*kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using kern (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide03.html">Chapter 3: Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide04.html">Chapter 4:Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide05.html">Chapter 5: The Humdrum Syntax</a></li>
@@ -198,18 +198,18 @@
   <div class="section" id="chapter-34-serial-processing">
 <h1>Chapter 34: Serial Processing<a class="headerlink" href="#chapter-34-serial-processing" title="Permalink to this headline">¶</a></h1>
 <p>Humdrum provides a handful of specialized tools for serial and serial-
-inspired analytic processing. In this chapter we introduce the <a href="#id133"><span class="problematic" id="id134">`**reihe**`_</span></a>,
-<a href="#id135"><span class="problematic" id="id136">`**pcset**`_</span></a>, <a href="#id137"><span class="problematic" id="id138">`**iv**`_</span></a>, <a href="#id139"><span class="problematic" id="id140">`**pf**`_</span></a> and <a href="#id141"><span class="problematic" id="id142">`**nf**`_</span></a> commands These commands
+inspired analytic processing. In this chapter we introduce the <a href="#id121"><span class="problematic" id="id122">`**reihe**`_</span></a>,
+<a href="#id123"><span class="problematic" id="id124">`**pcset**`_</span></a>, <a href="#id125"><span class="problematic" id="id126">`**iv**`_</span></a>, <a href="#id127"><span class="problematic" id="id128">`**pf**`_</span></a> and <a href="#id129"><span class="problematic" id="id130">`**nf**`_</span></a> commands These commands
 reveal their greatest power when used in conjunction with Humdrum tools we
-have already encountered &#8211; such as <a href="#id143"><span class="problematic" id="id144">`**context**`_</span></a>, <a href="#id145"><span class="problematic" id="id146">`**humsed**`_</span></a> and
-<a href="#id147"><span class="problematic" id="id148">`**patt**`_</span></a>.</p>
+have already encountered &#8211; such as <a href="#id131"><span class="problematic" id="id132">`**context**`_</span></a>, <a href="#id133"><span class="problematic" id="id134">`**humsed**`_</span></a> and
+<a href="#id135"><span class="problematic" id="id136">`**patt**`_</span></a>.</p>
 <p>The chapter culminates with a script that automatically identifies 12-tone
 row variants in complex orchestral scores. The general approach is
 instructive for applications beyond serial analysis.</p>
 <div class="section" id="pitch-class-representation">
 <h2>Pitch-Class Representation<a class="headerlink" href="#pitch-class-representation" title="Permalink to this headline">¶</a></h2>
 <p>In set theoretic applications it is common to use pitch-class
-representations. The <a href="#id149"><span class="problematic" id="id150">`**pc**`_</span></a> command can be used to transform pitch-related
+representations. The <a href="#id137"><span class="problematic" id="id138">`**pc**`_</span></a> command can be used to transform pitch-related
 representations (such as <a href="#id1"><span class="problematic" id="id2">``</span></a><strong>pitch``_, ``**freq``_ and ``**kern``_) to
 a conventional pitch-class notation where pitch-class C is represented by the
 value zero. With the **-a</strong> option, <strong>pc</strong> will generate outputs where the pc
@@ -230,7 +230,7 @@ identified as pitch-class set 3-11. Similarly, the dominant seventh chord and
 pc set 4-27.</p>
 <p>Figure 34.1. Examples of PC set forms.</p>
 <p>&gt; .. image:: guide.figures/guide34.1.gif</p>
-<p>The <a href="#id151"><span class="problematic" id="id152">`**pcset**`_</span></a> command identifies pitch-class sets from <a href="#id13"><span class="problematic" id="id14">``</span></a><a href="#id15"><span class="problematic" id="id16">**</span></a>pc``_ or
+<p>The <a href="#id139"><span class="problematic" id="id140">`**pcset**`_</span></a> command identifies pitch-class sets from <a href="#id13"><span class="problematic" id="id14">``</span></a><a href="#id15"><span class="problematic" id="id16">**</span></a>pc``_ or
 <a href="#id17"><span class="problematic" id="id18">``</span></a><a href="#id19"><span class="problematic" id="id20">**</span></a>semits``_ input. Illustrated below are the corresponding <a href="#id21"><span class="problematic" id="id22">``</span></a><a href="#id23"><span class="problematic" id="id24">**</span></a>kern``_,
 <a href="#id25"><span class="problematic" id="id26">``</span></a><a href="#id27"><span class="problematic" id="id28">**</span></a>pc``_ and <a href="#id29"><span class="problematic" id="id30">``</span></a><a href="#id31"><span class="problematic" id="id32">**</span></a>pcset``_ representations for Example 34.1.</p>
 <p><tt class="docutils literal"><span class="pre">**kern``**pc``**pcset</span>
@@ -250,9 +250,9 @@ input to a pitch-class representation, and then we apply the <strong>pcset</stro
 command:</p>
 <p><tt class="docutils literal"><span class="pre">pc</span> <span class="pre">opus24</span> <span class="pre">|</span> <span class="pre">pcset</span></tt></p>
 <p>Of course this command will only identify the set forms for pitches that have
-concurrent attacks. If any pitch is sustained, <a href="#id153"><span class="problematic" id="id154">`**pcset**`_</span></a> won&#8217;t know that
+concurrent attacks. If any pitch is sustained, <a href="#id141"><span class="problematic" id="id142">`**pcset**`_</span></a> won&#8217;t know that
 some null tokens indicate sustained pitch activity. We can rectify this by
-using the <a href="#id155"><span class="problematic" id="id156">`**ditto**`_</span></a> command (<a class="reference external" href="guide15.html">Chapter 15</a>) to fill-out the null tokens:</p>
+using the <a href="#id143"><span class="problematic" id="id144">`**ditto**`_</span></a> command (<a href="#id145"><span class="problematic" id="id146">`Chapter 15`_</span></a>) to fill-out the null tokens:</p>
 <p><tt class="docutils literal"><span class="pre">pc</span> <span class="pre">opus24</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">^=</span> <span class="pre">|</span> <span class="pre">pcset</span></tt></p>
 <p>If we wanted, we could assemble the resulting <tt class="docutils literal"><span class="pre">**pcset``_</span> <span class="pre">spine</span> <span class="pre">to</span> <span class="pre">the</span>
 <span class="pre">original</span> <span class="pre">input.</span> <span class="pre">This</span> <span class="pre">would</span> <span class="pre">allow</span> <span class="pre">us</span> <span class="pre">to</span> <span class="pre">search</span> <span class="pre">for</span> <span class="pre">particular</span> <span class="pre">patterns</span> <span class="pre">that</span>
@@ -263,10 +263,10 @@ using the <a href="#id155"><span class="problematic" id="id156">`**ditto**`_</sp
 <p><tt class="docutils literal"><span class="pre">pc</span> <span class="pre">opus24</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">^=</span> <span class="pre">|</span> <span class="pre">pcset</span> <span class="pre">&gt;</span> <span class="pre">opus24.pcs</span></tt></p>
 <p>Then we assemble this spine to the original input score:</p>
 <p><tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">opus24</span> <span class="pre">opus24.pcs</span> <span class="pre">&gt;</span> <span class="pre">opus24.all</span></tt></p>
-<p>Now we can search for data records containing phrase (<a href="#id157"><span class="problematic" id="id158">`{}&#8217;) or slur (&#8216;()&#8217;)
+<p>Now we can search for data records containing phrase (<a href="#id147"><span class="problematic" id="id148">`{}&#8217;) or slur (&#8216;()&#8217;)
 markers. Using `**yank**`_</span></a> <strong>-m ... -r 0</strong> rather than <strong>grep</strong> assures that
-the output retains the Humdrum syntax (see <a class="reference external" href="guide12.html">Chapter 12</a>). Maintaining the
-Humdrum syntax will allow us to use <a href="#id159"><span class="problematic" id="id160">`**extract**`_</span></a> to isolate just the
+the output retains the Humdrum syntax (see <a href="#id149"><span class="problematic" id="id150">`Chapter 12`_</span></a>). Maintaining the
+Humdrum syntax will allow us to use <a href="#id151"><span class="problematic" id="id152">`**extract**`_</span></a> to isolate just the
 <tt class="docutils literal"><span class="pre">**pcset</span></tt> data. Finally, we create an inventory of the pc sets. The process
 is repeated &#8211; once for beginning slurs/phrases, and once for ends of
 slurs/phrases.</p>
@@ -286,8 +286,8 @@ to generate the set <em>complement</em> rather than the principal set form.</p>
 <h2>Prime Form and Normal Form<a class="headerlink" href="#prime-form-and-normal-form" title="Permalink to this headline">¶</a></h2>
 <p>The 3-11 set form designates both the major and minor chords (since they are
 symmetrical). In order to distinguish symmetrical forms, it is sometimes
-useful to represent pitch-class sets using either <em>prime form</em> (the <a href="#id161"><span class="problematic" id="id162">`**pf**`_</span></a>
-command) or <em>normal form</em> (the <a href="#id163"><span class="problematic" id="id164">`**nf**`_</span></a> command).</p>
+useful to represent pitch-class sets using either <em>prime form</em> (the <a href="#id153"><span class="problematic" id="id154">`**pf**`_</span></a>
+command) or <em>normal form</em> (the <a href="#id155"><span class="problematic" id="id156">`**nf**`_</span></a> command).</p>
 <p>Suppose we wanted to count the proportion of phrase endings in music by Alban
 Berg where the phrase ends on either a major or minor chord. First, we locate
 all works composed by Berg:</p>
@@ -309,7 +309,7 @@ patterns. First, count the total number of phrases:</p>
 <div class="section" id="interval-vectors-using-the-iv-command">
 <h2>Interval Vectors Using the <em>iv</em> Command<a class="headerlink" href="#interval-vectors-using-the-iv-command" title="Permalink to this headline">¶</a></h2>
 <p>Interval vectors identify the frequency of occurrence of various interval-
-classes for a given pitch-class set. The <a href="#id165"><span class="problematic" id="id166">`**iv**`_</span></a> command generates the six-
+classes for a given pitch-class set. The <a href="#id157"><span class="problematic" id="id158">`**iv**`_</span></a> command generates the six-
 element interval vector for any of several types of inputs &#8211; including
 semitones (<a href="#id37"><span class="problematic" id="id38">``</span></a><a href="#id39"><span class="problematic" id="id40">**</span></a>semits``_), pitch-class (<a href="#id41"><span class="problematic" id="id42">``</span></a><a href="#id43"><span class="problematic" id="id44">**</span></a>pc``_), normal form
 (<a href="#id45"><span class="problematic" id="id46">``</span></a><a href="#id47"><span class="problematic" id="id48">**</span></a>nf``_), prime form (<a href="#id49"><span class="problematic" id="id50">``</span></a><a href="#id51"><span class="problematic" id="id52">**</span></a>pf``_), and pitch-class set
@@ -339,8 +339,8 @@ will have a zero in the last position (i.e., &lt;.....0&gt;).</p>
 <h2>Segmentation Using the <em>context</em> Command<a class="headerlink" href="#segmentation-using-the-context-command" title="Permalink to this headline">¶</a></h2>
 <p>So far, we have processed only &#8220;vertical&#8221; sets of concurrent pitches. In set-
 theory analyses, there are many other important ways of &#8220;segmenting&#8221; the
-musical pitches into pitch-class sets. As we saw in <a class="reference external" href="guide19.html">Chapter 19,</a> the
-<a href="#id167"><span class="problematic" id="id168">`**context**`_</span></a> command provides a useful way of grouping together successive
+musical pitches into pitch-class sets. As we saw in <a href="#id159"><span class="problematic" id="id160">`Chapter 19,`_</span></a> the
+<a href="#id161"><span class="problematic" id="id162">`**context**`_</span></a> command provides a useful way of grouping together successive
 data tokens.</p>
 <p>Suppose, for example, we wanted to analyze set forms in Claude Debussy&#8217;s
 <em>Syrinx</em> for solo flute. The opening measures are shown in Example 34.1.</p>
@@ -348,11 +348,11 @@ data tokens.</p>
 <p>&gt; .. image:: guide.figures/guide34.2.gif</p>
 <p>There are a number of ways we might want to try segmenting the melodic line.
 One possibility is to regard slurs or phrases as indicating appropriate
-groups. Recall that the <strong>-b</strong> and <strong>-e</strong> options for <a href="#id169"><span class="problematic" id="id170">`**context**`_</span></a> are used
+groups. Recall that the <strong>-b</strong> and <strong>-e</strong> options for <a href="#id163"><span class="problematic" id="id164">`**context**`_</span></a> are used
 to specify regular expressions that match the beginning and end
 (respectively) of the context group: We can invoke an appropriate <strong>context</strong>
 command, translate the output to a pitch-class representation, and then use
-the <a href="#id171"><span class="problematic" id="id172">`**pcset**`_</span></a> command to identify the set names:</p>
+the <a href="#id165"><span class="problematic" id="id166">`**pcset**`_</span></a> command to identify the set names:</p>
 <p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">'[{(]'</span> <span class="pre">-e</span> <span class="pre">'[})]'</span> <span class="pre">syrinx</span> <span class="pre">|</span> <span class="pre">pc</span> <span class="pre">|</span> <span class="pre">pcset</span></tt></p>
 <p>Perhaps we might consider gathering groups of three successive notes
 together, and then generating an inventory of the set forms associated with
@@ -364,13 +364,13 @@ such a segmentation:</p>
 <p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-e</span> <span class="pre">r</span> <span class="pre">syrinx</span> <span class="pre">|</span> <span class="pre">pc</span> <span class="pre">|</span> <span class="pre">pcset</span></tt></p>
 <p>When a work consists of more than one instrument or part, useful
 segmentations can be made by extracting each instrument individually, using
-<a href="#id173"><span class="problematic" id="id174">`**context**`_</span></a> to generate musically-pertinent sets, and then assembling all
+<a href="#id167"><span class="problematic" id="id168">`**context**`_</span></a> to generate musically-pertinent sets, and then assembling all
 of the <a href="#id57"><span class="problematic" id="id58">``</span></a><a href="#id59"><span class="problematic" id="id60">**</span></a>pcset``_ spines into a single file.</p>
 </div>
 <div class="section" id="the-reihe-command">
 <h2>The <em>reihe</em> Command<a class="headerlink" href="#the-reihe-command" title="Permalink to this headline">¶</a></h2>
 <p>Twelve-tone music raises additional analysis issues. Variants of a tone-row
-can be generated using the <a href="#id175"><span class="problematic" id="id176">`**reihe**`_</span></a> command. Given some input, <strong>reihe</strong>
+can be generated using the <a href="#id169"><span class="problematic" id="id170">`**reihe**`_</span></a> command. Given some input, <strong>reihe</strong>
 will output a user-specified transformation. Options are provided for prime
 transpositions (<strong>-P</strong> option), for inversions (<strong>-I</strong> option), for
 retrogrades (<strong>-R</strong> option) and for retrograde-inversions (<strong>-RI</strong> option).</p>
@@ -399,7 +399,7 @@ using the following command.</p>
 <p><tt class="docutils literal"><span class="pre">reihe</span> <span class="pre">-a</span> <span class="pre">-I</span> <span class="pre">2</span> <span class="pre">memoriam</span></tt></p>
 <p>The <strong>-a</strong> option causes the values <a href="#id61"><span class="problematic" id="id62">`</span></a>10&#8217; and <a href="#id63"><span class="problematic" id="id64">`</span></a>11&#8217; to be rendered
 alphabetically as <a href="#id65"><span class="problematic" id="id66">`</span></a>A&#8217; and <a href="#id67"><span class="problematic" id="id68">`</span></a>B&#8217;.</p>
-<p>The <a href="#id177"><span class="problematic" id="id178">`**reihe**`_</span></a> command also provides a <em>shift</em> operation (<strong>-S</strong>) that is
+<p>The <a href="#id171"><span class="problematic" id="id172">`**reihe**`_</span></a> command also provides a <em>shift</em> operation (<strong>-S</strong>) that is
 useful for shifting the serial order of data tokens forward or backward.
 Consider the following command:</p>
 <p><tt class="docutils literal"><span class="pre">reihe</span> <span class="pre">-S</span> <span class="pre">-1</span> <span class="pre">memoriam</span></tt></p>
@@ -415,7 +415,7 @@ the second value in the input, and the first value is moved to the end:</p>
 <p>The shift option for <strong>reihe</strong> can be used to shift <em>any</em> type of data &#8211; not
 just pitches of pitch-classes. For example, one might use the shift option to
 rotationally permute dynamic markings, text, durations, articulation marks,
-or any other type of Humdrum data. In <a class="reference external" href="guide38.html">Chapter 38</a> we will see how the shift
+or any other type of Humdrum data. In <a href="#id173"><span class="problematic" id="id174">`Chapter 38`_</span></a> we will see how the shift
 option for <strong>reihe</strong> can be effectively used in many applications apart from
 serial analysis.</p>
 </div>
@@ -427,7 +427,7 @@ Suppose the tone-row was stored in a file called <tt class="docutils literal"><s
 can generate the entire set matrix. There is a Humdrum <strong>matrix</strong> command
 that automatically generates a set matrix, but let&#8217;s create our own script to
 see how this can be done.</p>
-<p>The following script uses the <a href="#id179"><span class="problematic" id="id180">`**reihe**`_</span></a> command to generate each set form.
+<p>The following script uses the <a href="#id175"><span class="problematic" id="id176">`**reihe**`_</span></a> command to generate each set form.
 Each form is stored in a separate file with names such as <tt class="docutils literal"><span class="pre">I8</span></tt> and <tt class="docutils literal"><span class="pre">RI3</span></tt>.
 There are two noteworthy features to this script. Notice that the
 alphanumeric system (<strong>-a</strong> option) is used &#8211; so the values <a href="#id69"><span class="problematic" id="id70">`</span></a>A&#8217; and <a href="#id71"><span class="problematic" id="id72">`</span></a>B&#8217; are
@@ -471,8 +471,8 @@ done``</p>
 </div>
 <div class="section" id="locating-and-identifying-tone-rows">
 <h2>Locating and Identifying Tone-Rows<a class="headerlink" href="#locating-and-identifying-tone-rows" title="Permalink to this headline">¶</a></h2>
-<p>Each of the row variant files can be used as a template for the <a href="#id181"><span class="problematic" id="id182">`**patt**`_</span></a>
-command (see <a class="reference external" href="guide21.html">Chapter 21</a>). The following &#8220;rowfind&#8221; script shows how the
+<p>Each of the row variant files can be used as a template for the <a href="#id177"><span class="problematic" id="id178">`**patt**`_</span></a>
+command (see <a href="#id179"><span class="problematic" id="id180">`Chapter 21`_</span></a>). The following &#8220;rowfind&#8221; script shows how the
 Humdrum tools can be coordinated to carry out an automatic search and
 identification of tone row variants for some score.</p>
 <p>The first part of the script simply checks to ensure that all of the row
@@ -525,12 +525,12 @@ variant files are present:</p>
 <span class="pre">done</span></tt></p>
 <p>The following two lines of the script prepare the input score for searching.
 Specifically, the score is transformed to pitch-class notation (using <strong>pc</strong>)
-and then all rests are changed to null tokens using the <a href="#id183"><span class="problematic" id="id184">`**humsed**`_</span></a>
-command. Notice the use of the <strong>-a</strong> option for <a href="#id185"><span class="problematic" id="id186">`**pc**`_</span></a> in order to use
+and then all rests are changed to null tokens using the <a href="#id181"><span class="problematic" id="id182">`**humsed**`_</span></a>
+command. Notice the use of the <strong>-a</strong> option for <a href="#id183"><span class="problematic" id="id184">`**pc**`_</span></a> in order to use
 the alpha-numeric pitch-class representation.</p>
 <p><tt class="docutils literal"><span class="pre">pc</span> <span class="pre">-at</span> <span class="pre">$1</span> <span class="pre">&gt;</span> <span class="pre">temp.pc</span>
 <span class="pre">humsed</span> <span class="pre">'s/r/./g'</span> <span class="pre">temp.pc</span> <span class="pre">&gt;</span> <span class="pre">score.tmp</span></tt></p>
-<p>The main searching task is done by <strong>patt</strong>. The <a href="#id187"><span class="problematic" id="id188">`**patt**`_</span></a> command is
+<p>The main searching task is done by <strong>patt</strong>. The <a href="#id185"><span class="problematic" id="id186">`**patt**`_</span></a> command is
 executed 48 times &#8211; once for each row variant. The <strong>-t</strong> (tag) option is
 used so that a <tt class="docutils literal"><span class="pre">**patt</span></tt> output is generated. Each time a match is made the
 appropriate name (e.g. P4) is output in the spine. The <strong>-s</strong> option is used
@@ -591,8 +591,8 @@ do</p>
 <p>done``</p>
 <p>Each of the above 48 <strong>patt</strong> searches resulted in a separate temporary
 output file. It would be convenient to reduce all 48 <tt class="docutils literal"><span class="pre">**patt</span></tt> spines into a
-single aggregate spine. This can be done using the <a href="#id189"><span class="problematic" id="id190">`**assemble**`_</span></a> and
-<a href="#id191"><span class="problematic" id="id192">`**cleave**`_</span></a> commands:</p>
+single aggregate spine. This can be done using the <a href="#id187"><span class="problematic" id="id188">`**assemble**`_</span></a> and
+<a href="#id189"><span class="problematic" id="id190">`**cleave**`_</span></a> commands:</p>
 <p><a href="#id99"><span class="problematic" id="id100">``</span></a># Now we have a lot of files to assemble:
 assemble P*.pat &gt; prime.pat
 cleave -d &#8216; &#8216; -i &#8216;<a href="#id101"><span class="problematic" id="id102">**</span></a>patt&#8217; -o &#8216;<a href="#id103"><span class="problematic" id="id104">**</span></a>rows&#8217; prime.pat &gt; analysis.1</p>
@@ -629,11 +629,11 @@ both individual instruments and groups of instruments works very well.</p>
 <div class="section" id="reprise">
 <h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
 <p>In this chapter we have discussed several tools related to set theory
-analysis. These include the <a href="#id193"><span class="problematic" id="id194">`**pc**`_</span></a> (pitch-class) command, the <a href="#id195"><span class="problematic" id="id196">`**pcset**`_</span></a>
-command (for identifying set-forms), and the <a href="#id197"><span class="problematic" id="id198">`**reihe**`_</span></a> command (for
+analysis. These include the <a href="#id191"><span class="problematic" id="id192">`**pc**`_</span></a> (pitch-class) command, the <a href="#id193"><span class="problematic" id="id194">`**pcset**`_</span></a>
+command (for identifying set-forms), and the <a href="#id195"><span class="problematic" id="id196">`**reihe**`_</span></a> command (for
 generating set variants).</p>
-<p>We have seen how general tools like <a href="#id199"><span class="problematic" id="id200">`**context**`_</span></a> can be used to carry out
-segmentation of some score. Similarly, we have seen how the <a href="#id201"><span class="problematic" id="id202">`**patt**`_</span></a>
+<p>We have seen how general tools like <a href="#id197"><span class="problematic" id="id198">`**context**`_</span></a> can be used to carry out
+segmentation of some score. Similarly, we have seen how the <a href="#id199"><span class="problematic" id="id200">`**patt**`_</span></a>
 command can be used to identify tone-row statements.</p>
 <p>Two scripts were described in this chapter: <strong>matrix</strong> and <strong>rowfind.</strong> These
 demonstrated how the tools may be coordinated to carry out various automated
@@ -641,20 +641,11 @@ processes.</p>
 <p>This chapter has only scratched the surface regarding the types of pertinent
 serial-related manipulations that might be pursued. For example, much more
 sophisticated approaches to segmentation can be created by using some of the
-layer techniques described in the <a href="#id203"><span class="problematic" id="id204">`next Chapter.`_</span></a> Similarly, the pattern
+layer techniques described in the <a href="#id201"><span class="problematic" id="id202">`next Chapter.`_</span></a> Similarly, the pattern
 searches could easily be expanded to look at other parameters typical of
 &#8220;complete serialism&#8221; &#8211; such as durations, dynamics, articulation marks, and
 so on.</p>
 <hr class="docutils" />
-<ul class="simple">
-<li>` <a href="#id121"><span class="problematic" id="id122">**</span></a>Next Chapter**`_</li>
-<li>` <a href="#id123"><span class="problematic" id="id124">**</span></a>Previous Chapter**`_</li>
-<li>` <a href="#id125"><span class="problematic" id="id126">**</span></a>Table of Contents**`_</li>
-<li>` <a href="#id127"><span class="problematic" id="id128">**</span></a>Detailed Contents**`_</li>
-</ul>
-<ol class="upperalpha simple" start="3">
-<li>Copyright 1999 David Huron</li>
-</ol>
 </div>
 </div>
 

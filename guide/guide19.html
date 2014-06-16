@@ -68,7 +68,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html"><em>The Humdrum User Guide</em></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="guide01.html">Chapter 1: Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using `*`*kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using kern (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide03.html">Chapter 3: Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide04.html">Chapter 4:Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide05.html">Chapter 5: The Humdrum Syntax</a></li>
@@ -200,14 +200,14 @@
 <p>Much of what makes an event of interest is the context of the event. We may
 be interested in what precedes or follows a note or chord. We have already
 seen how the <strong>-A</strong> and <strong>-B</strong> options for <strong>grep</strong> can be used to output
-<a href="#id48"><span class="problematic" id="id49">`before&#8217; and `after&#8217; contexts. In `Chapter 21`_</span></a> we will see how the
-<a href="#id50"><span class="problematic" id="id51">`**patt**`_</span></a> and <a href="#id52"><span class="problematic" id="id53">`**pattern**`_</span></a> commands can provide further flexibility for
+<a href="#id39"><span class="problematic" id="id40">`before&#8217; and `after&#8217; contexts. In `Chapter 21`_</span></a> we will see how the
+<a href="#id41"><span class="problematic" id="id42">`**patt**`_</span></a> and <a href="#id43"><span class="problematic" id="id44">`**pattern**`_</span></a> commands can provide further flexibility for
 searching.</p>
 <p>However, in this chapter we introduce the deceptively simple <strong>context</strong>
 command.</p>
 <div class="section" id="the-context-command">
 <h2>The <em>context</em> Command<a class="headerlink" href="#the-context-command" title="Permalink to this headline">¶</a></h2>
-<p>The effect of the <a href="#id54"><span class="problematic" id="id55">`**context**`_</span></a> command is easier to illustrate than
+<p>The effect of the <a href="#id45"><span class="problematic" id="id46">`**context**`_</span></a> command is easier to illustrate than
 describe. Consider a file (named <tt class="docutils literal"><span class="pre">input</span></tt>) that contains the numbers 1
 through 6 on successive lines. A null token is interposed between the numbers
 2 and 3:</p>
@@ -249,12 +249,12 @@ the output.</p>
 <p>The <strong>-n 3</strong> option tells <strong>context</strong> how many data tokens to amalgamate on
 each output line. With the specification <strong>-n 2</strong>, just two data tokens would
 be amalgamated on each output line.</p>
-<p>How might <a href="#id56"><span class="problematic" id="id57">`**context**`_</span></a> be useful? Suppose we wanted to determine how
+<p>How might <a href="#id47"><span class="problematic" id="id48">`**context**`_</span></a> be useful? Suppose we wanted to determine how
 harmonic octave intervals are approached in Bach&#8217;s two-part keyboard
 <em>Inventions</em>. What harmonic interval tends to precede an octave? We can use
-the <a href="#id58"><span class="problematic" id="id59">`**hint**`_</span></a> command to generate the harmonic intervals for each
+the <a href="#id49"><span class="problematic" id="id50">`**hint**`_</span></a> command to generate the harmonic intervals for each
 successive sonority. To calculate all <em>passing intervals</em>, we will preprocess
-using <a href="#id60"><span class="problematic" id="id61">`**ditto**`_</span></a>:</p>
+using <a href="#id51"><span class="problematic" id="id52">`**ditto**`_</span></a>:</p>
 <p><tt class="docutils literal"><span class="pre">ditto</span> <span class="pre">inventions*</span> <span class="pre">|</span> <span class="pre">hint</span></tt></p>
 <p>Typical outputs might look like this:</p>
 <p><tt class="docutils literal"><span class="pre">M3</span>
@@ -368,7 +368,7 @@ progression that is realized as a series of arpeggiation figures.</p>
 <p>The harmonic structure can be made more explicit by amalgamating all of the
 notes in each arpeggio. There are several possible ways of doing this, but
 the slurs are particularly useful delineators. The <strong>-b</strong> option for
-<a href="#id62"><span class="problematic" id="id63">`**context**`_</span></a> allows the user to specify a regular expression that marks the
+<a href="#id53"><span class="problematic" id="id54">`**context**`_</span></a> allows the user to specify a regular expression that marks the
 <em>beginning</em> of each collection of data tokens. Consider the following
 command:</p>
 <p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">'('</span> <span class="pre">Anderson</span></tt></p>
@@ -401,7 +401,7 @@ the barlines prove useful in further processing.</p>
 <p>In the above passage by Anderson, the close of each slur provides a
 convenient marker for ending each chord. We can be more explicit in defining
 the grouping boundaries by also including the <strong>-e</strong> option for
-<a href="#id64"><span class="problematic" id="id65">`**context**`_</span></a>. This option allows the user to specify a regular expression
+<a href="#id55"><span class="problematic" id="id56">`**context**`_</span></a>. This option allows the user to specify a regular expression
 that marks the <em>end</em> of each collection of data tokens. A suitably revised
 command would be:</p>
 <p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">'('</span> <span class="pre">-e</span> <span class="pre">')'</span> <span class="pre">Anderson</span></tt></p>
@@ -441,7 +441,7 @@ tool such as <strong>ghostview</strong> to display the output:</p>
 signature disagrees with the total duration for each measure.</p>
 <p>Having reformatted our input data using <strong>context</strong>, we can continue by
 translating the data to another representation. For example, we might use the
-<a href="#id66"><span class="problematic" id="id67">`**deg**`_</span></a> command to reformulate each pitch group as scale degrees. This
+<a href="#id57"><span class="problematic" id="id58">`**deg**`_</span></a> command to reformulate each pitch group as scale degrees. This
 might allow us to search for particular harmonic patterns such as (say) an
 augmented sixth chord:</p>
 <p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">'('</span> <span class="pre">-e</span> <span class="pre">')'</span> <span class="pre">Anderson</span> <span class="pre">|</span> <span class="pre">deg</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'6-'</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'4+'</span> <span class="pre">\</span>
@@ -449,7 +449,7 @@ augmented sixth chord:</p>
 <span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'1'</span></tt></p>
 <p>Any regular expression can be used to identify the beginning and/or ending of
 an amalgamated group. For example, tokens might be grouped by barlines.
-Suppose the <a href="#id68"><span class="problematic" id="id69">`**census**`_</span></a> command tells us that a monophonic work contains
+Suppose the <a href="#id59"><span class="problematic" id="id60">`**census**`_</span></a> command tells us that a monophonic work contains
 sixty-fourth notes. We might want to know whether the sixty-fourth notes all
 tend to happen in one or two measures, or whether they occur throughout the
 work. Just how many measures contain sixty-fourth notes?</p>
@@ -474,8 +474,8 @@ phrase related harmonic sequences as follows:</p>
 <p>For example, we might count the number of harmonic functions in each phrase
 as follows:</p>
 <p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-o</span> <span class="pre">=</span> <span class="pre">-e</span> <span class="pre">';'</span> <span class="pre">input</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">awk</span> <span class="pre">'{print</span> <span class="pre">$NF}'</span></tt></p>
-<p>In <a class="reference external" href="guide22.html">Chapter 22</a> we will learn how to classify data into discrete categories.
-Using the <a href="#id70"><span class="problematic" id="id71">`**recode**`_</span></a> command described in that chapter, we might group
+<p>In <a href="#id61"><span class="problematic" id="id62">`Chapter 22`_</span></a> we will learn how to classify data into discrete categories.
+Using the <a href="#id63"><span class="problematic" id="id64">`**recode**`_</span></a> command described in that chapter, we might group
 notes together according to changes of melodic direction. That is, each group
 of would consist of notes that are all ascending or all descending in pitch.</p>
 </div>
@@ -492,8 +492,8 @@ following the first occurrence of a space. This will leave only the barline
 token &#8211; including the measure number.</p>
 <p>When using <strong>grep</strong> it is common for the output to no longer conform to the
 Humdrum syntax. This is the reason why we used <strong>sed</strong> rather than
-<a href="#id72"><span class="problematic" id="id73">`**humsed**`_</span></a> in the above example.) Remember that we can always use the
-<a href="#id74"><span class="problematic" id="id75">`**yank**`_</span></a> -m command to create &#8220;grep-like&#8221; output that still conforms to
+<a href="#id65"><span class="problematic" id="id66">`**humsed**`_</span></a> in the above example.) Remember that we can always use the
+<a href="#id67"><span class="problematic" id="id68">`**yank**`_</span></a> -m command to create &#8220;grep-like&#8221; output that still conforms to
 the Humdrum syntax. If we wanted to maintain the Humdrum syntax, an
 equivalent to the above command would be:</p>
 <p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">^=</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">yank</span> <span class="pre">-m</span> <span class="pre">'iii</span> <span class="pre">V'</span> <span class="pre">-r</span> <span class="pre">0</span> <span class="pre">\</span>
@@ -510,7 +510,7 @@ that have been preceded by a <em>iii V</em> progression in the previous measure.
 <p>Consider another example. Suppose we wanted to determine whether the first
 pitch in a phrase tends to be lower than the last pitch in a phrase. As
 before, we might first amalgamate all notes in each phrase onto individual
-data records. We can use <a href="#id76"><span class="problematic" id="id77">`**humsed**`_</span></a> to eliminate all notes other than the
+data records. We can use <a href="#id69"><span class="problematic" id="id70">`**humsed**`_</span></a> to eliminate all notes other than the
 first and last. The regular expression <tt class="docutils literal"><span class="pre">/</span> <span class="pre">.*</span> <span class="pre">/</span></tt> specifies any sequence of
 characters preceded by a space and followed by a space. Replacing matching
 strings with a single space will leave output data records consisting of
@@ -518,9 +518,9 @@ double-stops. The first note of the double-stop will be the first note of the
 phrase, and the second note of the double-stop will be the last note of the
 same phrase:</p>
 <p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">{</span> <span class="pre">-e</span> <span class="pre">}</span> <span class="pre">file</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/</span> <span class="pre">.*</span> <span class="pre">/</span> <span class="pre">/'</span></tt></p>
-<p>We can continue processing by piping the output to the <a href="#id78"><span class="problematic" id="id79">`**semits**`_</span></a> command.
+<p>We can continue processing by piping the output to the <a href="#id71"><span class="problematic" id="id72">`**semits**`_</span></a> command.
 This will leave pairs of numbers representing the semitone distances from
-middle C. We might then isolate the data records by using <a href="#id80"><span class="problematic" id="id81">`**rid**`_</span></a>.</p>
+middle C. We might then isolate the data records by using <a href="#id73"><span class="problematic" id="id74">`**rid**`_</span></a>.</p>
 <p>`` . . . | semits | rid -GLId | awk &#8216;{print $2-$1}&#8217;``</p>
 <p>Finally, we have used the UNIX <strong>awk</strong> utility to carry out some simple
 numerical processing: in this case, substracting the first semitone value
@@ -542,7 +542,7 @@ different types of data together. For example, how many ascending major sixth
 intervals occur in phrases that end on the dominant? For this question, we
 need concurrent access to both melodic interval data as well as scale degree
 information. The solution to such questions typically involves linking
-different types of data together using the <a href="#id82"><span class="problematic" id="id83">`**assemble**`_</span></a> command. Suppose
+different types of data together using the <a href="#id75"><span class="problematic" id="id76">`**assemble**`_</span></a> command. Suppose
 the first phrase in our input begins as follows:</p>
 <p><tt class="docutils literal"><span class="pre">**kern</span>
 <span class="pre">&gt;</span> <span class="pre">*F:</span>
@@ -587,7 +587,7 @@ translate the resulting data to the <a href="#id31"><span class="problematic" id
 &gt; etc.</p>
 <p>We need to search for the interval of an ascending major sixth (<tt class="docutils literal"><span class="pre">+M6</span></tt>)
 associated with a phrase ending on the dominant (<tt class="docutils literal"><span class="pre">5$</span></tt>). Before using the
-approprate <strong>grep</strong> command, we need to use <a href="#id84"><span class="problematic" id="id85">`**ditto**`_</span></a> to propagate the
+approprate <strong>grep</strong> command, we need to use <a href="#id77"><span class="problematic" id="id78">`**ditto**`_</span></a> to propagate the
 scale degree data over the null data tokens in the <tt class="docutils literal"><span class="pre">**deg</span></tt> spine; <strong>ditto</strong>
 will generate the following output:</p>
 <p><tt class="docutils literal"><span class="pre">**mint**deg</span>
@@ -624,7 +624,7 @@ degree:</p>
 <tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">temp1</span> <span class="pre">temp2</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'^[v^]*1</span> <span class="pre">'</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">\</span>
 <span class="pre">&gt;</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-rn</span> <span class="pre">&gt;</span> <span class="pre">inventory.pre</span></tt></p>
-<p>For the intervals following the tonic, we need to use <a href="#id86"><span class="problematic" id="id87">`**context**`_</span></a> -n 2.
+<p>For the intervals following the tonic, we need to use <a href="#id79"><span class="problematic" id="id80">`**context**`_</span></a> -n 2.
 This will create pairs of intervals: the first interval will indicate the
 approach, and the second interval in each pair will indicate the
 continuation.</p>
@@ -688,7 +688,7 @@ contexts.</p>
 </div>
 <div class="section" id="using-context-with-the-p-option">
 <h2>Using <em>context</em> with the <em>-p</em> Option<a class="headerlink" href="#using-context-with-the-p-option" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>-p</strong> option for <a href="#id88"><span class="problematic" id="id89">`**context**`_</span></a> allows the output data records to be
+<p>The <strong>-p</strong> option for <a href="#id81"><span class="problematic" id="id82">`**context**`_</span></a> allows the output data records to be
 &#8220;pushed&#8221; forward by a specified number of lines. Consider the normal
 operation of <strong>context</strong> as illustrated below. The left-hand spine represents
 the input and the right-hand spine represents the output where the option
@@ -778,27 +778,18 @@ assembled output might look as follows:</p>
 <p>The <strong>context</strong> command essentially transforms sequences of events into
 collections of pseudo-concurrent events. This pseudo-concurrent arrangement
 enables processing using line-oriented or record-oriented tools &#8211; most
-notably <strong>grep</strong>, <strong>sed</strong>, <a href="#id90"><span class="problematic" id="id91">`**humsed**`_</span></a> and <strong>awk</strong>. For example, it
+notably <strong>grep</strong>, <strong>sed</strong>, <a href="#id83"><span class="problematic" id="id84">`**humsed**`_</span></a> and <strong>awk</strong>. For example, it
 facilitates pattern searching using <strong>grep</strong> and also allows useful
 manipulations via tools such as <strong>humsed</strong>. The manner by which data tokens
 are collected together can be defined by a starting marker or an ending
 marker or both. Particular types of data can be excluded or omitted from the
 collections using the <strong>-o</strong> option, and the collections can be transported
 or pushed forward through the spine using the <strong>-p</strong> option.</p>
-<p>We&#8217;ve seen a number of ways by which <a href="#id92"><span class="problematic" id="id93">`**context**`_</span></a> can be used to establish
-a particular context for data. In <a class="reference external" href="guide21.html">Chapter 21</a> we will see how the
-<a href="#id94"><span class="problematic" id="id95">`**patt**`_</span></a> command can be used to establish other kinds of contexts and how
+<p>We&#8217;ve seen a number of ways by which <a href="#id85"><span class="problematic" id="id86">`**context**`_</span></a> can be used to establish
+a particular context for data. In <a href="#id87"><span class="problematic" id="id88">`Chapter 21`_</span></a> we will see how the
+<a href="#id89"><span class="problematic" id="id90">`**patt**`_</span></a> command can be used to establish other kinds of contexts and how
 both of these commands can be used together.</p>
 <hr class="docutils" />
-<ul class="simple">
-<li>` <a href="#id39"><span class="problematic" id="id40">**</span></a>Next Chapter**`_</li>
-<li>` <a href="#id41"><span class="problematic" id="id42">**</span></a>Previous Chapter**`_</li>
-<li>` <a href="#id43"><span class="problematic" id="id44">**</span></a>Table of Contents**`_</li>
-<li>` <a href="#id45"><span class="problematic" id="id46">**</span></a>Detailed Contents**`_</li>
-</ul>
-<ol class="upperalpha simple" start="3">
-<li>Copyright 1999 David Huron</li>
-</ol>
 </div>
 </div>
 

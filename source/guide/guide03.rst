@@ -485,23 +485,3 @@ order.
 
 --------
 
-
-
-
--   `**Next Chapter**`_
--   `**Previous Chapter**`_
--   `**Table of Contents**`_
--   `**Detailed Contents**`_
-
-(C) Copyright 1999 David Huron
-
-.. _Previous Chapter: guide02.html
-.. _Contents: guide.toc.html
-.. _Next Chapter: guide04.html
-.. _census: commands/census.html
-.. _Chapter 9.: guide09.html
-.. _composer's name: guide.append1.html#Authorship_Information
-.. _title: guide.append1.html#Identification_Information
-.. _Chapter 14.: guide14.html
-.. _Chapter 25.: guide25.html
-.. _Detailed Contents: guide.toc.detailed.html

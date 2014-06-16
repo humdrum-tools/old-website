@@ -889,28 +889,3 @@ related to phonetic data.
 --------
 
 
-
-
--   ` **Next Chapter**`_
--   ` **Previous Chapter**`_
--   ` **Table of Contents**`_
--   ` **Detailed Contents**`_
-
-(C) Copyright 1999 David Huron
-
-.. _Previous Chapter: guide26.html
-.. _Contents: guide.toc.html
-.. _Next Chapter: guide28.html
-.. _**text: representations/text.rep.html
-.. _**silbe: representations/silbe.rep.html
-.. _**IPA: representations/IPA.rep.html
-.. _Chapter 34.: guide34.html
-.. _context: commands/context.html
-.. _rid: commands/rid.html
-.. _**kern: representations/kern.rep.html
-.. _humsed: commands/humsed.html
-.. _cleave: commands/cleave.html
-.. _extract: commands/extract.html
-.. _ditto: commands/ditto.html
-.. _**semits: representations/semits.rep.html
-.. _Detailed Contents: guide.toc.detailed.html

@@ -772,29 +772,3 @@ together again.
 --------
 
 
-
-
--   ` **Next Chapter**`_
--   ` **Previous Chapter**`_
--   ` **Table of Contents**`_
--   ` **Detailed Contents**`_
-
-(C) Copyright 1999 David Huron
-
-.. _Previous Chapter: guide11.html
-.. _Contents: guide.toc.html
-.. _Next Chapter: guide13.html
-.. _extract: commands/extract.html
-.. _yank: commands/yank.html
-.. _**text: representations/text.rep.html
-.. _**semits: representations/semits.rep.html
-.. _**MIDI: representations/MIDI.rep.html
-.. _**kern: representations/kern.rep.html
-.. _census: commands/census.html
-.. _midi: commands/midi.html
-.. _perform: commands/perform.html
-.. _trans: commands/trans.html
-.. _Chapter 5,: guide05.html
-.. _humdrum: commands/humdrum.html
-.. _Chapter 20.: guide20.html
-.. _Detailed Contents: guide.toc.detailed.html

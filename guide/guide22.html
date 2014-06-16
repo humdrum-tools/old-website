@@ -68,7 +68,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html"><em>The Humdrum User Guide</em></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="guide01.html">Chapter 1: Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using `*`*kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using kern (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide03.html">Chapter 3: Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide04.html">Chapter 4:Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide05.html">Chapter 5: The Humdrum Syntax</a></li>
@@ -203,7 +203,7 @@
 various things. In this chapter we will discuss two general approaches to
 classifying: <em>parametric</em> classifying and <em>non-parametric</em> classifying. In
 the first instance, we will see how numerical data can be categorized
-according to arithmetic ranges. We will then revisit the <a href="#id39"><span class="problematic" id="id40">`**humsed**`_</span></a>
+according to arithmetic ranges. We will then revisit the <a href="#id29"><span class="problematic" id="id30">`**humsed**`_</span></a>
 command and learn how it can be used to classify different types of non-
 numeric data tokens.</p>
 </div>
@@ -214,7 +214,7 @@ representing the moment-to-moment heart-rate of a listener. Heart rate is
 related to arousal level and so we might use our data to identify passages
 that tend to arouse listeners. Since the average heart-rate of listeners
 differs, we are interested primarily in the rate-of-change. We can use the
-<a href="#id41"><span class="problematic" id="id42">`**xdelta**`_</span></a> command to calculate the differences in heart-rate between
+<a href="#id31"><span class="problematic" id="id32">`**xdelta**`_</span></a> command to calculate the differences in heart-rate between
 successive values.</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">xdelta</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">heart.dat</span> <span class="pre">&gt;</span> <span class="pre">changes</span></tt></p>
 <p>The example below displays the input (left) spine and the corresponding
@@ -245,7 +245,7 @@ output (right) spine for the above command:</p>
 <p>A certain amount of heart-rate variation is to be expected because of
 monitoring equipment and other variables. So we are primarily interested in
 large changes of heart-rate, such as the change occurring in measure 136. The
-<a href="#id43"><span class="problematic" id="id44">`**recode**`_</span></a> command allows us to classify numerical data according to value
+<a href="#id33"><span class="problematic" id="id34">`**recode**`_</span></a> command allows us to classify numerical data according to value
 or range. In the above case, we may be interested in identifying acceleration
 or decelerations that exceed some threshold. The <strong>recode</strong> command requires
 that the user supply a <em>reassignment file</em> that specifies how numerical
@@ -299,7 +299,7 @@ by transforming the input into a set of more basic cateogires.</p>
 information in various ways. For example, we might assemble this spine to our
 original musical score. Then we might then use <strong>grep -n</strong> to located any
 points in the score where a heart-rate related event has occurred.</p>
-<p>Permissible relational operators used by <a href="#id45"><span class="problematic" id="id46">`**recode**`_</span></a> include the following:</p>
+<p>Permissible relational operators used by <a href="#id35"><span class="problematic" id="id36">`**recode**`_</span></a> include the following:</p>
 <p>&gt; ==equals
 &gt; !=not equal
 &gt; &lt;less than
@@ -321,7 +321,7 @@ present, the else statement should appear as the last reassignment.</p>
 </div>
 <div class="section" id="classifying-intervals">
 <h2>Classifying Intervals<a class="headerlink" href="#classifying-intervals" title="Permalink to this headline">¶</a></h2>
-<p>The <a href="#id47"><span class="problematic" id="id48">`**recode**`_</span></a> command has innumerable applications. Suppose we wanted to
+<p>The <a href="#id37"><span class="problematic" id="id38">`**recode**`_</span></a> command has innumerable applications. Suppose we wanted to
 determine how frequently ascending melodic leaps are followed by a descending
 step. Let&#8217;s consider two different ways of distinguishing steps and leaps: a
 &#8220;semitone&#8221; method and a &#8220;diatonic&#8221; method. In the first method, we might
@@ -333,10 +333,10 @@ define a step interval as either one or two semitones. Our reassignment file
 <span class="pre">&gt;</span> <span class="pre">&gt;=-2down-step</span>
 <span class="pre">&gt;</span> <span class="pre">&lt;=-3down-leap</span></tt></p>
 <p>Given this reassignment file, we can now begin our processing. In the first
-method, we translate to semitone data using <a href="#id49"><span class="problematic" id="id50">`**semits**`_</span></a>, translate to
-semitone-differences using <a href="#id51"><span class="problematic" id="id52">`**xdelta**`_</span></a>, and then classify into five
-interval types using <a href="#id53"><span class="problematic" id="id54">`**recode**`_</span></a>. The <a href="#id55"><span class="problematic" id="id56">`**context**`_</span></a> <strong>-n 2</strong> command will
-create pairs of interval types, then <a href="#id57"><span class="problematic" id="id58">`**rid**`_</span></a>, <strong>sort</strong> and <strong>uniq -c</strong> are
+method, we translate to semitone data using <a href="#id39"><span class="problematic" id="id40">`**semits**`_</span></a>, translate to
+semitone-differences using <a href="#id41"><span class="problematic" id="id42">`**xdelta**`_</span></a>, and then classify into five
+interval types using <a href="#id43"><span class="problematic" id="id44">`**recode**`_</span></a>. The <a href="#id45"><span class="problematic" id="id46">`**context**`_</span></a> <strong>-n 2</strong> command will
+create pairs of interval types, then <a href="#id47"><span class="problematic" id="id48">`**rid**`_</span></a>, <strong>sort</strong> and <strong>uniq -c</strong> are
 used to generate an inventory. Finally, we use <strong>grep</strong> to identify what
 happens following ascending leaps:</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">semits</span> <span class="pre">melody</span> <span class="pre">|</span> <span class="pre">xdelta</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">recode</span> <span class="pre">-f</span> <span class="pre">reassign</span> <span class="pre">\</span>
@@ -346,7 +346,7 @@ happens following ascending leaps:</p>
 <p>An alternative way of distinguishing steps from leaps is by diatonic
 interval. For example, we might consider a diminished third to be a leap,
 while an augmented second may be considered a step. In this case, we can use
-the <a href="#id59"><span class="problematic" id="id60">`**mint**`_</span></a> command to determine the melodic interval size; the <strong>-d</strong>
+the <a href="#id49"><span class="problematic" id="id50">`**mint**`_</span></a> command to determine the melodic interval size; the <strong>-d</strong>
 option limits the output to diatonic intervals and excludes the interval
 quality (perfect, major, minor, etc.). The appropriate reassignment file
 would be:</p>
@@ -363,7 +363,7 @@ would be:</p>
 </div>
 <div class="section" id="clarinet-registers">
 <h2>Clarinet Registers<a class="headerlink" href="#clarinet-registers" title="Permalink to this headline">¶</a></h2>
-<p>Consider another use of the <a href="#id61"><span class="problematic" id="id62">`**recode**`_</span></a> command.  Imagine that we wanted to
+<p>Consider another use of the <a href="#id51"><span class="problematic" id="id52">`**recode**`_</span></a> command.  Imagine that we wanted to
 arrange Claude Debussy&#8217;s <em>Syrinx</em> for soprano clarinet instead of flute. Our
 principle concern as arranger is determining what key would be especially
 well suited to the clarinet. Tone color is particularly important for this
@@ -395,7 +395,7 @@ transpose down a major sixth:</p>
 </div>
 <div class="section" id="open-and-close-position-chords">
 <h2>Open and Close Position Chords<a class="headerlink" href="#open-and-close-position-chords" title="Permalink to this headline">¶</a></h2>
-<p>Inputs to the <a href="#id63"><span class="problematic" id="id64">`**recode**`_</span></a> command can be quite sophisticated. Consider, for
+<p>Inputs to the <a href="#id53"><span class="problematic" id="id54">`**recode**`_</span></a> command can be quite sophisticated. Consider, for
 example, the task of classifying chords as &#8220;open&#8221; or &#8220;close&#8221; position.
 According to one definition, a chord is said to be in &#8220;open&#8221; position when
 the the interval separating the soprano and tenor voices is an octave or
@@ -409,9 +409,9 @@ voices. Our reassignment file might be as follows:</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">&lt;=12close</span></tt>
 &gt; <tt class="docutils literal"><span class="pre">&gt;12open</span></tt></p>
 <p>We will need to extract the soprano and tenor voices, translate the pitch
-representation to <a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">**</span></a>semits``_ and use <a href="#id65"><span class="problematic" id="id66">`**ydelta**`_</span></a> to calculate the
+representation to <a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">**</span></a>semits``_ and use <a href="#id55"><span class="problematic" id="id56">`**ydelta**`_</span></a> to calculate the
 semitone distance between the two voices. In the following set of commands,
-we have also added the <a href="#id67"><span class="problematic" id="id68">`**ditto**`_</span></a> command to ensure that there are semitone
+we have also added the <a href="#id57"><span class="problematic" id="id58">`**ditto**`_</span></a> command to ensure that there are semitone
 values for each sonority.</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*Itenor,*Isopran'</span></tt> <a href="#id5"><span class="problematic" id="id6">*</span></a>inputfile*`` | semits -x | ditto &gt;
 &gt;&gt; | ydelta -s = -i &#8216;<a href="#id7"><span class="problematic" id="id8">**</span></a>semits&#8217; | recode -f reassign -i &#8216;<a href="#id9"><span class="problematic" id="id10">**</span></a>Ysemits&#8217; -s = &gt; tempfile
@@ -451,7 +451,7 @@ Fingerings are shown only for the first octave (from C4 to C5):</p>
 <p>Suppose we wanted to determine what kinds of fingering <em>transitions</em> occur in
 Joachim Quantz&#8217;s flute concertos. Since instrument fingerings are insensitive
 to enharmonic spelling, an appropriate input representation would be
-<tt class="docutils literal"><span class="pre">**semits</span></tt>. Having used <a href="#id69"><span class="problematic" id="id70">`**recode**`_</span></a> to translate the pitches to
+<tt class="docutils literal"><span class="pre">**semits</span></tt>. Having used <a href="#id59"><span class="problematic" id="id60">`**recode**`_</span></a> to translate the pitches to
 fingerings, we can then use <strong>context -n 2</strong> to generate diads of successive
 finger combinations.</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">semits</span> <span class="pre">con*</span> <span class="pre">|</span> <span class="pre">recode</span> <span class="pre">-f</span> <span class="pre">map</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">context</span> <span class="pre">-n</span> <span class="pre">2</span> <span class="pre">-o</span> <span class="pre">=</span> <span class="pre">&gt;</span> <span class="pre">fingers</span></tt></p>
@@ -465,7 +465,7 @@ processing:</p>
 <p>We could create a similar reassignment file containing fingers pertaining to
 the pre-Boehm flute. Suppose the revised reassignment file was called
 <tt class="docutils literal"><span class="pre">premodern</span></tt>. We could determine how the finger transitions differ between
-the pre-Boehm traverse flute and the modern flute. In <a class="reference external" href="guide29.html">Chapter 29</a> we will
+the pre-Boehm traverse flute and the modern flute. In <a href="#id61"><span class="problematic" id="id62">`Chapter 29`_</span></a> we will
 see how the <strong>diff</strong> command can be used to identify differences between two
 spines. This will allow us to identify specific places in the score where
 Baroque and modern fingerings differ.</p>
@@ -478,10 +478,10 @@ might be classified as dynamic markings (***ff*</strong>, <strong>*mf*</strong>,
 </div>
 <div class="section" id="classifying-with-humsed">
 <h2>Classifying with <em>humsed</em><a class="headerlink" href="#classifying-with-humsed" title="Permalink to this headline">¶</a></h2>
-<p>The <a href="#id71"><span class="problematic" id="id72">`**recode**`_</span></a> command is restricted to classifying numerical data only.
+<p>The <a href="#id63"><span class="problematic" id="id64">`**recode**`_</span></a> command is restricted to classifying numerical data only.
 For many applications, it is useful to be able to classify data according to
-non-numerical criteria. As we saw in <a class="reference external" href="guide14.html">Chapter 14,</a> stream editors such as
-<strong>sed</strong> and <a href="#id73"><span class="problematic" id="id74">`**humsed**`_</span></a> provide automated substitution operations. Such
+non-numerical criteria. As we saw in <a href="#id65"><span class="problematic" id="id66">`Chapter 14,`_</span></a> stream editors such as
+<strong>sed</strong> and <a href="#id67"><span class="problematic" id="id68">`**humsed**`_</span></a> provide automated substitution operations. Such
 string substitutions can be used for non-parametric classifying. We can
 illustrate this with <strong>humsed.</strong></p>
 <p>Suppose we wanted to classify various flute finger-transitions as either
@@ -489,7 +489,7 @@ illustrate this with <strong>humsed.</strong></p>
 fingering, E5 to A5 is a moderate fingering, whereas C5 to D5 is difficult.
 As before, it is best to use a semitone representation so we don&#8217;t need to
 consider differences in enharmonic pitch spelling. We can use the
-<a href="#id75"><span class="problematic" id="id76">`**semits**`_</span></a> command to transform all pitches. Then we can use <strong>context -n
+<a href="#id69"><span class="problematic" id="id70">`**semits**`_</span></a> command to transform all pitches. Then we can use <strong>context -n
 2</strong> to generate pairs of successive pitches as double-stops. We can then
 create a <strong>humsed</strong> script file (let&#8217;s call it <tt class="docutils literal"><span class="pre">difficulty</span></tt>) containing
 substitutions such as the following:</p>
@@ -672,19 +672,10 @@ ranges of numerical values into a finite set of classes or categories; (2) a
 <em>non-parametric</em> classification maps one set of words or terms into a second
 (usually smaller) set of words (used to label various classes or categories).
 In this chapter, we have seen that, for any Humdrum representation,
-parametric classification can be done using the <a href="#id77"><span class="problematic" id="id78">`**recode**`_</span></a> command and
+parametric classification can be done using the <a href="#id71"><span class="problematic" id="id72">`**recode**`_</span></a> command and
 non-parametric classification can be achieved using the <em>substitution</em>
-operation provided by the <a href="#id79"><span class="problematic" id="id80">`**humsed**`_</span></a> command.</p>
+operation provided by the <a href="#id73"><span class="problematic" id="id74">`**humsed**`_</span></a> command.</p>
 <hr class="docutils" />
-<ul class="simple">
-<li>` <a href="#id29"><span class="problematic" id="id30">**</span></a>Next Chapter**`_</li>
-<li>` <a href="#id31"><span class="problematic" id="id32">**</span></a>Previous Chapter**`_</li>
-<li>` <a href="#id33"><span class="problematic" id="id34">**</span></a>Table of Contents**`_</li>
-<li>` <a href="#id35"><span class="problematic" id="id36">**</span></a>Detailed Contents**`_</li>
-</ul>
-<ol class="upperalpha simple" start="3">
-<li>Copyright 1999 David Huron</li>
-</ol>
 </div>
 </div>
 

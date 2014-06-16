@@ -68,7 +68,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html"><em>The Humdrum User Guide</em></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="guide01.html">Chapter 1: Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using `*`*kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using kern (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide03.html">Chapter 3: Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide04.html">Chapter 4:Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide05.html">Chapter 5: The Humdrum Syntax</a></li>
@@ -205,8 +205,8 @@ alternative or <em>ossia</em> passages, different performance renditions, diverg
 sources, and competing editions or versions.</p>
 <p>This chapter describes the basic Humdrum mechanisms for representing non-
 linear musical structures. The two critical mechanisms are the Humdrum
-<em>section</em> and <em>strophe</em>. We will encounter examples using the <a href="#id107"><span class="problematic" id="id108">`**yank**`_</span></a>,
-<a href="#id109"><span class="problematic" id="id110">`**thru**`_</span></a>, and <a href="#id111"><span class="problematic" id="id112">`**strophe**`_</span></a> commands.</p>
+<em>section</em> and <em>strophe</em>. We will encounter examples using the <a href="#id99"><span class="problematic" id="id100">`**yank**`_</span></a>,
+<a href="#id101"><span class="problematic" id="id102">`**thru**`_</span></a>, and <a href="#id103"><span class="problematic" id="id104">`**strophe**`_</span></a> commands.</p>
 <div class="section" id="section-labels">
 <h2>Section Labels<a class="headerlink" href="#section-labels" title="Permalink to this headline">¶</a></h2>
 <p>Musical scores are often notated to take advantage of repetitions in the
@@ -248,7 +248,7 @@ verse.</p>
 </div>
 <div class="section" id="using-yank-to-extract-sections">
 <h2>Using <em>yank</em> to Extract Sections<a class="headerlink" href="#using-yank-to-extract-sections" title="Permalink to this headline">¶</a></h2>
-<p>We encountered the <a href="#id113"><span class="problematic" id="id114">`**yank**`_</span></a> command earlier in <a class="reference external" href="guide12.html">Chapter 12.</a> Recall that
+<p>We encountered the <a href="#id105"><span class="problematic" id="id106">`**yank**`_</span></a> command earlier in <a href="#id107"><span class="problematic" id="id108">`Chapter 12.`_</span></a> Recall that
 <strong>yank</strong> can be used to extract material by <em>section</em> using the <strong>-s</strong>
 option. For example, if the appropriate section is labelled, we might extract
 the coda of a work as follows:</p>
@@ -258,7 +258,7 @@ identifies the <em>first</em> occurrence of a section labelled <tt class="docuti
 </div>
 <div class="section" id="using-the-thru-command-to-expand-encodings">
 <h2>Using the <em>thru</em> Command to Expand Encodings<a class="headerlink" href="#using-the-thru-command-to-expand-encodings" title="Permalink to this headline">¶</a></h2>
-<p>The Humdrum <a href="#id115"><span class="problematic" id="id116">`**thru**`_</span></a> command expands <em>abbreviated format</em> representations
+<p>The Humdrum <a href="#id109"><span class="problematic" id="id110">`**thru**`_</span></a> command expands <em>abbreviated format</em> representations
 to a so-called <em>through-composed format</em> in which repeated passages are
 expanded according to an expansion list. When the <strong>thru</strong> command is
 invoked, it eliminates any expansion lists present in the input; in addition,
@@ -511,7 +511,7 @@ is to be repeated 4 times in total.</p>
 <p>The strophic passage pertains only to the spine marked <tt class="docutils literal"><span class="pre">**silbe</span></tt>. The
 <tt class="docutils literal"><span class="pre">`**silbe``_</span> <span class="pre">representation</span> <span class="pre">pertains</span> <span class="pre">to</span> <span class="pre">syllabic</span> <span class="pre">text</span> <span class="pre">encoding</span> <span class="pre">and</span> <span class="pre">is</span> <span class="pre">a</span>
 <span class="pre">pre-defined</span> <span class="pre">representation</span> <span class="pre">in</span> <span class="pre">Humdrum.</span> <span class="pre">The</span> <span class="pre">``**silbe</span></tt> representation is
-discussed in <a class="reference external" href="guide27.html">Chapter 27.</a> Following the strophic passage indicator
+discussed in <a href="#id111"><span class="problematic" id="id112">`Chapter 27.`_</span></a> Following the strophic passage indicator
 (<tt class="docutils literal"><span class="pre">*strophe</span></tt>), the spine is split apart until the required number of verses
 are generated. Then each spine is labelled with its own strophe label. Since
 the verses have an order, it is appropriate to label them with numbers:
@@ -642,18 +642,9 @@ spine-
 path,
 &gt; e.g. <tt class="docutils literal"><span class="pre">*S/fin</span></tt></p>
 <p><em>Summary of terms related to sections and strophes</em></p>
-<p>In <a class="reference external" href="guide37.html">Chapter 37</a> we will see further examples of how sections and strophes
+<p>In <a href="#id113"><span class="problematic" id="id114">`Chapter 37`_</span></a> we will see further examples of how sections and strophes
 are especially useful when producing electronic editions.</p>
 <hr class="docutils" />
-<ul class="simple">
-<li>` <a href="#id99"><span class="problematic" id="id100">**</span></a>Next Chapter**`_</li>
-<li>` <a href="#id101"><span class="problematic" id="id102">**</span></a>Previous Chapter**`_</li>
-<li>` <a href="#id103"><span class="problematic" id="id104">**</span></a>Table of Contents**`_</li>
-<li>` <a href="#id105"><span class="problematic" id="id106">**</span></a>Detailed Contents**`_</li>
-</ul>
-<ol class="upperalpha simple" start="3">
-<li>Copyright 1999 David Huron</li>
-</ol>
 </div>
 </div>
 

@@ -68,7 +68,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html"><em>The Humdrum User Guide</em></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="guide01.html">Chapter 1: Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using `*`*kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using kern (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide03.html">Chapter 3: Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide04.html">Chapter 4:Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide05.html">Chapter 5: The Humdrum Syntax</a></li>
@@ -205,7 +205,7 @@ frequent use of regular expressions.</p>
 <h2>The <em>grep</em> Command (Again)<a class="headerlink" href="#the-grep-command-again" title="Permalink to this headline">¶</a></h2>
 <p>Although regular expressions are used in a number of Humdrum commands, they
 are most frequently used in conjunction with the <strong>grep</strong> command encountered
-in <a class="reference external" href="guide03.html">Chapter 3.</a> <strong>grep</strong> is a popular software tool that is available from a
+in <a href="#id93"><span class="problematic" id="id94">`Chapter 3.`_</span></a> <strong>grep</strong> is a popular software tool that is available from a
 number of manufacturers and sources. Many versions of <strong>grep</strong> differ in the
 options provided. For example, the version of <strong>grep</strong> distributed by the GNU
 Software Foundation provides no fewer than 19 options. Some of the most
@@ -255,7 +255,7 @@ middle C.</p>
 <p>Frequently it is necessary to turn off the special meanings for
 metacharacters such as ^, $, and <a href="#id11"><span class="problematic" id="id12">*</span></a>. Recall that this can be done by inserting
 a backslash (<tt class="docutils literal"><span class="pre">\</span></tt>) immediately prior to the metacharacter. In the
-`` <a href="#id102"><span class="problematic" id="id103">`**kern```_</span></a> representation the caret signifies an accent. In a monophonic
+`` <a href="#id95"><span class="problematic" id="id96">`**kern```_</span></a> representation the caret signifies an accent. In a monophonic
 input, we might count the number of notes that have a notated accent as
 follows:</p>
 <p>`` grep -c &#8216;^&#8217; danmark3.krn``</p>
@@ -347,11 +347,11 @@ but are not rests.</p>
 </div>
 <div class="section" id="german-french-italian-and-neapolitan-sixths">
 <h2>German, French, Italian, and Neapolitan Sixths<a class="headerlink" href="#german-french-italian-and-neapolitan-sixths" title="Permalink to this headline">¶</a></h2>
-<p>In conjunction with the <a href="#id104"><span class="problematic" id="id105">`**solfa**`_</span></a> command, <strong>grep</strong> can be used to search
+<p>In conjunction with the <a href="#id97"><span class="problematic" id="id98">`**solfa**`_</span></a> command, <strong>grep</strong> can be used to search
 for various types of special chords. Suppose, for example, that we wanted to
 identify occurrences of augmented sixth chords. An augmented sixth chord is
 characterized by an augmented sixth interval occurring between the lowered
-sixth scale-degree and the raised fourth scale-degree. In <a class="reference external" href="guide04.html">Chapter 4,</a> we
+sixth scale-degree and the raised fourth scale-degree. In <a href="#id99"><span class="problematic" id="id100">`Chapter 4,`_</span></a> we
 saw that the <strong>solfa</strong> command represents pitches with respect to an encoded
 tonic pitch. In the <tt class="docutils literal"><span class="pre">`**solfa```_</span> <span class="pre">representation,</span> <span class="pre">the</span> <span class="pre">lowered</span> <span class="pre">sixth</span> <span class="pre">and</span>
 <span class="pre">raised</span> <span class="pre">fourth</span> <span class="pre">degrees</span> <span class="pre">will</span> <span class="pre">be</span> <span class="pre">represented</span> <span class="pre">as</span> <span class="pre">``6-</span></tt> and <tt class="docutils literal"><span class="pre">4+</span></tt> respectively.
@@ -451,7 +451,7 @@ regular expressions is found.</p>
 encode works composed in the 17th century OR written for organ OR in 6/8
 meter. The <strong>-f</strong> option is more typically used to specify several variations
 of the same idea. For example, suppose we were searching for D major triads
-in <a href="#id79"><span class="problematic" id="id80">``</span></a><a href="#id106"><span class="problematic" id="id107">`**pitch```_</span></a> data. We could use a file containing the following regular
+in <a href="#id79"><span class="problematic" id="id80">``</span></a><a href="#id101"><span class="problematic" id="id102">`**pitch```_</span></a> data. We could use a file containing the following regular
 expressions:</p>
 <p>`` [Dd].*[Ff]#.*[Aa]
 [Dd].*[Aa].* [Ff]#
@@ -518,18 +518,9 @@ also seen how the <strong>-f</strong> option for <strong>grep</strong> can be us
 possible criteria.</p>
 <p>Although this chapter has focussed principally on the <strong>grep</strong> command, the
 ensuing chapters will show that regular expressions are used by a wide
-variety of commands. In <a class="reference external" href="guide33.html">Chapter 33,</a> many more powerful examples will be
+variety of commands. In <a href="#id103"><span class="problematic" id="id104">`Chapter 33,`_</span></a> many more powerful examples will be
 discussed in conjunction with the <strong>find</strong> command.</p>
 <hr class="docutils" />
-<ul class="simple">
-<li>` <a href="#id93"><span class="problematic" id="id94">**</span></a>Next Chapter**`_</li>
-<li>` <a href="#id95"><span class="problematic" id="id96">**</span></a>Previous Chapter**`_</li>
-<li>` <a href="#id97"><span class="problematic" id="id98">**</span></a>Table of Contents**`_</li>
-<li>` <a href="#id99"><span class="problematic" id="id100">**</span></a>Detailed Contents**`_</li>
-</ul>
-<ol class="upperalpha simple" start="3">
-<li>Copyright 1999 David Huron</li>
-</ol>
 </div>
 </div>
 

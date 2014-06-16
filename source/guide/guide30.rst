@@ -137,25 +137,3 @@ tools is given in the *Humdrum Toolkit Reference Manual.*
 --------
 
 
-
-
--   ` **Next Chapter**`_
--   ` **Previous Chapter**`_
--   ` **Table of Contents**`_
--   ` **Detailed Contents**`_
-
-(C) Copyright 1999 David Huron
-
-.. _Previous Chapter: guide29.html
-.. _Contents: guide.toc.html
-.. _Next Chapter: guide31.html
-.. _record: commands/record.html
-.. _encode: commands/encode.html
-.. _**MIDI: representations/MIDI.rep.html
-.. _Chapter 7.: guide07.html
-.. _**kern: representations/kern.rep.html
-.. _**fret: representations/fret.rep.html
-.. _**solfg: representations/solfg.rep.html
-.. _timebase: commands/timebase.html
-.. _assemble: commands/assemble.html
-.. _Detailed Contents: guide.toc.detailed.html

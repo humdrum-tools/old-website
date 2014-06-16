@@ -395,25 +395,3 @@ organization that would otherwise be difficult or impossible to decipher.
 --------
 
 
-
-
--   ` **Next Chapter**`_
--   ` **Previous Chapter**`_
--   ` **Table of Contents**`_
--   ` **Detailed Contents**`_
-
-(C) Copyright 1999 David Huron
-
-.. _Previous Chapter: guide37.html
-.. _Contents: guide.toc.html
-.. _Next Chapter: guide39.html
-.. _Chapter 33: guide33.html
-.. _scramble: commands/scramble.html
-.. _semits: commands/semits.html
-.. _xdelta: commands/xdelta.html
-.. _rid: commands/rid.html
-.. _patt: commands/patt.html
-.. _reihe: commands/reihe.html
-.. _Chapter 35: guide35.html
-.. _ditto: commands/ditto.html
-.. _Detailed Contents: guide.toc.detailed.html

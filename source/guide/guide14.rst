@@ -501,27 +501,3 @@ Dale Dougherty (listed in the bibliography).
 --------
 
 
-
-
--   ` **Next Chapter**`_
--   ` **Previous Chapter**`_
--   ` **Table of Contents**`_
--   ` **Detailed Contents**`_
-
-(C) Copyright 1999 David Huron
-
-.. _Previous Chapter: guide13.html
-.. _Contents: guide.toc.html
-.. _Next Chapter: guide15.html
-.. _humsed: commands/humsed.html
-.. _**kern: representations/kern.rep.html
-.. _num: commands/num.html
-.. _**pitch: representations/pitch.rep.html
-.. _Chapter 7: guide07.html
-.. _**MIDI: representations/MIDI.rep.html
-.. _**harm: representations/harm.rep.html
-.. _deg: commands/deg.html
-.. _**silbe: representations/silbe.rep.html
-.. _pattern: commands/pattern.html
-.. _Chapter 21: guide21.html
-.. _Detailed Contents: guide.toc.detailed.html

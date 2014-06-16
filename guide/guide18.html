@@ -68,7 +68,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html"><em>The Humdrum User Guide</em></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="guide01.html">Chapter 1: Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using `*`*kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using kern (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide03.html">Chapter 3: Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide04.html">Chapter 4:Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide05.html">Chapter 5: The Humdrum Syntax</a></li>
@@ -287,16 +287,16 @@ example, the following scheme is fashioned after the Benesh dance notation:</p>
 <span class="pre">``*e:``*</span>
 <span class="pre">``!!</span> <span class="pre">First</span> <span class="pre">Couplet</span>
 <span class="pre">``!</span></tt>! Half Coupee
-<tt class="docutils literal"><span class="pre">4.gg</span></tt> | <a href="#id128"><span class="problematic" id="id129">|u|</span></a> | |
+<tt class="docutils literal"><span class="pre">4.gg</span></tt> | <a href="#id113"><span class="problematic" id="id114">|u|</span></a> | |
 <tt class="docutils literal"><span class="pre">.``%|+|</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">|</span>
-<span class="pre">``.</span></tt> <a href="#id130"><span class="problematic" id="id131">|=|v|</span></a> | |
+<span class="pre">``.</span></tt> <a href="#id115"><span class="problematic" id="id116">|=|v|</span></a> | |
 <tt class="docutils literal"><span class="pre">.``(|</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">|</span>
 <span class="pre">``.``(|-|</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">|{</span>
-<span class="pre">``8ff#</span></tt> <a href="#id132"><span class="problematic" id="id133">|_|</span></a> | | <a href="#id134"><span class="problematic" id="id135">|2
+<span class="pre">``8ff#</span></tt> <a href="#id117"><span class="problematic" id="id118">|_|</span></a> | | <a href="#id119"><span class="problematic" id="id120">|2
 ``=1``&#8212;&#8212;&#8212;&#8211;
-``2ee``m|</span></a> | | | <a href="#id136"><span class="problematic" id="id137">|}
+``2ee``m|</span></a> | | | <a href="#id121"><span class="problematic" id="id122">|}
 ``!``! Bound
-``.``_|^|</span></a> | | <a href="#id138"><span class="problematic" id="id139">|{
+``.``_|^|</span></a> | | <a href="#id123"><span class="problematic" id="id124">|{
 ``.``(|+|</span></a> | | |
 <tt class="docutils literal"><span class="pre">4.b</span></tt>-| | | | |
 <tt class="docutils literal"><span class="pre">.``(|+|</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">|}</span>
@@ -305,10 +305,10 @@ example, the following scheme is fashioned after the Benesh dance notation:</p>
 <span class="pre">``=2</span></tt>&#8212;&#8212;&#8212;&#8211;
 <tt class="docutils literal"><span class="pre">!</span></tt>! Bouree
 <tt class="docutils literal"><span class="pre">4g</span></tt> | | | | |
-<tt class="docutils literal"><span class="pre">.</span></tt> <a href="#id140"><span class="problematic" id="id141">|=|</span></a> | | |
-<tt class="docutils literal"><span class="pre">4e</span></tt> <a href="#id142"><span class="problematic" id="id143">|=|</span></a> | | <a href="#id144"><span class="problematic" id="id145">|}
+<tt class="docutils literal"><span class="pre">.</span></tt> <a href="#id125"><span class="problematic" id="id126">|=|</span></a> | | |
+<tt class="docutils literal"><span class="pre">4e</span></tt> <a href="#id127"><span class="problematic" id="id128">|=|</span></a> | | <a href="#id129"><span class="problematic" id="id130">|}
 ``.``_|=|</span></a> | | |
-<tt class="docutils literal"><span class="pre">4g</span></tt> <a href="#id146"><span class="problematic" id="id147">|o|</span></a> | | |
+<tt class="docutils literal"><span class="pre">4g</span></tt> <a href="#id131"><span class="problematic" id="id132">|o|</span></a> | | |
 <tt class="docutils literal"><span class="pre">!</span></tt>! Bouree
 <tt class="docutils literal"><span class="pre">4a``_|+|+|</span> <span class="pre">|</span> <span class="pre">|</span>
 <span class="pre">``=3</span></tt>&#8212;&#8212;&#8212;&#8211;
@@ -633,8 +633,8 @@ Table 18.1.</p>
 &gt; Y`thump&#8217; on top-plate</p>
 <p><em>Summary of ***fret</em> Signifiers*</p>
 <p>A number of pitch-related Humdrum commands accept <tt class="docutils literal"><span class="pre">**fret</span></tt> encoded data as
-inputs, including <a href="#id148"><span class="problematic" id="id149">`**cents**,`_</span></a> <a href="#id150"><span class="problematic" id="id151">`**freq**,`_</span></a> <a href="#id152"><span class="problematic" id="id153">`**kern**,`_</span></a> <a href="#id154"><span class="problematic" id="id155">`**pitch**,`_</span></a>
-<a href="#id156"><span class="problematic" id="id157">`**semits**,`_</span></a> <a href="#id158"><span class="problematic" id="id159">`**solfg**,`_</span></a> and <a href="#id160"><span class="problematic" id="id161">`**tonh**.`_</span></a></p>
+inputs, including <a href="#id133"><span class="problematic" id="id134">`**cents**,`_</span></a> <a href="#id135"><span class="problematic" id="id136">`**freq**,`_</span></a> <a href="#id137"><span class="problematic" id="id138">`**kern**,`_</span></a> <a href="#id139"><span class="problematic" id="id140">`**pitch**,`_</span></a>
+<a href="#id141"><span class="problematic" id="id142">`**semits**,`_</span></a> <a href="#id143"><span class="problematic" id="id144">`**solfg**,`_</span></a> and <a href="#id145"><span class="problematic" id="id146">`**tonh**.`_</span></a></p>
 </div>
 <hr class="docutils" />
 <div class="section" id="reprise">
@@ -647,15 +647,6 @@ in manipulating. As long as the resulting representation conforms to the
 Humdrum syntax, the most important Humdrum tools can still be used to
 manipulate your data.</p>
 <hr class="docutils" />
-<ul class="simple">
-<li>` <a href="#id113"><span class="problematic" id="id114">**</span></a>Next Chapter**`_</li>
-<li>` <a href="#id115"><span class="problematic" id="id116">**</span></a>Previous Chapter**`_</li>
-<li>` <a href="#id117"><span class="problematic" id="id118">**</span></a>Table of Contents**`_</li>
-<li>` <a href="#id119"><span class="problematic" id="id120">**</span></a>Detailed Contents**`_</li>
-</ul>
-<ol class="upperalpha simple" start="3">
-<li>Copyright 1999 David Huron</li>
-</ol>
 </div>
 </div>
 

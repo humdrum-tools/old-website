@@ -68,7 +68,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html"><em>The Humdrum User Guide</em></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="guide01.html">Chapter 1: Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using `*`*kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using kern (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide03.html">Chapter 3: Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide04.html">Chapter 4:Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide05.html">Chapter 5: The Humdrum Syntax</a></li>
@@ -201,7 +201,7 @@
 Humdrum files. In this chapter we discuss the reverse procedures: how to
 assemble and coordinate larger documents from individual segments and parts.
 We will discuss four tools: the UNIX <strong>cat</strong> command, and the Humdrum
-<a href="#id99"><span class="problematic" id="id100">`**assemble**`_</span></a>, <a href="#id101"><span class="problematic" id="id102">`**timebase**`_</span></a> and <a href="#id103"><span class="problematic" id="id104">`**rid**`_</span></a> commands.</p>
+<a href="#id89"><span class="problematic" id="id90">`**assemble**`_</span></a>, <a href="#id91"><span class="problematic" id="id92">`**timebase**`_</span></a> and <a href="#id93"><span class="problematic" id="id94">`**rid**`_</span></a> commands.</p>
 <div class="section" id="the-cat-command">
 <h2>The <em>cat</em> Command<a class="headerlink" href="#the-cat-command" title="Permalink to this headline">¶</a></h2>
 <p>The UNIX <strong>cat</strong> command allows two or more inputs to be concatenated
@@ -260,9 +260,9 @@ output such as the following:</p>
 `` 8F#8A8d8a
 `` *-</em>-<em>-</em>-``</p>
 <p>Notice that each complete measure ends with spine-path terminators and that
-the <a href="#id7"><span class="problematic" id="id8">``</span></a><a href="#id105"><span class="problematic" id="id106">`**kern```_</span></a> exclusive interpretations are repeated. This organization
+the <a href="#id7"><span class="problematic" id="id8">``</span></a><a href="#id95"><span class="problematic" id="id96">`**kern```_</span></a> exclusive interpretations are repeated. This organization
 has a number of repercussions for various Humdrum tools. For example, the
-<a href="#id107"><span class="problematic" id="id108">`**mint**`_</span></a> command calculates melodic intervals between successive notes
+<a href="#id97"><span class="problematic" id="id98">`**mint**`_</span></a> command calculates melodic intervals between successive notes
 within a spine. However, <strong>mint</strong> will not calculate intervals between
 pitches that are separated by a spine-path terminator. In other words, in the
 above output, <strong>mint</strong> will fail to calculate the melodic intervals between
@@ -270,7 +270,7 @@ notes in successive measures.</p>
 </div>
 <div class="section" id="the-rid-command">
 <h2>The <em>rid</em> Command<a class="headerlink" href="#the-rid-command" title="Permalink to this headline">¶</a></h2>
-<p>This problem can be resolved by using the Humdrum <a href="#id109"><span class="problematic" id="id110">`**rid**`_</span></a> command. The
+<p>This problem can be resolved by using the Humdrum <a href="#id99"><span class="problematic" id="id100">`**rid**`_</span></a> command. The
 <strong>rid</strong> command can be used to eliminate various kinds of records. Each
 option for <strong>rid</strong> eliminates a different class of records. Here are the
 record classes with their associated options:</p>
@@ -369,7 +369,7 @@ processing.</p>
 <h2>Assembling Parts Using the <em>assemble</em> Command<a class="headerlink" href="#assembling-parts-using-the-assemble-command" title="Permalink to this headline">¶</a></h2>
 <p>Assembling parts into a full score is slightly more challenging than
 concatenating together musical segments. The principle tool for joining
-spines together is the <a href="#id111"><span class="problematic" id="id112">`**assemble**`_</span></a> command. Consider the following two
+spines together is the <a href="#id101"><span class="problematic" id="id102">`**assemble**`_</span></a> command. Consider the following two
 files:</p>
 <p>`` !! Assemble example
 `` !! File 1
@@ -445,13 +445,13 @@ output with the appropriate spine-path changes:</p>
 `` E
 `` <a href="#id39"><span class="problematic" id="id40">*</span></a>-``</p>
 <p>Note that if all of the input files conform to the Humdrum syntax, then
-<a href="#id113"><span class="problematic" id="id114">`**assemble**`_</span></a> guarantees that the assembled output will also conform to the
+<a href="#id103"><span class="problematic" id="id104">`**assemble**`_</span></a> guarantees that the assembled output will also conform to the
 Humdrum syntax.</p>
 </div>
 <div class="section" id="aligning-durations-using-the-timebase-command">
 <h2>Aligning Durations Using the <em>timebase</em> Command<a class="headerlink" href="#aligning-durations-using-the-timebase-command" title="Permalink to this headline">¶</a></h2>
 <p>Suppose now that we wanted to join two hypothetical files containing
-`` <a href="#id115"><span class="problematic" id="id116">`**kern```_</span></a> data. The first file contains two quarter notes, whereas the
+`` <a href="#id105"><span class="problematic" id="id106">`**kern```_</span></a> data. The first file contains two quarter notes, whereas the
 second file contains four eighth notes:</p>
 <p>`` !! File 1
 `` <a href="#id41"><span class="problematic" id="id42">**</span></a>kern
@@ -468,8 +468,8 @@ second file contains four eighth notes:</p>
 <p>Using <strong>assemble</strong> to paste them together will clearly lead to an
 uncoordinated result. The two quarter notes in file 1 will be incorrectly
 matched with the first two eighth notes in file 2.</p>
-<p>The Humdrum <a href="#id117"><span class="problematic" id="id118">`**timebase**`_</span></a> command can be used to reformat either
-`` <a href="#id119"><span class="problematic" id="id120">`**kern```_</span></a> or <a href="#id49"><span class="problematic" id="id50">``</span></a><a href="#id121"><span class="problematic" id="id122">`**recip```_</span></a> inputs so that each output data record
+<p>The Humdrum <a href="#id107"><span class="problematic" id="id108">`**timebase**`_</span></a> command can be used to reformat either
+`` <a href="#id109"><span class="problematic" id="id110">`**kern```_</span></a> or <a href="#id49"><span class="problematic" id="id50">``</span></a><a href="#id111"><span class="problematic" id="id112">`**recip```_</span></a> inputs so that each output data record
 represents an equivalent slice (elapsed duration) of time. (Barlines are
 ignored by <strong>timebase</strong>.) The <strong>timebase</strong> command achieves this by padding
 an input with null data records. In the above case, we would preprocess file
@@ -531,7 +531,7 @@ unnecessary null data records. The command:</p>
 `` .8g
 `` 4d4f
 `` <em>-</em>-``</p>
-<p>The <a href="#id123"><span class="problematic" id="id124">`**timebase**`_</span></a> command can be applied to multi-spine inputs as well as
+<p>The <a href="#id113"><span class="problematic" id="id114">`**timebase**`_</span></a> command can be applied to multi-spine inputs as well as
 single-spine inputs. Consider, the following input:</p>
 <p>`` <a href="#id65"><span class="problematic" id="id66">**</span></a>kern**kern**kern**kern**commentary
 `` 4g8.r8.cc16ee2nd inversion
@@ -570,7 +570,7 @@ record represents an elapsed duration equivalent to a thirty-second note.</p>
 <h2>Assembling N-tuplets<a class="headerlink" href="#assembling-n-tuplets" title="Permalink to this headline">¶</a></h2>
 <p>Typically, one can simply use the shortest duration present as a guide for a
 suitable time-base value. The shortest duration can be determined using the
-<a href="#id125"><span class="problematic" id="id126">`**census**`_</span></a> -k command described in <a class="reference external" href="guide04.html">Chapter 4.</a> However, tuplets require
+<a href="#id115"><span class="problematic" id="id116">`**census**`_</span></a> -k command described in <a href="#id117"><span class="problematic" id="id118">`Chapter 4.`_</span></a> However, tuplets require
 a little more sophistication. Suppose we wanted to assemble two parts, one
 containing just eighth-notes and the other containing just quarter-note
 triplets. (The quarter-note triplets will be encoded as three notes in the
@@ -612,19 +612,19 @@ guaranteed to work for both files.</p>
 using the wrong time-base value. When parts are miscoordinated, it is
 typically the consequence of one or more notes being discarded by
 <strong>timebase</strong>. Fortunately, such miscoordinations are easily detected by
-applying the <a href="#id127"><span class="problematic" id="id128">`**proof**`_</span></a> command to any assembled <tt class="docutils literal"><span class="pre">**kern</span></tt> output. The
+applying the <a href="#id119"><span class="problematic" id="id120">`**proof**`_</span></a> command to any assembled <tt class="docutils literal"><span class="pre">**kern</span></tt> output. The
 <strong>proof</strong> utility checks <tt class="docutils literal"><span class="pre">**kern</span></tt> representations for a wide variety of
 possible encoding errors or ambiguities:</p>
 <p>`` proof fullscore``</p>
-<p>By way of summary, creating a full score from a set of <a href="#id79"><span class="problematic" id="id80">``</span></a><a href="#id129"><span class="problematic" id="id130">`**kern```_</span></a> parts
+<p>By way of summary, creating a full score from a set of <a href="#id79"><span class="problematic" id="id80">``</span></a><a href="#id121"><span class="problematic" id="id122">`**kern```_</span></a> parts
 involves the following five tasks: (1) Identify a common duration factor for
-all the parts. Use <a href="#id131"><span class="problematic" id="id132">`**census**`_</span></a> to determine the shortest duration; if any
+all the parts. Use <a href="#id123"><span class="problematic" id="id124">`**census**`_</span></a> to determine the shortest duration; if any
 of the parts contains an N-tuplet, then the common duration factor may be
-smaller than the shortest note. (2) Use the <a href="#id133"><span class="problematic" id="id134">`**timebase**`_</span></a> command to expand
+smaller than the shortest note. (2) Use the <a href="#id125"><span class="problematic" id="id126">`**timebase**`_</span></a> command to expand
 each input file separately using the common duration factor. (3) Assemble the
-parts using <a href="#id135"><span class="problematic" id="id136">`**assemble**.`_</span></a> (4) If desired, eliminate unnecessary null data
-records usingi <a href="#id137"><span class="problematic" id="id138">`**rid -d**.`_</span></a> (5) Check the assembled score for rhythmic
-coherence using the <a href="#id139"><span class="problematic" id="id140">`**proof**`_</span></a> command.</p>
+parts using <a href="#id127"><span class="problematic" id="id128">`**assemble**.`_</span></a> (4) If desired, eliminate unnecessary null data
+records usingi <a href="#id129"><span class="problematic" id="id130">`**rid -d**.`_</span></a> (5) Check the assembled score for rhythmic
+coherence using the <a href="#id131"><span class="problematic" id="id132">`**proof**`_</span></a> command.</p>
 </div>
 <div class="section" id="other-uses-for-the-timebase-command">
 <h2>Other Uses for the <em>timebase</em> Command<a class="headerlink" href="#other-uses-for-the-timebase-command" title="Permalink to this headline">¶</a></h2>
@@ -655,13 +655,13 @@ and so simply floats along at the fixed time-base.</p>
 <h2>Additional Uses of <em>assemble</em> and <em>timebase</em><a class="headerlink" href="#additional-uses-of-assemble-and-timebase" title="Permalink to this headline">¶</a></h2>
 <p>Although we normally assemble parts together, sometimes it is useful to
 assemble entire scores together. Suppose we wanted to listen to a theme at
-the same time as one of its variations. We might first use <a href="#id141"><span class="problematic" id="id142">`**yank**`_</span></a> to
+the same time as one of its variations. We might first use <a href="#id133"><span class="problematic" id="id134">`**yank**`_</span></a> to
 extract the appropriate sections. At the same time we might determine a
 common duration factor and expand them using <strong>timebase</strong>.</p>
 <p>`` yank -s Theme -r 1 blacksmith | timebase -t 32 &gt; temp1``
 `` yank -s &#8216;Variation 1&#8217; -r 1 blacksmith | timebase -t 32 &gt; temp2``</p>
-<p>Then we assemble the two sections together, translate to the <a href="#id81"><span class="problematic" id="id82">``</span></a><a href="#id143"><span class="problematic" id="id144">`**MIDI```_</span></a>
-representation and use <a href="#id145"><span class="problematic" id="id146">`**perform**`_</span></a> to listen to both sections at the same
+<p>Then we assemble the two sections together, translate to the <a href="#id81"><span class="problematic" id="id82">``</span></a><a href="#id135"><span class="problematic" id="id136">`**MIDI```_</span></a>
+representation and use <a href="#id137"><span class="problematic" id="id138">`**perform**`_</span></a> to listen to both sections at the same
 time:</p>
 <p>`` assemble temp1 temp2 | midi | perform``</p>
 <p>Similarly, suppose we would like to compare the bass lines for each variation
@@ -676,8 +676,8 @@ etc. ...
 <p>The most common use of <strong>assemble</strong> is not to assemble parts, but to assemble
 different types of concurrent information. Suppose we would like to determine
 whether descending minor seconds are more likely to be <em>fa-mi</em> rather than
-<em>do-ti</em>. We can use the <a href="#id147"><span class="problematic" id="id148">`**mint**`_</span></a> command to characterize melodic
-intervals, and the <a href="#id149"><span class="problematic" id="id150">`**solfa**`_</span></a> command to characterize scale degrees. Assume
+<em>do-ti</em>. We can use the <a href="#id139"><span class="problematic" id="id140">`**mint**`_</span></a> command to characterize melodic
+intervals, and the <a href="#id141"><span class="problematic" id="id142">`**solfa**`_</span></a> command to characterize scale degrees. Assume
 that our input is monophonic:</p>
 <p>`` mint melodies &gt; temp1``
 `` solfa melodies &gt; temp2``</p>
@@ -720,7 +720,7 @@ triple meter work. The <strong>timebase</strong> command can be used to reformat
 so that each measure occupies the same number of data records. For example,
 in a 3/4 meter, an eighth-note time-base will mean that each measure will
 contain six data records, and the fifth data record will correspond to the
-onset of the third beat. Recall from <a href="#id151"><span class="problematic" id="id152">`Chapter 12`_</span></a> that the <strong>yank -m</strong>
+onset of the third beat. Recall from <a href="#id143"><span class="problematic" id="id144">`Chapter 12`_</span></a> that the <strong>yank -m</strong>
 command allows us to extract particular data records following a specified
 marker. In the following command, we have defined the marker as a barline
 (<tt class="docutils literal"><span class="pre">-m</span> <span class="pre">^=</span></tt>) and instructed <strong>yank</strong> to fetch the fifth line following each
@@ -737,8 +737,8 @@ parameter to 1 and 3 respectively.</p>
 <p>In this chapter we have learned how to concatenate musical passages together
 using the <strong>cat</strong> command. We also learned how to eliminate redundant
 exclusive and tandem interpretations from concatenated outputs using the
-<strong>-u</strong> and <strong>-t</strong> options for <a href="#id153"><span class="problematic" id="id154">`**rid**`_</span></a>. In addition, we learned how to
-assemble two or more spines into a single output file using <a href="#id155"><span class="problematic" id="id156">`**assemble**`_</span></a>.
+<strong>-u</strong> and <strong>-t</strong> options for <a href="#id145"><span class="problematic" id="id146">`**rid**`_</span></a>. In addition, we learned how to
+assemble two or more spines into a single output file using <a href="#id147"><span class="problematic" id="id148">`**assemble**`_</span></a>.
 In the case of <tt class="docutils literal"><span class="pre">`**kern```_</span> <span class="pre">and</span> <span class="pre">```**recip```_</span> <span class="pre">representations,</span> <span class="pre">we</span> <span class="pre">learned</span>
 <span class="pre">how</span> <span class="pre">to</span> <span class="pre">use</span> <span class="pre">the</span> <span class="pre">`**timebase**`_</span> <span class="pre">command</span> <span class="pre">to</span> <span class="pre">preprocess</span> <span class="pre">each</span> <span class="pre">constituent</span> <span class="pre">file</span> <span class="pre">so</span>
 <span class="pre">that</span> <span class="pre">all</span> <span class="pre">data</span> <span class="pre">records</span> <span class="pre">represent</span> <span class="pre">equivalent</span> <span class="pre">elapsed</span> <span class="pre">durations.</span> <span class="pre">Having</span>
@@ -748,18 +748,9 @@ In the case of <tt class="docutils literal"><span class="pre">`**kern```_</span>
 <p>Finally, we learned that the <strong>timebase</strong> command can be used for other
 analytic purposes. Specifically, it can be used to reduce a score
 rhythmically so only particular onset points or beats are retained. In
-<a class="reference external" href="guide23.html">Chapter 23</a> we will see additional uses of <strong>timebase</strong> for a variety of
+<a href="#id149"><span class="problematic" id="id150">`Chapter 23`_</span></a> we will see additional uses of <strong>timebase</strong> for a variety of
 types of rhythmic tasks.</p>
 <hr class="docutils" />
-<ul class="simple">
-<li>` <a href="#id89"><span class="problematic" id="id90">**</span></a>Next Chapter**`_</li>
-<li>` <a href="#id91"><span class="problematic" id="id92">**</span></a>Previous Chapter**`_</li>
-<li>` <a href="#id93"><span class="problematic" id="id94">**</span></a>Table of Contents**`_</li>
-<li>` <a href="#id95"><span class="problematic" id="id96">**</span></a>Detailed Contents**`_</li>
-</ul>
-<ol class="upperalpha simple" start="3">
-<li>Copyright 1999 David Huron</li>
-</ol>
 </div>
 </div>
 

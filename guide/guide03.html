@@ -32,7 +32,7 @@
     <link rel="top" title="humdrum-tools 1 documentation" href="../index.html"/>
         <link rel="up" title="The Humdrum User Guide" href="index.html"/>
         <link rel="next" title="Chapter 4:Basic Pitch Translations" href="guide04.html"/>
-        <link rel="prev" title="Chapter 2: Representing Music Using `*`*kern (I)" href="guide02.html"/> 
+        <link rel="prev" title="Chapter 2: Representing Music Using kern (I)" href="guide02.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -68,7 +68,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html"><em>The Humdrum User Guide</em></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="guide01.html">Chapter 1: Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using `*`*kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using kern (I)</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Chapter 3: Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide04.html">Chapter 4:Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide05.html">Chapter 5: The Humdrum Syntax</a></li>
@@ -248,7 +248,7 @@ information by &#8220;piping&#8221; the output to the UNIX <strong>grep</strong>
 match some specified pattern. Patterns may be simple strings of characters,
 or may be more complicated constructions defined using the UNIX <em>regular
 expression</em> syntax. Regular expressions will be described in detail in
-<a class="reference external" href="guide09.html">Chapter 9.</a> The command name &#8220;<cite>grep</cite>&#8221; is an acronym for &#8220;get regular
+<a href="#id21"><span class="problematic" id="id22">`Chapter 9.`_</span></a> The command name &#8220;<cite>grep</cite>&#8221; is an acronym for &#8220;get regular
 expression.&#8221;</p>
 <p>Useful patterns are often literal character strings, such as keywords. For
 example, the following command identifies whether the file <cite>opus28.krn</cite>
@@ -308,13 +308,13 @@ command can be used to count the number of phrases in the file
 matching instances of the specified pattern. If a curly brace were to appear
 in a comment or other non-data record, then our phrase-count would be
 incorrect. More carefully constructed patterns require a better knowledge of
-<em>regular expressions.</em> Regular expressions are discussed in <a class="reference external" href="guide09.html">Chapter 9.</a></p>
+<em>regular expressions.</em> Regular expressions are discussed in <a href="#id23"><span class="problematic" id="id24">`Chapter 9.`_</span></a></p>
 </div>
 <div class="section" id="searching-for-reference-information">
 <h2>Searching for Reference Information<a class="headerlink" href="#searching-for-reference-information" title="Permalink to this headline">¶</a></h2>
-<p>As we saw in <a href="#id21"><span class="problematic" id="id22">`Chapter 2,`_</span></a> Humdrum files typically encode library-type
-information using reference records. For example, the <a href="#id23"><span class="problematic" id="id24">`**composer&#8217;s name**`_</span></a>
-is encoded in a <a href="#id25"><span class="problematic" id="id26">`!!!COM:`record, and the `**title**`_</span></a> is encoded via the
+<p>As we saw in <a href="#id25"><span class="problematic" id="id26">`Chapter 2,`_</span></a> Humdrum files typically encode library-type
+information using reference records. For example, the <a href="#id27"><span class="problematic" id="id28">`**composer&#8217;s name**`_</span></a>
+is encoded in a <a href="#id29"><span class="problematic" id="id30">`!!!COM:`record, and the `**title**`_</span></a> is encoded via the
 <cite>!!!OTL:`record. In conjunction with the **grep** command, these three-
 letter codes provide useful tags to search for pertinent information. For
 example, the following command will identify the composer for the file
@@ -349,7 +349,7 @@ by selecting the <strong>-h</strong> option for <strong>grep</strong>:</p>
 <p><cite>grep -h &#8216;!!!OTL:&#8217; *</cite></p>
 <p>(N.B. Some older versions of <strong>grep</strong> do not support all of the options
 described here. Filename headers can be stripped from the output by using the
-UNIX <strong>sed</strong> command described in <a class="reference external" href="guide14.html">Chapter 14.</a>)</p>
+UNIX <strong>sed</strong> command described in <a href="#id31"><span class="problematic" id="id32">`Chapter 14.`_</span></a>)</p>
 <p>We might place the resulting list of titles in a separate file using the UNIX
 <em>file redirection</em> construction. The output of a command can be placed into a
 file by following the command with a greater-than sign (&gt;) followed by a
@@ -452,7 +452,7 @@ single instance is present in the input).</p>
 <p>Suppose, for example, that we want to know which of the Bach chorales are
 harmonizations of the same tunes &#8211; that is, have the same titles. (Of course
 the same chorale might be known by two or more titles, but let&#8217;s defer this
-problem until <a class="reference external" href="guide25.html">Chapter 25.</a>) The <strong>-d</strong> option will only output the
+problem until <a href="#id33"><span class="problematic" id="id34">`Chapter 25.`_</span></a>) The <strong>-d</strong> option will only output the
 duplicate records:</p>
 <p><cite>grep -h &#8216;!!!OTL:&#8217; * | sort | uniq -d</cite></p>
 <p>The output will identify those titles which appear in two or more files in
@@ -564,15 +564,6 @@ order of successive input lines so they are in alphabetic/numeric order. The
 only the <strong>-r</strong> option &#8211; which causes the output to be sorted in reverse
 order.</p>
 <hr class="docutils" />
-<ul class="simple">
-<li><a href="#id27"><span class="problematic" id="id28">`**Next Chapter**`_</span></a></li>
-<li><a href="#id29"><span class="problematic" id="id30">`**Previous Chapter**`_</span></a></li>
-<li><a href="#id31"><span class="problematic" id="id32">`**Table of Contents**`_</span></a></li>
-<li><a href="#id33"><span class="problematic" id="id34">`**Detailed Contents**`_</span></a></li>
-</ul>
-<ol class="upperalpha simple" start="3">
-<li>Copyright 1999 David Huron</li>
-</ol>
 </div>
 </div>
 
@@ -585,7 +576,7 @@ order.</p>
         <a href="guide04.html" class="btn btn-neutral float-right" title="Chapter 4:Basic Pitch Translations"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="guide02.html" class="btn btn-neutral" title="Chapter 2: Representing Music Using `*`*kern (I)"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="guide02.html" class="btn btn-neutral" title="Chapter 2: Representing Music Using kern (I)"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -451,20 +451,3 @@ in the *Humdrum Reference Manual.*
 --------
 
 
-
-
--   ` **Next Chapter**`_
--   ` **Previous Chapter**`_
--   ` **Table of Contents**`_
--   ` **Detailed Contents**`_
-
-(C) Copyright 1999 David Huron
-
-.. _Previous Chapter: guide05.html
-.. _Contents: guide.toc.html
-.. _Next Chapter: guide07.html
-.. _Chapter 2,: guide02.html
-.. _timebase: commands/timebase.html
-.. _Chapter 13): guide13.html
-.. _**kern: representations/kern.rep.html
-.. _Detailed Contents: guide.toc.detailed.html

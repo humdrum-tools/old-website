@@ -450,22 +450,3 @@ discussed in conjunction with the **find** command.
 
 
 
-
--   ` **Next Chapter**`_
--   ` **Previous Chapter**`_
--   ` **Table of Contents**`_
--   ` **Detailed Contents**`_
-
-(C) Copyright 1999 David Huron
-
-.. _Previous Chapter: guide09.html
-.. _Contents: guide.toc.html
-.. _Next Chapter: guide11.html
-.. _Chapter 3.: guide03.html
-.. _**kern: representations/kern.rep.html
-.. _solfa: commands/solfa.html
-.. _Chapter 4,: guide04.html
-.. _**solfa: representations/solfa.rep.html
-.. _**pitch: representations/pitch.rep.html
-.. _Chapter 33,: guide33.html
-.. _Detailed Contents: guide.toc.detailed.html

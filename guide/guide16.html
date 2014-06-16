@@ -68,7 +68,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html"><em>The Humdrum User Guide</em></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="guide01.html">Chapter 1: Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using `*`*kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using kern (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide03.html">Chapter 3: Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide04.html">Chapter 4:Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide05.html">Chapter 5: The Humdrum Syntax</a></li>
@@ -197,7 +197,7 @@
             
   <div class="section" id="chapter-16-the-shell-ii">
 <h1>Chapter 16: The Shell (II)<a class="headerlink" href="#chapter-16-the-shell-ii" title="Permalink to this headline">¶</a></h1>
-<p>In <a class="reference external" href="guide08.html">Chapter 8</a> we introduced some of the shell special characters. By way of
+<p>In <a href="#id7"><span class="problematic" id="id8">`Chapter 8`_</span></a> we introduced some of the shell special characters. By way of
 review, we learned that the shell interprets the octothorpe (#) as the
 beginning of a comment. By itself, the asterisk (*) is &#8220;expanded&#8221; by the
 shell to the names of all files in the current directory. When linked with
@@ -316,7 +316,7 @@ than the files to be searched.</p>
 </div>
 <div class="section" id="single-quotes-double-quotes">
 <h2>Single Quotes, Double Quotes<a class="headerlink" href="#single-quotes-double-quotes" title="Permalink to this headline">¶</a></h2>
-<p>In <a class="reference external" href="guide08.html">Chapter 8</a> we learned that single quotation marks can be used to escape
+<p>In <a href="#id9"><span class="problematic" id="id10">`Chapter 8`_</span></a> we learned that single quotation marks can be used to escape
 the special meanings of reserved shell characters &#8211; such as * and $. Double
 quotation marks (<tt class="docutils literal"><span class="pre">&quot;</span></tt>) have a similar effect with one important exception.
 The dollars sign continues to retain its special meaning inside double
@@ -349,7 +349,7 @@ measure 39). In the following script, <strong>grep</strong> is used to assign th
 numbers to the shell variables <tt class="docutils literal"><span class="pre">A</span></tt> and <cite>B`</cite>.</p>
 <p><tt class="docutils literal"><span class="pre">A=`grep</span> <span class="pre">-n</span> <span class="pre">^=34</span></tt>
 <tt class="docutils literal"><span class="pre">B=`grep</span> <span class="pre">-n</span> <span class="pre">^=39</span></tt></p>
-<p>Now we can construct an appropriate <a href="#id15"><span class="problematic" id="id16">`**humsed**`_</span></a> command. Recall that each
+<p>Now we can construct an appropriate <a href="#id11"><span class="problematic" id="id12">`**humsed**`_</span></a> command. Recall that each
 substitute (<tt class="docutils literal"><span class="pre">s</span></tt>) command in <strong>humsed</strong> can be preceded by a range
 indication. In the following command, the <tt class="docutils literal"><span class="pre">A</span></tt> and <cite>B`</cite> variables convey
 the appropriate range to each substitution. This means that the substitutions
@@ -366,7 +366,7 @@ to <strong>humsed</strong>. Using singe quotes, however, would have caused <tt c
 defining aliases, and these aliases can prove very convenient.</p>
 <p>Consider, by way of example, the following common pipeline:</p>
 <p><tt class="docutils literal"><span class="pre">sort</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span></tt></p>
-<p>In <a href="#id17"><span class="problematic" id="id18">`Chapter 17`_</span></a> we will see that this is a useful way for generating
+<p>In <a href="#id13"><span class="problematic" id="id14">`Chapter 17`_</span></a> we will see that this is a useful way for generating
 inventories. Typically, this sequence occurs at the end of a pipeline where
 some preliminary processing has taken place, such as:</p>
 <p><tt class="docutils literal"><span class="pre">timebase</span> <span class="pre">-t</span> <span class="pre">8</span> <span class="pre">input</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">|</span> <span class="pre">hint</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLI</span> <span class="pre">\</span>
@@ -428,15 +428,6 @@ quotes. This allows shell variables to be embedded into text strings.</p>
 a convenient short-hand or way of abbreviating a complex pipeline or regular
 expression into a single user-defined keyword.</p>
 <hr class="docutils" />
-<ul class="simple">
-<li>` <a href="#id7"><span class="problematic" id="id8">**</span></a>Next Chapter**`_</li>
-<li>` <a href="#id9"><span class="problematic" id="id10">**</span></a>Previous Chapter**`_</li>
-<li>` <a href="#id11"><span class="problematic" id="id12">**</span></a>Table of Contents**`_</li>
-<li>` <a href="#id13"><span class="problematic" id="id14">**</span></a>Detailed Contents**`_</li>
-</ul>
-<ol class="upperalpha simple" start="3">
-<li>Copyright 1999 David Huron</li>
-</ol>
 </div>
 </div>
 

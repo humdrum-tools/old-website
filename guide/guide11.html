@@ -203,8 +203,8 @@ pitches are concurrent the distance is referred to as a <em>harmonic interval.</
 <p>The simplicity of these definitions is deceptive. In real music, the
 determination of pitch intervals can be surprisingly complicated. In this
 chapter we will discuss Humdrum tools related to melodic pitch intervals &#8211;
-specifically the <a href="#id84"><span class="problematic" id="id85">`**mint**`_</span></a> (melodic interval) and <a href="#id86"><span class="problematic" id="id87">`**xdelta**`_</span></a> commands.
-Discussion of harmonic intervals will be delayed until <a class="reference external" href="guide15.html">Chapter 15.</a></p>
+specifically the <a href="#id75"><span class="problematic" id="id76">`**mint**`_</span></a> (melodic interval) and <a href="#id77"><span class="problematic" id="id78">`**xdelta**`_</span></a> commands.
+Discussion of harmonic intervals will be delayed until <a href="#id79"><span class="problematic" id="id80">`Chapter 15.`_</span></a></p>
 <div class="section" id="types-of-melodic-intervals">
 <h2>Types of Melodic Intervals<a class="headerlink" href="#types-of-melodic-intervals" title="Permalink to this headline">¶</a></h2>
 <p>Example 11.1 provides a contrived illustration of seven different types of
@@ -281,7 +281,7 @@ cents, frequency differences, or even differences in cochlear coordinates.</p>
 </div>
 <div class="section" id="melodic-intervals-using-the-mint-command">
 <h2>Melodic Intervals Using the <em>mint</em> Command<a class="headerlink" href="#melodic-intervals-using-the-mint-command" title="Permalink to this headline">¶</a></h2>
-<p>The Humdrum <a href="#id88"><span class="problematic" id="id89">`**mint**`_</span></a> command calculates melodic intervals for pitch-
+<p>The Humdrum <a href="#id81"><span class="problematic" id="id82">`**mint**`_</span></a> command calculates melodic intervals for pitch-
 related representations such as <tt class="docutils literal"><span class="pre">`**kern```_,</span> <span class="pre">```**pitch```_,</span> <span class="pre">```**solfg```_</span>
 <span class="pre">and</span> <span class="pre">```**Tonh```_.</span> <span class="pre">Output</span> <span class="pre">intervals</span> <span class="pre">are</span> <span class="pre">expressed</span> <span class="pre">using</span> <span class="pre">the</span> <span class="pre">traditional</span>
 <span class="pre">diatonic</span> <span class="pre">terms</span> <span class="pre">where</span> <span class="pre">both</span> <span class="pre">interval</span> <span class="pre">quality</span> <span class="pre">and</span> <span class="pre">interval</span> <span class="pre">size</span> <span class="pre">are</span> <span class="pre">specified.</span>
@@ -318,7 +318,7 @@ voice.</p>
 via the <strong>-t</strong> option for <strong>mint.</strong></p>
 <p>Sometimes it is useful to maintain the initial starting pitches in the
 output. The presence of these &#8220;offset&#8221; pitch values can prove useful in later
-reconstructing the original pitches from the <a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id90"><span class="problematic" id="id91">`**mint```_</span></a> interval data.
+reconstructing the original pitches from the <a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id83"><span class="problematic" id="id84">`**mint```_</span></a> interval data.
 When the <strong>-o</strong> option is invoked, <strong>mint</strong> outputs the initial starting
 pitches (placed in square brackets) from which the subsequent melodic
 intervals have been calculated.</p>
@@ -348,7 +348,7 @@ just prior to the barline.</p>
 <p>Depending on the regular expression given, the <strong>-b</strong> option can used for a
 variety of specialized intervals. For example, suppose that we wanted to
 avoid calculating intervals between the last note of a phrase and the first
-note of the next phrase. In the <a href="#id13"><span class="problematic" id="id14">``</span></a><a href="#id92"><span class="problematic" id="id93">`**kern```_</span></a> representation, the open and
+note of the next phrase. In the <a href="#id13"><span class="problematic" id="id14">``</span></a><a href="#id85"><span class="problematic" id="id86">`**kern```_</span></a> representation, the open and
 closed curly braces are used to indicate the beginnings and ends of phrases.
 We need to tell <strong>mint</strong> to break interval calculations each time an end-of-
 phrase signifier is encountered:</p>
@@ -389,7 +389,7 @@ intervals would be omitted.</p>
 </div>
 <div class="section" id="calculating-distance-intervals-using-the-mint-s-command">
 <h2>Calculating Distance Intervals Using the <em>mint -s</em> Command<a class="headerlink" href="#calculating-distance-intervals-using-the-mint-s-command" title="Permalink to this headline">¶</a></h2>
-<p>Another option provided by <a href="#id94"><span class="problematic" id="id95">`**mint**`_</span></a> is the <strong>-s</strong> or skip option. Like the
+<p>Another option provided by <a href="#id87"><span class="problematic" id="id88">`**mint**`_</span></a> is the <strong>-s</strong> or skip option. Like the
 <strong>-b</strong> option, this option requires a subsequent regular expression. Any
 token matching this expression is transformed to a null data token and is
 ignored when processing. One possible use for this option is to help
@@ -439,10 +439,10 @@ arpeggiated major chord &#8211; from C5 to G4 (down a P4), to E4 (down a m3) to 
 <p>Using duration information is a somewhat limited technique for calculating
 distance intervals. Typically, users will want to define much more refined
 ways of identifying structural tones. More sophisticated methods for
-calculating distance intervals are discussed in <a class="reference external" href="guide35.html">Chapter 35</a> on &#8220;Layers.&#8221;</p>
+calculating distance intervals are discussed in <a href="#id89"><span class="problematic" id="id90">`Chapter 35`_</span></a> on &#8220;Layers.&#8221;</p>
 <p>Cross-voice melodic intervals can be calculated by amalgamating several
-spines into a single spine. In <a class="reference external" href="guide26.html">Chapter 26</a> we will learn more about the
-<a href="#id96"><span class="problematic" id="id97">`**cleave**`_</span></a> command. But here is a typical use:</p>
+spines into a single spine. In <a href="#id91"><span class="problematic" id="id92">`Chapter 26`_</span></a> we will learn more about the
+<a href="#id93"><span class="problematic" id="id94">`**cleave**`_</span></a> command. But here is a typical use:</p>
 <p>`` cleave -d &#8216; &#8216; -i &#8216;<a href="#id29"><span class="problematic" id="id30">**</span></a>kern&#8217; -o &#8216;<a href="#id31"><span class="problematic" id="id32">**</span></a>kern&#8217; example11a``</p>
 <p>With the <tt class="docutils literal"><span class="pre">**kern</span></tt> encoding for Example 11.1 as input, the corresponding
 output would be:</p>
@@ -461,7 +461,7 @@ output would be:</p>
 `` <a href="#id37"><span class="problematic" id="id38">*</span></a>-``</p>
 <p>Note that this output doesn&#8217;t quite conform to the <tt class="docutils literal"><span class="pre">**kern</span></tt> syntax: the
 barlines have been duplicated as double-stops, and the durations aren&#8217;t right
-for multiple-stops. We can clean up the output using <a href="#id98"><span class="problematic" id="id99">`**humsed,**`_</span></a> but the
+for multiple-stops. We can clean up the output using <a href="#id95"><span class="problematic" id="id96">`**humsed,**`_</span></a> but the
 incoherent durations won&#8217;t cause problems if our intention is to calculate
 pitch intervals.</p>
 <p>If we pipe the above output through the <strong>mint</strong> command, the appropriate
@@ -492,7 +492,7 @@ tenth (<tt class="docutils literal"><span class="pre">M10</span></tt>) will be o
 </div>
 <div class="section" id="diatonic-intervals-absolute-intervals-and-contour">
 <h2>Diatonic Intervals, Absolute Intervals and Contour<a class="headerlink" href="#diatonic-intervals-absolute-intervals-and-contour" title="Permalink to this headline">¶</a></h2>
-<p>The <a href="#id100"><span class="problematic" id="id101">`**mint**`_</span></a> command provides three further options of interest. The
+<p>The <a href="#id97"><span class="problematic" id="id98">`**mint**`_</span></a> command provides three further options of interest. The
 <strong>-d</strong> option causes <strong>mint</strong> to output only the diatonic interval size
 without the interval quality information. The <strong>-a</strong> option causes <strong>mint</strong>
 to output absolute pitch intervals without distinguishing ascending intervals
@@ -525,7 +525,7 @@ parts of a score:</p>
 <p>Here we have used the extended regular expression capabilities of <strong>egrep</strong>
 to specify an either/or pattern.</p>
 <p>Suppose we had a directory containing only files encoding melodies using the
-`` <a href="#id102"><span class="problematic" id="id103">`**mint```_</span></a> representation. Does any melody in the current directory
+`` <a href="#id99"><span class="problematic" id="id100">`**mint```_</span></a> representation. Does any melody in the current directory
 contain both an ascending major sixth and a descending major sixth?</p>
 <p>`` grep -l &#8216;+M6&#8217; * | xargs grep &#8216;-M6&#8217;``</p>
 <p>Do the vocal lines of Louis Jourdain contain successive ascending major
@@ -538,7 +538,7 @@ Dietrich?</p>
 <div class="section" id="calculating-melodic-intervals-using-the-xdelta-command">
 <h2>Calculating Melodic Intervals Using the <em>xdelta</em> Command<a class="headerlink" href="#calculating-melodic-intervals-using-the-xdelta-command" title="Permalink to this headline">¶</a></h2>
 <p>Often it is useful to calculate melodic intervals in purely numerical values,
-such as the number semitones or the number of cents. The <a href="#id104"><span class="problematic" id="id105">`**xdelta**`_</span></a>
+such as the number semitones or the number of cents. The <a href="#id101"><span class="problematic" id="id102">`**xdelta**`_</span></a>
 command provides a general tool for calculating numerical differences between
 successive values within individual spines. In order to use <strong>xdelta</strong> to
 calculate semitone differences, we first need to transform our representation
@@ -641,25 +641,16 @@ different types of melodic intervals including <em>voiced melodic intervals</em>
 <em>interrupted melodic intervals</em>, <em>cross-voice melodic intervals</em>, <em>unvoiced
 outer intervals</em>, <em>unvoiced inner intervals</em>, <em>distance intervals</em>, and <em>tied
 note intervals</em>.</p>
-<p>In this chapter we have seen how to use the <a href="#id106"><span class="problematic" id="id107">`**mint**`_</span></a> command to calculate
+<p>In this chapter we have seen how to use the <a href="#id103"><span class="problematic" id="id104">`**mint**`_</span></a> command to calculate
 these various kinds of intervals. Specifically, we have illustrated how to
 calculate voiced intervals, interrupted intervals, unvoiced outer intervals
-and unvoiced inner intervals. In <a class="reference external" href="guide26.html">Chapter 26</a> we will show how to calculate
-cross-voice intervals, and in <a class="reference external" href="guide35.html">Chapter 35</a> (&#8220;Layers&#8221;) we will consider how
+and unvoiced inner intervals. In <a href="#id105"><span class="problematic" id="id106">`Chapter 26`_</span></a> we will show how to calculate
+cross-voice intervals, and in <a href="#id107"><span class="problematic" id="id108">`Chapter 35`_</span></a> (&#8220;Layers&#8221;) we will consider how
 to calculate distance intervals.</p>
-<p>We have also seen how <a href="#id108"><span class="problematic" id="id109">`**xdelta**`_</span></a> can be used to measure purely numerical
+<p>We have also seen how <a href="#id109"><span class="problematic" id="id110">`**xdelta**`_</span></a> can be used to measure purely numerical
 distances between successive values. As we will see, <strong>xdelta</strong> will prove
 useful in many other applications apart from calculating pitch distances.</p>
 <hr class="docutils" />
-<ul class="simple">
-<li>` <a href="#id75"><span class="problematic" id="id76">**</span></a>Next Chapter**`_</li>
-<li>` <a href="#id77"><span class="problematic" id="id78">**</span></a>Previous Chapter**`_</li>
-<li>` <a href="#id79"><span class="problematic" id="id80">**</span></a>Table of Contents**`_</li>
-<li>` <a href="#id81"><span class="problematic" id="id82">**</span></a>Detailed Contents**`_</li>
-</ul>
-<ol class="upperalpha simple" start="3">
-<li>Copyright 1999 David Huron</li>
-</ol>
 </div>
 </div>
 

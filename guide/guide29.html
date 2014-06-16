@@ -68,7 +68,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html"><em>The Humdrum User Guide</em></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="guide01.html">Chapter 1: Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using `*`*kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using kern (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide03.html">Chapter 3: Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide04.html">Chapter 4:Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide05.html">Chapter 5: The Humdrum Syntax</a></li>
@@ -197,8 +197,8 @@
             
   <div class="section" id="chapter-29-differences-and-commonalities">
 <h1>Chapter 29: Differences and Commonalities<a class="headerlink" href="#chapter-29-differences-and-commonalities" title="Permalink to this headline">¶</a></h1>
-<p>In <a class="reference external" href="guide25.html">Chapter 25</a> we introduced the problem of similarity via the Humdrum
-<a href="#id21"><span class="problematic" id="id22">`**simil**`_</span></a> and <a href="#id23"><span class="problematic" id="id24">`**correl**`_</span></a> commands. This chapter revisits the problem of
+<p>In <a href="#id13"><span class="problematic" id="id14">`Chapter 25`_</span></a> we introduced the problem of similarity via the Humdrum
+<a href="#id15"><span class="problematic" id="id16">`**simil**`_</span></a> and <a href="#id17"><span class="problematic" id="id18">`**correl**`_</span></a> commands. This chapter revisits the problem of
 similarity by focussing on differences and commonalities. Specifically, this
 chapter introduces three additional tools, the UNIX <strong>cmp</strong>, <strong>diff</strong> and
 <strong>comm</strong> commands. Although these commands are less sophisticated than the
@@ -217,7 +217,7 @@ golden&#8221;).</p>
 <p>Sometimes files differ in ways that may be uninteresting. For example, we may
 suspect that a single work has been attributed to two different composers.
 The encoded files may differ only in that the <tt class="docutils literal"><span class="pre">!!!COM:</span></tt> reference records
-are different. We can pre-process the files using <a href="#id25"><span class="problematic" id="id26">`**rid**`_</span></a> in order to
+are different. We can pre-process the files using <a href="#id19"><span class="problematic" id="id20">`**rid**`_</span></a> in order to
 determine whether the scores are otherwise identical.</p>
 <p><tt class="docutils literal"><span class="pre">rid</span> <span class="pre">-G</span> <span class="pre">file1</span> <span class="pre">&gt;</span> <span class="pre">temp1</span></tt>
 <tt class="docutils literal"><span class="pre">rid</span> <span class="pre">-G</span> <span class="pre">file2</span> <span class="pre">&gt;</span> <span class="pre">temp2</span></tt>
@@ -282,7 +282,7 @@ same lyrics. Many otherwise similar texts might differ in trivial ways. For
 example, texts may differ in punctuation or in the use of upper- and lower-
 case characters. The <strong>diff</strong> command provides a <strong>-i</strong> option that ignores
 distinctions between upper- and lower-case characters. Punctuation marks can
-be eliminated by adding a suitable <a href="#id27"><span class="problematic" id="id28">`**humsed**`_</span></a> filter.</p>
+be eliminated by adding a suitable <a href="#id21"><span class="problematic" id="id22">`**humsed**`_</span></a> filter.</p>
 <p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**silbe'</span> <span class="pre">file1</span> <span class="pre">|</span> <span class="pre">text</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/[^a-zA-Z</span> <span class="pre">]//g'</span> <span class="pre">\</span>
 <span class="pre">&gt;</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">&gt;</span> <span class="pre">temp1</span>
@@ -504,19 +504,10 @@ also allows us to identify which lines are unique to just one of the files.</p>
 <p>The value of these tools is amplified when the inputs are pre-processed to
 eliminate unwanted or distracting data, and when post-processing is done
 (using <strong>wc</strong>) to estimate the magnitude of the differences or commonalities.</p>
-<p>Together with the <a href="#id29"><span class="problematic" id="id30">`**simil**`_</span></a> and <a href="#id31"><span class="problematic" id="id32">`**correl**`_</span></a> commands discussed in
-<a href="#id33"><span class="problematic" id="id34">`Chapter 25,`_</span></a> these five tools provide a variety of means for characterizing
+<p>Together with the <a href="#id23"><span class="problematic" id="id24">`**simil**`_</span></a> and <a href="#id25"><span class="problematic" id="id26">`**correl**`_</span></a> commands discussed in
+<a href="#id27"><span class="problematic" id="id28">`Chapter 25,`_</span></a> these five tools provide a variety of means for characterizing
 differences, commonalities, and similarities.</p>
 <hr class="docutils" />
-<ul class="simple">
-<li>` <a href="#id13"><span class="problematic" id="id14">**</span></a>Next Chapter**`_</li>
-<li>` <a href="#id15"><span class="problematic" id="id16">**</span></a>Previous Chapter**`_</li>
-<li>` <a href="#id17"><span class="problematic" id="id18">**</span></a>Table of Contents**`_</li>
-<li>` <a href="#id19"><span class="problematic" id="id20">**</span></a>Detailed Contents**`_</li>
-</ul>
-<ol class="upperalpha simple" start="3">
-<li>Copyright 1999 David Huron</li>
-</ol>
 </div>
 </div>
 

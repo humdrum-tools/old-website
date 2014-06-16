@@ -314,18 +314,3 @@ expression into a single user-defined keyword.
 --------
 
 
-
-
--   ` **Next Chapter**`_
--   ` **Previous Chapter**`_
--   ` **Table of Contents**`_
--   ` **Detailed Contents**`_
-
-(C) Copyright 1999 David Huron
-
-.. _Previous Chapter: guide15.html
-.. _Contents: guide.toc.html
-.. _Next Chapter: guide17.html
-.. _Chapter 8: guide08.html
-.. _humsed: commands/humsed.html
-.. _Detailed Contents: guide.toc.detailed.html

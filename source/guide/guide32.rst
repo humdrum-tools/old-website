@@ -358,19 +358,3 @@ specialized filters.
 
 --------
 
-
-
-
--   ` **Next Chapter**`_
--   ` **Previous Chapter**`_
--   ` **Table of Contents**`_
--   ` **Detailed Contents**`_
-
-(C) Copyright 1999 David Huron
-
-.. _Previous Chapter: guide31.html
-.. _Contents: guide.toc.html
-.. _Next Chapter: guide33.html
-.. _**semits: representations/semits.rep.html
-.. _**solfa: representations/solfa.rep.html
-.. _Detailed Contents: guide.toc.detailed.html

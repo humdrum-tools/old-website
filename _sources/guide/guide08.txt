@@ -367,20 +367,3 @@ arguments*, *input files* and *output redirection*.
 --------
 
 
-
-
--   ` **Next Chapter**`_
--   ` **Previous Chapter**`_
--   ` **Table of Contents**`_
--   ` **Detailed Contents**`_
-
-(C) Copyright 1999 David Huron
-
-.. _Previous Chapter: guide07.html
-.. _Contents: guide.toc.html
-.. _Next Chapter: guide09.html
-.. _**kern: representations/kern.rep.html
-.. _.: commands/pitch.html
-.. _recode: commands/recode.html
-.. _,: commands/trans.html
-.. _Detailed Contents: guide.toc.detailed.html

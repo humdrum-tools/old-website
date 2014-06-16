@@ -569,25 +569,3 @@ are especially useful when producing electronic editions.
 
 --------
 
-
-
-
--   ` **Next Chapter**`_
--   ` **Previous Chapter**`_
--   ` **Table of Contents**`_
--   ` **Detailed Contents**`_
-
-(C) Copyright 1999 David Huron
-
-.. _Previous Chapter: guide19.html
-.. _Contents: guide.toc.html
-.. _Next Chapter: guide21.html
-.. _yank: commands/yank.html
-.. _thru: commands/thru.html
-.. _strophe: commands/strophe.html
-.. _Chapter 12.: guide12.html
-.. _**silbe: representations/silbe.rep.html
-.. _Chapter 27.: guide27.html
-.. _**kern: representations/kern.rep.html
-.. _Chapter 37: guide37.html
-.. _Detailed Contents: guide.toc.detailed.html

@@ -31,7 +31,7 @@
   
     <link rel="top" title="humdrum-tools 1 documentation" href="../index.html"/>
         <link rel="up" title="The Humdrum User Guide" href="index.html"/>
-        <link rel="next" title="Chapter 2: Representing Music Using `*`*kern (I)" href="guide02.html"/>
+        <link rel="next" title="Chapter 2: Representing Music Using kern (I)" href="guide02.html"/>
         <link rel="prev" title="The Humdrum User Guide" href="index.html"/> 
 
   
@@ -68,7 +68,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html"><em>The Humdrum User Guide</em></a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="">Chapter 1: Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using `*`*kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02.html">Chapter 2: Representing Music Using kern (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide03.html">Chapter 3: Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide04.html">Chapter 4:Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide05.html">Chapter 5: The Humdrum Syntax</a></li>
@@ -312,7 +312,7 @@ you&#8217;re stuck.</li>
 </ul>
 <p>If the above functions sound vague, that&#8217;s because the corresponding Humdrum
 tools are similarly broad in their function. For example, the Humdrum
-<a href="#id7"><span class="problematic" id="id8">`**patt**`_</span></a> tool can be used to locate Landini cadences, label statements of
+<a href="#id1"><span class="problematic" id="id2">`**patt**`_</span></a> tool can be used to locate Landini cadences, label statements of
 12-tone rows, or search for piano fingering patterns in Liszt. All three
 tasks involve searching for a sequential pattern that might have concurrent
 features as well.</p>
@@ -327,18 +327,18 @@ will see.</p>
 <p>Although computers are typically not good at interpreting data, interpretive
 software will become increasingly important as computational musicology
 continues to develop. Humdrum provides a handful of tools that <em>interpret</em>
-data in various ways. For example, the <a href="#id9"><span class="problematic" id="id10">`**key**`_</span></a> command implements the
+data in various ways. For example, the <a href="#id3"><span class="problematic" id="id4">`**key**`_</span></a> command implements the
 Krumhansl and Kessler method for estimating the key of a music passage. The
-<a href="#id11"><span class="problematic" id="id12">`**melac**`_</span></a> command implements Joseph Thomassen&#8217;s model of melodic accent.
+<a href="#id5"><span class="problematic" id="id6">`**melac**`_</span></a> command implements Joseph Thomassen&#8217;s model of melodic accent.
 Other interpretive tools characterize syncopation or implement Johnson-
 Laird&#8217;s model of rhythmic prototypes.</p>
 <p>The names of some of the Humdrum tools will be readily recognizable by
-musicians. Humdrum tools such as <a href="#id13"><span class="problematic" id="id14">`**key,**`_</span></a> <a href="#id15"><span class="problematic" id="id16">`**pitch,**`_</span></a> <a href="#id17"><span class="problematic" id="id18">`**record,**`_</span></a>
-<a href="#id19"><span class="problematic" id="id20">`**tacet,**`_</span></a> <a href="#id21"><span class="problematic" id="id22">`**trans**`_</span></a> and <a href="#id23"><span class="problematic" id="id24">`**reihe**`_</span></a> may evoke fairly accurate ideas
+musicians. Humdrum tools such as <a href="#id7"><span class="problematic" id="id8">`**key,**`_</span></a> <a href="#id9"><span class="problematic" id="id10">`**pitch,**`_</span></a> <a href="#id11"><span class="problematic" id="id12">`**record,**`_</span></a>
+<a href="#id13"><span class="problematic" id="id14">`**tacet,**`_</span></a> <a href="#id15"><span class="problematic" id="id16">`**trans**`_</span></a> and <a href="#id17"><span class="problematic" id="id18">`**reihe**`_</span></a> may evoke fairly accurate ideas
 about what they do. Ironically, the most recognizable tools are typically the
 least useful tools in the toolkit &#8211; because they are so specialized. The
-most powerful Humdrum tools have names such as <a href="#id25"><span class="problematic" id="id26">`**cleave,**`_</span></a> <a href="#id27"><span class="problematic" id="id28">`**humsed,**`_</span></a>
-<a href="#id29"><span class="problematic" id="id30">`**simil,**`_</span></a> <a href="#id31"><span class="problematic" id="id32">`**recode,**`_</span></a> <a href="#id33"><span class="problematic" id="id34">`**context,**`_</span></a> <a href="#id35"><span class="problematic" id="id36">`**patt**`_</span></a> and <a href="#id37"><span class="problematic" id="id38">`**yank.**`_</span></a></p>
+most powerful Humdrum tools have names such as <a href="#id19"><span class="problematic" id="id20">`**cleave,**`_</span></a> <a href="#id21"><span class="problematic" id="id22">`**humsed,**`_</span></a>
+<a href="#id23"><span class="problematic" id="id24">`**simil,**`_</span></a> <a href="#id25"><span class="problematic" id="id26">`**recode,**`_</span></a> <a href="#id27"><span class="problematic" id="id28">`**context,**`_</span></a> <a href="#id29"><span class="problematic" id="id30">`**patt**`_</span></a> and <a href="#id31"><span class="problematic" id="id32">`**yank.**`_</span></a></p>
 <p>By itself, each individual tool in the Humdrum Toolkit is quite modest in its
 effect. However, the tools are not intended to be self-sufficient. They are
 designed to work in conjunction with each other, and with existing standard
@@ -427,7 +427,7 @@ comments might pertain to the whole table, to a given row or column, to a
 given data cell, or to a particular item of information within a cell (such
 as a single letter or digit). Since the <em>columns</em> in Humdrum data can roam
 about the table in a semi-flexible way, they are referred to as
-<a href="#id39"><span class="problematic" id="id40">`**spines.**`_</span></a> We&#8217;ll see how these devices are used in later chapters.</p>
+<a href="#id33"><span class="problematic" id="id34">`**spines.**`_</span></a> We&#8217;ll see how these devices are used in later chapters.</p>
 <p>The most common Humdrum files encode musical notes in the various cells of
 the table; the most common use of a spine is to represent a single musical
 part or instrument.</p>
@@ -459,7 +459,7 @@ everything at this point.</p>
 <div class="section" id="some-sample-commands">
 <h2>Some Sample Commands<a class="headerlink" href="#some-sample-commands" title="Permalink to this headline">¶</a></h2>
 <p>One group of tools is used to extract or select sections of data. Vertical
-spines of data can be extracted from a Humdrum file using the <a href="#id41"><span class="problematic" id="id42">`**extract**`_</span></a>
+spines of data can be extracted from a Humdrum file using the <a href="#id35"><span class="problematic" id="id36">`**extract**`_</span></a>
 command. For example, if a file encodes four musical parts, then the
 <strong>extract</strong> command might be used to isolate one or more given parts. The
 command</p>
@@ -477,7 +477,7 @@ accordingly. The following command extracts all of the woodwind parts:</p>
 <p>Or if the text is available in more than one language, a specific language
 may be isolated:</p>
 <p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*LDeutsch'</span> <span class="pre">filename</span></tt></p>
-<p>Segments or passages of music can be extracted using the <a href="#id43"><span class="problematic" id="id44">`**yank**`_</span></a> command.
+<p>Segments or passages of music can be extracted using the <a href="#id37"><span class="problematic" id="id38">`**yank**`_</span></a> command.
 Segments can be defined by sections, phrases, measures, or other any user-
 specified marker. For example, the following command extracts the section
 labelled &#8220;Trio&#8221; from a minuet &amp; trio:</p>
@@ -499,7 +499,7 @@ MIDI) the first and last measures from a section marked &#8220;Coda&#8221; at ha
 notated tempo from a file named <tt class="docutils literal"><span class="pre">Cui</span></tt>:</p>
 <p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-s</span> <span class="pre">'*&gt;Coda'</span> <span class="pre">Cui</span> <span class="pre">|</span> <span class="pre">yank</span> <span class="pre">-o</span> <span class="pre">^=</span> <span class="pre">-r</span> <span class="pre">1,$</span> <span class="pre">|</span> <span class="pre">midi</span> <span class="pre">|</span> <span class="pre">perform</span> <span class="pre">-t</span> <span class="pre">.5</span></tt></p>
 <p>Some tools translate from one representation to another. For example, the
-<a href="#id45"><span class="problematic" id="id46">`**mint**`_</span></a> command generates melodic interval information. The following
+<a href="#id39"><span class="problematic" id="id40">`**mint**`_</span></a> command generates melodic interval information. The following
 command locates all tritones &#8211; including compound (octave) equivalents:</p>
 <p><tt class="docutils literal"><span class="pre">mint</span> <span class="pre">-c</span> <span class="pre">filename</span> <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">-n</span> <span class="pre">'((d5)|(A4))'</span></tt></p>
 <p>Incidentally, Humdrum data can be processed by many common commands that are
@@ -540,14 +540,6 @@ few lines of Humdrum can also be used to write programs of some complexity.
 Users can write their own programs using the Humdrum tools, or they can add
 new tools that augment the functioning of Humdrum.</p>
 <hr class="docutils" />
-<ul class="simple">
-<li>` <a href="#id1"><span class="problematic" id="id2">**</span></a>Next Chapter**`_</li>
-<li>` <a href="#id3"><span class="problematic" id="id4">**</span></a>Table of Contents**`_</li>
-<li>` <a href="#id5"><span class="problematic" id="id6">**</span></a>Detailed Contents**`_</li>
-</ul>
-<ol class="upperalpha simple" start="3">
-<li>Copyright 1999 David Huron</li>
-</ol>
 </div>
 </div>
 
@@ -557,7 +549,7 @@ new tools that augment the functioning of Humdrum.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="guide02.html" class="btn btn-neutral float-right" title="Chapter 2: Representing Music Using `*`*kern (I)"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="guide02.html" class="btn btn-neutral float-right" title="Chapter 2: Representing Music Using kern (I)"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="The Humdrum User Guide"><span class="fa fa-arrow-circle-left"></span> Previous</a>

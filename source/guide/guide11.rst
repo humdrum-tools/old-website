@@ -595,28 +595,3 @@ useful in many other applications apart from calculating pitch distances.
 
 
 
--   ` **Next Chapter**`_
--   ` **Previous Chapter**`_
--   ` **Table of Contents**`_
--   ` **Detailed Contents**`_
-
-(C) Copyright 1999 David Huron
-
-.. _Previous Chapter: guide10.html
-.. _Contents: guide.toc.html
-.. _Next Chapter: guide12.html
-.. _mint: commands/mint.html
-.. _xdelta: commands/xdelta.html
-.. _Chapter 15.: guide15.html
-.. _**kern: representations/kern.rep.html
-.. _**pitch: representations/pitch.rep.html
-.. _**solfg: representations/solfg.rep.html
-.. _**Tonh: representations/Tonh.rep.html
-.. _**mint: representations/mint.rep.html
-.. _Chapter 35: guide35.html
-.. _Chapter 26: guide26.html
-.. _cleave: commands/cleave.html
-.. _humsed,: commands/humsed.html
-.. _**semits: representations/semits.rep.html
-.. _Chapter 4: guide04.html
-.. _Detailed Contents: guide.toc.detailed.html
