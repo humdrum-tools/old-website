@@ -19,7 +19,7 @@ Consider the opening motive from J.S. Bach's *Art of Fugue* shown in Example
 .. image:: examples/ex2-1.svg
 
 
-.. literalinclude:: ex2-1.krn 
+.. literalinclude:: examples/ex2-1.krn 
    :language: kern
 
 In general, ``**kern    is intended to represent the underlying *functional*
