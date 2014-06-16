@@ -4,15 +4,15 @@ Chapter 2: Representing Music Using `*`*kern (I)
 
 --------
 
-The ``**kern    representation can be used to represent basic or core
+The **kern    representation can be used to represent basic or core
 information for common Western music. The ``**kern    scheme can be used to
 encode pitch and duration, plus other common score-related information. In
 this chapter, we will introduce ``**kern    through a series of tutorial
-examples. A more comprehensive description of ``**kern    will be given in
+examples. A more comprehensive description of **kern    will be given in
 `Chapter 6.`_ Our intention here is to provide a quick introduction.
 
 Consider the opening motive from J.S. Bach's *Art of Fugue* shown in Example
-2.1. A corresponding ``**kern    representation is given below the notation.
+2.1. A corresponding **kern    representation is given below the notation.
 
 **Example 2.1.** J.S. Bach *Die Kunst der Fuge*
 
