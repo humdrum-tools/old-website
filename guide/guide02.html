@@ -227,25 +227,25 @@ examples. A more comprehensive description of <a href="#id19"><span class="probl
 <span class="-KernExclusive">*-</span>
 </pre></div>
 </div>
-<p>In general, <a href="#id23"><span class="problematic" id="id24">``</span></a><a href="#id25"><span class="problematic" id="id26">**</span></a>kern    is intended to represent the underlying <em>functional</em>
+<p>In general, <tt class="docutils literal"><span class="pre">kern</span></tt> is intended to represent the underlying <em>functional</em>
 information conveyed by a musical score rather than the visual or
-<em>orthographic</em> information found in a given printed rendition. The <a href="#id27"><span class="problematic" id="id28">``</span></a><a href="#id29"><span class="problematic" id="id30">**</span></a>kern
+<em>orthographic</em> information found in a given printed rendition. The <tt class="docutils literal"><span class="pre">kern</span></tt>
 representation is designed to facilitate analytic applications rather than
 music printing or sound generation. Nevertheless, both visual output and
-sound output can be generated from the <a href="#id31"><span class="problematic" id="id32">``</span></a><a href="#id33"><span class="problematic" id="id34">**</span></a>kern    representation.</p>
+sound output can be generated from the <tt class="docutils literal"><span class="pre">kern</span></tt> representation.</p>
 <p>Notice that whereas the notation is laid out horizontally across the page,
 the Humdrum representation procedes vertically down the page. The
-representation begins with the keyword <tt class="docutils literal"><span class="pre">**kern</span>&nbsp;&nbsp;&nbsp; <span class="pre">which</span> <span class="pre">indicates</span> <span class="pre">that</span> <span class="pre">the</span>
-<span class="pre">ensuing</span> <span class="pre">encoded</span> <span class="pre">material</span> <span class="pre">conforms</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">kern</span> <span class="pre">representation.</span> <span class="pre">The</span> <span class="pre">encoded</span>
-<span class="pre">passage</span> <span class="pre">ends</span> <span class="pre">with</span> <span class="pre">a</span> <span class="pre">special</span> <span class="pre">`*terminator*`_</span> <span class="pre">token</span> <span class="pre">(``*-</span></tt>).</p>
+representation begins with the keyword <tt class="docutils literal"><span class="pre">kern</span></tt> which indicates that the
+ensuing encoded material conforms to the kern representation. The encoded
+passage ends with a special <a href="#id300"><span class="problematic" id="id301">`*terminator*`_</span></a> token (<tt class="docutils literal"><span class="pre">*-</span></tt>).</p>
 <p>The clef is identified as a G-clef positioned on the second line of the staff
 (i.e., a treble clef). The key signature is encoded as a single flat, B-flat:
 the minus sign here indicates a flat. The meter signature (2/2) is encoded
 next.</p>
 <p>Lines that begin with an equals-sign indicate <em>logical</em> barlines. Musical
 works may begin with either a complete measure or a partial measure. In the
-<tt class="docutils literal"><span class="pre">**kern</span>&nbsp;&nbsp;&nbsp; <span class="pre">representation,</span> <span class="pre">the</span> <span class="pre">beginning</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">first</span> <span class="pre">measure</span> <span class="pre">is</span> <span class="pre">explicitly</span>
-<span class="pre">indicated.</span> <span class="pre">In</span> <span class="pre">Example</span> <span class="pre">2.1,</span> <span class="pre">the</span> <span class="pre">encoding</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">first</span> <span class="pre">barline</span> <span class="pre">(``=-</span></tt>) is a
+<tt class="docutils literal"><span class="pre">kern</span></tt> representation, the beginning of the first measure is explicitly
+indicated. In Example 2.1, the encoding for the first barline (<tt class="docutils literal"><span class="pre">=-</span></tt>) is a
 functional encoding that doesn&#8217;t correspond to anything in the printed score.
 The minus sign following the equals-sign indicates that the barline is
 &#8220;invisible.&#8221; The presence of this logical barline allows various Humdrum
@@ -257,14 +257,14 @@ note is a special case and is represented by the number zero.</p>
 <p>Stem directions are encoded using the slash (/) for up-stems and the back-
 slash () for down-stems.</p>
 <p>Pitches are represented through a scheme of upper- and lower-case letters.
-Middle C (C4) is represented using the single lower-case letter &#8220;<a href="#id35"><span class="problematic" id="id36">``</span></a>c   &#8221;.
+Middle C (C4) is represented using the single lower-case letter &#8220;<a href="#id23"><span class="problematic" id="id24">``</span></a>c   &#8221;.
 Successive octaves are designated by letter repetition, thus C5 is
-represented by &#8220;<a href="#id37"><span class="problematic" id="id38">``</span></a>cc   &#8221;, C6 by &#8220;<a href="#id39"><span class="problematic" id="id40">``</span></a>ccc   &#8221; and so on. The higher the octave,
+represented by &#8220;<a href="#id25"><span class="problematic" id="id26">``</span></a>cc   &#8221;, C6 by &#8220;<a href="#id27"><span class="problematic" id="id28">``</span></a>ccc   &#8221; and so on. The higher the octave,
 the more repeated letters.</p>
-<p>For pitches below C4, upper-case letters are used: &#8220;<a href="#id41"><span class="problematic" id="id42">``</span></a>C   &#8221; designates C3,
-&#8220;<a href="#id43"><span class="problematic" id="id44">``</span></a>CC   &#8221; designates C2, and so on. Changes of octave occur between B and C.
-Thus the B below middle C is represented as &#8220;<a href="#id45"><span class="problematic" id="id46">``</span></a>B   &#8221;; the B below &#8220;<a href="#id47"><span class="problematic" id="id48">``</span></a>CC   &#8221; is
-represented as &#8220;<a href="#id49"><span class="problematic" id="id50">``</span></a>BBB   &#8221;, and so on. The lower the octave, the greater the
+<p>For pitches below C4, upper-case letters are used: &#8220;<a href="#id29"><span class="problematic" id="id30">``</span></a>C   &#8221; designates C3,
+&#8220;<a href="#id31"><span class="problematic" id="id32">``</span></a>CC   &#8221; designates C2, and so on. Changes of octave occur between B and C.
+Thus the B below middle C is represented as &#8220;<a href="#id33"><span class="problematic" id="id34">``</span></a>B   &#8221;; the B below &#8220;<a href="#id35"><span class="problematic" id="id36">``</span></a>CC   &#8221; is
+represented as &#8220;<a href="#id37"><span class="problematic" id="id38">``</span></a>BBB   &#8221;, and so on. The lower the octave, the greater the
 number of repeated letters.</p>
 <p>Accidentals are encoded using the octothorpe (<tt class="docutils literal"><span class="pre">#</span></tt>) for sharps, the minus
 sign (<tt class="docutils literal"><span class="pre">-</span></tt>) for flats, and the lower-case letter &#8220;<tt class="docutils literal"><span class="pre">n</span>&nbsp;&nbsp; <span class="pre">&quot;</span> <span class="pre">for</span> <span class="pre">naturals.</span>
@@ -275,8 +275,8 @@ quadruple accidentals are similarly encoded by repetition. Sharps, flats, and
 naturals are mutually exclusive in <tt class="docutils literal"><span class="pre">**kern</span>&nbsp;&nbsp; <span class="pre">,</span> <span class="pre">so</span> <span class="pre">tokens</span> <span class="pre">such</span> <span class="pre">as</span> <span class="pre">&quot;``cc#n</span>&nbsp;&nbsp; <span class="pre">&quot;</span>
 <span class="pre">and</span> <span class="pre">&quot;``GG-#</span></tt>&#8221; are illegal.</p>
 <p>In Example 2.2, two musical parts are encoded. In the corresponding
-<a href="#id51"><span class="problematic" id="id52">``</span></a><a href="#id53"><span class="problematic" id="id54">**</span></a>kern    encoding, each musical part or voice has been assigned to a
-different musical staff &#8211; labelled <a href="#id55"><span class="problematic" id="id56">``</span></a><a href="#id57"><span class="problematic" id="id58">*</span></a>staff1    and <a href="#id59"><span class="problematic" id="id60">``</span></a><a href="#id61"><span class="problematic" id="id62">*</span></a>staff2   . Notice that
+<a href="#id39"><span class="problematic" id="id40">``</span></a><a href="#id41"><span class="problematic" id="id42">**</span></a>kern    encoding, each musical part or voice has been assigned to a
+different musical staff &#8211; labelled <a href="#id43"><span class="problematic" id="id44">``</span></a><a href="#id45"><span class="problematic" id="id46">*</span></a>staff1    and <a href="#id47"><span class="problematic" id="id48">``</span></a><a href="#id49"><span class="problematic" id="id50">*</span></a>staff2   . Notice that
 the upper part has been encoded in the right-most column. The layout is
 exactly as though the musical score were turned sideways.</p>
 <p><strong>Example 2.2.</strong> J.S. Bach, <em>Praeambulum</em> BWV 390.</p>
@@ -322,100 +322,100 @@ labelled <tt class="docutils literal"><span class="pre">**kern</span>&nbsp;&nbsp
 a single tab. Barline information is also encoded in each column. Notice that
 measure numbers have been added following the barline indicator (=). Although
 measure numbers may not be present in the printed score, it is normal to
-include them in <a href="#id63"><span class="problematic" id="id64">``</span></a><a href="#id65"><span class="problematic" id="id66">**</span></a>kern    encodings.</p>
+include them in <a href="#id51"><span class="problematic" id="id52">``</span></a><a href="#id53"><span class="problematic" id="id54">**</span></a>kern    encodings.</p>
 <p>A notable feature when representing multi-part music is the presence of place
-holders called <a href="#id330"><span class="problematic" id="id331">`*null tokens*.`_</span></a> A null token is represented by a single
+holders called <a href="#id302"><span class="problematic" id="id303">`*null tokens*.`_</span></a> A null token is represented by a single
 isolated period character (.). Not all musical parts will have a new note
 with each successive sonority. A null token maintains the grid structure for
 a sustained pitch while another part is moving.</p>
-<p>Rests are encoded by the lower-case letter <a href="#id67"><span class="problematic" id="id68">``</span></a><a href="#id69"><span class="problematic" id="id70">`</span></a>r   &#8216;. Notice that the first
+<p>Rests are encoded by the lower-case letter <a href="#id55"><span class="problematic" id="id56">``</span></a><a href="#id57"><span class="problematic" id="id58">`</span></a>r   &#8216;. Notice that the first
 rest in the lower part has not been encoded as a whole rest. Instead, it has
 been rendered as a dotted half rest. This is a good illustration of how
-<a href="#id71"><span class="problematic" id="id72">``</span></a><a href="#id73"><span class="problematic" id="id74">**</span></a>kern    is intended to be a <em>functional</em> rather than <em>orthographic</em>
+<a href="#id59"><span class="problematic" id="id60">``</span></a><a href="#id61"><span class="problematic" id="id62">**</span></a>kern    is intended to be a <em>functional</em> rather than <em>orthographic</em>
 (visual) representation. Nevertheless, users can explicitly indicate that the
 rest is visually rendered as a whole rest by adding a second lower-case
-letter <a href="#id75"><span class="problematic" id="id76">``</span></a>r   .</p>
+letter <a href="#id63"><span class="problematic" id="id64">``</span></a>r   .</p>
 <p>Another important difference between functional and orthographic
-representations is evident in the treatment of accidentals. In the <a href="#id77"><span class="problematic" id="id78">``</span></a><a href="#id79"><span class="problematic" id="id80">**</span></a>kern
+representations is evident in the treatment of accidentals. In the <a href="#id65"><span class="problematic" id="id66">``</span></a><a href="#id67"><span class="problematic" id="id68">**</span></a>kern
 representation, all pitches are encoded without regard for what is going on
-around them. For example, in <a href="#id81"><span class="problematic" id="id82">``</span></a><a href="#id83"><span class="problematic" id="id84">**</span></a>kern   , pitches are encoded with the
+around them. For example, in <a href="#id69"><span class="problematic" id="id70">``</span></a><a href="#id71"><span class="problematic" id="id72">**</span></a>kern   , pitches are encoded with the
 appropriate accidental, even if the accidental is specified in a key-
 signature or is present earlier in the same measure. Hence the explicit
 encoding of all occurrences of B-flats in Example 2.2.</p>
-<p>All pitches are encoded as absolute pitches. In <a href="#id85"><span class="problematic" id="id86">``</span></a><a href="#id87"><span class="problematic" id="id88">**</span></a>kern   , even transposing
+<p>All pitches are encoded as absolute pitches. In <a href="#id73"><span class="problematic" id="id74">``</span></a><a href="#id75"><span class="problematic" id="id76">**</span></a>kern   , even transposing
 instruments are always represented at (sounding) concert pitch. A special
 <em>transposition interpretation</em> is provided to indicate the nature of any
 transposing instrument &#8211; but the encoded pitches &#8211; selves appear only at
 concert pitch.</p>
-<p>Finally, pitches in <a href="#id89"><span class="problematic" id="id90">``</span></a><a href="#id91"><span class="problematic" id="id92">**</span></a>kern    are encoded as &#8220;nominally&#8221; equally-tempered
+<p>Finally, pitches in <a href="#id77"><span class="problematic" id="id78">``</span></a><a href="#id79"><span class="problematic" id="id80">**</span></a>kern    are encoded as &#8220;nominally&#8221; equally-tempered
 values. A special <em>temperament interpretation</em> is provided to indicate if the
 tuning system is other than equal temperament.</p>
 <p>Two other aspects of Example 2.2 are noteworthy. In measure 3 an inverted
 mordent appears on the first note in the bass part. Mordents are encoded via
-the letter <a href="#id93"><span class="problematic" id="id94">``</span></a><a href="#id95"><span class="problematic" id="id96">`</span></a>M   &#8216; &#8211; upper-case <a href="#id97"><span class="problematic" id="id98">``</span></a><a href="#id99"><span class="problematic" id="id100">`</span></a>M   &#8216; for whole-tone mordents and lower-
-case <a href="#id101"><span class="problematic" id="id102">``</span></a><a href="#id103"><span class="problematic" id="id104">`</span></a>m   &#8216; for semitone mordents. Inverted mordents are similarly encoded
-using the letter <a href="#id105"><span class="problematic" id="id106">``</span></a><a href="#id107"><span class="problematic" id="id108">`</span></a>W   &#8216;. In Example 2.2, it is not clear whether the mordent
+the letter <a href="#id81"><span class="problematic" id="id82">``</span></a><a href="#id83"><span class="problematic" id="id84">`</span></a>M   &#8216; &#8211; upper-case <a href="#id85"><span class="problematic" id="id86">``</span></a><a href="#id87"><span class="problematic" id="id88">`</span></a>M   &#8216; for whole-tone mordents and lower-
+case <a href="#id89"><span class="problematic" id="id90">``</span></a><a href="#id91"><span class="problematic" id="id92">`</span></a>m   &#8216; for semitone mordents. Inverted mordents are similarly encoded
+using the letter <a href="#id93"><span class="problematic" id="id94">``</span></a><a href="#id95"><span class="problematic" id="id96">`</span></a>W   &#8216;. In Example 2.2, it is not clear whether the mordent
 should be a semitone (consistent with a G harmonic minor figure) or a whole-
 tone mordent (consistent with a G melodic minor figure). The signifier
-<a href="#id109"><span class="problematic" id="id110">``</span></a><a href="#id111"><span class="problematic" id="id112">`</span></a>Ww   &#8216; is a special representation indicating that the ornament may be
+<a href="#id97"><span class="problematic" id="id98">``</span></a><a href="#id99"><span class="problematic" id="id100">`</span></a>Ww   &#8216; is a special representation indicating that the ornament may be
 either one.</p>
-<p>Also evident in Example 2.2 are the upper-case letters <a href="#id113"><span class="problematic" id="id114">``</span></a><a href="#id115"><span class="problematic" id="id116">`</span></a>L   &#8216; and <a href="#id117"><span class="problematic" id="id118">``</span></a><a href="#id119"><span class="problematic" id="id120">`</span></a>J   &#8216;.
-These encode beaming information. Each beam is opened by the letter <a href="#id121"><span class="problematic" id="id122">``</span></a><a href="#id123"><span class="problematic" id="id124">`</span></a>L   &#8216;
-and closed by the letter <a href="#id125"><span class="problematic" id="id126">``</span></a><a href="#id127"><span class="problematic" id="id128">`</span></a>J   &#8216; (think of left and right angles). Multiple
+<p>Also evident in Example 2.2 are the upper-case letters <a href="#id101"><span class="problematic" id="id102">``</span></a><a href="#id103"><span class="problematic" id="id104">`</span></a>L   &#8216; and <a href="#id105"><span class="problematic" id="id106">``</span></a><a href="#id107"><span class="problematic" id="id108">`</span></a>J   &#8216;.
+These encode beaming information. Each beam is opened by the letter <a href="#id109"><span class="problematic" id="id110">``</span></a><a href="#id111"><span class="problematic" id="id112">`</span></a>L   &#8216;
+and closed by the letter <a href="#id113"><span class="problematic" id="id114">``</span></a><a href="#id115"><span class="problematic" id="id116">`</span></a>J   &#8216; (think of left and right angles). Multiple
 beams and partial beams are discussed in Example 2.4.</p>
 <p>Example 2.3 shows a four-part chorale harmonization by Bach. In this example,
 two musical parts share each of the two staves. Notice how the corresponding
-<a href="#id129"><span class="problematic" id="id130">``</span></a><a href="#id131"><span class="problematic" id="id132">**</span></a>kern    encoding assigns each part to a separate column, but links the
-appropriate parts using the <a href="#id133"><span class="problematic" id="id134">``</span></a><a href="#id135"><span class="problematic" id="id136">*</span></a>staff    indicators.</p>
+<a href="#id117"><span class="problematic" id="id118">``</span></a><a href="#id119"><span class="problematic" id="id120">**</span></a>kern    encoding assigns each part to a separate column, but links the
+appropriate parts using the <a href="#id121"><span class="problematic" id="id122">``</span></a><a href="#id123"><span class="problematic" id="id124">*</span></a>staff    indicators.</p>
 <p><strong>Example 2.3.</strong> <em>Nun danket alle Gott</em>, arr. J.S. Bach.</p>
-<p>&gt; .. image:: guide.figures/guide02.3.gif</p>
-<p>&gt;
-&gt;``**kern**kern**kern**kern
-&gt;``*staff2*staff2*staff1*staff1
-&gt;``*clefF4*clefF4*clefG2*clefG2
-&gt;``*k[f#c#g#]*k[f#c#g#]*k[f#c#g#]*k[f#c#g#]
-&gt;``*M4/4*M4/4*M4/4*M4/4
-&gt;``4AA4c#4a4ee
-&gt;``=1=1=1=1
-&gt;``8A4c#4a4ee
-&gt;``8B...
-&gt;``8c#4c#4a4ee
-&gt;``8A...
-&gt;``8D4d4a4ff#
-&gt;``8E...
-&gt;``8F#4d4a4ff#
-&gt;``8D...
-&gt;``=2=2=2=2
-&gt;``2A;2c#;2a;2ee;
-&gt;``4r4r4r4r
-&gt;``4A4e4a4cc#
-&gt;``=3=3=3=3
-&gt;``4G#4e4b4dd
-&gt;``4A4e4a4cc#
-&gt;``8E4e4g#4b
-&gt;``8D...
-&gt;``8C#4e[4a8.cc#
-&gt;``8AA...
-&gt;``...16dd
-&gt;``=4=4=4=4
-&gt;``2E8e8a]2b
-&gt;``.16d8f#.
-&gt;``.16c#..
-&gt;``.4d4g#.
-&gt;``4AA;4c#;4e;4a;
-&gt;``=:<a href="#id324"><span class="problematic" id="id325">|!=:|</span></a>!=:<a href="#id326"><span class="problematic" id="id327">|!=:|</span></a>!
-&gt;``*-<em>-</em>-<a href="#id137"><span class="problematic" id="id138">*</span></a>-``</p>
+<img src="../_images/ex2-3.svg" /><div class="highlight-kern"><div class="highlight"><pre><span class="-KernExclusive">**kern</span><span class="w">       </span><span class="-KernExclusive">**kern</span><span class="w">          </span><span class="-KernExclusive">**kern</span><span class="w">          </span><span class="-KernExclusive">**kern</span>
+<span class="-KernExclusive">*staff2</span><span class="w">      </span><span class="-KernExclusive">*staff2</span><span class="w">         </span><span class="-KernExclusive">*staff1</span><span class="w">         </span><span class="-KernExclusive">*staff1</span>
+<span class="-KernExclusive">*clefF4</span><span class="w">      </span><span class="-KernExclusive">*clefF4</span><span class="w">         </span><span class="-KernExclusive">*clefG2</span><span class="w">         </span><span class="-KernExclusive">*clefG2</span>
+<span class="-KernExclusive">*k[f#c#g#]</span><span class="w">   </span><span class="-KernExclusive">*k[f#c#g#]</span><span class="w">      </span><span class="-KernExclusive">*k[f#c#g#]</span><span class="w">      </span><span class="-KernExclusive">*k[f#c#g#]</span>
+<span class="-KernExclusive">*M4/4</span><span class="w">        </span><span class="-KernExclusive">*M4/4</span><span class="w">           </span><span class="-KernExclusive">*M4/4</span><span class="w">           </span><span class="-KernExclusive">*M4/4</span>
+<span class="-KernNotes">4AA</span><span class="w">          </span><span class="-KernNotes">4c#</span><span class="w">             </span><span class="-KernNotes">4a</span><span class="w">              </span><span class="-KernNotes">4ee</span>
+<span class="-KernBar">=1           =1              =1              =1</span>
+<span class="-KernNotes">8A</span><span class="w">           </span><span class="-KernNotes">4c#</span><span class="w">             </span><span class="-KernNotes">4a</span><span class="w">              </span><span class="-KernNotes">4ee</span>
+<span class="-KernNotes">8B</span><span class="w">           </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span>
+<span class="-KernNotes">8c#</span><span class="w">          </span><span class="-KernNotes">4c#</span><span class="w">             </span><span class="-KernNotes">4a</span><span class="w">              </span><span class="-KernNotes">4ee</span>
+<span class="-KernNotes">8A</span><span class="w">           </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span>
+<span class="-KernNotes">8D</span><span class="w">           </span><span class="-KernNotes">4d</span><span class="w">              </span><span class="-KernNotes">4a</span><span class="w">              </span><span class="-KernNotes">4ff#</span>
+<span class="err">E</span><span class="w">            </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span>
+<span class="err">F#</span><span class="w">           </span><span class="-KernNotes">4d</span><span class="w">              </span><span class="-KernNotes">4a</span><span class="w">              </span><span class="-KernNotes">4ff#</span>
+<span class="err">D</span><span class="w">            </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span>
+<span class="-KernBar">=2           =2              =2              =2</span>
+<span class="err">A;</span><span class="-KernNotes">2c#</span><span class="err">;</span><span class="-KernNotes">2a</span><span class="err">;</span><span class="-KernNotes">2ee</span><span class="err">;</span>
+<span class="-KernNotes">4r</span><span class="w">           </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="-KernNotes">4r</span>
+<span class="-KernNotes">4A</span><span class="w">           </span><span class="-KernNotes">4e</span><span class="w">              </span><span class="-KernNotes">4a</span><span class="w">              </span><span class="-KernNotes">4cc#</span>
+<span class="-KernBar">=3           =3              =3              =3</span>
+<span class="-KernNotes">4G#</span><span class="w">          </span><span class="-KernNotes">4e</span><span class="w">              </span><span class="-KernNotes">4b</span><span class="w">              </span><span class="-KernNotes">4dd</span>
+<span class="-KernNotes">4A</span><span class="w">           </span><span class="-KernNotes">4e</span><span class="w">              </span><span class="-KernNotes">4a</span><span class="w">              </span><span class="-KernNotes">4cc#</span>
+<span class="-KernNotes">8E</span><span class="w">           </span><span class="-KernNotes">4e</span><span class="w">              </span><span class="-KernNotes">4g#</span><span class="w">             </span><span class="-KernNotes">4b</span>
+<span class="-KernNotes">8D</span><span class="w">           </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span>
+<span class="-KernNotes">8C#</span><span class="w">          </span><span class="-KernNotes">4e</span><span class="w">              </span><span class="err">[</span><span class="-KernNotes">4a</span><span class="w">             </span><span class="-KernNotes">8.cc#</span>
+<span class="-KernNotes">8AA</span><span class="w">          </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span>
+<span class="-KernDot">.</span><span class="w">            </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">16dd</span>
+<span class="-KernBar">=4           =4              =4              =4</span>
+<span class="-KernNotes">2E</span><span class="w">           </span><span class="-KernNotes">8e</span><span class="w">              </span><span class="-KernNotes">8a</span><span class="err">]</span><span class="w">             </span><span class="-KernNotes">2b</span>
+<span class="-KernDot">.</span><span class="w">            </span><span class="-KernNotes">16d</span><span class="w">             </span><span class="-KernNotes">8f#</span><span class="w">             </span><span class="-KernDot">.</span>
+<span class="-KernDot">.</span><span class="w">            </span><span class="-KernNotes">16c#</span><span class="w">            </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span>
+<span class="-KernDot">.</span><span class="w">            </span><span class="-KernNotes">4d</span><span class="w">              </span><span class="-KernNotes">4g#</span><span class="w">             </span><span class="-KernDot">.</span>
+<span class="-KernNotes">4AA</span><span class="err">;</span><span class="w">         </span><span class="-KernNotes">4c#</span><span class="err">;</span><span class="w">            </span><span class="-KernNotes">4e</span><span class="err">;</span><span class="w">             </span><span class="-KernNotes">4a</span><span class="err">;</span>
+<span class="-KernBar">=:|          </span><span class="err">!</span><span class="-KernBar">=:|            </span><span class="err">!</span><span class="-KernBar">=:|            </span><span class="err">!</span><span class="-KernBar">=:|!</span>
+<span class="-KernExclusive">*-</span><span class="w">           </span><span class="-KernExclusive">*-</span><span class="w">              </span><span class="-KernExclusive">*-</span><span class="w">              </span><span class="-KernExclusive">*-</span>
+</pre></div>
+</div>
 <p>Once again, clefs, key signatures and meter signatures are encoded separately
 for each part. Notice how the meter signature has been encoded as 4/4 rather
-than <a href="#id139"><span class="problematic" id="id140">`</span></a>common time&#8217;. This again reflects <a href="#id141"><span class="problematic" id="id142">``</span></a><a href="#id143"><span class="problematic" id="id144">**</span></a>kern   &#8216;s preoccupation with
+than <a href="#id125"><span class="problematic" id="id126">`</span></a>common time&#8217;. This again reflects <a href="#id127"><span class="problematic" id="id128">``</span></a><a href="#id129"><span class="problematic" id="id130">**</span></a>kern   &#8216;s preoccupation with
 functional information rather than orthographic information. (Later we will
 see how to encode the fact that the meter signature is visually rendered as
-<a href="#id145"><span class="problematic" id="id146">`</span></a>C&#8217; rather than 4/4.)</p>
+<a href="#id131"><span class="problematic" id="id132">`</span></a>C&#8217; rather than 4/4.)</p>
 <p>In measure 2, pauses (<tt class="docutils literal"><span class="pre">;</span></tt>) have been encoded for all four voices even
 though only two pause symbols appear in the printed notation.</p>
 <p>In the third measure, the last note of the alto part has been tied into the
-fourth measure. The <a href="#id147"><span class="problematic" id="id148">``</span></a><a href="#id149"><span class="problematic" id="id150">**</span></a>kern    representation provides no generic means for
-representing &#8220;curved lines&#8221; found in printed scores. Since <a href="#id151"><span class="problematic" id="id152">``</span></a><a href="#id153"><span class="problematic" id="id154">**</span></a>kern    is a
+fourth measure. The <a href="#id133"><span class="problematic" id="id134">``</span></a><a href="#id135"><span class="problematic" id="id136">**</span></a>kern    representation provides no generic means for
+representing &#8220;curved lines&#8221; found in printed scores. Since <a href="#id137"><span class="problematic" id="id138">``</span></a><a href="#id139"><span class="problematic" id="id140">**</span></a>kern    is a
 &#8220;functional&#8221; rather than an &#8220;orthographic&#8221; representation, all lines are
 explicitly interpreted as either <em>ties, slurs</em> or <em>phrases.</em></p>
 <p>The open brace <tt class="docutils literal"><span class="pre">{</span></tt> denotes the beginning of a phrase. The closed brace
@@ -424,7 +424,7 @@ explicitly interpreted as either <em>ties, slurs</em> or <em>phrases.</em></p>
 and end of a slur respectively.</p>
 <p>The open square bracket <tt class="docutils literal"><span class="pre">[</span></tt> denotes the first note of a tie. The closed
 square bracket <tt class="docutils literal"><span class="pre">]</span></tt> denotes the last note of a tie. The underscore character
-<a href="#id155"><span class="problematic" id="id156">``</span></a>_    denotes middle notes (if any) of a tie.</p>
+<a href="#id141"><span class="problematic" id="id142">``</span></a>_    denotes middle notes (if any) of a tie.</p>
 <p>Slurs and phrase markings can be <em>nested</em> (e.g. slurs within slurs) and may
 also be <em>elided</em> (e.g. overlapping phrases) to a single depth. <em>Nested
 markings</em> mean that one slur or phrase is entirely subsumed under another
@@ -450,66 +450,21 @@ same staff. Notice that key signatures are provided that explicitly indicate
 that there are no sharps or flats in the key signature.</p>
 <p>The upper-most part in the first measure shows the use of partial beams.
 Partial beams that extend to the left are encoded by the lower-case letter
-<a href="#id157"><span class="problematic" id="id158">``</span></a><a href="#id159"><span class="problematic" id="id160">`</span></a>k   &#8216;. Partial beams that extend to the right are encoded by the upper-case
-<a href="#id161"><span class="problematic" id="id162">``</span></a><a href="#id163"><span class="problematic" id="id164">`</span></a>K   &#8216;. Letters are repeated for each partial beam present. In this case,
-only a single partial beam is used, so only a single <a href="#id165"><span class="problematic" id="id166">``</span></a><a href="#id167"><span class="problematic" id="id168">`</span></a>k   &#8216; is encoded.
-Notice that the signifiers <a href="#id169"><span class="problematic" id="id170">``</span></a><a href="#id171"><span class="problematic" id="id172">`</span></a>L   &#8216; and <a href="#id173"><span class="problematic" id="id174">``</span></a><a href="#id175"><span class="problematic" id="id176">`</span></a>J   &#8216; are used only to encode
+<a href="#id143"><span class="problematic" id="id144">``</span></a><a href="#id145"><span class="problematic" id="id146">`</span></a>k   &#8216;. Partial beams that extend to the right are encoded by the upper-case
+<a href="#id147"><span class="problematic" id="id148">``</span></a><a href="#id149"><span class="problematic" id="id150">`</span></a>K   &#8216;. Letters are repeated for each partial beam present. In this case,
+only a single partial beam is used, so only a single <a href="#id151"><span class="problematic" id="id152">``</span></a><a href="#id153"><span class="problematic" id="id154">`</span></a>k   &#8216; is encoded.
+Notice that the signifiers <a href="#id155"><span class="problematic" id="id156">``</span></a><a href="#id157"><span class="problematic" id="id158">`</span></a>L   &#8216; and <a href="#id159"><span class="problematic" id="id160">``</span></a><a href="#id161"><span class="problematic" id="id162">`</span></a>J   &#8216; are used only to encode
 complete beams.</p>
 <p>In the second-last measure, double beams are used to join the sixteenth-note
-pairs. As a result, the beams are started with <a href="#id177"><span class="problematic" id="id178">``</span></a><a href="#id179"><span class="problematic" id="id180">`</span></a>LL   &#8216; and end with
-<a href="#id181"><span class="problematic" id="id182">``</span></a><a href="#id183"><span class="problematic" id="id184">`</span></a>JJ   &#8216;.</p>
+pairs. As a result, the beams are started with <cite>LL`</cite> and end with
+<cite>JJ`</cite>.</p>
 <p><strong>Example 2.4.</strong> Franz Joseph Haydn, <em>Sonata in C major, Hob. XVI: 35</em>.</p>
-<p>&gt; .. image:: guide.figures/guide02.4.gif</p>
-<p>&gt;
-&gt;``**kern**kern**kern
-&gt;``*staff2*staff2*staff1
-&gt;``*clefG2*clefG2*clefG2
-&gt;``*k[]*k[]*k[]
-&gt;``*M3/4*M3/4*M3/4
-&gt;``=1-=1-=1-
-&gt;``4r4r[4ee&gt;``4c/4g/8.ee]L
-&gt;``..16ffJk
-&gt;``4f/4g8.ddL
-&gt;``..16eeJk
-&gt;``=2=2=2
-&gt;``4e/4g/4cc&gt;``4r4r4gg/
-&gt;``4r4r4gg/
-&gt;``=3=3=3
-&gt;``(2B([2.g/(8ggL
-&gt;``..8ff)J
-&gt;``..(8ffL
-&gt;``..8ee)J
-&gt;``4c.(8eeL
-&gt;``..8dd)J
-&gt;``=4=4=4
-&gt;``4G)4g])/4dd&gt;``4r4r4b&gt;``4r4r4g/
-&gt;``=5=5=5
-&gt;``4r4r[4ee&gt;``4c/4g/8.ee]L
-&gt;``..16ffJk
-&gt;``4f/4g/8.ddL
-&gt;``..16eeJk
-&gt;``=6=6=6
-&gt;``4e/4g/4cc&gt;``4r4r4ccc&gt;``4E4c4ccc&gt;``=7=7=7
-&gt;``4f4c16gg#LL
-&gt;``..16aaJJ
-&gt;``..8r
-&gt;``4r4r16eeLL
-&gt;``..16ffJJ
-&gt;``..8r
-&gt;``4Gn4f16ddLL
-&gt;``..16bJJ
-&gt;``..8r
-&gt;``=8=8=8
-&gt;``4c4e4cc&gt;``4r4r4r
-&gt;``4r4r4r
-&gt;``=:<a href="#id328"><span class="problematic" id="id329">|!=:|</span></a>!=:<a href="#id185"><span class="problematic" id="id186">|</span></a>!
-&gt;``*-<em>-</em>-``</p>
 <p>Slurs are evident in the third measure. Open and closed slurs are represented
 by open (<tt class="docutils literal"><span class="pre">(</span></tt>) and closed (``)``) parentheses respectively. Notice that the
 middle part in the third measure contains a tied note. Considering the
 presence of concurrent slurs in the other parts it is possible that an
 appropriate interpretation of the score would regard the middle voice as also
-slurred. Notice that in the <a href="#id187"><span class="problematic" id="id188">``</span></a><a href="#id189"><span class="problematic" id="id190">**</span></a>kern    representation, notes can be tied,
+slurred. Notice that in the <a href="#id163"><span class="problematic" id="id164">``</span></a><a href="#id165"><span class="problematic" id="id166">**</span></a>kern    representation, notes can be tied,
 slurred, and phrased concurrently.</p>
 <div class="section" id="comment-records">
 <h2>Comment Records<a class="headerlink" href="#comment-records" title="Permalink to this headline">¶</a></h2>
@@ -553,7 +508,7 @@ spine. <em>Global comments</em> by contrast completely ignore the spines.</p>
 </div>
 <div class="section" id="reference-records">
 <h2>Reference Records<a class="headerlink" href="#reference-records" title="Permalink to this headline">¶</a></h2>
-<p>A particularly important type of global comment is the <a href="#id332"><span class="problematic" id="id333">`*reference record.*`_</span></a>
+<p>A particularly important type of global comment is the <a href="#id304"><span class="problematic" id="id305">`*reference record.*`_</span></a>
 Reference records are formal ways of encoding &#8220;library-type&#8221; information
 pertaining to a Humdrum document. Reference records provide standardized ways
 of encoding bibliographic information &#8211; suitable for computer-based access.</p>
@@ -562,73 +517,73 @@ beginning of a line, followed by a letter code, followed by an optional
 number, followed by a colon, followed by some text. The following example
 provides a set of reference records related to the &#8220;Augurs of Spring&#8221; section
 from Stravinsky&#8217;s <em>Rite of Spring.</em> Example 2.6.</p>
-<p><a href="#id191"><span class="problematic" id="id192">``</span></a>!!!COM: Stravinsky, Igor Fyodorovich
-<a href="#id193"><span class="problematic" id="id194">``</span></a>!!!CDT: 1882/6/17/-1971/4/6
-<a href="#id195"><span class="problematic" id="id196">``</span></a>!!!ODT: 1911//-1913//; 1947//
-<a href="#id197"><span class="problematic" id="id198">``</span></a>!!!OPT&#64;&#64;RUS: Vesna svyashchennaya
-<a href="#id199"><span class="problematic" id="id200">``</span></a><a class="reference external" href="mailto:!!!OPT&#37;&#52;&#48;FRE">!!!OPT<span>&#64;</span>FRE</a>: Le sacre du printemps
-<a href="#id201"><span class="problematic" id="id202">``</span></a><a class="reference external" href="mailto:!!!OPT&#37;&#52;&#48;ENG">!!!OPT<span>&#64;</span>ENG</a>: Rite of Spring
-<a href="#id203"><span class="problematic" id="id204">``</span></a><a class="reference external" href="mailto:!!!OTL&#37;&#52;&#48;FRE">!!!OTL<span>&#64;</span>FRE</a>: Les augures printaniers
-<a href="#id205"><span class="problematic" id="id206">``</span></a>!!!PUB: Boosey &amp; Hawkes
-<a href="#id207"><span class="problematic" id="id208">``</span></a>!!!YEC: 1945 Boosey &amp; Hawkes
-<a href="#id209"><span class="problematic" id="id210">``</span></a>!!!AGN: ballet
-<a href="#id211"><span class="problematic" id="id212">``</span></a>!!!AST: neo-classical
-<a href="#id213"><span class="problematic" id="id214">``</span></a>!!!AMT: irregular
-<a href="#id215"><span class="problematic" id="id216">``</span></a>!!!AIN: clars corno fagot flt oboe</p>
+<p><a href="#id167"><span class="problematic" id="id168">``</span></a>!!!COM: Stravinsky, Igor Fyodorovich
+<a href="#id169"><span class="problematic" id="id170">``</span></a>!!!CDT: 1882/6/17/-1971/4/6
+<a href="#id171"><span class="problematic" id="id172">``</span></a>!!!ODT: 1911//-1913//; 1947//
+<a href="#id173"><span class="problematic" id="id174">``</span></a>!!!OPT&#64;&#64;RUS: Vesna svyashchennaya
+<a href="#id175"><span class="problematic" id="id176">``</span></a><a class="reference external" href="mailto:!!!OPT&#37;&#52;&#48;FRE">!!!OPT<span>&#64;</span>FRE</a>: Le sacre du printemps
+<a href="#id177"><span class="problematic" id="id178">``</span></a><a class="reference external" href="mailto:!!!OPT&#37;&#52;&#48;ENG">!!!OPT<span>&#64;</span>ENG</a>: Rite of Spring
+<a href="#id179"><span class="problematic" id="id180">``</span></a><a class="reference external" href="mailto:!!!OTL&#37;&#52;&#48;FRE">!!!OTL<span>&#64;</span>FRE</a>: Les augures printaniers
+<a href="#id181"><span class="problematic" id="id182">``</span></a>!!!PUB: Boosey &amp; Hawkes
+<a href="#id183"><span class="problematic" id="id184">``</span></a>!!!YEC: 1945 Boosey &amp; Hawkes
+<a href="#id185"><span class="problematic" id="id186">``</span></a>!!!AGN: ballet
+<a href="#id187"><span class="problematic" id="id188">``</span></a>!!!AST: neo-classical
+<a href="#id189"><span class="problematic" id="id190">``</span></a>!!!AMT: irregular
+<a href="#id191"><span class="problematic" id="id192">``</span></a>!!!AIN: clars corno fagot flt oboe</p>
 <p>Reference records need not be in any particular order. The most important
 reference records (composer, title, etc.) are typically placed at the very
 beginning of a file since this makes inspecting the file easier. Less
 important reference records are typically placed at the end of the file.</p>
-<p>Reference codes that begin with the letter <a href="#id217"><span class="problematic" id="id218">``</span></a><a href="#id219"><span class="problematic" id="id220">`</span></a>C   &#8216; pertain to the composer.
-The <a href="#id221"><span class="problematic" id="id222">``</span></a><a href="#id223"><span class="problematic" id="id224">`</span></a>COM   &#8216; code identifies the composer (surname first followed by given
-names). The <a href="#id225"><span class="problematic" id="id226">``</span></a><a href="#id227"><span class="problematic" id="id228">`</span></a>CDT   &#8216; code identifies the composer&#8217;s birth and death dates. A
+<p>Reference codes that begin with the letter <a href="#id193"><span class="problematic" id="id194">``</span></a><a href="#id195"><span class="problematic" id="id196">`</span></a>C   &#8216; pertain to the composer.
+The <a href="#id197"><span class="problematic" id="id198">``</span></a><a href="#id199"><span class="problematic" id="id200">`</span></a>COM   &#8216; code identifies the composer (surname first followed by given
+names). The <a href="#id201"><span class="problematic" id="id202">``</span></a><a href="#id203"><span class="problematic" id="id204">`</span></a>CDT   &#8216; code identifies the composer&#8217;s birth and death dates. A
 special format is used in defining such dates, and so there are accurate ways
 to represent uncertainty, approximation, ranges of dates, and alternative
 dates. The <em>Humdrum Reference Manual</em> describes date formats in great detail.</p>
-<p>Reference codes that begin with the letter <a href="#id229"><span class="problematic" id="id230">``</span></a><a href="#id231"><span class="problematic" id="id232">`</span></a>O   &#8216; pertain to the work or
-opus. The <a href="#id233"><span class="problematic" id="id234">``</span></a><a href="#id235"><span class="problematic" id="id236">`</span></a>OTL   &#8216; code identifies the title of the encoded material &#8211; in
-this case the <a href="#id237"><span class="problematic" id="id238">`</span></a><em>Les augures printaniers</em>&#8216;. The <a href="#id239"><span class="problematic" id="id240">``</span></a><a href="#id241"><span class="problematic" id="id242">`</span></a>OPT   &#8216; code identifies the
-<a href="#id243"><span class="problematic" id="id244">`</span></a>parent&#8217; work from which the encoded music belongs. The <a href="#id245"><span class="problematic" id="id246">``</span></a><a href="#id247"><span class="problematic" id="id248">`</span></a>ODE   &#8216; code
+<p>Reference codes that begin with the letter <a href="#id205"><span class="problematic" id="id206">``</span></a><a href="#id207"><span class="problematic" id="id208">`</span></a>O   &#8216; pertain to the work or
+opus. The <a href="#id209"><span class="problematic" id="id210">``</span></a><a href="#id211"><span class="problematic" id="id212">`</span></a>OTL   &#8216; code identifies the title of the encoded material &#8211; in
+this case the <a href="#id213"><span class="problematic" id="id214">`</span></a><em>Les augures printaniers</em>&#8216;. The <a href="#id215"><span class="problematic" id="id216">``</span></a><a href="#id217"><span class="problematic" id="id218">`</span></a>OPT   &#8216; code identifies the
+<a href="#id219"><span class="problematic" id="id220">`</span></a>parent&#8217; work from which the encoded music belongs. The <a href="#id221"><span class="problematic" id="id222">``</span></a><a href="#id223"><span class="problematic" id="id224">`</span></a>ODE   &#8216; code
 identifies the name of a person or organization to which the work was
-dedicated. All three of these records (<a href="#id249"><span class="problematic" id="id250">``</span></a>OTL   , <a href="#id251"><span class="problematic" id="id252">``</span></a>OPT    and <a href="#id253"><span class="problematic" id="id254">``</span></a>ODE   ) are
+dedicated. All three of these records (<a href="#id225"><span class="problematic" id="id226">``</span></a>OTL   , <a href="#id227"><span class="problematic" id="id228">``</span></a>OPT    and <a href="#id229"><span class="problematic" id="id230">``</span></a>ODE   ) are
 encoded using the original language.</p>
 <p>Language designations are explicitly indicated by following a reference code
 with one or two &#8220;at&#8221; signs (&#64;) followed by a three letter language code. The
-<a href="#id255"><span class="problematic" id="id256">``</span></a><a href="#id257"><span class="problematic" id="id258">`</span></a><a class="reference external" href="mailto:OPT&#37;&#52;&#48;ENG">OPT<span>&#64;</span>ENG</a>   &#8216; code is used to provide an English translation. In this case,
+<a href="#id231"><span class="problematic" id="id232">``</span></a><a href="#id233"><span class="problematic" id="id234">`</span></a><a class="reference external" href="mailto:OPT&#37;&#52;&#48;ENG">OPT<span>&#64;</span>ENG</a>   &#8216; code is used to provide an English translation. In this case,
 the Russian title (<em>Vesna svyashchennaya</em>) is translated as <em>Rite of Spring</em>.
 The double &#8220;at&#8221; sign (&#64;&#64;) is used to designate the original, primary, or
 preferred language.</p>
-<p>Reference codes beginning with <a href="#id259"><span class="problematic" id="id260">``</span></a><a href="#id261"><span class="problematic" id="id262">`</span></a>P   &#8216; pertain to publishing and imprint
-information. (Codes beginning with <a href="#id263"><span class="problematic" id="id264">``</span></a><a href="#id265"><span class="problematic" id="id266">`</span></a>S   &#8216; can be used to identify manuscript
+<p>Reference codes beginning with <a href="#id235"><span class="problematic" id="id236">``</span></a><a href="#id237"><span class="problematic" id="id238">`</span></a>P   &#8216; pertain to publishing and imprint
+information. (Codes beginning with <a href="#id239"><span class="problematic" id="id240">``</span></a><a href="#id241"><span class="problematic" id="id242">`</span></a>S   &#8216; can be used to identify manuscript
 sources, library or archive locations, and other source-related data.)</p>
-<p>Codes beginning with <a href="#id267"><span class="problematic" id="id268">``</span></a><a href="#id269"><span class="problematic" id="id270">`</span></a>Y   &#8216; identify copyright information. Humdrum defines
+<p>Codes beginning with <a href="#id243"><span class="problematic" id="id244">``</span></a><a href="#id245"><span class="problematic" id="id246">`</span></a>Y   &#8216; identify copyright information. Humdrum defines
 separate codes for publisher of the electronic edition, publisher of the
 original source document, date of copyright, date of data release, country of
 copyright, copyright message, original copyright owner, original year of
-publication, and other information. The <a href="#id271"><span class="problematic" id="id272">``</span></a><a href="#id273"><span class="problematic" id="id274">`</span></a>YEC   &#8216; reference record shown in
+publication, and other information. The <a href="#id247"><span class="problematic" id="id248">``</span></a><a href="#id249"><span class="problematic" id="id250">`</span></a>YEC   &#8216; reference record shown in
 Example 2.6 simply encodes the date and copyright owner of the electronic
 document.</p>
-<p>Codes that begin with <a href="#id275"><span class="problematic" id="id276">``</span></a><a href="#id277"><span class="problematic" id="id278">`</span></a>A   &#8216; identify analytic information concerning the
-document. The code <a href="#id279"><span class="problematic" id="id280">``</span></a><a href="#id281"><span class="problematic" id="id282">`</span></a>AMT   &#8216; provides a metric classification. Meters may be
-classified using combinations of the following keywords: <a href="#id283"><span class="problematic" id="id284">``</span></a>simple, compound,
-duple, triple, quadruple, irregular   . The <a href="#id285"><span class="problematic" id="id286">``</span></a><a href="#id287"><span class="problematic" id="id288">`</span></a>AGN   &#8216; code is used to provide
+<p>Codes that begin with <a href="#id251"><span class="problematic" id="id252">``</span></a><a href="#id253"><span class="problematic" id="id254">`</span></a>A   &#8216; identify analytic information concerning the
+document. The code <a href="#id255"><span class="problematic" id="id256">``</span></a><a href="#id257"><span class="problematic" id="id258">`</span></a>AMT   &#8216; provides a metric classification. Meters may be
+classified using combinations of the following keywords: <a href="#id259"><span class="problematic" id="id260">``</span></a>simple, compound,
+duple, triple, quadruple, irregular   . The <a href="#id261"><span class="problematic" id="id262">``</span></a><a href="#id263"><span class="problematic" id="id264">`</span></a>AGN   &#8216; code is used to provide
 a free-form text that helps to identify the genre of the work. In this case
-the genre is identified as <a href="#id289"><span class="problematic" id="id290">``</span></a>ballet   . Other suitable characterizations may
+the genre is identified as <a href="#id265"><span class="problematic" id="id266">``</span></a>ballet   . Other suitable characterizations may
 include opera, string quartet, concerto, barbershop quartet, folksong, and so
-on. The <a href="#id291"><span class="problematic" id="id292">``</span></a><a href="#id293"><span class="problematic" id="id294">`</span></a>AST   &#8216; code can be used to identify the style or period of work.
+on. The <a href="#id267"><span class="problematic" id="id268">``</span></a><a href="#id269"><span class="problematic" id="id270">`</span></a>AST   &#8216; code can be used to identify the style or period of work.
 Once again, this is a free-form text record. Suitable keywords might include
 terms such as baroque, bebop, bossa nova, Ecole Notre Dame, minimalist, high-
 life, hip-hop, reggae, etc. Such analytic information is obviously
 interpretive and often open to disagreement. Nevertheless, explicit analytic
 information often proves useful in electronic documents.</p>
-<p>An especially useful analytic reference record is the <a href="#id295"><span class="problematic" id="id296">``</span></a><a href="#id334"><span class="problematic" id="id335">`AIN   &#8216; record for
+<p>An especially useful analytic reference record is the <a href="#id271"><span class="problematic" id="id272">``</span></a><a href="#id306"><span class="problematic" id="id307">`AIN   &#8216; record for
 encoding instrumentation. This reference record follows a strict syntax. Each
 instrument has an official Humdrum abbrevation. `**Appendix II**`_</span></a> identifies
 a number of the more common instrument codes. Instrumentation reference
 records always specify the instrumentation in alphabetical order by
 instrument abbrevation separated by a single space. For example, the
 instrumentation for a woodwind quintet is given as:</p>
-<p><a href="#id297"><span class="problematic" id="id298">``</span></a>!!!AIN: clars corno fagot flt oboe</p>
+<p><a href="#id273"><span class="problematic" id="id274">``</span></a>!!!AIN: clars corno fagot flt oboe</p>
 <p>In our discussion here we have only identified some of the more common types
 of reference records. A complete description of reference records is given in
 Appendix II.</p>
@@ -636,23 +591,23 @@ Appendix II.</p>
 <hr class="docutils" />
 <div class="section" id="reprise">
 <h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
-<p>In this chapter we have introduced the Humdrum <a href="#id299"><span class="problematic" id="id300">``</span></a><a href="#id301"><span class="problematic" id="id302">**</span></a>kern    representation and
-a few of the more important reference records. As we have seen, <a href="#id303"><span class="problematic" id="id304">``</span></a><a href="#id305"><span class="problematic" id="id306">**</span></a>kern
-can be used to encode core information for common musical scores; <a href="#id307"><span class="problematic" id="id308">``</span></a><a href="#id309"><span class="problematic" id="id310">**</span></a>kern
+<p>In this chapter we have introduced the Humdrum <a href="#id275"><span class="problematic" id="id276">``</span></a><a href="#id277"><span class="problematic" id="id278">**</span></a>kern    representation and
+a few of the more important reference records. As we have seen, <a href="#id279"><span class="problematic" id="id280">``</span></a><a href="#id281"><span class="problematic" id="id282">**</span></a>kern
+can be used to encode core information for common musical scores; <a href="#id283"><span class="problematic" id="id284">``</span></a><a href="#id285"><span class="problematic" id="id286">**</span></a>kern
 is used to represent <em>functional</em> information rather than <em>orthographic</em>
-(visual) information. In <a href="#id336"><span class="problematic" id="id337">`Chapter 6`_</span></a> an expanded description of <a href="#id311"><span class="problematic" id="id312">``</span></a><a href="#id313"><span class="problematic" id="id314">**</span></a>kern
+(visual) information. In <a href="#id308"><span class="problematic" id="id309">`Chapter 6`_</span></a> an expanded description of <a href="#id287"><span class="problematic" id="id288">``</span></a><a href="#id289"><span class="problematic" id="id290">**</span></a>kern
 will be given that includes a much wider variety of concepts and situations
-than we have encountered in this chapter. <a href="#id338"><span class="problematic" id="id339">`**Appendices I**`_</span></a> and <a href="#id340"><span class="problematic" id="id341">`**II**`_</span></a>
+than we have encountered in this chapter. <a href="#id310"><span class="problematic" id="id311">`**Appendices I**`_</span></a> and <a href="#id312"><span class="problematic" id="id313">`**II**`_</span></a>
 provide expanded information pertaining to Reference Records.</p>
 <p>Although we have only demonstrated the encoding of fairly simple information,
 we can already begin processing such data in musically useful ways. In the
 next chapter we will examine some simple processes.</p>
 <hr class="docutils" />
 <ul class="simple">
-<li>` <a href="#id315"><span class="problematic" id="id316">**</span></a>Next Chapter**`_</li>
-<li>` <a href="#id317"><span class="problematic" id="id318">**</span></a>Previous Chapter**`_</li>
-<li>` <a href="#id319"><span class="problematic" id="id320">**</span></a>Table of Contents**`_</li>
-<li>` <a href="#id321"><span class="problematic" id="id322">**</span></a>Detailed Contents**`_</li>
+<li>` <a href="#id291"><span class="problematic" id="id292">**</span></a>Next Chapter**`_</li>
+<li>` <a href="#id293"><span class="problematic" id="id294">**</span></a>Previous Chapter**`_</li>
+<li>` <a href="#id295"><span class="problematic" id="id296">**</span></a>Table of Contents**`_</li>
+<li>` <a href="#id297"><span class="problematic" id="id298">**</span></a>Detailed Contents**`_</li>
 </ul>
 <ol class="upperalpha simple" start="3">
 <li>Copyright 1999 David Huron</li>
