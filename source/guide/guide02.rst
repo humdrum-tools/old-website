@@ -1,5 +1,5 @@
 ========================================================
-Chapter 2: Representing Music Using **kern (I)
+Chapter 2: Representing Music Using kern (I)
 ========================================================
 
 --------
