@@ -385,32 +385,28 @@ spine. *Global comments* by contrast completely ignore the spines.
 
 **Example 2.5.** Ojibway Song.
 
-````
-$ 
 
-``!! Ojibway Indian Song
-``!! Transcribed by Frances Densmore
-``!! No. 84 "The Sioux Follow Me"
-``**kern**lyrics
-``!! In Ojibway
-``*clefF4*
-``*M3/4*
-``*k[b-e-a-d-g-]*
-``8.d-Ma-
-``16d--gi-
-``=1=1
-``8d--ja-
-``16A--go
-``16A-ic-
-``4d--kew-
-``4d--yan
-``=2=2
-``etc.etc.
-``*-*-``
+.. code-block:: kern
 
-````
-$ 
-
+  !! Ojibway Indian Song
+  !! Transcribed by Frances Densmore
+  !! No. 84 "The Sioux Follow Me"
+  **kern                **lyrics
+  !! In Ojibway
+  *clefF4*
+  *M3/4*
+  *k[b-e-a-d-g-]*
+  8.d-                  Ma-
+  16d-                  -gi-
+  =1                    =1
+  8d-                   -ja-
+  16A-                  -go
+  16A-                  ic-
+  4d--                  kew-
+  4d-                   -yan
+  =2                    =2
+  etc.                  etc.
+  *-                    *-
 
 Reference Records
 -----------------
