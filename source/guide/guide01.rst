@@ -127,7 +127,7 @@ tools can be grouped roughly into the following sixteen types of operations.
 
 If the above functions sound vague, that's because the corresponding Humdrum
 tools are similarly broad in their function. For example, the Humdrum
-`**patt**`_ tool can be used to locate Landini cadences, label statements of
+``patt`` tool can be used to locate Landini cadences, label statements of
 12-tone rows, or search for piano fingering patterns in Liszt. All three
 tasks involve searching for a sequential pattern that might have concurrent
 features as well.
@@ -144,19 +144,19 @@ will see.
 Although computers are typically not good at interpreting data, interpretive
 software will become increasingly important as computational musicology
 continues to develop. Humdrum provides a handful of tools that *interpret*
-data in various ways. For example, the `**key**`_ command implements the
+data in various ways. For example, the ``key`` command implements the
 Krumhansl and Kessler method for estimating the key of a music passage. The
-`**melac**`_ command implements Joseph Thomassen's model of melodic accent.
+``melac`` command implements Joseph Thomassen's model of melodic accent.
 Other interpretive tools characterize syncopation or implement Johnson-
 Laird's model of rhythmic prototypes.
 
 The names of some of the Humdrum tools will be readily recognizable by
-musicians. Humdrum tools such as `**key,**`_ `**pitch,**`_ `**record,**`_
-`**tacet,**`_ `**trans**`_ and `**reihe**`_ may evoke fairly accurate ideas
+musicians. Humdrum tools such as ``key``, ``pitch``, ``record``,
+``tacet``, ``trans``, and ``reihe`` may evoke fairly accurate ideas
 about what they do. Ironically, the most recognizable tools are typically the
 least useful tools in the toolkit -- because they are so specialized. The
-most powerful Humdrum tools have names such as `**cleave,**`_ `**humsed,**`_
-`**simil,**`_ `**recode,**`_ `**context,**`_ `**patt**`_ and `**yank.**`_
+most powerful Humdrum tools have names such as ``cleave``, ``humsed``,
+``simil``, ``recode``, ``context``, ``patt``, and ``yank``.
 
 By itself, each individual tool in the Humdrum Toolkit is quite modest in its
 effect. However, the tools are not intended to be self-sufficient. They are
@@ -193,19 +193,36 @@ sounded for each pitch:
 
 **Table 1.1**
 
-> **C4D4E4F4G4A4B4C5**
-> 1st 16thONoffoffoffoffoffoffoff
-> 2nd 16thONoffoffoffoffoffoffoff
-> 3rd 16thoffONoffoffoffoffoffoff
-> 4th 16thoffONoffoffoffoffoffoff
-> time5th 16thoffoffONoffoffoffoffoff
-> 6th 16thoffoffONoffoffoffoffoff
-> 7th 16thoffoffoffONoffoffoffoff
-> 8th 16thoffoffoffONoffoffoffoff
-> 9th 16thoffoffoffoffONoffoffoff
-> 10th 16thoffoffoffoffONoffoffoff
-> 11th 16thoffoffoffoffoffONoffoff
-> etc.
+ 
++---------+----------+------+-------+-------+-------+-------+-------+-------+-------+
+|         |          |**C4**|**D4** |**E4** |**F4** |**G4** |**A4** |**B4** |**C5** |
++=========+==========+======+=======+=======+=======+=======+=======+=======+=======+
+|         |1st 16th  | ON   | off   | off   | off   | off   | off   | off   | off   |                   
+|          +----------+------+-------+-------+-------+-------+-------+-------+-------+
+|         |2nd 16th  | ON   | off   | off   | off   | off   | off   | off   | off   |                   
+|         +----------+------+-------+-------+-------+-------+-------+-------+-------+
+|         |3rd 16th  | off  | ON    | off   | off   | off   | off   | off   | off   |                   
+|         +----------+------+-------+-------+-------+-------+-------+-------+-------+
+|         |4th 16th  | off  | ON    | off   | off   | off   | off   | off   | off   |                   
+|         +----------+------+-------+-------+-------+-------+-------+-------+-------+
+|         |5th 16th  | off  | off   | ON    | off   | off   | off   | off   | off   |                   
+|         +----------+------+-------+-------+-------+-------+-------+-------+-------+
+|         |6th 16th  | off  | off   | ON    | off   | off   | off   | off   | off   |                   
+|         +----------+------+-------+-------+-------+-------+-------+-------+-------+
+| *Time*  |7th 16th  | off  | off   | off   | ON    | off   | off   | off   | off   |                   
+|         +----------+------+-------+-------+-------+-------+-------+-------+-------+
+|         |8th 16th  | off  | off   | off   | ON    | off   | off   | off   | off   |                   
+|         +----------+------+-------+-------+-------+-------+-------+-------+-------+
+|         |9th 16th  | off  | off   | off   | off   | ON    | off   | off   | off   |                   
+|         +----------+------+-------+-------+-------+-------+-------+-------+-------+
+|         |10th 16th | off  | off   | off   | off   | ON    | off   | off   | off   |                   
+|         +----------+------+-------+-------+-------+-------+-------+-------+-------+
+|         |11th 16th | off  | off   | off   | off   | off   | ON    | off   | off   |                   
+|         +----------+------+-------+-------+-------+-------+-------+-------+-------+
+|         | *etc.*                                                                  |
++---------+----------+------+-------+-------+-------+-------+-------+-------+-------+
+
+
 
 Table 1.2 shows another example where different kinds of information are
 combined in the same table. Here the last column represents a combination of
@@ -213,15 +230,25 @@ trumpet valves:
 
 **Table 1.2**
 
-> **Pitch**Duration**Valve Combination**
-> 1st noteC4quarter0
-> 2nd noteB3eighth2
-> 3rd noteG4eighth0
-> 4th noteF4eighth1
-> 5th noteG4eighth0
-> 6th noteA4quarter1-2
-> 7th noteG4eighth0
-> 8th noteAb4quarter2-3
++=============+===============+===============+=======================+       
+|             | **Pitch**     | **Duration**  | **Valve Combination** |
++-------------+---------------+---------------+-----------------------+       
+| 1st note    | C4            | Quarter       | 0                     |
++-------------+---------------+---------------+-----------------------+       
+| 2nd note    | B3            | Eighth        | 2                     |
++-------------+---------------+---------------+-----------------------+       
+| 3rd note    | G4            | Eighth        | 0                     |
++-------------+---------------+---------------+-----------------------+       
+| 4th note    | F4            | Eighth        | 1                     |
++-------------+---------------+---------------+-----------------------+       
+| 5th note    | G4            | Eighth        | 0                     |
++-------------+---------------+---------------+-----------------------+       
+| 6th note    | A4            | Quarter       | 1-2                   |
++-------------+---------------+---------------+-----------------------+       
+| 7th note    | G4            | Eighth        | 0                     |
++-------------+---------------+---------------+-----------------------+       
+| 8th note    | Ab4           | Quarter       | 2-3                   |
++-------------+---------------+---------------+-----------------------+       
 
 Humdrum representations can be very similar to the data shown in Tables 1.1
 and 1.2. With just a few formatting changes, either table can be transformed
@@ -235,16 +262,27 @@ combination of an asterisk and hyphen.
 
 **Table 1.3** A Humdrum Equivalent to Table 1.2
 
-``**Note**Pitch**Duration**Valve Combination
-> 1st noteC4quarter0
-> 2nd noteB3eighth2
-> 3rd noteG4eighth0
-> 4th noteF4eighth1
-> 5th noteG4eighth0
-> 6th noteA4quarter1-2
-> 7th noteG4eighth0
-> 8th noteAb4quarter2-3
-> *-*-*-*-``
++=============+===============+===============+=======================+       
+| **Note      | **Pitch       | **Duration    | **Valve Combination** |
++-------------+---------------+---------------+-----------------------+       
+| 1st note    | C4            | Quarter       | 0                     |
++-------------+---------------+---------------+-----------------------+       
+| 2nd note    | B3            | Eighth        | 2                     |
++-------------+---------------+---------------+-----------------------+       
+| 3rd note    | G4            | Eighth        | 0                     |
++-------------+---------------+---------------+-----------------------+       
+| 4th note    | F4            | Eighth        | 1                     |
++-------------+---------------+---------------+-----------------------+       
+| 5th note    | G4            | Eighth        | 0                     |
++-------------+---------------+---------------+-----------------------+       
+| 6th note    | A4            | Quarter       | 1-2                   |
++-------------+---------------+---------------+-----------------------+       
+| 7th note    | G4            | Eighth        | 0                     |
++-------------+---------------+---------------+-----------------------+       
+| 8th note    | Ab4           | Quarter       | 2-3                   |
++-------------+---------------+---------------+-----------------------+       
+| *-          | *-            | *-            | *-                    |
++-------------+---------------+---------------+-----------------------+       
 
 It does not matter what characters appear in the table -- numbers, letters,
 symbols, etc. (although there are some restrictions concerning the use of
