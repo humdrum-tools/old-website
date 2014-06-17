@@ -446,9 +446,11 @@ contain 10 or more lines of commands.
 Reprise
 -------
 
-In this chapter we have seen that Humdrum consists of two parts: (1) a
-representation *syntax* that is similar to tables in a spread-sheet, and (2)
-a set of utilities or *tools* that manipulate Humdrum data in various ways.
+In this chapter we have seen that Humdrum consists of two parts:  
+
+1. a representation *syntax* that is similar to tables in a spread-sheet
+2. a set of utilities or *tools* that manipulate Humdrum data in various ways.
+
 The tools carry out operations such as displaying, performing, searching,
 counting, editing, transforming, extracting, linking, classifying, labelling
 and comparing. The tools can be linked together to carry out a wide variety
