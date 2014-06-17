@@ -207,7 +207,7 @@ appropriate parts using the ``*staff  indicators.
  F#           4d              4a              4ff#
  D            .               .               .
  =2           =2              =2              =2
- A;2c#;2a;2ee;
+ A;           2c#;            2a;             2ee;
  4r           4r              4r              4r
  4A           4e              4a              4cc#
  =3           =3              =3              =3
