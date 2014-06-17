@@ -431,7 +431,9 @@ three-line script locates any parallel fifths between the bass and alto
 voices of any input file:
 
 ``echo P5 > P5
-echo '= *' >> P5; echo P5 >> P5
+echo '= *' >> P5``
+
+``echo P5 >> P5
 extract -i '*Ibass,*Ialto' file | hint -c | pattern -s = P5``
 
 More complicated scripts can be written to carry out more sophisticated
