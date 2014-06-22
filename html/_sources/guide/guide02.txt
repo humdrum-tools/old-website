@@ -4,7 +4,7 @@ Chapter 2: Representing Music Using kern (I)
 
 --------
 
-The ``**kern````  representation can be used to represent basic or core
+The ``**kern``  representation can be used to represent basic or core
 information for common Western music. The ``**kern``  scheme can be used to
 encode pitch and duration, plus other common score-related information. In
 this chapter, we will introduce ``**kern``  through a series of tutorial
@@ -72,14 +72,14 @@ number of repeated letters.
 Accidentals are encoded using the octothorpe (``#``) for sharps, the minus
 sign (``-``) for flats, and the lower-case letter ``n`` for naturals.
 Accidentals are encoded immediately following the pitch letter name. Double-
-sharps and double-flats have no special representations in ``**kern````  and are
+sharps and double-flats have no special representations in ``**kern``  and are
 simply denoted by repetition: (``##``) and (``--``) respectively. Triple and
 quadruple accidentals are similarly encoded by repetition. Sharps, flats, and
-naturals are mutually exclusive in ``**kern````, so tokens such as ``cc#n``
+naturals are mutually exclusive in ``**kern``, so tokens such as ``cc#n``
 and "``GG-#`` are illegal.
 
 In Example 2.2, two musical parts are encoded. In the corresponding
-``**kern```` encoding, each musical part or voice has been assigned to a
+``**kern`` encoding, each musical part or voice has been assigned to a
 different musical staff -- labelled ``*staff1`` and ``*staff2``. Notice that
 the upper part has been encoded in the right-most column. The layout is
 exactly as though the musical score were turned sideways.
@@ -142,26 +142,26 @@ a sustained pitch while another part is moving.
 Rests are encoded by the lower-case letter ``r``. Notice that the first
 rest in the lower part has not been encoded as a whole rest. Instead, it has
 been rendered as a dotted half rest. This is a good illustration of how
-``**kern```` is intended to be a *functional* rather than *orthographic*
+``**kern`` is intended to be a *functional* rather than *orthographic*
 (visual) representation. Nevertheless, users can explicitly indicate that the
 rest is visually rendered as a whole rest by adding a second lower-case
 letter ``r``.
 
 Another important difference between functional and orthographic
-representations is evident in the treatment of accidentals. In the ``**kern````  
+representations is evident in the treatment of accidentals. In the ``**kern``  
 representation, all pitches are encoded without regard for what is going on
-around them. For example, in ``**kern````, pitches are encoded with the
+around them. For example, in ``**kern``, pitches are encoded with the
 appropriate accidental, even if the accidental is specified in a key-
 signature or is present earlier in the same measure. Hence the explicit
 encoding of all occurrences of B-flats in Example 2.2.
 
-All pitches are encoded as absolute pitches. In ``**kern````, even transposing
+All pitches are encoded as absolute pitches. In ``**kern``, even transposing
 instruments are always represented at (sounding) concert pitch. A special
 *transposition interpretation* is provided to indicate the nature of any
 transposing instrument -- but the encoded pitches -- selves appear only at
 concert pitch.
 
-Finally, pitches in ``**kern```` are encoded as "nominally" equally-tempered
+Finally, pitches in ``**kern`` are encoded as "nominally" equally-tempered
 values. A special *temperament interpretation* is provided to indicate if the
 tuning system is other than equal temperament.
 
@@ -182,7 +182,7 @@ beams and partial beams are discussed in Example 2.4.
 
 Example 2.3 shows a four-part chorale harmonization by Bach. In this example,
 two musical parts share each of the two staves. Notice how the corresponding
-``**kern```` encoding assigns each part to a separate column, but links the
+``**kern`` encoding assigns each part to a separate column, but links the
 appropriate parts using the ``*staff  indicators.
 
 **Example 2.3.** *Nun danket alle Gott*, arr. J.S. Bach.
@@ -511,11 +511,11 @@ Appendix II.
 Reprise
 -------
 
-In this chapter we have introduced the Humdrum ``**kern````  representation and
-a few of the more important reference records. As we have seen, ``**kern```` 
-can be used to encode core information for common musical scores; ``**kern```` 
+In this chapter we have introduced the Humdrum ``**kern``  representation and
+a few of the more important reference records. As we have seen, ``**kern`` 
+can be used to encode core information for common musical scores; ``**kern`` 
 is used to represent *functional* information rather than *orthographic*
-(visual) information. In `Chapter 6`_ an expanded description of ``**kern```` 
+(visual) information. In `Chapter 6`_ an expanded description of ``**kern`` 
 will be given that includes a much wider variety of concepts and situations
 than we have encountered in this chapter. `**Appendices I**`_ and `**II**`_
 provide expanded information pertaining to Reference Records.

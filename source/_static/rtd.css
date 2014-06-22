@@ -1,28 +1,28 @@
 /*
- *  * rtd.css
- *   * ~~~~~~~~~~~~~~~
- *    *
- *     * Sphinx stylesheet -- sphinxdoc theme.  Originally created by
- *      * Armin Ronacher for Werkzeug.
- *       *
- *        * Customized for ReadTheDocs by Eric Pierce & Eric Holscher
- *         *
- *          * :copyright: Copyright 2007-2010 by the Sphinx team, see AUTHORS.
- *           * :license: BSD, see LICENSE for details.
- *            *
- *             */
+ * rtd.css
+ * ~~~~~~~~~~~~~~~
+ *
+ * Sphinx stylesheet -- sphinxdoc theme.  Originally created by
+ * Armin Ronacher for Werkzeug.
+ *
+ * Customized for ReadTheDocs by Eric Pierce & Eric Holscher
+ *
+ * :copyright: Copyright 2007-2010 by the Sphinx team, see AUTHORS.
+ * :license: BSD, see LICENSE for details.
+ *
+ */
 
 /* RTD colors
- *  * light blue: #e8ecef
- *   * medium blue: #8ca1af
- *    * dark blue: #465158
- *     * dark grey: #444444
- *      *
- *       * white hover: #d1d9df;
- *        * medium blue hover: #697983;
- *         * green highlight: #8ecc4c
- *          * light blue (project bar): #e8ecef
- *           */
+ * light blue: #e8ecef
+ * medium blue: #8ca1af
+ * dark blue: #465158
+ * dark grey: #444444
+ *
+ * white hover: #d1d9df;
+ * medium blue hover: #697983;
+ * green highlight: #8ecc4c
+ * light blue (project bar): #e8ecef
+ */
 
 @import url("basic.css");
 

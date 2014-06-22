@@ -197,7 +197,7 @@
   <div class="section" id="chapter-2-representing-music-using-kern-i">
 <h1>Chapter 2: Representing Music Using kern (I)<a class="headerlink" href="#chapter-2-representing-music-using-kern-i" title="Permalink to this headline">¶</a></h1>
 <hr class="docutils" />
-<p>The <tt class="docutils literal"><span class="pre">**kern``</span></tt>  representation can be used to represent basic or core
+<p>The <tt class="docutils literal"><span class="pre">**kern</span></tt>  representation can be used to represent basic or core
 information for common Western music. The <tt class="docutils literal"><span class="pre">**kern</span></tt>  scheme can be used to
 encode pitch and duration, plus other common score-related information. In
 this chapter, we will introduce <tt class="docutils literal"><span class="pre">**kern</span></tt>  through a series of tutorial
@@ -268,13 +268,13 @@ number of repeated letters.</p>
 <p>Accidentals are encoded using the octothorpe (<tt class="docutils literal"><span class="pre">#</span></tt>) for sharps, the minus
 sign (<tt class="docutils literal"><span class="pre">-</span></tt>) for flats, and the lower-case letter <tt class="docutils literal"><span class="pre">n</span></tt> for naturals.
 Accidentals are encoded immediately following the pitch letter name. Double-
-sharps and double-flats have no special representations in <tt class="docutils literal"><span class="pre">**kern``</span></tt>  and are
+sharps and double-flats have no special representations in <tt class="docutils literal"><span class="pre">**kern</span></tt>  and are
 simply denoted by repetition: (<tt class="docutils literal"><span class="pre">##</span></tt>) and (<tt class="docutils literal"><span class="pre">--</span></tt>) respectively. Triple and
 quadruple accidentals are similarly encoded by repetition. Sharps, flats, and
-naturals are mutually exclusive in <tt class="docutils literal"><span class="pre">**kern``</span></tt>, so tokens such as <tt class="docutils literal"><span class="pre">cc#n</span></tt>
+naturals are mutually exclusive in <tt class="docutils literal"><span class="pre">**kern</span></tt>, so tokens such as <tt class="docutils literal"><span class="pre">cc#n</span></tt>
 and &#8220;<tt class="docutils literal"><span class="pre">GG-#</span></tt> are illegal.</p>
 <p>In Example 2.2, two musical parts are encoded. In the corresponding
-<tt class="docutils literal"><span class="pre">**kern``</span></tt> encoding, each musical part or voice has been assigned to a
+<tt class="docutils literal"><span class="pre">**kern</span></tt> encoding, each musical part or voice has been assigned to a
 different musical staff &#8211; labelled <tt class="docutils literal"><span class="pre">*staff1</span></tt> and <tt class="docutils literal"><span class="pre">*staff2</span></tt>. Notice that
 the upper part has been encoded in the right-most column. The layout is
 exactly as though the musical score were turned sideways.</p>
@@ -330,23 +330,23 @@ a sustained pitch while another part is moving.</p>
 <p>Rests are encoded by the lower-case letter <tt class="docutils literal"><span class="pre">r</span></tt>. Notice that the first
 rest in the lower part has not been encoded as a whole rest. Instead, it has
 been rendered as a dotted half rest. This is a good illustration of how
-<tt class="docutils literal"><span class="pre">**kern``</span></tt> is intended to be a <em>functional</em> rather than <em>orthographic</em>
+<tt class="docutils literal"><span class="pre">**kern</span></tt> is intended to be a <em>functional</em> rather than <em>orthographic</em>
 (visual) representation. Nevertheless, users can explicitly indicate that the
 rest is visually rendered as a whole rest by adding a second lower-case
 letter <tt class="docutils literal"><span class="pre">r</span></tt>.</p>
 <p>Another important difference between functional and orthographic
-representations is evident in the treatment of accidentals. In the <tt class="docutils literal"><span class="pre">**kern``</span></tt>
+representations is evident in the treatment of accidentals. In the <tt class="docutils literal"><span class="pre">**kern</span></tt>
 representation, all pitches are encoded without regard for what is going on
-around them. For example, in <tt class="docutils literal"><span class="pre">**kern``</span></tt>, pitches are encoded with the
+around them. For example, in <tt class="docutils literal"><span class="pre">**kern</span></tt>, pitches are encoded with the
 appropriate accidental, even if the accidental is specified in a key-
 signature or is present earlier in the same measure. Hence the explicit
 encoding of all occurrences of B-flats in Example 2.2.</p>
-<p>All pitches are encoded as absolute pitches. In <tt class="docutils literal"><span class="pre">**kern``</span></tt>, even transposing
+<p>All pitches are encoded as absolute pitches. In <tt class="docutils literal"><span class="pre">**kern</span></tt>, even transposing
 instruments are always represented at (sounding) concert pitch. A special
 <em>transposition interpretation</em> is provided to indicate the nature of any
 transposing instrument &#8211; but the encoded pitches &#8211; selves appear only at
 concert pitch.</p>
-<p>Finally, pitches in <tt class="docutils literal"><span class="pre">**kern``</span></tt> are encoded as &#8220;nominally&#8221; equally-tempered
+<p>Finally, pitches in <tt class="docutils literal"><span class="pre">**kern</span></tt> are encoded as &#8220;nominally&#8221; equally-tempered
 values. A special <em>temperament interpretation</em> is provided to indicate if the
 tuning system is other than equal temperament.</p>
 <p>Two other aspects of Example 2.2 are noteworthy. In measure 3 an inverted
@@ -364,7 +364,7 @@ and closed by the letter <tt class="docutils literal"><span class="pre">J</span>
 beams and partial beams are discussed in Example 2.4.</p>
 <p>Example 2.3 shows a four-part chorale harmonization by Bach. In this example,
 two musical parts share each of the two staves. Notice how the corresponding
-<tt class="docutils literal"><span class="pre">**kern``</span></tt> encoding assigns each part to a separate column, but links the
+<tt class="docutils literal"><span class="pre">**kern</span></tt> encoding assigns each part to a separate column, but links the
 appropriate parts using the <a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">*</span></a>staff  indicators.</p>
 <p><strong>Example 2.3.</strong> <em>Nun danket alle Gott</em>, arr. J.S. Bach.</p>
 <img src="../../_images/ex2-3.svg" /><div class="highlight-kern"><div class="highlight"><pre><span class="-KernExclusive">**kern</span><span class="w">       </span><span class="-KernExclusive">**kern</span><span class="w">          </span><span class="-KernExclusive">**kern</span><span class="w">          </span><span class="-KernExclusive">**kern</span>
@@ -648,11 +648,11 @@ Appendix II.</p>
 <hr class="docutils" />
 <div class="section" id="reprise">
 <h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
-<p>In this chapter we have introduced the Humdrum <tt class="docutils literal"><span class="pre">**kern``</span></tt>  representation and
-a few of the more important reference records. As we have seen, <tt class="docutils literal"><span class="pre">**kern``</span></tt>
-can be used to encode core information for common musical scores; <tt class="docutils literal"><span class="pre">**kern``</span></tt>
+<p>In this chapter we have introduced the Humdrum <tt class="docutils literal"><span class="pre">**kern</span></tt>  representation and
+a few of the more important reference records. As we have seen, <tt class="docutils literal"><span class="pre">**kern</span></tt>
+can be used to encode core information for common musical scores; <tt class="docutils literal"><span class="pre">**kern</span></tt>
 is used to represent <em>functional</em> information rather than <em>orthographic</em>
-(visual) information. In <a href="#id25"><span class="problematic" id="id26">`Chapter 6`_</span></a> an expanded description of <tt class="docutils literal"><span class="pre">**kern``</span></tt>
+(visual) information. In <a href="#id25"><span class="problematic" id="id26">`Chapter 6`_</span></a> an expanded description of <tt class="docutils literal"><span class="pre">**kern</span></tt>
 will be given that includes a much wider variety of concepts and situations
 than we have encountered in this chapter. <a href="#id27"><span class="problematic" id="id28">`**Appendices I**`_</span></a> and <a href="#id29"><span class="problematic" id="id30">`**II**`_</span></a>
 provide expanded information pertaining to Reference Records.</p>
@@ -723,7 +723,14 @@ next chapter we will examine some simple processes.</p>
           SphinxRtdTheme.StickyNav.enable();
       });
   </script>
+  
+<script>
+   var footer = document.getElementsByName("footer");
+   var footer_content = "This is the Footer";
+   //   document.getElementsByName("footer")[0].innerHTML = footer_content;
+</script>
    
+
 
 </body>
 </html>

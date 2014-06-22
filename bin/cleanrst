@@ -1,0 +1,49 @@
+#!/usr/bin/perl
+#
+# Programmer:    Craig Stuart Sapp <craig.stanford.edu>
+# Creation Date: Sun Jun 22 01:13:17 PDT 2014
+# Last Modified: Sun Jun 22 01:13:17 PDT 2014
+# Filename:      bin/cleanrst
+# Syntax:        perl 5
+#
+# Description:   Clean up translations of HTML into RST files.
+#
+
+use strict;
+
+my @files = @ARGV;
+
+my $file;
+foreach $file (@files) {
+   processFile($file);
+}
+
+
+sub processFile {
+   my ($file) = @_;
+   my $fh;
+   open $fh, '<', $file or die "Cannot read $file.";
+   $/ = undef;
+   my $contents = <$fh>;
+   close $fh;
+
+   $contents = cleanContent($contents);
+
+   open(FILE, ">$file") or die "Cannot open $file to write new contents.";
+   print FILE $contents;
+   close(FILE);
+}
+
+
+sub cleanContent {
+   my ($content) = @_;
+  
+   $content =~ s/``\*\*kern````/``**kern``/g;
+
+   return $content;
+}
+
+
+
+
+

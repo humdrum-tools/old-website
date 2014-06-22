@@ -27,46 +27,51 @@ and it has been used steadily for decades.
 We will be updating the site soon to include
 a list of studies and publications that have used the toolkit. 
 
+..	Getting Started
+	-------------------
 
-Getting Started
--------------------
+..	toctree::
+	:maxdepth: 2
 
-.. toctree::
-   :maxdepth: 3
-
-   installationguide/index
-
-The Humdrum User Guide
---------------------------
+	installationguide/index
 
 
-.. toctree::
-   :maxdepth: 1
 
-   
-   guide/index
+..	The Humdrum User Guide
+	--------------------------
 
-Humdrum Extras
----------------------
+..	toctree::
+	:maxdepth: 2
 
-.. toctree::
-   :maxdepth: 1
+	guide/index
 
-   extras/index
 
-The Humdrum Cookbook
------------------------
 
-.. toctree::
-   :maxdepth: 1
+..	Humdrum Extras
+	---------------------
 
-   cookbook/index
+..	toctree::
+	:maxdepth: 2
 
-Reference Manual
-----------------------
+	extras/index
 
-.. toctree::
-   :maxdepth: 1
 
-   referencemanual/index
+
+..	The Humdrum Cookbook
+	-----------------------
+
+..	toctree::
+	:maxdepth: 2
+
+	cookbook/index
+
+
+
+..	Reference Manual
+	----------------------
+
+..	toctree::
+	:maxdepth: 2
+
+	referencemanual/index
 
