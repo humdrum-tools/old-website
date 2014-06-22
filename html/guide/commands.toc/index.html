@@ -1,0 +1,363 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Humdrum Command Reference &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../"/>
+        <link rel="up" title="The Humdrum User Guide" href="../"/>
+        <link rel="next" title="&lt;no title&gt;" href="../glossary/"/>
+        <link rel="prev" title="Supplementary Humdrum Commands" href="../commands.more/"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installationguide/">Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installationguide/downloading/">Downloading Humdrum</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../"><em>The Humdrum User Guide</em></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../guide01/">Chapter 1: Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide02/">Chapter 2: Representing Music Using kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide03/">Chapter 3: Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide04/">Chapter 4:Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide05/">Chapter 5: The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide06/">Chapter 6: Representing Music Using ***kern*(II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide07/">Chapter 7: MIDI Output Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide08/">Chapter 8: The Shell (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide09/">Chapter 9: Searching with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide10/">Chapter 10: Musical Uses of Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide11/">Chapter 11: Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide12/">Chapter 12: Selecting Musical Parts and Passages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide13/">Chapter 13: Assembling Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide14/">Chapter 14: Stream Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide15/">Chapter 15: Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide16/">Chapter 16: The Shell (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide17/">Chapter 17: Creating Inventories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide18/">Chapter 18: Fingers, Footsteps and Frets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide19/">Chapter 19: Musical Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide20/">Chapter 20: Strophes, Verses, and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide21/">Chapter 21: Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide22/">Chapter 22: Classifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide23/">Chapter 23: Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide24/">Chapter 24: The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide25/">Chapter 25: Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide26/">Chapter 26: Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide27/">Chapter 27: Text and Lyrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide29/">Chapter 29: Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide30/">Chapter 30:MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide31/">Chapter 31: Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide32/">Chapter 32: The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide34/">Chapter 34: Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide35/">Chapter 35: Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide37/">Chapter 37: Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide38/">Chapter 38: Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide39/">Chapter 39: Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide40/">Chapter 40: Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bibliography/">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.more/">Supplementary Humdrum Commands</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Humdrum Command Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../humdrum.problems/">HUMDRUM PROBLEMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linux.perform/">Installing and Using the Humdrum &#8220;perform&#8221; Command under Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual.bibliog/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual.bibliog/#bibliography">Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07/">Humdrum Developer&#8217;s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07a/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07a/#humdrum-representation-development">Humdrum Representation Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07a/#representation-assumptions">Representation Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07a/#creating-new-humdrum-representations">Creating New Humdrum Representations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07a/#defining-a-new-humdrum-interpretation-a-sample-problem">Defining a New Humdrum Interpretation: A Sample Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07b/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07b/#humdrum-software-development">Humdrum Software Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07b/#standard-program-skeleton">Standard Program Skeleton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../musedata2kern/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../musedata2kern/#how-to-translate-musedata-files-to-humdrum">How To Translate MuseData Files to Humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../musedata2kern/#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/">Sample Research Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../representations.toc/">Humdrum Representation Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/">Online Resources:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample.problems/">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../extras/">Humdrum Extras</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/intro/">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/dataEntry/">Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/melody/">Melody Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/harmony/">Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/rhythm/">Rhythm Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/musicSearching/">Music Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/MIDIrendering/">MIDI Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/graphicalNotation/">Graphical Musical Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/otherUtilities/">Other Useful Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/programmingTutorial/">Programming Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cookbook/">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cookbook/vimHighlighting/">Syntax Coloring in Vim</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../referencemanual/">Humdrum Reference Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../referencemanual/assemble/">Assemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../referencemanual/hint/">hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../referencemanual/mint/">mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../referencemanual/key/">key</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../">Docs</a> &raquo;</li>
+      
+          <li><a href="../"><em>The Humdrum User Guide</em></a> &raquo;</li>
+      
+    <li>Humdrum Command Reference</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/guide/commands.toc.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <img alt="" src="guide/../HumdrumIcon.gif" />
+<img alt="Humdrum" src="guide/../HumdrumHeader.gif" />
+<img alt="" src="guide/../HumdrumSpacer.gif" />
+<div class="section" id="humdrum-command-reference">
+<h1>Humdrum Command Reference<a class="headerlink" href="#humdrum-command-reference" title="Permalink to this headline">¶</a></h1>
+<p><a href="#id47"><span class="problematic" id="id48">`**assemble**`_amalgamate two or more Humdrum files
+`**census**`_determine general properties of a Humdrum input
+`**cents**`_translate selected Humdrum pitch-related representations to cents
+`**cleave**`_join tokens from two or more Humdrum spines into a single output
+spine
+`**context**`_congeal Humdrum data records to form a contextual frame
+`**correl**`_measure the numerical similarity between two Humdrum spines
+`**deg**`_translate selected Humdrum pitch-related representations to
+relative scale degree (`****deg**`_</span></a>)
+<a href="#id49"><span class="problematic" id="id50">`**degree**`_translate selected Humdrum pitch-related representations to
+absolute scale degree (`****degree**`_</span></a>)
+<a href="#id51"><span class="problematic" id="id52">`**diss**`_calculate the degree of sensory dissonance for successive spectra
+(`****diss**`_</span></a>)
+<a href="#id53"><span class="problematic" id="id54">`**ditto**`_replace Humdrum null tokens with previous data token
+`**encode**`_interactive Humdrum encoding from MIDI input
+`**extract**`_get specified spines from a Humdrum input
+`**fields**`_list spine/field structure of a Humdrum file
+`**fin2hum**`_translate Finale files to Humdrum
+`**freq**`_translate selected Humdrum pitch-related representations to
+frequency
+`**hint**`_determine harmonic intervals between concurrent pitches for
+Humdrum inputs
+`**hum2fin**`_translate Humdrum files to Finale
+`**humdrum**`_general syntax checker for Humdrum files
+`**humsed**`_stream editor for Humdrum inputs
+`**humver**`_display Humdrum toolkit version and copyright information
+`**infot**`_calculate information theory measures for Humdrum inputs
+`**iv**`_determine interval-class vectors for successive vertical sonorities
+for Humdrum inputs
+`**kern**`_translate selected Humdrum pitch-related representations to
+`****kern**`_</span></a>
+<a href="#id55"><span class="problematic" id="id56">`**key**`_estimate the key for a Humdrum passage
+`**melac**`_calculate melodic accent values for successive pitches in a
+Humdrum input
+`**metpos**`_assign metric position indicators to Humdrum sonorities
+`**midi**`_convert from `****kern**`_</span></a> to Humdrum <a href="#id57"><span class="problematic" id="id58">`****MIDI**`_</span></a> format
+<a href="#id59"><span class="problematic" id="id60">`**midreset**`_reset MIDI controller card
+`**mint**`_determine melodic intervals between successive pitches for Humdrum
+inputs
+`**nf**`_determine normal form for successive vertical sonorities in Humdrum
+inputs
+`**num**`_number selected Humdrum records according to user-defined criteria
+`**patt**`_locate and output user-defined patterns in a Humdrum input
+`**pattern**`_exhaustively locate and count user-defined patterns in a
+Humdrum input
+`**pc**`_translate Humdrum semitone representation or pc to pitch-class
+`**pcset**`_convert Humdrum pitch and pitch-class information to set-
+theoretic representations
+`**perform**`_play Humdrum `****MIDI**`_</span></a> files
+<a href="#id61"><span class="problematic" id="id62">`**pf**`_determine prime form for successive Humdrum vertical sonorities
+`**pitch**`_translate selected Humdrum pitch-related representations to
+American standard pitch notation
+`**proof**`_check syntax of Humdrum `****kern**`_</span></a> file
+<a href="#id63"><span class="problematic" id="id64">`**recode**`_recode numeric tokens in selected Humdrum spines
+`**record**`_record live MIDI input in Humdrum `****MIDI**`_</span></a> data format
+<a href="#id65"><span class="problematic" id="id66">`**regexp**`_interactive regular-expression tester
+`**reihe**`_output specified row variant for a given Humdrum prime row input
+`**rend**`_split data tokens from specified Humdrum spines into component
+sub-tokens
+`**rid**`_eliminate specified Humdrum record types
+`**scramble**`_randomize order of either Humdrum data records or data tokens
+`**semits**`_translate selected Humdrum pitch-related representations to
+numerical semitones
+`**simil**`_measure the non-numeric similarity between two single-spine
+Humdrum inputs
+`**smf**`_generate standard MIDI file from Humdrum `****MIDI**`_</span></a> input
+<a href="#id67"><span class="problematic" id="id68">`**solfa**`_translate selected Humdrum pitch-related representations to tonic
+solfa syllables (`****solfa**`_</span></a>)
+<a href="#id69"><span class="problematic" id="id70">`**solfg**`_translate selected Humdrum pitch-related representations to
+French solfege notation
+`**strophe**`_selectively extract strophic data for Humdrum inputs
+`**synco**`_measure degree of metric syncopation for Humdrum input
+`**tacet**`_reset MIDI channels to ensure silence
+`**thru**`_expand Humdrum abbreviated format representation to through-
+composed format
+`**timebase**`_reformat Humdrum `****kern**`_</span></a> or <a href="#id71"><span class="problematic" id="id72">`****recip**`_</span></a> score with
+constant time-base
+<a href="#id1"><span class="problematic" id="id2">`</span></a><a href="#id3"><span class="problematic" id="id4">**</span></a>tonh**`_translate selected Humdrum pitch-related representations to German
+pitch notation
+<a href="#id5"><span class="problematic" id="id6">`</span></a><a href="#id7"><span class="problematic" id="id8">**</span></a>trans**`_transpose selected Humdrum pitch representations
+<a href="#id9"><span class="problematic" id="id10">`</span></a><a href="#id11"><span class="problematic" id="id12">**</span></a>urrhythm**`_characterize Johnson-Laird rhythmic prototypes in a Humdrum
+passage
+<a href="#id13"><span class="problematic" id="id14">`</span></a><a href="#id15"><span class="problematic" id="id16">**</span></a>veritas**`_validate that a Humdrum document has not been modified
+<a href="#id17"><span class="problematic" id="id18">`</span></a><a href="#id19"><span class="problematic" id="id20">**</span></a>vox**`_determine number of simultaneously active pitches in a Humdrum
+input
+<a href="#id21"><span class="problematic" id="id22">`</span></a><a href="#id23"><span class="problematic" id="id24">**</span></a>xdelta**`_calculate sequential numeric differences between successive
+Humdrum data tokens
+<a href="#id25"><span class="problematic" id="id26">`</span></a><a href="#id27"><span class="problematic" id="id28">**</span></a>yank**`_extract passages from a Humdrum input
+<a href="#id29"><span class="problematic" id="id30">`</span></a><a href="#id31"><span class="problematic" id="id32">**</span></a>ydelta**`_calculate numeric differences for concurrent Humdrum data</p>
+<ul class="simple">
+<li>` <a href="#id33"><span class="problematic" id="id34">**</span></a>Supplementary Humdrum Commands**`_</li>
+<li>` <a href="#id35"><span class="problematic" id="id36">**</span></a>Index to Pre-defined Humdrum Representations**`_</li>
+<li>` <a href="#id37"><span class="problematic" id="id38">**</span></a>Humdrum Home Page**`_</li>
+<li>` <a href="#id39"><span class="problematic" id="id40">**</span></a>Table for Contents for Humdrum User Guide**`_</li>
+</ul>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../glossary/" class="btn btn-neutral float-right" title="&lt;no title&gt;"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../commands.more/" class="btn btn-neutral" title="Supplementary Humdrum Commands"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

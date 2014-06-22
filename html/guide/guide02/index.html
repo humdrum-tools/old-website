@@ -1,0 +1,729 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapter 2: Representing Music Using kern (I) &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../"/>
+        <link rel="up" title="The Humdrum User Guide" href="../"/>
+        <link rel="next" title="Chapter 3: Some Initial Processing" href="../guide03/"/>
+        <link rel="prev" title="Chapter 1: Humdrum: A Brief Tour" href="../guide01/"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installationguide/">Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installationguide/downloading/">Downloading Humdrum</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../"><em>The Humdrum User Guide</em></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../guide01/">Chapter 1: Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Chapter 2: Representing Music Using kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide03/">Chapter 3: Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide04/">Chapter 4:Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide05/">Chapter 5: The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide06/">Chapter 6: Representing Music Using ***kern*(II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide07/">Chapter 7: MIDI Output Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide08/">Chapter 8: The Shell (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide09/">Chapter 9: Searching with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide10/">Chapter 10: Musical Uses of Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide11/">Chapter 11: Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide12/">Chapter 12: Selecting Musical Parts and Passages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide13/">Chapter 13: Assembling Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide14/">Chapter 14: Stream Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide15/">Chapter 15: Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide16/">Chapter 16: The Shell (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide17/">Chapter 17: Creating Inventories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide18/">Chapter 18: Fingers, Footsteps and Frets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide19/">Chapter 19: Musical Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide20/">Chapter 20: Strophes, Verses, and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide21/">Chapter 21: Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide22/">Chapter 22: Classifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide23/">Chapter 23: Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide24/">Chapter 24: The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide25/">Chapter 25: Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide26/">Chapter 26: Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide27/">Chapter 27: Text and Lyrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide29/">Chapter 29: Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide30/">Chapter 30:MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide31/">Chapter 31: Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide32/">Chapter 32: The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide34/">Chapter 34: Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide35/">Chapter 35: Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide37/">Chapter 37: Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide38/">Chapter 38: Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide39/">Chapter 39: Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide40/">Chapter 40: Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bibliography/">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.more/">Supplementary Humdrum Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.toc/">Humdrum Command Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../humdrum.problems/">HUMDRUM PROBLEMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linux.perform/">Installing and Using the Humdrum &#8220;perform&#8221; Command under Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual.bibliog/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual.bibliog/#bibliography">Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07/">Humdrum Developer&#8217;s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07a/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07a/#humdrum-representation-development">Humdrum Representation Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07a/#representation-assumptions">Representation Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07a/#creating-new-humdrum-representations">Creating New Humdrum Representations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07a/#defining-a-new-humdrum-interpretation-a-sample-problem">Defining a New Humdrum Interpretation: A Sample Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07b/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07b/#humdrum-software-development">Humdrum Software Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07b/#standard-program-skeleton">Standard Program Skeleton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../musedata2kern/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../musedata2kern/#how-to-translate-musedata-files-to-humdrum">How To Translate MuseData Files to Humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../musedata2kern/#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/">Sample Research Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../representations.toc/">Humdrum Representation Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/">Online Resources:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample.problems/">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../extras/">Humdrum Extras</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/intro/">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/dataEntry/">Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/melody/">Melody Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/harmony/">Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/rhythm/">Rhythm Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/musicSearching/">Music Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/MIDIrendering/">MIDI Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/graphicalNotation/">Graphical Musical Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/otherUtilities/">Other Useful Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/programmingTutorial/">Programming Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cookbook/">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cookbook/vimHighlighting/">Syntax Coloring in Vim</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../referencemanual/">Humdrum Reference Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../referencemanual/assemble/">Assemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../referencemanual/hint/">hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../referencemanual/mint/">mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../referencemanual/key/">key</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../">Docs</a> &raquo;</li>
+      
+          <li><a href="../"><em>The Humdrum User Guide</em></a> &raquo;</li>
+      
+    <li>Chapter 2: Representing Music Using kern (I)</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/guide/guide02.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="chapter-2-representing-music-using-kern-i">
+<h1>Chapter 2: Representing Music Using kern (I)<a class="headerlink" href="#chapter-2-representing-music-using-kern-i" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<p>The <tt class="docutils literal"><span class="pre">**kern``</span></tt>  representation can be used to represent basic or core
+information for common Western music. The <tt class="docutils literal"><span class="pre">**kern</span></tt>  scheme can be used to
+encode pitch and duration, plus other common score-related information. In
+this chapter, we will introduce <tt class="docutils literal"><span class="pre">**kern</span></tt>  through a series of tutorial
+examples. A more comprehensive description of <a href="#id1"><span class="problematic" id="id2">**</span></a>kern  will be given in
+<a href="#id13"><span class="problematic" id="id14">`Chapter 6.`_</span></a> Our intention here is to provide a quick introduction.</p>
+<p>Consider the opening motive from J.S. Bach&#8217;s <em>Art of Fugue</em> shown in Example
+2.1. A corresponding <a href="#id3"><span class="problematic" id="id4">**</span></a>kern  representation is given below the notation.</p>
+<p><strong>Example 2.1.</strong> J.S. Bach <em>Die Kunst der Fuge</em></p>
+<img src="../../_images/ex2-1.svg" /><div class="highlight-kern"><div class="highlight"><pre><span class="-KernExclusive">**kern</span>
+<span class="-KernExclusive">*clefG2</span>
+<span class="-KernExclusive">*k[b-]</span>
+<span class="-KernExclusive">*M2/2</span>
+<span class="-KernBar">=-</span>
+<span class="-KernNotes">2d</span><span class="err">/</span>
+<span class="-KernNotes">2a</span><span class="err">/</span>
+<span class="-KernBar">=</span>
+<span class="-KernNotes">2f</span><span class="err">/</span>
+<span class="-KernNotes">2d</span><span class="err">/</span>
+<span class="-KernBar">=</span>
+<span class="-KernNotes">2c#</span><span class="err">/</span>
+<span class="-KernNotes">4d</span><span class="err">/</span>
+<span class="-KernNotes">4e</span><span class="err">/</span>
+<span class="-KernBar">=</span>
+<span class="-KernNotes">2f</span><span class="err">/</span>
+<span class="-KernNotes">2r</span>
+<span class="-KernExclusive">*-</span>
+</pre></div>
+</div>
+<p>In general, <tt class="docutils literal"><span class="pre">kern</span></tt> is intended to represent the underlying <em>functional</em>
+information conveyed by a musical score rather than the visual or
+<em>orthographic</em> information found in a given printed rendition. The <tt class="docutils literal"><span class="pre">kern</span></tt>
+representation is designed to facilitate analytic applications rather than
+music printing or sound generation. Nevertheless, both visual output and
+sound output can be generated from the <tt class="docutils literal"><span class="pre">kern</span></tt> representation.</p>
+<p>Notice that whereas the notation is laid out horizontally across the page,
+the Humdrum representation procedes vertically down the page. The
+representation begins with the keyword <tt class="docutils literal"><span class="pre">kern</span></tt> which indicates that the
+ensuing encoded material conforms to the kern representation. The encoded
+passage ends with a special <a href="#id15"><span class="problematic" id="id16">`*terminator*`_</span></a> token (<tt class="docutils literal"><span class="pre">*-</span></tt>).</p>
+<p>The clef is identified as a G-clef positioned on the second line of the staff
+(i.e., a treble clef). The key signature is encoded as a single flat, B-flat:
+the minus sign here indicates a flat. The meter signature (2/2) is encoded
+next.</p>
+<p>Lines that begin with an equals-sign indicate <em>logical</em> barlines. Musical
+works may begin with either a complete measure or a partial measure. In the
+<tt class="docutils literal"><span class="pre">kern</span></tt> representation, the beginning of the first measure is explicitly
+indicated. In Example 2.1, the encoding for the first barline (<tt class="docutils literal"><span class="pre">=-</span></tt>) is a
+functional encoding that doesn&#8217;t correspond to anything in the printed score.
+The minus sign following the equals-sign indicates that the barline is
+&#8220;invisible.&#8221; The presence of this logical barline allows various Humdrum
+tools to recognize that the initial notes start at the beginning of the first
+measure, and are not &#8220;pick-up&#8221; notes prior to the first measure.</p>
+<p>The durations of the notes are indicated by reciprocal numbers: 1 for whole-
+note, 2 for half-note, 4 for quarter-note, etc. The <em>breve</em> or double whole-
+note is a special case and is represented by the number zero.</p>
+<p>Stem directions are encoded using the slash (/) for up-stems and the back-
+slash () for down-stems.</p>
+<p>Pitches are represented through a scheme of upper- and lower-case letters.
+Middle C (C4) is represented using the single lower-case letter &#8220;<tt class="docutils literal"><span class="pre">c</span> <span class="pre">&quot;.</span>
+<span class="pre">Successive</span> <span class="pre">octaves</span> <span class="pre">are</span> <span class="pre">designated</span> <span class="pre">by</span> <span class="pre">letter</span> <span class="pre">repetition,</span> <span class="pre">thus</span> <span class="pre">C5</span> <span class="pre">is</span>
+<span class="pre">represented</span> <span class="pre">by</span> <span class="pre">``cc</span></tt>, C6 by <tt class="docutils literal"><span class="pre">ccc</span></tt> and so on. The higher the octave,
+the more repeated letters.</p>
+<p>For pitches below C4, upper-case letters are used: <tt class="docutils literal"><span class="pre">C</span></tt> designates C3,
+<tt class="docutils literal"><span class="pre">CC</span></tt> designates C2, and so on. Changes of octave occur between B and C.
+Thus the B below middle C is represented as <tt class="docutils literal"><span class="pre">B</span></tt>; the B below <tt class="docutils literal"><span class="pre">CC</span></tt> is
+represented as <tt class="docutils literal"><span class="pre">BBB</span></tt>, and so on. The lower the octave, the greater the
+number of repeated letters.</p>
+<p>Accidentals are encoded using the octothorpe (<tt class="docutils literal"><span class="pre">#</span></tt>) for sharps, the minus
+sign (<tt class="docutils literal"><span class="pre">-</span></tt>) for flats, and the lower-case letter <tt class="docutils literal"><span class="pre">n</span></tt> for naturals.
+Accidentals are encoded immediately following the pitch letter name. Double-
+sharps and double-flats have no special representations in <tt class="docutils literal"><span class="pre">**kern``</span></tt>  and are
+simply denoted by repetition: (<tt class="docutils literal"><span class="pre">##</span></tt>) and (<tt class="docutils literal"><span class="pre">--</span></tt>) respectively. Triple and
+quadruple accidentals are similarly encoded by repetition. Sharps, flats, and
+naturals are mutually exclusive in <tt class="docutils literal"><span class="pre">**kern``</span></tt>, so tokens such as <tt class="docutils literal"><span class="pre">cc#n</span></tt>
+and &#8220;<tt class="docutils literal"><span class="pre">GG-#</span></tt> are illegal.</p>
+<p>In Example 2.2, two musical parts are encoded. In the corresponding
+<tt class="docutils literal"><span class="pre">**kern``</span></tt> encoding, each musical part or voice has been assigned to a
+different musical staff &#8211; labelled <tt class="docutils literal"><span class="pre">*staff1</span></tt> and <tt class="docutils literal"><span class="pre">*staff2</span></tt>. Notice that
+the upper part has been encoded in the right-most column. The layout is
+exactly as though the musical score were turned sideways.</p>
+<p><strong>Example 2.2.</strong> J.S. Bach, <em>Praeambulum</em> BWV 390.</p>
+<img src="../../_images/ex2-2.svg" /><div class="highlight-kern"><div class="highlight"><pre><span class="-KernExclusive">**kern</span><span class="w">  </span><span class="-KernExclusive">**kern</span>
+<span class="-KernExclusive">*staff2</span><span class="w"> </span><span class="-KernExclusive">*staff1</span>
+<span class="-KernExclusive">*clefF4</span><span class="w"> </span><span class="-KernExclusive">*clefG2</span>
+<span class="-KernExclusive">*k[b-]</span><span class="w">  </span><span class="-KernExclusive">*k[b-]</span>
+<span class="-KernExclusive">*M3/4</span><span class="w">   </span><span class="-KernExclusive">*M3/4</span>
+<span class="-KernBar">=1-     =1-</span>
+<span class="-KernNotes">2.rr</span><span class="w">    </span><span class="-KernNotes">8r</span>
+<span class="-KernDot">.</span><span class="w">       </span><span class="-KernNotes">8d</span><span class="err">/L</span>
+<span class="-KernDot">.</span><span class="w">       </span><span class="-KernNotes">8g</span><span class="err">/</span>
+<span class="-KernDot">.</span><span class="w">       </span><span class="-KernNotes">8b-</span><span class="err">/</span>
+<span class="-KernDot">.</span><span class="w">       </span><span class="-KernNotes">8g</span><span class="err">/</span>
+<span class="-KernDot">.</span><span class="w">       </span><span class="-KernNotes">8d</span><span class="err">/J</span>
+<span class="-KernBar">=2      =2</span>
+<span class="-KernNotes">8r</span><span class="w">      </span><span class="-KernNotes">4dd</span><span class="err">\</span>
+<span class="-KernNotes">8GG</span><span class="err">/L</span><span class="w">   </span><span class="-KernDot">.</span>
+<span class="-KernNotes">8BB-</span><span class="err">/</span><span class="w">   </span><span class="-KernNotes">4r</span>
+<span class="-KernNotes">8D</span><span class="err">/</span><span class="w">     </span><span class="-KernDot">.</span>
+<span class="-KernNotes">8BB-</span><span class="err">/</span><span class="w">   </span><span class="-KernNotes">4r</span>
+<span class="-KernNotes">8GG</span><span class="err">/J</span><span class="w">   </span><span class="-KernDot">.</span>
+<span class="-KernBar">=3      =3</span>
+<span class="-KernNotes">4G</span><span class="err">Ww\</span><span class="w">   </span><span class="-KernNotes">8r</span>
+<span class="-KernDot">.</span><span class="w">       </span><span class="-KernNotes">8dd</span><span class="err">\L</span>
+<span class="-KernNotes">8GG</span><span class="err">/L</span><span class="w">   </span><span class="-KernNotes">8b-</span><span class="err">\</span>
+<span class="-KernNotes">8BB-</span><span class="err">/</span><span class="w">   </span><span class="-KernNotes">8g</span><span class="err">\</span>
+<span class="-KernNotes">8D</span><span class="err">/</span><span class="w">     </span><span class="-KernNotes">8gg</span><span class="err">\</span>
+<span class="-KernNotes">8G</span><span class="err">/J</span><span class="w">    </span><span class="-KernNotes">8b-</span><span class="err">\J</span>
+<span class="-KernBar">=4      =4</span>
+<span class="-KernNotes">4D</span><span class="err">\</span><span class="w">     </span><span class="-KernNotes">8a</span><span class="err">/L</span>
+<span class="-KernDot">.</span><span class="w">       </span><span class="-KernNotes">8gg</span><span class="err">/</span>
+<span class="-KernNotes">4d</span><span class="err">\</span><span class="w">     </span><span class="-KernNotes">8ff</span><span class="err">/</span>
+<span class="-KernDot">.</span><span class="w">       </span><span class="-KernNotes">8ee</span><span class="err">/</span>
+<span class="-KernNotes">4D</span><span class="err">\</span><span class="w">     </span><span class="-KernNotes">8ff</span><span class="err">/</span>
+<span class="-KernDot">.</span><span class="w">       </span><span class="-KernNotes">8a-</span><span class="err">/J</span>
+<span class="-KernBar">=5      =5</span>
+<span class="-KernExclusive">*-</span><span class="w">      </span><span class="-KernExclusive">*-</span>
+</pre></div>
+</div>
+<p>Each column contains its own separate information. Both columns have been
+labelled <tt class="docutils literal"><span class="pre">**kern</span></tt>  and are terminated (<tt class="docutils literal"><span class="pre">*-</span></tt>). The columns are separated by
+a single tab. Barline information is also encoded in each column. Notice that
+measure numbers have been added following the barline indicator (=). Although
+measure numbers may not be present in the printed score, it is normal to
+include them in <tt class="docutils literal"><span class="pre">**kern</span></tt>  encodings.</p>
+<p>A notable feature when representing multi-part music is the presence of place
+holders called <a href="#id17"><span class="problematic" id="id18">`*null tokens*.`_</span></a> A null token is represented by a single
+isolated period character (.). Not all musical parts will have a new note
+with each successive sonority. A null token maintains the grid structure for
+a sustained pitch while another part is moving.</p>
+<p>Rests are encoded by the lower-case letter <tt class="docutils literal"><span class="pre">r</span></tt>. Notice that the first
+rest in the lower part has not been encoded as a whole rest. Instead, it has
+been rendered as a dotted half rest. This is a good illustration of how
+<tt class="docutils literal"><span class="pre">**kern``</span></tt> is intended to be a <em>functional</em> rather than <em>orthographic</em>
+(visual) representation. Nevertheless, users can explicitly indicate that the
+rest is visually rendered as a whole rest by adding a second lower-case
+letter <tt class="docutils literal"><span class="pre">r</span></tt>.</p>
+<p>Another important difference between functional and orthographic
+representations is evident in the treatment of accidentals. In the <tt class="docutils literal"><span class="pre">**kern``</span></tt>
+representation, all pitches are encoded without regard for what is going on
+around them. For example, in <tt class="docutils literal"><span class="pre">**kern``</span></tt>, pitches are encoded with the
+appropriate accidental, even if the accidental is specified in a key-
+signature or is present earlier in the same measure. Hence the explicit
+encoding of all occurrences of B-flats in Example 2.2.</p>
+<p>All pitches are encoded as absolute pitches. In <tt class="docutils literal"><span class="pre">**kern``</span></tt>, even transposing
+instruments are always represented at (sounding) concert pitch. A special
+<em>transposition interpretation</em> is provided to indicate the nature of any
+transposing instrument &#8211; but the encoded pitches &#8211; selves appear only at
+concert pitch.</p>
+<p>Finally, pitches in <tt class="docutils literal"><span class="pre">**kern``</span></tt> are encoded as &#8220;nominally&#8221; equally-tempered
+values. A special <em>temperament interpretation</em> is provided to indicate if the
+tuning system is other than equal temperament.</p>
+<p>Two other aspects of Example 2.2 are noteworthy. In measure 3 an inverted
+mordent appears on the first note in the bass part. Mordents are encoded via
+the letter M``  &#8211; upper-case <tt class="docutils literal"><span class="pre">M</span></tt> for whole-tone mordents and lower-
+case m &#8216; for semitone mordents. Inverted mordents are similarly encoded
+using the letter W &#8216;. In Example 2.2, it is not clear whether the mordent
+should be a semitone (consistent with a G harmonic minor figure) or a whole-
+tone mordent (consistent with a G melodic minor figure). The signifier
+<tt class="docutils literal"><span class="pre">Ww</span></tt> is a special representation indicating that the ornament may be
+either one.</p>
+<p>Also evident in Example 2.2 are the upper-case letters <tt class="docutils literal"><span class="pre">L</span></tt> and <tt class="docutils literal"><span class="pre">J</span></tt>.
+These encode beaming information. Each beam is opened by the letter <tt class="docutils literal"><span class="pre">L</span></tt>
+and closed by the letter <tt class="docutils literal"><span class="pre">J</span></tt> (think of left and right angles). Multiple
+beams and partial beams are discussed in Example 2.4.</p>
+<p>Example 2.3 shows a four-part chorale harmonization by Bach. In this example,
+two musical parts share each of the two staves. Notice how the corresponding
+<tt class="docutils literal"><span class="pre">**kern``</span></tt> encoding assigns each part to a separate column, but links the
+appropriate parts using the <a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">*</span></a>staff  indicators.</p>
+<p><strong>Example 2.3.</strong> <em>Nun danket alle Gott</em>, arr. J.S. Bach.</p>
+<img src="../../_images/ex2-3.svg" /><div class="highlight-kern"><div class="highlight"><pre><span class="-KernExclusive">**kern</span><span class="w">       </span><span class="-KernExclusive">**kern</span><span class="w">          </span><span class="-KernExclusive">**kern</span><span class="w">          </span><span class="-KernExclusive">**kern</span>
+<span class="-KernExclusive">*staff2</span><span class="w">      </span><span class="-KernExclusive">*staff2</span><span class="w">         </span><span class="-KernExclusive">*staff1</span><span class="w">         </span><span class="-KernExclusive">*staff1</span>
+<span class="-KernExclusive">*clefF4</span><span class="w">      </span><span class="-KernExclusive">*clefF4</span><span class="w">         </span><span class="-KernExclusive">*clefG2</span><span class="w">         </span><span class="-KernExclusive">*clefG2</span>
+<span class="-KernExclusive">*k[f#c#g#]</span><span class="w">   </span><span class="-KernExclusive">*k[f#c#g#]</span><span class="w">      </span><span class="-KernExclusive">*k[f#c#g#]</span><span class="w">      </span><span class="-KernExclusive">*k[f#c#g#]</span>
+<span class="-KernExclusive">*M4/4</span><span class="w">        </span><span class="-KernExclusive">*M4/4</span><span class="w">           </span><span class="-KernExclusive">*M4/4</span><span class="w">           </span><span class="-KernExclusive">*M4/4</span>
+<span class="-KernNotes">4AA</span><span class="w">          </span><span class="-KernNotes">4c#</span><span class="w">             </span><span class="-KernNotes">4a</span><span class="w">              </span><span class="-KernNotes">4ee</span>
+<span class="-KernBar">=1           =1              =1              =1</span>
+<span class="-KernNotes">8A</span><span class="w">           </span><span class="-KernNotes">4c#</span><span class="w">             </span><span class="-KernNotes">4a</span><span class="w">              </span><span class="-KernNotes">4ee</span>
+<span class="-KernNotes">8B</span><span class="w">           </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span>
+<span class="-KernNotes">8c#</span><span class="w">          </span><span class="-KernNotes">4c#</span><span class="w">             </span><span class="-KernNotes">4a</span><span class="w">              </span><span class="-KernNotes">4ee</span>
+<span class="-KernNotes">8A</span><span class="w">           </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span>
+<span class="-KernNotes">8D</span><span class="w">           </span><span class="-KernNotes">4d</span><span class="w">              </span><span class="-KernNotes">4a</span><span class="w">              </span><span class="-KernNotes">4ff#</span>
+<span class="err">E</span><span class="w">            </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span>
+<span class="err">F#</span><span class="w">           </span><span class="-KernNotes">4d</span><span class="w">              </span><span class="-KernNotes">4a</span><span class="w">              </span><span class="-KernNotes">4ff#</span>
+<span class="err">D</span><span class="w">            </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span>
+<span class="-KernBar">=2           =2              =2              =2</span>
+<span class="err">A;</span><span class="w">           </span><span class="-KernNotes">2c#</span><span class="err">;</span><span class="w">            </span><span class="-KernNotes">2a</span><span class="err">;</span><span class="w">             </span><span class="-KernNotes">2ee</span><span class="err">;</span>
+<span class="-KernNotes">4r</span><span class="w">           </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="-KernNotes">4r</span>
+<span class="-KernNotes">4A</span><span class="w">           </span><span class="-KernNotes">4e</span><span class="w">              </span><span class="-KernNotes">4a</span><span class="w">              </span><span class="-KernNotes">4cc#</span>
+<span class="-KernBar">=3           =3              =3              =3</span>
+<span class="-KernNotes">4G#</span><span class="w">          </span><span class="-KernNotes">4e</span><span class="w">              </span><span class="-KernNotes">4b</span><span class="w">              </span><span class="-KernNotes">4dd</span>
+<span class="-KernNotes">4A</span><span class="w">           </span><span class="-KernNotes">4e</span><span class="w">              </span><span class="-KernNotes">4a</span><span class="w">              </span><span class="-KernNotes">4cc#</span>
+<span class="-KernNotes">8E</span><span class="w">           </span><span class="-KernNotes">4e</span><span class="w">              </span><span class="-KernNotes">4g#</span><span class="w">             </span><span class="-KernNotes">4b</span>
+<span class="-KernNotes">8D</span><span class="w">           </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span>
+<span class="-KernNotes">8C#</span><span class="w">          </span><span class="-KernNotes">4e</span><span class="w">              </span><span class="err">[</span><span class="-KernNotes">4a</span><span class="w">             </span><span class="-KernNotes">8.cc#</span>
+<span class="-KernNotes">8AA</span><span class="w">          </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span>
+<span class="-KernDot">.</span><span class="w">            </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">16dd</span>
+<span class="-KernBar">=4           =4              =4              =4</span>
+<span class="-KernNotes">2E</span><span class="w">           </span><span class="-KernNotes">8e</span><span class="w">              </span><span class="-KernNotes">8a</span><span class="err">]</span><span class="w">             </span><span class="-KernNotes">2b</span>
+<span class="-KernDot">.</span><span class="w">            </span><span class="-KernNotes">16d</span><span class="w">             </span><span class="-KernNotes">8f#</span><span class="w">             </span><span class="-KernDot">.</span>
+<span class="-KernDot">.</span><span class="w">            </span><span class="-KernNotes">16c#</span><span class="w">            </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span>
+<span class="-KernDot">.</span><span class="w">            </span><span class="-KernNotes">4d</span><span class="w">              </span><span class="-KernNotes">4g#</span><span class="w">             </span><span class="-KernDot">.</span>
+<span class="-KernNotes">4AA</span><span class="err">;</span><span class="w">         </span><span class="-KernNotes">4c#</span><span class="err">;</span><span class="w">            </span><span class="-KernNotes">4e</span><span class="err">;</span><span class="w">             </span><span class="-KernNotes">4a</span><span class="err">;</span>
+<span class="-KernBar">=:|          </span><span class="err">!</span><span class="-KernBar">=:|            </span><span class="err">!</span><span class="-KernBar">=:|            </span><span class="err">!</span><span class="-KernBar">=:|!</span>
+<span class="-KernExclusive">*-</span><span class="w">           </span><span class="-KernExclusive">*-</span><span class="w">              </span><span class="-KernExclusive">*-</span><span class="w">              </span><span class="-KernExclusive">*-</span>
+</pre></div>
+</div>
+<p>Once again, clefs, key signatures and meter signatures are encoded separately
+for each part. Notice how the meter signature has been encoded as 4/4 rather
+than <cite>common time&#8217;. This again reflects ``**kern`</cite> &#8216;s preoccupation with
+functional information rather than orthographic information. (Later we will
+see how to encode the fact that the meter signature is visually rendered as
+<a href="#id9"><span class="problematic" id="id10">`</span></a>C&#8217; rather than 4/4.)</p>
+<p>In measure 2, pauses (<tt class="docutils literal"><span class="pre">;</span></tt>) have been encoded for all four voices even
+though only two pause symbols appear in the printed notation.</p>
+<p>In the third measure, the last note of the alto part has been tied into the
+fourth measure. The <tt class="docutils literal"><span class="pre">**kern</span></tt>  representation provides no generic means for
+representing &#8220;curved lines&#8221; found in printed scores. Since <tt class="docutils literal"><span class="pre">**kern</span></tt>  is a
+&#8220;functional&#8221; rather than an &#8220;orthographic&#8221; representation, all lines are
+explicitly interpreted as either <em>ties, slurs</em> or <em>phrases.</em></p>
+<p>The open brace <tt class="docutils literal"><span class="pre">{</span></tt> denotes the beginning of a phrase. The closed brace
+<tt class="docutils literal"><span class="pre">}</span></tt> denotes the end of a phrase.</p>
+<p>The open parenthesis <tt class="docutils literal"><span class="pre">(</span></tt> and closed parenthesis <tt class="docutils literal"><span class="pre">)</span></tt> signify the beginning
+and end of a slur respectively.</p>
+<p>The open square bracket <tt class="docutils literal"><span class="pre">[</span></tt> denotes the first note of a tie. The closed
+square bracket <tt class="docutils literal"><span class="pre">]</span></tt> denotes the last note of a tie. The underscore character
+<a href="#id11"><span class="problematic" id="id12">``</span></a>_  denotes middle notes (if any) of a tie.</p>
+<p>Slurs and phrase markings can be <em>nested</em> (e.g. slurs within slurs) and may
+also be <em>elided</em> (e.g. overlapping phrases) to a single depth. <em>Nested
+markings</em> mean that one slur or phrase is entirely subsumed under another
+slur or phrase. For example: <tt class="docutils literal"><span class="pre">(</span> <span class="pre">(</span> <span class="pre">)</span> <span class="pre">)</span></tt> means that a short slur has occurred
+within a longer slur. <em>Elisions</em> are overlaps, for example, where an existing
+phrase fails to end while a new phrase begins. In <tt class="docutils literal"><span class="pre">**kern</span></tt>  the ampersand
+character (<tt class="docutils literal"><span class="pre">&amp;</span></tt>) is used to mark elided slurs or phrases. For example: <tt class="docutils literal"><span class="pre">{</span>
+<span class="pre">&amp;{</span> <span class="pre">}</span> <span class="pre">&amp;}</span></tt> means that two phrases overlap &#8211; the first phrase ending after the
+second phrase has begun.</p>
+<p>Example 2.3 ends with a repeat sign. The <tt class="docutils literal"><span class="pre">**kern</span></tt>  representation makes a
+distinction between repeat signs that appear in the score and repeat signs
+that are obeyed in performance. In this example, only the visual or
+orthographic rendering of the barline has been encoded. Later, in <a href="#id19"><span class="problematic" id="id20">`Chapter
+20,`_</span></a> we will see how sectional repeats are functionally represented. The
+visual appearance of the final barline is encoded as follows: <tt class="docutils literal"><span class="pre">=:|!</span></tt>. The
+equals-sign indicates the logical presence of a barline. The colon indicates
+the repeat sign, followed by a thin line (<tt class="docutils literal"><span class="pre">|</span></tt>), followed by a thick line
+(<tt class="docutils literal"><span class="pre">!</span></tt>).</p>
+<p>Example 2.4 shows a keyboard work by Franz Joseph Haydn. In this example, the
+lower staff appears to have two concurrent voices. The excerpt has been
+encoded using three spines, two of which encode material appearing on the
+same staff. Notice that key signatures are provided that explicitly indicate
+that there are no sharps or flats in the key signature.</p>
+<p>The upper-most part in the first measure shows the use of partial beams.
+Partial beams that extend to the left are encoded by the lower-case letter
+<tt class="docutils literal"><span class="pre">k</span></tt>. Partial beams that extend to the right are encoded by the upper-case
+<tt class="docutils literal"><span class="pre">K</span></tt>. Letters are repeated for each partial beam present. In this case,
+only a single partial beam is used, so only a single <tt class="docutils literal"><span class="pre">k</span></tt> is encoded.
+Notice that the signifiers <tt class="docutils literal"><span class="pre">L</span></tt> and <tt class="docutils literal"><span class="pre">J</span></tt> are used only to encode
+complete beams.</p>
+<p>In the second-last measure, double beams are used to join the sixteenth-note
+pairs. As a result, the beams are started with <cite>LL`</cite> and end with
+<cite>JJ`</cite>.</p>
+<p><strong>Example 2.4.</strong> Franz Joseph Haydn, <em>Sonata in C major, Hob. XVI: 35</em>.</p>
+<img src="../../_images/ex2-4.svg" /><div class="highlight-kern"><div class="highlight"><pre><span class="-KernExclusive">**kern</span><span class="w">               </span><span class="-KernExclusive">**kern</span><span class="w">          </span><span class="-KernExclusive">**kern</span>
+<span class="-KernExclusive">*staff2</span><span class="w">              </span><span class="-KernExclusive">*staff2</span><span class="w">         </span><span class="-KernExclusive">*staff1</span>
+<span class="-KernExclusive">*clefG2</span><span class="w">              </span><span class="-KernExclusive">*clefG2</span><span class="w">         </span><span class="-KernExclusive">*clefG2</span>
+<span class="-KernExclusive">*k[]</span><span class="w">                 </span><span class="-KernExclusive">*k[]</span><span class="w">            </span><span class="-KernExclusive">*k[]</span>
+<span class="-KernExclusive">*M3/4</span><span class="w">                </span><span class="-KernExclusive">*M3/4</span><span class="w">           </span><span class="-KernExclusive">*M3/4</span>
+<span class="-KernBar">=1-                  =1-             =1-</span>
+<span class="-KernNotes">4r</span><span class="w">                   </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="err">[</span><span class="-KernNotes">4ee</span><span class="err">\</span>
+<span class="-KernNotes">4c</span><span class="err">/</span><span class="w">                  </span><span class="-KernNotes">4g</span><span class="err">/</span><span class="w">             </span><span class="-KernNotes">8.ee</span><span class="err">]\L</span>
+<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">16ff</span><span class="err">\Jk</span>
+<span class="-KernNotes">4f</span><span class="err">/</span><span class="w">                  </span><span class="-KernNotes">4g</span><span class="w">              </span><span class="-KernNotes">8.dd</span><span class="err">\L</span>
+<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">16ee</span><span class="err">\Jk</span>
+<span class="-KernBar">=2                   =2              =2</span>
+<span class="-KernNotes">4e</span><span class="err">/</span><span class="w">                  </span><span class="-KernNotes">4g</span><span class="err">/</span><span class="w">             </span><span class="-KernNotes">4cc</span><span class="err">\</span>
+<span class="-KernNotes">4r</span><span class="w">                   </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="-KernNotes">4gg</span><span class="err">/</span>
+<span class="-KernNotes">4r</span><span class="w">                   </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="-KernNotes">4gg</span><span class="err">/</span>
+<span class="-KernBar">=3                   =3              =3</span>
+<span class="err">(</span><span class="-KernNotes">2B</span><span class="err">\([</span><span class="-KernNotes">2.g</span><span class="err">/(</span><span class="-KernNotes">8gg</span><span class="err">\L</span>
+<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">8ff</span><span class="err">)\J</span>
+<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="err">(</span><span class="-KernNotes">8ff</span><span class="err">\L</span>
+<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">8ee</span><span class="err">)\J</span>
+<span class="-KernNotes">4c</span><span class="err">\</span><span class="w">                  </span><span class="-KernDot">.</span><span class="w">               </span><span class="err">(</span><span class="-KernNotes">8ee</span><span class="err">\L</span>
+<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">8dd</span><span class="err">)\J</span>
+<span class="-KernBar">=4                   =4              =4</span>
+<span class="-KernNotes">4G</span><span class="err">\)</span><span class="w">                 </span><span class="-KernNotes">4g</span><span class="err">])/</span><span class="w">           </span><span class="-KernNotes">4dd</span><span class="err">\</span>
+<span class="-KernNotes">4r</span><span class="w">                   </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="-KernNotes">4b</span><span class="err">\</span>
+<span class="-KernNotes">4r</span><span class="w">                   </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="-KernNotes">4g</span><span class="err">/</span>
+<span class="-KernBar">=5                   =5              =5</span>
+<span class="-KernNotes">4r</span><span class="w">                   </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="err">[</span><span class="-KernNotes">4ee</span><span class="err">\</span>
+<span class="-KernNotes">4c</span><span class="err">/</span><span class="w">                  </span><span class="-KernNotes">4g</span><span class="err">/</span><span class="w">             </span><span class="-KernNotes">8.ee</span><span class="err">]\L</span>
+<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">16ff</span><span class="err">\Jk</span>
+<span class="-KernNotes">4f</span><span class="err">/</span><span class="w">                  </span><span class="-KernNotes">4g</span><span class="err">/</span><span class="w">             </span><span class="-KernNotes">8.dd</span><span class="err">\L</span>
+<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">16ee</span><span class="err">\Jk</span>
+<span class="-KernBar">=6                   =6              =6</span>
+<span class="-KernNotes">4e</span><span class="err">/</span><span class="w">                  </span><span class="-KernNotes">4g</span><span class="err">/</span><span class="w">             </span><span class="-KernNotes">4cc</span><span class="err">\</span>
+<span class="-KernNotes">4r</span><span class="w">                   </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="-KernNotes">4ccc</span><span class="err">\</span>
+<span class="-KernNotes">4E</span><span class="err">\</span><span class="w">                  </span><span class="-KernNotes">4c</span><span class="err">\</span><span class="w">             </span><span class="-KernNotes">4ccc</span><span class="err">\</span>
+<span class="-KernBar">=7                   =7              =7</span>
+<span class="-KernNotes">4f</span><span class="err">\</span><span class="w">                  </span><span class="-KernNotes">4c</span><span class="err">\</span><span class="w">             </span><span class="-KernNotes">16gg#</span><span class="err">\LL</span>
+<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">16aa</span><span class="err">\JJ</span>
+<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">8r</span>
+<span class="-KernNotes">4r</span><span class="w">                   </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="-KernNotes">16ee</span><span class="err">\LL</span>
+<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">16ff</span><span class="err">\JJ</span>
+<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">8r</span>
+<span class="-KernNotes">4Gn</span><span class="err">\</span><span class="w">                 </span><span class="-KernNotes">4f</span><span class="err">\</span><span class="w">             </span><span class="-KernNotes">16dd</span><span class="err">\LL</span>
+<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">16b</span><span class="err">\JJ</span>
+<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">8r</span>
+<span class="-KernBar">=8                   =8              =8</span>
+<span class="-KernNotes">4c</span><span class="err">\</span><span class="w">                  </span><span class="-KernNotes">4e</span><span class="err">\</span><span class="w">             </span><span class="-KernNotes">4cc</span><span class="err">\</span>
+<span class="-KernNotes">4r</span><span class="w">                   </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="-KernNotes">4r</span>
+<span class="-KernNotes">4r</span><span class="w">                   </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="-KernNotes">4r</span>
+<span class="-KernBar">=:|                  </span><span class="err">!</span><span class="-KernBar">=:|            </span><span class="err">!</span><span class="-KernBar">=:|!</span>
+<span class="-KernExclusive">*-</span><span class="w">                   </span><span class="-KernExclusive">*-</span><span class="w">              </span><span class="-KernExclusive">*-</span>
+</pre></div>
+</div>
+<p>Slurs are evident in the third measure. Open and closed slurs are represented
+by open (<tt class="docutils literal"><span class="pre">(</span></tt>) and closed (``)``) parentheses respectively. Notice that the
+middle part in the third measure contains a tied note. Considering the
+presence of concurrent slurs in the other parts it is possible that an
+appropriate interpretation of the score would regard the middle voice as also
+slurred. Notice that in the <tt class="docutils literal"><span class="pre">**kern</span></tt>  representation, notes can be tied,
+slurred, and phrased concurrently.</p>
+<div class="section" id="comment-records">
+<h2>Comment Records<a class="headerlink" href="#comment-records" title="Permalink to this headline">¶</a></h2>
+<p>In any representation, some information may best be conveyed as an appended
+commentary, rather than as part of the encoded data. Humdrum comments are
+records (lines) that begin with an exclamation mark.</p>
+<p>Humdrum distinguishes two basic types of comments. Comments that pertain to
+all spines in a file are referred to as <em>global comments</em> and begin with two
+exclamation marks (<tt class="docutils literal"><span class="pre">!!</span></tt>). Comments that pertain to a single spine are
+called <em>local comments</em> and begin with a single exclamation mark in each
+spine. Both types of comments are evident in Example 2.5.</p>
+<p>The first three records are global comments identifying the source and title
+of the piece. The fifth record encodes a local comment in each column. One
+local comment identifies that the lyrics are in the Ojibway language. On the
+same line, notice that the other spine also encodes single exclamation mark,
+but contain no text. Such isolated exclamation marks are referred to as <em>null
+local comments.</em></p>
+<p>Notice that <em>local comments</em> conform to the prevailing spine structure. Each
+spine begins with an exclamation mark and tabs continue to demarcate each
+spine. <em>Global comments</em> by contrast completely ignore the spines.</p>
+<p><strong>Example 2.5.</strong> Ojibway Song.</p>
+<div class="highlight-kern"><div class="highlight"><pre><span class="-KernGlobalComment">!! Ojibway Indian Song</span>
+<span class="-KernGlobalComment">!! Transcribed by Frances Densmore</span>
+<span class="-KernGlobalComment">!! No. 84 &quot;The Sioux Follow Me&quot;</span>
+<span class="-KernExclusive">**kern</span><span class="w">              </span><span class="-KernExclusive">**lyrics</span>
+<span class="-KernGlobalComment">!! In Ojibway</span>
+<span class="-KernExclusive">*clefF4*</span>
+<span class="-KernExclusive">*M3/4*</span>
+<span class="-KernExclusive">*k[b-e-a-d-g-]*</span>
+<span class="-KernNotes">8.d-</span><span class="w">                </span><span class="err">Ma-</span>
+<span class="-KernNotes">16d-</span><span class="w">                </span><span class="err">-gi-</span>
+<span class="-KernBar">=1                  =1</span>
+<span class="-KernNotes">8d-</span><span class="w">                 </span><span class="err">-ja-</span>
+<span class="-KernNotes">16A-</span><span class="w">                </span><span class="err">-go</span>
+<span class="-KernNotes">16A-</span><span class="w">                </span><span class="err">ic-</span>
+<span class="-KernNotes">4d--</span><span class="w">                </span><span class="err">kew-</span>
+<span class="-KernNotes">4d-</span><span class="w">                 </span><span class="err">-yan</span>
+<span class="-KernBar">=2                  =2</span>
+<span class="-KernGlobalComment">! etc.              ! etc.</span>
+<span class="-KernExclusive">*-</span><span class="w">                  </span><span class="-KernExclusive">*-</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reference-records">
+<h2>Reference Records<a class="headerlink" href="#reference-records" title="Permalink to this headline">¶</a></h2>
+<p>A particularly important type of global comment is the <a href="#id21"><span class="problematic" id="id22">`*reference record.*`_</span></a>
+Reference records are formal ways of encoding &#8220;library-type&#8221; information
+pertaining to a Humdrum document. Reference records provide standardized ways
+of encoding bibliographic information &#8211; suitable for computer-based access.</p>
+<p>Humdrum reference records are designated by three exclamation marks at the
+beginning of a line, followed by a letter code, followed by an optional
+number, followed by a colon, followed by some text. The following example
+provides a set of reference records related to the &#8220;Augurs of Spring&#8221; section
+from Stravinsky&#8217;s <em>Rite of Spring.</em> Example 2.6.</p>
+<div class="highlight-kern"><div class="highlight"><pre><span class="-KernTitle">!!!COM: Stravinsky, Igor Fyodorovich</span>
+<span class="-KernTitle">!!!CDT: 1882/6/17/-1971/4/6</span>
+<span class="-KernTitle">!!!ODT: 1911//-1913//; 1947//</span>
+<span class="-KernTitle">!!!OPT@@RUS: Vesna svyashchennaya</span>
+<span class="-KernTitle">!!!OPT@FRE: Le sacre du printemps</span>
+<span class="-KernTitle">!!!OPT@ENG: Rite of Spring</span>
+<span class="-KernTitle">!!!OTL@FRE: Les augures printaniers</span>
+<span class="-KernTitle">!!!PUB: Boosey &amp; Hawkes</span>
+<span class="-KernTitle">!!!YEC: 1945 Boosey &amp; Hawkes</span>
+<span class="-KernTitle">!!!AGN: ballet</span>
+<span class="-KernTitle">!!!AST: neo-classical</span>
+<span class="-KernTitle">!!!AMT: irregular</span>
+<span class="-KernTitle">!!!AIN: clars corno fagot flt oboe</span>
+</pre></div>
+</div>
+<p>Reference records need not be in any particular order. The most important
+reference records (composer, title, etc.) are typically placed at the very
+beginning of a file since this makes inspecting the file easier. Less
+important reference records are typically placed at the end of the file.</p>
+<p>Reference codes that begin with the letter C pertain to the composer.
+The COM &#8216; code identifies the composer (surname first followed by given
+names). The CDT &#8216; code identifies the composer&#8217;s birth and death dates. A
+special format is used in defining such dates, and so there are accurate ways
+to represent uncertainty, approximation, ranges of dates, and alternative
+dates. The <em>Humdrum Reference Manual</em> describes date formats in great detail.</p>
+<p>Reference codes that begin with the letter O &#8216; pertain to the work or
+opus. The OTL &#8216; code identifies the title of the encoded material &#8211; in
+this case the <cite>*Les augures printaniers*&#8217;. The OPT &#8216; code identifies the
+`parent&#8217; work from which the encoded music belongs. The ODE &#8216; code
+identifies the name of a person or organization to which the work was
+dedicated. All three of these records (``OTL`</cite> , <tt class="docutils literal"><span class="pre">OPT</span></tt>  and <tt class="docutils literal"><span class="pre">ODE</span></tt>   ) are
+encoded using the original language.</p>
+<p>Language designations are explicitly indicated by following a reference code
+with one or two &#8220;at&#8221; signs (&#64;) followed by a three letter language code. The
+<a class="reference external" href="mailto:OPT&#37;&#52;&#48;ENG">OPT<span>&#64;</span>ENG</a> &#8216; code is used to provide an English translation. In this case,
+the Russian title (<em>Vesna svyashchennaya</em>) is translated as <em>Rite of Spring</em>.
+The double &#8220;at&#8221; sign (&#64;&#64;) is used to designate the original, primary, or
+preferred language.</p>
+<p>Reference codes beginning with P &#8216; pertain to publishing and imprint
+information. (Codes beginning with S &#8216; can be used to identify manuscript
+sources, library or archive locations, and other source-related data.)</p>
+<p>Codes beginning with Y &#8216; identify copyright information. Humdrum defines
+separate codes for publisher of the electronic edition, publisher of the
+original source document, date of copyright, date of data release, country of
+copyright, copyright message, original copyright owner, original year of
+publication, and other information. The YEC &#8216; reference record shown in
+Example 2.6 simply encodes the date and copyright owner of the electronic
+document.</p>
+<p>Codes that begin with A identify analytic information concerning the
+document. The code AMT provides a metric classification. Meters may be
+classified using combinations of the following keywords: <tt class="docutils literal"><span class="pre">simple</span></tt>, compound,
+duple, triple, quadruple, irregular. The AGN&#8217; code is used to provide
+a free-form text that helps to identify the genre of the work. In this case
+the genre is identified as <tt class="docutils literal"><span class="pre">ballet</span></tt>. Other suitable characterizations may
+include opera, string quartet, concerto, barbershop quartet, folksong, and so
+on. The AST &#8216; code can be used to identify the style or period of work.
+Once again, this is a free-form text record. Suitable keywords might include
+terms such as baroque, bebop, bossa nova, Ecole Notre Dame, minimalist, high-
+life, hip-hop, reggae, etc. Such analytic information is obviously
+interpretive and often open to disagreement. Nevertheless, explicit analytic
+information often proves useful in electronic documents.</p>
+<p>An especially useful analytic reference record is the AIN &#8216; record for
+encoding instrumentation. This reference record follows a strict syntax. Each
+instrument has an official Humdrum abbrevation. <a href="#id23"><span class="problematic" id="id24">`**Appendix II**`_</span></a> identifies
+a number of the more common instrument codes. Instrumentation reference
+records always specify the instrumentation in alphabetical order by
+instrument abbrevation separated by a single space. For example, the
+instrumentation for a woodwind quintet is given as:</p>
+<p><tt class="docutils literal"><span class="pre">!!!AIN:</span> <span class="pre">clars</span> <span class="pre">corno</span> <span class="pre">fagot</span> <span class="pre">flt</span> <span class="pre">oboe</span></tt></p>
+<p>In our discussion here we have only identified some of the more common types
+of reference records. A complete description of reference records is given in
+Appendix II.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="reprise">
+<h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
+<p>In this chapter we have introduced the Humdrum <tt class="docutils literal"><span class="pre">**kern``</span></tt>  representation and
+a few of the more important reference records. As we have seen, <tt class="docutils literal"><span class="pre">**kern``</span></tt>
+can be used to encode core information for common musical scores; <tt class="docutils literal"><span class="pre">**kern``</span></tt>
+is used to represent <em>functional</em> information rather than <em>orthographic</em>
+(visual) information. In <a href="#id25"><span class="problematic" id="id26">`Chapter 6`_</span></a> an expanded description of <tt class="docutils literal"><span class="pre">**kern``</span></tt>
+will be given that includes a much wider variety of concepts and situations
+than we have encountered in this chapter. <a href="#id27"><span class="problematic" id="id28">`**Appendices I**`_</span></a> and <a href="#id29"><span class="problematic" id="id30">`**II**`_</span></a>
+provide expanded information pertaining to Reference Records.</p>
+<p>Although we have only demonstrated the encoding of fairly simple information,
+we can already begin processing such data in musically useful ways. In the
+next chapter we will examine some simple processes.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../guide03/" class="btn btn-neutral float-right" title="Chapter 3: Some Initial Processing"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../guide01/" class="btn btn-neutral" title="Chapter 1: Humdrum: A Brief Tour"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

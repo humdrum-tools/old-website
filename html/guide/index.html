@@ -1,0 +1,788 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The Humdrum User Guide &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../"/>
+        <link rel="next" title="Chapter 1: Humdrum: A Brief Tour" href="guide01/"/>
+        <link rel="prev" title="Downloading Humdrum" href="../installationguide/downloading/"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../installationguide/">Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installationguide/downloading/">Downloading Humdrum</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href=""><em>The Humdrum User Guide</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide01/">Chapter 1: Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02/">Chapter 2: Representing Music Using kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide03/">Chapter 3: Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide04/">Chapter 4:Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide05/">Chapter 5: The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide06/">Chapter 6: Representing Music Using ***kern*(II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide07/">Chapter 7: MIDI Output Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide08/">Chapter 8: The Shell (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide09/">Chapter 9: Searching with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide10/">Chapter 10: Musical Uses of Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide11/">Chapter 11: Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide12/">Chapter 12: Selecting Musical Parts and Passages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide13/">Chapter 13: Assembling Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide14/">Chapter 14: Stream Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide15/">Chapter 15: Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide16/">Chapter 16: The Shell (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide17/">Chapter 17: Creating Inventories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide18/">Chapter 18: Fingers, Footsteps and Frets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide19/">Chapter 19: Musical Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide20/">Chapter 20: Strophes, Verses, and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide21/">Chapter 21: Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide22/">Chapter 22: Classifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide23/">Chapter 23: Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide24/">Chapter 24: The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide25/">Chapter 25: Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide26/">Chapter 26: Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide27/">Chapter 27: Text and Lyrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide29/">Chapter 29: Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide30/">Chapter 30:MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide31/">Chapter 31: Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide32/">Chapter 32: The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide34/">Chapter 34: Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide35/">Chapter 35: Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37/">Chapter 37: Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide38/">Chapter 38: Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide39/">Chapter 39: Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide40/">Chapter 40: Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bibliography/">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.more/">Supplementary Humdrum Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.toc/">Humdrum Command Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="humdrum.problems/">HUMDRUM PROBLEMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux.perform/">Installing and Using the Humdrum &#8220;perform&#8221; Command under Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.bibliog/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.bibliog/#bibliography">Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07/">Humdrum Developer&#8217;s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a/#humdrum-representation-development">Humdrum Representation Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a/#representation-assumptions">Representation Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a/#creating-new-humdrum-representations">Creating New Humdrum Representations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07a/#defining-a-new-humdrum-interpretation-a-sample-problem">Defining a New Humdrum Interpretation: A Sample Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07b/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07b/#humdrum-software-development">Humdrum Software Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual07b/#standard-program-skeleton">Standard Program Skeleton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="musedata2kern/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="musedata2kern/#how-to-translate-musedata-files-to-humdrum">How To Translate MuseData Files to Humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="musedata2kern/#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projects/">Sample Research Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="representations.toc/">Humdrum Representation Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources/">Online Resources:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample.problems/">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../extras/">Humdrum Extras</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../extras/intro/">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extras/dataEntry/">Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extras/melody/">Melody Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extras/harmony/">Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extras/rhythm/">Rhythm Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extras/musicSearching/">Music Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extras/MIDIrendering/">MIDI Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extras/graphicalNotation/">Graphical Musical Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extras/otherUtilities/">Other Useful Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extras/programmingTutorial/">Programming Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook/">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/vimHighlighting/">Syntax Coloring in Vim</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencemanual/">Humdrum Reference Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../referencemanual/assemble/">Assemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../referencemanual/hint/">hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../referencemanual/mint/">mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../referencemanual/key/">key</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../">Docs</a> &raquo;</li>
+      
+    <li><em>The Humdrum User Guide</em></li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/guide/index.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="the-humdrum-user-guide">
+<h1><em>The Humdrum User Guide</em><a class="headerlink" href="#the-humdrum-user-guide" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide01/">Chapter 1: Humdrum: A Brief Tour</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide01/#what-can-humdrum-do">What Can Humdrum Do?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide01/#the-humdrum-syntax-and-the-humdrum-toolkit">The Humdrum Syntax and the Humdrum Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide01/#humdrum-syntax">Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide01/#humdrum-tools">Humdrum Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide01/#some-sample-commands">Some Sample Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide01/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide02/">Chapter 2: Representing Music Using kern (I)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide02/#comment-records">Comment Records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02/#reference-records">Reference Records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide02/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide03/">Chapter 3: Some Initial Processing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide03/#the-census-command">The <em>census</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide03/#simple-searches-using-the-grep-command">Simple Searches using the <em>grep</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide03/#pattern-locations-using-grep-n">Pattern Locations Using grep -n</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide03/#counting-pattern-occurrences-using-grep-c">Counting Pattern Occurrences Using grep -c</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide03/#searching-for-reference-information">Searching for Reference Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide03/#the-sort-command">The <em>sort</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide03/#the-uniq-command">The <em>uniq</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide03/#options-for-the-uniq-command">Options for the <em>uniq</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide03/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide04/">Chapter 4:Basic Pitch Translations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide04/#iso-pitch-representation">ISO Pitch Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide04/#frequency">Frequency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide04/#cents">Cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide04/#semitones">Semitones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide04/#midi">MIDI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide04/#scale-degree-solfa-and-deg">Scale Degree &#8211; **<em>solfa</em> and **<em>deg</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide04/#pitch-translations">Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide04/#transposition-using-the-trans-command">Transposition Using the <em>trans</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide04/#key-interpretations">Key Interpretations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide04/#pitch-processing">Pitch Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide04/#uses-for-pitch-translations">Uses for Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide04/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide05/">Chapter 5: The Humdrum Syntax</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide05/#types-of-records">Types of Records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide05/#comment-records">Comment Records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide05/#interpretation-records">Interpretation Records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide05/#data-records">Data Records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide05/#data-tokens-and-null-tokens">Data Tokens and Null Tokens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide05/#data-sub-tokens">Data Sub-Tokens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide05/#spine-paths">Spine Paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide05/#the-humdrum-syntax-a-formal-definition">The Humdrum Syntax: A Formal Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide05/#the-humdrum-command">The <em>humdrum</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide05/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide06/">Chapter 6: Representing Music Using ***kern*(II)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide06/#tuplets">Tuplets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guide06/#grace-notes-gruppettos-and-appoggiaturas">Grace Notes, Gruppettos and Appoggiaturas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide06/#multiple-stops">Multiple Stops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide06/#further-examples">Further Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide06/#reprise">Reprise</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide07/">Chapter 7: MIDI Output Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide07/#the-midi-representation">The **<em>MIDI</em> Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide07/#the-midi-command">The <em>midi</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide07/#the-perform-command">The <em>perform</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide07/#data-scrolling-during-playback">Data Scrolling During Playback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide07/#changing-tempo">Changing Tempo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide07/#the-tacet-command">The <em>tacet</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide07/#the-smf-command">The <em>smf</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide07/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide08/">Chapter 8: The Shell (I)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide08/#shell-special-characters">Shell Special Characters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide08/#file-redirection">File Redirection (&gt;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide08/#pipe">Pipe (|)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide08/#shell-wildcard">Shell Wildcard (*)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide08/#comment">Comment (#)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide08/#escape-character">Escape Character ()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide08/#command-delimiter">Command Delimiter (;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide08/#shell-command-syntax">Shell Command Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide08/#output-redirection">Output Redirection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide08/#tee">Tee</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide08/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide09/">Chapter 9: Searching with Regular Expressions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide09/#literals">Literals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide09/#wild-card">Wild-Card</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide09/#escape-character">Escape Character</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide09/#repetition-operators">Repetition Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide09/#context-anchors">Context Anchors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide09/#or-logical-operator">OR Logical Operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide09/#character-classes">Character Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide09/#examples-of-regular-expressions">Examples of Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide09/#examples-of-regular-expressions-in-humdrum">Examples of Regular Expressions in Humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide09/#basic-extended-and-humdrum-extended-regular-expressions">Basic, Extended, and Humdrum-Extended Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide09/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide10/">Chapter 10: Musical Uses of Regular Expressions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide10/#the-grep-command-again">The <em>grep</em> Command (Again)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide10/#german-french-italian-and-neapolitan-sixths">German, French, Italian, and Neapolitan Sixths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide10/#and-searches-using-the-xargs-command">AND-Searches Using the <em>xargs</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide10/#or-searches-using-the-grep-f-command">OR-Searches Using the <em>grep -f</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide10/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide11/">Chapter 11: Melodic Intervals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide11/#types-of-melodic-intervals">Types of Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide11/#melodic-intervals-using-the-mint-command">Melodic Intervals Using the <em>mint</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide11/#unvoiced-inner-intervals">Unvoiced Inner Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide11/#calculating-distance-intervals-using-the-mint-s-command">Calculating Distance Intervals Using the <em>mint -s</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide11/#simple-and-compound-melodic-intervals">Simple and Compound Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide11/#diatonic-intervals-absolute-intervals-and-contour">Diatonic Intervals, Absolute Intervals and Contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide11/#using-the-mint-command">Using the <em>mint</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide11/#calculating-melodic-intervals-using-the-xdelta-command">Calculating Melodic Intervals Using the <em>xdelta</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide11/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide12/">Chapter 12: Selecting Musical Parts and Passages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide12/#extracting-spines-the-extract-command">Extracting Spines: The <em>extract</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide12/#extraction-by-interpretation">Extraction by Interpretation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide12/#using-extract-in-pipelines">Using <em>extract</em> in Pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide12/#extracting-spines-that-meander">Extracting Spines that Meander</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide12/#field-trace-extracting">Field-Trace Extracting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide12/#extracting-passages-the-yank-command">Extracting Passages: The <em>yank</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide12/#yanking-by-marker">Yanking by Marker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide12/#yanking-by-delimiters">Yanking by Delimiters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide12/#yanking-by-section">Yanking by Section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide12/#examples-using-yank">Examples Using <em>yank</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide12/#using-yank-in-pipelines">Using <em>yank</em> in Pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide12/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide13/">Chapter 13: Assembling Scores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide13/#the-cat-command">The <em>cat</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide13/#the-rid-command">The <em>rid</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide13/#assembling-parts-using-the-assemble-command">Assembling Parts Using the <em>assemble</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide13/#aligning-durations-using-the-timebase-command">Aligning Durations Using the <em>timebase</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide13/#assembling-n-tuplets">Assembling N-tuplets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide13/#checking-an-assembled-score-using-proof">Checking an Assembled Score Using <em>proof</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide13/#other-uses-for-the-timebase-command">Other Uses for the <em>timebase</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide13/#additional-uses-of-assemble-and-timebase">Additional Uses of <em>assemble</em> and <em>timebase</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide13/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide14/">Chapter 14: Stream Editing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide14/#the-sed-and-humsed-commands">The <em>sed</em> and <em>humsed</em> Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide14/#simple-substitutions">Simple Substitutions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide14/#selective-elimination-of-data">Selective Elimination of Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide14/#the-stats-command">The <em>stats</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide14/#eliminate-everything-but">Eliminate Everything But ...</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide14/#deleting-data-records">Deleting Data Records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide14/#adding-information">Adding Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide14/#multiple-substitutions">Multiple Substitutions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide14/#switching-signifiers">Switching Signifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide14/#executing-from-a-file">Executing from a File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide14/#writing-to-a-file">Writing to a File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide14/#reading-a-file-as-input">Reading a File as Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide14/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide15/">Chapter 15: Harmonic Intervals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide15/#types-of-harmonic-intervals">Types of Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide15/#harmonic-intervals-using-the-hint-command">Harmonic Intervals Using the <em>hint</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide15/#propagating-data-using-the-ditto-command">Propagating Data Using the <em>ditto</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide15/#using-the-ditto-and-hint-commands">Using the <em>ditto</em> and <em>hint</em> Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide15/#determining-implicit-harmonic-intervals">Determining Implicit Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide15/#the-ydelta-command">The <em>ydelta</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide15/#more-examples-using-the-ydelta-command">More Examples Using the <em>ydelta</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide15/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide16/">Chapter 16: The Shell (II)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide16/#shell-special-characters">Shell Special Characters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide16/#shell-variables">Shell Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide16/#the-shell-greve">The Shell Greve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide16/#single-quotes-double-quotes">Single Quotes, Double Quotes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide16/#using-shell-variables">Using Shell Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide16/#aliases">Aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide16/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide17/">Chapter 17: Creating Inventories</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide17/#filter-sort-count">Filter, Sort, Count</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide17/#filtering-data-with-the-rid-command">Filtering Data with the <em>rid</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide17/#inventories-for-multi-spine-inputs">Inventories for Multi-spine Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide17/#sorting-by-frequency-of-occurrence">Sorting By Frequency of Occurrence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide17/#counting-with-the-wc-command">Counting with the <em>wc</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide17/#excluding-or-seeking-rare-events">Excluding or Seeking Rare Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide17/#transforming-and-editing-inventory-data">Transforming and Editing Inventory Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide17/#further-examples">Further Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide17/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide18/">Chapter 18: Fingers, Footsteps and Frets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide18/#heart-beats-and-other-esoterica">Heart Beats and Other Esoterica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide18/#the-fret-representation">The **<em>fret</em> Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide18/#additional-features-of-fret">Additional Features of **<em>fret</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide18/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide19/">Chapter 19: Musical Contexts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide19/#the-context-command">The <em>context</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide19/#harmonic-progressions">Harmonic Progressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide19/#using-context-with-the-b-and-e-options">Using <em>context</em> with the <em>-b</em> and <em>-e</em> Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide19/#using-context-with-sed-and-humsed">Using <em>context</em> with <em>sed</em> and <em>humsed</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide19/#linking-context-outputs-with-inputs">Linking <em>context</em> Outputs with Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide19/#using-context-with-the-p-option">Using <em>context</em> with the <em>-p</em> Option</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide19/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide20/">Chapter 20: Strophes, Verses, and Repeats</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide20/#section-labels">Section Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide20/#expansion-lists">Expansion Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide20/#using-yank-to-extract-sections">Using <em>yank</em> to Extract Sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide20/#using-the-thru-command-to-expand-encodings">Using the <em>thru</em> Command to Expand Encodings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide20/#alternative-versions">Alternative Versions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide20/#section-types">Section Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide20/#hierarchical-sections">Hierarchical Sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide20/#using-the-yank-and-thru-commands">Using the <em>yank</em> and <em>thru</em> Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide20/#strophic-representations">Strophic Representations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide20/#the-strophe-command">The <em>strophe</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide20/#using-the-strophe-and-thru-commands">Using the <em>strophe</em> and <em>thru</em> Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide20/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide21/">Chapter 21: Searching for Patterns</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide21/#the-patt-command">The <em>patt</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide21/#using-patt-s-tag-option">Using <em>patt</em>&#8216;s Tag Option</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide21/#matching-multiple-records-using-the-patt-command">Matching Multiple Records Using the <em>patt</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide21/#the-pattern-command">The <em>pattern</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide21/#patterns-of-patterns">Patterns of Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide21/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide22/">Chapter 22: Classifying</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide22/#classifying">Classifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide22/#the-recode-command">The <em>recode</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide22/#classifying-intervals">Classifying Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide22/#clarinet-registers">Clarinet Registers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide22/#open-and-close-position-chords">Open and Close Position Chords</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide22/#flute-fingering-transitions">Flute Fingering Transitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide22/#classifying-with-humsed">Classifying with <em>humsed</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide22/#classifying-cadences">Classifying Cadences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide22/#orchestration">Orchestration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide22/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide23/">Chapter 23: Rhythm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide23/#the-recip-representation">The **<em>recip</em> Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide23/#the-dur-command">The <em>dur</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide23/#classifying-durations">Classifying Durations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide23/#using-yank-with-the-timebase-command">Using <em>yank</em> with the <em>timebase</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide23/#the-metpos-command">The <em>metpos</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide23/#changes-of-stress">Changes of Stress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide23/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide24/">Chapter 24: The Shell (III)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide24/#shell-programs">Shell Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide24/#flow-of-control-the-if-statement">Flow of Control: The <em>if</em> Statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide24/#flow-of-control-the-for-statement">Flow of Control: The <em>for</em> Statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide24/#a-script-for-identifying-transgressions-of-voice-leading">A Script for Identifying Transgressions of Voice-Leading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide24/#reprise">Reprise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide24/#locating-violations-of-the-rules-of-voice-leading">Locating Violations of the Rules of Voice-Leading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide24/#parts-out-of-range">(1) Parts Out Of Range</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guide24/#rule-avoid-parts-that-are-out-of-range">RULE: &#8220;Avoid parts that are out of range.&#8221;</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guide24/#augmented-diminished-melodic-intervals">(2) Augmented/Diminished Melodic Intervals</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guide24/#rule-avoid-parts-that-move-by-augmented-or-diminished-intervals">RULE: &#8220;Avoid parts that move by augmented or diminished intervals.</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guide24/#consecutive-fifths-or-octaves">(3) Consecutive Fifths or Octaves</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guide24/#rule-avoid-consecutive-fifths-and-octaves-between-any-two-parts">RULE: &#8220;Avoid consecutive fifths and octaves between any two parts.</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guide24/#doubled-leading-tone">(4) Doubled Leading Tone</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guide24/#rule-avoid-doubling-the-leading-tone">RULE: &#8220;Avoid doubling the leading-tone.&#8221;</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guide24/#avoid-unisons">(5) Avoid Unisons</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guide24/#rule-avoid-the-sharing-of-pitches-by-two-parts">RULE: &#8220;Avoid the sharing of pitches by two parts.&#8221;</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guide24/#crossed-parts">(6) Crossed Parts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guide24/#rule-avoid-the-crossing-of-parts">RULE: &#8220;Avoid the crossing of parts.&#8221;</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guide24/#parts-separated-by-greater-than-an-octave">(7) Parts Separated by Greater than an Octave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide24/#overlapped-parts">(8) Overlapped Parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide24/#exposed-octaves">(9) Exposed Octaves</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide25/">Chapter 25: Similarity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide25/#the-correl-command">The <em>correl</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide25/#using-a-template-with-correl">Using a Template with <em>correl</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide25/#the-simil-command">The <em>simil</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide25/#defining-edit-penalties">Defining Edit Penalties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide25/#the-accent-command">The <em>accent</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide25/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide26/">Chapter 26: Moving Signifiers Between Spines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide26/#the-rend-command">The <em>rend</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide26/#the-cleave-command">The <em>cleave</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide26/#creating-mixed-representations">Creating Mixed Representations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide26/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide27/">Chapter 27: Text and Lyrics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide27/#the-text-and-silbe-representations">The **<em>text</em> and **<em>silbe</em> Representations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide27/#the-text-command">The <em>text</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide27/#the-fmt-command">The <em>fmt</em> Command</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guide27/#id47">&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide27/#id48">&gt;</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guide27/#rhythmic-feet-in-text">Rhythmic Feet in Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide27/#concordance">Concordance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guide27/#id57">&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide27/#id64">&gt;&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide27/#id65">&gt;&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide27/#id66">&gt;</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guide27/#simile">Simile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide27/#word-painting">Word Painting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide27/#emotionality">Emotionality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide27/#other-types-of-language-use">Other Types of Language Use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide27/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide29/">Chapter 29: Differences and Commonalities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide29/#comparing-files-using-diff">Comparing Files Using <em>diff</em></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guide29/#id5">&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide29/#id6">&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide29/#id7">&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide29/#id10">&gt;&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide29/#id11">&gt;&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide29/#id12">&gt;</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guide29/#comparing-inventories-the-comm-command">Comparing Inventories &#8211; The <em>comm</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide29/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide30/">Chapter 30:MIDI Input Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide30/#the-record-command">The <em>record</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide30/#the-encode-command">The <em>encode</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide30/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide31/">Chapter 31: Repertories and Links</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide31/#the-find-command">The <em>find</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide31/#content-searching">Content Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide31/#using-find-with-the-xargs-command">Using <em>find</em> with the <em>xargs</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide31/#repertories-as-file-links">Repertories As File Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide31/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide32/">Chapter 32: The Shell (IV)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide32/#the-awk-programming-language">The <em>awk</em> Programming Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide32/#automatic-parsing-of-input-data">Automatic Parsing of Input Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide32/#arithmetic-operations">Arithmetic Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide32/#conditional-statements">Conditional Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide32/#assigning-variables">Assigning Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide32/#manipulating-character-strings">Manipulating Character Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide32/#the-for-loop">The <em>for</em> Loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide32/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide34/">Chapter 34: Serial Processing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide34/#pitch-class-representation">Pitch-Class Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide34/#the-pcset-command">The <em>pcset</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide34/#prime-form-and-normal-form">Prime Form and Normal Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide34/#interval-vectors-using-the-iv-command">Interval Vectors Using the <em>iv</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide34/#segmentation-using-the-context-command">Segmentation Using the <em>context</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide34/#the-reihe-command">The <em>reihe</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide34/#generating-a-set-matrix">Generating a Set Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide34/#locating-and-identifying-tone-rows">Locating and Identifying Tone-Rows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guide34/#id81">&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide34/#id82">&gt;&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide34/#id85">&gt;&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide34/#id86">&gt;&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide34/#id89">&gt;&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide34/#id90">&gt;&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide34/#id93">&gt;&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide34/#id94">&gt;&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide34/#id97">&gt;&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide34/#id98">&gt;</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guide34/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide35/">Chapter 35: Layers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide35/#implied-harmony">Implied Harmony</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide37/">Chapter 37: Electronic Music Editing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide37/#the-process-of-electronic-editing">The Process of Electronic Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37/#establishing-the-goal">Establishing the Goal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37/#documenting-encoded-data">Documenting Encoded Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37/#sources">Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37/#selecting-a-sample-from-some-repertory">Selecting a Sample from Some Repertory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37/#encoding">Encoding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37/#transposing-instruments">Transposing Instruments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37/#instrument-identification">Instrument Identification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37/#leading-barlines">Leading Barlines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37/#ornamentation">Ornamentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37/#editing-sections">Editing Sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37/#editorialisms-in-the-kern-representation">Editorialisms in the **<em>kern</em> Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37/#adding-reference-information">Adding Reference Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37/#proof-reading-materials">Proof-reading Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37/#data-integrity-using-the-vts-checksum-record">Data Integrity Using the VTS Checksum Record</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37/#preparing-a-distribution">Preparing a Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37/#electronic-citation">Electronic Citation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide37/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide38/">Chapter 38: Systematic Musicology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide38/#comparison-repertory">Comparison Repertory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide38/#randomizing">Randomizing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide38/#using-the-scramble-command">Using the <em>scramble</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide38/#retrograde-controls-using-the-tac-command">Retrograde Controls Using the <em>tac</em> Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide38/#autophase-procedure">Autophase Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide38/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide39/">Chapter 39: Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide39/#encoding-errors">Encoding Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide39/#searching-tips">Searching Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide39/#pipeline-tips">Pipeline Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide39/#reprise">Reprise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide40/">Chapter 40: Conclusion</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide40/#pursuing-a-project-with-humdrum">Pursuing a Project with Humdrum</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography/">The Humdrum Toolkit: A Bibliography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bibliography/#bibliography">Bibliography</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="commands.more/">Supplementary Humdrum Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands.toc/">Humdrum Command Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="humdrum.problems/">HUMDRUM PROBLEMS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="humdrum.problems/#version-differences">Version Differences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="humdrum.problems/#official-and-unofficial-versions">Official and Unofficial Versions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="humdrum.problems/#differences-between-humdrum-release-1-0-and-versions-2-x">Differences Between Humdrum Release 1.0 and Versions 2.X</a></li>
+<li class="toctree-l2"><a class="reference internal" href="humdrum.problems/#reporting-bugs">Reporting Bugs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="humdrum.problems/#trouble-shooting-tips">Trouble-Shooting Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="linux.perform/">Installing and Using the Humdrum &#8220;perform&#8221; Command under Linux</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="linux.perform/#how-to-use-the-perform-command-in-linux">How to Use the &#8220;perform&#8221; Command in Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux.perform/#appendix-a-soundcards-that-can-be-used-in-red-hat-linux-6-0">Appendix A: Soundcards that can be used in Red Hat Linux 6.0:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manual.bibliog/"><em>Development Reference</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual.bibliog/#bibliography">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual07/">Humdrum Developer&#8217;s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual07a/"><em>Development Reference</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual07a/#humdrum-representation-development">Humdrum Representation Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual07a/#representation-assumptions">Representation Assumptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual07a/#creating-new-humdrum-representations">Creating New Humdrum Representations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual07a/#defining-a-new-humdrum-interpretation-a-sample-problem">Defining a New Humdrum Interpretation: A Sample Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual07b/"><em>Development Reference</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual07b/#humdrum-software-development">Humdrum Software Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual07b/#standard-program-skeleton">Standard Program Skeleton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="musedata2kern/"><em>Development Reference</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="musedata2kern/#how-to-translate-musedata-files-to-humdrum">How To Translate MuseData Files to Humdrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="musedata2kern/#introduction">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="musedata2kern/#procedural-overview">Procedural Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="musedata2kern/#procedural-details">Procedural Details</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#access-appropriate-files">1. Access Appropriate Files.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#basic-translation">2. Basic Translation.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#transposing-parts">3. Transposing Parts.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#beam-modification">4. Beam Modification.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#combining-parts">5. Combining Parts.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#alignment-check">6. Alignment Check.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#removing-duplicate-header-information">7. Removing Duplicate Header Information.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#eliminate-redundant-section-labels">8. Eliminate Redundant Section Labels.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#instrument-identification">9. Instrument Identification.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#figured-bass-generation">10. Figured Bass Generation.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#editing-figured-bass">11. Editing Figured Bass.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#leading-barlines">12. Leading Barlines.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#logical-and-orthographic-barlines">13. Logical and Orthographic Barlines.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#eliminating-figured-bass-comments">14. Eliminating Figured Bass Comments.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#eliminating-p-record-comments">15. Eliminating `P&#8217; Record Comments.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#resolving-backspace-passages">16. Resolving &#8220;backspace&#8221; Passages.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#checking-naturals">17. Checking Naturals.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#adding-heavy-wedge-accents">18. Adding Heavy Wedge Accents.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#resolving-trills-and-mordents">19. Resolving Trills and Mordents.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#appoggiaturas">20. Appoggiaturas.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#sections-labels">21. Sections Labels.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#repeats-and-da-capos">22. Repeats and Da Capos.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#editorialisms">23. Editorialisms.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#reference-records">24. Reference Records.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#syntax-checking-i">25. Syntax Checking (I).</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#syntax-checking-ii">26. Syntax Checking (II).</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#proof-listening">27. Proof Listening.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#adding-vts-checksum-record">28. Adding VTS Checksum Record.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#assemble-the-distribution-files">29. Assemble the Distribution Files.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#create-a-readme-file">30. Create a README File.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#create-a-license-file">31. Create a LICENSE File.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="musedata2kern/#prepare-a-master-disk">32. Prepare a Master Disk.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="projects/">Sample Research Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="representations.toc/">Humdrum Representation Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources/">Online Resources:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sample.problems/">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="guide01/" class="btn btn-neutral float-right" title="Chapter 1: Humdrum: A Brief Tour"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../installationguide/downloading/" class="btn btn-neutral" title="Downloading Humdrum"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

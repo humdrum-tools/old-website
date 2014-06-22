@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<TITLE>Music 824: Computer Applications in Music Research</TITLE>
+</HEAD>
+<BODY bgcolor=#FFFFFF link="FF0000" alink="FF8O8O" vlink="008DDD">
+<B>Music 824: Computer Applications in Music Research</B><br>
+<B>Ohio State University</B><br>
+<B>School of Music</B>
+<br>
+<br>
+
+<center><HR WIDTH=500></center>
+<center><H1>Humdrum Exercise #6 - Answers</H1></center>
+<center><HR WIDTH=500></center>
+
+<P>
+All of the following commands assume that you are located in the appropriate
+score directory.
+</P>
+<P>
+<ol>
+5.
+<blockquote>
+Which Brandenburg Concerto contains a trumpet part?
+How long is the longest note played by the trumpet?
+How long is the shortest note played by the trumpet?
+<blockquote>
+COMMAND: &#160 &#160 </code><big><B>grep -l '!!!AIN:.*tromp' bwv*.krn</B></big></code>
+<br>
+ANSWER: &#160 &#160 &#160 &#160 </code><big><B>BWV 1047 (Concerto No. 2)</B></big></code>
+</blockquote>
+<blockquote>
+COMMAND: &#160 &#160 </code><big><B>extract -i '*Itromp' bwv1047a.krn | census -k</B></big></code>
+<br>
+ANSWER: &#160 &#160 &#160 &#160 </code><big><B>Longest note is a whole note.</B></big></code>
+<br>
+ANSWER: &#160 &#160 &#160 &#160 </code><big><B>Shortest note is a 32nd note.</B></big></code>
+</blockquote>
+</blockquote>
+</ol>
+</P>
+<A HREF="music824.html"><B>Return to Music 824 Index</B></A>
+<br>
+<XXXimg src=""></img><br>
+
+</BODY>
+</HTML>
+

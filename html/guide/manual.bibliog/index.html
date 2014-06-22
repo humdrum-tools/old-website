@@ -1,0 +1,453 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Development Reference &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../"/>
+        <link rel="up" title="The Humdrum User Guide" href="../"/>
+        <link rel="next" title="Humdrum Developer’s Guide" href="../manual07/"/>
+        <link rel="prev" title="Installing and Using the Humdrum “perform” Command under Linux" href="../linux.perform/"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installationguide/">Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installationguide/downloading/">Downloading Humdrum</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../"><em>The Humdrum User Guide</em></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../guide01/">Chapter 1: Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide02/">Chapter 2: Representing Music Using kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide03/">Chapter 3: Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide04/">Chapter 4:Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide05/">Chapter 5: The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide06/">Chapter 6: Representing Music Using ***kern*(II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide07/">Chapter 7: MIDI Output Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide08/">Chapter 8: The Shell (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide09/">Chapter 9: Searching with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide10/">Chapter 10: Musical Uses of Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide11/">Chapter 11: Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide12/">Chapter 12: Selecting Musical Parts and Passages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide13/">Chapter 13: Assembling Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide14/">Chapter 14: Stream Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide15/">Chapter 15: Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide16/">Chapter 16: The Shell (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide17/">Chapter 17: Creating Inventories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide18/">Chapter 18: Fingers, Footsteps and Frets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide19/">Chapter 19: Musical Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide20/">Chapter 20: Strophes, Verses, and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide21/">Chapter 21: Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide22/">Chapter 22: Classifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide23/">Chapter 23: Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide24/">Chapter 24: The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide25/">Chapter 25: Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide26/">Chapter 26: Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide27/">Chapter 27: Text and Lyrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide29/">Chapter 29: Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide30/">Chapter 30:MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide31/">Chapter 31: Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide32/">Chapter 32: The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide34/">Chapter 34: Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide35/">Chapter 35: Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide37/">Chapter 37: Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide38/">Chapter 38: Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide39/">Chapter 39: Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide40/">Chapter 40: Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bibliography/">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.more/">Supplementary Humdrum Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.toc/">Humdrum Command Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../humdrum.problems/">HUMDRUM PROBLEMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linux.perform/">Installing and Using the Humdrum &#8220;perform&#8221; Command under Linux</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href=""><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bibliography">Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07/">Humdrum Developer&#8217;s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07a/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07a/#humdrum-representation-development">Humdrum Representation Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07a/#representation-assumptions">Representation Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07a/#creating-new-humdrum-representations">Creating New Humdrum Representations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07a/#defining-a-new-humdrum-interpretation-a-sample-problem">Defining a New Humdrum Interpretation: A Sample Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07b/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07b/#humdrum-software-development">Humdrum Software Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07b/#standard-program-skeleton">Standard Program Skeleton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../musedata2kern/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../musedata2kern/#how-to-translate-musedata-files-to-humdrum">How To Translate MuseData Files to Humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../musedata2kern/#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/">Sample Research Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../representations.toc/">Humdrum Representation Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/">Online Resources:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample.problems/">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../extras/">Humdrum Extras</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/intro/">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/dataEntry/">Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/melody/">Melody Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/harmony/">Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/rhythm/">Rhythm Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/musicSearching/">Music Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/MIDIrendering/">MIDI Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/graphicalNotation/">Graphical Musical Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/otherUtilities/">Other Useful Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/programmingTutorial/">Programming Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cookbook/">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cookbook/vimHighlighting/">Syntax Coloring in Vim</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../referencemanual/">Humdrum Reference Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../referencemanual/assemble/">Assemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../referencemanual/hint/">hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../referencemanual/mint/">mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../referencemanual/key/">key</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../">Docs</a> &raquo;</li>
+      
+          <li><a href="../"><em>The Humdrum User Guide</em></a> &raquo;</li>
+      
+    <li><em>Development Reference</em></li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/guide/manual.bibliog.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <img alt="" src="guide/../HumdrumIcon.gif" />
+<img alt="Humdrum" src="guide/../HumdrumHeader.gif" />
+<img alt="" src="guide/../HumdrumSpacer.gif" />
+<div class="section" id="development-reference">
+<h1><em>Development Reference</em><a class="headerlink" href="#development-reference" title="Permalink to this headline">¶</a></h1>
+</div>
+<hr class="docutils" />
+<div class="section" id="bibliography">
+<h1>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<p>&gt; Aho, A., Kernighan, B. &amp; Weinberger, P. <em>The AWK Programming Langauge.</em>
+Reading, Massachusetts: Addison-Wesley Publishing Co. 1988.</p>
+<p>&gt; Alphonce, B. &#8220;Music analysis by computer,&#8221; <em>Computer Music Journal,</em> Vol.
+4, No. 2 (1980) pp. 26-35.</p>
+<p>&gt; Alphonce, B. &#8220;Computer applications: Analysis and modeling,&#8221; <em>Music Theory
+Spectrum,</em> Vol. 11, No. 1 (1989) pp. 49-59.</p>
+<p>&gt; Bregman, A. S. <em>Auditory Scene Analysis; The Perceptual Organization of
+Sound.</em> Cambridge, Mass.: M.I.T. Press, 1990.</p>
+<p>&gt; Brinkman, A. <em>Pascal Programming for Music Research.</em> Chicago: University
+of Chicago Press, 1990.</p>
+<p>&gt; Brinkman, A. &#8220;Representing musical scores for computer analysis,&#8221; <em>Journal
+of Music Theory,</em> Vol. 30, No. 2 (1986) pp. 225-275.</p>
+<p>&gt; Butler, D. &#8220;Describing the perception of tonality in music: A critique of
+the tonal hierarchy theory and a proposal for a theory of intervallic
+rivalry,&#8221; <em>Music Perception,</em> Vol. 6, No. 3 (1989) pp. 219-242.</p>
+<p>&gt; Christ, W., Delone, R., Kliewer, V., Rowell, L. &amp; Thomson, W. <em>Materials
+and Structure of Music.</em> Englewood Cliffs, N.J.: Prentice-Hall, 1966; third
+edition, 1980; in two volumes.</p>
+<p>&gt; Cole, H. <em>Sounds and Signs; Aspects of Musical Notation.</em> London: Oxford
+University Press, 1974.</p>
+<p>&gt; Cope, D. <em>New Music Notation.</em> Dubuque, Iowa: Kendall/Hunt Publishing Co.,
+1976.</p>
+<p>&gt; Erickson, R. &#8220;The DARMS project: A status report.&#8221; <em>Computers and the
+Humanities,</em> Vol. 9 ((1975) pp. 91-298.</p>
+<p>&gt; Dannenberg, R. &#8220;Music representation issues, techniques, and systems.&#8221;
+<em>Computer Music Journal,</em> Vol. 17, No. 3 (1993) pp. 20-30.</p>
+<p>&gt; Forte, A. <em>The Structure of Atonal Music.</em> New Haven: Yale University
+Press, 1973.</p>
+<p>&gt; Greenwood, D. D. &#8220;Critical bandwidth and the frequency coordinates of the
+basilar membrane,&#8221; <em>Journal of the Acoustical Society of America,</em> Vol. 33,
+No. 4 (1961) pp. 1344-1356.</p>
+<p>&gt; Hall P. &amp; Dowling, G. &#8220;Approximate string matching,&#8221; <em>ACM Computing
+Surveys,</em> Vol. 12 (1980) pp. 381-402.</p>
+<p>&gt; Hewlett, W. B. &#8220;MuseData: Comprehensive representation for printing, sound,
+and analysis.&#8221; In: E. Selfridge-Field <em>Beyond MIDI: The Handbook of Musical
+Codes,</em> Cambridge, Massachusetts: MIT Press, 1997.</p>
+<p>&gt; Hewlett, W. B. &amp; Selfridge-Field, E. (editors) <em>Directory of Computer
+Assisted Research in Musicology 1988.</em> Menlo Park: Center for Computer
+Assisted Research in the Humanities, 1988.</p>
+<p>&gt; Hewlett, W. B. &amp; Selfridge-Field, E. (editors) <em>Computing in Musicology; A
+Directory of Research;</em> Menlo Park: Center for Computer Assisted Research in
+the Humanities, 1989.</p>
+<p>&gt; Hewlett, W. B. &amp; Selfridge-Field, E. (editors) <em>Computing in Musicology; A
+Directory of Research;</em> Volume 6. Menlo Park: Center for Computer Assisted
+Research in the Humanities, 1990.</p>
+<p>&gt; Hewlett, W. B. &amp; Selfridge-Field, E. (editors) <em>Computing in Musicology; A
+Directory of Research;</em> Volume 7. Menlo Park: Center for Computer Assisted
+Research in the Humanities, 1991.</p>
+<p>&gt; Hewlett, W. B. &amp; Selfridge-Field, E. (editors) <em>Computing in Musicology; An
+International Directory of Applications;</em> Volume 8. Menlo Park: Center for
+Computer Assisted Research in the Humanities, 1992.</p>
+<p>&gt; Horwood, F. J. <em>The Basis of Harmony.</em> Toronto: Gordon V. Thompson Ltd,
+1948.</p>
+<p>&gt; Huron, D. &#8220;Error categories, detection, and reduction in a musical
+database,&#8221; <em>Computers and the Humanities,</em> Vol. 22, No. 2 (1988) pp. 253-264.</p>
+<p>&gt; Huron, D. &#8220;Voice denumerability in polyphonic music of homogeneous
+timbres,&#8221; <em>Music Perception,</em> Vol. 6, No. 4 (1989) pp. 361-382.</p>
+<p>&gt; Huron, D. &#8220;Characterizing musical textures,&#8221; <em>Proceedings of the 1989
+International Computer Music Conference,</em> San Francisco: Computer Music
+Association, 1989; pp. 131-134.</p>
+<p>&gt; Huron, D. &#8220;The avoidance of part-crossing in polyphonic music: Perceptual
+evidence and musical practice,&#8221; <em>Music Perception,</em> Vol. 9, No. 1 (1991) pp.
+93-104.</p>
+<p>&gt; Huron, D. &#8220;Harmony: A Psychoacoustical Approach [review of],&#8221; <em>Psychology
+of Music,</em> Vol. 19, No. 2 (1991) pp. 173-177.</p>
+<p>&gt; Huron, D. &#8220;Tonal consonance versus tonal fusion in polyphonic sonorities,&#8221;
+<em>Music Perception,</em> Vol. 9, No. 2 (1991) pp. 135-154.</p>
+<p>&gt; Huron, D. &#8220;Design principles in computer-based music representation,&#8221; in:
+A. Marsden &amp; A. Pople (editors), <em>Computer Representations and Models in
+Music.</em> London: Academic Press, 1992; pp. 5-59.</p>
+<p>&gt; Huron, D. &amp; Fantini, D. &#8220;The avoidance of inner-voice entries: Perceptual
+evidence and musical practice,&#8221; <em>Music Perception,</em> Vol. 7, No. 1 (1989) pp.
+43-47.</p>
+<p>&gt; Huron, D. &amp; Parncutt, R. &#8220;An improved model of tonality incorporating pitch
+salience and echoic memory,&#8221; <em>Psychomusicology,</em> Vol. 12, No. 2 (1993) pp.
+154-171.</p>
+<p>&gt; Johnson-Laird, P. &#8220;Rhythm and meter: A theory at the computational level,&#8221;
+<em>Psychomusicology,</em> Vol. 10 (1991) pp. 88-106.</p>
+<p>&gt; Kameoka, A. &amp; Kuriyagawa, M. &#8220;Consonance theory, part I: Consonance of
+dyads,&#8221; <em>Journal of the Acoustical Society of America,</em> Vol. 45, No. 6
+(1969a) pp. 1451-1459.</p>
+<p>&gt; Kameoka, A. &amp; Kuriyagawa, M. &#8220;Consonance theory, part II: Consonance of
+complex tones and its calculation method,&#8221; <em>Journal of the Acoustical Society
+of America,</em> Vol. 45, No. 6 (1969b) pp. 1460-1469.</p>
+<p>&gt; Kochan, S. &amp; Wood, P. <em>UNIX Shell Programming.</em> Hasbrouck Heights, New
+Jersey: Hayden Book Co. 1985.</p>
+<p>&gt; Krumhansl, C. <em>Cognitive Foundations of Musical Pitch.</em> Oxford: Oxford
+University Press, 1990.</p>
+<p>&gt; Krumhansl, C. &amp; Kessler, E. J. &#8220;Tracing the dynamic changes in perceived
+tonal organization in a spatial representation of musical keys,&#8221;
+<em>Psychological Review,</em> Vol. 89 (1982) pp. 334-368.</p>
+<p>&gt; Kurkela, K. <em>Note and Tone; A semantic analysis of conventional music
+notation.</em> Helsinki: Suomen Musiikkitieteellinen Seura (Musicological Society
+of Finland), 1986.</p>
+<p>&gt; Longuet-Higgins, H. C., &amp; Lee, C. S. &#8220;The perception of musical rhythms,&#8221;
+<em>Perception,</em> Vol. 11 (1982) pp. 115-128.</p>
+<p>&gt; Miller, G. A. &amp; Heise, G. A. &#8220;The trill threshold,&#8221; <em>Journal of the
+Acoustical Society of America,</em> Vol. 22, No. 5 (1950) pp. 637-638.</p>
+<p>&gt; Moles, A. <em>Information Theory and Esthetic Perception.</em> Urbana: University
+of Illinois Press, 1968.</p>
+<p>&gt; Moore, B. &amp; Glasberg, B. &#8220;Suggested formulae for calculating auditory-
+filter bandwidths and excitations patterns,&#8221; <em>Journal of the Acoustical
+Society of America,</em> Vol. 74, No. 3 (1983) pp. 750-753.</p>
+<p>&gt; Mortice Kern Systems Inc. <em>The MKS Toolkit.</em> Mortice Kern Systems Inc., 35
+King Street North, Waterloo, Ontario, Canada N2J 2W9.</p>
+<p>&gt; Nettheim, N. &#8220;On the accuracy of musical data, with examples from Gregorian
+Chant and German folksong.&#8221; <em>Computers and the Humanities,</em> Vol. 27, (1993)
+pp. 111-120.</p>
+<p>&gt; Newcomb, S. &#8220;Standard music description language complies with hypermedia
+standard.&#8221; <em>IEEE Computer,</em> Vol. 24, No. 7 (1991) pp. 76-79.</p>
+<p>&gt; Newcomb, S., Kipp, N. &amp; Newcomb, V. &#8220;The HyTime hypermedia time-based
+document structuring language.&#8221; <em>Communications of the ACM,</em> Vol. 34, No. 11
+(1991) pp. 67-83.</p>
+<p>&gt; van Noorden, L. <em>Temporal Coherence in the Perception of Tone Sequences.</em>
+Eindhoven: Druk vam Voorschoten, 1975.</p>
+<p>&gt; Opolko, F., &amp; Wapnick, J. <em>McGill University Master Samples.</em> Montreal:
+McGill University, 1987, 1989.</p>
+<p>&gt; Orpen, K. &amp; Huron, D. &#8220;Measurement of similarity in music: A quantitative
+approach for non-parametric representations,&#8221; <em>Computers in Music Research,</em>
+Vol. 4 (1992) pp. 1-44.</p>
+<p>&gt; Ottman, R. W. <em>Elementary Harmony; Theory and Practice.</em> Englewood Cliffs,
+N.J.: Prentice Hall, 1961; fourth edition, 1989.</p>
+<p>&gt; Overill, R. E. &#8220;On the combinatorial complexity of fuzzy pattern matching
+in music analysis,&#8221; <em>Computers and the Humanities,</em> Vol. 27 (1993) pp.
+105-110.</p>
+<p>&gt; Parncutt, R. <em>Harmony: A Psychoacoustical Approach.</em> Berlin: Spinger-
+Verlag, 1989.</p>
+<p>&gt; Parncutt, R. &#8220;Review of Terhardt&#8217;s psychoacoustical model of the root(s) of
+a musical chord,&#8221; <em>Music Perception,</em> Vol. 6, No. 1 (1988) pp. 65-94.</p>
+<p>&gt; Plomp, R. &amp; Levelt, W. J. M. &#8220;Tonal consonance and critical bandwidth,&#8221;
+<em>Journal of the Acoustical Society of America,</em> Vol. 37, (1965) pp. 548-560.</p>
+<p>&gt; Prather, R. &amp; Elliot, R. &#8220;SML: A structured musical language,&#8221; <em>Computers
+and the Humanities,</em> Vol. 22 (1988) pp. 137-151.</p>
+<p>&gt; Rahn, J. <em>Basic Atonal Theory.</em> New York: Longman Inc., 1980.</p>
+<p>&gt; Rastall, R. <em>The Notation of Western Music.</em> London: J. M. Dent &amp; Sons
+Ltd., 1983.</p>
+<p>&gt; Riemenschneider, A. <em>371 Harmonized Chorales and 69 Chorale Melodies with
+Figured Bass by Johann Sebastian Bach.</em> New York: G. Schirmer, 1941.</p>
+<p>&gt; Sandell, G. <em>Concurrent timbres in orchestration: A perceptual study of
+factors determing &#8220;blend.&#8221;</em> PhD dissertation, Northwestern University,
+Evanston, Illinois, 1991.</p>
+<p>&gt; Simpson, J. &amp; Huron, D. &#8220;The perception of rhythmic similarity: A test of a
+modified version of Johnson-Laird&#8217;s theory,&#8221; <em>Canadian Acoustics,</em> Vol. 21,
+No. 3 (1993) pp. 89-90.</p>
+<p>&gt; Stone, K. <em>Music Notation in the Twentieth Century; A Practical Guidebook.</em>
+New York: W. W. Norton &amp; Co., 1980.</p>
+<p>&gt; Straus, J. N. <em>Introduction to Post-Tonal Theory.</em> Englewood Clifs, N.J.:
+Prentice Hall, 1990.</p>
+<p>&gt; Terhardt, E. &#8220;Calculating virtual pitch,&#8221; <em>Hearing Research,</em> Vol. 1 (1979)
+pp. 155-182.</p>
+<p>&gt; Terhardt, E., Stoll, G. &amp; Seewann, M. &#8220;Algorithm for extraction of pitch
+and pitch salience from complex tonal signals,&#8221; <em>Journal of the Acoustical
+Society of America,</em> Vol. 71 (1982) pp. 679-688.</p>
+<p>&gt; Terhardt, E., Stoll, G. &amp; Seewann, M. &#8220;Pitch of complex signals according
+to virtual-pitch theory: test, examples, and predictions,&#8221; <em>Journal of the
+Acoustical Society of America,</em> Vol. 71 (1982) pp. 671-678.</p>
+<p>&gt; Thomas, R. &amp; Yates, J. <em>A User Guide to the UNIX System.</em> Berkeley,
+California: Osborne/McGraw-Hill 1982.</p>
+<p>&gt; Thomassen, J. &#8220;Melodic accent: Experiments and a tentative model,&#8221; <em>Journal
+of the Acoustical Society of America,</em> Vol. 71, No. 6 (1982) pp. 1598-1605;
+see also, Erratum, <em>Journal of the Acoustical Society of America,</em> Vol. 73,
+No. 1 (1983) p. 373.</p>
+<p>&gt; Vos, J. &amp; van Vianen, B. &#8220;The effect of fundamental frequency on the
+discriminability between pure and tempered fifths and major thirds,&#8221;
+<em>Perception &amp; Psychophysics,</em> Vol. 37 (1985) p.509.</p>
+<p>&gt; Wiggens, G., Miranda, E., Smaill, A. &amp; Harris, M. &#8220;A framework for the
+evaluation of music representation systems,&#8221; <em>Computer Music Journal,</em> Vol.
+17, No. 3 (1993) pp. 31-42.</p>
+<p>&gt; Wong, A. K. C., &amp; Ghahraman, D. &#8220;A statistical analysis of interdependence
+in character sequences,&#8221; <em>Information Sciences,</em> Vol. 8 (1975) pp. 173-188.</p>
+<p>&gt; Zwicker, E., Flottorp, G. &amp; Stevens, S. S. &#8220;Critical bandwidth in loudness
+summation,&#8221; <em>Journal of the Acoustical Society of America,</em> Vol. 29, No. 5
+(1957) pp. 548-557.</p>
+<hr class="docutils" />
+<ul class="simple">
+<li>` <a href="#id1"><span class="problematic" id="id2">**</span></a>Humdrum Toolkit Main Page**`_</li>
+<li>` <a href="#id3"><span class="problematic" id="id4">**</span></a>Developer&#8217;s Guide Main Page**`_</li>
+<li>` <a href="#id5"><span class="problematic" id="id6">**</span></a>Humdrum Toolkit User Guide**`_</li>
+<li>` <a href="#id7"><span class="problematic" id="id8">**</span></a>Humdrum Toolkit Command Documentation**`_</li>
+</ul>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../manual07/" class="btn btn-neutral float-right" title="Humdrum Developer’s Guide"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../linux.perform/" class="btn btn-neutral" title="Installing and Using the Humdrum “perform” Command under Linux"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

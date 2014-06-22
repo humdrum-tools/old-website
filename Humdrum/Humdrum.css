@@ -1,0 +1,26 @@
+body {
+	/* font-size: 12pt;  */
+	color: black; 
+	background-image: url("/images/backgrounds/bgBlue4.gif");
+	background-color: #dbedff 
+}
+
+h1 {
+        text-align:center;
+}
+
+h3 {
+        font-style: italic;
+}
+
+
+#header {
+	text-align:center;
+	color: black;
+	background-color: #6066ff;
+	/* Amaya puts a border attribute on the table tag; set it to 0. */
+	border-style: none;   
+	/* override possible user style sheet */
+	padding: 0;
+	margin: 0;
+}
