@@ -38,7 +38,8 @@ sub processFile {
 sub cleanContent {
    my ($content) = @_;
   
-   $content =~ s/``\*\*kern````/``**kern``/g;
+   #$content =~ s/``\*\*kern````/``**kern``/g;
+   $content =~ s/``\\*\\*kern``/\\*\\*kern/g;
 
    return $content;
 }

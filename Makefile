@@ -29,7 +29,7 @@ clean: clean-links
 ## base directory.
 ##
 
-doc: webpages clean-links links
+doc: webpages clean-links links css-hack
 	
 website:   webpages
 dirhtml:   webpages
@@ -38,6 +38,13 @@ webpage:   webpages
 webpages:
 	(cd source; $(MAKE) dirhtml)
 
+
+css-hack:
+	# Change RtD theme CSS settings which don't want to be change otherwise
+	# Sidebar background color: 343131 -> 3d5b73
+	# Sidebar search region at top: 2980b9 -> 3d5b73 (but not links or other)
+	-(cd html/_static/css; cp theme.css theme-old.css)
+	-(cd html/_static/css; sed 's/343131/3d5b73/g; s/background-color:#2980b9/background-color:#3d5b73/g' theme-old.css > theme.css)
 
 
 ###########################################################################

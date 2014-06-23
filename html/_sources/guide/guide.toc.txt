@@ -80,53 +80,49 @@ How to Use This Bookiii
 
 
 
-
-
-(C) Copyright 1999 David Huron
-
 .. _Center for Computer Assisted Research in the Humanities:
     http://musedata.stanford.edu/contact/orderform/index.html
 .. _Detailed Table of Contents: guide.toc.detailed.html
-.. _Humdrum:  A Brief Tour: guide01.html
-.. _Representing Music Using **kern (Part I): guide02.html
-.. _Some Initial Processing: guide03.html
-.. _Basic Pitch Translations: guide04.html
-.. _Humdrum Syntax: guide05.html
-.. _Representing Music Using **kern (Part II): guide06.html
-.. _MIDI Output Tools: guide07.html
-.. _The Shell (I): guide08.html
-.. _Searching with Regular Expressions: guide09.html
-.. _Musical Uses of Regular Expressions: guide10.html
-.. _Melodic Intervals: guide11.html
-.. _Selecting Musical Parts and Passages: guide12.html
-.. _Assembling Scores: guide13.html
-.. _Stream Editing: guide14.html
-.. _Harmonic Intervals: guide15.html
-.. _The Shell (II): guide16.html
-.. _Creating Inventories: guide17.html
-.. _Fingers, Footsteps and Frets: guide18.html
-.. _Musical Contexts: guide19.html
-.. _Strophes, Verses and Repeats: guide20.html
-.. _Searching for Patterns: guide21.html
-.. _Classifying: guide22.html
-.. _Rhythm: guide23.html
-.. _The Shell (III): guide24.html
-.. _Similarity: guide25.html
-.. _Moving Signifiers Between Spines: guide26.html
-.. _Text and Lyrics: guide27.html
-.. _Dynamics: guide28.html
-.. _Differences and Similarities: guide29.html
-.. _MIDI Input Tools: guide30.html
-.. _Repertoires and Links: guide31.html
-.. _The Shell (IV): guide32.html
-.. _Word Sounds: guide33.html
-.. _Serial Processing: guide34.html
-.. _Layers: guide35.html
-.. _Sound and Spectra: guide36.html
-.. _Electronic Music Editing: guide37.html
-.. _Systematic Musicology: guide38.html
-.. _Troubleshooting: guide39.html
-.. _Conclusion: guide40.html
+.. _Humdrum:  A Brief Tour: ch01.html
+.. _Representing Music Using **kern (Part I): ch02.html
+.. _Some Initial Processing: ch03.html
+.. _Basic Pitch Translations: ch04.html
+.. _Humdrum Syntax: ch05.html
+.. _Representing Music Using **kern (Part II): ch06.html
+.. _MIDI Output Tools: ch07.html
+.. _The Shell (I): ch08.html
+.. _Searching with Regular Expressions: ch09.html
+.. _Musical Uses of Regular Expressions: ch10.html
+.. _Melodic Intervals: ch11.html
+.. _Selecting Musical Parts and Passages: ch12.html
+.. _Assembling Scores: ch13.html
+.. _Stream Editing: ch14.html
+.. _Harmonic Intervals: ch15.html
+.. _The Shell (II): ch16.html
+.. _Creating Inventories: ch17.html
+.. _Fingers, Footsteps and Frets: ch18.html
+.. _Musical Contexts: ch19.html
+.. _Strophes, Verses and Repeats: ch20.html
+.. _Searching for Patterns: ch21.html
+.. _Classifying: ch22.html
+.. _Rhythm: ch23.html
+.. _The Shell (III): ch24.html
+.. _Similarity: ch25.html
+.. _Moving Signifiers Between Spines: ch26.html
+.. _Text and Lyrics: ch27.html
+.. _Dynamics: ch28.html
+.. _Differences and Similarities: ch29.html
+.. _MIDI Input Tools: ch30.html
+.. _Repertoires and Links: ch31.html
+.. _The Shell (IV): ch32.html
+.. _Word Sounds: ch33.html
+.. _Serial Processing: ch34.html
+.. _Layers: ch35.html
+.. _Sound and Spectra: ch36.html
+.. _Electronic Music Editing: ch37.html
+.. _Systematic Musicology: ch38.html
+.. _Troubleshooting: ch39.html
+.. _Conclusion: ch40.html
 .. _Bibliography: guide.bibliog.html
 .. _Appendix I:  Humdrum Reference Records: guide.append1.html
 .. _Appendix II:  Instrumentation Codes: guide.append2.html

@@ -11,7 +11,10 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-import sys, os, sphinx_rtd_theme
+import sys 
+import os
+import sphinx_rtd_theme
+
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -93,13 +96,18 @@ exclude_patterns = ['_build']
 # a list of builtin themes.
 html_theme = 'sphinx_rtd_theme'
 
+# Add any paths that contain custom themes here, relative to this directory.
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #html_theme_options = {}
 
-# Add any paths that contain custom themes here, relative to this directory.
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+html_theme_options = {
+	"sticky_navigation": True
+}
+
 
 ###pedro's extensions
 sys.path.insert(0, os.path.abspath('extensions'))

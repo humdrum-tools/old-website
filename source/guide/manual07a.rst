@@ -319,8 +319,8 @@ Having identified those attributes that we wish to represent, we need to
 consider how the representation ought to be structured. Specifically, we need
 to consider how our fingering representation can be coordinated with other
 Humdrum interpretations. The most important coordination task is ensuring
-that our representation will correspond well with the core ``**kern``
-representation. Each data record in ``**kern`` represents a single sonority
+that our representation will correspond well with the core \*\*kern
+representation. Each data record in \*\*kern represents a single sonority
 -- a moment in time that differs from the previous state. Since key-presses
 are closely related to notes, we might want to coordinate each of the
 `` **kern`` note tokens with possible key-presses. Many Humdrum pitch-related

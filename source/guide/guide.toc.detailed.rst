@@ -486,399 +486,399 @@ Detailed Table of Contents
 (C) Copyright 1999 David Huron
 
 .. _Regular Table of Contents: guide.toc.html
-.. _Humdrum:  A Brief Tour: guide01.html
-.. _What Can Humdrum Do?: guide01.html#What_Can_Humdrum_Do
+.. _Humdrum:  A Brief Tour: ch01.html
+.. _What Can Humdrum Do?: ch01.html#What_Can_Humdrum_Do
 .. _The Humdrum Syntax and the Humdrum Toolkit:
-    guide01.html#The_Humdrum_Syntax_and_the_Humdrum_Toolkit
-.. _Humdrum Syntax: guide01.html#Humdrum_Syntax
-.. _Humdrum Tools: guide01.html#Humdrum_Tools
-.. _Some Sample Commands: guide01.html#Some_Sample_Commands
-.. _Reprise: guide01.html#Reprise
-.. _Representing Music Using **kern (Part I): guide02.html
-.. _Comment Records: guide02.html#Comment_Records
-.. _Reference Records: guide02.html#Reference_Records
-.. _Reprise: guide02.html#Reprise
-.. _Some Initial Processing: guide03.html
-.. _The census Command: guide03.html#The_census_Command
-.. _ Command: guide03.html#Simple_Searches_using_the_grep_Command
-.. _grep -n: guide03.html#Pattern_Locations_Using_grep_-n
-.. _grep -c: guide03.html#Counting_Pattern_Occurrences_Using_grep-c
+    ch01.html#The_Humdrum_Syntax_and_the_Humdrum_Toolkit
+.. _Humdrum Syntax: ch01.html#Humdrum_Syntax
+.. _Humdrum Tools: ch01.html#Humdrum_Tools
+.. _Some Sample Commands: ch01.html#Some_Sample_Commands
+.. _Reprise: ch01.html#Reprise
+.. _Representing Music Using **kern (Part I): ch02.html
+.. _Comment Records: ch02.html#Comment_Records
+.. _Reference Records: ch02.html#Reference_Records
+.. _Reprise: ch02.html#Reprise
+.. _Some Initial Processing: ch03.html
+.. _The census Command: ch03.html#The_census_Command
+.. _ Command: ch03.html#Simple_Searches_using_the_grep_Command
+.. _grep -n: ch03.html#Pattern_Locations_Using_grep_-n
+.. _grep -c: ch03.html#Counting_Pattern_Occurrences_Using_grep-c
 .. _Searching for Reference Information:
-    guide03.html#Searching_for_Reference_Information
-.. _ Command: guide03.html#The_sort_Command
-.. _ Command: guide03.html#The_uniq_Command
-.. _ Command: guide03.html#Options_for_the_uniq_Command
-.. _Reprise: guide03.html#Reprise
-.. _Basic Pitch Translations: guide04.html
-.. _ISO Pitch Representation: guide04.html#Pitch_Representation
-.. _he: guide04.html#German_Ton&#246he
-.. _ge: guide04.html#French_Solf&#232ge
-.. _Frequency: guide04.html#Frequency
-.. _Cents: guide04.html#Cents
-.. _Semitones: guide04.html#Semitones
-.. _MIDI: guide04.html#MIDI
-.. _Scale Degree: guide04.html#Scale_Degree
-.. _Pitch Translations: guide04.html#Pitch_Translations
-.. _ Command: guide04.html#Transposition_Using_the_trans_Command
-.. _Key Interpretations: guide04.html#Key_Interpretations
-.. _Pitch Processing: guide04.html#Pitch_Processing
-.. _Uses for Pitch Translations: guide04.html#Uses_for_Pitch_Translations
-.. _Reprise: guide04.html#Reprise
-.. _The Humdrum Syntax: guide05.html
-.. _Types of Records: guide05.html#Types_of_Records
-.. _Comment Records: guide05.html#Comment_Records
-.. _Interpretation Records: guide05.html#Interpretation_Records
-.. _Data Records: guide05.html#Data_Records
-.. _Data Tokens and Null Tokens: guide05.html#Data_Tokens_and_Null_Tokens
-.. _Data Sub-Tokens: guide05.html#Data_Sub-Tokens
-.. _Spine Paths: guide05.html#Spine_Paths
+    ch03.html#Searching_for_Reference_Information
+.. _ Command: ch03.html#The_sort_Command
+.. _ Command: ch03.html#The_uniq_Command
+.. _ Command: ch03.html#Options_for_the_uniq_Command
+.. _Reprise: ch03.html#Reprise
+.. _Basic Pitch Translations: ch04.html
+.. _ISO Pitch Representation: ch04.html#Pitch_Representation
+.. _he: ch04.html#German_Ton&#246he
+.. _ge: ch04.html#French_Solf&#232ge
+.. _Frequency: ch04.html#Frequency
+.. _Cents: ch04.html#Cents
+.. _Semitones: ch04.html#Semitones
+.. _MIDI: ch04.html#MIDI
+.. _Scale Degree: ch04.html#Scale_Degree
+.. _Pitch Translations: ch04.html#Pitch_Translations
+.. _ Command: ch04.html#Transposition_Using_the_trans_Command
+.. _Key Interpretations: ch04.html#Key_Interpretations
+.. _Pitch Processing: ch04.html#Pitch_Processing
+.. _Uses for Pitch Translations: ch04.html#Uses_for_Pitch_Translations
+.. _Reprise: ch04.html#Reprise
+.. _The Humdrum Syntax: ch05.html
+.. _Types of Records: ch05.html#Types_of_Records
+.. _Comment Records: ch05.html#Comment_Records
+.. _Interpretation Records: ch05.html#Interpretation_Records
+.. _Data Records: ch05.html#Data_Records
+.. _Data Tokens and Null Tokens: ch05.html#Data_Tokens_and_Null_Tokens
+.. _Data Sub-Tokens: ch05.html#Data_Sub-Tokens
+.. _Spine Paths: ch05.html#Spine_Paths
 .. _    The Humdrum Syntax:  A Formal Definition:
-    guide05.html#The_Humdrum_Syntax:_A_Formal_Definition
-.. _ Command: guide05.html#The_humdrum_Command
-.. _Reprise: guide05.html#Reprise
-.. _Representing Music Using **kern (Part II): guide06.html
+    ch05.html#The_Humdrum_Syntax:_A_Formal_Definition
+.. _ Command: ch05.html#The_humdrum_Command
+.. _Reprise: ch05.html#Reprise
+.. _Representing Music Using **kern (Part II): ch06.html
 .. _Grace Notes, Gruppetos and Appoggiaturas:
-    guide06.html#Grace_Notes,_Gruppetos_and_Appoggiaturas
-.. _Multiple Stops: guide06.html#Multiple_Stops
-.. _Further Examples: guide06.html#Further_Examples
-.. _Reprise: guide06.html#Reprise
-.. _MIDI Output Tools: guide07.html
-.. _ Representation: guide07.html#The_**MIDI_Representation
-.. _ Command: guide07.html#The_midi_Command
-.. _ Command: guide07.html#The_perform_Command
+    ch06.html#Grace_Notes,_Gruppetos_and_Appoggiaturas
+.. _Multiple Stops: ch06.html#Multiple_Stops
+.. _Further Examples: ch06.html#Further_Examples
+.. _Reprise: ch06.html#Reprise
+.. _MIDI Output Tools: ch07.html
+.. _ Representation: ch07.html#The_**MIDI_Representation
+.. _ Command: ch07.html#The_midi_Command
+.. _ Command: ch07.html#The_perform_Command
 .. _Data Scrolling During Playback:
-    guide07.html#Data_Scrolling_During_Playback
-.. _Changing Tempo: guide07.html#Changing_Tempo
-.. _ Command: guide07.html#The_tacet_Command
-.. _ Command: guide07.html#The_smf_Command
-.. _Reprise: guide07.html#Reprise
-.. _The Shell (I): guide08.html
-.. _Shell Special Characters: guide08.html#Shell_Special_Characters
-.. _File Redirection: guide08.html#File_Redirection
-.. _Pipe (|): guide08.html#Pipe_(|)
-.. _Shell Wildcard (*): guide08.html#Shell_Wildcard_(*)
-.. _Comment (#): guide08.html#Comment_(octothorpe)
-.. _Command Delimiter (;): guide08.html#Command_Delimiter_(;)
-.. _): guide08.html#Background_Command_(&)
-.. _Shell Command Syntax: guide08.html#Shell_Command_Syntax
-.. _Output Redirection: guide08.html#Output_Redirection
-.. _Tee: guide08.html#Tee
-.. _Reprise: guide08.html#Reprise
-.. _Searching with Regular Expressions: guide09.html
-.. _Literals: guide09.html#Literals
-.. _Wild-Card: guide09.html#Wild-Card
-.. _Escape Character: guide09.html#Escape_Character
-.. _Repetition Operators: guide09.html#Repetition_Operators
-.. _Context Anchors: guide09.html#Context_Anchors
-.. _OR Logical Operator: guide09.html#OR_Logical_Operator
-.. _Character Classes: guide09.html#Character_Classes
+    ch07.html#Data_Scrolling_During_Playback
+.. _Changing Tempo: ch07.html#Changing_Tempo
+.. _ Command: ch07.html#The_tacet_Command
+.. _ Command: ch07.html#The_smf_Command
+.. _Reprise: ch07.html#Reprise
+.. _The Shell (I): ch08.html
+.. _Shell Special Characters: ch08.html#Shell_Special_Characters
+.. _File Redirection: ch08.html#File_Redirection
+.. _Pipe (|): ch08.html#Pipe_(|)
+.. _Shell Wildcard (*): ch08.html#Shell_Wildcard_(*)
+.. _Comment (#): ch08.html#Comment_(octothorpe)
+.. _Command Delimiter (;): ch08.html#Command_Delimiter_(;)
+.. _): ch08.html#Background_Command_(&)
+.. _Shell Command Syntax: ch08.html#Shell_Command_Syntax
+.. _Output Redirection: ch08.html#Output_Redirection
+.. _Tee: ch08.html#Tee
+.. _Reprise: ch08.html#Reprise
+.. _Searching with Regular Expressions: ch09.html
+.. _Literals: ch09.html#Literals
+.. _Wild-Card: ch09.html#Wild-Card
+.. _Escape Character: ch09.html#Escape_Character
+.. _Repetition Operators: ch09.html#Repetition_Operators
+.. _Context Anchors: ch09.html#Context_Anchors
+.. _OR Logical Operator: ch09.html#OR_Logical_Operator
+.. _Character Classes: ch09.html#Character_Classes
 .. _Examples of Regular Expressions:
-    guide09.html#Examples_of_Regular_Expressions
+    ch09.html#Examples_of_Regular_Expressions
 .. _Examples of Regular Expressions in Humdrum:
-    guide09.html#Examples_of_Regular_Expressions_in_Humdrum
+    ch09.html#Examples_of_Regular_Expressions_in_Humdrum
 .. _Basic, Extended, and Humdrum-Extended Regular Expressions:
-    guide09.html#Basic,_Extended,_and_Humdrum-Extended_Regular_Expressions
-.. _Reprise: guide09.html#Reprise
-.. _Musical Uses of Regular Expressions: guide10.html
-.. _ Command (Again): guide10.html#The_grep_Command_(Again)
+    ch09.html#Basic,_Extended,_and_Humdrum-Extended_Regular_Expressions
+.. _Reprise: ch09.html#Reprise
+.. _Musical Uses of Regular Expressions: ch10.html
+.. _ Command (Again): ch10.html#The_grep_Command_(Again)
 .. _German, French, Italian, and Neapolitan Sixths:
-    guide10.html#German,_French,_Italian,_and_Neapolitan_Sixths
-.. _ Command: guide10.html#AND-Searches_Using_the_xargs_Command
-.. _ Command: guide10.html#OR-Searches_Using_the_grep_-f_Command
-.. _Reprise: guide10.html#Reprise
-.. _Melodic Intervals: guide11.html
-.. _Types of Melodic Intervals: guide11.html#Types_of_Melodic_Intervals
-.. _ Command: guide11.html#Melodic_Intervals_Using_the_mint_Command
-.. _Unvoiced Inner Intervals: guide11.html#Unvoiced_Inner_Intervals
-.. _ Command: guide11.html
+    ch10.html#German,_French,_Italian,_and_Neapolitan_Sixths
+.. _ Command: ch10.html#AND-Searches_Using_the_xargs_Command
+.. _ Command: ch10.html#OR-Searches_Using_the_grep_-f_Command
+.. _Reprise: ch10.html#Reprise
+.. _Melodic Intervals: ch11.html
+.. _Types of Melodic Intervals: ch11.html#Types_of_Melodic_Intervals
+.. _ Command: ch11.html#Melodic_Intervals_Using_the_mint_Command
+.. _Unvoiced Inner Intervals: ch11.html#Unvoiced_Inner_Intervals
+.. _ Command: ch11.html
     #Calculating_Distance_Intervals_Using_the_mint_-s_Command
 .. _Simple and Compound Melodic Intervals:
-    guide11.html#Simple_and_Compound_Melodic_Intervals
+    ch11.html#Simple_and_Compound_Melodic_Intervals
 .. _Diatonic Intervals, Absolute Intervals and Contour:
-    guide11.html#Diatonic_Intervals,_Absolute_Intervals_and_Contour
-.. _ Command: guide11.html#Using_the_mint_Command
+    ch11.html#Diatonic_Intervals,_Absolute_Intervals_and_Contour
+.. _ Command: ch11.html#Using_the_mint_Command
 .. _ Command:
-    guide11.html#Calculating_Melodic_Intervals_Using_the_xdelta_Command
-.. _Reprise: guide11.html#Reprise
-.. _Selecting Musical Parts and Passages: guide12.html
-.. _ Command: guide12.html#Extracting_Spines:_The_extract_Command
+    ch11.html#Calculating_Melodic_Intervals_Using_the_xdelta_Command
+.. _Reprise: ch11.html#Reprise
+.. _Selecting Musical Parts and Passages: ch12.html
+.. _ Command: ch12.html#Extracting_Spines:_The_extract_Command
 .. _Extraction by Interpretation:
-    guide12.html#Extraction_by_Interpretation
-.. _ in Pipelines: guide12.html#Using_extract_in_Pipelines
+    ch12.html#Extraction_by_Interpretation
+.. _ in Pipelines: ch12.html#Using_extract_in_Pipelines
 .. _Extracting Spines that Meander:
-    guide12.html#Extracting_Spines_that_Meander
-.. _Field-Trace Extracting: guide12.html#Field-Trace_Extracting
-.. _ Command: guide12.html#Extracting_Passages:_The_yank_Command
-.. _Yanking by Marker: guide12.html#Yanking_by_Marker
-.. _Yanking by Delimiters: guide12.html#Yanking_by_Delimiters
-.. _Yanking by Section: guide12.html#Yanking_by_Section
-.. _yank: guide12.html#Examples_Using_yank
-.. _ in Pipelines: guide12.html#Using_yank_in_Pipelines
-.. _Reprise: guide12.html#Reprise
-.. _Assembling Scores: guide13.html
-.. _ Command: guide13.html#The_cat_Command
-.. _ Command: guide13.html#The_rid_Command
-.. _ Command: guide13.html#Assembling_Parts_Using_the_assemble_Command
-.. _ Command: guide13.html#Aligning_Durations_Using_the_timebase_Command
-.. _Assembling N-tuplets: guide13.html#Assembling_N-tuplets
-.. _proof: guide13.html#Checking_an_Assembled_Score_Using_proof
-.. _ Command: guide13.html#Other_Uses_for_the_timebase_Command
-.. _timebase: guide13.html#Additional_Uses_of_aassemble_and_timebase
-.. _Reprise: guide13.html#Reprise
-.. _Stream Editing: guide14.html
-.. _ Commands: guide14.html#The_sed_and_humsed_Commands
-.. _Simple Substitutions: guide14.html#Simple_Substitutions
+    ch12.html#Extracting_Spines_that_Meander
+.. _Field-Trace Extracting: ch12.html#Field-Trace_Extracting
+.. _ Command: ch12.html#Extracting_Passages:_The_yank_Command
+.. _Yanking by Marker: ch12.html#Yanking_by_Marker
+.. _Yanking by Delimiters: ch12.html#Yanking_by_Delimiters
+.. _Yanking by Section: ch12.html#Yanking_by_Section
+.. _yank: ch12.html#Examples_Using_yank
+.. _ in Pipelines: ch12.html#Using_yank_in_Pipelines
+.. _Reprise: ch12.html#Reprise
+.. _Assembling Scores: ch13.html
+.. _ Command: ch13.html#The_cat_Command
+.. _ Command: ch13.html#The_rid_Command
+.. _ Command: ch13.html#Assembling_Parts_Using_the_assemble_Command
+.. _ Command: ch13.html#Aligning_Durations_Using_the_timebase_Command
+.. _Assembling N-tuplets: ch13.html#Assembling_N-tuplets
+.. _proof: ch13.html#Checking_an_Assembled_Score_Using_proof
+.. _ Command: ch13.html#Other_Uses_for_the_timebase_Command
+.. _timebase: ch13.html#Additional_Uses_of_aassemble_and_timebase
+.. _Reprise: ch13.html#Reprise
+.. _Stream Editing: ch14.html
+.. _ Commands: ch14.html#The_sed_and_humsed_Commands
+.. _Simple Substitutions: ch14.html#Simple_Substitutions
 .. _Selective Elimination of Data:
-    guide14.html#Selective_Elimination_of_Data
-.. _ Command: guide14.html#The_stats_Command
-.. _Eliminate Everything But...: guide14.html#Eliminate_Everything_But...
-.. _Deleting Data Records: guide14.html#Deleting_Data_Records
-.. _Adding Information: guide14.html#Adding_Information
-.. _Multiple Substitutions: guide14.html#Multiple_Substitutions
-.. _Switching Signifiers: guide14.html#Switching_Signifiers
-.. _Executing from a File: guide14.html#Executing_from_a_File
-.. _Writing to a File: guide14.html#Writing_to_a_File
-.. _Reading a File as Input: guide14.html#Reading_a_File_as_Input
-.. _Reprise: guide14.html#Reprise
-.. _Harmonic Intervals: guide15.html
-.. _Types of Harmonic Intervals: guide15.html#Types_of_Harmonic_Intervals
-.. _ Command: guide15.html#Harmonic_Intervals_Using_the_hint_Command
-.. _ Command: guide15.html#Propagating_Data_Using_the_ditto_Command
-.. _ Commands: guide15.html#Using_the_ditto_and_hint_Commands
+    ch14.html#Selective_Elimination_of_Data
+.. _ Command: ch14.html#The_stats_Command
+.. _Eliminate Everything But...: ch14.html#Eliminate_Everything_But...
+.. _Deleting Data Records: ch14.html#Deleting_Data_Records
+.. _Adding Information: ch14.html#Adding_Information
+.. _Multiple Substitutions: ch14.html#Multiple_Substitutions
+.. _Switching Signifiers: ch14.html#Switching_Signifiers
+.. _Executing from a File: ch14.html#Executing_from_a_File
+.. _Writing to a File: ch14.html#Writing_to_a_File
+.. _Reading a File as Input: ch14.html#Reading_a_File_as_Input
+.. _Reprise: ch14.html#Reprise
+.. _Harmonic Intervals: ch15.html
+.. _Types of Harmonic Intervals: ch15.html#Types_of_Harmonic_Intervals
+.. _ Command: ch15.html#Harmonic_Intervals_Using_the_hint_Command
+.. _ Command: ch15.html#Propagating_Data_Using_the_ditto_Command
+.. _ Commands: ch15.html#Using_the_ditto_and_hint_Commands
 .. _Determining Implicit Harmonic Intervals:
-    guide15.html#Determining_Implicit_Harmonic_Intervals
-.. _ Command: guide15.html#The_ydelta_Command
-.. _ Command: guide15.html#More_Examples_Using_the_ydelta_Command
-.. _Reprise: guide15.html#Reprise
-.. _The Shell (II): guide16.html
-.. _Shell Special Characters: guide16.html#Shell_Special_Characters
-.. _Shell Variables: guide16.html#Shell_Variables
-.. _The Shell Greve: guide16.html#The_Shell_Greve
+    ch15.html#Determining_Implicit_Harmonic_Intervals
+.. _ Command: ch15.html#The_ydelta_Command
+.. _ Command: ch15.html#More_Examples_Using_the_ydelta_Command
+.. _Reprise: ch15.html#Reprise
+.. _The Shell (II): ch16.html
+.. _Shell Special Characters: ch16.html#Shell_Special_Characters
+.. _Shell Variables: ch16.html#Shell_Variables
+.. _The Shell Greve: ch16.html#The_Shell_Greve
 .. _Single Quotes, Double Quotes:
-    guide16.html#Single_Quotes,_Double_Quotes
-.. _Using Shell Variables: guide16.html#Using_Shell_Variables
-.. _Aliases: guide16.html#Aliases
-.. _Reprise: guide16.html#Reprise
-.. _Creating Inventories: guide17.html
-.. _Filter, Sort, Count: guide17.html#Filter,_Sort,_Count
-.. _ Command: guide17.html#Filtering_Data_with_the_rid_Command
-.. _Inventories for Multi-spine Inputs: guide17.html
+    ch16.html#Single_Quotes,_Double_Quotes
+.. _Using Shell Variables: ch16.html#Using_Shell_Variables
+.. _Aliases: ch16.html#Aliases
+.. _Reprise: ch16.html#Reprise
+.. _Creating Inventories: ch17.html
+.. _Filter, Sort, Count: ch17.html#Filter,_Sort,_Count
+.. _ Command: ch17.html#Filtering_Data_with_the_rid_Command
+.. _Inventories for Multi-spine Inputs: ch17.html
     #Inventories_for_Multi-spine_Inputs
 .. _Sorting By Frequency of Occurrence:
-    guide17.html#Sorting_By_Frequency_of_Occurrence
-.. _ Command: guide17.html#Counting_with_the_wc_Command
+    ch17.html#Sorting_By_Frequency_of_Occurrence
+.. _ Command: ch17.html#Counting_with_the_wc_Command
 .. _Excluding or Seeking Rare Events:
-    guide17.html#Excluding_or_Seeking_Rare_Events
+    ch17.html#Excluding_or_Seeking_Rare_Events
 .. _Transforming and Editing Inventory Data:
-    guide17.html#Transforming_and_Editing_Inventory_Data
-.. _Further Examples: guide17.html#Further_Examples
-.. _Reprise: guide17.html#Reprise
-.. _Fingers, Footsteps and Frets: guide18.html
+    ch17.html#Transforming_and_Editing_Inventory_Data
+.. _Further Examples: ch17.html#Further_Examples
+.. _Reprise: ch17.html#Reprise
+.. _Fingers, Footsteps and Frets: ch18.html
 .. _Heart Beats and Other Esoterica:
-    guide18.html#Heart_Beats_and_Other_Esoterica
-.. _ Representation: guide18.html#The_**fret_Representation
-.. _**fret: guide18.html#Additional_Features_of_**fret
-.. _Reprise: guide18.html#Reprise
-.. _Musical Contexts: guide19.html
-.. _ Command: guide19.html#The_context_Command
-.. _Harmonic Progressions: guide19.html#Harmonic_Progressions
-.. _ Options: guide19.html#Using_context_with_the_-b_and_-e_Options
-.. _humsed: guide19.html#Using_context_with_sed_and_humsed
+    ch18.html#Heart_Beats_and_Other_Esoterica
+.. _ Representation: ch18.html#The_**fret_Representation
+.. _**fret: ch18.html#Additional_Features_of_**fret
+.. _Reprise: ch18.html#Reprise
+.. _Musical Contexts: ch19.html
+.. _ Command: ch19.html#The_context_Command
+.. _Harmonic Progressions: ch19.html#Harmonic_Progressions
+.. _ Options: ch19.html#Using_context_with_the_-b_and_-e_Options
+.. _humsed: ch19.html#Using_context_with_sed_and_humsed
 .. _Linking context Outputs with Inputs:
-    guide19.html#Linking_context_Outputs_with_Inputs
-.. _ Option: guide19.html#Using_context_with_the_-p_Option
-.. _Reprise: guide19.html#Reprise
-.. _Strophes, Verses and Repeats: guide20.html
-.. _Section Labels: guide20.html#Section_Labels
-.. _Expansion Lists: guide20.html#Expansion_Lists
-.. _ to Extract Sections: guide20.html#Using_yank_to_Extract_Sections
+    ch19.html#Linking_context_Outputs_with_Inputs
+.. _ Option: ch19.html#Using_context_with_the_-p_Option
+.. _Reprise: ch19.html#Reprise
+.. _Strophes, Verses and Repeats: ch20.html
+.. _Section Labels: ch20.html#Section_Labels
+.. _Expansion Lists: ch20.html#Expansion_Lists
+.. _ to Extract Sections: ch20.html#Using_yank_to_Extract_Sections
 .. _ Command to Expand Encodings:
-    guide20.html#Using_the_thru_Command_to_Expand_Encodings
-.. _Alternative Versions: guide20.html#Alternative_Versions
-.. _Section Types: guide20.html#Section_Types
-.. _Hierarchical Sections: guide20.html#Hierarchical_Sections
-.. _ Commands: guide20.html#Using_the_yank_and_thru_Commands
-.. _Strophic Representations: guide20.html#Strophic_Representations
-.. _ Command: guide20.html#The_strophe_Command
-.. _ Commands: guide20.html#Using_the_strophe_and_thru_Commands
-.. _Reprise: guide20.html#Reprise
-.. _Searching for Patterns: guide21.html
-.. _ Command: guide21.html#The_patt_Command
-.. _'s Tag Option: guide21.html#Using_patt's_Tag_Option
+    ch20.html#Using_the_thru_Command_to_Expand_Encodings
+.. _Alternative Versions: ch20.html#Alternative_Versions
+.. _Section Types: ch20.html#Section_Types
+.. _Hierarchical Sections: ch20.html#Hierarchical_Sections
+.. _ Commands: ch20.html#Using_the_yank_and_thru_Commands
+.. _Strophic Representations: ch20.html#Strophic_Representations
+.. _ Command: ch20.html#The_strophe_Command
+.. _ Commands: ch20.html#Using_the_strophe_and_thru_Commands
+.. _Reprise: ch20.html#Reprise
+.. _Searching for Patterns: ch21.html
+.. _ Command: ch21.html#The_patt_Command
+.. _'s Tag Option: ch21.html#Using_patt's_Tag_Option
 .. _ Command:
-    guide21.html#Matching_Multiple_Records_Using_the_patt_Command
-.. _ Command: guide21.html#The_pattern_Command
-.. _Patterns of Patterns: guide21.html#Patterns_of_Patterns
-.. _Reprise: guide21.html#Reprise
-.. _Classifying: guide22.html
-.. _ Command: guide22.html#The_recode_Command
-.. _Classifying Intervals: guide22.html#Classifying_Intervals
-.. _Clarinet Registers: guide22.html#Clarinet_Registers
+    ch21.html#Matching_Multiple_Records_Using_the_patt_Command
+.. _ Command: ch21.html#The_pattern_Command
+.. _Patterns of Patterns: ch21.html#Patterns_of_Patterns
+.. _Reprise: ch21.html#Reprise
+.. _Classifying: ch22.html
+.. _ Command: ch22.html#The_recode_Command
+.. _Classifying Intervals: ch22.html#Classifying_Intervals
+.. _Clarinet Registers: ch22.html#Clarinet_Registers
 .. _Open and Close Position Chords:
-    guide22.html#Open_and_Close_Position_Chords
-.. _Flute Fingering Transitions: guide22.html#Flute_Fingering_Transitions
-.. _humsed: guide22.html#Classifying_with_humsed
-.. _Classifying Cadences: guide22.html#Classifying_Cadences
-.. _Orchestration: guide22.html#Orchestration
-.. _Reprise: guide22.html#Reprise
-.. _Rhythm: guide23.html
-.. _ Representation: guide23.html#The_**recip_Representation
-.. _ Command: guide23.html#The_dur_Command
-.. _Classifying Durations: guide23.html#Classifying_Durations
-.. _ Command: guide23.html#Using_yank_with_the_timebase_Command
-.. _ Command: guide23.html#The_metpos_Command
-.. _Changes of Stress: guide23.html#Changes_of_Stress
-.. _Reprise: guide23.html#Reprise
-.. _The Shell (III): guide24.html
-.. _Shell Programs: guide24.html#Shell_Programs
-.. _ Statement: guide24.html#Flow_of_Control:_The_if_Statement
-.. _ Statement: guide24.html#Flow_of_Control:_The_for_Statement
+    ch22.html#Open_and_Close_Position_Chords
+.. _Flute Fingering Transitions: ch22.html#Flute_Fingering_Transitions
+.. _humsed: ch22.html#Classifying_with_humsed
+.. _Classifying Cadences: ch22.html#Classifying_Cadences
+.. _Orchestration: ch22.html#Orchestration
+.. _Reprise: ch22.html#Reprise
+.. _Rhythm: ch23.html
+.. _ Representation: ch23.html#The_**recip_Representation
+.. _ Command: ch23.html#The_dur_Command
+.. _Classifying Durations: ch23.html#Classifying_Durations
+.. _ Command: ch23.html#Using_yank_with_the_timebase_Command
+.. _ Command: ch23.html#The_metpos_Command
+.. _Changes of Stress: ch23.html#Changes_of_Stress
+.. _Reprise: ch23.html#Reprise
+.. _The Shell (III): ch24.html
+.. _Shell Programs: ch24.html#Shell_Programs
+.. _ Statement: ch24.html#Flow_of_Control:_The_if_Statement
+.. _ Statement: ch24.html#Flow_of_Control:_The_for_Statement
 .. _A Script for Identifying Transgressions of Voice-Leading:
-    guide24.html#A_Script_for_Identifying_Transgressions_of_Voice-Leading
-.. _            (1) Parts Out Of Range: guide24.html#Parts_Out_Of_Range
-.. _            (2) Augmented/Diminished Melodic Intervals: guide24.html
+    ch24.html#A_Script_for_Identifying_Transgressions_of_Voice-Leading
+.. _            (1) Parts Out Of Range: ch24.html#Parts_Out_Of_Range
+.. _            (2) Augmented/Diminished Melodic Intervals: ch24.html
     #Augmented-Diminished_Melodic_Intervals
 .. _            (3) Consecutive Fifths or Octaves:
-    guide24.html#Consecutive_Fifths_or_Octaves
+    ch24.html#Consecutive_Fifths_or_Octaves
 .. _            (4) Doubled Leading Tone:
-    guide24.html#Doubled_Leading_Tone
-.. _            (5) Avoid Unisons: guide24.html#Avoid_Unisons
-.. _            (6) Crossed Parts: guide24.html#Crossed_Parts
+    ch24.html#Doubled_Leading_Tone
+.. _            (5) Avoid Unisons: ch24.html#Avoid_Unisons
+.. _            (6) Crossed Parts: ch24.html#Crossed_Parts
 .. _            (7) Parts Separated by Greater than an Octave:
-    guide24.html#Parts_Separated_by_Greater_than_an_Octave
-.. _            (8) Overlapped Parts: guide24.html#Overlapped_Parts
-.. _            (9) Exposed Octaves: guide24.html#Exposed_Octaves
-.. _Reprise: guide24.html#Reprise
-.. _Similarity: guide25.html
-.. _ Command: guide25.html#The_correl_Command
-.. _correl: guide25.html#Using_a_Template_with_correl
-.. _ Command: guide25.html#The_simil_Command
-.. _Defining Edit Penalties: guide25.html#Defining_Edit_Penalties
-.. _ Command: guide25.html#The_accent_Command
-.. _Reprise: guide25.html#Reprise
-.. _Moving Signifiers Between Spines: guide26.html
-.. _ Command: guide26.html#The_rend_Command
-.. _ Command: guide26.html#The_cleave_Command
+    ch24.html#Parts_Separated_by_Greater_than_an_Octave
+.. _            (8) Overlapped Parts: ch24.html#Overlapped_Parts
+.. _            (9) Exposed Octaves: ch24.html#Exposed_Octaves
+.. _Reprise: ch24.html#Reprise
+.. _Similarity: ch25.html
+.. _ Command: ch25.html#The_correl_Command
+.. _correl: ch25.html#Using_a_Template_with_correl
+.. _ Command: ch25.html#The_simil_Command
+.. _Defining Edit Penalties: ch25.html#Defining_Edit_Penalties
+.. _ Command: ch25.html#The_accent_Command
+.. _Reprise: ch25.html#Reprise
+.. _Moving Signifiers Between Spines: ch26.html
+.. _ Command: ch26.html#The_rend_Command
+.. _ Command: ch26.html#The_cleave_Command
 .. _Creating Mixed Representations:
-    guide26.html#Creating_Mixed_Representations
-.. _Reprise: guide26.html#Reprise
-.. _Text and Lyrics: guide27.html
-.. _ Representations: guide27.html#The_**text_and_**silbe_Representations
-.. _ Command: guide27.html#The_text_Command
-.. _ Command: guide27.html#The_fmt_Command
-.. _Rhythmic Feet in Text: guide27.html#Rhythmic_Feet_in_Text
-.. _Concordance: guide27.html#Concordance
-.. _Simile: guide27.html#Simile
-.. _Word Painting: guide27.html#Word_Painting
-.. _Emotionality: guide27.html#Emotionality
-.. _Other Types of Language Use: guide27.html#Other_Types_of_Language_Use
-.. _Reprise: guide27.html#Reprise
-.. _Dynamics: guide28.html
-.. _ Representations: guide28.html#The_**dynam_and_**dyn_Representations
-.. _ Representation: guide28.html#The_**dyn_Representation
-.. _ Representation: guide28.html#The_**dB_Representation
-.. _ Command: guide28.html#The_db_Command
+    ch26.html#Creating_Mixed_Representations
+.. _Reprise: ch26.html#Reprise
+.. _Text and Lyrics: ch27.html
+.. _ Representations: ch27.html#The_**text_and_**silbe_Representations
+.. _ Command: ch27.html#The_text_Command
+.. _ Command: ch27.html#The_fmt_Command
+.. _Rhythmic Feet in Text: ch27.html#Rhythmic_Feet_in_Text
+.. _Concordance: ch27.html#Concordance
+.. _Simile: ch27.html#Simile
+.. _Word Painting: ch27.html#Word_Painting
+.. _Emotionality: ch27.html#Emotionality
+.. _Other Types of Language Use: ch27.html#Other_Types_of_Language_Use
+.. _Reprise: ch27.html#Reprise
+.. _Dynamics: ch28.html
+.. _ Representations: ch28.html#The_**dynam_and_**dyn_Representations
+.. _ Representation: ch28.html#The_**dyn_Representation
+.. _ Representation: ch28.html#The_**dB_Representation
+.. _ Command: ch28.html#The_db_Command
 .. _Processing Dynamic Information:
-    guide28.html#Processing_Dynamic_Information
-.. _Terraced Dynamics: guide28.html#Terraced_Dynamics
-.. _Dynamic Swells: guide28.html#Dynamic_Swells
-.. _MIDI Dynamics: guide28.html#MIDI_Dynamics
-.. _Reprise: guide28.html#Reprise
-.. _Differences and Similarities: guide29.html
-.. _cmp: guide29.html#Comparing_Files_Using_cmp
-.. _diff: guide29.html#Comparing_Files_Using_diff
-.. _ Command: guide29.html#Comparing_Inventories--The_comm_Command
-.. _Reprise: guide29.html#Reprise
-.. _MIDI Input Tools: guide30.html
-.. _ Command: guide30.html#The_record_Command
-.. _ Command: guide30.html#The_encode_Command
-.. _Reprise: guide30.html#Reprise
-.. _Repertoires and Links: guide31.html
-.. _ Command: guide31.html#The_find_Command
-.. _Content Searching: guide31.html#Content_Searching
-.. _ Command: guide31.html#Using_find_with_the_xargs_Command
-.. _Repertoires As File Links: guide31.html#Repertoires_As_File_Links
-.. _Reprise: guide31.html#Reprise
-.. _The Shell (IV): guide32.html
-.. _ Programming Language: guide32.html#The_awk_Programming_Language
+    ch28.html#Processing_Dynamic_Information
+.. _Terraced Dynamics: ch28.html#Terraced_Dynamics
+.. _Dynamic Swells: ch28.html#Dynamic_Swells
+.. _MIDI Dynamics: ch28.html#MIDI_Dynamics
+.. _Reprise: ch28.html#Reprise
+.. _Differences and Similarities: ch29.html
+.. _cmp: ch29.html#Comparing_Files_Using_cmp
+.. _diff: ch29.html#Comparing_Files_Using_diff
+.. _ Command: ch29.html#Comparing_Inventories--The_comm_Command
+.. _Reprise: ch29.html#Reprise
+.. _MIDI Input Tools: ch30.html
+.. _ Command: ch30.html#The_record_Command
+.. _ Command: ch30.html#The_encode_Command
+.. _Reprise: ch30.html#Reprise
+.. _Repertoires and Links: ch31.html
+.. _ Command: ch31.html#The_find_Command
+.. _Content Searching: ch31.html#Content_Searching
+.. _ Command: ch31.html#Using_find_with_the_xargs_Command
+.. _Repertoires As File Links: ch31.html#Repertoires_As_File_Links
+.. _Reprise: ch31.html#Reprise
+.. _The Shell (IV): ch32.html
+.. _ Programming Language: ch32.html#The_awk_Programming_Language
 .. _Automatic Parsing of Input Data:
-    guide32.html#Automatic_Parsing_of_Input_Data
-.. _Arithemtic Operations: guide32.html#Arithemtic_Operations
-.. _Conditional Statements: guide32.html#Conditional_Statements
-.. _Assigning Variables: guide32.html#Assigning_Variables
+    ch32.html#Automatic_Parsing_of_Input_Data
+.. _Arithemtic Operations: ch32.html#Arithemtic_Operations
+.. _Conditional Statements: ch32.html#Conditional_Statements
+.. _Assigning Variables: ch32.html#Assigning_Variables
 .. _Manipulating Character Strings:
-    guide32.html#Manipulating_Character_Strings
-.. _ Loop: guide32.html#The_for_Loop
-.. _Reprise: guide32.html#Reprise
-.. _Word Sounds: guide33.html
-.. _ Representation: guide33.html#The_**IPA_Representation
-.. _Alliteration: guide33.html#Alliteration
-.. _Classifying Phonemes: guide33.html#Classifying_Phonemes
-.. _Properties of Vowels: guide33.html#Properties_of_Vowels
-.. _Vowel Coloration: guide33.html#Vowel_Coloration
-.. _Rhyme and Rhyme Schemes: guide33.html#Rhyme_and_Rhyme_Schemes
-.. _Reprise: guide33.html#Reprise
-.. _Serial Processing: guide34.html
-.. _Pitch-Class Representation: guide34.html#Pitch-Class_Representation
-.. _ Command: guide34.html#The_pcset_Command
-.. _Prime Form and Normal Form: guide34.html#Prime_Form_and_Normal_Form
-.. _ Command: guide34.html#Interval_Vectors_Using_the_iv_Command
-.. _ Command: guide34.html#Segmentation_Using_the_context_Command
-.. _ Command: guide34.html#The_reihe_Command
-.. _Generating a Set Matrix: guide34.html#Generating_a_Set_Matrix
-.. _Locating and Identifying Tone-Rows: guide34.html
+    ch32.html#Manipulating_Character_Strings
+.. _ Loop: ch32.html#The_for_Loop
+.. _Reprise: ch32.html#Reprise
+.. _Word Sounds: ch33.html
+.. _ Representation: ch33.html#The_**IPA_Representation
+.. _Alliteration: ch33.html#Alliteration
+.. _Classifying Phonemes: ch33.html#Classifying_Phonemes
+.. _Properties of Vowels: ch33.html#Properties_of_Vowels
+.. _Vowel Coloration: ch33.html#Vowel_Coloration
+.. _Rhyme and Rhyme Schemes: ch33.html#Rhyme_and_Rhyme_Schemes
+.. _Reprise: ch33.html#Reprise
+.. _Serial Processing: ch34.html
+.. _Pitch-Class Representation: ch34.html#Pitch-Class_Representation
+.. _ Command: ch34.html#The_pcset_Command
+.. _Prime Form and Normal Form: ch34.html#Prime_Form_and_Normal_Form
+.. _ Command: ch34.html#Interval_Vectors_Using_the_iv_Command
+.. _ Command: ch34.html#Segmentation_Using_the_context_Command
+.. _ Command: ch34.html#The_reihe_Command
+.. _Generating a Set Matrix: ch34.html#Generating_a_Set_Matrix
+.. _Locating and Identifying Tone-Rows: ch34.html
     #Locating_and_Identifying_Tone-Rows
-.. _Reprise: guide34.html#Reprise
-.. _Layers: guide35.html
-.. _Implied Harmony: guide35.html#Implied_Harmony
-.. _Sound and Spectra: guide36.html
-.. _ Representation: guide36.html#The_**spect_Representation
-.. _ Command: guide36.html#The_SHARC_Database_and_spect_Command
-.. _ Command: guide36.html#The_mask_Command
-.. _ Command: guide36.html#The_sdiss_Command
-.. _ Command: guide36.html#Connecting_Humdrum_with_Csound--
+.. _Reprise: ch34.html#Reprise
+.. _Layers: ch35.html
+.. _Implied Harmony: ch35.html#Implied_Harmony
+.. _Sound and Spectra: ch36.html
+.. _ Representation: ch36.html#The_**spect_Representation
+.. _ Command: ch36.html#The_SHARC_Database_and_spect_Command
+.. _ Command: ch36.html#The_mask_Command
+.. _ Command: ch36.html#The_sdiss_Command
+.. _ Command: ch36.html#Connecting_Humdrum_with_Csound--
     the_kern2cs_Command
-.. _Sound Analysis: guide36.html#Sound_Analysis
-.. _Reprise: guide36.html#Reprise
-.. _Electronic Music Editing: guide37.html
+.. _Sound Analysis: ch36.html#Sound_Analysis
+.. _Reprise: ch36.html#Reprise
+.. _Electronic Music Editing: ch37.html
 .. _The Process of Electronic Editing:
-    guide37.html#The_Process_of_Electronic_Editing
-.. _Establishing the Goal: guide37.html#Establishing_the_Goal
-.. _Documenting Encoded Data: guide37.html#Documenting_Encoded_Data
-.. _Sources: guide37.html#Sources
+    ch37.html#The_Process_of_Electronic_Editing
+.. _Establishing the Goal: ch37.html#Establishing_the_Goal
+.. _Documenting Encoded Data: ch37.html#Documenting_Encoded_Data
+.. _Sources: ch37.html#Sources
 .. _Selecting a Sample from Some Repertory:
-    guide37.html#Selecting_a_Sample_from_Some_Repertory
-.. _Encoding: guide37.html#Encoding
-.. _Transposing Instruments: guide37.html#Transposing_Instruments
-.. _Instrument Identification: guide37.html#Instrument_Identification
-.. _Leading Barlines: guide37.html#Leading_Barlines
-.. _Ornamentation: guide37.html#Ornamentation
-.. _Editing Sections: guide37.html#Editing_Sections
+    ch37.html#Selecting_a_Sample_from_Some_Repertory
+.. _Encoding: ch37.html#Encoding
+.. _Transposing Instruments: ch37.html#Transposing_Instruments
+.. _Instrument Identification: ch37.html#Instrument_Identification
+.. _Leading Barlines: ch37.html#Leading_Barlines
+.. _Ornamentation: ch37.html#Ornamentation
+.. _Editing Sections: ch37.html#Editing_Sections
 .. _ Representation:
-    guide37.html#Editorialisms_in_the_**kern_Representation
+    ch37.html#Editorialisms_in_the_**kern_Representation
 .. _Adding Reference Information:
-    guide37.html#Adding_Reference_Information
-.. _Proof-reading Materials: guide37.html#Proof-reading_Materials
+    ch37.html#Adding_Reference_Information
+.. _Proof-reading Materials: ch37.html#Proof-reading_Materials
 .. _Data Integrity Using the VTS Checksum Record:
-    guide37.html#Data_Integrity_Using_the_VTS_Checksum_Record
-.. _Preparing a Distribution: guide37.html#Preparing_a_Distribution
-.. _Electronic Citation: guide37.html#Electronic_Citation
-.. _Reprise: guide37.html#Reprise
-.. _Systematic Musicology: guide38.html
-.. _Comparison Repertory: guide38.html#Comparison_Repertory
-.. _Randomizing: guide38.html#Randomizing
-.. _ Command: guide38.html#Using_the_scramble_Command
-.. _ Command: guide38.html#Retrograde_Controls_Using_the_tac_Command
-.. _Autophase Procedure: guide38.html#Autophase_Procedure
-.. _Reprise: guide38.html#Reprise
-.. _Troubleshooting: guide39.html
-.. _Encoding Errors: guide39.html#Encoding_Errors
-.. _Searching Tips: guide39.html#Searching_Tips
-.. _Pipeline Tips: guide39.html#Pipeline_Tips
-.. _Reprise: guide39.html#Reprise
-.. _Conclusion: guide40.html
+    ch37.html#Data_Integrity_Using_the_VTS_Checksum_Record
+.. _Preparing a Distribution: ch37.html#Preparing_a_Distribution
+.. _Electronic Citation: ch37.html#Electronic_Citation
+.. _Reprise: ch37.html#Reprise
+.. _Systematic Musicology: ch38.html
+.. _Comparison Repertory: ch38.html#Comparison_Repertory
+.. _Randomizing: ch38.html#Randomizing
+.. _ Command: ch38.html#Using_the_scramble_Command
+.. _ Command: ch38.html#Retrograde_Controls_Using_the_tac_Command
+.. _Autophase Procedure: ch38.html#Autophase_Procedure
+.. _Reprise: ch38.html#Reprise
+.. _Troubleshooting: ch39.html
+.. _Encoding Errors: ch39.html#Encoding_Errors
+.. _Searching Tips: ch39.html#Searching_Tips
+.. _Pipeline Tips: ch39.html#Pipeline_Tips
+.. _Reprise: ch39.html#Reprise
+.. _Conclusion: ch40.html
 .. _Pursuing a Project with Humdrum:
-    guide40.html#Pursuing_a_Project_with_Humdrum
+    ch40.html#Pursuing_a_Project_with_Humdrum
 .. _Bibliography: guide.bibliog.html
 .. _Appendix I:  Humdrum Reference Records: guide.append1.html
 .. _    Authorship Information: guide.append1.html#Authorship_Information

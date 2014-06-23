@@ -66,7 +66,7 @@ oriented) `****silbe**`_ input
 .. _muse2kern: musedata2kern.html
 .. _MuseData:
     http://musedata.stanford.edu/databases/musedata_format/index.html
-.. _stats: guide14.html#The_stats_Command
+.. _stats: ch14.html#The_stats_Command
 .. _specc: commands/specc.html
 .. _spect: commands/spect.html
 .. _text: commands/text.html

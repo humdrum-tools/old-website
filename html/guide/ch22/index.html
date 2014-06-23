@@ -1,0 +1,759 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapter 22: Classifying &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../"/>
+        <link rel="up" title="The Humdrum User Guide" href="../"/>
+        <link rel="next" title="Chapter 23: Rhythm" href="../ch23/"/>
+        <link rel="prev" title="Chapter 21: Searching for Patterns" href="../ch21/"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installationguide/">Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installationguide/downloading/">Downloading Humdrum</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../"><em>The Humdrum User Guide</em></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ch01/">Chapter 1: Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">Chapter 2: Representing Music Using kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch03/">Chapter 3: Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch04/">Chapter 4:Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch05/">Chapter 5: The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">Chapter 6: Representing Music Using ***kern*(II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch07/">Chapter 7: MIDI Output Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch08/">Chapter 8: The Shell (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch09/">Chapter 9: Searching with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch10/">Chapter 10: Musical Uses of Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch11/">Chapter 11: Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch12/">Chapter 12: Selecting Musical Parts and Passages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch13/">Chapter 13: Assembling Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch14/">Chapter 14: Stream Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch15/">Chapter 15: Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch16/">Chapter 16: The Shell (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch17/">Chapter 17: Creating Inventories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch18/">Chapter 18: Fingers, Footsteps and Frets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch19/">Chapter 19: Musical Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch20/">Chapter 20: Strophes, Verses, and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch21/">Chapter 21: Searching for Patterns</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Chapter 22: Classifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch23/">Chapter 23: Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch24/">Chapter 24: The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch25/">Chapter 25: Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch26/">Chapter 26: Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch27/">Chapter 27: Text and Lyrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch29/">Chapter 29: Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch30/">Chapter 30:MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch31/">Chapter 31: Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch32/">Chapter 32: The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch34/">Chapter 34: Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch35/">Chapter 35: Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch37/">Chapter 37: Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch38/">Chapter 38: Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch39/">Chapter 39: Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch40/">Chapter 40: Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bibliography/">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.more/">Supplementary Humdrum Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.toc/">Humdrum Command Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../humdrum.problems/">HUMDRUM PROBLEMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linux.perform/">Installing and Using the Humdrum &#8220;perform&#8221; Command under Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual.bibliog/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual.bibliog/#bibliography">Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07/">Humdrum Developer&#8217;s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07a/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07a/#humdrum-representation-development">Humdrum Representation Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07a/#representation-assumptions">Representation Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07a/#creating-new-humdrum-representations">Creating New Humdrum Representations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07a/#defining-a-new-humdrum-interpretation-a-sample-problem">Defining a New Humdrum Interpretation: A Sample Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07b/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07b/#humdrum-software-development">Humdrum Software Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual07b/#standard-program-skeleton">Standard Program Skeleton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../musedata2kern/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../musedata2kern/#how-to-translate-musedata-files-to-humdrum">How To Translate MuseData Files to Humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../musedata2kern/#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/">Sample Research Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../representations.toc/">Humdrum Representation Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/">Online Resources:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample.problems/">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../extras/">Humdrum Extras</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/intro/">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/dataEntry/">Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/melody/">Melody Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/harmony/">Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/rhythm/">Rhythm Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/musicSearching/">Music Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/MIDIrendering/">MIDI Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/graphicalNotation/">Graphical Musical Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/otherUtilities/">Other Useful Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extras/programmingTutorial/">Programming Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cookbook/">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cookbook/vimHighlighting/">Syntax Coloring in Vim</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../referencemanual/">Humdrum Reference Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../referencemanual/assemble/">Assemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../referencemanual/hint/">hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../referencemanual/mint/">mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../referencemanual/key/">key</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../">Docs</a> &raquo;</li>
+      
+          <li><a href="../"><em>The Humdrum User Guide</em></a> &raquo;</li>
+      
+    <li>Chapter 22: Classifying</li>
+      <li class="wy-breadcrumbs-aside">
+        
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="chapter-22-classifying">
+<h1>Chapter 22: Classifying<a class="headerlink" href="#chapter-22-classifying" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="classifying">
+<h2>Classifying<a class="headerlink" href="#classifying" title="Permalink to this headline">¶</a></h2>
+<p>Many of the most important analytic tasks involve classifying or categorizing
+various things. In this chapter we will discuss two general approaches to
+classifying: <em>parametric</em> classifying and <em>non-parametric</em> classifying. In
+the first instance, we will see how numerical data can be categorized
+according to arithmetic ranges. We will then revisit the <a href="#id27"><span class="problematic" id="id28">`**humsed**`_</span></a>
+command and learn how it can be used to classify different types of non-
+numeric data tokens.</p>
+</div>
+<div class="section" id="the-recode-command">
+<h2>The <em>recode</em> Command<a class="headerlink" href="#the-recode-command" title="Permalink to this headline">¶</a></h2>
+<p>Suppose that we have a Humdrum spine that contains numerical information
+representing the moment-to-moment heart-rate of a listener. Heart rate is
+related to arousal level and so we might use our data to identify passages
+that tend to arouse listeners. Since the average heart-rate of listeners
+differs, we are interested primarily in the rate-of-change. We can use the
+<a href="#id29"><span class="problematic" id="id30">`**xdelta**`_</span></a> command to calculate the differences in heart-rate between
+successive values.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">xdelta</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">heart.dat</span> <span class="pre">&gt;</span> <span class="pre">changes</span></tt></p>
+<p>The example below displays the input (left) spine and the corresponding
+output (right) spine for the above command:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">**heart*Xheart</span>
+<span class="pre">&gt;</span> <span class="pre">=133=133</span>
+<span class="pre">&gt;</span> <span class="pre">550</span>
+<span class="pre">&gt;</span> <span class="pre">561</span>
+<span class="pre">&gt;</span> <span class="pre">55-1</span>
+<span class="pre">&gt;</span> <span class="pre">=134=134</span>
+<span class="pre">&gt;</span> <span class="pre">583</span>
+<span class="pre">&gt;</span> <span class="pre">56-2</span>
+<span class="pre">&gt;</span> <span class="pre">55-1</span>
+<span class="pre">&gt;</span> <span class="pre">=135=135</span>
+<span class="pre">&gt;</span> <span class="pre">572</span>
+<span class="pre">&gt;</span> <span class="pre">55-2</span>
+<span class="pre">&gt;</span> <span class="pre">561</span>
+<span class="pre">&gt;</span> <span class="pre">=136=136</span>
+<span class="pre">&gt;</span> <span class="pre">55-1</span>
+<span class="pre">&gt;</span> <span class="pre">605</span>
+<span class="pre">&gt;</span> <span class="pre">622</span>
+<span class="pre">&gt;</span> <span class="pre">=137=137</span>
+<span class="pre">&gt;</span> <span class="pre">61-1</span>
+<span class="pre">&gt;</span> <span class="pre">59-2</span>
+<span class="pre">&gt;</span> <span class="pre">590</span>
+<span class="pre">&gt;</span> <span class="pre">=138=138</span>
+<span class="pre">&gt;</span> <span class="pre">*-*-</span></tt></p>
+<p>A certain amount of heart-rate variation is to be expected because of
+monitoring equipment and other variables. So we are primarily interested in
+large changes of heart-rate, such as the change occurring in measure 136. The
+<a href="#id31"><span class="problematic" id="id32">`**recode**`_</span></a> command allows us to classify numerical data according to value
+or range. In the above case, we may be interested in identifying acceleration
+or decelerations that exceed some threshold. The <strong>recode</strong> command requires
+that the user supply a <em>reassignment file</em> that specifies how numerical
+values are to be reassigned. In our heart-rate application, we might create
+the following reassignment file, named <tt class="docutils literal"><span class="pre">reassign</span></tt>. Reassignment files obey
+the following syntax: for each line, <em>conditions</em> are given on the left
+followed by a single tab, followed by a <em>reassignment string.</em></p>
+<p>&gt; <tt class="docutils literal"><span class="pre">&gt;3+event</span>
+<span class="pre">&gt;</span> <span class="pre">&lt;-3-event</span>
+<span class="pre">&gt;</span> <span class="pre">else.</span></tt></p>
+<p>The above reassignment file may be interpreted as follows: if the numerical
+value is greater than 3, then output the string &#8220;<tt class="docutils literal"><span class="pre">+event</span></tt>&#8221;; if the
+numerical value is less than -3, then output the string &#8220;<tt class="docutils literal"><span class="pre">-event</span></tt>&#8221;;
+otherwise output a string consisting of an isolated period (<tt class="docutils literal"><span class="pre">.</span></tt>). We can
+invoke an appropriate command as follows:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">recode</span> <span class="pre">-f</span> <span class="pre">reassign</span> <span class="pre">-i</span> <span class="pre">'**Xheart'</span> <span class="pre">-s</span> <span class="pre">^=</span> <span class="pre">changes</span></tt></p>
+<p>The <strong>-f</strong> option is required, and is used to identify the file containing
+the reassignment information. The <strong>-i</strong> option is also required, and is used
+to identify the exclusive interpretation for the data to be processed. The
+<strong>-s</strong> option tells <strong>recode</strong> to skip records matching some specified
+regular expression &#8211; in this case, to skip barlines. Finally, &#8220;<tt class="docutils literal"><span class="pre">changes</span></tt>&#8221;
+is the name of our input file.</p>
+<p>The result of applying this process to the right-most spine in the above
+example is given below:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">*Xheart</span>
+<span class="pre">&gt;</span> <span class="pre">=133</span>
+<span class="pre">&gt;</span> <span class="pre">``.</span>
+<span class="pre">&gt;</span> <span class="pre">``.</span>
+<span class="pre">&gt;</span> <span class="pre">``.</span>
+<span class="pre">&gt;</span> <span class="pre">=134</span>
+<span class="pre">&gt;</span> <span class="pre">``.</span>
+<span class="pre">&gt;</span> <span class="pre">``.</span>
+<span class="pre">&gt;</span> <span class="pre">``.</span>
+<span class="pre">&gt;</span> <span class="pre">=135</span>
+<span class="pre">&gt;</span> <span class="pre">``.</span>
+<span class="pre">&gt;</span> <span class="pre">``.</span>
+<span class="pre">&gt;</span> <span class="pre">``.</span>
+<span class="pre">&gt;</span> <span class="pre">=136</span>
+<span class="pre">&gt;</span> <span class="pre">``.</span>
+<span class="pre">&gt;</span> <span class="pre">+event</span>
+<span class="pre">&gt;</span> <span class="pre">``.</span>
+<span class="pre">&gt;</span> <span class="pre">=137</span>
+<span class="pre">&gt;</span> <span class="pre">``.</span>
+<span class="pre">&gt;</span> <span class="pre">``.</span>
+<span class="pre">&gt;</span> <span class="pre">``.</span>
+<span class="pre">&gt;</span> <span class="pre">=138</span>
+<span class="pre">&gt;</span> <span class="pre">*-</span></tt></p>
+<p>Notice that we have used <strong>recode</strong> to drastically reduce the volume of data
+by transforming the input into a set of more basic cateogires.</p>
+<p>Having constructed our new output spine, we can further process this
+information in various ways. For example, we might assemble this spine to our
+original musical score. Then we might then use <strong>grep -n</strong> to located any
+points in the score where a heart-rate related event has occurred.</p>
+<p>Permissible relational operators used by <a href="#id33"><span class="problematic" id="id34">`**recode**`_</span></a> include the following:</p>
+<p>&gt; ==equals
+&gt; !=not equal
+&gt; &lt;less than
+&gt; &lt;=less than or equal
+&gt; &gt;greater than
+&gt; &gt;=greater than or equal
+&gt; elsedefault relation</p>
+<p>Conditions are tested in the order given in the reassignment file. Thus if a
+numerical value satisfies more than one condition, only the first string
+replacement is made. Consider the following reassignment file:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">&lt;=0LOW</span>
+<span class="pre">&gt;</span> <span class="pre">&gt;100HIGH</span>
+<span class="pre">&gt;</span> <span class="pre">&gt;0MEDIUM</span></tt></p>
+<p>The order of specification is important here. If the <tt class="docutils literal"><span class="pre">MEDIUM</span></tt> condition was
+specified prior to the <tt class="docutils literal"><span class="pre">HIGH</span></tt> condition, then all values greater than one
+hundred would be categorized as <tt class="docutils literal"><span class="pre">MEDIUM</span></tt> rather than as <tt class="docutils literal"><span class="pre">HIGH</span></tt>. Only a
+single <strong>else</strong> condition is allowed in a reassignment file; when it is
+present, the else statement should appear as the last reassignment.</p>
+</div>
+<div class="section" id="classifying-intervals">
+<h2>Classifying Intervals<a class="headerlink" href="#classifying-intervals" title="Permalink to this headline">¶</a></h2>
+<p>The <a href="#id35"><span class="problematic" id="id36">`**recode**`_</span></a> command has innumerable applications. Suppose we wanted to
+determine how frequently ascending melodic leaps are followed by a descending
+step. Let&#8217;s consider two different ways of distinguishing steps and leaps: a
+&#8220;semitone&#8221; method and a &#8220;diatonic&#8221; method. In the first method, we might
+define a step interval as either one or two semitones. Our reassignment file
+(dubbed &#8220;<tt class="docutils literal"><span class="pre">reassign</span></tt>&#8221;) might appear as follows:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">&gt;=3up-leap</span>
+<span class="pre">&gt;</span> <span class="pre">&gt;0up-step</span>
+<span class="pre">&gt;</span> <span class="pre">==0unison</span>
+<span class="pre">&gt;</span> <span class="pre">&gt;=-2down-step</span>
+<span class="pre">&gt;</span> <span class="pre">&lt;=-3down-leap</span></tt></p>
+<p>Given this reassignment file, we can now begin our processing. In the first
+method, we translate to semitone data using <a href="#id37"><span class="problematic" id="id38">`**semits**`_</span></a>, translate to
+semitone-differences using <a href="#id39"><span class="problematic" id="id40">`**xdelta**`_</span></a>, and then classify into five
+interval types using <a href="#id41"><span class="problematic" id="id42">`**recode**`_</span></a>. The <a href="#id43"><span class="problematic" id="id44">`**context**`_</span></a> <strong>-n 2</strong> command will
+create pairs of interval types, then <a href="#id45"><span class="problematic" id="id46">`**rid**`_</span></a>, <strong>sort</strong> and <strong>uniq -c</strong> are
+used to generate an inventory. Finally, we use <strong>grep</strong> to identify what
+happens following ascending leaps:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">semits</span> <span class="pre">melody</span> <span class="pre">|</span> <span class="pre">xdelta</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">recode</span> <span class="pre">-f</span> <span class="pre">reassign</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">-i</span> <span class="pre">'**Xsemits'</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">context</span> <span class="pre">-n</span> <span class="pre">2</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">\</span>
+<span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'up-leap</span> <span class="pre">.*$'</span></tt></p>
+<p>An alternative way of distinguishing steps from leaps is by diatonic
+interval. For example, we might consider a diminished third to be a leap,
+while an augmented second may be considered a step. In this case, we can use
+the <a href="#id47"><span class="problematic" id="id48">`**mint**`_</span></a> command to determine the melodic interval size; the <strong>-d</strong>
+option limits the output to diatonic intervals and excludes the interval
+quality (perfect, major, minor, etc.). The appropriate reassignment file
+would be:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">&gt;=3up-leap</span>
+<span class="pre">&gt;</span> <span class="pre">==2up-step</span>
+<span class="pre">&gt;</span> <span class="pre">==1unison</span>
+<span class="pre">&gt;</span> <span class="pre">==-2down-step</span>
+<span class="pre">&gt;</span> <span class="pre">&lt;=-3down-leap</span></tt></p>
+<p>The appropriate command pipe would be:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">mint</span> <span class="pre">melody</span> <span class="pre">|</span> <span class="pre">xdelta</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">recode</span> <span class="pre">-f</span> <span class="pre">reassign</span> <span class="pre">-i</span> <span class="pre">'`**mint`_'</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">context</span> <span class="pre">-n</span> <span class="pre">2</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">\</span>
+<span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'up-leap</span> <span class="pre">.*$'</span></tt></p>
+</div>
+<div class="section" id="clarinet-registers">
+<h2>Clarinet Registers<a class="headerlink" href="#clarinet-registers" title="Permalink to this headline">¶</a></h2>
+<p>Consider another use of the <a href="#id49"><span class="problematic" id="id50">`**recode**`_</span></a> command.  Imagine that we wanted to
+arrange Claude Debussy&#8217;s <em>Syrinx</em> for soprano clarinet instead of flute. Our
+principle concern as arranger is determining what key would be especially
+well suited to the clarinet. Tone color is particularly important for this
+piece. The clarinet has four fairly distinctive tessituras as shown in
+Example 22.1. These are the <em>chalemeau</em> register (dark and rich), the
+<em>clarion</em> register (bright and clear), the <em>altissimo</em> register (very high
+and piercing), and the <em>throat</em> register (weak and breathy).</p>
+<p><strong>Example 22.1.</strong> Clarinet registers (notated at concert pitch).</p>
+<p>&gt; .. image:: guide.figures/ch22.1.gif</p>
+<p>&gt;
+&gt;&gt; <em>chalemeau*throat**clarion**altissimo</em></p>
+<p>Suppose we wanted to pick a key that satisfies two conditions: (1) it is not
+out of range for the clarinet, and (2) it minimizes the number of notes
+played in the throat register. We can use <strong>recode</strong> to classify all pitches
+according to the following reassignments:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">&gt;=30too-high</span>
+<span class="pre">&gt;</span> <span class="pre">&gt;=23altissimo</span>
+<span class="pre">&gt;</span> <span class="pre">&gt;=8clarion</span>
+<span class="pre">&gt;</span> <span class="pre">&gt;=5throat-register</span>
+<span class="pre">&gt;</span> <span class="pre">&gt;=-10chalemeau</span>
+<span class="pre">&gt;</span> <span class="pre">elsetoo-low</span></tt></p>
+<p>Now we simply explore various transpositions using <strong>trans</strong> and create an
+inventory of pitch types. For Debussy&#8217;s <em>Syrinx</em>, the minimum number of
+throat tones (without exceeding the clarinet&#8217;s range) occurs when we
+transpose down a major sixth:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">trans</span> <span class="pre">-d</span> <span class="pre">-5</span> <span class="pre">-c</span> <span class="pre">-9</span> <span class="pre">syrinx</span> <span class="pre">|</span> <span class="pre">semits</span> <span class="pre">|</span> <span class="pre">recode</span> <span class="pre">-f</span> <span class="pre">reassign</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">-i</span> <span class="pre">'**semits'</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></tt></p>
+</div>
+<div class="section" id="open-and-close-position-chords">
+<h2>Open and Close Position Chords<a class="headerlink" href="#open-and-close-position-chords" title="Permalink to this headline">¶</a></h2>
+<p>Inputs to the <a href="#id51"><span class="problematic" id="id52">`**recode**`_</span></a> command can be quite sophisticated. Consider, for
+example, the task of classifying chords as &#8220;open&#8221; or &#8220;close&#8221; position.
+According to one definition, a chord is said to be in &#8220;open&#8221; position when
+the the interval separating the soprano and tenor voices is an octave or
+greater. One music theorist has claimed that close position chords are more
+common than open position. How might we test this?</p>
+<p>In determining an appropriate sequence of Humdrum commands, it is often
+helpful to work backwards from our goal. We&#8217;d like to end up with a spine
+that simply encodes the words &#8220;open&#8221; or &#8220;close&#8221; for each sonority. This
+classification will be based on the distance separating the soprano and tenor
+voices. Our reassignment file might be as follows:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">&lt;=12close</span></tt>
+&gt; <tt class="docutils literal"><span class="pre">&gt;12open</span></tt></p>
+<p>We will need to extract the soprano and tenor voices, translate the pitch
+representation to <a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">**</span></a>semits``_ and use <a href="#id53"><span class="problematic" id="id54">`**ydelta**`_</span></a> to calculate the
+semitone distance between the two voices. In the following set of commands,
+we have also added the <a href="#id55"><span class="problematic" id="id56">`**ditto**`_</span></a> command to ensure that there are semitone
+values for each sonority.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*Itenor,*Isopran'</span></tt> <a href="#id5"><span class="problematic" id="id6">*</span></a>inputfile*`` | semits -x | ditto &gt;
+&gt;&gt; | ydelta -s = -i &#8216;<a href="#id7"><span class="problematic" id="id8">**</span></a>semits&#8217; | recode -f reassign -i &#8216;<a href="#id9"><span class="problematic" id="id10">**</span></a>Ysemits&#8217; -s = &gt; tempfile
+&gt;
+&gt; grep -c &#8216;open&#8217; tempfile
+grep -c &#8216;close&#8217; tempfile``</p>
+<p>The <strong>grep -c</strong> commands tell us whether open position sonorities are more
+common than close position sonorities.</p>
+</div>
+<div class="section" id="flute-fingering-transitions">
+<h2>Flute Fingering Transitions<a class="headerlink" href="#flute-fingering-transitions" title="Permalink to this headline">¶</a></h2>
+<p>There is no fixed limit to the length of a reassignment file. Consider for
+example, the following file named <tt class="docutils literal"><span class="pre">map</span></tt>. Each <tt class="docutils literal"><span class="pre">**semits</span></tt> value from C4
+(0) to C7 (36) has been assigned to a schematic representation of flute
+fingerings. The letter <a href="#id11"><span class="problematic" id="id12">`</span></a>X&#8217; indicates a closed key, whereas the letter <a href="#id13"><span class="problematic" id="id14">`</span></a>O&#8217;
+indicates an open key. The first letter pertains to the left thumb; the next
+group of four letters pertain to the ensuing fingers of the left hand; the
+final group of letters pertain to the right-hand fingers. The little finger
+of the right hand is able to play three keys (labelled X, Y, and Z).
+Fingerings are shown only for the first octave (from C4 to C5):</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">&lt;0out-of-range</span>
+<span class="pre">&gt;</span> <span class="pre">``==0``X-XXXO-XXXZ</span>
+<span class="pre">&gt;</span> <span class="pre">``==1``X-XXXO-XXXY</span>
+<span class="pre">&gt;</span> <span class="pre">``==2``X-XXXO-XXXO</span>
+<span class="pre">&gt;</span> <span class="pre">``==3``X-XXXO-XXXX</span>
+<span class="pre">&gt;</span> <span class="pre">``==4``X-XXXO-XXOX</span>
+<span class="pre">&gt;</span> <span class="pre">``==5``X-XXXO-XOOX</span>
+<span class="pre">&gt;</span> <span class="pre">``==6``X-XXXO-OOXX</span>
+<span class="pre">&gt;</span> <span class="pre">``==7``X-XXXO-OOOX</span>
+<span class="pre">&gt;</span> <span class="pre">``==8``X-XXXX-OOOX</span>
+<span class="pre">&gt;</span> <span class="pre">``==9``X-XXOO-OOOX</span>
+<span class="pre">&gt;</span> <span class="pre">``==10``X-XOOO-XOOX</span>
+<span class="pre">&gt;</span> <span class="pre">``==11``X-XOOO-OOOX</span>
+<span class="pre">&gt;</span> <span class="pre">``==12``O-XOOO-OOOX</span></tt>
+&gt; etc.
+&gt; <tt class="docutils literal"><span class="pre">elserest</span></tt></p>
+<p>Suppose we wanted to determine what kinds of fingering <em>transitions</em> occur in
+Joachim Quantz&#8217;s flute concertos. Since instrument fingerings are insensitive
+to enharmonic spelling, an appropriate input representation would be
+<tt class="docutils literal"><span class="pre">**semits</span></tt>. Having used <a href="#id57"><span class="problematic" id="id58">`**recode**`_</span></a> to translate the pitches to
+fingerings, we can then use <strong>context -n 2</strong> to generate diads of successive
+finger combinations.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">semits</span> <span class="pre">con*</span> <span class="pre">|</span> <span class="pre">recode</span> <span class="pre">-f</span> <span class="pre">map</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">context</span> <span class="pre">-n</span> <span class="pre">2</span> <span class="pre">-o</span> <span class="pre">=</span> <span class="pre">&gt;</span> <span class="pre">fingers</span></tt></p>
+<p>For example, if our input contains the pitch G5 followed by B4, the
+appropriate data record in the <tt class="docutils literal"><span class="pre">fingers</span></tt> file would be the following
+Humdrum double-stop:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">X-XXXO-OOOX</span> <span class="pre">X-XOOO-OOOX</span></tt></p>
+<p>We could create an inventory of finger transitions by continuing the
+processing:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">rid</span> <span class="pre">-GLI</span> <span class="pre">fingers</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span></tt></p>
+<p>We could create a similar reassignment file containing fingers pertaining to
+the pre-Boehm flute. Suppose the revised reassignment file was called
+<tt class="docutils literal"><span class="pre">premodern</span></tt>. We could determine how the finger transitions differ between
+the pre-Boehm traverse flute and the modern flute. In <a href="#id59"><span class="problematic" id="id60">`Chapter 29`_</span></a> we will
+see how the <strong>diff</strong> command can be used to identify differences between two
+spines. This will allow us to identify specific places in the score where
+Baroque and modern fingerings differ.</p>
+<p>The <strong>recode</strong> command can be used for innumerable other kinds of
+classifications. For example, **kern_ durations might be expressed in
+seconds (using the <a href="#id61"><span class="problematic" id="id62">`**dur**`_</span></a> command), and the elapsed times then classified
+as <em>long</em>, <em>short</em> and <em>medium</em> (say). Sound pressure levels (in decibels)
+might be classified as dynamic markings (<strong>*ff*</strong>, <strong>*mf*</strong>, <strong>*mp*</strong>,
+<strong>*pp*</strong>, etc.), and so on.</p>
+</div>
+<div class="section" id="classifying-with-humsed">
+<h2>Classifying with <em>humsed</em><a class="headerlink" href="#classifying-with-humsed" title="Permalink to this headline">¶</a></h2>
+<p>The <a href="#id63"><span class="problematic" id="id64">`**recode**`_</span></a> command is restricted to classifying numerical data only.
+For many applications, it is useful to be able to classify data according to
+non-numerical criteria. As we saw in <a href="#id65"><span class="problematic" id="id66">`Chapter 14,`_</span></a> stream editors such as
+<strong>sed</strong> and <a href="#id67"><span class="problematic" id="id68">`**humsed**`_</span></a> provide automated substitution operations. Such
+string substitutions can be used for non-parametric classifying. We can
+illustrate this with <strong>humsed.</strong></p>
+<p>Suppose we wanted to classify various flute finger-transitions as either
+<em>easy</em>, <em>moderate</em> or <em>difficult</em>. For example, F4 to G4 is an easy
+fingering, E5 to A5 is a moderate fingering, whereas C5 to D5 is difficult.
+As before, it is best to use a semitone representation so we don&#8217;t need to
+consider differences in enharmonic pitch spelling. We can use the
+<a href="#id69"><span class="problematic" id="id70">`**semits**`_</span></a> command to transform all pitches. Then we can use <strong>context -n
+2</strong> to generate pairs of successive pitches as double-stops. We can then
+create a <strong>humsed</strong> script file (let&#8217;s call it <tt class="docutils literal"><span class="pre">difficulty</span></tt>) containing
+substitutions such as the following:</p>
+<p>&gt; <a href="#id15"><span class="problematic" id="id16">``</span></a>s/5 7/easy/<a href="#id17"><span class="problematic" id="id18">``</span></a>[i.e. F4 to G4]
+&gt; <a href="#id19"><span class="problematic" id="id20">``</span></a>s/16 21/moderate/<a href="#id21"><span class="problematic" id="id22">``</span></a>[i.e. E5 to A5]
+&gt; <a href="#id23"><span class="problematic" id="id24">``</span></a>s/12 14/difficult/<a href="#id25"><span class="problematic" id="id26">``</span></a>[i.e. C5 to D5]
+&gt; etc.</p>
+<p>We can apply the script as follows:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">-f</span> <span class="pre">difficulty</span> <span class="pre">sonata*</span></tt></p>
+<p>Since there are a large number of possible pitch transitions, our script file
+is apt to be especially large. However, notes an octave apart have a high
+likelihood of having identical fingerings on the modern flute. A more
+succinct <strong>humsed</strong> script would deal with fingering transitions rather than
+pitch transitions.</p>
+<p>&gt;
+<tt class="docutils literal"><span class="pre">s/X-XXXO-XOOX</span> <span class="pre">X-XXXO-OOOX/easy/</span>
+<span class="pre">s/X-XXXO-XXOX</span> <span class="pre">X-XXOO-OOOX/moderate/</span>
+<span class="pre">s/O-XOOO-OOOX</span> <span class="pre">X-OXXO-XXXO/difficult/</span></tt>
+etc.</p>
+<p>The three substitutions shown above apply to many more pitch transitions than
+the original transitions F4-G4, E5-A5, and C5-D5. The above three
+substitutions apply also to F5-G5, F5-G4, F4-G5, E4-A4, E4-A5, and E5-A4.</p>
+<p>Having created a file classifying all fingering transitions as &#8220;easy,&#8221;
+&#8220;moderate&#8221; or &#8220;difficult,&#8221; we can characterize our Quantz flute concertos
+using the following pipeline:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">semits</span> <span class="pre">Quantz*</span> <span class="pre">|</span> <span class="pre">recode</span> <span class="pre">-f</span> <span class="pre">map</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">context</span> <span class="pre">-n</span> <span class="pre">2</span> <span class="pre">-o</span> <span class="pre">=</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">-f</span> <span class="pre">difficulty</span></tt></p>
+<p>The output will be a single spine that classifies the difficulty of all
+fingering transitions.</p>
+</div>
+<div class="section" id="classifying-cadences">
+<h2>Classifying Cadences<a class="headerlink" href="#classifying-cadences" title="Permalink to this headline">¶</a></h2>
+<p>Consider another application where we use <strong>humsed</strong> to classify cadences.
+Suppose we have Roman-numeral harmonic data (as provided by the <tt class="docutils literal"><span class="pre">**harm``_</span>
+<span class="pre">representation).</span> <span class="pre">In</span> <span class="pre">the</span> <span class="pre">case</span> <span class="pre">of</span> <span class="pre">Bach's</span> <span class="pre">chorale</span> <span class="pre">harmonizations,</span> <span class="pre">for</span> <span class="pre">example,</span>
+<span class="pre">cadences</span> <span class="pre">are</span> <span class="pre">clearly</span> <span class="pre">evident</span> <span class="pre">by</span> <span class="pre">the</span> <span class="pre">presence</span> <span class="pre">of</span> <span class="pre">pauses</span> <span class="pre">(designated</span> <span class="pre">by</span> <span class="pre">the</span>
+<span class="pre">semicolon).</span> <span class="pre">We</span> <span class="pre">can</span> <span class="pre">easily</span> <span class="pre">create</span> <span class="pre">a</span> <span class="pre">spine</span> <span class="pre">that</span> <span class="pre">identifies</span> <span class="pre">only</span> <span class="pre">cadences.</span>
+<span class="pre">Consider</span> <span class="pre">a</span> <span class="pre">suitable</span> <span class="pre">reassignment</span> <span class="pre">file</span> <span class="pre">(dubbed</span> <span class="pre">``cadences</span></tt>):</p>
+<p>&gt;
+<tt class="docutils literal"><span class="pre">s/V</span> <span class="pre">I;/authentic/</span>
+<span class="pre">s/V7</span> <span class="pre">I;/authentic/</span>
+<span class="pre">s/V</span> <span class="pre">i;/authentic/</span>
+<span class="pre">s/V7</span> <span class="pre">i;/authentic/</span>
+<span class="pre">s/IV</span> <span class="pre">I;/plagal/</span>
+<span class="pre">s/iv</span> <span class="pre">i;/plagal/</span>
+<span class="pre">s/iv</span> <span class="pre">I;/plagal/</span>
+<span class="pre">s/V</span> <span class="pre">vi;/deceptive/</span>
+<span class="pre">s/V</span> <span class="pre">VI;/deceptive/</span></tt></p>
+<p>etc.</p>
+<p><tt class="docutils literal"><span class="pre">s/^[IiVv].*$/./</span></tt></p>
+<p>(The precise file will depend on your preferred way of labeling cadences.)
+Remember that, unlike the <strong>recode</strong> command, all of the substitutions in a
+<strong>humsed</strong> or <strong>sed</strong> script are applied to every input line. The final
+substitution causes any record beginning with either an <em>i</em>, <em>i</em>, <em>v</em> or <em>V</em>
+to be changed to a null data token. In effect, any progression that is not
+deemed to be an authentic, plagal or deceptive cadence is transformed to a
+null data record. Using the above reassignment file, we could create a
+cadence spine using the following pipeline:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**harm'</span> <span class="pre">chorales</span> <span class="pre">|</span> <span class="pre">context</span> <span class="pre">-o</span> <span class="pre">=</span> <span class="pre">-n</span> <span class="pre">2</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">-f</span> <span class="pre">cadences</span> <span class="pre">|</span> <span class="pre">sed</span> <span class="pre">'s/\*\*harm/**cadences/'</span></tt></p>
+<p>We first extract the <tt class="docutils literal"><span class="pre">**harm</span></tt> spine using <strong>extract</strong>. We then generate a
+sequence of two-chord progressions using <strong>context</strong> &#8211; taking care to omit
+barlines (<tt class="docutils literal"><span class="pre">-o</span> <span class="pre">=</span></tt>). We then use <strong>humsed</strong> to run the script of cadence-name
+substitutions. Finally, we use the <strong>sed</strong> command to change the name of the
+exclusive interpretation from <tt class="docutils literal"><span class="pre">**harm</span></tt> to something more suitable &#8211;
+<tt class="docutils literal"><span class="pre">**cadences</span></tt>.</p>
+<p>Many more sophisticated variants of this sort of procedure may be used. For
+example, one could first classify harmonies more broadly. In so-called
+&#8220;functional&#8221; harmony, for example, supertonic chords in first inversion are
+normally considered to be subdominant functions. One could construct a whole
+series of re-write rules that classify harmonies in a variety of ways.</p>
+</div>
+<div class="section" id="orchestration">
+<h2>Orchestration<a class="headerlink" href="#orchestration" title="Permalink to this headline">¶</a></h2>
+<p>One of the simplest classifications in a musical score is whether or not an
+instrument is sounding or resting. Suppose we extracted the viola part from
+Beethoven&#8217;s Symphony No. 1. We might use the <strong>ditto</strong> command to ensure that
+each data record encodes either a note, rest, or barline:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*Iviola'</span> <span class="pre">symphony1</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span></tt></p>
+<p>Let&#8217;s append to this pipeline a <strong>humsed</strong> command that makes two string
+substitutions. The first substitution replaces all data records containing
+the lower-case letter <tt class="docutils literal"><span class="pre">r</span></tt> (i.e., rests) with the string <tt class="docutils literal"><span class="pre">-viola</span></tt>. The
+second substitution changes any record that does not begin with either a
+minus sign or an equals sign to the string <tt class="docutils literal"><span class="pre">+viola</span></tt>. In effect, we&#8217;ve
+transformed the viola part so that all data tokens encode either <tt class="docutils literal"><span class="pre">+viola</span></tt>,
+<tt class="docutils literal"><span class="pre">-viola</span></tt> or are barlines.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*Iviola'</span> <span class="pre">symphony1</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/.*r.*/-viola/;</span> <span class="pre">/s/^[^-=].*$/+viola/'</span> <span class="pre">&gt;</span> <span class="pre">viola</span></tt></p>
+<p>Now imagine that we repeat this process for every instrument in Beethoven&#8217;s
+Symphony No. 1. In each case, we substitute the name of the instrument
+(preceded by a plus-sign or minus-sign) for the various note or rest tokens.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*Iflt'</span> <span class="pre">symphony1</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/.*r.*/-flt/;</span> <span class="pre">/s/^[^-=].*$/+flt/'</span> <span class="pre">&gt;</span> <span class="pre">flt</span></tt>
+&gt;
+&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*Ioboe'</span> <span class="pre">symphony1</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/.*r.*/-oboe/;</span> <span class="pre">/s/^[^-=].*$/+oboe/'</span> <span class="pre">&gt;</span> <span class="pre">oboe</span></tt>
+&gt;
+&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*Iclars'</span> <span class="pre">symphony1</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/.*r.*/-clars/;</span> <span class="pre">/s/^[^-=].*$/+clars/'</span> <span class="pre">&gt;</span> <span class="pre">clars</span></tt>
+&gt;
+&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*Ifagot'</span> <span class="pre">symphony1</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/.*r.*/-fagot/;</span> <span class="pre">/s/^[^-=].*$/+fagot/'</span> <span class="pre">&gt;</span> <span class="pre">fagot</span></tt>
+&gt;
+&gt; etc.</p>
+<p>When we are finished, we reassemble all of the transformed parts into a
+complete score.</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">cbass</span> <span class="pre">cello</span> <span class="pre">viola</span> <span class="pre">violn2</span> <span class="pre">violn1</span> <span class="pre">tromb</span> <span class="pre">tromp</span> <span class="pre">fagot</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">clars</span> <span class="pre">oboe</span> <span class="pre">flt</span> <span class="pre">&gt;</span> <span class="pre">orchestra</span></tt></p>
+<p>We now have a file that contains data records that look something like the
+following excerpt:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">+cbass+cello+viola+violn+violn-tromb-tromp+fagot-clars+oboe+flt</span>
+<span class="pre">&gt;</span> <span class="pre">+cbass+cello-viola-violn+violn-tromb-tromp+fagot-clars+oboe+flt</span>
+<span class="pre">&gt;</span> <span class="pre">+cbass+cello+viola+violn+violn-tromb-tromp+fagot-clars+oboe+flt</span>
+<span class="pre">&gt;</span> <span class="pre">+cbass+cello-viola-violn+violn-tromb-tromp+fagot-clars+oboe+flt</span>
+<span class="pre">&gt;</span> <span class="pre">-cbass-cello+viola+violn+violn-tromb-tromp-fagot-clars+oboe+flt</span>
+<span class="pre">&gt;</span> <span class="pre">-cbass-cello-viola-violn+violn-tromb-tromp-fagot-clars+oboe+flt</span>
+<span class="pre">&gt;</span> <span class="pre">=131=131=131=131=131=131=131=131=131=131=131</span>
+<span class="pre">&gt;</span> <span class="pre">+cbass+cello+viola+violn+violn-tromb-tromp+fagot-clars+oboe+flt</span>
+<span class="pre">&gt;</span> <span class="pre">+cbass+cello-viola-violn+violn-tromb-tromp+fagot-clars+oboe+flt</span>
+<span class="pre">&gt;</span> <span class="pre">-cbass-cello+viola+violn+violn-tromb-tromp-fagot-clars+oboe+flt</span>
+<span class="pre">&gt;</span> <span class="pre">-cbass-cello-viola-violn+violn-tromb-tromp-fagot-clars+oboe+flt</span>
+<span class="pre">&gt;</span> <span class="pre">+cbass+cello+viola+violn+violn-tromb-tromp+fagot-clars+oboe+flt</span>
+<span class="pre">&gt;</span> <span class="pre">+cbass+cello-viola+violn+violn-tromb-tromp+fagot-clars+oboe+flt</span></tt>
+&gt; etc.</p>
+<p>The first sonority indicates that all of the string instruments are playing,
+that the brass are inactive, and that all of the woodwinds are sounding with
+the exception of the clarinet.</p>
+<p>A representation such as the above provides an opportunity to study
+instrumental combinations in Beethoven&#8217;s orchestration. For example, the
+following command will count the number of sonorities where the oboe and
+bassoon sound concurrently:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'+fagot.*+oboe'</span> <span class="pre">orchestra</span></tt></p>
+<p>It is better to express this count as a proportion of the total work. We can
+count the total number of sonorities in the work by omitting any leading plus
+or minus sign:</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'fagot.*oboe'</span> <span class="pre">orchestra</span></tt></p>
+<p>How often are the oboe and bassoon resting at the same time?</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'-fagot.*-oboe'</span> <span class="pre">orchestra</span></tt></p>
+<p>Excluding <em>tutti</em> sections, do the trumpet and flute tend to &#8220;repell&#8221; each
+others&#8217; presence?</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'\-'</span> <span class="pre">orchestra</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'+tromp.*-flt'</span> <span class="pre">orchestra</span></tt>
+<tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'\-'</span> <span class="pre">orchestra</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'+tromp.*+flt'</span> <span class="pre">orchestra</span></tt>
+<tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'\-'</span> <span class="pre">orchestra</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'-tromp.*-flt'</span> <span class="pre">orchestra</span></tt>
+<tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'\-'</span> <span class="pre">orchestra</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'-tromp.*+flt'</span> <span class="pre">orchestra</span></tt></p>
+<p>When all of the woodwinds are playing, which of the remaining instruments is
+Beethoven most likely to omit from the texture?</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'+fagot.*+clars.*+oboe.*+flt'</span> <span class="pre">orchestra</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'-cbass'</span></tt>
+<tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'+fagot.*+clars.*+oboe.*+flt'</span> <span class="pre">orchestra</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'-cello'</span></tt>
+<tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'+fagot.*+clars.*+oboe.*+flt'</span> <span class="pre">orchestra</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'-viola'</span></tt>
+<tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'+fagot.*+clars.*+oboe.*+flt'</span> <span class="pre">orchestra</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'-violn'</span></tt>
+etc.</p>
+<p>Many refinements can be added to this basic approach. For example, instead of
+classifying instruments as simply being &#8220;present&#8221; or &#8220;absent,&#8221; we might
+distinguish various registers for each instrument &#8211; as we did with the
+clarinet when describing <strong>recode</strong>. We could then determine whether
+Beethoven tends to link, say, activity in the chalemeau register of the
+clarinet with low register activity in the strings.</p>
+<p>Further refinements might include relating orchestration to structural
+aspects of the music. For example, we might use <strong>yank</strong> to extract sections
+of movements; we could then compare possible differences of orchestration
+between the first and second themes, for example. Similarly, we could reduce
+instruments to instrument classes, and examine how brass, woodwinds, strings,
+and percussion in general are related.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="reprise">
+<h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
+<p>A large number of analytic tasks simply involve classifying things. In
+general, two sorts of classifying methods can be distinguished: (1) a
+numerical or <em>parametric</em> classification can be used to reassign various
+ranges of numerical values into a finite set of classes or categories; (2) a
+<em>non-parametric</em> classification maps one set of words or terms into a second
+(usually smaller) set of words (used to label various classes or categories).
+In this chapter, we have seen that, for any Humdrum representation,
+parametric classification can be done using the <a href="#id71"><span class="problematic" id="id72">`**recode**`_</span></a> command and
+non-parametric classification can be achieved using the <em>substitution</em>
+operation provided by the <a href="#id73"><span class="problematic" id="id74">`**humsed**`_</span></a> command.</p>
+<hr class="docutils" />
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  <hr/>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <center><a href="../ch23/" class="btn btn-neutral float-right" title="Chapter 23: Rhythm">Next <span class="fa fa-arrow-circle-right"></span></a></center>
+      
+      
+        <a href="../ch21/" class="btn btn-neutral" title="Chapter 21: Searching for Patterns"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+      
+             <center><a href="../../_sources/guide/ch22.txt" rel="nofollow"> View page source</a></center>
+      
+    </div>
+  
+
+
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+   
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-52162357-1', 'humdrum.org');
+  ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>
