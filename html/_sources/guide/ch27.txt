@@ -886,6 +886,3 @@ to the UNIX **fmt** command (a simple text formatter), the **cut** command
 In `Chapter 34`_ we will examine further representations and processes
 related to phonetic data.
 
---------
-
-

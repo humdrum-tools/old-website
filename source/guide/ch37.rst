@@ -596,5 +596,3 @@ Reprise
 In this chapter we have reviewed the principal issues involved in preparing
 electronic music documents in Humdrum.
 
---------
-

@@ -603,5 +603,3 @@ In this chapter we have seen how to use the `**hint**`_ command to calculate
 these various kinds of intervals. We have also seen how `**ydelta**`_ can be
 used to measure purely numerical distances between concurrent values.
 
---------
-

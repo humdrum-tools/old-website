@@ -370,7 +370,3 @@ without duplicating files. For example, a given score may be accessed in one
 directory structure via *composer*, in another directory via
 *instrumentation*, in a third directory via *genre*, and so on.
 
---------
-
-
-

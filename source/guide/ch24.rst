@@ -1148,5 +1148,3 @@ extract -i '*tenor'  | mint | humsed 's/.*[3-9].*/leap/' > spine5
 assemble spine1 spine2 spine3 spine4 spine5 > tempfile
 egrep -n 'P1.*^.*^.*leap.*leap|P1.*v.*v.*leap.*leap' tempfile``
 
---------
-

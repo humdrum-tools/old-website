@@ -678,6 +678,3 @@ There are many software tools that make use of regular expressions. The UNIX
 In the next chapter we will explore how regular expressions may be used in
 musical applications.
 
---------
-
-

@@ -671,5 +671,3 @@ rhythmically so only particular onset points or beats are retained. In
 `Chapter 23`_ we will see additional uses of **timebase** for a variety of
 types of rhythmic tasks.
 
---------
-

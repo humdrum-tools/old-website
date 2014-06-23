@@ -364,6 +364,3 @@ We have also reviewed the syntax for UNIX commands. Commands can include
 components such as the *command name*, *options*, *parameters*, *command
 arguments*, *input files* and *output redirection*.
 
---------
-
-

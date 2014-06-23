@@ -372,5 +372,3 @@ interest. Before amalgamating spines, you can use the `**humsed**`_ command
 to translate the characters/signifiers so that you use your preferred way of
 representing something.
 
---------
-

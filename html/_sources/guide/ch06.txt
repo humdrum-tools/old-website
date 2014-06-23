@@ -1,6 +1,6 @@
 
 ========================================================
-Chapter 6: Representing Music Using ***kern*(II)
+Chapter 6: Representing Music Using \*\*kern (II)
 ========================================================
 
 In this chapter we return to consider several more advanced topics related to
@@ -10,7 +10,7 @@ the \*\*kern representation.
 Tuplets
 =======
 
-As we saw in `Chapter 2,`_ \*\*kern durations are represented using a
+As we saw in `Chapter 2 <../ch02>`_, \*\*kern durations are represented using a
 reciprocal number notation. With the exception of the value zero, durations
 are represented by reciprocal numerical values corresponding to the American
 duration names: "1" for whole note, "8" for eighth, "32" for thirty-second,
@@ -18,14 +18,14 @@ etc. The number zero (0) is reserved for the breve duration (a duration of
 twice the length of a whole note).
 
 Dotted durations are indicated by adding the period character (.) immediately
-following the numerical value, hence "``8.``" signifies a dotted eighth-note
-and "``2..``" signifies a doubly dotted half-note. Any number of augmentation
+following the numerical value, hence ``8.`` signifies a dotted eighth-note
+and ``2..`` signifies a doubly dotted half-note. Any number of augmentation
 dots may follow the duration integer.
 
 Triplet and other irregular durations are represented using the same
 reciprocal logic. Consider, for example, the quarter-note triplet duration.
 Three quarter triplets occur in the time of four quarters or one whole
-duration. If we divide a whole duration ("``1``") into three equal parts,
+duration. If we divide a whole duration (``1``) into three equal parts,
 each part has a duration of one-third. The corresponding reciprocal integer
 for 1/3 is 3, hence \*\*kern represents a quarter-note triplet as a "third-
 note", ``3``. Similarly, eighth-note triplets are represented by the integer
@@ -36,7 +36,7 @@ duration divided by 5).
 In general, the way to determine the \*\*kern equivalent of an arbitrary
 "tuplet" duration is to multiply the number of tuplets by the total duration
 which they occupy. If 7 notes of equal duration occupy the duration of a
-whole-note ("``1``"), then each septuplet is represented by the value 7 (i.e.
+whole-note (``1``), then each septuplet is represented by the value 7 (i.e.
 1 x 7). A more extreme example is 23 notes in the time of a doubly dotted
 quarter. The appropriate \*\*kern duration can be found by multiplying 4 by
 23 (equals 92) and adding the appropriate augmentation dots. Thus "92.." is
@@ -48,53 +48,16 @@ Elert's *Caprices* Op. 107, No. 23 for solo flute. The work is in 3/4 meter.
 The last beat of the first measure has 9 notes in the time of a quarter
 duration. The reciprocal encoding is 9 x 4 or 36th notes.
 
+
 **Example 6.1.** Karg-Elert, *Caprices* Op. 107, No. 23.
 
-> .. image:: guide.figures/ch06.1a.gif
-.. image:: guide.figures/ch06.1b.gif
+.. image:: examples/ex6-1.svg
+	:align: center
+	:width: 100%
 
->
-|  ``**kern
-|  *clefG2
-|  *k[f#c#g#d#]
-|  *M3/4
-|  =
-|  (8f#
-|  8e#
-|  4en)
-|  (36d#
-|  36e#
-|  36c#
-|  36a
-|  36f##
-|  36g#
-|  36dd#
-|  36aa
-|  36cc#
-|  =
-|  8b~
-|  8a#~
-|  4an)
-|  (20gg#
-|  20ff#
-|  20dd#
-|  20cc#
-|  20a
-|  =
-|  8g#)
-|  (40b
-|  40a#
-|  40an
-|  40e
-|  40dd#
-|  8g#)
-|  (40b
-|  40a#
-|  40an
-|  40e
-|  40dd#
-|  20g#)
-|  *-``
+.. literalinclude:: examples/ex6-1.krn 
+	:language: kern
+
 
 Another set of tuplets appears in the last beat of the second measure. In
 this case, five notes are played in the time of a quarter, hence the
@@ -134,8 +97,8 @@ in groups) whose stems do not contain a slash, and whose notated durations
 cause the total notated duration for the measure to exceed the prevailing
 meter. These gruppetto notes are encoded as notes retaining their notated
 durations, but all such notes are also designated by the upper-case letter
-"``Q``". Hence, a miniature sixteenth-note middle C would be encoded as
-"``16cQ``".
+``Q``. Hence, a miniature sixteenth-note middle C would be encoded as
+``16cQ``.
 
 When processed by various tools in the Humdrum Toolkit, these notes may be
 treated as equivalent to their notated durations. Alternatively, in some
@@ -149,9 +112,9 @@ performed. An appropriate duration is assigned to the appoggiatura according
 to common performance practice. The duration of the subsequent note is
 reduced by a corresponding amount. The status of the two notes forming the
 appoggiatura is nevertheless marked. The appoggiatura note itself is
-designated by the upper-case letter "``P``", whereas the subsequent note
+designated by the upper-case letter ``P``, whereas the subsequent note
 (whose notated duration has been shortened) is designated by the lower-case
-letter "``p``".
+letter ``p``.
 
 
 Multiple Stops
@@ -163,7 +126,7 @@ more than one concurrent note. A good example of such a situation occurs when
 a violin plays a double stop.
 
 The \*\*kern representation provides three different ways of representing
-such situations: (1) multiple stops, (2) spine splitting and rejoining, and
+such situations: (1) multiple stops (chords), (2) spine splitting and rejoining, and
 (3) introduction and retiring of a momentary "part". Each of these
 representation methods captures a different way of interpreting the music.
 The best representation will depend on the editorial or processing goal.
@@ -172,8 +135,6 @@ First we will consider the generic Humdrum *subtoken.* A data token becomes a
 multiple stop when two or more subtokens are present, separated by single
 spaces. By way of illustration, the following \*\*kern data represents a
 scale played in ascending thirds:
-
-
 
 > ``**kern
 > 4c 4e
@@ -200,8 +161,6 @@ Multiple stops may occur at any point in a \*\*kern spine. For example, the
 following \*\*kern data represents a scale that begins and ends with
 chords:
 
-
-
 > ``**kern
 > 4c 4e 4g
 > 8d
@@ -225,53 +184,16 @@ is almost entirely in two parts with only occasional chords. Since the chords
 always contain notes of equal duration, they can be encoded as double stops
 within a single part.
 
+
 **Example 6.2.** Telemann, *Kleine Fantasien fur Klavier* No. 7.
 
-> .. image:: guide.figures/ch06.2.gif
+.. image:: examples/ex6-2.svg
+	:align: center
+	:width: 100%
 
->
-|  ``**kern**kern
-|  *clefF4*clefG2
-|  *k[f#c#g#]*k[f#c#g#]
-|  *M4/4*M4/4
-|  !! Allegro
-|  =2=2
-|  2r12b
-|  ``.12e
-|  ``.12b
-|  ``.12b
-|  ``.12e
-|  ``.12b
-|  4E 4G#4b
-|  4AA 4A4cc#
-|  =3=3
-|  12C#12ee
-|  12E12cc#
-|  12A12a
-|  12D12ff#
-|  12F#12dd
-|  12A12a
-|  12C#12ee
-|  12E12cc#
-|  12A12a
-|  12D12ff#
-|  12F#12dd
-|  12A12a
-|  =4=4
-|  6C#12ee
-|  ``.12dd
-|  12A12cc#
-|  6BB12dd
-|  ``.12cc#
-|  12G#12b
-|  4AA12cc#
-|  ``.12b
-|  ``.12cc#
-|  6C#12a
-|  ``.12cc#
-|  12E12b
-|  =5=5
-|  *-*-``
+.. literalinclude:: examples/ex6-2.krn 
+	:language: kern
+
 
 When encoding multiple stops in the \*\*kern representation, some note
 attributes should be encoded for each note in the multiple stop, whereas
@@ -287,19 +209,15 @@ once. However, the staccato markings have been encoded for both notes in each
 of the double stops. Similarly, separate ties have been encoded for both
 notes in the double stop.
 
-**Example 6.3.** Attribute encoding for \*\*kern multiple stops.
 
-> ``**kern
-> {4c 4e
-> 8dL 8f
-> 8eJ 8g
-> (8f' 8a'
-> 8g' 8b')
-> 8.a 8.ccL
-> 16b 16ddk
-> [4cc [4ee
-> 4cc] 4ee]}
-> *-``
+**Example 6.3.** Attribute encoding for \*\*kern multiple stops (chords).
+
+.. image:: examples/ex6-3.svg
+	:align: center
+	:width: 60%
+
+.. literalinclude:: examples/ex6-3.krn 
+	:language: kern
 
 
 Further Examples
@@ -314,7 +232,7 @@ indicated with two thin lines. Two tandem interpretations encode the meter
 signature (``*M3/4``) and the tempo (``*MM66``). Note that metronome markings
 using the ``*MM`` interpretation are always given in quarter-durations per
 minute. If the metronome marking had been given as half-note equals 48, then
-the tempo interpretation would be given as ``*MM96`` -- i.e. quarter-note
+the tempo interpretation would be given as \*MM96 -- i.e. quarter-note
 equals 96 beats per minute.
 
 Two grace-notes are evident in the passage. The first occurs just after the
@@ -341,100 +259,15 @@ Finally, notice how the triplet eighth-notes (encoded as duration "12") have
 been interleaved with the concurrent eighth-note figures so that the onsets
 are ordered in the correct temporal sequence.
 
+
 **Example 6.4.** Chopin, *Etude* Op. 25, No. 7.
 
-.. code-block:: kern
-   !! Lento
-   **kern       **kern          **kern
-   *staff2      *staff1         *staff1
-   *clefF4      *clefG2         *clefG2
-   {4GG#Q       .               .
-   4.D#Q        .               .
-   8C#Q         .               .
-   8C#Q         .               .
-   8BB#Q        .               .
-   4.AQ         .               .
-   8G#Q         .               .
-   16F##Q       .               .
-   16G#Q        .               .
-   16AQ         .               .
-   16G#Q        .               .
-   16BnQ        .               .
-   16AQ         .               .
-   16EQ         .               .
-   16E#Q        .               .
-   16F#Q        .               .
-   16E#Q        .               .
-   16G#Q        .               .
-   16F#Q        .               .
-   16AQ         .               .
-   16G#Q        .               .
-   16C#Q        .               .
-   16D#Q        .               .
-   =||          =||             =||
-   *MM66        *MM66           *MM66
-   *M3/4        *M3/4           *M3/4
-   &{(Enq}      .               .
-   2e)          8r              2.r
-   8g#          8cc#            .
-   8g#          8cc#            .
-   8g#          8cc#            .
-   8.d#         8g#             8cc#
-   8g#          8cc#            .
-   16c#         .               .
-   =3           =3              =3
-   4..          cc#             8e 8a{2ee
-   .            8e              8a.
-   8e           8a              .
-   8e           8a              .
-   32d#         .               .
-   32c#         .               .
-   8e           8a              8.dd#
-   .            8e              8a.
-   .            .               16cc#
-   =4           =4              =4
-   [4A8d#       8f#             4cc#
-   .            8d#             8f#.
-   16A]         8d#             8f#4b#
-   16G#         .               .
-   16F##        8d#             8f#.
-   16G#         .               .
-   16Bn         8d#             8f#4cc#
-   16A          .               .
-   16F#         8d#             8f#.
-   16D#         .               .
-   =5           =5              =5
-   4BB#}        8d#             8f#4dd#
-   .            8d#             8f#.
-   8r           8d#             8f#4..g#}
-   {16FF##      ^8d#            8f#.
-   16GG#        .               .
-   BBnq         .               .
-   16AA         8B#             8f#.
-   16GG#        .               .
-   16C#         8B#             8f#.
-   16D#         .               {16g#
-   =6           =6              =6
-   4E           8r              4g#
-   .            8c#             .
-   4CC#}        8c#             8e4cc#
-   .            8c#             8e.
-   (8.G#        8c#             8e4bn
-   .            8c#             8e.
-   16.G#        .               .
-   =7           =7              =7
-   4G#)         8c#             8e4b
-   .            8c#             8e.
-   (12FF#       8c#             8e4a
-   12C#         .               .
-   .            8c#             8e.
-   12F#         .               .
-   12G#         8c#             8e4g#
-   12B          .               .
-   .            8c#             8e.
-   12A          .               .
-   =8           =8              =8
-   *-           *-              *-
+.. image:: examples/ex6-4.svg
+	:align: center
+	:width: 100%
+
+.. literalinclude:: examples/ex6-4.krn 
+	:language: kern
 
 
 Reprise
@@ -447,6 +280,5 @@ gruppettos, acciaccaturas, elided phrases, and spine path changes.
 A more complete description of the \*\*kern_ representation may be found
 in the *Humdrum Reference Manual.*
 
---------
 
 

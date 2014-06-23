@@ -765,7 +765,3 @@ type of data being considered.
 The tools described in this chapter complement the pattern searching tools
 (such as `**patt**`_, `**pattern**`_ and **grep**) described earlier.
 
---------
-
-
-

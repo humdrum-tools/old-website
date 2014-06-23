@@ -534,7 +534,3 @@ in manipulating. As long as the resulting representation conforms to the
 Humdrum syntax, the most important Humdrum tools can still be used to
 manipulate your data.
 
---------
-
-
-

@@ -446,7 +446,3 @@ ensuing chapters will show that regular expressions are used by a wide
 variety of commands. In `Chapter 33,`_ many more powerful examples will be
 discussed in conjunction with the **find** command.
 
---------
-
-
-

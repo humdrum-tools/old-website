@@ -567,5 +567,3 @@ path,
 In `Chapter 37`_ we will see further examples of how sections and strophes
 are especially useful when producing electronic editions.
 
---------
-

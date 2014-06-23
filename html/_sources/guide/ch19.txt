@@ -764,5 +764,3 @@ a particular context for data. In `Chapter 21`_ we will see how the
 `**patt**`_ command can be used to establish other kinds of contexts and how
 both of these commands can be used together.
 
---------
-

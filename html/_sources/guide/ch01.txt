@@ -459,5 +459,4 @@ few lines of Humdrum can also be used to write programs of some complexity.
 Users can write their own programs using the Humdrum tools, or they can add
 new tools that augment the functioning of Humdrum.
 
---------
 

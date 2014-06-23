@@ -611,6 +611,5 @@ Additional interpretive information may be encoded using tandem
 interpretations. Both local comments and tandem interpretations may occur
 anywhere, but must be preceded in the spine by some exclusive interpretation.
 
---------
 
 

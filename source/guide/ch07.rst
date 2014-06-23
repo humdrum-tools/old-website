@@ -350,8 +350,3 @@ to a vast array of commercial and non-commerical applications software. In
 `Chapter 30`_ we will explore some of the Humdrum tools for inputting MIDI
 data into Humdrum.
 
---------
-
-
-
-

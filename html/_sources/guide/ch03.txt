@@ -483,5 +483,4 @@ order of successive input lines so they are in alphabetic/numeric order. The
 only the **-r** option -- which causes the output to be sorted in reverse
 order.
 
---------
 

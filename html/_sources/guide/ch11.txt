@@ -590,8 +590,3 @@ We have also seen how `**xdelta**`_ can be used to measure purely numerical
 distances between successive values. As we will see, **xdelta** will prove
 useful in many other applications apart from calculating pitch distances.
 
---------
-
-
-
-

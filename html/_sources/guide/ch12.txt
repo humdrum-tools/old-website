@@ -769,6 +769,3 @@ output will conform to the Humdrum syntax.
 In the next chapter we will discuss how segments of music can be put back
 together again.
 
---------
-
-

@@ -270,6 +270,3 @@ good records of what you have done. For critical tasks, always use two or
 more independent methods to ensure that the results agree. In general,
 cultivate a skeptical attitude; wise users are wary users.
 
---------
-
-

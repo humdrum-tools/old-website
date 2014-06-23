@@ -622,5 +622,4 @@ be better tailored to a specific application. However, before we continue
 discussing further representations, this is an appropriate point to present a
 more formal description of the general Humdrum representation syntax.
 
---------
 

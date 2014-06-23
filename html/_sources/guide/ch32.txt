@@ -356,5 +356,3 @@ be used to transform data in highly specific and specialized ways. The power
 of Humdrum is significantly enhanced when users are able to create their own
 specialized filters.
 
---------
-

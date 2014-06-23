@@ -579,5 +579,3 @@ Reprise
  tools such as `**correl**`_ and `**simil**`_ can contribute to more
  sophisticated pattern searches.
 
- --------
-

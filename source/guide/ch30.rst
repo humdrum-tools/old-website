@@ -134,6 +134,3 @@ related input: `**encode**`_ and `**record**`_. These tools allow MIDI data
 to be translated to a Humdrum format. Further information regarding these
 tools is given in the *Humdrum Toolkit Reference Manual.*
 
---------
-
-

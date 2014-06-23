@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Chapter 6: Representing Music Using ***kern*(II) &mdash; humdrum-tools 1 documentation</title>
+  <title>Chapter 6: Representing Music Using **kern (II) &mdash; humdrum-tools 1 documentation</title>
   
 
   
@@ -67,11 +67,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../"><em>The Humdrum User Guide</em></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ch01/">Chapter 1: Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch02/">Chapter 2: Representing Music Using kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">Chapter 2: Representing Music Using **kern (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch03/">Chapter 3: Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch04/">Chapter 4:Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch05/">Chapter 5: The Humdrum Syntax</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Chapter 6: Representing Music Using ***kern*(II)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Chapter 6: Representing Music Using **kern (II)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch07/">Chapter 7: MIDI Output Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch08/">Chapter 8: The Shell (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch09/">Chapter 9: Searching with Regular Expressions</a></li>
@@ -183,7 +183,7 @@
       
           <li><a href="../"><em>The Humdrum User Guide</em></a> &raquo;</li>
       
-    <li>Chapter 6: Representing Music Using ***kern*(II)</li>
+    <li>Chapter 6: Representing Music Using **kern (II)</li>
       <li class="wy-breadcrumbs-aside">
         
         
@@ -194,25 +194,25 @@
           <div role="main">
             
   <div class="section" id="chapter-6-representing-music-using-kern-ii">
-<h1>Chapter 6: Representing Music Using <a href="#id1"><span class="problematic" id="id2">**</span></a><a href="#id3"><span class="problematic" id="id4">*</span></a>kern*(II)<a class="headerlink" href="#chapter-6-representing-music-using-kern-ii" title="Permalink to this headline">¶</a></h1>
+<h1>Chapter 6: Representing Music Using **kern (II)<a class="headerlink" href="#chapter-6-representing-music-using-kern-ii" title="Permalink to this headline">¶</a></h1>
 <p>In this chapter we return to consider several more advanced topics related to
 the **kern representation.</p>
 <div class="section" id="tuplets">
 <h2>Tuplets<a class="headerlink" href="#tuplets" title="Permalink to this headline">¶</a></h2>
-<p>As we saw in <a href="#id5"><span class="problematic" id="id6">`Chapter 2,`_</span></a> **kern durations are represented using a
+<p>As we saw in <a class="reference external" href="../ch02">Chapter 2</a>, **kern durations are represented using a
 reciprocal number notation. With the exception of the value zero, durations
 are represented by reciprocal numerical values corresponding to the American
 duration names: &#8220;1&#8221; for whole note, &#8220;8&#8221; for eighth, &#8220;32&#8221; for thirty-second,
 etc. The number zero (0) is reserved for the breve duration (a duration of
 twice the length of a whole note).</p>
 <p>Dotted durations are indicated by adding the period character (.) immediately
-following the numerical value, hence &#8220;<tt class="docutils literal"><span class="pre">8.</span></tt>&#8221; signifies a dotted eighth-note
-and &#8220;<tt class="docutils literal"><span class="pre">2..</span></tt>&#8221; signifies a doubly dotted half-note. Any number of augmentation
+following the numerical value, hence <tt class="docutils literal"><span class="pre">8.</span></tt> signifies a dotted eighth-note
+and <tt class="docutils literal"><span class="pre">2..</span></tt> signifies a doubly dotted half-note. Any number of augmentation
 dots may follow the duration integer.</p>
 <p>Triplet and other irregular durations are represented using the same
 reciprocal logic. Consider, for example, the quarter-note triplet duration.
 Three quarter triplets occur in the time of four quarters or one whole
-duration. If we divide a whole duration (&#8220;<tt class="docutils literal"><span class="pre">1</span></tt>&#8221;) into three equal parts,
+duration. If we divide a whole duration (<tt class="docutils literal"><span class="pre">1</span></tt>) into three equal parts,
 each part has a duration of one-third. The corresponding reciprocal integer
 for 1/3 is 3, hence **kern represents a quarter-note triplet as a &#8220;third-
 note&#8221;, <tt class="docutils literal"><span class="pre">3</span></tt>. Similarly, eighth-note triplets are represented by the integer
@@ -222,7 +222,7 @@ duration divided by 5).</p>
 <p>In general, the way to determine the **kern equivalent of an arbitrary
 &#8220;tuplet&#8221; duration is to multiply the number of tuplets by the total duration
 which they occupy. If 7 notes of equal duration occupy the duration of a
-whole-note (&#8220;<tt class="docutils literal"><span class="pre">1</span></tt>&#8221;), then each septuplet is represented by the value 7 (i.e.
+whole-note (<tt class="docutils literal"><span class="pre">1</span></tt>), then each septuplet is represented by the value 7 (i.e.
 1 x 7). A more extreme example is 23 notes in the time of a doubly dotted
 quarter. The appropriate **kern duration can be found by multiplying 4 by
 23 (equals 92) and adding the appropriate augmentation dots. Thus &#8220;92..&#8221; is
@@ -233,50 +233,51 @@ Elert&#8217;s <em>Caprices</em> Op. 107, No. 23 for solo flute. The work is in 3
 The last beat of the first measure has 9 notes in the time of a quarter
 duration. The reciprocal encoding is 9 x 4 or 36th notes.</p>
 <p><strong>Example 6.1.</strong> Karg-Elert, <em>Caprices</em> Op. 107, No. 23.</p>
-<p>&gt; .. image:: guide.figures/ch06.1a.gif
-.. image:: guide.figures/ch06.1b.gif</p>
-<p>&gt;
-|  <tt class="docutils literal"><span class="pre">**kern</span>
-<span class="pre">|</span>&nbsp; <span class="pre">*clefG2</span>
-<span class="pre">|</span>&nbsp; <span class="pre">*k[f#c#g#d#]</span>
-<span class="pre">|</span>&nbsp; <span class="pre">*M3/4</span>
-<span class="pre">|</span>&nbsp; <span class="pre">=</span>
-<span class="pre">|</span>&nbsp; <span class="pre">(8f#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">8e#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">4en)</span>
-<span class="pre">|</span>&nbsp; <span class="pre">(36d#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">36e#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">36c#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">36a</span>
-<span class="pre">|</span>&nbsp; <span class="pre">36f##</span>
-<span class="pre">|</span>&nbsp; <span class="pre">36g#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">36dd#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">36aa</span>
-<span class="pre">|</span>&nbsp; <span class="pre">36cc#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">=</span>
-<span class="pre">|</span>&nbsp; <span class="pre">8b~</span>
-<span class="pre">|</span>&nbsp; <span class="pre">8a#~</span>
-<span class="pre">|</span>&nbsp; <span class="pre">4an)</span>
-<span class="pre">|</span>&nbsp; <span class="pre">(20gg#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">20ff#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">20dd#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">20cc#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">20a</span>
-<span class="pre">|</span>&nbsp; <span class="pre">=</span>
-<span class="pre">|</span>&nbsp; <span class="pre">8g#)</span>
-<span class="pre">|</span>&nbsp; <span class="pre">(40b</span>
-<span class="pre">|</span>&nbsp; <span class="pre">40a#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">40an</span>
-<span class="pre">|</span>&nbsp; <span class="pre">40e</span>
-<span class="pre">|</span>&nbsp; <span class="pre">40dd#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">8g#)</span>
-<span class="pre">|</span>&nbsp; <span class="pre">(40b</span>
-<span class="pre">|</span>&nbsp; <span class="pre">40a#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">40an</span>
-<span class="pre">|</span>&nbsp; <span class="pre">40e</span>
-<span class="pre">|</span>&nbsp; <span class="pre">40dd#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">20g#)</span>
-<span class="pre">|</span>&nbsp; <span class="pre">*-</span></tt></p>
+<a class="reference internal image-reference" href="../../_images/ex6-1.svg"><div align="center" class="align-center"><img src="../../_images/ex6-1.svg" width="100%" /></div>
+</a>
+<div class="highlight-kern"><div class="highlight"><pre><span class="-KernExclusive">**kern</span>
+<span class="-KernExclusive">*clefG2</span>
+<span class="-KernExclusive">*k[f#c#g#d#]</span>
+<span class="-KernExclusive">*M3/4</span>
+<span class="-KernBar">=</span>
+<span class="err">(</span><span class="-KernNotes">8f#</span>
+<span class="-KernNotes">8e#</span>
+<span class="-KernNotes">4en</span><span class="err">)</span>
+<span class="err">(</span><span class="-KernNotes">36d#</span>
+<span class="-KernNotes">36e#</span>
+<span class="-KernNotes">36c#</span>
+<span class="-KernNotes">36a</span>
+<span class="-KernNotes">36f##</span>
+<span class="-KernNotes">36g#</span>
+<span class="-KernNotes">36dd#</span>
+<span class="-KernNotes">36aa</span>
+<span class="-KernNotes">36cc#</span>
+<span class="-KernBar">=</span>
+<span class="-KernNotes">8b</span><span class="err">~</span>
+<span class="-KernNotes">8a#</span><span class="err">~</span>
+<span class="-KernNotes">4an</span><span class="err">)</span>
+<span class="err">(</span><span class="-KernNotes">20gg#</span>
+<span class="-KernNotes">20ff#</span>
+<span class="-KernNotes">20dd#</span>
+<span class="-KernNotes">20cc#</span>
+<span class="-KernNotes">20a</span>
+<span class="-KernBar">=</span>
+<span class="-KernNotes">8g#</span><span class="err">)</span>
+<span class="err">(</span><span class="-KernNotes">40b</span>
+<span class="-KernNotes">40a#</span>
+<span class="-KernNotes">40an</span>
+<span class="-KernNotes">40e</span>
+<span class="-KernNotes">40dd#</span>
+<span class="-KernNotes">8g#</span><span class="err">)</span>
+<span class="err">(</span><span class="-KernNotes">40b</span>
+<span class="-KernNotes">40a#</span>
+<span class="-KernNotes">40an</span>
+<span class="-KernNotes">40e</span>
+<span class="-KernNotes">40dd#</span>
+<span class="-KernNotes">20g#</span><span class="err">)</span>
+<span class="-KernExclusive">*-</span>
+</pre></div>
+</div>
 <p>Another set of tuplets appears in the last beat of the second measure. In
 this case, five notes are played in the time of a quarter, hence the
 reciprocal durations are 5 x 4 or 20th notes.</p>
@@ -307,12 +308,12 @@ in groups) whose stems do not contain a slash, and whose notated durations
 cause the total notated duration for the measure to exceed the prevailing
 meter. These gruppetto notes are encoded as notes retaining their notated
 durations, but all such notes are also designated by the upper-case letter
-&#8220;<tt class="docutils literal"><span class="pre">Q</span></tt>&#8221;. Hence, a miniature sixteenth-note middle C would be encoded as
-&#8220;<tt class="docutils literal"><span class="pre">16cQ</span></tt>&#8221;.</p>
+<tt class="docutils literal"><span class="pre">Q</span></tt>. Hence, a miniature sixteenth-note middle C would be encoded as
+<tt class="docutils literal"><span class="pre">16cQ</span></tt>.</p>
 <p>When processed by various tools in the Humdrum Toolkit, these notes may be
 treated as equivalent to their notated durations. Alternatively, in some
 types of processing these notes may be discarded. For example, the Humdrum
-<a href="#id7"><span class="problematic" id="id8">`**timebase**`_</span></a> command (described in <a href="#id9"><span class="problematic" id="id10">`Chapter 13)`_</span></a> eliminates acciaccaturas
+<a href="#id1"><span class="problematic" id="id2">`**timebase**`_</span></a> command (described in <a href="#id3"><span class="problematic" id="id4">`Chapter 13)`_</span></a> eliminates acciaccaturas
 and gruppetto notes. Note that data records containing acciaccaturas or
 gruppetto notes must <em>not</em> also include normal notes.</p>
 <p>In the case of <em>appoggiaturas,</em> **kern requires that they be encoded as
@@ -320,9 +321,9 @@ performed. An appropriate duration is assigned to the appoggiatura according
 to common performance practice. The duration of the subsequent note is
 reduced by a corresponding amount. The status of the two notes forming the
 appoggiatura is nevertheless marked. The appoggiatura note itself is
-designated by the upper-case letter &#8220;<tt class="docutils literal"><span class="pre">P</span></tt>&#8221;, whereas the subsequent note
+designated by the upper-case letter <tt class="docutils literal"><span class="pre">P</span></tt>, whereas the subsequent note
 (whose notated duration has been shortened) is designated by the lower-case
-letter &#8220;<tt class="docutils literal"><span class="pre">p</span></tt>&#8221;.</p>
+letter <tt class="docutils literal"><span class="pre">p</span></tt>.</p>
 </div>
 <div class="section" id="multiple-stops">
 <h3>Multiple Stops<a class="headerlink" href="#multiple-stops" title="Permalink to this headline">¶</a></h3>
@@ -331,7 +332,7 @@ musical parts or voices. Occasionally, a nominally single &#8220;part&#8221; con
 more than one concurrent note. A good example of such a situation occurs when
 a violin plays a double stop.</p>
 <p>The **kern representation provides three different ways of representing
-such situations: (1) multiple stops, (2) spine splitting and rejoining, and
+such situations: (1) multiple stops (chords), (2) spine splitting and rejoining, and
 (3) introduction and retiring of a momentary &#8220;part&#8221;. Each of these
 representation methods captures a different way of interpreting the music.
 The best representation will depend on the editorial or processing goal.</p>
@@ -381,50 +382,52 @@ is almost entirely in two parts with only occasional chords. Since the chords
 always contain notes of equal duration, they can be encoded as double stops
 within a single part.</p>
 <p><strong>Example 6.2.</strong> Telemann, <em>Kleine Fantasien fur Klavier</em> No. 7.</p>
-<p>&gt; .. image:: guide.figures/ch06.2.gif</p>
-<p>&gt;
-|  <tt class="docutils literal"><span class="pre">**kern**kern</span>
-<span class="pre">|</span>&nbsp; <span class="pre">*clefF4*clefG2</span>
-<span class="pre">|</span>&nbsp; <span class="pre">*k[f#c#g#]*k[f#c#g#]</span>
-<span class="pre">|</span>&nbsp; <span class="pre">*M4/4*M4/4</span>
-<span class="pre">|</span>&nbsp; <span class="pre">!!</span> <span class="pre">Allegro</span>
-<span class="pre">|</span>&nbsp; <span class="pre">=2=2</span>
-<span class="pre">|</span>&nbsp; <span class="pre">2r12b</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.12e</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.12b</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.12b</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.12e</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.12b</span>
-<span class="pre">|</span>&nbsp; <span class="pre">4E</span> <span class="pre">4G#4b</span>
-<span class="pre">|</span>&nbsp; <span class="pre">4AA</span> <span class="pre">4A4cc#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">=3=3</span>
-<span class="pre">|</span>&nbsp; <span class="pre">12C#12ee</span>
-<span class="pre">|</span>&nbsp; <span class="pre">12E12cc#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">12A12a</span>
-<span class="pre">|</span>&nbsp; <span class="pre">12D12ff#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">12F#12dd</span>
-<span class="pre">|</span>&nbsp; <span class="pre">12A12a</span>
-<span class="pre">|</span>&nbsp; <span class="pre">12C#12ee</span>
-<span class="pre">|</span>&nbsp; <span class="pre">12E12cc#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">12A12a</span>
-<span class="pre">|</span>&nbsp; <span class="pre">12D12ff#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">12F#12dd</span>
-<span class="pre">|</span>&nbsp; <span class="pre">12A12a</span>
-<span class="pre">|</span>&nbsp; <span class="pre">=4=4</span>
-<span class="pre">|</span>&nbsp; <span class="pre">6C#12ee</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.12dd</span>
-<span class="pre">|</span>&nbsp; <span class="pre">12A12cc#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">6BB12dd</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.12cc#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">12G#12b</span>
-<span class="pre">|</span>&nbsp; <span class="pre">4AA12cc#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.12b</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.12cc#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">6C#12a</span>
-<span class="pre">|</span>&nbsp; <span class="pre">``.12cc#</span>
-<span class="pre">|</span>&nbsp; <span class="pre">12E12b</span>
-<span class="pre">|</span>&nbsp; <span class="pre">=5=5</span>
-<span class="pre">|</span>&nbsp; <span class="pre">*-*-</span></tt></p>
+<a class="reference internal image-reference" href="../../_images/ex6-2.svg"><div align="center" class="align-center"><img src="../../_images/ex6-2.svg" width="100%" /></div>
+</a>
+<div class="highlight-kern"><div class="highlight"><pre><span class="-KernExclusive">**kern</span><span class="-KernTab">	</span><span class="-KernExclusive">**kern</span>
+<span class="-KernExclusive">*clefF4</span><span class="-KernTab">	</span><span class="-KernExclusive">*clefG2</span>
+<span class="-KernExclusive">*k[f#c#g#]</span><span class="-KernTab">	</span><span class="-KernExclusive">*k[f#c#g#]</span>
+<span class="-KernExclusive">*M4/4</span><span class="-KernTab">	</span><span class="-KernExclusive">*M4/4</span>
+<span class="-KernGlobalComment">!! Allegro</span>
+<span class="-KernBar">=2	=2</span>
+<span class="-KernNotes">2r</span><span class="-KernTab">	</span><span class="-KernNotes">12b</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">12e</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">12b</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">12b</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">12e</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">12b</span>
+<span class="-KernNotes">4E</span><span class="w"> </span><span class="-KernNotes">4G#</span><span class="-KernTab">	</span><span class="-KernNotes">4b</span>
+<span class="-KernNotes">4AA</span><span class="w"> </span><span class="-KernNotes">4A</span><span class="-KernTab">	</span><span class="-KernNotes">4cc#</span>
+<span class="-KernBar">=3	=3</span>
+<span class="-KernNotes">12C#</span><span class="-KernTab">	</span><span class="-KernNotes">12ee</span>
+<span class="-KernNotes">12E</span><span class="-KernTab">	</span><span class="-KernNotes">12cc#</span>
+<span class="-KernNotes">12A</span><span class="-KernTab">	</span><span class="-KernNotes">12a</span>
+<span class="-KernNotes">12D</span><span class="-KernTab">	</span><span class="-KernNotes">12ff#</span>
+<span class="-KernNotes">12F#</span><span class="-KernTab">	</span><span class="-KernNotes">12dd</span>
+<span class="-KernNotes">12A</span><span class="-KernTab">	</span><span class="-KernNotes">12a</span>
+<span class="-KernNotes">12C#</span><span class="-KernTab">	</span><span class="-KernNotes">12ee</span>
+<span class="-KernNotes">12E</span><span class="-KernTab">	</span><span class="-KernNotes">12cc#</span>
+<span class="-KernNotes">12A</span><span class="-KernTab">	</span><span class="-KernNotes">12a</span>
+<span class="-KernNotes">12D</span><span class="-KernTab">	</span><span class="-KernNotes">12ff#</span>
+<span class="-KernNotes">12F#</span><span class="-KernTab">	</span><span class="-KernNotes">12dd</span>
+<span class="-KernNotes">12A</span><span class="-KernTab">	</span><span class="-KernNotes">12a</span>
+<span class="-KernBar">=4	=4</span>
+<span class="-KernNotes">6C#</span><span class="-KernTab">	</span><span class="-KernNotes">12ee</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">12dd</span>
+<span class="-KernNotes">12A</span><span class="-KernTab">	</span><span class="-KernNotes">12cc#</span>
+<span class="-KernNotes">6BB</span><span class="-KernTab">	</span><span class="-KernNotes">12dd</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">12cc#</span>
+<span class="-KernNotes">12G#</span><span class="-KernTab">	</span><span class="-KernNotes">12b</span>
+<span class="-KernNotes">4AA</span><span class="-KernTab">	</span><span class="-KernNotes">12cc#</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">12b</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">12cc#</span>
+<span class="-KernNotes">6C#</span><span class="-KernTab">	</span><span class="-KernNotes">12a</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">12cc#</span>
+<span class="-KernNotes">12E</span><span class="-KernTab">	</span><span class="-KernNotes">12b</span>
+<span class="-KernBar">=5	=5</span>
+<span class="-KernExclusive">*-</span><span class="-KernTab">	</span><span class="-KernExclusive">*-</span>
+</pre></div>
+</div>
 <p>When encoding multiple stops in the **kern representation, some note
 attributes should be encoded for each note in the multiple stop, whereas
 other markings should be encoded only once for the entire multiple stop.
@@ -438,18 +441,22 @@ conventions. Notice that the first double stop encodes a single open phrase
 once. However, the staccato markings have been encoded for both notes in each
 of the double stops. Similarly, separate ties have been encoded for both
 notes in the double stop.</p>
-<p><strong>Example 6.3.</strong> Attribute encoding for **kern multiple stops.</p>
-<p>&gt; <tt class="docutils literal"><span class="pre">**kern</span>
-<span class="pre">&gt;</span> <span class="pre">{4c</span> <span class="pre">4e</span>
-<span class="pre">&gt;</span> <span class="pre">8dL</span> <span class="pre">8f</span>
-<span class="pre">&gt;</span> <span class="pre">8eJ</span> <span class="pre">8g</span>
-<span class="pre">&gt;</span> <span class="pre">(8f'</span> <span class="pre">8a'</span>
-<span class="pre">&gt;</span> <span class="pre">8g'</span> <span class="pre">8b')</span>
-<span class="pre">&gt;</span> <span class="pre">8.a</span> <span class="pre">8.ccL</span>
-<span class="pre">&gt;</span> <span class="pre">16b</span> <span class="pre">16ddk</span>
-<span class="pre">&gt;</span> <span class="pre">[4cc</span> <span class="pre">[4ee</span>
-<span class="pre">&gt;</span> <span class="pre">4cc]</span> <span class="pre">4ee]}</span>
-<span class="pre">&gt;</span> <span class="pre">*-</span></tt></p>
+<p><strong>Example 6.3.</strong> Attribute encoding for **kern multiple stops (chords).</p>
+<a class="reference internal image-reference" href="../../_images/ex6-3.svg"><div align="center" class="align-center"><img src="../../_images/ex6-3.svg" width="60%" /></div>
+</a>
+<div class="highlight-kern"><div class="highlight"><pre><span class="-KernExclusive">**kern</span>
+<span class="err">{</span><span class="-KernNotes">4c</span><span class="w"> </span><span class="-KernNotes">4e</span>
+<span class="-KernNotes">8d</span><span class="err">L</span><span class="w"> </span><span class="-KernNotes">8f</span>
+<span class="-KernNotes">8e</span><span class="err">J</span><span class="w"> </span><span class="-KernNotes">8g</span>
+<span class="err">(</span><span class="-KernNotes">8f</span><span class="err">&#39;</span><span class="w"> </span><span class="-KernNotes">8a</span><span class="err">&#39;</span>
+<span class="-KernNotes">8g</span><span class="err">&#39;</span><span class="w"> </span><span class="-KernNotes">8b</span><span class="err">&#39;)</span>
+<span class="-KernNotes">8.a</span><span class="w"> </span><span class="-KernNotes">8.cc</span><span class="err">L</span>
+<span class="-KernNotes">16b</span><span class="w"> </span><span class="-KernNotes">16dd</span><span class="err">k</span>
+<span class="err">[</span><span class="-KernNotes">4cc</span><span class="w"> </span><span class="err">[</span><span class="-KernNotes">4ee</span>
+<span class="-KernNotes">4cc</span><span class="err">]</span><span class="w"> </span><span class="-KernNotes">4ee</span><span class="err">]}</span>
+<span class="-KernExclusive">*-</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="further-examples">
 <h3>Further Examples<a class="headerlink" href="#further-examples" title="Permalink to this headline">¶</a></h3>
@@ -461,7 +468,7 @@ indicated with two thin lines. Two tandem interpretations encode the meter
 signature (``*M3/4`</cite>) and the tempo (<tt class="docutils literal"><span class="pre">*MM66</span></tt>). Note that metronome markings
 using the <tt class="docutils literal"><span class="pre">*MM</span></tt> interpretation are always given in quarter-durations per
 minute. If the metronome marking had been given as half-note equals 48, then
-the tempo interpretation would be given as <tt class="docutils literal"><span class="pre">*MM96</span></tt> &#8211; i.e. quarter-note
+the tempo interpretation would be given as *MM96 &#8211; i.e. quarter-note
 equals 96 beats per minute.</p>
 <p>Two grace-notes are evident in the passage. The first occurs just after the
 double-bar, and the second occurs three measures later. These notes have been
@@ -484,6 +491,101 @@ same duration.</p>
 been interleaved with the concurrent eighth-note figures so that the onsets
 are ordered in the correct temporal sequence.</p>
 <p><strong>Example 6.4.</strong> Chopin, <em>Etude</em> Op. 25, No. 7.</p>
+<a class="reference internal image-reference" href="../../_images/ex6-4.svg"><div align="center" class="align-center"><img src="../../_images/ex6-4.svg" width="100%" /></div>
+</a>
+<div class="highlight-kern"><div class="highlight"><pre><span class="-KernGlobalComment">!! Lento</span>
+<span class="-KernExclusive">**kern</span><span class="-KernTab">	</span><span class="-KernExclusive">**kern</span><span class="-KernTab">	</span><span class="-KernExclusive">**kern</span>
+<span class="-KernExclusive">*staff2</span><span class="-KernTab">	</span><span class="-KernExclusive">*staff1</span><span class="-KernTab">	</span><span class="-KernExclusive">*staff1</span>
+<span class="-KernExclusive">*clefF4</span><span class="-KernTab">	</span><span class="-KernExclusive">*clefG2</span><span class="-KernTab">	</span><span class="-KernExclusive">*clefG2</span>
+<span class="err">{</span><span class="-KernNotes">4GG#</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">4.D#</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">8C#</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">8C#</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">8BB#</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">4.A</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">8G#</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16F##</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16G#</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16A</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16G#</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16Bn</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16A</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16E</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16E#</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16F#</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16E#</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16G#</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16F#</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16A</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16G#</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16C#</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16D#</span><span class="err">Q</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernBar">=||	=||	=||</span>
+<span class="-KernExclusive">*MM66</span><span class="-KernTab">	</span><span class="-KernExclusive">*MM66</span><span class="-KernTab">	</span><span class="-KernExclusive">*MM66</span>
+<span class="-KernExclusive">*M3/4</span><span class="-KernTab">	</span><span class="-KernExclusive">*M3/4</span><span class="-KernTab">	</span><span class="-KernExclusive">*M3/4</span>
+<span class="err">&amp;{(Enq}</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">2e</span><span class="err">)</span><span class="-KernTab">	</span><span class="-KernNotes">8r</span><span class="-KernTab">	</span><span class="-KernNotes">2.r</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8g#</span><span class="w"> </span><span class="-KernNotes">8cc#</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8g#</span><span class="w"> </span><span class="-KernNotes">8cc#</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8g#</span><span class="w"> </span><span class="-KernNotes">8cc#</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">8.d#</span><span class="-KernTab">	</span><span class="-KernNotes">8g#</span><span class="w"> </span><span class="-KernNotes">8cc#</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8g#</span><span class="w"> </span><span class="-KernNotes">8cc#</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16c#</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernBar">=3	=3	=3</span>
+<span class="-KernNotes">4..cc#</span><span class="-KernTab">	</span><span class="-KernNotes">8e</span><span class="w"> </span><span class="-KernNotes">8a</span><span class="-KernTab">	</span><span class="err">{</span><span class="-KernNotes">2ee</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8e</span><span class="w"> </span><span class="-KernNotes">8a</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8e</span><span class="w"> </span><span class="-KernNotes">8a</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8e</span><span class="w"> </span><span class="-KernNotes">8a</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">32d#</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">32c#</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">8.dd#</span><span class="-KernTab">	</span><span class="-KernNotes">8e</span><span class="w"> </span><span class="-KernNotes">8a</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8e</span><span class="w"> </span><span class="-KernNotes">8a</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16cc#</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernBar">=4	=4	=4</span>
+<span class="err">[</span><span class="-KernNotes">4A</span><span class="-KernTab">	</span><span class="-KernNotes">8d#</span><span class="w"> </span><span class="-KernNotes">8f#</span><span class="-KernTab">	</span><span class="-KernNotes">4cc#</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8d#</span><span class="w"> </span><span class="-KernNotes">8f#</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16A</span><span class="err">]</span><span class="-KernTab">	</span><span class="-KernNotes">8d#</span><span class="w"> </span><span class="-KernNotes">8f#</span><span class="-KernTab">	</span><span class="-KernNotes">4b#</span>
+<span class="-KernNotes">16G#</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16F##</span><span class="-KernTab">	</span><span class="-KernNotes">8d#</span><span class="w"> </span><span class="-KernNotes">8f#</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16G#</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16Bn</span><span class="-KernTab">	</span><span class="-KernNotes">8d#</span><span class="w"> </span><span class="-KernNotes">8f#</span><span class="-KernTab">	</span><span class="-KernNotes">4cc#</span>
+<span class="-KernNotes">16A</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16F#</span><span class="-KernTab">	</span><span class="-KernNotes">8d#</span><span class="w"> </span><span class="-KernNotes">8f#</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16D#</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernBar">=5	=5	=5</span>
+<span class="-KernNotes">4BB#</span><span class="err">}</span><span class="-KernTab">	</span><span class="-KernNotes">8d#</span><span class="w"> </span><span class="-KernNotes">8f#</span><span class="-KernTab">	</span><span class="-KernNotes">4dd#</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8d#</span><span class="w"> </span><span class="-KernNotes">8f#</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">8r</span><span class="-KernTab">	</span><span class="-KernNotes">8d#</span><span class="w"> </span><span class="-KernNotes">8f#</span><span class="-KernTab">	</span><span class="-KernNotes">4..g#</span><span class="err">}</span>
+<span class="err">{</span><span class="-KernNotes">16FF##</span><span class="-KernTab">	</span><span class="err">^</span><span class="-KernNotes">8d#</span><span class="w"> </span><span class="-KernNotes">8f#</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16GG#</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="err">BBnq</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16AA</span><span class="-KernTab">	</span><span class="-KernNotes">8B#</span><span class="w"> </span><span class="-KernNotes">8f#</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16GG#</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16C#</span><span class="-KernTab">	</span><span class="-KernNotes">8B#</span><span class="w"> </span><span class="-KernNotes">8f#</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16D#</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="err">{</span><span class="-KernNotes">16g#</span>
+<span class="-KernBar">=6	=6	=6</span>
+<span class="-KernNotes">4E</span><span class="-KernTab">	</span><span class="-KernNotes">8r</span><span class="-KernTab">	</span><span class="-KernNotes">4g#</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8c#</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">4CC#</span><span class="err">}</span><span class="-KernTab">	</span><span class="-KernNotes">8c#</span><span class="w"> </span><span class="-KernNotes">8e</span><span class="-KernTab">	</span><span class="-KernNotes">4cc#</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8c#</span><span class="w"> </span><span class="-KernNotes">8e</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="err">(</span><span class="-KernNotes">8.G#</span><span class="-KernTab">	</span><span class="-KernNotes">8c#</span><span class="w"> </span><span class="-KernNotes">8e</span><span class="-KernTab">	</span><span class="-KernNotes">4bn</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8c#</span><span class="w"> </span><span class="-KernNotes">8e</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">16.G#</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernBar">=7	=7	=7</span>
+<span class="-KernNotes">4G#</span><span class="err">)</span><span class="-KernTab">	</span><span class="-KernNotes">8c#</span><span class="w"> </span><span class="-KernNotes">8e</span><span class="-KernTab">	</span><span class="-KernNotes">4b</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8c#</span><span class="w"> </span><span class="-KernNotes">8e</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="err">(</span><span class="-KernNotes">12FF#</span><span class="-KernTab">	</span><span class="-KernNotes">8c#</span><span class="w"> </span><span class="-KernNotes">8e</span><span class="-KernTab">	</span><span class="-KernNotes">4a</span>
+<span class="-KernNotes">12C#</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8c#</span><span class="w"> </span><span class="-KernNotes">8e</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">12F#</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">12G#</span><span class="-KernTab">	</span><span class="-KernNotes">8c#</span><span class="w"> </span><span class="-KernNotes">8e</span><span class="-KernTab">	</span><span class="-KernNotes">4g#</span>
+<span class="-KernNotes">12B</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8c#</span><span class="w"> </span><span class="-KernNotes">8e</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">12A</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernBar">=8	=8	=8</span>
+<span class="-KernExclusive">*-</span><span class="-KernTab">	</span><span class="-KernExclusive">*-</span><span class="-KernTab">	</span><span class="-KernExclusive">*-</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="reprise">
 <h3>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h3>
@@ -492,7 +594,6 @@ noted an number of subtleties related to encoding tuplets, multiple stops,
 gruppettos, acciaccaturas, elided phrases, and spine path changes.</p>
 <p>A more complete description of the **kern_ representation may be found
 in the <em>Humdrum Reference Manual.</em></p>
-<hr class="docutils" />
 </div>
 </div>
 </div>

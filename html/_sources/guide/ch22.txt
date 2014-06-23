@@ -587,5 +587,3 @@ parametric classification can be done using the `**recode**`_ command and
 non-parametric classification can be achieved using the *substitution*
 operation provided by the `**humsed**`_ command.
 
---------
-

@@ -365,5 +365,3 @@ Together with the `**simil**`_ and `**correl**`_ commands discussed in
 `Chapter 25,`_ these five tools provide a variety of means for characterizing
 differences, commonalities, and similarities.
 
---------
-

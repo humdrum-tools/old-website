@@ -498,6 +498,3 @@ complexity. However, for most tasks, the simple substitute (**s**) and delete
 editing using **sed**, refer to the book on **sed** and **awk** written by
 Dale Dougherty (listed in the bibliography).
 
---------
-
-

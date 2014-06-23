@@ -635,6 +635,3 @@ One further topic related to rhythm remains to be discussed. The **accent**
 command allows the user to distinguish notes according to their estimated
 perceptual importance. We will consider **accent** in `Chapter 31.`_
 
---------
-
-

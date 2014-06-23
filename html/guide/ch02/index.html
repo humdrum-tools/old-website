@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Chapter 2: Representing Music Using kern (I) &mdash; humdrum-tools 1 documentation</title>
+  <title>Chapter 2: Representing Music Using **kern (I) &mdash; humdrum-tools 1 documentation</title>
   
 
   
@@ -67,11 +67,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../"><em>The Humdrum User Guide</em></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ch01/">Chapter 1: Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Chapter 2: Representing Music Using kern (I)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Chapter 2: Representing Music Using **kern (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch03/">Chapter 3: Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch04/">Chapter 4:Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch05/">Chapter 5: The Humdrum Syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch06/">Chapter 6: Representing Music Using ***kern*(II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">Chapter 6: Representing Music Using **kern (II)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch07/">Chapter 7: MIDI Output Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch08/">Chapter 8: The Shell (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch09/">Chapter 9: Searching with Regular Expressions</a></li>
@@ -183,7 +183,7 @@
       
           <li><a href="../"><em>The Humdrum User Guide</em></a> &raquo;</li>
       
-    <li>Chapter 2: Representing Music Using kern (I)</li>
+    <li>Chapter 2: Representing Music Using **kern (I)</li>
       <li class="wy-breadcrumbs-aside">
         
         
@@ -194,7 +194,7 @@
           <div role="main">
             
   <div class="section" id="chapter-2-representing-music-using-kern-i">
-<h1>Chapter 2: Representing Music Using kern (I)<a class="headerlink" href="#chapter-2-representing-music-using-kern-i" title="Permalink to this headline">¶</a></h1>
+<h1>Chapter 2: Representing Music Using **kern (I)<a class="headerlink" href="#chapter-2-representing-music-using-kern-i" title="Permalink to this headline">¶</a></h1>
 <hr class="docutils" />
 <p>The <a href="#id1"><span class="problematic" id="id2">:exinterp:`kern`</span></a> representation can be used to represent basic or core
 information for common Western music. The **kern  scheme can be used to
@@ -205,7 +205,8 @@ examples. A more comprehensive description of **kern  will be given in
 <p>Consider the opening motive from J.S. Bach&#8217;s <em>Art of Fugue</em> shown in Example
 2.1. A corresponding **kern  representation is given below the notation.</p>
 <p><strong>Example 2.1.</strong> J.S. Bach <em>Die Kunst der Fuge</em></p>
-<div align="center" class="align-center"><img src="../../_images/ex2-1.svg" /></div>
+<a class="reference internal image-reference" href="../../_images/ex2-1.svg"><div align="center" class="align-center"><img src="../../_images/ex2-1.svg" width="100%" /></div>
+</a>
 <div class="highlight-kern"><div class="highlight"><pre><span class="-KernExclusive">**kern</span>
 <span class="-KernExclusive">*clefG2</span>
 <span class="-KernExclusive">*k[b-]</span>
@@ -236,7 +237,7 @@ sound output can be generated from the **kern representation.</p>
 the Humdrum representation procedes vertically down the page. The
 representation begins with the keyword **kern which indicates that the
 ensuing encoded material conforms to the kern representation. The encoded
-passage ends with a special <a href="#id13"><span class="problematic" id="id14">`*terminator*`_</span></a> token (<tt class="docutils literal"><span class="pre">*-</span></tt>).</p>
+passage ends with a special <a href="#id9"><span class="problematic" id="id10">`*terminator*`_</span></a> token (<tt class="docutils literal"><span class="pre">*-</span></tt>).</p>
 <p>The clef is identified as a G-clef positioned on the second line of the staff
 (i.e., a treble clef). The key signature is encoded as a single flat, B-flat:
 the minus sign here indicates a flat. The meter signature (2/2) is encoded
@@ -280,41 +281,41 @@ the upper part has been encoded in the right-most column. The layout is
 exactly as though the musical score were turned sideways.</p>
 <p><strong>Example 2.2.</strong> J.S. Bach, <em>Praeambulum</em> BWV 390.</p>
 <div align="center" class="align-center"><img src="../../_images/ex2-2.svg" /></div>
-<div class="highlight-kern"><div class="highlight"><pre><span class="-KernExclusive">**kern</span><span class="w">  </span><span class="-KernExclusive">**kern</span>
-<span class="-KernExclusive">*staff2</span><span class="w"> </span><span class="-KernExclusive">*staff1</span>
-<span class="-KernExclusive">*clefF4</span><span class="w"> </span><span class="-KernExclusive">*clefG2</span>
-<span class="-KernExclusive">*k[b-]</span><span class="w">  </span><span class="-KernExclusive">*k[b-]</span>
-<span class="-KernExclusive">*M3/4</span><span class="w">   </span><span class="-KernExclusive">*M3/4</span>
-<span class="-KernBar">=1-     =1-</span>
-<span class="-KernNotes">2.rr</span><span class="w">    </span><span class="-KernNotes">8r</span>
-<span class="-KernDot">.</span><span class="w">       </span><span class="-KernNotes">8d</span><span class="err">/L</span>
-<span class="-KernDot">.</span><span class="w">       </span><span class="-KernNotes">8g</span><span class="err">/</span>
-<span class="-KernDot">.</span><span class="w">       </span><span class="-KernNotes">8b-</span><span class="err">/</span>
-<span class="-KernDot">.</span><span class="w">       </span><span class="-KernNotes">8g</span><span class="err">/</span>
-<span class="-KernDot">.</span><span class="w">       </span><span class="-KernNotes">8d</span><span class="err">/J</span>
-<span class="-KernBar">=2      =2</span>
-<span class="-KernNotes">8r</span><span class="w">      </span><span class="-KernNotes">4dd</span><span class="err">\</span>
-<span class="-KernNotes">8GG</span><span class="err">/L</span><span class="w">   </span><span class="-KernDot">.</span>
-<span class="-KernNotes">8BB-</span><span class="err">/</span><span class="w">   </span><span class="-KernNotes">4r</span>
-<span class="-KernNotes">8D</span><span class="err">/</span><span class="w">     </span><span class="-KernDot">.</span>
-<span class="-KernNotes">8BB-</span><span class="err">/</span><span class="w">   </span><span class="-KernNotes">4r</span>
-<span class="-KernNotes">8GG</span><span class="err">/J</span><span class="w">   </span><span class="-KernDot">.</span>
-<span class="-KernBar">=3      =3</span>
-<span class="-KernNotes">4G</span><span class="err">Ww\</span><span class="w">   </span><span class="-KernNotes">8r</span>
-<span class="-KernDot">.</span><span class="w">       </span><span class="-KernNotes">8dd</span><span class="err">\L</span>
-<span class="-KernNotes">8GG</span><span class="err">/L</span><span class="w">   </span><span class="-KernNotes">8b-</span><span class="err">\</span>
-<span class="-KernNotes">8BB-</span><span class="err">/</span><span class="w">   </span><span class="-KernNotes">8g</span><span class="err">\</span>
-<span class="-KernNotes">8D</span><span class="err">/</span><span class="w">     </span><span class="-KernNotes">8gg</span><span class="err">\</span>
-<span class="-KernNotes">8G</span><span class="err">/J</span><span class="w">    </span><span class="-KernNotes">8b-</span><span class="err">\J</span>
-<span class="-KernBar">=4      =4</span>
-<span class="-KernNotes">4D</span><span class="err">\</span><span class="w">     </span><span class="-KernNotes">8a</span><span class="err">/L</span>
-<span class="-KernDot">.</span><span class="w">       </span><span class="-KernNotes">8gg</span><span class="err">/</span>
-<span class="-KernNotes">4d</span><span class="err">\</span><span class="w">     </span><span class="-KernNotes">8ff</span><span class="err">/</span>
-<span class="-KernDot">.</span><span class="w">       </span><span class="-KernNotes">8ee</span><span class="err">/</span>
-<span class="-KernNotes">4D</span><span class="err">\</span><span class="w">     </span><span class="-KernNotes">8ff</span><span class="err">/</span>
-<span class="-KernDot">.</span><span class="w">       </span><span class="-KernNotes">8a-</span><span class="err">/J</span>
-<span class="-KernBar">=5      =5</span>
-<span class="-KernExclusive">*-</span><span class="w">      </span><span class="-KernExclusive">*-</span>
+<div class="highlight-kern"><div class="highlight"><pre><span class="-KernExclusive">**kern</span><span class="-KernTab">	</span><span class="-KernExclusive">**kern</span>
+<span class="-KernExclusive">*staff2</span><span class="-KernTab">	</span><span class="-KernExclusive">*staff1</span>
+<span class="-KernExclusive">*clefF4</span><span class="-KernTab">	</span><span class="-KernExclusive">*clefG2</span>
+<span class="-KernExclusive">*k[b-]</span><span class="-KernTab">	</span><span class="-KernExclusive">*k[b-]</span>
+<span class="-KernExclusive">*M3/4</span><span class="-KernTab">	</span><span class="-KernExclusive">*M3/4</span>
+<span class="-KernBar">=1-	=1-</span>
+<span class="-KernNotes">2.rr</span><span class="-KernTab">	</span><span class="-KernNotes">8r</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8d</span><span class="err">/L</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8g</span><span class="err">/</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8b-</span><span class="err">/</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8g</span><span class="err">/</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8d</span><span class="err">/J</span>
+<span class="-KernBar">=2	=2</span>
+<span class="-KernNotes">8r</span><span class="-KernTab">	</span><span class="-KernNotes">4dd</span><span class="err">\</span>
+<span class="-KernNotes">8GG</span><span class="err">/L</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">8BB-</span><span class="err">/</span><span class="-KernTab">	</span><span class="-KernNotes">4r</span>
+<span class="-KernNotes">8D</span><span class="err">/</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">8BB-</span><span class="err">/</span><span class="-KernTab">	</span><span class="-KernNotes">4r</span>
+<span class="-KernNotes">8GG</span><span class="err">/J</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernBar">=3	=3</span>
+<span class="-KernNotes">4G</span><span class="err">Ww\</span><span class="-KernTab">	</span><span class="-KernNotes">8r</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8dd</span><span class="err">\L</span>
+<span class="-KernNotes">8GG</span><span class="err">/L</span><span class="-KernTab">	</span><span class="-KernNotes">8b-</span><span class="err">\</span>
+<span class="-KernNotes">8BB-</span><span class="err">/</span><span class="-KernTab">	</span><span class="-KernNotes">8g</span><span class="err">\</span>
+<span class="-KernNotes">8D</span><span class="err">/</span><span class="-KernTab">	</span><span class="-KernNotes">8gg</span><span class="err">\</span>
+<span class="-KernNotes">8G</span><span class="err">/J</span><span class="-KernTab">	</span><span class="-KernNotes">8b-</span><span class="err">\J</span>
+<span class="-KernBar">=4	=4</span>
+<span class="-KernNotes">4D</span><span class="err">\</span><span class="-KernTab">	</span><span class="-KernNotes">8a</span><span class="err">/L</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8gg</span><span class="err">/</span>
+<span class="-KernNotes">4d</span><span class="err">\</span><span class="-KernTab">	</span><span class="-KernNotes">8ff</span><span class="err">/</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8ee</span><span class="err">/</span>
+<span class="-KernNotes">4D</span><span class="err">\</span><span class="-KernTab">	</span><span class="-KernNotes">8ff</span><span class="err">/</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8a-</span><span class="err">/J</span>
+<span class="-KernBar">=5	=5</span>
+<span class="-KernExclusive">*-</span><span class="-KernTab">	</span><span class="-KernExclusive">*-</span>
 </pre></div>
 </div>
 <p>Each column contains its own separate information. Both columns have been
@@ -324,7 +325,7 @@ measure numbers have been added following the barline indicator (=). Although
 measure numbers may not be present in the printed score, it is normal to
 include them in **kern  encodings.</p>
 <p>A notable feature when representing multi-part music is the presence of place
-holders called <a href="#id15"><span class="problematic" id="id16">`*null tokens*.`_</span></a> A null token is represented by a single
+holders called <a href="#id11"><span class="problematic" id="id12">`*null tokens*.`_</span></a> A null token is represented by a single
 isolated period character (.). Not all musical parts will have a new note
 with each successive sonority. A null token maintains the grid structure for
 a sustained pitch while another part is moving.</p>
@@ -366,53 +367,53 @@ beams and partial beams are discussed in Example 2.4.</p>
 <p>Example 2.3 shows a four-part chorale harmonization by Bach. In this example,
 two musical parts share each of the two staves. Notice how the corresponding
 **kern encoding assigns each part to a separate column, but links the
-appropriate parts using the <a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id5"><span class="problematic" id="id6">*</span></a>staff  indicators.</p>
+appropriate parts using the *staff  indicators.</p>
 <p><strong>Example 2.3.</strong> <em>Nun danket alle Gott</em>, arr. J.S. Bach.</p>
 <a class="reference internal image-reference" href="../../_images/ex2-3.svg"><div align="center" class="align-center"><img src="../../_images/ex2-3.svg" width="100%" /></div>
 </a>
-<div class="highlight-kern"><div class="highlight"><pre><span class="-KernExclusive">**kern</span><span class="w">       </span><span class="-KernExclusive">**kern</span><span class="w">          </span><span class="-KernExclusive">**kern</span><span class="w">          </span><span class="-KernExclusive">**kern</span>
-<span class="-KernExclusive">*staff2</span><span class="w">      </span><span class="-KernExclusive">*staff2</span><span class="w">         </span><span class="-KernExclusive">*staff1</span><span class="w">         </span><span class="-KernExclusive">*staff1</span>
-<span class="-KernExclusive">*clefF4</span><span class="w">      </span><span class="-KernExclusive">*clefF4</span><span class="w">         </span><span class="-KernExclusive">*clefG2</span><span class="w">         </span><span class="-KernExclusive">*clefG2</span>
-<span class="-KernExclusive">*k[f#c#g#]</span><span class="w">   </span><span class="-KernExclusive">*k[f#c#g#]</span><span class="w">      </span><span class="-KernExclusive">*k[f#c#g#]</span><span class="w">      </span><span class="-KernExclusive">*k[f#c#g#]</span>
-<span class="-KernExclusive">*M4/4</span><span class="w">        </span><span class="-KernExclusive">*M4/4</span><span class="w">           </span><span class="-KernExclusive">*M4/4</span><span class="w">           </span><span class="-KernExclusive">*M4/4</span>
-<span class="-KernNotes">4AA</span><span class="w">          </span><span class="-KernNotes">4c#</span><span class="w">             </span><span class="-KernNotes">4a</span><span class="w">              </span><span class="-KernNotes">4ee</span>
-<span class="-KernBar">=1           =1              =1              =1</span>
-<span class="-KernNotes">8A</span><span class="w">           </span><span class="-KernNotes">4c#</span><span class="w">             </span><span class="-KernNotes">4a</span><span class="w">              </span><span class="-KernNotes">4ee</span>
-<span class="-KernNotes">8B</span><span class="w">           </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span>
-<span class="-KernNotes">8c#</span><span class="w">          </span><span class="-KernNotes">4c#</span><span class="w">             </span><span class="-KernNotes">4a</span><span class="w">              </span><span class="-KernNotes">4ee</span>
-<span class="-KernNotes">8A</span><span class="w">           </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span>
-<span class="-KernNotes">8D</span><span class="w">           </span><span class="-KernNotes">4d</span><span class="w">              </span><span class="-KernNotes">4a</span><span class="w">              </span><span class="-KernNotes">4ff#</span>
-<span class="err">E</span><span class="w">            </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span>
-<span class="err">F#</span><span class="w">           </span><span class="-KernNotes">4d</span><span class="w">              </span><span class="-KernNotes">4a</span><span class="w">              </span><span class="-KernNotes">4ff#</span>
-<span class="err">D</span><span class="w">            </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span>
-<span class="-KernBar">=2           =2              =2              =2</span>
-<span class="err">A;</span><span class="w">           </span><span class="-KernNotes">2c#</span><span class="err">;</span><span class="w">            </span><span class="-KernNotes">2a</span><span class="err">;</span><span class="w">             </span><span class="-KernNotes">2ee</span><span class="err">;</span>
-<span class="-KernNotes">4r</span><span class="w">           </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="-KernNotes">4r</span>
-<span class="-KernNotes">4A</span><span class="w">           </span><span class="-KernNotes">4e</span><span class="w">              </span><span class="-KernNotes">4a</span><span class="w">              </span><span class="-KernNotes">4cc#</span>
-<span class="-KernBar">=3           =3              =3              =3</span>
-<span class="-KernNotes">4G#</span><span class="w">          </span><span class="-KernNotes">4e</span><span class="w">              </span><span class="-KernNotes">4b</span><span class="w">              </span><span class="-KernNotes">4dd</span>
-<span class="-KernNotes">4A</span><span class="w">           </span><span class="-KernNotes">4e</span><span class="w">              </span><span class="-KernNotes">4a</span><span class="w">              </span><span class="-KernNotes">4cc#</span>
-<span class="-KernNotes">8E</span><span class="w">           </span><span class="-KernNotes">4e</span><span class="w">              </span><span class="-KernNotes">4g#</span><span class="w">             </span><span class="-KernNotes">4b</span>
-<span class="-KernNotes">8D</span><span class="w">           </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span>
-<span class="-KernNotes">8C#</span><span class="w">          </span><span class="-KernNotes">4e</span><span class="w">              </span><span class="err">[</span><span class="-KernNotes">4a</span><span class="w">             </span><span class="-KernNotes">8.cc#</span>
-<span class="-KernNotes">8AA</span><span class="w">          </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span>
-<span class="-KernDot">.</span><span class="w">            </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">16dd</span>
-<span class="-KernBar">=4           =4              =4              =4</span>
-<span class="-KernNotes">2E</span><span class="w">           </span><span class="-KernNotes">8e</span><span class="w">              </span><span class="-KernNotes">8a</span><span class="err">]</span><span class="w">             </span><span class="-KernNotes">2b</span>
-<span class="-KernDot">.</span><span class="w">            </span><span class="-KernNotes">16d</span><span class="w">             </span><span class="-KernNotes">8f#</span><span class="w">             </span><span class="-KernDot">.</span>
-<span class="-KernDot">.</span><span class="w">            </span><span class="-KernNotes">16c#</span><span class="w">            </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernDot">.</span>
-<span class="-KernDot">.</span><span class="w">            </span><span class="-KernNotes">4d</span><span class="w">              </span><span class="-KernNotes">4g#</span><span class="w">             </span><span class="-KernDot">.</span>
-<span class="-KernNotes">4AA</span><span class="err">;</span><span class="w">         </span><span class="-KernNotes">4c#</span><span class="err">;</span><span class="w">            </span><span class="-KernNotes">4e</span><span class="err">;</span><span class="w">             </span><span class="-KernNotes">4a</span><span class="err">;</span>
-<span class="-KernBar">=:|          </span><span class="err">!</span><span class="-KernBar">=:|            </span><span class="err">!</span><span class="-KernBar">=:|            </span><span class="err">!</span><span class="-KernBar">=:|!</span>
-<span class="-KernExclusive">*-</span><span class="w">           </span><span class="-KernExclusive">*-</span><span class="w">              </span><span class="-KernExclusive">*-</span><span class="w">              </span><span class="-KernExclusive">*-</span>
+<div class="highlight-kern"><div class="highlight"><pre><span class="-KernExclusive">**kern</span><span class="-KernTab">	</span><span class="-KernExclusive">**kern</span><span class="-KernTab">	</span><span class="-KernExclusive">**kern</span><span class="-KernTab">	</span><span class="-KernExclusive">**kern</span>
+<span class="-KernExclusive">*staff2</span><span class="-KernTab">	</span><span class="-KernExclusive">*staff2</span><span class="-KernTab">	</span><span class="-KernExclusive">*staff1</span><span class="-KernTab">	</span><span class="-KernExclusive">*staff1</span>
+<span class="-KernExclusive">*clefF4</span><span class="-KernTab">	</span><span class="-KernExclusive">*clefF4</span><span class="-KernTab">	</span><span class="-KernExclusive">*clefG2</span><span class="-KernTab">	</span><span class="-KernExclusive">*clefG2</span>
+<span class="-KernExclusive">*k[f#c#g#]</span><span class="-KernTab">	</span><span class="-KernExclusive">*k[f#c#g#]</span><span class="-KernTab">	</span><span class="-KernExclusive">*k[f#c#g#]</span><span class="-KernTab">	</span><span class="-KernExclusive">*k[f#c#g#]</span>
+<span class="-KernExclusive">*M4/4</span><span class="-KernTab">	</span><span class="-KernExclusive">*M4/4</span><span class="-KernTab">	</span><span class="-KernExclusive">*M4/4</span><span class="-KernTab">	</span><span class="-KernExclusive">*M4/4</span>
+<span class="-KernNotes">4AA</span><span class="-KernTab">	</span><span class="-KernNotes">4c#</span><span class="-KernTab">	</span><span class="-KernNotes">4a</span><span class="-KernTab">	</span><span class="-KernNotes">4ee</span>
+<span class="-KernBar">=1	=1	=1	=1</span>
+<span class="-KernNotes">8A</span><span class="-KernTab">	</span><span class="-KernNotes">4c#</span><span class="-KernTab">	</span><span class="-KernNotes">4a</span><span class="-KernTab">	</span><span class="-KernNotes">4ee</span>
+<span class="-KernNotes">8B</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">8c#</span><span class="-KernTab">	</span><span class="-KernNotes">4c#</span><span class="-KernTab">	</span><span class="-KernNotes">4a</span><span class="-KernTab">	</span><span class="-KernNotes">4ee</span>
+<span class="-KernNotes">8A</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">8D</span><span class="-KernTab">	</span><span class="-KernNotes">4d</span><span class="-KernTab">	</span><span class="-KernNotes">4a</span><span class="-KernTab">	</span><span class="-KernNotes">4ff#</span>
+<span class="-KernNotes">8E</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">8F#</span><span class="-KernTab">	</span><span class="-KernNotes">4d</span><span class="-KernTab">	</span><span class="-KernNotes">4a</span><span class="-KernTab">	</span><span class="-KernNotes">4ff#</span>
+<span class="-KernNotes">8D</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernBar">=2	=2	=2	=2</span>
+<span class="-KernNotes">2A</span><span class="err">;</span><span class="-KernTab">	</span><span class="-KernNotes">2c#</span><span class="err">;</span><span class="-KernTab">	</span><span class="-KernNotes">2a</span><span class="err">;</span><span class="-KernTab">	</span><span class="-KernNotes">2ee</span><span class="err">;</span>
+<span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="-KernNotes">4r</span>
+<span class="-KernNotes">4A</span><span class="-KernTab">	</span><span class="-KernNotes">4e</span><span class="-KernTab">	</span><span class="-KernNotes">4a</span><span class="-KernTab">	</span><span class="-KernNotes">4cc#</span>
+<span class="-KernBar">=3	=3	=3	=3</span>
+<span class="-KernNotes">4G#</span><span class="-KernTab">	</span><span class="-KernNotes">4e</span><span class="-KernTab">	</span><span class="-KernNotes">4b</span><span class="-KernTab">	</span><span class="-KernNotes">4dd</span>
+<span class="-KernNotes">4A</span><span class="-KernTab">	</span><span class="-KernNotes">4e</span><span class="-KernTab">	</span><span class="-KernNotes">4a</span><span class="-KernTab">	</span><span class="-KernNotes">4cc#</span>
+<span class="-KernNotes">8E</span><span class="-KernTab">	</span><span class="-KernNotes">4e</span><span class="-KernTab">	</span><span class="-KernNotes">4g#</span><span class="-KernTab">	</span><span class="-KernNotes">4b</span>
+<span class="-KernNotes">8D</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">8C#</span><span class="-KernTab">	</span><span class="-KernNotes">4e</span><span class="-KernTab">	</span><span class="err">[</span><span class="-KernNotes">4a</span><span class="-KernTab">	</span><span class="-KernNotes">8.cc#</span>
+<span class="-KernNotes">8AA</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">16dd</span>
+<span class="-KernBar">=4	=4	=4	=4</span>
+<span class="-KernNotes">2E</span><span class="-KernTab">	</span><span class="-KernNotes">8e</span><span class="-KernTab">	</span><span class="-KernNotes">8a</span><span class="err">]</span><span class="-KernTab">	</span><span class="-KernNotes">2b</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">16d</span><span class="-KernTab">	</span><span class="-KernNotes">8f#</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">16c#</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">4d</span><span class="-KernTab">	</span><span class="-KernNotes">4g#</span><span class="-KernTab">	</span><span class="-KernDot">.</span>
+<span class="-KernNotes">4AA</span><span class="err">;</span><span class="-KernTab">	</span><span class="-KernNotes">4c#</span><span class="err">;</span><span class="-KernTab">	</span><span class="-KernNotes">4e</span><span class="err">;</span><span class="-KernTab">	</span><span class="-KernNotes">4a</span><span class="err">;</span>
+<span class="-KernBar">=:|!	=:|	=:|	=:|!</span>
+<span class="-KernExclusive">*-</span><span class="-KernTab">	</span><span class="-KernExclusive">*-</span><span class="-KernTab">	</span><span class="-KernExclusive">*-</span><span class="-KernTab">	</span><span class="-KernExclusive">*-</span>
 </pre></div>
 </div>
 <p>Once again, clefs, key signatures and meter signatures are encoded separately
 for each part. Notice how the meter signature has been encoded as 4/4 rather
-than <a href="#id7"><span class="problematic" id="id8">`</span></a>common time&#8217;. This again reflects **kern &#8216;s preoccupation with
+than <a href="#id3"><span class="problematic" id="id4">`</span></a>common time&#8217;. This again reflects **kern &#8216;s preoccupation with
 functional information rather than orthographic information. (Later we will
 see how to encode the fact that the meter signature is visually rendered as
-<a href="#id9"><span class="problematic" id="id10">`</span></a>C&#8217; rather than 4/4.)</p>
+<a href="#id5"><span class="problematic" id="id6">`</span></a>C&#8217; rather than 4/4.)</p>
 <p>In measure 2, pauses (<tt class="docutils literal"><span class="pre">;</span></tt>) have been encoded for all four voices even
 though only two pause symbols appear in the printed notation.</p>
 <p>In the third measure, the last note of the alto part has been tied into the
@@ -426,7 +427,7 @@ explicitly interpreted as either <em>ties, slurs</em> or <em>phrases.</em></p>
 and end of a slur respectively.</p>
 <p>The open square bracket <tt class="docutils literal"><span class="pre">[</span></tt> denotes the first note of a tie. The closed
 square bracket <tt class="docutils literal"><span class="pre">]</span></tt> denotes the last note of a tie. The underscore character
-<a href="#id11"><span class="problematic" id="id12">``</span></a>_  denotes middle notes (if any) of a tie.</p>
+<a href="#id7"><span class="problematic" id="id8">``</span></a>_  denotes middle notes (if any) of a tie.</p>
 <p>Slurs and phrase markings can be <em>nested</em> (e.g. slurs within slurs) and may
 also be <em>elided</em> (e.g. overlapping phrases) to a single depth. <em>Nested
 markings</em> mean that one slur or phrase is entirely subsumed under another
@@ -439,7 +440,7 @@ second phrase has begun.</p>
 <p>Example 2.3 ends with a repeat sign. The **kern  representation makes a
 distinction between repeat signs that appear in the score and repeat signs
 that are obeyed in performance. In this example, only the visual or
-orthographic rendering of the barline has been encoded. Later, in <a href="#id17"><span class="problematic" id="id18">`Chapter
+orthographic rendering of the barline has been encoded. Later, in <a href="#id13"><span class="problematic" id="id14">`Chapter
 20,`_</span></a> we will see how sectional repeats are functionally represented. The
 visual appearance of the final barline is encoded as follows: <tt class="docutils literal"><span class="pre">=:|!</span></tt>. The
 equals-sign indicates the logical presence of a barline. The colon indicates
@@ -463,58 +464,58 @@ pairs. As a result, the beams are started with <cite>LL`</cite> and end with
 <p><strong>Example 2.4.</strong> Franz Joseph Haydn, <em>Sonata in C major, Hob. XVI: 35</em>.</p>
 <a class="reference internal image-reference" href="../../_images/ex2-4.svg"><div align="center" class="align-center"><img src="../../_images/ex2-4.svg" width="100%" /></div>
 </a>
-<div class="highlight-kern"><div class="highlight"><pre><span class="-KernExclusive">**kern</span><span class="w">               </span><span class="-KernExclusive">**kern</span><span class="w">          </span><span class="-KernExclusive">**kern</span>
-<span class="-KernExclusive">*staff2</span><span class="w">              </span><span class="-KernExclusive">*staff2</span><span class="w">         </span><span class="-KernExclusive">*staff1</span>
-<span class="-KernExclusive">*clefG2</span><span class="w">              </span><span class="-KernExclusive">*clefG2</span><span class="w">         </span><span class="-KernExclusive">*clefG2</span>
-<span class="-KernExclusive">*k[]</span><span class="w">                 </span><span class="-KernExclusive">*k[]</span><span class="w">            </span><span class="-KernExclusive">*k[]</span>
-<span class="-KernExclusive">*M3/4</span><span class="w">                </span><span class="-KernExclusive">*M3/4</span><span class="w">           </span><span class="-KernExclusive">*M3/4</span>
-<span class="-KernBar">=1-                  =1-             =1-</span>
-<span class="-KernNotes">4r</span><span class="w">                   </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="err">[</span><span class="-KernNotes">4ee</span><span class="err">\</span>
-<span class="-KernNotes">4c</span><span class="err">/</span><span class="w">                  </span><span class="-KernNotes">4g</span><span class="err">/</span><span class="w">             </span><span class="-KernNotes">8.ee</span><span class="err">]\L</span>
-<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">16ff</span><span class="err">\Jk</span>
-<span class="-KernNotes">4f</span><span class="err">/</span><span class="w">                  </span><span class="-KernNotes">4g</span><span class="w">              </span><span class="-KernNotes">8.dd</span><span class="err">\L</span>
-<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">16ee</span><span class="err">\Jk</span>
-<span class="-KernBar">=2                   =2              =2</span>
-<span class="-KernNotes">4e</span><span class="err">/</span><span class="w">                  </span><span class="-KernNotes">4g</span><span class="err">/</span><span class="w">             </span><span class="-KernNotes">4cc</span><span class="err">\</span>
-<span class="-KernNotes">4r</span><span class="w">                   </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="-KernNotes">4gg</span><span class="err">/</span>
-<span class="-KernNotes">4r</span><span class="w">                   </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="-KernNotes">4gg</span><span class="err">/</span>
-<span class="-KernBar">=3                   =3              =3</span>
-<span class="err">(</span><span class="-KernNotes">2B</span><span class="err">\([</span><span class="-KernNotes">2.g</span><span class="err">/(</span><span class="-KernNotes">8gg</span><span class="err">\L</span>
-<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">8ff</span><span class="err">)\J</span>
-<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="err">(</span><span class="-KernNotes">8ff</span><span class="err">\L</span>
-<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">8ee</span><span class="err">)\J</span>
-<span class="-KernNotes">4c</span><span class="err">\</span><span class="w">                  </span><span class="-KernDot">.</span><span class="w">               </span><span class="err">(</span><span class="-KernNotes">8ee</span><span class="err">\L</span>
-<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">8dd</span><span class="err">)\J</span>
-<span class="-KernBar">=4                   =4              =4</span>
-<span class="-KernNotes">4G</span><span class="err">\)</span><span class="w">                 </span><span class="-KernNotes">4g</span><span class="err">])/</span><span class="w">           </span><span class="-KernNotes">4dd</span><span class="err">\</span>
-<span class="-KernNotes">4r</span><span class="w">                   </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="-KernNotes">4b</span><span class="err">\</span>
-<span class="-KernNotes">4r</span><span class="w">                   </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="-KernNotes">4g</span><span class="err">/</span>
-<span class="-KernBar">=5                   =5              =5</span>
-<span class="-KernNotes">4r</span><span class="w">                   </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="err">[</span><span class="-KernNotes">4ee</span><span class="err">\</span>
-<span class="-KernNotes">4c</span><span class="err">/</span><span class="w">                  </span><span class="-KernNotes">4g</span><span class="err">/</span><span class="w">             </span><span class="-KernNotes">8.ee</span><span class="err">]\L</span>
-<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">16ff</span><span class="err">\Jk</span>
-<span class="-KernNotes">4f</span><span class="err">/</span><span class="w">                  </span><span class="-KernNotes">4g</span><span class="err">/</span><span class="w">             </span><span class="-KernNotes">8.dd</span><span class="err">\L</span>
-<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">16ee</span><span class="err">\Jk</span>
-<span class="-KernBar">=6                   =6              =6</span>
-<span class="-KernNotes">4e</span><span class="err">/</span><span class="w">                  </span><span class="-KernNotes">4g</span><span class="err">/</span><span class="w">             </span><span class="-KernNotes">4cc</span><span class="err">\</span>
-<span class="-KernNotes">4r</span><span class="w">                   </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="-KernNotes">4ccc</span><span class="err">\</span>
-<span class="-KernNotes">4E</span><span class="err">\</span><span class="w">                  </span><span class="-KernNotes">4c</span><span class="err">\</span><span class="w">             </span><span class="-KernNotes">4ccc</span><span class="err">\</span>
-<span class="-KernBar">=7                   =7              =7</span>
-<span class="-KernNotes">4f</span><span class="err">\</span><span class="w">                  </span><span class="-KernNotes">4c</span><span class="err">\</span><span class="w">             </span><span class="-KernNotes">16gg#</span><span class="err">\LL</span>
-<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">16aa</span><span class="err">\JJ</span>
-<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">8r</span>
-<span class="-KernNotes">4r</span><span class="w">                   </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="-KernNotes">16ee</span><span class="err">\LL</span>
-<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">16ff</span><span class="err">\JJ</span>
-<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">8r</span>
-<span class="-KernNotes">4Gn</span><span class="err">\</span><span class="w">                 </span><span class="-KernNotes">4f</span><span class="err">\</span><span class="w">             </span><span class="-KernNotes">16dd</span><span class="err">\LL</span>
-<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">16b</span><span class="err">\JJ</span>
-<span class="-KernDot">.</span><span class="w">                    </span><span class="-KernDot">.</span><span class="w">               </span><span class="-KernNotes">8r</span>
-<span class="-KernBar">=8                   =8              =8</span>
-<span class="-KernNotes">4c</span><span class="err">\</span><span class="w">                  </span><span class="-KernNotes">4e</span><span class="err">\</span><span class="w">             </span><span class="-KernNotes">4cc</span><span class="err">\</span>
-<span class="-KernNotes">4r</span><span class="w">                   </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="-KernNotes">4r</span>
-<span class="-KernNotes">4r</span><span class="w">                   </span><span class="-KernNotes">4r</span><span class="w">              </span><span class="-KernNotes">4r</span>
-<span class="-KernBar">=:|                  </span><span class="err">!</span><span class="-KernBar">=:|            </span><span class="err">!</span><span class="-KernBar">=:|!</span>
-<span class="-KernExclusive">*-</span><span class="w">                   </span><span class="-KernExclusive">*-</span><span class="w">              </span><span class="-KernExclusive">*-</span>
+<div class="highlight-kern"><div class="highlight"><pre><span class="-KernExclusive">**kern</span><span class="-KernTab">	</span><span class="-KernExclusive">**kern</span><span class="-KernTab">	</span><span class="-KernExclusive">**kern</span>
+<span class="-KernExclusive">*staff2</span><span class="-KernTab">	</span><span class="-KernExclusive">*staff2</span><span class="-KernTab">	</span><span class="-KernExclusive">*staff1</span>
+<span class="-KernExclusive">*clefG2</span><span class="-KernTab">	</span><span class="-KernExclusive">*clefG2</span><span class="-KernTab">	</span><span class="-KernExclusive">*clefG2</span>
+<span class="-KernExclusive">*k[]</span><span class="-KernTab">	</span><span class="-KernExclusive">*k[]</span><span class="-KernTab">	</span><span class="-KernExclusive">*k[]</span>
+<span class="-KernExclusive">*M3/4</span><span class="-KernTab">	</span><span class="-KernExclusive">*M3/4</span><span class="-KernTab">	</span><span class="-KernExclusive">*M3/4</span>
+<span class="-KernBar">=1-	=1-	=1-</span>
+<span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="err">[</span><span class="-KernNotes">4ee</span><span class="err">\</span>
+<span class="-KernNotes">4c</span><span class="err">/</span><span class="-KernTab">	</span><span class="-KernNotes">4g</span><span class="err">/</span><span class="-KernTab">	</span><span class="-KernNotes">8.ee</span><span class="err">]\L</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">16ff</span><span class="err">\Jk</span>
+<span class="-KernNotes">4f</span><span class="err">/</span><span class="-KernTab">	</span><span class="-KernNotes">4g</span><span class="-KernTab">	</span><span class="-KernNotes">8.dd</span><span class="err">\L</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">16ee</span><span class="err">\Jk</span>
+<span class="-KernBar">=2	=2	=2</span>
+<span class="-KernNotes">4e</span><span class="err">/</span><span class="-KernTab">	</span><span class="-KernNotes">4g</span><span class="err">/</span><span class="-KernTab">	</span><span class="-KernNotes">4cc</span><span class="err">\</span>
+<span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="-KernNotes">4gg</span><span class="err">/</span>
+<span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="-KernNotes">4gg</span><span class="err">/</span>
+<span class="-KernBar">=3	=3	=3</span>
+<span class="err">(</span><span class="-KernNotes">2B</span><span class="err">\</span><span class="-KernTab">	</span><span class="err">([</span><span class="-KernNotes">2.g</span><span class="err">/</span><span class="-KernTab">	</span><span class="err">(</span><span class="-KernNotes">8gg</span><span class="err">\L</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8ff</span><span class="err">)\J</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="err">(</span><span class="-KernNotes">8ff</span><span class="err">\L</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8ee</span><span class="err">)\J</span>
+<span class="-KernNotes">4c</span><span class="err">\</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="err">(</span><span class="-KernNotes">8ee</span><span class="err">\L</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8dd</span><span class="err">)\J</span>
+<span class="-KernBar">=4	=4	=4</span>
+<span class="-KernNotes">4G</span><span class="err">\)</span><span class="-KernTab">	</span><span class="-KernNotes">4g</span><span class="err">])/</span><span class="-KernTab">	</span><span class="-KernNotes">4dd</span><span class="err">\</span>
+<span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="-KernNotes">4b</span><span class="err">\</span>
+<span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="-KernNotes">4g</span><span class="err">/</span>
+<span class="-KernBar">=5	=5	=5</span>
+<span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="err">[</span><span class="-KernNotes">4ee</span><span class="err">\</span>
+<span class="-KernNotes">4c</span><span class="err">/</span><span class="-KernTab">	</span><span class="-KernNotes">4g</span><span class="err">/</span><span class="-KernTab">	</span><span class="-KernNotes">8.ee</span><span class="err">]\L</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">16ff</span><span class="err">\Jk</span>
+<span class="-KernNotes">4f</span><span class="err">/</span><span class="-KernTab">	</span><span class="-KernNotes">4g</span><span class="err">/</span><span class="-KernTab">	</span><span class="-KernNotes">8.dd</span><span class="err">\L</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">16ee</span><span class="err">\Jk</span>
+<span class="-KernBar">=6	=6	=6</span>
+<span class="-KernNotes">4e</span><span class="err">/</span><span class="-KernTab">	</span><span class="-KernNotes">4g</span><span class="err">/</span><span class="-KernTab">	</span><span class="-KernNotes">4cc</span><span class="err">\</span>
+<span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="-KernNotes">4ccc</span><span class="err">\</span>
+<span class="-KernNotes">4E</span><span class="err">\</span><span class="-KernTab">	</span><span class="-KernNotes">4c</span><span class="err">\</span><span class="-KernTab">	</span><span class="-KernNotes">4ccc</span><span class="err">\</span>
+<span class="-KernBar">=7	=7	=7</span>
+<span class="-KernNotes">4f</span><span class="err">\</span><span class="-KernTab">	</span><span class="-KernNotes">4c</span><span class="err">\</span><span class="-KernTab">	</span><span class="-KernNotes">16gg#</span><span class="err">\LL</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">16aa</span><span class="err">\JJ</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8r</span>
+<span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="-KernNotes">16ee</span><span class="err">\LL</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">16ff</span><span class="err">\JJ</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8r</span>
+<span class="-KernNotes">4Gn</span><span class="err">\</span><span class="-KernTab">	</span><span class="-KernNotes">4f</span><span class="err">\</span><span class="-KernTab">	</span><span class="-KernNotes">16dd</span><span class="err">\LL</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">16b</span><span class="err">\JJ</span>
+<span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernDot">.</span><span class="-KernTab">	</span><span class="-KernNotes">8r</span>
+<span class="-KernBar">=8	=8	=8</span>
+<span class="-KernNotes">4c</span><span class="err">\</span><span class="-KernTab">	</span><span class="-KernNotes">4e</span><span class="err">\</span><span class="-KernTab">	</span><span class="-KernNotes">4cc</span><span class="err">\</span>
+<span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="-KernNotes">4r</span>
+<span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="-KernNotes">4r</span><span class="-KernTab">	</span><span class="-KernNotes">4r</span>
+<span class="-KernBar">=:|!	=:|!	=:|!</span>
+<span class="-KernExclusive">*-</span><span class="-KernTab">	</span><span class="-KernExclusive">*-</span><span class="-KernTab">	</span><span class="-KernExclusive">*-</span>
 </pre></div>
 </div>
 <p>Slurs are evident in the third measure. Open and closed slurs are represented
@@ -568,7 +569,7 @@ spine. <em>Global comments</em> by contrast completely ignore the spines.</p>
 </div>
 <div class="section" id="reference-records">
 <h2>Reference Records<a class="headerlink" href="#reference-records" title="Permalink to this headline">¶</a></h2>
-<p>A particularly important type of global comment is the <a href="#id19"><span class="problematic" id="id20">`*reference record.*`_</span></a>
+<p>A particularly important type of global comment is the <a href="#id15"><span class="problematic" id="id16">`*reference record.*`_</span></a>
 Reference records are formal ways of encoding &#8220;library-type&#8221; information
 pertaining to a Humdrum document. Reference records provide standardized ways
 of encoding bibliographic information &#8211; suitable for computer-based access.</p>
@@ -640,7 +641,7 @@ interpretive and often open to disagreement. Nevertheless, explicit analytic
 information often proves useful in electronic documents.</p>
 <p>An especially useful analytic reference record is the AIN &#8216; record for
 encoding instrumentation. This reference record follows a strict syntax. Each
-instrument has an official Humdrum abbrevation. <a href="#id21"><span class="problematic" id="id22">`**Appendix II**`_</span></a> identifies
+instrument has an official Humdrum abbrevation. <a href="#id17"><span class="problematic" id="id18">`**Appendix II**`_</span></a> identifies
 a number of the more common instrument codes. Instrumentation reference
 records always specify the instrumentation in alphabetical order by
 instrument abbrevation separated by a single space. For example, the
@@ -659,7 +660,7 @@ can be used to encode core information for common musical scores; **kern
 is used to represent <em>functional</em> information rather than <em>orthographic</em>
 (visual) information. In <a class="reference external" href="../ch06">Chapter 6</a> an expanded description of **kern
 will be given that includes a much wider variety of concepts and situations
-than we have encountered in this chapter. <a href="#id23"><span class="problematic" id="id24">`**Appendices I**`_</span></a> and <a href="#id25"><span class="problematic" id="id26">`**II**`_</span></a>
+than we have encountered in this chapter. <a href="#id19"><span class="problematic" id="id20">`**Appendices I**`_</span></a> and <a href="#id21"><span class="problematic" id="id22">`**II**`_</span></a>
 provide expanded information pertaining to Reference Records.</p>
 <p>Although we have only demonstrated the encoding of fairly simple information,
 we can already begin processing such data in musically useful ways. In the
