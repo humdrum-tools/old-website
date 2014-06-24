@@ -24,6 +24,10 @@ Consider the opening motive from J.S. Bach's *Art of Fugue* shown in Example
 .. literalinclude:: examples/ex2-1.krn 
 	:language: kern
 
+.. image:: examples/ex2-1b.svg
+	:align: center
+	:width: 75%
+
 
 In general, \*\*kern is intended to represent the underlying *functional*
 information conveyed by a musical score rather than the visual or
