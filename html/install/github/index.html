@@ -522,11 +522,8 @@ like this:</p>
 /usr/local/humdrum-tools/humextra/bin
 </pre></div>
 </div>
-<div class="line-block">
-<div class="line">You can also use the <tt class="docutils literal"><span class="pre">which</span></tt> command to see where a command is</div>
-</div>
-<p>located.
-| If the humdrum-tools command paths are set up correctly, then the
+<p>You can also use the <tt class="docutils literal"><span class="pre">which</span></tt> command to see where a command is
+located. If the humdrum-tools command paths are set up correctly, then the
 following commands:</p>
 <div class="code bash highlight-bash"><div class="highlight"><pre>which key
 which keycor
@@ -587,10 +584,12 @@ make update     <span class="c"># Download any updates from GitHub.</span>
 make            <span class="c"># Re-compile the programs.</span>
 </pre></div>
 </div>
-<p>If you make changes to the files in the humdrum-tools directory, the
-above commands may complain if the same file has been updated in the
-repository. Type <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> to see what files have been locally
-modified or added since you did the last update or download.</p>
+<p><tt class="docutils literal"><span class="pre">make</span> <span class="pre">update</span></tt> will download any new changes, and <tt class="docutils literal"><span class="pre">make</span></tt> will
+recompile the programs.  If you make changes to the files in the
+humdrum-tools directory, the above commands may complain if the
+same file has been updated in the repository. Type <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt>
+to see what files have been locally modified or added since you did
+the last update or download.</p>
 <p>If you want to keep local changes but still update, try these commands:</p>
 <div class="code bash highlight-bash"><div class="highlight"><pre><span class="nb">cd</span> <span class="sb">`</span>which mint | sed <span class="s1">&#39;s/humdrum\/bin\/mint$//&#39;</span><span class="sb">`</span>
 git stash

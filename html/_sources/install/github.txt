@@ -372,25 +372,25 @@ like this:
     /usr/local/humdrum-tools/humdrum/bin
     /usr/local/humdrum-tools/humextra/bin
 
-| You can also use the ``which`` command to see where a command is
-located.
-| If the humdrum-tools command paths are set up correctly, then the
+You can also use the ``which`` command to see where a command is
+located. If the humdrum-tools command paths are set up correctly, then the
 following commands:
 
 .. code:: bash
 
-       which key
-       which keycor
+	which key
+	which keycor
 
 should reply something like this:
 
 ::
 
-    /usr/local/humdrum-tools/humdrum/bin/key
-    /usr/local/humdrum-tools/humextra/bin/keycor
+    	/usr/local/humdrum-tools/humdrum/bin/key
+	/usr/local/humdrum-tools/humextra/bin/keycor
 
 This implies that the PATH variable contains the correct two ``bin``
 directories for using humdrum-tools.
+
 
 Testing
 -------
@@ -446,10 +446,12 @@ updated to the most recent versions by typing these commands:
        make update     # Download any updates from GitHub.
        make            # Re-compile the programs.
 
-If you make changes to the files in the humdrum-tools directory, the
-above commands may complain if the same file has been updated in the
-repository. Type ``git status`` to see what files have been locally
-modified or added since you did the last update or download.
+``make update`` will download any new changes, and ``make`` will
+recompile the programs.  If you make changes to the files in the
+humdrum-tools directory, the above commands may complain if the
+same file has been updated in the repository. Type ``git status``
+to see what files have been locally modified or added since you did
+the last update or download.
 
 If you want to keep local changes but still update, try these commands:
 
