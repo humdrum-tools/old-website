@@ -223,32 +223,23 @@ sounded for each pitch:
 +---------+----------+--------+---------+--------+--------+--------+--------+--------+-------+
 
 
-
 Table 1.2 shows another example where different kinds of information are
 combined in the same table. Here the last column represents a combination of
 trumpet valves:
 
 **Table 1.2**
 
-+-------------+---------------+---------------+-----------------------+       
-|             | **Pitch**     | **Duration**  | **Valve Combination** |
-+=============+===============+===============+=======================+       
-| 1st note    | C4            | Quarter       | 0                     |
-+-------------+---------------+---------------+-----------------------+       
-| 2nd note    | B3            | Eighth        | 2                     |
-+-------------+---------------+---------------+-----------------------+       
-| 3rd note    | G4            | Eighth        | 0                     |
-+-------------+---------------+---------------+-----------------------+       
-| 4th note    | F4            | Eighth        | 1                     |
-+-------------+---------------+---------------+-----------------------+       
-| 5th note    | G4            | Eighth        | 0                     |
-+-------------+---------------+---------------+-----------------------+       
-| 6th note    | A4            | Quarter       | 1-2                   |
-+-------------+---------------+---------------+-----------------------+       
-| 7th note    | G4            | Eighth        | 0                     |
-+-------------+---------------+---------------+-----------------------+       
-| 8th note    | Ab4           | Quarter       | 2-3                   |
-+-------------+---------------+---------------+-----------------------+       
+.. csv-table::
+	:header: "", Pitch, Duration, Valve combination
+
+	1st note,   C4  ,  Quarter ,   0
+	2nd note,   B3  ,  Eighth  ,   2
+	3rd note,   G4  ,  Eighth  ,   0
+	4th note,   F4  ,  Eighth  ,   1
+	5th note,   G4  ,  Eighth  ,   0
+	6th note,   A4  ,  Quarter ,   1--2
+	7th note,   G4  ,  Eighth  ,   0
+	8th note,   Ab4 ,  Quarter ,   2--3
 
 Humdrum representations can be very similar to the data shown in Tables 1.1
 and 1.2. With just a few formatting changes, either table can be transformed

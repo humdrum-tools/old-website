@@ -17,7 +17,7 @@ transfer onto this website, you can vew the original HTML documentation
 
 
 What is Humdrum?
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 Humdrum is a set of command-line tools that facilitates musical 
 analysis. Because it's a set of command-line tools, 
@@ -29,13 +29,17 @@ and it has been used steadily for decades.
 We will be updating the site soon to include
 a list of studies and publications that have used the toolkit. 
 
+
+Documentation
+~~~~~~~~~~~~~
+
 ..	Getting Started
 	-------------------
 
 ..	toctree::
 	:maxdepth: 2
 
-	installationguide/index
+	install/index
 
 
 

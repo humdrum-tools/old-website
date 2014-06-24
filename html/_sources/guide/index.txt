@@ -1,7 +1,6 @@
-*The Humdrum User Guide*
-=================================
-
-
+======================
+The Humdrum User Guide
+======================
 
 .. toctree::
    :maxdepth: 3
