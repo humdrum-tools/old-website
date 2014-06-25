@@ -67,7 +67,19 @@ release = '1'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build']
+exclude_patterns = [
+	'_build',
+	'humextra/data.rstd',
+	'humextra/harmony.rstd',
+	'humextra/intro.rstd',
+	'humextra/melody.rstd',
+	'humextra/midi.rstd',
+	'humextra/notation.rstd',
+	'humextra/other.rstd',
+	'humextra/programming.rstd',
+	'humextra/rhythm.rstd',
+	'humextra/searching.rstd'
+]
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None

@@ -46,7 +46,7 @@ publish:
 	(cd ..; $(MAKE) publish)
 
 clean:
-	-rm -rf $(BUILDDIR)/*
+	(cd ..; $(MAKE) clean)
 
 html: dirhtml
 oldhtml:

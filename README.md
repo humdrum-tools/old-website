@@ -120,4 +120,32 @@ https://github.com/snide/sphinx_rtd_theme .
 	sudo pip install sphinx_rtd_theme
 ```
 
+[Pygments](http://pygments.org) is needed in order to add syntax highlighting:
+
+```bash
+	sudo pip install pygments
+```
+
+[Pandoc](http:) is useful for converting content files into 
+RST format used in Sphinx:
+
+```bash
+	brew install pandoc     # with Homebrew in OS X
+	yum install pandoc	# in linux
+	apt-get install pandoc  # alternate method in linux
+```
+
+Example conversions, where ```-f``` means *from* and ```-t``` means *to*:
+
+```bash
+	# Covert HTML files into rst files:
+	pandoc -f html -t rst file.html > file.rst
+
+	# Covert Wikipedia wiki files into rst files:
+	pandoc -f mediawiki -t rst file.wiki > file.rst
+```
+
+
+
+
 

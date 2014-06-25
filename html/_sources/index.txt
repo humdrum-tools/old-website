@@ -59,7 +59,7 @@ Documentation
 ..	toctree::
 	:maxdepth: 2
 
-	extras/index
+	humextra/index
 
 
 

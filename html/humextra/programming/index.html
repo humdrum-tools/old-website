@@ -1,0 +1,2641 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Humdrum Extras Programming Tutorial &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../"/>
+        <link rel="up" title="Humdrum Extras" href="../"/>
+        <link rel="next" title="The Humdrum Cookbook" href="../../cookbook/"/>
+        <link rel="prev" title="Other Useful Tools" href="../other/"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">Humdrum Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../install/github/">Installing Humdrum Tools from GitHub</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/">The Humdrum User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch01/">Chapter 1: Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch02/">Chapter 2: Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch03/">Chapter 3: Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch04/">Chapter 4:Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch05/">Chapter 5: The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch06/">Chapter 6: Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch07/">Chapter 7: MIDI Output Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch08/">Chapter 8: The Shell (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch09/">Chapter 9: Searching with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch10/">Chapter 10: Musical Uses of Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch11/">Chapter 11: Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch12/">Chapter 12: Selecting Musical Parts and Passages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch13/">Chapter 13: Assembling Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch14/">Chapter 14: Stream Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch15/">Chapter 15: Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch16/">Chapter 16: The Shell (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch17/">Chapter 17: Creating Inventories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch18/">Chapter 18: Fingers, Footsteps and Frets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch19/">Chapter 19: Musical Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch20/">Chapter 20: Strophes, Verses, and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch21/">Chapter 21: Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch22/">Chapter 22: Classifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch23/">Chapter 23: Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch24/">Chapter 24: The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch25/">Chapter 25: Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch26/">Chapter 26: Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch27/">Chapter 27: Text and Lyrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch29/">Chapter 29: Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch30/">Chapter 30:MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch31/">Chapter 31: Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch32/">Chapter 32: The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch34/">Chapter 34: Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch35/">Chapter 35: Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch37/">Chapter 37: Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch38/">Chapter 38: Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch39/">Chapter 39: Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch40/">Chapter 40: Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/bibliography/">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/commands.more/">Supplementary Humdrum Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/commands.toc/">Humdrum Command Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/humdrum.problems/">HUMDRUM PROBLEMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/linux.perform/">Installing and Using the Humdrum &#8220;perform&#8221; Command under Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/manual.bibliog/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/manual.bibliog/#bibliography">Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/manual07/">Humdrum Developer&#8217;s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/manual07a/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/manual07a/#humdrum-representation-development">Humdrum Representation Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/manual07a/#representation-assumptions">Representation Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/manual07a/#creating-new-humdrum-representations">Creating New Humdrum Representations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/manual07a/#defining-a-new-humdrum-interpretation-a-sample-problem">Defining a New Humdrum Interpretation: A Sample Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/manual07b/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/manual07b/#humdrum-software-development">Humdrum Software Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/manual07b/#standard-program-skeleton">Standard Program Skeleton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/musedata2kern/"><em>Development Reference</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/musedata2kern/#how-to-translate-musedata-files-to-humdrum">How To Translate MuseData Files to Humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/musedata2kern/#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/projects/">Sample Research Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/representations.toc/">Humdrum Representation Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/resources/">Online Resources:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/sample.problems/">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../">Humdrum Extras</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../intro/">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/">Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../melody/">Melody Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../harmony/">Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rhythm/">Rhythm Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../searching/">Music Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../midi/">MIDI Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notation/">Graphical Musical Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../other/">Other Useful Tools</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Humdrum Extras Programming Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cookbook/">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cookbook/vimHighlighting/">Syntax Coloring in Vim</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../referencemanual/">Humdrum Reference Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../referencemanual/assemble/">Assemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../referencemanual/hint/">hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../referencemanual/mint/">mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../referencemanual/key/">key</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../">Docs</a> &raquo;</li>
+      
+          <li><a href="../">Humdrum Extras</a> &raquo;</li>
+      
+    <li>Humdrum Extras Programming Tutorial</li>
+      <li class="wy-breadcrumbs-aside">
+        
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="humdrum-extras-programming-tutorial">
+<h1>Humdrum Extras Programming Tutorial<a class="headerlink" href="#humdrum-extras-programming-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>This chapter demonstrates how to write programs using the C++ library for
+parsing Humdrum Files, which forms the basis of the Humdrum Extras tools.</p>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>First, you should install
+<a class="reference external" href="https://www.github.com/craigsapp/humextra">Humdrum Extras</a>
+or the
+<a class="reference external" href="https://www.github.com/humdrum-tools/humdrum-tools">humdrum-tools</a>
+meta repository which includes Humdrum Extras.  Instructions for
+installing humdrum-tools are given <a class="reference external" href="../../install/github">here</a>.</p>
+<p>Once Humdrum Extras has been installed (and you know where it is located),
+you can place your program source code into the <tt class="docutils literal"><span class="pre">humextra/src-programs</span></tt>
+directory.  If the file is called <tt class="docutils literal"><span class="pre">humextra/src-programs/myprogram.cpp</span></tt>,
+then you can type this command within the humextra directory to compile it:</p>
+<div class="code bash highlight-bash"><div class="highlight"><pre>make myprogram
+</pre></div>
+</div>
+<p>If there are no compiling errors, then the compiled program will be
+<tt class="docutils literal"><span class="pre">humextra/bin/myprogram</span></tt>.  If you have set up the PATH environment
+variable for Humdrum Extras, you should be able to use the program from
+any directory; otherwise, in the <tt class="docutils literal"><span class="pre">humextra</span></tt> directory, you can type
+<tt class="docutils literal"><span class="pre">bin/myprogram</span></tt> to run it.</p>
+</div>
+<div class="section" id="tutorial">
+<h2>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h2>
+<p>Here are a set of graduated programming examples which can be used as a
+starting point for writing your own programs.</p>
+<div class="section" id="basic-data-access">
+<h3>Basic data access<a class="headerlink" href="#basic-data-access" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="humecho-cpp-echo-input-data-to-output">
+<h4>humecho.cpp (Echo input data to output)<a class="headerlink" href="#humecho-cpp-echo-input-data-to-output" title="Permalink to this headline">¶</a></h4>
+<p>Below is a very simple C++ program called <tt class="docutils literal"><span class="pre">humecho.cpp</span></tt> that uses the
+main Humdrum file parser of the Humdrum Extras library to read and write a
+Humdrum file:</p>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include &quot;humdrum.h&quot;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">HumdrumFile</span> <span class="n">hfile</span><span class="p">;</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">hfile</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+   <span class="k">else</span> <span class="n">hfile</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">);</span>
+   <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">hfile</span><span class="p">;</span>
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>This program takes one Humdrum file as an argument (or standard
+input if no filename given) and echos the contents of the Humdrum
+file to standard output.  The declaration <tt class="code cpp docutils literal"><span class="name"><span class="pre">HumdrumFile</span></span> <span class="name"><span class="pre">hfile</span></span><span class="punctuation"><span class="pre">;</span></span></tt>
+on line&nbsp;3 creates
+a variable called <tt class="docutils literal"><span class="pre">hfile</span></tt> that is a <tt class="docutils literal"><span class="pre">HumdrumFile</span></tt> object.
+The program then chooses where to read data from on lines&nbsp;4&#8211;5:
+if there is at least one command-line argument, it will read data
+from that filename; otherwise, it will read data from standard input.
+Once the <tt class="docutils literal"><span class="pre">hfile</span></tt> variable has read some content, it immediately prints
+it to standard output on the
+line&nbsp;6: <tt class="code cpp docutils literal"><span class="name"><span class="pre">std</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">cout</span></span> <span class="operator"><span class="pre">&lt;&lt;</span></span> <span class="name"><span class="pre">hfile</span></span><span class="punctuation"><span class="pre">;</span></span></tt>.</p>
+<p>To compile this program using the Humdrum Extras makefiles, place
+<tt class="docutils literal"><span class="pre">humecho.cpp</span></tt> in the directory <tt class="docutils literal"><span class="pre">humextra/src-programs</span></tt>, and
+then type <tt class="docutils literal"><span class="pre">make</span> <span class="pre">humecho</span></tt> in the <tt class="docutils literal"><span class="pre">humextra</span></tt> directory. The
+compiled program will be placed in <tt class="docutils literal"><span class="pre">bin/humecho</span></tt>.  The <tt class="docutils literal"><span class="pre">humecho</span></tt>
+program can access input data in several ways, including downloading
+from the web, or using the humdrum:// URI (or hum:// or h://
+abbreviations):</p>
+<div class="code bash highlight-bash"><div class="highlight"><pre>cat file.krn | bin/humecho           <span class="c"># standard input</span>
+bin/humecho file.krn                 <span class="c"># command-line argument</span>
+bin/humecho h://wtc/wtc1f01.krn      <span class="c"># humdrum:// URI</span>
+bin/humecho jrp://Jos2721            <span class="c"># jrp:// URI</span>
+bin/humecho http://y.z.com/file.krn  <span class="c"># hypothetical URL for a Humdrum file</span>
+</pre></div>
+</div>
+<p>Try compiling <tt class="docutils literal"><span class="pre">humecho.cpp</span></tt> and then process various local and
+remote Humdrum data files with the compiled program.  If the PATH
+environment variable contains the Humdrum Extras bin directory,
+then you can omit the <tt class="docutils literal"><span class="pre">bin/</span></tt> prefix when running humecho.  For
+long files, you can pipe the standard output from <tt class="docutils literal"><span class="pre">humecho</span></tt> into
+the unix command <tt class="docutils literal"><span class="pre">less</span></tt> (typing <tt class="docutils literal"><span class="pre">q</span></tt> to exit from <tt class="docutils literal"><span class="pre">less</span></tt>):</p>
+<div class="code bash highlight-bash"><div class="highlight"><pre>humecho h://371chorales/chor001.krn | less
+</pre></div>
+</div>
+</div>
+<div class="section" id="humecho2-cpp-accessing-individual-lines">
+<h4>humecho2.cpp (Accessing individual lines)<a class="headerlink" href="#humecho2-cpp-accessing-individual-lines" title="Permalink to this headline">¶</a></h4>
+<p>The <tt class="docutils literal"><span class="pre">humecho</span></tt> program shows how to access the datafile in its
+entirety. The following source code for <tt class="docutils literal"><span class="pre">humecho2.cpp</span></tt> demonstrates
+how to access lines in the file individually. A HumdrumFile class
+essentially consists of an array of <a class="reference external" href="http://extras.humdrum.org/download/humextra/include/HumdrumRecord.h">HumdrumRecord</a>
+class objects.</p>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include &quot;humdrum.h&quot;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">HumdrumFile</span> <span class="n">hfile</span><span class="p">;</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="n">hfile</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span> <span class="p">}</span>
+   <span class="k">else</span> <span class="n">hfile</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">cin</span><span class="p">);</span>
+<span class="hll">   <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">hfile</span><span class="p">.</span><span class="n">getNumLines</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="hll">      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">hfile</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class="hll">   <span class="p">}</span>
+</span>   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>The highlighted lines&nbsp;8&#8211;10 in <tt class="docutils literal"><span class="pre">humecho2.cpp</span></tt> replace this single
+line from <tt class="docutils literal"><span class="pre">humecho.cpp</span></tt>:</p>
+<div class="highlight-cpp"><div class="highlight"><pre>   <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="n">hfile</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>The added for-loop accesses each data line of the input file and
+prints it individually to standard output.  Notice that the <tt class="docutils literal"><span class="pre">[]</span></tt>
+operator returns a HumdrumRecord object which stores the content
+of one line in a Humdrum file.</p>
+<p>The <tt class="code cpp docutils literal"><span class="name"><span class="pre">hfile</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">getNumLines</span></span><span class="punctuation"><span class="pre">()</span></span></tt> member function returns the number
+data records in the Humdrum file stored in the hfile variable, so
+the for-loop iterates through each line in the file from the first
+at index 0, to the last at <tt class="code cpp docutils literal"><span class="name"><span class="pre">hfile</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">getNumLines</span></span><span class="punctuation"><span class="pre">()</span></span><span class="operator"><span class="pre">-</span></span><span class="literal number integer"><span class="pre">1</span></span></tt>.</p>
+</div>
+<div class="section" id="humecho3-cpp-accessing-humdrumrecord-fields">
+<h4>humecho3.cpp (Accessing HumdrumRecord fields)<a class="headerlink" href="#humecho3-cpp-accessing-humdrumrecord-fields" title="Permalink to this headline">¶</a></h4>
+<p>An even more verbose version of <tt class="docutils literal"><span class="pre">humecho</span></tt> is given below. The
+<tt class="docutils literal"><span class="pre">humecho3</span></tt> program further expands access to the data as a
+two-dimensial grid, matching the spreadsheet-like arrangement of
+data in Humdrum files.  Each line of a HumdrumFile object consists
+of HumdrumRecord objects.  These in turn consist of a list of data
+fields, called <em>tokens</em> in Humdrum parlance.  The
+<tt class="docutils literal"><span class="pre">HumdrumRecord::getFieldCount()</span></tt> function returns the number of
+fields on the line.  For global comments, reference records and
+blank-line records, the field count is always 1.  For local comments,
+interpretations and data records, the field count is equivalent to
+the number of tab-separated values (<a class="reference external" href="http://en.wikipedia.org/wiki/Tab-separated_values">TSV</a>) on the line,
+so <tt class="docutils literal"><span class="pre">.getFieldCount()</span></tt> will return a count one larger than the
+number of tabs on the line for those types of data records.</p>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include &quot;humdrum.h&quot;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">HumdrumFile</span> <span class="n">hfile</span><span class="p">;</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="n">hfile</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span> <span class="p">}</span>
+   <span class="k">else</span> <span class="p">{</span> <span class="n">hfile</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">cin</span><span class="p">);</span> <span class="p">}</span>
+   <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">hfile</span><span class="p">.</span><span class="n">getNumLines</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="hll">      <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\t</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">hfile</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+</span><span class="hll">      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">hfile</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">getFieldCount</span><span class="p">();</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="hll">         <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\t</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">hfile</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class="hll">      <span class="p">}</span>
+</span><span class="hll">      <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span>   <span class="p">}</span>
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>The ostream output of the HumdrumRecord is now replaced by the
+highlighted lines of code on lines&nbsp;9&#8211;13.  HumdrumRecords
+always contain at least one field, so the code &#8220;<tt class="docutils literal"><span class="pre">cout</span> <span class="pre">&lt;&lt;</span> <span class="pre">hfile[i][0];</span></tt>&#8221; will never cause an invalid array access in any situation.  Both
+<tt class="docutils literal"><span class="pre">[]</span></tt> operators used on the <tt class="docutils literal"><span class="pre">hfile</span></tt> variable (first to access a
+<tt class="docutils literal"><span class="pre">HumdrumRecord</span></tt>, and the second for a <tt class="docutils literal"><span class="pre">const</span> <span class="pre">char*</span></tt>) are always
+checked for a valid range, and the program will exit with an error
+if an out-of-range value is requested.</p>
+<p>Note that <tt class="docutils literal"><span class="pre">hfile[i][j]</span></tt> is a <tt class="docutils literal"><span class="pre">const</span> <span class="pre">char*</span></tt> and not a <tt class="docutils literal"><span class="pre">char*</span></tt>. If
+you want to change the contents of a field, you would have to use
+<tt class="docutils literal"><span class="pre">hfile[i].changeField(j,</span> <span class="pre">&quot;new</span> <span class="pre">string&quot;)</span></tt>.</p>
+</div>
+<div class="section" id="humdrumrecord-line-types">
+<h4>HumdrumRecord line types<a class="headerlink" href="#humdrumrecord-line-types" title="Permalink to this headline">¶</a></h4>
+<p>Each HumdrumRecord line in a HumdrumFile class possesses an enumerated
+type:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Enumeration constant</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>E_humrec_data</td>
+<td>data lines other than measure</td>
+</tr>
+<tr class="row-odd"><td>E_humrec_data_measure</td>
+<td>line starting with <tt class="docutils literal"><span class="pre">=</span></tt></td>
+</tr>
+<tr class="row-even"><td>E_humrec_interpretation</td>
+<td>line starting with <tt class="docutils literal"><span class="pre">*</span></tt></td>
+</tr>
+<tr class="row-odd"><td>E_humrec_bibliography</td>
+<td>reference records of the form <tt class="docutils literal"><span class="pre">!!!key:</span> <span class="pre">value</span></tt></td>
+</tr>
+<tr class="row-even"><td>E_humrec_global_comment</td>
+<td>starts with <tt class="docutils literal"><span class="pre">!!</span></tt>, other than reference records</td>
+</tr>
+<tr class="row-odd"><td>E_humrec_local_comment</td>
+<td>local comment, starting with single <tt class="docutils literal"><span class="pre">!</span></tt></td>
+</tr>
+<tr class="row-even"><td>E_humrec_empty</td>
+<td>empty line</td>
+</tr>
+</tbody>
+</table>
+<p>Use the HumdrumRecord::getType() function to access the type of a line.
+These type values can be used for <tt class="docutils literal"><span class="pre">switch</span></tt> statements, but for better
+code readability, the following helper HumdrumRecord functions interface
+uitd these enumerations:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">HumdrumRecord method</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>.isData()</td>
+<td>true if data (other than barline).</td>
+</tr>
+<tr class="row-odd"><td>.isMeasure()</td>
+<td>true if barline (line starts with <tt class="docutils literal"><span class="pre">=</span></tt>).</td>
+</tr>
+<tr class="row-even"><td>.isInterpretation()</td>
+<td>true if line starts with <tt class="docutils literal"><span class="pre">*</span></tt>.</td>
+</tr>
+<tr class="row-odd"><td>.isBibliographic()</td>
+<td>true if in the form of <tt class="docutils literal"><span class="pre">!!!key:</span> <span class="pre">value</span></tt>.</td>
+</tr>
+<tr class="row-even"><td>.isGlobalComment()</td>
+<td>true if line starts with <tt class="docutils literal"><span class="pre">!!</span></tt> and not bib.</td>
+</tr>
+<tr class="row-odd"><td>.isLocalComment()</td>
+<td>true if line starts with one <tt class="docutils literal"><span class="pre">!</span></tt>.</td>
+</tr>
+<tr class="row-even"><td>.isEmpty()</td>
+<td>true if nothing on line.</td>
+</tr>
+</tbody>
+</table>
+<p>In addition there are a few composite tests for line types:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">HumdrumRecord method</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>.isComment()</td>
+<td>isBibliographic() or isGlobalComment() or isLocalComment()</td>
+</tr>
+<tr class="row-odd"><td>.isTandem()</td>
+<td>Interpretation lines which contain only spine manipulators (<em>+, *-, *^, *v, *x, or exclusive interpretations (starting with *</em>).</td>
+</tr>
+<tr class="row-even"><td>.isNull()</td>
+<td>isData() and all fields are <tt class="docutils literal"><span class="pre">.</span></tt> (null token), or isInterpretation() and all fields are <tt class="docutils literal"><span class="pre">*</span></tt>.</td>
+</tr>
+<tr class="row-odd"><td>.hasSpines()</td>
+<td>isData() or isMeasure() or isLocalComment() or isInterpretation()</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="rid-gli-remove-all-lines-except-for-data-lines">
+<h4>&#8220;rid -GLI&#8221; (Remove all lines except for data lines)<a class="headerlink" href="#rid-gli-remove-all-lines-except-for-data-lines" title="Permalink to this headline">¶</a></h4>
+<p>The Humdrum Tool <tt class="docutils literal"><span class="pre">rid</span></tt> with the <tt class="docutils literal"><span class="pre">-GLI</span></tt> options can be implemented
+using the following C++ program:</p>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include &quot;humdrum.h&quot;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">HumdrumFile</span> <span class="n">hfile</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+   <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">hfile</span><span class="p">.</span><span class="n">getNumLines</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">hfile</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">isData</span><span class="p">()</span> <span class="o">||</span> <span class="n">hfile</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">isMeasure</span><span class="p">()))</span> <span class="k">continue</span><span class="p">;</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">hfile</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>The above code will only print lines which are data or barlines. The
+official Humdrum file specification does not technically distinguish
+between barlines and data, but in practice and from a logical point of
+view they must be separated. So when using the Humdrum Extras C++ parser
+for Humdrum files, a line of data should not contain a mixture of data
+(or null tokens) and barlines.</p>
+</div>
+<div class="section" id="rid-glid-remove-comments-interpretations-and-null-data">
+<h4>&#8220;rid -GLId&#8221; (Remove comments, interpretations and null data)<a class="headerlink" href="#rid-glid-remove-comments-interpretations-and-null-data" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include &quot;humdrum.h&quot;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">HumdrumFile</span> <span class="n">hfile</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+   <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">hfile</span><span class="p">.</span><span class="n">getNumLines</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">hfile</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">isData</span><span class="p">()</span> <span class="o">||</span> <span class="n">hfile</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">isMeasure</span><span class="p">()))</span> <span class="k">continue</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">hfile</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">isNull</span><span class="p">())</span> <span class="k">continue</span><span class="p">;</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">hfile</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>The <tt class="docutils literal"><span class="pre">HumdrumRecord::isNull()</span></tt> function returns true if all fields
+in the record are equal to the string &#8221;.&#8221; (called a null token in
+Humdrum terminology—not related to a NULL pointer in C).</p>
+</div>
+</div>
+<div class="section" id="options-class-user-specified-options">
+<h3>Options class (User-specified options)<a class="headerlink" href="#options-class-user-specified-options" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="myrid-m-c-i-handling-command-line-options">
+<h4>&#8220;myrid -M -C -I&#8221; (Handling command-line options)<a class="headerlink" href="#myrid-m-c-i-handling-command-line-options" title="Permalink to this headline">¶</a></h4>
+<p>The Humdrum Extras library contains a helper class called
+<a class="reference external" href="http://extras.humdrum.org/download/humextra/include/Options.h">Options</a>
+which can be used to manage command-line options. The following example
+program implements the options <tt class="docutils literal"><span class="pre">-M</span></tt> (suppress measure lines), <tt class="docutils literal"><span class="pre">-C</span></tt>
+(suppress comments), <tt class="docutils literal"><span class="pre">-I</span></tt> (suppress interpretations) in a C++
+implementation of the Humdrum Toolkit rid program.</p>
+<p>The Options class can be used to define multiple aliases for the same
+option, such as a short abbreviation and a long form. The options are
+formulated on the command line according to
+<a class="reference external" href="http://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html">POSIX</a>
+rules for options: single-letter options are preceded by a single dash.
+Multiple-letter options are preceeded by two dashes. When a
+single-letter option does not require it&#8217;s own argument, they can be
+globbed together into a list of options preceded by a single dash. Here
+are various program usages for the code below:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>myrid -M file.krn</td>
+<td>Remove measure lines when echoing file.krn to standard output.</td>
+</tr>
+<tr class="row-odd"><td>myrid -M -I -C file.krn</td>
+<td>Remove measure lines, interpretations and comments (global, local and reference).</td>
+</tr>
+<tr class="row-even"><td>myrid -MIC file.krn</td>
+<td>Same as above. Shorthand for bundling multiple single-letter boolean options.</td>
+</tr>
+<tr class="row-odd"><td>myrid &#8211;no-measures file.krn</td>
+<td>Long form of <tt class="docutils literal"><span class="pre">myrid</span> <span class="pre">-M</span></tt>.</td>
+</tr>
+<tr class="row-even"><td>myrid &#8211;options</td>
+<td>Secret built-in option for the Option class which will force a list of defined options to be printed to standard output.</td>
+</tr>
+<tr class="row-odd"><td>myrid -A file.krn</td>
+<td>The option list will also be displayed when an undefined or misspelled option is used. Use <tt class="docutils literal"><span class="pre">--</span></tt> to disable options processing for unusual cases such as a filename starting with a dash.</td>
+</tr>
+<tr class="row-even"><td>myrid -MM file.krn</td>
+<td>Duplicate options are ignored, so only the last -M is used. Note that this is not the option <tt class="docutils literal"><span class="pre">MM</span></tt> which would be formulated as <tt class="docutils literal"><span class="pre">myrid</span> <span class="pre">--MM</span></tt>.</td>
+</tr>
+<tr class="row-odd"><td>myrid -M file.krn -IC</td>
+<td>Options can occur in any order, and can come before or after any command arguments which are not options.</td>
+</tr>
+<tr class="row-even"><td>myrid -M &#8211; -file.krn -C</td>
+<td>Process the poorly named file <tt class="docutils literal"><span class="pre">-file.krn</span></tt> and the even more poorly named file called <tt class="docutils literal"><span class="pre">-C</span></tt> which is not an option if it comes after the &#8211; marker.</td>
+</tr>
+</tbody>
+</table>
+<p>Note in the following source code, an extra include directive for the
+Options class does not need to be added, since the declaration for the
+Options class is included in <tt class="docutils literal"><span class="pre">humdrum.h</span></tt>. If you want to use the
+Options class independent of the HumdrumFile parser, you can instead
+include the file <tt class="docutils literal"><span class="pre">Options.h</span></tt>.</p>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include &quot;humdrum.h&quot;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">Options</span> <span class="n">opts</span><span class="p">;</span>
+   <span class="n">opts</span><span class="p">.</span><span class="n">define</span><span class="p">(</span><span class="s">&quot;M|no-measures:b&quot;</span><span class="p">,</span> <span class="s">&quot;remove measures&quot;</span><span class="p">);</span>
+   <span class="n">opts</span><span class="p">.</span><span class="n">define</span><span class="p">(</span><span class="s">&quot;C|no-comments:b&quot;</span><span class="p">,</span> <span class="s">&quot;remove comments&quot;</span><span class="p">);</span>
+   <span class="n">opts</span><span class="p">.</span><span class="n">define</span><span class="p">(</span><span class="s">&quot;I|no-interpretations:b&quot;</span><span class="p">,</span> <span class="s">&quot;remove interpretations&quot;</span><span class="p">);</span>
+   <span class="n">opts</span><span class="p">.</span><span class="n">process</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
+   <span class="kt">int</span> <span class="n">measuresQ</span> <span class="o">=</span> <span class="o">!</span><span class="n">opts</span><span class="p">.</span><span class="n">getBoolean</span><span class="p">(</span><span class="s">&quot;no-measures&quot;</span><span class="p">);</span>
+   <span class="kt">int</span> <span class="n">commentsQ</span> <span class="o">=</span> <span class="o">!</span><span class="n">opts</span><span class="p">.</span><span class="n">getBoolean</span><span class="p">(</span><span class="s">&quot;no-comments&quot;</span><span class="p">);</span>
+   <span class="kt">int</span> <span class="n">interpQ</span> <span class="o">=</span> <span class="o">!</span><span class="n">opts</span><span class="p">.</span><span class="n">getBoolean</span><span class="p">(</span><span class="s">&quot;no-interpretations&quot;</span><span class="p">);</span>
+   <span class="n">HumdrumFile</span> <span class="n">hfile</span><span class="p">(</span><span class="n">opts</span><span class="p">.</span><span class="n">getArg</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+   <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">hfile</span><span class="p">.</span><span class="n">getNumLines</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">hfile</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">isMeasure</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">measureQ</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">hfile</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">isComment</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">commentQ</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">hfile</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">isInterpretation</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">interpQ</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">hfile</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>The code <tt class="docutils literal"><span class="pre">HumdrumFile</span> <span class="pre">hfile(opts.getArg(1));</span></tt> reads data from the
+first argument on the command line. Note that argument counts are
+indexed from 1 rather than 0, since the program name is typically
+reserved for the first input argument.  However, To access the name
+of the command, use the Options::getCommand() function.</p>
+</div>
+<div class="section" id="option-definitions">
+<h4>Option definitions<a class="headerlink" href="#option-definitions" title="Permalink to this headline">¶</a></h4>
+<p>Notice the Options::define() function calls in the above program. These
+are used to define the options that an Options variable will search for
+when the Options::process() function is called. The .define() function
+takes two arguments (the second one optional). The first argument is the
+definition string, and the second is a human-readable description of the
+option.</p>
+<p>The option definition string has the basic format:</p>
+<center><p><tt class="docutils literal"><span class="pre">&quot;OptionName=OptionType:DefaultValue&quot;</span></tt></p>
+</center><p>The OptionName can include aliases which are added to the Option name,
+separated by a pipe (<tt class="docutils literal"><span class="pre">|</span></tt>) character:</p>
+<center><p><tt class="docutils literal"><span class="pre">&quot;OptionName|OptionAlias1|OptionAlias2=OptionType:DefaultValue&quot;</span></tt></p>
+</center><p>For example:</p>
+<center><p><tt class="docutils literal"><span class="pre">&quot;M|no-measures=b&quot;</span></tt></p>
+</center><p>Is the definition of the option &#8220;M&#8221; or equivalently &#8220;no-measures&#8221; which
+is a boolean type (which means that it sets a true/false switch for the
+option). For boolean options, there is no default value—they are &#8220;false&#8221;
+if not given as an argument to the program, and turned to &#8220;true&#8221; when
+given as input to a program.</p>
+<p>There are four Options data types:</p>
+<p>::{| class=&#8221;wikitable&#8221; cellpadding=&#8221;3&#8221; cellspacing=&#8221;0&#8221; border=&#8221;0&#8221; |- !
+scope=&#8221;col&#8221; align=&#8221;center&#8221; | Option type ! scope=&#8221;col&#8221; align=&#8221;left&#8221; |
+Description ! scope=&#8221;col&#8221; align=&#8221;left&#8221; | Options value access |- | b
+|| boolean (true or false) || .getBoolean(&#8220;OptionName&#8221;) |- | i
+|| integer || .getInteger(&#8220;OptionName&#8221;) |- | d || double
+(floating-point number) || .getDouble(&#8220;OptionName&#8221;) |- | s ||
+string || .getString(&#8220;OptionName&#8221;) |}</p>
+</ul><p>In terms of implementation, there are really only two types: booleans
+(with out parameters) and non-booleans (with parameters). Within a C++
+program you can acess the original string form of the option&#8217;s
+parameter, or you can convert it into an <tt class="docutils literal"><span class="pre">int</span></tt> or a <tt class="docutils literal"><span class="pre">double</span></tt> at
+runtime. For example, if an option &#8220;number&#8221; is defined, you can get the
+integer version of the number with .getInteger(&#8220;number&#8221;), or the double
+version of the number with .getDouble(&#8220;number&#8221;), or you can check to see
+if the option was set from the input arguments to the program with
+.getBoolean(&#8220;number&#8221;).</p>
+<p>Here are some example option definitions with option names, option
+aliases, and option types:</p>
+<div class="line-block">
+<div class="line">::{| class=&#8221;wikitable&#8221; cellpadding=&#8221;5&#8221; cellspacing=&#8221;0&#8221; border=&#8221;0&#8221; |-</div>
+</div>
+<p>! scope=&#8221;col&#8221; align=&#8221;center&#8221; | Option definition ! scope=&#8221;col&#8221;
+align=&#8221;left&#8221; | Command-line examples |- valign=&#8221;baseline&#8221; | &#8220;r=b&#8221;
+|| command -r |- valign=&#8221;baseline&#8221; | &#8220;m=i&#8221; || command -m 10 or
+command -m10 |- valign=&#8221;baseline&#8221; | &#8220;v|value=d&#8221; || command -v 5.23
+or command -v5.23
+| command &#8211;value 5.23
+| command &#8211;value=5.23 |- valign=&#8221;baseline&#8221; | &#8220;t=s&#8221; || command -t
+string or command -tstring
+| command -t &#8220;string with spaces&#8221;
+| command -t &#8216;funny $tring&#8217; |}</p>
+</ul><p>When options names (or option aliases) are a single character, the space
+between the option name and it parameter is optional, as in &#8220;command -m
+10&#8221; or &#8220;command -m10&#8221;. When an option has multiple characters, the space
+is not optional, although an equals sign can be substituted for the
+space: &#8220;command &#8211;value 5.23&#8221; and &#8220;command &#8211;value=5.23&#8221;. When a string
+option contains spaces, or other special characters reserved for shell
+syntax, (such as [;&amp;$|?*\]). The multi-word option must be enclosed
+in quotes. To insert a quote into the string option place a backslash
+before it: \&#8221;. To prevent the command-line parser from looking inside
+of the string use single quotes: &#8220;command -t &#8216;funny $tring&#8217;&#8221;. In this
+case the final input will be &#8220;funny $tring&#8221;. If double quotes were used,
+$tring would be interpreted as an environmental variable and its value
+would be substituted, usually resulting in &#8220;funny &#8221;, since you are not
+likely to have the shell variable $tring defined.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="default-option-values">
+<h4>Default option values<a class="headerlink" href="#default-option-values" title="Permalink to this headline">¶</a></h4>
+<p>The final component of the option definition is a default value to use
+if no input is given for that option on the command-line. If no default
+value is given in the definition, the default value will be zero. For
+example, if this option definition is given:</p>
+<blockquote>
+<div><table style="background:white;"><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre>options.define<span class="o">(</span><span class="s2">&quot;v|val|value=i:10&quot;</span>, <span class="s2">&quot;an integer value&quot;</span><span class="o">)</span>;
+</pre></div>
+</div>
+</td></tr></table></ul><p>Then here are different behaviors when accessing that option&#8217;s value in
+C++:</p>
+<blockquote>
+<div><table style="background:white;"><tr><td></div></blockquote>
+<div class="highlight-bash"><div class="highlight"><pre>User-set option:
+   program -v 20
+      options.getInteger<span class="o">(</span><span class="s2">&quot;value&quot;</span><span class="o">)</span>      &amp;rarr; 20
+      options.getInteger<span class="o">(</span><span class="s2">&quot;val&quot;</span><span class="o">)</span>        &amp;rarr; 20
+      options.getInteger<span class="o">(</span><span class="s2">&quot;v&quot;</span><span class="o">)</span>          &amp;rarr; 20
+
+Default option:
+   program
+      options.getInteger<span class="o">(</span><span class="s2">&quot;value&quot;</span><span class="o">)</span>      &amp;rarr; 10
+      options.getInteger<span class="o">(</span><span class="s2">&quot;val&quot;</span><span class="o">)</span>        &amp;rarr; 10
+      options.getInteger<span class="o">(</span><span class="s2">&quot;v&quot;</span><span class="o">)</span>          &amp;rarr; 10
+</pre></div>
+</div>
+</td></tr></table></ul><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="accessing-option-values">
+<h4>Accessing option values<a class="headerlink" href="#accessing-option-values" title="Permalink to this headline">¶</a></h4>
+<p>As mentioned previously, the .getBoolean, .getInteger, .getDouble and
+.getString accessor functions are used to extract an option value from
+the Options database after .process() has been called on the <tt class="docutils literal"><span class="pre">argc</span></tt>
+and <tt class="docutils literal"><span class="pre">argv</span></tt> input parameters to <tt class="docutils literal"><span class="pre">main()</span></tt>. All of the get functions
+can be applied to any option type. For example, the option definition:</p>
+<blockquote>
+<div><table style="background:white;"><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre>.define<span class="o">(</span><span class="s2">&quot;t|temperature=d:80.6 Farenheit&quot;</span>, <span class="s2">&quot;temperature setting&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+</td></tr></table></ul><p>can be used to extract any of the four option types in C++:</p>
+<blockquote>
+<div><table style="background:white;"><tr><td></div></blockquote>
+<div class="highlight-bash"><div class="highlight"><pre>.getBoolean<span class="o">(</span><span class="s2">&quot;temperature&quot;</span><span class="o">)</span>           &amp;rarr; 1 <span class="o">(</span><span class="nb">true</span><span class="o">)</span> <span class="k">if </span><span class="nb">set </span>via the <span class="nb">command</span>-line.
+                                     &amp;rarr; 0 <span class="o">(</span><span class="nb">false</span><span class="o">)</span> <span class="k">if </span>not <span class="nb">set </span>via the <span class="nb">command</span>-line.
+.getInteger<span class="o">(</span><span class="s2">&quot;temperature&quot;</span><span class="o">)</span>           &amp;rarr; 80
+.getDouble<span class="o">(</span><span class="s2">&quot;temperature&quot;</span><span class="o">)</span>            &amp;rarr; 80.6
+.getString<span class="o">(</span><span class="s2">&quot;temperature&quot;</span><span class="o">)</span>            &amp;rarr; <span class="s2">&quot;80.6 Farenheit&quot;</span>
+</pre></div>
+</div>
+</td></tr></table></ul><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="input-from-piped-data-or-file-s">
+<h3>Input from piped data or file(s)<a class="headerlink" href="#input-from-piped-data-or-file-s" title="Permalink to this headline">¶</a></h3>
+<p>Most of the previous program examples expect a single filename as input
+for processing. The following program example (<tt class="docutils literal"><span class="pre">humecho4</span></tt>) is more
+flexible, allowing for multiple input files. If no filenames are given,
+then standard input will be read as the input data:</p>
+<blockquote>
+<div><table style="background:white;"><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
+using namespace std;
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
+   options.process<span class="o">()</span>;
+   HumdrumFile hfile;
+   int <span class="nv">numinputs</span> <span class="o">=</span> options.getArgCount<span class="o">()</span>;
+   <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>1; i&lt;<span class="o">=</span>numinputs <span class="o">||</span> <span class="nv">i</span><span class="o">==</span>0; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>numinputs &lt; 1<span class="o">)</span> <span class="o">{</span>
+         hfile.read<span class="o">(</span>cin<span class="o">)</span>; // <span class="nb">read </span>from standard input
+      <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+         hfile.read<span class="o">(</span>options.getArg<span class="o">(</span>i<span class="o">))</span>;
+      <span class="o">}</span>
+      // <span class="k">do </span>something with the Humdrum data here:
+      cout &lt;&lt; hfile;
+   <span class="o">}</span>
+   <span class="k">return </span>0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul><p>This program has an identical function to <tt class="docutils literal"><span class="pre">humecho.cpp</span></tt>, but now
+multiple files can be read in and processed at the same time. For
+example if there are two input files with these contents:</p>
+<blockquote>
+<div><table style="background:white;"><tr valign=top><td></div></blockquote>
+<center><p>file 1</p>
+</center><td width=20></td><td><center><p>file 2</p>
+</center></td><td width=40></td><td><center><p>output</p>
+</center></td></tr></table></ul><p>Here are some possible command-line realizations for the above program:</p>
+<blockquote>
+<div><table style="background:white;"><tr><td></div></blockquote>
+<div class="code bash highlight-bash"><div class="highlight"><pre>humecho4 file.krn
+humecho4 file1.krn file2.krn file3.krn
+cat file.krn | humecho4
+humecho4
+</pre></div>
+</div>
+</td></tr></table></ul><p>The last command will cause the shell to wait while you type in the
+input to humecho4, followed by control-D to indicate the end of input
+data.</p>
+<p>Note that the number of command-line arguments (other than options) can
+be queried from an Options variable by using the .getArgCount()
+function. If there are three filenames as in &#8220;echo4 file1.krn file2.krn
+file3.krn&#8221;, then .getArgCount() will return 3. The .getArg() function
+will return a string for the specified argument, starting with argument
+1: .getArg(1) == file1.krn, .getArg(2) == file2.krn, .getArg(3) ==
+file3.krn. Note that the first argument is not .getArg(0). If you want
+to access the command name, then use .getCommand(), which would return
+&#8220;humecho4&#8221; in this case.</p>
+<p>When reading from standard input use HumdrumFile::read(istream) rather
+than HumdrumFile::read(const char*). For example, reading from standard
+input is done with hfile.read(cin) in the above code.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="humdrumstream-class">
+<h3>HumdrumStream class<a class="headerlink" href="#humdrumstream-class" title="Permalink to this headline">¶</a></h3>
+<p>Input data from multiple files can be managed by the HumdrumStream
+class. This class also manages multiple independent sequences of data,
+such as movements, in a data file which the HumdrumFile class will not
+process.</p>
+<blockquote>
+<div><table style="background:white;"><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
+using namespace std;
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
+   options.process<span class="o">()</span>;
+   HumdrumStream streamer<span class="o">(</span>options.getArgList<span class="o">())</span>;
+   HumdrumFile hfile;
+   <span class="k">while</span> <span class="o">(</span>streamer.read<span class="o">(</span>hfile<span class="o">))</span> <span class="o">{</span>
+      cout &lt;&lt; hfile;
+   <span class="o">}</span>
+   <span class="k">return </span>0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul></div>
+<div class="section" id="humdrumfileset-class">
+<h3>HumdrumFileSet class<a class="headerlink" href="#humdrumfileset-class" title="Permalink to this headline">¶</a></h3>
+<p>The HumdrumFileSet class functions in a similar manner to the
+HumdrumStream class. It reads in multiple segments of Humdrum data from
+a single physical file, multiple files, or standard input. The main
+difference compared to HumdrumStream is that HumdrumFileSet retains the
+contents of all input segments in memory.</p>
+<p>Here is a basic processing example which demonstrates how to store all
+input arguments into HumdrumFileSet. In this case the
+HumdrumFileSet::read() function is used to extract a list of arguments
+from the options variable. If the options variable does not contain any
+filenames, standard input will be read:</p>
+<blockquote>
+<div><table style="background:white;"><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
+using namespace std;
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
+   options.process<span class="o">()</span>;
+   HumdrumFileSet infiles;
+   infiles.read<span class="o">(</span>options<span class="o">)</span>;
+   <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>0; i&lt;infiles.getCount<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      cout <span class="s">&lt;&lt; infi</span>les<span class="o">[</span>i<span class="o">]</span>;
+   <span class="o">}</span>
+   <span class="k">return </span>0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul></div>
+<div class="section" id="c-string-comparison-functions">
+<h3>C string comparison functions<a class="headerlink" href="#c-string-comparison-functions" title="Permalink to this headline">¶</a></h3>
+<p>Here are three of the string comparison functions available within in
+the C (or C++) language:</p>
+<dl><dt><p>strcmp(&#8220;string1&#8221;, &#8220;string2&#8221;)</p>
+<dd><div class="line-block">
+<div class="line">returns 0 if strings are equivalent</div>
+<div class="line">returns –1 if string1 is alphabetized before string2</div>
+<div class="line">returns +1 if string1 is alphabetized after string2.</div>
+</div>
+<dt><p>strncmp(&#8220;string1&#8221;, &#8220;string2&#8221;, n)</p>
+<dd><p>compare only first n characters of the two strings.</p>
+<dt><p>strchr(&#8220;string&#8221;, &#8216;character&#8217;)</p>
+<dd><p>returns a pointer to the first occurrence of the character within the
+string. If the character is not found in the string, returns a NULL
+pointer.</p>
+</dl><p>Other interesting string processing functions in the C language are
+<tt class="docutils literal"><span class="pre">strstr</span></tt> which is similar to <tt class="docutils literal"><span class="pre">strchr</span></tt> but search for a sub-string
+within the a string; and <tt class="docutils literal"><span class="pre">strrchr</span></tt> which is similar to <tt class="docutils literal"><span class="pre">strchr</span></tt> but
+searches for the character in the reverse direction in the string, which
+returns the last occurrence of the character in the string (or NULL) if
+the character is not in the string. For more description about these
+functions, type &#8220;man strrchr&#8221; in a terminal for more information about
+the strrchr function (or any other standard C fuction).</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="third-dimension-of-data-access-note-level-access">
+<h3>Third dimension of data access (Note-level access)<a class="headerlink" href="#third-dimension-of-data-access-note-level-access" title="Permalink to this headline">¶</a></h3>
+<p>Accessing individual notes in **kern data spines requires three
+dimensions of indexing: (1) the data line of the note, the data field on
+the line for the note, and then the note number within a chord for the
+note. Previous program examples demonstrated how to access lines and
+line-fields. The following program (<tt class="docutils literal"><span class="pre">noteloc</span></tt>) goes one step further
+to access individual **kern notes. The program takes any sort of
+Humdrum file, and then outputs a list of all notes found in all kern
+spines:</p>
+<blockquote>
+<div><table style="background:white;"><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
+   options.process<span class="o">()</span>;
+   HumdrumFile hfile;
+   hfile.read<span class="o">(</span>options.getArg<span class="o">(</span>1<span class="o">))</span>;
+   char buffer<span class="o">[</span>1024<span class="o">]</span> <span class="o">=</span> <span class="o">{</span>0<span class="o">}</span>;
+   <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>0; i&lt;hfile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>!hfile<span class="o">[</span>i<span class="o">]</span>.isData<span class="o">())</span> <span class="k">continue</span>; // ignore non-data lines
+      <span class="k">for</span> <span class="o">(</span>int <span class="nv">j</span><span class="o">=</span>0; j&lt;hfile<span class="o">[</span>i<span class="o">]</span>.getFieldCount<span class="o">()</span>; j++<span class="o">)</span> <span class="o">{</span>
+         <span class="k">if</span> <span class="o">(</span>strcmp<span class="o">(</span><span class="s2">&quot;**kern&quot;</span>, hfile<span class="o">[</span>i<span class="o">]</span>.getExInterp<span class="o">(</span>j<span class="o">))</span> !<span class="o">=</span> 0<span class="o">)</span> <span class="k">continue</span>;
+         <span class="k">if</span> <span class="o">(</span>strcmp<span class="o">(</span><span class="s2">&quot;.&quot;</span>, hfile<span class="o">[</span>i<span class="o">][</span>j<span class="o">])</span> <span class="o">==</span> 0<span class="o">)</span> <span class="k">continue</span>; // ignore null tokens
+         int <span class="nv">count</span> <span class="o">=</span> hfile<span class="o">[</span>i<span class="o">]</span>.getTokenCount<span class="o">(</span>j<span class="o">)</span>;
+         <span class="k">for</span> <span class="o">(</span>int <span class="nv">k</span><span class="o">=</span>0; k&lt;count; k++<span class="o">)</span> <span class="o">{</span>
+            cout &lt;&lt; <span class="s2">&quot;(&quot;</span> <span class="s">&lt;&lt; i+1 &lt;&lt;&quot;,&quot; &lt;&lt; j+1 &lt;&lt; &quot;,&quot; &lt;&lt; k+1 &lt;&lt; &quot;)\t&quot;</span>
+<span class="s">                 &lt;&lt; hfi</span>le<span class="o">[</span>i<span class="o">]</span>.getToken<span class="o">(</span>buffer, j, k<span class="o">)</span> <span class="s">&lt;&lt; endl;</span>
+<span class="s">         }</span>
+<span class="s">      }</span>
+<span class="s">   }</span>
+<span class="s">   re</span>turn 0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul><p>The line:</p>
+<blockquote>
+<div><table style="background:white;"><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="k">if</span> <span class="o">(</span>strcmp<span class="o">(</span><span class="s2">&quot;**kern&quot;</span>, hfile<span class="o">[</span>i<span class="o">]</span>.getExInterp<span class="o">(</span>j<span class="o">))</span> !<span class="o">=</span> 0<span class="o">)</span> <span class="k">continue</span>;
+</pre></div>
+</div>
+</td></tr></table></ul><p>is used to skip over all spines which do not have **kern data. The
+function .getExInterp() returns a const char* string for the name of
+the exclusive interpretation. The strcmp() function compares the returns
+exclusive interpretation name with the string &#8220;**kern&#8221;, and if it does
+not match, the next data field on the line will be examined. An
+equivalent way of identifying the exclusive interpretation can be done
+with the .isExInterp() function. The following line of code is
+equivalent to the one above:</p>
+<blockquote>
+<div><table style="background:white;"><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="k">if</span> <span class="o">(</span>hfile<span class="o">[</span>i<span class="o">]</span>.isExInterp<span class="o">(</span>j, <span class="s2">&quot;**kern&quot;</span><span class="o">))</span> <span class="k">continue</span>;
+</pre></div>
+</div>
+</td></tr></table></ul><p>Input and output to/from the program:</p>
+<blockquote>
+<div><table style="background:white;"><tr valign=top><td></div></blockquote>
+</td><td width=40></td><td><div class="code text highlight-bash"><div class="highlight"><pre><span class="o">(</span>2,1,1<span class="o">)</span> 4C
+<span class="o">(</span>2,3,1<span class="o">)</span> 4c
+<span class="o">(</span>3,1,1<span class="o">)</span> 4D
+<span class="o">(</span>3,1,2<span class="o">)</span> 4E
+<span class="o">(</span>4,1,1<span class="o">)</span> 4F
+<span class="o">(</span>5,3,1<span class="o">)</span> 4d
+<span class="o">(</span>5,3,2<span class="o">)</span> 4e
+<span class="o">(</span>6,1,1<span class="o">)</span> 4r
+<span class="o">(</span>7,1,1<span class="o">)</span> 4G
+<span class="o">(</span>7,1,2<span class="o">)</span> 4A
+<span class="o">(</span>7,1,3<span class="o">)</span> 4B
+</pre></div>
+</div>
+</td></tr></table></ul><p>Each of the three numbers before the note indicates the address within
+the file for the note, with the first number being the line on which the
+note occurs, the second number the field on the line which contains the
+note, and the last number is the note number within the (possible) chord
+for the note.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">=== kerninfo.cpp (Count **kern notes in data) ===</div>
+</div>
+<p>Here is an example program which somewhat emulates the &#8220;census -k&#8221;
+command from the Humdrum Toolkit. The program will count the number of
+note attacks, rests and tied notes in one or more Humdrum files.</p>
+<blockquote>
+<div><table style="background:white;"><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
+using namespace std;
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
+   options.process<span class="o">()</span>;
+   HumdrumFile hfile;
+   int <span class="nv">restcount</span>   <span class="o">=</span> 0;
+   int <span class="nv">nullcount</span>   <span class="o">=</span> 0;
+   int <span class="nv">attackcount</span> <span class="o">=</span> 0;
+   int <span class="nv">tiedcount</span>   <span class="o">=</span> 0;
+   int <span class="nv">chordcount</span>  <span class="o">=</span> 0;
+   <span class="k">for</span> <span class="o">(</span>int <span class="nv">arg</span><span class="o">=</span>1; arg &lt;<span class="o">=</span> options.getArgCount<span class="o">()</span> <span class="o">||</span> <span class="nv">arg</span> <span class="o">==</span> 0; arg++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>options.getArgCount<span class="o">()</span> <span class="o">==</span> 0<span class="o">)</span> <span class="o">{</span>  hfile.read<span class="o">(</span>cin<span class="o">)</span>; <span class="o">}</span>
+      <span class="k">else</span> <span class="o">{</span> hfile.read<span class="o">(</span>options.getArg<span class="o">(</span>arg<span class="o">))</span>; <span class="o">}</span>
+      char buffer<span class="o">[</span>1024<span class="o">]</span> <span class="o">=</span> <span class="o">{</span>0<span class="o">}</span>;
+      <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>0; i&lt;hfile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+         <span class="k">if</span> <span class="o">(</span>!hfile<span class="o">[</span>i<span class="o">]</span>.isData<span class="o">())</span> <span class="k">continue</span>;
+         <span class="k">for</span> <span class="o">(</span>int <span class="nv">j</span><span class="o">=</span>0; j&lt;hfile<span class="o">[</span>i<span class="o">]</span>.getFieldCount<span class="o">()</span>; j++<span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span>!hfile<span class="o">[</span>i<span class="o">]</span>.isExInterp<span class="o">(</span>j, <span class="s2">&quot;**kern&quot;</span><span class="o">))</span> <span class="k">continue</span>;
+            int <span class="nv">count</span> <span class="o">=</span> hfile<span class="o">[</span>i<span class="o">]</span>.getTokenCount<span class="o">(</span>j<span class="o">)</span>;
+            <span class="k">if</span> <span class="o">(</span>count &gt; 1<span class="o">)</span> chordcount++;
+            <span class="k">for</span> <span class="o">(</span>int <span class="nv">k</span><span class="o">=</span>0; k&lt;count; k++<span class="o">)</span> <span class="o">{</span>
+               hfile<span class="o">[</span>i<span class="o">]</span>.getToken<span class="o">(</span>buffer, j, k<span class="o">)</span>;
+               <span class="k">if</span> <span class="o">(</span>strchr<span class="o">(</span>buffer, <span class="s1">&#39;r&#39;</span><span class="o">)</span> !<span class="o">=</span> NULL<span class="o">)</span>   <span class="o">{</span> restcount++; <span class="o">}</span>
+               <span class="k">else if</span> <span class="o">(</span>strcmp<span class="o">(</span>buffer, <span class="s2">&quot;.&quot;</span><span class="o">)</span> <span class="o">==</span> 0<span class="o">)</span> <span class="o">{</span> nullcount++; <span class="o">}</span>
+               <span class="k">else if</span> <span class="o">(</span>strchr<span class="o">(</span>buffer, <span class="s1">&#39;_&#39;</span><span class="o">)</span> !<span class="o">=</span> NULL<span class="o">)</span> <span class="o">{</span> /* ignore */ <span class="o">}</span>
+               <span class="k">else if</span> <span class="o">(</span>strchr<span class="o">(</span>buffer, <span class="s1">&#39;]&#39;</span><span class="o">)</span> !<span class="o">=</span> NULL<span class="o">)</span> <span class="o">{</span> tiedcount++; <span class="o">}</span>
+               <span class="k">else</span> <span class="o">{</span> attackcount++; <span class="o">}</span>
+            <span class="o">}</span>
+         <span class="o">}</span>
+      <span class="o">}</span>
+   <span class="o">}</span>
+   cout &lt;&lt; <span class="s2">&quot;Note attacks: &quot;</span> <span class="s">&lt;&lt; atta</span>ckcount <span class="s">&lt;&lt; endl;</span>
+<span class="s">   cout &lt;&lt; &quot;Tied notes  : &quot; &lt;&lt; tiedcount   &lt;&lt; endl</span>;
+   cout &lt;&lt; <span class="s2">&quot;Chords      : &quot;</span> <span class="s">&lt;&lt; chordc</span>ount  <span class="s">&lt;&lt; endl;</span>
+<span class="s">   cout &lt;&lt; &quot;Rests       : &quot; &lt;&lt; restcount   &lt;&lt; endl</span>;
+   cout &lt;&lt; <span class="s2">&quot;Null Tokens : &quot;</span> <span class="s">&lt;&lt; nullcoun</span>t   <span class="s">&lt;&lt; endl;</span>
+<span class="s">   re</span>turn 0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul>
+
+     .. raw:: html
+
+        <table style="background:white;">
+
+     .. raw:: html
+
+        <tr valign=baseline>
+
+     .. raw:: html
+
+        <td><p>Trying out the kerninfo prorgram on this input data:</p>
+</td><td width=40></td><td><p>Results in these statistics:</p>
+<div class="highlight-bash"><div class="highlight"><pre>Note attacks: 10
+Tied notes  : 0
+Chords      : 3
+Rests       : 1
+Null Tokens : 5
+</pre></div>
+</div>
+</td></tr></table></ul><p>Trying out the <tt class="docutils literal"><span class="pre">kerninfo</span></tt> program on a real piece of music:</p>
+<blockquote>
+<div><table style="background:white;"><tr><td></div></blockquote>
+<p><tt class="docutils literal"><span class="pre">kerninfo</span> <span class="pre">h://wtc/wtc1p04.krn</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>Note attacks: 675
+Tied notes  : 85
+Chords      : 14
+Rests       : 69
+Null Tokens : 967
+</pre></div>
+</div>
+</td></tr></table></ul><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="convert-class">
+<h3>Convert class<a class="headerlink" href="#convert-class" title="Permalink to this headline">¶</a></h3>
+<p>In addition to the Options class, and important helper class in Humdrum
+Extras is the Convert class. This class handles most conversions between
+data types. The HumdrumFile class essentially stores a two-dimensional
+array of strings. The **kern notes in a HumdrumFile variable are
+extracted as strings, but will need to be interpreted further depending
+on the information about the note which you need. For example, to
+convert a **kern note into a MIDI note number, use the following
+Convert function:</p>
+<p><tt class="docutils literal"><span class="pre">&nbsp;&nbsp;Convert::kernToMidiNoteNumber(&quot;4d-&quot;)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→&nbsp;&nbsp;61</span></tt></p>
+<p>Likewise, the MIDI note 61 can be converted back into a **kern note:</p>
+<p><tt class="docutils literal"><span class="pre">&nbsp;&nbsp;Convert::midiNoteNumberToKern(buffer,&nbsp;61)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→&nbsp;&nbsp;&quot;c#&quot;</span></tt></p>
+<p>All access to Convert class functions is done statically, so you can
+shorten the code by using the a typedef for Convert to a shorter name:</p>
+<div class="line-block">
+<div class="line"><tt class="docutils literal"><span class="pre">&nbsp;&nbsp;&nbsp;typedef&nbsp;Convert&nbsp;C;</span></tt></div>
+<div class="line"><tt class="docutils literal"><span class="pre">&nbsp;&nbsp;&nbsp;C::kernToMidiNoteNumber(&quot;4d-&quot;);</span></tt></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="convert-kern-note-names-to-midi">
+<h4>Convert **kern note names to MIDI<a class="headerlink" href="#convert-kern-note-names-to-midi" title="Permalink to this headline">¶</a></h4>
+<p>The following program will convert the first note of every chord into a
+MIDI note number.</p>
+<blockquote>
+<div><table style="background:white;"><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
+   options.process<span class="o">()</span>;
+   HumdrumFile hfile<span class="o">(</span>options.getArg<span class="o">(</span>1<span class="o">))</span>;
+   <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>0; i&lt;hfile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>!hfile<span class="o">[</span>i<span class="o">]</span>.isData<span class="o">())</span> <span class="k">continue</span>;
+      <span class="k">for</span> <span class="o">(</span>int <span class="nv">j</span><span class="o">=</span>0; j&lt;hfile<span class="o">[</span>i<span class="o">]</span>.getFieldCount<span class="o">()</span>; j++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>hfile<span class="o">[</span>i<span class="o">]</span>.isExInterp<span class="o">(</span>j, <span class="s2">&quot;**kern&quot;</span><span class="o">))</span> <span class="k">continue</span>;
+      <span class="k">if</span> <span class="o">(</span>strcmp<span class="o">(</span><span class="s2">&quot;.&quot;</span>, hfile<span class="o">[</span>i<span class="o">][</span>j<span class="o">])</span> <span class="o">==</span> 0<span class="o">)</span> <span class="k">continue</span>; // ignore null tokens
+      <span class="k">if</span> <span class="o">(</span>strchr<span class="o">(</span>hfile<span class="o">[</span>i<span class="o">][</span>j<span class="o">]</span>, <span class="s1">&#39;r&#39;</span><span class="o">)</span> !<span class="o">=</span> NULL<span class="o">)</span> <span class="k">continue</span>; // ignore rests
+         cout <span class="s">&lt;&lt; hfile[i][j] &lt;&lt; &quot;\t&quot; &lt;&lt; Convert::kernToMidiNoteNumber(hfile</span><span class="o">[</span>i<span class="o">][</span>j<span class="o">])</span> <span class="s">&lt;&lt; endl;</span>
+<span class="s">      }</span>
+<span class="s">   }</span>
+<span class="s">   re</span>turn 0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul><p>Example input and output:</p>
+<blockquote>
+<div><table style="background:white;"><tr valign=top><td></div></blockquote>
+</td><td width=40></td><td><div class="code text highlight-bash"><div class="highlight"><pre>4C        48
+4c        60
+4D 4E     50
+4F        53
+4d 4e     62
+4G 4A 4B  55
+</pre></div>
+</div>
+</td></tr></table></ul><p>Note that only the first kern note in the string will be extracted by
+Convert::kernToMidiNoteNumber(). As an exercise, adjust the code so that
+it prints a MIDI note number for every note in the chords.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="note-histogram-notehist-cpp">
+<h3>Note Histogram (notehist.cpp)<a class="headerlink" href="#note-histogram-notehist-cpp" title="Permalink to this headline">¶</a></h3>
+<p>Here is an example of how to count the number of twelvetone pitch
+classes in a Humdrum file. The following program will count tied notes.
+As an exercise, have the program skip counting of any middle or end tied
+notes (middle tied notes have an underscore (_) in their content, and
+ending tied notes has a closing square bracket (])).</p>
+<blockquote>
+<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
+   options.process<span class="o">()</span>;
+   HumdrumFile hfile;
+   hfile.read<span class="o">(</span>options.getArg<span class="o">(</span>1<span class="o">))</span>;
+   double histogram<span class="o">[</span>12<span class="o">]</span> <span class="o">=</span> <span class="o">{</span>0<span class="o">}</span>;
+   char buffer<span class="o">[</span>1024<span class="o">]</span> <span class="o">=</span> <span class="o">{</span>0<span class="o">}</span>;
+   int midikey;
+   int i;
+   <span class="k">for</span> <span class="o">(</span><span class="nv">i</span><span class="o">=</span>0; i&lt;hfile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>!hfile<span class="o">[</span>i<span class="o">]</span>.isData<span class="o">())</span> <span class="k">continue</span>; // ignore non-data lines
+      <span class="k">for</span> <span class="o">(</span>int <span class="nv">j</span><span class="o">=</span>0; j&lt;hfile<span class="o">[</span>i<span class="o">]</span>.getFieldCount<span class="o">()</span>; j++<span class="o">)</span> <span class="o">{</span>
+         <span class="k">if</span> <span class="o">(</span>strcmp<span class="o">(</span><span class="s2">&quot;**kern&quot;</span>, hfile<span class="o">[</span>i<span class="o">]</span>.getExInterp<span class="o">(</span>j<span class="o">))</span> !<span class="o">=</span> 0<span class="o">)</span> <span class="k">continue</span>;
+         <span class="k">if</span> <span class="o">(</span>strcmp<span class="o">(</span><span class="s2">&quot;.&quot;</span>, hfile<span class="o">[</span>i<span class="o">][</span>j<span class="o">])</span> <span class="o">==</span> 0<span class="o">)</span> <span class="k">continue</span>; // ignore null tokens
+         int <span class="nv">count</span> <span class="o">=</span> hfile<span class="o">[</span>i<span class="o">]</span>.getTokenCount<span class="o">(</span>j<span class="o">)</span>;
+         <span class="k">for</span> <span class="o">(</span>int <span class="nv">k</span><span class="o">=</span>0; k&lt;count; k++<span class="o">)</span> <span class="o">{</span>
+            hfile<span class="o">[</span>i<span class="o">]</span>.getToken<span class="o">(</span>buffer, j, k<span class="o">)</span>;
+            <span class="k">if</span> <span class="o">(</span>strchr<span class="o">(</span>buffer, <span class="s1">&#39;r&#39;</span><span class="o">)</span> !<span class="o">=</span> NULL<span class="o">)</span> <span class="k">continue</span>; // ignore rests
+            <span class="nv">midikey</span> <span class="o">=</span> Convert::kernToMidiNoteNumber<span class="o">(</span>buffer<span class="o">)</span>;
+            histogram<span class="o">[</span>midikey % 12<span class="o">]</span>++;
+         <span class="o">}</span>
+      <span class="o">}</span>
+   <span class="o">}</span>
+   <span class="k">for</span> <span class="o">(</span><span class="nv">i</span><span class="o">=</span>0; i&lt;12; i++<span class="o">)</span> <span class="o">{</span>
+      std::cout <span class="s">&lt;&lt; i &lt;&lt; &quot;\t&quot; &lt;&lt; hi</span>stogram<span class="o">[</span>i<span class="o">]</span> &lt;&lt; std::endl;
+   <span class="o">}</span>
+   <span class="k">return </span>0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul><p>Example output when processing a real piece of music is given below. The
+first output line means there are 600 C notes in Beethoven&#8217;s 32nd
+sonata, mvmt. 1, 233 Cs/Ds, etc.</p>
+<blockquote>
+<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
+<p><tt class="docutils literal"><span class="pre">notehist</span> <span class="pre">h://beethoven/sonatas/sonata32-1.krn</span></tt></p>
+<div class="code text highlight-bash"><div class="highlight"><pre>0   600
+1   233
+2   279
+3   476
+4   146
+5   513
+6   144
+7   636
+8   459
+9   121
+10  259
+11  230
+</pre></div>
+</div>
+</td></tr></table></ul><p>To sort the pitch classes by how often they occur:</p>
+<blockquote>
+<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
+<p><tt class="docutils literal"><span class="pre">notehist</span> <span class="pre">h://beethoven/sonatas/sonata32-1.krn</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-nrk2</span></tt></p>
+<div class="code text highlight-bash"><div class="highlight"><pre>7   636
+0   600
+5   513
+3   476
+8   459
+2   279
+10  259
+1   233
+11  230
+4   146
+6   144
+9   121
+</pre></div>
+</div>
+</td></tr></table></ul><p>In this case the most common pitch class is G (7), and the least common
+pitch class is A (9). Note that the sorting did not have to be
+implemented in the C++ program, since the command-line program <tt class="docutils literal"><span class="pre">sort</span></tt>
+could be utilized. The options to sort are <tt class="docutils literal"><span class="pre">-n</span></tt> (sort numerically),
+<tt class="docutils literal"><span class="pre">-r</span></tt> (sort in reverse order so that the largest number comes first),
+and <tt class="docutils literal"><span class="pre">-k2</span></tt> (sort by the second column of data).</p>
+<p>Here is a modification of the program so that pitch names rather than
+pitch-class numbers are displayed:</p>
+<blockquote>
+<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
+   options.process<span class="o">()</span>;
+   HumdrumFile hfile;
+   hfile.read<span class="o">(</span>options.getArg<span class="o">(</span>1<span class="o">))</span>;
+   double histogram<span class="o">[</span>12<span class="o">]</span> <span class="o">=</span> <span class="o">{</span>0<span class="o">}</span>;
+   char buffer<span class="o">[</span>1024<span class="o">]</span> <span class="o">=</span> <span class="o">{</span>0<span class="o">}</span>;
+   int midikey;
+   int i;
+   <span class="k">for</span> <span class="o">(</span><span class="nv">i</span><span class="o">=</span>0; i&lt;hfile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>!hfile<span class="o">[</span>i<span class="o">]</span>.isData<span class="o">())</span> <span class="k">continue</span>; // ignore non-data lines
+      <span class="k">for</span> <span class="o">(</span>int <span class="nv">j</span><span class="o">=</span>0; j&lt;hfile<span class="o">[</span>i<span class="o">]</span>.getFieldCount<span class="o">()</span>; j++<span class="o">)</span> <span class="o">{</span>
+         <span class="k">if</span> <span class="o">(</span>strcmp<span class="o">(</span><span class="s2">&quot;**kern&quot;</span>, hfile<span class="o">[</span>i<span class="o">]</span>.getExInterp<span class="o">(</span>j<span class="o">))</span> !<span class="o">=</span> 0<span class="o">)</span> <span class="k">continue</span>;
+         <span class="k">if</span> <span class="o">(</span>strcmp<span class="o">(</span><span class="s2">&quot;.&quot;</span>, hfile<span class="o">[</span>i<span class="o">][</span>j<span class="o">])</span> <span class="o">==</span> 0<span class="o">)</span> <span class="k">continue</span>; // ignore null tokens
+         int <span class="nv">count</span> <span class="o">=</span> hfile<span class="o">[</span>i<span class="o">]</span>.getTokenCount<span class="o">(</span>j<span class="o">)</span>;
+         <span class="k">for</span> <span class="o">(</span>int <span class="nv">k</span><span class="o">=</span>0; k&lt;count; k++<span class="o">)</span> <span class="o">{</span>
+            hfile<span class="o">[</span>i<span class="o">]</span>.getToken<span class="o">(</span>buffer, j, k<span class="o">)</span>;
+            <span class="k">if</span> <span class="o">(</span>strchr<span class="o">(</span>buffer, <span class="s1">&#39;r&#39;</span><span class="o">)</span> !<span class="o">=</span> NULL<span class="o">)</span> <span class="k">continue</span>; // ignore rests
+            <span class="nv">midikey</span> <span class="o">=</span> Convert::kernToMidiNoteNumber<span class="o">(</span>buffer<span class="o">)</span>;
+            histogram<span class="o">[</span>midikey % 12<span class="o">]</span>++;
+         <span class="o">}</span>
+      <span class="o">}</span>
+   <span class="o">}</span>
+   <span class="k">for</span> <span class="o">(</span><span class="nv">i</span><span class="o">=</span>0; i&lt;12; i++<span class="o">)</span> <span class="o">{</span>
+      std::cout <span class="s">&lt;&lt; i &lt;&lt; &quot;\t&quot;</span>
+<span class="s">                &lt;&lt; Convert::base12ToKern(buffer, hi</span>stogram<span class="o">[</span>i<span class="o">]</span> + 4 * 12<span class="o">)</span> &lt;&lt; std::endl;
+   <span class="o">}</span>
+   <span class="k">return </span>0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul><p>So now the note names will be printed instead of their numeric
+equivalent:</p>
+<blockquote>
+<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
+<p><tt class="docutils literal"><span class="pre">notehist</span> <span class="pre">h://beethoven/sonatas/sonata32-1.krn</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-nrk2</span></tt></p>
+<div class="code text highlight-bash"><div class="highlight"><pre>G   636
+C   600
+F   513
+E-  476
+G#  459
+D   279
+B-  259
+C#  233
+B   230
+E   146
+F#  144
+A   121
+</pre></div>
+</div>
+</td></tr></table></ul><p>If you want to preserve the accidental spellings, then you can use
+base-40 instead of base-12 (MIDI note numbers):</p>
+<blockquote>
+<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
+   options.process<span class="o">()</span>;
+   HumdrumFile hfile;
+   hfile.read<span class="o">(</span>options.getArg<span class="o">(</span>1<span class="o">))</span>;
+   double histogram<span class="o">[</span>40<span class="o">]</span> <span class="o">=</span> <span class="o">{</span>0<span class="o">}</span>;
+   char buffer<span class="o">[</span>1024<span class="o">]</span> <span class="o">=</span> <span class="o">{</span>0<span class="o">}</span>;
+   int base40;
+   int i;
+   <span class="k">for</span> <span class="o">(</span><span class="nv">i</span><span class="o">=</span>0; i&lt;hfile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>!hfile<span class="o">[</span>i<span class="o">]</span>.isData<span class="o">())</span> <span class="k">continue</span>; // ignore non-data lines
+      <span class="k">for</span> <span class="o">(</span>int <span class="nv">j</span><span class="o">=</span>0; j&lt;hfile<span class="o">[</span>i<span class="o">]</span>.getFieldCount<span class="o">()</span>; j++<span class="o">)</span> <span class="o">{</span>
+         <span class="k">if</span> <span class="o">(</span>strcmp<span class="o">(</span><span class="s2">&quot;**kern&quot;</span>, hfile<span class="o">[</span>i<span class="o">]</span>.getExInterp<span class="o">(</span>j<span class="o">))</span> !<span class="o">=</span> 0<span class="o">)</span> <span class="k">continue</span>;
+         <span class="k">if</span> <span class="o">(</span>strcmp<span class="o">(</span><span class="s2">&quot;.&quot;</span>, hfile<span class="o">[</span>i<span class="o">][</span>j<span class="o">])</span> <span class="o">==</span> 0<span class="o">)</span> <span class="k">continue</span>; // ignore null tokens
+         int <span class="nv">count</span> <span class="o">=</span> hfile<span class="o">[</span>i<span class="o">]</span>.getTokenCount<span class="o">(</span>j<span class="o">)</span>;
+         <span class="k">for</span> <span class="o">(</span>int <span class="nv">k</span><span class="o">=</span>0; k&lt;count; k++<span class="o">)</span> <span class="o">{</span>
+            hfile<span class="o">[</span>i<span class="o">]</span>.getToken<span class="o">(</span>buffer, j, k<span class="o">)</span>;
+            <span class="k">if</span> <span class="o">(</span>strchr<span class="o">(</span>buffer, <span class="s1">&#39;r&#39;</span><span class="o">)</span> !<span class="o">=</span> NULL<span class="o">)</span> <span class="k">continue</span>; // ignore rests
+            <span class="nv">base40</span> <span class="o">=</span> Convert::kernToBase40<span class="o">(</span>buffer<span class="o">)</span>;
+            histogram<span class="o">[</span>base40 % 40<span class="o">]</span>++;
+         <span class="o">}</span>
+      <span class="o">}</span>
+   <span class="o">}</span>
+   <span class="k">for</span> <span class="o">(</span><span class="nv">i</span><span class="o">=</span>0; i&lt;40; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>histogram<span class="o">[</span>i<span class="o">]</span> <span class="o">==</span> 0<span class="o">)</span> <span class="o">{</span> <span class="k">continue</span>; <span class="o">}</span>
+      std::cout &lt;&lt; Convert::base40ToKern<span class="o">(</span>buffer, i + 3*40<span class="o">)</span> &lt;&lt; <span class="s2">&quot;\t&quot;</span>
+                &lt;&lt; histogram<span class="o">[</span>i<span class="o">]</span> &lt;&lt; std::endl;
+   <span class="o">}</span>
+   <span class="k">return </span>0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul><p>With the more verbose pitch information being:</p>
+<blockquote>
+<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
+<p><tt class="docutils literal"><span class="pre">notehist</span> <span class="pre">h://beethoven/sonatas/sonata32-1.krn</span></tt></p>
+<div class="code text highlight-bash"><div class="highlight"><pre>C-  32
+C   600
+C#  1
+D-  232
+D   271
+D#  1
+E-- 8
+E-  475
+E   134
+E#  2
+F-  12
+F   511
+F#  83
+G-  61
+G   636
+G#  2
+A-  457
+A   121
+B-  259
+B   198
+</pre></div>
+</div>
+</td></tr></table></ul><p><a class="reference external" href="http://www.cplusplus.com/reference">Standard Template Library</a>
+classes such as vector can be used instead of the C-like histogram array
+used in the previous program. Here is an example using the vector class:</p>
+<blockquote>
+<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
+<span class="c">#include &lt;vector&gt;</span>
+using namespace std;
+
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
+   options.process<span class="o">()</span>;
+   HumdrumFile hfile;
+   hfile.read<span class="o">(</span>options.getArg<span class="o">(</span>1<span class="o">))</span>;
+   vector&lt;int&gt; histogram<span class="o">(</span>40<span class="o">)</span>;
+   char buffer<span class="o">[</span>1024<span class="o">]</span> <span class="o">=</span> <span class="o">{</span>0<span class="o">}</span>;
+   int base40;
+   unsigned int i;
+   <span class="k">for</span> <span class="o">(</span><span class="nv">i</span><span class="o">=</span>0; i&lt;<span class="o">(</span>unsigned int<span class="o">)</span>hfile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>!hfile<span class="o">[</span>i<span class="o">]</span>.isData<span class="o">())</span> <span class="k">continue</span>; // ignore non-data lines
+      <span class="k">for</span> <span class="o">(</span>int <span class="nv">j</span><span class="o">=</span>0; j&lt;hfile<span class="o">[</span>i<span class="o">]</span>.getFieldCount<span class="o">()</span>; j++<span class="o">)</span> <span class="o">{</span>
+         <span class="k">if</span> <span class="o">(</span>strcmp<span class="o">(</span><span class="s2">&quot;**kern&quot;</span>, hfile<span class="o">[</span>i<span class="o">]</span>.getExInterp<span class="o">(</span>j<span class="o">))</span> !<span class="o">=</span> 0<span class="o">)</span> <span class="k">continue</span>;
+         <span class="k">if</span> <span class="o">(</span>strcmp<span class="o">(</span><span class="s2">&quot;.&quot;</span>, hfile<span class="o">[</span>i<span class="o">][</span>j<span class="o">])</span> <span class="o">==</span> 0<span class="o">)</span> <span class="k">continue</span>; // ignore null tokens
+         int <span class="nv">count</span> <span class="o">=</span> hfile<span class="o">[</span>i<span class="o">]</span>.getTokenCount<span class="o">(</span>j<span class="o">)</span>;
+         <span class="k">for</span> <span class="o">(</span>int <span class="nv">k</span><span class="o">=</span>0; k&lt;count; k++<span class="o">)</span> <span class="o">{</span>
+            hfile<span class="o">[</span>i<span class="o">]</span>.getToken<span class="o">(</span>buffer, j, k<span class="o">)</span>;
+            <span class="k">if</span> <span class="o">(</span>strchr<span class="o">(</span>buffer, <span class="s1">&#39;r&#39;</span><span class="o">)</span> !<span class="o">=</span> NULL<span class="o">)</span> <span class="k">continue</span>; // ignore rests
+            <span class="nv">base40</span> <span class="o">=</span> Convert::kernToBase40<span class="o">(</span>buffer<span class="o">)</span>;
+            histogram<span class="o">[</span>base40 % 40<span class="o">]</span>++;
+         <span class="o">}</span>
+      <span class="o">}</span>
+   <span class="o">}</span>
+   <span class="k">for</span> <span class="o">(</span><span class="nv">i</span><span class="o">=</span>0; i&lt;histogram.size<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>histogram<span class="o">[</span>i<span class="o">]</span> <span class="o">==</span> 0<span class="o">)</span> <span class="o">{</span> <span class="k">continue</span>; <span class="o">}</span>
+      cout &lt;&lt; Convert::base40ToKern<span class="o">(</span>buffer, i + 3*40<span class="o">)</span> &lt;&lt; <span class="s2">&quot;\t&quot;</span>
+                &lt;&lt; histogram<span class="o">[</span>i<span class="o">]</span> <span class="s">&lt;&lt; endl;</span>
+<span class="s">   }</span>
+<span class="s">   re</span>turn 0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul><p>In addition, Humdrum Extras has an Array class which has a similar
+functionality as the vector class or C arrays:</p>
+<blockquote>
+<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
+using namespace std;
+
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
+   options.process<span class="o">()</span>;
+   HumdrumFile hfile;
+   hfile.read<span class="o">(</span>options.getArg<span class="o">(</span>1<span class="o">))</span>;
+   Array&lt;int&gt; histogram<span class="o">(</span>40<span class="o">)</span>;
+   histogram.setAll<span class="o">(</span>0<span class="o">)</span>;
+   char buffer<span class="o">[</span>1024<span class="o">]</span> <span class="o">=</span> <span class="o">{</span>0<span class="o">}</span>;
+   int base40;
+   int i;
+   <span class="k">for</span> <span class="o">(</span><span class="nv">i</span><span class="o">=</span>0; i&lt;hfile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>!hfile<span class="o">[</span>i<span class="o">]</span>.isData<span class="o">())</span> <span class="k">continue</span>; // ignore non-data lines
+      <span class="k">for</span> <span class="o">(</span>int <span class="nv">j</span><span class="o">=</span>0; j&lt;hfile<span class="o">[</span>i<span class="o">]</span>.getFieldCount<span class="o">()</span>; j++<span class="o">)</span> <span class="o">{</span>
+         <span class="k">if</span> <span class="o">(</span>strcmp<span class="o">(</span><span class="s2">&quot;**kern&quot;</span>, hfile<span class="o">[</span>i<span class="o">]</span>.getExInterp<span class="o">(</span>j<span class="o">))</span> !<span class="o">=</span> 0<span class="o">)</span> <span class="k">continue</span>;
+         <span class="k">if</span> <span class="o">(</span>strcmp<span class="o">(</span><span class="s2">&quot;.&quot;</span>, hfile<span class="o">[</span>i<span class="o">][</span>j<span class="o">])</span> <span class="o">==</span> 0<span class="o">)</span> <span class="k">continue</span>; // ignore null tokens
+         int <span class="nv">count</span> <span class="o">=</span> hfile<span class="o">[</span>i<span class="o">]</span>.getTokenCount<span class="o">(</span>j<span class="o">)</span>;
+         <span class="k">for</span> <span class="o">(</span>int <span class="nv">k</span><span class="o">=</span>0; k&lt;count; k++<span class="o">)</span> <span class="o">{</span>
+            hfile<span class="o">[</span>i<span class="o">]</span>.getToken<span class="o">(</span>buffer, j, k<span class="o">)</span>;
+            <span class="k">if</span> <span class="o">(</span>strchr<span class="o">(</span>buffer, <span class="s1">&#39;r&#39;</span><span class="o">)</span> !<span class="o">=</span> NULL<span class="o">)</span> <span class="k">continue</span>; // ignore rests
+            <span class="nv">base40</span> <span class="o">=</span> Convert::kernToBase40<span class="o">(</span>buffer<span class="o">)</span>;
+            histogram<span class="o">[</span>base40 % 40<span class="o">]</span>++;
+         <span class="o">}</span>
+      <span class="o">}</span>
+   <span class="o">}</span>
+   <span class="k">for</span> <span class="o">(</span><span class="nv">i</span><span class="o">=</span>0; i&lt;histogram.getSize<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>histogram<span class="o">[</span>i<span class="o">]</span> <span class="o">==</span> 0<span class="o">)</span> <span class="o">{</span> <span class="k">continue</span>; <span class="o">}</span>
+      cout &lt;&lt; Convert::base40ToKern<span class="o">(</span>buffer, i + 3*40<span class="o">)</span> &lt;&lt; <span class="s2">&quot;\t&quot;</span>
+                &lt;&lt; histogram<span class="o">[</span>i<span class="o">]</span> <span class="s">&lt;&lt; endl;</span>
+<span class="s">   }</span>
+<span class="s">   re</span>turn 0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul></div>
+<div class="section" id="duration-weighted-note-histogram">
+<h3>Duration-weighted note histogram<a class="headerlink" href="#duration-weighted-note-histogram" title="Permalink to this headline">¶</a></h3>
+<p>Often it is useful to know how long a certain pitch class sounds in a
+musical work rather than just how many note attacks for each pitch
+class. Here is a program which measures the duration of each pitch class
+in the music:</p>
+<blockquote>
+<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
+   options.process<span class="o">()</span>;
+   HumdrumFile hfile;
+   hfile.read<span class="o">(</span>options.getArg<span class="o">(</span>1<span class="o">))</span>;
+   Array&lt;double&gt; histogram<span class="o">(</span>12<span class="o">)</span>;
+   histogram.setAll<span class="o">(</span>0<span class="o">)</span>;
+   histogram.allowGrowth<span class="o">(</span>0<span class="o">)</span>;
+   char buffer<span class="o">[</span>1024<span class="o">]</span> <span class="o">=</span> <span class="o">{</span>0<span class="o">}</span>;
+   double duration;
+   int midikey;
+   int i;
+   <span class="k">for</span> <span class="o">(</span><span class="nv">i</span><span class="o">=</span>0; i&lt;hfile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>!hfile<span class="o">[</span>i<span class="o">]</span>.isData<span class="o">())</span> <span class="k">continue</span>; // ignore non-data lines
+      <span class="k">for</span> <span class="o">(</span>int <span class="nv">j</span><span class="o">=</span>0; j&lt;hfile<span class="o">[</span>i<span class="o">]</span>.getFieldCount<span class="o">()</span>; j++<span class="o">)</span> <span class="o">{</span>
+         <span class="k">if</span> <span class="o">(</span>strcmp<span class="o">(</span><span class="s2">&quot;**kern&quot;</span>, hfile<span class="o">[</span>i<span class="o">]</span>.getExInterp<span class="o">(</span>j<span class="o">))</span> !<span class="o">=</span> 0<span class="o">)</span> <span class="k">continue</span>;
+         <span class="k">if</span> <span class="o">(</span>strcmp<span class="o">(</span><span class="s2">&quot;.&quot;</span>, hfile<span class="o">[</span>i<span class="o">][</span>j<span class="o">])</span> <span class="o">==</span> 0<span class="o">)</span> <span class="k">continue</span>; // ignore null tokens
+         int <span class="nv">count</span> <span class="o">=</span> hfile<span class="o">[</span>i<span class="o">]</span>.getTokenCount<span class="o">(</span>j<span class="o">)</span>;
+         <span class="k">for</span> <span class="o">(</span>int <span class="nv">k</span><span class="o">=</span>0; k&lt;count; k++<span class="o">)</span> <span class="o">{</span>
+            hfile<span class="o">[</span>i<span class="o">]</span>.getToken<span class="o">(</span>buffer, j, k<span class="o">)</span>;
+            <span class="k">if</span> <span class="o">(</span>strchr<span class="o">(</span>buffer, <span class="s1">&#39;r&#39;</span><span class="o">)</span> !<span class="o">=</span> NULL<span class="o">)</span> <span class="k">continue</span>; // ignore rests
+            <span class="nv">midikey</span> <span class="o">=</span> Convert::kernToMidiNoteNumber<span class="o">(</span>buffer<span class="o">)</span>;
+            <span class="nv">duration</span> <span class="o">=</span> Convert::kernToDuration<span class="o">(</span>buffer<span class="o">)</span>;
+            histogram<span class="o">[</span>midikey % 12<span class="o">]</span> +<span class="o">=</span> duration;
+         <span class="o">}</span>
+      <span class="o">}</span>
+   <span class="o">}</span>
+   <span class="k">for</span> <span class="o">(</span><span class="nv">i</span><span class="o">=</span>0; i&lt;histogram.getSize<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      std::cout &lt;&lt; Convert::base12ToKern<span class="o">(</span>buffer, i+4*12<span class="o">)</span> &lt;&lt; <span class="s2">&quot;\t&quot;</span>
+                &lt;&lt; histogram<span class="o">[</span>i<span class="o">]</span> &lt;&lt; std::endl;
+   <span class="o">}</span>
+   <span class="k">return </span>0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul><p>Now the program will output the duration in quarter notes for each pitch
+class in the music:</p>
+<blockquote>
+<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
+<div class="code text highlight-bash"><div class="highlight"><pre>C   319.556
+C#  98.6833
+D   137.644
+E-  208.4
+E   84.1444
+F   225.158
+F#  75.5278
+G   308.772
+G#  203.953
+A   61.2111
+B-  121.267
+B   125.767
+</pre></div>
+</div>
+</td></tr></table></ul><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="rhythm-parsing">
+<h3>Rhythm parsing<a class="headerlink" href="#rhythm-parsing" title="Permalink to this headline">¶</a></h3>
+<p>Humdrum files containing **kern data can be rhythmically parsed using
+the HumdrumFile::analyzeRhythm() function. The **kern data is expected
+to contain rhythmic data which is consistent with the layout of the
+music on each line in the file. This function will store rhythmic
+information for each line in the file, such as the current beat in the
+measure, the number of beats since the start of the file, and the
+duration of each line (composite rhythm).</p>
+<div class="section" id="absolute-beat">
+<h4>Absolute beat<a class="headerlink" href="#absolute-beat" title="Permalink to this headline">¶</a></h4>
+<p>The HumdrumRecord::getAbsBeat() function returns the number of quarter
+notes (by default) from the beginning of the file to the current line.
+Below is an example program which prints the &#8220;absolute beat&#8221; data for
+each line of a Humdrum file. Note that lines of any type (data,
+comments, interpretations) can be queried for their position in the
+score. In this example the argument &#8220;4&#8221; is given to .analyzeRhythm().
+This means to use the quarter note as the basis for calculating rhythmic
+values for the score.</p>
+<blockquote>
+<div><table style="background: white;" cellpadding=0 cellspacing=0><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
+
+void printRhythm<span class="o">(</span>HumdrumFile&amp; infile<span class="o">)</span> <span class="o">{</span>
+   <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>0; i&lt;infile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      cout <span class="s">&lt;&lt; infile[i].getAbsBeat() &lt;&lt; &#39;\t&#39; &lt;&lt; infile</span><span class="o">[</span>i<span class="o">]</span> <span class="s">&lt;&lt; &#39;\n&#39;;</span>
+<span class="s">   }</span>
+<span class="s">}</span>
+
+<span class="s">void processFile(HumdrumFile&amp; in</span>file<span class="o">)</span> <span class="o">{</span>
+   infile.analyzeRhythm<span class="o">(</span><span class="s2">&quot;4&quot;</span><span class="o">)</span>;
+   printRhythm<span class="o">(</span>infile<span class="o">)</span>;
+<span class="o">}</span>
+
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
+   HumdrumFileSet infiles;
+   options.process<span class="o">()</span>;
+   infiles.read<span class="o">(</span>options<span class="o">)</span>;
+
+   <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>0; i&lt;infiles.getCount<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      processFile<span class="o">(</span>infiles<span class="o">[</span>i<span class="o">])</span>;
+      <span class="k">if</span> <span class="o">(</span>i&lt;infiles.getCount<span class="o">()</span> - 1<span class="o">)</span> <span class="o">{</span>
+         cout <span class="s">&lt;&lt; &#39;\n&#39;;</span>
+<span class="s">      }</span>
+<span class="s">   }</span>
+
+<span class="s">   return</span> 0;
+<span class="o">}</span>;
+</pre></div>
+</div>
+</td></tr></table></ul><p>Here is example input/output from the above program. Each line in the
+output starts with the &#8220;absolute beat&#8221; value for the line, followed by
+the input line. Note that the example input contains two measures of 4/4
+meter, so the total duration of the score is 8 quarter notes. This
+matches to the &#8220;absolute beat&#8221; position of the last line in the file.</p>
+<blockquote>
+<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+</td><td width=40></td><td></td></tr></table></ul><p>In the above example program, absolute beat positions for each line were
+printed as floating-point numbers. Notice that for the triplet eighth
+notes starting in measure 2, round-off error occurs in 10<sup>-5</sup>
+decimal place. If you require rhythmic information with no round-ff
+error, use the .getAbsBeatR() function rather than .getAbsBeat(). The
+&#8220;R&#8221; stands for &#8220;Rational number&#8221;. The return value from &#8220;R&#8221; versions of
+rhythm functions return a data type called RationalNumber which can
+represent fractional values. A triplet eighth is exactly 1/3 of a
+quarter note which is approximated by the floating-point value 0.33333.
+The RationalNumber class handles such fractions by storing the numerator
+and denominator as separate integer values to avoid introducing
+round-off error.</p>
+<p>Try replacing the printRhythm() function in the above example with this
+one which substitutes .getAbsBeat() with .getAbsBeatR():</p>
+<blockquote>
+<div><table style="background: white;" cellpadding=0 cellspacing=0><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre>void printRhythm<span class="o">(</span>HumdrumFile&amp; infile<span class="o">)</span> <span class="o">{</span>
+   <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>0; i&lt;infile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      cout <span class="s">&lt;&lt; infile[i].getAbsBeatR() &lt;&lt; &#39;\t&#39; &lt;&lt; infile</span><span class="o">[</span>i<span class="o">]</span> &lt;&lt; <span class="s1">&#39;\n&#39;</span>;
+   <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul><p>Now the output of the program describes the rhythms in terms of
+fractions rather than floating-point values:</p>
+<blockquote>
+<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+</td><td width=40></td><td></td></tr></table></ul><p>This is now quite readable, so printing and integer plus a fractional
+remainder for each absolute beat position would be more convenient:</p>
+<blockquote>
+<div><table style="background: white;" cellpadding=0 cellspacing=0><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre>void printRhythm<span class="o">(</span>HumdrumFile&amp; infile<span class="o">)</span> <span class="o">{</span>
+   RationalNumber absbeat;
+   <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>0; i&lt;infile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="nv">absbeat</span> <span class="o">=</span> infile<span class="o">[</span>i<span class="o">]</span>.getAbsBeatR<span class="o">()</span>;
+      absbeat.printTwoPart<span class="o">(</span>cout<span class="o">)</span>;
+      cout &lt;&lt; <span class="s1">&#39;\t&#39;</span> <span class="s">&lt;&lt; infi</span>le<span class="o">[</span>i<span class="o">]</span> &lt;&lt; <span class="s1">&#39;\n&#39;</span>;
+   <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul><p>Now the output is more readable with numbers such as 31/5 replaced with
+6+1/5:</p>
+<blockquote>
+<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+</td><td width=40></td><td></td></tr></table></ul></div>
+<div class="section" id="line-duration">
+<h4>Line duration<a class="headerlink" href="#line-duration" title="Permalink to this headline">¶</a></h4>
+<p>The line duration, or composite rhythm, of a Humdrum file can be
+extracted from the rhythmic analysis results by using the
+HumdrumRecord::getDuration() and getDurationR() functions. The
+getDuration() function returns a double float, while getDurationR()
+returns a RationalNumber type. The floating point version will contain
+round-off errors while the RationalNumber type will not, so you can use
+the different methods depending on your particular application
+requirements. Floating point values can also be extracted from
+RationalNumber types with the RationalNumber::getFloat() function.</p>
+<p>Here is an example program which prints the duration of each line in a
+Humdrum file:</p>
+<blockquote>
+<div><table style="background: white;" cellpadding=0 cellspacing=0><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
+
+void printRhythm<span class="o">(</span>HumdrumFile&amp; infile<span class="o">)</span> <span class="o">{</span>
+   RationalNumber linedur;
+   <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>0; i&lt;infile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="nv">linedur</span> <span class="o">=</span> infile<span class="o">[</span>i<span class="o">]</span>.getDurationR<span class="o">()</span>;
+      linedur.printTwoPart<span class="o">(</span>cout<span class="o">)</span>;
+      cout <span class="s">&lt;&lt; &#39;\t&#39; &lt;&lt; infile[i] &lt;&lt; &#39;\n&#39;;</span>
+<span class="s">   }</span>
+<span class="s">}</span>
+
+<span class="s">void processFile(HumdrumFile&amp; infile) {</span>
+<span class="s">   infile.analyzeRhyt</span>hm<span class="o">(</span><span class="s2">&quot;4&quot;</span><span class="o">)</span>;
+   printRhythm<span class="o">(</span>infile<span class="o">)</span>;
+<span class="o">}</span>
+
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
+   HumdrumFileSet infiles;
+   options.process<span class="o">()</span>;
+   infiles.read<span class="o">(</span>options<span class="o">)</span>;
+
+   <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>0; i&lt;infiles.getCount<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      processFile<span class="o">(</span>infiles<span class="o">[</span>i<span class="o">])</span>;
+      <span class="k">if</span> <span class="o">(</span>i&lt;infiles.getCount<span class="o">()</span> - 1<span class="o">)</span> <span class="o">{</span>
+         cout <span class="s">&lt;&lt; &#39;\n&#39;;</span>
+<span class="s">      }</span>
+<span class="s">   }</span>
+
+<span class="s">   return</span> 0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul><p>This program outputs the duration of each line in quarter-note units:</p>
+<blockquote>
+<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+</td><td width=40></td><td></td></tr></table></ul><p>Notice that non-data lines are assigned a duration of 0. Also note that
+the line &#8221;. 12ee&#8221; has a line duration of 1/6th of a quarter note. This
+is smaller than the rhythm 12 which is 1/3 of a quarter note due to the
+8th note in the first column having its duration split across two lines.</p>
+<p>If you want the durations to represent **recip Humdrum data (**kern
+rhythm values), then either divide the RationalValue duration by 4, or
+use whole notes when analyzing the rhythmic structure of the file with
+.analyzeRhythm(&#8220;1&#8221;) instead of using &#8220;4&#8221; as its argument.</p>
+<p>Here is an example program which calculates the composite rhythm of the
+file and prepends a **recip spine to the original data:</p>
+<blockquote>
+<div><table style="background: white;" cellpadding=0 cellspacing=0><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
+
+void processFile<span class="o">(</span>HumdrumFile&amp; infile<span class="o">)</span> <span class="o">{</span>
+   infile.analyzeRhythm<span class="o">(</span><span class="s2">&quot;4&quot;</span><span class="o">)</span>;
+   RationalNumber linedur;
+   <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>0; i&lt;infile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>infile<span class="o">[</span>i<span class="o">]</span>.isData<span class="o">())</span> <span class="o">{</span>
+         <span class="nv">linedur</span> <span class="o">=</span> infile<span class="o">[</span>i<span class="o">]</span>.getDurationR<span class="o">()</span>;
+         cout <span class="s">&lt;&lt; linedur &lt;&lt; &#39;\t&#39;;</span>
+<span class="s">         linedur</span> /<span class="o">=</span> 4;
+         linedur.printRecip<span class="o">(</span>cout<span class="o">)</span>;
+         cout <span class="s">&lt;&lt; &#39;\t&#39; &lt;&lt; infile[i] &lt;&lt; &#39;\n&#39;;</span>
+<span class="s">      } else if (infile[i].isMeasure()) {</span>
+<span class="s">         cout</span> <span class="s">&lt;&lt; infile[i][0] &lt;&lt; &#39;\t&#39; &lt;&lt;infile</span><span class="o">[</span>i<span class="o">][</span>0<span class="o">]</span>;
+         cout <span class="s">&lt;&lt; &#39;\t&#39; &lt;&lt; infile[i] &lt;&lt; &#39;\n&#39;;</span>
+<span class="s">      } else if (st</span>rncmp<span class="o">(</span>infile<span class="o">[</span>i<span class="o">][</span>0<span class="o">]</span>, <span class="s2">&quot;**&quot;</span>, 2<span class="o">)</span> <span class="o">==</span> 0<span class="o">)</span> <span class="o">{</span>
+         cout &lt;&lt; <span class="s2">&quot;**dur\t**recip\t&quot;</span> <span class="s">&lt;&lt; infile[i] &lt;&lt; &#39;\n&#39;;</span>
+<span class="s">      } else if (strcmp(infile</span><span class="o">[</span>i<span class="o">][</span>0<span class="o">]</span>, <span class="s2">&quot;*-&quot;</span><span class="o">)</span> <span class="o">==</span> 0<span class="o">)</span> <span class="o">{</span>
+         cout &lt;&lt; <span class="s2">&quot;*-\t*-\t&quot;</span> <span class="s">&lt;&lt; infile[i] &lt;&lt; &#39;\n&#39;;</span>
+<span class="s">      } else if (infile</span><span class="o">[</span>i<span class="o">]</span>.isInterpretation<span class="o">())</span> <span class="o">{</span>
+         cout &lt;&lt; <span class="s2">&quot;*\t*&quot;</span> <span class="s">&lt;&lt; &#39;\t&#39; &lt;&lt; infile[i] &lt;&lt; &#39;\n&#39;;</span>
+<span class="s">      } else if (infile[i].isLocalComment</span><span class="o">())</span> <span class="o">{</span>
+         cout &lt;&lt; <span class="s2">&quot;!\t!&quot;</span> <span class="s">&lt;&lt; &#39;\t&#39; &lt;&lt; infile[i] &lt;&lt; &#39;\n&#39;;</span>
+<span class="s">      } else {</span>
+<span class="s">         cout</span> <span class="s">&lt;&lt; infile[i] &lt;&lt; &#39;\n&#39;;</span>
+<span class="s">      }</span>
+<span class="s">   }</span>
+<span class="s">}</span>
+
+<span class="s">int main(int argc, char** argv) {</span>
+<span class="s">   Options options(argc, argv);</span>
+<span class="s">   HumdrumFileSet infile</span>s;
+   options.process<span class="o">()</span>;
+   infiles.read<span class="o">(</span>options<span class="o">)</span>;
+
+   <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>0; i&lt;infiles.getCount<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      processFile<span class="o">(</span>infiles<span class="o">[</span>i<span class="o">])</span>;
+      <span class="k">if</span> <span class="o">(</span>i&lt;infiles.getCount<span class="o">()</span> - 1<span class="o">)</span> <span class="o">{</span>
+         cout <span class="s">&lt;&lt; &#39;\n&#39;;</span>
+<span class="s">      }</span>
+<span class="s">   }</span>
+
+<span class="s">   return</span> 0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul><p>Here is the input and output for the composite rhythm program listed
+above. The HumdrumRecord::getDurationR() information was printed in the
+first column. The second column gives the Humdrum **recip
+representation of the duration as a **kern rhythmic value. The
+**recip value is the inverse of the duration, multiplied by 4 in this
+case to represent inverse divisions of whole notes rather than quarter
+notes.</p>
+<blockquote>
+<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+</td><td width=40></td><td></td></tr></table></ul></div>
+</div>
+<div class="section" id="line-field-enumeration-by-spine">
+<h3>Line field enumeration by spine<a class="headerlink" href="#line-field-enumeration-by-spine" title="Permalink to this headline">¶</a></h3>
+<p>The HumdrumRecord::getFieldCount() function returns the number of tokens
+on each Humdrum line, and each of these fields is accessed by an index
+number up to this count. However, if you want to access data by spine
+number (or to be clear primary spine number), you have to use a
+different method. The field number and spine number do not always match
+because spines can split into subspines which will increase the field
+count on a line.</p>
+<p>To access data by spine, use the HumdrumRecord::getPrimaryTrack()
+function. This function returns an integer value for the current spine,
+enumerated from one (sorry). Multiple fields can have the same primary
+track number, which is caused by a spine split in the data.</p>
+<p>Here is a program which prints the primary track for each data token in
+a Humdrum file structure:</p>
+<blockquote>
+<div><table style="background: white;" cellpadding=0 cellspacing=0><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
+using namespace std;
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
+   options.process<span class="o">()</span>;
+   HumdrumFile hfile;
+   hfile.read<span class="o">(</span>options.getArg<span class="o">(</span>1<span class="o">))</span>;
+   <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>0; i&lt;hfile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>!hfile<span class="o">[</span>i<span class="o">]</span>.isData<span class="o">())</span> <span class="o">{</span>
+         cout <span class="s">&lt;&lt; hfile[i] &lt;&lt; endl;</span>
+<span class="s">         continue;</span>
+<span class="s">      }</span>
+<span class="s">      cout &lt;&lt; hfile</span><span class="o">[</span>i<span class="o">]</span>.getPrimaryTrack<span class="o">(</span>0<span class="o">)</span>;
+      <span class="k">for</span> <span class="o">(</span>int <span class="nv">j</span><span class="o">=</span>1; j&lt;hfile<span class="o">[</span>i<span class="o">]</span>.getFieldCount<span class="o">()</span>; j++<span class="o">)</span> <span class="o">{</span>
+         cout <span class="s">&lt;&lt; &#39;\t&#39; &lt;&lt; hfile[i].get</span>PrimaryTrack<span class="o">(</span>j<span class="o">)</span>;
+      <span class="o">}</span>
+      cout <span class="s">&lt;&lt; endl;</span>
+<span class="s">   }</span>
+<span class="s">   re</span>turn 0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul><p>And here is example input and output:</p>
+<blockquote>
+<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+</td><td width=40></td><td></td></tr></table></ul><p>Notice that the input data contains three exclusive interpretations.
+This will mean that there are three primary tracks (or spines) in the
+data. In the output you can see the numbers for each track: 1, 2, and 3.
+The HumdrumRecord::getMaxTrack() function can be called to find out what
+the maximum track number is (3 in this case).</p>
+<p>The primary track value is an integer. If you also want to see the
+subtrack information, use .getTrack() instead of .getPrimaryTrack(). The
+.getTrack() function will have the primary track in the integer portion
+of a double float, and the enumerated subtrack in the fractional value.
+The subtrack value uses the first three digits of the fraction, so you
+can extract the subtrack by removing the integer part of the number and
+multiplying by 1000. Note that the subtrack enumeration starts at 0,
+while the primary tracks are enumerated from 1 (sorry again).</p>
+<blockquote>
+<div><table style="background:white;" cellpadding=0 cellspacing=0><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
+using namespace std;
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
+   options.process<span class="o">()</span>;
+   HumdrumFile hfile;
+   hfile.read<span class="o">(</span>options.getArg<span class="o">(</span>1<span class="o">))</span>;
+   <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>0; i&lt;hfile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>!hfile<span class="o">[</span>i<span class="o">]</span>.isData<span class="o">())</span> <span class="o">{</span>
+         cout <span class="s">&lt;&lt; hfile[i] &lt;&lt; endl;</span>
+<span class="s">         continue;</span>
+<span class="s">      }</span>
+<span class="s">      cout &lt;&lt; hfile</span><span class="o">[</span>i<span class="o">]</span>.getPrimaryTrack<span class="o">(</span>0<span class="o">)</span>;
+      <span class="k">for</span> <span class="o">(</span>int <span class="nv">j</span><span class="o">=</span>1; j&lt;hfile<span class="o">[</span>i<span class="o">]</span>.getFieldCount<span class="o">()</span>; j++<span class="o">)</span> <span class="o">{</span>
+         cout <span class="s">&lt;&lt; &#39;\t&#39; &lt;&lt; hfile[i].get</span>Track<span class="o">(</span>j<span class="o">)</span>;
+      <span class="o">}</span>
+      cout <span class="s">&lt;&lt; endl;</span>
+<span class="s">   }</span>
+<span class="s">   re</span>turn 0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul>
+
+     .. raw:: html
+
+        <table style="background:white;" cellpadding=0 cellspacing=0>
+
+     .. raw:: html
+
+        <tr valign=top>
+
+     .. raw:: html
+
+        <td></td><td width=40></td><td></td></tr></table></ul><p>Even more detail about track information can be accessed with the
+.getSpineInfo() function. This function returns the internally stored
+string which keeps track of how the spine/subspine was manipulated on
+previous lines of the data.</p>
+<blockquote>
+<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
+using namespace std;
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
+   options.process<span class="o">()</span>;
+   HumdrumFile hfile;
+   hfile.read<span class="o">(</span>options.getArg<span class="o">(</span>1<span class="o">))</span>;
+   <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>0; i&lt;hfile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>!hfile<span class="o">[</span>i<span class="o">]</span>.isData<span class="o">())</span> <span class="o">{</span>
+         cout <span class="s">&lt;&lt; hfile[i] &lt;&lt; endl;</span>
+<span class="s">         continue;</span>
+<span class="s">      }</span>
+<span class="s">      cout &lt;&lt; hfile</span><span class="o">[</span>i<span class="o">]</span>.getPrimaryTrack<span class="o">(</span>0<span class="o">)</span>;
+      <span class="k">for</span> <span class="o">(</span>int <span class="nv">j</span><span class="o">=</span>1; j&lt;hfile<span class="o">[</span>i<span class="o">]</span>.getFieldCount<span class="o">()</span>; j++<span class="o">)</span> <span class="o">{</span>
+         cout <span class="s">&lt;&lt; &#39;\t&#39; &lt;&lt; hfile[i].get</span>SpineInfo<span class="o">(</span>j<span class="o">)</span>;
+      <span class="o">}</span>
+      cout <span class="s">&lt;&lt; endl;</span>
+<span class="s">   }</span>
+<span class="s">   re</span>turn 0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul>
+
+     .. raw:: html
+
+        <table style="background:white;" cellpadding=0 cellspacing=0>
+
+     .. raw:: html
+
+        <tr valign=top>
+
+     .. raw:: html
+
+        <td></td><td width=40></td><td></td></tr></table></ul><p>In this case the spine info &#8220;<tt class="docutils literal"><span class="pre">(2)a</span></tt>&#8221; means that that token is in
+primary spine 2, but the spine was split once, and this subtrack is the
+left-hand subspine coming out of the split. The .getPrimaryTrack()
+function returns the first number in the .getSpineInfo() string.</p>
+<p>Here is a more complex spine manipulation:</p>
+<blockquote>
+<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+</td><td width=40></td><td></td></tr></table></ul><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="spine-manipulator-examples">
+<h4>Spine manipulator examples<a class="headerlink" href="#spine-manipulator-examples" title="Permalink to this headline">¶</a></h4>
+<p>Here is an example of spine splits (<tt class="docutils literal"><span class="pre">*v</span></tt>) and joins (<tt class="docutils literal"><span class="pre">*v</span></tt>):</p>
+<blockquote>
+<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+</td><td width=40></td><td></td></tr></table></ul><p>Here is an example of spine additions (<tt class="docutils literal"><span class="pre">*+</span></tt>) and terminations
+(<tt class="docutils literal"><span class="pre">*-</span></tt>):</p>
+<blockquote>
+<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+</td><td width=40></td><td></td></tr></table></ul><p>Here is an example of spine exchanges (<tt class="docutils literal"><span class="pre">*x</span></tt>):</p>
+<blockquote>
+<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+</td><td width=40></td><td></td></tr></table></ul><p>And finally a complex example using all of the spine manipulators:</p>
+<blockquote>
+<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+</td><td width=40></td><td></td></tr></table></ul><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="myextract-cpp">
+<h4>myextract.cpp<a class="headerlink" href="#myextract-cpp" title="Permalink to this headline">¶</a></h4>
+<p>Now that you know how to extract information about spines and subspines,
+you can write your own version of the Humdrum Toolkit&#8217;s extract program.
+It will be even more powerful than the extract program, since the
+extract program cannot deal with subspines without special processing.
+Here is the <tt class="docutils literal"><span class="pre">myextract</span></tt> code:</p>
+<blockquote>
+<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
+using namespace std;
+
+void extract<span class="o">(</span>HumdrumFile&amp; hfile, int primarytrack<span class="o">)</span> <span class="o">{</span>
+   int i, j, fcount, pcount;
+   <span class="k">for</span> <span class="o">(</span><span class="nv">i</span><span class="o">=</span>0; i&lt;hfile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>!hfile<span class="o">[</span>i<span class="o">]</span>.hasSpines<span class="o">())</span> <span class="o">{</span>
+         cout <span class="s">&lt;&lt; hfile[i] &lt;&lt; endl;</span>
+<span class="s">         continue;</span>
+<span class="s">      }</span>
+<span class="s">      fcount = hfile</span><span class="o">[</span>i<span class="o">]</span>.getFieldCount<span class="o">()</span>;
+      <span class="nv">pcount</span> <span class="o">=</span> 0;
+      <span class="k">for</span> <span class="o">(</span><span class="nv">j</span><span class="o">=</span>0; j&lt;fcount; j++<span class="o">)</span> <span class="o">{</span>
+         <span class="k">if</span> <span class="o">(</span><span class="nv">primarytrack</span> <span class="o">==</span> hfile<span class="o">[</span>i<span class="o">]</span>.getPrimaryTrack<span class="o">(</span>j<span class="o">))</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span>pcount++ &gt; 0<span class="o">)</span> cout <span class="s">&lt;&lt; &#39;\t&#39;;</span>
+<span class="s">            cout</span> <span class="s">&lt;&lt; hfile[i][j];</span>
+<span class="s">         }</span>
+<span class="s">      }</span>
+<span class="s">      if (pcount &gt; 0) cout &lt;&lt; endl;</span>
+<span class="s">   }</span>
+<span class="s">}</span>
+
+<span class="s">int main (int argc, char** argv) {</span>
+<span class="s">   Options opts;</span>
+<span class="s">   opts.define(&quot;t|track=i:1&quot;, &quot;extract specified track&quot;);</span>
+<span class="s">   opts.process(argc, argv);</span>
+<span class="s">   int primarytrack = opts.getInteger(&quot;track&quot;);</span>
+<span class="s">   int numinputs = opts.getArgCount();</span>
+<span class="s">   HumdrumFile hfile</span>;
+   <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>1; i&lt;<span class="o">=</span>numinputs <span class="o">||</span> <span class="nv">i</span><span class="o">==</span>0; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>numinputs &lt; 1<span class="o">)</span> <span class="o">{</span> hfile.read<span class="o">(</span>std::cin<span class="o">)</span>; <span class="o">}</span>
+      <span class="k">else</span> <span class="o">{</span> hfile.read<span class="o">(</span>opts.getArg<span class="o">(</span>i<span class="o">))</span>; <span class="o">}</span>
+      extract<span class="o">(</span>hfile, primarytrack<span class="o">)</span>;
+   <span class="o">}</span>
+   <span class="k">return </span>0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul>
+
+     .. raw:: html
+
+        <table style="background:white;" cellpadding=0 cellspacing=0><tr><td><p>input</p>
+</td><td colspan=2><center><p><tt class="docutils literal"><span class="pre">myextract</span> <span class="pre">-t</span> <span class="pre">2</span></tt></p>
+</center></td></tr><tr valign=top><td></td><td width=145></td><td></td></tr></table></ul><p>Notice that all of the &#8220;B&#8221; information which was in spine 2 was
+extracted from the input data.</p>
+</div>
+</div>
+<div class="section" id="regular-expressions">
+<h3>Regular Expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this headline">¶</a></h3>
+<p>Regular expressions are an important concept to understand when working
+with Humdrum data, since the data format was designed to take advantage
+of them.</p>
+<div class="section" id="gnu-posix-regular-expressions">
+<h4>GNU POSIX regular expressions<a class="headerlink" href="#gnu-posix-regular-expressions" title="Permalink to this headline">¶</a></h4>
+<p>Different Operating systems have different C implementations of regular
+expressions. Here is an example of how to use them on most linux
+operating systems using the GNU POSIX regular expressions:</p>
+<blockquote>
+<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+<div class="code c highlight-bash"><div class="highlight"><pre><span class="c">#include &lt;regex.h&gt;</span>
+<span class="c">#include &lt;stdlib.h&gt;</span>
+<span class="c">#include &lt;stdio.h&gt;</span>
+using namespace std;
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   <span class="k">if</span> <span class="o">(</span>argc &lt; 3<span class="o">)</span> <span class="nb">exit</span><span class="o">(</span>1<span class="o">)</span>;
+   const char *searchstring <span class="o">=</span> argv<span class="o">[</span>1<span class="o">]</span>;
+   const char *datastring <span class="o">=</span> argv<span class="o">[</span>2<span class="o">]</span>;
+   regex_t re;
+   int <span class="nv">flags</span> <span class="o">=</span> 0 | REG_EXTENDED | REG_ICASE;
+   int <span class="nv">status</span> <span class="o">=</span> regcomp<span class="o">(</span>&amp;re, searchstring, flags<span class="o">)</span>;
+   <span class="k">if</span> <span class="o">(</span>status !<span class="o">=</span>0<span class="o">)</span> <span class="o">{</span>
+      char errstring<span class="o">[</span>999<span class="o">]</span>;
+      regerror<span class="o">(</span>status, &amp;re, errstring, 999<span class="o">)</span>;
+      <span class="nb">printf</span><span class="o">(</span><span class="s2">&quot;%s\n&quot;</span>, errstring<span class="o">)</span>;
+      <span class="nb">exit</span><span class="o">(</span>1<span class="o">)</span>;
+   <span class="o">}</span>
+   <span class="nv">status</span> <span class="o">=</span> regexec<span class="o">(</span>&amp;re, datastring, 0, NULL, 0<span class="o">)</span>;
+   <span class="k">if</span> <span class="o">(</span><span class="nv">status</span> <span class="o">==</span> 0<span class="o">)</span> <span class="nb">printf</span><span class="o">(</span><span class="s2">&quot;Match Found\n&quot;</span><span class="o">)</span>;
+   <span class="k">else </span><span class="nb">printf</span><span class="o">(</span><span class="s2">&quot;Match Not Found\n&quot;</span><span class="o">)</span>;
+   <span class="k">return </span>0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul><p>Example behavior of the program:</p>
+<blockquote>
+<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+<div class="code text highlight-bash"><div class="highlight"><pre>search cat <span class="s2">&quot;cat in the hat&quot;</span>
+Match Found
+
+search dog <span class="s2">&quot;cat in the hat&quot;</span>
+Match Not Found
+</pre></div>
+</div>
+</td></tr></table></ul><p>For the simple examples above the strstr() C library function could have
+been used (which would probably also run faster). But using regular
+expressions allows for more powerful generalized searching, such as
+looking for upper and lower case matches:</p>
+<blockquote>
+<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+<div class="code text highlight-bash"><div class="highlight"><pre>search cat <span class="s2">&quot;Cat in the hat&quot;</span>
+Match Found
+</pre></div>
+</div>
+</td></tr></table></ul><p>In this case &#8220;cat&#8221; was matched to &#8220;Cat&#8221; since the REG_ICASE flag was
+used to ignore difference between upper and lower letter cases. The
+REG_EXTENDED flag is for using extended regular expressions (regular
+expressions 2.0). The regexec() function returns 0 if a match was found,
+otherwise returns a non-zero value to indicate no match was found.</p>
+<div class="section" id="mysed-c-search-and-replace">
+<h5>mysed.c (Search and replace)<a class="headerlink" href="#mysed-c-search-and-replace" title="Permalink to this headline">¶</a></h5>
+<p>The following program demonstrates how to do search and replace on
+strings with GNU POSIX regular expressions.</p>
+<blockquote>
+<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+<div class="code c highlight-bash"><div class="highlight"><pre><span class="c">#include &lt;regex.h&gt;</span>
+<span class="c">#include &lt;stdlib.h&gt;</span>
+<span class="c">#include &lt;stdio.h&gt;</span>
+<span class="c">#include &lt;string.h&gt;</span>
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   <span class="k">if</span> <span class="o">(</span>argc &lt; 4<span class="o">)</span> <span class="nb">exit</span><span class="o">(</span>1<span class="o">)</span>;
+   char buffer<span class="o">[</span>1024<span class="o">]</span> <span class="o">=</span> <span class="o">{</span>0<span class="o">}</span>;
+   const char *searchstring <span class="o">=</span> argv<span class="o">[</span>1<span class="o">]</span>;
+   const char *replacestring <span class="o">=</span> argv<span class="o">[</span>2<span class="o">]</span>;
+   const char *datastring <span class="o">=</span> argv<span class="o">[</span>3<span class="o">]</span>;
+   regex_t re;
+   regmatch_t match;
+   int <span class="nv">compflags</span> <span class="o">=</span> 0 | REG_EXTENDED | REG_ICASE;
+   int <span class="nv">status</span> <span class="o">=</span> regcomp<span class="o">(</span>&amp;re, searchstring, compflags<span class="o">)</span>;
+   <span class="k">if</span> <span class="o">(</span>status !<span class="o">=</span>0<span class="o">)</span> <span class="o">{</span>
+      regerror<span class="o">(</span>status, &amp;re, buffer, 1024<span class="o">)</span>;
+      <span class="nb">printf</span><span class="o">(</span><span class="s2">&quot;%s\n&quot;</span>, buffer<span class="o">)</span>;
+      <span class="nb">exit</span><span class="o">(</span>1<span class="o">)</span>;
+   <span class="o">}</span>
+   <span class="nv">status</span> <span class="o">=</span> regexec<span class="o">(</span>&amp;re, datastring, 1, &amp;match , 0<span class="o">)</span>;
+   <span class="k">while</span> <span class="o">(</span><span class="nv">status</span> <span class="o">==</span> 0<span class="o">)</span> <span class="o">{</span>
+      strncat<span class="o">(</span>buffer, datastring, match.rm_so<span class="o">)</span>;
+      strcat<span class="o">(</span>buffer, replacestring<span class="o">)</span>;
+      datastring +<span class="o">=</span> match.rm_eo;
+      <span class="nv">status</span> <span class="o">=</span> regexec<span class="o">(</span>&amp;re, datastring, 1, &amp;match, REG_NOTBOL<span class="o">)</span>;
+   <span class="o">}</span>
+   <span class="nb">printf</span><span class="o">(</span><span class="s2">&quot;%s%s\n&quot;</span>, buffer, datastring<span class="o">)</span>;
+   <span class="k">return </span>0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul><p>Example use:</p>
+<blockquote>
+<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+<div class="code text highlight-bash"><div class="highlight"><pre>mysed klm 000 abcdefghijklmnopqrstuvwxyz
+abcdefghij000nopqrstuvwxyz
+</pre></div>
+</div>
+</td></tr></table></ul></div>
+</div>
+<div class="section" id="perl-compatible-regular-expressions">
+<h4>Perl Compatible Regular Expressions<a class="headerlink" href="#perl-compatible-regular-expressions" title="Permalink to this headline">¶</a></h4>
+<p>The Humdrum Extras library includes the <a class="reference external" href="http://www.pcre.org">Perl Compatible Regular
+Expressions</a> (PCRE) library which is more
+portable than GNU POSIX regular expressions, and also more powerful as
+it implements extensions to regular expressions which are present in the
+Perl language. The Humdrum Extras library also includes a C++ wrapper
+class for PCRE which allows for a simpler interface. Below are programs
+similar to the GNU POSIX regular expressions found above.</p>
+<blockquote>
+<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+<div class="code c highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;PerlRegularExpression.h&quot;</span>
+<span class="c">#include &lt;iostream&gt;</span>
+using namespace std;
+
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   <span class="k">if</span> <span class="o">(</span>argc &lt; 3<span class="o">)</span> <span class="nb">exit</span><span class="o">(</span>1<span class="o">)</span>;
+   const char *searchstring <span class="o">=</span> argv<span class="o">[</span>1<span class="o">]</span>;
+   const char *datastring <span class="o">=</span> argv<span class="o">[</span>2<span class="o">]</span>;
+   PerlRegularExpression pre;
+   <span class="k">if</span> <span class="o">(</span>pre.search<span class="o">(</span>datastring, searchstring, <span class="s2">&quot;i&quot;</span><span class="o">))</span> <span class="o">{</span>
+      cout &lt;&lt; <span class="s2">&quot;Match Found&quot;</span> <span class="s">&lt;&lt; endl;</span>
+<span class="s">   } else {</span>
+<span class="s">      cout &lt;&lt; &quot;Match Not Found&quot; &lt;&lt; endl</span>;
+   <span class="o">}</span>
+   <span class="k">return </span>0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul><p>The
+<a class="reference external" href="http://extras.humdrum.org/download/humextra/include/PerlRegularExpression.h">PerlRegularExpression</a>
+class definition must be included with <tt class="docutils literal"><span class="pre">PerlRegularExpression.h</span></tt> since
+<tt class="docutils literal"><span class="pre">humdrum.h</span></tt> or any of the files it includes does not depend on the
+PerlRegularExpression class. The .search() function returns true if a
+match was found, or false otherwise. When a match is found, the index
+location of the string plus one is the return value. By default, a
+PerlRegularExpression variable will use extended regular expressions,
+and the <tt class="docutils literal"><span class="pre">&quot;i&quot;</span></tt> used as the third parameter in the .search() function is
+used to set the ignore-case flag.</p>
+<p>Example behavior of the program:</p>
+<blockquote>
+<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+<div class="code text highlight-bash"><div class="highlight"><pre>search cat <span class="s2">&quot;cat in the hat&quot;</span>
+Match Found
+
+search dog <span class="s2">&quot;cat in the hat&quot;</span>
+Match Not Found
+</pre></div>
+</div>
+</td></tr></table></ul><div class="section" id="mysed-cpp-search-and-replace">
+<h5>mysed.cpp (Search and replace)<a class="headerlink" href="#mysed-cpp-search-and-replace" title="Permalink to this headline">¶</a></h5>
+<p>The following program demonstrates how to do search and replace on
+strings with the PerlRegularExpression class.</p>
+<blockquote>
+<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
+<div class="code c highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;PerlRegularExpression.h&quot;</span>
+<span class="c">#include &lt;stdio.h&gt;</span>
+<span class="c">#include &lt;string.h&gt;</span>
+
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   <span class="k">if</span> <span class="o">(</span>argc &lt; 4<span class="o">)</span> <span class="nb">exit</span><span class="o">(</span>1<span class="o">)</span>;
+   const char *searchstring <span class="o">=</span> argv<span class="o">[</span>1<span class="o">]</span>;
+   const char *replacestring <span class="o">=</span> argv<span class="o">[</span>2<span class="o">]</span>;
+   Array&lt;char&gt; data;
+   <span class="nv">data</span> <span class="o">=</span> argv<span class="o">[</span>3<span class="o">]</span>;
+   PerlRegularExpression pre;
+   pre.sar<span class="o">(</span>data, searchstring, replacestring, <span class="s2">&quot;gi&quot;</span><span class="o">)</span>;
+   cout <span class="s">&lt;&lt; data &lt;&lt; end</span>l;
+   <span class="k">return </span>0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul><p>Example use:</p>
+<blockquote>
+<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
+<div class="highlight-bash"><div class="highlight"><pre>mysed klm 000 abcdefghijklmnopqrstuvwxyz
+abcdefghij000nopqrstuvwxyz
+</pre></div>
+</div>
+</td></tr></table></ul><p>The .sar() function (or .searchAndReplace() as the long form) takes four
+parameters: (1) the string to perform the replacement, (2) the search
+string, (3) the replacement string, and (4) the regular expression
+flags. In this case <tt class="docutils literal"><span class="pre">&quot;gi&quot;</span></tt> represents two flags: &#8220;<tt class="docutils literal"><span class="pre">g</span></tt>&#8221; for a
+global replacement (not just the first match on the line) and &#8220;<tt class="docutils literal"><span class="pre">i</span></tt>&#8221;
+as before which means to ignore case.</p>
+</div>
+</div>
+</div>
+<div class="section" id="editing-a-humdrumfile">
+<h3>Editing a HumdrumFile<a class="headerlink" href="#editing-a-humdrumfile" title="Permalink to this headline">¶</a></h3>
+<p>When accessing the contents of a HumdrumFile/HumdrumReccords with [][]
+operators, the value of each spine (or global commend/reference record)
+is a <tt class="docutils literal"><span class="pre">const</span></tt> <tt class="docutils literal"><span class="pre">char*</span></tt>. In order to change a value, use the
+HumdrumRecord::setToken() fuction.</p>
+<div class="section" id="erase-cpp-set-all-data-fields-to-the-null-token">
+<h4>erase.cpp (Set all data fields to the null token)<a class="headerlink" href="#erase-cpp-set-all-data-fields-to-the-null-token" title="Permalink to this headline">¶</a></h4>
+<p>Here is a program which uses .setToken() to change the contents of all
+data fields into null tokens.</p>
+<blockquote>
+<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
+using namespace std;
+
+void setData<span class="o">(</span>HumdrumFile&amp; hfile, const char* replacement<span class="o">)</span> <span class="o">{</span>
+   <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>0; i&lt;hfile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>!hfile<span class="o">[</span>i<span class="o">]</span>.isData<span class="o">())</span> <span class="o">{</span> <span class="k">continue</span>; <span class="o">}</span>
+      <span class="k">for</span> <span class="o">(</span>int <span class="nv">j</span><span class="o">=</span>0; j&lt;hfile<span class="o">[</span>i<span class="o">]</span>.getFieldCount<span class="o">()</span>; j++<span class="o">)</span> <span class="o">{</span>
+         hfile<span class="o">[</span>i<span class="o">]</span>.setToken<span class="o">(</span>j, replacement<span class="o">)</span>;
+      <span class="o">}</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   Options opts;
+   opts.process<span class="o">(</span>argc, argv<span class="o">)</span>;
+   HumdrumFile hfile;
+   <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>1; i&lt;<span class="o">=</span>opts.getArgCount<span class="o">()</span> <span class="o">||</span> <span class="nv">i</span> <span class="o">==</span> 0; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span><span class="nv">i</span> <span class="o">==</span> 0<span class="o">)</span> <span class="o">{</span> hfile.read<span class="o">(</span>cin<span class="o">)</span>; <span class="o">}</span>
+      <span class="k">else</span> <span class="o">{</span> hfile.read<span class="o">(</span>opts.getArg<span class="o">(</span>i<span class="o">))</span>; <span class="o">}</span>
+      setData<span class="o">(</span>hfile, <span class="s2">&quot;.&quot;</span><span class="o">)</span>;
+      cout &lt;&lt; hfile;
+   <span class="o">}</span>
+   <span class="k">return </span>0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul>
+
+     .. raw:: html
+
+        <table style="background:white;">
+
+     .. raw:: html
+
+        <tr valign=baseline>
+
+     .. raw:: html
+
+        <td></td><td width=40></td><td></td></tr></table></ul></div>
+<div class="section" id="transpose-cpp-transpose-music">
+<h4>transpose.cpp (Transpose music)<a class="headerlink" href="#transpose-cpp-transpose-music" title="Permalink to this headline">¶</a></h4>
+<p>The following example program processes each **kern note by
+transposing it by a base40 interval. The transposed note is reinserted
+into the original HumdrumFile structure which is then printed to
+standard output. The main() function is used to handle multiple input
+files, transposeFile() is used to search through each file and pull out
+notes to transpose, and transposeNote() is used to replace the original
+pitch with the transposed version.</p>
+<blockquote>
+<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
+<span class="c">#include &quot;PerlRegularExpression.h&quot;</span>
+using namespace std;
+
+int <span class="nv">debugQ</span> <span class="o">=</span> 0;
+
+char* transposeNote<span class="o">(</span>Array&lt;char&gt;&amp; subtoken, int transpose<span class="o">)</span> <span class="o">{</span>
+   int <span class="nv">base40</span> <span class="o">=</span> Convert::kernToBase40<span class="o">(</span>subtoken.getBase<span class="o">())</span>;
+   <span class="k">if</span> <span class="o">(</span>base40 &lt;<span class="o">=</span> 0<span class="o">)</span> <span class="o">{</span> <span class="k">return </span>subtoken.getBase<span class="o">()</span>; <span class="o">}</span>
+   char newnote<span class="o">[</span>1024<span class="o">]</span> <span class="o">=</span> <span class="o">{</span>0<span class="o">}</span>;
+   Convert::base40ToKern<span class="o">(</span>newnote, base40 + transpose<span class="o">)</span>;
+   <span class="k">if</span> <span class="o">(</span>debugQ<span class="o">)</span> <span class="o">{</span> cout &lt;&lt; <span class="s2">&quot;!! transposing &quot;</span> <span class="s">&lt;&lt; subtoken; }</span>
+<span class="s">   PerlRegularExpression pre;</span>
+<span class="s">   pre.sar(subtoken</span>, <span class="s2">&quot;[a-g]+[-#n]*&quot;</span>, newnote, <span class="s2">&quot;i&quot;</span><span class="o">)</span>;
+   <span class="k">if</span> <span class="o">(</span>debugQ<span class="o">)</span> <span class="o">{</span> cout &lt;&lt; <span class="s2">&quot;\tto\t&quot;</span> <span class="s">&lt;&lt; subtoken &lt;&lt; endl; }</span>
+<span class="s">   return subtoken</span>.getBase<span class="o">()</span>;
+<span class="o">}</span>
+
+HumdrumFile&amp; transposeFile<span class="o">(</span>HumdrumFile&amp; hfile, int transpose<span class="o">)</span> <span class="o">{</span>
+   Array&lt;char&gt; subtoken;   // <span class="k">for </span>extracting note from chord
+   char obuf<span class="o">[</span>1024<span class="o">]</span> <span class="o">=</span> <span class="o">{</span>0<span class="o">}</span>;  // output token buffer
+   <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>0; i&lt;hfile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>!hfile<span class="o">[</span>i<span class="o">]</span>.isData<span class="o">())</span> <span class="o">{</span> <span class="k">continue</span>; <span class="o">}</span>
+      <span class="k">for</span> <span class="o">(</span>int <span class="nv">j</span><span class="o">=</span>0; j&lt;hfile<span class="o">[</span>i<span class="o">]</span>.getFieldCount<span class="o">()</span>; j++<span class="o">)</span> <span class="o">{</span>
+         <span class="k">if</span> <span class="o">((</span>!hfile<span class="o">[</span>i<span class="o">]</span>.isExInterp<span class="o">(</span>j, <span class="s2">&quot;**kern&quot;</span><span class="o">))</span> <span class="o">||</span>
+               <span class="o">(</span>strcmp<span class="o">(</span><span class="s2">&quot;.&quot;</span>, hfile<span class="o">[</span>i<span class="o">][</span>j<span class="o">])</span> <span class="o">==</span> 0<span class="o">))</span> <span class="o">{</span>
+            <span class="k">continue</span>;
+         <span class="o">}</span>
+         int <span class="nv">tcount</span> <span class="o">=</span> hfile<span class="o">[</span>i<span class="o">]</span>.getTokenCount<span class="o">(</span>j<span class="o">)</span>;
+         strcpy<span class="o">(</span>obuf, <span class="s2">&quot;&quot;</span><span class="o">)</span>;
+         <span class="k">for</span> <span class="o">(</span>int <span class="nv">k</span><span class="o">=</span>0; k&lt;tcount; k++<span class="o">)</span> <span class="o">{</span>
+            hfile<span class="o">[</span>i<span class="o">]</span>.getToken<span class="o">(</span>subtoken, j, k<span class="o">)</span>;
+            <span class="k">if</span> <span class="o">(</span>k &gt; 0<span class="o">)</span> <span class="o">{</span> strcat<span class="o">(</span>obuf, <span class="s2">&quot; &quot;</span><span class="o">)</span>; <span class="o">}</span>
+            strcat<span class="o">(</span>obuf, transposeNote<span class="o">(</span>subtoken, transpose<span class="o">))</span>;
+         <span class="o">}</span>
+         hfile<span class="o">[</span>i<span class="o">]</span>.setToken<span class="o">(</span>j, obuf<span class="o">)</span>;
+      <span class="o">}</span>
+   <span class="o">}</span>
+   <span class="k">return </span>hfile;
+<span class="o">}</span>
+
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   Options opts;
+   opts.define<span class="o">(</span><span class="s2">&quot;t|transpose=i:0&quot;</span>, <span class="s2">&quot;transpose by base-40 interval&quot;</span><span class="o">)</span>;
+   opts.define<span class="o">(</span><span class="s2">&quot;debug=b&quot;</span>,         <span class="s2">&quot;print debugging statements&quot;</span><span class="o">)</span>;
+   opts.process<span class="o">(</span>argc, argv<span class="o">)</span>;
+   <span class="nv">debugQ</span> <span class="o">=</span> opts.getBoolean<span class="o">(</span><span class="s2">&quot;debug&quot;</span><span class="o">)</span>;
+   int <span class="nv">transpose</span> <span class="o">=</span> opts.getInteger<span class="o">(</span><span class="s2">&quot;transpose&quot;</span><span class="o">)</span>;
+   int <span class="nv">numinputs</span> <span class="o">=</span> opts.getArgCount<span class="o">()</span>;
+   HumdrumFile hfile;
+   <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>1; i&lt;<span class="o">=</span>numinputs <span class="o">||</span> <span class="nv">i</span><span class="o">==</span>0; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>numinputs &lt; 1<span class="o">)</span> <span class="o">{</span> hfile.read<span class="o">(</span>std::cin<span class="o">)</span>;  <span class="o">}</span>
+      <span class="k">else</span> <span class="o">{</span> hfile.read<span class="o">(</span>opts.getArg<span class="o">(</span>i<span class="o">))</span>; <span class="o">}</span>
+      cout <span class="s">&lt;&lt; transposeFile(hfile, transpose</span><span class="o">)</span>;
+   <span class="o">}</span>
+   <span class="k">return </span>0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul></div>
+</div>
+<div class="section" id="random-melody-generator">
+<h3>Random melody generator<a class="headerlink" href="#random-melody-generator" title="Permalink to this headline">¶</a></h3>
+<p>The following program will generate a random melody, both in pitch and
+rhythm:</p>
+<blockquote>
+<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre>#include &quot;humdrum.h&quot;
+#include &lt;stdlib.h&gt;     /* for drand48 random numbers */
+#include &lt;time.h&gt;       /* for time(NULL) function */
+
+void printRandomMelody(int notecount, int seed) {
+   cout &lt;&lt; &quot;!!!seed:\t&quot; &lt;&lt; seed &lt;&lt; endl;
+   cout &lt;&lt; &quot;**kern\n&quot;;
+   int pitch, rhythm;
+   char buffer[1024] = {0};
+   for (int i=0; i&lt;notecount; i++) {
+      rhythm = int(drand48() * 16 + 1 + 0.5);
+      pitch  = int(drand48() * 24 + 12*4.5 + 3);
+      cout &lt;&lt; rhythm &lt;&lt; Convert::base12ToKern(buffer, pitch) &lt;&lt; endl;
+   }
+   cout &lt;&lt; &quot;*-\n&quot;;
+}
+
+int main(int argc, char** argv) {
+   Options options;
+   options.define(&quot;c|count=i:20&quot;, &quot;number of notes to generate&quot;);
+   options.define(&quot;s|seed=i:-1&quot;,  &quot;random number generator seed&quot;);
+   options.process(argc, argv);
+   int seed = options.getInteger(&quot;seed&quot;);
+   if (seed &lt; 0) {
+      seed = time(NULL);  // time in seconds since 1 Jan 1970
+   }
+   srand48(seed);
+   printRandomMelody(options.getInteger(&quot;count&quot;), seed);
+   return 0;
+}
+</pre></div>
+</div>
+</td></tr></table></ul><p>Here is some example output:</p>
+<blockquote>
+<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
+</td></tr></table></ul><p>The <tt class="docutils literal"><span class="pre">-s</span></tt> option can be used to generate a fixed random melody;
+otherwise, the random melody will be based on the current time in
+seconds since 1 Jan 1970. The <tt class="docutils literal"><span class="pre">-c</span></tt> option can be used to specify the
+number of notes in the melody. Notice that if no melody length is given,
+the default length of 20 note will be used.</p>
+<p>To display as graphical music notation:</p>
+<blockquote>
+<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
+<div class="code bash highlight-bash"><div class="highlight"><pre>bin/randomel -s 1241137496 <span class="se">\</span>
+   | hum2abc -M none | abcm2ps - -O - <span class="se">\</span>
+   | convert -quality 100 -density 300 - -trim -resize <span class="s1">&#39;33%&#39;</span> output.png
+</pre></div>
+</div>
+</td></tr></table></ul><div class="figure">
+<img alt="RandomMelody.png" src="humextra/RandomMelody.png" />
+<p class="caption">RandomMelody.png</p>
+</div>
+<p>The Humdrum file data can be stored internally in a stream object. This
+stream object can be ready by a HumdrumFile object to be reprocessed
+within the program, or to be printed with ostream as a HumdrumFile
+object. The following example demonstrates this. Also, since strstream
+was changed to stringstream in ANSI C99, there are some preprocessor
+instructions to allow using string streams in both older and newer
+standards (including differences in Visual C++ 6).</p>
+<blockquote>
+<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre>#include &quot;humdrum.h&quot;
+#include &lt;stdlib.h&gt;     /* for drand48 random numbers */
+#include &lt;time.h&gt;       /* for time(NULL) function */
+
+#ifndef OLDCPP
+   #define SSTREAM stringstream
+   #define CSTRING str().c_str()
+   using namespace std;
+#else
+   #ifdef VISUAL
+      #include &lt;strstrea.h&gt;
+   #else
+      #include &lt;strstream.h&gt;
+   #endif
+   #define SSTREAM strstream
+   #define CSTRING str()
+#endif
+
+void getRandomMelody(HumdrumFile&amp; datafile, int notecount, int seed) {
+   SSTREAM output;
+   output &lt;&lt; &quot;!!!seed:\t&quot; &lt;&lt; seed &lt;&lt; endl;
+   output &lt;&lt; &quot;**kern\n&quot;;
+   int pitch, rhythm;
+   char buffer[1024] = {0};
+   for (int i=0; i&lt;notecount; i++) {
+      rhythm = int(drand48() * 16 + 1 + 0.5);
+      pitch  = int(drand48() * 24 + 12*4.5 + 3);
+      output &lt;&lt; rhythm &lt;&lt; Convert::base12ToKern(buffer, pitch) &lt;&lt; endl;
+   }
+   output &lt;&lt; &quot;*-\n&quot;;
+   output &lt;&lt; ends;
+   // It is possible to print to ostream:
+   // cout &lt;&lt; output.CSTRING &lt;&lt; flush;
+   datafile.read(output);
+}
+
+int main(int argc, char** argv) {
+   Options options;
+   options.define(&quot;c|count=i:20&quot;, &quot;number of notes to generate&quot;);
+   options.define(&quot;s|seed=i:-1&quot;,  &quot;random number generator seed&quot;);
+   options.process(argc, argv);
+   int seed = options.getInteger(&quot;seed&quot;);
+   if (seed &lt; 0) {
+      seed = time(NULL);  // time in seconds since 1 Jan 1970
+   }
+   srand48(seed);
+   HumdrumFile datafile;
+   getRandomMelody(datafile, options.getInteger(&quot;count&quot;), seed);
+   cout &lt;&lt; datafile;
+   return 0;
+}
+</pre></div>
+</div>
+</td></tr></table></ul></div>
+<div class="section" id="markov-melody-analyzer-generator">
+<h3>Markov melody analyzer/generator<a class="headerlink" href="#markov-melody-analyzer-generator" title="Permalink to this headline">¶</a></h3>
+<p>Here is a more sophisticated random melody generator.</p>
+<blockquote>
+<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
+<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
+<span class="c">#include &lt;regex.h&gt;</span>
+<span class="c">#include &lt;stdlib.h&gt;</span>
+<span class="c">#include &lt;time.h&gt;</span>
+
+void buildTable<span class="o">(</span>HumdrumFile&amp; hfile, Array&lt;Array&lt;double&gt; &gt;&amp; ptable,
+      Array&lt;Array&lt;double&gt; &gt;&amp; mtable<span class="o">)</span> <span class="o">{</span>
+   int <span class="nv">lastmeter</span> <span class="o">=</span> -1; int <span class="nv">lastpitch</span> <span class="o">=</span> -1;
+   int meter, pitch;
+   hfile.analyzeRhythm<span class="o">()</span>;
+   <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>0; i&lt;hfile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>!hfile<span class="o">[</span>i<span class="o">]</span>.isData<span class="o">())</span> <span class="k">continue</span>;
+      <span class="k">if</span> <span class="o">(</span>strcmp<span class="o">(</span><span class="s2">&quot;**kern&quot;</span>, hfile<span class="o">[</span>i<span class="o">]</span>.getExInterp<span class="o">(</span>0<span class="o">))</span> !<span class="o">=</span> 0<span class="o">)</span> <span class="k">continue</span>;
+      <span class="k">if</span> <span class="o">(</span>strcmp<span class="o">(</span>hfile<span class="o">[</span>i<span class="o">][</span>0<span class="o">]</span>, <span class="s2">&quot;.&quot;</span><span class="o">)</span> <span class="o">==</span> 0<span class="o">)</span> <span class="k">continue</span>;    // ignore null tokens
+      <span class="k">if</span> <span class="o">(</span>strchr<span class="o">(</span>hfile<span class="o">[</span>i<span class="o">][</span>0<span class="o">]</span>, <span class="s1">&#39;r&#39;</span><span class="o">)</span> !<span class="o">=</span> NULL<span class="o">)</span> <span class="k">continue</span>; // ignore rests
+      <span class="nv">pitch</span> <span class="o">=</span> Convert::kernToBase40<span class="o">(</span>hfile<span class="o">[</span>i<span class="o">][</span>0<span class="o">])</span> % 40;
+      <span class="nv">meter</span> <span class="o">=</span> int<span class="o">((</span>hfile<span class="o">[</span>i<span class="o">]</span>.getBeat<span class="o">()</span> - 1.0<span class="o">)</span> * 4 + 0.5<span class="o">)</span>;
+      <span class="k">if</span> <span class="o">(</span>meter &lt; 0<span class="o">)</span> <span class="nv">meter</span> <span class="o">=</span> 0;
+      <span class="k">if</span> <span class="o">(</span>meter &gt;<span class="o">=</span> 40<span class="o">)</span> <span class="nv">meter</span> <span class="o">=</span> 39;
+      <span class="k">if</span> <span class="o">(</span>lastmeter &lt; 0<span class="o">)</span> <span class="o">{</span>
+         <span class="nv">lastpitch</span> <span class="o">=</span> pitch; <span class="nv">lastmeter</span> <span class="o">=</span> meter;
+         <span class="k">continue</span>;
+      <span class="o">}</span>
+      mtable<span class="o">[</span>lastmeter<span class="o">][</span>meter<span class="o">]</span>++;   mtable<span class="o">[</span>lastmeter<span class="o">][</span>40<span class="o">]</span>++;
+      ptable<span class="o">[</span>lastpitch<span class="o">][</span>pitch<span class="o">]</span>++;   ptable<span class="o">[</span>lastpitch<span class="o">][</span>40<span class="o">]</span>++;
+      <span class="nv">lastpitch</span> <span class="o">=</span> pitch;            <span class="nv">lastmeter</span> <span class="o">=</span> meter;
+   <span class="o">}</span>
+<span class="o">}</span>
+
+void printTables<span class="o">(</span>Array&lt;Array&lt;double&gt; &gt;&amp; ptable,
+   Array&lt;Array&lt;double&gt; &gt;&amp; mtable, int style<span class="o">)</span> <span class="o">{</span>
+   int i, j;
+   double value;
+   char buffer<span class="o">[</span>32<span class="o">]</span> <span class="o">=</span> <span class="o">{</span>0<span class="o">}</span>;
+   <span class="k">for</span> <span class="o">(</span><span class="nv">i</span><span class="o">=</span>0; i&lt;ptable.getSize<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      cout <span class="s">&lt;&lt; &#39;\t&#39; &lt;&lt; Convert</span>::base40ToKern<span class="o">(</span>buffer, i+4*40<span class="o">)</span>;
+   <span class="o">}</span>
+   cout <span class="s">&lt;&lt; endl;</span>
+<span class="s">   for (i=0; i&lt;ptable.getSize(); i++) {</span>
+<span class="s">      cout &lt;&lt; Convert::base40ToKern(buffer, i+4*40);</span>
+<span class="s">      for (j=0; j&lt;40; j++) {</span>
+<span class="s">         value = style ? ptable[i][j]/ptable[i][40] : ptable[i][j];</span>
+<span class="s">         cout &lt;&lt; &#39;\t&#39; &lt;&lt; value;</span>
+<span class="s">      }</span>
+<span class="s">      cout &lt;&lt; &#39;\t&#39; &lt;&lt; ptable[i][40] &lt;&lt; endl</span>;
+   <span class="o">}</span>
+   cout <span class="s">&lt;&lt; endl;</span>
+<span class="s">   for (i=0; i&lt;mtable.getSize(); i++) cout &lt;&lt; &quot;\tb&quot; &lt;&lt; i/4.0 + 1.0;</span>
+<span class="s">   cout &lt;&lt; endl</span>;
+   <span class="k">for</span> <span class="o">(</span><span class="nv">i</span><span class="o">=</span>0; i&lt;mtable.getSize<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      cout &lt;&lt; <span class="s2">&quot;b&quot;</span> <span class="s">&lt;&lt; i/4.0 + 1.0;</span>
+<span class="s">      for (j=0; j&lt;mtable[i</span><span class="o">]</span>.getSize<span class="o">()</span>; j++<span class="o">)</span> cout <span class="s">&lt;&lt; &#39;\t&#39; &lt;&lt; mt</span>able<span class="o">[</span>i<span class="o">][</span>j<span class="o">]</span>;
+      cout <span class="s">&lt;&lt; endl;</span>
+<span class="s">   }</span>
+<span class="s">}</span>
+
+<span class="s">int chooseNextTransition(Array&lt;Array&lt;double&gt; &gt;&amp; table, int state) {</span>
+<span class="s">   double target = drand48() * table[state][40];</span>
+<span class="s">   double sum = 0.0;</span>
+<span class="s">   for (int i=0; i&lt;40; i++) {</span>
+<span class="s">      sum += table[state][i];</span>
+<span class="s">      if (sum &gt; target)  return i;</span>
+<span class="s">   }</span>
+<span class="s">   return 39;</span>
+<span class="s">}</span>
+
+<span class="s">void smoothMelody(Array&lt;double&gt;&amp; meldur, Array&lt;int&gt;&amp; melpitch) {</span>
+<span class="s">   int beforei, afteri, inta, intb;</span>
+<span class="s">   for (int i=2; i&lt;meldur.getSize()-2; i++) {</span>
+<span class="s">      if (meldur[i] &lt; 0.0) continue;</span>
+<span class="s">      afteri  = i+1;   beforei = i-1;</span>
+<span class="s">      if (meldur[afteri] &lt; 0.0) afteri++;</span>
+<span class="s">      if (meldur[beforei] &lt; 0.0) beforei--;</span>
+<span class="s">      inta = melpitch[i] - melpitch[beforei];</span>
+<span class="s">      intb = melpitch[i] - melpitch[afteri];</span>
+<span class="s">      if ((inta &gt; 22) &amp;&amp; (intb &gt; 22)) {</span>
+<span class="s">         melpitch[i] -= 40;</span>
+<span class="s">      } else if ((inta &lt; -22) &amp;&amp; (intb &lt; -22)) {</span>
+<span class="s">         melpitch[i] += 40;</span>
+<span class="s">      }</span>
+<span class="s">   }</span>
+<span class="s">}</span>
+
+<span class="s">void generateMelody(Array&lt;Array&lt;double&gt; &gt;&amp; ptable,</span>
+<span class="s">      Array&lt;Array&lt;double&gt; &gt;&amp; mtable, int count) {</span>
+<span class="s">   int    pitch, pitchclass = 2, meter = 0, oldmeter = 0;</span>
+<span class="s">   int    i, measurenumber = 2;</span>
+<span class="s">   double duration, barmarker = -1;</span>
+<span class="s">   char   buffer[1024] = {0};</span>
+<span class="s">   Array&lt;int&gt; melpitch(count*2);  melpitch.setSize(0);</span>
+<span class="s">   Array&lt;double&gt; meldur(count*2); meldur.setSize(0);</span>
+<span class="s">   for (i=0; i&lt;count; i++) {</span>
+<span class="s">      pitchclass  = chooseNextTransition(ptable, pitchclass);</span>
+<span class="s">      meter = chooseNextTransition(mtable, meter);</span>
+<span class="s">      if (meter &gt; oldmeter) duration = (meter - oldmeter) / 4.0;</span>
+<span class="s">      else {</span>
+<span class="s">         duration = (4 + meter - oldmeter) / 4.0;</span>
+<span class="s">         meldur.append(barmarker);</span>
+<span class="s">         pitch = measurenumber++;</span>
+<span class="s">         melpitch.append(pitch);</span>
+<span class="s">      }</span>
+<span class="s">      oldmeter = meter;</span>
+<span class="s">      if (duration == 0.0) duration = 4.0;</span>
+<span class="s">      if (duration &gt; 4.0)  duration = 4.0;</span>
+<span class="s">      if (duration &lt; 0.0)  duration = 1.0;</span>
+<span class="s">      pitch = pitchclass + 4 * 40;</span>
+<span class="s">      meldur.append(duration);  melpitch.append(pitch);</span>
+<span class="s">   }</span>
+<span class="s">   smoothMelody(meldur, melpitch);</span>
+<span class="s">   cout &lt;&lt; &quot;**kern\n*M4/4\n=1-\n&quot;;</span>
+<span class="s">   for (i=0; i&lt;meldur.getSize(); i++) {</span>
+<span class="s">      if (meldur[i] &lt; 0.0) cout &lt;&lt; &quot;=&quot; &lt;&lt; melpitch[i] &lt;&lt; endl</span>;
+      <span class="k">else</span> <span class="o">{</span>
+         cout <span class="s">&lt;&lt; Convert::durationToKernRhythm(buffer, meldur[i]);</span>
+<span class="s">         cout &lt;&lt; Convert</span>::base40ToKern<span class="o">(</span>buffer, melpitch<span class="o">[</span>i<span class="o">])</span>;
+         cout <span class="s">&lt;&lt; endl;</span>
+<span class="s">      }</span>
+<span class="s">   }</span>
+<span class="s">   cout &lt;&lt; &quot;*-&quot; &lt;&lt; endl</span>;
+<span class="o">}</span>
+
+int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
+   Options options;
+   options.define<span class="o">(</span><span class="s2">&quot;t|table=b&quot;</span>,       <span class="s2">&quot;display table of transitions&quot;</span><span class="o">)</span>;
+   options.define<span class="o">(</span><span class="s2">&quot;f|fraction=b&quot;</span>,    <span class="s2">&quot;display transitions as fractions&quot;</span><span class="o">)</span>;
+   options.define<span class="o">(</span><span class="s2">&quot;g|generate=i:20&quot;</span>, <span class="s2">&quot;generate specified number of notes&quot;</span><span class="o">)</span>;
+   options.process<span class="o">(</span>argc, argv<span class="o">)</span>;
+   srand48<span class="o">(</span><span class="nb">time</span><span class="o">(</span>NULL<span class="o">))</span>; HumdrumFile hfile;
+   Array&lt;Array&lt;double&gt; &gt; ptable; // pitch transition table
+                               // <span class="o">(</span>scale degrees would be musically better<span class="o">)</span>
+   Array&lt;Array&lt;double&gt; &gt; mtable; // meter transition table
+   ptable.setSize<span class="o">(</span>40<span class="o">)</span>; ptable.allowGrowth<span class="o">(</span>0<span class="o">)</span>;
+   mtable.setSize<span class="o">(</span>40<span class="o">)</span>; mtable.allowGrowth<span class="o">(</span>0<span class="o">)</span>;
+   int i;
+   <span class="k">for</span> <span class="o">(</span><span class="nv">i</span><span class="o">=</span>0; i&lt;ptable.getSize<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
+      ptable<span class="o">[</span>i<span class="o">]</span>.setSize<span class="o">(</span>41<span class="o">)</span>; ptable<span class="o">[</span>i<span class="o">]</span>.allowGrowth<span class="o">(</span>0<span class="o">)</span>; ptable<span class="o">[</span>i<span class="o">]</span>.setAll<span class="o">(</span>0.0<span class="o">)</span>;
+      mtable<span class="o">[</span>i<span class="o">]</span>.setSize<span class="o">(</span>41<span class="o">)</span>; mtable<span class="o">[</span>i<span class="o">]</span>.allowGrowth<span class="o">(</span>0<span class="o">)</span>; mtable<span class="o">[</span>i<span class="o">]</span>.setAll<span class="o">(</span>0.0<span class="o">)</span>;
+   <span class="o">}</span>
+   int <span class="nv">numinputs</span> <span class="o">=</span> options.getArgCount<span class="o">()</span>;
+   <span class="k">for</span> <span class="o">(</span><span class="nv">i</span><span class="o">=</span>1; i&lt;<span class="o">=</span>numinputs <span class="o">||</span> <span class="nv">i</span><span class="o">==</span>0; i++<span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span>numinputs &lt; 1<span class="o">)</span> hfile.read<span class="o">(</span>std::cin<span class="o">)</span>;
+      <span class="k">else </span>hfile.read<span class="o">(</span>options.getArg<span class="o">(</span>i<span class="o">))</span>;
+      buildTable<span class="o">(</span>hfile, ptable, mtable<span class="o">)</span>;
+   <span class="o">}</span>
+   <span class="k">if</span> <span class="o">(</span>options.getBoolean<span class="o">(</span><span class="s2">&quot;table&quot;</span><span class="o">))</span> <span class="o">{</span>
+      printTables<span class="o">(</span>ptable, mtable, options.getBoolean<span class="o">(</span><span class="s2">&quot;fraction&quot;</span><span class="o">))</span>;
+   <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+      generateMelody<span class="o">(</span>ptable, mtable, options.getInteger<span class="o">(</span><span class="s2">&quot;generate&quot;</span><span class="o">))</span>;
+   <span class="o">}</span>
+   <span class="k">return </span>0;
+<span class="o">}</span>
+</pre></div>
+</div>
+</td></tr></table></ul></div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  <hr/>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <center><a href="../../cookbook/" class="btn btn-neutral float-right" title="The Humdrum Cookbook">Next <span class="fa fa-arrow-circle-right"></span></a></center>
+      
+      
+        <a href="../other/" class="btn btn-neutral" title="Other Useful Tools"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+      
+             <center><a href="../../_sources/humextra/programming.txt" rel="nofollow"> View page source</a></center>
+      
+    </div>
+  
+
+
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+   
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-52162357-1', 'humdrum.org');
+  ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>
