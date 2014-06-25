@@ -18,6 +18,7 @@ of all parts.  In measures 1, 3 and 4, no single part contains a
 complete measure of eighth notes, but when considered together the
 rhythmic texture is a sequence of continuous eighth notes.
 
+**Example** J.S. Bach, Chorale *Hilf, Gott, laß mir's gelingen*, BWV 343, mm. 16--19.
 
 .. image:: rhythm.rstd/chor199i.svg
 	:align: center
@@ -101,5 +102,27 @@ note, breve, and dotted whole note.
 	a whole note.
 
 
+Below is a more complicated example which contains a polyrhythmic composite
+rhythm.  The right-hand rhythm in measure 9 is five eighth notes in the time
+of three which has a duration of:
 
+.. math::
+
+	\frac{3}{5} \times \frac{1}{8} = \frac{3}{40} \quad \mbox{whole notes}
+
+The duration of 3/40th of a whole note is represented in extended
+\*\*recip by the rhythm value ``40%3``.  Likewise, the
+septuplets in the last measure are 
+:math:`\scriptstyle 3/7 \times 1/8 = 3/56` whole notes, 
+which is the \*\*recip rhythm ``56%3``.
+
+
+**Example** F. Chopin, Nocturne in B major, op. 9/3, mm. 8--10.
+
+.. image:: rhythm.rstd/noc9-3.svg
+	:align: center
+	:width: 100%
+
+.. literalinclude:: rhythm.rstd/noc9-3-pdf.krn
+	:language: humdrum
 
