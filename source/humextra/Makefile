@@ -22,7 +22,7 @@ all: doc open
 open:
 	open $(BASEDIR)/html/$(PAGEFILE)
 
-doc:
+doc: index
 	(cd $(BASEDIR); $(MAKE) doc)
 
 clean:
@@ -35,5 +35,8 @@ info:
 	@echo BASEDIR  = $(BASEDIR)
 	@echo PAGEFILE = $(PAGEFILE)
 
+index:
+	-../bin/makerst index.tsr index.rst
+	
 
 

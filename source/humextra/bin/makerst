@@ -1,0 +1,81 @@
+#!/usr/bin/perl
+#
+# Programmer:    Craig Stuart Sapp <craig.stanford.edu>
+# Creation Date: Wed Jun 25 01:53:12 PDT 2014
+# Last Modified: Wed Jun 25 01:53:12 PDT 2014
+# Filename:      ...source/humextra/bin/makerst
+# Syntax:        perl 5
+#
+# Description:   re-restrctured text to restructured text converter.
+#
+
+use strict;
+
+die "Usage $0 input output (@ARGV)" if @ARGV != 2;
+
+my $inputfile  = $ARGV[0];
+my $outputfile = $ARGV[1];
+
+open (INFILE, $inputfile) or die "Cannot read inputfile: $inputfile";
+my @contents = <INFILE>;
+close INFILE;
+
+@contents = processContents(@contents);
+
+open (OUTFILE, ">$outputfile") or die "Cannot write outputfile: $outputfile";
+print OUTFILE ".. ####### AUTOMATICALLY GENERATED TEXT, DO NOT EDIT ######\n";
+print OUTFILE @contents;
+close OUTFILE;
+
+exit(0);
+
+
+###########################################################################
+
+
+##############################
+##
+## processContents --
+##
+## Change :hxcom:`command`
+## To:    `command <http://extras.humdrum.org/man/command>`_
+##
+## Change :exinterp:`kern`
+## To:    \*\*kern
+##
+##
+
+sub processContents {
+   my @contents = @_;
+
+   my $i;
+   my $pre;
+   my $post;
+   my $match;
+   for ($i=0; $i<@contents; $i++) {
+
+      while ($contents[$i] =~ /:hxcom:`\s*([^`\s]+)\s*`/) {
+         $match = $1;
+         $pre = $`;
+         $post = $';
+         $contents[$i]  = $pre;
+         $contents[$i] .= "`$match <http://extras.humdrum.org/man/$match>`_";
+         $contents[$i] .= $post;
+      }
+
+      while ($contents[$i] =~ /:exinterp:`\s*([^`\s]+)\s*`/) {
+         $match = $1;
+         $pre = $`;
+         $post = $';
+         $contents[$i]  = $pre;
+         $contents[$i] .= "\\*\\*$match";
+         $contents[$i] .= $post;
+      }
+
+   }
+
+   return @contents;
+}
+
+
+

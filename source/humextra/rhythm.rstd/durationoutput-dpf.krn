@@ -1,0 +1,35 @@
+!!data-generation: myank -m 16-19 h://371chorales/chor199.krn  | satb2gs | ridx -GL
+!!data-filter: beat -dpf
+**dur	**kern	**kern
+*	*clefF4	*clefG2
+*	*k[b-]	*k[b-]
+*M3/4	*M3/4	*M3/4
+*	*^	*^
+=16-	=16-	=16-	=16-	=16-
+1/8	8dL	4G	4.b-	4g
+1/8	8e-J	.	.	.
+1/8	8fnXL	4F	.	4.d
+1/8	8FJ	.	8a	.
+1/8	4G	4E-X	4g	.
+1/8	.	.	.	8c
+=17	=17	=17	=17	=17
+1/2	2A;y	2D;	2f#;	2d;y
+1/4	[4d	4D	4a	4f#
+=18	=18	=18	=18	=18
+1/8	8dL]	4.G	2b-	2g
+1/8	8B-J	.	.	.
+1/8	4e-	.	.	.
+1/8	.	8E-X	.	.
+1/8	8dL	[4B-	4dd	4fnX
+1/8	8B-J	.	.	.
+=19	=19	=19	=19	=19
+1/8	4G	4B-]	2cc	8enXL
+1/8	.	.	.	8d
+1/8	8cL	4A	.	8e
+1/8	8AJ	.	.	8f#J
+1/8	8B-L	4G	4b-	4g
+1/8	8dJ	.	.	.
+=	=	=	=	=
+*	*v	*v	*	*
+*	*	*v	*v
+*-	*-	*-

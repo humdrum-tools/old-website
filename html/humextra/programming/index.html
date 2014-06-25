@@ -677,26 +677,56 @@ takes two arguments (the second one optional). The first argument is the
 definition string, and the second is a human-readable description of the
 option.</p>
 <p>The option definition string has the basic format:</p>
-<center><p><tt class="docutils literal"><span class="pre">&quot;OptionName=OptionType:DefaultValue&quot;</span></tt></p>
-</center><p>The OptionName can include aliases which are added to the Option name,
+<div class="code highlight-bash"><div class="highlight"><pre><span class="s2">&quot;OptionName=OptionType:DefaultValue&quot;</span>
+</pre></div>
+</div>
+<p>The OptionName can include aliases which are added to the Option name,
 separated by a pipe (<tt class="docutils literal"><span class="pre">|</span></tt>) character:</p>
-<center><p><tt class="docutils literal"><span class="pre">&quot;OptionName|OptionAlias1|OptionAlias2=OptionType:DefaultValue&quot;</span></tt></p>
-</center><p>For example:</p>
-<center><p><tt class="docutils literal"><span class="pre">&quot;M|no-measures=b&quot;</span></tt></p>
-</center><p>Is the definition of the option &#8220;M&#8221; or equivalently &#8220;no-measures&#8221; which
+<div class="code highlight-bash"><div class="highlight"><pre><span class="s2">&quot;OptionName|OptionAlias1|OptionAlias2=OptionType:DefaultValue&quot;</span>
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="code highlight-bash"><div class="highlight"><pre><span class="s2">&quot;M|no-measures=b&quot;</span>
+</pre></div>
+</div>
+<p>is the definition of the option &#8220;M&#8221; or equivalently &#8220;no-measures&#8221; which
 is a boolean type (which means that it sets a true/false switch for the
 option). For boolean options, there is no default value—they are &#8220;false&#8221;
 if not given as an argument to the program, and turned to &#8220;true&#8221; when
 given as input to a program.</p>
 <p>There are four Options data types:</p>
-<p>::{| class=&#8221;wikitable&#8221; cellpadding=&#8221;3&#8221; cellspacing=&#8221;0&#8221; border=&#8221;0&#8221; |- !
-scope=&#8221;col&#8221; align=&#8221;center&#8221; | Option type ! scope=&#8221;col&#8221; align=&#8221;left&#8221; |
-Description ! scope=&#8221;col&#8221; align=&#8221;left&#8221; | Options value access |- | b
-|| boolean (true or false) || .getBoolean(&#8220;OptionName&#8221;) |- | i
-|| integer || .getInteger(&#8220;OptionName&#8221;) |- | d || double
-(floating-point number) || .getDouble(&#8220;OptionName&#8221;) |- | s ||
-string || .getString(&#8220;OptionName&#8221;) |}</p>
-</ul><p>In terms of implementation, there are really only two types: booleans
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option type</th>
+<th class="head">Description</th>
+<th class="head">Options value access</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>b</td>
+<td>boolean (true or false)</td>
+<td>.getBoolean(&#8220;OptionName&#8221;)</td>
+</tr>
+<tr class="row-odd"><td>i</td>
+<td>integer</td>
+<td>.getInteger(&#8220;OptionName&#8221;)</td>
+</tr>
+<tr class="row-even"><td>d</td>
+<td>double (floating-point number)</td>
+<td>.getDouble(&#8220;OptionName&#8221;)</td>
+</tr>
+<tr class="row-odd"><td>s</td>
+<td>string</td>
+<td>.getString(&#8220;OptionName&#8221;)</td>
+</tr>
+</tbody>
+</table>
+<p>In terms of implementation, there are really only two types: booleans
 (with out parameters) and non-booleans (with parameters). Within a C++
 program you can acess the original string form of the option&#8217;s
 parameter, or you can convert it into an <tt class="docutils literal"><span class="pre">int</span></tt> or a <tt class="docutils literal"><span class="pre">double</span></tt> at
@@ -707,20 +737,44 @@ if the option was set from the input arguments to the program with
 .getBoolean(&#8220;number&#8221;).</p>
 <p>Here are some example option definitions with option names, option
 aliases, and option types:</p>
-<div class="line-block">
-<div class="line">::{| class=&#8221;wikitable&#8221; cellpadding=&#8221;5&#8221; cellspacing=&#8221;0&#8221; border=&#8221;0&#8221; |-</div>
-</div>
-<p>! scope=&#8221;col&#8221; align=&#8221;center&#8221; | Option definition ! scope=&#8221;col&#8221;
-align=&#8221;left&#8221; | Command-line examples |- valign=&#8221;baseline&#8221; | &#8220;r=b&#8221;
-|| command -r |- valign=&#8221;baseline&#8221; | &#8220;m=i&#8221; || command -m 10 or
-command -m10 |- valign=&#8221;baseline&#8221; | &#8220;v|value=d&#8221; || command -v 5.23
-or command -v5.23
-| command &#8211;value 5.23
-| command &#8211;value=5.23 |- valign=&#8221;baseline&#8221; | &#8220;t=s&#8221; || command -t
-string or command -tstring
-| command -t &#8220;string with spaces&#8221;
-| command -t &#8216;funny $tring&#8217; |}</p>
-</ul><p>When options names (or option aliases) are a single character, the space
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option definition</th>
+<th class="head">Command-line examples</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&#8220;r=b&#8221;</td>
+<td>command -r</td>
+</tr>
+<tr class="row-odd"><td>&#8220;m=i&#8221;</td>
+<td>command -m 10 or command -m10</td>
+</tr>
+<tr class="row-even"><td>&#8220;value=d&#8221;</td>
+<td>command -v 5.23 or command -v5.23</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>command &#8211;value 5.23</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>command &#8211;value=5.23</td>
+</tr>
+<tr class="row-odd"><td>&#8220;t=s&#8221;</td>
+<td>command -t string or command -tstring</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>command -t &#8220;string with spaces&#8221;</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>command -t &#8216;funny $tring&#8217;</td>
+</tr>
+</tbody>
+</table>
+<p>When options names (or option aliases) are a single character, the space
 between the option name and it parameter is optional, as in &#8220;command -m
 10&#8221; or &#8220;command -m10&#8221;. When an option has multiple characters, the space
 is not optional, although an equals sign can be substituted for the
@@ -734,9 +788,6 @@ case the final input will be &#8220;funny $tring&#8221;. If double quotes were u
 $tring would be interpreted as an environmental variable and its value
 would be substituted, usually resulting in &#8220;funny &#8221;, since you are not
 likely to have the shell variable $tring defined.</p>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
 </div>
 <div class="section" id="default-option-values">
 <h4>Default option values<a class="headerlink" href="#default-option-values" title="Permalink to this headline">¶</a></h4>
@@ -744,15 +795,11 @@ likely to have the shell variable $tring defined.</p>
 if no input is given for that option on the command-line. If no default
 value is given in the definition, the default value will be zero. For
 example, if this option definition is given:</p>
-<blockquote>
-<div><table style="background:white;"><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre>options.define<span class="o">(</span><span class="s2">&quot;v|val|value=i:10&quot;</span>, <span class="s2">&quot;an integer value&quot;</span><span class="o">)</span>;
 </pre></div>
 </div>
-</td></tr></table></ul><p>Then here are different behaviors when accessing that option&#8217;s value in
+<p>Then here are different behaviors when accessing that option&#8217;s value in
 C++:</p>
-<blockquote>
-<div><table style="background:white;"><tr><td></div></blockquote>
 <div class="highlight-bash"><div class="highlight"><pre>User-set option:
    program -v 20
       options.getInteger<span class="o">(</span><span class="s2">&quot;value&quot;</span><span class="o">)</span>      &amp;rarr; 20
@@ -766,9 +813,6 @@ Default option:
       options.getInteger<span class="o">(</span><span class="s2">&quot;v&quot;</span><span class="o">)</span>          &amp;rarr; 10
 </pre></div>
 </div>
-</td></tr></table></ul><div class="line-block">
-<div class="line"><br /></div>
-</div>
 </div>
 <div class="section" id="accessing-option-values">
 <h4>Accessing option values<a class="headerlink" href="#accessing-option-values" title="Permalink to this headline">¶</a></h4>
@@ -777,23 +821,16 @@ Default option:
 the Options database after .process() has been called on the <tt class="docutils literal"><span class="pre">argc</span></tt>
 and <tt class="docutils literal"><span class="pre">argv</span></tt> input parameters to <tt class="docutils literal"><span class="pre">main()</span></tt>. All of the get functions
 can be applied to any option type. For example, the option definition:</p>
-<blockquote>
-<div><table style="background:white;"><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre>.define<span class="o">(</span><span class="s2">&quot;t|temperature=d:80.6 Farenheit&quot;</span>, <span class="s2">&quot;temperature setting&quot;</span><span class="o">)</span>
 </pre></div>
 </div>
-</td></tr></table></ul><p>can be used to extract any of the four option types in C++:</p>
-<blockquote>
-<div><table style="background:white;"><tr><td></div></blockquote>
+<p>can be used to extract any of the four option types in C++:</p>
 <div class="highlight-bash"><div class="highlight"><pre>.getBoolean<span class="o">(</span><span class="s2">&quot;temperature&quot;</span><span class="o">)</span>           &amp;rarr; 1 <span class="o">(</span><span class="nb">true</span><span class="o">)</span> <span class="k">if </span><span class="nb">set </span>via the <span class="nb">command</span>-line.
                                      &amp;rarr; 0 <span class="o">(</span><span class="nb">false</span><span class="o">)</span> <span class="k">if </span>not <span class="nb">set </span>via the <span class="nb">command</span>-line.
 .getInteger<span class="o">(</span><span class="s2">&quot;temperature&quot;</span><span class="o">)</span>           &amp;rarr; 80
 .getDouble<span class="o">(</span><span class="s2">&quot;temperature&quot;</span><span class="o">)</span>            &amp;rarr; 80.6
 .getString<span class="o">(</span><span class="s2">&quot;temperature&quot;</span><span class="o">)</span>            &amp;rarr; <span class="s2">&quot;80.6 Farenheit&quot;</span>
 </pre></div>
-</div>
-</td></tr></table></ul><div class="line-block">
-<div class="line"><br /></div>
 </div>
 </div>
 </div>
@@ -803,46 +840,74 @@ can be applied to any option type. For example, the option definition:</p>
 for processing. The following program example (<tt class="docutils literal"><span class="pre">humecho4</span></tt>) is more
 flexible, allowing for multiple input files. If no filenames are given,
 then standard input will be read as the input data:</p>
-<blockquote>
-<div><table style="background:white;"><tr><td></div></blockquote>
-<div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
-using namespace std;
-int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
-   Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
-   options.process<span class="o">()</span>;
-   HumdrumFile hfile;
-   int <span class="nv">numinputs</span> <span class="o">=</span> options.getArgCount<span class="o">()</span>;
-   <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>1; i&lt;<span class="o">=</span>numinputs <span class="o">||</span> <span class="nv">i</span><span class="o">==</span>0; i++<span class="o">)</span> <span class="o">{</span>
-      <span class="k">if</span> <span class="o">(</span>numinputs &lt; 1<span class="o">)</span> <span class="o">{</span>
-         hfile.read<span class="o">(</span>cin<span class="o">)</span>; // <span class="nb">read </span>from standard input
-      <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-         hfile.read<span class="o">(</span>options.getArg<span class="o">(</span>i<span class="o">))</span>;
-      <span class="o">}</span>
-      // <span class="k">do </span>something with the Humdrum data here:
-      cout &lt;&lt; hfile;
-   <span class="o">}</span>
-   <span class="k">return </span>0;
-<span class="o">}</span>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include &quot;humdrum.h&quot;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">Options</span> <span class="n">options</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
+   <span class="n">options</span><span class="p">.</span><span class="n">process</span><span class="p">();</span>
+   <span class="n">HumdrumFile</span> <span class="n">hfile</span><span class="p">;</span>
+   <span class="kt">int</span> <span class="n">numinputs</span> <span class="o">=</span> <span class="n">options</span><span class="p">.</span><span class="n">getArgCount</span><span class="p">();</span>
+   <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="n">numinputs</span> <span class="o">||</span> <span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">numinputs</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">hfile</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">cin</span><span class="p">);</span> <span class="c1">// read from standard input</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+         <span class="n">hfile</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">options</span><span class="p">.</span><span class="n">getArg</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+      <span class="p">}</span>
+      <span class="c1">// do something with the Humdrum data here:</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">hfile</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
-</div>
-</td></tr></table></ul><p>This program has an identical function to <tt class="docutils literal"><span class="pre">humecho.cpp</span></tt>, but now
+</td></tr></table></div>
+<p>This program has an identical function to <tt class="docutils literal"><span class="pre">humecho.cpp</span></tt>, but now
 multiple files can be read in and processed at the same time. For
 example if there are two input files with these contents:</p>
-<blockquote>
-<div><table style="background:white;"><tr valign=top><td></div></blockquote>
-<center><p>file 1</p>
-</center><td width=20></td><td><center><p>file 2</p>
-</center></td><td width=40></td><td><center><p>output</p>
-</center></td></tr></table></ul><p>Here are some possible command-line realizations for the above program:</p>
-<blockquote>
-<div><table style="background:white;"><tr><td></div></blockquote>
+<table style="background:white;">
+<tr valign=top>
+<td>
+<center>
+file 1
+</center><td width=20>
+</td>
+<td>
+<center>
+file 2
+</center></td>
+<td width=40>
+</td>
+<td>
+<center>
+output
+</center></td>
+</tr>
+</table><p>Here are some possible command-line realizations for the above program:</p>
 <div class="code bash highlight-bash"><div class="highlight"><pre>humecho4 file.krn
 humecho4 file1.krn file2.krn file3.krn
 cat file.krn | humecho4
 humecho4
 </pre></div>
 </div>
-</td></tr></table></ul><p>The last command will cause the shell to wait while you type in the
+<p>The last command will cause the shell to wait while you type in the
 input to humecho4, followed by control-D to indicate the end of input
 data.</p>
 <p>Note that the number of command-line arguments (other than options) can
@@ -857,9 +922,6 @@ to access the command name, then use .getCommand(), which would return
 <p>When reading from standard input use HumdrumFile::read(istream) rather
 than HumdrumFile::read(const char*). For example, reading from standard
 input is done with hfile.read(cin) in the above code.</p>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
 </div>
 <div class="section" id="humdrumstream-class">
 <h3>HumdrumStream class<a class="headerlink" href="#humdrumstream-class" title="Permalink to this headline">¶</a></h3>
@@ -867,8 +929,6 @@ input is done with hfile.read(cin) in the above code.</p>
 class. This class also manages multiple independent sequences of data,
 such as movements, in a data file which the HumdrumFile class will not
 process.</p>
-<blockquote>
-<div><table style="background:white;"><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
 using namespace std;
 int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
@@ -883,7 +943,7 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul></div>
+</div>
 <div class="section" id="humdrumfileset-class">
 <h3>HumdrumFileSet class<a class="headerlink" href="#humdrumfileset-class" title="Permalink to this headline">¶</a></h3>
 <p>The HumdrumFileSet class functions in a similar manner to the
@@ -896,8 +956,6 @@ input arguments into HumdrumFileSet. In this case the
 HumdrumFileSet::read() function is used to extract a list of arguments
 from the options variable. If the options variable does not contain any
 filenames, standard input will be read:</p>
-<blockquote>
-<div><table style="background:white;"><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
 using namespace std;
 int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
@@ -912,23 +970,28 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul></div>
+</div>
 <div class="section" id="c-string-comparison-functions">
 <h3>C string comparison functions<a class="headerlink" href="#c-string-comparison-functions" title="Permalink to this headline">¶</a></h3>
 <p>Here are three of the string comparison functions available within in
 the C (or C++) language:</p>
-<dl><dt><p>strcmp(&#8220;string1&#8221;, &#8220;string2&#8221;)</p>
-<dd><div class="line-block">
-<div class="line">returns 0 if strings are equivalent</div>
-<div class="line">returns –1 if string1 is alphabetized before string2</div>
-<div class="line">returns +1 if string1 is alphabetized after string2.</div>
-</div>
-<dt><p>strncmp(&#8220;string1&#8221;, &#8220;string2&#8221;, n)</p>
-<dd><p>compare only first n characters of the two strings.</p>
-<dt><p>strchr(&#8220;string&#8221;, &#8216;character&#8217;)</p>
-<dd><p>returns a pointer to the first occurrence of the character within the
+<dl>
+<dt>
+strcmp("string1", "string2")
+<dd>
+returns 0 if strings are equivalent<br>
+returns –1 if string1 is alphabetized before string2<br>
+returns +1 if string1 is alphabetized after string2.
+<dt>
+strncmp("string1", "string2", n)
+<dd>
+compare only first n characters of the two strings.
+<dt>
+strchr("string", 'character')
+<dd>
+returns a pointer to the first occurrence of the character within the
 string. If the character is not found in the string, returns a NULL
-pointer.</p>
+pointer.
 </dl><p>Other interesting string processing functions in the C language are
 <tt class="docutils literal"><span class="pre">strstr</span></tt> which is similar to <tt class="docutils literal"><span class="pre">strchr</span></tt> but search for a sub-string
 within the a string; and <tt class="docutils literal"><span class="pre">strrchr</span></tt> which is similar to <tt class="docutils literal"><span class="pre">strchr</span></tt> but
@@ -937,9 +1000,6 @@ returns the last occurrence of the character in the string (or NULL) if
 the character is not in the string. For more description about these
 functions, type &#8220;man strrchr&#8221; in a terminal for more information about
 the strrchr function (or any other standard C fuction).</p>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
 </div>
 <div class="section" id="third-dimension-of-data-access-note-level-access">
 <h3>Third dimension of data access (Note-level access)<a class="headerlink" href="#third-dimension-of-data-access-note-level-access" title="Permalink to this headline">¶</a></h3>
@@ -951,8 +1011,6 @@ line-fields. The following program (<tt class="docutils literal"><span class="pr
 to access individual **kern notes. The program takes any sort of
 Humdrum file, and then outputs a list of all notes found in all kern
 spines:</p>
-<blockquote>
-<div><table style="background:white;"><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
 int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
    Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
@@ -976,29 +1034,28 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul><p>The line:</p>
-<blockquote>
-<div><table style="background:white;"><tr><td></div></blockquote>
+<p>The line:</p>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="k">if</span> <span class="o">(</span>strcmp<span class="o">(</span><span class="s2">&quot;**kern&quot;</span>, hfile<span class="o">[</span>i<span class="o">]</span>.getExInterp<span class="o">(</span>j<span class="o">))</span> !<span class="o">=</span> 0<span class="o">)</span> <span class="k">continue</span>;
 </pre></div>
 </div>
-</td></tr></table></ul><p>is used to skip over all spines which do not have **kern data. The
+<p>is used to skip over all spines which do not have **kern data. The
 function .getExInterp() returns a const char* string for the name of
 the exclusive interpretation. The strcmp() function compares the returns
-exclusive interpretation name with the string &#8220;**kern&#8221;, and if it does
+exclusive interpretation name with the string &#8220;**kern&#8221; and if it does
 not match, the next data field on the line will be examined. An
 equivalent way of identifying the exclusive interpretation can be done
 with the .isExInterp() function. The following line of code is
 equivalent to the one above:</p>
-<blockquote>
-<div><table style="background:white;"><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="k">if</span> <span class="o">(</span>hfile<span class="o">[</span>i<span class="o">]</span>.isExInterp<span class="o">(</span>j, <span class="s2">&quot;**kern&quot;</span><span class="o">))</span> <span class="k">continue</span>;
 </pre></div>
 </div>
-</td></tr></table></ul><p>Input and output to/from the program:</p>
-<blockquote>
-<div><table style="background:white;"><tr valign=top><td></div></blockquote>
-</td><td width=40></td><td><div class="code text highlight-bash"><div class="highlight"><pre><span class="o">(</span>2,1,1<span class="o">)</span> 4C
+<p>Input and output to/from the program:</p>
+<table style="background:white;">
+<tr valign=top>
+<td></td>
+<td width=40>
+</td>
+<td><div class="code text highlight-bash"><div class="highlight"><pre><span class="o">(</span>2,1,1<span class="o">)</span> 4C
 <span class="o">(</span>2,3,1<span class="o">)</span> 4c
 <span class="o">(</span>3,1,1<span class="o">)</span> 4D
 <span class="o">(</span>3,1,2<span class="o">)</span> 4E
@@ -1011,20 +1068,18 @@ equivalent to the one above:</p>
 <span class="o">(</span>7,1,3<span class="o">)</span> 4B
 </pre></div>
 </div>
-</td></tr></table></ul><p>Each of the three numbers before the note indicates the address within
+</td>
+</tr>
+</table><p>Each of the three numbers before the note indicates the address within
 the file for the note, with the first number being the line on which the
 note occurs, the second number the field on the line which contains the
 note, and the last number is the note number within the (possible) chord
 for the note.</p>
-<div class="line-block">
-<div class="line"><br /></div>
-<div class="line">=== kerninfo.cpp (Count **kern notes in data) ===</div>
-</div>
+<div class="section" id="kerninfo-cpp-count-kern-notes-in-data">
+<h4>kerninfo.cpp (Count **kern notes in data)<a class="headerlink" href="#kerninfo-cpp-count-kern-notes-in-data" title="Permalink to this headline">¶</a></h4>
 <p>Here is an example program which somewhat emulates the &#8220;census -k&#8221;
 command from the Humdrum Toolkit. The program will count the number of
 note attacks, rests and tied notes in one or more Humdrum files.</p>
-<blockquote>
-<div><table style="background:white;"><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
 using namespace std;
 int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
@@ -1066,20 +1121,8 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul>
-
-     .. raw:: html
-
-        <table style="background:white;">
-
-     .. raw:: html
-
-        <tr valign=baseline>
-
-     .. raw:: html
-
-        <td><p>Trying out the kerninfo prorgram on this input data:</p>
-</td><td width=40></td><td><p>Results in these statistics:</p>
+<p>Trying out the kerninfo prorgram on this input data:</p>
+<p>Results in these statistics:</p>
 <div class="highlight-bash"><div class="highlight"><pre>Note attacks: 10
 Tied notes  : 0
 Chords      : 3
@@ -1087,9 +1130,7 @@ Rests       : 1
 Null Tokens : 5
 </pre></div>
 </div>
-</td></tr></table></ul><p>Trying out the <tt class="docutils literal"><span class="pre">kerninfo</span></tt> program on a real piece of music:</p>
-<blockquote>
-<div><table style="background:white;"><tr><td></div></blockquote>
+<p>Trying out the <tt class="docutils literal"><span class="pre">kerninfo</span></tt> program on a real piece of music:</p>
 <p><tt class="docutils literal"><span class="pre">kerninfo</span> <span class="pre">h://wtc/wtc1p04.krn</span></tt></p>
 <div class="highlight-bash"><div class="highlight"><pre>Note attacks: 675
 Tied notes  : 85
@@ -1098,8 +1139,6 @@ Rests       : 69
 Null Tokens : 967
 </pre></div>
 </div>
-</td></tr></table></ul><div class="line-block">
-<div class="line"><br /></div>
 </div>
 </div>
 <div class="section" id="convert-class">
@@ -1117,19 +1156,15 @@ Convert function:</p>
 <p><tt class="docutils literal"><span class="pre">&nbsp;&nbsp;Convert::midiNoteNumberToKern(buffer,&nbsp;61)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→&nbsp;&nbsp;&quot;c#&quot;</span></tt></p>
 <p>All access to Convert class functions is done statically, so you can
 shorten the code by using the a typedef for Convert to a shorter name:</p>
-<div class="line-block">
-<div class="line"><tt class="docutils literal"><span class="pre">&nbsp;&nbsp;&nbsp;typedef&nbsp;Convert&nbsp;C;</span></tt></div>
-<div class="line"><tt class="docutils literal"><span class="pre">&nbsp;&nbsp;&nbsp;C::kernToMidiNoteNumber(&quot;4d-&quot;);</span></tt></div>
-</div>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
+<dl class="docutils">
+<dt>::</dt>
+<dd>typedef&nbsp;Convert&nbsp;C;
+C::kernToMidiNoteNumber(&#8220;4d-&#8221;);</dd>
+</dl>
 <div class="section" id="convert-kern-note-names-to-midi">
 <h4>Convert **kern note names to MIDI<a class="headerlink" href="#convert-kern-note-names-to-midi" title="Permalink to this headline">¶</a></h4>
 <p>The following program will convert the first note of every chord into a
 MIDI note number.</p>
-<blockquote>
-<div><table style="background:white;"><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
 int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
    Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
@@ -1148,10 +1183,13 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul><p>Example input and output:</p>
-<blockquote>
-<div><table style="background:white;"><tr valign=top><td></div></blockquote>
-</td><td width=40></td><td><div class="code text highlight-bash"><div class="highlight"><pre>4C        48
+<p>Example input and output:</p>
+<table style="background:white;">
+<tr valign=top>
+<td></td>
+<td width=40>
+</td>
+<td><div class="code text highlight-bash"><div class="highlight"><pre>4C        48
 4c        60
 4D 4E     50
 4F        53
@@ -1159,12 +1197,11 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 4G 4A 4B  55
 </pre></div>
 </div>
-</td></tr></table></ul><p>Note that only the first kern note in the string will be extracted by
+</td>
+</tr>
+</table><p>Note that only the first kern note in the string will be extracted by
 Convert::kernToMidiNoteNumber(). As an exercise, adjust the code so that
 it prints a MIDI note number for every note in the chords.</p>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
 </div>
 </div>
 <div class="section" id="note-histogram-notehist-cpp">
@@ -1174,8 +1211,6 @@ classes in a Humdrum file. The following program will count tied notes.
 As an exercise, have the program skip counting of any middle or end tied
 notes (middle tied notes have an underscore (_) in their content, and
 ending tied notes has a closing square bracket (])).</p>
-<blockquote>
-<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
 int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
    Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
@@ -1207,11 +1242,9 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul><p>Example output when processing a real piece of music is given below. The
+<p>Example output when processing a real piece of music is given below. The
 first output line means there are 600 C notes in Beethoven&#8217;s 32nd
 sonata, mvmt. 1, 233 Cs/Ds, etc.</p>
-<blockquote>
-<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
 <p><tt class="docutils literal"><span class="pre">notehist</span> <span class="pre">h://beethoven/sonatas/sonata32-1.krn</span></tt></p>
 <div class="code text highlight-bash"><div class="highlight"><pre>0   600
 1   233
@@ -1227,9 +1260,7 @@ sonata, mvmt. 1, 233 Cs/Ds, etc.</p>
 11  230
 </pre></div>
 </div>
-</td></tr></table></ul><p>To sort the pitch classes by how often they occur:</p>
-<blockquote>
-<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
+<p>To sort the pitch classes by how often they occur:</p>
 <p><tt class="docutils literal"><span class="pre">notehist</span> <span class="pre">h://beethoven/sonatas/sonata32-1.krn</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-nrk2</span></tt></p>
 <div class="code text highlight-bash"><div class="highlight"><pre>7   636
 0   600
@@ -1245,7 +1276,7 @@ sonata, mvmt. 1, 233 Cs/Ds, etc.</p>
 9   121
 </pre></div>
 </div>
-</td></tr></table></ul><p>In this case the most common pitch class is G (7), and the least common
+<p>In this case the most common pitch class is G (7), and the least common
 pitch class is A (9). Note that the sorting did not have to be
 implemented in the C++ program, since the command-line program <tt class="docutils literal"><span class="pre">sort</span></tt>
 could be utilized. The options to sort are <tt class="docutils literal"><span class="pre">-n</span></tt> (sort numerically),
@@ -1253,8 +1284,6 @@ could be utilized. The options to sort are <tt class="docutils literal"><span cl
 and <tt class="docutils literal"><span class="pre">-k2</span></tt> (sort by the second column of data).</p>
 <p>Here is a modification of the program so that pitch names rather than
 pitch-class numbers are displayed:</p>
-<blockquote>
-<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
 int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
    Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
@@ -1287,10 +1316,8 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul><p>So now the note names will be printed instead of their numeric
+<p>So now the note names will be printed instead of their numeric
 equivalent:</p>
-<blockquote>
-<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
 <p><tt class="docutils literal"><span class="pre">notehist</span> <span class="pre">h://beethoven/sonatas/sonata32-1.krn</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-nrk2</span></tt></p>
 <div class="code text highlight-bash"><div class="highlight"><pre>G   636
 C   600
@@ -1306,10 +1333,8 @@ F#  144
 A   121
 </pre></div>
 </div>
-</td></tr></table></ul><p>If you want to preserve the accidental spellings, then you can use
+<p>If you want to preserve the accidental spellings, then you can use
 base-40 instead of base-12 (MIDI note numbers):</p>
-<blockquote>
-<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
 int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
    Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
@@ -1343,9 +1368,7 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul><p>With the more verbose pitch information being:</p>
-<blockquote>
-<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
+<p>With the more verbose pitch information being:</p>
 <p><tt class="docutils literal"><span class="pre">notehist</span> <span class="pre">h://beethoven/sonatas/sonata32-1.krn</span></tt></p>
 <div class="code text highlight-bash"><div class="highlight"><pre>C-  32
 C   600
@@ -1369,11 +1392,9 @@ B-  259
 B   198
 </pre></div>
 </div>
-</td></tr></table></ul><p><a class="reference external" href="http://www.cplusplus.com/reference">Standard Template Library</a>
+<p><a class="reference external" href="http://www.cplusplus.com/reference">Standard Template Library</a>
 classes such as vector can be used instead of the C-like histogram array
 used in the previous program. Here is an example using the vector class:</p>
-<blockquote>
-<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
 <span class="c">#include &lt;vector&gt;</span>
 using namespace std;
@@ -1410,10 +1431,8 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul><p>In addition, Humdrum Extras has an Array class which has a similar
+<p>In addition, Humdrum Extras has an Array class which has a similar
 functionality as the vector class or C arrays:</p>
-<blockquote>
-<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
 using namespace std;
 
@@ -1450,15 +1469,13 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul></div>
+</div>
 <div class="section" id="duration-weighted-note-histogram">
 <h3>Duration-weighted note histogram<a class="headerlink" href="#duration-weighted-note-histogram" title="Permalink to this headline">¶</a></h3>
 <p>Often it is useful to know how long a certain pitch class sounds in a
 musical work rather than just how many note attacks for each pitch
 class. Here is a program which measures the duration of each pitch class
 in the music:</p>
-<blockquote>
-<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
 int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
    Options options<span class="o">(</span>argc, argv<span class="o">)</span>;
@@ -1495,10 +1512,8 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul><p>Now the program will output the duration in quarter notes for each pitch
+<p>Now the program will output the duration in quarter notes for each pitch
 class in the music:</p>
-<blockquote>
-<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
 <div class="code text highlight-bash"><div class="highlight"><pre>C   319.556
 C#  98.6833
 D   137.644
@@ -1512,9 +1527,6 @@ A   61.2111
 B-  121.267
 B   125.767
 </pre></div>
-</div>
-</td></tr></table></ul><div class="line-block">
-<div class="line"><br /></div>
 </div>
 </div>
 <div class="section" id="rhythm-parsing">
@@ -1536,8 +1548,6 @@ comments, interpretations) can be queried for their position in the
 score. In this example the argument &#8220;4&#8221; is given to .analyzeRhythm().
 This means to use the quarter note as the basis for calculating rhythmic
 values for the score.</p>
-<blockquote>
-<div><table style="background: white;" cellpadding=0 cellspacing=0><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
 
 void printRhythm<span class="o">(</span>HumdrumFile&amp; infile<span class="o">)</span> <span class="o">{</span>
@@ -1568,14 +1578,19 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <span class="o">}</span>;
 </pre></div>
 </div>
-</td></tr></table></ul><p>Here is example input/output from the above program. Each line in the
+<p>Here is example input/output from the above program. Each line in the
 output starts with the &#8220;absolute beat&#8221; value for the line, followed by
 the input line. Note that the example input contains two measures of 4/4
 meter, so the total duration of the score is 8 quarter notes. This
 matches to the &#8220;absolute beat&#8221; position of the last line in the file.</p>
-<blockquote>
-<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
-</td><td width=40></td><td></td></tr></table></ul><p>In the above example program, absolute beat positions for each line were
+<table style="background:white;" cellpadding=0 cellspacing=0>
+<tr valign=top>
+<td></td>
+<td width=40>
+</td>
+<td></td>
+</tr>
+</table><p>In the above example program, absolute beat positions for each line were
 printed as floating-point numbers. Notice that for the triplet eighth
 notes starting in measure 2, round-off error occurs in 10<sup>-5</sup>
 decimal place. If you require rhythmic information with no round-ff
@@ -1589,8 +1604,6 @@ and denominator as separate integer values to avoid introducing
 round-off error.</p>
 <p>Try replacing the printRhythm() function in the above example with this
 one which substitutes .getAbsBeat() with .getAbsBeatR():</p>
-<blockquote>
-<div><table style="background: white;" cellpadding=0 cellspacing=0><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre>void printRhythm<span class="o">(</span>HumdrumFile&amp; infile<span class="o">)</span> <span class="o">{</span>
    <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>0; i&lt;infile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
       cout <span class="s">&lt;&lt; infile[i].getAbsBeatR() &lt;&lt; &#39;\t&#39; &lt;&lt; infile</span><span class="o">[</span>i<span class="o">]</span> &lt;&lt; <span class="s1">&#39;\n&#39;</span>;
@@ -1598,14 +1611,15 @@ one which substitutes .getAbsBeat() with .getAbsBeatR():</p>
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul><p>Now the output of the program describes the rhythms in terms of
+<p>Now the output of the program describes the rhythms in terms of
 fractions rather than floating-point values:</p>
-<blockquote>
-<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
-</td><td width=40></td><td></td></tr></table></ul><p>This is now quite readable, so printing and integer plus a fractional
+</td>
+<td width=40>
+</td><p>&lt;td&gt;</p>
+</td>
+</tr>
+</table><p>This is now quite readable, so printing and integer plus a fractional
 remainder for each absolute beat position would be more convenient:</p>
-<blockquote>
-<div><table style="background: white;" cellpadding=0 cellspacing=0><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre>void printRhythm<span class="o">(</span>HumdrumFile&amp; infile<span class="o">)</span> <span class="o">{</span>
    RationalNumber absbeat;
    <span class="k">for</span> <span class="o">(</span>int <span class="nv">i</span><span class="o">=</span>0; i&lt;infile.getNumLines<span class="o">()</span>; i++<span class="o">)</span> <span class="o">{</span>
@@ -1616,11 +1630,16 @@ remainder for each absolute beat position would be more convenient:</p>
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul><p>Now the output is more readable with numbers such as 31/5 replaced with
+<p>Now the output is more readable with numbers such as 31/5 replaced with
 6+1/5:</p>
-<blockquote>
-<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
-</td><td width=40></td><td></td></tr></table></ul></div>
+<table style="background:white;" cellpadding=0 cellspacing=0>
+<tr valign=top>
+<td></td>
+<td width=40>
+</td>
+<td></td>
+</tr>
+</table></div>
 <div class="section" id="line-duration">
 <h4>Line duration<a class="headerlink" href="#line-duration" title="Permalink to this headline">¶</a></h4>
 <p>The line duration, or composite rhythm, of a Humdrum file can be
@@ -1634,8 +1653,6 @@ requirements. Floating point values can also be extracted from
 RationalNumber types with the RationalNumber::getFloat() function.</p>
 <p>Here is an example program which prints the duration of each line in a
 Humdrum file:</p>
-<blockquote>
-<div><table style="background: white;" cellpadding=0 cellspacing=0><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
 
 void printRhythm<span class="o">(</span>HumdrumFile&amp; infile<span class="o">)</span> <span class="o">{</span>
@@ -1669,10 +1686,15 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul><p>This program outputs the duration of each line in quarter-note units:</p>
-<blockquote>
-<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
-</td><td width=40></td><td></td></tr></table></ul><p>Notice that non-data lines are assigned a duration of 0. Also note that
+<p>This program outputs the duration of each line in quarter-note units:</p>
+<table style="background:white;" cellpadding=0 cellspacing=0>
+<tr valign=top>
+<td></td>
+<td width=40>
+</td>
+<td></td>
+</tr>
+</table><p>Notice that non-data lines are assigned a duration of 0. Also note that
 the line &#8221;. 12ee&#8221; has a line duration of 1/6th of a quarter note. This
 is smaller than the rhythm 12 which is 1/3 of a quarter note due to the
 8th note in the first column having its duration split across two lines.</p>
@@ -1682,8 +1704,6 @@ use whole notes when analyzing the rhythmic structure of the file with
 .analyzeRhythm(&#8220;1&#8221;) instead of using &#8220;4&#8221; as its argument.</p>
 <p>Here is an example program which calculates the composite rhythm of the
 file and prepends a **recip spine to the original data:</p>
-<blockquote>
-<div><table style="background: white;" cellpadding=0 cellspacing=0><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
 
 void processFile<span class="o">(</span>HumdrumFile&amp; infile<span class="o">)</span> <span class="o">{</span>
@@ -1730,16 +1750,21 @@ void processFile<span class="o">(</span>HumdrumFile&amp; infile<span class="o">)
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul><p>Here is the input and output for the composite rhythm program listed
+<p>Here is the input and output for the composite rhythm program listed
 above. The HumdrumRecord::getDurationR() information was printed in the
 first column. The second column gives the Humdrum **recip
 representation of the duration as a **kern rhythmic value. The
 **recip value is the inverse of the duration, multiplied by 4 in this
 case to represent inverse divisions of whole notes rather than quarter
 notes.</p>
-<blockquote>
-<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
-</td><td width=40></td><td></td></tr></table></ul></div>
+<table style="background:white;" cellpadding=0 cellspacing=0>
+<tr valign=top>
+<td></td>
+<td width=40>
+</td>
+<td></td>
+</tr>
+</table></div>
 </div>
 <div class="section" id="line-field-enumeration-by-spine">
 <h3>Line field enumeration by spine<a class="headerlink" href="#line-field-enumeration-by-spine" title="Permalink to this headline">¶</a></h3>
@@ -1756,8 +1781,6 @@ enumerated from one (sorry). Multiple fields can have the same primary
 track number, which is caused by a spine split in the data.</p>
 <p>Here is a program which prints the primary track for each data token in
 a Humdrum file structure:</p>
-<blockquote>
-<div><table style="background: white;" cellpadding=0 cellspacing=0><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
 using namespace std;
 int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
@@ -1780,10 +1803,15 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul><p>And here is example input and output:</p>
-<blockquote>
-<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
-</td><td width=40></td><td></td></tr></table></ul><p>Notice that the input data contains three exclusive interpretations.
+<p>And here is example input and output:</p>
+<table style="background:white;" cellpadding=0 cellspacing=0>
+<tr valign=top>
+<td></td>
+<td width=40>
+</td>
+<td></td>
+</tr>
+</table><p>Notice that the input data contains three exclusive interpretations.
 This will mean that there are three primary tracks (or spines) in the
 data. In the output you can see the numbers for each track: 1, 2, and 3.
 The HumdrumRecord::getMaxTrack() function can be called to find out what
@@ -1796,8 +1824,6 @@ The subtrack value uses the first three digits of the fraction, so you
 can extract the subtrack by removing the integer part of the number and
 multiplying by 1000. Note that the subtrack enumeration starts at 0,
 while the primary tracks are enumerated from 1 (sorry again).</p>
-<blockquote>
-<div><table style="background:white;" cellpadding=0 cellspacing=0><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
 using namespace std;
 int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
@@ -1820,24 +1846,17 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul>
-
-     .. raw:: html
-
-        <table style="background:white;" cellpadding=0 cellspacing=0>
-
-     .. raw:: html
-
-        <tr valign=top>
-
-     .. raw:: html
-
-        <td></td><td width=40></td><td></td></tr></table></ul><p>Even more detail about track information can be accessed with the
+<table style="background:white;" cellpadding=0 cellspacing=0>
+<tr valign=top>
+<td></td>
+<td width=40>
+</td>
+<td></td>
+</tr>
+</table><p>Even more detail about track information can be accessed with the
 .getSpineInfo() function. This function returns the internally stored
 string which keeps track of how the spine/subspine was manipulated on
 previous lines of the data.</p>
-<blockquote>
-<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
 using namespace std;
 int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
@@ -1860,47 +1879,84 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul>
-
-     .. raw:: html
-
-        <table style="background:white;" cellpadding=0 cellspacing=0>
-
-     .. raw:: html
-
-        <tr valign=top>
-
-     .. raw:: html
-
-        <td></td><td width=40></td><td></td></tr></table></ul><p>In this case the spine info &#8220;<tt class="docutils literal"><span class="pre">(2)a</span></tt>&#8221; means that that token is in
+<table style="background:white;" cellpadding=0 cellspacing=0>
+<tr valign=top>
+<td></td>
+<td width=40>
+</td>
+<td></td>
+</tr>
+</table><p>In this case the spine info <tt class="docutils literal"><span class="pre">(2)a</span></tt> means that that token is in
 primary spine 2, but the spine was split once, and this subtrack is the
 left-hand subspine coming out of the split. The .getPrimaryTrack()
 function returns the first number in the .getSpineInfo() string.</p>
 <p>Here is a more complex spine manipulation:</p>
-<blockquote>
-<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
-</td><td width=40></td><td></td></tr></table></ul><div class="line-block">
-<div class="line"><br /></div>
-</div>
-<div class="section" id="spine-manipulator-examples">
+<table style="background:white;" cellpadding=0 cellspacing=0>
+<tr valign=top>
+<td></td>
+<td width=40>
+</td>
+<td></td>
+</tr>
+</table><div class="section" id="spine-manipulator-examples">
 <h4>Spine manipulator examples<a class="headerlink" href="#spine-manipulator-examples" title="Permalink to this headline">¶</a></h4>
 <p>Here is an example of spine splits (<tt class="docutils literal"><span class="pre">*v</span></tt>) and joins (<tt class="docutils literal"><span class="pre">*v</span></tt>):</p>
-<blockquote>
-<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
-</td><td width=40></td><td></td></tr></table></ul><p>Here is an example of spine additions (<tt class="docutils literal"><span class="pre">*+</span></tt>) and terminations
+<table style="background:white;" cellpadding=0 cellspacing=0>
+<tr valign=top>
+<td></td>
+<td width=40>
+</td>
+<td></td>
+</tr>
+</table><p>Here is an example of spine additions (<tt class="docutils literal"><span class="pre">*+</span></tt>) and terminations
 (<tt class="docutils literal"><span class="pre">*-</span></tt>):</p>
-<blockquote>
-<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
-</td><td width=40></td><td></td></tr></table></ul><p>Here is an example of spine exchanges (<tt class="docutils literal"><span class="pre">*x</span></tt>):</p>
-<blockquote>
-<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
-</td><td width=40></td><td></td></tr></table></ul><p>And finally a complex example using all of the spine manipulators:</p>
-<blockquote>
-<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
-</td><td width=40></td><td></td></tr></table></ul><div class="line-block">
-<div class="line"><br /></div>
-</div>
-</div>
+<table style="background:white;" cellpadding=0 cellspacing=0>
+<tr valign=top>
+<td></td>
+<td width=40>
+</td>
+<td></td>
+</tr>
+</table><p>Here is an example of spine exchanges (<tt class="docutils literal"><span class="pre">*x</span></tt>):</p>
+<table style="background:white;" cellpadding=0 cellspacing=0>
+<tr valign=top>
+<td></td>
+<td width=40>
+</td>
+<td></td>
+</tr>
+</table><p>And finally a complex example using all of the spine manipulators:</p>
+<table style="background:white;" cellpadding=0 cellspacing=0>
+<tr valign=top>
+<td><p><a href="#id1"><span class="problematic" id="id2">**</span></a>a <a href="#id3"><span class="problematic" id="id4">**</span></a>b
+.   .
+*   <a href="#id5"><span class="problematic" id="id6">*</span></a>^
+.   .   .
+<a href="#id7"><span class="problematic" id="id8">*</span></a>+  <a href="#id9"><span class="problematic" id="id10">**</span></a>c *
+.   .   .   .
+*   *   <a href="#id11"><span class="problematic" id="id12">*</span></a>x  <a href="#id13"><span class="problematic" id="id14">*</span></a>x
+.   .   .   .
+*   *   <a href="#id15"><span class="problematic" id="id16">*</span></a>^  *
+.   .   .   .   .
+*   <a href="#id17"><span class="problematic" id="id18">*</span></a>+  <a href="#id19"><span class="problematic" id="id20">**</span></a>d *   *
+.   .   .   .   .   .
+*   *   *   *   <a href="#id21"><span class="problematic" id="id22">*</span></a>x  <a href="#id23"><span class="problematic" id="id24">*</span></a>x
+.   .   .   .   .   .
+*   <a href="#id25"><span class="problematic" id="id26">*</span></a>-  *   *   *   *
+.   .   .   .   .
+<a href="#id27"><span class="problematic" id="id28">*</span></a>v  <a href="#id29"><span class="problematic" id="id30">*</span></a>v  *   *   *
+.   .   .   .
+*   <a href="#id31"><span class="problematic" id="id32">*</span></a>v  <a href="#id33"><span class="problematic" id="id34">*</span></a>v  *
+.   .   .
+*   <a href="#id35"><span class="problematic" id="id36">*</span></a>v  <a href="#id37"><span class="problematic" id="id38">*</span></a>v
+.   .
+<a href="#id39"><span class="problematic" id="id40">*</span></a>-  <a href="#id41"><span class="problematic" id="id42">*</span></a>-</p>
+</td>
+<td width=40>
+</td>
+<td></td>
+</tr>
+</table></div>
 <div class="section" id="myextract-cpp">
 <h4>myextract.cpp<a class="headerlink" href="#myextract-cpp" title="Permalink to this headline">¶</a></h4>
 <p>Now that you know how to extract information about spines and subspines,
@@ -1908,8 +1964,6 @@ you can write your own version of the Humdrum Toolkit&#8217;s extract program.
 It will be even more powerful than the extract program, since the
 extract program cannot deal with subspines without special processing.
 Here is the <tt class="docutils literal"><span class="pre">myextract</span></tt> code:</p>
-<blockquote>
-<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
 using namespace std;
 
@@ -1948,13 +2002,14 @@ void extract<span class="o">(</span>HumdrumFile&amp; hfile, int primarytrack<spa
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul>
-
-     .. raw:: html
-
-        <table style="background:white;" cellpadding=0 cellspacing=0><tr><td><p>input</p>
-</td><td colspan=2><center><p><tt class="docutils literal"><span class="pre">myextract</span> <span class="pre">-t</span> <span class="pre">2</span></tt></p>
-</center></td></tr><tr valign=top><td></td><td width=145></td><td></td></tr></table></ul><p>Notice that all of the &#8220;B&#8221; information which was in spine 2 was
+<table style="background:white;" cellpadding=0 cellspacing=0>
+<tr>
+<td>
+input
+</td>
+<td colspan=2>
+<center><p><tt class="docutils literal"><span class="pre">myextract</span> <span class="pre">-t</span> <span class="pre">2</span></tt></p>
+</center></td></tr><tr valign=top><td></td><td width=145></td><td></td></tr></table><p>Notice that all of the &#8220;B&#8221; information which was in spine 2 was
 extracted from the input data.</p>
 </div>
 </div>
@@ -1968,35 +2023,31 @@ of them.</p>
 <p>Different Operating systems have different C implementations of regular
 expressions. Here is an example of how to use them on most linux
 operating systems using the GNU POSIX regular expressions:</p>
-<blockquote>
-<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
 <div class="code c highlight-bash"><div class="highlight"><pre><span class="c">#include &lt;regex.h&gt;</span>
 <span class="c">#include &lt;stdlib.h&gt;</span>
 <span class="c">#include &lt;stdio.h&gt;</span>
 using namespace std;
 int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <span class="o">{</span>
-   <span class="k">if</span> <span class="o">(</span>argc &lt; 3<span class="o">)</span> <span class="nb">exit</span><span class="o">(</span>1<span class="o">)</span>;
-   const char *searchstring <span class="o">=</span> argv<span class="o">[</span>1<span class="o">]</span>;
-   const char *datastring <span class="o">=</span> argv<span class="o">[</span>2<span class="o">]</span>;
-   regex_t re;
-   int <span class="nv">flags</span> <span class="o">=</span> 0 | REG_EXTENDED | REG_ICASE;
-   int <span class="nv">status</span> <span class="o">=</span> regcomp<span class="o">(</span>&amp;re, searchstring, flags<span class="o">)</span>;
-   <span class="k">if</span> <span class="o">(</span>status !<span class="o">=</span>0<span class="o">)</span> <span class="o">{</span>
-      char errstring<span class="o">[</span>999<span class="o">]</span>;
-      regerror<span class="o">(</span>status, &amp;re, errstring, 999<span class="o">)</span>;
-      <span class="nb">printf</span><span class="o">(</span><span class="s2">&quot;%s\n&quot;</span>, errstring<span class="o">)</span>;
-      <span class="nb">exit</span><span class="o">(</span>1<span class="o">)</span>;
-   <span class="o">}</span>
-   <span class="nv">status</span> <span class="o">=</span> regexec<span class="o">(</span>&amp;re, datastring, 0, NULL, 0<span class="o">)</span>;
-   <span class="k">if</span> <span class="o">(</span><span class="nv">status</span> <span class="o">==</span> 0<span class="o">)</span> <span class="nb">printf</span><span class="o">(</span><span class="s2">&quot;Match Found\n&quot;</span><span class="o">)</span>;
-   <span class="k">else </span><span class="nb">printf</span><span class="o">(</span><span class="s2">&quot;Match Not Found\n&quot;</span><span class="o">)</span>;
-   <span class="k">return </span>0;
+<span class="k">if</span> <span class="o">(</span>argc &lt; 3<span class="o">)</span> <span class="nb">exit</span><span class="o">(</span>1<span class="o">)</span>;
+const char *searchstring <span class="o">=</span> argv<span class="o">[</span>1<span class="o">]</span>;
+const char *datastring <span class="o">=</span> argv<span class="o">[</span>2<span class="o">]</span>;
+regex_t re;
+int <span class="nv">flags</span> <span class="o">=</span> 0 | REG_EXTENDED | REG_ICASE;
+int <span class="nv">status</span> <span class="o">=</span> regcomp<span class="o">(</span>&amp;re, searchstring, flags<span class="o">)</span>;
+<span class="k">if</span> <span class="o">(</span>status !<span class="o">=</span>0<span class="o">)</span> <span class="o">{</span>
+char errstring<span class="o">[</span>999<span class="o">]</span>;
+regerror<span class="o">(</span>status, &amp;re, errstring, 999<span class="o">)</span>;
+<span class="nb">printf</span><span class="o">(</span><span class="s2">&quot;%s\n&quot;</span>, errstring<span class="o">)</span>;
+<span class="nb">exit</span><span class="o">(</span>1<span class="o">)</span>;
+<span class="o">}</span>
+<span class="nv">status</span> <span class="o">=</span> regexec<span class="o">(</span>&amp;re, datastring, 0, NULL, 0<span class="o">)</span>;
+<span class="k">if</span> <span class="o">(</span><span class="nv">status</span> <span class="o">==</span> 0<span class="o">)</span> <span class="nb">printf</span><span class="o">(</span><span class="s2">&quot;Match Found\n&quot;</span><span class="o">)</span>;
+<span class="k">else </span><span class="nb">printf</span><span class="o">(</span><span class="s2">&quot;Match Not Found\n&quot;</span><span class="o">)</span>;
+<span class="k">return </span>0;
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul><p>Example behavior of the program:</p>
-<blockquote>
-<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+<p>Example behavior of the program:</p>
 <div class="code text highlight-bash"><div class="highlight"><pre>search cat <span class="s2">&quot;cat in the hat&quot;</span>
 Match Found
 
@@ -2004,17 +2055,15 @@ search dog <span class="s2">&quot;cat in the hat&quot;</span>
 Match Not Found
 </pre></div>
 </div>
-</td></tr></table></ul><p>For the simple examples above the strstr() C library function could have
+<p>For the simple examples above the strstr() C library function could have
 been used (which would probably also run faster). But using regular
 expressions allows for more powerful generalized searching, such as
 looking for upper and lower case matches:</p>
-<blockquote>
-<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
 <div class="code text highlight-bash"><div class="highlight"><pre>search cat <span class="s2">&quot;Cat in the hat&quot;</span>
 Match Found
 </pre></div>
 </div>
-</td></tr></table></ul><p>In this case &#8220;cat&#8221; was matched to &#8220;Cat&#8221; since the REG_ICASE flag was
+<p>In this case &#8220;cat&#8221; was matched to &#8220;Cat&#8221; since the REG_ICASE flag was
 used to ignore difference between upper and lower letter cases. The
 REG_EXTENDED flag is for using extended regular expressions (regular
 expressions 2.0). The regexec() function returns 0 if a match was found,
@@ -2023,8 +2072,6 @@ otherwise returns a non-zero value to indicate no match was found.</p>
 <h5>mysed.c (Search and replace)<a class="headerlink" href="#mysed-c-search-and-replace" title="Permalink to this headline">¶</a></h5>
 <p>The following program demonstrates how to do search and replace on
 strings with GNU POSIX regular expressions.</p>
-<blockquote>
-<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
 <div class="code c highlight-bash"><div class="highlight"><pre><span class="c">#include &lt;regex.h&gt;</span>
 <span class="c">#include &lt;stdlib.h&gt;</span>
 <span class="c">#include &lt;stdio.h&gt;</span>
@@ -2056,14 +2103,12 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul><p>Example use:</p>
-<blockquote>
-<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
+<p>Example use:</p>
 <div class="code text highlight-bash"><div class="highlight"><pre>mysed klm 000 abcdefghijklmnopqrstuvwxyz
 abcdefghij000nopqrstuvwxyz
 </pre></div>
 </div>
-</td></tr></table></ul></div>
+</div>
 </div>
 <div class="section" id="perl-compatible-regular-expressions">
 <h4>Perl Compatible Regular Expressions<a class="headerlink" href="#perl-compatible-regular-expressions" title="Permalink to this headline">¶</a></h4>
@@ -2074,8 +2119,6 @@ it implements extensions to regular expressions which are present in the
 Perl language. The Humdrum Extras library also includes a C++ wrapper
 class for PCRE which allows for a simpler interface. Below are programs
 similar to the GNU POSIX regular expressions found above.</p>
-<blockquote>
-<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
 <div class="code c highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;PerlRegularExpression.h&quot;</span>
 <span class="c">#include &lt;iostream&gt;</span>
 using namespace std;
@@ -2094,8 +2137,7 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul><p>The
-<a class="reference external" href="http://extras.humdrum.org/download/humextra/include/PerlRegularExpression.h">PerlRegularExpression</a>
+<p>The <a class="reference external" href="http://extras.humdrum.org/download/humextra/include/PerlRegularExpression.h">PerlRegularExpression</a>
 class definition must be included with <tt class="docutils literal"><span class="pre">PerlRegularExpression.h</span></tt> since
 <tt class="docutils literal"><span class="pre">humdrum.h</span></tt> or any of the files it includes does not depend on the
 PerlRegularExpression class. The .search() function returns true if a
@@ -2105,8 +2147,6 @@ PerlRegularExpression variable will use extended regular expressions,
 and the <tt class="docutils literal"><span class="pre">&quot;i&quot;</span></tt> used as the third parameter in the .search() function is
 used to set the ignore-case flag.</p>
 <p>Example behavior of the program:</p>
-<blockquote>
-<div><table style="background:white;" cellpadding=0 cellspacing=0><tr valign=top><td></div></blockquote>
 <div class="code text highlight-bash"><div class="highlight"><pre>search cat <span class="s2">&quot;cat in the hat&quot;</span>
 Match Found
 
@@ -2114,12 +2154,10 @@ search dog <span class="s2">&quot;cat in the hat&quot;</span>
 Match Not Found
 </pre></div>
 </div>
-</td></tr></table></ul><div class="section" id="mysed-cpp-search-and-replace">
+<div class="section" id="mysed-cpp-search-and-replace">
 <h5>mysed.cpp (Search and replace)<a class="headerlink" href="#mysed-cpp-search-and-replace" title="Permalink to this headline">¶</a></h5>
 <p>The following program demonstrates how to do search and replace on
 strings with the PerlRegularExpression class.</p>
-<blockquote>
-<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
 <div class="code c highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;PerlRegularExpression.h&quot;</span>
 <span class="c">#include &lt;stdio.h&gt;</span>
 <span class="c">#include &lt;string.h&gt;</span>
@@ -2137,14 +2175,12 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul><p>Example use:</p>
-<blockquote>
-<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
+<p>Example use:</p>
 <div class="highlight-bash"><div class="highlight"><pre>mysed klm 000 abcdefghijklmnopqrstuvwxyz
 abcdefghij000nopqrstuvwxyz
 </pre></div>
 </div>
-</td></tr></table></ul><p>The .sar() function (or .searchAndReplace() as the long form) takes four
+<p>The .sar() function (or .searchAndReplace() as the long form) takes four
 parameters: (1) the string to perform the replacement, (2) the search
 string, (3) the replacement string, and (4) the regular expression
 flags. In this case <tt class="docutils literal"><span class="pre">&quot;gi&quot;</span></tt> represents two flags: &#8220;<tt class="docutils literal"><span class="pre">g</span></tt>&#8221; for a
@@ -2163,8 +2199,6 @@ HumdrumRecord::setToken() fuction.</p>
 <h4>erase.cpp (Set all data fields to the null token)<a class="headerlink" href="#erase-cpp-set-all-data-fields-to-the-null-token" title="Permalink to this headline">¶</a></h4>
 <p>Here is a program which uses .setToken() to change the contents of all
 data fields into null tokens.</p>
-<blockquote>
-<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
 using namespace std;
 
@@ -2191,19 +2225,14 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul>
-
-     .. raw:: html
-
-        <table style="background:white;">
-
-     .. raw:: html
-
-        <tr valign=baseline>
-
-     .. raw:: html
-
-        <td></td><td width=40></td><td></td></tr></table></ul></div>
+<table style="background:white;">
+<tr valign=baseline>
+<td></td>
+<td width=40>
+</td>
+<td></td>
+</tr>
+</table></div>
 <div class="section" id="transpose-cpp-transpose-music">
 <h4>transpose.cpp (Transpose music)<a class="headerlink" href="#transpose-cpp-transpose-music" title="Permalink to this headline">¶</a></h4>
 <p>The following example program processes each **kern note by
@@ -2213,8 +2242,6 @@ standard output. The main() function is used to handle multiple input
 files, transposeFile() is used to search through each file and pull out
 notes to transpose, and transposeNote() is used to replace the original
 pitch with the transposed version.</p>
-<blockquote>
-<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
 <span class="c">#include &quot;PerlRegularExpression.h&quot;</span>
 using namespace std;
@@ -2274,17 +2301,15 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul></div>
+</div>
 </div>
 <div class="section" id="random-melody-generator">
 <h3>Random melody generator<a class="headerlink" href="#random-melody-generator" title="Permalink to this headline">¶</a></h3>
 <p>The following program will generate a random melody, both in pitch and
 rhythm:</p>
-<blockquote>
-<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre>#include &quot;humdrum.h&quot;
-#include &lt;stdlib.h&gt;     /* for drand48 random numbers */
-#include &lt;time.h&gt;       /* for time(NULL) function */
+#include &lt;stdlib.h&gt;     // for drand48 random numbers
+#include &lt;time.h&gt;       // for time(NULL) function
 
 void printRandomMelody(int notecount, int seed) {
    cout &lt;&lt; &quot;!!!seed:\t&quot; &lt;&lt; seed &lt;&lt; endl;
@@ -2314,26 +2339,20 @@ int main(int argc, char** argv) {
 }
 </pre></div>
 </div>
-</td></tr></table></ul><p>Here is some example output:</p>
-<blockquote>
-<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
-</td></tr></table></ul><p>The <tt class="docutils literal"><span class="pre">-s</span></tt> option can be used to generate a fixed random melody;
+<p>Here is some example output:</p>
+<p>The <tt class="docutils literal"><span class="pre">-s</span></tt> option can be used to generate a fixed random melody;
 otherwise, the random melody will be based on the current time in
 seconds since 1 Jan 1970. The <tt class="docutils literal"><span class="pre">-c</span></tt> option can be used to specify the
 number of notes in the melody. Notice that if no melody length is given,
 the default length of 20 note will be used.</p>
 <p>To display as graphical music notation:</p>
-<blockquote>
-<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
 <div class="code bash highlight-bash"><div class="highlight"><pre>bin/randomel -s 1241137496 <span class="se">\</span>
    | hum2abc -M none | abcm2ps - -O - <span class="se">\</span>
    | convert -quality 100 -density 300 - -trim -resize <span class="s1">&#39;33%&#39;</span> output.png
 </pre></div>
 </div>
-</td></tr></table></ul><div class="figure">
-<img alt="RandomMelody.png" src="humextra/RandomMelody.png" />
-<p class="caption">RandomMelody.png</p>
-</div>
+<a class="reference internal image-reference" href="../../_images/random.svg"><div align="center" class="align-center"><img src="../../_images/random.svg" width="100%" /></div>
+</a>
 <p>The Humdrum file data can be stored internally in a stream object. This
 stream object can be ready by a HumdrumFile object to be reprocessed
 within the program, or to be printed with ostream as a HumdrumFile
@@ -2341,11 +2360,9 @@ object. The following example demonstrates this. Also, since strstream
 was changed to stringstream in ANSI C99, there are some preprocessor
 instructions to allow using string streams in both older and newer
 standards (including differences in Visual C++ 6).</p>
-<blockquote>
-<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre>#include &quot;humdrum.h&quot;
-#include &lt;stdlib.h&gt;     /* for drand48 random numbers */
-#include &lt;time.h&gt;       /* for time(NULL) function */
+#include &lt;stdlib.h&gt;     // for drand48 random numbers
+#include &lt;time.h&gt;       // for time(NULL) function
 
 #ifndef OLDCPP
    #define SSTREAM stringstream
@@ -2396,12 +2413,10 @@ int main(int argc, char** argv) {
 }
 </pre></div>
 </div>
-</td></tr></table></ul></div>
+</div>
 <div class="section" id="markov-melody-analyzer-generator">
 <h3>Markov melody analyzer/generator<a class="headerlink" href="#markov-melody-analyzer-generator" title="Permalink to this headline">¶</a></h3>
 <p>Here is a more sophisticated random melody generator.</p>
-<blockquote>
-<div><table cellpadding=0 cellspacing=0 style="background: white;"><tr><td></div></blockquote>
 <div class="code cpp highlight-bash"><div class="highlight"><pre><span class="c">#include &quot;humdrum.h&quot;</span>
 <span class="c">#include &lt;regex.h&gt;</span>
 <span class="c">#include &lt;stdlib.h&gt;</span>
@@ -2555,7 +2570,7 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <span class="o">}</span>
 </pre></div>
 </div>
-</td></tr></table></ul></div>
+</div>
 </div>
 </div>
 

@@ -1,0 +1,576 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="35 0 438 71"
+     width="438" height="71">
+<g transform="translate(0,90) scale(1,-1) scale(.01800) translate(2100,26250)" stroke-linejoin="round" color="black" stroke="currentColor" fill="none" stroke-width="26.7067"  fill-rule="evenodd">
+<defs>
+<g id="P00">
+<path  d="
+M218 168
+L168 162
+L118 150
+L87 137
+L56 118
+L37 100
+L18 75
+L6 50
+L0 18
+L0 -18
+L6 -50
+L18 -75
+L37 -100
+L56 -118
+L87 -137
+L118 -150
+L168 -162
+L218 -168
+L262 -168
+L312 -162
+L362 -150
+L393 -137
+L425 -118
+L443 -100
+L462 -75
+L475 -50
+L481 -18
+L481 18
+L475 50
+L462 75
+L443 100
+L425 118
+L393 137
+L362 150
+L312 162
+L262 168
+L218 168
+M212 162
+L175 156
+L156 150
+L137 137
+L125 125
+L112 106
+L106 81
+L106 56
+L112 18
+L125 -31
+L137 -68
+L156 -112
+L168 -131
+L181 -143
+L206 -156
+L237 -162
+L268 -162
+L306 -156
+L325 -150
+L343 -137
+L356 -125
+L368 -106
+L375 -81
+L375 -56
+L368 -18
+L356 31
+L343 68
+L325 112
+L312 131
+L300 143
+L275 156
+L243 162
+L212 162
+Z" fill="currentColor"/>
+</g>
+</defs>
+<path  d="
+M0 -24000
+L24000 -24000
+M0 -23650
+L24000 -23650
+M0 -23300
+L24000 -23300
+M0 -22950
+L24000 -22950
+M0 -22600
+L24000 -22600
+"/>
+<path  d="
+M575 -22925
+L793 -24175
+L806 -24293
+L800 -24356
+L787 -24393
+L775 -24418
+L750 -24456
+L712 -24493
+L681 -24512
+L637 -24525
+L600 -24531
+L568 -24531
+L506 -24525
+L475 -24518
+L450 -24506
+L456 -24468
+L481 -24475
+L493 -24475
+L518 -24468
+L543 -24456
+L562 -24443
+L581 -24425
+L600 -24393
+L606 -24375
+L612 -24343
+L612 -24331
+L606 -24300
+L587 -24262
+L575 -24250
+L550 -24231
+L537 -24225
+L500 -24212
+L468 -24212
+L437 -24218
+L406 -24231
+L387 -24243
+L368 -24262
+L350 -24293
+L343 -24312
+L337 -24343
+L337 -24368
+L343 -24406
+L356 -24437
+L375 -24468
+L406 -24500
+L431 -24518
+L475 -24537
+L506 -24543
+L568 -24550
+L587 -24550
+L637 -24543
+L668 -24537
+L700 -24525
+L731 -24506
+L775 -24462
+L800 -24425
+L818 -24368
+L825 -24343
+L831 -24287
+L818 -24175
+L600 -22925
+L575 -22925
+Z" fill="currentColor"/>
+<path  d="
+M531 -23975
+L612 -23981
+L662 -23981
+L731 -23975
+L768 -23968
+L806 -23956
+L856 -23931
+"/>
+<path  d="
+M856 -23931
+L900 -23887
+L912 -23868
+L931 -23837
+L943 -23806
+L950 -23787
+L956 -23762
+L962 -23718
+L962 -23687
+L956 -23650
+L950 -23625
+L937 -23593
+L912 -23556
+L893 -23537
+L868 -23518
+L837 -23500
+L806 -23487
+L781 -23481
+L725 -23475
+L718 -23475
+L662 -23481
+L612 -23493
+L587 -23506
+L550 -23531
+L525 -23562
+L512 -23587
+L500 -23618
+L493 -23668
+L500 -23712
+L512 -23743
+L531 -23775
+L556 -23800
+L612 -23837
+L606 -23843
+L543 -23812
+L518 -23793
+L487 -23762
+L456 -23718
+L437 -23668
+L431 -23625
+L431 -23593
+L437 -23556
+L443 -23531
+L462 -23487
+L481 -23456
+L500 -23431
+L531 -23400
+L568 -23368
+L600 -23350
+L625 -23337
+L681 -23325
+L706 -23325
+L768 -23331
+L812 -23343
+L856 -23362
+L900 -23387
+L943 -23431
+L975 -23475
+L1000 -23525
+L1012 -23568
+L1018 -23606
+L1018 -23643
+L1012 -23693
+L1006 -23725
+L993 -23768
+L975 -23806
+L956 -23837
+L931 -23868
+L900 -23900
+L856 -23931
+Z" fill="currentColor"/>
+<path  d="
+M531 -23975
+L493 -23968
+L443 -23956
+L406 -23943
+L356 -23918
+L331 -23900
+L293 -23868
+L262 -23837
+L231 -23793
+L206 -23743
+L187 -23693
+L175 -23637
+L168 -23581
+L168 -23518
+L181 -23425
+L200 -23350
+L225 -23287
+L256 -23225
+L300 -23168
+L356 -23106
+L462 -23006
+L531 -22943
+L687 -22793
+L756 -22712
+L793 -22650
+L818 -22593
+L831 -22556
+L843 -22506
+L850 -22450
+L850 -22412
+L843 -22368
+L837 -22350
+L875 -22325
+L887 -22375
+L893 -22412
+L900 -22468
+L900 -22481
+L893 -22568
+L887 -22606
+L875 -22662
+L856 -22731
+L831 -22793
+L800 -22856
+L756 -22931
+L687 -23012
+L456 -23231
+L387 -23306
+L350 -23356
+L312 -23418
+L300 -23443
+L281 -23487
+L268 -23531
+L262 -23587
+L262 -23631
+L268 -23687
+L281 -23737
+L300 -23787
+L331 -23843
+L356 -23875
+L387 -23906
+L418 -23931
+L456 -23950
+L487 -23962
+L531 -23975
+Z" fill="currentColor"/>
+<path  d="
+M575 -22925
+L550 -22750
+L543 -22631
+L543 -22537
+L556 -22418
+L568 -22362
+L587 -22312
+L612 -22268
+L643 -22225
+L675 -22187
+L725 -22137
+L750 -22125
+L756 -22125
+L768 -22131
+L800 -22168
+L837 -22237
+L875 -22325
+L837 -22350
+L825 -22318
+L806 -22293
+L787 -22287
+L781 -22287
+L756 -22293
+L750 -22300
+L731 -22312
+L706 -22337
+L662 -22400
+L625 -22475
+L606 -22525
+L587 -22612
+L581 -22681
+L581 -22725
+L587 -22818
+L600 -22925
+L575 -22925
+Z" fill="currentColor"/>
+<text transform="translate(1766,-21900) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">Stacked intervals</text>
+<use transform="translate(1968,-24350)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M1843 -24350
+L2568 -24350
+"/>
+<use transform="translate(1968,-24000)" xlink:href="#P00"/>
+<use transform="translate(1968,-23650)" xlink:href="#P00"/>
+<use transform="translate(1968,-23125)" xlink:href="#P00"/>
+<text transform="translate(2868,-25050) scale(1,-1)" fill="currentColor" stroke="none" font-size="682" style="font-family:Nimbus Roman No9 L">M3</text>
+<path stroke-width="53.4133" d="
+M3198 -23955
+L3460 -23956
+L3459 -24281
+L3197 -24281
+"/>
+<text transform="translate(4518,-25050) scale(1,-1)" fill="currentColor" stroke="none" font-size="682" style="font-family:Nimbus Roman No9 L">m3</text>
+<path stroke-width="53.4133" d="
+M4676 -23649
+L4938 -23650
+L4937 -23976
+L4675 -23976
+"/>
+<text transform="translate(5868,-25050) scale(1,-1)" fill="currentColor" stroke="none" font-size="682" style="font-family:Nimbus Roman No9 L">P4</text>
+<path stroke-width="53.4133" d="
+M5839 -23124
+L6101 -23125
+L6100 -23675
+L5838 -23675
+"/>
+<path  d="
+M7534 -24000
+L7534 -22600
+M7541 -24000
+L7541 -22600
+M7347 -24000
+L7347 -22600
+M7353 -24000
+L7353 -22600
+"/>
+<text transform="translate(7857,-21900) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">Bass-related ints.</text>
+<use transform="translate(8059,-24350)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M7934 -24350
+L8659 -24350
+"/>
+<use transform="translate(8059,-24000)" xlink:href="#P00"/>
+<use transform="translate(8059,-23650)" xlink:href="#P00"/>
+<use transform="translate(8059,-23125)" xlink:href="#P00"/>
+<text transform="translate(8868,-25050) scale(1,-1)" fill="currentColor" stroke="none" font-size="682" style="font-family:Nimbus Roman No9 L">M3</text>
+<path stroke-width="53.4133" d="
+M9198 -23955
+L9460 -23956
+L9459 -24281
+L9197 -24281
+"/>
+<text transform="translate(10518,-25050) scale(1,-1)" fill="currentColor" stroke="none" font-size="682" style="font-family:Nimbus Roman No9 L">P5</text>
+<path stroke-width="53.4133" d="
+M10698 -23605
+L10960 -23606
+L10959 -24381
+L10697 -24381
+"/>
+<text transform="translate(11868,-25050) scale(1,-1)" fill="currentColor" stroke="none" font-size="682" style="font-family:Nimbus Roman No9 L">P8</text>
+<path stroke-width="53.4133" d="
+M12198 -23080
+L12460 -23081
+L12459 -24306
+L12197 -24306
+"/>
+<path  d="
+M13625 -24000
+L13625 -22600
+M13632 -24000
+L13632 -22600
+M13438 -24000
+L13438 -22600
+M13445 -24000
+L13445 -22600
+"/>
+<text transform="translate(13948,-21900) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">Permuted intervals</text>
+<use transform="translate(14150,-23125)" xlink:href="#P00"/>
+<use transform="translate(14150,-23650)" xlink:href="#P00"/>
+<use transform="translate(14150,-24000)" xlink:href="#P00"/>
+<use transform="translate(14150,-24350)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M14025 -24350
+L14750 -24350
+"/>
+<text transform="translate(14868,-25050) scale(1,-1)" fill="currentColor" stroke="none" font-size="682" style="font-family:Nimbus Roman No9 L">M3</text>
+<path stroke-width="53.4133" d="
+M15198 -23955
+L15460 -23956
+L15459 -24281
+L15197 -24281
+"/>
+<text transform="translate(16518,-25050) scale(1,-1)" fill="currentColor" stroke="none" font-size="682" style="font-family:Nimbus Roman No9 L">P5</text>
+<path stroke-width="53.4133" d="
+M16698 -23605
+L16960 -23606
+L16959 -24381
+L16697 -24381
+"/>
+<text transform="translate(17868,-25050) scale(1,-1)" fill="currentColor" stroke="none" font-size="682" style="font-family:Nimbus Roman No9 L">P8</text>
+<path stroke-width="53.4133" d="
+M18198 -23080
+L18460 -23081
+L18459 -24306
+L18197 -24306
+"/>
+<text transform="translate(19368,-25050) scale(1,-1)" fill="currentColor" stroke="none" font-size="682" style="font-family:Nimbus Roman No9 L">m3</text>
+<path stroke-width="53.4133" d="
+M19698 -23649
+L19960 -23650
+L19959 -23975
+L19697 -23975
+"/>
+<text transform="translate(20868,-25050) scale(1,-1)" fill="currentColor" stroke="none" font-size="682" style="font-family:Nimbus Roman No9 L">m6</text>
+<path stroke-width="53.4133" d="
+M21198 -23080
+L21460 -23081
+L21459 -24006
+L21197 -24006
+"/>
+<text transform="translate(22368,-25050) scale(1,-1)" fill="currentColor" stroke="none" font-size="682" style="font-family:Nimbus Roman No9 L">P4</text>
+<path stroke-width="53.4133" d="
+M22698 -23080
+L22960 -23081
+L22959 -23706
+L22697 -23706
+"/>
+<path  d="
+M23655 -24000
+L23655 -22600
+M23661 -24000
+L23661 -22600
+M23850 -24000
+L24000 -22600
+"/>
+<path  d="
+M24000 -22600
+L24000 -24000
+L23850 -24000
+L23850 -22600
+L24000 -22600
+Z" fill="currentColor"/>
+</g>
+</svg>
+<?SCORE version="4"
+###ScorePage:	ex15-2
+###document:            Humdrum User Guide
+###example_number:      15-2
+###example_label:       interpreting_interval_content
+###caption:             Interpreting interval content in chords.
+###typesetter:          Craig Stuart Sapp
+###typeset_date:        /bin/bash: dat: command not found
+
+#SVG_SCALE: 1
+#BORDER: 2
+
+
+##System:	1
+
+##SystemBar:	1:1	(dur = 2)
+8 1 0 0 0 160
+3 1 1.125
+t 1 13.125 15 1 1 0 0 0 0 -1.35 0 21
+_00Stacked intervals
+1 1 13.125 1 10 2 2 7
+1 1 13.125 3 0 2 2
+1 1 13.125 5 0 2 2
+1 1 13.125 8 0 2 2
+t 1 19.12 -3 1 0.885 0 0 0 0 0 0 6
+_00M3
+4 1 23.068 3.25 3.25 25.24 0 0 0 2 -1.5 -1.5 90
+t 1 30.12 -3 1 0.885 0 0 0 0 0 0 6
+_00m3
+4 1 32.925 5 5 35.1 0 0 0 2 -1.5 -1.5 90
+t 1 39.12 -3 1 0.885 0 0 0 0 0 0 6
+_00P4
+4 1 40.675 8 8 44.35 0 0 0 2 -1.5 -1.5 90
+
+##SystemBar:	1:2	(dur = 2)
+14 1 50.232 1 1
+t 1 53.732 15 1 1 0 0 0 0 -1.35 0 22
+_00Bass-related ints.
+1 1 53.732 1 10 2 2 7
+1 1 53.732 3 0 2 2
+1 1 53.732 5 0 2 2
+1 1 53.732 8 0 2 2
+t 1 59.12 -3 1 0.885 0 0 0 0 0 0 6
+_00M3
+4 1 63.068 3.25 3.25 65.24 0 0 0 2 -1.5 -1.5 90
+t 1 70.12 -3 1 0.885 0 0 0 0 0 0 6
+_00P5
+4 1 73.068 5.25 5.25 78.24 0 0 0 2 -1.5 -1.5 90
+t 1 79.12 -3 1 0.885 0 0 0 0 0 0 6
+_00P8
+4 1 83.068 8.25 8.25 91.24 0 0 0 2 -1.5 -1.5 90
+
+##SystemBar:	1:3	(dur = 4)
+14 1 90.839 1 1
+t 1 94.339 15 1 1 0 0 0 0 -1.35 0 22
+_00Permuted intervals
+1 1 94.339 8 0 2 4
+1 1 94.339 5 0 2 4
+1 1 94.339 3 0 2 4
+1 1 94.339 1 10 2 4 7
+t 1 99.12 -3 1 0.885 0 0 0 0 0 0 6
+_00M3
+4 1 103.068 3.25 3.25 105.24 0 0 0 2 -1.5 -1.5 90
+t 1 110.12 -3 1 0.885 0 0 0 0 0 0 6
+_00P5
+4 1 113.068 5.25 5.25 118.24 0 0 0 2 -1.5 -1.5 90
+t 1 119.12 -3 1 0.885 0 0 0 0 0 0 6
+_00P8
+4 1 123.068 8.25 8.25 131.24 0 0 0 2 -1.5 -1.5 90
+t 1 129.12 -3 1 0.885 0 0 0 0 0 0 6
+_00m3
+4 1 133.068 5 5 135.24 0 0 0 2 -1.5 -1.5 90
+t 1 139.12 -3 1 0.885 0 0 0 0 0 0 6
+_00m6
+4 1 143.068 8.25 8.25 149.24 0 0 0 2 -1.5 -1.5 90
+t 1 149.12 -3 1 0.885 0 0 0 0 0 0 6
+_00P4
+4 1 153.068 8.25 8.25 157.24 0 0 0 2 -1.5 -1.5 90
+
+14 1 160 1 2
+
+?>

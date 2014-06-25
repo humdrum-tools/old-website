@@ -1,0 +1,104 @@
+
+===============================
+Rhythm Tools
+===============================
+
+
+Composite rhythm
+=================
+
+The :hxcom:`beat` tool can be used to calculate the duration of
+each line of a Humdrum file containing :exinterp:`kern` or
+:exinterp:`recip` data.  Musically this called the *composite
+rhythm*, which is the rhythm of all parts considered as a single
+stream.  The following musical example shows four parts on the top
+two staves along with a staff beneath showing the composite rhythm
+of all parts.  In measures 1, 3 and 4, no single part contains a
+complete measure of eighth notes, but when considered together the
+rhythmic texture is a sequence of continuous eighth notes.
+
+
+.. image:: rhythm.rstd/chor199i.svg
+	:align: center
+	:width: 100%
+	:alt: myank -m 16-19 h://371chorales/chor199.krn  | satb2gs | ridx -GL
+
+.. literalinclude:: rhythm.rstd/durationinput.krn
+	:language: humdrum
+
+The ``-d`` option for :hxcom:`beat` is used to extract the
+duration of each data line.  The ``-p`` option prepends the
+duration analysis data to the start of each line (``-a`` will
+append the analysis data to the end of the line).
+
+.. highlight:: bash
+.. code:: bash
+
+	beat -dp file.krn
+	
+.. literalinclude:: rhythm.rstd/durationoutput-dp.krn
+	:language: humdrum
+
+
+The ``-f`` option will display duration information as fractional
+ratio values instead of decimal numbers.  When the ``-f`` option
+is used, the value of one represents the duration of a while
+note (rather than a quarter note with the default floating-point
+duration vaues).
+
+.. highlight:: bash
+.. code:: bash
+
+	beat -dpf file.krn
+
+.. literalinclude:: rhythm.rstd/durationoutput-dpf.krn
+	:language: humdrum
+
+
+.. highlight:: bash
+.. code:: bash
+
+
+Here is an example of extracting the distribution of durations
+for the composite rhythm of 370 Bach chorales:
+
+
+.. code:: bash
+
+	beat -df h://370chorales | ridx -H | sortcount -p
+
+.. code::
+
+	69.43	1/8
+	19.46	1/4
+	7.11	1/16
+	2.79	1/2
+	0.94	3/4
+	0.18	1
+	0.04	3/8
+	0.03	1/32
+	0.02	3/16
+	0.01	2
+	0.01	3/2
+
+The most common composite rhythmic value is the eighth note (69.43%), then in
+decreasing frequency: quarter note, sixteenth note, half note, 
+dotted half note, whole note, dotted quarter note, 32nd note, dotted eighth
+note, breve, and dotted whole note.
+
+.. note: The is a small bug in that composite rhythm of tied notes will 
+	not be extracted properly.  Consider the following example:
+	**kern
+	1c
+	=
+	[2c
+	2c]
+	==
+	*-
+	This should have a composite rhythm of two whole notes, but the
+	tied note duration value is given as a half note instead of
+	a whole note.
+
+
+
+

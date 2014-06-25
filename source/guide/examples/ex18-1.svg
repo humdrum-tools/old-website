@@ -1,0 +1,519 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="37 0 542 322"
+     width="542" height="322">
+<g transform="translate(0,319) scale(1,-1) scale(.01800) translate(2100,26250)" stroke-linejoin="round" color="black" stroke="currentColor" fill="none" stroke-width="26.7067"  fill-rule="evenodd">
+<defs>
+<g id="P00">
+<path  d="
+M218 168
+L168 162
+L118 150
+L87 137
+L56 118
+L37 100
+L18 75
+L6 50
+L0 18
+L0 -18
+L6 -50
+L18 -75
+L37 -100
+L56 -118
+L87 -137
+L118 -150
+L168 -162
+L218 -168
+L262 -168
+L312 -162
+L362 -150
+L393 -137
+L425 -118
+L443 -100
+L462 -75
+L475 -50
+L481 -18
+L481 18
+L475 50
+L462 75
+L443 100
+L425 118
+L393 137
+L362 150
+L312 162
+L262 168
+L218 168
+M212 162
+L175 156
+L156 150
+L137 137
+L125 125
+L112 106
+L106 81
+L106 56
+L112 18
+L125 -31
+L137 -68
+L156 -112
+L168 -131
+L181 -143
+L206 -156
+L237 -162
+L268 -162
+L306 -156
+L325 -150
+L343 -137
+L356 -125
+L368 -106
+L375 -81
+L375 -56
+L368 -18
+L356 31
+L343 68
+L325 112
+L312 131
+L300 143
+L275 156
+L243 162
+L212 162
+Z" fill="currentColor"/>
+</g>
+</defs>
+<defs>
+<g id="P01">
+<path  d="
+M0 1031
+L12 1000
+L31 975
+L56 950
+L87 937
+L125 931
+L137 931
+L181 937
+L212 950
+L237 968
+L256 993
+L268 1018
+L275 1056
+L275 1075
+L268 1106
+L256 1131
+L231 1156
+L212 1168
+L187 1181
+L156 1187
+L125 1187
+L87 1175
+L68 1162
+L50 1131
+L31 1150
+L37 1193
+L50 1231
+L62 1256
+L93 1306
+L56 1268
+L37 1243
+L25 1218
+L6 1168
+L-6 1118
+L-6 1081
+L0 1031
+Z" fill="currentColor"/>
+<path  d="
+M93 1306
+L137 1337
+L175 1356
+L212 1368
+L250 1375
+"/>
+<path  d="
+M162 362
+L237 406
+L325 462
+L418 537
+L500 618
+L537 668
+L581 731
+L606 781
+L631 837
+L643 881
+L650 925
+L656 981
+L656 1025
+L650 1087
+L637 1131
+L618 1181
+L600 1218
+L568 1262
+L537 1293
+L500 1318
+L475 1337
+L431 1356
+L387 1368
+L331 1375
+L250 1375
+L325 1362
+L356 1350
+L393 1325
+L431 1281
+L450 1250
+L468 1200
+L481 1137
+L487 1062
+L487 993
+L481 893
+L468 825
+L456 768
+L437 706
+L406 637
+L381 593
+L343 543
+L300 493
+L275 468
+L231 431
+L181 393
+L143 368
+L68 325
+L-50 262
+L-50 256
+L31 293
+L162 362
+Z" fill="currentColor"/>
+<path  d="
+M756 1212
+L762 1200
+L775 1181
+L793 1175
+L812 1175
+L831 1181
+L843 1200
+L850 1212
+L850 1237
+L843 1250
+L831 1268
+L812 1275
+L793 1275
+L775 1268
+L762 1250
+L756 1237
+L756 1212
+Z" fill="currentColor"/>
+<path  d="
+M756 868
+L762 856
+L775 837
+L793 831
+L812 831
+L831 837
+L843 856
+L850 868
+L850 893
+L843 906
+L831 925
+L812 931
+L793 931
+L775 925
+L762 906
+L756 893
+L756 868
+Z" fill="currentColor"/>
+</g>
+</defs>
+<text transform="translate(-52,-9088) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">(a) Common 6-string guitar</text>
+<path  d="
+M0 -11188
+L30000 -11188
+M0 -10838
+L30000 -10838
+M0 -10488
+L30000 -10488
+M0 -10138
+L30000 -10138
+M0 -9788
+L30000 -9788
+"/>
+<use transform="translate(225,-11188)" xlink:href="#P01"/>
+<use transform="translate(2025,-11538)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M1900 -11538
+L2625 -11538
+"/>
+<text transform="translate(2310,-12588) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" >*AT:E2</text>
+<text transform="translate(2310,-13463) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" >*RT:0:5:10:15:19:24</text>
+<use transform="translate(7163,-11013)" xlink:href="#P00"/>
+<use transform="translate(12301,-10488)" xlink:href="#P00"/>
+<use transform="translate(17439,-9963)" xlink:href="#P00"/>
+<use transform="translate(22578,-9613)" xlink:href="#P00"/>
+<use transform="translate(27716,-9088)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M27591 -9088
+L28316 -9088
+M27591 -9438
+L28316 -9438
+"/>
+<path  d="
+M29655 -11188
+L29655 -9788
+M29661 -11188
+L29661 -9788
+M29850 -11188
+L30000 -9788
+"/>
+<path  d="
+M30000 -9788
+L30000 -11188
+L29850 -11188
+L29850 -9788
+L30000 -9788
+Z" fill="currentColor"/>
+<text transform="translate(-52,-15495) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">(b) Common 12-string guitar.</text>
+<path  d="
+M0 -17595
+L30000 -17595
+M0 -17245
+L30000 -17245
+M0 -16895
+L30000 -16895
+M0 -16545
+L30000 -16545
+M0 -16195
+L30000 -16195
+"/>
+<use transform="translate(225,-17595)" xlink:href="#P01"/>
+<use transform="translate(2025,-17945)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M1900 -17945
+L2625 -17945
+"/>
+<use transform="translate(2025,-16720)" xlink:href="#P00"/>
+<text transform="translate(2310,-18995) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" >*AT:E2</text>
+<text transform="translate(2310,-19870) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" >*RT:0,12:5,17:10,22:15,27:19,19:24,24</text>
+<use transform="translate(7163,-16195)" xlink:href="#P00"/>
+<use transform="translate(7163,-17420)" xlink:href="#P00"/>
+<use transform="translate(12301,-15670)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M12176 -15845
+L12901 -15845
+"/>
+<use transform="translate(12301,-16895)" xlink:href="#P00"/>
+<use transform="translate(17439,-15145)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M17314 -15145
+L18039 -15145
+M17314 -15495
+L18039 -15495
+M17314 -15845
+L18039 -15845
+"/>
+<use transform="translate(17439,-16370)" xlink:href="#P00"/>
+<use transform="translate(22578,-16020)" xlink:href="#P00"/>
+<use transform="translate(22103,-16020)" xlink:href="#P00"/>
+<use transform="translate(27716,-15495)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M27591 -15495
+L28316 -15495
+M27591 -15845
+L28316 -15845
+"/>
+<use transform="translate(27241,-15495)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M27116 -15495
+L27841 -15495
+M27116 -15845
+L27841 -15845
+"/>
+<path  d="
+M29655 -17595
+L29655 -16195
+M29661 -17595
+L29661 -16195
+M29850 -17595
+L30000 -16195
+"/>
+<path  d="
+M30000 -16195
+L30000 -17595
+L29850 -17595
+L29850 -16195
+L30000 -16195
+Z" fill="currentColor"/>
+<text transform="translate(-52,-21900) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">(c) Vieil accord lute.</text>
+<path  d="
+M0 -24000
+L30000 -24000
+M0 -23650
+L30000 -23650
+M0 -23300
+L30000 -23300
+M0 -22950
+L30000 -22950
+M0 -22600
+L30000 -22600
+"/>
+<use transform="translate(225,-24000)" xlink:href="#P01"/>
+<text transform="translate(1822,-25400) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" >*AT:G2</text>
+<text transform="translate(1822,-26275) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" >*RT:0,12:5,17:10,22:14,14:19,19:24,24</text>
+<use transform="translate(2025,-24000)" xlink:href="#P00"/>
+<use transform="translate(2025,-22775)" xlink:href="#P00"/>
+<use transform="translate(7163,-22250)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M7038 -22250
+L7763 -22250
+"/>
+<use transform="translate(7163,-23475)" xlink:href="#P00"/>
+<use transform="translate(12301,-21725)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M12176 -21900
+L12901 -21900
+M12176 -22250
+L12901 -22250
+"/>
+<use transform="translate(12301,-22950)" xlink:href="#P00"/>
+<use transform="translate(17439,-21375)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M17314 -21550
+L18039 -21550
+M17314 -21900
+L18039 -21900
+M17314 -22250
+L18039 -22250
+"/>
+<use transform="translate(17439,-22600)" xlink:href="#P00"/>
+<use transform="translate(22578,-22075)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M22453 -22250
+L23178 -22250
+"/>
+<use transform="translate(22103,-22075)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M21978 -22250
+L22703 -22250
+"/>
+<use transform="translate(27716,-21550)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M27591 -21550
+L28316 -21550
+M27591 -21900
+L28316 -21900
+M27591 -22250
+L28316 -22250
+"/>
+<use transform="translate(27241,-21550)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M27116 -21550
+L27841 -21550
+M27116 -21900
+L27841 -21900
+M27116 -22250
+L27841 -22250
+"/>
+<path  d="
+M29655 -24000
+L29655 -22600
+M29661 -24000
+L29661 -22600
+M29850 -24000
+L30000 -22600
+"/>
+<path  d="
+M30000 -22600
+L30000 -24000
+L29850 -24000
+L29850 -22600
+L30000 -22600
+Z" fill="currentColor"/>
+</g>
+</svg>
+<?SCORE version="4"
+###ScorePage:	ex18-1
+###document:            Humdrum User Guide
+###example_number:      18-1
+###example_label:       sample_tunings
+###caption:             Sample tunings for fretted instruments.
+###typesetter:          Craig Stuart Sapp
+###typeset_date:        Tue Jun 24 22:35:34 PDT 2014
+
+#SVG_SCALE: 1
+#BORDER: 2
+
+
+##System:	1
+
+##SystemBar:	1:1	(dur = 21)
+t 3 0 15 1 1 0 0 0 0 -1.35 0 30
+_00(a) Common 6-string guitar
+8 3 0 37.21 0 200
+3 3 1.5 0 1
+1 3 13.5 1 10 2 4
+t 3 16.754 -5 1 1 0 0 0 0 -1.35 0 10
+_29*AT:E2
+t 3 16.754 -10 1 1 0 0 0 0 -1.35 0 23
+_29*RT:0:5:10:15:19:24
+1 3 47.755 4 10 2 4
+1 3 82.01 7 20 2 4
+1 3 116.265 10 20 2 4
+1 3 150.52 12 20 2 4
+1 3 184.776 15 20 2 1 1
+
+14 3 200 1 2
+
+
+##System:	2
+
+##SystemBar:	2:1	(dur = 21)
+t 2 0 15 1 1 0 0 0 0 -1.35 0 32
+_00(b) Common 12-string guitar.
+8 2 0 18.6 0 200
+3 2 1.5 0 1
+1 2 13.5 1 10 2 4 7
+1 2 13.5 8 0 2 4
+t 2 16.754 -5 1 1 0 0 0 0 -1.35 0 10
+_29*AT:E2
+t 2 16.754 -10 1 1 0 0 0 0 -1.35 0 41
+_29*RT:0,12:5,17:10,22:15,27:19,19:24,24
+1 2 47.755 11 20 2 4 7
+1 2 47.755 4 0 2 4
+1 2 82.01 14 20 2 4 7
+1 2 82.01 7 0 2 4
+1 2 116.265 17 20 2 4 7
+1 2 116.265 10 0 2 4
+1 2 150.52 12 20 2 4
+1 2 150.52 12 20 2 4 0 0 20
+1 2 184.776 15 20 2 1 1
+1 2 184.776 15 20 2 1 1 0 20
+
+14 2 200 1 2
+
+
+##System:	3
+
+##SystemBar:	3:1	(dur = 21)
+t 1 0 15 1 1 0 0 0 0 -1.35 0 26
+_00(c) Vieil accord lute.
+8 1 0 0 0 200
+3 1 1.5 0 1
+t 1 13.5 -5 1 1 0 0 0 0 -1.35 0 10
+_29*AT:G2
+t 1 13.5 -10 1 1 0 0 0 0 -1.35 0 41
+_29*RT:0,12:5,17:10,22:14,14:19,19:24,24
+1 1 13.5 3 10 2 4 7
+1 1 13.5 10 0 2 4
+1 1 47.755 13 20 2 4 7
+1 1 47.755 6 0 2 4
+1 1 82.01 16 20 2 4 7
+1 1 82.01 9 0 2 4
+1 1 116.265 18 20 2 4 7
+1 1 116.265 11 0 2 4
+1 1 150.52 14 20 2 4
+1 1 150.52 14 20 2 4 0 0 20
+1 1 184.776 17 20 2 1 3
+1 1 184.776 17 20 2 1 3 0 20
+
+14 1 200 1 2
+
+?>

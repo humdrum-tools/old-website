@@ -1,0 +1,708 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="35 0 545 204"
+     width="545" height="204">
+<g transform="translate(0,223) scale(1,-1) scale(.01800) translate(2100,26250)" stroke-linejoin="round" color="black" stroke="currentColor" fill="none" stroke-width="26.7067"  fill-rule="evenodd">
+<defs>
+<g id="P00">
+<path  d="
+M218 168
+L168 162
+L118 150
+L87 137
+L56 118
+L37 100
+L18 75
+L6 50
+L0 18
+L0 -18
+L6 -50
+L18 -75
+L37 -100
+L56 -118
+L87 -137
+L118 -150
+L168 -162
+L218 -168
+L262 -168
+L312 -162
+L362 -150
+L393 -137
+L425 -118
+L443 -100
+L462 -75
+L475 -50
+L481 -18
+L481 18
+L475 50
+L462 75
+L443 100
+L425 118
+L393 137
+L362 150
+L312 162
+L262 168
+L218 168
+M212 162
+L175 156
+L156 150
+L137 137
+L125 125
+L112 106
+L106 81
+L106 56
+L112 18
+L125 -31
+L137 -68
+L156 -112
+L168 -131
+L181 -143
+L206 -156
+L237 -162
+L268 -162
+L306 -156
+L325 -150
+L343 -137
+L356 -125
+L368 -106
+L375 -81
+L375 -56
+L368 -18
+L356 31
+L343 68
+L325 112
+L312 131
+L300 143
+L275 156
+L243 162
+L212 162
+Z" fill="currentColor"/>
+</g>
+</defs>
+<defs>
+<g id="P01">
+<path  d="
+M0 1031
+L12 1000
+L31 975
+L56 950
+L87 937
+L125 931
+L137 931
+L181 937
+L212 950
+L237 968
+L256 993
+L268 1018
+L275 1056
+L275 1075
+L268 1106
+L256 1131
+L231 1156
+L212 1168
+L187 1181
+L156 1187
+L125 1187
+L87 1175
+L68 1162
+L50 1131
+L31 1150
+L37 1193
+L50 1231
+L62 1256
+L93 1306
+L56 1268
+L37 1243
+L25 1218
+L6 1168
+L-6 1118
+L-6 1081
+L0 1031
+Z" fill="currentColor"/>
+<path  d="
+M93 1306
+L137 1337
+L175 1356
+L212 1368
+L250 1375
+"/>
+<path  d="
+M162 362
+L237 406
+L325 462
+L418 537
+L500 618
+L537 668
+L581 731
+L606 781
+L631 837
+L643 881
+L650 925
+L656 981
+L656 1025
+L650 1087
+L637 1131
+L618 1181
+L600 1218
+L568 1262
+L537 1293
+L500 1318
+L475 1337
+L431 1356
+L387 1368
+L331 1375
+L250 1375
+L325 1362
+L356 1350
+L393 1325
+L431 1281
+L450 1250
+L468 1200
+L481 1137
+L487 1062
+L487 993
+L481 893
+L468 825
+L456 768
+L437 706
+L406 637
+L381 593
+L343 543
+L300 493
+L275 468
+L231 431
+L181 393
+L143 368
+L68 325
+L-50 262
+L-50 256
+L31 293
+L162 362
+Z" fill="currentColor"/>
+<path  d="
+M756 1212
+L762 1200
+L775 1181
+L793 1175
+L812 1175
+L831 1181
+L843 1200
+L850 1212
+L850 1237
+L843 1250
+L831 1268
+L812 1275
+L793 1275
+L775 1268
+L762 1250
+L756 1237
+L756 1212
+Z" fill="currentColor"/>
+<path  d="
+M756 868
+L762 856
+L775 837
+L793 831
+L812 831
+L831 837
+L843 856
+L850 868
+L850 893
+L843 906
+L831 925
+L812 931
+L793 931
+L775 925
+L762 906
+L756 893
+L756 868
+Z" fill="currentColor"/>
+</g>
+</defs>
+<path  d="
+M0 -15918
+L30000 -15918
+M0 -15568
+L30000 -15568
+M0 -15218
+L30000 -15218
+M0 -14868
+L30000 -14868
+M0 -14518
+L30000 -14518
+"/>
+<use transform="translate(225,-15918)" xlink:href="#P01"/>
+<use transform="translate(2025,-15218)" xlink:href="#P00"/>
+<text transform="translate(2025,-16793) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">A</text>
+<text transform="translate(3182,-16793) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">so/</text>
+<use transform="translate(3332,-15043)" xlink:href="#P00"/>
+<path  d="
+M4235 -16653
+L4461 -16653
+"/>
+<use transform="translate(4639,-14868)" xlink:href="#P00"/>
+<text transform="translate(4639,-16793) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">lis</text>
+<text transform="translate(5946,-16793) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">or/</text>
+<use transform="translate(5946,-14693)" xlink:href="#P00"/>
+<use transform="translate(7253,-14518)" xlink:href="#P00"/>
+<path  d="
+M7556 -16653
+L7782 -16653
+"/>
+<text transform="translate(8560,-16793) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">tus</text>
+<use transform="translate(8560,-15218)" xlink:href="#P00"/>
+<text transform="translate(9867,-16793) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">car/</text>
+<use transform="translate(9867,-15043)" xlink:href="#P00"/>
+<use transform="translate(11175,-14693)" xlink:href="#P00"/>
+<path  d="
+M11627 -16653
+L11853 -16653
+"/>
+<text transform="translate(12482,-16793) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">di</text>
+<use transform="translate(12482,-14868)" xlink:href="#P00"/>
+<use transform="translate(13789,-15043)" xlink:href="#P00"/>
+<path  d="
+M13963 -16653
+L14189 -16653
+"/>
+<text transform="translate(15096,-16793) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">ne</text>
+<use transform="translate(15096,-15043)" xlink:href="#P00"/>
+<path  d="
+M16403 -14168
+L16403 -14693
+M16410 -14168
+L16410 -14693
+"/>
+<text transform="translate(16928,-16793) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">ad</text>
+<use transform="translate(16928,-14693)" xlink:href="#P00"/>
+<text transform="translate(18235,-16793) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">us</text>
+<use transform="translate(18235,-14518)" xlink:href="#P00"/>
+<use transform="translate(19542,-14168)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M19417 -14168
+L20142 -14168
+"/>
+<path  d="
+M19701 -16653
+L19927 -16653
+"/>
+<text transform="translate(20732,-16793) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">que</text>
+<use transform="translate(20850,-14168)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M20725 -14168
+L21450 -14168
+"/>
+<use transform="translate(22157,-14168)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M22032 -14168
+L22757 -14168
+"/>
+<text transform="translate(22157,-16793) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">ter/</text>
+<use transform="translate(23464,-14343)" xlink:href="#P00"/>
+<path  d="
+M23853 -16653
+L24078 -16653
+"/>
+<text transform="translate(24771,-16793) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">rae</text>
+<use transform="translate(24771,-14518)" xlink:href="#P00"/>
+<use transform="translate(26078,-14693)" xlink:href="#P00"/>
+<use transform="translate(27385,-14518)" xlink:href="#P00"/>
+<text transform="translate(27385,-16793) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">li/</text>
+<use transform="translate(28692,-14343)" xlink:href="#P00"/>
+<path  d="
+M28964 -16653
+L29189 -16653
+"/>
+<path  d="
+M0 -20396
+L30000 -20396
+M0 -20046
+L30000 -20046
+M0 -19696
+L30000 -19696
+M0 -19346
+L30000 -19346
+M0 -18996
+L30000 -18996
+"/>
+<use transform="translate(218,-20396)" xlink:href="#P01"/>
+<use transform="translate(1967,-18821)" xlink:href="#P00"/>
+<text transform="translate(1967,-21271) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">mi</text>
+<path  d="
+M2852 -21131
+L3078 -21131
+"/>
+<text transform="translate(3173,-21271) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">tem,</text>
+<use transform="translate(3376,-18821)" xlink:href="#P00"/>
+<path  d="
+M4781 -18646
+L4781 -19171
+M4788 -18646
+L4788 -19171
+"/>
+<text transform="translate(5101,-21271) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">Chri/</text>
+<use transform="translate(5304,-18996)" xlink:href="#P00"/>
+<path  d="
+M6703 -21131
+L6929 -21131
+"/>
+<text transform="translate(6913,-21271) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">stum</text>
+<use transform="translate(7116,-18996)" xlink:href="#P00"/>
+<use transform="translate(8503,-18646)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M8378 -18646
+L9103 -18646
+"/>
+<use transform="translate(9891,-18471)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M9766 -18646
+L10491 -18646
+"/>
+<text transform="translate(11278,-21271) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">ca</text>
+<use transform="translate(11278,-18646)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M11153 -18646
+L11878 -18646
+"/>
+<path  d="
+M12195 -21131
+L12421 -21131
+"/>
+<text transform="translate(12677,-21271) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">na/</text>
+<use transform="translate(12677,-18646)" xlink:href="#P00"/>
+<path stroke-width="40.0600" d="
+M12552 -18646
+L13277 -18646
+"/>
+<use transform="translate(14070,-18821)" xlink:href="#P00"/>
+<path  d="
+M14315 -21131
+L14541 -21131
+"/>
+<text transform="translate(15260,-21271) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">mus</text>
+<use transform="translate(15463,-18996)" xlink:href="#P00"/>
+<use transform="translate(16857,-19171)" xlink:href="#P00"/>
+<text transform="translate(18049,-21271) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">prin/</text>
+<use transform="translate(18252,-18996)" xlink:href="#P00"/>
+<path  d="
+M19522 -21131
+L19748 -21131
+"/>
+<use transform="translate(19732,-19171)" xlink:href="#P00"/>
+<text transform="translate(19732,-21271) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">ci</text>
+<use transform="translate(21120,-19346)" xlink:href="#P00"/>
+<path  d="
+M21171 -21131
+L21397 -21131
+"/>
+<text transform="translate(22304,-21271) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">pem,</text>
+<use transform="translate(22507,-19521)" xlink:href="#P00"/>
+<use transform="translate(23888,-19696)" xlink:href="#P00"/>
+<use transform="translate(25269,-19346)" xlink:href="#P00"/>
+<use transform="translate(26650,-19171)" xlink:href="#P00"/>
+<use transform="translate(28032,-18996)" xlink:href="#P00"/>
+<path  d="
+M29413 -18646
+L29413 -19171
+M29420 -18646
+L29420 -19171
+"/>
+<path  d="
+M0 -24000
+L30000 -24000
+M0 -23650
+L30000 -23650
+M0 -23300
+L30000 -23300
+M0 -22950
+L30000 -22950
+M0 -22600
+L30000 -22600
+"/>
+<use transform="translate(225,-24000)" xlink:href="#P01"/>
+<use transform="translate(2025,-23300)" xlink:href="#P00"/>
+<text transform="translate(2025,-24875) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">na/</text>
+<path  d="
+M3032 -24735
+L3258 -24735
+"/>
+<text transform="translate(3347,-24875) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">tum</text>
+<use transform="translate(3550,-23125)" xlink:href="#P00"/>
+<text transform="translate(5043,-24875) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">Ma</text>
+<use transform="translate(5074,-22950)" xlink:href="#P00"/>
+<path  d="
+M6210 -24735
+L6436 -24735
+"/>
+<use transform="translate(6600,-22775)" xlink:href="#P00"/>
+<text transform="translate(6600,-24875) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">ri/</text>
+<use transform="translate(8125,-22600)" xlink:href="#P00"/>
+<path  d="
+M8342 -24735
+L8568 -24735
+"/>
+<use transform="translate(9649,-22775)" xlink:href="#P00"/>
+<text transform="translate(9649,-24875) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">a</text>
+<use transform="translate(11175,-22950)" xlink:href="#P00"/>
+<text transform="translate(12400,-24875) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">Vir/</text>
+<use transform="translate(12700,-22775)" xlink:href="#P00"/>
+<path  d="
+M13808 -24735
+L14034 -24735
+"/>
+<use transform="translate(14224,-22950)" xlink:href="#P00"/>
+<text transform="translate(14224,-24875) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">gi</text>
+<path  d="
+M15162 -24735
+L15387 -24735
+"/>
+<use transform="translate(15750,-23125)" xlink:href="#P00"/>
+<text transform="translate(15750,-24875) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">ne.</text>
+<path  d="
+M17275 -22250
+L17275 -22775
+M17281 -22250
+L17281 -22775
+"/>
+<use transform="translate(17800,-23300)" xlink:href="#P00"/>
+<text transform="translate(17800,-24875) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">Be</text>
+<path  d="
+M18865 -24735
+L19091 -24735
+"/>
+<use transform="translate(19324,-23125)" xlink:href="#P00"/>
+<text transform="translate(19324,-24875) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">a/</text>
+<path  d="
+M20240 -24735
+L20466 -24735
+"/>
+<use transform="translate(20850,-22950)" xlink:href="#P00"/>
+<text transform="translate(20850,-24875) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">tus</text>
+<use transform="translate(22375,-22775)" xlink:href="#P00"/>
+<text transform="translate(22375,-24875) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">au/</text>
+<use transform="translate(23899,-22600)" xlink:href="#P00"/>
+<path  d="
+M24144 -24735
+L24370 -24735
+"/>
+<text transform="translate(25222,-24875) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">ctor</text>
+<use transform="translate(25425,-23300)" xlink:href="#P00"/>
+<use transform="translate(26950,-23125)" xlink:href="#P00"/>
+<text transform="translate(26950,-24875) scale(1,-1)" fill="currentColor" stroke="none" font-size="771" style="font-family:Nimbus Roman No9 L">sae/</text>
+<use transform="translate(28474,-22775)" xlink:href="#P00"/>
+<path  d="
+M29024 -24735
+L29250 -24735
+"/>
+</g>
+</svg>
+<?SCORE version="4"
+###ScorePage:	ex27-2
+###document:            Humdrum User Guide
+###example_number:      27-2
+###example_label:       a_solis_ortus
+###caption:             Beginning of chant &lt;i&gt;A solis ortus&lt;/i&gt;.
+###typesetter:          Craig Stuart Sapp
+###typeset_date:        Tue Jun 24 22:46:56 PDT 2014
+
+#SVG_SCALE: 1
+#BORDER: 2
+
+
+##System:	1
+
+##SystemBar:	1:1	(dur = 11)
+8 3 0 10.18 0 200
+3 3 1.5 0 1
+1 3 13.5 7 0 2 1
+t 3 13.5 -2 1 1 0 0 0 0 0 0 5
+_00A
+t 3 22.214 -2 1 1 0 0 0 0 -1 0 7
+_00so\
+1 3 22.214 8 0 2 1
+4 3 28.237 -1.2 -1.2 27.96 1 1.29 -0.41
+1 3 30.929 9 0 2 1
+t 3 30.929 -2 1 1 0 0 0 0 0 0 7
+_00lis
+t 3 39.643 -2 1 1 0 0 0 0 0 0 7
+_00or\
+1 3 39.643 10 0 2 1
+1 3 48.357 11 0 2 1
+4 3 50.378 -1.2 -1.2 54.1 1 1.29 3.02
+t 3 57.071 -2 1 1 0 0 0 0 0 0 7
+_00tus
+1 3 57.071 7 0 2 1
+t 3 65.786 -2 1 1 0 0 0 0 0 0 8
+_00car\
+1 3 65.786 8 0 2 1
+1 3 74.5 10 0 2 1
+4 3 77.52 -1.2 -1.2 80.24 1 1.29 2.16
+t 3 83.214 -2 1 1 0 0 0 0 0 0 6
+_00di
+1 3 83.214 9 0 2 1
+1 3 91.929 8 0 2 1
+4 3 93.093 -1.2 -1.2 97.67 1 1.29 3.75
+t 3 100.643 -2 1 1 0 0 0 0 0 0 6
+_00ne
+1 3 100.643 8 0 2 1
+
+##SystemBar:	1:2	(dur = 10)
+14 3 109.357 1 0 0 0 0 0 13 10
+t 3 112.857 -2 1 1 0 0 0 0 0 0 6
+_00ad
+1 3 112.857 10 0 2 1
+t 3 121.571 -2 1 1 0 0 0 0 0 0 6
+_00us
+1 3 121.571 11 0 2 1
+1 3 130.286 13 0 2 1
+4 3 131.345 -1.2 -1.2 135.25 1 1.29 3.17
+t 3 139 -2 1 1 0 0 0 0 -0.781 0 7
+_00que
+1 3 139 13 0 2 1
+1 3 147.714 13 0 2 1
+t 3 147.714 -2 1 1 0 0 0 0 0 0 8
+_00ter\
+1 3 156.429 12 0 2 1
+4 3 159.021 -1.2 -1.2 162.17 1 1.29 2.53
+t 3 165.143 -2 1 1 0 0 0 0 0 0 7
+_00rae
+1 3 165.143 11 0 2 1
+1 3 173.857 10 0 2 1
+1 3 182.571 11 0 2 1
+t 3 182.571 -2 1 1 0 0 0 0 0 0 7
+_00li\
+1 3 191.286 12 0 2 1
+4 3 193.094 -1.2 -1.2 198.03 1 1.29 4.05
+
+14 3 200 -1
+
+
+##System:	2
+
+##SystemBar:	2:1	(dur = 2)
+8 2 0 2.59 0 200
+3 2 1.458 0 1
+1 2 13.119 12 0 2 1
+t 2 13.119 -2 1 1 0 0 0 0 0 0 6
+_00mi
+4 2 19.018 -1.2 -1.2 18.19 1 1.29 -0.89
+t 2 22.507 -2 1 1 0 0 0 0 -1.35 0 8
+_00tem,
+1 2 22.507 12 0 2 1
+
+##SystemBar:	2:2	(dur = 17)
+14 2 31.879 1 0 0 0 0 0 13 10
+t 2 35.36 -2 1 1 0 0 0 0 -1.35 0 9
+_00Chri\
+1 2 35.36 11 0 2 1
+4 2 44.691 -1.2 -1.2 43.02 1 1.29 -1.36
+t 2 47.441 -2 1 1 0 0 0 0 -1.35 0 8
+_00stum
+1 2 47.441 11 0 2 1
+1 2 56.691 13 0 2 1
+1 2 65.942 14 0 2 1
+t 2 75.192 -2 1 1 0 0 0 0 0 0 6
+_00ca
+1 2 75.192 13 0 2 1
+4 2 81.303 -1.2 -1.2 81.55 1 1.29 0.03
+t 2 84.519 -2 1 1 0 0 0 0 0 0 7
+_00na\
+1 2 84.519 13 0 2 1
+1 2 93.803 12 0 2 1
+4 2 95.435 -1.2 -1.2 98.77 1 1.29 2.68
+t 2 103.087 -2 1 1 0 0 0 0 -1.35 0 7
+_00mus
+1 2 103.087 11 0 2 1
+1 2 112.384 10 0 2 1
+t 2 121.681 -2 1 1 0 0 0 0 -1.35 0 9
+_00prin\
+1 2 121.681 11 0 2 1
+4 2 130.153 -1.2 -1.2 128.49 1 1.29 -1.36
+1 2 131.553 10 0 2 1
+t 2 131.553 -2 1 1 0 0 0 0 0 0 6
+_00ci
+1 2 140.8 9 0 2 1
+4 2 141.145 -1.2 -1.2 145.73 1 1.29 3.75
+t 2 150.048 -2 1 1 0 0 0 0 -1.35 0 8
+_00pem,
+1 2 150.048 8 0 2 1
+1 2 159.256 7 0 2 1
+1 2 168.465 9 0 2 1
+1 2 177.673 10 0 2 1
+1 2 186.882 11 0 2 1
+
+14 2 196.09 1 0 0 0 0 0 13 10
+
+
+##System:	3
+
+##SystemBar:	3:1	(dur = 10)
+8 1 0 0 0 200
+3 1 1.5 0 1
+1 1 13.5 7 0 2 1
+t 1 13.5 -2 1 1 0 0 0 0 0 0 7
+_00na\
+4 1 20.215 -1.2 -1.2 19.35 1 1.29 -0.92
+t 1 23.667 -2 1 1 0 0 0 0 -1.35 0 7
+_00tum
+1 1 23.667 8 0 2 1
+t 1 33.833 -2 1 1 0 0 0 0 -0.21 0 6
+_00Ma
+1 1 33.833 9 0 2 1
+4 1 41.404 -1.2 -1.2 41.03 1 1.29 -0.5
+1 1 44 10 0 2 1
+t 1 44 -2 1 1 0 0 0 0 0 0 7
+_00ri\
+1 1 54.167 11 0 2 1
+4 1 55.617 -1.2 -1.2 61.36 1 1.29 4.75
+1 1 64.333 10 0 2 1
+t 1 64.333 -2 1 1 0 0 0 0 0 0 5
+_00a
+1 1 74.5 9 0 2 1
+t 1 84.667 -2 1 1 0 0 0 0 -2 0 8
+_00Vir\
+1 1 84.667 10 0 2 1
+4 1 92.058 -1.2 -1.2 91.86 1 1.29 -0.34
+1 1 94.833 9 0 2 1
+t 1 94.833 -2 1 1 0 0 0 0 0 0 6
+_00gi
+4 1 101.081 -1.2 -1.2 102.03 1 1.29 0.64
+1 1 105 8 0 2 1
+t 1 105 -2 1 1 0 0 0 0 0 0 7
+_00ne.
+
+##SystemBar:	3:2	(dur = 8)
+14 1 115.167 1 0 0 0 0 0 13 10
+1 1 118.667 7 0 2 1
+t 1 118.667 -2 1 1 0 0 0 0 0 0 6
+_00Be
+4 1 125.771 -1.2 -1.2 125.86 1 1.29 -0.1
+1 1 128.833 8 0 2 1
+t 1 128.833 -2 1 1 0 0 0 0 0 0 6
+_00a\
+4 1 134.937 -1.2 -1.2 136.03 1 1.29 0.76
+1 1 139 9 0 2 1
+t 1 139 -2 1 1 0 0 0 0 0 0 7
+_00tus
+1 1 149.167 10 0 2 1
+t 1 149.167 -2 1 1 0 0 0 0 0 0 7
+_00au\
+1 1 159.333 11 0 2 1
+4 1 160.965 -1.2 -1.2 165.18 1 1.29 3.44
+t 1 169.5 -2 1 1 0 0 0 0 -1.35 0 8
+_00ctor
+1 1 169.5 7 0 2 1
+1 1 179.667 8 0 2 1
+t 1 179.667 -2 1 1 0 0 0 0 0 0 8
+_00sae\
+1 1 189.833 10 0 2 1
+4 1 193.497 -1.2 -1.2 198.03 1 1.29 3.71
+
+14 1 200 -1
+
+?>
