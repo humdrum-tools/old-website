@@ -5,7 +5,8 @@ body {
 	color: black; 
 	/* background-image: url("/images/backgrounds/bgBlue4.gif"); */
 	background-color: #dbedff;
-	font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
+	/* font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif; */
+	font-family: Georgia,"Palatino Linotype","Book Antiqua",Palatino,"Times New Roman",Times,serif
 	font-weight: normal;
 }
 
