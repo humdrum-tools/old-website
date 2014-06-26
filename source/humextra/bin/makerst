@@ -148,6 +148,7 @@ sub processHumdrumio {
    my $entry;
    
    if ($options{"style"} eq "wide") {
+
       $entry = <<EOT;
 .. raw:: html
 
@@ -161,6 +162,23 @@ sub processHumdrumio {
 .. raw:: html
 
 	</td><td width="4%">&nbsp;</td><td width="48%">
+
+.. literalinclude:: $options{"outputfile"}
+	:language: humdrum
+
+.. raw:: html
+
+	</td></tr></table>
+EOT
+
+   } elsif ($options{"style"} eq "outputonly") {
+
+      $entry = <<EOT;
+.. raw:: html
+
+	<table width="100%"><tr> <td align="center" style="background-color: #cccccc;" colspan="3">
+	   <tt style="border: none; background-color: #cccccc;">$options{"transform"}</tt>
+	</td></tr><tr><td colspan="3">
 
 .. literalinclude:: $options{"outputfile"}
 	:language: humdrum

@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Rhythm &mdash; humdrum-tools 1 documentation</title>
+  <title>Rhythm and Time &mdash; humdrum-tools 1 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="humdrum-tools 1 documentation" href="../../"/>
         <link rel="up" title="Humdrum Extras" href="../"/>
-        <link rel="next" title="Music Searching" href="../searching/"/>
-        <link rel="prev" title="Harmony" href="../harmony/"/> 
+        <link rel="next" title="Melody Tools" href="../melody/"/>
+        <link rel="prev" title="Introduction" href="../intro/"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -132,10 +132,10 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../">Humdrum Extras</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../intro/">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data/">Data Entry</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Rhythm and Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../melody/">Melody Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../harmony/">Harmony</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/">Data Entry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../searching/">Music Searching</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../midi/">MIDI Rendering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notation/">Graphical Musical Notation</a></li>
@@ -183,7 +183,7 @@
       
           <li><a href="../">Humdrum Extras</a> &raquo;</li>
       
-    <li>Rhythm</li>
+    <li>Rhythm and Time</li>
       <li class="wy-breadcrumbs-aside">
         
         
@@ -193,8 +193,8 @@
 </div>
           <div role="main">
             
-  <div class="section" id="rhythm">
-<h1>Rhythm<a class="headerlink" href="#rhythm" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="rhythm-and-time">
+<h1>Rhythm and Time<a class="headerlink" href="#rhythm-and-time" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="extensions-to-recip-and-kern-rhythms">
 <h2>Extensions to <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a> and <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/kern.rep.html">**kern</a> rhythms<a class="headerlink" href="#extensions-to-recip-and-kern-rhythms" title="Permalink to this headline">¶</a></h2>
 <p>Humdrum Extras programs recognize an extension to <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a>
@@ -353,7 +353,7 @@ represented.</p>
 both 4:3-tuplet quarter notes and dotted eighth-notes (both have a
 duration of 0.75 quarter notes).  The augmentation dot count is
 necessary in order to determine the musical name of the duration.</p>
-<p>The rational-duration extention to the <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a> representation
+<p>The rational-duration extension to the <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a> representation
 is mostly backwards-compatible with <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/kern.rep.html">**kern</a>.  The <tt class="docutils literal"><span class="pre">%</span></tt> sign
 is a user signifier, meaning it does not have a fixed meaning, and
 can be given a temporary meaning.  For the rational rhythm extension
@@ -392,11 +392,11 @@ uses the symbol <tt class="docutils literal"><span class="pre">0</span></tt> (ze
 Note that <tt class="docutils literal"><span class="pre">q</span></tt> is used to represent grace notes with a zero notated
 duration.  Most rhythm-parsing Humdrum Toolkit programs (such as
 <a class="reference external" href="http://www.humdrum.org/Humdrum/commands/census.html">census</a>) recognize this zero convention.  By extension, the
-symbol <tt class="docutils literal"><span class="pre">00</span></tt> represents a longa (quadrupal whole note), and <tt class="docutils literal"><span class="pre">000</span></tt>
+symbol <tt class="docutils literal"><span class="pre">00</span></tt> represents a longa (quadruple whole note), and <tt class="docutils literal"><span class="pre">000</span></tt>
 represents a maxima (octuple whole note); however, most Humdrum
 Toolkit rhythm-parsing programs do not understand these longer
 durations.  The Humdrum Extras programs will recognize all such
-rhythms, and will increase the power of two to parse, <tt class="docutils literal"><span class="pre">0000</span></tt>,
+rhythms, and will increase the power-of-two to parse <tt class="docutils literal"><span class="pre">0000</span></tt>,
 <tt class="docutils literal"><span class="pre">00000</span></tt> or larger exotic rhythmic values:</p>
 <p><strong>Example.</strong> Duration of various large rhythms in quarter-note units using
 the &#8220;zero&#8221; representation.</p>
@@ -426,10 +426,10 @@ the &#8220;zero&#8221; representation.</p>
 *-
 </pre></div>
 </div>
-</td></tr></table><p>Compare this to durational equivalents in the reciprocal representation
+</td></tr></table><p>Compare this to durational equivalents in the rational representation
 in the following example:</p>
 <p><strong>Example.</strong> Duration of various large rhythms in quarter-note units using
-the reciprocal representation.</p>
+the rational representation.</p>
 <table width="100%"><tr><td width="30%"><div class="highlight-humdrum"><div class="highlight"><pre>**kern
 4c
 2d
@@ -462,9 +462,9 @@ the reciprocal representation.</p>
 <h2>Rhythm scaling<a class="headerlink" href="#rhythm-scaling" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="http://extras.humdrum.org/man/rscale">rscale</a> program can be used to multiply or divide the duration
 of all rhythms in a score.  The two main purposes of rhythmic scaling are
-(1) to remove reciprocal representations, and (2) to switch between early
+(1) to remove rational representations, and (2) to switch between early
 and modern rhythmic units for the beat.</p>
-<p>The Humdrum Toolkit programs will not understand reciproical rhythms
+<p>The Humdrum Toolkit programs will not understand reciprocal rhythms
 such as <tt class="docutils literal"><span class="pre">3%2</span></tt> for triplet whole notes.  Typically a datafile with
 rational rhythms will contain a line such as <tt class="docutils literal"><span class="pre">!!!rscale-alt:</span> <span class="pre">1/2</span></tt>
 which indicates that the original file contains reciprocal rhythms,
@@ -475,30 +475,6 @@ becomes <tt class="docutils literal"><span class="pre">3</span></tt> (triplet ha
 when searching for the largest note value in the JRP repertory of
 Pierre de la Rue:</p>
 <div class="code highlight-python"><div class="highlight"><pre>humcat -s h://jrp/Rue | census -k
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre>HUMDRUM DATA
-
-Number of data tokens:     684225
-Number of null tokens:     258292
-Number of multiple-stops:  15
-Number of data records:    155393
-Number of comments:        5960
-Number of interpretations: 4680
-Number of records:         166033
-
-KERN DATA
-
-Number of note-heads:      261511
-Number of notes:           242659
-Longest note:              0.
-Shortest note:             8
-Highest note:              gg
-Lowest note:               BBB-
-Number of rests:           42797
-Maximum number of voices:  6
-Number of single barlines: 27474
-Number of double barlines: 184
 </pre></div>
 </div>
 </div>
@@ -518,7 +494,10 @@ rhythmic texture is a sequence of continuous eighth notes.</p>
 </a>
 <table width="100%"><tr> <td style="background-color: #cccccc;" colspan="3" align="center">
    &#x21d2;&nbsp;&nbsp;<tt style="border: none; background-color: #cccccc;"><a href=http://extras.humdrum.org/man/beat>beat</a> -dp</tt>&nbsp;&nbsp;&#x21d2;
-</td></tr><tr><td width="48%><div class="highlight-humdrum"><div class="highlight"><pre>**kern	**kern
+</td></tr><tr><td width="48%><div class="highlight-humdrum"><div class="highlight"><pre>!!!COM: Bach, J.S.
+!!!OTL: Hilf, Gott, laß mir’s gelingen
+!!!SCT: BWV 343
+**kern	**kern
 *clefF4	*clefG2
 *k[b-]	*k[b-]
 *M3/4	*M3/4
@@ -553,7 +532,10 @@ rhythmic texture is a sequence of continuous eighth notes.</p>
 *-	*-
 </pre></div>
 </div>
-</td><td width="4%">&nbsp;</td><td width="48%"><div class="highlight-humdrum"><div class="highlight"><pre>**dur	**kern	**kern
+</td><td width="4%">&nbsp;</td><td width="48%"><div class="highlight-humdrum"><div class="highlight"><pre>!!!COM: Bach, J.S.
+!!!OTL: Hilf, Gott, laß mir’s gelingen
+!!!SCT: BWV 343
+**dur	**kern	**kern
 *	*clefF4	*clefG2
 *	*k[b-]	*k[b-]
 *M3/4	*M3/4	*M3/4
@@ -597,12 +579,11 @@ ratio values instead of decimal numbers.  When the <tt class="docutils literal">
 is used, the value of one represents the duration of a while
 note (rather than a quarter note with the default floating-point
 duration vales).</p>
-<div class="code bash highlight-bash"><div class="highlight"><pre>beat -dpf file.krn
-</pre></div>
-</div>
-<div class="highlight-humdrum"><div class="highlight"><pre>!!data-generation: myank -m 16-19 h://371chorales/chor199.krn  | satb2gs | ridx -GL
-!!data-filter: beat -dpf
-**dur	**kern	**kern
+<p><strong>Example.</strong> Extracting durations as rational numbers instead
+of floating-point values.</p>
+<table width="100%"><tr> <td align="center" style="background-color: #cccccc;" colspan="3">
+   <tt style="border: none; background-color: #cccccc;"><a href=http://extras.humdrum.org/man/myank>myank</a> -m 16-19 h://370chorales/chor199.krn | <a href=http://extras.humdrum.org/man/satb2gs>satb2gs</a> | <a href=http://extras.humdrum.org/man/ridx>ridx</a> -GL | <a href=http://extras.humdrum.org/man/beat>beat</a> -dpf</tt>
+</td></tr><tr><td colspan="3"><div class="highlight-humdrum"><div class="highlight"><pre>**dur	**kern	**kern
 *	*clefF4	*clefG2
 *	*k[b-]	*k[b-]
 *M3/4	*M3/4	*M3/4
@@ -637,25 +618,25 @@ duration vales).</p>
 *-	*-	*-
 </pre></div>
 </div>
-<p>Here is an example of extracting the distribution of durations
+</td></tr></table><p>Here is an example of extracting the distribution of durations
 for the composite rhythm of 370 Bach chorales:</p>
-<div class="code bash highlight-bash"><div class="highlight"><pre>beat -df h://370chorales | ridx -H | sortcount -p
+<p><strong>Example.</strong> Create a frequency distribution of composite rhythm durations in 370 Bach chorales.</p>
+<table width="100%"><tr> <td align="center" style="background-color: #cccccc;" colspan="3">
+   <tt style="border: none; background-color: #cccccc;"><a href=http://extras.humdrum.org/man/beat>beat</a> -df h://370chorales | <a href=http://extras.humdrum.org/man/ridx>ridx</a> -H | sortcount -p</tt>
+</td></tr><tr><td colspan="3"><div class="highlight-humdrum"><div class="highlight"><pre>69.43	1/8
+19.46	1/4
+7.11	1/16
+2.79	1/2
+0.94	3/4
+0.18	1
+0.04	3/8
+0.03	1/32
+0.02	3/16
+0.01	2
+0.01	3/2
 </pre></div>
 </div>
-<div class="code highlight-bash"><div class="highlight"><pre>69.43   1/8
-19.46   1/4
-7.11    1/16
-2.79    1/2
-0.94    3/4
-0.18    1
-0.04    3/8
-0.03    1/32
-0.02    3/16
-0.01    2
-0.01    3/2
-</pre></div>
-</div>
-<p>The most common composite rhythmic value is the eighth note (69.43%), then in
+</td></tr></table><p>The most common composite rhythmic value is the eighth note (69.43%), then in
 decreasing frequency: quarter note, sixteenth note, half note,
 dotted half note, whole note, dotted quarter note, 32nd note, dotted eighth
 note, breve, and dotted whole note.</p>
@@ -672,8 +653,9 @@ which is the <a class="reference external" href="http://www.humdrum.org/Humdrum/
 <p><strong>Example.</strong> F. Chopin, Nocturne in B major, op. 9/3, mm. 8&#8211;10.</p>
 <a class="reference internal image-reference" href="../../_images/noc9-3.svg"><div align="center" class="align-center"><img src="../../_images/noc9-3.svg" width="100%" /></div>
 </a>
-<div class="highlight-humdrum"><div class="highlight"><pre>!!data-filter: beat -dp
-!!!COM: Chopin, Frederic
+<table width="100%"><tr> <td align="center" style="background-color: #cccccc;" colspan="3">
+   <tt style="border: none; background-color: #cccccc;"><a href=http://extras.humdrum.org/man/beat>beat</a> -dpf </tt>
+</td></tr><tr><td colspan="3"><div class="highlight-humdrum"><div class="highlight"><pre>!!!COM: Chopin, Frederic
 !!!OTL: Nocturne in B Major, op. 9/3
 **dur	**kern	**kern
 *	*clefF4	*clefG2
@@ -730,7 +712,7 @@ which is the <a class="reference external" href="http://www.humdrum.org/Humdrum/
 *-	*-	*-
 </pre></div>
 </div>
-</div>
+</td></tr></table></div>
 </div>
 
 
@@ -740,10 +722,10 @@ which is the <a class="reference external" href="http://www.humdrum.org/Humdrum/
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <center><a href="../searching/" class="btn btn-neutral float-right" title="Music Searching">Next <span class="fa fa-arrow-circle-right"></span></a></center>
+        <center><a href="../melody/" class="btn btn-neutral float-right" title="Melody Tools">Next <span class="fa fa-arrow-circle-right"></span></a></center>
       
       
-        <a href="../harmony/" class="btn btn-neutral" title="Harmony"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../intro/" class="btn btn-neutral" title="Introduction"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
       
              <center><a href="../../_sources/humextra/rhythm.txt" rel="nofollow"> View page source</a></center>

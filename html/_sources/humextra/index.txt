@@ -11,13 +11,13 @@ search tools, and many more.
 
 
 .. toctree::
-	maxdepth: 2
+	maxdepth: 1
 
 	intro
-	data
+	rhythm
 	melody
 	harmony
-	rhythm
+	data
 	searching
 	midi
 	notation

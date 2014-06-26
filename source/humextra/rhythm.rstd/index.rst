@@ -5,7 +5,7 @@
 	:trim:
 
 ===========================================================================
-Rhythm 
+Rhythm and Time
 ===========================================================================
 
 Extensions to `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ and `\*\*kern <http://www.humdrum.org/Humdrum/representations/kern.rep.html>`_ rhythms
@@ -94,7 +94,7 @@ both 4:3-tuplet quarter notes and dotted eighth-notes (both have a
 duration of 0.75 quarter notes).  The augmentation dot count is
 necessary in order to determine the musical name of the duration.
 
-The rational-duration extention to the `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ representation
+The rational-duration extension to the `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ representation
 is mostly backwards-compatible with `\*\*kern <http://www.humdrum.org/Humdrum/representations/kern.rep.html>`_.  The ``%`` sign
 is a user signifier, meaning it does not have a fixed meaning, and
 can be given a temporary meaning.  For the rational rhythm extension
@@ -139,11 +139,11 @@ uses the symbol ``0`` (zero) for breves (double whole notes).
 Note that ``q`` is used to represent grace notes with a zero notated
 duration.  Most rhythm-parsing Humdrum Toolkit programs (such as
 `census <http://www.humdrum.org/Humdrum/commands/census.html>`_) recognize this zero convention.  By extension, the
-symbol ``00`` represents a longa (quadrupal whole note), and ``000``
+symbol ``00`` represents a longa (quadruple whole note), and ``000``
 represents a maxima (octuple whole note); however, most Humdrum
 Toolkit rhythm-parsing programs do not understand these longer
 durations.  The Humdrum Extras programs will recognize all such
-rhythms, and will increase the power of two to parse, ``0000``,
+rhythms, and will increase the power-of-two to parse ``0000``,
 ``00000`` or larger exotic rhythmic values:
 
 **Example.** Duration of various large rhythms in quarter-note units using
@@ -169,17 +169,17 @@ the "zero" representation.
 
 	</td></tr></table>
 
-Compare this to durational equivalents in the reciprocal representation
+Compare this to durational equivalents in the rational representation
 in the following example:
 
 **Example.** Duration of various large rhythms in quarter-note units using
-the reciprocal representation.
+the rational representation.
 
 .. raw:: html
 
 	<table width="100%"><tr><td width="30%">
 
-.. literalinclude:: rhythm.rstd/zero-reciprocal.krn
+.. literalinclude:: rhythm.rstd/zero-rational.krn
 	:language: humdrum
 
 .. raw:: html
@@ -188,7 +188,7 @@ the reciprocal representation.
 	   &#x21d2;&nbsp;<tt><a href=http://extras.humdrum.org/man/beat>beat</a> -d</tt>&nbsp;&#x21d2;
 	</td><td width="30%">
 
-.. literalinclude:: rhythm.rstd/zero-reciprocal-beat-d.krn
+.. literalinclude:: rhythm.rstd/zero-rational-beat-d.krn
 	:language: humdrum
 
 .. raw:: html
@@ -201,10 +201,10 @@ Rhythm scaling
 
 The `rscale <http://extras.humdrum.org/man/rscale>`_ program can be used to multiply or divide the duration
 of all rhythms in a score.  The two main purposes of rhythmic scaling are
-(1) to remove reciprocal representations, and (2) to switch between early
+(1) to remove rational representations, and (2) to switch between early
 and modern rhythmic units for the beat.
 
-The Humdrum Toolkit programs will not understand reciproical rhythms
+The Humdrum Toolkit programs will not understand reciprocal rhythms
 such as ``3%2`` for triplet whole notes.  Typically a datafile with
 rational rhythms will contain a line such as ``!!!rscale-alt: 1/2``
 which indicates that the original file contains reciprocal rhythms,
@@ -279,40 +279,42 @@ is used, the value of one represents the duration of a while
 note (rather than a quarter note with the default floating-point
 duration vales).
 
-.. highlight:: bash
-.. code:: bash
 
-	beat -dpf file.krn
+**Example.** Extracting durations as rational numbers instead 
+of floating-point values.
+
+.. raw:: html
+
+	<table width="100%"><tr> <td align="center" style="background-color: #cccccc;" colspan="3">
+	   <tt style="border: none; background-color: #cccccc;"><a href=http://extras.humdrum.org/man/myank>myank</a> -m 16-19 h://370chorales/chor199.krn | <a href=http://extras.humdrum.org/man/satb2gs>satb2gs</a> | <a href=http://extras.humdrum.org/man/ridx>ridx</a> -GL | <a href=http://extras.humdrum.org/man/beat>beat</a> -dpf</tt>
+	</td></tr><tr><td colspan="3">
 
 .. literalinclude:: rhythm.rstd/durationoutput-dpf.krn
 	:language: humdrum
 
+.. raw:: html
 
-.. highlight:: bash
-.. code:: bash
+	</td></tr></table>
 
 
 Here is an example of extracting the distribution of durations
 for the composite rhythm of 370 Bach chorales:
 
+**Example.** Create a frequency distribution of composite rhythm durations in 370 Bach chorales.
 
-.. code:: bash
+.. raw:: html
 
-	beat -df h://370chorales | ridx -H | sortcount -p
+	<table width="100%"><tr> <td align="center" style="background-color: #cccccc;" colspan="3">
+	   <tt style="border: none; background-color: #cccccc;"><a href=http://extras.humdrum.org/man/beat>beat</a> -df h://370chorales | <a href=http://extras.humdrum.org/man/ridx>ridx</a> -H | sortcount -p</tt>
+	</td></tr><tr><td colspan="3">
 
-.. code::
+.. literalinclude:: rhythm.rstd/chorale-composite-rhythm.txt
+	:language: humdrum
 
-	69.43	1/8
-	19.46	1/4
-	7.11	1/16
-	2.79	1/2
-	0.94	3/4
-	0.18	1
-	0.04	3/8
-	0.03	1/32
-	0.02	3/16
-	0.01	2
-	0.01	3/2
+.. raw:: html
+
+	</td></tr></table>
+
 
 The most common composite rhythmic value is the eighth note (69.43%), then in
 decreasing frequency: quarter note, sixteenth note, half note, 
@@ -354,6 +356,17 @@ which is the `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.re
 	:align: center
 	:width: 100%
 
+.. raw:: html
+
+	<table width="100%"><tr> <td align="center" style="background-color: #cccccc;" colspan="3">
+	   <tt style="border: none; background-color: #cccccc;"><a href=http://extras.humdrum.org/man/beat>beat</a> -dpf </tt>
+	</td></tr><tr><td colspan="3">
+
 .. literalinclude:: rhythm.rstd/noc9-3-pdf.krn
 	:language: humdrum
+
+.. raw:: html
+
+	</td></tr></table>
+
 
