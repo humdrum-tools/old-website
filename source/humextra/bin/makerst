@@ -9,7 +9,10 @@
 # Description:   re-restrctured text to restructured text converter.
 #
 
+
 use strict;
+
+my $oldhumdir = "../../../Humdrum";
 
 die "Usage $0 input output (@ARGV)" if @ARGV != 2;
 
@@ -54,16 +57,11 @@ exit(0);
 sub processContents {
    my @contents = @_;
 
-   my $hasStar = 0;
-
    my $i;
    my $pre;
    my $post;
    my $match;
    for ($i=0; $i<@contents; $i++) {
-      if ($contents[$i] =~ /^\.\.\s+\|star\|\s+unicode\s*:\s*:/) {
-         $hasStar = 1;
-      }
 
       if ($contents[$i] =~ /^\.\.\s+humdrumio\s*:\s*:/) {
          @contents = processHumdrumio($i, @contents);
@@ -110,8 +108,8 @@ sub processContents {
          $pre = $`;
          $post = $';
          $contents[$i]  = $pre;
-         if ($hasStar) {
-            $contents[$i] .= "\ |star|\ |star|\ $match";
+         if (-r "$oldhumdir/representations/$match.rep.html") {
+            $contents[$i] .= "`\\*\\*$match <http://www.humdrum.org/Humdrum/representations/$match.rep.html>`_";
          } else {
             $contents[$i] .= "\\*\\*$match";
          }
@@ -129,13 +127,11 @@ sub processContents {
 sub processHumdrumio {
    my ($line, @contents) = @_;
 
-   my $tablewidth = "100%";
-   my $width1 = "30%";
-   my $width2 = "30%";
-   my $width3 = "30%";
-   my $inputfile  = "";
-   my $outputfile = "";
-   my $transform  = "";
+   my %options;
+   $options{"width1"}		= "30%";
+   $options{"width2"}		= "30%";
+   $options{"width3"} 		= "30%";
+   $options{"tablewidth"}	= "100%";
    my $key;
    my $value;
 
@@ -145,27 +141,28 @@ sub processHumdrumio {
       $key = $1;
       $value = $2;
       $contents[$i] = "";
-      $inputfile  = $value if $key eq "inputfile";
-      $outputfile = $value if $key eq "outputfile";
-      $transform  = $value if $key eq "transform";
+      $options{$key} = $value;
+      $i++;
    }
-   
 
-   my $entry = <<EOT;
+   my $entry;
+   
+   if ($options{"style"} eq "wide") {
+      $entry = <<EOT;
 .. raw:: html
 
-	<table width="100%"><tr><td width="$width1">
+	<table width="100%"><tr> <td style="background-color: #cccccc;" colspan="3" align="center">
+	   &#x21d2;&nbsp;&nbsp;<tt style="border: none; background-color: #cccccc;">$options{"transform"}</tt>&nbsp;&nbsp;&#x21d2;
+	</td></tr><tr><td width="48%>
 
-.. literalinclude:: $inputfile
+.. literalinclude:: $options{"inputfile"}
 	:language: humdrum
 
 .. raw:: html
 
-	</td><td align="center" width="$width2"> 
-	   &#x21d2; <tt>$transform</tt> &#x21d2;
-	</td><td width="$width3">
+	</td><td width="4%">&nbsp;</td><td width="48%">
 
-.. literalinclude:: $outputfile
+.. literalinclude:: $options{"outputfile"}
 	:language: humdrum
 
 .. raw:: html
@@ -173,10 +170,37 @@ sub processHumdrumio {
 	</td></tr></table>
 EOT
 
+   } else {
+
+      $entry = <<EOT;
+.. raw:: html
+
+	<table width="100%"><tr><td width="$options{"width1"}">
+
+.. literalinclude:: $options{"inputfile"}
+	:language: humdrum
+
+.. raw:: html
+
+	</td><td align="center" width="$options{"width2"}"> 
+	   &#x21d2;&nbsp;<tt>$options{"transform"}</tt>&nbsp;&#x21d2;
+	</td><td width="$options{"width3"}">
+
+.. literalinclude:: $options{"outputfile"}
+	:language: humdrum
+
+.. raw:: html
+
+	</td></tr></table>
+EOT
+   }
+
    # :uxcom: == unix command
    # :hxcom: == humdrum extras command
    # :htcom: == humdrum toolkit command
    $entry =~ s/:([a-z][a-z])com:/:html:${1}com:/g;
+
+   $contents[$line] = $entry;
 
    return @contents;
 }

@@ -8,30 +8,29 @@
 Rhythm 
 ===========================================================================
 
-Extensions to \*\*recip and \*\*kern rhythms
+Extensions to `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ and `\*\*kern <http://www.humdrum.org/Humdrum/representations/kern.rep.html>`_ rhythms
 ===========================================================================
 
 
-Humdrum Extras programs recognize an extension to \*\*recip
-and \*\*kern rhythm representations that allows any rational
+Humdrum Extras programs recognize an extension to `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_
+and `\*\*kern <http://www.humdrum.org/Humdrum/representations/kern.rep.html>`_ rhythm representations which allows any rational
 rhythm to be encoded.  A majority of notatable rhythms found
-in music can be represented in standard \*\*recip
-data.  For example a dotted quarter note is encoded as ``4.`` and
+in music can be represented in standard `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_
+data.  For example a dotted quarter-note is encoded as ``4.`` and
 a quintuplet sixteenth note is ``20``.  Such rhythms are based upon
-integral divisions of whole notes.  The value ``4`` means 1/4th of
+integral divisions of the whole note.  The value ``4`` means 1/4th of
 a whole note; ``4.`` means 1/4 of a whole note plus half of that
 (1/8 of a whole note).  Only rhythms which are composed of equal
 divisions of whole notes plus augmentation dots can be represented
-in this system, and a problem occurs when trying to represent other
-rhythms such as a triplet whole-notes or non-binary tuplets such
-as five eighth notes occurring within the time of three eighth
-notes.
+in this system. But a problem occurs when trying to represent other
+rhythms such as triplet whole-notes or non-power-of-two tuplet bases 
+such as five eighth notes in the time of three eighth notes.
 
-In other words when \*\*recip encodes reciprocal durations
+In other words when `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ encodes reciprocal durations
 of rhythms, the durations must always have a 1 in the numerator
 (excluding augmentations dots which are not considered when
 calculating the reciprocal duration).  For example an eighth note
-is represented in \*\*recip or \*\*kern data as
+is represented in `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ or `\*\*kern <http://www.humdrum.org/Humdrum/representations/kern.rep.html>`_ data as
 ``8``.  This means that the duration of an eighth note is 1/8th of
 a whole note.  Likewise, ``12`` means 1/12 of a whole note which
 translates musically into "triplet eighth-notes".  Here is a
@@ -54,19 +53,22 @@ This means that a 5:3-tuplet eighth note is equal to 3/40ths of a
 whole note.  Notice that this duration is not a integral division
 of the whole note since the numerator of the duration (or the
 denominator in the reciprocal duration) is not 1.  The difficulty
-in the standard \*\*recip representation is that it includes
+in the standard `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ representation is that it includes
 a default value of 1 for the denominator of the reciprocal duration
-since only integers are allowed for rhythms in \*\*recip
+since only integers are allowed for rhythms in `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_
 data.  The quarter note value ``4`` is more generally the ratio 4/1
-with the "/1" implied in \*\*recip data. The Humdrum Extras
+with the "/1" implied in `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ data. The Humdrum Extras
 programs allow for the denominator to be any other positive integer.
-In order to represent the duration 3/40 in \*\*recip data,
+In order to represent the duration 3/40 in `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ data,
 the symbol ``40%3`` can be used, where the ``%`` sign indicates a
 reciprocal duration ratio with a denominator other than one is being
 represented.
 
+
+**Table.** Sample reciprocal encodings of rhythms in `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ and `\*\*kern <http://www.humdrum.org/Humdrum/representations/kern.rep.html>`_ representations.
+
 .. csv-table::
-	:header: Encoding, Reciprocal duration, Duration (whole-note units), Musical name
+	:header: Encoding, Reciprocal dur., Dur. (whole-note units), Musical name
 
 	``4``,	4/1,	1/4, 	Quarter note
 	``4%1``,	4/1,	1/4, 	Quarter note
@@ -92,8 +94,8 @@ both 4:3-tuplet quarter notes and dotted eighth-notes (both have a
 duration of 0.75 quarter notes).  The augmentation dot count is
 necessary in order to determine the musical name of the duration.
 
-The rational-duration extention to the \*\*recip representation
-is mostly backwards-compatible with \*\*kern.  The ``%`` sign
+The rational-duration extention to the `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ representation
+is mostly backwards-compatible with `\*\*kern <http://www.humdrum.org/Humdrum/representations/kern.rep.html>`_.  The ``%`` sign
 is a user signifier, meaning it does not have a fixed meaning, and
 can be given a temporary meaning.  For the rational rhythm extension
 this character is reserved to separate the two integers in a
@@ -102,8 +104,10 @@ values for standard Humdrum Tools that don't recognize the extension
 use the `rscale <http://extras.humdrum.org/man/rscale>`_ program to scale the rhythm to a timebase
 which does not require the extension.  For example if the duration
 of triplet whole-notes are decreased by half, they become triplet 
-half-notes which are representable in the standard \*\*recip 
+half-notes which are representable in the standard `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ 
 system:
+
+**Example.** Halving the duration of notes in a `\*\*kern <http://www.humdrum.org/Humdrum/representations/kern.rep.html>`_ score.
 
 .. raw:: html
 
@@ -114,8 +118,8 @@ system:
 
 .. raw:: html
 
-	</td><td align="center" valign="center" width="50"> 
-	   &#x21d2; <tt><a href=http://extras.humdrum.org/man/rscale>rscale</a> -f 1/2</tt> &#x21d2;
+	</td><td align="center" width="30%"> 
+	   &#x21d2;&nbsp;<tt><a href=http://extras.humdrum.org/man/rscale>rscale</a> -f 1/2</tt>&nbsp;&#x21d2;
 	</td><td width="30%">
 
 .. literalinclude:: rhythm.rstd/triplethalfnotes.krn
@@ -126,10 +130,11 @@ system:
 	</td></tr></table>
 
 
-"Zero" extension to \*\*recip rhythm interpretation
+
+"Zero" extension to `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ rhythm interpretation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A different extension to the \*\*recip rhythm representation
+A different extension to the `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ rhythm representation
 uses the symbol ``0`` (zero) for breves (double whole notes).
 Note that ``q`` is used to represent grace notes with a zero notated
 duration.  Most rhythm-parsing Humdrum Toolkit programs (such as
@@ -141,19 +146,91 @@ durations.  The Humdrum Extras programs will recognize all such
 rhythms, and will increase the power of two to parse, ``0000``,
 ``00000`` or larger exotic rhythmic values:
 
-**Example.** Number of quarter notes
+**Example.** Duration of various large rhythms in quarter-note units using
+the "zero" representation.
 
-.. literalinclude:: rhythm.rstd/zero-beat-da.krn
+.. raw:: html
+
+	<table width="100%"><tr><td width="30%">
+
+.. literalinclude:: rhythm.rstd/zero.krn
 	:language: humdrum
-	
+
+.. raw:: html
+
+	</td><td align="center" width="30%"> 
+	   &#x21d2;&nbsp;<tt><a href=http://extras.humdrum.org/man/beat>beat</a> -d</tt>&nbsp;&#x21d2;
+	</td><td width="30%">
+
+.. literalinclude:: rhythm.rstd/zero-beat-d.krn
+	:language: humdrum
+
+.. raw:: html
+
+	</td></tr></table>
+
+Compare this to durational equivalents in the reciprocal representation
+in the following example:
+
+**Example.** Duration of various large rhythms in quarter-note units using
+the reciprocal representation.
+
+.. raw:: html
+
+	<table width="100%"><tr><td width="30%">
+
+.. literalinclude:: rhythm.rstd/zero-reciprocal.krn
+	:language: humdrum
+
+.. raw:: html
+
+	</td><td align="center" width="30%"> 
+	   &#x21d2;&nbsp;<tt><a href=http://extras.humdrum.org/man/beat>beat</a> -d</tt>&nbsp;&#x21d2;
+	</td><td width="30%">
+
+.. literalinclude:: rhythm.rstd/zero-reciprocal-beat-d.krn
+	:language: humdrum
+
+.. raw:: html
+
+	</td></tr></table>
+
+
+Rhythm scaling
+===========================================================================
+
+The `rscale <http://extras.humdrum.org/man/rscale>`_ program can be used to multiply or divide the duration
+of all rhythms in a score.  The two main purposes of rhythmic scaling are
+(1) to remove reciprocal representations, and (2) to switch between early
+and modern rhythmic units for the beat.
+
+The Humdrum Toolkit programs will not understand reciproical rhythms
+such as ``3%2`` for triplet whole notes.  Typically a datafile with
+rational rhythms will contain a line such as ``!!!rscale-alt: 1/2``
+which indicates that the original file contains reciprocal rhythms,
+and a rhythmic-scaling by 1/2 will remove them.  For example, if
+``3%2`` (triplet whole-note) is halved, then the reciprocal rhythm
+becomes ``3`` (triplet half-note).
+
+Compare the following two results from the `census <http://www.humdrum.org/Humdrum/commands/census.html>`_ command
+when searching for the largest note value in the JRP repertory of
+Pierre de la Rue:
+
+.. code::
+
+	humcat -s h://jrp/Rue | census -k
+
+.. literalinclude:: rhythm.rstd/Rue.census
+
+
 
 
 Composite rhythm
-=================
+===========================================================================
 
-The `beat <http://extras.humdrum.org/man/beat>`_ tool can be used to calculate the duration of
-each line of a Humdrum file containing \*\*kern or
-\*\*recip data.  Musically this called the *composite
+The `beat <http://extras.humdrum.org/man/beat>`_ program can be used to calculate the duration of
+each line of a Humdrum file containing `\*\*kern <http://www.humdrum.org/Humdrum/representations/kern.rep.html>`_ or
+`\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ data.  Musically this called the *composite
 rhythm*, which is the rhythm of all parts considered as a single
 stream.  The following musical example shows four parts on the top
 two staves along with a staff beneath showing the composite rhythm
@@ -168,21 +245,32 @@ rhythmic texture is a sequence of continuous eighth notes.
 	:width: 100%
 	:alt: myank -m 16-19 h://371chorales/chor199.krn  | satb2gs | ridx -GL
 
+
+.. raw:: html
+
+	<table width="100%"><tr> <td style="background-color: #cccccc;" colspan="3" align="center">
+	   &#x21d2;&nbsp;&nbsp;<tt style="border: none; background-color: #cccccc;"><a href=http://extras.humdrum.org/man/beat>beat</a> -dp</tt>&nbsp;&nbsp;&#x21d2;
+	</td></tr><tr><td width="48%>
+
 .. literalinclude:: rhythm.rstd/durationinput.krn
 	:language: humdrum
+
+.. raw:: html
+
+	</td><td width="4%">&nbsp;</td><td width="48%">
+
+.. literalinclude:: rhythm.rstd/durationoutput-dp.krn
+	:language: humdrum
+
+.. raw:: html
+
+	</td></tr></table>
+
 
 The ``-d`` option for `beat <http://extras.humdrum.org/man/beat>`_ is used to extract the
 duration of each data line.  The ``-p`` option prepends the
 duration analysis data to the start of each line (``-a`` will
 append the analysis data to the end of the line).
-
-.. highlight:: bash
-.. code:: bash
-
-	beat -dp file.krn
-	
-.. literalinclude:: rhythm.rstd/durationoutput-dp.krn
-	:language: humdrum
 
 
 The ``-f`` option will display duration information as fractional
@@ -254,10 +342,10 @@ of three which has a duration of:
 	\frac{3}{5} \times \frac{1}{8} = \frac{3}{40} \quad \mbox{whole notes}
 
 The duration of 3/40th of a whole note is represented in extended
-\*\*recip by the rhythm value ``40%3``.  Likewise, the
+`\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ by the rhythm value ``40%3``.  Likewise, the
 septuplets in the last measure are 
 :math:`\scriptstyle 3/7 \times 1/8 = 3/56` whole notes, 
-which is the \*\*recip rhythm ``56%3``.
+which is the `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ rhythm ``56%3``.
 
 
 **Example.** F. Chopin, Nocturne in B major, op. 9/3, mm. 8--10.
