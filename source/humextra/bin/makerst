@@ -37,9 +37,15 @@ exit(0);
 ##
 ## processContents --
 ##
+## * Add hyperlinks to Humdrum Extras program man pages:
 ## Change :hxcom:`command`
 ## To:    `command <http://extras.humdrum.org/man/command>`_
 ##
+## * Add hyperlinks to Humdrum Toolkit program man pages:
+## Change :htcom:`command`
+## To:    `command <http://www.humdrum.org/Humdrum/commands/command.html>`_
+##
+## * Tagging system for exclusive interpretations:
 ## Change :exinterp:`kern`
 ## To:    \*\*kern
 ##
@@ -48,11 +54,29 @@ exit(0);
 sub processContents {
    my @contents = @_;
 
+   my $hasStar = 0;
+
    my $i;
    my $pre;
    my $post;
    my $match;
    for ($i=0; $i<@contents; $i++) {
+      if ($contents[$i] =~ /^\.\.\s+\|star\|\s+unicode\s*:\s*:/) {
+         $hasStar = 1;
+      }
+
+      if ($contents[$i] =~ /^\.\.\s+humdrumio\s*:\s*:/) {
+         @contents = processHumdrumio($i, @contents);
+      }
+
+      while ($contents[$i] =~ /:html:hxcom:`\s*([^`\s]+)\s*`/) {
+         $match = $1;
+         $pre = $`;
+         $post = $';
+         $contents[$i]  = $pre;
+         $contents[$i] .= "<a href=http://extras.humdrum.org/man/$match>$match</a>";
+         $contents[$i] .= $post;
+      }
 
       while ($contents[$i] =~ /:hxcom:`\s*([^`\s]+)\s*`/) {
          $match = $1;
@@ -63,16 +87,96 @@ sub processContents {
          $contents[$i] .= $post;
       }
 
+      while ($contents[$i] =~ /:html:htcom:`\s*([^`\s]+)\s*`/) {
+         $match = $1;
+         $pre = $`;
+         $post = $';
+         $contents[$i]  = $pre;
+         $contents[$i] .= "<a href=http://www.humdrum.org/Humdrum/commands/$match.html>$match</a>";
+         $contents[$i] .= $post;
+      }
+
+      while ($contents[$i] =~ /:htcom:`\s*([^`\s]+)\s*`/) {
+         $match = $1;
+         $pre = $`;
+         $post = $';
+         $contents[$i]  = $pre;
+         $contents[$i] .= "`$match <http://www.humdrum.org/Humdrum/commands/$match.html>`_";
+         $contents[$i] .= $post;
+      }
+
       while ($contents[$i] =~ /:exinterp:`\s*([^`\s]+)\s*`/) {
          $match = $1;
          $pre = $`;
          $post = $';
          $contents[$i]  = $pre;
-         $contents[$i] .= "\\*\\*$match";
+         if ($hasStar) {
+            $contents[$i] .= "\ |star|\ |star|\ $match";
+         } else {
+            $contents[$i] .= "\\*\\*$match";
+         }
          $contents[$i] .= $post;
       }
 
    }
+
+   return @contents;
+}
+
+
+
+
+sub processHumdrumio {
+   my ($line, @contents) = @_;
+
+   my $tablewidth = "100%";
+   my $width1 = "30%";
+   my $width2 = "30%";
+   my $width3 = "30%";
+   my $inputfile  = "";
+   my $outputfile = "";
+   my $transform  = "";
+   my $key;
+   my $value;
+
+   my $i;
+   $i = $line+1;
+   while ($contents[$i] =~ /^\s*:([^\s]+):\s*(.*)\s*/) {
+      $key = $1;
+      $value = $2;
+      $contents[$i] = "";
+      $inputfile  = $value if $key eq "inputfile";
+      $outputfile = $value if $key eq "outputfile";
+      $transform  = $value if $key eq "transform";
+   }
+   
+
+   my $entry = <<EOT;
+.. raw:: html
+
+	<table width="100%"><tr><td width="$width1">
+
+.. literalinclude:: $inputfile
+	:language: humdrum
+
+.. raw:: html
+
+	</td><td align="center" width="$width2"> 
+	   &#x21d2; <tt>$transform</tt> &#x21d2;
+	</td><td width="$width3">
+
+.. literalinclude:: $outputfile
+	:language: humdrum
+
+.. raw:: html
+
+	</td></tr></table>
+EOT
+
+   # :uxcom: == unix command
+   # :hxcom: == humdrum extras command
+   # :htcom: == humdrum toolkit command
+   $entry =~ s/:([a-z][a-z])com:/:html:${1}com:/g;
 
    return @contents;
 }
