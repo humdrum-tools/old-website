@@ -64,7 +64,7 @@ reciprocal duration ratio with a denominator other than one is being
 represented.
 
 
-**Table.** Sample reciprocal encodings of rhythms in :exinterp:`recip` and :exinterp:`kern` representations.
+**Table.** Sample rational encodings of rhythms in :exinterp:`recip` and :exinterp:`kern` representations.
 
 .. csv-table::
 	:header: Encoding, Reciprocal dur., Dur. (whole-note units), Musical name
@@ -226,8 +226,9 @@ of floating-point values.
 .. humdrumio::
 	:inputfile:	
 	:outputfile:	rhythm.rstd/durationoutput-dpf.krn
-	:transform:	:hxcom:`myank` -m 16-19 h://370chorales/chor199.krn | :hxcom:`satb2gs` | :hxcom:`ridx` -GL | :hxcom:`beat` -dpf
+	:transform:	:hxcom:`myank` -m 16-19 h://370chorales/chor199.krn | :hxcom:`ridx` -GL | :hxcom:`beat` -dpf
 	:style:		outputonly
+	:outputtabwidth:	12
 
 
 Here is an example of extracting the distribution of durations
@@ -287,5 +288,6 @@ which is the :exinterp:`recip` rhythm ``56%3``.
 	:outputfile:	rhythm.rstd/noc9-3-pdf.krn
 	:transform:	:hxcom:`beat` -dpf 
 	:style:		outputonly
+	:outputtabwidth:	15
 
 

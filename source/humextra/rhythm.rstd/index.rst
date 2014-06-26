@@ -65,7 +65,7 @@ reciprocal duration ratio with a denominator other than one is being
 represented.
 
 
-**Table.** Sample reciprocal encodings of rhythms in `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ and `\*\*kern <http://www.humdrum.org/Humdrum/representations/kern.rep.html>`_ representations.
+**Table.** Sample rational encodings of rhythms in `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ and `\*\*kern <http://www.humdrum.org/Humdrum/representations/kern.rep.html>`_ representations.
 
 .. csv-table::
 	:header: Encoding, Reciprocal dur., Dur. (whole-note units), Musical name
@@ -116,6 +116,7 @@ system:
 .. literalinclude:: rhythm.rstd/tripletwholenotes.krn
 	:language: humdrum
 
+
 .. raw:: html
 
 	</td><td align="center" width="30%"> 
@@ -124,6 +125,7 @@ system:
 
 .. literalinclude:: rhythm.rstd/triplethalfnotes.krn
 	:language: humdrum
+
 
 .. raw:: html
 
@@ -156,6 +158,7 @@ the "zero" representation.
 .. literalinclude:: rhythm.rstd/zero.krn
 	:language: humdrum
 
+
 .. raw:: html
 
 	</td><td align="center" width="30%"> 
@@ -164,6 +167,7 @@ the "zero" representation.
 
 .. literalinclude:: rhythm.rstd/zero-beat-d.krn
 	:language: humdrum
+
 
 .. raw:: html
 
@@ -182,6 +186,7 @@ the rational representation.
 .. literalinclude:: rhythm.rstd/zero-rational.krn
 	:language: humdrum
 
+
 .. raw:: html
 
 	</td><td align="center" width="30%"> 
@@ -190,6 +195,7 @@ the rational representation.
 
 .. literalinclude:: rhythm.rstd/zero-rational-beat-d.krn
 	:language: humdrum
+
 
 .. raw:: html
 
@@ -255,12 +261,14 @@ rhythmic texture is a sequence of continuous eighth notes.
 .. literalinclude:: rhythm.rstd/durationinput.krn
 	:language: humdrum
 
+
 .. raw:: html
 
 	</td><td width="4%">&nbsp;</td><td width="48%">
 
 .. literalinclude:: rhythm.rstd/durationoutput-dp.krn
 	:language: humdrum
+
 
 .. raw:: html
 
@@ -286,11 +294,13 @@ of floating-point values.
 .. raw:: html
 
 	<table width="100%"><tr> <td align="center" style="background-color: #cccccc;" colspan="3">
-	   <tt style="border: none; background-color: #cccccc;"><a href=http://extras.humdrum.org/man/myank>myank</a> -m 16-19 h://370chorales/chor199.krn | <a href=http://extras.humdrum.org/man/satb2gs>satb2gs</a> | <a href=http://extras.humdrum.org/man/ridx>ridx</a> -GL | <a href=http://extras.humdrum.org/man/beat>beat</a> -dpf</tt>
+	   <tt style="border: none; background-color: #cccccc;"><a href=http://extras.humdrum.org/man/myank>myank</a> -m 16-19 h://370chorales/chor199.krn | <a href=http://extras.humdrum.org/man/ridx>ridx</a> -GL | <a href=http://extras.humdrum.org/man/beat>beat</a> -dpf</tt>
 	</td></tr><tr><td colspan="3">
 
 .. literalinclude:: rhythm.rstd/durationoutput-dpf.krn
 	:language: humdrum
+	:tab-width: 12
+
 
 .. raw:: html
 
@@ -310,6 +320,7 @@ for the composite rhythm of 370 Bach chorales:
 
 .. literalinclude:: rhythm.rstd/chorale-composite-rhythm.txt
 	:language: humdrum
+
 
 .. raw:: html
 
@@ -364,6 +375,8 @@ which is the `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.re
 
 .. literalinclude:: rhythm.rstd/noc9-3-pdf.krn
 	:language: humdrum
+	:tab-width: 15
+
 
 .. raw:: html
 
