@@ -1,6 +1,6 @@
 
 
-.humDiv        { font-family: Incosolata,Consolata,Monaco,monospace; width:100%; padding:10px; background:#ffffff; align:center; border: 1px solid #e1e4e5; }
+.humDiv        { font-size: 12px; font-family: Incosolata,Consolata,Monaco,monospace; width:100%; padding:10px; background:#ffffff; align:center; border: 1px solid #e1e4e5; }
 .humTable      { padding:0; border-spacing:0; }
 .humSubtable   { padding:0; border-spacing:0; }
 .humLine:hover { background:#d0d0ff; }

@@ -373,7 +373,7 @@ which is the `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.re
 	</td></tr><tr><td colspan="3">
 	<div class="humDiv">
 	<table class="humTable">
-	<tr valign="baseline" class="humLine humRef"><td colspan=3><span class="humKey" title="Composer's name">!!!COM: Chopin, Frederic</span></td></tr>
+	<tr valign="baseline" class="humLine humRef"><td colspan=3><span class="humKey" title="Composer's name">!!!COM: Chopin, Fr&eacute;d&eacute;ric</span></td></tr>
 	<tr valign="baseline" class="humLine humRef"><td colspan=3><span class="humKey" title="Title">!!!OTL: Nocturne in B Major, op. 9/3</span></td></tr>
 	<tr valign="baseline" class="humLine humExinterp"><td class=" humTok  humSSdur humTr1 humTrackpad">**dur</td><td class=" humTok  humSSkern humTr2 humTrackpad">**kern</td><td class=" humTok  humSSkern humTr3">**kern</td></tr>
 	<tr valign="baseline" class="humLine humInterp"><td class=" humTok  humSSdur humTr1 humTrackpad">*</td><td class=" humTok  humSSkern humTr2 humTrackpad">*clefF4</td><td class=" humTok  humSSkern humTr3">*clefG2</td></tr>
