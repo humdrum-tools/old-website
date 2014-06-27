@@ -1,11 +1,3 @@
-.. image:: ../HumdrumIcon.gif
-    :alt:
-.. image:: ../HumdrumHeader.gif
-    :alt: Humdrum
-.. image:: ../HumdrumSpacer.gif
-    :alt:
-
-
 Sample Problems Using the Humdrum Toolkit
 =========================================
 

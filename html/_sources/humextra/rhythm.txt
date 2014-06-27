@@ -371,83 +371,65 @@ which is the `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.re
 	<table width="100%"><tr> <td align="center" style="background-color: #cccccc;" colspan="3">
 	   <tt style="border: none; background-color: #cccccc;"><a href=http://extras.humdrum.org/man/beat>beat</a> -dpf </tt>
 	</td></tr><tr><td colspan="3">
-	<table cellpadding="0" cellspacing="0">
-	<tr valign="baseline" class="humhi humref"><td colspan=3><span class="key" title="Composer's name">!!!COM: Chopin, Frederic</span></td></tr><tr valign="baseline" class="humhi humref"><td colspan=3><span class="key" title="Title">!!!OTL: Nocturne in B Major, op. 9/3</span></td></tr><tr valign="baseline" class="humhi humexinterp"><td class="humtd">**dur</td><td class="humtd">**kern</td><td class="humtd">**kern</td></tr>
-	<tr valign="baseline" class="humhi huminterp"><td class="humtd">*</td><td class="humtd">*clefF4</td><td class="humtd">*clefG2</td></tr>
-	<tr valign="baseline" class="humhi huminterp"><td class="humtd">*</td><td class="humtd">*k[f#c#g#d#a#]</td><td class="humtd">*k[f#c#g#d#a#]</td></tr>
-	<tr valign="baseline" class="humhi humbar"><td class="humtd">=8-</td><td class="humtd">=8-</td><td class="humtd">=8-</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/8</td><td class="humtd">(8FF#\L</td><td class="humtd">[2a#/</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/8</td><td class="humtd">8C#\</td><td class="humtd">.</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/8</td><td class="humtd">8A#\</td><td class="humtd">.</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/8</td><td class="humtd">8F#\</td><td class="humtd">.</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/24</td><td class="humtd">8e\</td><td class="humtd">24a#]/LL</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/24</td><td class="humtd">.</td><td class="humtd">(24e#/</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/24</td><td class="humtd">.</td><td class="humtd">24f#/J</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/32</td><td class="humtd">8A#\J)</td><td class="humtd">32g#/LL</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/32</td><td class="humtd">.</td><td class="humtd">32a#/</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/32</td><td class="humtd">.</td><td class="humtd">32b/</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/32</td><td class="humtd">.</td><td class="humtd">32c/JJJ)</td></tr>
-	<tr valign="baseline" class="humhi humbar"><td class="humtd">=9</td><td class="humtd">=9</td><td class="humtd">=9</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">3/40</td><td class="humtd">(8BB\L</td><td class="humtd">(40%3d#\L</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/20</td><td class="humtd">.</td><td class="humtd">40%3fn\</td></tr>
-	<tr valign="baseline" class="humhi hummanip"><td class="humtd">*</td><td class="humtd">*^</td><td class="humtd">*</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/40</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>8F#\</td><td width=10></td><td  width=70>4F#/</td></tr></table>
-	</td><td class="humtd">.</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">3/40</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>.</td><td width=10></td><td  width=70>.</td></tr></table>
-	</td><td class="humtd">40%3e\</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/40</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>.</td><td width=10></td><td  width=70>.</td></tr></table>
-	</td><td class="humtd">40%3c##\</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/20</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>8f#\J)</td><td width=10></td><td  width=70>.</td></tr></table>
-	</td><td class="humtd">.</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">3/40</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>.</td><td width=10></td><td  width=70>.</td></tr></table>
-	</td><td class="humtd">40%3d#\J)</td></tr>
-	<tr valign="baseline" class="humhi hummanip"><td class="humtd">*</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi hummanip"><td  width=70>*v</td><td width=10></td><td  width=70>*v</td></tr></table>
-	</td><td class="humtd">*</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">3/40</td><td class="humtd">(8BB\L</td><td class="humtd">(40%3dn\L</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/20</td><td class="humtd">.</td><td class="humtd">40%3e\</td></tr>
-	<tr valign="baseline" class="humhi hummanip"><td class="humtd">*</td><td class="humtd">*^</td><td class="humtd">*</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/40</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>8Fn\</td><td width=10></td><td  width=70>4Fn/</td></tr></table>
-	</td><td class="humtd">.</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">3/40</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>.</td><td width=10></td><td  width=70>.</td></tr></table>
-	</td><td class="humtd">40%3d#\</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/40</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>.</td><td width=10></td><td  width=70>.</td></tr></table>
-	</td><td class="humtd">40%3c#\</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/20</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>8fn\J)</td><td width=10></td><td  width=70>.</td></tr></table>
-	</td><td class="humtd">.</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">3/40</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>.</td><td width=10></td><td  width=70>.</td></tr></table>
-	</td><td class="humtd">40%3dn\J)</td></tr>
-	<tr valign="baseline" class="humhi hummanip"><td class="humtd">*</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi hummanip"><td  width=70>*v</td><td width=10></td><td  width=70>*v</td></tr></table>
-	</td><td class="humtd">*</td></tr>
-	<tr valign="baseline" class="humhi humbar"><td class="humtd">=10</td><td class="humtd">=10</td><td class="humtd">=10</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/8</td><td class="humtd">8BB\L</td><td class="humtd">[4.c#^</td></tr>
-	<tr valign="baseline" class="humhi hummanip"><td class="humtd">*</td><td class="humtd">*^</td><td class="humtd">*</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/8</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>8E\</td><td width=10></td><td  width=70>4E/</td></tr></table>
-	</td><td class="humtd">.</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/8</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>8e\J</td><td width=10></td><td  width=70>.</td></tr></table>
-	</td><td class="humtd">.</td></tr>
-	<tr valign="baseline" class="humhi hummanip"><td class="humtd">*</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi hummanip"><td  width=70>*v</td><td width=10></td><td  width=70>*v</td></tr></table>
-	</td><td class="humtd">*</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">3/56</td><td class="humtd">8BB\L</td><td class="humtd">(56%3c#]\LL</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">3/56</td><td class="humtd">.</td><td class="humtd">56%3b#\</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/56</td><td class="humtd">.</td><td class="humtd">56%3c#\</td></tr>
-	<tr valign="baseline" class="humhi hummanip"><td class="humtd">*</td><td class="humtd">*^</td><td class="humtd">*</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/28</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>8Gn\</td><td width=10></td><td  width=70>4Gn/</td></tr></table>
-	</td><td class="humtd">.</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">3/56</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>.</td><td width=10></td><td  width=70>.</td></tr></table>
-	</td><td class="humtd">56%3c##\</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/28</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>.</td><td width=10></td><td  width=70>.</td></tr></table>
-	</td><td class="humtd">56%3d#\</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/56</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>8gn\J</td><td width=10></td><td  width=70>.</td></tr></table>
-	</td><td class="humtd">.</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">3/56</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>.</td><td width=10></td><td  width=70>.</td></tr></table>
-	</td><td class="humtd">56%3e\</td></tr>
-	<tr valign="baseline" class="humhi humdat"><td class="humtd">3/56</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>.</td><td width=10></td><td  width=70>.</td></tr></table>
-	</td><td class="humtd">56%3e#\JJ)</td></tr>
-	<tr valign="baseline" class="humhi hummanip"><td class="humtd">*</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi hummanip"><td  width=70>*v</td><td width=10></td><td  width=70>*v</td></tr></table>
-	</td><td class="humtd">*</td></tr>
-	<tr valign="baseline" class="humhi humbar"><td class="humtd">=</td><td class="humtd">=</td><td class="humtd">=</td></tr>
-	<tr valign="baseline" class="humhi hummanip"><td class="humtd">*-</td><td class="humtd">*-</td><td class="humtd">*-</td></tr>
+	<div class="humDiv">
+	<table class="humTable">
+	<tr valign="baseline" class="humLine humRef"><td colspan=3><span class="humKey" title="Composer's name">!!!COM: Chopin, Frederic</span></td></tr>
+	<tr valign="baseline" class="humLine humRef"><td colspan=3><span class="humKey" title="Title">!!!OTL: Nocturne in B Major, op. 9/3</span></td></tr>
+	<tr valign="baseline" class="humLine humExinterp"><td class=" humTok  humSSdur humTr1 humTrackpad">**dur</td><td class=" humTok  humSSkern humTr2 humTrackpad">**kern</td><td class=" humTok  humSSkern humTr3">**kern</td></tr>
+	<tr valign="baseline" class="humLine humInterp"><td class=" humTok  humSSdur humTr1 humTrackpad">*</td><td class=" humTok  humSSkern humTr2 humTrackpad">*clefF4</td><td class=" humTok  humSSkern humTr3">*clefG2</td></tr>
+	<tr valign="baseline" class="humLine humInterp"><td class=" humTok  humSSdur humTr1 humTrackpad">*</td><td class=" humTok  humSSkern humTr2 humTrackpad">*k[f#c#g#d#a#]</td><td class=" humTok  humSSkern humTr3">*k[f#c#g#d#a#]</td></tr>
+	<tr valign="baseline" class="humLine humBar"><td class=" humTok  humSSdur humTr1 humTrackpad">=8-</td><td class=" humTok  humSSkern humTr2 humTrackpad">=8-</td><td class=" humTok  humSSkern humTr3">=8-</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad">(8FF#\L</td><td class=" humTok  humSSkern humTr3">[2a#/</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad">8C#\</td><td class=" humTok  humSSkern humTr3"><span class="humNull">.</span></td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad">8A#\</td><td class=" humTok  humSSkern humTr3"><span class="humNull">.</span></td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad">8F#\</td><td class=" humTok  humSSkern humTr3"><span class="humNull">.</span></td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/24</td><td class=" humTok  humSSkern humTr2 humTrackpad">8e\</td><td class=" humTok  humSSkern humTr3">24a#]/LL</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/24</td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3">(24e#/</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/24</td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3">24f#/J</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/32</td><td class=" humTok  humSSkern humTr2 humTrackpad">8A#\J)</td><td class=" humTok  humSSkern humTr3">32g#/LL</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/32</td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3">32a#/</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/32</td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3">32b/</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/32</td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3">32c/JJJ)</td></tr>
+	<tr valign="baseline" class="humLine humBar"><td class=" humTok  humSSdur humTr1 humTrackpad">=9</td><td class=" humTok  humSSkern humTr2 humTrackpad">=9</td><td class=" humTok  humSSkern humTr3">=9</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">3/40</td><td class=" humTok  humSSkern humTr2 humTrackpad">(8BB\L</td><td class=" humTok  humSSkern humTr3">(40%3d#\L</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/20</td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3">40%3fn\</td></tr>
+	<tr valign="baseline" class="humLine humManip"><td class=" humTok  humSSdur humTr1 humTrackpad">*</td><td class=" humTok  humSSkern humTr2 humTrackpad">*^</td><td class=" humTok  humSSkern humTr3">*</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/40</td><td class=" humTr2 humTrackpad"><table width="100%" class="humSubtable"><tr valign=baseline class="humLine humDat"><td width="50%" class=" humTok  humSSkern humSubtrackpad">8F#\</td><td width="50%" class=" humTok  humSSkern">4F#/</td></tr></table></td><td class=" humTok  humSSkern humTr3"><span class="humNull">.</span></td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">3/40</td><td class=" humTr2 humTrackpad"><table width="100%" class="humSubtable"><tr valign=baseline class="humLine humDat"><td width="50%" class=" humTok  humSSkern humSubtrackpad"><span class="humNull">.</span></td><td width="50%" class=" humTok  humSSkern"><span class="humNull">.</span></td></tr></table></td><td class=" humTok  humSSkern humTr3">40%3e\</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/40</td><td class=" humTr2 humTrackpad"><table width="100%" class="humSubtable"><tr valign=baseline class="humLine humDat"><td width="50%" class=" humTok  humSSkern humSubtrackpad"><span class="humNull">.</span></td><td width="50%" class=" humTok  humSSkern"><span class="humNull">.</span></td></tr></table></td><td class=" humTok  humSSkern humTr3">40%3c##\</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/20</td><td class=" humTr2 humTrackpad"><table width="100%" class="humSubtable"><tr valign=baseline class="humLine humDat"><td width="50%" class=" humTok  humSSkern humSubtrackpad">8f#\J)</td><td width="50%" class=" humTok  humSSkern"><span class="humNull">.</span></td></tr></table></td><td class=" humTok  humSSkern humTr3"><span class="humNull">.</span></td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">3/40</td><td class=" humTr2 humTrackpad"><table width="100%" class="humSubtable"><tr valign=baseline class="humLine humDat"><td width="50%" class=" humTok  humSSkern humSubtrackpad"><span class="humNull">.</span></td><td width="50%" class=" humTok  humSSkern"><span class="humNull">.</span></td></tr></table></td><td class=" humTok  humSSkern humTr3">40%3d#\J)</td></tr>
+	<tr valign="baseline" class="humLine humManip"><td class=" humTok  humSSdur humTr1 humTrackpad">*</td><td class=" humTr2 humTrackpad"><table width="100%" class="humSubtable"><tr valign=baseline class="humLine humManip"><td width="50%" class=" humTok  humSSkern humSubtrackpad">*v</td><td width="50%" class=" humTok  humSSkern">*v</td></tr></table></td><td class=" humTok  humSSkern humTr3">*</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">3/40</td><td class=" humTok  humSSkern humTr2 humTrackpad">(8BB\L</td><td class=" humTok  humSSkern humTr3">(40%3dn\L</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/20</td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3">40%3e\</td></tr>
+	<tr valign="baseline" class="humLine humManip"><td class=" humTok  humSSdur humTr1 humTrackpad">*</td><td class=" humTok  humSSkern humTr2 humTrackpad">*^</td><td class=" humTok  humSSkern humTr3">*</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/40</td><td class=" humTr2 humTrackpad"><table width="100%" class="humSubtable"><tr valign=baseline class="humLine humDat"><td width="50%" class=" humTok  humSSkern humSubtrackpad">8Fn\</td><td width="50%" class=" humTok  humSSkern">4Fn/</td></tr></table></td><td class=" humTok  humSSkern humTr3"><span class="humNull">.</span></td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">3/40</td><td class=" humTr2 humTrackpad"><table width="100%" class="humSubtable"><tr valign=baseline class="humLine humDat"><td width="50%" class=" humTok  humSSkern humSubtrackpad"><span class="humNull">.</span></td><td width="50%" class=" humTok  humSSkern"><span class="humNull">.</span></td></tr></table></td><td class=" humTok  humSSkern humTr3">40%3d#\</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/40</td><td class=" humTr2 humTrackpad"><table width="100%" class="humSubtable"><tr valign=baseline class="humLine humDat"><td width="50%" class=" humTok  humSSkern humSubtrackpad"><span class="humNull">.</span></td><td width="50%" class=" humTok  humSSkern"><span class="humNull">.</span></td></tr></table></td><td class=" humTok  humSSkern humTr3">40%3c#\</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/20</td><td class=" humTr2 humTrackpad"><table width="100%" class="humSubtable"><tr valign=baseline class="humLine humDat"><td width="50%" class=" humTok  humSSkern humSubtrackpad">8fn\J)</td><td width="50%" class=" humTok  humSSkern"><span class="humNull">.</span></td></tr></table></td><td class=" humTok  humSSkern humTr3"><span class="humNull">.</span></td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">3/40</td><td class=" humTr2 humTrackpad"><table width="100%" class="humSubtable"><tr valign=baseline class="humLine humDat"><td width="50%" class=" humTok  humSSkern humSubtrackpad"><span class="humNull">.</span></td><td width="50%" class=" humTok  humSSkern"><span class="humNull">.</span></td></tr></table></td><td class=" humTok  humSSkern humTr3">40%3dn\J)</td></tr>
+	<tr valign="baseline" class="humLine humManip"><td class=" humTok  humSSdur humTr1 humTrackpad">*</td><td class=" humTr2 humTrackpad"><table width="100%" class="humSubtable"><tr valign=baseline class="humLine humManip"><td width="50%" class=" humTok  humSSkern humSubtrackpad">*v</td><td width="50%" class=" humTok  humSSkern">*v</td></tr></table></td><td class=" humTok  humSSkern humTr3">*</td></tr>
+	<tr valign="baseline" class="humLine humBar"><td class=" humTok  humSSdur humTr1 humTrackpad">=10</td><td class=" humTok  humSSkern humTr2 humTrackpad">=10</td><td class=" humTok  humSSkern humTr3">=10</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad">8BB\L</td><td class=" humTok  humSSkern humTr3">[4.c#^</td></tr>
+	<tr valign="baseline" class="humLine humManip"><td class=" humTok  humSSdur humTr1 humTrackpad">*</td><td class=" humTok  humSSkern humTr2 humTrackpad">*^</td><td class=" humTok  humSSkern humTr3">*</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTr2 humTrackpad"><table width="100%" class="humSubtable"><tr valign=baseline class="humLine humDat"><td width="50%" class=" humTok  humSSkern humSubtrackpad">8E\</td><td width="50%" class=" humTok  humSSkern">4E/</td></tr></table></td><td class=" humTok  humSSkern humTr3"><span class="humNull">.</span></td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTr2 humTrackpad"><table width="100%" class="humSubtable"><tr valign=baseline class="humLine humDat"><td width="50%" class=" humTok  humSSkern humSubtrackpad">8e\J</td><td width="50%" class=" humTok  humSSkern"><span class="humNull">.</span></td></tr></table></td><td class=" humTok  humSSkern humTr3"><span class="humNull">.</span></td></tr>
+	<tr valign="baseline" class="humLine humManip"><td class=" humTok  humSSdur humTr1 humTrackpad">*</td><td class=" humTr2 humTrackpad"><table width="100%" class="humSubtable"><tr valign=baseline class="humLine humManip"><td width="50%" class=" humTok  humSSkern humSubtrackpad">*v</td><td width="50%" class=" humTok  humSSkern">*v</td></tr></table></td><td class=" humTok  humSSkern humTr3">*</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">3/56</td><td class=" humTok  humSSkern humTr2 humTrackpad">8BB\L</td><td class=" humTok  humSSkern humTr3">(56%3c#]\LL</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">3/56</td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3">56%3b#\</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/56</td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3">56%3c#\</td></tr>
+	<tr valign="baseline" class="humLine humManip"><td class=" humTok  humSSdur humTr1 humTrackpad">*</td><td class=" humTok  humSSkern humTr2 humTrackpad">*^</td><td class=" humTok  humSSkern humTr3">*</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/28</td><td class=" humTr2 humTrackpad"><table width="100%" class="humSubtable"><tr valign=baseline class="humLine humDat"><td width="50%" class=" humTok  humSSkern humSubtrackpad">8Gn\</td><td width="50%" class=" humTok  humSSkern">4Gn/</td></tr></table></td><td class=" humTok  humSSkern humTr3"><span class="humNull">.</span></td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">3/56</td><td class=" humTr2 humTrackpad"><table width="100%" class="humSubtable"><tr valign=baseline class="humLine humDat"><td width="50%" class=" humTok  humSSkern humSubtrackpad"><span class="humNull">.</span></td><td width="50%" class=" humTok  humSSkern"><span class="humNull">.</span></td></tr></table></td><td class=" humTok  humSSkern humTr3">56%3c##\</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/28</td><td class=" humTr2 humTrackpad"><table width="100%" class="humSubtable"><tr valign=baseline class="humLine humDat"><td width="50%" class=" humTok  humSSkern humSubtrackpad"><span class="humNull">.</span></td><td width="50%" class=" humTok  humSSkern"><span class="humNull">.</span></td></tr></table></td><td class=" humTok  humSSkern humTr3">56%3d#\</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/56</td><td class=" humTr2 humTrackpad"><table width="100%" class="humSubtable"><tr valign=baseline class="humLine humDat"><td width="50%" class=" humTok  humSSkern humSubtrackpad">8gn\J</td><td width="50%" class=" humTok  humSSkern"><span class="humNull">.</span></td></tr></table></td><td class=" humTok  humSSkern humTr3"><span class="humNull">.</span></td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">3/56</td><td class=" humTr2 humTrackpad"><table width="100%" class="humSubtable"><tr valign=baseline class="humLine humDat"><td width="50%" class=" humTok  humSSkern humSubtrackpad"><span class="humNull">.</span></td><td width="50%" class=" humTok  humSSkern"><span class="humNull">.</span></td></tr></table></td><td class=" humTok  humSSkern humTr3">56%3e\</td></tr>
+	<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">3/56</td><td class=" humTr2 humTrackpad"><table width="100%" class="humSubtable"><tr valign=baseline class="humLine humDat"><td width="50%" class=" humTok  humSSkern humSubtrackpad"><span class="humNull">.</span></td><td width="50%" class=" humTok  humSSkern"><span class="humNull">.</span></td></tr></table></td><td class=" humTok  humSSkern humTr3">56%3e#\JJ)</td></tr>
+	<tr valign="baseline" class="humLine humManip"><td class=" humTok  humSSdur humTr1 humTrackpad">*</td><td class=" humTr2 humTrackpad"><table width="100%" class="humSubtable"><tr valign=baseline class="humLine humManip"><td width="50%" class=" humTok  humSSkern humSubtrackpad">*v</td><td width="50%" class=" humTok  humSSkern">*v</td></tr></table></td><td class=" humTok  humSSkern humTr3">*</td></tr>
+	<tr valign="baseline" class="humLine humBar"><td class=" humTok  humSSdur humTr1 humTrackpad">=</td><td class=" humTok  humSSkern humTr2 humTrackpad">=</td><td class=" humTok  humSSkern humTr3">=</td></tr>
+	<tr valign="baseline" class="humLine humManip"><td class=" humTok  humSSdur humTr1 humTrackpad">*-</td><td class=" humTok  humSSkern humTr2 humTrackpad">*-</td><td class=" humTok  humSSkern humTr3">*-</td></tr>
 	</table>
+	</div>
 
 	</td></tr></table>
 

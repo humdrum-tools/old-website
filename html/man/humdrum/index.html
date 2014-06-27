@@ -1,0 +1,983 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Command: humdrum &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../"/>
+        <link rel="up" title="Humdrum Command Manual" href="../"/>
+        <link rel="next" title="Command: humsed" href="../humsed/"/>
+        <link rel="prev" title="Command: hum2fin" href="../hum2fin/"/>
+   <link rel="stylesheet" type"text/css" href="../../_static/humdrum.css">
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">Humdrum Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../install/github/">Installing Humdrum Tools from GitHub</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/">The Humdrum User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch01/">Chapter 1: Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch02/">Chapter 2: Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch03/">Chapter 3: Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch04/">Chapter 4: Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch05/">Chapter 5: The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch06/">Chapter 6: Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch07/">Chapter 7: MIDI Output Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch08/">Chapter 8: The Shell (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch09/">Chapter 9: Searching with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch10/">Chapter 10: Musical Uses of Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch11/">Chapter 11: Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch12/">Chapter 12: Selecting Musical Parts and Passages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch13/">Chapter 13: Assembling Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch14/">Chapter 14: Stream Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch15/">Chapter 15: Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch16/">Chapter 16: The Shell (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch17/">Chapter 17: Creating Inventories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch18/">Chapter 18: Fingers, Footsteps and Frets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch19/">Chapter 19: Musical Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch20/">Chapter 20: Strophes, Verses, and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch21/">Chapter 21: Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch22/">Chapter 22: Classifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch23/">Chapter 23: Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch24/">Chapter 24: The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch25/">Chapter 25: Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch26/">Chapter 26: Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch27/">Chapter 27: Text and Lyrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch28/">Chapter 28: Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch29/">Chapter 29: Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch30/">Chapter 30:MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch31/">Chapter 31: Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch32/">Chapter 32: The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch33/">Chapter 33: Word Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch34/">Chapter 34: Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch35/">Chapter 35: Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch36/">Chapter 33: Sound and Spectra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch37/">Chapter 37: Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch38/">Chapter 38: Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch39/">Chapter 39: Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch40/">Chapter 40: Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/bibliography/">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/sample.problems/">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/searching/">Music Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/midi/">MIDI Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/notation/">Graphical Musical Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/other/">Other Useful Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/programming/">Humdrum Extras Programming Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cookbook/">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cookbook/vimHighlighting/">Syntax Coloring in Vim</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../">Humdrum Command Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../assemble/">Command: assemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barks/">Command: barks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cbr/">Command: cbr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../census/">Command: census</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cents/">Command: cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cleave/">Command: cleave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cocho/">Command: cocho</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../context/">Command: context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../correl/">Command: correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deg/">Command: deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../degree/">Command: degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../diss/">Command: diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ditto/">Command: ditto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dur/">Command: dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ekern/">Command: ekern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../encode/">Command: encode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extract/">Command: extract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fade/">Command: fade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fields/">Command: fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fin2hum/">Command: fin2hum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../freq/">Command: freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hint/">Command: hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hum2fin/">Command: hum2fin</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Command: humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../humsed/">Command: humsed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../humver/">Command: humver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../infot/">Command: infot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../iv/">Command: iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kern/">Command: kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../key/">Command: key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../melac/">Command: melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../melvel/">Command: melvel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metpos/">Command: metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../midi/">Command: midi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../midreset/">Command: midreset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mint/">Command: mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ms/">Command: ms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nf/">Command: nf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../num/">Command: num</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../patt/">Command: patt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pattern/">Command: pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pc/">Command: pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pcset/">Command: pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../perform/">Command: perform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pf/">Command: pf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pitch/">Command: pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../proof/">Command: proof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../recode/">Command: recode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../record/">Command: record</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regexp/">Command: regexp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reihe/">Command: reihe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rend/">Command: rend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rid/">Command: rid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scramble/">Command: scramble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../semits/">Command: semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simil/">Command: simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smf/">Command: smf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solfa/">Command: solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solfg/">Command: solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../specc/">Command: specc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spect/">Command: spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../strophe/">Command: strophe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../synco/">Command: synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tacet/">Command: tacet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">Command: text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../themefinder/">Command: thmea</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../thru/">Command: thru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../timebase/">Command: timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tonh/">Command: tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trans/">Command: trans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../urrhythm/">Command: urrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../veritas/">Command: veritas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vox/">Command: vox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xdelta/">Command: xdelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../yank/">Command: yank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ydelta/">Command: ydelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../#commands">Commands</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../rep/">Pre-defined Humdrum Data Representations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/barlines/">Representation: barlines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/IPA/">Representation: **IPA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/MIDI/">Representation: **MIDI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/Tonh/">Representation: **Tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/URrhythm/">Representation: **URrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/Zeit/">Representation: **Zeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/bhatk/">Representation: **bhatk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/cents/">Representation: **cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/correl/">Representation: **correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/dB/">Representation: **dB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/date/">Representation: **date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/deg/">Representation: **deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/degree/">Representation: **degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/diss/">Representation: **diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/dur/">Representation: **dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/embel/">Representation: **embel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/freq/">Representation: **freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/fret/">Representation: **fret</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/harm/">Representation: **harm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/hildegard/">Representation: **hildegard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/hint/">Representation: **hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/iv/">Representation: **iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/kern/">Representation: **kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/melac/">Representation: **melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/metpos/">Representation: **metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/mint/">Representation: **mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/ordo/">Representation: **ordo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/pc/">Representation: **pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/pcset/">Representation: **pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/pitch/">Representation: **pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/recip/">Representation: **recip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/semits/">Representation: **semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/silbe/">Representation: **silbe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/simil/">Representation: **simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/solfa/">Representation: **solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/solfg/">Representation: **solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/specC/">Representation: **specC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/spect/">Representation: **spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/synco/">Representation: **synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/takt/">Representation: **takt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/text/">Representation: **text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/time/">Representation: **time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/timebase/">Representation: **timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/vox/">Representation: **vox#</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../">Docs</a> &raquo;</li>
+      
+          <li><a href="../">Humdrum Command Manual</a> &raquo;</li>
+      
+    <li>Command: humdrum</li>
+      <li class="wy-breadcrumbs-aside">
+        
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="command-humdrum">
+<h1>Command: humdrum<a class="headerlink" href="#command-humdrum" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="command">
+<h2>COMMAND<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h2>
+<p><strong>humdrum</strong> &#8211; general syntax checker for Humdrum files</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p>`` humdrum  [-v]  [inputfile ...]``</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>humdrum</strong> command identifies whether an input conforms to the
+Humdrum representation syntax. Error messages are issued where
+appropriate. If the input conforms to the Humdrum syntax, then the
+<strong>humdrum</strong> command produces no output, unless the verbose (<strong>-v</strong>)
+option is invoked.</p>
+<p>Formally, a Humdrum representation may be defined as any ASCII input
+containing zero or more <em>comments, data records</em> or <em>interpretations</em> &#8211;
+with the restriction that no <em>data records</em> or <em>local comments</em> appear
+without a prior <em>exclusive interpretation,</em> and that the file maintain a
+coherent <em>spine</em> organization.</p>
+<p>Humdrum comments are records (lines) that begin with an exclamation mark
+(!). Local comments begin each active spine with a single exclamation
+mark, whereas gobal comments begin with two exclamation marks (!!) at
+the beginning of the record.</p>
+<p>Humdrum interpretations are records that begin with an asterisk (*).
+Tandem interpretations begin each active spine with a single asterisk,
+whereas exclusive interpretations begin the record with one or more
+asterisks and have at least one active spine beginning with two
+asterisks. Spine-path indicators are special types of interpretations
+that include any one of the following tokens: *+ *- *v *^ or *x.
+Spine-path indicators cannot appear on the same line with a tandem or
+exclusive interpretation.</p>
+<p>Any record that does not begin with either an exclamation mark of
+asterisk is a data record.</p>
+<p>The following table defines some of the pertinent Humdrum terminology.</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><em>record</em></td>
+<td>a line of text; a sequences of (zero or more) ASCII characters</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>terminated by a carriage return or newline character</td>
+</tr>
+<tr class="row-odd"><td><em>data record</em></td>
+<td>any <em>record</em> which is not a <em>comment</em> or an <em>interpretation</em></td>
+</tr>
+<tr class="row-even"><td><em>comment</em></td>
+<td>a <em>global</em> or <em>local comment</em></td>
+</tr>
+<tr class="row-odd"><td><em>global comment</em></td>
+<td>any <em>record</em> beginning with two exclamation marks (!!)</td>
+</tr>
+<tr class="row-even"><td><em>local comment</em></td>
+<td>any <em>record</em> beginning with a single exclamation mark (!)</td>
+</tr>
+<tr class="row-odd"><td><em>interpretation</em></td>
+<td>an <em>exclusive</em> or <em>tandem interpretation</em>, or a <em>spine-path indicator</em></td>
+</tr>
+<tr class="row-even"><td><em>exclusive interpretation</em></td>
+<td>any <em>record</em> beginning with one or more asterisks (**) and</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>having at least one active spine beginning with two asterisks</td>
+</tr>
+<tr class="row-even"><td><em>tandem interpretation</em></td>
+<td>any <em>record</em> in which each active spine begins with a single</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>asterisk, excluding spine-path indicators</td>
+</tr>
+<tr class="row-even"><td><em>spine-path indicator</em></td>
+<td>one of the following five <em>interpretations</em>: *+ *- *v *^ *x</td>
+</tr>
+<tr class="row-odd"><td><em>null token</em></td>
+<td>the period (.) either alone on a single <em>record</em> or</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>separated from other characters by tabs</td>
+</tr>
+<tr class="row-odd"><td><em>spine</em></td>
+<td>a column of information &#8211; including <em>data records, local</em></td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><em>comments</em>, and <em>interpretations.</em></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><em>Some Humdrum Definitions</em></p>
+<p>The following files may satisfy the Humdrum syntactical requirements:</p>
+<ul class="simple">
+<li>a file containing data records preceded by at least one exclusive
+interpretation</li>
+<li>a file containing only comments and interpretations</li>
+<li>a file containing only interpretations</li>
+<li>a file containing only global comments</li>
+<li>a totally empty file.</li>
+</ul>
+<p>Additional interpretations may be added throughout the file. Global
+comments may appear anywhere in the file. Local comments and data
+records can appear only after a spine has been initiated via an
+exclusive interpretation.</p>
+<p>Illegal constructions in Humdrum include the following:</p>
+<ul class="simple">
+<li>empty record (i.e. a record containing only a carriage return or
+newline)</li>
+<li>record containing only tabs</li>
+<li>any record beginning with a tab</li>
+<li>any record ending with a tab (except in a global comment)</li>
+<li>any record containing two successive tab characters (except in a
+global comment)</li>
+<li>any data record with fewer or more spines than the immediately
+preceding data or exclusive interpretation record</li>
+<li>spine-path record containing only one join-spine indication</li>
+<li>spine-path record containing only one exchange-spine indication, or
+containing more than two exchange-spine indicators.</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="spine-organization">
+<h2>SPINE ORGANIZATION<a class="headerlink" href="#spine-organization" title="Permalink to this headline">¶</a></h2>
+<p>A Humdrum file must maintain a coherent spine organization. Spines are
+columns of information separated by tabs. Each spine must be labelled
+with an exclusive interpretation. If the number of spines varies in a
+given file, spines must be added, terminated, split, joined, or
+exchanged using the appropriate spine path indicators. Spines may (1)
+start, (2) terminate, (3) split (into two), (4) join (<em>n</em>-into-one), and
+(5) exchange.</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">*+</span></tt></td>
+<td><ul class="first last simple">
+<li>start a new spine</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">*-</span></tt></td>
+<td><ul class="first last simple">
+<li>terminate a current spine</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">*^</span></tt></td>
+<td><ul class="first last simple">
+<li>split a spine (into two)</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">*v</span></tt></td>
+<td><ul class="first last simple">
+<li>join (two or more) spines into one</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">*x</span></tt></td>
+<td><ul class="first last simple">
+<li>exchange the position of two spines</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><em>Spine-path Indicators</em></p>
+<p>The use of various spine-path indicators is illustrated below:</p>
+<blockquote>
+<div>1
+2
+3
+*
+*+
+*
+*
+*
+**inter
+*
+(must follow immediately after)
+1
+2
+new
+3
+1
+2
+3
+*
+*-
+*
+1
+3
+1
+2
+3
+*
+*^
+*
+1
+2a
+2b
+3
+1
+2
+3
+*
+*v
+*v
+1
+2&amp;3
+1
+2
+3
+*x
+*x
+*
+2
+1
+3
+More complex examples:
+1
+2
+3
+4
+5
+*
+*-
+*
+*-
+*
+*v
+*v
+*v
+1&amp;3&amp;5
+1
+2
+3
+4
+*
+*
+*v
+*v
+*
+*x
+*x
+*v
+*v
+*
+1&amp;3&amp;4
+2
+1
+2
+3
+4
+*v
+*v
+*^
+*^
+1&amp;2
+3a
+3b
+4a
+4b
+1
+2
+3
+4
+5
+*
+*-
+*
+*
+*
+*v
+*v
+*
+*
+*
+*^
+*
+*
+*
+*+
+*
+*
+*
+*
+**inter
+*
+1&amp;3
+4a
+4b
+new
+5</div></blockquote>
+</div>
+<hr class="docutils" />
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>humdrum</strong> command provides the following options:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>-h</strong></td>
+<td>displays a help screen summarizing the command syntax</td>
+</tr>
+<tr class="row-even"><td><strong>-v</strong></td>
+<td>verbose mode</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Options are specified in the command line.</p>
+<p>The <strong>-v</strong> option invokes the verbose mode which provides summary
+information and statistics concerning the input file. A list of all of
+interpretations found in the file is output. In addition, an inventory
+of all of the ASCII signifiers (characters) found in the data records is
+output. The total number of data records is also provided, as well as
+the number of null tokens encountered.</p>
+<p>The verbose summary also produces a number of statistics related to the
+spine-organization in the Humdrum file. Both the minimum and maximum
+number of spines are identified. The paths of the various spines through
+the file are also summarized. Specifically, <strong>humdrum</strong> indicates the
+number of terminated spines, the number of new spines introduced, the
+number of joined spines, the number of split spines, and the number of
+exchanged spines.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>The following is a sample input that conforms to the Humdrum syntax.</p>
+<hr class="docutils" />
+<blockquote>
+<div>!! This is a global comment.
+!! The following line specifies three
+!! interpretations called &#8220;inter&#8221;:
+**inter
+**inter
+**inter
+!! The next line has three local comments.
+! flute
+! oboe
+! fingering
+We
+are
+ASCII
+data
+tokens
+.
+We are
+data as
+well.
+!! The above three lines are data records.
+!! More examples of data records:
+76.3
+x+y
+L(-)%4^
+_ _ _
+_ _
+_ _ _ _ _
+&gt;
+&lt;
+|||
+!! The next data record contains
+!! only null tokens:
+.
+.
+.
+!! Some spine-path exchanges:
+!Spine1
+!Spine2
+!Spine3
+*x
+*x
+*
+*
+*x
+*x
+!Spine2
+!Spine3
+!Spine1
+Monday
+Tuesday
+Wednesday
+4:00
+5:00
+6:00PM
+!! Some null comments follow:
+!!
+!
+!
+!
+!! New exclusive interpretations:
+**foo
+**bar
+**ding
+!! A tandem interpretation in spine #2:
+*
+*bop
+*
+More
+data
+tokens.
+!! Some spine-path terminators:
+*-
+*-
+*-</div></blockquote>
+<p>Where the verbose <strong>(-v)</strong> flag has been selected, the corresponding
+output for the above file would be:</p>
+<blockquote>
+<div>`` Inventory of Interpretations:                           HUMDRUM FILE SUMMARY            Interpretations  Occurrences          <a href="#id1"><span class="problematic" id="id2">**</span></a>inter          3          <a href="#id3"><span class="problematic" id="id4">**</span></a>foo            1          <a href="#id5"><span class="problematic" id="id6">**</span></a>bar            1          <a href="#id7"><span class="problematic" id="id8">**</span></a>ding           1          *                2          <a href="#id9"><span class="problematic" id="id10">*</span></a>bop             1    Inventory of data token signifiers:     %()+-.034567:&lt;&gt;                                          ACILMPSTW^_                                          adeklnorstuwxy    Number of global comments:      14      Number of local comments:       4  Maximum # of concurrent spines: 3       Minimum # of concurrent spines: 3  Number of data records:         10      Number of null tokens:          4      Changes in number of spines:          New spines:        0          Terminated spines: 3          Split spines:      0          Joined spines:     0          Exchanges spines:  4``</div></blockquote>
+</div>
+<hr class="docutils" />
+<div class="section" id="files">
+<h2>FILES<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>humdrum</strong> command uses a kornshell script to invoke an executable.
+In order to avoid conflict, the executable file is named
+<tt class="docutils literal"><span class="pre">humdrum_.exe</span></tt> (<tt class="docutils literal"><span class="pre">humdrum_</span></tt> on UNIX) rather than <tt class="docutils literal"><span class="pre">humdrum.exe</span></tt>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="portability">
+<h2>PORTABILITY<a class="headerlink" href="#portability" title="Permalink to this headline">¶</a></h2>
+<p>DOS 2.0 and up, with the MKS Toolkit. OS/2 with the MKS Toolkit. UNIX
+systems supporting the <em>Korn</em> shell or <em>Bourne</em> shell command
+interpreters, and revised <em>awk</em> (1985).</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="census.html">**census**</a> (4), <a class="reference external" href="proof.html">**proof**</a> (4)</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="diagnostics">
+<h2>DIAGNOSTICS<a class="headerlink" href="#diagnostics" title="Permalink to this headline">¶</a></h2>
+<p>The following list tabulates all of the potential errors and warnings
+issued by the <strong>humdrum</strong> command. <a href="#id11"><span class="problematic" id="id12">``</span></a><a href="#id13"><span class="problematic" id="id14">``</span></a></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>ERROR 1:</td>
+<td>Record containing add-spine indicator has not been followed</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>by exclusive interpretation for that spine in line</td>
+</tr>
+<tr class="row-odd"><td>ERROR 2:</td>
+<td>Illegal empty record in line</td>
+</tr>
+<tr class="row-even"><td>ERROR 3:</td>
+<td>Leading tab in line</td>
+</tr>
+<tr class="row-odd"><td>ERROR 4:</td>
+<td>Trailing tab in line</td>
+</tr>
+<tr class="row-even"><td>ERROR 5:</td>
+<td>Consecutive tabs in line</td>
+</tr>
+<tr class="row-odd"><td>ERROR 6:</td>
+<td>Missing initial asterisk in interpretation keyword in line</td>
+</tr>
+<tr class="row-even"><td>ERROR 7:</td>
+<td>Null exclusive interpretation found in line</td>
+</tr>
+<tr class="row-odd"><td>ERROR 8:</td>
+<td>Incorrect number of spines in interpretation record in line</td>
+</tr>
+<tr class="row-even"><td>ERROR 9:</td>
+<td>Local comment precedes first exclusive interpretation record in line</td>
+</tr>
+<tr class="row-odd"><td>ERROR 10:</td>
+<td>Number of sub-comments in local comment does not match the</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>number of currently active spines in line</td>
+</tr>
+<tr class="row-odd"><td>ERROR 11:</td>
+<td>Missing initial exclamation mark in local comment in line</td>
+</tr>
+<tr class="row-even"><td>ERROR 12:</td>
+<td>Data record appears before first exclusive interpretation</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>record in line</td>
+</tr>
+<tr class="row-even"><td>ERROR 13:</td>
+<td>Number of tokens in data record does not match the number</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>of currently active spines in line</td>
+</tr>
+<tr class="row-even"><td>ERROR 14:</td>
+<td>All spines have not been properly terminated in file</td>
+</tr>
+<tr class="row-odd"><td>ERROR 15:</td>
+<td>First exclusive interpretation record contains a null</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>interpretation in line</td>
+</tr>
+<tr class="row-odd"><td>ERROR 16:</td>
+<td>First exclusive interpretation record contains a spine-path</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>indicator in line</td>
+</tr>
+<tr class="row-odd"><td>ERROR 17:</td>
+<td>First exclusive interpretation record contains a</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>non-exclusive interpretation in line</td>
+</tr>
+<tr class="row-odd"><td>ERROR 18:</td>
+<td>Spine-path indicators mixed with keyword interpretations in line</td>
+</tr>
+<tr class="row-even"><td>ERROR 19:</td>
+<td>Improper number of exchange-path indicators in line</td>
+</tr>
+<tr class="row-odd"><td>ERROR 20:</td>
+<td>Single join-path indicator found at end of interpretation</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>record in line</td>
+</tr>
+<tr class="row-odd"><td>ERROR 21:</td>
+<td>Join-path indicator is not adjacent to another join-path</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>indicator in line</td>
+</tr>
+<tr class="row-odd"><td>ERROR 22:</td>
+<td>Exclusive interpretations do not match for designated</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>join spines in line</td>
+</tr>
+<tr class="row-odd"><td>ERROR 23:</td>
+<td>Leading spaces in token in line</td>
+</tr>
+<tr class="row-even"><td>ERROR 24:</td>
+<td>Trailing spaces in token in line</td>
+</tr>
+<tr class="row-odd"><td>ERROR 25:</td>
+<td>Consecutive spaces in token in line</td>
+</tr>
+<tr class="row-even"><td>ERROR 26:</td>
+<td>Multiple-stop contains null token in line</td>
+</tr>
+<tr class="row-odd"><td>WARNING 1:</td>
+<td>Local comment may be mistaken for global comment in line</td>
+</tr>
+<tr class="row-even"><td>WARNING 2:</td>
+<td>Data token may be mistaken for global comment in line</td>
+</tr>
+<tr class="row-odd"><td>WARNING 3:</td>
+<td>Data token may be mistaken for local comment in line</td>
+</tr>
+<tr class="row-even"><td>WARNING 4:</td>
+<td>Data token may be mistaken for exclusive interpretation in line</td>
+</tr>
+<tr class="row-odd"><td>WARNING 5:</td>
+<td>Data token may be mistaken for tandem interpretation in line</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><em>Potential errors and warnings issued by **humdrum*</em>.*</p>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="../guide05.html#The_humdrum_Command">**Pertinent description in the Humdrum User
+Guide**</a></li>
+<li><a class="reference external" href="../commands.toc.html">**Index to Humdrum Commands**</a></li>
+<li><a class="reference external" href="../guide.toc.html">**Table for Contents for Humdrum User Guide**</a></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  <hr/>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <center><a href="../humsed/" class="btn btn-neutral float-right" title="Command: humsed">Next <span class="fa fa-arrow-circle-right"></span></a></center>
+      
+      
+        <a href="../hum2fin/" class="btn btn-neutral" title="Command: hum2fin"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+      
+             <center><a href="../../_sources/man/humdrum.txt" rel="nofollow"> View page source</a></center>
+      
+    </div>
+  
+
+
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+   
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-52162357-1', 'humdrum.org');
+  ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>

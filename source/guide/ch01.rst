@@ -1,4 +1,3 @@
-
 =====================================
 Chapter 1: Humdrum: A Brief Tour
 =====================================
@@ -253,27 +252,19 @@ combination of an asterisk and hyphen.
 
 **Table 1.3** A Humdrum Equivalent to Table 1.2
 
-+-------------+---------------+---------------+-----------------------+       
-| **Note      | **Pitch       | **Duration    | **Valve Combination** |
-+=============+===============+===============+=======================+       
-| 1st note    | C4            | Quarter       | 0                     |
-+-------------+---------------+---------------+-----------------------+       
-| 2nd note    | B3            | Eighth        | 2                     |
-+-------------+---------------+---------------+-----------------------+       
-| 3rd note    | G4            | Eighth        | 0                     |
-+-------------+---------------+---------------+-----------------------+       
-| 4th note    | F4            | Eighth        | 1                     |
-+-------------+---------------+---------------+-----------------------+       
-| 5th note    | G4            | Eighth        | 0                     |
-+-------------+---------------+---------------+-----------------------+       
-| 6th note    | A4            | Quarter       | 1-2                   |
-+-------------+---------------+---------------+-----------------------+       
-| 7th note    | G4            | Eighth        | 0                     |
-+-------------+---------------+---------------+-----------------------+       
-| 8th note    | Ab4           | Quarter       | 2-3                   |
-+-------------+---------------+---------------+-----------------------+       
-| *-          | *-            | *-            | *-                    |
-+-------------+---------------+---------------+-----------------------+       
+.. csv-table::
+	:header: "\*\*Note", "\*\*Pitch", "\*\*Duration", "\*\*Valves"
+
+	1st note    , C4            , Quarter       , 0  
+	2nd note    , B3            , Eighth        , 2  
+	3rd note    , G4            , Eighth        , 0  
+	4th note    , F4            , Eighth        , 1  
+	5th note    , G4            , Eighth        , 0  
+	6th note    , A4            , Quarter       , 1-2
+	7th note    , G4            , Eighth        , 0  
+	8th note    , Ab4           , Quarter       , 2-3
+	*-          , *-            , *-            , *- 
+
 
 It does not matter what characters appear in the table -- numbers, letters,
 symbols, etc. (although there are some restrictions concerning the use of
@@ -340,21 +331,21 @@ useful to extract material according to the encoded content without regard to
 the position of the spine. For example, the following command will extract
 all spines containing a label indicating the tenor part(s).
 
-``extract -i '*Itenor' filename``
+``extract -i '\*Itenor' filename``
 
 Instruments can be labelled by "instrument class" and so can be extracted
 accordingly. The following command extracts all of the woodwind parts:
 
-``extract -i '*ICww' filename``
+``extract -i '\*ICww' filename``
 
 Any vocal text can be similarly extracted:
 
-``extract -i '`**text`_' filename``
+``extract -i '`\*\*text`_' filename``
 
 Or if the text is available in more than one language, a specific language
 may be isolated:
 
-``extract -i '*LDeutsch' filename``
+``extract -i '\*LDeutsch' filename``
 
 Segments or passages of music can be extracted using the `**yank**`_ command.
 Segments can be defined by sections, phrases, measures, or other any user-
@@ -376,17 +367,17 @@ will be discussed fully in the ensuing chapters. For now, it is important
 only that you get a feel for some of the types of operations that Humdrum
 users might perform.
 
-Two or more commands can be connected into a *pipeline.* The following
+Two or more commands can be connected into a *pipeline*. The following
 command will let us determine whether there are any notes in the bassoon
 part:
 
-``extract -i '*Ifagot' filename | census -k``
+``extract -i '\*Ifagot' filename | census -k``
 
 The following pipeline connects together four commands: it will play (using
 MIDI) the first and last measures from a section marked "Coda" at half the
 notated tempo from a file named ``Cui``:
 
-``yank -s '*>Coda' Cui | yank -o ^= -r 1,$ | midi | perform -t .5``
+``yank -s '\*>Coda' Cui | yank -o ^= -r 1,$ | midi | perform -t .5``
 
 Some tools translate from one representation to another. For example, the
 `**mint**`_ command generates melodic interval information. The following
@@ -401,31 +392,31 @@ is a common computer utility and is not part of the Humdrum Toolkit.
 Depending on the type of translation, the resulting data can be searched for
 different things. The following command identifies French sixth chords:
 
-``solfa file | extract -i '`**solfa`_' | ditto | grep '6-.*4+' | grep 2``
+``solfa file | extract -i '`\*\*solfa`_' | ditto | grep '6-.\*4+' | grep 2``
 
 Locate all sonorities in the music of Machaut where the seventh scale degree
 has been doubled:
 
-``deg -t machaut* | grep -n '7[^-+].*7'``
+``deg -t machaut\* | grep -n '7[^-+].\*7'``
 
 Count the number of phrases that end on the subdominant pitch:
 
-``deg filename | egrep -c '(}.*4)|(4.*})'``
+``deg filename | egrep -c '(}.\*4)|(4.\*})'``
 
 The following command identifies all scores whose instrumentation includes a
 tuba but not a trumpet:
 
-``grep -sl '!!!AIN.*tuba' * | grep -v 'tromp'``
+``grep -sl '!!!AIN.\*tuba' \* | grep -v 'tromp'``
 
 Some tasks may require more than one command line. For example, the following
 three-line script locates any parallel fifths between the bass and alto
 voices of any input file:
 
 ``echo P5 > P5
-echo '= *' >> P5``
+echo '= \*' >> P5``
 
 ``echo P5 >> P5
-extract -i '*Ibass,*Ialto' file | hint -c | pattern -s = P5``
+extract -i '\*Ibass,\*Ialto' file | hint -c | pattern -s = P5``
 
 More complicated scripts can be written to carry out more sophisticated
 musical processes. In later chapters we'll encounter some scripts that

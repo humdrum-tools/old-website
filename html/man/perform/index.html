@@ -1,0 +1,697 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Command: perform &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../"/>
+        <link rel="up" title="Humdrum Command Manual" href="../"/>
+        <link rel="next" title="Command: pf" href="../pf/"/>
+        <link rel="prev" title="Command: pcset" href="../pcset/"/>
+   <link rel="stylesheet" type"text/css" href="../../_static/humdrum.css">
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">Humdrum Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../install/github/">Installing Humdrum Tools from GitHub</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/">The Humdrum User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch01/">Chapter 1: Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch02/">Chapter 2: Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch03/">Chapter 3: Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch04/">Chapter 4: Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch05/">Chapter 5: The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch06/">Chapter 6: Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch07/">Chapter 7: MIDI Output Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch08/">Chapter 8: The Shell (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch09/">Chapter 9: Searching with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch10/">Chapter 10: Musical Uses of Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch11/">Chapter 11: Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch12/">Chapter 12: Selecting Musical Parts and Passages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch13/">Chapter 13: Assembling Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch14/">Chapter 14: Stream Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch15/">Chapter 15: Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch16/">Chapter 16: The Shell (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch17/">Chapter 17: Creating Inventories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch18/">Chapter 18: Fingers, Footsteps and Frets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch19/">Chapter 19: Musical Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch20/">Chapter 20: Strophes, Verses, and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch21/">Chapter 21: Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch22/">Chapter 22: Classifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch23/">Chapter 23: Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch24/">Chapter 24: The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch25/">Chapter 25: Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch26/">Chapter 26: Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch27/">Chapter 27: Text and Lyrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch28/">Chapter 28: Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch29/">Chapter 29: Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch30/">Chapter 30:MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch31/">Chapter 31: Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch32/">Chapter 32: The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch33/">Chapter 33: Word Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch34/">Chapter 34: Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch35/">Chapter 35: Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch36/">Chapter 33: Sound and Spectra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch37/">Chapter 37: Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch38/">Chapter 38: Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch39/">Chapter 39: Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch40/">Chapter 40: Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/bibliography/">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/sample.problems/">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/searching/">Music Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/midi/">MIDI Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/notation/">Graphical Musical Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/other/">Other Useful Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/programming/">Humdrum Extras Programming Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cookbook/">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cookbook/vimHighlighting/">Syntax Coloring in Vim</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../">Humdrum Command Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../assemble/">Command: assemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barks/">Command: barks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cbr/">Command: cbr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../census/">Command: census</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cents/">Command: cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cleave/">Command: cleave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cocho/">Command: cocho</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../context/">Command: context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../correl/">Command: correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deg/">Command: deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../degree/">Command: degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../diss/">Command: diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ditto/">Command: ditto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dur/">Command: dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ekern/">Command: ekern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../encode/">Command: encode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extract/">Command: extract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fade/">Command: fade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fields/">Command: fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fin2hum/">Command: fin2hum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../freq/">Command: freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hint/">Command: hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hum2fin/">Command: hum2fin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../humdrum/">Command: humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../humsed/">Command: humsed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../humver/">Command: humver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../infot/">Command: infot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../iv/">Command: iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kern/">Command: kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../key/">Command: key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../melac/">Command: melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../melvel/">Command: melvel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metpos/">Command: metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../midi/">Command: midi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../midreset/">Command: midreset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mint/">Command: mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ms/">Command: ms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nf/">Command: nf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../num/">Command: num</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../patt/">Command: patt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pattern/">Command: pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pc/">Command: pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pcset/">Command: pcset</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Command: perform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pf/">Command: pf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pitch/">Command: pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../proof/">Command: proof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../recode/">Command: recode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../record/">Command: record</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regexp/">Command: regexp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reihe/">Command: reihe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rend/">Command: rend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rid/">Command: rid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scramble/">Command: scramble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../semits/">Command: semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simil/">Command: simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smf/">Command: smf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solfa/">Command: solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solfg/">Command: solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../specc/">Command: specc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spect/">Command: spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../strophe/">Command: strophe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../synco/">Command: synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tacet/">Command: tacet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">Command: text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../themefinder/">Command: thmea</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../thru/">Command: thru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../timebase/">Command: timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tonh/">Command: tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trans/">Command: trans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../urrhythm/">Command: urrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../veritas/">Command: veritas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vox/">Command: vox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xdelta/">Command: xdelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../yank/">Command: yank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ydelta/">Command: ydelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../#commands">Commands</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../rep/">Pre-defined Humdrum Data Representations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/barlines/">Representation: barlines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/IPA/">Representation: **IPA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/MIDI/">Representation: **MIDI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/Tonh/">Representation: **Tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/URrhythm/">Representation: **URrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/Zeit/">Representation: **Zeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/bhatk/">Representation: **bhatk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/cents/">Representation: **cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/correl/">Representation: **correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/dB/">Representation: **dB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/date/">Representation: **date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/deg/">Representation: **deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/degree/">Representation: **degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/diss/">Representation: **diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/dur/">Representation: **dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/embel/">Representation: **embel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/freq/">Representation: **freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/fret/">Representation: **fret</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/harm/">Representation: **harm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/hildegard/">Representation: **hildegard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/hint/">Representation: **hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/iv/">Representation: **iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/kern/">Representation: **kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/melac/">Representation: **melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/metpos/">Representation: **metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/mint/">Representation: **mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/ordo/">Representation: **ordo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/pc/">Representation: **pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/pcset/">Representation: **pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/pitch/">Representation: **pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/recip/">Representation: **recip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/semits/">Representation: **semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/silbe/">Representation: **silbe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/simil/">Representation: **simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/solfa/">Representation: **solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/solfg/">Representation: **solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/specC/">Representation: **specC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/spect/">Representation: **spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/synco/">Representation: **synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/takt/">Representation: **takt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/text/">Representation: **text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/time/">Representation: **time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/timebase/">Representation: **timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/vox/">Representation: **vox#</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../">Docs</a> &raquo;</li>
+      
+          <li><a href="../">Humdrum Command Manual</a> &raquo;</li>
+      
+    <li>Command: perform</li>
+      <li class="wy-breadcrumbs-aside">
+        
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="command-perform">
+<h1>Command: perform<a class="headerlink" href="#command-perform" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="command">
+<h2>COMMAND<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h2>
+<p><strong>perform</strong> &#8211; play Humdrum <tt class="docutils literal"><span class="pre">**MIDI</span></tt> files</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p>`` perform  [-g]  [-i hex]  [-t n.n]  [-v n]  [inputfile.hmd]``</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>perform</strong> command allows the user to listen to synthesized
+performances of Humdrum <tt class="docutils literal"><span class="pre">**MIDI</span></tt>-format input. When invoked,
+<strong>perform</strong> provides an interactive environment suitable for
+proof-listening and other audition tasks.</p>
+<p>The <strong>perform</strong> command accepts as input Humdrum inputs containing
+<tt class="docutils literal"><span class="pre">**MIDI</span></tt> representations. The command generates serial MIDI data which
+are sent directly to a MIDI controller card. The user must have an
+appropriate MIDI synthesizer connected via a Roland MPU-401 (or
+compatible) MIDI controller card. All <tt class="docutils literal"><span class="pre">**MIDI</span></tt> spines present in the
+input stream are performed. Non-MIDI spines are ignored and do not
+affect the sound output.</p>
+<p>When first invoked, the <strong>perform</strong> command reads in the entire input
+into memory. By loading the complete input into memory, random data
+access is possible and so the user can move freely both forward and
+backward through the MIDI score. (Note that the size of any input is
+limited by the available memory.) While the data is being loaded into
+memory, a tally of the number of bytes loaded is reported. Once the data
+is loaded, MIDI performance commences immediately.</p>
+<p>The <strong>perform</strong> command provides a set of interactive commands that
+allow the user to pause and resume playback, to change tempo, to move to
+any measure by absolute or relative reference, and to search forward or
+backward for commented markers. Editing of MIDI data is not available
+using <strong>perform.</strong></p>
+<p>Playback can be suspended by typing the space-bar; typing any key will
+resume playback. By itself, typing ENTER will return to the beginning of
+the score and re-initiate playback. If a number is typed before pressing
+ENTER, <strong>perform</strong> will search for a corresponding measure number and
+continue playback from the beginning of the specified measure. Where
+more than one measure matches the inputted measure-number, <strong>perform</strong>
+will find the nearest matching measure, without going backward through
+&#8220;measure zero.&#8221; Typing a <em>number</em> followed by the plus sign (<tt class="docutils literal"><span class="pre">+</span></tt>) will
+move to the numbered measure corresponding to the current measure plus
+&lt;<em>number</em>&gt;, and continue playback from the beginning of that measure.
+Typing a <em>number</em> followed by the minus sign (<tt class="docutils literal"><span class="pre">-</span></tt>) will move to the
+numbered measure corresponding to the current measure minus
+&lt;<em>number</em>&gt;, and continue playback from the beginning of that measure.
+The <strong>perform</strong> commands for moving forward and backward should be
+avoided when inputs contain unnumbered measures or highly unusual
+orderings &#8211; such as reverse-order measure numbers.</p>
+<p>The tempo can be modified interactively by using the greater-than
+(<tt class="docutils literal"><span class="pre">&gt;</span></tt>) and less-than (<tt class="docutils literal"><span class="pre">&lt;</span></tt>) signs to increase or decrease the tempo
+respectively. The less-than sign reduces the tempo whereas the
+greater-than sign increases the tempo. Tempo changes are in increments
+of 6 quarter-note durations per minute. A minimum tempo of 8, and a
+maximum tempo of 250 quarter-notes per minute are permitted. The current
+tempo is displayed whenever a change of tempo is made.</p>
+<p>In the default operation, <strong>perform</strong> echoes all global comments on the
+screen as the comments are encountered in the input. For inputs
+containing appropriate annotations, the echoing of comments can provide
+useful visual markers or reminders of particular moments in the sound
+output. Whether or not global comments are echoed on the standard
+output, users can use the <strong>perform</strong> forward-search (<tt class="docutils literal"><span class="pre">/</span></tt>) and
+backward-search (<tt class="docutils literal"><span class="pre">?</span></tt>) commands to move directly to a particular
+commented point in the score. For example, if an input contains a global
+comment containing the character string &#8220;Second theme,&#8221; the user can
+move immediately to this position in the input by entering the following
+command:</p>
+<blockquote>
+<div>`` /Second theme``</div></blockquote>
+<p>followed by a carriage return (or ENTER). (The search string need only
+contain sufficient characters to distinguish uniquely the appropriate
+point of interest.) Similarly, the user can search backward for this
+character string by entering:</p>
+<blockquote>
+<div>`` ?Second theme``</div></blockquote>
+<p>If the search is successful, playback continues immediately from the new
+score position. If the search is unsuccessful, playback continues from
+the current score position.</p>
+<p>In rare circumstances, ciphers (stuck notes) can occur in MIDI tasks &#8211;
+such as where an intermittent MIDI cable fails to convey a &#8220;note-off&#8221;
+instruction to an active synthesizer. The <strong>p</strong> command (&#8220;panic&#8221;) turns
+off all active notes. In addition, a &#8220;power panic&#8221; command (upper-case
+letter <strong>P</strong>) is provided; this command sends &#8220;all-notes-off&#8221; commands
+on MIDI channels 1-16. See also the <strong>tacet</strong> command.</p>
+<p>The <strong>f</strong> command will flag a current measure by echoing the measure
+number on the screen. This can be useful for chronicling various events
+without having to pause or interrupt playback.</p>
+<p>The <strong>perform</strong> command is terminated by typing either <strong>q</strong> or <strong>Q</strong>,
+or by pressing the escape key (ESC).</p>
+<p>The following table summarizes the interactive commands provided by
+<strong>perform.</strong> A summary of these commands can be displayed from within
+<strong>perform</strong> by typing the <strong>h</strong> (help) command.</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>&nbsp;</td>
+<td>pause; suspend playback; strike any key to continue</td>
+</tr>
+<tr class="row-even"><td>&lt;</td>
+<td>reduce tempo</td>
+</tr>
+<tr class="row-odd"><td>&gt;</td>
+<td>increase tempo</td>
+</tr>
+<tr class="row-even"><td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>go back to the beginning of the previous measure</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>and continue performing</td>
+</tr>
+<tr class="row-even"><td><em>integer</em>-</td>
+<td>go back <em>integer</em> measures and continue performing</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>from the beginning of that measure</td>
+</tr>
+<tr class="row-even"><td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>go forward to the beginning of the next measure</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>and continue performing</td>
+</tr>
+<tr class="row-even"><td><em>integer</em>+</td>
+<td>go forward <em>integer</em> measures and continue performing</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>from the beginning of that measure</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>by itself the carriage return moves to the beginning</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>of the score and continues performing</td>
+</tr>
+<tr class="row-even"><td>/<em>string</em></td>
+<td>search forward from the current position for the</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>next global comment containing <em>string</em> and continue</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>performing</td>
+</tr>
+<tr class="row-odd"><td>?<em>string</em></td>
+<td>search backward from the current position for the</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>nearest global comment containing <em>string</em> and continue</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>performing</td>
+</tr>
+<tr class="row-even"><td><em>integer</em></td>
+<td>go to numbered measure <em>integer</em>; where more than</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>one measure shares the same numerical label go to the</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>next (forward) measure matching <em>integer</em></td>
+</tr>
+<tr class="row-odd"><td>h</td>
+<td>display command summary help screen</td>
+</tr>
+<tr class="row-even"><td>p</td>
+<td>panic; turn off all active notes</td>
+</tr>
+<tr class="row-odd"><td>p</td>
+<td>power panic; reset all notes off on all MIDI channels</td>
+</tr>
+<tr class="row-even"><td>q</td>
+<td>same as <strong>q</strong></td>
+</tr>
+<tr class="row-odd"><td>Q</td>
+<td>terminate the perform command</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>same as <strong>q</strong></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><em>Interactive commands in **perform*</em>.*</p>
+<p>In order to facilitate user interaction, a number of keyboard `aliases&#8217;
+are provided. For example, the comma (<tt class="docutils literal"><span class="pre">,</span></tt>) and the period (<tt class="docutils literal"><span class="pre">.</span></tt>) are
+valid aliases for the less-than (<tt class="docutils literal"><span class="pre">&lt;</span></tt>) and greater-than (<tt class="docutils literal"><span class="pre">&gt;</span></tt>) signs;
+these aliases normally share the same keys on ASCII keyboards and so
+avoid the need to use the shift-key. For similar reasons, the
+equals-sign (<tt class="docutils literal"><span class="pre">=</span></tt>) and the underscore (<tt class="docutils literal"><span class="pre">_</span></tt>) are valid aliases for the
+plus and minus signs respectively.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>perform</strong> command provides the following command-line options:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>-g</strong></td>
+<td>suppress the echoing of global comments on the standard output</td>
+</tr>
+<tr class="row-even"><td><strong>-h</strong></td>
+<td>displays a help screen summarizing the command syntax</td>
+</tr>
+<tr class="row-odd"><td>-i <em>hex</em></td>
+<td>assign MIDI input/output address to <em>hex</em></td>
+</tr>
+<tr class="row-even"><td>-t <em>n.n</em></td>
+<td>set initial tempo to <em>n.n</em> times the default tempo</td>
+</tr>
+<tr class="row-odd"><td>-v <em>n</em></td>
+<td>specify default MIDI key-velocity value (0-127)</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Options are specified in the command line.</p>
+<p>In addition to modifying the tempo interactively while performing, the
+performance tempo may be specified either in the command line or in the
+input Humdrum representation. The tempo may be specified on the command
+line by using the <strong>-t</strong> option. The <strong>-t</strong> must be followed by an
+integer or real value between 0.13 and 3.80. A value of 1.0 corresponds
+to the default tempo of 66 quarter-notes per minute. A value of 2.0
+doubles the tempo, whereas a value of 0.5 halves the tempo.
+Alternatively, tempo may be specified using the <tt class="docutils literal"><span class="pre">**MIDI</span></tt> tandem
+interpretation for metronome marking (e.g. <tt class="docutils literal"><span class="pre">*MM96</span></tt>). Tempos found in
+the input representation take precedence over any tempo specified on the
+command line. If no tempo information is available, <strong>perform</strong> uses the
+default tempo of 66 quarter-notes per minute.</p>
+<p>The <strong>-v</strong> option allows the user to specify a key-velocity default.
+MIDI instruments normally treat key-velocity data as dynamic or accent
+information &#8211; thus higher key-velocity values are associated with
+accented notes. Permissible key-velocity values range between 0 and 127.
+The <strong>-v</strong> option can be used to set the default key-velocity for key-on
+commands with unspecified key-velocities. In the absence of the <strong>-v</strong>
+option, the default key-velocity value is 64.</p>
+<p>In normal operation, <strong>perform</strong> echoes all global comments on the
+standard output. This feature may be defeated by invoking the <strong>-g</strong>
+option.</p>
+<p>The <strong>-i</strong> option is used to specify the input/output address of the
+MIDI card. The default address is `330.&#8217; The address is specified as a
+hexadecimal number.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="warnings">
+<h2>WARNINGS<a class="headerlink" href="#warnings" title="Permalink to this headline">¶</a></h2>
+<p>When using Microsoft <em>Windows,</em> the <strong>perform</strong> command requires the use
+of &#8220;standard mode;&#8221; <strong>perform</strong> is unable to work in &#8220;386 enhanced
+mode.&#8221;</p>
+<p>Improper termination of <strong>perform</strong> may leave the MIDI card active, and
+so possibly to hang the machine. Proper termination of <strong>perform</strong> is
+achieved via the letters <strong>q</strong> or <strong>Q</strong>, or via the escape key (ESC). In
+the event of improper termination, the <strong>midreset</strong> command should be
+used.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="portability">
+<h2>PORTABILITY<a class="headerlink" href="#portability" title="Permalink to this headline">¶</a></h2>
+<p>DOS 2.0 and up. Microsoft <em>Windows,</em> in &#8220;standard mode&#8221; only. Linux
+version adapted by Craig Sapp.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="proposed-modifications">
+<h2>PROPOSED MODIFICATIONS<a class="headerlink" href="#proposed-modifications" title="Permalink to this headline">¶</a></h2>
+<p>The program should be modified to allow inputs to contain MIDI control
+codes and MIDI system exclusive codes.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="encode.html">**encode**</a> (4), <strong>encode.rc</strong> (5), <strong>**MIDI</strong> (2),
+<a class="reference external" href="midi.html">**midi**</a> (4), <a class="reference external" href="midreset.html">**midreset**</a> (4),
+<a class="reference external" href="record.html">**record**</a> (4), <a class="reference external" href="smf.html">**smf**</a> (4),
+<a class="reference external" href="tacet.html">**tacet**</a> (4)</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="references">
+<h2>REFERENCES<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>Use of the Music Quest Inc. MIDI library functions is gratefully
+acknowledged.</p>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="../guide07.html#The_perform_Command">**Pertinent description in the Humdrum User
+Guide**</a></li>
+<li><a class="reference external" href="../commands.toc.html">**Index to Humdrum Commands**</a></li>
+<li><a class="reference external" href="../guide.toc.html">**Table for Contents for Humdrum User Guide**</a></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  <hr/>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <center><a href="../pf/" class="btn btn-neutral float-right" title="Command: pf">Next <span class="fa fa-arrow-circle-right"></span></a></center>
+      
+      
+        <a href="../pcset/" class="btn btn-neutral" title="Command: pcset"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+      
+             <center><a href="../../_sources/man/perform.txt" rel="nofollow"> View page source</a></center>
+      
+    </div>
+  
+
+
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+   
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-52162357-1', 'humdrum.org');
+  ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>

@@ -1,11 +1,4 @@
-.. image:: ../HumdrumIcon.gif
-   :alt:
-.. image:: ../HumdrumHeader.gif
-   :alt: Humdrum
-.. image:: ../HumdrumSpacer.gif
-   :alt:
-
-
+===================================
 The Humdrum Toolkit: A Bibliography
 ===================================
 
@@ -47,7 +40,7 @@ Huron, David (1988).
 
 Huron, David (1989).
 "Voice denumerability in polyphonic music of homogeneous timbres."
-*Music Perception,* Vol. 6, No. 4 (1989) pp. 361-382. `**Abstract**`_
+*Music Perception,* Vol. 6, No. 4 (1989) pp. 361-382. 
 
 Huron, David (1989).
 "Characterizing Musical Textures."
@@ -56,33 +49,33 @@ Francisco: Computer Music Association, 1989; pp. 131-134.
 
 Huron, David (1990).
 "Crescendo/Diminuendo asymmetries in Beethoven's piano sonatas."
-*Music Perception,* Vol. 7, No. 4, pp. 395-402. `**Abstract**`_
+*Music Perception,* Vol. 7, No. 4, pp. 395-402. 
 
 Huron, David (1990).
 "Increment/Decrement asymmetries in polyphonic sonorities."
-*Music Perception,* Vol. 7, No. 4 (1990) pp. 385-393. `**Abstract**`_
+*Music Perception,* Vol. 7, No. 4 (1990) pp. 385-393. 
 
 Huron, David (1991).
 "Tonal consonance versus tonal fusion in polyphonic sonorities."
-*Music Perception,* Vol. 9, No. 2, pp. 135-154. `**Abstract**`_
+*Music Perception,* Vol. 9, No. 2, pp. 135-154. 
 
 Huron, David (1991).
 "The avoidance of part-crossing in polyphonic music: Perceptual evidence and
 musical practice."
-*Music Perception,* Vol. 9, No. 1, pp. 93-104. `**Abstract**`_
+*Music Perception,* Vol. 9, No. 1, pp. 93-104. 
 
 Huron, David (1991).
 "The ramp archetype: A study of musical dynamics in 14 piano composers."
-*Psychology of Music,* Vol. 19, No. 1, pp. 33-45. `**Abstract**`_
+*Psychology of Music,* Vol. 19, No. 1, pp. 33-45. 
 
 Huron, David (1992).
 Design principles in computer-based music representation. In: A. Marsden & A.
 Pople (editors), *Computer Representations and Models in Music,* London:
-Academic Press, 1992, pp. 5-39. `**Abstract**`_
+Academic Press, 1992, pp. 5-39. 
 
 Huron, David (1992).
 "The ramp archetype and the maintenance of auditory attention."
-*Music Perception,* Vol. 10, No. 1, pp. 83-92. `**Abstract**`_
+*Music Perception,* Vol. 10, No. 1, pp. 83-92. 
 
 Huron, David (1993).
 "Chordal-tone doubling and the enhancement of key perception."
@@ -90,7 +83,7 @@ Huron, David (1993).
 
 Huron, David (1993).
 "Note onset asynchrony in J.S. Bach's Two-part Inventions."
-*Music Perception,* Vol. 10, No. 4, pp. 435-444. `**Abstract**`_
+*Music Perception,* Vol. 10, No. 4, pp. 435-444. 
 
 Huron, David (1993). *The Humdrum Toolkit: Software for Music Researchers.*
 (Three computer disks and 16-page installation guide.) Stanford, CA: Center
@@ -99,7 +92,7 @@ for Computer Assisted Research in the Humanities.
 Huron, David (1994).
 "Interval-class content in equally-tempered pitch-class sets: Common scales
 exhibit optimum tonal consonance."
-*Music Perception,* Vol. 11, No. 3, pp. 289-305. `**Abstract**`_
+*Music Perception,* Vol. 11, No. 3, pp. 289-305. 
 
 Huron, David (1995).
 *The Humdrum Toolkit: Reference Manual.* Menlo Park, California: Center for
@@ -126,20 +119,20 @@ available online**`_
 Huron, David & Fantini, Deborah (1989).
 "The avoidance of inner-voice entries: Perceptual evidence and musical
 practice."
-*Music Perception,* Vol. 7, No. 1, pp. 43-47. `**Abstract**`_
+*Music Perception,* Vol. 7, No. 1, pp. 43-47. 
 
 Huron, David & Parncutt, Richard (1993).
 "An improved model of tonality perception incorporating pitch salience and
 echoic memory."
-*Psychomusicology,* Vol. 12, No. 2, pp. 154-171. `**Abstract**`_
+*Psychomusicology,* Vol. 12, No. 2, pp. 154-171. 
 
 Huron, David & Royal, Matthew (1996).
 "What is melodic accent? Converging evidence from musical practice."
-*Music Perception,* Vol. 13, No. 4, pp. 489-516. `**Abstract**`_
+*Music Perception,* Vol. 13, No. 4, pp. 489-516. 
 
 Huron, David & Sellmer, Peter (1992).
 "Critical bands and the spelling of vertical sonorities."
-*Music Perception,* Vol. 10, No. 2, pp. 129-149. `**Abstract**`_
+*Music Perception,* Vol. 10, No. 2, pp. 129-149. 
 
 Kornstaedt, Andreas (1996).
 SCORE-to-Humdrum: A graphical environment for musicological analysis.
@@ -152,7 +145,7 @@ vol. 11, pp.231-236.
 Nam, Unjung (1998).
 Pitch distributions in Korean Court music: Evidence consistent With tonal
 hierarchies. *Music Perception*, Vol. 16, No. 2, pp. 243-248.
-`**Abstract**`_.
+.
 
 Orpen, Keith & Huron, David (1992).
 "The measurement of similarity in music: A quantitative approach for non-
@@ -172,7 +165,7 @@ Johnson-Laird's theory."
 Simpson, Jasba & Huron, David (1994).
 "Absolute pitch as a learned phenomenon: Evidence consistent with the Hick-
 Hyman Law."
-*Music Perception,* Vol. 12, No. 2, pp. 267-270. `**Abstract**`_
+*Music Perception,* Vol. 12, No. 2, pp. 267-270. 
 
 Taylor, William Michael (1996).
 *Humdrum Graphical User Interface.*
@@ -191,35 +184,3 @@ Wild, Jonathan (1996).
 *Music Theory Online,* Vol. 2, No. 7 (1996 Nov.). `** A review of the Humdrum
 Toolkit: Unix tools for musical research, created by David Huron. **`_
 
---------
-
-
-
-`**Humdrum Toolkit Home Page**`_
-
-
-
-.. _Abstract: ../Huron/Publications/huron.denumerability.abstract.html
-.. _Abstract: ../Huron/Publications/huron.beethoven.abstract.html
-.. _Abstract: ../Huron/Publications/huron.increment.abstract.html
-.. _Abstract: ../Huron/Publications/huron.consonance.abstract.html
-.. _Abstract: ../Huron/Publications/huron.crossing.abstract.html
-.. _Abstract: ../Huron/Publications/huron.dynamics.abstract.html
-.. _Abstract: ../Huron/Publications/huron.design.abstract.html
-.. _Abstract: ../Huron/Publications/huron.ramp.abstract.html
-.. _Abstract: ../Huron/Publications/huron.asynchrony.abstract.html
-.. _Abstract: ../Huron/Publications/huron.scales.abstract.html
-.. _Text: ../Huron/Publications/huron.arch.text.html
-.. _Text: ../Huron/Publications/huron.Eitan.review.html
-.. _Also available online: ../Humdrum/guide.toc.html
-.. _Abstract: ../Huron/Publications/huron.inner.abstract.html
-.. _Abstract: ../Huron/Publications/huron.tonality.abstract.html
-.. _Abstract: ../Huron/Publications/huron.accent.abstract.html
-.. _Abstract: ../Huron/Publications/huron.bands.abstract.html
-.. _Abstract: http://www-
-   ucpress.berkeley.edu/journals/mp/abstracts.html#16-2-243
-.. _Abstract: ../Huron/Publications/huron.ap.abstract.html
-.. _   A review of the Humdrum Toolkit: Unix tools for musical research,
-   created   by David Huron. :
-   http://boethius.music.ucsb.edu/mto/issues/mto.96.2.7/mto.96.2.7.wild.html
-.. _Humdrum Toolkit Home Page: index.html

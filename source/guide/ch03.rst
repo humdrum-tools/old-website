@@ -1,4 +1,3 @@
-
 ========================================
 Chapter 3: Some Initial Processing
 ========================================
@@ -10,7 +9,7 @@ tasks.
 
 
 The *census* Command
---------
+-----------------------
 
 The Humdrum `**census**`_ command provides basic information about an input
 stream or file. We can invoke the command by typing the command name followed
@@ -63,7 +62,7 @@ information by "piping" the output to the UNIX **grep** command.
 
 
 Simple Searches using the *grep* Command
---------
+-------------------
 
 The UNIX **grep** command is a popular tool for searching for lines that
 match some specified pattern. Patterns may be simple strings of characters,
@@ -236,7 +235,7 @@ written and its previous contents lost. With the **-h** option the file
 
 
 The *sort* Command
---------
+-------------------
 
 The UNIX operating system provides a general sorting utility called **sort**.
 We might use this utility to rearrange the titles in alphabetical order:
@@ -259,7 +258,7 @@ in the file `titles`:
 
 
 The *uniq* Command
---------
+-------------------
 
 Bach often harmonized a chorale melody more than once. In the 185 chorales in
 the original 1784 edition, several duplicate titles are present. Suppose you
@@ -328,7 +327,7 @@ the current directory:
 
 
 Options for the *uniq* Command
---------
+-------------------
 
 Like **grep**, the **uniq** command provides several options that modify its
 behavior. The **-d** option causes only those records to be output which are
@@ -442,11 +441,9 @@ As a final note, we might mention that, like **grep** and **uniq**, the
 the output to be arranged in reverse order. This can be useful in producing
 lists that are ordered from most common to least common.
 
---------
-
 
 Reprise
--------
+------------------
 
 In this chapter we have introduced some elementary ways of processing Humdrum
 files. We noted that the **census** command can be used to identify basic

@@ -82,7 +82,8 @@ exclude_patterns = [
 	'humextra/other.rstd',
 	'humextra/programming.rstd',
 	'humextra/rhythm.rstd',
-	'humextra/searching.rstd'
+	'humextra/searching.rstd',
+	'_todo',
 ]
 
 # The reST default role (used for this markup: `text`) to use for all documents.
@@ -126,7 +127,7 @@ html_theme_options = {
 
 
 ###pedro's extensions
-sys.path.insert(0, os.path.abspath('extensions'))
+sys.path.insert(0, os.path.abspath('_extensions'))
 
 #pygments_style = 'pygkern.kern_style.KernStyle'
 

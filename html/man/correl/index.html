@@ -1,0 +1,1073 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Command: correl &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../"/>
+        <link rel="up" title="Humdrum Command Manual" href="../"/>
+        <link rel="next" title="Command: deg" href="../deg/"/>
+        <link rel="prev" title="Command: context" href="../context/"/>
+   <link rel="stylesheet" type"text/css" href="../../_static/humdrum.css">
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">Humdrum Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../install/github/">Installing Humdrum Tools from GitHub</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/">The Humdrum User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch01/">Chapter 1: Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch02/">Chapter 2: Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch03/">Chapter 3: Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch04/">Chapter 4: Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch05/">Chapter 5: The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch06/">Chapter 6: Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch07/">Chapter 7: MIDI Output Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch08/">Chapter 8: The Shell (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch09/">Chapter 9: Searching with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch10/">Chapter 10: Musical Uses of Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch11/">Chapter 11: Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch12/">Chapter 12: Selecting Musical Parts and Passages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch13/">Chapter 13: Assembling Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch14/">Chapter 14: Stream Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch15/">Chapter 15: Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch16/">Chapter 16: The Shell (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch17/">Chapter 17: Creating Inventories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch18/">Chapter 18: Fingers, Footsteps and Frets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch19/">Chapter 19: Musical Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch20/">Chapter 20: Strophes, Verses, and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch21/">Chapter 21: Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch22/">Chapter 22: Classifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch23/">Chapter 23: Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch24/">Chapter 24: The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch25/">Chapter 25: Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch26/">Chapter 26: Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch27/">Chapter 27: Text and Lyrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch28/">Chapter 28: Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch29/">Chapter 29: Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch30/">Chapter 30:MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch31/">Chapter 31: Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch32/">Chapter 32: The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch33/">Chapter 33: Word Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch34/">Chapter 34: Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch35/">Chapter 35: Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch36/">Chapter 33: Sound and Spectra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch37/">Chapter 37: Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch38/">Chapter 38: Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch39/">Chapter 39: Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch40/">Chapter 40: Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/bibliography/">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/sample.problems/">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/searching/">Music Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/midi/">MIDI Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/notation/">Graphical Musical Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/other/">Other Useful Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/programming/">Humdrum Extras Programming Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cookbook/">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cookbook/vimHighlighting/">Syntax Coloring in Vim</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../">Humdrum Command Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../assemble/">Command: assemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barks/">Command: barks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cbr/">Command: cbr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../census/">Command: census</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cents/">Command: cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cleave/">Command: cleave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cocho/">Command: cocho</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../context/">Command: context</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Command: correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deg/">Command: deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../degree/">Command: degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../diss/">Command: diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ditto/">Command: ditto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dur/">Command: dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ekern/">Command: ekern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../encode/">Command: encode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extract/">Command: extract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fade/">Command: fade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fields/">Command: fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fin2hum/">Command: fin2hum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../freq/">Command: freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hint/">Command: hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hum2fin/">Command: hum2fin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../humdrum/">Command: humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../humsed/">Command: humsed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../humver/">Command: humver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../infot/">Command: infot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../iv/">Command: iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kern/">Command: kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../key/">Command: key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../melac/">Command: melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../melvel/">Command: melvel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metpos/">Command: metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../midi/">Command: midi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../midreset/">Command: midreset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mint/">Command: mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ms/">Command: ms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nf/">Command: nf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../num/">Command: num</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../patt/">Command: patt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pattern/">Command: pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pc/">Command: pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pcset/">Command: pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../perform/">Command: perform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pf/">Command: pf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pitch/">Command: pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../proof/">Command: proof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../recode/">Command: recode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../record/">Command: record</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regexp/">Command: regexp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reihe/">Command: reihe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rend/">Command: rend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rid/">Command: rid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scramble/">Command: scramble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../semits/">Command: semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simil/">Command: simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smf/">Command: smf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solfa/">Command: solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solfg/">Command: solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../specc/">Command: specc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spect/">Command: spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../strophe/">Command: strophe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../synco/">Command: synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tacet/">Command: tacet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">Command: text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../themefinder/">Command: thmea</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../thru/">Command: thru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../timebase/">Command: timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tonh/">Command: tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trans/">Command: trans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../urrhythm/">Command: urrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../veritas/">Command: veritas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vox/">Command: vox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xdelta/">Command: xdelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../yank/">Command: yank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ydelta/">Command: ydelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../#commands">Commands</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../rep/">Pre-defined Humdrum Data Representations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/barlines/">Representation: barlines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/IPA/">Representation: **IPA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/MIDI/">Representation: **MIDI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/Tonh/">Representation: **Tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/URrhythm/">Representation: **URrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/Zeit/">Representation: **Zeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/bhatk/">Representation: **bhatk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/cents/">Representation: **cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/correl/">Representation: **correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/dB/">Representation: **dB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/date/">Representation: **date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/deg/">Representation: **deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/degree/">Representation: **degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/diss/">Representation: **diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/dur/">Representation: **dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/embel/">Representation: **embel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/freq/">Representation: **freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/fret/">Representation: **fret</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/harm/">Representation: **harm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/hildegard/">Representation: **hildegard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/hint/">Representation: **hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/iv/">Representation: **iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/kern/">Representation: **kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/melac/">Representation: **melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/metpos/">Representation: **metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/mint/">Representation: **mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/ordo/">Representation: **ordo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/pc/">Representation: **pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/pcset/">Representation: **pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/pitch/">Representation: **pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/recip/">Representation: **recip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/semits/">Representation: **semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/silbe/">Representation: **silbe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/simil/">Representation: **simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/solfa/">Representation: **solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/solfg/">Representation: **solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/specC/">Representation: **specC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/spect/">Representation: **spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/synco/">Representation: **synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/takt/">Representation: **takt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/text/">Representation: **text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/time/">Representation: **time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/timebase/">Representation: **timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/vox/">Representation: **vox#</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../">Docs</a> &raquo;</li>
+      
+          <li><a href="../">Humdrum Command Manual</a> &raquo;</li>
+      
+    <li>Command: correl</li>
+      <li class="wy-breadcrumbs-aside">
+        
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="command-correl">
+<h1>Command: correl<a class="headerlink" href="#command-correl" title="Permalink to this headline">¶</a></h1>
+<p><strong>correl</strong> &#8211; measure the numerical similarity between two Humdrum spines</p>
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p>`` correl  [-f templatefile]  [-m]  [-p n]  [-s regexp]  [inputfile ...]  [&gt; outputfile.cor]``</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>correl</strong> command measures the degree of parametric (numerical)
+similarity between corresponding values in two Humdrum spines. More
+precisely, <strong>correl</strong> calculates Pearson&#8217;s coefficient of correlation
+for paired tokens containing numerical data.</p>
+<p>Two modes of operation are provided. In the <em>single input mode,</em> a
+single file containing two equal-length spines is processed. In this
+mode, the output from <strong>correl</strong> consists of a single number indicating
+the linear correlation between the two spines of numerical data.</p>
+<p>In the <em>dual input mode,</em> two single-spine numerical inputs &#8211; called
+the <em>template file</em> and the <em>input file</em> &#8211; are specified by the user.
+Normally, the template file is considerably shorter than the input file.
+In this mode, the output consists of a spine of numerical information
+(<tt class="docutils literal"><span class="pre">**correl</span></tt>) that reflects the momentary similarity between the
+template and the input for each successive moment in the input. In
+short, the input file is `scanned&#8217; using the template values, and the
+correlational similarity determined at each point.</p>
+<p>In both <em>single input</em> and <em>dual input</em> modes, output numerical values
+range between +1 and -1. Correlation values reflect the degree to which
+two sets of numerical values rise and fall in synchrony. The maximum
+output value is +1 &#8211; indicating that the two sets of numbers are
+perfectly related according to a linear relationship. -nimum output
+value of -1 indicates that the two sets of numbers are perfectly
+out-of-phase &#8211; one set of numbers rises while the other set falls by a
+proportional magnitude, and vice versa. A correlation value of zero
+indicates that there is no linear relationship between the two sets of
+numbers.</p>
+<p>In <em>single input mode,</em> inputs to <strong>correl</strong> must consist of precisely
+two spines; otherwise an error message is generated and the command is
+terminated. The two spines may contain different interpretations and
+represent different types of information. In the case of the <em>dual input
+mode,</em> the input file and template file must have precisely one spine
+each; the spines may differ in length, but the <em>template</em> file must not
+be longer than the <em>input</em> file.</p>
+<p>Only numerical signifiers are considered by <strong>correl;</strong> non-numeric
+input data are ignored. Where a data token contains a mix of numeric and
+non-numeric signifiers, only the first complete numerical subtoken
+contributes to the calculation. The following examples illustrate how
+<strong>correl</strong> interprets mixed data tokens:</p>
+<blockquote>
+<div>data token
+numerical interpretation
+<tt class="docutils literal"><span class="pre">4gg#</span></tt>
+4
+<tt class="docutils literal"><span class="pre">4.gg#</span></tt>
+4
+<tt class="docutils literal"><span class="pre">-33aa</span></tt>
+-33
+<tt class="docutils literal"><span class="pre">-aa33</span></tt>
+33
+<tt class="docutils literal"><span class="pre">x7.2yz</span></tt>
+7.2
+<tt class="docutils literal"><span class="pre">a7..2bc</span></tt>
+7
+<tt class="docutils literal"><span class="pre">[+5]12</span></tt>
+5
+<tt class="docutils literal"><span class="pre">$17&#64;2</span></tt>
+17
+<tt class="docutils literal"><span class="pre">a1b2</span> <span class="pre">c.3.d</span></tt>
+1 0.3</div></blockquote>
+<p>Humdrum multiple-stops require special attention in <strong>correl</strong> (see
+below).</p>
+<p>In the <em>dual input mode</em> the output from the <strong>correl</strong> command consists
+of a set of records matching the structure of the <em>input</em> document.
+Output values indicate the correlation between the <em>template</em> data
+values and the input data values beginning at that record.</p>
+<p>When the <em>dual input mode</em> is invoked, it is recommended that output
+files produced by the <strong>correl</strong> command should be given names with the
+distinguishing `.cor&#8217; extension.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>correl</strong> command provides the following options:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>-f <em>templatefile</em></td>
+<td>specify source pattern as <em>templatefile</em> and</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>invoke dual input mode</td>
+</tr>
+<tr class="row-odd"><td><strong>-h</strong></td>
+<td>displays a help screen summarizing the command syntax</td>
+</tr>
+<tr class="row-even"><td><strong>-m</strong></td>
+<td>disable matched-pairs criterion</td>
+</tr>
+<tr class="row-odd"><td>-p <em>n</em></td>
+<td>output precision to <em>n</em> decimal places</td>
+</tr>
+<tr class="row-even"><td>-s <em>regexp</em></td>
+<td>skip; completely ignore data records matching <em>regexp</em></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Options are specified in the command line.</p>
+<p>The <strong>-f</strong> option is used to specify an independent <em>template file</em> &#8211;
+and so invokes the <em>dual input mode.</em></p>
+<p>The <strong>-p</strong> option can be used to set the precision of the output values
+to <em>n</em> decimal places. The default precision is 3 decimal places.</p>
+<p>The <strong>-s</strong> option allows the user to avoid (or skip) the processing of
+certain types of data records. This option must be accompanied by a
+user-defined regular-expression. Input data records matching this
+expression are not processed.</p>
+<p>Correlation values can be calculated only where all numerical data are
+arranged as matched pairs &#8211; that is, the input conforms to the &#8220;matched
+pairs criterion.&#8221; For example, the following two spines illustrate
+numerical data matching. The number of numerical data values in both
+spines are matched throughout the inputs: <a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">``</span></a></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>**spine1</td>
+<td>**spine2</td>
+</tr>
+<tr class="row-even"><td>10.0</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>7 3</td>
+<td>2 .91</td>
+</tr>
+<tr class="row-even"><td>.</td>
+<td>.</td>
+</tr>
+<tr class="row-odd"><td>13.8</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>5 8 5</td>
+<td>1 1 2</td>
+</tr>
+<tr class="row-odd"><td>a b c</td>
+<td>x</td>
+</tr>
+<tr class="row-even"><td>.</td>
+<td>p q</td>
+</tr>
+<tr class="row-odd"><td>*-</td>
+<td>*-</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>By contrast, the following file shows several transgressions of the
+matched pairs criterion. For example, the first data record gives a
+numerical value in spine #1 that is not matched by a numerical value in
+spine #2. Similarly, the multiple-stop values in the second data record
+are unmatched in spine #2: <a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">``</span></a></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="48%" />
+<col width="52%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>**spine1</td>
+<td>**spine2</td>
+</tr>
+<tr class="row-even"><td>9.7</td>
+<td>a</td>
+</tr>
+<tr class="row-odd"><td>7 31</td>
+<td>2</td>
+</tr>
+<tr class="row-even"><td>.</td>
+<td>114</td>
+</tr>
+<tr class="row-odd"><td>426</td>
+<td>.</td>
+</tr>
+<tr class="row-even"><td>r 11 7</td>
+<td>35 xy08z 28</td>
+</tr>
+<tr class="row-odd"><td>a b c</td>
+<td>6 .07</td>
+</tr>
+<tr class="row-even"><td>.</td>
+<td>p q</td>
+</tr>
+<tr class="row-odd"><td>*-</td>
+<td>*-</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>In normal operation, a single failure to conform to the matched pairs
+criterion will cause <strong>correl</strong> to issue an error message and terminate
+operation. If the <strong>-m</strong> option is invoked, unmatched data is simply
+ignored. For example, with the <strong>-m</strong> option, the above input is treated
+as equivalent to the following input: <a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">``</span></a></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>**spine1</td>
+<td>**spine2</td>
+</tr>
+<tr class="row-even"><td>.</td>
+<td>.</td>
+</tr>
+<tr class="row-odd"><td>7</td>
+<td>2</td>
+</tr>
+<tr class="row-even"><td>.</td>
+<td>.</td>
+</tr>
+<tr class="row-odd"><td>.</td>
+<td>.</td>
+</tr>
+<tr class="row-even"><td>11 7</td>
+<td>35 08</td>
+</tr>
+<tr class="row-odd"><td>.</td>
+<td>.</td>
+</tr>
+<tr class="row-even"><td>.</td>
+<td>.</td>
+</tr>
+<tr class="row-odd"><td>*-</td>
+<td>*-</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<hr class="docutils" />
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>The following examples illustrate the operation of <strong>correl.</strong> The first
+example shows an excerpt containing considerable parallel motion between
+two polyphonic voices. Measuring the pitch-contour similarity can be
+done using the single input mode. <a href="#id13"><span class="problematic" id="id14">``</span></a><a href="#id15"><span class="problematic" id="id16">``</span></a></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>!! J.S. Bach, Invention No. 8; BWV 779</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>**semits</td>
+<td>**semits</td>
+</tr>
+<tr class="row-even"><td>*M3/4</td>
+<td>*M3/4</td>
+</tr>
+<tr class="row-odd"><td>9</td>
+<td>17</td>
+</tr>
+<tr class="row-even"><td>12</td>
+<td>21</td>
+</tr>
+<tr class="row-odd"><td>10</td>
+<td>19</td>
+</tr>
+<tr class="row-even"><td>12</td>
+<td>21</td>
+</tr>
+<tr class="row-odd"><td>9</td>
+<td>17</td>
+</tr>
+<tr class="row-even"><td>12</td>
+<td>21</td>
+</tr>
+<tr class="row-odd"><td>10</td>
+<td>19</td>
+</tr>
+<tr class="row-even"><td>12</td>
+<td>21</td>
+</tr>
+<tr class="row-odd"><td>=6</td>
+<td>=6</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>14</td>
+</tr>
+<tr class="row-odd"><td>9</td>
+<td>17</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td>16</td>
+</tr>
+<tr class="row-odd"><td>9</td>
+<td>17</td>
+</tr>
+<tr class="row-even"><td>*-</td>
+<td>*-</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>In order to avoid processing the measure numbers, the skip (<strong>-s</strong>)
+option is used; executing the command:</p>
+<blockquote>
+<div>`` correl -s = bwv779``</div></blockquote>
+<p>will produce the following output:</p>
+<blockquote>
+<div>`` 0.979``</div></blockquote>
+<p>The second example illustrates the dual input mode. The target input
+consists of a single spine (labelled `` <strong>input)`` containing mixed
+alphabetic and numerical values. (This input file is shown below as the
+left-most column.) The template file consists of the numerical sequence:
+1, 2, 3 &#8211; mixed with the letters a, b, c. (This file is shown as the
+middle column below.) Note that the non-numeric characters in both the
+input and template files have no influence on the operation of
+**correl.</strong> The third (output) spine is produced by the following
+command:</p>
+<blockquote>
+<div>`` correl -f template input &gt; output.cor``</div></blockquote>
+<hr class="docutils" />
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="37%" />
+<col width="33%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>(input</td>
+<td>(template</td>
+<td>(correl</td>
+</tr>
+<tr class="row-even"><td>file)</td>
+<td>file)</td>
+<td>output)</td>
+</tr>
+<tr class="row-odd"><td>**input</td>
+<td>**template</td>
+<td>**correl</td>
+</tr>
+<tr class="row-even"><td>0</td>
+<td>1a</td>
+<td>1.000</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>2b</td>
+<td>1.000</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>3c</td>
+<td>1.000</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>*-</td>
+<td>-0.655</td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td>&nbsp;</td>
+<td>-0.655</td>
+</tr>
+<tr class="row-odd"><td>x1x</td>
+<td>&nbsp;</td>
+<td>0.866</td>
+</tr>
+<tr class="row-even"><td>y2.</td>
+<td>&nbsp;</td>
+<td>0.866</td>
+</tr>
+<tr class="row-odd"><td>2z</td>
+<td>&nbsp;</td>
+<td>0.000</td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic simple" start="3">
+<li></li>
+</ol>
+</td>
+<td>&nbsp;</td>
+<td>-1.000</td>
+</tr>
+<tr class="row-odd"><td>[2]</td>
+<td>&nbsp;</td>
+<td>.</td>
+</tr>
+<tr class="row-even"><td>01</td>
+<td>&nbsp;</td>
+<td>.</td>
+</tr>
+<tr class="row-odd"><td>*-</td>
+<td>&nbsp;</td>
+<td>*-</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>The similarity values generated by <strong>correl</strong> are given in the
+`` <a href="#id17"><span class="problematic" id="id18">**</span></a>correl`` spine. Each successive value in the output spine is
+matched with a data token in the target input file (<tt class="docutils literal"><span class="pre">**foo</span></tt>). For
+example, the initial three output values (1.000) indicate that exact
+positive correlations occur between the template and the input. That is
+(0, 1, 2) (1, 2, 3) and (2, 3, 4) all show simple equidistant increases
+corresponding to the source template. The final numerical value in
+`` <a href="#id19"><span class="problematic" id="id20">**</span></a>correl`` shows a negative correlation (-1.000) indicating that the
+numerical sequence (3, 2, 1) is the exact opposite contour to the source
+template (1, 2, 3). By contrast, the immediately preceding output value
+(0.000) indicates that the sequence (2, 3, 2) shows no systematic linear
+relationship with the source template (1, 2, 3).</p>
+<p>The following example provides a more complicated illustration of
+<strong>correl.</strong> Once again the left-most column is the target input, the
+middle column is the source template, and the right-most column shows
+the corresponding output. <a href="#id21"><span class="problematic" id="id22">``</span></a><a href="#id23"><span class="problematic" id="id24">``</span></a></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="37%" />
+<col width="33%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>(input</td>
+<td>(template</td>
+<td>(correl</td>
+</tr>
+<tr class="row-even"><td>file)</td>
+<td>file)</td>
+<td>output)</td>
+</tr>
+<tr class="row-odd"><td>**input</td>
+<td>**template</td>
+<td>**correl</td>
+</tr>
+<tr class="row-even"><td>=1</td>
+<td>1</td>
+<td>.</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>2 3</td>
+<td>1.000</td>
+</tr>
+<tr class="row-even"><td>2 3</td>
+<td>.</td>
+<td>-0.370</td>
+</tr>
+<tr class="row-odd"><td>100</td>
+<td>4</td>
+<td>-0.742</td>
+</tr>
+<tr class="row-even"><td>8r</td>
+<td>5 6</td>
+<td>.</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>*-</td>
+<td>0.042</td>
+</tr>
+<tr class="row-even"><td>5 6</td>
+<td>&nbsp;</td>
+<td>.</td>
+</tr>
+<tr class="row-odd"><td>=2</td>
+<td>&nbsp;</td>
+<td>.</td>
+</tr>
+<tr class="row-even"><td>0</td>
+<td>&nbsp;</td>
+<td>.</td>
+</tr>
+<tr class="row-odd"><td>4r</td>
+<td>&nbsp;</td>
+<td>.</td>
+</tr>
+<tr class="row-even"><td>-2x -3</td>
+<td>&nbsp;</td>
+<td>.</td>
+</tr>
+<tr class="row-odd"><td>-x8</td>
+<td>&nbsp;</td>
+<td>.</td>
+</tr>
+<tr class="row-even"><td>==</td>
+<td>&nbsp;</td>
+<td>.</td>
+</tr>
+<tr class="row-odd"><td>*-</td>
+<td>&nbsp;</td>
+<td>*-</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>The above output spine was created by executing the command:</p>
+<blockquote>
+<div>`` correl -m -s &#8216;[=r]&#8217; -f template input &gt; output.cor``</div></blockquote>
+<p>Due to the <strong>-s</strong> option, all records in the input file containing an
+equals-sign or lower-case `r&#8217; are eliminated from the calculations. The
+presence of the null-token in the third data record of the template file
+is noteworthy. Although no correlations are calculated with the
+null-token, it acts as a place-holder, and causes the corresponding
+record in the input file to be ignored. For example, the first
+correlation value is calculated on the basis of the following
+coordination of numerical data: <a href="#id25"><span class="problematic" id="id26">``</span></a><a href="#id27"><span class="problematic" id="id28">``</span></a></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>1</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>2 3</td>
+<td>2 3</td>
+</tr>
+<tr class="row-odd"><td>100</td>
+<td>.</td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>5 6</td>
+<td>5 6</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Since the value `100&#8217; is not matched with a numerical value in the
+template, it is ignored in the correlation measure. (Note that without
+the <strong>-m</strong> option, no output would be generated.)</p>
+<p>At the next instant, the correlation value is calculated on the basis of
+the following coordination of numerical data: <a href="#id29"><span class="problematic" id="id30">``</span></a><a href="#id31"><span class="problematic" id="id32">``</span></a></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>2 3</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>100</td>
+<td>2 3</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>.</td>
+</tr>
+<tr class="row-even"><td>5 6</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>5 6</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>The double-stops do not form matched pairs, hence much of the data is
+discarded. For example, in the first data record, 2 is matched with 1
+but 3 is discarded. In the second record, 100 is matched with 2 but 3 is
+discarded, etc.</p>
+<p>The third correlation value is calculated on the basis of the following
+coordination of numerical data: <a href="#id33"><span class="problematic" id="id34">``</span></a><a href="#id35"><span class="problematic" id="id36">``</span></a></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="56%" />
+<col width="44%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>100</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td>2 3</td>
+</tr>
+<tr class="row-odd"><td>5 6</td>
+<td>.</td>
+</tr>
+<tr class="row-even"><td>0</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>-2 -3</td>
+<td>5 6</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>In this case, the correlation value is based on the following numerical
+pairing: 100 &lt;&#8211;&gt; 1, 4 &lt;&#8211;&gt; 2, 0 &lt;&#8211;&gt; 4, -2 &lt;&#8211;&gt; 5, -3 &lt;&#8211;&gt; 6. All other
+numerical values are ignored.</p>
+<p>The final correlation value in this example is calculated on the basis
+of the following coordination of numerical data: <a href="#id37"><span class="problematic" id="id38">``</span></a><a href="#id39"><span class="problematic" id="id40">``</span></a></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="56%" />
+<col width="44%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>4</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>5 6</td>
+<td>2 3</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>.</td>
+</tr>
+<tr class="row-even"><td>-2 -3</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>8</td>
+<td>5 6</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>The corresponding correlation value is based on the following numerical
+pairing: 4 &lt;&#8211;&gt; 1, 5 &lt;&#8211;&gt; 2, 6 &lt;&#8211;&gt; 3, -2 &lt;&#8211;&gt; 4, 8 &lt;&#8211;&gt; 5.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="portability">
+<h2>PORTABILITY<a class="headerlink" href="#portability" title="Permalink to this headline">¶</a></h2>
+<p>DOS 2.0 and up, with the MKS Toolkit. OS/2 with the MKS Toolkit. UNIX
+systems supporting the <em>Korn</em> shell or <em>Bourne</em> shell command
+interpreters, and revised <em>awk</em> (1985).</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="patt.html">**patt**</a> (4), <a class="reference external" href="pattern.html">**pattern**</a> (4),
+<a class="reference external" href="simil.html">**simil**</a> (4)</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="warnings">
+<h2>WARNINGS<a class="headerlink" href="#warnings" title="Permalink to this headline">¶</a></h2>
+<p>Correlation coefficients indicate only the magnitude of the association
+between two sets of data. High correlation values can occur purely by
+chance. The noteworthiness (statistical significance) of a correlation
+value depends on the number of input values given in the template spine.
+Novice users should consult a standard statistics textbook for further
+advice on how to interpret the results.</p>
+<p>For formal statistical measures, the <strong>-m</strong> option should never be
+invoked.</p>
+<p>If only one pair of matched values is present, the linear correlation is
+mathematically undefined. In this case a question mark signifier is
+output.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="limits">
+<h2>LIMITS<a class="headerlink" href="#limits" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>correl</strong> command is currently unable to handle input files greater
+than about 4,000 records.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="note">
+<h2>NOTE<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>correl</strong> command is also able to process simple columnated data
+that does not conform to the Humdrum syntax.</p>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="../guide25.html#The_correl_Command">**Pertinent description in the Humdrum User
+Guide**</a></li>
+<li><a class="reference external" href="../commands.toc.html">**Index to Humdrum Commands**</a></li>
+<li><a class="reference external" href="../guide.toc.html">**Table for Contents for Humdrum User Guide**</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  <hr/>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <center><a href="../deg/" class="btn btn-neutral float-right" title="Command: deg">Next <span class="fa fa-arrow-circle-right"></span></a></center>
+      
+      
+        <a href="../context/" class="btn btn-neutral" title="Command: context"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+      
+             <center><a href="../../_sources/man/correl.txt" rel="nofollow"> View page source</a></center>
+      
+    </div>
+  
+
+
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+   
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-52162357-1', 'humdrum.org');
+  ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>

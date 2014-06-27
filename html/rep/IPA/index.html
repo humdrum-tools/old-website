@@ -1,0 +1,866 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Representation: **IPA &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../"/>
+        <link rel="up" title="Pre-defined Humdrum Data Representations" href="../"/>
+        <link rel="next" title="Representation: **MIDI" href="../MIDI/"/>
+        <link rel="prev" title="Representation: barlines" href="../barlines/"/>
+   <link rel="stylesheet" type"text/css" href="../../_static/humdrum.css">
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">Humdrum Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../install/github/">Installing Humdrum Tools from GitHub</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/">The Humdrum User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch01/">Chapter 1: Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch02/">Chapter 2: Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch03/">Chapter 3: Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch04/">Chapter 4: Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch05/">Chapter 5: The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch06/">Chapter 6: Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch07/">Chapter 7: MIDI Output Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch08/">Chapter 8: The Shell (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch09/">Chapter 9: Searching with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch10/">Chapter 10: Musical Uses of Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch11/">Chapter 11: Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch12/">Chapter 12: Selecting Musical Parts and Passages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch13/">Chapter 13: Assembling Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch14/">Chapter 14: Stream Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch15/">Chapter 15: Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch16/">Chapter 16: The Shell (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch17/">Chapter 17: Creating Inventories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch18/">Chapter 18: Fingers, Footsteps and Frets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch19/">Chapter 19: Musical Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch20/">Chapter 20: Strophes, Verses, and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch21/">Chapter 21: Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch22/">Chapter 22: Classifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch23/">Chapter 23: Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch24/">Chapter 24: The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch25/">Chapter 25: Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch26/">Chapter 26: Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch27/">Chapter 27: Text and Lyrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch28/">Chapter 28: Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch29/">Chapter 29: Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch30/">Chapter 30:MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch31/">Chapter 31: Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch32/">Chapter 32: The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch33/">Chapter 33: Word Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch34/">Chapter 34: Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch35/">Chapter 35: Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch36/">Chapter 33: Sound and Spectra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch37/">Chapter 37: Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch38/">Chapter 38: Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch39/">Chapter 39: Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch40/">Chapter 40: Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/bibliography/">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/sample.problems/">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/searching/">Music Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/midi/">MIDI Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/notation/">Graphical Musical Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/other/">Other Useful Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/programming/">Humdrum Extras Programming Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cookbook/">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cookbook/vimHighlighting/">Syntax Coloring in Vim</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../man/">Humdrum Command Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../man/assemble/">Command: assemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/barks/">Command: barks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/cbr/">Command: cbr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/census/">Command: census</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/cents/">Command: cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/cleave/">Command: cleave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/cocho/">Command: cocho</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/context/">Command: context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/correl/">Command: correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/deg/">Command: deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/degree/">Command: degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/diss/">Command: diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/ditto/">Command: ditto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/dur/">Command: dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/ekern/">Command: ekern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/encode/">Command: encode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/extract/">Command: extract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/fade/">Command: fade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/fields/">Command: fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/fin2hum/">Command: fin2hum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/freq/">Command: freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/hint/">Command: hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/hum2fin/">Command: hum2fin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/humdrum/">Command: humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/humsed/">Command: humsed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/humver/">Command: humver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/infot/">Command: infot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/iv/">Command: iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/kern/">Command: kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/key/">Command: key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/melac/">Command: melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/melvel/">Command: melvel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/metpos/">Command: metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/midi/">Command: midi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/midreset/">Command: midreset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/mint/">Command: mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/ms/">Command: ms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/nf/">Command: nf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/num/">Command: num</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/patt/">Command: patt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/pattern/">Command: pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/pc/">Command: pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/pcset/">Command: pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/perform/">Command: perform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/pf/">Command: pf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/pitch/">Command: pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/proof/">Command: proof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/recode/">Command: recode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/record/">Command: record</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/regexp/">Command: regexp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/reihe/">Command: reihe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/rend/">Command: rend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/rid/">Command: rid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/scramble/">Command: scramble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/semits/">Command: semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/simil/">Command: simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/smf/">Command: smf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/solfa/">Command: solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/solfg/">Command: solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/specc/">Command: specc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/spect/">Command: spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/strophe/">Command: strophe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/synco/">Command: synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/tacet/">Command: tacet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/text/">Command: text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/themefinder/">Command: thmea</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/thru/">Command: thru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/timebase/">Command: timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/tonh/">Command: tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/trans/">Command: trans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/urrhythm/">Command: urrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/veritas/">Command: veritas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/vox/">Command: vox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/xdelta/">Command: xdelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/yank/">Command: yank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/ydelta/">Command: ydelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/#commands">Commands</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../">Pre-defined Humdrum Data Representations</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../barlines/">Representation: barlines</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Representation: **IPA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MIDI/">Representation: **MIDI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tonh/">Representation: **Tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../URrhythm/">Representation: **URrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Zeit/">Representation: **Zeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bhatk/">Representation: **bhatk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cents/">Representation: **cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../correl/">Representation: **correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dB/">Representation: **dB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../date/">Representation: **date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deg/">Representation: **deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../degree/">Representation: **degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../diss/">Representation: **diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dur/">Representation: **dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../embel/">Representation: **embel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../freq/">Representation: **freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fret/">Representation: **fret</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../harm/">Representation: **harm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hildegard/">Representation: **hildegard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hint/">Representation: **hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../iv/">Representation: **iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kern/">Representation: **kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../melac/">Representation: **melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metpos/">Representation: **metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mint/">Representation: **mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ordo/">Representation: **ordo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pc/">Representation: **pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pcset/">Representation: **pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pitch/">Representation: **pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../recip/">Representation: **recip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../semits/">Representation: **semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../silbe/">Representation: **silbe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simil/">Representation: **simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solfa/">Representation: **solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solfg/">Representation: **solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../specC/">Representation: **specC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spect/">Representation: **spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../synco/">Representation: **synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../takt/">Representation: **takt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">Representation: **text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../time/">Representation: **time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../timebase/">Representation: **timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vox/">Representation: **vox#</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../">Docs</a> &raquo;</li>
+      
+          <li><a href="../">Pre-defined Humdrum Data Representations</a> &raquo;</li>
+      
+    <li>Representation: **IPA</li>
+      <li class="wy-breadcrumbs-aside">
+        
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="representation-ipa">
+<h1>Representation: **IPA<a class="headerlink" href="#representation-ipa" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="humdrum-representation-for-phonetic-sounds">
+<h2>Humdrum Representation for Phonetic Sounds<a class="headerlink" href="#humdrum-representation-for-phonetic-sounds" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="representation">
+<h3>REPRESENTATION<a class="headerlink" href="#representation" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><strong>**IPA</strong> &#8211; representation for International Phonetic Alphabet</div></blockquote>
+</div>
+<div class="section" id="description">
+<h3>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The <strong>**IPA</strong> scheme provides a means for representing phonetic
+information based on the International Phonetic Alphabet (IPA). This
+representation is a Humdrum adaptation of the ASCII transliteration
+scheme for IPA developed by Evan Kirshenbaum. The <strong>**IPA</strong>
+representation permits the encoding of the basic phonetic
+constituents of spoken or sung utterances for several languages.</p>
+<p>Two types of data tokens are distinguished in <strong>**IPA</strong>: phonetic
+segments and silences.</p>
+<p>Spans of silence are represented by the percent sign (%) appearing
+as an isolated token.</p>
+<p>Phonetic segment tokens typically encode syllables or
+single-syllable words. Each syllable consists of one or more
+successive phonemes, where each phoneme is signified by a single
+character with an optional modifier. The beginning of the token may
+include one of three stress indicators. A stressed syllable is
+signified by the apostrophe (&#8216;). A less stressed syllable is
+signified by the comma (,). The absence of either the apostrophe or
+the comma indicates an unstressed syllable.</p>
+<p>In the case of tonally inflected languages (such as all Chinese
+dialects), numbers may follow indicating the type of tonal
+inflection. For example, in Mandarin, the number 1 indicates a high
+tone, the number 2 indicates a rising tone, the number 3 indicates a
+falling-rising tone, and the number 4 indicates a falling tone.</p>
+<div class="line-block">
+<div class="line">Individual phonemes are represented according to the signifiers</div>
+</div>
+<p>listed in the table given below. For example, the upper-case letter
+`A&#8217; signifies the `aw&#8217; vowel as in the standard American
+pronunciation of <em>l\o&#8217;a\(ul&#8217;\o&#8217;w\(ul&#8217;, c\o&#8217;o\(ul&#8217;t</em> and
+<em>b\o&#8217;o\(ul&#8217;ther</em>. Any vowel or diphthong signifier can be modified
+by the subsequent presence of a tilde; the modified vowel is
+pronounced with open nasal passages &#8211; as in the French &#8220;un bon vin
+blanc,&#8221; which is encoded as:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>**IPA</td>
+</tr>
+<tr class="row-even"><td>W~</td>
+</tr>
+<tr class="row-odd"><td>bo~</td>
+</tr>
+<tr class="row-even"><td>va~</td>
+</tr>
+<tr class="row-odd"><td>blA~</td>
+</tr>
+<tr class="row-even"><td>*-</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>In the case of consonants, two modifiers are possible. Any consonant
+signifier that is followed by a semicolon indicates that the front
+of the tongue is positioned as at the beginning of the word <em>yacht.</em>
+Any consonant signifier that is followed by a dash indicates that
+the consonant and the preceding <em>schwa</em> (see below) are pronounced
+as an independent syllable &#8211; as in the case of the words
+<em>batt\o&#8217;l\(ul&#8217;\o&#8217;e\(ul&#8217;, mitt\o&#8217;e\(ul&#8217;\o&#8217;n\(ul&#8217;</em> and
+<em>eat\o&#8217;e\(ul&#8217;\o&#8217;n\(ul&#8217;</em>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="file-type">
+<h3>FILE TYPE<a class="headerlink" href="#file-type" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>It is recommended that files containing predominantly <tt class="docutils literal"><span class="pre">**IPA</span></tt> data
+should be given names with the distinguishing `.ipa&#8217; extension.</div></blockquote>
+</div>
+<div class="section" id="signifiers">
+<h3>SIGNIFIERS<a class="headerlink" href="#signifiers" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><div class="line-block">
+<div class="line">The following table summarizes the <strong>**IPA</strong> mappings of</div>
+</div>
+<p>signifiers and signifieds. (§ All footnotes appear at the end of
+this table.)</p>
+<p>&#64;</p>
+<p>schwa§ as in (unaccented) <em>b\o&#8217;a\(ul&#8217;nan\o&#8217;a\(ul&#8217;,
+c\o&#8217;o\(ul&#8217;llide, \o&#8217;a\(ul&#8217;lone</em></p>
+<p>V</p>
+<p>(IPA symbol: \(an); as in <em>h\o&#8217;u\(ul&#8217;t</em> or
+<em>h\o&#8217;u\(ul&#8217;mdr\o&#8217;u\(ul&#8217;m</em></p>
+<p>R</p>
+<p>R\(dd; as in <em>b\o&#8217;u\(ul&#8217;rn, op\o&#8217;e\(ul&#8217;\o&#8217;r\(ul&#8217;ation,
+d\o&#8217;i\(ul&#8217;\o&#8217;r\(ul&#8217;t, \o&#8217;u\(ul&#8217;\o&#8217;r\(ul&#8217;gent</em></p>
+<p>&amp;</p>
+<p>short a (IPA symbol: \(ae); as in <em>m\o&#8217;a\(ul&#8217;t, m\o&#8217;a\(ul&#8217;p,
+m\o&#8217;a\(ul&#8217;d, g\o&#8217;a\(ul&#8217;g, sn\o&#8217;a\(ul&#8217;p, p\o&#8217;a\(ul&#8217;tch</em></p>
+<p>A</p>
+<p>\o&#8217;a\(..&#8217; (IPA symbol: <em>a</em>); as in <em>b\o&#8217;o\(ul&#8217;ther,
+c\o&#8217;o\(ul&#8217;t</em>, and, with most American speakers,</p>
+<p><em>f\o&#8217;a\(ul&#8217;ther, c\o&#8217;a\(ul&#8217;rt</em></p>
+<p>a</p>
+<p>\o&#8217;a\(de&#8217;; <em>f\o&#8217;a\(ul&#8217;ther</em> as pronounced by speakers who do not
+rhyme it with <em>bother</em>.</p>
+<p>E</p>
+<p>short e (IPA symbol: \(*e or E); as in <em>g\o&#8217;e\(ul&#8217;t,
+b\o&#8217;e\(ul&#8217;d, p\o&#8217;e\(ul&#8217;ck, \o&#8217;e\(ul&#8217;dge</em></p>
+<p>i</p>
+<p>long e (IPA symbol: \o&#8217;i&#8217;); as in <em>b\o&#8217;e\(ul&#8217;\o&#8217;a\(ul&#8217;t,
+gr\o&#8217;e\(ul&#8217;\o&#8217;e\(ul&#8217;d, \o&#8217;e\(ul&#8217;venl\o&#8217;y\(ul&#8217;,
+\o&#8217;e\(ul&#8217;\o&#8217;a\(ul&#8217;s\o&#8217;y\(ul&#8217;</em></p>
+<p>I</p>
+<p>short i (IPA symbol: I or \(*i); as in <em>t\o&#8217;i\(ul&#8217;p,
+ban\o&#8217;i\(ul&#8217;sh, act\o&#8217;i\(ul&#8217;ve</em></p>
+<p>O</p>
+<p>\o&#8217;o\(de&#8217; (IPA symbol: backward `c&#8217;); as in
+<em>l\o&#8217;a\(ul&#8217;\o&#8217;w\(ul&#8217;, \o&#8217;a\(ul&#8217;ll, sh\o&#8217;a\(ul&#8217;\o&#8217;w\(ul&#8217;m</em></p>
+<p>W</p>
+<p>oe digraph (IPA symbol: \(oe); as in the French
+<em>b\o&#8217;o\(ul&#8217;\o&#8217;e\(ul&#8217;\o&#8217;u\(ul&#8217;f</em>, German <em>H\o&#8217;o\(..\(ul&#8217;lle</em></p>
+<p>o</p>
+<p>\o&#8217;o/&#8217; digraph; as in the French
+<em>b\o&#8217;o\(ul&#8217;\o&#8217;e\(ul&#8217;\o&#8217;u\(ul&#8217;fs</em>, d\o&#8217;e\(ul&#8217;\o&#8217;u\(ul&#8217;x,
+German <em>fl\o&#8217;o\(..\(ul&#8217;te</em></p>
+<p>u</p>
+<p>\o&#8217;u\(..&#8217;; as in <em>r\o&#8217;u\(ul&#8217;le, y\o&#8217;o\(ul&#8217;\o&#8217;u\(ul&#8217;th,
+f\o&#8217;e\(ul&#8217;\o&#8217;w\(ul&#8217;, \o&#8217;o\(ul&#8217;\o&#8217;o\(ul&#8217;ze</em></p>
+<p>H</p>
+<p>\o&#8217;u\(..&#8217; (IPA symbol: upside &amp; backwards `h&#8217;); as in French
+<em>n\o&#8217;u\(ul&#8217;ance</em>, <em>l\o&#8217;u\(ul&#8217;i</em></p>
+<p>U</p>
+<p>\o&#8217;u\(de&#8217; (IPA symbol: \(*u or U or \(*w); as in
+<em>p\o&#8217;u\(ul&#8217;ll, w\o&#8217;o\(ul&#8217;\o&#8217;o\(ul&#8217;d, b\o&#8217;o\(ul&#8217;\o&#8217;o\(ul&#8217;k</em></p>
+<p>y</p>
+<p>ue; as in the German <em>f\o&#8217;u\(..\(ul&#8217;hren</em>, <em>\o&#8217;U\(..\(ul&#8217;bung</em></p>
+<p>Y</p>
+<p>UE; as in the German <em>Gl\o&#8217;u\(..\(ul&#8217;ck</em>,
+<em>klavierst\o&#8217;u\(..\(ul&#8217;ck</em></p>
+<p><em>vowel</em>~</p>
+<p>following a vowel* indicates a vowel or diphthong pronounced
+withopen</p>
+<p>nasal passages; as in the French &#8220;un bon vin blanc&#8221;
+(<tt class="docutils literal"><span class="pre">W~</span> <span class="pre">bo~</span> <span class="pre">va~</span> <span class="pre">blA~</span></tt>)</p>
+<p>b</p>
+<p>b; as in <em>\o&#8217;b\(ul&#8217;a\o&#8217;b\(ul&#8217;y, ca\o&#8217;b\(ul&#8217;in, ro\o&#8217;b\(ul&#8217;</em></p>
+<p>d</p>
+<p>d; as in <em>\o&#8217;d\(ul&#8217;ee\o&#8217;d\(ul&#8217;, \o&#8217;d\(ul&#8217;ulcimer,
+a\o&#8217;dd\(ul&#8217;er</em></p>
+<p>f</p>
+<p>f; as in <em>\o&#8217;f\(ul&#8217;eel, cu\o&#8217;f\(ul&#8217;\o&#8217;f\(ul&#8217;</em>, \o&#8217;f\(ul&#8217;orte</p>
+<p>g</p>
+<p>g; as in <em>\o&#8217;g\(ul&#8217;o, ba\o&#8217;g\(ul&#8217;, \o&#8217;g\(ul&#8217;ift</em></p>
+<p>h</p>
+<p>h; as in <em>\o&#8217;h\(ul&#8217;ear, a\o&#8217;h\(ul&#8217;ead, \o&#8217;h\(ul&#8217;orn</em></p>
+<p>k</p>
+<p>k; as in <em>\o&#8217;c\(ul&#8217;oo\o&#8217;k\(ul&#8217;, ta\o&#8217;k\(ul&#8217;\o&#8217;e\(ul&#8217;,
+a\o&#8217;c\(ul&#8217;\o&#8217;h\(ul&#8217;\o&#8217;e\(ul&#8217;</em></p>
+<p>x</p>
+<p>K (IPA symbol: \o&#8217;x\(ul&#8217;); as in the German
+<em>i\o&#8217;c\(ul&#8217;\o&#8217;h\(ul&#8217;, Ba\o&#8217;c\(ul&#8217;\o&#8217;h\(ul&#8217;</em></p>
+<p>C</p>
+<p>as in the German <em>i\o&#8217;c\(ul&#8217;\o&#8217;h\(ul&#8217;, trauri\o&#8217;g\(ul&#8217;</em></p>
+<p>l</p>
+<p>l; as in <em>\o&#8217;l\(ul&#8217;ibretto, \o&#8217;l\(ul&#8217;i\o&#8217;l\(ul&#8217;y,
+poo\o&#8217;l\(ul&#8217;</em></p>
+<p>L</p>
+<p>gl (IPA symbol lambda); as in the Italian
+<em>passaca\o&#8217;g\(ul&#8217;\o&#8217;l\(ul&#8217;ia, a\o&#8217;g\(ul&#8217;\o&#8217;l\(ul&#8217;io</em></p>
+<p>m</p>
+<p>m; as in <em>\o&#8217;m\(ul&#8217;usic, li\o&#8217;m\(ul&#8217;\o&#8217;b\(ul&#8217;,
+ny\o&#8217;m\(ul&#8217;ph</em></p>
+<p>n</p>
+<p>n; as in <em>i\o&#8217;n\(ul&#8217;o, \o&#8217;n\(ul&#8217;strument, ow\o&#8217;n\(ul&#8217;</em></p>
+<p>N</p>
+<p>eng (IPA symbol: `n&#8217; with a tail); as in <em>si\o&#8217;n\(ul&#8217;\o&#8217;g\(ul&#8217;,
+fi\o&#8217;n\(ul&#8217;\o&#8217;g\(ul&#8217;er, i\o&#8217;n\(ul&#8217;k</em></p>
+<p>J</p>
+<p>enya; as in the Italian Lasa\o&#8217;g\(ul&#8217;\o&#8217;n\(ul&#8217;e, French
+<em>a\o&#8217;g\(ul&#8217;\o&#8217;n\(ul&#8217;eau, Dordo\o&#8217;g\(ul&#8217;\o&#8217;n\(ul&#8217;e</em></p>
+<p>p</p>
+<p>p; as in <em>\o&#8217;p\(ul&#8217;iano, bee\o&#8217;p\(ul&#8217;er, li\o&#8217;p\(ul&#8217;</em></p>
+<p>r</p>
+<p>r; as in <em>\o&#8217;r\(ul&#8217;eed, o\o&#8217;r\(ul&#8217;gan, ca\o&#8217;r\(ul&#8217;</em></p>
+<p>s</p>
+<p>s; as in <em>\o&#8217;s\(ul&#8217;eek, \o&#8217;s\(ul&#8217;our\o&#8217;c\(ul&#8217;\o&#8217;e\(ul&#8217;,
+ba\o&#8217;s\(ul&#8217;\o&#8217;s\(ul&#8217;</em></p>
+<p>S</p>
+<p>sh [&#8220;esh&#8221;] (IPA symbol: \o&#8217;\(It\(Im\(Ib&#8217;); as in
+<em>\o&#8217;s\(ul&#8217;\o&#8217;h\(ul&#8217;y, cre\o&#8217;s\(ul&#8217;\o&#8217;c\(ul&#8217;endo,
+spe\o&#8217;c\(ul&#8217;\o&#8217;i\(ul&#8217;al</em></p>
+<p>t</p>
+<p>t; as in <em>\o&#8217;t\(ul&#8217;empo, \o&#8217;t\(ul&#8217;ie,
+a\o&#8217;t\(ul&#8217;\o&#8217;t\(ul&#8217;acca</em></p>
+<p>T</p>
+<p>th [&#8220;theta&#8221;] (IPA symbol: \(*h); as in <em>\o&#8217;t\(ul&#8217;\o&#8217;h\(ul&#8217;in,
+pa\o&#8217;t\(ul&#8217;\o&#8217;h\(ul&#8217;, e\o&#8217;t\(ul&#8217;\o&#8217;h\(ul&#8217;er</em></p>
+<p>D</p>
+<p>\o&#8217;t\(ul&#8217;\o&#8217;h\(ul&#8217; [&#8220;eth&#8221;] (IPA symbol: \o&#8217;d~&#8217;) as in
+<em>\o&#8217;t\(ul&#8217;\o&#8217;h\(ul&#8217;en, ei\o&#8217;t\(ul&#8217;\o&#8217;h\(ul&#8217;er,
+smoo\o&#8217;t\(ul&#8217;\o&#8217;h\(ul&#8217;</em></p>
+<p>v</p>
+<p>v; as in <em>\o&#8217;v\(ul&#8217;oice, \o&#8217;v\(ul&#8217;i\o&#8217;v\(ul&#8217;id,
+li\o&#8217;v\(ul&#8217;\o&#8217;e\(ul&#8217;</em></p>
+<p>w</p>
+<p>w; as in <em>\o&#8217;w\(ul&#8217;e, a\o&#8217;w\(ul&#8217;ay</em></p>
+<p>j</p>
+<p>j; as in <em>\o&#8217;y\(ul&#8217;es, \o&#8217;y\(ul&#8217;oung, c\o&#8217;u\(ul&#8217;e,
+on\o&#8217;i\(ul&#8217;\o&#8217;o\(ul&#8217;n</em></p>
+<p>z</p>
+<p>z; as in <em>\o&#8217;z\(ul&#8217;one, rai\o&#8217;s\(ul&#8217;\o&#8217;e\(ul&#8217;,
+\o&#8217;x\(ul&#8217;ylophone</em></p>
+<p>Z</p>
+<p>zh [&#8220;yogh&#8221;\(sc]; as in <em>mea\o&#8217;s\(ul&#8217;ure,
+vi\o&#8217;s\(ul&#8217;\o&#8217;i\(ul&#8217;on, a\o&#8217;z\(ul&#8217;ure</em></p>
+<p><em>consonant</em>-</p>
+<p>following a consonant (l-, n-, m-, or N-)** indicates a consonant
+preceded</p>
+<p>by a <em>schwa</em> that is pronounced as an independent syllable; as in
+batt\o&#8217;l\(ul&#8217;\o&#8217;e\(ul&#8217;,</p>
+<p>mitt\o&#8217;e\(ul&#8217;\o&#8217;n\(ul&#8217;, eat\o&#8217;e\(ul&#8217;\o&#8217;n\(ul&#8217;\fR</p>
+<p><em>consonant</em>;</p>
+<p>following a consonant,§§ indicates that the front of the tongue is</p>
+<p>positioned as in the beginning of the word `yard&#8217;</p>
+<p>\&#8217;</p>
+<p>primary stress (should precede stressed sound)</p>
+<p>,</p>
+<p>secondary stress (should precede stressed sound)</p>
+<p>%</p>
+<p>silence signifier</p>
+<p><em>Summary of *</em>**IPA** Signifiers*</p>
+<ul class="simple">
+<li>The IPA <em>schwa</em> is notated as an upside-down `e&#8217;.</li>
+<li>The IPA symbol consists of a <em>schwa</em> with a hook.</li>
+<li>The IPA <em>yogh</em> is written like a flat-topped number `3&#8217; that has
+been lowered in height.</li>
+<li>In IPA such vowels are marked by the presence of a tilde above
+the vowel.</li>
+<li>In IPA such consonants are marked by the presence of a vertical
+bar below the consonant.</li>
+<li>The IPA symbol consists of a superscript letter `j&#8217; either
+following or hooked beneath the consonant.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="examples">
+<h3>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Sample syllables and their corresponding <strong>**IPA</strong> encodings are
+given below:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="52%" />
+<col width="48%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>**text</td>
+<td>**IPA</td>
+</tr>
+<tr class="row-even"><td>book</td>
+<td>bUk</td>
+</tr>
+<tr class="row-odd"><td>sing</td>
+<td>sIN</td>
+</tr>
+<tr class="row-even"><td>tag</td>
+<td>t&amp;g</td>
+</tr>
+<tr class="row-odd"><td>now</td>
+<td>nAU</td>
+</tr>
+<tr class="row-even"><td>loud</td>
+<td>lAUd</td>
+</tr>
+<tr class="row-odd"><td>out</td>
+<td>AUt</td>
+</tr>
+<tr class="row-even"><td>site</td>
+<td>saIt</td>
+</tr>
+<tr class="row-odd"><td>side</td>
+<td>saId</td>
+</tr>
+<tr class="row-even"><td>buy</td>
+<td>baI</td>
+</tr>
+<tr class="row-odd"><td>job</td>
+<td>dZAb</td>
+</tr>
+<tr class="row-even"><td>gem</td>
+<td>dZEm</td>
+</tr>
+<tr class="row-odd"><td>edge</td>
+<td>EdZ</td>
+</tr>
+<tr class="row-even"><td>join</td>
+<td>dZOin</td>
+</tr>
+<tr class="row-odd"><td>judge</td>
+<td><a class="reference external" href="mailto:dZ&#37;&#52;&#48;dZ">dZ<span>&#64;</span>dZ</a></td>
+</tr>
+<tr class="row-even"><td>day</td>
+<td>deI</td>
+</tr>
+<tr class="row-odd"><td>fade</td>
+<td>feId</td>
+</tr>
+<tr class="row-even"><td>date</td>
+<td>deIt</td>
+</tr>
+<tr class="row-odd"><td>cape</td>
+<td>keIp</td>
+</tr>
+<tr class="row-even"><td>youth</td>
+<td>juT</td>
+</tr>
+<tr class="row-odd"><td>few</td>
+<td>fju</td>
+</tr>
+<tr class="row-even"><td>mute</td>
+<td>mjut</td>
+</tr>
+<tr class="row-odd"><td>cue</td>
+<td>kju</td>
+</tr>
+<tr class="row-even"><td>cure</td>
+<td>kjUr</td>
+</tr>
+<tr class="row-odd"><td>coin</td>
+<td>kOin</td>
+</tr>
+<tr class="row-even"><td>troy</td>
+<td>trOi</td>
+</tr>
+<tr class="row-odd"><td>bone</td>
+<td>boUn</td>
+</tr>
+<tr class="row-even"><td>know</td>
+<td>noU</td>
+</tr>
+<tr class="row-odd"><td>beau</td>
+<td>boU</td>
+</tr>
+<tr class="row-even"><td>chin</td>
+<td>tSIn</td>
+</tr>
+<tr class="row-odd"><td>*-</td>
+<td>*-</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>The following example encodes a sentence as might be spoken by
+American and British speakers.</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="36%" />
+<col width="33%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>**text</td>
+<td>**IPA</td>
+<td>**IPA</td>
+</tr>
+<tr class="row-even"><td>*</td>
+<td>*American</td>
+<td>*British</td>
+</tr>
+<tr class="row-odd"><td>I</td>
+<td>aI</td>
+<td>aI</td>
+</tr>
+<tr class="row-even"><td>hear</td>
+<td>hir</td>
+<td>hiV</td>
+</tr>
+<tr class="row-odd"><td>the</td>
+<td>D&#64;</td>
+<td>DI</td>
+</tr>
+<tr class="row-even"><td>sec-</td>
+<td>&#8216;sEk</td>
+<td>&#8216;sEk</td>
+</tr>
+<tr class="row-odd"><td>-re-</td>
+<td>rI</td>
+<td>r^</td>
+</tr>
+<tr class="row-even"><td>-ta-</td>
+<td>,t&amp;</td>
+<td>tri</td>
+</tr>
+<tr class="row-odd"><td>-ry</td>
+<td>ri</td>
+<td>.</td>
+</tr>
+<tr class="row-even"><td>*-</td>
+<td>*-</td>
+<td>*-</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="pertinent-commands">
+<h3>PERTINENT COMMANDS<a class="headerlink" href="#pertinent-commands" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The following Humdrum commands accept <strong>**IPA</strong> encoded data as
+inputs:</p>
+<blockquote>
+<div><strong>formant</strong>
+identifies first two formant frequencies for common vowels</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="tandem-interpretations">
+<h3>TANDEM INTERPRETATIONS<a class="headerlink" href="#tandem-interpretations" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The following tandem interpretations can be used in conjunction with
+<strong>**IPA</strong>:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="63%" />
+<col width="38%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>instrument</td>
+<td>*I</td>
+</tr>
+<tr class="row-even"><td>instrument class</td>
+<td>*IC</td>
+</tr>
+<tr class="row-odd"><td>meter signatures</td>
+<td>*M6/8</td>
+</tr>
+<tr class="row-even"><td>tempo</td>
+<td>*MM96.3</td>
+</tr>
+</tbody>
+</table>
+<p><em>Tandem interpretations for *</em>**IPA***</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="see-also">
+<h3>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>`` formant (4)``</div></blockquote>
+</div>
+<div class="section" id="limits">
+<h3>LIMITS<a class="headerlink" href="#limits" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>The International Phonetic Alphabet itself is not well suited to the
+representation of clicks commonly found in African languages, and
+this limitation is evident in the <strong>**IPA</strong> representation. A more
+precise phonetic representation also developed by Evan Kirshenbaum
+might be adapted as the basis for a more refined Humdrum
+representation.</div></blockquote>
+</div>
+<div class="section" id="references">
+<h3>REFERENCES<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>This representation is a Humdrum adaptation of the ASCII
+transliteration scheme for IPA developed by Evan Kirshenbaum.</div></blockquote>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="../guide13.html#XXXXX">**Pertinent description in the Humdrum User
+Guide**</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  <hr/>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <center><a href="../MIDI/" class="btn btn-neutral float-right" title="Representation: **MIDI">Next <span class="fa fa-arrow-circle-right"></span></a></center>
+      
+      
+        <a href="../barlines/" class="btn btn-neutral" title="Representation: barlines"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+      
+             <center><a href="../../_sources/rep/IPA.txt" rel="nofollow"> View page source</a></center>
+      
+    </div>
+  
+
+
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+   
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-52162357-1', 'humdrum.org');
+  ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>

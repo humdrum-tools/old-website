@@ -79,5 +79,16 @@ Documentation
 ..	toctree::
 	:maxdepth: 2
 
-	referencemanual/index
+	man/index
+
+
+
+..	Data Representations
+	----------------------
+
+..	toctree::
+	:maxdepth: 2
+
+	rep/index
+
 

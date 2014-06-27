@@ -1,0 +1,1034 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Command: strophe &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../"/>
+        <link rel="up" title="Humdrum Command Manual" href="../"/>
+        <link rel="next" title="Command: synco" href="../synco/"/>
+        <link rel="prev" title="Command: spect" href="../spect/"/>
+   <link rel="stylesheet" type"text/css" href="../../_static/humdrum.css">
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">Humdrum Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../install/github/">Installing Humdrum Tools from GitHub</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/">The Humdrum User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch01/">Chapter 1: Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch02/">Chapter 2: Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch03/">Chapter 3: Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch04/">Chapter 4: Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch05/">Chapter 5: The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch06/">Chapter 6: Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch07/">Chapter 7: MIDI Output Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch08/">Chapter 8: The Shell (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch09/">Chapter 9: Searching with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch10/">Chapter 10: Musical Uses of Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch11/">Chapter 11: Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch12/">Chapter 12: Selecting Musical Parts and Passages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch13/">Chapter 13: Assembling Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch14/">Chapter 14: Stream Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch15/">Chapter 15: Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch16/">Chapter 16: The Shell (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch17/">Chapter 17: Creating Inventories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch18/">Chapter 18: Fingers, Footsteps and Frets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch19/">Chapter 19: Musical Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch20/">Chapter 20: Strophes, Verses, and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch21/">Chapter 21: Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch22/">Chapter 22: Classifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch23/">Chapter 23: Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch24/">Chapter 24: The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch25/">Chapter 25: Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch26/">Chapter 26: Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch27/">Chapter 27: Text and Lyrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch28/">Chapter 28: Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch29/">Chapter 29: Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch30/">Chapter 30:MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch31/">Chapter 31: Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch32/">Chapter 32: The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch33/">Chapter 33: Word Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch34/">Chapter 34: Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch35/">Chapter 35: Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch36/">Chapter 33: Sound and Spectra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch37/">Chapter 37: Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch38/">Chapter 38: Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch39/">Chapter 39: Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/ch40/">Chapter 40: Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/bibliography/">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/sample.problems/">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/searching/">Music Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/midi/">MIDI Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/notation/">Graphical Musical Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/other/">Other Useful Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/programming/">Humdrum Extras Programming Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cookbook/">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cookbook/vimHighlighting/">Syntax Coloring in Vim</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../">Humdrum Command Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../assemble/">Command: assemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barks/">Command: barks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cbr/">Command: cbr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../census/">Command: census</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cents/">Command: cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cleave/">Command: cleave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cocho/">Command: cocho</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../context/">Command: context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../correl/">Command: correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deg/">Command: deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../degree/">Command: degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../diss/">Command: diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ditto/">Command: ditto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dur/">Command: dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ekern/">Command: ekern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../encode/">Command: encode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extract/">Command: extract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fade/">Command: fade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fields/">Command: fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fin2hum/">Command: fin2hum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../freq/">Command: freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hint/">Command: hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hum2fin/">Command: hum2fin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../humdrum/">Command: humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../humsed/">Command: humsed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../humver/">Command: humver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../infot/">Command: infot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../iv/">Command: iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kern/">Command: kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../key/">Command: key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../melac/">Command: melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../melvel/">Command: melvel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metpos/">Command: metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../midi/">Command: midi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../midreset/">Command: midreset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mint/">Command: mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ms/">Command: ms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nf/">Command: nf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../num/">Command: num</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../patt/">Command: patt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pattern/">Command: pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pc/">Command: pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pcset/">Command: pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../perform/">Command: perform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pf/">Command: pf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pitch/">Command: pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../proof/">Command: proof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../recode/">Command: recode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../record/">Command: record</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regexp/">Command: regexp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reihe/">Command: reihe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rend/">Command: rend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rid/">Command: rid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scramble/">Command: scramble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../semits/">Command: semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simil/">Command: simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smf/">Command: smf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solfa/">Command: solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solfg/">Command: solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../specc/">Command: specc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spect/">Command: spect</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Command: strophe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../synco/">Command: synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tacet/">Command: tacet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">Command: text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../themefinder/">Command: thmea</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../thru/">Command: thru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../timebase/">Command: timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tonh/">Command: tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trans/">Command: trans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../urrhythm/">Command: urrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../veritas/">Command: veritas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vox/">Command: vox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xdelta/">Command: xdelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../yank/">Command: yank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ydelta/">Command: ydelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../#commands">Commands</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../rep/">Pre-defined Humdrum Data Representations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/barlines/">Representation: barlines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/IPA/">Representation: **IPA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/MIDI/">Representation: **MIDI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/Tonh/">Representation: **Tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/URrhythm/">Representation: **URrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/Zeit/">Representation: **Zeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/bhatk/">Representation: **bhatk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/cents/">Representation: **cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/correl/">Representation: **correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/dB/">Representation: **dB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/date/">Representation: **date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/deg/">Representation: **deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/degree/">Representation: **degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/diss/">Representation: **diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/dur/">Representation: **dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/embel/">Representation: **embel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/freq/">Representation: **freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/fret/">Representation: **fret</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/harm/">Representation: **harm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/hildegard/">Representation: **hildegard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/hint/">Representation: **hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/iv/">Representation: **iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/kern/">Representation: **kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/melac/">Representation: **melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/metpos/">Representation: **metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/mint/">Representation: **mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/ordo/">Representation: **ordo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/pc/">Representation: **pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/pcset/">Representation: **pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/pitch/">Representation: **pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/recip/">Representation: **recip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/semits/">Representation: **semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/silbe/">Representation: **silbe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/simil/">Representation: **simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/solfa/">Representation: **solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/solfg/">Representation: **solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/specC/">Representation: **specC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/spect/">Representation: **spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/synco/">Representation: **synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/takt/">Representation: **takt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/text/">Representation: **text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/time/">Representation: **time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/timebase/">Representation: **timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/vox/">Representation: **vox#</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../">Docs</a> &raquo;</li>
+      
+          <li><a href="../">Humdrum Command Manual</a> &raquo;</li>
+      
+    <li>Command: strophe</li>
+      <li class="wy-breadcrumbs-aside">
+        
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="command-strophe">
+<h1>Command: strophe<a class="headerlink" href="#command-strophe" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="command">
+<h2>COMMAND<a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h2>
+<p><strong>strophe</strong> &#8211; selectively extract strophic data for Humdrum inputs</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p>`` strophe  [-s strophe_list | -x strophe_label]  [inputfile ...]``</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>strophe</strong> command is used to isolate or extract selective strophic
+data. Strophic data encode alternative concurrent information for a
+given passage. Examples of alternative concurrent information might
+include the texts for different verses of a song, alternative renditions
+of the same passage (such as <em>ossia</em> passages), or differing editorial
+interpretations of a given note or sequence of notes.</p>
+<p>The <strong>strophe</strong> command permits the user to extract selected information
+paths (called <em>strophes</em>) present in a Humdrum input.</p>
+<p>Structurally, strophic data must begin from a single common spine, split
+apart into two or more alternative spines, and then rejoin to form a
+single spine. Since the strophes split from a common spine, all strophic
+data necessarily begin by sharing the same data type. Different
+exclusive interpretations may be introduced in the strophic passage &#8211;
+provided all strophic spines end up sharing the same data type just
+prior to being rejoined.</p>
+<p>The beginning of a strophic passage is signalled by the presence of a
+<em>strophic passage initiator</em> &#8211; a single asterisk followed by the
+keyword &#8220;strophe&#8221; (<tt class="docutils literal"><span class="pre">*strophe</span></tt>). The end of a strophic passage is
+signalled by the <em>strophic passage terminator</em> &#8211; a single asterisk
+followed by the upper-case letter `S&#8217; followed by a minus sign
+(<tt class="docutils literal"><span class="pre">*S-</span></tt>). Each spine within the strophic passage begins with a <em>strophe
+label</em> and ends with a <em>strophe end indicator</em> (<tt class="docutils literal"><span class="pre">*S/fin</span></tt>).</p>
+<p>Strophe labels may consist of either alphanumeric names, or numbers.
+Numerical labels should be used when the strophic data imply some sort
+of order, such as verses in a song. Alphanumeric labels are convenient
+for distinguishing different editions or <em>ossia</em> passages. The following
+example encodes a melodic phrase containing four numbered verses from
+&#8220;Das Wandern&#8221; from <em>Die Schöne Müllerin</em> by Schubert. <a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">``</span></a></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>!! Franz Schubert, `Das Wandern&#8217; from &#8220;Die Schoene Muellerin&#8221;</td>
+</tr>
+</tbody>
+</table>
+<p>**kern
+**text
+*&gt;[V,V,V,V]
+*&gt;[V,V,V,V]
+*&gt;V
+*&gt;V
+*k[b-e-]
+*Deutsch
+*
+*solo
+*
+*strophe
+*
+*^
+*
+*^
+*^
+*
+*S/1
+*S/2
+*S/3
+*S/4
+8f
+Das
+Vom
+Das
+Die
+=5
+=5
+=5
+=5
+=5
+8f
+Wan-
+Was-
+sehn
+Stei-
+8b-
+-dern
+-ser
+wir
+-ne
+8a
+ist
+ha-
+auch
+selbst ,
+8ee-
+des
+-ben
+den
+so
+=6
+=6
+=6
+=6
+=6
+(16dd
+Mül-
+wir&#8217;s
+Rä-
+schwer
+)16ff
+|
+|
+|
+|
+(16dd
+-lers
+ge-
+-dern
+sie
+)16b-
+|
+|
+|
+|
+8f
+Lust ,
+-lernt ,
+ab ,
+sind ,
+8dd
+das
+vom
+den
+die
+=7
+=7
+=7
+=7
+=7
+(8.cc
+Wan-
+Was-
+Rä-
+Stei-
+)16a
+|
+|
+|
+|
+8b-
+-dern !
+-ser !
+-dern !
+-ne !
+8r
+%
+%
+%
+%
+*
+*S/fin
+*S/fin
+*S/fin
+*S/fin
+*
+*v
+*v
+*v
+*v
+*
+*S-
+*-
+*-</p>
+</div></blockquote>
+<p>Notice that this file contains a single section labelled `V&#8217; (verse)
+and that an expansion list occurs near the beginning of the file that
+indicates the section is to be repeated 4 times in total.</p>
+<p>The strophic passage in the above example pertains only to the spine
+marked <tt class="docutils literal"><span class="pre">**text</span></tt>. Following the strophic passage indicator
+(<tt class="docutils literal"><span class="pre">*strophe</span></tt>), the spine is split apart until the required number of
+verses are generated. Then each spine is labelled with its own strophe
+label. Since the verses have an order, it is appropriate to label them
+with numbers:<tt class="docutils literal"><span class="pre">*S/1,</span> <span class="pre">*S/2,</span></tt> and so on. The individual verses are
+terminated with strophe end indicators (<tt class="docutils literal"><span class="pre">*S/fin</span></tt>), the spines rejoin,
+and then a strophic passage terminator (<tt class="docutils literal"><span class="pre">*S-</span></tt>) marks the end of the
+strophic passage.</p>
+<p>Executing the command:</p>
+<blockquote>
+<div>`` strophe -s 4``</div></blockquote>
+<p>produces the following output: <a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">``</span></a></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>!! Franz Schubert, `Das Wandern&#8217; from &#8220;Die Schoene Muellerin&#8221;</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>**kern</td>
+<td>**text</td>
+</tr>
+<tr class="row-even"><td>*&gt;[V,V,V,V]</td>
+<td>*&gt;[V,V,V,V]</td>
+</tr>
+<tr class="row-odd"><td>*&gt;V</td>
+<td>*&gt;V</td>
+</tr>
+<tr class="row-even"><td>*k[b-e-]</td>
+<td>*Deutsch</td>
+</tr>
+<tr class="row-odd"><td>*</td>
+<td>*solo</td>
+</tr>
+<tr class="row-even"><td>8f</td>
+<td>Die</td>
+</tr>
+<tr class="row-odd"><td>=5</td>
+<td>=5</td>
+</tr>
+<tr class="row-even"><td>8f</td>
+<td>Stei-</td>
+</tr>
+<tr class="row-odd"><td>8b-</td>
+<td>-ne</td>
+</tr>
+<tr class="row-even"><td>8a</td>
+<td>selbst ,</td>
+</tr>
+<tr class="row-odd"><td>8ee-</td>
+<td>so</td>
+</tr>
+<tr class="row-even"><td>=6</td>
+<td>=6</td>
+</tr>
+<tr class="row-odd"><td>(16dd</td>
+<td>schwer</td>
+</tr>
+<tr class="row-even"><td>)16ff</td>
+<td>|</td>
+</tr>
+<tr class="row-odd"><td>(16dd</td>
+<td>sie</td>
+</tr>
+<tr class="row-even"><td>)16b-</td>
+<td>|</td>
+</tr>
+<tr class="row-odd"><td>8f</td>
+<td>sind ,</td>
+</tr>
+<tr class="row-even"><td>8dd</td>
+<td>die</td>
+</tr>
+<tr class="row-odd"><td>=7</td>
+<td>=7</td>
+</tr>
+<tr class="row-even"><td>(8.cc</td>
+<td>Stei-</td>
+</tr>
+<tr class="row-odd"><td>)16a</td>
+<td>|</td>
+</tr>
+<tr class="row-even"><td>8b-</td>
+<td>-ne !</td>
+</tr>
+<tr class="row-odd"><td>8r</td>
+<td>%</td>
+</tr>
+<tr class="row-even"><td>*-</td>
+<td>*-</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Strophic encodings are nearly always encoded in <em>abbreviated</em> rather
+than <em>through-composed</em> file formats. Abbreviated encodings employ
+<em>section labels</em> and <em>expansion-lists</em> in order to identify how various
+passages are repeated and ordered.</p>
+<p>When extracting a single strophe, either the abbreviated or
+through-composed versions can be used as input. However, when using the
+<strong>strophe</strong> command to select more than one strophe for output, it is
+essential that the input first be expanded to a through-composed
+version, via the <a class="reference external" href="thru.html">**thru**</a> command. For example, in order
+to select the first and third verses in the above passage by Schubert,
+the user would need to execute the following command pipeline:</p>
+<blockquote>
+<div>`` thru wandern | strophe -s 1,3``</div></blockquote>
+<p>The list following the <strong>-s</strong> option can contain individual strophes
+separated by commas. For example, the following command extracts verses
+1, 3 and 4 in succession:</p>
+<blockquote>
+<div>`` thru wandern | strophe -s 1,3,4``</div></blockquote>
+<p>Strophes may also be output in non-numeric order as in the following
+command invocation:</p>
+<blockquote>
+<div>`` thru wandern | strophe -s 4,3,2,1``</div></blockquote>
+<p>If the <strong>-x</strong> option is invoked, <strong>strophe</strong> outputs only a single
+strophe whose string <em>label</em> is specified as an option. Strophe names
+need not be numerical. E.g.</p>
+<blockquote>
+<div>`` strophe -x ossia``</div></blockquote>
+<p>If the <strong>strophe</strong> command is invoked without any option, then all
+strophes are expanded in the output in numerical order beginning with
+strophe 1. Missing numerical strophes (such as a missing strophe <tt class="docutils literal"><span class="pre">S/3</span></tt>
+in a four-strophe encoding) will cause an error to be generated and
+terminate the <strong>strophe</strong> command.</p>
+<p>Note that the <strong>strophe</strong> command allows strophe numbers containing a
+single decimal point, such as strophe <tt class="docutils literal"><span class="pre">*S/4.2</span></tt>. Having extracted the
+verse <tt class="docutils literal"><span class="pre">*S/1</span></tt>, the <strong>strophe</strong> command will output verse <tt class="docutils literal"><span class="pre">*S/1.1</span></tt> in
+preference to <tt class="docutils literal"><span class="pre">*S/2</span></tt> &#8211; if the decimal strophe is present. This
+feature allows more than one strophic passage to be encoded within a
+single abbreviated format file. This feature might prove useful, for
+example, in a musical work that contains a brief refrain in the middle
+of each verse.</p>
+<p>The various strophe-related tandem interpretations are summarized below:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>*strophe</td>
+<td>strophic passage initiator</td>
+</tr>
+<tr class="row-even"><td>*S-</td>
+<td>strophic passage terminator</td>
+</tr>
+<tr class="row-odd"><td>*S/<em>string</em></td>
+<td>strophe name label</td>
+</tr>
+<tr class="row-even"><td>*S/<em>n[.n]</em></td>
+<td>strophe number label</td>
+</tr>
+<tr class="row-odd"><td>*S/fin</td>
+<td>strophe end indicator</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><em>Types of Strophe Interpretations</em></p>
+<p>Note that for each strophic passage, all strophe labels must appear on
+the same record. See <a class="reference external" href="#EXAMPLES">EXAMPLES</a> below.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="options">
+<h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p>The <em>strophe</em> command provides the following options:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>-h</strong></td>
+<td>displays a help screen summarizing the command syntax</td>
+</tr>
+<tr class="row-even"><td>-s <em>strophe_list</em></td>
+<td>output numbered strophes according to <em>strophe_list</em></td>
+</tr>
+<tr class="row-odd"><td>-x <em>strophe_label</em></td>
+<td>output only strophes labelled <em>strophe_label</em></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Options are specified in the command line.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="examples">
+<h2>EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>The following example is concocted to illustrate the operation of the
+<strong>strophe</strong> command. Consider the following Humdrum input: <a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">``</span></a></p>
+<blockquote>
+<div>!! `strophe&#8217; example.
+**example
+**bar
+*&gt;[A,V,V,Coda]
+*&gt;[A,V,V,Coda]
+*&gt;A
+*&gt;A
+A
+i
+*&gt;V
+*&gt;V
+*
+**foo
+*
+*strophe
+*
+*^
+*
+*S/1
+*S/2
+B
+1
+2
+*
+*S/fin
+*S/fin
+*
+*v
+*v
+*
+*S-
+*
+**bar
+C
+refrain
+*
+*strophe
+*
+*^
+*
+*S/1.1
+*S/2.1
+B
+1
+2
+*
+*S/fin
+*S/fin
+*
+*v
+*v
+*
+*S-
+*&gt;Coda
+*&gt;Coda
+*
+**foo
+E
+i
+*-
+*-</div></blockquote>
+<p>Since this file is in abbreviated format, we must first expand it to
+through-composed form using the <a class="reference external" href="thru.html">**thru**</a> command. The
+resulting output is: <a href="#id13"><span class="problematic" id="id14">``</span></a><a href="#id15"><span class="problematic" id="id16">``</span></a></p>
+<blockquote>
+<div>!! `strophe&#8217; example.
+**example
+**bar
+*thru
+*thru
+*&gt;A
+*&gt;A
+A
+i
+*&gt;V
+*&gt;V
+*
+**foo
+*
+*thru
+*
+*strophe
+*
+*^
+*
+*S/1
+*S/2
+B
+1
+2
+*
+*S/fin
+*S/fin
+*
+*v
+*v
+*
+*S-
+*
+**bar
+*
+*thru
+C
+refrain
+*
+*strophe
+*
+*^
+*
+*S/1.1
+*S/2.1
+B
+1
+2
+*
+*S/fin
+*S/fin
+*
+*v
+*v
+*
+*S-
+*&gt;V
+*&gt;V
+*
+**foo
+*
+*thru
+*
+*strophe
+*
+*^
+*
+*S/1
+*S/2
+B
+1
+2
+*
+*S/fin
+*S/fin
+*
+*v
+*v
+*
+*S-
+*
+**bar
+*
+*thru
+C
+refrain
+*
+*strophe
+*
+*^
+*
+*S/1.1
+*S/2.1
+B
+1
+2
+*
+*S/fin
+*S/fin
+*
+*v
+*v
+*
+*S-
+*&gt;Coda
+*&gt;Coda
+*
+**foo
+*
+*thru
+E
+i
+*-
+*-</div></blockquote>
+<p>The command:</p>
+<blockquote>
+<div>`` strophe file``</div></blockquote>
+<p>will produce the following output: <a href="#id17"><span class="problematic" id="id18">``</span></a><a href="#id19"><span class="problematic" id="id20">``</span></a></p>
+<blockquote>
+<div>!! `strophe&#8217; example.
+**example
+**bar
+*thru
+*thru
+*&gt;A
+*&gt;A
+A
+i
+*&gt;V
+*&gt;V
+*
+**foo
+*
+*thru
+B
+1
+*
+**bar
+*
+*thru
+C
+refrain
+B
+1
+*&gt;V
+*&gt;V
+*
+**foo
+*
+*thru
+B
+2
+*
+**bar
+*
+*thru
+C
+refrain
+B
+2
+*&gt;Coda
+*&gt;Coda
+*
+**foo
+*
+*thru
+E
+i
+*-
+*-</div></blockquote>
+</div>
+<hr class="docutils" />
+<div class="section" id="portability">
+<h2>PORTABILITY<a class="headerlink" href="#portability" title="Permalink to this headline">¶</a></h2>
+<p>DOS 2.0 and up, with the MKS Toolkit. OS/2 with the MKS Toolkit. UNIX
+systems supporting the <em>Korn</em> shell or <em>Bourne</em> shell command
+interpreters, and revised <em>awk</em> (1985).</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>``  extract (4),  thru (4), <a href="#id21"><span class="problematic" id="id22">*</span></a>strophe (2),  yank (4)``</p>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="../guide20.html#The_strophe_Command">**Pertinent description in the Humdrum User
+Guide**</a></li>
+<li><a class="reference external" href="../commands.toc.html">**Index to Humdrum Commands**</a></li>
+<li><a class="reference external" href="../guide.toc.html">**Table for Contents for Humdrum User Guide**</a></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  <hr/>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <center><a href="../synco/" class="btn btn-neutral float-right" title="Command: synco">Next <span class="fa fa-arrow-circle-right"></span></a></center>
+      
+      
+        <a href="../spect/" class="btn btn-neutral" title="Command: spect"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+      
+             <center><a href="../../_sources/man/strophe.txt" rel="nofollow"> View page source</a></center>
+      
+    </div>
+  
+
+
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+   
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-52162357-1', 'humdrum.org');
+  ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>

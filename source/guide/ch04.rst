@@ -1,6 +1,5 @@
-
 =====================================
-Chapter 4:Basic Pitch Translations
+Chapter 4: Basic Pitch Translations
 =====================================
 
 
@@ -177,7 +176,7 @@ to be exported or imported by various Humdrum tools. A complete description
 of ``**MIDI`` will be given in `Chapter 7.`_
 
 
-Scale Degree -- ***solfa* and ***deg*
+Scale Degree -- \*\*solfa and \*\*deg
 -----
 
 Two different Humdrum representations are provided to describe scale-degree

@@ -1,5 +1,6 @@
+=====================================
 Chapter 16: The Shell (II)
-=========
+=====================================
 
 
 In `Chapter 8`_ we introduced some of the shell special characters. By way of

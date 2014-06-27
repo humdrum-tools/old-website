@@ -46,24 +46,8 @@ The Humdrum User Guide
    ch39.rst
    ch40.rst
    bibliography.rst
-   commands.more.rst
-   commands.toc.rst
-   glossary.rst
    guide.append1.rst
    guide.append2.rst
    guide.bibliog.rst
-   guide.general.index.rst
-   guide.music.index.rst
-   humdrum.problems.rst
-   install.rst
-   linux.perform.rst
-   manual.bibliog.rst
-   manual07.rst
-   manual07a.rst
-   manual07b.rst
-   musedata2kern.rst
    problems.rst
-   projects.rst
-   representations.toc.rst
-   resources.rst
    sample.problems.rst
