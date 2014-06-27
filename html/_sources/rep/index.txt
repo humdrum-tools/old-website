@@ -3,7 +3,7 @@ Humdrum Data Representations
 ====================================
 
 .. toctree::
-	:maxdepth: 2
+	:maxdepth: 1
 
 	barlines
 	IPA
