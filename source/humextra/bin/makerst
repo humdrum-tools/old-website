@@ -12,6 +12,8 @@
 
 use strict;
 
+my $humtable = "humtable";
+
 my $oldhumdir = "../../../Humdrum";
 
 die "Usage $0 input output (@ARGV)" if @ARGV != 2;
@@ -123,6 +125,10 @@ sub processContents {
 
 
 
+##############################
+##
+## processHumdrumio --
+##
 
 sub processHumdrumio {
    my ($line, @contents) = @_;
@@ -141,6 +147,8 @@ sub processHumdrumio {
       $key = $1;
       $value = $2;
       $contents[$i] = "";
+      $key =~ s/-//g;
+      $key =~ s/_//g;
       $options{$key} = $value;
       $i++;
    }
@@ -154,19 +162,57 @@ sub processHumdrumio {
    if ($inputtabwidth !~ /^\s*$/) {
       $inputtabwidth = "\t:tab-width: $inputtabwidth\n";
    }
+   $options{'inputtabwidth'};
+
+
+   if ($options{"display"} eq "humtable") {
+      my $which = `which $humtable`;
+      if ($which =~ /^\s*$/) {
+         $options{"display"} = "literalinclude";
+      }
+   }
+
+   if ($options{"display"} eq "humtable") {
+      printHumdrumioAsHumtable($line, \%options, \@contents);
+   } else {
+      printHumdrumioAsLiteralInclude($line, \%options, \@contents);
+   }
+
+   return @contents;
+}
+
+
+
+##############################
+##
+## printHumdrumAsLiteralInclude --
+##
+
+sub printHumdrumioAsLiteralInclude {
+   my ($line, $opt, $cont) = @_;
+
+   my $inputfile      = $opt->{"inputfile"};
+   my $outputfile     = $opt->{"outputfile"};
+   my $transform      = $opt->{"transform"};
+   my $style          = $opt->{"style"};
+   my $width1         = $opt->{"width1"};
+   my $width2         = $opt->{"width2"};
+   my $width3         = $opt->{"width3"};
+   my $inputtabwidth  = $opt->{"inputtabwidth"};
+   my $outputtabwidth = $opt->{"outputtabwidth"};
 
    my $entry;
    
-   if ($options{"style"} eq "wide") {
+   if ($style eq "wide") {
 
       $entry = <<EOT;
 .. raw:: html
 
 	<table width="100%"><tr> <td style="background-color: #cccccc;" colspan="3" align="center">
-	   &#x21d2;&nbsp;&nbsp;<tt style="border: none; background-color: #cccccc;">$options{"transform"}</tt>&nbsp;&nbsp;&#x21d2;
+	   &#x21d2;&nbsp;&nbsp;<tt style="border: none; background-color: #cccccc;">$transform</tt>&nbsp;&nbsp;&#x21d2;
 	</td></tr><tr><td width="48%>
 
-.. literalinclude:: $options{"inputfile"}
+.. literalinclude:: $inputfile
 	:language: humdrum
 $inputtabwidth
 
@@ -174,7 +220,7 @@ $inputtabwidth
 
 	</td><td width="4%">&nbsp;</td><td width="48%">
 
-.. literalinclude:: $options{"outputfile"}
+.. literalinclude:: $outputfile
 	:language: humdrum
 $outputtabwidth
 
@@ -183,16 +229,16 @@ $outputtabwidth
 	</td></tr></table>
 EOT
 
-   } elsif ($options{"style"} eq "outputonly") {
+   } elsif ($style eq "outputonly") {
 
       $entry = <<EOT;
 .. raw:: html
 
 	<table width="100%"><tr> <td align="center" style="background-color: #cccccc;" colspan="3">
-	   <tt style="border: none; background-color: #cccccc;">$options{"transform"}</tt>
+	   <tt style="border: none; background-color: #cccccc;">$transform</tt>
 	</td></tr><tr><td colspan="3">
 
-.. literalinclude:: $options{"outputfile"}
+.. literalinclude:: $outputfile
 	:language: humdrum
 $outputtabwidth
 
@@ -206,19 +252,19 @@ EOT
       $entry = <<EOT;
 .. raw:: html
 
-	<table width="100%"><tr><td width="$options{"width1"}">
+	<table width="100%"><tr><td width="$width1">
 
-.. literalinclude:: $options{"inputfile"}
+.. literalinclude:: $inputfile
 	:language: humdrum
 $inputtabwidth
 
 .. raw:: html
 
-	</td><td align="center" width="$options{"width2"}"> 
-	   &#x21d2;&nbsp;<tt>$options{"transform"}</tt>&nbsp;&#x21d2;
-	</td><td width="$options{"width3"}">
+	</td><td align="center" width="$width2"> 
+	   &#x21d2;&nbsp;<tt>$transform</tt>&nbsp;&#x21d2;
+	</td><td width="$width3">
 
-.. literalinclude:: $options{"outputfile"}
+.. literalinclude:: $outputfile
 	:language: humdrum
 $outputtabwidth
 
@@ -233,9 +279,131 @@ EOT
    # :htcom: == humdrum toolkit command
    $entry =~ s/:([a-z][a-z])com:/:html:${1}com:/g;
 
-   $contents[$line] = $entry;
+   $$cont[$line] = $entry;
 
-   return @contents;
+}
+
+
+
+##############################
+##
+## printHumdrumAsHumtable --
+##
+
+sub printHumdrumioAsHumtable {
+   my ($line, $opt, $cont) = @_;
+
+   my $inputfile      = $opt->{"inputfile"};
+   my $outputfile     = $opt->{"outputfile"};
+   my $transform      = $opt->{"transform"};
+   my $style          = $opt->{"style"};
+   my $width1         = $opt->{"width1"};
+   my $width2         = $opt->{"width2"};
+   my $width3         = $opt->{"width3"};
+   my $inputtabwidth  = $opt->{"inputtabwidth"};
+   my $outputtabwidth = $opt->{"outputtabwidth"};
+
+   my $entry;
+
+   my $inhtml;
+   my $outhtml;
+
+   my $shortin = $inputfile;
+   my $shortout = $outputfile;
+   $shortin  =~ s/.*\///;
+   $shortout =~ s/.*\///;
+
+   if (validHumdrum($shortin)) {
+      $inhtml = `humtable $shortin`;
+   } else {
+      $inhtml = "$shortin NOT FOUND";
+   }
+   if (validHumdrum($shortout)) {
+      $outhtml = `humtable $shortout`;
+   } else {
+      $outhtml = "$shortout NOT FOUND";
+   }
+   
+   $inhtml =~ s/^/\t/gm;
+   $outhtml =~ s/^/\t/gm;
+
+   if ($style eq "wide") {
+
+      $entry = <<EOT;
+.. raw:: html
+
+	<table width="100%"><tr> <td style="background-color: #cccccc;" colspan="3" align="center">
+	   &#x21d2;&nbsp;&nbsp;<tt style="border: none; background-color: #cccccc;">$transform</tt>&nbsp;&nbsp;&#x21d2;
+	</td></tr><tr><td width="48%>
+$inhtml
+	</td><td width="4%">&nbsp;</td><td width="48%">
+$outhtml
+	</td></tr></table>
+EOT
+
+   } elsif ($style eq "outputonly") {
+
+      $entry = <<EOT;
+.. raw:: html
+
+	<table width="100%"><tr> <td align="center" style="background-color: #cccccc;" colspan="3">
+	   <tt style="border: none; background-color: #cccccc;">$transform</tt>
+	</td></tr><tr><td colspan="3">
+$outhtml
+	</td></tr></table>
+EOT
+
+   } else {
+
+      $entry = <<EOT;
+.. raw:: html
+
+	<table width="100%"><tr><td width="$width1">
+$inhtml
+	</td><td align="center" width="$width2"> 
+	   &#x21d2;&nbsp;<tt>$transform</tt>&nbsp;&#x21d2;
+	</td><td width="$width3">
+$outhtml
+	</td></tr></table>
+EOT
+   }
+
+   # :uxcom: == unix command
+   # :hxcom: == humdrum extras command
+   # :htcom: == humdrum toolkit command
+   $entry =~ s/:([a-z][a-z])com:/:html:${1}com:/g;
+
+   $$cont[$line] = $entry;
+
+}
+
+
+
+#############################
+##
+## validHumdrum -- returns true if valid Humdrum file.
+##
+
+sub validHumdrum {
+   my ($filename) = @_;
+
+   return 0 if !-r $filename;
+
+   open(VFILE, $filename) or die;
+   my $line;
+   while ($line = <VFILE>) {
+      next if $line =~ /^$/;
+      if ($line =~ /^!/) {
+         close VFILE;
+         return 1;
+      }
+      if ($line =~ /^\*/) {
+         close VFILE;
+         return 1;
+      }
+      close VFILE;
+      return 0;
+   }
 }
 
 

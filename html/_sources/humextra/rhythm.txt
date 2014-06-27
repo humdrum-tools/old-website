@@ -299,8 +299,7 @@ of floating-point values.
 
 .. literalinclude:: rhythm.rstd/durationoutput-dpf.krn
 	:language: humdrum
-	:tab-width: 12
-
+12
 
 .. raw:: html
 
@@ -372,13 +371,83 @@ which is the `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.re
 	<table width="100%"><tr> <td align="center" style="background-color: #cccccc;" colspan="3">
 	   <tt style="border: none; background-color: #cccccc;"><a href=http://extras.humdrum.org/man/beat>beat</a> -dpf </tt>
 	</td></tr><tr><td colspan="3">
-
-.. literalinclude:: rhythm.rstd/noc9-3-pdf.krn
-	:language: humdrum
-	:tab-width: 15
-
-
-.. raw:: html
+	<table cellpadding="0" cellspacing="0">
+	<tr valign="baseline" class="humhi humref"><td colspan=3><span class="key" title="Composer's name">!!!COM: Chopin, Frederic</span></td></tr><tr valign="baseline" class="humhi humref"><td colspan=3><span class="key" title="Title">!!!OTL: Nocturne in B Major, op. 9/3</span></td></tr><tr valign="baseline" class="humhi humexinterp"><td class="humtd">**dur</td><td class="humtd">**kern</td><td class="humtd">**kern</td></tr>
+	<tr valign="baseline" class="humhi huminterp"><td class="humtd">*</td><td class="humtd">*clefF4</td><td class="humtd">*clefG2</td></tr>
+	<tr valign="baseline" class="humhi huminterp"><td class="humtd">*</td><td class="humtd">*k[f#c#g#d#a#]</td><td class="humtd">*k[f#c#g#d#a#]</td></tr>
+	<tr valign="baseline" class="humhi humbar"><td class="humtd">=8-</td><td class="humtd">=8-</td><td class="humtd">=8-</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/8</td><td class="humtd">(8FF#\L</td><td class="humtd">[2a#/</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/8</td><td class="humtd">8C#\</td><td class="humtd">.</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/8</td><td class="humtd">8A#\</td><td class="humtd">.</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/8</td><td class="humtd">8F#\</td><td class="humtd">.</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/24</td><td class="humtd">8e\</td><td class="humtd">24a#]/LL</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/24</td><td class="humtd">.</td><td class="humtd">(24e#/</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/24</td><td class="humtd">.</td><td class="humtd">24f#/J</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/32</td><td class="humtd">8A#\J)</td><td class="humtd">32g#/LL</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/32</td><td class="humtd">.</td><td class="humtd">32a#/</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/32</td><td class="humtd">.</td><td class="humtd">32b/</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/32</td><td class="humtd">.</td><td class="humtd">32c/JJJ)</td></tr>
+	<tr valign="baseline" class="humhi humbar"><td class="humtd">=9</td><td class="humtd">=9</td><td class="humtd">=9</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">3/40</td><td class="humtd">(8BB\L</td><td class="humtd">(40%3d#\L</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/20</td><td class="humtd">.</td><td class="humtd">40%3fn\</td></tr>
+	<tr valign="baseline" class="humhi hummanip"><td class="humtd">*</td><td class="humtd">*^</td><td class="humtd">*</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/40</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>8F#\</td><td width=10></td><td  width=70>4F#/</td></tr></table>
+	</td><td class="humtd">.</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">3/40</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>.</td><td width=10></td><td  width=70>.</td></tr></table>
+	</td><td class="humtd">40%3e\</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/40</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>.</td><td width=10></td><td  width=70>.</td></tr></table>
+	</td><td class="humtd">40%3c##\</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/20</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>8f#\J)</td><td width=10></td><td  width=70>.</td></tr></table>
+	</td><td class="humtd">.</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">3/40</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>.</td><td width=10></td><td  width=70>.</td></tr></table>
+	</td><td class="humtd">40%3d#\J)</td></tr>
+	<tr valign="baseline" class="humhi hummanip"><td class="humtd">*</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi hummanip"><td  width=70>*v</td><td width=10></td><td  width=70>*v</td></tr></table>
+	</td><td class="humtd">*</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">3/40</td><td class="humtd">(8BB\L</td><td class="humtd">(40%3dn\L</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/20</td><td class="humtd">.</td><td class="humtd">40%3e\</td></tr>
+	<tr valign="baseline" class="humhi hummanip"><td class="humtd">*</td><td class="humtd">*^</td><td class="humtd">*</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/40</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>8Fn\</td><td width=10></td><td  width=70>4Fn/</td></tr></table>
+	</td><td class="humtd">.</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">3/40</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>.</td><td width=10></td><td  width=70>.</td></tr></table>
+	</td><td class="humtd">40%3d#\</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/40</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>.</td><td width=10></td><td  width=70>.</td></tr></table>
+	</td><td class="humtd">40%3c#\</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/20</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>8fn\J)</td><td width=10></td><td  width=70>.</td></tr></table>
+	</td><td class="humtd">.</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">3/40</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>.</td><td width=10></td><td  width=70>.</td></tr></table>
+	</td><td class="humtd">40%3dn\J)</td></tr>
+	<tr valign="baseline" class="humhi hummanip"><td class="humtd">*</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi hummanip"><td  width=70>*v</td><td width=10></td><td  width=70>*v</td></tr></table>
+	</td><td class="humtd">*</td></tr>
+	<tr valign="baseline" class="humhi humbar"><td class="humtd">=10</td><td class="humtd">=10</td><td class="humtd">=10</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/8</td><td class="humtd">8BB\L</td><td class="humtd">[4.c#^</td></tr>
+	<tr valign="baseline" class="humhi hummanip"><td class="humtd">*</td><td class="humtd">*^</td><td class="humtd">*</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/8</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>8E\</td><td width=10></td><td  width=70>4E/</td></tr></table>
+	</td><td class="humtd">.</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/8</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>8e\J</td><td width=10></td><td  width=70>.</td></tr></table>
+	</td><td class="humtd">.</td></tr>
+	<tr valign="baseline" class="humhi hummanip"><td class="humtd">*</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi hummanip"><td  width=70>*v</td><td width=10></td><td  width=70>*v</td></tr></table>
+	</td><td class="humtd">*</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">3/56</td><td class="humtd">8BB\L</td><td class="humtd">(56%3c#]\LL</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">3/56</td><td class="humtd">.</td><td class="humtd">56%3b#\</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/56</td><td class="humtd">.</td><td class="humtd">56%3c#\</td></tr>
+	<tr valign="baseline" class="humhi hummanip"><td class="humtd">*</td><td class="humtd">*^</td><td class="humtd">*</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/28</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>8Gn\</td><td width=10></td><td  width=70>4Gn/</td></tr></table>
+	</td><td class="humtd">.</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">3/56</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>.</td><td width=10></td><td  width=70>.</td></tr></table>
+	</td><td class="humtd">56%3c##\</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/28</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>.</td><td width=10></td><td  width=70>.</td></tr></table>
+	</td><td class="humtd">56%3d#\</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">1/56</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>8gn\J</td><td width=10></td><td  width=70>.</td></tr></table>
+	</td><td class="humtd">.</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">3/56</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>.</td><td width=10></td><td  width=70>.</td></tr></table>
+	</td><td class="humtd">56%3e\</td></tr>
+	<tr valign="baseline" class="humhi humdat"><td class="humtd">3/56</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi humdat"><td  width=70>.</td><td width=10></td><td  width=70>.</td></tr></table>
+	</td><td class="humtd">56%3e#\JJ)</td></tr>
+	<tr valign="baseline" class="humhi hummanip"><td class="humtd">*</td><td class="humtd"><table cellpadding="0" cellspacing="0"><tr valign=baseline class="humhi hummanip"><td  width=70>*v</td><td width=10></td><td  width=70>*v</td></tr></table>
+	</td><td class="humtd">*</td></tr>
+	<tr valign="baseline" class="humhi humbar"><td class="humtd">=</td><td class="humtd">=</td><td class="humtd">=</td></tr>
+	<tr valign="baseline" class="humhi hummanip"><td class="humtd">*-</td><td class="humtd">*-</td><td class="humtd">*-</td></tr>
+	</table>
 
 	</td></tr></table>
 

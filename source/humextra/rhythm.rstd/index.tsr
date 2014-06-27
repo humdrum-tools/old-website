@@ -288,6 +288,7 @@ which is the :exinterp:`recip` rhythm ``56%3``.
 	:outputfile:	rhythm.rstd/noc9-3-pdf.krn
 	:transform:	:hxcom:`beat` -dpf 
 	:style:		outputonly
+	:display:	humtable
 	:outputtabwidth:	15
 
 
