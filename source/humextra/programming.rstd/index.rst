@@ -11,7 +11,7 @@
 .. ########################################################################
 
 ===================================
-Humdrum Extras Programming Tutorial
+Programming Tutorial
 ===================================
 
 This chapter demonstrates how to write programs using the C++ library for

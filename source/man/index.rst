@@ -27,7 +27,6 @@ Humdrum Command Manual
 	fin2hum
 	freq
 	hint
-	hum2fin
 	humdrum
 	humsed
 	humver
@@ -107,7 +106,6 @@ Commands
 	extract
 	fade
 	fields
-	fin2hum
 	freq
 	hint
 	hum2fin

@@ -156,7 +156,7 @@ a {
 /* Search box size */
 div.sphinxsidebar 
 #searchbox input[type="submit"] {
-    width: 50px;
+    width: 40px;
 }
 
 /* Most links get an underline-effect when hovered */
@@ -272,14 +272,14 @@ div.sphinxsidebar {
     top: 3em;
     left: 0;
     padding: 0 1em;
-    width: 14em;
+    width: 12em;
     font-size: 1em;
     text-align: left;
     background-color: #e8ecef; 
 }
 
 div.sphinxsidebar img {
-    max-width: 12em;
+    max-width: 10em;
 }
 
 div.sphinxsidebar h3,
@@ -362,7 +362,7 @@ input[type="text"] {
     margin: 0;
     padding: 0 3px;
     height: 20px;
-    width: 144px;
+    width: 134px;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
     -moz-border-radius-topleft: 3px;

@@ -1,0 +1,74 @@
+
+.. |flat|    unicode:: 0x266d
+.. |natural| unicode:: 0x266e
+.. |sharp|   unicode:: 0x266f
+
+
+===============================
+Harmony
+===============================
+
+Roman Numeral Chords to Pitches
+===========================================================================
+
+The :hxcom:`harm2kern` program can be used to convert Roman numeral
+chords in the :exinterp:`harm` representation into :exinterp:`kern`
+pitches.  Here is an example conversion, using the Pachelbel's canon
+chord sequence:
+
+**Example.** Pachelbel's canon chord sequence mapped onto pitches.
+
+.. humdrumio::
+	:inputfile:	harmony.rstd/pachelbel.hmd
+	:outputfile:	harmony.rstd/pachelbel-out.hmd
+	:transform:	:hxcom:`harm2kern`
+
+Rhythm can be added to the output :exinterp:`kern` data as shown
+in the following examples.  This is useful if you want to align
+to a musical score or listen to the resulting pitches by converting
+the result into a MIDI file.  A constant rhythm value can be prefixed
+to each output chord note by using the ``-P`` option followed by a
+:exinterp:`recip` rhythm (although ``-P`` will also prefix any arbitrary
+text).
+
+**Example.** Add half note rhythm to all chord notes using the ``-P`` (prefix) option.
+
+.. humdrumio::
+	:inputfile:	harmony.rstd/pachelbel.hmd
+	:outputfile:	harmony.rstd/pachelbel-2.krn
+	:transform:	:hxcom:`harm2kern` -P 2
+
+**Example.** Include a :exinterp:`recip` or :exinterp:`kern` spine with the input to automatically generate rhythmic values in output.
+
+.. humdrumio::
+	:inputfile:	harmony.rstd/pachelbel-recip.hmd
+	:outputfile:	harmony.rstd/pachelbel-recip-out.krn
+	:transform:	:hxcom:`harm2kern` 
+
+
+Automatic transpositions of :exinterp:`harm` data can be done
+before or after conversion to :exinterp:`kern` data 
+with the :hxcom:`transpose` command.  Also note that the following
+input data was created by appending the conversion to :exinterp:`kern`
+data to the input :exinterp:`harm` data by using the ``-a`` option.
+
+
+**Example.** Transposing Pachelbel's canon chords to F\ |sharp| major.
+
+.. humdrumio::
+	:inputfile:	harmony.rstd/pachelbel-both.krn
+	:outputfile:	harmony.rstd/pachelbel-fsharp.krn
+	:transform:	:hxcom:`transpose` -qk f# 
+
+Here is a chord label sampler with conversions into pitches:
+
+
+**Example.** Various chord types
+
+.. humdrumio::
+	:inputfile:	harmony.rstd/allchords.hmd
+	:outputfile:	harmony.rstd/allchords-out.hmd
+	:transform:	:hxcom:`harm2kern` 
+
+
+
