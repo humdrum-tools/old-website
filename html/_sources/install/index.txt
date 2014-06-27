@@ -3,6 +3,6 @@ Humdrum Installation Guide
 ==========================
 
 .. toctree:: 
-   maxdepth: 3
+	:maxdepth: 1
 
-   github
+	github
