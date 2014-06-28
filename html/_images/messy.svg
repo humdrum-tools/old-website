@@ -1,0 +1,548 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="33 0 280 146"
+     width="560" height="292">
+<g transform="translate(0,150) scale(1,-1) scale(.01800) translate(2100,26250)" stroke-linejoin="round" color="black" stroke="currentColor" fill="none" stroke-width="26.7067"  fill-rule="evenodd">
+<defs>
+<g id="P00">
+<path  d="
+M118 -168
+L162 -168
+L200 -162
+L256 -143
+L306 -118
+L350 -87
+L368 -68
+L400 -31
+L418 6
+L425 43
+L425 68
+L418 93
+L412 106
+L393 131
+L368 150
+L356 156
+L337 162
+L306 168
+L262 168
+L225 162
+L187 150
+L168 143
+L118 118
+L75 87
+L56 68
+L25 31
+L6 -6
+L0 -43
+L0 -68
+L6 -93
+L12 -106
+L31 -131
+L56 -150
+L68 -156
+L87 -162
+L118 -168
+Z" fill="currentColor"/>
+</g>
+</defs>
+<defs>
+<g id="P01">
+<path  d="
+M175 1050
+L175 350
+L0 350
+L0 1050
+L175 1050
+L175 1025
+Z" fill="currentColor"/>
+<path  d="
+M525 350
+L525 1050
+L350 1050
+L350 350
+L525 350
+L525 375
+Z" fill="currentColor"/>
+</g>
+</defs>
+<path  d="
+M0 -23300
+L15000 -23300
+"/>
+<use transform="translate(112,-24000)" xlink:href="#P01"/>
+<path  d="
+M995 -21165
+L917 -21178
+L851 -21204
+L825 -21217
+L785 -21243
+L746 -21283
+L733 -21309
+L720 -21348
+L720 -21388
+L733 -21440
+L772 -21480
+L812 -21493
+L851 -21493
+L890 -21480
+L917 -21453
+L930 -21414
+L930 -21375
+L917 -21335
+L890 -21309
+L864 -21296
+L812 -21283
+L812 -21256
+L851 -21230
+L917 -21204
+L982 -21191
+L1008 -21191
+L1074 -21204
+L1100 -21217
+L1127 -21243
+L1153 -21296
+L1166 -21375
+L1166 -21427
+L1153 -21480
+L1140 -21506
+L1113 -21532
+L1074 -21558
+L1035 -21571
+L864 -21585
+L864 -21624
+L1022 -21637
+L1061 -21650
+L1087 -21663
+L1113 -21690
+L1127 -21703
+L1153 -21755
+L1166 -21821
+L1166 -21913
+L1153 -21991
+L1140 -22018
+L1100 -22057
+L1048 -22083
+L982 -22096
+L956 -22096
+L890 -22083
+L825 -22057
+L798 -22044
+L772 -22018
+L772 -21991
+L785 -21978
+L798 -21978
+L838 -21991
+L877 -21991
+L903 -21978
+L930 -21952
+L943 -21913
+L943 -21873
+L930 -21834
+L903 -21808
+L864 -21795
+L812 -21795
+L772 -21808
+L759 -21821
+L733 -21860
+L720 -21913
+L720 -21939
+L733 -22005
+L759 -22044
+L772 -22057
+L812 -22083
+L877 -22110
+L956 -22123
+L1035 -22123
+L1140 -22110
+L1218 -22083
+L1271 -22057
+L1323 -22018
+L1363 -21965
+L1376 -21939
+L1389 -21886
+L1389 -21821
+L1376 -21768
+L1363 -21742
+L1337 -21703
+L1284 -21663
+L1218 -21637
+L1179 -21624
+L1179 -21598
+L1245 -21571
+L1271 -21558
+L1310 -21532
+L1337 -21506
+L1363 -21466
+L1376 -21427
+L1376 -21375
+L1363 -21322
+L1337 -21283
+L1284 -21230
+L1232 -21204
+L1153 -21178
+L1061 -21165
+L995 -21165
+Z" fill="currentColor"/>
+<path  d="
+M943 -22228
+L930 -22333
+L917 -22398
+L890 -22503
+L864 -22582
+L812 -22713
+L746 -22831
+L720 -22871
+L707 -22897
+L707 -22910
+L720 -22936
+L1100 -22936
+L1100 -23146
+L903 -23146
+L903 -23186
+L1520 -23186
+L1520 -23146
+L1310 -23146
+L1310 -22936
+L1520 -22936
+L1520 -22897
+L1310 -22897
+L1310 -22543
+L1284 -22530
+L1100 -22700
+L1100 -22897
+L785 -22897
+L785 -22884
+L903 -22753
+L1048 -22582
+L1192 -22398
+L1284 -22280
+L1284 -22267
+L1258 -22241
+L1035 -22241
+L982 -22228
+L943 -22228
+Z" fill="currentColor"/>
+<use transform="translate(1769,-23300)" xlink:href="#P00"/>
+<path  d="
+M1769 -23352
+L1769 -24525
+"/>
+<path stroke-width=".0000" d="
+M13705 -24350
+L13705 -24525
+L1769 -24525
+L1769 -24350
+L13705 -24350
+L13705 -24525
+Z" fill="currentColor"/>
+<text transform="translate(7781,-25800) scale(1,-1)" fill="currentColor" stroke="none" font-size="675" style="font-family:Nimbus Roman No9 L;font-style:italic">7</text>
+<path  d="
+M1769 -25050
+L1769 -25575
+L7631 -25575
+M8281 -25575
+L14143 -25575
+L14143 -25050
+"/>
+<use transform="translate(3031,-23300)" xlink:href="#P00"/>
+<path  d="
+M3031 -23352
+L3031 -24525
+"/>
+<use transform="translate(4294,-23300)" xlink:href="#P00"/>
+<path  d="
+M4294 -23352
+L4294 -24525
+"/>
+<use transform="translate(5811,-23300)" xlink:href="#P00"/>
+<path  d="
+M5811 -23352
+L5811 -24525
+"/>
+<use transform="translate(8898,-23300)" xlink:href="#P00"/>
+<path  d="
+M8898 -23352
+L8898 -24525
+"/>
+<path stroke-width=".0000" d="
+M10710 -24087
+L10710 -24262
+L8898 -24262
+L8898 -24087
+L10710 -24087
+L10710 -24262
+Z" fill="currentColor"/>
+<path stroke-width=".0000" d="
+M9348 -23825
+L9348 -24000
+L8898 -24000
+L8898 -23825
+L9348 -23825
+L9348 -24000
+Z" fill="currentColor"/>
+<text transform="translate(9847,-25275) scale(1,-1)" fill="currentColor" stroke="none" font-size="675" style="font-family:Nimbus Roman No9 L;font-style:italic">4</text>
+<path  d="
+M8898 -24700
+L8898 -25050
+L9697 -25050
+M10347 -25050
+L11147 -25050
+L11147 -24700
+"/>
+<use transform="translate(9821,-23300)" xlink:href="#P00"/>
+<path  d="
+M9821 -23352
+L9821 -24525
+"/>
+<path stroke-width=".0000" d="
+M10710 -23825
+L10710 -24000
+L10260 -24000
+L10260 -23825
+L10710 -23825
+L10710 -24000
+Z" fill="currentColor"/>
+<use transform="translate(10710,-23300)" xlink:href="#P00"/>
+<path  d="
+M10710 -23352
+L10710 -24525
+"/>
+<use transform="translate(11385,-23300)" xlink:href="#P00"/>
+<path  d="
+M11385 -23352
+L11385 -24525
+"/>
+<path  d="
+M11900 -23137
+L11900 -23106
+L11925 -23081
+L11956 -23081
+L11981 -23106
+L11981 -23137
+L11956 -23162
+L11925 -23162
+L11900 -23137
+L11900 -23106
+Z" fill="currentColor"/>
+<path stroke-width=".0000" d="
+M12975 -24087
+L12975 -24262
+L11385 -24262
+L11385 -24087
+L12975 -24087
+L12975 -24262
+Z" fill="currentColor"/>
+<text transform="translate(12223,-25275) scale(1,-1)" fill="currentColor" stroke="none" font-size="675" style="font-family:Nimbus Roman No9 L;font-style:italic">3</text>
+<path  d="
+M11385 -24700
+L11385 -25050
+L12073 -25050
+M12723 -25050
+L13412 -25050
+L13412 -24700
+"/>
+<path stroke-width=".0000" d="
+M12300 -23825
+L12300 -24000
+L11850 -24000
+L11850 -23825
+L12300 -23825
+L12300 -24000
+Z" fill="currentColor"/>
+<use transform="translate(12299,-23300)" xlink:href="#P00"/>
+<path  d="
+M12299 -23352
+L12299 -24525
+"/>
+<use transform="translate(12974,-23300)" xlink:href="#P00"/>
+<path  d="
+M12974 -23352
+L12974 -24525
+"/>
+<use transform="translate(13706,-23300)" xlink:href="#P00"/>
+<path  d="
+M13706 -23352
+L13706 -24525
+"/>
+<path  d="
+M15000 -24000
+L15000 -22600
+M15006 -24000
+L15006 -22600
+"/>
+<path  d="
+M0 -21025
+L15000 -21025
+"/>
+<use transform="translate(112,-21725)" xlink:href="#P01"/>
+<use transform="translate(1769,-21025)" xlink:href="#P00"/>
+<path  d="
+M2194 -20972
+L2194 -19800
+"/>
+<text transform="translate(7314,-18625) scale(1,-1)" fill="currentColor" stroke="none" font-size="675" style="font-family:Nimbus Roman No9 L;font-style:italic">5</text>
+<path  d="
+M1769 -19100
+L1769 -18400
+L7164 -18400
+M7814 -18400
+L13210 -18400
+L13210 -19100
+"/>
+<use transform="translate(3536,-21025)" xlink:href="#P00"/>
+<path  d="
+M3961 -20972
+L3961 -19800
+"/>
+<use transform="translate(5380,-21025)" xlink:href="#P00"/>
+<path  d="
+M5805 -20972
+L5805 -19800
+"/>
+<path stroke-width=".0000" d="
+M9365 -19975
+L9365 -19800
+L5805 -19800
+L5805 -19975
+L9365 -19975
+L9365 -19800
+Z" fill="currentColor"/>
+<text transform="translate(7204,-19150) scale(1,-1)" fill="currentColor" stroke="none" font-size="675" style="font-family:Nimbus Roman No9 L;font-style:italic">3</text>
+<path  d="
+M5380 -19275
+L5380 -18925
+L7054 -18925
+M7704 -18925
+L9377 -18925
+L9377 -19275
+"/>
+ <g color="red" stroke="black">
+<use transform="translate(6240,-21025)" xlink:href="#P00"/>
+<path  d="
+M6665 -20972
+L6665 -19800
+"/>
+<use transform="translate(6915,-21025)" xlink:href="#P00"/>
+<path  d="
+M7340 -20972
+L7340 -19800
+"/>
+<use transform="translate(7590,-21025)" xlink:href="#P00"/>
+<path  d="
+M8015 -20972
+L8015 -19800
+"/>
+<use transform="translate(8265,-21025)" xlink:href="#P00"/>
+<path  d="
+M8690 -20972
+L8690 -19800
+"/>
+<use transform="translate(8940,-21025)" xlink:href="#P00"/>
+<path  d="
+M9365 -20972
+L9365 -19800
+"/>
+ </g>
+<path stroke-width=".0000" d="
+M9365 -20237
+L9365 -20062
+L6665 -20062
+L6665 -20237
+L9365 -20237
+L9365 -20062
+Z" fill="currentColor"/>
+<path  d="
+M6240 -19625
+L6240 -19450
+L7208 -19450
+M8408 -19450
+L9377 -19450
+L9377 -19625
+"/>
+<text transform="translate(7477,-19625) scale(1,-1)" fill="currentColor" stroke="none" font-size="682" style="font-family:Nimbus Roman No9 L;font-style:italic">5:2</text>
+<use transform="translate(9615,-21025)" xlink:href="#P00"/>
+<path  d="
+M10040 -20972
+L10040 -19800
+"/>
+<use transform="translate(12772,-21025)" xlink:href="#P00"/>
+<path  d="
+M13197 -20972
+L13197 -19800
+"/>
+<path  d="
+M15000 -21725
+L15000 -20325
+M15006 -21725
+L15006 -20325
+"/>
+</g>
+</svg>
+<?SCORE version="4"
+###ScorePage:	messy
+###document:		Humdrum Extras Guide
+###example_number:	messy
+###example_label:	messy
+###caption:		Nested tuplets
+###typesetter:		Craig Stuart Sapp
+###typeset_date:	Fri Jun 27 14:15:21 PDT 2014
+
+#SVG_SCALE: 2
+#BORDER: 4
+
+#define SVG t 1 1\n_99%svg%
+
+8 1 0 0 0 100 301 3
+3 1 0.75 0 4
+18 1 4.801 3 3 4 1.5
+1 1 11.798 7 20 0 0.4286
+6 1 11.798 7 7 91.37 21
+5 1 11.798 -3 -3 91.37 -3 3 7
+1 1 20.213 7 20 0 0.4286
+1 1 28.627 7 20 0 0.4286
+1 1 38.745 7 20 0 0.4286
+1 1 59.321 7 20 0 0.1071
+6 1 59.321 8.5 8.5 71.4 21
+6 1 59.321 10 10 62.32 21
+5 1 59.321 -1 -1 71.4 -2 3 4
+1 1 65.476 7 20 0 0.2143
+6 1 68.4 10 10 71.4 21
+1 1 71.402 7 20 0 0.1071
+1 1 75.902 7 20 0 0.2143 0 10.99
+6 1 75.902 8.5 8.5 86.5 21
+5 1 75.902 -1 -1 86.5 -2 3 3
+6 1 79 10 10 82 21
+1 1 81.998 7 20 0 0.0714
+1 1 86.498 7 20 0 0.1429
+1 1 91.374 7 20 0 0.4286
+14 1 100 1
+8 2 0 -5 0 100 301
+3 2 0.75 0 4
+1 2 11.798 7 10 0 0.6
+5 2 11.798 18 18 85.15 4 3 5
+1 2 23.577 7 10 0 0.6
+1 2 35.872 7 10 0 0.2
+6 2 35.872 7 7 59.6 11
+5 2 35.872 17 17 59.6 2 3 3
+
+SVG &lt;g color="red" stroke="black"&gt;
+1 2 41.602 7 10 0 0.08
+1 2 46.102 7 10 0 0.08
+1 2 50.602 7 10 0 0.08
+1 2 55.102 7 10 0 0.08
+1 2 59.602 7 10 0 0.08
+SVG &lt;\g&gt;
+
+6 2 41.602 5.5 5.5 59.6 11
+5 2 41.602 15 15 59.6 1 3 -8
+t 2 50.062 15 1 0.885 0 0 0 0 -0.21
+_025:2
+1 2 64.102 7 10 0 0.6
+1 2 85.148 7 10 0 0.6
+14 2 100 1
+?>

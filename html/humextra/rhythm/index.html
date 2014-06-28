@@ -299,38 +299,47 @@
             
   <div class="section" id="rhythm-and-time">
 <h1>Rhythm and Time<a class="headerlink" href="#rhythm-and-time" title="Permalink to this headline">¶</a></h1>
+<p>This chapter discusses various concepts and tools related to rhythm and
+time.</p>
 <div class="section" id="extensions-to-recip-and-kern-rhythms">
 <h2>Extensions to <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a> and <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/kern.rep.html">**kern</a> rhythms<a class="headerlink" href="#extensions-to-recip-and-kern-rhythms" title="Permalink to this headline">¶</a></h2>
 <p>Humdrum Extras programs recognize an extension to <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a>
 and <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/kern.rep.html">**kern</a> rhythm representations which allows any rational
-rhythm to be encoded.  A majority of notatable rhythms found
-in music can be represented in standard <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a>
-data.  For example a dotted quarter-note is encoded as <tt class="docutils literal"><span class="pre">4.</span></tt> and
-a quintuplet sixteenth note is <tt class="docutils literal"><span class="pre">20</span></tt>.  Such rhythms are based upon
-integral divisions of the whole note.  The value <tt class="docutils literal"><span class="pre">4</span></tt> means 1/4th of
-a whole note; <tt class="docutils literal"><span class="pre">4.</span></tt> means 1/4 of a whole note plus half of that
-(1/8 of a whole note).  Only rhythms which are composed of equal
-divisions of whole notes plus augmentation dots can be represented
-in this system. But a problem occurs when trying to represent other
-rhythms such as triplet whole-notes or non-power-of-two tuplet bases
-such as five eighth notes in the time of three eighth notes.</p>
+rhythm to be encoded.  A majority of rhythms found in printed music
+can be represented in standard <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a> data.  For example
+a dotted quarter-note is encoded as <tt class="docutils literal"><span class="pre">4.</span></tt> and a quintuplet sixteenth
+note is <tt class="docutils literal"><span class="pre">20</span></tt>.  Such rhythms are based upon integral divisions of
+the whole note.  The value <tt class="docutils literal"><span class="pre">4</span></tt> means 1/4th of a whole note; <tt class="docutils literal"><span class="pre">4.</span></tt>
+means 1/4 of a whole note plus half of that (1/8 of a whole note).
+Rhythms which are composed of equal divisions of whole notes plus
+augmentation dots can be represented in this system. But a problem
+occurs when trying to represent other rhythms as illustrated in Example
+1, like triplet whole-notes or non-power-of-two
+tuplet bases.</p>
+<p><strong>Example 1.</strong> Difficult rhythms to represent
+in <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a> data.</p>
+<a class="reference internal image-reference" href="../../_images/53eighth.svg"><div align="center" class="align-center"><img src="../../_images/53eighth.svg" width="100%" /></div>
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
 <p>In other words when <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a> encodes reciprocal durations
 of rhythms, the durations must always have a 1 in the numerator
-(excluding augmentations dots which are not considered when
-calculating the reciprocal duration).  For example an eighth note
-is represented in <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a> or <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/kern.rep.html">**kern</a> data as
-<tt class="docutils literal"><span class="pre">8</span></tt>.  This means that the duration of an eighth note is 1/8th of
-a whole note.  Likewise, <tt class="docutils literal"><span class="pre">12</span></tt> means 1/12 of a whole note which
-translates musically into &#8220;triplet eighth-notes&#8221;.  Here is a
+(excluding duration additions from augmentation dots).  For example
+an eighth note is represented in <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a> or <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/kern.rep.html">**kern</a>
+data as <tt class="docutils literal"><span class="pre">8</span></tt>.  This means that the duration of an eighth note is
+1/8th that of a whole note.  Likewise, <tt class="docutils literal"><span class="pre">12</span></tt> means 1/12 of a whole note
+which translates musically into &#8220;triplet eighth-notes&#8221;.  Here is a
 demonstration of the calculations that relate <tt class="docutils literal"><span class="pre">12</span></tt> to a &#8220;triplet
 eighth-note&#8221;:</p>
 <div class="math">
-\[12 = \frac{1}{\frac{2}{3} \times \frac{1}{8}}\]</div>
+\[12 = \frac{1}{\frac{1}{8} \times \frac{2}{3}}\]</div>
 <p>&#8220;1/8&#8221; is an eighth-note duration, and &#8220;2/3&#8221; is the tuplet relation of &#8220;three
 notes in the time of two&#8221;, or a &#8220;3:2&#8221; tuplet.  By analogy, 5:3-tuplet
 eighth notes have the reciprocal duration of 40/3:</p>
 <div class="math">
-\[\frac{40}{3} = \frac{1}{\frac{3}{5} \times \frac{1}{8}}\]</div>
+\[\frac{40}{3} = \frac{1}{\frac{1}{8} \times \frac{3}{5}}\]</div>
 <p>This means that a 5:3-tuplet eighth note is equal to 3/40ths of a
 whole note.  Notice that this duration is not a integral division
 of the whole note since the numerator of the duration (or the
@@ -345,7 +354,7 @@ In order to represent the duration 3/40 in <a class="reference external" href="h
 the symbol <tt class="docutils literal"><span class="pre">40%3</span></tt> can be used, where the <tt class="docutils literal"><span class="pre">%</span></tt> sign indicates a
 reciprocal duration ratio with a denominator other than one is being
 represented.</p>
-<p><strong>Table.</strong> Sample rational encodings of rhythms in <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a> and <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/kern.rep.html">**kern</a> representations.</p>
+<p><strong>Table 1.</strong> Sample rational encodings of rhythms in <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a> and <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/kern.rep.html">**kern</a> representations.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="25%" />
@@ -458,18 +467,18 @@ both 4:3-tuplet quarter notes and dotted eighth-notes (both have a
 duration of 0.75 quarter notes).  The augmentation dot count is
 necessary in order to determine the musical name of the duration.</p>
 <p>The rational-duration extension to the <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a> representation
-is mostly backwards-compatible with <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/kern.rep.html">**kern</a>.  The <tt class="docutils literal"><span class="pre">%</span></tt> sign
-is a user signifier, meaning it does not have a fixed meaning, and
-can be given a temporary meaning.  For the rational rhythm extension
-this character is reserved to separate the two integers in a
-reciprocal duration value.  For generating compatible rhythmic
-values for standard Humdrum Tools that don&#8217;t recognize the extension
-use the <a class="reference external" href="http://extras.humdrum.org/man/rscale">rscale</a> program to scale the rhythm to a timebase
-which does not require the extension.  For example if the duration
-of triplet whole-notes are decreased by half, they become triplet
-half-notes which are representable in the standard <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a>
-system:</p>
-<p><strong>Example.</strong> Halving the duration of notes in a <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/kern.rep.html">**kern</a> score.</p>
+is mostly backwards-compatible with <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/kern.rep.html">**kern</a>.  The <tt class="docutils literal"><span class="pre">%</span></tt>
+sign is a user signifier in <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/kern.rep.html">**kern</a>, meaning it does not
+have a fixed meaning, and can be given a temporary meaning.  For
+the rational rhythm extension this character is reserved to separate
+the two integers in a reciprocal duration value.  For generating
+compatible rhythmic values for standard Humdrum Tools that don&#8217;t
+recognize the extension use the <a class="reference external" href="http://extras.humdrum.org/man/rscale">rscale</a> program to scale
+the rhythm to a timebase which does not require the extension.  For
+example if the duration of triplet whole-notes are decreased by
+half, they become triplet half-notes which are representable in the
+standard <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a> system:</p>
+<p><strong>Example 2.</strong> Halving the duration of notes in a <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/kern.rep.html">**kern</a> score.</p>
 <table width="100%"><tr><td width="30%"><div class="highlight-humdrum"><div class="highlight"><pre>**kern
 *M3/1
 3%2c
@@ -502,7 +511,7 @@ Toolkit rhythm-parsing programs do not understand these longer
 durations.  The Humdrum Extras programs will recognize all such
 rhythms, and will increase the power-of-two to parse <tt class="docutils literal"><span class="pre">0000</span></tt>,
 <tt class="docutils literal"><span class="pre">00000</span></tt> or larger exotic rhythmic values:</p>
-<p><strong>Example.</strong> Duration of various large rhythms in quarter-note units using
+<p><strong>Example 3.</strong> Duration of various large rhythms in quarter-note units using
 the &#8220;zero&#8221; representation.</p>
 <table width="100%"><tr><td width="30%"><div class="highlight-humdrum"><div class="highlight"><pre>**kern
 4c
@@ -531,8 +540,10 @@ the &#8220;zero&#8221; representation.</p>
 </pre></div>
 </div>
 </td></tr></table><p>Compare this to durational equivalents in the rational representation
-in the following example:</p>
-<p><strong>Example.</strong> Duration of various large rhythms in quarter-note units using
+in Example 4, where the analyzed durations of the
+<a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a> rhythms in the right column match to those in
+Example 3.</p>
+<p><strong>Example 4.</strong> Duration of various large rhythms in quarter-note units using
 the rational representation.</p>
 <table width="100%"><tr><td width="30%"><div class="highlight-humdrum"><div class="highlight"><pre>**kern
 4c
@@ -561,6 +572,111 @@ the rational representation.</p>
 </pre></div>
 </div>
 </td></tr></table></div>
+<div class="section" id="nested-tuplets">
+<h3>Nested tuplets<a class="headerlink" href="#nested-tuplets" title="Permalink to this headline">¶</a></h3>
+<p>Nested tuplets are a recursive representation of rhythm which allows
+for iterative non-binary subdivisions.  It is a further generalization
+of rhythm that is not accounted for in the <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a>
+representation.  Consider the music in Example 5
+where quintuplets and septuplets are further subdivided into other
+tuplets.  In the top part of the example, the third quintuplet
+quarter-note is further divided into triplets, with two of those
+triplet notes even further subdivided into a quintuplet.</p>
+<p><strong>Example 5.</strong> Nested tuplets, with notes equal to
+1/50 of a whole note marked in red (see Example 7
+for the <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a> representation of this music).</p>
+<a class="reference internal image-reference" href="../../_images/messy.svg"><div align="center" class="align-center"><img src="../../_images/messy.svg" width="50%" /></div>
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p>The reciprocal duration of the shortest notes on the top line of
+Example 5 (highlited in red) are <tt class="docutils literal"><span class="pre">50</span></tt> in the
+<a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a> representation.  The following equation demonstrates
+the process of dividing the quarter note three successive times to
+arrive at this rhythmic value: the quarter note is first subdivided
+by 3/5 then by 1/2 and finally by 2/5:</p>
+<div class="math">
+\[50 = \frac{1}{\frac{1}{4} \times \left[\left(\frac{3}{5}\right)\left(\frac{1}{3}\right)\left(\frac{2}{5}\right)\right]  } = 4 \times \left[\left(\frac{5}{3}\right)\left(\frac{3}{1}\right)\left(\frac{5}{2}\right)\right] = 4 \times \frac{25}{2}\]</div>
+<p>Going from <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a> data to graphical music notation poses
+a problem in the general case, since the ordering of the subdividing
+factors are not specified in the data token <tt class="docutils literal"><span class="pre">50</span></tt>.  In other words,
+this rhythm can be approached from any number of tuplet subdivisions
+of notes.  Consider the smallest notes in Example 6.
+These are also represented as <tt class="docutils literal"><span class="pre">50</span></tt> rhythms, as can be seen in the
+following equation:</p>
+<div class="math">
+\[50 = 4 \times \left[\left(\frac{5}{4}\right)\left(\frac{2}{1}\right)\left(\frac{5}{1}\right)\right] = 4 \times \frac{25}{2}\]</div>
+<p><strong>Example 6.</strong> Alternate notational interpretation of the
+<a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a> token <tt class="docutils literal"><span class="pre">50</span></tt> (highlighted in red).</p>
+<a class="reference internal image-reference" href="../../_images/nested2.svg"><div align="center" class="align-center"><img src="../../_images/nested2.svg" width="50%" /></div>
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p>In order to disambiguate such cases, the ordering of the factors
+within the brackets in the above equations must be known.  This can
+be done with tuplet layout codes in Humdrum data which give clues
+to notation renders on how to organize the notation.  Layout codes
+are structured local comments which start with <tt class="docutils literal"><span class="pre">!LO:</span></tt>, followed
+by the specific layout code, which is <tt class="docutils literal"><span class="pre">TUP</span></tt> for tuplets, followed by
+a colon-separated list of parameters for the layout code.  Example
+7 show the music of Example 5
+encoded as Humdrum <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/kern.rep.html">**kern</a> data.  The layout code in the
+second spine on line 4 of the file (<tt class="docutils literal"><span class="pre">!LO:TUP:r=2.:t=5</span></tt>) indicates
+the outer quintuplet bracket.  The <tt class="docutils literal"><span class="pre">r=2.</span></tt> parameter is the rhythmic value
+(reciprocal duration) of the bracket, and the second parameter,
+<tt class="docutils literal"><span class="pre">t=5</span></tt> indicates that the tuplet&#8217;s duration will be split into 5
+equal parts.</p>
+<p><strong>Example 7.</strong> <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a> encoding of the
+music in Example 5, including tuplet layout codes.</p>
+<table width="100%">
+<tr><td colspan="3">
+<div class="humDiv">
+<table class="humTable">
+<tr valign="baseline" class="humLine humExinterp"><td class=" humTok  humSSkern humTr1 humTrackpad">**kern</td><td class=" humTok  humSSkern humTr2">**kern</td></tr>
+<tr valign="baseline" class="humLine humInterp"><td class=" humTok  humSSkern humTr1 humTrackpad">*clefX</td><td class=" humTok  humSSkern humTr2">*clefX</td></tr>
+<tr valign="baseline" class="humLine humInterp"><td class=" humTok  humSSkern humTr1 humTrackpad">*M3/4</td><td class=" humTok  humSSkern humTr2">*M3/4</td></tr>
+<tr valign="baseline" class="humLine humLcom"><td class=" humTok  humSSkern humTr1 humTrackpad">!LO:TUP:r=2.:t=7</td><td class=" humTok  humSSkern humTr2">!LO:TUP:r=2.:t=5</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad">28%3L</td><td class=" humTok  humSSkern humTr2">20%3</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad">28%3</td><td class=" humTok  humSSkern humTr2"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr2">20%3</td></tr>
+<tr valign="baseline" class="humLine humLcom"><td class=" humTok  humSSkern humTr1 humTrackpad">!</td><td class=" humTok  humSSkern humTr2">!LO:TUP:r=20%3:t=3</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad">28%3</td><td class=" humTok  humSSkern humTr2"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr2">20L</td></tr>
+<tr valign="baseline" class="humLine humLcom"><td class=" humTok  humSSkern humTr1 humTrackpad">!</td><td class=" humTok  humSSkern humTr2">!LO:TUP:r=10:t=5</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad">28%3</td><td class=" humTok  humSSkern humTr2"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad"><span class="humNull">.</span></td><td style="background-color:#dd0000" class=" humTok  humSSkern humTr2">50L@</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad"><span class="humNull">.</span></td><td style="background-color:#dd0000" class=" humTok  humSSkern humTr2">50@</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad"><span class="humNull">.</span></td><td style="background-color:#dd0000" class=" humTok  humSSkern humTr2">50@</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad"><span class="humNull">.</span></td><td style="background-color:#dd0000" class=" humTok  humSSkern humTr2">50@</td></tr>
+<tr valign="baseline" class="humLine humLcom"><td class=" humTok  humSSkern humTr1 humTrackpad">!LO:TUP:r=28%3:t=4</td><td class=" humTok  humSSkern humTr2">!</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad">112%3LK</td><td style="background-color:#dd0000" class=" humTok  humSSkern humTr2"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad"><span class="humNull">.</span></td><td style="background-color:#dd0000" class=" humTok  humSSkern humTr2">50JJ@</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr2">20%3</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad">56%3</td><td class=" humTok  humSSkern humTr2"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad">112%3Jk</td><td class=" humTok  humSSkern humTr2"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humLcom"><td class=" humTok  humSSkern humTr1 humTrackpad">!LO:TUP:r=28%3:t=3</td><td class=" humTok  humSSkern humTr2">!</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad">28.L</td><td class=" humTok  humSSkern humTr2"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad">56k</td><td class=" humTok  humSSkern humTr2"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr2">20%3</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad">28J</td><td class=" humTok  humSSkern humTr2"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad">28%3J</td><td class=" humTok  humSSkern humTr2"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humBar"><td class=" humTok  humSSkern humTr1 humTrackpad">=</td><td class=" humTok  humSSkern humTr2">=</td></tr>
+<tr valign="baseline" class="humLine humManip"><td class=" humTok  humSSkern humTr1 humTrackpad">*-</td><td class=" humTok  humSSkern humTr2">*-</td></tr>
+<tr valign="baseline" class="humLine humRef"><td colspan=2><span class="humKey" title="User-defined signifiers">!!!RDF**kern: @ = marked note (rhythm of "50").</span></td></tr>
+</table>
+</div>
+
+</td></tr></table><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
 </div>
 <div class="section" id="rhythm-scaling">
 <h2>Rhythm scaling<a class="headerlink" href="#rhythm-scaling" title="Permalink to this headline">¶</a></h2>
@@ -581,6 +697,55 @@ Pierre de la Rue:</p>
 <div class="code highlight-python"><div class="highlight"><pre>humcat -s h://jrp/Rue | census -k
 </pre></div>
 </div>
+<p><strong>Example 8.</strong> Josquin, Missa <em>L&#8217;homme armé</em> sexti toni, Credo, mm. 234&#8211;7.</p>
+<a class="reference internal image-reference" href="../../_images/jos0602c.svg"><div align="center" class="align-center"><img src="../../_images/jos0602c.svg" width="100%" /></div>
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table width="100%">
+<tr><td colspan="3">
+<div class="humDiv">
+<table class="humTable">
+<tr valign="baseline" class="humLine humRef"><td colspan=4><span class="humKey" title="Composer's name">!!!COM: Josquin des Prez</span></td></tr>
+<tr valign="baseline" class="humLine humRef"><td colspan=4><span class="humKey" title="Title">!!!OTL:   Missa L'homme armé sexti toni, Credo</span></td></tr>
+<tr valign="baseline" class="humLine humExinterp"><td class=" humTok  humSSkern humTr1 humTrackpad">**kern</td><td class=" humTok  humSSkern humTr2 humTrackpad">**kern</td><td class=" humTok  humSSkern humTr3 humTrackpad">**kern</td><td class=" humTok  humSSkern humTr4">**kern</td></tr>
+<tr valign="baseline" class="humLine humInterp"><td class=" humTok  humSSkern humTr1 humTrackpad">*clefF4</td><td class=" humTok  humSSkern humTr2 humTrackpad">*clefGv2</td><td class=" humTok  humSSkern humTr3 humTrackpad">*clefGv2</td><td class=" humTok  humSSkern humTr4">*clefG2</td></tr>
+<tr valign="baseline" class="humLine humInterp"><td class=" humTok  humSSkern humTr1 humTrackpad">*k[b-]</td><td class=" humTok  humSSkern humTr2 humTrackpad">*k[b-]</td><td class=" humTok  humSSkern humTr3 humTrackpad">*k[b-]</td><td class=" humTok  humSSkern humTr4">*k[b-]</td></tr>
+<tr valign="baseline" class="humLine humInterp"><td class=" humTok  humSSkern humTr1 humTrackpad">*M3/1</td><td class=" humTok  humSSkern humTr2 humTrackpad">*M3/1</td><td class=" humTok  humSSkern humTr3 humTrackpad">*M3/1</td><td class=" humTok  humSSkern humTr4">*M3/1</td></tr>
+<tr valign="baseline" class="humLine humInterp"><td class=" humTok  humSSkern humTr1 humTrackpad">*met(C|3)</td><td class=" humTok  humSSkern humTr2 humTrackpad">*met(C|3)</td><td class=" humTok  humSSkern humTr3 humTrackpad">*met(C|3)</td><td class=" humTok  humSSkern humTr4">*met(C|3)</td></tr>
+<tr valign="baseline" class="humLine humBar"><td class=" humTok  humSSkern humTr1 humTrackpad">=234-</td><td class=" humTok  humSSkern humTr2 humTrackpad">=234-</td><td class=" humTok  humSSkern humTr3 humTrackpad">=234-</td><td class=" humTok  humSSkern humTr4">=234-</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad">1BB-</td><td class=" humTok  humSSkern humTr2 humTrackpad">0F</td><td class=" humTok  humSSkern humTr3 humTrackpad">1D</td><td class=" humTok  humSSkern humTr4">1f</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad">0GG</td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3 humTrackpad">1.BB-</td><td class=" humTok  humSSkern humTr4">1g</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr2 humTrackpad">1E</td><td class=" humTok  humSSkern humTr3 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr4">1b-</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3 humTrackpad">2AA/</td><td class=" humTok  humSSkern humTr4"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humBar"><td class=" humTok  humSSkern humTr1 humTrackpad">=235</td><td class=" humTok  humSSkern humTr2 humTrackpad">=235</td><td class=" humTok  humSSkern humTr3 humTrackpad">=235</td><td class=" humTok  humSSkern humTr4">=235</td></tr>
+<tr valign="baseline" class="humLine humInterp"><td class=" humTok  humSSkern humTr1 humTrackpad">*M2/1</td><td class=" humTok  humSSkern humTr2 humTrackpad">*M2/1</td><td class=" humTok  humSSkern humTr3 humTrackpad">*M2/1</td><td class=" humTok  humSSkern humTr4">*M2/1</td></tr>
+<tr valign="baseline" class="humLine humInterp"><td class=" humTok  humSSkern humTr1 humTrackpad">*met(Cr)</td><td class=" humTok  humSSkern humTr2 humTrackpad">*met(C|)</td><td class=" humTok  humSSkern humTr3 humTrackpad">*met(Cr)</td><td class=" humTok  humSSkern humTr4">*met(C|)</td></tr>
+<tr valign="baseline" class="humLine humInterp"><td class=" humTok  humSSkern humTr1 humTrackpad">*rscale:2</td><td class=" humTok  humSSkern humTr2 humTrackpad">*</td><td class=" humTok  humSSkern humTr3 humTrackpad">*rscale:2</td><td class=" humTok  humSSkern humTr4">*</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad">0FF</td><td class=" humTok  humSSkern humTr2 humTrackpad">[0F</td><td class=" humTok  humSSkern humTr3 humTrackpad">1C</td><td class=" humTok  humSSkern humTr4">0a</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3 humTrackpad">2r</td><td class=" humTok  humSSkern humTr4"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3 humTrackpad">2C/</td><td class=" humTok  humSSkern humTr4"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humBar"><td class=" humTok  humSSkern humTr1 humTrackpad">=236</td><td class=" humTok  humSSkern humTr2 humTrackpad">=236</td><td class=" humTok  humSSkern humTr3 humTrackpad">=236</td><td class=" humTok  humSSkern humTr4">=236</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad">1r</td><td class=" humTok  humSSkern humTr2 humTrackpad">0F]</td><td class=" humTok  humSSkern humTr3 humTrackpad">1D</td><td class=" humTok  humSSkern humTr4">1.f</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad">1FF</td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3 humTrackpad">1C</td><td class=" humTok  humSSkern humTr4"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr4">4e/</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr4">4d/</td></tr>
+<tr valign="baseline" class="humLine humBar"><td class=" humTok  humSSkern humTr1 humTrackpad">=237</td><td class=" humTok  humSSkern humTr2 humTrackpad">=237</td><td class=" humTok  humSSkern humTr3 humTrackpad">=237</td><td class=" humTok  humSSkern humTr4">=237</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad">2FF/</td><td class=" humTok  humSSkern humTr2 humTrackpad">1r</td><td class=" humTok  humSSkern humTr3 humTrackpad">0F</td><td class=" humTok  humSSkern humTr4">2c/</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad">1BB-</td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr4">2d/</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr2 humTrackpad">1F</td><td class=" humTok  humSSkern humTr3 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr4">2B-/</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSkern humTr1 humTrackpad">2BB-/</td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr4">2d/</td></tr>
+<tr valign="baseline" class="humLine humBar"><td class=" humTok  humSSkern humTr1 humTrackpad">=</td><td class=" humTok  humSSkern humTr2 humTrackpad">=</td><td class=" humTok  humSSkern humTr3 humTrackpad">=</td><td class=" humTok  humSSkern humTr4">=</td></tr>
+<tr valign="baseline" class="humLine humManip"><td class=" humTok  humSSkern humTr1 humTrackpad">*-</td><td class=" humTok  humSSkern humTr2 humTrackpad">*-</td><td class=" humTok  humSSkern humTr3 humTrackpad">*-</td><td class=" humTok  humSSkern humTr4">*-</td></tr>
+</table>
+</div>
+
+</td></tr></table><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
 </div>
 <div class="section" id="composite-rhythm">
 <h2>Composite rhythm<a class="headerlink" href="#composite-rhythm" title="Permalink to this headline">¶</a></h2>
@@ -593,9 +758,14 @@ two staves along with a staff beneath showing the composite rhythm
 of all parts.  In measures 1, 3 and 4, no single part contains a
 complete measure of eighth notes, but when considered together the
 rhythmic texture is a sequence of continuous eighth notes.</p>
-<p><strong>Example.</strong> J.S. Bach, Chorale <em>Hilf, Gott, laß mir&#8217;s gelingen</em>, BWV 343, mm. 16&#8211;19.</p>
+<p><strong>Example 9.</strong> J.S. Bach, Chorale <em>Hilf, Gott,
+laß mir&#8217;s gelingen</em>, BWV 343, mm. 16&#8211;19. Composite rhythm of all parts given
+on the bottom line of the system.</p>
 <a class="reference internal image-reference" href="../../_images/chor199i.svg"><div align="center" class="align-center"><img alt="myank -m 16-19 h://371chorales/chor199.krn  | satb2gs | ridx -GL" src="../../_images/chor199i.svg" width="100%" /></div>
 </a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <table width="100%"><tr> <td style="background-color: #cccccc;" colspan="3" align="center">
    &#x21d2;&nbsp;&nbsp;<tt style="border: none; background-color: #cccccc;"><a href=http://extras.humdrum.org/man/beat>beat</a> -dp</tt>&nbsp;&nbsp;&#x21d2;
 </td></tr><tr><td width="48%><div class="highlight-humdrum"><div class="highlight"><pre>!!!COM: Bach, J.S.
@@ -683,48 +853,51 @@ ratio values instead of decimal numbers.  When the <tt class="docutils literal">
 is used, the value of one represents the duration of a while
 note (rather than a quarter note with the default floating-point
 duration vales).</p>
-<p><strong>Example.</strong> Extracting durations as rational numbers instead
+<p><strong>Example 10.</strong> Extracting durations as rational numbers instead
 of floating-point values.</p>
 <table width="100%"><tr> <td align="center" style="background-color: #cccccc;" colspan="3">
    <tt style="border: none; background-color: #cccccc;"><a href=http://extras.humdrum.org/man/myank>myank</a> -m 16-19 h://370chorales/chor199.krn | <a href=http://extras.humdrum.org/man/ridx>ridx</a> -GL | <a href=http://extras.humdrum.org/man/beat>beat</a> -dpf</tt>
-</td></tr><tr><td colspan="3"><div class="highlight-humdrum"><div class="highlight"><pre>**dur	**kern	**kern	**kern	**kern
-*	*clefF4	*clefGv2	*clefG2	*clefG2
-*	*k[b-]	*k[b-]	*k[b-]	*k[b-]
-*	*g:dor	*g:dor	*g:dor	*g:dor
-*M3/4	*M3/4	*M3/4	*M3/4	*M3/4
-*MM100	*MM100	*MM100	*MM100	*MM100
-=16-	=16-	=16-	=16-	=16-
-1/8	4G	8dL	4g	4.b-
-1/8	.	8e-J	.	.
-1/8	4F	8fnXL	4.d	.
-1/8	.	8FJ	.	8a
-1/8	4E-X	4G	.	4g
-1/8	.	.	8c	.
-=17	=17	=17	=17	=17
-1/2	2D;	2A;	2d;	2f#;
-1/4	4D	[4d	4f#	4a
-=18	=18	=18	=18	=18
-1/8	4.G	8dL]	2g	2b-
-1/8	.	8B-J	.	.
-1/8	.	4e-	.	.
-1/8	8E-X	.	.	.
-1/8	[4B-	8dL	4fnX	4dd
-1/8	.	8B-J	.	.
-=19	=19	=19	=19	=19
-1/8	4B-]	4G	8ennXXL	2cc
-1/8	.	.	8d	.
-1/8	4A	8cL	8e	.
-1/8	.	8AJ	8f#J	.
-1/8	4G	8B-L	4g	4b-
-1/8	.	8dJ	.	.
-=	=	=	=	=
-*-	*-	*-	*-	*-
-</pre></div>
+</td></tr><tr><td colspan="3">
+<div class="humDiv">
+<table class="humTable">
+<tr valign="baseline" class="humLine humExinterp"><td class=" humTok  humSSdur humTr1 humTrackpad">**dur</td><td class=" humTok  humSSkern humTr2 humTrackpad">**kern</td><td class=" humTok  humSSkern humTr3 humTrackpad">**kern</td><td class=" humTok  humSSkern humTr4 humTrackpad">**kern</td><td class=" humTok  humSSkern humTr5">**kern</td></tr>
+<tr valign="baseline" class="humLine humInterp"><td class=" humTok  humSSdur humTr1 humTrackpad">*</td><td class=" humTok  humSSkern humTr2 humTrackpad">*clefF4</td><td class=" humTok  humSSkern humTr3 humTrackpad">*clefGv2</td><td class=" humTok  humSSkern humTr4 humTrackpad">*clefG2</td><td class=" humTok  humSSkern humTr5">*clefG2</td></tr>
+<tr valign="baseline" class="humLine humInterp"><td class=" humTok  humSSdur humTr1 humTrackpad">*</td><td class=" humTok  humSSkern humTr2 humTrackpad">*k[b-]</td><td class=" humTok  humSSkern humTr3 humTrackpad">*k[b-]</td><td class=" humTok  humSSkern humTr4 humTrackpad">*k[b-]</td><td class=" humTok  humSSkern humTr5">*k[b-]</td></tr>
+<tr valign="baseline" class="humLine humInterp"><td class=" humTok  humSSdur humTr1 humTrackpad">*</td><td class=" humTok  humSSkern humTr2 humTrackpad">*g:dor</td><td class=" humTok  humSSkern humTr3 humTrackpad">*g:dor</td><td class=" humTok  humSSkern humTr4 humTrackpad">*g:dor</td><td class=" humTok  humSSkern humTr5">*g:dor</td></tr>
+<tr valign="baseline" class="humLine humInterp"><td class=" humTok  humSSdur humTr1 humTrackpad">*M3/4</td><td class=" humTok  humSSkern humTr2 humTrackpad">*M3/4</td><td class=" humTok  humSSkern humTr3 humTrackpad">*M3/4</td><td class=" humTok  humSSkern humTr4 humTrackpad">*M3/4</td><td class=" humTok  humSSkern humTr5">*M3/4</td></tr>
+<tr valign="baseline" class="humLine humInterp"><td class=" humTok  humSSdur humTr1 humTrackpad">*MM100</td><td class=" humTok  humSSkern humTr2 humTrackpad">*MM100</td><td class=" humTok  humSSkern humTr3 humTrackpad">*MM100</td><td class=" humTok  humSSkern humTr4 humTrackpad">*MM100</td><td class=" humTok  humSSkern humTr5">*MM100</td></tr>
+<tr valign="baseline" class="humLine humBar"><td class=" humTok  humSSdur humTr1 humTrackpad">=16-</td><td class=" humTok  humSSkern humTr2 humTrackpad">=16-</td><td class=" humTok  humSSkern humTr3 humTrackpad">=16-</td><td class=" humTok  humSSkern humTr4 humTrackpad">=16-</td><td class=" humTok  humSSkern humTr5">=16-</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad">4G</td><td class=" humTok  humSSkern humTr3 humTrackpad">8dL</td><td class=" humTok  humSSkern humTr4 humTrackpad">4g</td><td class=" humTok  humSSkern humTr5">4.b-</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3 humTrackpad">8e-J</td><td class=" humTok  humSSkern humTr4 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr5"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad">4F</td><td class=" humTok  humSSkern humTr3 humTrackpad">8fnXL</td><td class=" humTok  humSSkern humTr4 humTrackpad">4.d</td><td class=" humTok  humSSkern humTr5"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3 humTrackpad">8FJ</td><td class=" humTok  humSSkern humTr4 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr5">8a</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad">4E-X</td><td class=" humTok  humSSkern humTr3 humTrackpad">4G</td><td class=" humTok  humSSkern humTr4 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr5">4g</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr4 humTrackpad">8c</td><td class=" humTok  humSSkern humTr5"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humBar"><td class=" humTok  humSSdur humTr1 humTrackpad">=17</td><td class=" humTok  humSSkern humTr2 humTrackpad">=17</td><td class=" humTok  humSSkern humTr3 humTrackpad">=17</td><td class=" humTok  humSSkern humTr4 humTrackpad">=17</td><td class=" humTok  humSSkern humTr5">=17</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/2</td><td class=" humTok  humSSkern humTr2 humTrackpad">2D;</td><td class=" humTok  humSSkern humTr3 humTrackpad">2A;</td><td class=" humTok  humSSkern humTr4 humTrackpad">2d;</td><td class=" humTok  humSSkern humTr5">2f#;</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/4</td><td class=" humTok  humSSkern humTr2 humTrackpad">4D</td><td class=" humTok  humSSkern humTr3 humTrackpad">[4d</td><td class=" humTok  humSSkern humTr4 humTrackpad">4f#</td><td class=" humTok  humSSkern humTr5">4a</td></tr>
+<tr valign="baseline" class="humLine humBar"><td class=" humTok  humSSdur humTr1 humTrackpad">=18</td><td class=" humTok  humSSkern humTr2 humTrackpad">=18</td><td class=" humTok  humSSkern humTr3 humTrackpad">=18</td><td class=" humTok  humSSkern humTr4 humTrackpad">=18</td><td class=" humTok  humSSkern humTr5">=18</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad">4.G</td><td class=" humTok  humSSkern humTr3 humTrackpad">8dL]</td><td class=" humTok  humSSkern humTr4 humTrackpad">2g</td><td class=" humTok  humSSkern humTr5">2b-</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3 humTrackpad">8B-J</td><td class=" humTok  humSSkern humTr4 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr5"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3 humTrackpad">4e-</td><td class=" humTok  humSSkern humTr4 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr5"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad">8E-X</td><td class=" humTok  humSSkern humTr3 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr4 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr5"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad">[4B-</td><td class=" humTok  humSSkern humTr3 humTrackpad">8dL</td><td class=" humTok  humSSkern humTr4 humTrackpad">4fnX</td><td class=" humTok  humSSkern humTr5">4dd</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3 humTrackpad">8B-J</td><td class=" humTok  humSSkern humTr4 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr5"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humBar"><td class=" humTok  humSSdur humTr1 humTrackpad">=19</td><td class=" humTok  humSSkern humTr2 humTrackpad">=19</td><td class=" humTok  humSSkern humTr3 humTrackpad">=19</td><td class=" humTok  humSSkern humTr4 humTrackpad">=19</td><td class=" humTok  humSSkern humTr5">=19</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad">4B-]</td><td class=" humTok  humSSkern humTr3 humTrackpad">4G</td><td class=" humTok  humSSkern humTr4 humTrackpad">8ennXXL</td><td class=" humTok  humSSkern humTr5">2cc</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr4 humTrackpad">8d</td><td class=" humTok  humSSkern humTr5"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad">4A</td><td class=" humTok  humSSkern humTr3 humTrackpad">8cL</td><td class=" humTok  humSSkern humTr4 humTrackpad">8e</td><td class=" humTok  humSSkern humTr5"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3 humTrackpad">8AJ</td><td class=" humTok  humSSkern humTr4 humTrackpad">8f#J</td><td class=" humTok  humSSkern humTr5"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad">4G</td><td class=" humTok  humSSkern humTr3 humTrackpad">8B-L</td><td class=" humTok  humSSkern humTr4 humTrackpad">4g</td><td class=" humTok  humSSkern humTr5">4b-</td></tr>
+<tr valign="baseline" class="humLine humDat"><td class=" humTok  humSSdur humTr1 humTrackpad">1/8</td><td class=" humTok  humSSkern humTr2 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr3 humTrackpad">8dJ</td><td class=" humTok  humSSkern humTr4 humTrackpad"><span class="humNull">.</span></td><td class=" humTok  humSSkern humTr5"><span class="humNull">.</span></td></tr>
+<tr valign="baseline" class="humLine humBar"><td class=" humTok  humSSdur humTr1 humTrackpad">=</td><td class=" humTok  humSSkern humTr2 humTrackpad">=</td><td class=" humTok  humSSkern humTr3 humTrackpad">=</td><td class=" humTok  humSSkern humTr4 humTrackpad">=</td><td class=" humTok  humSSkern humTr5">=</td></tr>
+<tr valign="baseline" class="humLine humManip"><td class=" humTok  humSSdur humTr1 humTrackpad">*-</td><td class=" humTok  humSSkern humTr2 humTrackpad">*-</td><td class=" humTok  humSSkern humTr3 humTrackpad">*-</td><td class=" humTok  humSSkern humTr4 humTrackpad">*-</td><td class=" humTok  humSSkern humTr5">*-</td></tr>
+</table>
 </div>
-<p>12</p>
+
 </td></tr></table><p>Here is an example of extracting the distribution of durations
 for the composite rhythm of 370 Bach chorales:</p>
-<p><strong>Example.</strong> Create a frequency distribution of composite rhythm durations in 370 Bach chorales.</p>
+<p><strong>Example 11.</strong> Create a frequency distribution of composite rhythm durations in 370 Bach chorales.</p>
 <table width="100%"><tr> <td align="center" style="background-color: #cccccc;" colspan="3">
    <tt style="border: none; background-color: #cccccc;"><a href=http://extras.humdrum.org/man/beat>beat</a> -df h://370chorales | <a href=http://extras.humdrum.org/man/ridx>ridx</a> -H | sortcount -p</tt>
 </td></tr><tr><td colspan="3"><div class="highlight-humdrum"><div class="highlight"><pre>69.43	1/8
@@ -754,7 +927,7 @@ of three which has a duration of:</p>
 septuplets in the last measure are
 <span class="math">\(\scriptstyle 3/7 \times 1/8 = 3/56\)</span> whole notes,
 which is the <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a> rhythm <tt class="docutils literal"><span class="pre">56%3</span></tt>.</p>
-<p><strong>Example.</strong> F. Chopin, Nocturne in B major, op. 9/3, mm. 8&#8211;10.</p>
+<p><strong>Example 12.</strong> F. Chopin, Nocturne in B major, op. 9/3, mm. 8&#8211;10.</p>
 <a class="reference internal image-reference" href="../../_images/noc9-3.svg"><div align="center" class="align-center"><img src="../../_images/noc9-3.svg" width="100%" /></div>
 </a>
 <table width="100%"><tr> <td align="center" style="background-color: #cccccc;" colspan="3">

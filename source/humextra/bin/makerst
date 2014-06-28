@@ -25,6 +25,10 @@ open (INFILE, $inputfile) or die "Cannot read inputfile: $inputfile";
 my @contents = <INFILE>;
 close INFILE;
 
+my %LABELS = getLabels(\@contents);
+
+resolveCounters(\@contents);
+
 @contents = processContents(@contents);
 
 open (OUTFILE, ">$outputfile") or die "Cannot write outputfile: $outputfile";
@@ -36,6 +40,82 @@ exit(0);
 
 
 ###########################################################################
+
+
+##############################
+##
+## resolveCounters --
+##
+
+sub resolveCounters {
+   my ($cont) = @_;
+
+   my $i;
+   my $pre;
+   my $post;
+   my $label;
+   my $number;
+   my $size = @$cont;
+   for ($i=0; $i<$size; $i++) {
+      while ($$cont[$i] =~ /:counter:`([^`]+)`/) {
+         $pre    = $`;
+         $post   = $';
+         $label  = $1;
+         $number = $LABELS{"$label"};
+         if ($number =~ /^\s*$/) {
+	    print "Error: Label \"$label\" is not defined.\n";
+            $number = "XXXXX";
+         }
+         $$cont[$i] = "$pre$number$post";
+      }
+   }
+}
+
+
+
+##############################
+##
+## getLabels --
+##
+
+sub getLabels {
+   my ($cont) = @_;
+   my %output;
+
+   my %counts;
+
+   my $pre;
+   my $post;
+   my $category;
+   my $label;
+   my $line;
+   my $i;
+   my $number;
+   my $size = @$cont;
+
+   for ($i=0; $i<$size; $i++) {
+      while ($$cont[$i] =~ /:label:([A-Za-z0-9_-]+):`([^`]+)`/) {
+         $pre  = $`;
+         $post = $';
+         $category = $1;
+         $label    = $2;
+         $counts{$category}++;
+         $number = $counts{$category};
+         if ($output{$label} !~ /^\s*$/) {
+            die "Error: label already exists: \"$label\"\n";
+         } else {
+            print "Creating label \"$label\" with counter = $number\n";
+         }
+         $output{$label} = $number;
+         $$cont[$i] = "$pre$number$post";
+      }
+   }
+
+   return %output;
+}
+
+
+
 
 
 ##############################
@@ -289,6 +369,14 @@ EOT
 ##
 ## printHumdrumAsHumtable --
 ##
+##
+## Single file in humtable display:
+##
+##.. humdrumio::
+##	:file:		file.krn
+##	:style:		fileonly
+##	:display:	humtable
+##
 
 sub printHumdrumioAsHumtable {
    my ($line, $opt, $cont) = @_;
@@ -302,6 +390,10 @@ sub printHumdrumioAsHumtable {
    my $width3         = $opt->{"width3"};
    my $inputtabwidth  = $opt->{"inputtabwidth"};
    my $outputtabwidth = $opt->{"outputtabwidth"};
+
+   if ($style eq "fileonly") {
+      $outputfile = $opt->{"file"}
+   }
 
    my $entry;
 
@@ -349,6 +441,17 @@ EOT
 	<table width="100%"><tr> <td align="center" style="background-color: #cccccc;" colspan="3">
 	   <tt style="border: none; background-color: #cccccc;">$transform</tt>
 	</td></tr><tr><td colspan="3">
+$outhtml
+	</td></tr></table>
+EOT
+
+   } elsif ($style eq "fileonly") {
+
+      $entry = <<EOT;
+.. raw:: html
+
+	<table width="100%">
+	<tr><td colspan="3">
 $outhtml
 	</td></tr></table>
 EOT

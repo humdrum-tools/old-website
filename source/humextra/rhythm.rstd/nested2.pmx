@@ -1,0 +1,32 @@
+###ScorePage:	nested2
+###document:		Humdrum Extras Guide
+###example_number:	nested2
+###example_label:	nested2
+###caption:		Nested tuplets
+###typesetter:		Craig Stuart Sapp
+###typeset_date:	Fri Jun 27 15:29:08 PDT 2014
+
+#SVG_SCALE: 2
+#BORDER: 4
+
+#define SVG t 1 1\n_99%svg%
+
+8 1 0 0 0 100
+3 1 1.5
+1 1 13.254 3 10 0 0.8
+5 1 13.254 0 0 86.1 -2 3 5
+1 1 27.204 3 10 0 0.8
+1 1 41.154 3 10 0 0.8
+1 1 55.104 3 10 0 0.4 1
+6 1 55.104 4 4 82.49 11 5 0 12 64.49 82.49 0 0 0 0.68
+
+SVG <g color="red" stroke="black">
+1 1 64.486 3 10 0 0.08 1
+1 1 68.986 3 10 0 0.08 1
+1 1 73.486 3 10 0 0.08 1
+1 1 77.986 3 10 0 0.08 1
+1 1 82.486 3 10 0 0.08 1
+SVG <\g>
+
+1 1 86.101 3 10 0 0.8
+14 1 100 -1
