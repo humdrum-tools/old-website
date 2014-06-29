@@ -1,0 +1,656 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapter 26: Moving Signifiers Between Spines &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../../"/>
+   <link rel="stylesheet" type"text/css" href="../../../_static/humdrum.css">
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../../" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/">Humdrum Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../install/github/">Installing Humdrum Tools from GitHub</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../">The Humdrum User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ch01/">Chapter 1: Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch02/">Chapter 2: Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch03/">Chapter 3: Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch04/">Chapter 4: Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch05/">Chapter 5: The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch06/">Chapter 6: Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch07/">Chapter 7: MIDI Output Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch08/">Chapter 8: The Shell (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch09/">Chapter 9: Searching with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch10/">Chapter 10: Musical Uses of Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch11/">Chapter 11: Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch12/">Chapter 12: Selecting Musical Parts and Passages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch13/">Chapter 13: Assembling Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch14/">Chapter 14: Stream Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch15/">Chapter 15: Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch16/">Chapter 16: The Shell (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch17/">Chapter 17: Creating Inventories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch18/">Chapter 18: Fingers, Footsteps and Frets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch19/">Chapter 19: Musical Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch20/">Chapter 20: Strophes, Verses, and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch21/">Chapter 21: Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch22/">Chapter 22: Classifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch23/">Chapter 23: Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch24/">Chapter 24: The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch25/">Chapter 25: Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch26/">Chapter 26: Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch27/">Chapter 27: Text and Lyrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch28/">Chapter 28: Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch29/">Chapter 29: Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch30/">Chapter 30:MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch31/">Chapter 31: Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch32/">Chapter 32: The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch33/">Chapter 33: Word Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch34/">Chapter 34: Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch35/">Chapter 35: Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch36/">Chapter 33: Sound and Spectra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch37/">Chapter 37: Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch38/">Chapter 38: Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch39/">Chapter 39: Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch40/">Chapter 40: Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../bibliography/">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sample.problems/">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../humextra/">Humdrum Extras</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/intro/">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/rhythm/">2. Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/melody/">Melody and Pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/harmony/">Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/data/">Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/searching/">Music Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/midi/">MIDI Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/notation/">Graphical Musical Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/other/">Other Useful Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/programming/">Programming Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../cookbook/">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../cookbook/vimHighlighting/">Syntax Coloring in Vim</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../man/">Humdrum Command Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/assemble/">Command: assemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/barks/">Command: barks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cbr/">Command: cbr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/census/">Command: census</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cents/">Command: cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cleave/">Command: cleave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cocho/">Command: cocho</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/context/">Command: context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/correl/">Command: correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/deg/">Command: deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/degree/">Command: degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/diss/">Command: diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ditto/">Command: ditto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/dur/">Command: dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ekern/">Command: ekern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/encode/">Command: encode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/extract/">Command: extract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/fade/">Command: fade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/fields/">Command: fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/freq/">Command: freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/hint/">Command: hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/humdrum/">Command: humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/humsed/">Command: humsed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/humver/">Command: humver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/infot/">Command: infot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/iv/">Command: iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/kern/">Command: kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/key/">Command: key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/melac/">Command: melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/melvel/">Command: melvel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/metpos/">Command: metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/midi/">Command: midi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/midreset/">Command: midreset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/mint/">Command: mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ms/">Command: ms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/nf/">Command: nf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/num/">Command: num</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/patt/">Command: patt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pattern/">Command: pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pc/">Command: pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pcset/">Command: pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/perform/">Command: perform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pf/">Command: pf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pitch/">Command: pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/proof/">Command: proof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/recode/">Command: recode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/record/">Command: record</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/regexp/">Command: regexp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/reihe/">Command: reihe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/rend/">Command: rend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/rid/">Command: rid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/scramble/">Command: scramble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/semits/">Command: semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/simil/">Command: simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/smf/">Command: smf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/solfa/">Command: solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/solfg/">Command: solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/specc/">Command: specc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/spect/">Command: spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/strophe/">Command: strophe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/synco/">Command: synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/tacet/">Command: tacet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/text/">Command: text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/themefinder/">Command: thmea</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/thru/">Command: thru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/timebase/">Command: timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/tonh/">Command: tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/trans/">Command: trans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/urrhythm/">Command: urrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/veritas/">Command: veritas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/vox/">Command: vox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/xdelta/">Command: xdelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/yank/">Command: yank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ydelta/">Command: ydelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/#commands">Commands</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../rep/">Humdrum Data Representations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/barlines/">Representation: barlines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/IPA/">Representation: **IPA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/MIDI/">Representation: **MIDI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/Tonh/">Representation: **Tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/URrhythm/">Representation: **URrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/Zeit/">Representation: **Zeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/bhatk/">Representation: **bhatk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/cents/">Representation: **cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/correl/">Representation: **correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/dB/">Representation: **dB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/date/">Representation: **date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/deg/">Representation: **deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/degree/">Representation: **degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/diss/">Representation: **diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/dur/">Representation: **dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/embel/">Representation: **embel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/freq/">Representation: **freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/fret/">Representation: **fret</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/harm/">Representation: **harm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/hildegard/">Representation: **hildegard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/hint/">Representation: **hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/iv/">Representation: **iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/kern/">Representation: **kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/melac/">Representation: **melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/metpos/">Representation: **metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/mint/">Representation: **mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/ordo/">Representation: **ordo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/pc/">Representation: **pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/pcset/">Representation: **pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/pitch/">Representation: **pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/recip/">Representation: **recip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/semits/">Representation: **semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/silbe/">Representation: **silbe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/simil/">Representation: **simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/solfa/">Representation: **solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/solfg/">Representation: **solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/specC/">Representation: **specC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/spect/">Representation: **spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/synco/">Representation: **synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/takt/">Representation: **takt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/text/">Representation: **text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/time/">Representation: **time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/timebase/">Representation: **timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/vox/">Representation: **vox#</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../">Docs</a> &raquo;</li>
+      
+    <li>Chapter 26: Moving Signifiers Between Spines</li>
+      <li class="wy-breadcrumbs-aside">
+        
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="chapter-26-moving-signifiers-between-spines">
+<h1>Chapter 26: Moving Signifiers Between Spines<a class="headerlink" href="#chapter-26-moving-signifiers-between-spines" title="Permalink to this headline">¶</a></h1>
+<p>In many types of tasks is it useful to be able to transfer signifiers from
+one spine to another. In this chapter we will discuss two commands. The
+<a class="reference external" href="../../man/rend">rend</a> command makes it possible to split characters in a single spine
+and distribute them across two or more spines. The <a class="reference external" href="../../man/cleave">cleave</a> command does
+the reverse: it allows characters that are distributed across two or more
+spines to be gathered into a single new spine. These two commands provide
+opportunities to create Humdrum spines that contain precisely the information
+of interest to the user.</p>
+<div class="section" id="the-rend-command">
+<h2>The <em>rend</em> Command<a class="headerlink" href="#the-rend-command" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="../../man/rend">rend</a> command allows a Humdrum spine to be broken apart into two or
+more spines. Different pieces of information can be distributed to the
+individual output spines. Consider for example the following spine containing
+<a class="reference external" href="../../rep/pitch">**pitch</a> data:</p>
+<p><tt class="docutils literal"><span class="pre">**pitch</span>
+<span class="pre">&gt;</span> <span class="pre">Ab3</span>
+<span class="pre">&gt;</span> <span class="pre">F#4</span>
+<span class="pre">&gt;</span> <span class="pre">C5</span>
+<span class="pre">&gt;</span> <span class="pre">*-</span></tt></p>
+<p>The <strong>rend</strong> command might be used to structure this as three independent
+spines:</p>
+<p><tt class="docutils literal"><span class="pre">**octave**note**accidental</span>
+<span class="pre">&gt;</span> <span class="pre">3Abb</span>
+<span class="pre">&gt;</span> <span class="pre">4F##</span>
+<span class="pre">&gt;</span> <span class="pre">5C.</span>
+<span class="pre">&gt;</span> <span class="pre">*-*-*-</span></tt></p>
+<p>The operation of <a class="reference external" href="../../man/rend">rend</a> requires a reassignment file where each line
+contains an output exclusive interpretation, followed by a tab, followed by a
+regular expression. In the above case, the reassignment file (<tt class="docutils literal"><span class="pre">reassign</span></tt>)
+contained the following:</p>
+<p><tt class="docutils literal"><span class="pre">**octave[0-9]</span>
+<span class="pre">&gt;</span> <span class="pre">**note[A-Gb#x]</span>
+<span class="pre">&gt;</span> <span class="pre">**accidental[b#x]</span></tt></p>
+<p>The first line tells <strong>rend</strong> that any signifiers matching the character-
+class 0-9 should be output in a spine labelled <tt class="docutils literal"><span class="pre">octave</span></tt>. The second line
+causes signifiers matching the upper-case letters A to G and the <tt class="docutils literal"><span class="pre">b</span></tt>, <tt class="docutils literal"><span class="pre">#</span></tt>
+and <tt class="docutils literal"><span class="pre">x</span></tt> signifiers to be output in a spine labelled <tt class="docutils literal"><span class="pre">note</span></tt>. The third
+line causes signifiers matching just <tt class="docutils literal"><span class="pre">b</span></tt>, <tt class="docutils literal"><span class="pre">#</span></tt> and <tt class="docutils literal"><span class="pre">x</span></tt> to be output in a
+spine labelled <tt class="docutils literal"><span class="pre">accidental</span></tt>.</p>
+<p>The above output was generated by invoking the following command:</p>
+<p><tt class="docutils literal"><span class="pre">rend</span> <span class="pre">-i</span> <span class="pre">'**pitch'</span> <span class="pre">-f</span> <span class="pre">reassign</span></tt> <em>inputfile</em></p>
+<p>Note that the <strong>-i</strong> and <strong>-f</strong> options are mandatory. The <strong>-i</strong> option
+tells <a class="reference external" href="../../man/rend">rend</a> which input spines to process and the <strong>-f</strong> option tells
+<strong>rend</strong> the name of the file containing the spine-reassignments.</p>
+<p>The <strong>rend</strong> command is typically paired with a subsequent <strong>cleave</strong>
+command.</p>
+</div>
+<div class="section" id="the-cleave-command">
+<h2>The <em>cleave</em> Command<a class="headerlink" href="#the-cleave-command" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="../../man/cleave">cleave</a> command amalgamates concurrent data tokens in two or more
+spines into a single data spine. In effect, <strong>cleave</strong> does the opposite of
+<a class="reference external" href="../../man/rend">rend</a>. By way of example, <strong>cleave</strong> can be used to transform the
+following:</p>
+<p><tt class="docutils literal"><span class="pre">**A**B**C</span>
+<span class="pre">&gt;</span> <span class="pre">abc</span>
+<span class="pre">&gt;</span> <span class="pre">ABC</span>
+<span class="pre">&gt;</span> <span class="pre">*-*-*-</span></tt></p>
+<p>into:</p>
+<p><tt class="docutils literal"><span class="pre">**new</span>
+<span class="pre">&gt;</span> <span class="pre">abc</span>
+<span class="pre">&gt;</span> <span class="pre">ABC</span>
+<span class="pre">&gt;</span> <span class="pre">*-</span></tt></p>
+<p>Specifically, the above &#8220;cleaving&#8221; would be done using the following command:</p>
+<p><tt class="docutils literal"><span class="pre">cleave</span> <span class="pre">-i</span> <span class="pre">'**A,**B,**C'</span> <span class="pre">-o</span> <span class="pre">'**new'</span></tt> <em>inputfile</em></p>
+<p>Both the <strong>-i</strong> and <strong>-o</strong> options are mandatory. The <strong>-i</strong> option tells
+<a class="reference external" href="../../man/cleave">cleave</a> which exclusive interpretations should be cleaved together. In
+the above case, we have provided a list of three types of data. The <strong>-o</strong>
+option tells <a class="reference external" href="../../man/cleave">cleave</a> what to call the resulting cleaved spine. In this
+case, we&#8217;ve simply called the result <tt class="docutils literal"><span class="pre">new</span></tt>.</p>
+<p>Suppose that we would like to automatically add key-velocities to some
+<a class="reference external" href="../../rep/MIDI">**MIDI</a> data that reflect the normal accents arising from the meter.
+For example, in 4/4 meter, we would like the first note in each measure to be
+strongest, the third beat to be next most strongest and so on. Recall that
+<a class="reference external" href="../../rep/MIDI">**MIDI</a> data tokens consist of three elements: (1) the duration in MIDI
+clock ticks, (2) the key number (also on/off indication), and (3) the key
+velocity. In order to add accents, we need to change the key velocity values.
+The maximum MIDI key velocity value is 127; the minimum value is 0; and the
+default value is 64.</p>
+<p>Consider the following hypothetical input file:</p>
+<p><tt class="docutils literal"><span class="pre">**kern</span>
+<span class="pre">&gt;</span> <span class="pre">*M4/4</span>
+<span class="pre">&gt;</span> <span class="pre">=1-</span>
+<span class="pre">&gt;</span> <span class="pre">4c</span>
+<span class="pre">&gt;</span> <span class="pre">8d</span>
+<span class="pre">&gt;</span> <span class="pre">8e</span>
+<span class="pre">&gt;</span> <span class="pre">8f</span>
+<span class="pre">&gt;</span> <span class="pre">8g</span>
+<span class="pre">&gt;</span> <span class="pre">8a</span>
+<span class="pre">&gt;</span> <span class="pre">8b</span>
+<span class="pre">&gt;</span> <span class="pre">=2</span>
+<span class="pre">&gt;</span> <span class="pre">2cc</span>
+<span class="pre">&gt;</span> <span class="pre">*-</span></tt></p>
+<p>The <a class="reference external" href="../../man/metpos">metpos</a> command can be used to identify the metric position of
+various note onsets. Before using <strong>metpos</strong> however, we must use the
+<a class="reference external" href="../../man/timebase">timebase</a> command to create an isorhythmic record structure. Since the
+shortest note is an eighth-note, the appropriate command is as follows.</p>
+<p><tt class="docutils literal"><span class="pre">timebase</span> <span class="pre">-t</span> <span class="pre">8</span> <span class="pre">scale</span> <span class="pre">&gt;</span> <span class="pre">scale.tb</span></tt></p>
+<p>Using the timebased output, we can then invoke the <strong>metpos</strong> command:</p>
+<p><tt class="docutils literal"><span class="pre">metpos</span> <span class="pre">scale.tb</span> <span class="pre">&gt;</span> <span class="pre">scale.met</span></tt></p>
+<p>The resulting output contains both the original input (on the left) and the
+metric position spine (on the right):</p>
+<p><tt class="docutils literal"><span class="pre">**kern**metpos</span>
+<span class="pre">&gt;</span> <span class="pre">*M4/4*M4/4</span>
+<span class="pre">&gt;</span> <span class="pre">*tb8*tb8</span>
+<span class="pre">&gt;</span> <span class="pre">=1-=1-</span>
+<span class="pre">&gt;</span> <span class="pre">4c1</span>
+<span class="pre">&gt;</span> <span class="pre">.4</span>
+<span class="pre">&gt;</span> <span class="pre">8d3</span>
+<span class="pre">&gt;</span> <span class="pre">8e4</span>
+<span class="pre">&gt;</span> <span class="pre">8f2</span>
+<span class="pre">&gt;</span> <span class="pre">8g4</span>
+<span class="pre">&gt;</span> <span class="pre">8a3</span>
+<span class="pre">&gt;</span> <span class="pre">8b4</span>
+<span class="pre">&gt;</span> <span class="pre">=2=2</span>
+<span class="pre">&gt;</span> <span class="pre">2cc1</span>
+<span class="pre">&gt;</span> <span class="pre">.4</span>
+<span class="pre">&gt;</span> <span class="pre">.3</span>
+<span class="pre">&gt;</span> <span class="pre">.4</span>
+<span class="pre">&gt;</span> <span class="pre">*-*-</span></tt></p>
+<p>Let&#8217;s now eliminate the null data tokens introduced by <strong>timebase</strong>. Using
+<a class="reference external" href="../../man/humsed">humsed</a>, we delete each data record beginning with a period character:</p>
+<p><tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'/^\./d'</span> <span class="pre">scale.met</span> <span class="pre">&gt;</span> <span class="pre">scale.tmp</span></tt></p>
+<p>Next, we can use the <a class="reference external" href="../../man/recode">recode</a> command to change the metric position
+values to appropriate MIDI key velocities. We might use the following
+reassignment file (named <tt class="docutils literal"><span class="pre">accent</span></tt>):</p>
+<p>&gt; ==1100
+&gt; ==280
+&gt; ==360
+&gt; ==440
+&gt; elseerror</p>
+<p>In applying <strong>recode</strong> we will take care to avoid processing measure numbers
+using the <strong>-s</strong> (skip) option:</p>
+<p><tt class="docutils literal"><span class="pre">recode</span> <span class="pre">-f</span> <span class="pre">accent</span> <span class="pre">-s</span> <span class="pre">^=</span> <span class="pre">-i</span> <span class="pre">'**metpos'</span> <span class="pre">scale.tmp</span> <span class="pre">&gt;</span> <span class="pre">scale.acc</span></tt></p>
+<p>The output will now appear as follows:</p>
+<p><tt class="docutils literal"><span class="pre">**kern**metpos</span>
+<span class="pre">&gt;</span> <span class="pre">*M4/4*M4/4</span>
+<span class="pre">&gt;</span> <span class="pre">*tb8*tb8</span>
+<span class="pre">&gt;</span> <span class="pre">=1-=1-</span>
+<span class="pre">&gt;</span> <span class="pre">4c100</span>
+<span class="pre">&gt;</span> <span class="pre">8d60</span>
+<span class="pre">&gt;</span> <span class="pre">8e40</span>
+<span class="pre">&gt;</span> <span class="pre">8f80</span>
+<span class="pre">&gt;</span> <span class="pre">8g40</span>
+<span class="pre">&gt;</span> <span class="pre">8a60</span>
+<span class="pre">&gt;</span> <span class="pre">8b40</span>
+<span class="pre">&gt;</span> <span class="pre">=2=2</span>
+<span class="pre">&gt;</span> <span class="pre">2cc100</span>
+<span class="pre">&gt;</span> <span class="pre">*-*-</span></tt></p>
+<p>Now we can use the <a class="reference external" href="../../man/midi">midi</a> command to generate <a class="reference external" href="../../rep/MIDI">**MIDI</a> data:</p>
+<p><tt class="docutils literal"><span class="pre">midi</span> <span class="pre">scale.acc</span> <span class="pre">&gt;</span> <span class="pre">scale.mid</span></tt></p>
+<p>The result is given below:</p>
+<p><tt class="docutils literal"><span class="pre">**MIDI**metpos</span>
+<span class="pre">&gt;</span> <span class="pre">*Ch1*</span>
+<span class="pre">&gt;</span> <span class="pre">*M4/4*M4/4</span>
+<span class="pre">&gt;</span> <span class="pre">*tb8*tb8</span>
+<span class="pre">&gt;</span> <span class="pre">=1-=1-</span>
+<span class="pre">&gt;</span> <span class="pre">72/60/64100</span>
+<span class="pre">&gt;</span> <span class="pre">72/-60/64</span> <span class="pre">72/62/6460</span>
+<span class="pre">&gt;</span> <span class="pre">36/-62/64</span> <span class="pre">36/64/6440</span>
+<span class="pre">&gt;</span> <span class="pre">36/-64/64</span> <span class="pre">36/65/6480</span>
+<span class="pre">&gt;</span> <span class="pre">36/-65/64</span> <span class="pre">36/67/6440</span>
+<span class="pre">&gt;</span> <span class="pre">36/-67/64</span> <span class="pre">36/69/6460</span>
+<span class="pre">&gt;</span> <span class="pre">36/-69/64</span> <span class="pre">36/71/6440</span>
+<span class="pre">&gt;</span> <span class="pre">=2=2</span>
+<span class="pre">&gt;</span> <span class="pre">36/-71/64</span> <span class="pre">36/72/64100</span>
+<span class="pre">&gt;</span> <span class="pre">144/-72/64.</span>
+<span class="pre">&gt;</span> <span class="pre">*-*-</span></tt></p>
+<p>Before using <a class="reference external" href="../../man/cleave">cleave</a> to join the new key velocity values to the
+<a class="reference external" href="../../rep/MIDI">**MIDI</a> data we need to delete the current key-down velocities. These are
+the values <a class="reference external" href="../../man/humsed">64&#8217; preceding the tab character. The `humsed</a> command can be
+used as follows:</p>
+<p><tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/64``*tab*/*tab*</span></tt>/&#8217; scale.mid &gt; scale.tmp``</p>
+<p>The modified output will now be:</p>
+<p><tt class="docutils literal"><span class="pre">**MIDI**metpos</span>
+<span class="pre">&gt;</span> <span class="pre">*Ch1*</span>
+<span class="pre">&gt;</span> <span class="pre">*M4/4*M4/4</span>
+<span class="pre">&gt;</span> <span class="pre">*tb8*tb8</span>
+<span class="pre">&gt;</span> <span class="pre">=1-=1-</span>
+<span class="pre">&gt;</span> <span class="pre">72/60/100</span>
+<span class="pre">&gt;</span> <span class="pre">72/-60/64</span> <span class="pre">72/62/60</span>
+<span class="pre">&gt;</span> <span class="pre">36/-62/64</span> <span class="pre">36/64/40</span>
+<span class="pre">&gt;</span> <span class="pre">36/-64/64</span> <span class="pre">36/65/80</span>
+<span class="pre">&gt;</span> <span class="pre">36/-65/64</span> <span class="pre">36/67/40</span>
+<span class="pre">&gt;</span> <span class="pre">36/-67/64</span> <span class="pre">36/69/60</span>
+<span class="pre">&gt;</span> <span class="pre">36/-69/64</span> <span class="pre">36/71/40</span>
+<span class="pre">&gt;</span> <span class="pre">=2=2</span>
+<span class="pre">&gt;</span> <span class="pre">36/-71/64</span> <span class="pre">36/72/100</span>
+<span class="pre">&gt;</span> <span class="pre">144/-72/.</span>
+<span class="pre">&gt;</span> <span class="pre">*-*-</span></tt></p>
+<p>Finally, we use <a class="reference external" href="../../man/cleave">cleave</a> to add the new key-down velocities.</p>
+<p><tt class="docutils literal"><span class="pre">cleave</span> <span class="pre">-i</span> <span class="pre">'**MIDI,**metpos'</span> <span class="pre">-o</span> <span class="pre">'**MIDI'</span> <span class="pre">scale.tmp</span> <span class="pre">&gt;</span> <span class="pre">scale.mid</span></tt></p>
+<p>The final output is:</p>
+<p><tt class="docutils literal"><span class="pre">**MIDI</span>
+<span class="pre">&gt;</span> <span class="pre">*</span>
+<span class="pre">&gt;</span> <span class="pre">*M4/4</span>
+<span class="pre">&gt;</span> <span class="pre">*tb8</span>
+<span class="pre">&gt;</span> <span class="pre">=1-=1-</span>
+<span class="pre">&gt;</span> <span class="pre">72/60/100</span>
+<span class="pre">&gt;</span> <span class="pre">72/-60/64</span> <span class="pre">72/62/60</span>
+<span class="pre">&gt;</span> <span class="pre">36/-62/64</span> <span class="pre">36/64/40</span>
+<span class="pre">&gt;</span> <span class="pre">36/-64/64</span> <span class="pre">36/65/80</span>
+<span class="pre">&gt;</span> <span class="pre">36/-65/64</span> <span class="pre">36/67/40</span>
+<span class="pre">&gt;</span> <span class="pre">36/-67/64</span> <span class="pre">36/69/60</span>
+<span class="pre">&gt;</span> <span class="pre">36/-69/64</span> <span class="pre">36/71/40</span>
+<span class="pre">&gt;</span> <span class="pre">=2=2</span>
+<span class="pre">&gt;</span> <span class="pre">36/-71/64</span> <span class="pre">36/72/100</span>
+<span class="pre">&gt;</span> <span class="pre">144/-72/</span>
+<span class="pre">&gt;</span> <span class="pre">*-</span></tt></p>
+</div>
+<div class="section" id="creating-mixed-representations">
+<h2>Creating Mixed Representations<a class="headerlink" href="#creating-mixed-representations" title="Permalink to this headline">¶</a></h2>
+<p>For some analytic tasks it is often useful to generate a special
+representation that combines all of the elements or types of data of interest
+to the researcher. For example, suppose we were working on a model of melodic
+organization that reduced melodies to three types of information: relative-
+duration context, gross pitch height, and scale step. Sample data tokens for
+our representation and their meanings are given in the following table.
+Notice that the order of signifiers is important:</p>
+<p>&gt; <strong>token**meaning</strong>
+<a href="#id14"><span class="problematic" id="id15">``</span></a>LSLHto``long-short-long rhythm, high pitch, tonic
+<a href="#id16"><span class="problematic" id="id17">``</span></a>LLSLsd``long-long-short rhythm, low pitch, subdominant
+<a href="#id18"><span class="problematic" id="id19">``</span></a>MLSMlt``medium-long-short rhythm, medium pitch, leading tone
+<a href="#id20"><span class="problematic" id="id21">``</span></a>r``rest</p>
+<p>In <a class="reference external" href="../ch22">Chapter 22</a> we learned how to use <a class="reference external" href="../../man/recode">recode</a> to classify various
+numerical ranges and <a class="reference external" href="../../man/humsed">humsed</a> to classify non-numeric data. We already
+know how to create the elements of our new representation.</p>
+<p>The scale degree information can be created by using <a class="reference external" href="../../man/deg">deg</a> and
+<strong>humsed</strong> can be used to transform the signifiers as in the following
+<a class="reference external" href="../../man/degree">degree</a> file:</p>
+<p><tt class="docutils literal"><span class="pre">s/1.*/to/</span>
+<span class="pre">s/2.*/st/</span>
+<span class="pre">s/3.*/me/</span>
+<span class="pre">s/4.*/sd/</span>
+<span class="pre">s/5.*/do/</span>
+<span class="pre">s/6.*/sm/</span>
+<span class="pre">s/7.*/lt/</span></tt></p>
+<p>We can classify the pitch ranges into high, medium, and low using the
+<a class="reference external" href="../../man/semits">semits</a> command, followed by <strong>recode</strong>. For example, we could
+transform the <a class="reference external" href="../../rep/semits">**semits</a> data using the following reassignment file:</p>
+<p><tt class="docutils literal"><span class="pre">&lt;0L</span>
+<span class="pre">&gt;</span> <span class="pre">&gt;16H</span>
+<span class="pre">&gt;</span> <span class="pre">&gt;=0M</span>
+<span class="pre">&gt;</span> <span class="pre">elser</span></tt></p>
+<p>Durations can be similarly classified into long (L), medium (M), and short
+(S) using the <a class="reference external" href="../../man/dur">dur</a> command, followed by <em>recode</em>.</p>
+<p><tt class="docutils literal"><span class="pre">&gt;1.0L</span>
+<span class="pre">&gt;</span> <span class="pre">&gt;0.5M</span>
+<span class="pre">&gt;</span> <span class="pre">&gt;0S</span></tt></p>
+<p>Using <a class="reference external" href="../../man/context">context</a> <strong>-n 3</strong> we could then create contextual <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">triples&#8217; so
+that data records contain three durations. Suppose also that we have used
+`sed</a> to change the names of the exclusive interpretations so they are more
+appropriate. As a result we have three spines that, when assembled together
+are organized as in Example 26.1</p>
+<p><strong>Example 26.1</strong></p>
+<p><tt class="docutils literal"><span class="pre">**rhythm**range**scale-step</span>
+<span class="pre">&gt;</span> <span class="pre">L</span> <span class="pre">S</span> <span class="pre">LHto</span>
+<span class="pre">&gt;</span> <span class="pre">L</span> <span class="pre">L</span> <span class="pre">SLsd</span>
+<span class="pre">&gt;</span> <span class="pre">M</span> <span class="pre">L</span> <span class="pre">SMlt</span>
+<span class="pre">&gt;</span> <span class="pre">rrr</span>
+<span class="pre">&gt;</span> <span class="pre">*-*-*-</span></tt></p>
+<p>We need to process the first spine with <strong>humsed</strong> again to eliminate the
+spaces in the multiple stops. The rhythm spine would be processed as follows:</p>
+<p><tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/</span> <span class="pre">//g'</span> <span class="pre">rhythm</span> <span class="pre">&gt;</span> <span class="pre">rhythm.new</span></tt></p>
+<p>We could assemble these spines using the <a class="reference external" href="../../man/assemble">assemble</a> command:</p>
+<p><tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">rhythm.new</span> <span class="pre">range</span> <span class="pre">scale.step</span> <span class="pre">&gt;</span> <span class="pre">newfile</span></tt></p>
+<p>Finally we can use <strong>cleave</strong> to amalgamate all of the data into a single
+final spine.</p>
+<p><tt class="docutils literal"><span class="pre">cleave</span> <span class="pre">-i</span> <span class="pre">'**rhythm,**range,**scale-step'</span> <span class="pre">-o</span> <span class="pre">'**complex'</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">newfile</span> <span class="pre">&gt;</span> <span class="pre">output</span></tt></p>
+<p>Having created our new representation, we can continue to process this new
+data with the various Humdrum tools. For example, we could generate
+inventories that answer questions such as &#8220;How often does a high subdominant
+note in a long-short-long rhythmic follow a low submediant in a long-long-
+short context?</p>
+<p>A similar approach can be used to address other questions, such as whether
+large leaps involving chromatically-altered tones tend to have a longer
+duration on the altered tone. Etc.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="reprise">
+<h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
+<p>In this chapter we have seen how <a class="reference external" href="../../man/rend">rend</a> and <a class="reference external" href="../../man/cleave">cleave</a> can be used to
+take bits and pieces of signifiers from potentially many spines, and assemble
+a composite Humdrum spine that contains precisely the information of
+interest. Before amalgamating spines, you can use the <a class="reference external" href="../../man/humsed">humsed</a> command
+to translate the characters/signifiers so that you use your preferred way of
+representing something.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  <hr/>
+  
+
+
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+   
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-52162357-1', 'humdrum.org');
+  ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>

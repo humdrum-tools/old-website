@@ -322,7 +322,7 @@ This will give us the total number of items in our inventory. Simple division
 will generate the percentages for each type of data record.
 
 Suppose, for example, that the total number of data records was determined to
-be 874. Using the UNIX **awk** command will allow us to easily generate the
+be 874. Using the UNIX `awk <http://en.wikipedia.org/wiki/Awk>`_ command will allow us to easily generate the
 percentages for each data type via the command:
 
 ``awk '{print $1/847*100 "\t" $2}' inventory.alpha``

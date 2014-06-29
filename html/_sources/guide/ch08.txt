@@ -224,7 +224,7 @@ a common command:
 
 Each of these components is separated by 'blank space' (tabs or spaces). A
 command begins with the command name -- such as `uniq <http://en.wikipedia.org/wiki/Uniq>`_, **sort**, or
-`**pitch**.`_ A command argument is a special requirement of only some
+`pitch <../../man/pitch>`_. A command argument is a special requirement of only some
 commands. A good example of a command argument is the search pattern given to
 the `grep <http://en.wikipedia.org/wiki/Grep>`_ command. In the following command, `grep <http://en.wikipedia.org/wiki/Grep>`_ is the command name,
 "Lennon" is the command argument and ``beatles`` is the input file name:
@@ -264,7 +264,7 @@ as **-ab** (or as **-ba)** -- provided neither option requires a parameter.
 
 Whenever an option requires a parameter, the option must be specified alone
 and followed immediately by the appropriate parameter. For example, in the
-following command, the command name is `**trans**,`_ the **-d** option is
+following command, the command name is `trans <../../man/trans>`_, the **-d** option is
 followed by the numerical parameter **3**; the parameter for the **-c**
 option is the number **4** and the input file is named **gambia21**.
 

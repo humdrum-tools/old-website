@@ -516,8 +516,8 @@ Table 18.1.
 *Summary of ***fret* Signifiers*
 
 A number of pitch-related Humdrum commands accept `**fret <../../rep/fret>`_ encoded data as
-inputs, including `**cents**,`_ `**freq**,`_ `**kern**,`_ `**pitch**,`_
-`**semits**,`_ `**solfg**,`_ and `**tonh**.`_
+inputs, including `cents <../../man/cents>`_, `freq <../../man/freq>`_, `kern <../../man/kern>`_, `pitch <../../man/pitch>`_,
+`semits <../../man/semits>`_, `solfg <../../man/solfg>`_, and `tonh <../../man/tonh>`_.
 
 --------
 

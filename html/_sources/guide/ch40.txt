@@ -42,52 +42,52 @@ to the type of operation. There are roughly a dozen or so classes of tasks:
     `midi <../../man/midi>`_ and `perform <../../man/perform>`_ commands.
 -   ***Searching for things.*** When searching for things within
     specified files, appropriate commands include: `grep <http://en.wikipedia.org/wiki/Grep>`_, `egrep <http://en.wikipedia.org/wiki/Egrep#Variations>`_,
-    `**yank -m**,`_ `**patt**,`_ `**pattern**,`_ `**correl**,`_ `simil <../../man/simil>`_
+    `**yank -m**,`_ `patt <../../man/patt>`_, `pattern <../../man/pattern>`_, `correl <../../man/correl>`_, `simil <../../man/simil>`_
     and `**humdrum -v**.`_ When searching for files that meet certain
     conditions, appropriate commands include **grep -l**, **egrep -l** and
-    **find**. Most of these search tools rely extensively on regular
+    `find <http://en.wikipedia.org/wiki/Find>`_. Most of these search tools rely extensively on regular
     expressions to define patterns of characters.
 -   ***Counting things.*** Appropriate commands include: `wc <http://en.wikipedia.org/wiki/Wc_(Unix)>`_, **wc
     -l**, **grep -c**, **egrep -c**, `census <../../man/census>`_ and **census -k**.
     Eliminating unnecessary or confounding information can be achieved using
-    `**rid**,`_ `**extract**,`_ **grep -v**, `sed <http://en.wikipedia.org/wiki/Sed>`_ and `**humsed**.`_
+    `rid <../../man/rid>`_, `extract <../../man/extract>`_, **grep -v**, `sed <http://en.wikipedia.org/wiki/Sed>`_ and `humsed <../../man/humsed>`_.
 -   ***Editing things.*** Manual editing may be done using any text
-    editor, such as **emacs** or **vi**. Automated (or "stream") editing may
-    be done using `sed <http://en.wikipedia.org/wiki/Sed>`_ and `**humsed**.`_
+    editor, such as `emacs <http://en.wikipedia.org/wiki/Emacs>`_ or `vi <http://en.wikipedia.org/wiki/Vi>`_. Automated (or "stream") editing may
+    be done using `sed <http://en.wikipedia.org/wiki/Sed>`_ and `humsed <../../man/humsed>`_.
 -   ***Editorializing.*** E.g., add an editorial footnote to a specified
     note or passage; indicate that a passage differs from the composer's
     autograph.
 -   ***Transforming or translating between representations.***
-    Appropriate commands include: `**cents**,`_ `**deg**,`_ `**degree**,`_
-    **dur**, `**freq**,`_ `**hint**,`_ `**humsed**,`_ `**iv**,`_ `**kern**,`_
-    `**mint**,`_ `**pc**,`_ `**pf**,`_ `**pitch**,`_ `**reihe**,`_
-    `**semits**,`_ `**solfa**,`_ `**solfg**,`_ **text**, `**tonh**,`_
-    `trans <../../man/trans>`_ and `**vox**.`_
+    Appropriate commands include: `cents <../../man/cents>`_, `deg <../../man/deg>`_, `degree <../../man/degree>`_,
+    **dur**, `freq <../../man/freq>`_, `hint <../../man/hint>`_, `humsed <../../man/humsed>`_, `iv <../../man/iv>`_, `kern <../../man/kern>`_,
+    `mint <../../man/mint>`_, `pc <../../man/pc>`_, `pf <../../man/pf>`_, `pitch <../../man/pitch>`_, `reihe <../../man/reihe>`_,
+    `semits <../../man/semits>`_, `solfa <../../man/solfa>`_, `solfg <../../man/solfg>`_, **text**, `tonh <../../man/tonh>`_,
+    `trans <../../man/trans>`_ and `vox <../../man/vox>`_.
 -   ***Arithmetic transformations of representations.*** Manipulating
-    numerical values can be done using `**xdelta**,`_ `**ydelta**,`_
-    `recode <../../man/recode>`_ and **awk**.
+    numerical values can be done using `xdelta <../../man/xdelta>`_, `ydelta <../../man/ydelta>`_,
+    `recode <../../man/recode>`_ and `awk <http://en.wikipedia.org/wiki/Awk>`_.
 -   ***Extracting or selecting information.*** Appropriate commands
-    include: `**extract**,`_ `**yank**,`_ `grep <http://en.wikipedia.org/wiki/Grep>`_, `egrep <http://en.wikipedia.org/wiki/Egrep#Variations>`_, `**yank
-    -m**,`_ `**thru**,`_ `**strophe**,`_ `rend <../../man/rend>`_ and **csplit**.
+    include: `extract <../../man/extract>`_, `yank <../../man/yank>`_, `grep <http://en.wikipedia.org/wiki/Grep>`_, `egrep <http://en.wikipedia.org/wiki/Egrep#Variations>`_, `**yank
+    -m**,`_ `thru <../../man/thru>`_, `strophe <../../man/strophe>`_, `rend <../../man/rend>`_ and **csplit**.
 -   ***Linking or joining information.*** Appropriate commands include:
-    `**assemble**,`_ `cat <http://en.wikipedia.org/wiki/Cat_(Unix)>`_, `**cleave**,`_ `**timebase**,`_ `**context**,`_
+    `assemble <../../man/assemble>`_, `cat <http://en.wikipedia.org/wiki/Cat_(Unix)>`_, `cleave <../../man/cleave>`_, `timebase <../../man/timebase>`_, `context <../../man/context>`_,
     `ditto <../../man/ditto>`_ and **join**.
 -   ***Generating inventories of things.*** Appropriate commands include:
     **sort** and `uniq <http://en.wikipedia.org/wiki/Uniq>`_. Once again, unnecessary or confounding information
-    can be eliminated using `**rid**,`_ `**extract**,`_ **grep -v**, `**yank
-    -m**,`_ `sed <http://en.wikipedia.org/wiki/Sed>`_ or `**humsed**.`_
+    can be eliminated using `rid <../../man/rid>`_, `extract <../../man/extract>`_, **grep -v**, `**yank
+    -m**,`_ `sed <http://en.wikipedia.org/wiki/Sed>`_ or `humsed <../../man/humsed>`_.
 -   ***Classifying things.*** Numerical values can be classified using
-    `**recode**;`_ non-numerical data can be classified using `**humsed**.`_
+    `recode <../../man/recode>`_; non-numerical data can be classified using `humsed <../../man/humsed>`_.
 -   ***Labelling things.*** Appropriate commands include: `**patt -t**,`_
-    `**recode**,`_ `humsed <../../man/humsed>`_ and `**timebase**.`_
+    `recode <../../man/recode>`_, `humsed <../../man/humsed>`_ and `timebase <../../man/timebase>`_.
 -   ***Comparing whether things are the same or similar.*** Appropriate
     commands include: **diff**, **diff3**, **cmp**, `correl <../../man/correl>`_ and
-    `**simil**.`_
+    `simil <../../man/simil>`_.
 -   ***Capturing data.*** MIDI data can be input via `encode <../../man/encode>`_ and
     `**record.**`_
--   ***Trouble-shooting.*** Appropriate commands include: `**humdrum**,`_
-    `**humdrum -v**,`_ `**proof**,`_ `**proof -k**,`_ `**veritas**,`_
-    `midi <../../man/midi>`_ and `**perform**.`_
+-   ***Trouble-shooting.*** Appropriate commands include: `humdrum <../../man/humdrum>`_,
+    `**humdrum -v**,`_ `proof <../../man/proof>`_, `**proof -k**,`_ `veritas <../../man/veritas>`_,
+    `midi <../../man/midi>`_ and `perform <../../man/perform>`_.
 
 Not all of the existing Humdrum Tools were covered in this book. Nor were all
 of the available options described for all of the tools discussed. Exploring
@@ -123,7 +123,7 @@ X and Y are different``
 
 -   *What materials are available for processing?*
 
-    > Use **find** and `grep <http://en.wikipedia.org/wiki/Grep>`_ to locate useful materials.
+    > Use `find <http://en.wikipedia.org/wiki/Find>`_ and `grep <http://en.wikipedia.org/wiki/Grep>`_ to locate useful materials.
 
 -   *What materials do I need to create?*
 
@@ -137,20 +137,20 @@ X and Y are different``
     classes -- such as *up*, *down*, *leap*, *long*, *short*, *difficult*,
     *easy*, *clarion register*, *dominant*, etc.
 >
->     Use translating/transforming commands such as `**mint**,`_
-`**ydelta**,`_ `**pcset**,`_ etc to translate the data to a different
+>     Use translating/transforming commands such as `mint <../../man/mint>`_,
+`ydelta <../../man/ydelta>`_, `pcset <../../man/pcset>`_, etc to translate the data to a different
 representation.
 
 -   *What data should I eliminate?*
 
-    > Use `**rid**,`_ `**extract**,`_ `**yank**,`_ `sed <http://en.wikipedia.org/wiki/Sed>`_,
-    `**humsed**,`_ `uniq <http://en.wikipedia.org/wiki/Uniq>`_, **uniq -d** and **grep -v** to eliminate
+    > Use `rid <../../man/rid>`_, `extract <../../man/extract>`_, `yank <../../man/yank>`_, `sed <http://en.wikipedia.org/wiki/Sed>`_,
+    `humsed <../../man/humsed>`_, `uniq <http://en.wikipedia.org/wiki/Uniq>`_, **uniq -d** and **grep -v** to eliminate
     selective materials.
 
 -   *What data do I need to coordinate?*
 
     > Use `context <../../man/context>`_ to generate contextual information. Use
-    `**assemble**,`_ `rend <../../man/rend>`_ and `cleave <../../man/cleave>`_ to link information
+    `assemble <../../man/assemble>`_, `rend <../../man/rend>`_ and `cleave <../../man/cleave>`_ to link information
     together.
 
 -   *How do I know my results are worthwhile?*

@@ -1,0 +1,1268 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapter 28: Dynamic &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../../"/>
+   <link rel="stylesheet" type"text/css" href="../../../_static/humdrum.css">
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../../" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/">Humdrum Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../install/github/">Installing Humdrum Tools from GitHub</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../">The Humdrum User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ch01/">Chapter 1: Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch02/">Chapter 2: Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch03/">Chapter 3: Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch04/">Chapter 4: Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch05/">Chapter 5: The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch06/">Chapter 6: Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch07/">Chapter 7: MIDI Output Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch08/">Chapter 8: The Shell (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch09/">Chapter 9: Searching with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch10/">Chapter 10: Musical Uses of Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch11/">Chapter 11: Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch12/">Chapter 12: Selecting Musical Parts and Passages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch13/">Chapter 13: Assembling Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch14/">Chapter 14: Stream Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch15/">Chapter 15: Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch16/">Chapter 16: The Shell (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch17/">Chapter 17: Creating Inventories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch18/">Chapter 18: Fingers, Footsteps and Frets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch19/">Chapter 19: Musical Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch20/">Chapter 20: Strophes, Verses, and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch21/">Chapter 21: Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch22/">Chapter 22: Classifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch23/">Chapter 23: Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch24/">Chapter 24: The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch25/">Chapter 25: Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch26/">Chapter 26: Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch27/">Chapter 27: Text and Lyrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch28/">Chapter 28: Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch29/">Chapter 29: Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch30/">Chapter 30:MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch31/">Chapter 31: Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch32/">Chapter 32: The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch33/">Chapter 33: Word Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch34/">Chapter 34: Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch35/">Chapter 35: Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch36/">Chapter 33: Sound and Spectra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch37/">Chapter 37: Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch38/">Chapter 38: Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch39/">Chapter 39: Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch40/">Chapter 40: Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../bibliography/">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sample.problems/">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../humextra/">Humdrum Extras</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/intro/">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/rhythm/">2. Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/melody/">Melody and Pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/harmony/">Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/data/">Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/searching/">Music Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/midi/">MIDI Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/notation/">Graphical Musical Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/other/">Other Useful Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/programming/">Programming Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../cookbook/">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../cookbook/vimHighlighting/">Syntax Coloring in Vim</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../man/">Humdrum Command Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/assemble/">Command: assemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/barks/">Command: barks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cbr/">Command: cbr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/census/">Command: census</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cents/">Command: cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cleave/">Command: cleave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cocho/">Command: cocho</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/context/">Command: context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/correl/">Command: correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/deg/">Command: deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/degree/">Command: degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/diss/">Command: diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ditto/">Command: ditto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/dur/">Command: dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ekern/">Command: ekern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/encode/">Command: encode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/extract/">Command: extract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/fade/">Command: fade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/fields/">Command: fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/freq/">Command: freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/hint/">Command: hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/humdrum/">Command: humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/humsed/">Command: humsed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/humver/">Command: humver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/infot/">Command: infot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/iv/">Command: iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/kern/">Command: kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/key/">Command: key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/melac/">Command: melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/melvel/">Command: melvel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/metpos/">Command: metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/midi/">Command: midi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/midreset/">Command: midreset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/mint/">Command: mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ms/">Command: ms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/nf/">Command: nf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/num/">Command: num</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/patt/">Command: patt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pattern/">Command: pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pc/">Command: pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pcset/">Command: pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/perform/">Command: perform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pf/">Command: pf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pitch/">Command: pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/proof/">Command: proof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/recode/">Command: recode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/record/">Command: record</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/regexp/">Command: regexp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/reihe/">Command: reihe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/rend/">Command: rend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/rid/">Command: rid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/scramble/">Command: scramble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/semits/">Command: semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/simil/">Command: simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/smf/">Command: smf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/solfa/">Command: solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/solfg/">Command: solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/specc/">Command: specc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/spect/">Command: spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/strophe/">Command: strophe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/synco/">Command: synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/tacet/">Command: tacet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/text/">Command: text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/themefinder/">Command: thmea</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/thru/">Command: thru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/timebase/">Command: timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/tonh/">Command: tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/trans/">Command: trans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/urrhythm/">Command: urrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/veritas/">Command: veritas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/vox/">Command: vox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/xdelta/">Command: xdelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/yank/">Command: yank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ydelta/">Command: ydelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/#commands">Commands</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../rep/">Humdrum Data Representations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/barlines/">Representation: barlines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/IPA/">Representation: **IPA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/MIDI/">Representation: **MIDI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/Tonh/">Representation: **Tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/URrhythm/">Representation: **URrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/Zeit/">Representation: **Zeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/bhatk/">Representation: **bhatk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/cents/">Representation: **cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/correl/">Representation: **correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/dB/">Representation: **dB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/date/">Representation: **date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/deg/">Representation: **deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/degree/">Representation: **degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/diss/">Representation: **diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/dur/">Representation: **dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/embel/">Representation: **embel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/freq/">Representation: **freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/fret/">Representation: **fret</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/harm/">Representation: **harm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/hildegard/">Representation: **hildegard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/hint/">Representation: **hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/iv/">Representation: **iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/kern/">Representation: **kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/melac/">Representation: **melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/metpos/">Representation: **metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/mint/">Representation: **mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/ordo/">Representation: **ordo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/pc/">Representation: **pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/pcset/">Representation: **pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/pitch/">Representation: **pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/recip/">Representation: **recip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/semits/">Representation: **semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/silbe/">Representation: **silbe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/simil/">Representation: **simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/solfa/">Representation: **solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/solfg/">Representation: **solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/specC/">Representation: **specC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/spect/">Representation: **spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/synco/">Representation: **synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/takt/">Representation: **takt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/text/">Representation: **text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/time/">Representation: **time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/timebase/">Representation: **timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/vox/">Representation: **vox#</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../">Docs</a> &raquo;</li>
+      
+    <li>Chapter 28: Dynamic</li>
+      <li class="wy-breadcrumbs-aside">
+        
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="chapter-28-dynamic">
+<h1>Chapter 28: Dynamic<a class="headerlink" href="#chapter-28-dynamic" title="Permalink to this headline">¶</a></h1>
+<p>In this chapter we introduce three pre-defined representations
+pertaining to musical dynamics. One representation (**dyn) represents
+dynamic markings as they appear visually in a printed score. A second
+representation (**dynam) represents a rationalized interpretation of
+the notated dynamic markings in a score. A third scheme (**dB)
+represents continuous dynamic levels in decibels.</p>
+<div class="section" id="the-dynam-and-dyn-representations">
+<h2>The <em>**dynam</em> and <em>**dyn</em> Representations<a class="headerlink" href="#the-dynam-and-dyn-representations" title="Permalink to this headline">¶</a></h2>
+<p>Musical scores commonly contain dynamic markings that include both
+written text (such as &#8220;<em>subito forte</em>&#8221; and &#8220;<em>dimin.</em>&#8221;) and graphic
+representations (such as hairpin or wedge-shaped crescendo markings).
+Unfortunately, traditional dynamic markings are often confusing or
+ambiguous. Consider, for example, the following sequence of dynamic
+markings from a Beethoven piano sonata:</p>
+<p>pp</p>
+<p>cresc.</p>
+<p>cresc.</p>
+<p>p</p>
+<p>cresc.</p>
+<p><em>pp</em></p>
+<p>What are we to make of these markings? Does the music gradually
+<em>crescendo</em> from <em>pianissimo</em> to <em>piano</em>? Does this initial <em>crescendo</em>
+occur in two distinct phases or does the repetition of the term
+&#8220;<em>cresc.</em>&#8221; merely indicate a continuation of a single <em>crescendo</em>?
+Does this <em>crescendo</em> move to a dynamic level above <em>piano</em> and abruptly
+reduce to <em>piano</em>? Does the final <em>crescendo</em> begin at a <em>piano</em> level
+and get louder &#8211; followed by a relatively abrupt reduction to
+<em>pianissimo</em>? Or does the final <em>crescendo</em> begin below <em>piano</em> and
+gradually reach <em>pianissimo</em>? Such ambiguities are rampant in printed
+musical scores. We can examine the accompanying musical context to help
+us resolve questions of interpretation, but computers are unable to
+bring such sophistication to the task.</p>
+<p>Humdrum provides two pre-defined representations for score-related
+dynamic markings. One representation
+(<tt class="docutils literal"><span class="pre">dyn</span></tt> &lt;representations/dyn.rep.html&gt;`__) attempts to represent the
+dynamic markings as they appear in a visual rendering of a score. That
+is, <tt class="docutils literal"><span class="pre">dyn</span></tt> represents the visual or orthographic information. A
+second representation (<tt class="docutils literal"><span class="pre">dynam</span></tt> &lt;representations/dynam.rep.html&gt;`__)
+provides a &#8220;rationalized&#8221; or canonical means for interpreting
+score-related dynamic indications. Users will want to choose one or the
+other representation depending on the analytic task being pursued.</p>
+<p>In the first instance, <tt class="docutils literal"><span class="pre">dynam</span></tt> uses standardized data tokens to
+represent particular dynamic levels. Table 28.1 shows the standard
+representations for <tt class="docutils literal"><span class="pre">dynam</span></tt>. For example, the token <tt class="docutils literal"><span class="pre">pp</span></tt>
+represents the concept of pianissimo, even if the visual rendering may
+be <em>pp</em> or <em>pianissimo</em> or <em>pianiss.</em>, etc.</p>
+<p><strong>Table 28.1.</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>p</td>
+<td>piano</td>
+</tr>
+<tr class="row-even"><td>pp</td>
+<td>pianissimo</td>
+</tr>
+<tr class="row-odd"><td>ppp</td>
+<td>triple piano</td>
+</tr>
+<tr class="row-even"><td>pppp</td>
+<td>quadruple piano, [etc]</td>
+</tr>
+<tr class="row-odd"><td>f</td>
+<td>forte</td>
+</tr>
+<tr class="row-even"><td>ff</td>
+<td>fortissimo</td>
+</tr>
+<tr class="row-odd"><td>fff</td>
+<td>triple forte</td>
+</tr>
+<tr class="row-even"><td>ffff</td>
+<td>quadruple forte, [etc]</td>
+</tr>
+<tr class="row-odd"><td>mp</td>
+<td>mezzo-piano</td>
+</tr>
+<tr class="row-even"><td>mf</td>
+<td>mezzo-forte</td>
+</tr>
+<tr class="row-odd"><td>s</td>
+<td>subito (suddenly), e.g. spp (subito pianissimo), sf (subito forte)</td>
+</tr>
+<tr class="row-even"><td>z</td>
+<td>sforzando = fp (forte-piano)</td>
+</tr>
+<tr class="row-odd"><td>&lt;</td>
+<td>begin crescendo</td>
+</tr>
+<tr class="row-even"><td>&gt;</td>
+<td>begin diminuendo</td>
+</tr>
+<tr class="row-odd"><td>(</td>
+<td>continuing crescendo</td>
+</tr>
+<tr class="row-even"><td>)</td>
+<td>continuing diminuendo</td>
+</tr>
+<tr class="row-odd"><td>[</td>
+<td>end crescendo</td>
+</tr>
+<tr class="row-even"><td>]</td>
+<td>end diminuendo</td>
+</tr>
+<tr class="row-odd"><td>X</td>
+<td>explicit interpretation (not indicated in the score)</td>
+</tr>
+<tr class="row-even"><td>x</td>
+<td>published interpretation (indicated in the score, often in parentheses)</td>
+</tr>
+<tr class="row-odd"><td>r</td>
+<td>rest (silence)</td>
+</tr>
+<tr class="row-even"><td>v</td>
+<td>notated accent or stress</td>
+</tr>
+</tbody>
+</table>
+<p>In the case of crescendo and diminuendo markings,
+<tt class="docutils literal"><span class="pre">dynam</span></tt> &lt;representations/dynam.rep.html&gt;`__ requires an explicit
+interpretation of where the dynamic marking begins and ends. The
+beginning of a crescendo is indicated by the less-than sign (<tt class="docutils literal"><span class="pre">&lt;</span></tt>). The
+end of the crescendo is marked by the open square bracket (<tt class="docutils literal"><span class="pre">]</span></tt>).
+Between the beginning and end points, <em>continuation signifiers</em> are
+encoded. For crescendos, continuations are indicated using the open
+parenthesis; for diminuendos, continuations are indicated using the
+closed parenthesis.</p>
+<p>In the <tt class="docutils literal"><span class="pre">dynam</span></tt> representation, no distinction is made for various
+ways a composer might indicate a crescendo or a diminuendo. For example,
+it doesn&#8217;t matter whether a diminuendo is notated as <em>dim.</em>, <em>dimin.</em>,
+<em>diminuendo</em>, <em>decres.</em>, <em>decresc.</em>, <em>decresendo</em>, <em>calando</em>, <em>morendo</em>,
+<em>se perdant</em>, <em>cédéz</em>, <em>gradually quieter</em>, or via a hairpin or wedge
+graphic diminuendo. All are represented by <tt class="docutils literal"><span class="pre">&gt;</span></tt> ... <tt class="docutils literal"><span class="pre">)</span></tt> ... <tt class="docutils literal"><span class="pre">]</span></tt>.</p>
+<p>The <tt class="docutils literal"><span class="pre">dynam</span></tt> representation also requires explicit resolution of
+possibly ambiguous dynamic markings. In many cases, the user will be
+required to add dynamic markings that are only implicit in the original
+score. Interpreted dynamics are preceded by the upper-case letter <tt class="docutils literal"><span class="pre">X</span></tt>,
+so an interpreted diminuendo will be represented by <tt class="docutils literal"><span class="pre">X&gt;</span></tt> ... <tt class="docutils literal"><span class="pre">X)</span></tt>
+... <tt class="docutils literal"><span class="pre">X]</span></tt>.</p>
+<p>Often published editions will include dynamic markings that have been
+introduced by the editor. In scholarly publications these editorialisms
+are indicated in parentheses or square brackets. Such interpreted
+dynamics are preceded by the lower-case letter <tt class="docutils literal"><span class="pre">x</span></tt>.</p>
+<p>The use of the <tt class="docutils literal"><span class="pre">dynam</span></tt> &lt;representations/dynam.rep.html&gt;`__
+representation is illustrated in Example 28.1.</p>
+<p><strong>Example 28.1</strong></p>
+<blockquote>
+<div><a href="#id10"><span class="problematic" id="id11">|image5|</span></a></div></blockquote>
+<p>This example might be encoded as follows:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">dynam</span></tt>
+**kern
+*staff1
+*staff1
+=
+=
+p
+2c 2e 2g 2cc
+&lt;
+.
+(
+2G 2d 2g 2b
+=
+=
+(
+2A 2c 2e 2a
+[
+.
+pp
+2E 2B 2e 2g
+=
+=
+*-
+*-</div></blockquote>
+<p>The <tt class="docutils literal"><span class="pre">dynam</span></tt> encoding is interpreted as follows: the level begins
+<em>piano</em> with a crescendo beginning prior to the second chord; the
+crescendo continues until after the third chord and then the level
+abruptly drops to <em>pianissimo</em> with the onset of the fourth chord.
+Notice that dynamic markings are &#8220;read from left-to-right&#8221;; that is, we
+presume that the crescendo begins <em>piano</em> and that the <em>pianissimo</em> is
+an abrupt reduction in level, rather than presuming that the crescendo
+builds to the <em>pianissimo</em> level and so there is an abrupt reduction in
+level after the initial <em>piano</em> just before the cresendo begins. In
+short, a crescendo (or diminuendo) marking is always assumed to increase
+(or decrease) the dynamic level from the preceding indication.</p>
+<p>If appropriate, a user can render implicit dynamic shading explicitly.
+For example, a user might choose to re-code Example 28.1 as either</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">dynam</span></tt>
+**kern
+*staff1
+*staff1
+=
+=
+p
+2c 2e 2g 2cc
+&lt;
+2G 2d 2g 2b
+=
+=
+[
+2A 2c 2e 2a
+X&gt;
+.
+X]
+.
+pp
+2E 2B 2e 2g
+=
+=
+*-
+*-</div></blockquote>
+<p>or</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">dynam</span></tt>
+**kern
+*staff1
+*staff1
+=
+=
+p
+2c 2e 2g 2cc
+Xppp
+.
+&lt;
+2G 2d 2g 2b
+=
+=
+(
+2A 2c 2e 2a
+[
+.
+pp
+2E 2B 2e 2g
+=
+=
+*-
+*-</div></blockquote>
+<p>Notice that null data records may be inserted as necessary to clarify
+the moment of dynamic change. The
+<tt class="docutils literal"><span class="pre">dynam</span></tt> &lt;representations/dynam.rep.html&gt;`__ representation makes
+use of the common system for representing barlines.</p>
+</div>
+<div class="section" id="the-dyn-representation">
+<h2>The <em>**dyn</em> Representation<a class="headerlink" href="#the-dyn-representation" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">dyn</span></tt> representation provides a method for representing the
+orthographic appearance of notated dynamic markings. Unlike <tt class="docutils literal"><span class="pre">dynam</span></tt>,
+the <tt class="docutils literal"><span class="pre">dyn</span></tt> representation distinguishes between different ways of
+identifying a dynamic marking. For example, <em>dim.</em>, <em>dimin.</em>,
+<em>diminuendo</em>, <em>decres.</em>, <em>decresc.</em>, <em>decresendo</em>, are all regarded as
+different from each other. Composers often have idiosyncratic ways of
+writing dynamic markings. As a result, the specific terms used may have
+repercussions, for example, in resolving cases of disputed composership.
+In some circumstances, it is thought that individual composers
+distinguish the terms in their own minds. For example, a composer might
+use <em>decrescendo</em> as a general term to indicate a temporary descending
+dynamic shape, whereas <em>diminuendo</em> might have a more specific meaning
+of a `dying away&#8217; or `fade-out&#8217; gesture.</p>
+<p>In the **dyn representation the horizontal position of dynamic
+markings is indicated in quarter-durations with respect to the previous
+barline. This number appears prior to the dynamic signifier, hence
+<tt class="docutils literal"><span class="pre">4.1f</span></tt> means a <em>forte</em> (e.g., <strong>*f*</strong>) marking just after the
+horizontal position of the fourth quarter in the measure. The vertical
+position of dynamic markings is indicated with respect to the middle
+line of a corresponding staff; this number appears in curly braces.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>&lt;</td>
+<td>begin wedge-graphic crescendo marking</td>
+</tr>
+<tr class="row-even"><td>&gt;</td>
+<td>begin wedge-graphic diminuendo marking</td>
+</tr>
+<tr class="row-odd"><td>[</td>
+<td>terminate wedge-graphic crescendo marking</td>
+</tr>
+<tr class="row-even"><td>]</td>
+<td>terminate wedge-graphic diminuendo marking</td>
+</tr>
+<tr class="row-odd"><td>(</td>
+<td>continuing wedge-graphic crescendo</td>
+</tr>
+<tr class="row-even"><td>)</td>
+<td>continuing wedge-graphic diminuendo</td>
+</tr>
+<tr class="row-odd"><td>{...}</td>
+<td>vertical position (in staff-line steps from mid-line)</td>
+</tr>
+<tr class="row-even"><td>#...</td>
+<td>size of marking (in staff-line steps)</td>
+</tr>
+<tr class="row-odd"><td><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">number:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>density of dashed lines in strokes per quarter-duration</td>
+</tr>
+<tr class="row-even"><td>/.../</td>
+<td>wedge opening size (in staff-line steps)</td>
+</tr>
+<tr class="row-odd"><td>r</td>
+<td>rest (silence)</td>
+</tr>
+<tr class="row-even"><td>H</td>
+<td>marking appears in square brackets</td>
+</tr>
+</tbody>
+</table>
+<p>By way of illustration, consider Example 28.2.</p>
+<p><strong>Example 28.2:</strong> Arnold Schoenberg, <em>Three Piano Pieces, Op. 11, No.
+2</em>, excerpt.</p>
+<blockquote>
+<div><a href="#id12"><span class="problematic" id="id13">|image6|</span></a></div></blockquote>
+<p>Using the <tt class="docutils literal"><span class="pre">dyn</span></tt> representation, Example 28.2 might be encoded as
+follows:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">dyn</span></tt>
+**kern
+**kern
+**kern
+*staff1/2
+*staff2
+*staff1
+*staff1
+*
+*clefF4
+*clefG2
+*clefG2
+*
+*M12/8
+*M12/8
+*M12/8
+=
+=
+=
+=
+0.8f{-4}
+8F# 8en
+8r
+2.ffn
+<tt class="docutils literal"><span class="pre">.</span></tt>
+8A#
+8r
+.
+<tt class="docutils literal"><span class="pre">.</span></tt>
+8Dn 8cn
+[8cc#
+.
+<tt class="docutils literal"><span class="pre">.</span></tt>
+8F#
+8cc#]
+.
+<tt class="docutils literal"><span class="pre">.</span></tt>
+8AAn 8Gn
+8ccn
+.
+<tt class="docutils literal"><span class="pre">.</span></tt>
+8C#
+8bn
+.
+<tt class="docutils literal"><span class="pre">.</span></tt>
+8FFn 8E-
+8b-
+[4.aan
+<tt class="docutils literal"><span class="pre">.</span></tt>
+8AAn
+8ddn
+.
+<tt class="docutils literal"><span class="pre">.</span></tt>
+8DD- 8C-
+8b-
+.
+<tt class="docutils literal"><span class="pre">.</span></tt>
+8FFn
+4.dd
+8aa]
+<tt class="docutils literal"><span class="pre">.</span></tt>
+8BBB- 8AA-
+.
+4ff#
+<tt class="docutils literal"><span class="pre">.</span></tt>
+8DDn
+.
+.
+*
+*
+*v
+*v
+=
+=
+=
+<tt class="docutils literal"><span class="pre">.</span></tt>
+8r
+8r
+1.4fp{-4.5}
+{8d-
+{8gn 8ccn 8ffn
+1.6&gt;{-4.3}/1.5/
+.
+.
+)
+8fn
+8bn 8een
+2.4]{-4.3}
+.
+.
+2.5pp{-5}
+24A-
+4.cn 4.fn 4.b}
+<tt class="docutils literal"><span class="pre">.</span></tt>
+24d-
+.
+2.8&gt;/1.4/
+24Dn
+.
+)
+8.GG
+.
+4.2]
+16BB-}
+.
+<tt class="docutils literal"><span class="pre">.</span></tt>
+8r
+8r
+4.4fp{-4.5}
+{8An
+{8e- 8a- 8dd-
+4.6&gt;/1.5/
+.
+.
+)
+8d-
+8gn 8ccn
+5.2]
+.
+.
+5.4pp{-4.5}
+24F#
+4.B- 4.en 4.a}
+5.7&gt;/1.4/
+24Bn
+.
+)
+24BB-
+.
+)
+8.DD
+.
+6.8]
+16GG}
+.
+=
+=
+=
+*-
+*-
+*-</div></blockquote>
+<p>The <tt class="docutils literal"><span class="pre">*staff1/2</span></tt> tandem interpretation indicates that the dynamic
+markings pertain to both staffs 1 and 2, however all vertical
+<tt class="docutils literal"><span class="pre">dyn</span></tt> &lt;representations/dyn.rep.html&gt;`__ distance measures are
+encoded with respect to staff 1. (Reversing the numerical order &#8211;
+<tt class="docutils literal"><span class="pre">*staff2/1</span></tt> &#8211; would cause all distances to be measured with respect
+to staff 2.) The token <tt class="docutils literal"><span class="pre">0.8f{-4}</span></tt> means that the signifier <em>f</em> is
+located 0.8 quarter-duration spaces from the beginning of the bar and 4
+staff-line steps below the center line of staff 1. The token
+<tt class="docutils literal"><span class="pre">1.6&gt;{-4.3}/1.5/</span></tt> means that a wedge diminuendo marking begins 1.6
+quarter-durations from the beginning of the bar; the size of the opening
+of the wedge is 1.5 staff-line steps wide and the center of the opening
+is located 4.3 staff-line steps below the center line for staff 1. The
+token <tt class="docutils literal"><span class="pre">2.4]{-4.3}</span></tt> means that a wedge diminuendo marking ends 2.4
+quarter-durations from the beginning of the bar; the tip of the wedge
+converges at a point 4.3 staff-line steps below the center line for
+staff 1. Changing this value allows tilted wedges to be represented.</p>
+</div>
+<div class="section" id="the-db-representation">
+<h2>The <em>**dB</em> Representation<a class="headerlink" href="#the-db-representation" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="../../rep/dB">**dB</a> &lt;representations/dB.rep.html&gt;`__ representation provides a
+way to represent intensity in decibels. Decibels can be expressed in
+relative or absolute terms. Absolute values are represented according to
+sound pressure level (SPL). An absolute representation is indicated by
+the presence of the <tt class="docutils literal"><span class="pre">*SPL</span></tt> tandem interpretation. Zero decibels (SPL)
+corresponds roughly to the quietest sound detectable under ideal
+circumstances. A quiet room is roughly 40 dB in intensity; a
+conversation produces roughly 70 dB, a vacuum cleaner produces roughly
+80 dB, a noisy factory produces roughly 90 dB, and a passing loud
+motorcycle generates roughly 100 dB (SPL).</p>
+<p>The <a class="reference external" href="../../rep/dB">**dB</a> representation provides a convenient way to represent sound
+intensity in a numerical form. A numerical representation allows us to
+carry out a variety of calculations and comparisons.</p>
+</div>
+<div class="section" id="the-db-command">
+<h2>The <em>db</em> Command<a class="headerlink" href="#the-db-command" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>db</strong> command translates dynamic markings to dynamic level
+expressed in decibels; specifically, <strong>db</strong> translates from the
+<tt class="docutils literal"><span class="pre">dynam</span></tt> representation to <a class="reference external" href="../../rep/dB">**dB</a> representation. By default,
+<strong>db</strong> uses the following mapping:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">dynamic level</th>
+<th class="head">dB SPL</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>fffffff 115</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>ffffff  110</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>fffff   105</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>ffff    100</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>fff     90</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>ff      80</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>f       75</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>mf      70</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>mp      65</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>p       60</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>pp      55</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>ppp     50</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>pppp    45</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>ppppp   40</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>pppppp  35</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>ppppppp 30</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>v       +5</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Notice the presence of the <em>accent</em> signifier (<tt class="docutils literal"><span class="pre">v</span></tt>); the assigned
+value (<tt class="docutils literal"><span class="pre">+5</span></tt>) means that any encoded accents will receive a decibel
+level 5 dB higher than the basic sound pressure level at that point in
+the score. For example, an explicitly accented note occurring in a
+<em>fortissimo</em> passage will be assigned a value of 85 dB SPL.</p>
+<p>Users can define other mappings by using the <strong>-f</strong> option for <strong>db</strong>.
+With <strong>-f</strong> the user provides a filename that contains the non-default
+mapping values. The format for this file is the same as that shown in
+the above table. Each table entry specifies a dynamic marking, followed
+by a tab, followed by a numerical value.</p>
+<p>In the case of crescendo and diminuendo markings, the <strong>db</strong> command
+attempts to interpolate a series of values between any preceding and
+subsequent dynamic markings. The following example shows a pianissimo
+marking at the beginning of measure 5; a crescendo marking spans all of
+measure 6, and a mezzo-forte marking appears in measure 7. The
+right-most spine shows the corresponding output generated by the <strong>db</strong>
+command. It shows an interpolation between the two dynamic levels.</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">dynam</span></tt>
+**dB
+*SPL
+*
+=5
+=5
+pp
+55
+.
+.
+.
+.
+.
+.
+=6
+=6
+&lt;
+58
+(
+61
+.
+.
+(
+64
+]
+67
+=7
+=7
+.
+.
+mf
+70
+.
+.</div></blockquote>
+<p>The interpolation begins with the crescendo indicator and increments for
+each continuation signifier (i.e., the open parentheses). Interpolations
+are linear and continue up to the crescendo termination signifier. The
+size of the increment value depends on starting and ending dynamic
+levels as well as the number of crescendo-continuation signifiers. In
+the above case four pertinent crescendo signifiers separate the
+pianissimo and mezzo-forte markings; each of these records has been
+incremented by 3 decibels. Where necessary, decimal values are output.
+Notice that null tokens (such as those in the middle of measure 6) are
+ignored in the calculation.</p>
+</div>
+<div class="section" id="processing-dynamic-information">
+<h2>Processing Dynamic Information<a class="headerlink" href="#processing-dynamic-information" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="../../rep/dB">**dB</a> &lt;representations/dB.rep.html&gt;`__ representation can be
+used to assist a number of tasks related to musical dynamics. Suppose,
+for example, that we want to compare the average overall dynamic levels
+for two arabesques:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**dynam'</span> <span class="pre">arabesque1</span> <span class="pre">|</span> <span class="pre">db</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">stats</span></tt></dt>
+<dd><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**dynam'</span> <span class="pre">arabesque2</span> <span class="pre">|</span> <span class="pre">db</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">stats</span></tt></dd>
+</dl>
+</div></blockquote>
+<p>Similarly, we might compare the overall dynamic levels between two
+sections of a single work. Perhaps we wish to know whether the
+exposition is on average louder than the development section:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-s</span> <span class="pre">Exposition</span> <span class="pre">-r</span> <span class="pre">1</span> <span class="pre">symphony3</span> <span class="pre">|</span> <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**dynam'</span> <span class="pre">\</span></tt></p>
+<blockquote>
+<div>| db | rid -GLId | stats</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-s</span> <span class="pre">Development</span> <span class="pre">-r</span> <span class="pre">1</span> <span class="pre">symphony3</span> <span class="pre">|</span> <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**dynam'</span> <span class="pre">\</span></tt></p>
+<blockquote>
+<div>| db | rid -GLId | stats</div></blockquote>
+</div></blockquote>
+<p>Does a work tend to begin quietly and end loudly, or vice versa? Here we
+might compare the first 10 measures with the final 10 measures. Notice
+the use of <a class="reference external" href="commands/ditto.html">**ditto**</a> to increase the number of
+values participating in the calculation of the average dynamic level:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-n</span> <span class="pre">=</span> <span class="pre">-r</span> <span class="pre">1-10</span> <span class="pre">janacek</span> <span class="pre">|</span> <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**dynam'</span> <span class="pre">\</span></tt></p>
+<blockquote>
+<div>| ditto -s = | db | rid -GLId | stats</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-n</span> <span class="pre">=</span> <span class="pre">-r</span> <span class="pre">'$-10-$'</span> <span class="pre">janacek</span> <span class="pre">|</span> <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**dynam'</span> <span class="pre">\</span></tt></p>
+<blockquote>
+<div>| ditto -s = | db | rid -GLId | stats</div></blockquote>
+</div></blockquote>
+<p>Suppose we want to determine whether there is an association between
+dynamic levels and pitch height for Klezmer music. That is, does the
+music tend to be quieter for lower pitches and louder for higher
+pitches? A straightforward way to determine this is to compare dynamic
+level with pitch height &#8211; represented in semitones
+(<a class="reference external" href="../../rep/semits">**semits</a> &lt;representations/semits.rep.html&gt;`__). The
+<a class="reference external" href="commands/correl.html">**correl**</a> command can then be used to
+measure Pearson&#8217;s coefficient of correlation. If there is a relationship
+between pitch height and dynamic level then the correlation should be
+positive.</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">semits</span> <span class="pre">klezmer</span> <span class="pre">|</span> <span class="pre">correl</span> <span class="pre">-s</span> <span class="pre">^=</span> <span class="pre">-m</span></tt></div></blockquote>
+<p>This command assumes an input consisting of two spines &#8211; one
+pitch-related and a <a class="reference external" href="../../rep/dB">**dB</a> spine. The <strong>-s</strong> option for <strong>correl</strong> is
+used to skip barlines so bar numbers aren&#8217;t included in the calculation.
+The <strong>-m</strong> option for <strong>correl</strong> disables the &#8220;matched pairs&#8221; criterion.
+Normally, if a number is found in one spine but not the other then
+<strong>correl</strong> will complain and terminate. With the <strong>-m</strong> option, each
+encoded pitch need not have a corresponding dynamic level indication and
+vice versa.</p>
+<p>Similarly, we could use this same approach to determine whether there is
+a relationship between duration and dynamic level. Are longer notes more
+likely to be louder in Klezmer music?</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">dur</span> <span class="pre">klezmer</span> <span class="pre">|</span> <span class="pre">correl</span> <span class="pre">-s</span> <span class="pre">^=</span> <span class="pre">-m</span></tt></div></blockquote>
+<p>A variation on this procedure might be to restrict the comparison over a
+specified pitch range. For example, one might think that higher pitches
+tend to be louder but that lower pitches are neither softer nor louder
+than usual. In order to test this view we can use the
+<a class="reference external" href="commands/recode.html">**recode**</a> command to reassign &#8220;low&#8221; pitches
+to a single value. By way of illustration, the reassignment might
+presume that below G4 (semits=7) there is no relationship between pitch
+height and dynamic level. We might recode all values lower than 7 to a
+unique string (such as `XXX&#8217;) and then use <strong>grep -v</strong> to eliminate
+these notes from a subsequent correlation:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**kern'</span> <span class="pre">klezmer</span> <span class="pre">|</span> <span class="pre">semits</span> <span class="pre">recode</span> <span class="pre">&gt;</span> <span class="pre">temp1</span>&nbsp; <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**dB'</span> <span class="pre">klezmer</span> <span class="pre">&gt;</span> <span class="pre">temp2</span>&nbsp; <span class="pre">assemble</span> <span class="pre">temp1</span> <span class="pre">temp2</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">'XXX'</span> <span class="pre">|</span> <span class="pre">correl</span> <span class="pre">-s</span> <span class="pre">^=</span> <span class="pre">-m</span></tt></div></blockquote>
+</div>
+<div class="section" id="terraced-dynamics">
+<h2>Terraced Dynamics<a class="headerlink" href="#terraced-dynamics" title="Permalink to this headline">¶</a></h2>
+<p>Suppose we want to identify whether various works exhibit &#8220;terraced&#8221; or
+&#8220;graduated&#8221; dynamics. In the case of terraced dynamics, we would expect
+to see many relatively abrupt dynamic contrasts, such as alternations
+between <em>forte</em> and <em>piano</em>. There are several ways of approaching this
+question. One approach might translate
+<tt class="docutils literal"><span class="pre">dynam</span></tt> &lt;representations/dynam.rep.html&gt;`__ data to
+<a class="reference external" href="../../rep/dB">**dB</a> &lt;representations/dB.rep.html&gt;`__ data and then calculate the
+average (or maximum) changes in dynamic level. If a work contains many
+crescendos and diminuendos markings, then most of the changes in
+<a class="reference external" href="../../rep/dB">**dB</a> values will be small. Conversely, alternations between
+contrasting dynamic levels will cause the average decibel differences to
+be larger. The <a class="reference external" href="commands/xdelta.html">**xdelta**</a> command can be used
+to calculate the changes in dynamic level. Notice that it is important
+to avoid using the <a class="reference external" href="commands/ditto.html">**ditto**</a> command since
+repeated dynamic level values will cause the average dynamic difference
+to approach zero.</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**dynam'</span> <span class="pre">haendel</span> <span class="pre">|</span> <span class="pre">db</span> <span class="pre">|</span> <span class="pre">xdelta</span> <span class="pre">-a</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-d</span> <span class="pre">\</span></tt></p>
+<blockquote>
+<div>| stats</div></blockquote>
+</div></blockquote>
+<p>Another approach to this problem might be to count the number of dynamic
+contrasts, avoiding the use of the <strong>db</strong> command. In the following
+pipeline, we use <a class="reference external" href="commands/context.html">**context**</a> to generate
+pairs of dynamic markings, and then use <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to count the number of
+alternations between <em>f</em> and <em>p</em>.</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**dynam'</span> <span class="pre">haendel</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">'[][()=rX]'</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-d</span> <span class="pre">\</span></tt></p>
+<blockquote>
+<div>| context -n 2 | grep -c &#8216;f p&#8217;</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line-block">
+<div class="line"><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**dynam'</span> <span class="pre">haendel</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">'[][()=rX]'</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-d</span> <span class="pre">\</span></tt></div>
+</div>
+</div>
+<blockquote>
+<div>| context -n 2 | grep -c &#8216;p f&#8217;</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="dynamic-swells">
+<h2>Dynamic Swells<a class="headerlink" href="#dynamic-swells" title="Permalink to this headline">¶</a></h2>
+<p>Conceptually, crescendos and diminuendos can be paired to form one of
+two dynamic gestures. A &#8220;swell&#8221; gesture consists of a crescendo followed
+by a diminuendo. Conversely, a &#8220;dip&#8221; gesture would consist of a
+diminuendo followed by a crescendo. Musical intuition would suggest that
+swell gestures are more common than dip gestures. We could test this
+view as follows:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**dynam'</span> <span class="pre">grieg</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">'[][()=rX]'</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-d</span> <span class="pre">\</span></tt></p>
+<blockquote>
+<div>| context -n 2 | grep -c &#8216;&lt; &gt;&#8217;</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**dynam'</span> <span class="pre">grieg</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">'[][()=rX]'</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-d</span> <span class="pre">\</span></tt></p>
+<blockquote>
+<div>| context -n 2 | grep -c &#8216;&gt; &lt;&#8217;</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="midi-dynamics">
+<h2>MIDI Dynamics<a class="headerlink" href="#midi-dynamics" title="Permalink to this headline">¶</a></h2>
+<p>Dynamic level data is not always easily available. One possible source
+is to translate MIDI key-velocity data to an estimated decibel value.
+Actual sound pressure levels will depend on the timbre of the MIDI
+sounds, the specific pitch played, and the volume on the output
+amplifier. Nevertheless, a rough estimate of sound pressure level may be
+useful for various analytic tasks. Recall that in the
+<a class="reference external" href="../../rep/MIDI">**MIDI</a> &lt;representations/MIDI.rep.html&gt;`__ representation,
+key-velocity data is encoded as the final number in three-number tokens
+where numbers are separated by slashes. The first value in the triplet
+is elapsed clock ticks and the second value is the MIDI key number
+(positive for key-on events, negative for key-off events). By way of
+reminder, the following example shows three
+<a class="reference external" href="../../rep/kern">**kern</a> &lt;representations/kern.rep.html&gt;`__ notes with a
+corresponding **MIDI representation.</p>
+<blockquote>
+<div><a class="reference external" href="../../rep/kern">**kern</a>
+**MIDI
+*
+*Ch1
+4c
+72/60/64
+4d
+72/-60/64 72/62/64
+4e
+72/-62/64 72/64/64
+.
+72/-64/64
+*-
+*-</div></blockquote>
+<p>In order to translate to a **dB representation, we must first isolate
+the key velocity values for key-on events. The following
+<a class="reference external" href="commands/humsed.html">**humsed**</a> command simply eliminates all data
+up to (and including) the last slash character:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**MIDI'</span> <span class="pre">mono_input</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/.*\///'</span></tt></div></blockquote>
+<p>This will leave us with just the key-down velocity data. Let&#8217;s suppose
+that the following rough decibel equivalents are established:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">key velocity</th>
+<th class="head">approximate dB SPL</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>127</td>
+<td>85</td>
+</tr>
+<tr class="row-odd"><td>100</td>
+<td>80</td>
+</tr>
+<tr class="row-even"><td>90</td>
+<td>77</td>
+</tr>
+<tr class="row-odd"><td>80</td>
+<td>74</td>
+</tr>
+<tr class="row-even"><td>70</td>
+<td>70</td>
+</tr>
+<tr class="row-odd"><td>60</td>
+<td>65</td>
+</tr>
+<tr class="row-even"><td>50</td>
+<td>60</td>
+</tr>
+<tr class="row-odd"><td>40</td>
+<td>53</td>
+</tr>
+<tr class="row-even"><td>30</td>
+<td>44</td>
+</tr>
+<tr class="row-odd"><td>20</td>
+<td>32</td>
+</tr>
+<tr class="row-even"><td>10</td>
+<td>21</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>10</td>
+</tr>
+<tr class="row-even"><td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>An appropriate reassignment file for
+<a class="reference external" href="commands/recode.html">**recode**</a> would begin as follows:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">&gt;=127</span></tt>
+85
+&gt;=100
+80
+&gt;=90
+77
+&gt;=80
+74
+&gt;=70
+70
+etc.</div></blockquote>
+<p>The completed translation would be accomplished by the following
+pipeline:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**MIDI'</span> <span class="pre">mono_input</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/.*\///'</span> <span class="pre">\</span></tt></p>
+<blockquote>
+<div>| recode -f reassign | sed &#8216;s/**MIDI/**dB/&#8217;</div></blockquote>
+</div></blockquote>
+<p>Notice the use of the <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> command to replace the **MIDI
+interpretation by a **dB interpretation.</p>
+</div>
+<div class="section" id="reprise">
+<h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
+<p>In this chapter we have introduced three representations related to
+musical dynamics. The <tt class="docutils literal"><span class="pre">dyn</span></tt> &lt;representations/dyn.rep.html&gt;`__
+representation allows us to encode dynamic markings as they appear
+visually in a printed score. Unfortunately, traditional notated dynamic
+markings are often confusing or ambiguous. In order to facilitate some
+types of analytic processing it is useful to generate a more
+rationalized interpretation of the dynamics of a work. The
+<tt class="docutils literal"><span class="pre">dynam</span></tt> &lt;representations/dynam.rep.html&gt;`__ representation provides
+a canonical scheme for representing basic notated dynamic markings where
+ambiguities are resolved by explicitly interpreting the meaning of
+dynamic markings. A third scheme
+(<a class="reference external" href="../../rep/dB">**dB</a> &lt;representations/dB.rep.html&gt;`__) provides a scheme for
+representing continuous dynamic levels in decibels. We have seen that
+the <strong>db</strong> command (which translates from <tt class="docutils literal"><span class="pre">dynam</span></tt> to <a class="reference external" href="../../rep/dB">**dB</a>)
+allows us to pose and answer a variety of questions related to the
+dynamic organization of music.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  <hr/>
+  
+
+
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+   
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-52162357-1', 'humdrum.org');
+  ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>

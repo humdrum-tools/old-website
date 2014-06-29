@@ -1,0 +1,960 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapter 19: Musical Contexts &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../../"/>
+   <link rel="stylesheet" type"text/css" href="../../../_static/humdrum.css">
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../../" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/">Humdrum Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../install/github/">Installing Humdrum Tools from GitHub</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../">The Humdrum User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ch01/">Chapter 1: Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch02/">Chapter 2: Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch03/">Chapter 3: Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch04/">Chapter 4: Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch05/">Chapter 5: The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch06/">Chapter 6: Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch07/">Chapter 7: MIDI Output Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch08/">Chapter 8: The Shell (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch09/">Chapter 9: Searching with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch10/">Chapter 10: Musical Uses of Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch11/">Chapter 11: Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch12/">Chapter 12: Selecting Musical Parts and Passages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch13/">Chapter 13: Assembling Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch14/">Chapter 14: Stream Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch15/">Chapter 15: Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch16/">Chapter 16: The Shell (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch17/">Chapter 17: Creating Inventories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch18/">Chapter 18: Fingers, Footsteps and Frets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch19/">Chapter 19: Musical Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch20/">Chapter 20: Strophes, Verses, and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch21/">Chapter 21: Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch22/">Chapter 22: Classifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch23/">Chapter 23: Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch24/">Chapter 24: The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch25/">Chapter 25: Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch26/">Chapter 26: Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch27/">Chapter 27: Text and Lyrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch28/">Chapter 28: Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch29/">Chapter 29: Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch30/">Chapter 30:MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch31/">Chapter 31: Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch32/">Chapter 32: The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch33/">Chapter 33: Word Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch34/">Chapter 34: Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch35/">Chapter 35: Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch36/">Chapter 33: Sound and Spectra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch37/">Chapter 37: Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch38/">Chapter 38: Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch39/">Chapter 39: Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch40/">Chapter 40: Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../bibliography/">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sample.problems/">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../humextra/">Humdrum Extras</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/intro/">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/rhythm/">2. Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/melody/">Melody and Pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/harmony/">Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/data/">Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/searching/">Music Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/midi/">MIDI Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/notation/">Graphical Musical Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/other/">Other Useful Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/programming/">Programming Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../cookbook/">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../cookbook/vimHighlighting/">Syntax Coloring in Vim</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../man/">Humdrum Command Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/assemble/">Command: assemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/barks/">Command: barks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cbr/">Command: cbr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/census/">Command: census</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cents/">Command: cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cleave/">Command: cleave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cocho/">Command: cocho</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/context/">Command: context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/correl/">Command: correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/deg/">Command: deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/degree/">Command: degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/diss/">Command: diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ditto/">Command: ditto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/dur/">Command: dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ekern/">Command: ekern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/encode/">Command: encode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/extract/">Command: extract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/fade/">Command: fade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/fields/">Command: fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/freq/">Command: freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/hint/">Command: hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/humdrum/">Command: humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/humsed/">Command: humsed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/humver/">Command: humver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/infot/">Command: infot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/iv/">Command: iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/kern/">Command: kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/key/">Command: key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/melac/">Command: melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/melvel/">Command: melvel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/metpos/">Command: metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/midi/">Command: midi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/midreset/">Command: midreset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/mint/">Command: mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ms/">Command: ms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/nf/">Command: nf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/num/">Command: num</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/patt/">Command: patt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pattern/">Command: pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pc/">Command: pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pcset/">Command: pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/perform/">Command: perform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pf/">Command: pf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pitch/">Command: pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/proof/">Command: proof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/recode/">Command: recode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/record/">Command: record</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/regexp/">Command: regexp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/reihe/">Command: reihe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/rend/">Command: rend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/rid/">Command: rid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/scramble/">Command: scramble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/semits/">Command: semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/simil/">Command: simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/smf/">Command: smf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/solfa/">Command: solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/solfg/">Command: solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/specc/">Command: specc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/spect/">Command: spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/strophe/">Command: strophe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/synco/">Command: synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/tacet/">Command: tacet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/text/">Command: text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/themefinder/">Command: thmea</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/thru/">Command: thru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/timebase/">Command: timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/tonh/">Command: tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/trans/">Command: trans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/urrhythm/">Command: urrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/veritas/">Command: veritas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/vox/">Command: vox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/xdelta/">Command: xdelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/yank/">Command: yank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ydelta/">Command: ydelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/#commands">Commands</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../rep/">Humdrum Data Representations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/barlines/">Representation: barlines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/IPA/">Representation: **IPA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/MIDI/">Representation: **MIDI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/Tonh/">Representation: **Tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/URrhythm/">Representation: **URrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/Zeit/">Representation: **Zeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/bhatk/">Representation: **bhatk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/cents/">Representation: **cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/correl/">Representation: **correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/dB/">Representation: **dB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/date/">Representation: **date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/deg/">Representation: **deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/degree/">Representation: **degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/diss/">Representation: **diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/dur/">Representation: **dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/embel/">Representation: **embel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/freq/">Representation: **freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/fret/">Representation: **fret</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/harm/">Representation: **harm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/hildegard/">Representation: **hildegard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/hint/">Representation: **hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/iv/">Representation: **iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/kern/">Representation: **kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/melac/">Representation: **melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/metpos/">Representation: **metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/mint/">Representation: **mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/ordo/">Representation: **ordo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/pc/">Representation: **pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/pcset/">Representation: **pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/pitch/">Representation: **pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/recip/">Representation: **recip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/semits/">Representation: **semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/silbe/">Representation: **silbe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/simil/">Representation: **simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/solfa/">Representation: **solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/solfg/">Representation: **solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/specC/">Representation: **specC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/spect/">Representation: **spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/synco/">Representation: **synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/takt/">Representation: **takt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/text/">Representation: **text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/time/">Representation: **time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/timebase/">Representation: **timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/vox/">Representation: **vox#</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../">Docs</a> &raquo;</li>
+      
+    <li>Chapter 19: Musical Contexts</li>
+      <li class="wy-breadcrumbs-aside">
+        
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="chapter-19-musical-contexts">
+<h1>Chapter 19: Musical Contexts<a class="headerlink" href="#chapter-19-musical-contexts" title="Permalink to this headline">¶</a></h1>
+<p>Much of what makes an event of interest is the context of the event. We may
+be interested in what precedes or follows a note or chord. We have already
+seen how the <strong>-A</strong> and <strong>-B</strong> options for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> can be used to output
+<a class="reference external" href="../ch21">before&#8217; and `after&#8217; contexts. In `Chapter 21</a> we will see how the
+<a class="reference external" href="../../man/patt">patt</a> and <a class="reference external" href="../../man/pattern">pattern</a> commands can provide further flexibility for
+searching.</p>
+<p>However, in this chapter we introduce the deceptively simple <strong>context</strong>
+command.</p>
+<div class="section" id="the-context-command">
+<h2>The <em>context</em> Command<a class="headerlink" href="#the-context-command" title="Permalink to this headline">¶</a></h2>
+<p>The effect of the <a class="reference external" href="../../man/context">context</a> command is easier to illustrate than
+describe. Consider a file (named <tt class="docutils literal"><span class="pre">input</span></tt>) that contains the numbers 1
+through 6 on successive lines. A null token is interposed between the numbers
+2 and 3:</p>
+<p><tt class="docutils literal"><span class="pre">`</span>
+<span class="pre">$</span>
+<span class="pre">&gt;</span> <span class="pre">**numbers</span>
+<span class="pre">&gt;</span> <span class="pre">1</span>
+<span class="pre">&gt;</span> <span class="pre">2</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">3</span>
+<span class="pre">&gt;</span> <span class="pre">4</span>
+<span class="pre">&gt;</span> <span class="pre">5</span>
+<span class="pre">&gt;</span> <span class="pre">6</span>
+<span class="pre">&gt;</span> <span class="pre">*-</span></tt></p>
+<p>The command</p>
+<p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-n</span> <span class="pre">3</span> <span class="pre">input</span></tt></p>
+<p>will produce the following output:</p>
+<p><tt class="docutils literal"><span class="pre">`</span>
+<span class="pre">$</span>
+<span class="pre">&gt;</span> <span class="pre">**numbers</span>
+<span class="pre">&gt;</span> <span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span>
+<span class="pre">&gt;</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">5</span>
+<span class="pre">&gt;</span> <span class="pre">4</span> <span class="pre">5</span> <span class="pre">6</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">*-</span></tt></p>
+<p>In effect, <strong>context</strong> amalgamates data tokens from successive records and
+assembles them as multiple-stops on a single record. Notice that the number
+of data records in the output is the same as in the input: <strong>context</strong> has
+simply padded the trailing data records with null tokens. Also notice that
+individual data tokens can appear more than once. For example, the number 3
+appears at the end of the second line, in the middle of the third line, and
+at the beginning of the fourth line. In the above example only the numbers 1
+and 6 appear once. Finally, notice that null tokens are simply ignored: the
+null token in the fourth line of our input also appears in the fourth line of
+the output.</p>
+<p>The <strong>-n 3</strong> option tells <strong>context</strong> how many data tokens to amalgamate on
+each output line. With the specification <strong>-n 2</strong>, just two data tokens would
+be amalgamated on each output line.</p>
+<p>How might <a class="reference external" href="../../man/context">context</a> be useful? Suppose we wanted to determine how
+harmonic octave intervals are approached in Bach&#8217;s two-part keyboard
+<em>Inventions</em>. What harmonic interval tends to precede an octave? We can use
+the <a class="reference external" href="../../man/hint">hint</a> command to generate the harmonic intervals for each
+successive sonority. To calculate all <em>passing intervals</em>, we will preprocess
+using <a class="reference external" href="../../man/ditto">ditto</a>:</p>
+<p><tt class="docutils literal"><span class="pre">ditto</span> <span class="pre">inventions*</span> <span class="pre">|</span> <span class="pre">hint</span></tt></p>
+<p>Typical outputs might look like this:</p>
+<p><tt class="docutils literal"><span class="pre">M3</span>
+<span class="pre">&gt;</span> <span class="pre">M6</span>
+<span class="pre">&gt;</span> <span class="pre">A4</span>
+<span class="pre">&gt;</span> <span class="pre">=12</span>
+<span class="pre">&gt;</span> <span class="pre">M6</span>
+<span class="pre">&gt;</span> <span class="pre">m7</span>
+<span class="pre">&gt;</span> <span class="pre">M3</span>
+<span class="pre">&gt;</span> <span class="pre">A4</span>
+<span class="pre">&gt;</span> <span class="pre">M6</span>
+<span class="pre">&gt;</span> <span class="pre">A4</span>
+<span class="pre">&gt;</span> <span class="pre">M6</span>
+<span class="pre">&gt;</span> <span class="pre">P4</span>
+<span class="pre">&gt;</span> <span class="pre">M6</span>
+<span class="pre">&gt;</span> <span class="pre">M7</span>
+<span class="pre">&gt;</span> <span class="pre">m9</span>
+<span class="pre">&gt;</span> <span class="pre">m10</span>
+<span class="pre">&gt;</span> <span class="pre">d12</span>
+<span class="pre">&gt;</span> <span class="pre">m10</span>
+<span class="pre">&gt;</span> <span class="pre">P11</span>
+<span class="pre">&gt;</span> <span class="pre">M9</span>
+<span class="pre">&gt;</span> <span class="pre">=13</span>
+<span class="pre">&gt;</span> <span class="pre">m10</span>
+<span class="pre">&gt;</span> <span class="pre">P4</span>
+<span class="pre">&gt;</span> <span class="pre">M9</span>
+<span class="pre">&gt;</span> <span class="pre">M10</span></tt></p>
+<p>Using <strong>context</strong> with the <strong>-n 2</strong> option will cause pairs of successive
+intervals to appear in the data records. Each data record will consist of a
+double-stop containing two harmonic intervals. We simply need to identify
+those data records that have <tt class="docutils literal"><span class="pre">P8</span></tt> as the second token of the double-stop.
+In short, we are interested in data records that end with <tt class="docutils literal"><span class="pre">P8</span></tt>. The
+dollars-sign can be used in a regular expression to anchor the pattern to the
+end of the line. Hence:</p>
+<p><tt class="docutils literal"><span class="pre">ditto</span> <span class="pre">inventions*</span> <span class="pre">|</span> <span class="pre">hint</span> <span class="pre">|</span> <span class="pre">context</span> <span class="pre">-n</span> <span class="pre">2</span> <span class="pre">-o</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'</span> <span class="pre">P8$'</span></tt></p>
+<p>The <strong>-o =</strong> option tells <strong>context</strong> to omit any data tokens matching the
+equals-sign &#8211; that is, to omit barlines from the amalgamated multiple stops.
+(The <strong>-o</strong> option accepts any regular expression as a parameter, so omitted
+data can be defined in a much more refined manner than simply specifying an
+equals-sign.) The <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command grabs all of the lines ending with <tt class="docutils literal"><span class="pre">P8</span></tt>.
+We can now create an inventory of harmonic interval pairs and order them from
+least common to most common:</p>
+<p><a href="#id3"><span class="problematic" id="id4">``</span></a>ditto inventions* | hint | context -n 2 -o = </p>
+<p>&gt;
+&gt;&gt; | grep &#8216; P8$&#8217; | sort | uniq -c | sort -rn``</p>
+<p>In the case of Bach&#8217;s fifteen two-part <em>Inventions</em> the results look as
+follows:</p>
+<p>&gt;
+<tt class="docutils literal"><span class="pre">24</span> <span class="pre">m10</span> <span class="pre">P8</span>
+<span class="pre">24</span> <span class="pre">M10</span> <span class="pre">P8</span>
+<span class="pre">23</span> <span class="pre">m7</span> <span class="pre">P8</span>
+<span class="pre">21</span> <span class="pre">M6</span> <span class="pre">P8</span>
+<span class="pre">19</span> <span class="pre">M9</span> <span class="pre">P8</span>
+<span class="pre">12</span> <span class="pre">P5</span> <span class="pre">P8</span>
+<span class="pre">11</span> <span class="pre">m6</span> <span class="pre">P8</span>
+<span class="pre">9</span> <span class="pre">P12</span> <span class="pre">P8</span>
+<span class="pre">8</span> <span class="pre">m13</span> <span class="pre">P8</span>
+<span class="pre">8</span> <span class="pre">-</span> <span class="pre">P8</span></tt></p>
+<p>In other words, the octave is most commonly approached by contracting from
+minor and major tenths rather than expanding from a major sixth interval.</p>
+<p>This same basic process can be used to address a variety of similar problems.
+For example, suppose we wanted to determine the most common word following
+&#8220;gloria&#8221; in Gregorian chant texts. We first extract the <a class="reference external" href="../../rep/text">**text</a> spine,
+use <strong>context</strong> to create pairs of words, and search in the normal way:</p>
+<p><a href="#id5"><span class="problematic" id="id6">``</span></a>extract -i &#8216;<a href="#id7"><span class="problematic" id="id8">**</span></a>text&#8217; chants* | context -n 2 </p>
+<p>&gt;
+&gt;&gt; | grep -i &#8216; gloria$&#8217; | sort | uniq -c | sort -nr``</p>
+<p>A slight change to the regular expression for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> will allow us to
+determine what word typically <em>follows</em> after the word &#8220;gloria.&#8221; In this
+case, we need to anchor the word &#8220;gloria&#8221; to the beginning of the line by
+using the caret (^).</p>
+<p><a href="#id10"><span class="problematic" id="id11">``</span></a>extract -i &#8216;<a href="#id12"><span class="problematic" id="id13">**</span></a>text&#8217; chants* | context -n 2 </p>
+<p>&gt;
+&gt;&gt; | grep -i &#8216;^gloria &#8216; | sort | uniq -c | sort -nr``</p>
+<p>Suppose we wanted to determine what scale degree most commonly precedes the
+dominant pitch in a sample of Czech folksongs. First we translate the
+folksongs to the <a class="reference external" href="../../rep/deg">**deg</a> representation using the <strong>deg</strong> command, and
+then process as above:</p>
+<p><a href="#id14"><span class="problematic" id="id15">``</span></a>deg Czech* | context -n 2 -o = | grep &#8216;5 &#8216; | sort </p>
+<p>&gt;
+&gt;&gt; | uniq -c | sort -nr``</p>
+</div>
+<div class="section" id="harmonic-progressions">
+<h2>Harmonic Progressions<a class="headerlink" href="#harmonic-progressions" title="Permalink to this headline">¶</a></h2>
+<p>The V-I progression is the most common chord progression in Western tonal
+music. After the V-I progression, what is the most common chord progression
+in Bach&#8217;s chorale harmonizations? We will assume that a Roman numeral
+<a class="reference external" href="../../rep/harm">**harm</a> spine already exists. First we extract the appropriate spine.
+Then we create context records holding pairs of harmony data (omitting
+barlines). Then we eliminate global and local comments, interpretations, and
+null data. We then sort the data records, eliminate duplicates while
+counting, and then sort by numerical count in reverse order.</p>
+<p><a href="#id16"><span class="problematic" id="id17">``</span></a>extract -i &#8216;<a href="#id18"><span class="problematic" id="id19">**</span></a>harm&#8217; chorales* | context -n 2 -o = </p>
+<p>&gt;
+&gt;&gt; | rid -GLId | sort | uniq -c | sort -nr``</p>
+<p>Of course, there is no need to restrict ourselves to pairs of successive data
+tokens (i.e. <strong>-n 2</strong>) as we have done in the above example. Given a database
+of melodies, we can determine the most common sequence of five melodic
+intervals as follows:</p>
+<p><a href="#id20"><span class="problematic" id="id21">``</span></a>mint melodies* | context -n 5 -o = | rid -GLId | sort </p>
+<p>&gt;
+&gt;&gt; | uniq -c | sort -nr``</p>
+</div>
+<div class="section" id="using-context-with-the-b-and-e-options">
+<h2>Using <em>context</em> with the <em>-b</em> and <em>-e</em> Options<a class="headerlink" href="#using-context-with-the-b-and-e-options" title="Permalink to this headline">¶</a></h2>
+<p>Example 19.1 shows an excerpt from a flute study by Anderson. Although the
+work is monophonic, the work&#8217;s structure is based on an underlying chord
+progression that is realized as a series of arpeggiation figures.</p>
+<p><strong>Example 19.1 Joachim Anderson, Opus 30, No. 24.</strong></p>
+<p>&gt; .. image:: guide.figures/ch19.1.gif</p>
+<p>The harmonic structure can be made more explicit by amalgamating all of the
+notes in each arpeggio. There are several possible ways of doing this, but
+the slurs are particularly useful delineators. The <strong>-b</strong> option for
+<a class="reference external" href="../../man/context">context</a> allows the user to specify a regular expression that marks the
+<em>beginning</em> of each collection of data tokens. Consider the following
+command:</p>
+<p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">'('</span> <span class="pre">Anderson</span></tt></p>
+<p>Whenever a data record contains an open parenthesis a new amalgamation
+begins. The appropriate output for measure 1 of Example 19.1 would be:</p>
+<p><tt class="docutils literal"><span class="pre">**kern</span>
+<span class="pre">&gt;</span> <span class="pre">*clefG2</span>
+<span class="pre">&gt;</span> <span class="pre">*k[b-]</span>
+<span class="pre">&gt;</span> <span class="pre">*d:</span>
+<span class="pre">&gt;</span> <span class="pre">*M4/4</span>
+<span class="pre">&gt;</span> <span class="pre">=1-</span>
+<span class="pre">&gt;</span> <span class="pre">(16dd</span> <span class="pre">16ff</span> <span class="pre">16dd</span> <span class="pre">16a)</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">(16dd</span> <span class="pre">16gg</span> <span class="pre">16dd</span> <span class="pre">16b-)</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">(16dd</span> <span class="pre">16ff</span> <span class="pre">16dd</span> <span class="pre">16a)</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">(16f</span> <span class="pre">16a</span> <span class="pre">16f</span> <span class="pre">16e)</span> <span class="pre">=2</span></tt>
+&gt; etc.</p>
+<p>Notice how the barline for measure 2 has been included in the fourth group.
+(Groups continue until the next open parenthesis is encountered.) Once again
+we might eliminate barlines by using the <strong>-o</strong> option. However, sometimes
+the barlines prove useful in further processing.</p>
+<p>In the above passage by Anderson, the close of each slur provides a
+convenient marker for ending each chord. We can be more explicit in defining
+the grouping boundaries by also including the <strong>-e</strong> option for
+<a class="reference external" href="../../man/context">context</a>. This option allows the user to specify a regular expression
+that marks the <em>end</em> of each collection of data tokens. A suitably revised
+command would be:</p>
+<p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">'('</span> <span class="pre">-e</span> <span class="pre">')'</span> <span class="pre">Anderson</span></tt></p>
+<p>The resulting output would begin as follows:</p>
+<p><tt class="docutils literal"><span class="pre">**kern</span>
+<span class="pre">&gt;</span> <span class="pre">*clefG2</span>
+<span class="pre">&gt;</span> <span class="pre">*k[b-]</span>
+<span class="pre">&gt;</span> <span class="pre">*d:</span>
+<span class="pre">&gt;</span> <span class="pre">*M4/4</span>
+<span class="pre">&gt;</span> <span class="pre">=1-</span>
+<span class="pre">&gt;</span> <span class="pre">(16dd</span> <span class="pre">16ff</span> <span class="pre">16dd</span> <span class="pre">16a)</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">(16dd</span> <span class="pre">16gg</span> <span class="pre">16dd</span> <span class="pre">16b-)</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">(16dd</span> <span class="pre">16ff</span> <span class="pre">16dd</span> <span class="pre">16a)</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">(16f</span> <span class="pre">16a</span> <span class="pre">16f</span> <span class="pre">16e)</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">.</span>
+<span class="pre">&gt;</span> <span class="pre">=2</span>
+<span class="pre">&gt;</span> <span class="pre">(16d</span> <span class="pre">16ff</span> <span class="pre">16dd</span> <span class="pre">16a)</span></tt>
+&gt; etc.</p>
+<p>We could pipe this output to the <strong>ms</strong> command in order to display the re-
+arranged passage. We place the output in a postscript file and use a display
+tool such as <strong>ghostview</strong> to display the output:</p>
+<p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">'('</span> <span class="pre">-e</span> <span class="pre">')'</span> <span class="pre">Anderson</span> <span class="pre">|</span> <span class="pre">ms</span> <span class="pre">&gt;</span> <span class="pre">output.ps</span></tt></p>
+<p><strong>Example 19.2 Arpeggio Amalgamation.</strong></p>
+<p>&gt; .. image:: guide.figures/ch19.2.gif</p>
+<p>Notice that the resulting notation is &#8220;ungrammatical&#8221; because the meter
+signature disagrees with the total duration for each measure.</p>
+<p>Having reformatted our input data using <strong>context</strong>, we can continue by
+translating the data to another representation. For example, we might use the
+<a class="reference external" href="../../man/deg">deg</a> command to reformulate each pitch group as scale degrees. This
+might allow us to search for particular harmonic patterns such as (say) an
+augmented sixth chord:</p>
+<p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">'('</span> <span class="pre">-e</span> <span class="pre">')'</span> <span class="pre">Anderson</span> <span class="pre">|</span> <span class="pre">deg</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'6-'</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'4+'</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'1'</span></tt></p>
+<p>Any regular expression can be used to identify the beginning and/or ending of
+an amalgamated group. For example, tokens might be grouped by barlines.
+Suppose the <a class="reference external" href="../../man/census">census</a> command tells us that a monophonic work contains
+sixty-fourth notes. We might want to know whether the sixty-fourth notes all
+tend to happen in one or two measures, or whether they occur throughout the
+work. Just how many measures contain sixty-fourth notes?</p>
+<p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">=</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'64'</span></tt></p>
+<p>Similarly, for **kern_ inputs, the following command counts the number
+of measures that contain at least one trill:</p>
+<p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">=</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'^=.*[Tt]'</span></tt></p>
+<p>In **kern representations, the beginnings and endings of beams are
+indicated by the letters <tt class="docutils literal"><span class="pre">L</span></tt>&#8216; and <tt class="docutils literal"><span class="pre">J</span></tt>&#8216; respectively. We might group
+notes according to the beaming:</p>
+<p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">L</span> <span class="pre">-e</span> <span class="pre">J</span> <span class="pre">inputfile</span></tt></p>
+<p>For example, the following command determines the location of any beams that
+cross over phrase boundaries:</p>
+<p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">L</span> <span class="pre">-e</span> <span class="pre">J</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-n</span> <span class="pre">'}.*{'</span></tt></p>
+<p>As in the case of the <strong>-b</strong> option, the <strong>-e</strong> option can be used by itself.
+This option might prove useful, for example, when collecting all chord
+functions preceding a cadence. In Bach&#8217;s chorale harmonizations, for example,
+cadences are conveniently marked by a pause. In the <a class="reference external" href="../../rep/harm">**harm</a>
+representation, pauses are indicated by the semicolon (<tt class="docutils literal"><span class="pre">;</span></tt>). We can create
+phrase related harmonic sequences as follows:</p>
+<p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-o</span> <span class="pre">=</span> <span class="pre">-e</span> <span class="pre">';'</span> <span class="pre">input</span></tt></p>
+<p>For example, we might count the number of harmonic functions in each phrase
+as follows:</p>
+<p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-o</span> <span class="pre">=</span> <span class="pre">-e</span> <span class="pre">';'</span> <span class="pre">input</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">awk</span> <span class="pre">'{print</span> <span class="pre">$NF}'</span></tt></p>
+<p>In <a class="reference external" href="../ch22">Chapter 22</a> we will learn how to classify data into discrete categories.
+Using the <a class="reference external" href="../../man/recode">recode</a> command described in that chapter, we might group
+notes together according to changes of melodic direction. That is, each group
+of would consist of notes that are all ascending or all descending in pitch.</p>
+</div>
+<div class="section" id="using-context-with-sed-and-humsed">
+<h2>Using <em>context</em> with <em>sed</em> and <em>humsed</em><a class="headerlink" href="#using-context-with-sed-and-humsed" title="Permalink to this headline">¶</a></h2>
+<p>The stream-editors (<a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> and <strong>humsed</strong>) are especially handy companions
+for <strong>context</strong>. Suppose we wanted to identify by measure number those
+measures that contain a <em>iii-V</em> progression. Given a <a class="reference external" href="../../rep/harm">**harm</a> input, we
+would first amalgamate all harmony tokens for each measure.</p>
+<p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">^=</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'iii</span> <span class="pre">V'</span> <span class="pre">|</span> <span class="pre">sed</span> <span class="pre">'s/</span> <span class="pre">.*//;</span> <span class="pre">s/=//'</span></tt></p>
+<p>Here we have used <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to isolate all those records that contain the
+character sequence <tt class="docutils literal"><span class="pre">iii</span> <span class="pre">V</span></tt>. We have then used <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> to eliminate all data
+following the first occurrence of a space. This will leave only the barline
+token &#8211; including the measure number.</p>
+<p>When using <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> it is common for the output to no longer conform to the
+Humdrum syntax. This is the reason why we used <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> rather than
+<a class="reference external" href="../../man/humsed">humsed</a> in the above example.) Remember that we can always use the
+<a class="reference external" href="../../man/yank">yank</a> -m command to create &#8220;grep-like&#8221; output that still conforms to
+the Humdrum syntax. If we wanted to maintain the Humdrum syntax, an
+equivalent to the above command would be:</p>
+<p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">^=</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">yank</span> <span class="pre">-m</span> <span class="pre">'iii</span> <span class="pre">V'</span> <span class="pre">-r</span> <span class="pre">0</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/</span> <span class="pre">.*//;</span> <span class="pre">s/=//'</span></tt></p>
+<p>The range option (<strong>-r</strong>) specifies that we grab the current record (0) that
+matches the marker (<tt class="docutils literal"><span class="pre">iii</span> <span class="pre">V</span></tt>). However, we are free to specify any other
+range. Consider the following command variation:</p>
+<p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">^=</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-d</span> <span class="pre">|</span> <span class="pre">yank</span> <span class="pre">-m</span> <span class="pre">'iii</span> <span class="pre">V'</span> <span class="pre">-r</span> <span class="pre">1</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'ii</span> <span class="pre">IV'</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/</span> <span class="pre">.*//;</span> <span class="pre">s/=//'</span></tt></p>
+<p>This command identifies all those measures containing a <em>ii IV</em> progression
+that have been preceded by a <em>iii V</em> progression in the previous measure.</p>
+<p>Consider another example. Suppose we wanted to determine whether the first
+pitch in a phrase tends to be lower than the last pitch in a phrase. As
+before, we might first amalgamate all notes in each phrase onto individual
+data records. We can use <a class="reference external" href="../../man/humsed">humsed</a> to eliminate all notes other than the
+first and last. The regular expression <tt class="docutils literal"><span class="pre">/</span> <span class="pre">.*</span> <span class="pre">/</span></tt> specifies any sequence of
+characters preceded by a space and followed by a space. Replacing matching
+strings with a single space will leave output data records consisting of
+double-stops. The first note of the double-stop will be the first note of the
+phrase, and the second note of the double-stop will be the last note of the
+same phrase:</p>
+<p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">{</span> <span class="pre">-e</span> <span class="pre">}</span> <span class="pre">file</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/</span> <span class="pre">.*</span> <span class="pre">/</span> <span class="pre">/'</span></tt></p>
+<p>We can continue processing by piping the output to the <a class="reference external" href="../../man/semits">semits</a> command.
+This will leave pairs of numbers representing the semitone distances from
+middle C. We might then isolate the data records by using <a class="reference external" href="../../man/rid">rid</a>.</p>
+<p>`` . . . | semits | rid -GLId | awk &#8216;{print $2-$1}&#8217;``</p>
+<p>Finally, we have used the UNIX <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a> utility to carry out some simple
+numerical processing: in this case, substracting the first semitone value
+from the second one. Phrases that end on a pitch higher than the beginning
+pitch will have positive semitone outputs. Phrases that end on a pitch lower
+than the beginning pitch will have negative semitone outputs.</p>
+<p>If we wanted to determine the semitone pitch distance <em>between</em> phrases, we
+need only to reverse the begin (<strong>-b</strong>) and end (<strong>-e</strong>) criteria. That is,
+we will amalgamate the last note of one phrase with the first note in the
+subsequent phrase. The full pipeline would be as follows:</p>
+<p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">{</span> <span class="pre">-e</span> <span class="pre">}</span> <span class="pre">file</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/</span> <span class="pre">.*</span> <span class="pre">/</span> <span class="pre">/'</span> <span class="pre">|</span> <span class="pre">semits</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">awk</span> <span class="pre">'{print</span> <span class="pre">$2-$1}'</span></tt></p>
+</div>
+<div class="section" id="linking-context-outputs-with-inputs">
+<h2>Linking <em>context</em> Outputs with Inputs<a class="headerlink" href="#linking-context-outputs-with-inputs" title="Permalink to this headline">¶</a></h2>
+<p>Frequently, we would like to answer context-related questions that mix
+different types of data together. For example, how many ascending major sixth
+intervals occur in phrases that end on the dominant? For this question, we
+need concurrent access to both melodic interval data as well as scale degree
+information. The solution to such questions typically involves linking
+different types of data together using the <a class="reference external" href="../../man/assemble">assemble</a> command. Suppose
+the first phrase in our input begins as follows:</p>
+<p><tt class="docutils literal"><span class="pre">**kern</span>
+<span class="pre">&gt;</span> <span class="pre">*F:</span>
+<span class="pre">&gt;</span> <span class="pre">*M3/4</span>
+<span class="pre">&gt;</span> <span class="pre">{8Bn</span>
+<span class="pre">&gt;</span> <span class="pre">8c</span>
+<span class="pre">&gt;</span> <span class="pre">=1</span>
+<span class="pre">&gt;</span> <span class="pre">4.a</span>
+<span class="pre">&gt;</span> <span class="pre">8g</span>
+<span class="pre">&gt;</span> <span class="pre">4f</span>
+<span class="pre">&gt;</span> <span class="pre">=2</span>
+<span class="pre">&gt;</span> <span class="pre">4g</span>
+<span class="pre">&gt;</span> <span class="pre">4d</span>
+<span class="pre">&gt;</span> <span class="pre">4e</span>
+<span class="pre">&gt;</span> <span class="pre">=3</span>
+<span class="pre">&gt;</span> <span class="pre">2c}</span>
+<span class="pre">&gt;</span> <span class="pre">*-</span></tt></p>
+<p>We need to pursue two independent lines of processing. First we creat a
+temporary file of scale degree information:</p>
+<p><tt class="docutils literal"><span class="pre">mint</span> <span class="pre">inputfile</span> <span class="pre">&gt;</span> <span class="pre">temp.mnt</span></tt></p>
+<p>Then we amalgamate the pitch data according the phrasing information, and
+translate the resulting data to the <a class="reference external" href="../../rep/deg">**deg</a> representation:</p>
+<p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">{</span> <span class="pre">-e</span> <span class="pre">}</span> <span class="pre">-o</span> <span class="pre">^=</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">deg</span> <span class="pre">&gt;</span> <span class="pre">temp.deg</span></tt></p>
+<p>Next we assemble the two temporary files together to form a single document.</p>
+<p><tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">temp.mnt</span> <span class="pre">temp.deg</span></tt></p>
+<p>The first phrase output will appear as follows:</p>
+<p><tt class="docutils literal"><span class="pre">**mint**deg</span>
+<span class="pre">&gt;</span> <span class="pre">*F:*F:</span>
+<span class="pre">&gt;</span> <span class="pre">*M3/4*M3/4</span>
+<span class="pre">&gt;</span> <span class="pre">[B]4+</span> <span class="pre">^5</span> <span class="pre">^3</span> <span class="pre">v2</span> <span class="pre">v1</span> <span class="pre">^2</span> <span class="pre">v6</span> <span class="pre">^7</span> <span class="pre">v5</span>
+<span class="pre">&gt;</span> <span class="pre">+m2.</span>
+<span class="pre">&gt;</span> <span class="pre">=1.</span>
+<span class="pre">&gt;</span> <span class="pre">+M6.</span>
+<span class="pre">&gt;</span> <span class="pre">-M2.</span>
+<span class="pre">&gt;</span> <span class="pre">-M2.</span>
+<span class="pre">&gt;</span> <span class="pre">=2.</span>
+<span class="pre">&gt;</span> <span class="pre">+M2.</span>
+<span class="pre">&gt;</span> <span class="pre">-P4.</span>
+<span class="pre">&gt;</span> <span class="pre">+M2.</span>
+<span class="pre">&gt;</span> <span class="pre">=3.</span>
+<span class="pre">&gt;</span> <span class="pre">-M3.</span></tt>
+&gt; etc.</p>
+<p>We need to search for the interval of an ascending major sixth (<tt class="docutils literal"><span class="pre">+M6</span></tt>)
+associated with a phrase ending on the dominant (<tt class="docutils literal"><span class="pre">5$</span></tt>). Before using the
+approprate <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command, we need to use <a class="reference external" href="../../man/ditto">ditto</a> to propagate the
+scale degree data over the null data tokens in the <a class="reference external" href="../../rep/deg">**deg</a> spine; <strong>ditto</strong>
+will generate the following output:</p>
+<p><tt class="docutils literal"><span class="pre">**mint**deg</span>
+<span class="pre">&gt;</span> <span class="pre">*F:*F:</span>
+<span class="pre">&gt;</span> <span class="pre">*M3/4*M3/4</span>
+<span class="pre">&gt;</span> <span class="pre">[B]4+</span> <span class="pre">^5</span> <span class="pre">^3</span> <span class="pre">v2</span> <span class="pre">v1</span> <span class="pre">^2</span> <span class="pre">v6</span> <span class="pre">^7</span> <span class="pre">v5</span>
+<span class="pre">&gt;</span> <span class="pre">+m24+</span> <span class="pre">^5</span> <span class="pre">^3</span> <span class="pre">v2</span> <span class="pre">v1</span> <span class="pre">^2</span> <span class="pre">v6</span> <span class="pre">^7</span> <span class="pre">v5</span>
+<span class="pre">&gt;</span> <span class="pre">=14+</span> <span class="pre">^5</span> <span class="pre">^3</span> <span class="pre">v2</span> <span class="pre">v1</span> <span class="pre">^2</span> <span class="pre">v6</span> <span class="pre">^7</span> <span class="pre">v5</span>
+<span class="pre">&gt;</span> <span class="pre">+M64+</span> <span class="pre">^5</span> <span class="pre">^3</span> <span class="pre">v2</span> <span class="pre">v1</span> <span class="pre">^2</span> <span class="pre">v6</span> <span class="pre">^7</span> <span class="pre">v5</span>
+<span class="pre">&gt;</span> <span class="pre">-M24+</span> <span class="pre">^5</span> <span class="pre">^3</span> <span class="pre">v2</span> <span class="pre">v1</span> <span class="pre">^2</span> <span class="pre">v6</span> <span class="pre">^7</span> <span class="pre">v5</span>
+<span class="pre">&gt;</span> <span class="pre">-M24+</span> <span class="pre">^5</span> <span class="pre">^3</span> <span class="pre">v2</span> <span class="pre">v1</span> <span class="pre">^2</span> <span class="pre">v6</span> <span class="pre">^7</span> <span class="pre">v5</span>
+<span class="pre">&gt;</span> <span class="pre">=24+</span> <span class="pre">^5</span> <span class="pre">^3</span> <span class="pre">v2</span> <span class="pre">v1</span> <span class="pre">^2</span> <span class="pre">v6</span> <span class="pre">^7</span> <span class="pre">v5</span>
+<span class="pre">&gt;</span> <span class="pre">+M24+</span> <span class="pre">^5</span> <span class="pre">^3</span> <span class="pre">v2</span> <span class="pre">v1</span> <span class="pre">^2</span> <span class="pre">v6</span> <span class="pre">^7</span> <span class="pre">v5</span>
+<span class="pre">&gt;</span> <span class="pre">-P44+</span> <span class="pre">^5</span> <span class="pre">^3</span> <span class="pre">v2</span> <span class="pre">v1</span> <span class="pre">^2</span> <span class="pre">v6</span> <span class="pre">^7</span> <span class="pre">v5</span>
+<span class="pre">&gt;</span> <span class="pre">+M24+</span> <span class="pre">^5</span> <span class="pre">^3</span> <span class="pre">v2</span> <span class="pre">v1</span> <span class="pre">^2</span> <span class="pre">v6</span> <span class="pre">^7</span> <span class="pre">v5</span>
+<span class="pre">&gt;</span> <span class="pre">=34+</span> <span class="pre">^5</span> <span class="pre">^3</span> <span class="pre">v2</span> <span class="pre">v1</span> <span class="pre">^2</span> <span class="pre">v6</span> <span class="pre">^7</span> <span class="pre">v5</span>
+<span class="pre">&gt;</span> <span class="pre">-M34+</span> <span class="pre">^5</span> <span class="pre">^3</span> <span class="pre">v2</span> <span class="pre">v1</span> <span class="pre">^2</span> <span class="pre">v6</span> <span class="pre">^7</span> <span class="pre">v5</span></tt>
+&gt; etc.</p>
+<p>Finally, we use <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to search for the composite data:</p>
+<p><tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">temp.mnt</span> <span class="pre">temp.deg</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'^+M6.*5$'</span></tt></p>
+<p>In addition to linking together different types of data, sometimes we may
+also need to use a stream editor to modify the data in some way. Suppose we
+wanted to test a theory that the tonic pitch tends to be followed by a
+greater variety of melodic intervals than precedes it. That is, we might
+suspect that the tonic tends to be approached in stereotypic ways &#8211; such as
+from the leading-tone (+m2), from the supertonic (-M2) or from the dominant
+(+P4); but what follows the tonic may be less restricted.</p>
+<p>In effect, we need to generate two inventories: one for intervals that
+approach the tonic, and one for intervals that follow the tonic. We already
+know how to create an inventory of intervals approaching a particular scale-
+degree:</p>
+<p><tt class="docutils literal"><span class="pre">deg</span> <span class="pre">-a</span> <span class="pre">inputfile</span> <span class="pre">&gt;</span> <span class="pre">temp1</span></tt>
+<tt class="docutils literal"><span class="pre">mint</span> <span class="pre">inputfile</span> <span class="pre">&gt;</span> <span class="pre">temp2</span></tt>
+<tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">temp1</span> <span class="pre">temp2</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'^[v^]*1</span> <span class="pre">'</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-rn</span> <span class="pre">&gt;</span> <span class="pre">inventory.pre</span></tt></p>
+<p>For the intervals following the tonic, we need to use <a class="reference external" href="../../man/context">context</a> -n 2.
+This will create pairs of intervals: the first interval will indicate the
+approach, and the second interval in each pair will indicate the
+continuation.</p>
+<p><tt class="docutils literal"><span class="pre">deg</span> <span class="pre">-a</span> <span class="pre">inputfile</span> <span class="pre">&gt;</span> <span class="pre">temp1</span></tt>
+<tt class="docutils literal"><span class="pre">mint</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">context</span> <span class="pre">-n</span> <span class="pre">2</span> <span class="pre">-o</span> <span class="pre">^=</span> <span class="pre">&gt;</span> <span class="pre">temp2</span></tt>
+<tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/</span> <span class="pre">.*//'</span> <span class="pre">temp2</span> <span class="pre">&gt;</span> <span class="pre">intervals.pre</span></tt>
+<tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/.*</span> <span class="pre">//'</span> <span class="pre">temp2</span> <span class="pre">&gt;</span> <span class="pre">intervals.post</span></tt>
+<tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">temp1</span> <span class="pre">intervals.pre</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'^1</span> <span class="pre">'</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-rn</span> <span class="pre">&gt;</span> <span class="pre">inventory.pre</span></tt>
+&gt;
+<tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">temp1</span> <span class="pre">intervals.post</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'^1</span> <span class="pre">'</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-rn</span> <span class="pre">&gt;</span> <span class="pre">inventory.post</span></tt></p>
+<p>In some tasks, it may be necessary to generate more than one <strong>context</strong>
+output. For example, suppose we wanted to identify possible &#8220;cross relations&#8221;
+between two voices. A cross relation occurs when an accidental occurs in one
+voice but not in another voice within a brief period of time. One approach is
+to extract each voice, translate to scale-degree and create brief contexts of
+(say) 2 or 3 notes. E.g.</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-f</span> <span class="pre">1</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">deg</span> <span class="pre">|</span> <span class="pre">context</span> <span class="pre">-n</span> <span class="pre">3</span> <span class="pre">-o</span> <span class="pre">^=</span> <span class="pre">&gt;</span> <span class="pre">lower.tmp</span></tt>
+<tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-f</span> <span class="pre">2</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">deg</span> <span class="pre">|</span> <span class="pre">context</span> <span class="pre">-n</span> <span class="pre">3</span> <span class="pre">-o</span> <span class="pre">^=</span> <span class="pre">&gt;</span> <span class="pre">upper.tmp</span></tt></p>
+<p>We can then assemble the two contexts together:</p>
+<p><tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">lower.tmp</span> <span class="pre">upper.tmp</span></tt></p>
+<p>Suppose our inputs consisted of an ascending C major scale played in the
+lower voice concurrent with an E major scale in the upper voice. Our output
+would look as follows:</p>
+<p><tt class="docutils literal"><span class="pre">**deg**deg</span>
+<span class="pre">&gt;</span> <span class="pre">*C:*C:</span>
+<span class="pre">&gt;</span> <span class="pre">1</span> <span class="pre">^2</span> <span class="pre">^33</span> <span class="pre">^4+</span> <span class="pre">^5+</span>
+<span class="pre">&gt;</span> <span class="pre">^2</span> <span class="pre">^3</span> <span class="pre">^4^4+</span> <span class="pre">^5+</span> <span class="pre">^6</span>
+<span class="pre">&gt;</span> <span class="pre">^3</span> <span class="pre">^4</span> <span class="pre">^5^5+</span> <span class="pre">^6</span> <span class="pre">^7</span>
+<span class="pre">&gt;</span> <span class="pre">^4</span> <span class="pre">^5</span> <span class="pre">^6^6</span> <span class="pre">^7</span> <span class="pre">^1+</span>
+<span class="pre">&gt;</span> <span class="pre">^5</span> <span class="pre">^6</span> <span class="pre">^7^7</span> <span class="pre">^1+</span> <span class="pre">^2+</span>
+<span class="pre">&gt;</span> <span class="pre">^6</span> <span class="pre">^7</span> <span class="pre">^1^1+</span> <span class="pre">^2+</span> <span class="pre">^3</span>
+<span class="pre">&gt;</span> <span class="pre">..</span>
+<span class="pre">&gt;</span> <span class="pre">..</span>
+<span class="pre">&gt;</span> <span class="pre">*-*-</span></tt></p>
+<p>In effect, each data record contains an agglomeration of three successive
+notes from both voices. Seaching for cross-relations would entail looking for
+scale degrees that are both modified and unmodified concurrently. For
+example, in the case of the subdominant pitch, we could search for such
+instances as follows:</p>
+<p><tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">lower.tmp</span> <span class="pre">upper.tmp</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">'4[+-].*</span> <span class="pre">.*4([^+-])|$'</span></tt></p>
+<p>The regular expression given to <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a> searches for a subdominant pitch in
+the lower voice that is either raised or lowered &#8211; concurrent with a
+subdominant pitch in the upper voice that has not been modified. Notice the
+use of the tab character in the regular expressions to specify the precise
+voice being searched. We would also need to test for the reverse situation,
+where the modified pitch is in the upper voice:</p>
+<p><tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">lower.tmp</span> <span class="pre">upper.tmp</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">\</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">'4[^+-].*</span> <span class="pre">.*4[+-]'</span></tt></p>
+<p>In a similar fashion, the user can mix together spines representing highly
+diverse types of contextual information to carry out searches for complex
+patterns or conditions. For example, a user might search for a specific piano
+fingering that coincides with particular interval-transitions and harmonic
+contexts.</p>
+</div>
+<div class="section" id="using-context-with-the-p-option">
+<h2>Using <em>context</em> with the <em>-p</em> Option<a class="headerlink" href="#using-context-with-the-p-option" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>-p</strong> option for <a class="reference external" href="../../man/context">context</a> allows the output data records to be
+&#8220;pushed&#8221; forward by a specified number of lines. Consider the normal
+operation of <strong>context</strong> as illustrated below. The left-hand spine represents
+the input and the right-hand spine represents the output where the option
+<strong>-n 2</strong> has been specified.</p>
+<p><tt class="docutils literal"><span class="pre">**kern**kern</span>
+<span class="pre">&gt;</span> <span class="pre">*C:*C:</span>
+<span class="pre">&gt;</span> <span class="pre">cc</span> <span class="pre">d</span>
+<span class="pre">&gt;</span> <span class="pre">dd</span> <span class="pre">e</span>
+<span class="pre">&gt;</span> <span class="pre">ee</span> <span class="pre">f</span>
+<span class="pre">&gt;</span> <span class="pre">ff</span> <span class="pre">g</span>
+<span class="pre">&gt;</span> <span class="pre">gg</span> <span class="pre">a</span>
+<span class="pre">&gt;</span> <span class="pre">aa</span> <span class="pre">b</span>
+<span class="pre">&gt;</span> <span class="pre">bb</span> <span class="pre">cc</span>
+<span class="pre">&gt;</span> <span class="pre">cc.</span>
+<span class="pre">&gt;</span> <span class="pre">*-*-</span></tt></p>
+<p>Now consider the effect of adding the <strong>-p</strong> option. In this case, the
+complete command is:</p>
+<p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-n</span> <span class="pre">2</span> <span class="pre">-p</span> <span class="pre">1</span></tt></p>
+<p>The corresponding result is:</p>
+<p><tt class="docutils literal"><span class="pre">**kern**kern</span>
+<span class="pre">&gt;</span> <span class="pre">*C:*C:</span>
+<span class="pre">&gt;</span> <span class="pre">c.</span>
+<span class="pre">&gt;</span> <span class="pre">dc</span> <span class="pre">d</span>
+<span class="pre">&gt;</span> <span class="pre">ed</span> <span class="pre">e</span>
+<span class="pre">&gt;</span> <span class="pre">fe</span> <span class="pre">f</span>
+<span class="pre">&gt;</span> <span class="pre">gf</span> <span class="pre">g</span>
+<span class="pre">&gt;</span> <span class="pre">ag</span> <span class="pre">a</span>
+<span class="pre">&gt;</span> <span class="pre">ba</span> <span class="pre">b</span>
+<span class="pre">&gt;</span> <span class="pre">ccb</span> <span class="pre">cc</span>
+<span class="pre">&gt;</span> <span class="pre">*-*-</span></tt></p>
+<p>The data records have been pushed forward by one line: a null token now
+appears at the beginning of the output spine rather than at the end.
+Similarly, consider the effect of the following command:</p>
+<p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-n</span> <span class="pre">4</span> <span class="pre">-p</span> <span class="pre">2</span></tt></p>
+<p>The corresponding result is:</p>
+<p><tt class="docutils literal"><span class="pre">**kern**kern</span>
+<span class="pre">&gt;</span> <span class="pre">*C:*C:</span>
+<span class="pre">&gt;</span> <span class="pre">c.</span>
+<span class="pre">&gt;</span> <span class="pre">d.</span>
+<span class="pre">&gt;</span> <span class="pre">ec</span> <span class="pre">d</span> <span class="pre">e</span> <span class="pre">f</span>
+<span class="pre">&gt;</span> <span class="pre">fd</span> <span class="pre">e</span> <span class="pre">f</span> <span class="pre">g</span>
+<span class="pre">&gt;</span> <span class="pre">ge</span> <span class="pre">f</span> <span class="pre">g</span> <span class="pre">a</span>
+<span class="pre">&gt;</span> <span class="pre">af</span> <span class="pre">g</span> <span class="pre">a</span> <span class="pre">b</span>
+<span class="pre">&gt;</span> <span class="pre">bg</span> <span class="pre">a</span> <span class="pre">b</span> <span class="pre">cc</span>
+<span class="pre">&gt;</span> <span class="pre">cc.</span>
+<span class="pre">&gt;</span> <span class="pre">*-*-</span></tt></p>
+<p>The output is now padded with two preceding null tokens with a trailing null
+token at the end of the spine. In summary, the <strong>-p</strong> option pushes the
+context records by a specified number of lines. This allows us to move the
+contextual information around, and so provides more possibilities for
+searching. In the above case, the pitch <a href="#id39"><span class="problematic" id="id40">`</span></a>e&#8217; is aligned with contextual
+information that indicates the two pitches that precede <a href="#id41"><span class="problematic" id="id42">`</span></a>e&#8217; and the one pitch
+that follows it.</p>
+<p>By way of example, suppose we are looking for a submediant pitch that is
+approached by two melodic intervals of an ascending major third followed by a
+descending major second. First, we generate independent <a class="reference external" href="../../rep/mint">**mint</a> and
+<a class="reference external" href="../../rep/deg">**deg</a> outputs. Next we process the <a class="reference external" href="../../rep/mint">**mint</a> data using <strong>context</strong>
+to create pairs of successive intervals. Without the <strong>-p</strong> option, the
+assembled output might look as follows:</p>
+<p><tt class="docutils literal"><span class="pre">**deg**mint</span>
+<span class="pre">&gt;</span> <span class="pre">*C:*C:</span>
+<span class="pre">&gt;</span> <span class="pre">3[e]</span> <span class="pre">+m2</span>
+<span class="pre">&gt;</span> <span class="pre">^4+m2</span> <span class="pre">+M2</span>
+<span class="pre">&gt;</span> <span class="pre">^5+M2</span> <span class="pre">+M3</span>
+<span class="pre">&gt;</span> <span class="pre">^7+M3</span> <span class="pre">-M2</span>
+<span class="pre">&gt;</span> <span class="pre">v6-M2</span> <span class="pre">+m3</span>
+<span class="pre">&gt;</span> <span class="pre">^1+m3</span> <span class="pre">-P4</span>
+<span class="pre">&gt;</span> <span class="pre">v5.</span>
+<span class="pre">&gt;</span> <span class="pre">*-*-</span></tt></p>
+<p>With <strong>-p 1</strong> the output becomes:</p>
+<p><tt class="docutils literal"><span class="pre">**deg**mint</span>
+<span class="pre">&gt;</span> <span class="pre">*C:*C:</span>
+<span class="pre">&gt;</span> <span class="pre">3.</span>
+<span class="pre">&gt;</span> <span class="pre">^4[e]</span> <span class="pre">+m2</span>
+<span class="pre">&gt;</span> <span class="pre">^5+m2</span> <span class="pre">+M2</span>
+<span class="pre">&gt;</span> <span class="pre">^7+M2</span> <span class="pre">+M3</span>
+<span class="pre">&gt;</span> <span class="pre">v6+M3</span> <span class="pre">-M2</span>
+<span class="pre">&gt;</span> <span class="pre">^1-M2</span> <span class="pre">+m3</span>
+<span class="pre">&gt;</span> <span class="pre">v5+m3</span> <span class="pre">-P4</span>
+<span class="pre">&gt;</span> <span class="pre">*-*-</span></tt></p>
+<p>Now we can search directly for the situation of interest:</p>
+<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'6</span> <span class="pre">+M3</span> <span class="pre">-M2$'</span></tt></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="reprise">
+<h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>context</strong> command essentially transforms sequences of events into
+collections of pseudo-concurrent events. This pseudo-concurrent arrangement
+enables processing using line-oriented or record-oriented tools &#8211; most
+notably <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a>, <a class="reference external" href="../../man/humsed">humsed</a> and <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a>. For example, it
+facilitates pattern searching using <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> and also allows useful
+manipulations via tools such as <strong>humsed</strong>. The manner by which data tokens
+are collected together can be defined by a starting marker or an ending
+marker or both. Particular types of data can be excluded or omitted from the
+collections using the <strong>-o</strong> option, and the collections can be transported
+or pushed forward through the spine using the <strong>-p</strong> option.</p>
+<p>We&#8217;ve seen a number of ways by which <a class="reference external" href="../../man/context">context</a> can be used to establish
+a particular context for data. In <a class="reference external" href="../ch21">Chapter 21</a> we will see how the
+<a class="reference external" href="../../man/patt">patt</a> command can be used to establish other kinds of contexts and how
+both of these commands can be used together.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  <hr/>
+  
+
+
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+   
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-52162357-1', 'humdrum.org');
+  ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>

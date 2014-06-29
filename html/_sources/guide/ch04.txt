@@ -523,7 +523,7 @@ Next we translate the scores to the **solfa** representation and use **grep
 
 The proportion of subdominant pitches can be calculated by simply comparing
 the resulting pattern count with the number of notes identified by
-`**census**.`_
+`census <../../man/census>`_.
 
 Recall that one of the differences between the `**solfa <../../rep/solfa>`_ and
 `**deg <../../rep/deg>`_ representations is that the `**deg <../../rep/deg>`_ output contains an

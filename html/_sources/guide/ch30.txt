@@ -60,7 +60,7 @@ voices using a representation like **kern. A full score is generated from the
 individual parts using the `timebase <../../man/timebase>`_ and `assemble <../../man/assemble>`_ commands.
 
 The **encode** command implements a full-screen interactive editor similar to
-the **vi** text editor. When invoked, the screen is divided into three
+the `vi <http://en.wikipedia.org/wiki/Vi>`_ text editor. When invoked, the screen is divided into three
 display regions, including a *status window*, a *command window*, and a
 larger *text window*. The *status window* displays various items of basic
 information about the file being edited. The **command window** allows the

@@ -510,7 +510,7 @@ all the parts. Use `census <../../man/census>`_ to determine the shortest durati
 of the parts contains an N-tuplet, then the common duration factor may be
 smaller than the shortest note. (2) Use the `timebase <../../man/timebase>`_ command to expand
 each input file separately using the common duration factor. (3) Assemble the
-parts using `**assemble**.`_ (4) If desired, eliminate unnecessary null data
+parts using `assemble <../../man/assemble>`_. (4) If desired, eliminate unnecessary null data
 records usingi `**rid -d**.`_ (5) Check the assembled score for rhythmic
 coherence using the `proof <../../man/proof>`_ command.
 

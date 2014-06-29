@@ -443,5 +443,5 @@ possible criteria.
 Although this chapter has focussed principally on the `grep <http://en.wikipedia.org/wiki/Grep>`_ command, the
 ensuing chapters will show that regular expressions are used by a wide
 variety of commands. In `Chapter 33 <../ch33>`_, many more powerful examples will be
-discussed in conjunction with the **find** command.
+discussed in conjunction with the `find <http://en.wikipedia.org/wiki/Find>`_ command.
 

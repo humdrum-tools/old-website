@@ -553,7 +553,7 @@ Humdrum syntax.</p>
 <div class="section" id="aligning-durations-using-the-timebase-command">
 <h2>Aligning Durations Using the <em>timebase</em> Command<a class="headerlink" href="#aligning-durations-using-the-timebase-command" title="Permalink to this headline">¶</a></h2>
 <p>Suppose now that we wanted to join two hypothetical files containing
-`` <a href="#id109"><span class="problematic" id="id110">`**kern```_</span></a> data. The first file contains two quarter notes, whereas the
+`` <a href="#id110"><span class="problematic" id="id111">`**kern```_</span></a> data. The first file contains two quarter notes, whereas the
 second file contains four eighth notes:</p>
 <p>`` !! File 1
 `` <a href="#id43"><span class="problematic" id="id44">**</span></a>kern
@@ -571,7 +571,7 @@ second file contains four eighth notes:</p>
 uncoordinated result. The two quarter notes in file 1 will be incorrectly
 matched with the first two eighth notes in file 2.</p>
 <p>The Humdrum <a class="reference external" href="../../man/timebase">timebase</a> command can be used to reformat either
-`` <a href="#id111"><span class="problematic" id="id112">`**kern```_</span></a> or <a class="reference external" href="../../rep/recip">**recip</a> inputs so that each output data record
+`` <a href="#id112"><span class="problematic" id="id113">`**kern```_</span></a> or <a class="reference external" href="../../rep/recip">**recip</a> inputs so that each output data record
 represents an equivalent slice (elapsed duration) of time. (Barlines are
 ignored by <strong>timebase</strong>.) The <strong>timebase</strong> command achieves this by padding
 an input with null data records. In the above case, we would preprocess file
@@ -724,8 +724,8 @@ all the parts. Use <a class="reference external" href="../../man/census">census<
 of the parts contains an N-tuplet, then the common duration factor may be
 smaller than the shortest note. (2) Use the <a class="reference external" href="../../man/timebase">timebase</a> command to expand
 each input file separately using the common duration factor. (3) Assemble the
-parts using <a href="#id113"><span class="problematic" id="id114">`**assemble**.`_</span></a> (4) If desired, eliminate unnecessary null data
-records usingi <a href="#id115"><span class="problematic" id="id116">`**rid -d**.`_</span></a> (5) Check the assembled score for rhythmic
+parts using <a class="reference external" href="../../man/assemble">assemble</a>. (4) If desired, eliminate unnecessary null data
+records usingi <a href="#id114"><span class="problematic" id="id115">`**rid -d**.`_</span></a> (5) Check the assembled score for rhythmic
 coherence using the <a class="reference external" href="../../man/proof">proof</a> command.</p>
 </div>
 <div class="section" id="other-uses-for-the-timebase-command">
@@ -801,13 +801,13 @@ rising third or a rising sixth and coincide with a dominant seventh chord.
 First, let&#8217;s extract the soprano line and create a corresponding scale degree
 representation using **deg**. We can use the **-a** option to avoid
 outputting the melodic direction signifiers (``^`</cite> and <tt class="docutils literal"><span class="pre">v</span></tt>):</p>
-<p>`` extract -i &#8216;<a href="#id91"><span class="problematic" id="id92">*</span></a>Isopran&#8217; howells | deg -a &gt; temp1``</p>
+<p>`` extract -i &#8216;<a href="#id92"><span class="problematic" id="id93">*</span></a>Isopran&#8217; howells | deg -a &gt; temp1``</p>
 <p>Next, let&#8217;s again extract the soprano voice and create a corresponding
 melodic interval representation using <strong>mint</strong>. Since we are not interested
 in interval qualities we can invoke the <strong>-d</strong> option to output only diatonic
 interval sizes.</p>
-<p>`` extract -i &#8216;<a href="#id93"><span class="problematic" id="id94">*</span></a>Isopran&#8217; howells | mint -d &gt; temp2``
-`` extract -i &#8216;<a href="#id95"><span class="problematic" id="id96">**</span></a>harm&#8217; howells &gt; temp3``</p>
+<p>`` extract -i &#8216;<a href="#id94"><span class="problematic" id="id95">*</span></a>Isopran&#8217; howells | mint -d &gt; temp2``
+`` extract -i &#8216;<a href="#id96"><span class="problematic" id="id97">**</span></a>harm&#8217; howells &gt; temp3``</p>
 <p>We have also extracted the <a class="reference external" href="../../rep/harm">**harm</a> spine and placed it in the file
 `` temp3``. If we assemble together our three temporary files, the result will
 have three spines: <a class="reference external" href="../../rep/deg">**deg</a>, <a class="reference external" href="../../rep/mint">**mint</a> and <a class="reference external" href="../../rep/harm">**harm</a>. We can now use

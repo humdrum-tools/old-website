@@ -366,8 +366,8 @@ con- -ce/- -pit al/- -vo fi/- -li- -um.``
 If we are looking for vocal texts that exhibit a recurring rhythm, we might
 make a simple addition to the above script. Instead of outputting the actual
 syllables in each phrase, we would output a count of the number of syllables
-in each phrase. The standard **awk** utility allows us to write simple in-
-line programs. The following **awk** script simply outputs the number of
+in each phrase. The standard `awk <http://en.wikipedia.org/wiki/Awk>`_ utility allows us to write simple in-
+line programs. The following `awk <http://en.wikipedia.org/wiki/Awk>`_ script simply outputs the number of
 fields (white-space separated text) in each input line:
 
 > ``awk '{print NF}'``

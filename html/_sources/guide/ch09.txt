@@ -620,8 +620,8 @@ $
 ```
 $ 
 
-For Humdrum commands such as `**humsed**,`_ `**rend**,`_ `**yank**,`_
-`**xdelta**,`_ and `**ydelta**,`_ regular expressions are applied only to
+For Humdrum commands such as `humsed <../../man/humsed>`_, `rend <../../man/rend>`_, `yank <../../man/yank>`_,
+`xdelta <../../man/xdelta>`_, and `ydelta <../../man/ydelta>`_, regular expressions are applied only to
 data records so there is no need to use the more complex expressions. In many
 circumstances, we will see that it is convenient to use the Humdrum
 `rid <../../man/rid>`_ command to explicitly remove comments and interpretations prior to

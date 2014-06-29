@@ -423,7 +423,7 @@ middle C. We might then isolate the data records by using `rid <../../man/rid>`_
 
 `` . . . | semits | rid -GLId | awk '{print $2-$1}'``
 
-Finally, we have used the UNIX **awk** utility to carry out some simple
+Finally, we have used the UNIX `awk <http://en.wikipedia.org/wiki/Awk>`_ utility to carry out some simple
 numerical processing: in this case, substracting the first semitone value
 from the second one. Phrases that end on a pitch higher than the beginning
 pitch will have positive semitone outputs. Phrases that end on a pitch lower
@@ -751,7 +751,7 @@ Reprise
 The **context** command essentially transforms sequences of events into
 collections of pseudo-concurrent events. This pseudo-concurrent arrangement
 enables processing using line-oriented or record-oriented tools -- most
-notably `grep <http://en.wikipedia.org/wiki/Grep>`_, `sed <http://en.wikipedia.org/wiki/Sed>`_, `humsed <../../man/humsed>`_ and **awk**. For example, it
+notably `grep <http://en.wikipedia.org/wiki/Grep>`_, `sed <http://en.wikipedia.org/wiki/Sed>`_, `humsed <../../man/humsed>`_ and `awk <http://en.wikipedia.org/wiki/Awk>`_. For example, it
 facilitates pattern searching using `grep <http://en.wikipedia.org/wiki/Grep>`_ and also allows useful
 manipulations via tools such as **humsed**. The manner by which data tokens
 are collected together can be defined by a starting marker or an ending

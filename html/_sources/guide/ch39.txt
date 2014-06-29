@@ -132,7 +132,7 @@ high quality data and preparing the files in an appropriate manner.
 -   Use the **ls -l** or `wc <http://en.wikipedia.org/wiki/Wc_(Unix)>`_ commands to determine the size of the
     search data. Does the amount of input data seem unduly small or unduly
     large?
--   Use the **find** command to search the system for other files that
+-   Use the `find <http://en.wikipedia.org/wiki/Find>`_ command to search the system for other files that
     ought to be included in the search task.
 
 **(3) One of the most common problems in searching arises** **from inaccurate

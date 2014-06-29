@@ -315,8 +315,8 @@ will see, in most cases, one or two commands are all that is necessary to
 assemble a repertory list of works conforming to complex selection criteria.</p>
 <div class="section" id="the-find-command">
 <h2>The <em>find</em> Command<a class="headerlink" href="#the-find-command" title="Permalink to this headline">¶</a></h2>
-<p>The UNIX <strong>find</strong> command traverses through a file hierarchy, and finds all
-files that match certain conditions. The <strong>find</strong> command takes the following
+<p>The UNIX <a class="reference external" href="http://en.wikipedia.org/wiki/Find">find</a> command traverses through a file hierarchy, and finds all
+files that match certain conditions. The <a class="reference external" href="http://en.wikipedia.org/wiki/Find">find</a> command takes the following
 syntax:</p>
 <p><tt class="docutils literal"><span class="pre">find</span></tt> * *</p>
 <p>The <em>PATH</em> is a directory from which the search <em>commences.</em> All files in the
@@ -333,22 +333,22 @@ root directory.</p>
 <p><tt class="docutils literal"><span class="pre">/scores/bach</span></tt></p>
 <p>means all files under the <tt class="docutils literal"><span class="pre">scores/bach</span></tt> directory. The period character:</p>
 <p><tt class="docutils literal"><span class="pre">.</span></tt></p>
-<p>tells <strong>find</strong> to commence searching from the current directory.</p>
-<p>Since <strong>find</strong> searches all files under the given path, its operation may be
+<p>tells <a class="reference external" href="http://en.wikipedia.org/wiki/Find">find</a> to commence searching from the current directory.</p>
+<p>Since <a class="reference external" href="http://en.wikipedia.org/wiki/Find">find</a> searches all files under the given path, its operation may be
 quite slow when there are thousands of files to search. It&#8217;s wise to restrict
 the search by choosing a reasonable starting point. For example, specifying
 the path <tt class="docutils literal"><span class="pre">/scores/bach/chorales</span></tt> may save a great deal of time compared
 with the path <tt class="docutils literal"><span class="pre">/scores</span></tt>. Although we won&#8217;t discuss them in this book, the
-<strong>find</strong> command provides a number of options that help to restrict the depth
-of searches or otherwise &#8220;prune&#8221; the search. When first trying <strong>find</strong> it&#8217;s
+<a class="reference external" href="http://en.wikipedia.org/wiki/Find">find</a> command provides a number of options that help to restrict the depth
+of searches or otherwise &#8220;prune&#8221; the search. When first trying <a class="reference external" href="http://en.wikipedia.org/wiki/Find">find</a> it&#8217;s
 a good idea to limit the searches to small segments of the file system.</p>
-<p>When searching through the specific <em>PATH</em>, <strong>find</strong> is able to carry out a
+<p>When searching through the specific <em>PATH</em>, <a class="reference external" href="http://en.wikipedia.org/wiki/Find">find</a> is able to carry out a
 wide variety of possible tests on each file. One simple action is to test
 whether the file-name conforms to a given regular expression. Consider, for
 example, the goal of identifying all files representing pitch-class
 (<a class="reference external" href="../../rep/pc">**pc</a>) information. The Humdrum convention is to identify these files
 by adding the <tt class="docutils literal"><span class="pre">.pc</span></tt> extension to the filename &#8211; such as <tt class="docutils literal"><span class="pre">opus24.pc</span></tt>. The
-following <strong>find</strong> command will traverse through the <tt class="docutils literal"><span class="pre">/scores</span></tt> directory
+following <a class="reference external" href="http://en.wikipedia.org/wiki/Find">find</a> command will traverse through the <tt class="docutils literal"><span class="pre">/scores</span></tt> directory
 (and all sub-directories) searching for files that contain the <a class="reference external" href="../../man/pc">pc</a> file
 extension:</p>
 <p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-name</span> <span class="pre">*.pc</span></tt></p>
@@ -365,7 +365,7 @@ particular criterion. For example, the following command searches the
 <tt class="docutils literal"><span class="pre">/scores</span></tt> path for files whose names contain the <tt class="docutils literal"><span class="pre">.tmp</span></tt> extension. Any
 matching file is then deleted using the UNIX <strong>rm</strong> command:</p>
 <p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-name</span> <span class="pre">*.tmp</span> <span class="pre">-exec</span> <span class="pre">rm</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
-<p>This command illustrates a number of features of the <strong>find</strong> command. The
+<p>This command illustrates a number of features of the <a class="reference external" href="http://en.wikipedia.org/wiki/Find">find</a> command. The
 search begins from the <em>path</em> <tt class="docutils literal"><span class="pre">/scores</span></tt>. The <em>option</em> <tt class="docutils literal"><span class="pre">-name</span> <span class="pre">*.tmp</span></tt>
 identifies the search condition. The <tt class="docutils literal"><span class="pre">-exec</span></tt> flag identifies the <em>action</em>
 as that of executing a command. The arguments between <tt class="docutils literal"><span class="pre">-exec</span></tt> and the semi-
@@ -446,7 +446,7 @@ following command identifies all works composed between 1812 and 1840:</p>
 <p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">/</span> <span class="pre">-exec</span> <span class="pre">egrep</span> <span class="pre">-l</span> <span class="pre">'!!!ODT.*18(1[2-9])|([23][0-9])|(40)'</span> <span class="pre">\</span>
 <span class="pre">&gt;</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
-<p>Often the <strong>find</strong> command can be used to answer research questions more
+<p>Often the <a class="reference external" href="http://en.wikipedia.org/wiki/Find">find</a> command can be used to answer research questions more
 directly. Suppose we wanted to determine whether German drinking songs more
 likely to be in triple meter. There are over four thousand German folksongs
 encoded in Helmut Schaffrath&#8217;s <em>Essen Folksong Collection</em>. These works
@@ -474,7 +474,7 @@ meters.</p>
 <h2>Using <em>find</em> with the <em>xargs</em> Command<a class="headerlink" href="#using-find-with-the-xargs-command" title="Permalink to this headline">¶</a></h2>
 <p>As we saw in <a class="reference external" href="../ch10">Chapter 10</a>, the <strong>xargs</strong> command can be used to propagate
 file names from command to command within a pipeline. Using <strong>xargs</strong> in
-conjunction with <strong>find</strong> provides a powerful means for finding works that
+conjunction with <a class="reference external" href="http://en.wikipedia.org/wiki/Find">find</a> provides a powerful means for finding works that
 conform to highly complex criteria. For example, the following command
 identifies all files in the path <tt class="docutils literal"><span class="pre">/corelli</span></tt> that contain a change of meter
 signature:</p>
@@ -508,7 +508,7 @@ signatures.</p>
 <p>In summary, the above pipeline identifies all scores that contain both a
 change of key signature as well as a change of meter signature.</p>
 <p>The <strong>xargs</strong> command can also be used to process a list of files &#8211; where
-the list has been stored in a file. For example, suppose we used the <strong>find</strong>
+the list has been stored in a file. For example, suppose we used the <a class="reference external" href="http://en.wikipedia.org/wiki/Find">find</a>
 command to locate all scores in compound meters written for woodwind quintet:</p>
 <p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">.</span> <span class="pre">-name</span> <span class="pre">'*'</span> <span class="pre">|</span> <span class="pre">xargs</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'!!!AMT:.*compound'</span> <span class="pre">\</span>
 <span class="pre">&gt;</span>
@@ -557,9 +557,9 @@ can execute it:</p>
 <hr class="docutils" />
 <div class="section" id="reprise">
 <h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>find</strong> command provides a convenient way to traverse through an entire
+<p>The <a class="reference external" href="http://en.wikipedia.org/wiki/Find">find</a> command provides a convenient way to traverse through an entire
 file-system looking for files that conform to specific criteria. In
-musicological tasks, the <strong>find</strong> command is especially well suited to
+musicological tasks, the <a class="reference external" href="http://en.wikipedia.org/wiki/Find">find</a> command is especially well suited to
 assembling a repertory of scores that exhibit some characteristic(s) of
 interest. Multiple selection criteria can be accommodated by using one or
 more pipes in conjunction with the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command.</p>

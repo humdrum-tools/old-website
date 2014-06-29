@@ -22,8 +22,8 @@ assemble a repertory list of works conforming to complex selection criteria.
 The *find* Command
 --------
 
-The UNIX **find** command traverses through a file hierarchy, and finds all
-files that match certain conditions. The **find** command takes the following
+The UNIX `find <http://en.wikipedia.org/wiki/Find>`_ command traverses through a file hierarchy, and finds all
+files that match certain conditions. The `find <http://en.wikipedia.org/wiki/Find>`_ command takes the following
 syntax:
 
 ``find`` * *
@@ -52,24 +52,24 @@ means all files under the ``scores/bach`` directory. The period character:
 
 ``.``
 
-tells **find** to commence searching from the current directory.
+tells `find <http://en.wikipedia.org/wiki/Find>`_ to commence searching from the current directory.
 
-Since **find** searches all files under the given path, its operation may be
+Since `find <http://en.wikipedia.org/wiki/Find>`_ searches all files under the given path, its operation may be
 quite slow when there are thousands of files to search. It's wise to restrict
 the search by choosing a reasonable starting point. For example, specifying
 the path ``/scores/bach/chorales`` may save a great deal of time compared
 with the path ``/scores``. Although we won't discuss them in this book, the
-**find** command provides a number of options that help to restrict the depth
-of searches or otherwise "prune" the search. When first trying **find** it's
+`find <http://en.wikipedia.org/wiki/Find>`_ command provides a number of options that help to restrict the depth
+of searches or otherwise "prune" the search. When first trying `find <http://en.wikipedia.org/wiki/Find>`_ it's
 a good idea to limit the searches to small segments of the file system.
 
-When searching through the specific *PATH*, **find** is able to carry out a
+When searching through the specific *PATH*, `find <http://en.wikipedia.org/wiki/Find>`_ is able to carry out a
 wide variety of possible tests on each file. One simple action is to test
 whether the file-name conforms to a given regular expression. Consider, for
 example, the goal of identifying all files representing pitch-class
 (`**pc <../../rep/pc>`_) information. The Humdrum convention is to identify these files
 by adding the ``.pc`` extension to the filename -- such as ``opus24.pc``. The
-following **find** command will traverse through the ``/scores`` directory
+following `find <http://en.wikipedia.org/wiki/Find>`_ command will traverse through the ``/scores`` directory
 (and all sub-directories) searching for files that contain the `pc <../../man/pc>`_ file
 extension:
 
@@ -93,7 +93,7 @@ matching file is then deleted using the UNIX **rm** command:
 
 ``find /scores -name *.tmp -exec rm "{}" ";"``
 
-This command illustrates a number of features of the **find** command. The
+This command illustrates a number of features of the `find <http://en.wikipedia.org/wiki/Find>`_ command. The
 search begins from the *path* ``/scores``. The *option* ``-name *.tmp``
 identifies the search condition. The ``-exec`` flag identifies the *action*
 as that of executing a command. The arguments between ``-exec`` and the semi-
@@ -207,7 +207,7 @@ following command identifies all works composed between 1812 and 1840:
 >
 >> "{}" ";"``
 
-Often the **find** command can be used to answer research questions more
+Often the `find <http://en.wikipedia.org/wiki/Find>`_ command can be used to answer research questions more
 directly. Suppose we wanted to determine whether German drinking songs more
 likely to be in triple meter. There are over four thousand German folksongs
 encoded in Helmut Schaffrath's *Essen Folksong Collection*. These works
@@ -242,7 +242,7 @@ Using *find* with the *xargs* Command
 
 As we saw in `Chapter 10 <../ch10>`_, the **xargs** command can be used to propagate
 file names from command to command within a pipeline. Using **xargs** in
-conjunction with **find** provides a powerful means for finding works that
+conjunction with `find <http://en.wikipedia.org/wiki/Find>`_ provides a powerful means for finding works that
 conform to highly complex criteria. For example, the following command
 identifies all files in the path ``/corelli`` that contain a change of meter
 signature:
@@ -285,7 +285,7 @@ In summary, the above pipeline identifies all scores that contain both a
 change of key signature as well as a change of meter signature.
 
 The **xargs** command can also be used to process a list of files -- where
-the list has been stored in a file. For example, suppose we used the **find**
+the list has been stored in a file. For example, suppose we used the `find <http://en.wikipedia.org/wiki/Find>`_
 command to locate all scores in compound meters written for woodwind quintet:
 
 ``find . -name '*' | xargs grep -l '!!!AMT:.*compound' \
@@ -355,9 +355,9 @@ We now have a new directory whose files contain scores with vocal parts.
 Reprise
 -------
 
-The **find** command provides a convenient way to traverse through an entire
+The `find <http://en.wikipedia.org/wiki/Find>`_ command provides a convenient way to traverse through an entire
 file-system looking for files that conform to specific criteria. In
-musicological tasks, the **find** command is especially well suited to
+musicological tasks, the `find <http://en.wikipedia.org/wiki/Find>`_ command is especially well suited to
 assembling a repertory of scores that exhibit some characteristic(s) of
 interest. Multiple selection criteria can be accommodated by using one or
 more pipes in conjunction with the `grep <http://en.wikipedia.org/wiki/Grep>`_ command.

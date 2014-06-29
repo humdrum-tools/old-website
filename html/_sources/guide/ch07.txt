@@ -15,7 +15,7 @@ The ***MIDI* Representation
 Humdrum provides a `**MIDI <../../rep/MIDI>`_ representation that closely parallels the
 commercial MIDI specification but conforms to the Humdrum data format. This
 representation provides an intermediate format; using Humdrum commands such
-as `perform <../../man/perform>`_ and `**smf**,`_ true MIDI data can be generated. However,
+as `perform <../../man/perform>`_ and `smf <../../man/smf>`_, true MIDI data can be generated. However,
 since the `**MIDI <../../rep/MIDI>`_ representation conforms to the Humdrum syntax, the data
 can be manipulated, modified and searched in the same way as other Humdrum
 data. For example, we can use `grep <http://en.wikipedia.org/wiki/Grep>`_ to search MIDI data, etc.

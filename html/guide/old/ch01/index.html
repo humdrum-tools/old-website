@@ -1,0 +1,950 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapter 1: Humdrum: A Brief Tour &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../../"/>
+   <link rel="stylesheet" type"text/css" href="../../../_static/humdrum.css">
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../../" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/">Humdrum Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../install/github/">Installing Humdrum Tools from GitHub</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../">The Humdrum User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ch01/">Chapter 1: Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch02/">Chapter 2: Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch03/">Chapter 3: Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch04/">Chapter 4: Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch05/">Chapter 5: The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch06/">Chapter 6: Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch07/">Chapter 7: MIDI Output Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch08/">Chapter 8: The Shell (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch09/">Chapter 9: Searching with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch10/">Chapter 10: Musical Uses of Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch11/">Chapter 11: Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch12/">Chapter 12: Selecting Musical Parts and Passages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch13/">Chapter 13: Assembling Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch14/">Chapter 14: Stream Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch15/">Chapter 15: Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch16/">Chapter 16: The Shell (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch17/">Chapter 17: Creating Inventories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch18/">Chapter 18: Fingers, Footsteps and Frets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch19/">Chapter 19: Musical Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch20/">Chapter 20: Strophes, Verses, and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch21/">Chapter 21: Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch22/">Chapter 22: Classifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch23/">Chapter 23: Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch24/">Chapter 24: The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch25/">Chapter 25: Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch26/">Chapter 26: Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch27/">Chapter 27: Text and Lyrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch28/">Chapter 28: Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch29/">Chapter 29: Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch30/">Chapter 30:MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch31/">Chapter 31: Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch32/">Chapter 32: The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch33/">Chapter 33: Word Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch34/">Chapter 34: Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch35/">Chapter 35: Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch36/">Chapter 33: Sound and Spectra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch37/">Chapter 37: Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch38/">Chapter 38: Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch39/">Chapter 39: Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch40/">Chapter 40: Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../bibliography/">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sample.problems/">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../humextra/">Humdrum Extras</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/intro/">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/rhythm/">2. Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/melody/">Melody and Pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/harmony/">Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/data/">Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/searching/">Music Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/midi/">MIDI Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/notation/">Graphical Musical Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/other/">Other Useful Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/programming/">Programming Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../cookbook/">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../cookbook/vimHighlighting/">Syntax Coloring in Vim</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../man/">Humdrum Command Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/assemble/">Command: assemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/barks/">Command: barks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cbr/">Command: cbr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/census/">Command: census</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cents/">Command: cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cleave/">Command: cleave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cocho/">Command: cocho</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/context/">Command: context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/correl/">Command: correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/deg/">Command: deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/degree/">Command: degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/diss/">Command: diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ditto/">Command: ditto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/dur/">Command: dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ekern/">Command: ekern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/encode/">Command: encode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/extract/">Command: extract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/fade/">Command: fade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/fields/">Command: fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/freq/">Command: freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/hint/">Command: hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/humdrum/">Command: humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/humsed/">Command: humsed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/humver/">Command: humver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/infot/">Command: infot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/iv/">Command: iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/kern/">Command: kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/key/">Command: key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/melac/">Command: melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/melvel/">Command: melvel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/metpos/">Command: metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/midi/">Command: midi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/midreset/">Command: midreset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/mint/">Command: mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ms/">Command: ms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/nf/">Command: nf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/num/">Command: num</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/patt/">Command: patt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pattern/">Command: pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pc/">Command: pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pcset/">Command: pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/perform/">Command: perform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pf/">Command: pf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pitch/">Command: pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/proof/">Command: proof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/recode/">Command: recode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/record/">Command: record</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/regexp/">Command: regexp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/reihe/">Command: reihe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/rend/">Command: rend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/rid/">Command: rid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/scramble/">Command: scramble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/semits/">Command: semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/simil/">Command: simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/smf/">Command: smf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/solfa/">Command: solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/solfg/">Command: solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/specc/">Command: specc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/spect/">Command: spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/strophe/">Command: strophe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/synco/">Command: synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/tacet/">Command: tacet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/text/">Command: text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/themefinder/">Command: thmea</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/thru/">Command: thru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/timebase/">Command: timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/tonh/">Command: tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/trans/">Command: trans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/urrhythm/">Command: urrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/veritas/">Command: veritas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/vox/">Command: vox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/xdelta/">Command: xdelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/yank/">Command: yank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ydelta/">Command: ydelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/#commands">Commands</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../rep/">Humdrum Data Representations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/barlines/">Representation: barlines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/IPA/">Representation: **IPA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/MIDI/">Representation: **MIDI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/Tonh/">Representation: **Tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/URrhythm/">Representation: **URrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/Zeit/">Representation: **Zeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/bhatk/">Representation: **bhatk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/cents/">Representation: **cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/correl/">Representation: **correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/dB/">Representation: **dB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/date/">Representation: **date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/deg/">Representation: **deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/degree/">Representation: **degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/diss/">Representation: **diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/dur/">Representation: **dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/embel/">Representation: **embel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/freq/">Representation: **freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/fret/">Representation: **fret</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/harm/">Representation: **harm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/hildegard/">Representation: **hildegard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/hint/">Representation: **hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/iv/">Representation: **iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/kern/">Representation: **kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/melac/">Representation: **melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/metpos/">Representation: **metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/mint/">Representation: **mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/ordo/">Representation: **ordo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/pc/">Representation: **pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/pcset/">Representation: **pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/pitch/">Representation: **pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/recip/">Representation: **recip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/semits/">Representation: **semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/silbe/">Representation: **silbe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/simil/">Representation: **simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/solfa/">Representation: **solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/solfg/">Representation: **solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/specC/">Representation: **specC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/spect/">Representation: **spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/synco/">Representation: **synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/takt/">Representation: **takt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/text/">Representation: **text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/time/">Representation: **time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/timebase/">Representation: **timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/vox/">Representation: **vox#</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../">Docs</a> &raquo;</li>
+      
+    <li>Chapter 1: Humdrum: A Brief Tour</li>
+      <li class="wy-breadcrumbs-aside">
+        
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="chapter-1-humdrum-a-brief-tour">
+<h1>Chapter 1: Humdrum: A Brief Tour<a class="headerlink" href="#chapter-1-humdrum-a-brief-tour" title="Permalink to this headline">¶</a></h1>
+<p>Humdrum is a general-purpose software system intended to assist music
+researchers. Humdrum&#8217;s capabilities are quite broad, so it is difficult to
+describe concisely what it can do. This chapter provides a brief tour through
+Humdrum: the goal is to give you a quick glimpse of Humdrum&#8217;s capabilities
+and to help sketch some of the big picture. Don&#8217;t worry if you don&#8217;t
+understand everything in this chapter. All of the topics mentioned here will
+be covered more thoroughly in later chapters.</p>
+<div class="section" id="what-can-humdrum-do">
+<h2>What Can Humdrum Do?<a class="headerlink" href="#what-can-humdrum-do" title="Permalink to this headline">¶</a></h2>
+<p>Although Humdrum facilitates exploratory investigations, it is best used when
+the user has a clear problem or question in mind. For example, Humdrum allows
+users to pose and answer questions such as the following:</p>
+<ul class="simple">
+<li>In the music of Stravinsky, are dissonances more common in strong
+metric positions than in weak metric positions?</li>
+<li>In Urdu folk songs, how common is the so-called &#8220;melodic arch&#8221; &#8211;
+where phrases tend to ascend and then descend in pitch?</li>
+<li>What are the most common fret-board patterns in guitar riffs by Jimi
+Hendrix?</li>
+<li>Which of the Brandenburg Concertos contains the B-A-C-H motif?</li>
+<li>Which of two different English translations of Schubert lyrics best
+preserves the vowel coloration of the original German?</li>
+<li>Did George Gershwin tend to use more syncopation in his later works?</li>
+<li>After the V-I progression, which harmonic progression is most apt to
+employ a suspension?</li>
+<li>How do chord voicings in barbershop quartets differ from chord
+voicings in other repertories?</li>
+<li>In what harmonic contexts does Handel double the leading-tone?</li>
+</ul>
+<p>Although the Humdrum tools may take just seconds to compute an answer for any
+of the above problems, only a few of these questions are <em>easy</em> to answer
+using Humdrum. The primary impediment to a quick solution is the user&#8217;s skill
+in interconnecting the right tools for the task at hand. The purpose of this
+book is to help you develop that skill.</p>
+</div>
+<div class="section" id="the-humdrum-syntax-and-the-humdrum-toolkit">
+<h2>The Humdrum Syntax and the Humdrum Toolkit<a class="headerlink" href="#the-humdrum-syntax-and-the-humdrum-toolkit" title="Permalink to this headline">¶</a></h2>
+<p>Humdrum consists of two distinct components: the <em>Humdrum Syntax</em> and the
+<em>Humdrum Toolkit.</em> The <em>Humdrum Syntax</em> is a grammar for representing
+information. Over the course of this book we&#8217;ll encounter a variety of
+representation schemes that conform to this syntax. The syntax itself doesn&#8217;t
+represent anything: it merely provides a common framework for representing
+all sorts of information. Within the syntax an endless number of
+representation schemes can be defined. Theoretically, any type of sequential
+symbolic data may be accommodated &#8211; such as medieval square notation, MIDI
+data, acoustic spectra, piano fingerings, changes of emotional states, Indian
+tabla notations, dance steps, Schenkerian graphs, concert programs &#8211; or even
+industrial chemical processes.</p>
+<p>A number of representation schemes are pre-defined in Humdrum; however, users
+are free to concoct their own task-specific representations as necessary. For
+example, if you are interested in Telugu notation or Dagomba dance, you can
+design your own pertinent representation scheme within the Humdrum syntax.
+Humdrum representations may be meticulously crafted, or they may be invented
+in a matter of seconds. It is common to generate intermediate or &#8220;throw-away&#8221;
+representations that are used only for a single research task.</p>
+<p>The <em>Humdrum Toolkit</em> is a set of more than 70 inter-related software tools.
+These tools manipulate ASCII data (text) conforming to the Humdrum syntax. If
+the ASCII data represents music-related information, then we can say that the
+Humdrum tools manipulate music-related information.</p>
+<p>What kinds of manipulations can be done with Humdrum? The various Humdrum
+tools can be grouped roughly into the following sixteen types of operations.</p>
+<ul class="simple">
+<li><strong>Visual display.</strong> e.g, display a score beginning at measure 128;
+output the libretto from Act II, Scene 5; print the string parts for the
+Coda &#8211; including the Roman numeral harmonic analysis.</li>
+<li><strong>Aural display.</strong> e.g, play the bass trombone part slowly beginning
+at measure 70; play just the opening two measures from all of the works
+in a given repertory.</li>
+<li><strong>Searching.</strong> e.g, search for instances of a motive; locate any
+deceptive cadences; find all of the works that are composed for a given
+combination of traditional Japanese instruments.</li>
+<li><strong>Counting.</strong> e.g, how often do augmented intervals occur in
+Hungarian folk songs? What proportion of phrases do not begin with a
+pick-up or anacrusis?</li>
+<li><strong>Editing.</strong> e.g, change all up-stems to down-stems in measure 88 of
+the second horn part.</li>
+<li><strong>Editorializing.</strong> e.g, add an editorial footnote to a specified
+note; indicate that a passage differs from the composer&#8217;s autograph.</li>
+<li><strong>Transforming or translating between representations.</strong> e.g,
+transpose from one key to another; calculate the harmonic intervals
+between two parts; represent a score according to scale-degrees;
+reconstitute chords so they are represented in set <em>normal form</em>.</li>
+<li><strong>Arithmetic transformations of representations.</strong> e.g, calculate
+the semitone spacings between successive notes, or determine points where
+parts cross in pitch.</li>
+<li><strong>Extracting or selecting information.</strong> e.g, extract the second
+verse; exclude the development section; isolate the third phrase; grab
+the second chord in each measure; select the brass parts; take the second
+endings when repeating the trio; choose the Dresden manuscript version.</li>
+<li><strong>Linking or joining information.</strong> e.g, assemble instrumental parts
+into a full score; tag notes with their harmonic function; coordinate
+heart-rate data from a listener with the musical score.</li>
+<li><strong>Generating inventories.</strong> e.g, list all the types of embellishment
+(non-chordal) tones from the most common to the least common; what chord
+functions are absent from a work?</li>
+<li><strong>Classifying.</strong> e.g, classify all chords as &#8220;open&#8221; or &#8220;closed&#8221;
+position; identify all secondary dominants; classify all intervals as
+either unisons, steps or leaps; classify various piano fingerings as
+either easy, moderate, difficult, or impossible.</li>
+<li><strong>Labelling.</strong> e.g, mark musical sections; label themes; identify
+French, Italian and German sixth chords; mark appropriate words in a
+vocal text as either &#8220;passionate,&#8221; &#8220;apathetic,&#8221; or &#8220;neutral.&#8221; Mark
+sonorities as falling on either strong or weak metric positions.</li>
+<li><strong>Comparison.</strong> e.g, determine whether the Amsterdam and Manchester
+manuscripts for a work have identical pitches in the third movement;
+determine whether motets by John Dunstable are more similar to motets by
+Thomas Morley or by Lionel Power.</li>
+<li><strong>Capturing Data.</strong> e.g, import live or recorded MIDI data; import
+data from a notation program.</li>
+<li><strong>Trouble-shooting.</strong> e.g, identify any transgressions of notational
+conventions; check whether a score has been tampered with; get help when
+you&#8217;re stuck.</li>
+</ul>
+<p>If the above functions sound vague, that&#8217;s because the corresponding Humdrum
+tools are similarly broad in their function. For example, the Humdrum
+<a class="reference external" href="../../man/patt">patt</a> tool can be used to locate Landini cadences, label statements of
+12-tone rows, or search for piano fingering patterns in Liszt. All three
+tasks involve searching for a sequential pattern that might have concurrent
+features as well.</p>
+<p>When using computers in research activities, it is important to maintain a
+keen awareness of their limitations. For example, computers are typically not
+good at <em>interpreting</em> data. Because much music scholarship hinges on
+interpretations, this would seem to preclude computers from being of much
+use. However, there are some things that computers do well, and when a
+skilled user intervenes to make a few crucial interpretations, the resulting
+computer/human interaction can lead to pretty sophisticated results &#8211; as we
+will see.</p>
+<p>Although computers are typically not good at interpreting data, interpretive
+software will become increasingly important as computational musicology
+continues to develop. Humdrum provides a handful of tools that <em>interpret</em>
+data in various ways. For example, the <a class="reference external" href="../../man/key">key</a> command implements the
+Krumhansl and Kessler method for estimating the key of a music passage. The
+<a class="reference external" href="../../man/melac">melac</a> command implements Joseph Thomassen&#8217;s model of melodic accent.
+Other interpretive tools characterize syncopation or implement Johnson-
+Laird&#8217;s model of rhythmic prototypes.</p>
+<p>The names of some of the Humdrum tools will be readily recognizable by
+musicians. Humdrum tools such as <a class="reference external" href="../../man/key">key</a>, <a class="reference external" href="../../man/pitch">pitch</a>, <a class="reference external" href="../../man/record">record</a>,
+<a class="reference external" href="../../man/tacet">tacet</a>, <a class="reference external" href="../../man/trans">trans</a>, and <a class="reference external" href="../../man/reihe">reihe</a> may evoke fairly accurate ideas
+about what they do. Ironically, the most recognizable tools are typically the
+least useful tools in the toolkit &#8211; because they are so specialized. The
+most powerful Humdrum tools have names such as <a class="reference external" href="../../man/cleave">cleave</a>, <a class="reference external" href="../../man/humsed">humsed</a>,
+<a class="reference external" href="../../man/simil">simil</a>, <a class="reference external" href="../../man/recode">recode</a>, <a class="reference external" href="../../man/context">context</a>, <a class="reference external" href="../../man/patt">patt</a>, and <a class="reference external" href="../../man/yank">yank</a>.</p>
+<p>By itself, each individual tool in the Humdrum Toolkit is quite modest in its
+effect. However, the tools are not intended to be self-sufficient. They are
+designed to work in conjunction with each other, and with existing standard
+UNIX commands. Like musical instruments, their potential usefulness is
+greatly increased when they are combined with other tools. Musical problems
+are typically addressed by linking together successive Humdrum (and UNIX)
+commands to form one or more command <em>pipelines.</em> Although each individual
+tool may have only a modest effect, the tools&#8217; combined capacity for solving
+complex problems is legion.</p>
+<p>Now that we&#8217;ve sketched an overview of Humdrum, we can consider in greater
+detail the two principal components of Humdrum: the <em>Humdrum Syntax</em> and the
+<em>Humdrum Toolkit</em>.</p>
+</div>
+<div class="section" id="humdrum-syntax">
+<h2>Humdrum Syntax<a class="headerlink" href="#humdrum-syntax" title="Permalink to this headline">¶</a></h2>
+<p>Humdrum data are organized somewhat like the tables of a spread-sheet. As
+with a spread-sheet, you can define or label your own types of data. As with
+a spread-sheet, the different <em>columns</em> can be set up to represent whatever
+type of data you like. The <em>rows</em> of data, however, have a fixed meaning &#8211;
+they represent successive moments in time; that is, time passes as you move
+down the page.</p>
+<p>By way of example, consider Table 1.1. This table shows something akin to a
+piano-roll. The diatonic pitches are labelled in columns from C4 (middle C)
+to C5. Each row represents the passage of a sixteenth duration. The table
+entries indicate whether the note is <em>on</em> or <em>off</em>. The table encodes an
+ascending scale. As the table stands, it&#8217;s not clear whether each note has a
+duration of an eighth note or whether two successive sixteenth notes are
+sounded for each pitch:</p>
+<p><strong>Table 1.1</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="12%" />
+<col width="10%" />
+<col width="11%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">&nbsp;</th>
+<th class="head"><strong>C4</strong></th>
+<th class="head"><strong>D4</strong></th>
+<th class="head"><strong>E4</strong></th>
+<th class="head"><strong>F4</strong></th>
+<th class="head"><strong>G4</strong></th>
+<th class="head"><strong>A4</strong></th>
+<th class="head"><strong>B4</strong></th>
+<th class="head"><strong>C5</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td rowspan="12"><em>Time</em></td>
+<td>1st 16th</td>
+<td>ON</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+</tr>
+<tr class="row-odd"><td>2nd 16th</td>
+<td>ON</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+</tr>
+<tr class="row-even"><td>3rd 16th</td>
+<td>off</td>
+<td>ON</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+</tr>
+<tr class="row-odd"><td>4th 16th</td>
+<td>off</td>
+<td>ON</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+</tr>
+<tr class="row-even"><td>5th 16th</td>
+<td>off</td>
+<td>off</td>
+<td>ON</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+</tr>
+<tr class="row-odd"><td>6th 16th</td>
+<td>off</td>
+<td>off</td>
+<td>ON</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+</tr>
+<tr class="row-even"><td>7th 16th</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>ON</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+</tr>
+<tr class="row-odd"><td>8th 16th</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>ON</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+</tr>
+<tr class="row-even"><td>9th 16th</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>ON</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+</tr>
+<tr class="row-odd"><td>10th 16th</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>ON</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+</tr>
+<tr class="row-even"><td>11th 16th</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>off</td>
+<td>ON</td>
+<td>off</td>
+<td>off</td>
+</tr>
+<tr class="row-odd"><td colspan="9"><em>etc.</em></td>
+</tr>
+</tbody>
+</table>
+<p>Table 1.2 shows another example where different kinds of information are
+combined in the same table. Here the last column represents a combination of
+trumpet valves:</p>
+<p><strong>Table 1.2</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">Pitch</th>
+<th class="head">Duration</th>
+<th class="head">Valve combination</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1st note</td>
+<td>C4</td>
+<td>Quarter</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>2nd note</td>
+<td>B3</td>
+<td>Eighth</td>
+<td>2</td>
+</tr>
+<tr class="row-even"><td>3rd note</td>
+<td>G4</td>
+<td>Eighth</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>4th note</td>
+<td>F4</td>
+<td>Eighth</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>5th note</td>
+<td>G4</td>
+<td>Eighth</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>6th note</td>
+<td>A4</td>
+<td>Quarter</td>
+<td>1&#8211;2</td>
+</tr>
+<tr class="row-even"><td>7th note</td>
+<td>G4</td>
+<td>Eighth</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>8th note</td>
+<td>Ab4</td>
+<td>Quarter</td>
+<td>2&#8211;3</td>
+</tr>
+</tbody>
+</table>
+<p>Humdrum representations can be very similar to the data shown in Tables 1.1
+and 1.2. With just a few formatting changes, either table can be transformed
+so that it conforms to the Humdrum syntax. For example, Table 1.3 recasts
+Table 1.2 so that it conforms to the Humdrum syntax. Just four changes have
+been made: (1) the left-most column has been given a heading name so that
+<em>every</em> column has a label, (2) each column heading is preceded by two
+asterisks, (3) the columns have been left-justified so successive columns are
+separated by a tab, and (4) each column has been terminated with the
+combination of an asterisk and hyphen.</p>
+<p><strong>Table 1.3</strong> A Humdrum Equivalent to Table 1.2</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><blockquote class="first last">
+<div>❉ ❉ Note</div></blockquote>
+</th>
+<th class="head"><blockquote class="first last">
+<div>❉ ❉ Pitch</div></blockquote>
+</th>
+<th class="head"><blockquote class="first last">
+<div>❉ ❉ Duration</div></blockquote>
+</th>
+<th class="head"><blockquote class="first last">
+<div>❉ ❉ Valves</div></blockquote>
+</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1st note</td>
+<td>C4</td>
+<td>Quarter</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>2nd note</td>
+<td>B3</td>
+<td>Eighth</td>
+<td>2</td>
+</tr>
+<tr class="row-even"><td>3rd note</td>
+<td>G4</td>
+<td>Eighth</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>4th note</td>
+<td>F4</td>
+<td>Eighth</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>5th note</td>
+<td>G4</td>
+<td>Eighth</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>6th note</td>
+<td>A4</td>
+<td>Quarter</td>
+<td>1-2</td>
+</tr>
+<tr class="row-even"><td>7th note</td>
+<td>G4</td>
+<td>Eighth</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>8th note</td>
+<td>Ab4</td>
+<td>Quarter</td>
+<td>2-3</td>
+</tr>
+<tr class="row-even"><td>❉-</td>
+<td>❉-</td>
+<td>❉-</td>
+<td>❉-</td>
+</tr>
+</tbody>
+</table>
+<p>It does not matter what characters appear in the table &#8211; numbers, letters,
+symbols, etc. (although there are some restrictions concerning the use of
+spaces and tabs). The table can have as many columns as you like, and can be
+as long as you like. Unlike spreadsheet columns, Humdrum &#8220;columns&#8221; can
+exhibit complicated &#8220;paths&#8221; through the document; columns can join together,
+split apart, exchange positions, stop in mid-table, or be introduced in mid-
+table. Humdrum also allows subsidiary column headings that can clarify the
+state of the data. Subsidiary headings can also be added anywhere in mid-
+table. Finally, Humdrum also provides ways of adding running commentaries;
+comments might pertain to the whole table, to a given row or column, to a
+given data cell, or to a particular item of information within a cell (such
+as a single letter or digit). Since the <em>columns</em> in Humdrum data can roam
+about the table in a semi-flexible way, they are referred to as
+<a href="#id4"><span class="problematic" id="id5">`**spines.**`_</span></a> We&#8217;ll see how these devices are used in later chapters.</p>
+<p>The most common Humdrum files encode musical notes in the various cells of
+the table; the most common use of a spine is to represent a single musical
+part or instrument.</p>
+<p>Some twenty or more representation schemes are pre-defined in Humdrum, but
+remember that users are always free to concoct their own representations as
+necessary. As in a spread-sheet, the spines or columns can be used to
+represent whatever you like. In the following chapter, we&#8217;ll look at the most
+commonly used of the pre-defined Humdrum representations &#8211; the <em>kern</em>
+representation. This representation gets its name from the German word for
+<em>core</em>; it is a scheme intended to represent the basic or core musical
+information of notes, durations, rests, barlines, and so on.</p>
+</div>
+<div class="section" id="humdrum-tools">
+<h2>Humdrum Tools<a class="headerlink" href="#humdrum-tools" title="Permalink to this headline">¶</a></h2>
+<p>The Humdrum software is not a program that you invoke like a word-processor
+or notation editor. Humdrum is not a big program that you start-up when you
+want to do music research. Instead, Humdrum provides a toolbox of <em>utilities</em>
+&#8211; most of which can be accessed at any time from anywhere in the system.</p>
+<p>Any data that conforms to the Humdrum syntax can be manipulated using the
+Humdrum software tools. Since the tools can be interconnected with each other
+(and can also be interconnected with non-Humdrum tools) there are a lot of
+ways to manipulate Humdrum data. Much of this book will deal with how the
+tools can be interconnected to do musically useful things.</p>
+<p>For the remainder of this chapter, we will describe a few Humdrum tools and
+illustrate how they might be used. Once again, the goal in this chapter is to
+give you an initial taste of Humdrum. Don&#8217;t worry if you don&#8217;t understand
+everything at this point.</p>
+</div>
+<div class="section" id="some-sample-commands">
+<h2>Some Sample Commands<a class="headerlink" href="#some-sample-commands" title="Permalink to this headline">¶</a></h2>
+<p>One group of tools is used to extract or select sections of data. Vertical
+spines of data can be extracted from a Humdrum file using the <a class="reference external" href="../../man/extract">extract</a>
+command. For example, if a file encodes four musical parts, then the
+<strong>extract</strong> command might be used to isolate one or more given parts. The
+command</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-f</span> <span class="pre">1</span> <span class="pre">filename</span></tt></p>
+<p>will extract the first or left-most column or spine of data. Often it is
+useful to extract material according to the encoded content without regard to
+the position of the spine. For example, the following command will extract
+all spines containing a label indicating the tenor part(s).</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'\*Itenor'</span> <span class="pre">filename</span></tt></p>
+<p>Instruments can be labelled by &#8220;instrument class&#8221; and so can be extracted
+accordingly. The following command extracts all of the woodwind parts:</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'\*ICww'</span> <span class="pre">filename</span></tt></p>
+<p>Any vocal text can be similarly extracted:</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'`\*\*text`_'</span> <span class="pre">filename</span></tt></p>
+<p>Or if the text is available in more than one language, a specific language
+may be isolated:</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'\*LDeutsch'</span> <span class="pre">filename</span></tt></p>
+<p>Segments or passages of music can be extracted using the <a class="reference external" href="../../man/yank">yank</a> command.
+Segments can be defined by sections, phrases, measures, or other any user-
+specified marker. For example, the following command extracts the section
+labelled &#8220;Trio&#8221; from a minuet &amp; trio:</p>
+<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-s</span> <span class="pre">Trio</span> <span class="pre">-r</span> <span class="pre">1</span> <span class="pre">filename</span></tt></p>
+<p>Or select the material in measures 114 to 183:</p>
+<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-n</span> <span class="pre">=</span> <span class="pre">-r</span> <span class="pre">114-183</span> <span class="pre">filename</span></tt></p>
+<p>Or select the second-last phrase in the work:</p>
+<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-o</span> <span class="pre">{</span> <span class="pre">-e</span> <span class="pre">}</span> <span class="pre">-r</span> <span class="pre">'$-1'</span> <span class="pre">filename</span></tt></p>
+<p>Don&#8217;t worry about the complex syntax for these commands; the command formats
+will be discussed fully in the ensuing chapters. For now, it is important
+only that you get a feel for some of the types of operations that Humdrum
+users might perform.</p>
+<p>Two or more commands can be connected into a <em>pipeline</em>. The following
+command will let us determine whether there are any notes in the bassoon
+part:</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'\*Ifagot'</span> <span class="pre">filename</span> <span class="pre">|</span> <span class="pre">census</span> <span class="pre">-k</span></tt></p>
+<p>The following pipeline connects together four commands: it will play (using
+MIDI) the first and last measures from a section marked &#8220;Coda&#8221; at half the
+notated tempo from a file named <tt class="docutils literal"><span class="pre">Cui</span></tt>:</p>
+<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-s</span> <span class="pre">'\*&gt;Coda'</span> <span class="pre">Cui</span> <span class="pre">|</span> <span class="pre">yank</span> <span class="pre">-o</span> <span class="pre">^=</span> <span class="pre">-r</span> <span class="pre">1,$</span> <span class="pre">|</span> <span class="pre">midi</span> <span class="pre">|</span> <span class="pre">perform</span> <span class="pre">-t</span> <span class="pre">.5</span></tt></p>
+<p>Some tools translate from one representation to another. For example, the
+<a class="reference external" href="../../man/mint">mint</a> command generates melodic interval information. The following
+command locates all tritones &#8211; including compound (octave) equivalents:</p>
+<p><tt class="docutils literal"><span class="pre">mint</span> <span class="pre">-c</span> <span class="pre">filename</span> <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">-n</span> <span class="pre">'((d5)|(A4))'</span></tt></p>
+<p>Incidentally, Humdrum data can be processed by many common commands that are
+not part of the Humdrum Toolkit. The <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a> command in the above pipeline
+is a common computer utility and is not part of the Humdrum Toolkit.</p>
+<p>Depending on the type of translation, the resulting data can be searched for
+different things. The following command identifies French sixth chords:</p>
+<p><tt class="docutils literal"><span class="pre">solfa</span> <span class="pre">file</span> <span class="pre">|</span> <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'`\*\*solfa`_'</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'6-.\*4+'</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">2</span></tt></p>
+<p>Locate all sonorities in the music of Machaut where the seventh scale degree
+has been doubled:</p>
+<p><tt class="docutils literal"><span class="pre">deg</span> <span class="pre">-t</span> <span class="pre">machaut\*</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-n</span> <span class="pre">'7[^-+].\*7'</span></tt></p>
+<p>Count the number of phrases that end on the subdominant pitch:</p>
+<p><tt class="docutils literal"><span class="pre">deg</span> <span class="pre">filename</span> <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">-c</span> <span class="pre">'(}.\*4)|(4.\*})'</span></tt></p>
+<p>The following command identifies all scores whose instrumentation includes a
+tuba but not a trumpet:</p>
+<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-sl</span> <span class="pre">'!!!AIN.\*tuba'</span> <span class="pre">\*</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">'tromp'</span></tt></p>
+<p>Some tasks may require more than one command line. For example, the following
+three-line script locates any parallel fifths between the bass and alto
+voices of any input file:</p>
+<p><tt class="docutils literal"><span class="pre">echo</span> <span class="pre">P5</span> <span class="pre">&gt;</span> <span class="pre">P5</span>
+<span class="pre">echo</span> <span class="pre">'=</span> <span class="pre">\*'</span> <span class="pre">&gt;&gt;</span> <span class="pre">P5</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">echo</span> <span class="pre">P5</span> <span class="pre">&gt;&gt;</span> <span class="pre">P5</span>
+<span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'\*Ibass,\*Ialto'</span> <span class="pre">file</span> <span class="pre">|</span> <span class="pre">hint</span> <span class="pre">-c</span> <span class="pre">|</span> <span class="pre">pattern</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">P5</span></tt></p>
+<p>More complicated scripts can be written to carry out more sophisticated
+musical processes. In later chapters we&#8217;ll encounter some scripts that
+contain 10 or more lines of commands.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="reprise">
+<h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
+<p>In this chapter we have seen that Humdrum consists of two parts:</p>
+<ol class="arabic simple">
+<li>a representation <em>syntax</em> that is similar to tables in a spread-sheet</li>
+<li>a set of utilities or <em>tools</em> that manipulate Humdrum data in various ways.</li>
+</ol>
+<p>The tools carry out operations such as displaying, performing, searching,
+counting, editing, transforming, extracting, linking, classifying, labelling
+and comparing. The tools can be linked together to carry out a wide variety
+of tasks. Even one-line commands can carry out sophisticated operations. A
+few lines of Humdrum can also be used to write programs of some complexity.
+Users can write their own programs using the Humdrum tools, or they can add
+new tools that augment the functioning of Humdrum.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  <hr/>
+  
+
+
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+   
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-52162357-1', 'humdrum.org');
+  ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>

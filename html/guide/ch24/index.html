@@ -930,29 +930,29 @@ possible numerical representations that might conflict with semitone
 designations:</p>
 <p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*alto,*tenor'``*</span> <span class="pre">*</span></tt> | semits -x``</p>
 <p>Next we need to compare the two parts at each moment in order to determine
-whether they have the same numerical value. The Unix <strong>awk</strong> command will
+whether they have the same numerical value. The Unix <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a> command will
 allow us to do some arithmetic. Awk auto- matically parses an input, so the
-value of the first spine is referred to as <cite>$1&#8217;, the value of the second
-spine is `$2&#8217; and so on. The **awk** expression ``1==$2&#8217;`</cite> is a test of
-whether the first and second spines are equivalent. The <strong>awk</strong> action
+value of the first spine is referred to as <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">$1&#8217;, the value of the second
+spine is `$2&#8217; and so on. The `awk</a> expression <tt class="docutils literal"><span class="pre">1==$2'</span></tt> is a test of
+whether the first and second spines are equivalent. The <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a> action
 <tt class="docutils literal"><span class="pre">`print</span> <span class="pre">NR'</span></tt> means to print the current line number (record number is
 <tt class="docutils literal"><span class="pre">`NR'</span></tt>).</p>
 <p>So the following command will print the line number for any input in which
 the semitone value is the same for both the alto and tenor voices:</p>
 <p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*alto,*tenor'</span>&nbsp; <span class="pre">|</span> <span class="pre">semits</span> <span class="pre">-x</span> <span class="pre">|</span> <span class="pre">awk</span> <span class="pre">'{if($1==$2)</span> <span class="pre">print</span> <span class="pre">NR}'</span></tt></p>
-<p>There is a problem with this pipeline however. The <strong>awk</strong> command will match
+<p>There is a problem with this pipeline however. The <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a> command will match
 all sorts of non-numeric inputs &#8211; such as where null tokens (.) occur in
 both parts at the same time. Consequently, we need to be careful to avoid
 non-numeric inputs and comments.</p>
-<p>The regular expression <a href="#id83"><span class="problematic" id="id84">`</span></a>[^0-9]&#8217; will match any line that doesn&#8217;t consist
-solely of numbers. The expression <a href="#id85"><span class="problematic" id="id86">`</span></a>[^0-9-]&#8217; will match any line that doesn&#8217;t
+<p>The regular expression <a href="#id85"><span class="problematic" id="id86">`</span></a>[^0-9]&#8217; will match any line that doesn&#8217;t consist
+solely of numbers. The expression <a href="#id87"><span class="problematic" id="id88">`</span></a>[^0-9-]&#8217; will match any line that doesn&#8217;t
 consist solely of numbers or the minus sign. Since the tab character will
 also be present in our data records, we should also include the tab in our
 regular expression. The tab may be denoted in regular expressions by the
-lower-case letter <a href="#id87"><span class="problematic" id="id88">`</span></a>t&#8217; preceded by a backslash. Hence the expression
-<a href="#id89"><span class="problematic" id="id90">`</span></a>[^0-9t-]&#8217; will match only those lines consisting solely of numbers, the
+lower-case letter <a href="#id89"><span class="problematic" id="id90">`</span></a>t&#8217; preceded by a backslash. Hence the expression
+<a href="#id91"><span class="problematic" id="id92">`</span></a>[^0-9t-]&#8217; will match only those lines consisting solely of numbers, the
 minus sign, and tabs.</p>
-<p>The following <strong>awk</strong> script will output the line numbers for all inputs
+<p>The following <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a> script will output the line numbers for all inputs
 where the first and second spines contain identical numbers:</p>
 <p><tt class="docutils literal"><span class="pre">awk</span> <span class="pre">'{if($0~/[^0-9\t-]/)next}{if($1==$2)</span> <span class="pre">print</span> <span class="pre">NR}'</span></tt></p>
 <p>Adding this construction to our pipeline produces the following command for
@@ -970,12 +970,12 @@ than a nominally lower voice.</p>
 <p>The relations &#8220;higher&#8221; and &#8220;lower&#8221; suggest the use of an arithmetic operator
 such as greater-than (&gt;) or less-than (&lt;). In brief, we will approach this
 question by translating the pitches to a numerical scale, and then use the
-general-purpose Unix <strong>awk</strong> command to test whether the nominally lower
+general-purpose Unix <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a> command to test whether the nominally lower
 voice is truly lower.</p>
 <p>First we need to translate the pitch representation to some sort of numerical
 form. We have several options. We could translate the pitches to frequency
 (<a class="reference external" href="../../rep/freq">**freq</a>), or we could translate them to semitones (<a class="reference external" href="../../rep/semits">**semits</a>), or
-we could translate them to cents (<a href="#id92"><span class="problematic" id="id93">**</span></a>cents). Let&#8217;s use <a class="reference external" href="../../rep/semits">**semits</a>. Once
+we could translate them to cents (<a href="#id96"><span class="problematic" id="id97">**</span></a>cents). Let&#8217;s use <a class="reference external" href="../../rep/semits">**semits</a>. Once
 again, in this representation, middle-C is represented by the number zero,
 and all other pitches are represented by their semitone distance (positive or
 negative) with respect to this reference.</p>
@@ -986,8 +986,8 @@ numerical representation:</p>
 the Humdrum <strong>ditto</strong> command, as we did for the doubled leading-tone
 problem. Hence:</p>
 <p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*alto,*tenor'</span>&nbsp; <span class="pre">|</span> <span class="pre">semits</span> <span class="pre">-x</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span></tt></p>
-<p>Finally, we can use the Unix <strong>awk</strong> command to do a little arithmetic. Once
-again, in <strong>awk</strong>, <tt class="docutils literal"><span class="pre">1'</span></tt> and <tt class="docutils literal"><span class="pre">2'</span></tt> refer to the first and second input
+<p>Finally, we can use the Unix <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a> command to do a little arithmetic. Once
+again, in <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a>, <tt class="docutils literal"><span class="pre">1'</span></tt> and <tt class="docutils literal"><span class="pre">2'</span></tt> refer to the first and second input
 fields, and the built-in variable <tt class="docutils literal"><span class="pre">NR'</span></tt> refers to the current record
 (line) number. The expression <tt class="docutils literal"><span class="pre">{if($1&gt;$2)</span> <span class="pre">print</span> <span class="pre">NR}'</span></tt> is a miniature
 program that says: &#8220;if the first input field is numerically greater than the
@@ -996,17 +996,17 @@ second field for the current line, then print the line number&#8221;:</p>
 <span class="pre">print</span> <span class="pre">NR}'</span></tt></p>
 <p>In short, if the left-most spine has a lower numerical value than the second
 spine, then tell us where that occurs.</p>
-<p>Since the <a class="reference external" href="../../rep/semits">**semits</a> representation uses the lower-case letter <a href="#id96"><span class="problematic" id="id97">`</span></a>r&#8217; to
+<p>Since the <a class="reference external" href="../../rep/semits">**semits</a> representation uses the lower-case letter <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">r&#8217; to
 represent a rest, we should avoid the possibility of comparing a number
-(note) with a rest. We can use a variation on the same <strong>awk</strong> script as we
+(note) with a rest. We can use a variation on the same `awk</a> script as we
 used when checking for unisons:</p>
 <p><tt class="docutils literal"><span class="pre">awk</span> <span class="pre">'{if($0~/[^0-9\t-]/)next}{if($1&gt;$2)</span> <span class="pre">print</span> <span class="pre">NR}'</span></tt></p>
 <p>Finally, the complete pipeline for identifying crossed parts:</p>
 <p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*soprano,*alto'</span>&nbsp; <span class="pre">|</span> <span class="pre">semits</span> <span class="pre">-x</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">awk</span>
 <span class="pre">'{if($0~/[^0-9\t-]/)next}{if($1&gt;$2)</span> <span class="pre">print</span> <span class="pre">NR}'</span></tt>
-extract -i &#8216;<a href="#id98"><span class="problematic" id="id99">*</span></a>alto,*tenor&#8217;  | semits -x | ditto -s = | awk
+extract -i &#8216;<a href="#id102"><span class="problematic" id="id103">*</span></a>alto,*tenor&#8217;  | semits -x | ditto -s = | awk
 &#8216;{if($0~/[^0-9t-]/)next}{if($1&gt;$2) print NR}&#8217;
-extract -i &#8216;<a href="#id100"><span class="problematic" id="id101">*</span></a>tenor,*bass&#8217;  | semits -x | ditto -s = | awk
+extract -i &#8216;<a href="#id104"><span class="problematic" id="id105">*</span></a>tenor,*bass&#8217;  | semits -x | ditto -s = | awk
 &#8216;{if($0~/[^0-9t-]/)next}{if($1&gt;$2) print NR}&#8217;</p>
 </div>
 </div>
@@ -1023,7 +1023,7 @@ modification to our method for identifying the crossing of parts.</p>
 <p>Having transformed the pitch input to a numerical form, we simply need to
 check whether the difference between the two semitone values is greater than
 12 semitones.</p>
-<p>The <strong>awk</strong> portion of our command is modified so that we are informed if the
+<p>The <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a> portion of our command is modified so that we are informed if the
 nominally higher voice is more than 12 semitones away from the other voice:</p>
 <p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*soprano,*alto'</span>&nbsp; <span class="pre">|</span> <span class="pre">semits</span> <span class="pre">-x</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">awk</span>
 <span class="pre">'{if($0~/[^0-9\t-]/)next}{if($2-$1&gt;12)</span> <span class="pre">print</span> <span class="pre">NR}'</span>
@@ -1117,7 +1117,7 @@ is by leap (&#8220;leap&#8221;), and the fifth spine will indicate whether the m
 motion for the upper voice is by leap.</p>
 <p>Examples of violations of the exposed octaves rule will appear as one of the
 following two situations:</p>
-<p><a href="#id103"><span class="problematic" id="id104">``</span></a>(<a href="#id105"><span class="problematic" id="id106">**</span></a>hint <a href="#id107"><span class="problematic" id="id108">**</span></a>updown <a href="#id109"><span class="problematic" id="id110">**</span></a>updown <a href="#id111"><span class="problematic" id="id112">**</span></a>size <a href="#id113"><span class="problematic" id="id114">**</span></a>size)
+<p><a href="#id108"><span class="problematic" id="id109">``</span></a>(<a href="#id110"><span class="problematic" id="id111">**</span></a>hint <a href="#id112"><span class="problematic" id="id113">**</span></a>updown <a href="#id114"><span class="problematic" id="id115">**</span></a>updown <a href="#id116"><span class="problematic" id="id117">**</span></a>size <a href="#id118"><span class="problematic" id="id119">**</span></a>size)
 &gt; P1 ^ ^ leap leap
 &gt; P1 v v leap leap</p>
 <p>Any other situation means that the exposed octaves rule has not been

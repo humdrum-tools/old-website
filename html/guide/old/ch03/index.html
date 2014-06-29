@@ -1,0 +1,733 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapter 3: Some Initial Processing &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../../"/>
+   <link rel="stylesheet" type"text/css" href="../../../_static/humdrum.css">
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../../" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/">Humdrum Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../install/github/">Installing Humdrum Tools from GitHub</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../">The Humdrum User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ch01/">Chapter 1: Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch02/">Chapter 2: Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch03/">Chapter 3: Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch04/">Chapter 4: Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch05/">Chapter 5: The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch06/">Chapter 6: Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch07/">Chapter 7: MIDI Output Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch08/">Chapter 8: The Shell (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch09/">Chapter 9: Searching with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch10/">Chapter 10: Musical Uses of Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch11/">Chapter 11: Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch12/">Chapter 12: Selecting Musical Parts and Passages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch13/">Chapter 13: Assembling Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch14/">Chapter 14: Stream Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch15/">Chapter 15: Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch16/">Chapter 16: The Shell (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch17/">Chapter 17: Creating Inventories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch18/">Chapter 18: Fingers, Footsteps and Frets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch19/">Chapter 19: Musical Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch20/">Chapter 20: Strophes, Verses, and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch21/">Chapter 21: Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch22/">Chapter 22: Classifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch23/">Chapter 23: Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch24/">Chapter 24: The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch25/">Chapter 25: Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch26/">Chapter 26: Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch27/">Chapter 27: Text and Lyrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch28/">Chapter 28: Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch29/">Chapter 29: Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch30/">Chapter 30:MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch31/">Chapter 31: Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch32/">Chapter 32: The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch33/">Chapter 33: Word Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch34/">Chapter 34: Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch35/">Chapter 35: Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch36/">Chapter 33: Sound and Spectra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch37/">Chapter 37: Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch38/">Chapter 38: Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch39/">Chapter 39: Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch40/">Chapter 40: Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../bibliography/">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sample.problems/">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../humextra/">Humdrum Extras</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/intro/">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/rhythm/">2. Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/melody/">Melody and Pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/harmony/">Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/data/">Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/searching/">Music Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/midi/">MIDI Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/notation/">Graphical Musical Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/other/">Other Useful Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/programming/">Programming Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../cookbook/">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../cookbook/vimHighlighting/">Syntax Coloring in Vim</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../man/">Humdrum Command Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/assemble/">Command: assemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/barks/">Command: barks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cbr/">Command: cbr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/census/">Command: census</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cents/">Command: cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cleave/">Command: cleave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cocho/">Command: cocho</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/context/">Command: context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/correl/">Command: correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/deg/">Command: deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/degree/">Command: degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/diss/">Command: diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ditto/">Command: ditto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/dur/">Command: dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ekern/">Command: ekern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/encode/">Command: encode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/extract/">Command: extract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/fade/">Command: fade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/fields/">Command: fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/freq/">Command: freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/hint/">Command: hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/humdrum/">Command: humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/humsed/">Command: humsed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/humver/">Command: humver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/infot/">Command: infot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/iv/">Command: iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/kern/">Command: kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/key/">Command: key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/melac/">Command: melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/melvel/">Command: melvel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/metpos/">Command: metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/midi/">Command: midi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/midreset/">Command: midreset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/mint/">Command: mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ms/">Command: ms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/nf/">Command: nf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/num/">Command: num</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/patt/">Command: patt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pattern/">Command: pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pc/">Command: pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pcset/">Command: pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/perform/">Command: perform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pf/">Command: pf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pitch/">Command: pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/proof/">Command: proof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/recode/">Command: recode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/record/">Command: record</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/regexp/">Command: regexp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/reihe/">Command: reihe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/rend/">Command: rend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/rid/">Command: rid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/scramble/">Command: scramble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/semits/">Command: semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/simil/">Command: simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/smf/">Command: smf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/solfa/">Command: solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/solfg/">Command: solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/specc/">Command: specc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/spect/">Command: spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/strophe/">Command: strophe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/synco/">Command: synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/tacet/">Command: tacet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/text/">Command: text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/themefinder/">Command: thmea</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/thru/">Command: thru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/timebase/">Command: timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/tonh/">Command: tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/trans/">Command: trans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/urrhythm/">Command: urrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/veritas/">Command: veritas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/vox/">Command: vox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/xdelta/">Command: xdelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/yank/">Command: yank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ydelta/">Command: ydelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/#commands">Commands</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../rep/">Humdrum Data Representations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/barlines/">Representation: barlines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/IPA/">Representation: **IPA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/MIDI/">Representation: **MIDI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/Tonh/">Representation: **Tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/URrhythm/">Representation: **URrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/Zeit/">Representation: **Zeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/bhatk/">Representation: **bhatk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/cents/">Representation: **cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/correl/">Representation: **correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/dB/">Representation: **dB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/date/">Representation: **date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/deg/">Representation: **deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/degree/">Representation: **degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/diss/">Representation: **diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/dur/">Representation: **dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/embel/">Representation: **embel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/freq/">Representation: **freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/fret/">Representation: **fret</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/harm/">Representation: **harm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/hildegard/">Representation: **hildegard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/hint/">Representation: **hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/iv/">Representation: **iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/kern/">Representation: **kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/melac/">Representation: **melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/metpos/">Representation: **metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/mint/">Representation: **mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/ordo/">Representation: **ordo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/pc/">Representation: **pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/pcset/">Representation: **pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/pitch/">Representation: **pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/recip/">Representation: **recip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/semits/">Representation: **semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/silbe/">Representation: **silbe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/simil/">Representation: **simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/solfa/">Representation: **solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/solfg/">Representation: **solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/specC/">Representation: **specC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/spect/">Representation: **spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/synco/">Representation: **synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/takt/">Representation: **takt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/text/">Representation: **text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/time/">Representation: **time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/timebase/">Representation: **timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/vox/">Representation: **vox#</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../">Docs</a> &raquo;</li>
+      
+    <li>Chapter 3: Some Initial Processing</li>
+      <li class="wy-breadcrumbs-aside">
+        
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="chapter-3-some-initial-processing">
+<h1>Chapter 3: Some Initial Processing<a class="headerlink" href="#chapter-3-some-initial-processing" title="Permalink to this headline">¶</a></h1>
+<p>Now that we have learned some things about Humdrum representations (and the
+<a href="#id1"><span class="problematic" id="id2">`</span></a><a href="#id3"><span class="problematic" id="id4">**</span></a>kern`representation in particular), let&#8217;s explore some basic processing
+tasks.</p>
+<div class="section" id="the-census-command">
+<h2>The <em>census</em> Command<a class="headerlink" href="#the-census-command" title="Permalink to this headline">¶</a></h2>
+<p>The Humdrum <a class="reference external" href="../../man/census">census</a> command provides basic information about an input
+stream or file. We can invoke the command by typing the command name followed
+by the name of a file. The command</p>
+<p><cite>census india01.krn</cite></p>
+<p>might produce the following output:</p>
+<p><cite>HUMDRUM DATA
+&gt; Number of data tokens: 91
+&gt; Number of null tokens: 0
+&gt; Number of multiple-stops: 0
+&gt; Number of data records: 91
+&gt; Number of comments: 14
+&gt; Number of interpretations: 7
+&gt; Number of records: 112</cite></p>
+<p>Most commands provide <em>options</em> that will modify the operation of the command
+in a particular way. In UNIX-style commands, options follow after the command
+name and are typically specified by a single letter preceded by a hyphen. The
+<strong>-k</strong> option with the <strong>census</strong> command will give further information
+pertaining to the Humdrum <a href="#id5"><span class="problematic" id="id6">`</span></a><strong>kern`representation. With the **-k</strong> option,
+the output includes the number of notes in the file, the longest, shortest,
+highest, and lowest notes, the maximum number of concurrent notes or voices,
+the number of rests, and the number of barlines. For example, the command:</p>
+<p><cite>census -k india01.krn</cite></p>
+<p>might produce the following <em>additional</em> output:</p>
+<p><cite>KERN DATA
+&gt; Number of noteheads: 78
+&gt; Number of notes: 78
+&gt; Longest note: 1
+&gt; Shortest note: 16
+&gt; Highest note: cc
+&gt; Lowest note: c
+&gt; Number of rests: 1
+&gt; Maximum number of voices: 1
+&gt; Number of single barlines: 11
+&gt; Number of double barlines: 1</cite></p>
+<p>Notice that a distinction is made between the number of notes and the number
+of noteheads. A tied note is considered to be a single &#8220;note,&#8221; although it
+may be notated using two or more noteheads.</p>
+<p>The output from <strong>census</strong> can be restricted to a particular item of
+information by &#8220;piping&#8221; the output to the UNIX <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command.</p>
+</div>
+<div class="section" id="simple-searches-using-the-grep-command">
+<h2>Simple Searches using the <em>grep</em> Command<a class="headerlink" href="#simple-searches-using-the-grep-command" title="Permalink to this headline">¶</a></h2>
+<p>The UNIX <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command is a popular tool for searching for lines that
+match some specified pattern. Patterns may be simple strings of characters,
+or may be more complicated constructions defined using the UNIX <em>regular
+expression</em> syntax. Regular expressions will be described in detail in
+<a class="reference external" href="../ch09">Chapter 9</a>. The command name &#8220;<cite>grep</cite>&#8221; is an acronym for &#8220;get regular
+expression.&#8221;</p>
+<p>Useful patterns are often literal character strings, such as keywords. For
+example, the following command identifies whether the file <cite>opus28.krn</cite>
+contains the word &#8220;<cite>Andante</cite>&#8221;:</p>
+<p><cite>grep &#8216;Andante&#8217; opus28.krn</cite></p>
+<p>Every line containing the specified pattern will be output. If no match is
+found, no output is given.</p>
+<p>Using a single command, all files in the current directory can be searched by
+substituting the asterisk (shell <em>wildcard</em>) in place of a filename. The
+following command identifies all instances where the word &#8220;<cite>Andante</cite>&#8221;
+occurs; all files in the current directory are searched:</p>
+<p><cite>grep &#8216;Andante&#8217; *</cite></p>
+<p>Once again, every line containing the sought pattern is echoed in the output.
+If more than one pattern is found, each instance of the pattern will be
+output on a separate line. Whenever an asterisk or &#8220;wildcard&#8221; is used as part
+of the filename, <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> causes the <em>name</em> of each file to be prepended to
+the output for all patterns that are found:</p>
+<p><cite>opus28:!! Andante
+opus29:!! Andante
+opus46:!! Andante
+opus91:!! Andante
+opus98:!! Andante</cite></p>
+<p>By default, <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> distinguishes upper- and lower-case characters, so the
+above command will not match strings such as &#8220;<cite>ANDANTE</cite>&#8221;. However, the
+<strong>-i</strong> option tells <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to ignore the case when searching. E.g.,</p>
+<p><cite>grep -i &#8216;Andante&#8217; *</cite></p>
+<p>Sought patterns may occur in any line, including data records and comments.
+The following command will identify the presence of any double-sharps in the
+file <cite>schumann.krn</cite>.</p>
+<p><cite>grep &#8216;##&#8217; schumann.krn</cite></p>
+</div>
+<div class="section" id="pattern-locations-using-grep-n">
+<h2>Pattern Locations Using grep -n<a class="headerlink" href="#pattern-locations-using-grep-n" title="Permalink to this headline">¶</a></h2>
+<p>If a pattern is found, it is sometimes helpful to know the precise location
+of the pattern. The <strong>-n</strong> option tells <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to prepend the <em>line number</em>
+for each matching instance. The following command identifies the line numbers
+for lines containing a double sharp for the file <cite>melody.krn</cite>:</p>
+<p><cite>grep -n &#8216;##&#8217; melody.krn</cite></p>
+<p>The output might look like this:</p>
+<p><cite>1109:{4g##
+1731:16g##
+3002:16f##</cite></p>
+<p>&#8211; meaning that double sharps were found in lines 1109, 1731, and 3002 in the
+file <cite>melody.krn</cite>.</p>
+</div>
+<div class="section" id="counting-pattern-occurrences-using-grep-c">
+<h2>Counting Pattern Occurrences Using grep -c<a class="headerlink" href="#counting-pattern-occurrences-using-grep-c" title="Permalink to this headline">¶</a></h2>
+<p>In some cases, the user is interested in counting the total number of
+instances of a found pattern. The <strong>-c</strong> option causes <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to output a
+numerical <em>count</em> of the number of lines containing matching instances. For
+example, in the <cite>**kern`representation, the beginning of each phrase is
+marked by the presence of an open curly brace (``{</cite>&#8216;). So the following
+command can be used to count the number of phrases in the file
+<cite>glazunov.krn</cite>:</p>
+<p><cite>grep -c &#8216;{&#8216; glazunov.krn</cite></p>
+<p>As noted, the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command will search all lines (including comments) for
+matching instances of the specified pattern. If a curly brace were to appear
+in a comment or other non-data record, then our phrase-count would be
+incorrect. More carefully constructed patterns require a better knowledge of
+<em>regular expressions.</em> Regular expressions are discussed in <a class="reference external" href="../ch09">Chapter 9</a>.</p>
+</div>
+<div class="section" id="searching-for-reference-information">
+<h2>Searching for Reference Information<a class="headerlink" href="#searching-for-reference-information" title="Permalink to this headline">¶</a></h2>
+<p>As we saw in <a class="reference external" href="../ch02">Chapter 2</a>, Humdrum files typically encode library-type
+information using reference records. For example, the <a href="#id57"><span class="problematic" id="id58">`**composer&#8217;s name**`_</span></a>
+is encoded in a <a href="#id59"><span class="problematic" id="id60">`!!!COM:`record, and the `**title**`_</span></a> is encoded via the
+<a class="reference external" href="http://en.wikipedia.org/wiki/Grep">!!!OTL:`record. In conjunction with the `grep</a> command, these three-
+letter codes provide useful tags to search for pertinent information. For
+example, the following command will identify the composer for the file
+<cite>opus24.krn</cite>:</p>
+<p><cite>grep &#8216;!!!COM:&#8217; opus24.krn</cite></p>
+<p>The output might look like this:</p>
+<p><cite>!!!COM: Boulanger, Nadia</cite></p>
+<p>Once again, a wildcard (i.e., the asterisk) can be used to address all of the
+files in the current directory. Hence the command</p>
+<p><cite>grep &#8216;!!!COM:&#8217; *</cite></p>
+<p>will produce a list of all composers of files in the current directory.
+Similarly, the following command will generate a list of all of the titles:</p>
+<p><cite>grep &#8216;!!!OTL:&#8217; *</cite></p>
+<p>The output might look as follows:</p>
+<p><cite>foster11:!!!OTL: Oh! Susanna
+foster12:!!!OTL: Jeanie with the Light Brown Hair
+foster13:!!!OTL: Beautiful Dreamer
+foster14:!!!OTL: Gwine to Run All Night (or &#8216;De Camptown Race&#8217;)
+foster15:!!!OTL: My Old Kentucky Home, Good-Night
+foster16:!!!OTL: We are Coming, Father Abraam
+foster17:!!!OTL: Don&#8217;t Bet Your Money on De Shanghai
+foster18:!!!OTL: Gentle Annie
+foster19:!!!OTL: If You&#8217;ve Only Got a Moustache
+foster20:!!!OTL: Maggie by my Side
+foster21:!!!OTL: Old Folks at Home
+foster22:!!!OTL: Better Times are Coming
+foster23:!!!OTL: When this Dreadful War is Ended
+foster24:!!!OTL: Hard Times Comes Again No More</cite></p>
+<p>Remember that when a wildcard is used in filenames, <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> prepends the
+filename prior to found patterns. These filename <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">headers&#8217; can be eliminated
+by selecting the **-h** option for `grep</a>:</p>
+<p><cite>grep -h &#8216;!!!OTL:&#8217; *</cite></p>
+<p>(N.B. Some older versions of <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> do not support all of the options
+described here. Filename headers can be stripped from the output by using the
+UNIX <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> command described in <a class="reference external" href="../ch14">Chapter 14</a>.)</p>
+<p>We might place the resulting list of titles in a separate file using the UNIX
+<em>file redirection</em> construction. The output of a command can be placed into a
+file by following the command with a greater-than sign (&gt;) followed by a
+filename. For example, the following command places the output from <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>
+in a file called <cite>titles</cite>:</p>
+<p><cite>grep -h &#8216;!!!OTL:&#8217; * &gt; titles</cite></p>
+<p>Beware that if the file <a href="#id18"><span class="problematic" id="id19">`</span></a>titles`already exists then it will be over
+written and its previous contents lost. With the <strong>-h</strong> option the file
+<a href="#id20"><span class="problematic" id="id21">`</span></a>titles`might contain the following lines:</p>
+<p><cite>!!!OTL: Oh! Susanna
+!!!OTL: Jeanie with the Light Brown Hair
+!!!OTL: Beautiful Dreamer
+!!!OTL: Gwine to Run All Night (or &#8216;De Camptown Race&#8217;)
+!!!OTL: My Old Kentucky Home, Good-Night
+!!!OTL: We are Coming, Father Abraam
+!!!OTL: Don&#8217;t Bet Your Money on De Shanghai
+!!!OTL: Gentle Annie
+!!!OTL: If You&#8217;ve Only Got a Moustache
+!!!OTL: Maggie by my Side
+!!!OTL: Old Folks at Home
+!!!OTL: Better Times are Coming
+!!!OTL: When this Dreadful War is Ended
+!!!OTL: Hard Times Comes Again No More</cite></p>
+</div>
+<div class="section" id="the-sort-command">
+<h2>The <em>sort</em> Command<a class="headerlink" href="#the-sort-command" title="Permalink to this headline">¶</a></h2>
+<p>The UNIX operating system provides a general sorting utility called <strong>sort</strong>.
+We might use this utility to rearrange the titles in alphabetical order:</p>
+<p><cite>sort titles</cite></p>
+<p>Rather than using an intermediate file, we can directly connect the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>
+and <strong>sort</strong> commands using a UNIX &#8220;pipe.&#8221; The vertical bar (<cite>|</cite>) creates a
+connection between the output of one command and the input of the next
+command. We can combine the above two commands to create an alphabetical
+listing of all titles in the current directory:</p>
+<p><cite>grep &#8216;!!!OTL:&#8217; * | sort</cite></p>
+<p>File redirection can be added at the end of a pipe so the final output is
+captured in a file. In the following case, the alphabetized titles are placed
+in the file <cite>titles</cite>:</p>
+<p><cite>grep &#8216;!!!OTL:&#8217; * | sort &gt; titles</cite></p>
+</div>
+<div class="section" id="the-uniq-command">
+<h2>The <em>uniq</em> Command<a class="headerlink" href="#the-uniq-command" title="Permalink to this headline">¶</a></h2>
+<p>Bach often harmonized a chorale melody more than once. In the 185 chorales in
+the original 1784 edition, several duplicate titles are present. Suppose you
+want to create an alphabetical list of titles, but you want to exclude
+duplicate titles. The UNIX <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command provides a useful utility for
+eliminating duplication. Without any option, <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> simply eliminates any
+successive repeated lines. For example, given the input:</p>
+<p><cite>1
+1
+1
+2
+2
+3</cite></p>
+<p>the <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command will produce the following output:</p>
+<p><cite>1
+2
+3</cite></p>
+<p>Note that <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> only discards <em>successive</em> repeated records; an input such
+as the following would remain unmodified by the <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command:</p>
+<p><cite>1
+2
+3
+1
+3
+1</cite></p>
+<p>Another important point about <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> is that successive lines must be
+<em>exact repetitions</em> in order to be discarded. For example, if one line has a
+trailing blank that is not present in the previous line, then the line is not
+discarded.</p>
+<p>Returning to our problem of creating a list of unique titles for J.S. Bach&#8217;s
+chorale harmonizations, we can use the following command pipeline.</p>
+<p><cite>grep -h &#8216;!!!OTL:&#8217; * | sort | uniq</cite></p>
+<p>Note that our &#8220;pipeline&#8221; consists of three successive commands with the
+outputs connected to the inputs using the UNIX pipe symbol (<cite>|</cite>). The
+<strong>sort</strong> command is essential in order to collect identical titles as
+successive lines before passing the list to <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a>.</p>
+<p>Suppose you wanted to ensure that all of the works in the current directory
+are composed by the same composer. The same command structure can be used,
+only we would search for reference records encoding the composer&#8217;s name:</p>
+<p><cite>grep -h &#8216;!!!COM:&#8217; * | sort | uniq</cite></p>
+<p>Even if the current directory contains hundreds of works by one composer (say
+Beethoven) and just a single work by another composer, the presence of the
+odd score will be obvious without having to look through long lists:</p>
+<p><cite>!!!COM: Beethoven, Ludwig van</cite>
+<cite>!!!COM: Stamitz, Carl Philipp</cite></p>
+<p>Of course we can make similar lists for other types of information available
+in reference records. The <a href="#id29"><span class="problematic" id="id30">`</span></a>AIN`reference record encodes instrumentation.
+We could make a list of various instrumental combinations used for scores in
+the current directory:</p>
+<p><cite>grep -h &#8216;!!!AIN:&#8217; * | sort | uniq</cite></p>
+</div>
+<div class="section" id="options-for-the-uniq-command">
+<h2>Options for the <em>uniq</em> Command<a class="headerlink" href="#options-for-the-uniq-command" title="Permalink to this headline">¶</a></h2>
+<p>Like <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>, the <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command provides several options that modify its
+behavior. The <strong>-d</strong> option causes only those records to be output which are
+<em>duplicated</em> (i.e. two or more instances). Conversely, the <strong>-u</strong> option
+causes only those records to be output that are truly <em>unique</em> (i.e. only a
+single instance is present in the input).</p>
+<p>Suppose, for example, that we want to know which of the Bach chorales are
+harmonizations of the same tunes &#8211; that is, have the same titles. (Of course
+the same chorale might be known by two or more titles, but let&#8217;s defer this
+problem until <a class="reference external" href="../ch25">Chapter 25</a>.) The <strong>-d</strong> option will only output the
+duplicate records:</p>
+<p><cite>grep -h &#8216;!!!OTL:&#8217; * | sort | uniq -d</cite></p>
+<p>The output will identify those titles which appear in two or more files in
+the current directory. The output might look as follows:</p>
+<p><cite>!!!OTL: Befiehl du deine Wege
+!!!OTL: Christ lag in Todesbanden
+!!!OTL: Christus, der ist mein Leben
+!!!OTL: Das alte Jahr vergangen ist
+!!!OTL: Ein&#8217; feste Burg ist unser Gott
+!!!OTL: Erbarm&#8217; dich mein, o Herre Gott
+!!!OTL: Herr, ich habe missgehandelt
+!!!OTL: Herr, wie du willst, so schick&#8217;s mit mir
+!!!OTL: Ich dank&#8217; dir, lieber Herre
+!!!OTL: Jesu, der du meine Seele
+!!!OTL: Jesu, meiner Seelen Wonne</cite></p>
+<p>Having established which titles are duplicates, a logical next step might be
+to identify the specific files involved. We can use <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> again to search
+for a specific title. Without the <strong>-h</strong> option, the output will identify the
+appropriate filenames. For example:</p>
+<p><cite>grep &#8216;!!!OTL: Befiehl du deine Wege&#8217; *</cite></p>
+<p>might produce the following output:</p>
+<p><cite>bwv270.krn:!!!OTL: Befiehl du deine Wege</cite>
+<cite>bwv271.krn:!!!OTL: Befiehl du deine Wege</cite>
+<cite>bwv272.krn:!!!OTL: Befiehl du deine Wege</cite></p>
+<p>Sometimes we would like to have an output that contains <em>only</em> the
+<em>filenames</em> containing the sought pattern. The <strong>-l</strong> option causes <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>
+to output only filenames that contain one or more instances of the sought
+pattern:</p>
+<p><cite>grep -l &#8216;!!!OTL: Befiehl du deine Wege&#8217; *</cite></p>
+<p>The output would appear as follows:</p>
+<p><cite>bwv270.krn</cite>
+<cite>bwv271.krn</cite>
+<cite>bwv272.krn</cite></p>
+<p>As we&#8217;ve already notes, the <strong>-u</strong> option for <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> causes only unique
+entries in a list to be passed to the output. This is often useful in
+identifying works that differ in some way from other works in a group or
+corpus. For example, in some repertory, you may remember that a particular
+work had a different instrumentation than the other works. But you may not be
+able to remember what the specific instrumentation was. Use the <strong>-u</strong> option
+for <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> to produce a list consisting of only those works whose
+instrumentation differs from all others:</p>
+<p><cite>grep -h &#8216;!!!AIN:&#8217; * | sort | uniq -u</cite></p>
+<p>As in the case of the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command, <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> also supports a <strong>-c</strong>
+option which counts the number of occurrences of a pattern. For example, if
+we want to count the number of works by each composer in the current
+directory:</p>
+<p><cite>grep -h &#8216;!!!OTL:&#8217; * | sort | uniq -c</cite></p>
+<p>The output might appear as follows:</p>
+<p>` 9 !!!COM: Berardi, Angelo
+2 !!!COM: Caldara, Antonio
+12 !!!COM: Zarlino, Gioseffo
+2 !!!COM: Sweelinck, Jan Pieterszoon
+4 !!!COM: Josquin Des Pres`</p>
+<p>Notice that the number of instances is prepended to the reference records.</p>
+<p>Incidentally, if we wanted to rearrange this list in order of the number of
+works, we could pass the above output to yet another <strong>sort</strong> command. Since
+<strong>sort</strong> sorts from left to right, it will begin sorting according to the
+numerical values at the extreme left. The command</p>
+<p><cite>grep -h &#8216;!!!COM:&#8217; * | sort | uniq -c | sort -n</cite></p>
+<p>will rearrange the above output as follows:</p>
+<p>` 2 !!!COM: Caldara, Antonio
+2 !!!COM: Sweelinck, Jan Pieterszoon
+4 !!!COM: Josquin Des Pres
+9 !!!COM: Berardi, Angelo
+12 !!!COM: Zarlino, Gioseffo`</p>
+<p>It is important to understand that the two <strong>sort</strong> commands in our pipeline
+achieve different goals but use the same process. The first <strong>sort</strong> command
+sorts the composer&#8217;s names into alphabetical order. This is done so that the
+ensuing <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command is able to count successive identical records. Since
+the <strong>uniq -c</strong> command prepends numerical counts, the subsequent <strong>sort</strong>
+sorts first according to the numbers to the left of the reference records.</p>
+<p>As a final note, we might mention that, like <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> and <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a>, the
+<strong>sort</strong> command has several options. One option, the <strong>-r</strong> option, causes
+the output to be arranged in reverse order. This can be useful in producing
+lists that are ordered from most common to least common.</p>
+</div>
+<div class="section" id="reprise">
+<h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
+<p>In this chapter we have introduced some elementary ways of processing Humdrum
+files. We noted that the <strong>census</strong> command can be used to identify basic
+statistics about a file. The <strong>-k</strong> option for <strong>census</strong> provides basic
+information related to <a href="#id42"><span class="problematic" id="id43">`</span></a><a href="#id44"><span class="problematic" id="id45">**</span></a>kern`files, such as the number of notes and
+rests, the highest and lowest notes, the number of barlines, etc.</p>
+<p>In this chapter we also introduced simple searching techniques using the
+<a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command; <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> provides a useful way of locating particular
+patterns of text characters in files. We used <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to identify composers,
+titles, instrumentation and other information. Most of our examples were
+limited to searching for Humdrum reference records. In later chapters we will
+use <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> in more sophisticated searches. We noted several useful options
+for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>: the <strong>-c</strong> option causes a count to be output of the number of
+instances of the pattern in each file. The <strong>-i</strong> option causes <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to
+ignore any distinction between upper- and lower-case characters when
+searching for patterns. The <strong>-h</strong> option causes <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to suppress
+outputting the filenames prior to found patterns when more than one file is
+searched. The <strong>-l</strong> option results in only the filenames being output. In a
+later chapter we will encounter a number of other useful options provided by
+<a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>.</p>
+<p>Also discussed in this chapter was the <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command; <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> provides a
+useful utility for eliminating or isolating duplicate records or lines. Once
+again a number of useful options were introduced. The <strong>-c</strong> option causes
+<a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> to prepend a count of the number of duplicate input lines. The
+<strong>-d</strong> option results in only duplicate input lines being noted in the
+output. The <strong>-u</strong> option does the reverse: only those input lines that are
+unique are passed to the output.</p>
+<p>Finally, we introduced the UNIX <strong>sort</strong> utility. This command rearranges the
+order of successive input lines so they are in alphabetic/numeric order. The
+<strong>sort</strong> command provides a wealth of useful options; however, we mentioned
+only the <strong>-r</strong> option &#8211; which causes the output to be sorted in reverse
+order.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  <hr/>
+  
+
+
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+   
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-52162357-1', 'humdrum.org');
+  ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>

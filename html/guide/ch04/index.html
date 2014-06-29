@@ -738,7 +738,7 @@ First we need to count the total number of notes in each repertory.</p>
 <tt class="docutils literal"><span class="pre">solfa</span> <span class="pre">repertory2.krn</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">fa</span></tt></p>
 <p>The proportion of subdominant pitches can be calculated by simply comparing
 the resulting pattern count with the number of notes identified by
-<a href="#id94"><span class="problematic" id="id95">`**census**.`_</span></a></p>
+<a class="reference external" href="../../man/census">census</a>.</p>
 <p>Recall that one of the differences between the <a class="reference external" href="../../rep/solfa">**solfa</a> and
 <a class="reference external" href="../../rep/deg">**deg</a> representations is that the <a class="reference external" href="../../rep/deg">**deg</a> output contains an
 indication of the direction of melodic approach. The caret (<strong>^</strong>) indicates
@@ -783,7 +783,7 @@ determining the total number of notes in the melody using <strong>census</strong
 <strong>-k</strong> option.</p>
 <p>&gt; `` census -k melody.krn``</p>
 <p>We can use the <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command to eliminate successive repeated pitches &#8211;
-but only if the note tokens are identical. First we can use <a href="#id96"><span class="problematic" id="id97">`**kern -x**`_</span></a> to
+but only if the note tokens are identical. First we can use <a href="#id94"><span class="problematic" id="id95">`**kern -x**`_</span></a> to
 translate &#8220;from **kern to **kern&#8221; while eliminating non-pitch-related
 data. Then we need to remove barlines so they don&#8217;t interfere with pitches
 that are repeated across the measure. Using <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> will then eliminate all

@@ -624,7 +624,7 @@ same phrase:</p>
 This will leave pairs of numbers representing the semitone distances from
 middle C. We might then isolate the data records by using <a class="reference external" href="../../man/rid">rid</a>.</p>
 <p>`` . . . | semits | rid -GLId | awk &#8216;{print $2-$1}&#8217;``</p>
-<p>Finally, we have used the UNIX <strong>awk</strong> utility to carry out some simple
+<p>Finally, we have used the UNIX <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a> utility to carry out some simple
 numerical processing: in this case, substracting the first semitone value
 from the second one. Phrases that end on a pitch higher than the beginning
 pitch will have positive semitone outputs. Phrases that end on a pitch lower
@@ -880,7 +880,7 @@ assembled output might look as follows:</p>
 <p>The <strong>context</strong> command essentially transforms sequences of events into
 collections of pseudo-concurrent events. This pseudo-concurrent arrangement
 enables processing using line-oriented or record-oriented tools &#8211; most
-notably <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a>, <a class="reference external" href="../../man/humsed">humsed</a> and <strong>awk</strong>. For example, it
+notably <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a>, <a class="reference external" href="../../man/humsed">humsed</a> and <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a>. For example, it
 facilitates pattern searching using <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> and also allows useful
 manipulations via tools such as <strong>humsed</strong>. The manner by which data tokens
 are collected together can be defined by a starting marker or an ending

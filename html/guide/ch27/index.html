@@ -603,8 +603,8 @@ becomes:</p>
 <p>If we are looking for vocal texts that exhibit a recurring rhythm, we might
 make a simple addition to the above script. Instead of outputting the actual
 syllables in each phrase, we would output a count of the number of syllables
-in each phrase. The standard <strong>awk</strong> utility allows us to write simple in-
-line programs. The following <strong>awk</strong> script simply outputs the number of
+in each phrase. The standard <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a> utility allows us to write simple in-
+line programs. The following <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a> script simply outputs the number of
 fields (white-space separated text) in each input line:</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">awk</span> <span class="pre">'{print</span> <span class="pre">NF}'</span></tt></p>
 <p>If we add this to the end of our command sequence, then the output would
@@ -617,21 +617,21 @@ syllable/phrase schemes can be generated for any syllable-related input. The
 following script counts the number of syllables in successive phrases for a
 single input file.</p>
 <p>&gt;
-<a href="#id57"><span class="problematic" id="id58">``</span></a># SYLLABLE - count the number of syllables in each phrase
+<a href="#id58"><span class="problematic" id="id59">``</span></a># SYLLABLE - count the number of syllables in each phrase
 #
 # Usage: syllable filename [ &gt; outputfile]
 #
-extract -i &#8216;<a href="#id59"><span class="problematic" id="id60">**</span></a>kern&#8217; $1 | humsed &#8216;s/[^}]*//; s/^$/./&#8217; &gt; temp1
-extract -i &#8216;<a href="#id61"><span class="problematic" id="id62">**</span></a>silbe&#8217; $1 &gt; temp2
-assemble temp1 temp2 | cleave -i &#8216;<a href="#id63"><span class="problematic" id="id64">**</span></a>kern,**silbe&#8217; -o &#8216;<a href="#id65"><span class="problematic" id="id66">**</span></a>silbe&#8217; </p>
-<div class="section" id="id67">
-<h3>&gt;<a class="headerlink" href="#id67" title="Permalink to this headline">¶</a></h3>
+extract -i &#8216;<a href="#id60"><span class="problematic" id="id61">**</span></a>kern&#8217; $1 | humsed &#8216;s/[^}]*//; s/^$/./&#8217; &gt; temp1
+extract -i &#8216;<a href="#id62"><span class="problematic" id="id63">**</span></a>silbe&#8217; $1 &gt; temp2
+assemble temp1 temp2 | cleave -i &#8216;<a href="#id64"><span class="problematic" id="id65">**</span></a>kern,**silbe&#8217; -o &#8216;<a href="#id66"><span class="problematic" id="id67">**</span></a>silbe&#8217; </p>
+<div class="section" id="id68">
+<h3>&gt;<a class="headerlink" href="#id68" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line">context -o = -e } | rid -GLId | sed &#8216;s/}//&#8217; | awk &#8216;{print NF}&#8217;</div>
 </div>
 </div>
-<div class="section" id="id68">
-<h3>&gt;<a class="headerlink" href="#id68" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id69">
+<h3>&gt;<a class="headerlink" href="#id69" title="Permalink to this headline">¶</a></h3>
 <p>rm temp[12]``</p>
 <p>Variations on this theme abound. For example, if we wish to determine the
 number of syllables between successive punctuation marks, the following
@@ -665,8 +665,8 @@ syllable and <tt class="docutils literal"><span class="pre">1</span></tt> indica
 <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span>
 <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span> <span class="pre">0</span></tt></p>
 <p>The above output was generated using the <a class="reference external" href="../../man/humsed">humsed</a> command. Any syllable
-containing a trailing asterisk (<tt class="docutils literal"><span class="pre">*</span></tt>) is re-written as a <a href="#id70"><span class="problematic" id="id71">`</span></a>1&#8217;, otherwise as a
-<a href="#id72"><span class="problematic" id="id73">`</span></a>0&#8217;.</p>
+containing a trailing asterisk (<tt class="docutils literal"><span class="pre">*</span></tt>) is re-written as a <a href="#id71"><span class="problematic" id="id72">`</span></a>1&#8217;, otherwise as a
+<a href="#id73"><span class="problematic" id="id74">`</span></a>0&#8217;.</p>
 <p>&gt; `` . . . | humsed &#8216;s/[^ ][^ ]**/1/g; s/[^1][^1]*$/0/g&#8217;``</p>
 <p>With the above output, we can generate an inventory of phrase-related text-
 rhythms.</p>
@@ -700,7 +700,7 @@ position of the phrase, nine stressed syllables in the second syllable
 position, and so on. These results suggest the following rhythmic structure:
 medium-strong-weak-strong-weak-strong-weak-weak. By way of conclusion, it
 appears that this work has a strongly rhythmic text structure &#8211; implying
-that this <a href="#id74"><span class="problematic" id="id75">`</span></a>chant&#8217; might have been sung rhythmically.</p>
+that this <a href="#id75"><span class="problematic" id="id76">`</span></a>chant&#8217; might have been sung rhythmically.</p>
 </div>
 <div class="section" id="concordance">
 <h2>Concordance<a class="headerlink" href="#concordance" title="Permalink to this headline">¶</a></h2>
@@ -751,28 +751,28 @@ and also eliminate lines that don&#8217;t contain any text. All of this processi
 is carried out in a while-loop that cycles through all of the files provided
 when the command is invoked.</p>
 <p>&gt;
-<a href="#id81"><span class="problematic" id="id82">``</span></a>while [ $# -ne 0 ]
+<a href="#id82"><span class="problematic" id="id83">``</span></a>while [ $# -ne 0 ]
 do</p>
-<div class="section" id="id83">
-<h3>&gt;<a class="headerlink" href="#id83" title="Permalink to this headline">¶</a></h3>
-<p>extract -i &#8216;<a href="#id84"><span class="problematic" id="id85">**</span></a>silbe&#8217; $1 &gt; temp1
+<div class="section" id="id84">
+<h3>&gt;<a class="headerlink" href="#id84" title="Permalink to this headline">¶</a></h3>
+<p>extract -i &#8216;<a href="#id85"><span class="problematic" id="id86">**</span></a>silbe&#8217; $1 &gt; temp1
 text temp1 | context -o = -n 5 -p 3 &gt; temp2
-num -n = -a &#8216;<a href="#id86"><span class="problematic" id="id87">**</span></a>nums&#8217; temp1 | extract -i &#8216;<a href="#id88"><span class="problematic" id="id89">**</span></a>nums&#8217; </p>
+num -n = -a &#8216;<a href="#id87"><span class="problematic" id="id88">**</span></a>nums&#8217; temp1 | extract -i &#8216;<a href="#id89"><span class="problematic" id="id90">**</span></a>nums&#8217; </p>
 </div>
-<div class="section" id="id90">
-<h3>&gt;&gt;<a class="headerlink" href="#id90" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id91">
+<h3>&gt;&gt;<a class="headerlink" href="#id91" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line">ditto | humsed &#8216;s/./0/&#8217; &gt; temp3</div>
 </div>
 </div>
-<div class="section" id="id91">
-<h3>&gt;&gt;<a class="headerlink" href="#id91" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id92">
+<h3>&gt;&gt;<a class="headerlink" href="#id92" title="Permalink to this headline">¶</a></h3>
 <p>humsed &#8220;s/.*/$1/&#8221; temp1 &gt; temp4
 assemble temp4 temp3 temp2 | rid -GLId | sed &#8216;/.* .$/d&#8217;
 shift;</p>
 </div>
-<div class="section" id="id92">
-<h3>&gt;<a class="headerlink" href="#id92" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id93">
+<h3>&gt;<a class="headerlink" href="#id93" title="Permalink to this headline">¶</a></h3>
 <p>done
 rm temp[1-4]``</p>
 <p>Having generated our concordance file, we can now create a simple tool that
@@ -785,8 +785,8 @@ context. We need to tell <a class="reference external" href="http://en.wikipedia
 number, and context fields are separated by tabs. We can ignore the first two
 fields by eliminating everything up to the last tab in the line. Since words
 are separated by blank space, the expression <tt class="docutils literal"><span class="pre">[^</span> <span class="pre">]+</span></tt> will match a word not
-containing spaces. In short, the regular expression &#8220;<a href="#id96"><span class="problematic" id="id97">``</span></a>^.**tab*[^ ]+ [^ ]+
-<a href="#id98"><span class="problematic" id="id99">``</span></a>&#8221; will match everything up to the first tab, followed by two additional
+containing spaces. In short, the regular expression &#8220;<a href="#id97"><span class="problematic" id="id98">``</span></a>^.**tab*[^ ]+ [^ ]+
+<a href="#id99"><span class="problematic" id="id100">``</span></a>&#8221; will match everything up to the first tab, followed by two additional
 words. All we need to do is paste our keyword to the end of this expression.</p>
 <p>Below is a simple one-line script for a command called <strong>keyword.</strong> The user
 simply types the command <strong>keyword</strong> followed by a regular expression that
@@ -810,13 +810,13 @@ concordance to help identify metaphor or image related words (such as
 or metaphorical link is created between two things (&#8220;My love is like a red
 red rose.&#8221;) In English, similes are often (though not always) signalled by
 the presence of the words &#8220;like&#8221; or &#8220;as.&#8221;</p>
-<p>A simple task involves searching for <a href="#id101"><span class="problematic" id="id102">`</span></a>like&#8217; or <a href="#id103"><span class="problematic" id="id104">`</span></a>as&#8217; in the lyrics of some
+<p>A simple task involves searching for <a href="#id102"><span class="problematic" id="id103">`</span></a>like&#8217; or <a href="#id104"><span class="problematic" id="id105">`</span></a>as&#8217; in the lyrics of some
 input. For each occurrence of these words, suppose that we would like to
 output a line that places the word in context &#8211; specifically the preceding
 and following four words.</p>
 <p>First we transform and isolate the text data using the <strong>text</strong> and
 <a class="reference external" href="../../man/extract">extract</a> commands:</p>
-<p>&gt; <a href="#id106"><span class="problematic" id="id107">``</span></a>text inputfile | extract -i &#8216;<a href="#id108"><span class="problematic" id="id109">**</span></a>text&#8217; ``</p>
+<p>&gt; <a href="#id107"><span class="problematic" id="id108">``</span></a>text inputfile | extract -i &#8216;<a href="#id109"><span class="problematic" id="id110">**</span></a>text&#8217; ``</p>
 <p>Since the input may contain multiple-stops, we might consider the precaution
 of ensuring no more than one word per data record. For this we can use
 <strong>humsed</strong>. Specifically, we can replace any spaces by a carriage return.
@@ -941,10 +941,10 @@ are not present in the emotionality list are not rated.</p>
 <p>In order to process our input, any syllabic text would first be translated to
 the <a class="reference external" href="../../rep/text">**text</a> representation, and all other spines discarded using <strong>extract
 -i</strong>.</p>
-<p>&gt; <a class="reference external" href="../../man/text">text</a> <a href="#id124"><span class="problematic" id="id125">*</span></a>inputfile*`` | extract -i &#8216;<a href="#id126"><span class="problematic" id="id127">**</span></a>text&#8217; ...``</p>
+<p>&gt; <a class="reference external" href="../../man/text">text</a> <a href="#id125"><span class="problematic" id="id126">*</span></a>inputfile*`` | extract -i &#8216;<a href="#id127"><span class="problematic" id="id128">**</span></a>text&#8217; ...``</p>
 <p>Then we would translate the words using our &#8220;emotionality&#8221; script, eliminate
 everything other than data records, and calculate the numerical statistics:</p>
-<p>&gt; <a class="reference external" href="../../man/text">text</a> <a href="#id129"><span class="problematic" id="id130">*</span></a>inputfile*`` | extract -i &#8216;<a href="#id131"><span class="problematic" id="id132">**</span></a>text&#8217; | humsed -f emotion &gt;
+<p>&gt; <a class="reference external" href="../../man/text">text</a> <a href="#id130"><span class="problematic" id="id131">*</span></a>inputfile*`` | extract -i &#8216;<a href="#id132"><span class="problematic" id="id133">**</span></a>text&#8217; | humsed -f emotion &gt;
 &gt;&gt; | rid -GLId | stats``</p>
 <p>In general, works whose lyrics express predominantly positive emotions ought
 to exhibit positive emotionality estimates. Similarly, works expressing
@@ -963,7 +963,7 @@ to access a specified number of lines at the beginning of a file: the option
 allows us to access a specified number of lines at the end of a file. The ten
 highest and lowest values are then concatenated together and piped to the
 <strong>stats</strong> command:</p>
-<p>&gt; <a class="reference external" href="../../man/text">text</a> <a href="#id134"><span class="problematic" id="id135">*</span></a>inputfile*`` | extract -i &#8216;<a href="#id136"><span class="problematic" id="id137">**</span></a>text&#8217; | humsed -f emotion &gt;
+<p>&gt; <a class="reference external" href="../../man/text">text</a> <a href="#id135"><span class="problematic" id="id136">*</span></a>inputfile*`` | extract -i &#8216;<a href="#id137"><span class="problematic" id="id138">**</span></a>text&#8217; | humsed -f emotion &gt;
 &gt;&gt; | rid -GLId | sort -n &gt; temp
 &gt;
 &gt; head -5 temp &gt; lowest
@@ -989,7 +989,7 @@ which are most emotionally charged. Suppose we wanted to determine the
 location of the most emotionally charged word. A combination of <strong>sort</strong> and
 <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> can be applied to this task. First we generate a spine containing
 the emotional-charge values taking care to eliminate the signs:</p>
-<p>&gt; <a class="reference external" href="../../man/text">text</a> <a href="#id140"><span class="problematic" id="id141">*</span></a>inputfile*`` | extract -i &#8216;<a href="#id142"><span class="problematic" id="id143">**</span></a>text&#8217; | humsed -f emotion &gt;
+<p>&gt; <a class="reference external" href="../../man/text">text</a> <a href="#id141"><span class="problematic" id="id142">*</span></a>inputfile*`` | extract -i &#8216;<a href="#id143"><span class="problematic" id="id144">**</span></a>text&#8217; | humsed -f emotion &gt;
 &gt;&gt; | humsed &#8216;s/[+-]//g&#8217; &gt; charges``</p>
 <p>Next we assemble this new spine with the original input:</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">charges</span></tt> <em>inputfile</em></p>
@@ -997,7 +997,7 @@ the emotional-charge values taking care to eliminate the signs:</p>
 according to the numbers present in the first column. The most emotional
 charged word will be at the end of the file (largest number) so we can use
 <strong>tail -1</strong> to identify the word:</p>
-<p>&gt; <tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">charges</span></tt> <a href="#id144"><span class="problematic" id="id145">*</span></a>inputfile*`` | rid -GLId | sort -n | tail -1``</p>
+<p>&gt; <tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">charges</span></tt> <a href="#id145"><span class="problematic" id="id146">*</span></a>inputfile*`` | rid -GLId | sort -n | tail -1``</p>
 <p>Having established what word has been estimated as having the highest
 emotional-charge, we can then use <strong>grep -n</strong> to establish the location(s) of
 this word in the original input file.</p>

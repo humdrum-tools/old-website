@@ -1,0 +1,97 @@
+#!/usr/bin/perl
+#
+# Programmer:    Craig Stuart Sapp <craig.stanford.edu>
+# Creation Date: Sun Jun 29 00:56:54 PDT 2014
+# Last Modified: Sun Jun 29 00:56:54 PDT 2014
+# Filename:      /usr/local/humdrum-tools/doc/source/guide/zhumblock
+# Syntax:        perl 5
+#
+# Description:   Convert text in the format:
+#
+# ``\s*[*!][*!].*
+# >+\s*.*
+# >+\s*.*
+# >+\s*.*
+# >+\s*\*-.*``
+# [blank line]
+#
+# Change to:
+#
+# .. code-block: humdrum
+# [blank line]
+# 	line 1
+# 	line 2
+# 	line 3
+# 	line 4
+# [blank line]
+#
+# Also:
+# [blank line]
+# ``\s*.*
+# ``\s*.*
+# ``\s*.*
+# ``\s*.*
+# ``\s*.*
+# [blank line]
+#
+# Should be changed to a code-block
+
+
+use strict;
+
+my @files = @ARGV;
+my $file;
+foreach $file (@files) {
+   processFile($file);
+}
+
+
+
+###############################
+##
+## processFile --
+##
+
+sub processFile {
+   my ($file) = @_;
+   open(FILE, $file) or die;
+   my @contents = <FILE>;
+   close FILE;
+   my $i;
+   my $line;
+   my @output;
+   for ($i=0; $i<@contents; $i++) {
+      $line = $contents[$i];
+      #chomp($line);
+      checkBlock($i, \@contents);
+   }
+
+
+#   print @output;
+}
+
+
+
+
+###############################
+##
+## checkBlock --
+##
+
+sub checkBlock {
+   my ($index, $cont) = @_;
+   my $line = $$cont[$index]; 
+   if ($line =~ /^``\s*[\*\!][\*\!]/) {
+      return;
+   }
+   my $i;
+ggg
+
+}
+
+
+
+
+
+
+

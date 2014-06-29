@@ -1,0 +1,1221 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapter 24: The Shell (III) &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../../"/>
+   <link rel="stylesheet" type"text/css" href="../../../_static/humdrum.css">
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../../" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/">Humdrum Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../install/github/">Installing Humdrum Tools from GitHub</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../">The Humdrum User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ch01/">Chapter 1: Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch02/">Chapter 2: Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch03/">Chapter 3: Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch04/">Chapter 4: Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch05/">Chapter 5: The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch06/">Chapter 6: Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch07/">Chapter 7: MIDI Output Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch08/">Chapter 8: The Shell (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch09/">Chapter 9: Searching with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch10/">Chapter 10: Musical Uses of Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch11/">Chapter 11: Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch12/">Chapter 12: Selecting Musical Parts and Passages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch13/">Chapter 13: Assembling Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch14/">Chapter 14: Stream Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch15/">Chapter 15: Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch16/">Chapter 16: The Shell (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch17/">Chapter 17: Creating Inventories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch18/">Chapter 18: Fingers, Footsteps and Frets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch19/">Chapter 19: Musical Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch20/">Chapter 20: Strophes, Verses, and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch21/">Chapter 21: Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch22/">Chapter 22: Classifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch23/">Chapter 23: Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch24/">Chapter 24: The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch25/">Chapter 25: Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch26/">Chapter 26: Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch27/">Chapter 27: Text and Lyrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch28/">Chapter 28: Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch29/">Chapter 29: Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch30/">Chapter 30:MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch31/">Chapter 31: Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch32/">Chapter 32: The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch33/">Chapter 33: Word Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch34/">Chapter 34: Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch35/">Chapter 35: Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch36/">Chapter 33: Sound and Spectra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch37/">Chapter 37: Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch38/">Chapter 38: Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch39/">Chapter 39: Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch40/">Chapter 40: Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../bibliography/">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sample.problems/">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../humextra/">Humdrum Extras</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/intro/">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/rhythm/">2. Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/melody/">Melody and Pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/harmony/">Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/data/">Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/searching/">Music Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/midi/">MIDI Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/notation/">Graphical Musical Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/other/">Other Useful Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/programming/">Programming Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../cookbook/">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../cookbook/vimHighlighting/">Syntax Coloring in Vim</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../man/">Humdrum Command Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/assemble/">Command: assemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/barks/">Command: barks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cbr/">Command: cbr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/census/">Command: census</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cents/">Command: cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cleave/">Command: cleave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cocho/">Command: cocho</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/context/">Command: context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/correl/">Command: correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/deg/">Command: deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/degree/">Command: degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/diss/">Command: diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ditto/">Command: ditto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/dur/">Command: dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ekern/">Command: ekern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/encode/">Command: encode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/extract/">Command: extract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/fade/">Command: fade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/fields/">Command: fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/freq/">Command: freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/hint/">Command: hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/humdrum/">Command: humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/humsed/">Command: humsed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/humver/">Command: humver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/infot/">Command: infot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/iv/">Command: iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/kern/">Command: kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/key/">Command: key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/melac/">Command: melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/melvel/">Command: melvel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/metpos/">Command: metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/midi/">Command: midi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/midreset/">Command: midreset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/mint/">Command: mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ms/">Command: ms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/nf/">Command: nf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/num/">Command: num</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/patt/">Command: patt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pattern/">Command: pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pc/">Command: pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pcset/">Command: pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/perform/">Command: perform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pf/">Command: pf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pitch/">Command: pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/proof/">Command: proof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/recode/">Command: recode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/record/">Command: record</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/regexp/">Command: regexp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/reihe/">Command: reihe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/rend/">Command: rend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/rid/">Command: rid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/scramble/">Command: scramble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/semits/">Command: semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/simil/">Command: simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/smf/">Command: smf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/solfa/">Command: solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/solfg/">Command: solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/specc/">Command: specc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/spect/">Command: spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/strophe/">Command: strophe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/synco/">Command: synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/tacet/">Command: tacet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/text/">Command: text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/themefinder/">Command: thmea</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/thru/">Command: thru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/timebase/">Command: timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/tonh/">Command: tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/trans/">Command: trans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/urrhythm/">Command: urrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/veritas/">Command: veritas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/vox/">Command: vox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/xdelta/">Command: xdelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/yank/">Command: yank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ydelta/">Command: ydelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/#commands">Commands</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../rep/">Humdrum Data Representations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/barlines/">Representation: barlines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/IPA/">Representation: **IPA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/MIDI/">Representation: **MIDI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/Tonh/">Representation: **Tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/URrhythm/">Representation: **URrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/Zeit/">Representation: **Zeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/bhatk/">Representation: **bhatk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/cents/">Representation: **cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/correl/">Representation: **correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/dB/">Representation: **dB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/date/">Representation: **date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/deg/">Representation: **deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/degree/">Representation: **degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/diss/">Representation: **diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/dur/">Representation: **dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/embel/">Representation: **embel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/freq/">Representation: **freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/fret/">Representation: **fret</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/harm/">Representation: **harm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/hildegard/">Representation: **hildegard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/hint/">Representation: **hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/iv/">Representation: **iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/kern/">Representation: **kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/melac/">Representation: **melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/metpos/">Representation: **metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/mint/">Representation: **mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/ordo/">Representation: **ordo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/pc/">Representation: **pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/pcset/">Representation: **pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/pitch/">Representation: **pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/recip/">Representation: **recip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/semits/">Representation: **semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/silbe/">Representation: **silbe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/simil/">Representation: **simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/solfa/">Representation: **solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/solfg/">Representation: **solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/specC/">Representation: **specC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/spect/">Representation: **spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/synco/">Representation: **synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/takt/">Representation: **takt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/text/">Representation: **text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/time/">Representation: **time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/timebase/">Representation: **timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/vox/">Representation: **vox#</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../">Docs</a> &raquo;</li>
+      
+    <li>Chapter 24: The Shell (III)</li>
+      <li class="wy-breadcrumbs-aside">
+        
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="chapter-24-the-shell-iii">
+<h1>Chapter 24: The Shell (III)<a class="headerlink" href="#chapter-24-the-shell-iii" title="Permalink to this headline">¶</a></h1>
+<p>In <a class="reference external" href="../ch16">Chapter 16</a> we learned about the <strong>alias</strong> feature of the shell. The
+<strong>alias</strong> command allowed us to create new commands by assigning a complex
+pipeline to a single-word command. In this chapter we will learn how to use
+the shell to write more complex programs. Shell programs allow users to
+reduce lengthy sequences of Humdrum commands to a single user-defined
+command.</p>
+<div class="section" id="shell-programs">
+<h2>Shell Programs<a class="headerlink" href="#shell-programs" title="Permalink to this headline">¶</a></h2>
+<p>A shell program is simply a script consisting of one or more shell commands.
+Suppose we had a complex procedure consisting of a number of commands and
+pipelines:</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>extract -i &#8216;<a href="#id3"><span class="problematic" id="id4">**</span></a>Ursatz&#8217; inputfile | humsed &#8216;/X/d&#8217; </p>
+<p>&gt;
+&gt;&gt; | context -o Y -b Z &gt; Ursatz``
+&gt;
+<a href="#id5"><span class="problematic" id="id6">``</span></a>extract -i &#8216;<a href="#id7"><span class="problematic" id="id8">**</span></a>Urlinie&#8217; inputfile | humsed &#8216;/X/d&#8217; </p>
+<p>&gt;
+&gt;&gt; | context -o Y -b Z &gt; Urlinie
+&gt;
+&gt; assemble Ursatz Urlinie | rid -GLId | graph``</p>
+<p>In the above hypothetical script, we have processed an input file called
+<tt class="docutils literal"><span class="pre">inputfile</span></tt>. It may be that this is a procedure we would like to apply to
+several different files. Rather than typing the above command sequence for
+each file, an alternative is to place the above commands in a file. Let&#8217;s
+assume that we put the above commands in a file called <tt class="docutils literal"><span class="pre">Schenker</span></tt>. In order
+to execute this file as a shell script, we need to assign <em>execute
+permissions</em> to the file. We can do this by invoking the UNIX <strong>chmod</strong>
+command.</p>
+<p><tt class="docutils literal"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">Schenker</span></tt></p>
+<p>The <strong>+x</strong> option causes <strong>chmod</strong> to add execute permissions to the file
+<tt class="docutils literal"><span class="pre">Schenker</span></tt>. Using <strong>chmod</strong> we can change modes related to <em>executing</em> a
+file, <em>reading</em> a file, and <em>writing</em> to a file. Possible mode changes
+include the following:</p>
+<p>&gt; +xadd execute permission
+&gt; -xdeny execute permission
+&gt; +radd read permission
+&gt; -rdeny read permission
+&gt; +wadd write permission
+&gt; -wdeny write permission</p>
+<p>Having added execute permissions to the file, we can now execute the shell
+script or program. This is done simply by typing the name of the file; in
+effect, the filename becomes a new command:</p>
+<p><tt class="docutils literal"><span class="pre">Schenker</span></tt></p>
+<p>Each time we type this command, our script will be executed anew. Notice that
+in our script, the final output has not been sent to a file. As a result, the
+output from our <strong>Schenker</strong> command will be sent to the screen (standard
+output). It is convenient not to specify an output file in the script since
+this is often something the user would like to specify. When typing our new
+command, we can use file-redirection to place the output in a user-specified
+file:</p>
+<p><tt class="docutils literal"><span class="pre">Schenker</span> <span class="pre">&gt;</span> <span class="pre">outputfile</span></tt></p>
+<p>As currently written, our program can be applied only to an input file whose
+name is literally <tt class="docutils literal"><span class="pre">inputfile</span></tt>. If we wanted to, we could edit our script
+and update the name of the input filename every time we want to use the
+command. However, it would be more convenient to specify the input filename
+on the command line &#8211; as we can do for other commands. For example, it would
+be convenient to be able to type commands such as the following:</p>
+<p><tt class="docutils literal"><span class="pre">Schenker</span> <span class="pre">opus118</span> <span class="pre">&gt;</span> <span class="pre">opus118.out</span></tt></p>
+<p>In order to allow such a possibility, we can use a predefined feature of the
+shell. Whenever the shell receives a command, each item of information on the
+command line is assigned to a shell variable. The first item on the command
+line is assigned to the variable $0 (normally, this is the command name). For
+example, in the above example, $0 is assigned the string value
+&#8220;<tt class="docutils literal"><span class="pre">Schenker</span></tt>.&#8221; The variables $1, $2, $3, etc. are assigned to each
+successive item of information on the command line. So in the above example,
+$1 is assigned the string value &#8220;<tt class="docutils literal"><span class="pre">opus118</span></tt>.&#8221;</p>
+<p>These shell variables can be accessed within the shell script itself. We need
+to revise the script so that each occurrence of the input file is replaced by
+the variable $1:</p>
+<p><a href="#id9"><span class="problematic" id="id10">``</span></a>extract -i &#8216;<a href="#id11"><span class="problematic" id="id12">**</span></a>Ursatz&#8217; $1 | humsed &#8216;/X/d&#8217; </p>
+<p>&gt;
+&gt;&gt; | context -o Y -b Z &gt; Ursatz``
+&gt;
+<a href="#id13"><span class="problematic" id="id14">``</span></a>extract -i &#8216;<a href="#id15"><span class="problematic" id="id16">**</span></a>Urlinie&#8217; $1 | humsed &#8216;/X/d&#8217; </p>
+<p>&gt;
+&gt;&gt; | context -o Y -b Z &gt; Urlinie
+&gt;
+&gt; assemble Ursatz Urlinie | rid -GLId | graph``</p>
+<p>This change means that our <strong>Schenker</strong> command can be applied to any user-
+specified input file &#8211; simply by typing the filename in the command.</p>
+</div>
+<div class="section" id="flow-of-control-the-if-statement">
+<h2>Flow of Control: The <em>if</em> Statement<a class="headerlink" href="#flow-of-control-the-if-statement" title="Permalink to this headline">¶</a></h2>
+<p>Suppose we wanted our <strong>Schenker</strong> command to apply only to tonal works &#8211;
+more specifically, to works with a known key. Before processing a work, we
+might want to have <strong>Schenker</strong> test for the presence of a tandem
+interpretation specifying the key.</p>
+<p>Let&#8217;s begin by using <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to search for a key tandem interpretation. An
+appropriate <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command would be:</p>
+<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'^\*[A-Ga-g][#-]*:'</span> <span class="pre">$1</span></tt></p>
+<p>Recall that we can assign the output of any command to a shell variable by
+placing the command within back-quotes or greves, i.e. <cite>...</cite>. Let&#8217;s assign
+the key interpretation to the variable KEY:</p>
+<p><tt class="docutils literal"><span class="pre">KEY=`grep</span> <span class="pre">'^\*[A-Ga-g][#-]*:'</span> <span class="pre">$1</span></tt></p>
+<p>If no key indicator is found by <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>, then the variable KEY will be
+empty. We can test for this condition using the shell <strong>if</strong> statement.</p>
+<p><tt class="docutils literal"><span class="pre">KEY=`grep</span> <span class="pre">'^\*[A-Ga-g][#-]*:'</span> <span class="pre">$1`</span>
+<span class="pre">if</span> <span class="pre">[</span> <span class="pre">&quot;$KEY&quot;</span> <span class="pre">=</span> <span class="pre">&quot;&quot;</span> <span class="pre">]</span>
+<span class="pre">then</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">echo</span> <span class="pre">&quot;Sorry,</span> <span class="pre">this</span> <span class="pre">input</span> <span class="pre">file</span> <span class="pre">has</span> <span class="pre">no</span> <span class="pre">key.&quot;</span>
+<span class="pre">exit</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;</span> <span class="pre">fi</span></tt></p>
+<p>Notice that we use the dollars sign prior to the variable to mean <em>the
+contents of variable KEY</em>. The double quotation marks allow a string
+comparison. Our test is whether the variable $KEY is equivalent to the empty
+or null string &#8220;&#8221;. If the test is true, then the commands following the
+<tt class="docutils literal"><span class="pre">then</span></tt> statement are executed. By convention, these commands are indented
+for clarity. In the above case, two commands are executed if the $KEY
+variable is empty. The <strong>echo</strong> command causes the quoted string to be
+output. The <strong>exit</strong> command causes the script to terminate. Notice the
+presence of the <strong>fi</strong> command (<strong>if</strong> backwards). This command simply
+indicates that the if-block has ended.</p>
+<p>Of course, if there is a key designation, then it is appropriate to execute
+the rest of our <strong>Schenker</strong> script. The complete script would be as follows:</p>
+<p><tt class="docutils literal"><span class="pre">KEY=`grep</span> <span class="pre">'^\*[A-Ga-g][#-]*:'</span> <span class="pre">$1`</span>
+<span class="pre">if</span> <span class="pre">[</span> <span class="pre">&quot;$KEY&quot;</span> <span class="pre">=</span> <span class="pre">&quot;&quot;</span> <span class="pre">]</span>
+<span class="pre">then</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">echo</span> <span class="pre">&quot;Sorry,</span> <span class="pre">this</span> <span class="pre">input</span> <span class="pre">file</span> <span class="pre">has</span> <span class="pre">no</span> <span class="pre">key.&quot;</span> <span class="pre">exit</span>
+<span class="pre">&gt;</span>
+<span class="pre">&gt;</span> <span class="pre">else</span></tt>
+&gt;
+&gt;``extract -i &#8216;<a href="#id19"><span class="problematic" id="id20">**</span></a>Ursatz&#8217; $1 | humsed &#8216;/X/d&#8217; </p>
+<p>&gt;&gt;
+&gt;&gt;&gt; | context -o Y -b Z &gt; Ursatz``
+&gt;&gt;
+&gt;``extract -i &#8216;<a href="#id21"><span class="problematic" id="id22">**</span></a>Urlinie&#8217; $1 | humsed &#8216;/X/d&#8217; </p>
+<p>&gt;&gt;
+&gt;&gt;&gt; | context -o Y -b Z &gt; Urlinie
+&gt;&gt;
+&gt;&gt; assemble Ursatz Urlinie | rid -GLId | graph
+&gt;
+&gt; fi``</p>
+<p>Notice the addition of the <strong>else</strong> statement. The <strong>else</strong> statement
+delineates the block of commands to be executed whenever the <strong>if</strong> condition
+fails &#8211; that is, when the $KEY variable does <em>not</em> equal the null string.
+Once again, to make the script more readable, we indent the commands
+contained in the else-block.</p>
+<p>The <strong>if</strong> command provides many other ways of testing some condition. For
+example, the shell provides ways to determine whether a file exists, and
+other features.</p>
+</div>
+<div class="section" id="flow-of-control-the-for-statement">
+<h2>Flow of Control: The <em>for</em> Statement<a class="headerlink" href="#flow-of-control-the-for-statement" title="Permalink to this headline">¶</a></h2>
+<p>In music research, a common task is to apply a particular process or script
+to a large number of score files. By way of illustration, suppose we wanted
+to know the maximum number of notes in any single folk melody in a collection
+of Czech folksongs. Suppose further that we are located in a directory
+containing a large number of Czech folksongs named <tt class="docutils literal"><span class="pre">czech01.krn</span></tt>,
+<tt class="docutils literal"><span class="pre">czech02.krn</span></tt>, <tt class="docutils literal"><span class="pre">czech03.krn</span></tt>, and so on.</p>
+<p>We would like to run the <strong>census -k</strong> command on each file separately, but
+we&#8217;d prefer not to type the command for each score. The <strong>for</strong> statement
+provides a convenient way to do this. The following commands might be typed
+directly at the shell:</p>
+<p><tt class="docutils literal"><span class="pre">for</span> <span class="pre">J</span> <span class="pre">in</span> <span class="pre">czech*.krn</span>
+<span class="pre">&gt;</span> <span class="pre">do</span>
+<span class="pre">&gt;</span> <span class="pre">census</span> <span class="pre">-k</span> <span class="pre">$J</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'Number</span> <span class="pre">of</span> <span class="pre">notes:'</span>
+<span class="pre">&gt;</span> <span class="pre">done</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span></tt></p>
+<p>The pattern <tt class="docutils literal"><span class="pre">czech*.krn</span></tt> will be expanded to all of the files in the
+current directory that it matches. The variable <strong>J</strong> will take on each name
+in turn. The commands between <strong>do</strong> and <strong>done</strong> will be executed for each
+value of the variable <strong>$J</strong>. That is, initially <strong>$J</strong> will have the value
+<tt class="docutils literal"><span class="pre">czech01.krn</span></tt>. Having completed the do-done block of commands, the value of
+<strong>$J</strong> will become <tt class="docutils literal"><span class="pre">czech02.krn</span></tt>, and the do-done block will be repeated.
+This will continue until the value of <strong>$J</strong> has taken on all of the possible
+matches for <tt class="docutils literal"><span class="pre">czech*.krn</span></tt>.</p>
+<p>The output might appear as follows:</p>
+<p><tt class="docutils literal"><span class="pre">Number</span> <span class="pre">of</span> <span class="pre">notes:</span> <span class="pre">31</span>
+<span class="pre">Number</span> <span class="pre">of</span> <span class="pre">notes:</span> <span class="pre">32</span>
+<span class="pre">Number</span> <span class="pre">of</span> <span class="pre">notes:</span> <span class="pre">32</span>
+<span class="pre">Number</span> <span class="pre">of</span> <span class="pre">notes:</span> <span class="pre">34</span>
+<span class="pre">Number</span> <span class="pre">of</span> <span class="pre">notes:</span> <span class="pre">35</span>
+<span class="pre">Number</span> <span class="pre">of</span> <span class="pre">notes:</span> <span class="pre">39</span>
+<span class="pre">Number</span> <span class="pre">of</span> <span class="pre">notes:</span> <span class="pre">39</span>
+<span class="pre">Number</span> <span class="pre">of</span> <span class="pre">notes:</span> <span class="pre">40</span>
+<span class="pre">Number</span> <span class="pre">of</span> <span class="pre">notes:</span> <span class="pre">48</span>
+<span class="pre">Number</span> <span class="pre">of</span> <span class="pre">notes:</span> <span class="pre">48</span>
+<span class="pre">Number</span> <span class="pre">of</span> <span class="pre">notes:</span> <span class="pre">55</span>
+<span class="pre">Number</span> <span class="pre">of</span> <span class="pre">notes:</span> <span class="pre">78</span></tt>
+etc.</p>
+<p>Incidentally, the output from a <strong>for</strong> construction such as above can be
+piped to further commands, so we might identify the maximum number of notes
+in a Czech melody by piping the output through <strong>sort -n</strong>.</p>
+</div>
+<div class="section" id="a-script-for-identifying-transgressions-of-voice-leading">
+<h2>A Script for Identifying Transgressions of Voice-Leading<a class="headerlink" href="#a-script-for-identifying-transgressions-of-voice-leading" title="Permalink to this headline">¶</a></h2>
+<p>Shell programs can be of arbitrary complexity. Below is a shell program
+(dubbed <strong>leader</strong>) whose purpose is to identify all instances of betrayals
+of nine classic rules of voice-leading for a two-part input. A number of
+refinements have been added to the program &#8211; including input file checking,
+and formatting of the output.</p>
+<p>The program is invoked as follows:</p>
+<p><a href="#id23"><span class="problematic" id="id24">``</span></a>leader ``</p>
+<p>The input is assumed to contain two voices, each in a separate **kern_
+spine. The nominally lower voice should be in the first spine. For music
+containing more than two voices, the Humdrum <strong>extract</strong> command should be
+used to select successive pairs of voices for processing by <strong>leader</strong>.</p>
+<p><a href="#id25"><span class="problematic" id="id26">``</span></a># LEADER
+#
+# A shell program to check for voice-leading infractions.
+# This command is invoked as:
+#
+# leader
+#
+# where  is assumed to be a file containing two voices, each
+# in a separate <a href="#id27"><span class="problematic" id="id28">**</span></a>kern spine, where the nominally lower voice is in the
+# first spine.</p>
+<p># Before processing, ensure that a proper input file has been specified.
+if [ ! -f $1 ]
+then echo &#8220;leader: file $1 not found&#8221;
+exit
+fi
+if [ $# -eq 0 ]
+then echo &#8220;leader: input file not specified&#8221;
+exit
+fi</p>
+<p># 1. Record the ranges for the two voices.
+echo &#8216;Range for Upper voice:&#8217;
+extract -f 2 $1 | census -k | egrep &#8216;Highest|Lowest&#8217; | sed &#8216;s/^/ /&#8217;
+echo &#8216;Range for Lower voice:&#8217;
+extract -f 1 $1 | census -k | egrep &#8216;Highest|Lowest&#8217; | sed &#8216;s/^/ /&#8217;</p>
+<p># 2. Check for augmented or diminished melodic intervals.
+extract -f 1 $1 | mint -b r | sed &#8216;/[[Ad][Ad]*]/d&#8217; | egrep -n
+&#8216;^[^!*].*[Ad][^1]&#8217; <a href="#id29"><span class="problematic" id="id30">|</span></a>sed &#8216;s/:/ (/;s/$/)/;s/^/Augmented or diminished melodic interval at line: /&#8217;
+extract -f 2 $1 | mint -b r | sed &#8216;/[[Ad][Ad]*]/d&#8217; | egrep -n
+&#8216;^[^!*].*[Ad][^1]&#8217; <a href="#id31"><span class="problematic" id="id32">|</span></a>sed &#8216;s/:/ (/;s/$/)/;s/^/Augmented or diminished melodic interval at line: /&#8217;</p>
+<p># 3. Check for consecutive fifths and octaves.
+echo &#8216;P5&#8217; &gt; $TMPDIR/template; echo &#8216;P5&#8217; &gt;&gt; $TMPDIR/template
+hint -c $1 | patt -f $TMPDIR/template -s = | sed &#8216;s/ of file.*/./;s/.*Pattern/Consecutive fifth/&#8217;
+echo &#8216;P1&#8217; &gt; $TMPDIR/template; echo &#8216;P1&#8217; &gt;&gt; $TMPDIR/template
+hint -c $1 | patt -f $TMPDIR/template -s = | sed &#8216;s/ of file.*/./;s/.*Pattern/Consecutive octave/&#8217;</p>
+<p># 4. Check for doubling of the leading-tone.
+deg $1 | extract -i &#8216;<a href="#id33"><span class="problematic" id="id34">**</span></a>deg&#8217; | ditto -s = | sed &#8216;s/^=.*/=/&#8217; | egrep -n &#8216;^7.*7|^[^!*].*7.*7&#8217; | egrep -v &#8216;7[-+]&#8217; | sed &#8216;s/:.*/./;s/^/Leading-tone doubled at line: /&#8217;</p>
+<p># 5. Check for unisons.
+semits -x $1 | ditto -s = | awk &#8216;{if($0~/[^0-9t-]/)next}{if($1==$2) print &#8220;Unison at line: &#8221; NR}&#8217;</p>
+<p># 6. Check for the crossing of parts.
+semits -x $1 | ditto -s = | sed &#8216;s/^=.*/=/&#8217; | awk &#8216;{if($0~/[^0-9t-]/)next}{if($1&gt;$2) print &#8220;Crossed parts at line: &#8221; NR}&#8217;</p>
+<p># 7. Check for more than an octave between the two parts.
+semits -x $1 | ditto -s = | awk &#8216;{if($0~/[^0-9t-]/)next} {if($2-$1&gt;12) print &#8220;More than an octave between parts at line: &#8221; NR}&#8217;</p>
+<p># 8. Check for overlapping parts.
+extract -f 2 $1 | sed &#8216;s/^=.*/./&#8217; | context -n 2 -p 1 -d XXX | rid -GL | humsed &#8216;s/XXX.*//&#8217; &gt; $TMPDIR/upper
+extract -f 1 $1 | sed &#8216;s/^=.*/./&#8217; &gt; $TMPDIR/lower
+assemble $TMPDIR/lower $TMPDIR/upper | semits -x | ditto | awk &#8216;{if($0~/[^0-9t-]/)next}{if($1&gt;$2) print &#8220;Parts overlap at line: &#8221; NR}&#8217;
+extract -f 1 $1 | sed &#8216;s/^=.*/./&#8217; | context -n 2 -p 1 -d XXX | rid -GL | humsed &#8216;s/XXX.*//&#8217; &gt; $TMPDIR/lower
+extract -f 2 $1 | sed &#8216;s/^=.*/./&#8217; &gt; $TMPDIR/upper
+assemble $TMPDIR/lower $TMPDIR/upper | semits -x | ditto | awk &#8216;{if($0~/[^0-9t-]/)next}{if($1&gt;$2) print &#8220;Parts overlap at line: &#8221; NR}&#8217;</p>
+<p># 9. Check for exposed octaves.
+hint -c $1 &gt; $TMPDIR/s1
+extract -f 1 $1 | deg &gt; $TMPDIR/s2
+extract -f 2 $1 | deg &gt; $TMPDIR/s3
+extract -f 1 $1 | mint | humsed &#8216;s/.*[3-9].*/leap/&#8217; &gt; $TMPDIR/s4
+extract -f 2 $1 | mint | humsed &#8216;s/.*[3-9].*/leap/&#8217; &gt; $TMPDIR/s5
+assemble $TMPDIR/s1 $TMPDIR/s2 $TMPDIR/s3 $TMPDIR/s4 $TMPDIR/s5 &gt;
+$TMPDIR/temp
+egrep -n &#8216;P1.*^.*^.*leap.*leap|P1.*v.*v.*leap.*leap&#8217; $TMPDIR/temp | sed &#8216;s/:.*/./;s/^/Exposed octave at line: /&#8217;</p>
+<p># Clean-up some temporary files.
+rm $TMPDIR/template $TMPDIR/upper $TMPDIR/lower $TMPDIR/s[1-5] $TMPDIR/temp``</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="reprise">
+<h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
+<p>In this chapter we have illustrated how to package complex Humdrum command
+scripts into shell programs. This allows us to create special-purpose
+commands. We learned that files can be transformed into executable scripts
+through the <strong>chmod</strong> command. We also learned how to pass parameters from
+the command line to the script, and how to assign and modify the contents of
+variables. In addition, we learned how to influence the flow of control using
+the <strong>if</strong> and <strong>for</strong> statements. Finally, we learned that multi-line
+scripts can be typed directly at the command line without creating a script
+file.</p>
+<p>Shell scripts can be very brief or very long. It is possible to create
+scripts that carry out highly sophisticated processing such as searching for
+voice-leading transgressions. There are innumerable features to shell
+programming that have not been touched-on in this chapter. Several books are
+available that provide comprehensive tutorials for shell programming.</p>
+</div>
+<div class="section" id="locating-violations-of-the-rules-of-voice-leading">
+<h2>Locating Violations of the Rules of Voice-Leading<a class="headerlink" href="#locating-violations-of-the-rules-of-voice-leading" title="Permalink to this headline">¶</a></h2>
+<p>The traditional rules of voice-leading have formed a standard component of
+conservatory training for art musicians.</p>
+<p>For illustration purposes, we&#8217;ll apply some of the Humdrum tools to the
+problem of identifying betrayals of the classic rules of voice-leading in a
+**kern-encoded score. Note that our purpose here is not to legislate how
+to compose or arrange! We&#8217;re simply using the traditional voice-leading rules
+as a way to introduce various pattern-searching techniques.</p>
+</div>
+<div class="section" id="parts-out-of-range">
+<h2>(1) Parts Out Of Range<a class="headerlink" href="#parts-out-of-range" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rule-avoid-parts-that-are-out-of-range">
+<h3>RULE: &#8220;Avoid parts that are out of range.&#8221;<a class="headerlink" href="#rule-avoid-parts-that-are-out-of-range" title="Permalink to this headline">¶</a></h3>
+<p>The Humdrum <strong>census</strong> command provides a summary of various elementary
+features of any Humdrum input. With the <strong>-k</strong> option, <strong>census</strong> provides a
+summary of a further ten features pertaining to **kern format inputs.
+This includes the highest and lowest notes present.</p>
+<p><a href="#id35"><span class="problematic" id="id36">``</span></a>census -k ``</p>
+<p>Since we are interested in the highest and lowest notes for each individual
+part (rather than for the whole piece), we should <strong>extract</strong> each part
+before processing it with <strong>census.</strong></p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*soprano'</span>&nbsp; <span class="pre">&gt;</span> <span class="pre">soprano.part</span></tt>
+<tt class="docutils literal"><span class="pre">census</span> <span class="pre">-k</span> <span class="pre">soprano.part</span></tt></p>
+<p>On UNIX, a set of commands that sequentially process a given input can be
+joined together as a &#8220;pipeline&#8221;. A pipeline feeds the output of one process
+to the input of another process. This means that we can simplify the above
+sequence of commands into a single pipeline:</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*soprano'</span>&nbsp; <span class="pre">|</span> <span class="pre">census</span> <span class="pre">-k</span></tt></p>
+<p>We could then repeat the pipeline for each voice present:</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*alto'</span>&nbsp; <span class="pre">|</span> <span class="pre">census</span> <span class="pre">-k</span>
+<span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*tenor'</span>&nbsp; <span class="pre">|</span> <span class="pre">census</span> <span class="pre">-k</span>
+<span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*bass'</span>&nbsp; <span class="pre">|</span> <span class="pre">census</span> <span class="pre">-k</span></tt></p>
+<p>If we wanted to get a little fancier, we could filter the output so that only
+the highest and lowest pitch information is output. The UNIX <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command
+will let us define a string for searching; <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a> permits compound
+strings, such as the use of the OR bar (|):</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*soprano'</span>&nbsp; <span class="pre">|</span> <span class="pre">census</span> <span class="pre">-k</span> <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">'Highest|Lowest'</span></tt></p>
+</div>
+</div>
+<div class="section" id="augmented-diminished-melodic-intervals">
+<h2>(2) Augmented/Diminished Melodic Intervals<a class="headerlink" href="#augmented-diminished-melodic-intervals" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rule-avoid-parts-that-move-by-augmented-or-diminished-intervals">
+<h3>RULE: &#8220;Avoid parts that move by augmented or diminished intervals.<a class="headerlink" href="#rule-avoid-parts-that-move-by-augmented-or-diminished-intervals" title="Permalink to this headline">¶</a></h3>
+<p>Implementing this is simple. We first translate our pitch- related data to
+the melodic interval format &#8211; <a class="reference external" href="../../rep/mint">**mint</a>. This can be done using the
+Humdrum <strong>mint</strong> command. For example, consider the following melodic
+fragment from the 2nd movement of Bach&#8217;s Brandenburg Concerto No. 5:</p>
+<p><tt class="docutils literal"><span class="pre">**kern</span>
+<span class="pre">&gt;</span> <span class="pre">8r</span>
+<span class="pre">&gt;</span> <span class="pre">8f#</span>
+<span class="pre">&gt;</span> <span class="pre">8b</span>
+<span class="pre">&gt;</span> <span class="pre">16.cc#</span>
+<span class="pre">&gt;</span> <span class="pre">32dd</span>
+<span class="pre">&gt;</span> <span class="pre">8a#</span>
+<span class="pre">&gt;</span> <span class="pre">16.b</span>
+<span class="pre">&gt;</span> <span class="pre">32cc#</span>
+<span class="pre">&gt;</span> <span class="pre">8dd</span>
+<span class="pre">&gt;</span> <span class="pre">*-</span></tt></p>
+<p>Given this input, the <strong>mint</strong> command will produce the following output.
+Plus signs indicate ascending intervals, while minus signs indicate
+descending intervals; &#8216;P&#8217; means perfect, &#8216;M&#8217; means major, &#8216;m&#8217; means minor,
+&#8216;A&#8217; means augmented, and &#8216;d&#8217; means diminished:</p>
+<p><tt class="docutils literal"><span class="pre">**mint</span>
+<span class="pre">&gt;</span> <span class="pre">[f#]</span>
+<span class="pre">&gt;</span> <span class="pre">+P4</span>
+<span class="pre">&gt;</span> <span class="pre">+M2</span>
+<span class="pre">&gt;</span> <span class="pre">+m2</span>
+<span class="pre">&gt;</span> <span class="pre">-d4</span>
+<span class="pre">&gt;</span> <span class="pre">+m2</span>
+<span class="pre">&gt;</span> <span class="pre">+M2</span>
+<span class="pre">&gt;</span> <span class="pre">+m2</span>
+<span class="pre">&gt;</span> <span class="pre">*-</span></tt></p>
+<p>Searching for diminished or augmented intervals is as simple as using the
+Unix <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command, with the appropriate regular expression:</p>
+<p><a href="#id39"><span class="problematic" id="id40">``</span></a>grep -n &#8216;[Ad]&#8217; ``</p>
+<p>The <strong>-n</strong> option will cause <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to prepend the line number of any
+matching patterns, so we can refer back to the original input file.</p>
+<p>In order to avoid the letters <a href="#id42"><span class="problematic" id="id43">`</span></a>A&#8217; or <a href="#id44"><span class="problematic" id="id45">`</span></a>d&#8217; found in comments or
+interpretations, we might consider using the Humdrum <strong>rid</strong> command:</p>
+<p><tt class="docutils literal"><span class="pre">rid</span> <span class="pre">-GLI</span>&nbsp; <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-n</span> <span class="pre">'[Ad]'</span></tt></p>
+<p>However, this will cause the line numbers output by <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to be wrong. The
+line numbers will correspond to the input file with the comments and
+interpretations removed.</p>
+<p>A better approach is to send the complete file to <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>, and use a more
+circumspect regular expression to eliminate comments and interpretations
+within <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>. <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a> allows us to define more complex regular
+expressions:</p>
+<p><tt class="docutils literal"><span class="pre">egrep</span> <span class="pre">'^[^!*].*[Ad]'</span></tt></p>
+<p>The expression <a href="#id50"><span class="problematic" id="id51">`</span></a>^[^!*]&#8217; means &#8220;not an exclamation mark or asterisk at the
+beginning of a line.&#8221; The expression <a href="#id52"><span class="problematic" id="id53">`</span></a>.*[Ad]&#8217; means &#8220;zero or more instances
+of any character followed by either an upper-case letter <a href="#id54"><span class="problematic" id="id55">`</span></a>A&#8217; or a lower-case
+letter <a href="#id56"><span class="problematic" id="id57">`</span></a>d&#8217;.</p>
+<p>In other words, the complete regular expression matches any line that
+contains either an upper-case <a href="#id58"><span class="problematic" id="id59">`</span></a>A&#8217; or lower-case <a href="#id60"><span class="problematic" id="id61">`</span></a>d&#8217; as long as the beginning
+of the line does not start with an exclamation mark (i.e. Humdrum comment) or
+an asterisk (i.e. Humdrum interpretation).</p>
+<p>If we want to look for augmented or diminished intervals in a particular part
+or voice, we would begin by using the <strong>extract</strong> command to isolate the
+voice of interest.</p>
+<p>Finally, putting all of the elements together in a Unix pipeline, we get the
+following command for identifying augmented or diminished melodic intervals:</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'alto'</span>&nbsp; <span class="pre">|</span> <span class="pre">mint</span> <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">-n</span> <span class="pre">'^[^!*].*[Ad]'</span></tt></p>
+<p>If there is no output, then there are no augmented or diminished intervals
+present.</p>
+</div>
+</div>
+<div class="section" id="consecutive-fifths-or-octaves">
+<h2>(3) Consecutive Fifths or Octaves<a class="headerlink" href="#consecutive-fifths-or-octaves" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rule-avoid-consecutive-fifths-and-octaves-between-any-two-parts">
+<h3>RULE: &#8220;Avoid consecutive fifths and octaves between any two parts.<a class="headerlink" href="#rule-avoid-consecutive-fifths-and-octaves-between-any-two-parts" title="Permalink to this headline">¶</a></h3>
+<p>Let&#8217;s focus on identifying consecutive fifths &#8211; since the process is the
+same for octaves.</p>
+<p>Either the Humdrum <strong>patt</strong> or <strong>pattern</strong> commands can be used to find
+patterns that span more than one line or record. For this example, we&#8217;ll use
+<strong>patt</strong>.</p>
+<p>First, we need to reformat our input so the data represent harmonic intervals
+rather than pitches. The Humdrum <strong>hint</strong> command will change most pitch
+representations to the harmonic interval representation &#8211; <a class="reference external" href="../../rep/hint">**hint</a>.
+Consider, for example, the following input:</p>
+<p><tt class="docutils literal"><span class="pre">**kern</span> <span class="pre">**kern</span>
+<span class="pre">&gt;</span> <span class="pre">=1</span> <span class="pre">=1</span>
+<span class="pre">&gt;</span> <span class="pre">4c</span> <span class="pre">4e</span>
+<span class="pre">&gt;</span> <span class="pre">4G</span> <span class="pre">4d</span>
+<span class="pre">&gt;</span> <span class="pre">=2</span> <span class="pre">=2</span>
+<span class="pre">&gt;</span> <span class="pre">2F</span> <span class="pre">2c</span>
+<span class="pre">&gt;</span> <span class="pre">*-</span> <span class="pre">*-</span></tt></p>
+<p>Given the following command:</p>
+<p><a href="#id62"><span class="problematic" id="id63">``</span></a>hint ``</p>
+<p>The following output will be produced:</p>
+<p><tt class="docutils literal"><span class="pre">**hint</span>
+<span class="pre">&gt;</span> <span class="pre">=1</span>
+<span class="pre">&gt;</span> <span class="pre">M3</span>
+<span class="pre">&gt;</span> <span class="pre">P5</span>
+<span class="pre">&gt;</span> <span class="pre">=2</span>
+<span class="pre">&gt;</span> <span class="pre">P5</span>
+<span class="pre">&gt;</span> <span class="pre">*-</span></tt></p>
+<p>(Notice that, in this case, the consecutive fifths are separated by a
+barline.)</p>
+<p>Second, we need to define a pattern template for the <strong>patt</strong> command. The
+template is a series of one or more regular expressions that are stored in a
+separate file. In this case the pattern is trivial: just two consecutive
+perfect fifth tokens. We might store the following pattern in the file
+&#8220;template&#8221;:</p>
+<p><tt class="docutils literal"><span class="pre">P5</span>
+<span class="pre">&gt;</span> <span class="pre">P5</span></tt></p>
+<p>(Note that if we were looking for consecutive <a href="#id64"><span class="problematic" id="id65">`</span></a>fifths&#8217; that need not
+necessarily be <a href="#id66"><span class="problematic" id="id67">`</span></a>perfect,&#8217; we could simply eliminate the letter &#8220;P&#8221; in each
+interval given in the template.)</p>
+<p>Given the above output from the <strong>hint</strong> command, we could search for
+occurrences of the defined pattern using the following command:</p>
+<p>&gt; The <strong>-f</strong> option is used to identify the file (<tt class="docutils literal"><span class="pre">template</span></tt>) in which the
+pattern-template has been stored. The <strong>-s</strong> option tells <strong>patt</strong> of any
+input records that should be skipped during the search process. The <strong>-s</strong>
+option is followed by a regular expression &#8211; in this case the equals-sign &#8211;
+so that any input records containing the equals-sign (i.e. <a class="reference external" href="../../rep/hint">**hint</a>
+barlines) are ignored.</p>
+<p>The default output from <strong>patt</strong> identifies the location of any instances of
+the pattern it finds in the source document.</p>
+<p>The appropriate pipeline is:</p>
+<p><tt class="docutils literal"><span class="pre">hint</span>&nbsp; <span class="pre">|</span> <span class="pre">patt</span> <span class="pre">-f</span> <span class="pre">template</span> <span class="pre">-s</span> <span class="pre">=</span></tt></p>
+<p>There are a few refinements we ought to add to this process. Currently, we
+are searching for parallel perfect fifths only. The consecutive fifths rule
+pertains to all intervals that are compound-equivalents to perfect fifths
+(such as perfect twelfths, etc.).</p>
+<p>This additional criteria is easily handled. The <strong>hint</strong> command provides a
+<strong>-c</strong> option that causes all compound intervals to be represented by their
+non-compound equivalents. For example, major tenths and major seventheenths,
+etc. will all be represented as &#8220;M3&#8221;, and so on. Hence we would modify our
+pipeline:</p>
+<p><tt class="docutils literal"><span class="pre">hint</span> <span class="pre">-c</span>&nbsp; <span class="pre">|</span> <span class="pre">patt</span> <span class="pre">-f</span> <span class="pre">template</span> <span class="pre">-s</span> <span class="pre">=</span></tt></p>
+<p>(Note that an alternative way of handling the compound-intervals question
+would be to define slightly more complex regular expressions in our template
+file, e.g.</p>
+<p><tt class="docutils literal"><span class="pre">P5|P12|P19</span>
+<span class="pre">&gt;</span> <span class="pre">P5|P12|P19</span></tt></p>
+<p>In regular expressions the vertical bar (|) denotes the logical <a href="#id69"><span class="problematic" id="id70">`</span></a>OR&#8217;
+operation. So the above pattern says &#8220;a perfect fifth OR a perfect twelfth OR
+a perfect nineteenth followed by a ...&#8221;)</p>
+<p>Another refinement relates to the selection of voices. So far, we have
+presumed that the input consists of just two Humdrum spines containing
+separate parts. In a multi-part score, we must examine each pair of voices in
+turn, in order to determine whether any pair exhibit consecutive fifths or
+octaves.</p>
+<p>The simplest (but more tedious) approach, is simply to execute our command
+pipeline for each pairing of voices. For example, in a traditional four-part
+harmonization:</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*soprano,*alto'</span>&nbsp; <span class="pre">|</span> <span class="pre">hint</span> <span class="pre">-c</span> <span class="pre">|</span> <span class="pre">patt</span> <span class="pre">-f</span> <span class="pre">template</span> <span class="pre">-s</span> <span class="pre">=</span>
+<span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*soprano,*tenor'</span>&nbsp; <span class="pre">|</span> <span class="pre">hint</span> <span class="pre">-c</span> <span class="pre">|</span> <span class="pre">patt</span> <span class="pre">-f</span> <span class="pre">template</span> <span class="pre">-s</span> <span class="pre">=</span>
+<span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*soprano,*bass'</span>&nbsp; <span class="pre">|</span> <span class="pre">hint</span> <span class="pre">-c</span> <span class="pre">|</span> <span class="pre">patt</span> <span class="pre">-f</span> <span class="pre">template</span> <span class="pre">-s</span> <span class="pre">=</span>
+<span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*alto,*tenor'</span>&nbsp; <span class="pre">|</span> <span class="pre">hint</span> <span class="pre">-c</span> <span class="pre">|</span> <span class="pre">patt</span> <span class="pre">-f</span> <span class="pre">template</span> <span class="pre">-s</span> <span class="pre">=</span>
+<span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*alto,*bass'</span>&nbsp; <span class="pre">|</span> <span class="pre">hint</span> <span class="pre">-c</span> <span class="pre">|</span> <span class="pre">patt</span> <span class="pre">-f</span> <span class="pre">template</span> <span class="pre">-s</span> <span class="pre">=</span>
+<span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*tenor,*bass'</span>&nbsp; <span class="pre">|</span> <span class="pre">hint</span> <span class="pre">-c</span> <span class="pre">|</span> <span class="pre">patt</span> <span class="pre">-f</span> <span class="pre">template</span> <span class="pre">-s</span> <span class="pre">=</span></tt></p>
+<p>(There are shorter ways of doing these permutations that involves a little
+shell programming, but we&#8217;ll leave that for another time.)</p>
+</div>
+</div>
+<div class="section" id="doubled-leading-tone">
+<h2>(4) Doubled Leading Tone<a class="headerlink" href="#doubled-leading-tone" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rule-avoid-doubling-the-leading-tone">
+<h3>RULE: &#8220;Avoid doubling the leading-tone.&#8221;<a class="headerlink" href="#rule-avoid-doubling-the-leading-tone" title="Permalink to this headline">¶</a></h3>
+<p>Pitches can be identified as &#8220;leading-tones&#8221; only when we have some idea of
+their key-related scale-degree. The Humdrum <strong>deg</strong> command translates pitch
+representations to a scale-degree representation where the numbers 1 to 7
+represent tonic to leading-tone designations.</p>
+<p>Notice that the score input must contain an explicit key indication (a
+special type of Humdrum tandem interpretation). For example, the key of G
+major is indicated through the presence of the following interpretation:</p>
+<p><tt class="docutils literal"><span class="pre">*G:</span></tt></p>
+<p>Minor keys are indicated using lower-case characters. For example, the
+following passage is in B minor:</p>
+<p><tt class="docutils literal"><span class="pre">**kern</span>
+<span class="pre">&gt;</span> <span class="pre">*b:</span>
+<span class="pre">&gt;</span> <span class="pre">8r</span>
+<span class="pre">&gt;</span> <span class="pre">8f#</span>
+<span class="pre">&gt;</span> <span class="pre">8b</span>
+<span class="pre">&gt;</span> <span class="pre">16.cc#</span>
+<span class="pre">&gt;</span> <span class="pre">32dd</span>
+<span class="pre">&gt;</span> <span class="pre">8a#</span>
+<span class="pre">&gt;</span> <span class="pre">16.b</span>
+<span class="pre">&gt;</span> <span class="pre">32cc#</span>
+<span class="pre">&gt;</span> <span class="pre">8dd</span>
+<span class="pre">&gt;</span> <span class="pre">*-</span></tt></p>
+<p>The <strong>deg</strong> command can be used to transform this representation to scale
+degree. The passage begins on the dominant (degree <a href="#id71"><span class="problematic" id="id72">`</span></a>5&#8217;), ascends (^) to the
+tonic (<a href="#id73"><span class="problematic" id="id74">`</span></a>1&#8217;), ascends to the supertonic (^2), ascends to the median (^3) and
+then descends to the leading- tone (v7), etc.:</p>
+<p><tt class="docutils literal"><span class="pre">**deg</span>
+<span class="pre">&gt;</span> <span class="pre">*b:</span>
+<span class="pre">&gt;</span> <span class="pre">5</span>
+<span class="pre">&gt;</span> <span class="pre">^1</span>
+<span class="pre">&gt;</span> <span class="pre">^2</span>
+<span class="pre">&gt;</span> <span class="pre">^3</span>
+<span class="pre">&gt;</span> <span class="pre">v7</span>
+<span class="pre">&gt;</span> <span class="pre">^1</span>
+<span class="pre">&gt;</span> <span class="pre">^2</span>
+<span class="pre">&gt;</span> <span class="pre">^3</span>
+<span class="pre">&gt;</span> <span class="pre">*-</span></tt></p>
+<p>The following command will eliminate durations or other possible number
+representations that might conflict with scale-degree designations:</p>
+<p><a href="#id75"><span class="problematic" id="id76">``</span></a>deg ``</p>
+<p>Having translated the representation in this way, we need to search for any
+lines which contain two instances of the number <a href="#id77"><span class="problematic" id="id78">`</span></a>7&#8217; &#8211; that is, two
+concurrent instances of the leading-tone.</p>
+<p>Searching for the number <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">7&#8217; is easily done using the standard Unix `grep</a>
+(get regular expression) command:</p>
+<p><tt class="docutils literal"><span class="pre">deg</span>&nbsp; <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-n</span> <span class="pre">'7'</span></tt></p>
+<p>This will find and output all records that contain the number 7; the <strong>-n</strong>
+option means that the corresponding line number will also be output.</p>
+<p>However, we want to find instances where two or more 7s occur on a single
+line. For this, we can use a slightly more complex regular expression</p>
+<p><tt class="docutils literal"><span class="pre">deg</span>&nbsp; <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-n</span> <span class="pre">'7.*7'</span></tt></p>
+<p>In the construction &#8221;.*&#8221; the period (.) means any character, and the asterisk
+means &#8220;zero or more instances of ...&#8221; Hence, the regular expression means
+&#8220;the number 7 followed by zero or more instances of any character, followed
+by the number 7&#8221;. In short, this expression will match any record in which
+the number 7 occurs at least twice.</p>
+<p>As in the case of our earlier search for augmented and diminished intervals,
+<a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> is insensitive to whether the matching character string is found in
+a data record, or whether it occurs in a Humdrum comment or interpretation.
+In order to avoid matching comments or interpretations, a further refinement
+to our regular expression is appropriate.</p>
+<p><tt class="docutils literal"><span class="pre">deg</span>&nbsp; <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">-n</span> <span class="pre">'^7.*7|^[^!*].*7.*7'</span></tt></p>
+<p>In this case, the regular expression says the following: &#8220;find any occurrence
+of the number 7 at the beginning of the line followed by zero or more
+characters followed by the number 7; or match any character at the beginning
+of the line &#8211; other than an exclamation mark or an asterisk &#8211; followed by
+zero or more characters, followed by the number 7, followed by zero or more
+characters, followed by another number 7.</p>
+<p>Depending on the input, it is possible that Humdrum spines will be present
+that do not represent scale degree information. It is possible that these
+other kinds of data may also make use of the number 7 &#8211; but <em>not</em> to
+represent the leading-tone. In other words, it is possible that a matching
+<a href="#id80"><span class="problematic" id="id81">`</span></a>7&#8217; has nothing to do with scale degrees. We can ensure that this doesn&#8217;t
+happen by first ensuring that <em>only</em> scale-degree spines are present in the
+input to be searched.</p>
+<p>In order to do this, we can use the Humdrum <strong>extract</strong> command as a filter,
+and identify the types of interpretations we want to pass. In the following
+modification to our pipe, the <strong>extract</strong> command has been used to ensure
+that only <a class="reference external" href="../../rep/deg">**deg</a> spines are present:</p>
+<p><tt class="docutils literal"><span class="pre">deg</span>&nbsp; <span class="pre">|</span> <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**deg'</span> <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">-n</span> <span class="pre">'^7.*7|^[^!*].*7.*7'</span></tt></p>
+<p>There are still some refinements that we could add to this command sequence,
+but as it stands it is guaranteed to find all doubled leading-tones &#8211;
+provided the notes begin at the same time. Consider the following
+hypothetical passage:</p>
+<p><tt class="docutils literal"><span class="pre">**kern</span> <span class="pre">**kern</span>
+<span class="pre">&gt;</span> <span class="pre">*C:</span> <span class="pre">*C:</span>
+<span class="pre">&gt;</span> <span class="pre">8c</span> <span class="pre">8g</span>
+<span class="pre">&gt;</span> <span class="pre">=1</span> <span class="pre">=1</span>
+<span class="pre">&gt;</span> <span class="pre">4B</span> <span class="pre">8g</span>
+<span class="pre">&gt;</span> <span class="pre">.</span> <span class="pre">16a</span>
+<span class="pre">&gt;</span> <span class="pre">.</span> <span class="pre">16b</span>
+<span class="pre">&gt;</span> <span class="pre">4A</span> <span class="pre">4cc</span>
+<span class="pre">&gt;</span> <span class="pre">*-</span> <span class="pre">*-</span></tt></p>
+<p>Given the above command sequence, no doubled leading-tones would be
+identified in this passage. However, we might wish to implement a more
+stringent criterion that would seek out any instances where the leading-tone
+sounds at the same time in more than one voice. This occurs in the above
+example with the sixteenth-note B concurrent with the held quarter-note B in
+the other part.</p>
+<p>This criterion can be accommodated by a further refinement to our command
+pipeline. The Humdrum <strong>ditto</strong> command is used to replace null data tokens
+by the immediately preceding data token in the same spine. Consider first,
+the output from the <strong>deg</strong> command for the above example:</p>
+<p><tt class="docutils literal"><span class="pre">**deg</span> <span class="pre">**deg</span>
+<span class="pre">&gt;</span> <span class="pre">*C:</span> <span class="pre">*C:</span>
+<span class="pre">&gt;</span> <span class="pre">1</span> <span class="pre">5</span>
+<span class="pre">&gt;</span> <span class="pre">=1</span> <span class="pre">=1</span>
+<span class="pre">&gt;</span> <span class="pre">v7</span> <span class="pre">5</span>
+<span class="pre">&gt;</span> <span class="pre">.</span> <span class="pre">^6</span>
+<span class="pre">&gt;</span> <span class="pre">.</span> <span class="pre">^7</span>
+<span class="pre">&gt;</span> <span class="pre">v6</span> <span class="pre">^1</span>
+<span class="pre">&gt;</span> <span class="pre">*-</span> <span class="pre">*-</span></tt></p>
+<p>If we now invoke the <strong>ditto</strong> command, the modified output is:</p>
+<p><tt class="docutils literal"><span class="pre">**deg</span> <span class="pre">**deg</span>
+<span class="pre">&gt;</span> <span class="pre">*C:</span> <span class="pre">*C:</span>
+<span class="pre">&gt;</span> <span class="pre">1</span> <span class="pre">5</span>
+<span class="pre">&gt;</span> <span class="pre">=1</span> <span class="pre">=1</span>
+<span class="pre">&gt;</span> <span class="pre">v7</span> <span class="pre">5</span>
+<span class="pre">&gt;</span> <span class="pre">v7</span> <span class="pre">^6</span>
+<span class="pre">&gt;</span> <span class="pre">v7</span> <span class="pre">^7</span>
+<span class="pre">&gt;</span> <span class="pre">v6</span> <span class="pre">^1</span>
+<span class="pre">&gt;</span> <span class="pre">*-</span> <span class="pre">*-</span></tt></p>
+<p>Notice that the two null tokens in the left-hand spine have been replaced by
+copies of the most recent data token. Now our <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command will find the
+two leading tones in the second last data record.</p>
+<p>In summary, the complete command pipeline would be:</p>
+<p><tt class="docutils literal"><span class="pre">deg</span>&nbsp; <span class="pre">|</span> <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**deg'</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">-n</span> <span class="pre">'^7.*7|^[^!*].*7.*7'</span></tt></p>
+<p>This may seem somewhat complicated, but the basic structure of this pipeline
+is suitable for a very wide variety of pattern searches.</p>
+</div>
+</div>
+<div class="section" id="avoid-unisons">
+<h2>(5) Avoid Unisons<a class="headerlink" href="#avoid-unisons" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rule-avoid-the-sharing-of-pitches-by-two-parts">
+<h3>RULE: &#8220;Avoid the sharing of pitches by two parts.&#8221;<a class="headerlink" href="#rule-avoid-the-sharing-of-pitches-by-two-parts" title="Permalink to this headline">¶</a></h3>
+<p>For this rule, let&#8217;s assume that we also want to identify unisons that are
+spelled enharmonically (such as F-sharp and G-flat).</p>
+<p>First, we need to translate the two parts into some absolute pitch
+representation &#8211; such as frequency or semitones. This will ensure that
+enharmonically equivalent pitches have the same representation &#8211; and so will
+facilitate comparison.</p>
+<p>The Humdrum <strong>semits</strong> command translates pitches to semitone distances where
+middle C is denoted as zero. For example, where two voices both play B3 at
+the same time, both the parts will have a <a class="reference external" href="../../rep/semits">**semits</a> value of minus one
+(-1).</p>
+<p>Like the <strong>deg</strong> command, the <strong>semits</strong> command provides a <strong>&#8220;-x</strong> option
+that eliminates from the output stream any characters that don&#8217;t pertain to
+semitones. Hence the following command will eliminate durations or other
+possible numerical representations that might conflict with semitone
+designations:</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*alto,*tenor'``*</span> <span class="pre">*</span></tt> | semits -x``</p>
+<p>Next we need to compare the two parts at each moment in order to determine
+whether they have the same numerical value. The Unix <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a> command will
+allow us to do some arithmetic. Awk auto- matically parses an input, so the
+value of the first spine is referred to as <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">$1&#8217;, the value of the second
+spine is `$2&#8217; and so on. The `awk</a> expression <tt class="docutils literal"><span class="pre">1==$2'</span></tt> is a test of
+whether the first and second spines are equivalent. The <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a> action
+<tt class="docutils literal"><span class="pre">`print</span> <span class="pre">NR'</span></tt> means to print the current line number (record number is
+<tt class="docutils literal"><span class="pre">`NR'</span></tt>).</p>
+<p>So the following command will print the line number for any input in which
+the semitone value is the same for both the alto and tenor voices:</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*alto,*tenor'</span>&nbsp; <span class="pre">|</span> <span class="pre">semits</span> <span class="pre">-x</span> <span class="pre">|</span> <span class="pre">awk</span> <span class="pre">'{if($1==$2)</span> <span class="pre">print</span> <span class="pre">NR}'</span></tt></p>
+<p>There is a problem with this pipeline however. The <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a> command will match
+all sorts of non-numeric inputs &#8211; such as where null tokens (.) occur in
+both parts at the same time. Consequently, we need to be careful to avoid
+non-numeric inputs and comments.</p>
+<p>The regular expression <a href="#id85"><span class="problematic" id="id86">`</span></a>[^0-9]&#8217; will match any line that doesn&#8217;t consist
+solely of numbers. The expression <a href="#id87"><span class="problematic" id="id88">`</span></a>[^0-9-]&#8217; will match any line that doesn&#8217;t
+consist solely of numbers or the minus sign. Since the tab character will
+also be present in our data records, we should also include the tab in our
+regular expression. The tab may be denoted in regular expressions by the
+lower-case letter <a href="#id89"><span class="problematic" id="id90">`</span></a>t&#8217; preceded by a backslash. Hence the expression
+<a href="#id91"><span class="problematic" id="id92">`</span></a>[^0-9t-]&#8217; will match only those lines consisting solely of numbers, the
+minus sign, and tabs.</p>
+<p>The following <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a> script will output the line numbers for all inputs
+where the first and second spines contain identical numbers:</p>
+<p><tt class="docutils literal"><span class="pre">awk</span> <span class="pre">'{if($0~/[^0-9\t-]/)next}{if($1==$2)</span> <span class="pre">print</span> <span class="pre">NR}'</span></tt></p>
+<p>Adding this construction to our pipeline produces the following command for
+identifying unisons:</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-f</span> <span class="pre">1,2</span>&nbsp; <span class="pre">|</span> <span class="pre">semits</span> <span class="pre">-x</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">awk</span>
+<span class="pre">'{if($0~/[^0-9\t-]/)next}{if($1==$2)</span> <span class="pre">print</span> <span class="pre">NR}'</span></tt></p>
+</div>
+</div>
+<div class="section" id="crossed-parts">
+<h2>(6) Crossed Parts<a class="headerlink" href="#crossed-parts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rule-avoid-the-crossing-of-parts">
+<h3>RULE: &#8220;Avoid the crossing of parts.&#8221;<a class="headerlink" href="#rule-avoid-the-crossing-of-parts" title="Permalink to this headline">¶</a></h3>
+<p>Part-crossing occurs when a nominally higher voice uses a pitch that is lower
+than a nominally lower voice.</p>
+<p>The relations &#8220;higher&#8221; and &#8220;lower&#8221; suggest the use of an arithmetic operator
+such as greater-than (&gt;) or less-than (&lt;). In brief, we will approach this
+question by translating the pitches to a numerical scale, and then use the
+general-purpose Unix <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a> command to test whether the nominally lower
+voice is truly lower.</p>
+<p>First we need to translate the pitch representation to some sort of numerical
+form. We have several options. We could translate the pitches to frequency
+(<a class="reference external" href="../../rep/freq">**freq</a>), or we could translate them to semitones (<a class="reference external" href="../../rep/semits">**semits</a>), or
+we could translate them to cents (<a href="#id96"><span class="problematic" id="id97">**</span></a>cents). Let&#8217;s use <a class="reference external" href="../../rep/semits">**semits</a>. Once
+again, in this representation, middle-C is represented by the number zero,
+and all other pitches are represented by their semitone distance (positive or
+negative) with respect to this reference.</p>
+<p>We extract the two parts of interest, and then translate them to the semitone
+numerical representation:</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*soprano,*alto'</span>&nbsp; <span class="pre">|</span> <span class="pre">semits</span> <span class="pre">-x</span></tt></p>
+<p>Since part-crossing may occur when one voice is holding a note, we should use
+the Humdrum <strong>ditto</strong> command, as we did for the doubled leading-tone
+problem. Hence:</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*alto,*tenor'</span>&nbsp; <span class="pre">|</span> <span class="pre">semits</span> <span class="pre">-x</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span></tt></p>
+<p>Finally, we can use the Unix <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a> command to do a little arithmetic. Once
+again, in <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a>, <tt class="docutils literal"><span class="pre">1'</span></tt> and <tt class="docutils literal"><span class="pre">2'</span></tt> refer to the first and second input
+fields, and the built-in variable <tt class="docutils literal"><span class="pre">NR'</span></tt> refers to the current record
+(line) number. The expression <tt class="docutils literal"><span class="pre">{if($1&gt;$2)</span> <span class="pre">print</span> <span class="pre">NR}'</span></tt> is a miniature
+program that says: &#8220;if the first input field is numerically greater than the
+second field for the current line, then print the line number&#8221;:</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*alto,*tenor'</span>&nbsp; <span class="pre">|</span> <span class="pre">semits</span> <span class="pre">-x</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">awk</span> <span class="pre">'{if($1&gt;$2)</span>
+<span class="pre">print</span> <span class="pre">NR}'</span></tt></p>
+<p>In short, if the left-most spine has a lower numerical value than the second
+spine, then tell us where that occurs.</p>
+<p>Since the <a class="reference external" href="../../rep/semits">**semits</a> representation uses the lower-case letter <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">r&#8217; to
+represent a rest, we should avoid the possibility of comparing a number
+(note) with a rest. We can use a variation on the same `awk</a> script as we
+used when checking for unisons:</p>
+<p><tt class="docutils literal"><span class="pre">awk</span> <span class="pre">'{if($0~/[^0-9\t-]/)next}{if($1&gt;$2)</span> <span class="pre">print</span> <span class="pre">NR}'</span></tt></p>
+<p>Finally, the complete pipeline for identifying crossed parts:</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*soprano,*alto'</span>&nbsp; <span class="pre">|</span> <span class="pre">semits</span> <span class="pre">-x</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">awk</span>
+<span class="pre">'{if($0~/[^0-9\t-]/)next}{if($1&gt;$2)</span> <span class="pre">print</span> <span class="pre">NR}'</span></tt>
+extract -i &#8216;<a href="#id102"><span class="problematic" id="id103">*</span></a>alto,*tenor&#8217;  | semits -x | ditto -s = | awk
+&#8216;{if($0~/[^0-9t-]/)next}{if($1&gt;$2) print NR}&#8217;
+extract -i &#8216;<a href="#id104"><span class="problematic" id="id105">*</span></a>tenor,*bass&#8217;  | semits -x | ditto -s = | awk
+&#8216;{if($0~/[^0-9t-]/)next}{if($1&gt;$2) print NR}&#8217;</p>
+</div>
+</div>
+<div class="section" id="parts-separated-by-greater-than-an-octave">
+<h2>(7) Parts Separated by Greater than an Octave<a class="headerlink" href="#parts-separated-by-greater-than-an-octave" title="Permalink to this headline">¶</a></h2>
+<p>RULE: &#8220;Avoid intervals greater than an octave between the soprano and alto
+voices. Also avoid intervals greater than an octave between the alto and
+tenor voices.&#8221;
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::</p>
+<p>Finding infringements of this voice-leading rule requires just a slight
+modification to our method for identifying the crossing of parts.</p>
+<p>Having transformed the pitch input to a numerical form, we simply need to
+check whether the difference between the two semitone values is greater than
+12 semitones.</p>
+<p>The <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a> portion of our command is modified so that we are informed if the
+nominally higher voice is more than 12 semitones away from the other voice:</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*soprano,*alto'</span>&nbsp; <span class="pre">|</span> <span class="pre">semits</span> <span class="pre">-x</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">awk</span>
+<span class="pre">'{if($0~/[^0-9\t-]/)next}{if($2-$1&gt;12)</span> <span class="pre">print</span> <span class="pre">NR}'</span>
+<span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*alto,*tenor'</span>&nbsp; <span class="pre">|</span> <span class="pre">semits</span> <span class="pre">-x</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">awk</span>
+<span class="pre">'{if($0~/[^0-9\t-]/)next}{if($2-$1&gt;12)</span> <span class="pre">print</span> <span class="pre">NR}'</span></tt></p>
+</div>
+<div class="section" id="overlapped-parts">
+<h2>(8) Overlapped Parts<a class="headerlink" href="#overlapped-parts" title="Permalink to this headline">¶</a></h2>
+<p>RULE: &#8220;Avoid the overlapping of parts, where the pitch in an ostensibly lower
+voice moves to a pitch higher than the previous pitch in an ostensibly higher
+voice; or where the pitch in an ostensibly higher voice moves to a pitch
+lower than the previous pitch in an ostensibly lower voice.&#8221;
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::</p>
+<p>The following passage illustrates a violation of the part overlapping rule:</p>
+<p><tt class="docutils literal"><span class="pre">**pitch</span> <span class="pre">**pitch</span>
+<span class="pre">&gt;</span> <span class="pre">C4</span> <span class="pre">E4</span>
+<span class="pre">&gt;</span> <span class="pre">F4</span> <span class="pre">A4</span>
+<span class="pre">&gt;</span> <span class="pre">E4</span> <span class="pre">G4</span>
+<span class="pre">&gt;</span> <span class="pre">*-</span> <span class="pre">*-</span></tt></p>
+<p>(In the second sonority, the lower voice (F4) moves to a pitch higher than
+the previous pitch in the higher voice (E4).)</p>
+<p>This rule is similar to the part-crossing rule, only we have to compare the
+current pitch in one part with the previous pitch in another part.</p>
+<p>Rather than making a direct comparison, for the purpose of this tutorial, we
+will make a modification to our earlier part-crossing detector. In brief, we
+will extract one of the parts, shift the data tokens within that part, paste
+the two parts back together, and then check to determine whether the shifted
+part shows any &#8220;crossed parts&#8221; &#8211; using our earlier command pipeline.</p>
+<p>The following command pipe will shift the data tokens in a spine down one
+record. (The last data record will disappear.)</p>
+<p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-n</span> <span class="pre">2</span> <span class="pre">-p</span> <span class="pre">1</span> <span class="pre">-d</span> <span class="pre">XXX</span>&nbsp; <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/XXX.*//'</span></tt></p>
+<p>In this tutorial, we won&#8217;t discuss how this works, since the <strong>context</strong> and
+<strong>humsed</strong> commands will be covered in a future tutorial. For now, we can
+note that shifting (say) the alto part can be done by extracting the
+appropriate voice, and then using the shift command sequence shown above:</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**alto'</span>&nbsp; <span class="pre">|</span> <span class="pre">context</span> <span class="pre">-n</span> <span class="pre">2</span> <span class="pre">-p</span> <span class="pre">1</span> <span class="pre">-d</span> <span class="pre">XXX</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/XXX.*//'</span> <span class="pre">&gt;</span>
+<span class="pre">alto.shf</span></tt></p>
+<p>If we want to compare, say, the soprano and alto voices, we need to extract
+both parts, and shift one of them:</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*soprano'</span>&nbsp; <span class="pre">&gt;</span> <span class="pre">soprano</span>
+<span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*alto'</span>&nbsp; <span class="pre">|</span> <span class="pre">context</span> <span class="pre">-n</span> <span class="pre">2</span> <span class="pre">-p</span> <span class="pre">1</span> <span class="pre">-d</span> <span class="pre">XXX</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/XXX.*//'</span> <span class="pre">&gt;</span>
+<span class="pre">alto.shf</span></tt></p>
+<p>Next, we need to assemble the shifted and unshifted parts back into a single
+score:</p>
+<p><tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">alto.shf</span> <span class="pre">soprano</span> <span class="pre">&gt;</span> <span class="pre">tempfile</span></tt></p>
+<p>Then we test this intermediate file for instances of &#8220;part-crossing&#8221; &#8211; using
+our earlier command pipeline:</p>
+<p><tt class="docutils literal"><span class="pre">semits</span> <span class="pre">-x</span> <span class="pre">tempfile</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">awk</span> <span class="pre">'{if($0~/[^0-9\t-]/)next}{if($1&gt;$2)</span>
+<span class="pre">print</span> <span class="pre">NR}'</span></tt></p>
+<p>Avoiding the temporary file altogether:</p>
+<p><tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">alto.shf</span> <span class="pre">soprano</span> <span class="pre">|</span> <span class="pre">semits</span> <span class="pre">-x</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">awk</span>
+<span class="pre">'{if($0~/[^0-9\t-]/)next}{if($1&gt;$2)</span> <span class="pre">print</span> <span class="pre">NR}'</span></tt></p>
+<p>Note that this procedure has determined whether any of the notes in the
+soprano voice are lower than the previous note in the alto voice. We also
+need to check whether any of the notes in the alto voice are higher than the
+previous note in the soprano voice. To do this, we simply repeat the process,
+shifting the other voice:</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*soprano'</span>&nbsp; <span class="pre">|</span> <span class="pre">context</span> <span class="pre">-n</span> <span class="pre">2</span> <span class="pre">-p</span> <span class="pre">1</span> <span class="pre">-d</span> <span class="pre">XXX</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/XXX.*//'</span> <span class="pre">&gt;</span>
+<span class="pre">soprano.shf</span>
+<span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*alto'</span>&nbsp; <span class="pre">&gt;</span> <span class="pre">alto</span>
+<span class="pre">assemble</span> <span class="pre">alto</span> <span class="pre">soprano.shf</span> <span class="pre">|</span> <span class="pre">semits</span> <span class="pre">-x</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">awk</span>
+<span class="pre">'{if($0~/[^0-9\t-]/)next}{if($1&gt;$2)</span> <span class="pre">print</span> <span class="pre">NR}'</span></tt></p>
+<p>This processing needs to be applied for each pair of successive voices &#8211;
+soprano/alto, alto/tenor, tenor/bass.</p>
+</div>
+<div class="section" id="exposed-octaves">
+<h2>(9) Exposed Octaves<a class="headerlink" href="#exposed-octaves" title="Permalink to this headline">¶</a></h2>
+<p>RULE: &#8220;When approaching an octave by similar motion, ensure that at least one
+of the parts moves by step.&#8221;
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::</p>
+<p>Violations of the exposed octaves rules must meet three conditions. First,
+the two voices must be separated by an octave (or two octaves, or a unison,
+etc.). (This suggests that we use the <strong>hint</strong> command with the <strong>-c</strong> option
+in order to reduce compound intervals to their non-compound equivalents.)
+Second, the voices must be moving in the same direction. (The <a class="reference external" href="../../rep/deg">**deg</a>
+representation may be suitable here, since it distinguishes notes according
+to whether they are approached from below (&#8220;^&#8221;) or above (&#8220;v&#8221;).) Third, both
+voices must be moving by leap (e.g. more than two semitones).</p>
+<p>To address this problem, let&#8217;s plan to create five different spines. The
+first spine will encode harmonic interval size so that all compound
+equivalents to a unison are represented by the string &#8220;P1&#8221;.</p>
+<p>The second spine will indicate whether the lower voice is ascending or
+descending (&#8220;^&#8221; or &#8220;v&#8221;). Similarly, the third spine will indicate whether the
+upper voices is ascending or descending.</p>
+<p>The fourth spine will indicate whether the melodic motion for the lower voice
+is by leap (&#8220;leap&#8221;), and the fifth spine will indicate whether the melodic
+motion for the upper voice is by leap.</p>
+<p>Examples of violations of the exposed octaves rule will appear as one of the
+following two situations:</p>
+<p><a href="#id108"><span class="problematic" id="id109">``</span></a>(<a href="#id110"><span class="problematic" id="id111">**</span></a>hint <a href="#id112"><span class="problematic" id="id113">**</span></a>updown <a href="#id114"><span class="problematic" id="id115">**</span></a>updown <a href="#id116"><span class="problematic" id="id117">**</span></a>size <a href="#id118"><span class="problematic" id="id119">**</span></a>size)
+&gt; P1 ^ ^ leap leap
+&gt; P1 v v leap leap</p>
+<p>Any other situation means that the exposed octaves rule has not been
+violated.</p>
+<p>In other words, our final test can be expressed using the following <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a>
+command:</p>
+<p><tt class="docutils literal"><span class="pre">egrep</span> <span class="pre">-n</span> <span class="pre">'P1.*^.*^.*leap.*leap|P1.*v.*v.*leap.*leap'</span></tt></p>
+<p>Now all we need to do is generate our five spines and assemble them in the
+proper order.</p>
+<p>The first spine is easily generated using the <strong>hint</strong> command. Remember that
+the <strong>-c</strong> option means that all intervals an octave or greater will be
+represented by the within-octave equivalent.</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*alto,*tenor'</span>&nbsp; <span class="pre">|</span> <span class="pre">hint</span> <span class="pre">-c</span> <span class="pre">&gt;</span> <span class="pre">spine1</span></tt></p>
+<p>The second and third spines can be generated using the Humdrum <a class="reference external" href="../../man/deg">deg</a>
+command:</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*alto'</span>&nbsp; <span class="pre">|</span> <span class="pre">deg</span> <span class="pre">&gt;</span> <span class="pre">spine2</span>
+<span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*tenor'</span>&nbsp; <span class="pre">|</span> <span class="pre">deg</span> <span class="pre">&gt;</span> <span class="pre">spine3</span></tt></p>
+<p>The fourth and fifth spines require a little more work. First, we calculate
+the melodic intervals for each voice using the Humdrum <a class="reference external" href="../../man/mint">mint</a> command.</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*alto'</span>&nbsp; <span class="pre">|</span> <span class="pre">mint</span> <span class="pre">...</span></tt></p>
+<p>Secondly, we need to change all data tokens indicating intervals greater than
+a diatonic second (3 or more semitones) into the data token consisting of the
+(arbitrary) character string &#8220;leap&#8221;. This can be done using the <a class="reference external" href="../../man/humsed">humsed</a>
+stream editor.</p>
+<p>`` ... humsed &#8216;s/.*[3-9].*/leap/&#8217; &gt; spine4 [spine5 for the other voice]``</p>
+<p>Putting it all together, the following command sequence will let us identify
+any instances of exposed octaves between two arbitrary voices:</p>
+<p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*alto,*tenor'</span>&nbsp; <span class="pre">|</span> <span class="pre">hint</span> <span class="pre">-c</span> <span class="pre">&gt;</span> <span class="pre">spine1</span>
+<span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*alto'</span>&nbsp; <span class="pre">|</span> <span class="pre">deg</span> <span class="pre">&gt;</span> <span class="pre">spine2</span>
+<span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*tenor'</span>&nbsp; <span class="pre">|</span> <span class="pre">deg</span> <span class="pre">&gt;</span> <span class="pre">spine3</span>
+<span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*alto'</span>&nbsp; <span class="pre">|</span> <span class="pre">mint</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/.*[3-9].*/leap/'</span> <span class="pre">&gt;</span> <span class="pre">spine4</span>
+<span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*tenor'</span>&nbsp; <span class="pre">|</span> <span class="pre">mint</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/.*[3-9].*/leap/'</span> <span class="pre">&gt;</span> <span class="pre">spine5</span>
+<span class="pre">assemble</span> <span class="pre">spine1</span> <span class="pre">spine2</span> <span class="pre">spine3</span> <span class="pre">spine4</span> <span class="pre">spine5</span> <span class="pre">&gt;</span> <span class="pre">tempfile</span>
+<span class="pre">egrep</span> <span class="pre">-n</span> <span class="pre">'P1.*^.*^.*leap.*leap|P1.*v.*v.*leap.*leap'</span> <span class="pre">tempfile</span></tt></p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  <hr/>
+  
+
+
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+   
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-52162357-1', 'humdrum.org');
+  ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>

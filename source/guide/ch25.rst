@@ -161,7 +161,7 @@ used.
 
 
 Using a Template with *correl*
-------
+--------------------------------
 
 In the above examples, **correl** generates a single output value indicating
 the degree of numerical similarity between two spines. A more valuable use of

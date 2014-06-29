@@ -79,7 +79,7 @@ the same proportion of major/minor keys. One might similarly match
 instrumentation, date or period of composition, duration of work, tempi, and
 so on.
 
-Humdrum users can use the **find** and `grep <http://en.wikipedia.org/wiki/Grep>`_ commands to identify works
+Humdrum users can use the `find <http://en.wikipedia.org/wiki/Find>`_ and `grep <http://en.wikipedia.org/wiki/Grep>`_ commands to identify works
 that match particular controlled characteristics (see `Chapter 33 <../ch33>`_). For
 example, the following command might locate all files that contain scores in
 triple meter. The results are placed in a file called ``control``:

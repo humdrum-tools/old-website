@@ -272,7 +272,7 @@ and m6) in the first measure:
 `` M3 m3 P4
 `` *-``
 
-The `**ditto**,`_ command provides two additional options that are worthy of
+The `ditto <../../man/ditto>`_, command provides two additional options that are worthy of
 note: the **-s** and **-c** options. The **-s** option allows **ditto** to
 skip or ignore the presence of certain data records. Suppose, for example,
 that we had a barline in the midst of some null tokens:
@@ -476,7 +476,7 @@ The resulting output would be as follows:
 
 Numerical differences for values on a single data record can be computed
 using the `ydelta <../../man/ydelta>`_ command. The **ydelta** command is comparable to
-`**xdelta**,`_ however, numerical differences are calculated between
+`xdelta <../../man/xdelta>`_, however, numerical differences are calculated between
 simultaneous numerical values (delta-*y*) rather than between successive
 numerical values (delta-*x*).
 

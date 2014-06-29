@@ -17,13 +17,13 @@ environment, for more complex tasks, it is better to use one of the many good
 programming languages.
 
 For data manipulation tasks comparable to those described in this book, the
-most appropriate programming language include **perl** and **awk**. The
-**awk** programming language is especially useful for text processing,
-retrieving, transforming, reducing, and validating text data. The **perl**
+most appropriate programming language include `perl <http://en.wikipedia.org/wiki/Perl>`_ and `awk <http://en.wikipedia.org/wiki/Awk>`_. The
+`awk <http://en.wikipedia.org/wiki/Awk>`_ programming language is especially useful for text processing,
+retrieving, transforming, reducing, and validating text data. The `perl <http://en.wikipedia.org/wiki/Perl>`_
 programming language provides even more extensive capabilities, but requires
 a somewhat greater effort to learn. For research-oriented programming,
-**perl** is the programming language of choice. However, for this brief
-introduction we will describe features of the **awk** programming language.
+`perl <http://en.wikipedia.org/wiki/Perl>`_ is the programming language of choice. However, for this brief
+introduction we will describe features of the `awk <http://en.wikipedia.org/wiki/Awk>`_ programming language.
 Awk is a so-called "scripted" language. It is easy to learn but nevertheless
 quite powerful.
 
@@ -36,7 +36,7 @@ the following:
 
 ``awk '{print "hello"}'``
 
-The **awk** command invokes the awk program interpreter. The material within
+The `awk <http://en.wikipedia.org/wiki/Awk>`_ command invokes the awk program interpreter. The material within
 the single quotes is the actual program. Once the program is started, it is
 is executed once each time you type the carriage return or ENTER key. To stop
 the program, simply type control-D (on UNIX systems) or control-Z (on DOS
@@ -350,8 +350,8 @@ file manipulations.
 Reprise
 -------
 
-In this chapter we have introduced some features of the **awk**
-pattern/action language. A programming language, like **awk** or **perl** can
+In this chapter we have introduced some features of the `awk <http://en.wikipedia.org/wiki/Awk>`_
+pattern/action language. A programming language, like `awk <http://en.wikipedia.org/wiki/Awk>`_ or `perl <http://en.wikipedia.org/wiki/Perl>`_ can
 be used to transform data in highly specific and specialized ways. The power
 of Humdrum is significantly enhanced when users are able to create their own
 specialized filters.

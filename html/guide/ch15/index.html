@@ -381,7 +381,7 @@ tools for calculating harmonic intervals: <strong>hint</strong> and <strong>ydel
 <h2>Harmonic Intervals Using the <em>hint</em> Command<a class="headerlink" href="#harmonic-intervals-using-the-hint-command" title="Permalink to this headline">¶</a></h2>
 <p>The Humdrum <a class="reference external" href="../../man/hint">hint</a> command calculates harmonic intervals for pitch-
 related representations such as <a class="reference external" href="../../rep/kern">**kern</a>, <a class="reference external" href="../../rep/pitch">**pitch</a>,
-`` <a href="#id94"><span class="problematic" id="id95">`**solfg```_</span></a>, and <a class="reference external" href="../../rep/Tonh">**Tonh</a>. As in the case of the <strong>mint</strong> command,
+`` <a href="#id95"><span class="problematic" id="id96">`**solfg```_</span></a>, and <a class="reference external" href="../../rep/Tonh">**Tonh</a>. As in the case of the <strong>mint</strong> command,
 output intervals are expressed as a combination of diatonic interval size
 plus interval quality (such as <a href="#id4"><span class="problematic" id="id5">`</span></a>perfect fourth&#8217; and <a href="#id6"><span class="problematic" id="id7">`</span></a>minor ninth&#8217;).</p>
 <p>In the default operation, <strong>hint</strong> calculates only explicit harmonic
@@ -508,7 +508,7 @@ and m6) in the first measure:</p>
 `` =2
 `` M3 m3 P4
 `` <a href="#id39"><span class="problematic" id="id40">*</span></a>-``</p>
-<p>The <a href="#id96"><span class="problematic" id="id97">`**ditto**,`_</span></a> command provides two additional options that are worthy of
+<p>The <a class="reference external" href="../../man/ditto">ditto</a>, command provides two additional options that are worthy of
 note: the <strong>-s</strong> and <strong>-c</strong> options. The <strong>-s</strong> option allows <strong>ditto</strong> to
 skip or ignore the presence of certain data records. Suppose, for example,
 that we had a barline in the midst of some null tokens:</p>
@@ -523,13 +523,13 @@ types of data tokens, so the result might be:</p>
 &gt; =
 &gt; A</p>
 <p>By providing <strong>ditto</strong> with a suitable regular expression, we can have the
-data token <a href="#id41"><span class="problematic" id="id42">`</span></a>A&#8217; skip over the barline:</p>
+data token <a href="#id42"><span class="problematic" id="id43">`</span></a>A&#8217; skip over the barline:</p>
 <p>`` ditto -s ^=``</p>
 <p>Without this option, the final data token in the above example would be an
-equals-sign rather than the token <a href="#id43"><span class="problematic" id="id44">`</span></a>A&#8217;.</p>
+equals-sign rather than the token <a href="#id44"><span class="problematic" id="id45">`</span></a>A&#8217;.</p>
 <p>The <strong>-c</strong> option for <strong>ditto</strong> allows the user to selectively identify which
 characters are propagated. For example, the following command will cause only
-the lower-case letters <a href="#id45"><span class="problematic" id="id46">`</span></a>a&#8217; and <a href="#id47"><span class="problematic" id="id48">`</span></a>b&#8217; to be propagated:</p>
+the lower-case letters <a href="#id46"><span class="problematic" id="id47">`</span></a>a&#8217; and <a href="#id48"><span class="problematic" id="id49">`</span></a>b&#8217; to be propagated:</p>
 <p>`` ditto -c ab``</p>
 <p>This feature allows users to replicate only certain kinds of data &#8211; such as
 pitches, durations, dynamic marks, etc.</p>
@@ -556,11 +556,11 @@ proportion, we need to make two counts: the total number of (explicit)
 intervals formed by the oboe and flute, and the number of those intervals
 that are octave equivalents. (We will assume that there is only one oboe and
 one flute part in the file <tt class="docutils literal"><span class="pre">Rimsky-K</span></tt>:)</p>
-<p>`` extract -i &#8216;<a href="#id49"><span class="problematic" id="id50">*</span></a>Ioboe,*Iflts&#8217; Rimsky-K | hint -c | rid -GLId &gt;
+<p>`` extract -i &#8216;<a href="#id50"><span class="problematic" id="id51">*</span></a>Ioboe,*Iflts&#8217; Rimsky-K | hint -c | rid -GLId &gt;
 &gt;&gt; | grep -c P1``
 &gt;
 &gt;
-`` extract -i &#8216;<a href="#id51"><span class="problematic" id="id52">*</span></a>Ioboe,*Iflts&#8217; Rimsky-K | hint -c | rid -GLId &gt;
+`` extract -i &#8216;<a href="#id52"><span class="problematic" id="id53">*</span></a>Ioboe,*Iflts&#8217; Rimsky-K | hint -c | rid -GLId &gt;
 &gt;&gt; | grep -c [MmPAd]``</p>
 <p>The second <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> counts the total number of intervals by looking for all
 of the interval qualities (major, minor, perfect, etc.)</p>
@@ -580,11 +580,11 @@ has a rest while the other part is sounding. Note that if we could eliminate
 rest tokens, then we could use <strong>ditto</strong> to repeat previous pitch tokens in
 place of the rests and so generate implicit harmonic intervals.</p>
 <p>The <a class="reference external" href="../../man/humsed">humsed</a> command (described in <a class="reference external" href="../ch14">Chapter 14</a>) is well suited to this
-task. We want to transform any data token containing the letter <a href="#id53"><span class="problematic" id="id54">`</span></a>r&#8217; to a null
+task. We want to transform any data token containing the letter <a href="#id54"><span class="problematic" id="id55">`</span></a>r&#8217; to a null
 token. Consider the following substitution:</p>
 <p>`` humsed &#8216;s/.*r.*/. ./&#8217; example15.1``</p>
 <p>Unfortunately, this isn&#8217;t quite right. The above substitution will find any
-data record containing the letter <a href="#id55"><span class="problematic" id="id56">`</span></a>r&#8217; and transform the entire record to a
+data record containing the letter <a href="#id56"><span class="problematic" id="id57">`</span></a>r&#8217; and transform the entire record to a
 single null data record. We need to address individual data tokens. In this
 example, rest tokens may be in two possible positions: the first token in the
 record or the last token in the record. We need two different regular
@@ -592,7 +592,7 @@ expressions to address each of these conditions. First, a regular expression
 to identify rests in the first token:</p>
 <p>`` /^[^ ]*r[^ ]* /``</p>
 <p>(That is, the beginning of the record (^), followed by zero or more instances
-of any character other than a tab ([^ ]*), followed by the letter <a href="#id57"><span class="problematic" id="id58">`</span></a>r&#8217;,
+of any character other than a tab ([^ ]*), followed by the letter <a href="#id58"><span class="problematic" id="id59">`</span></a>r&#8217;,
 followed by zero or more instances of any character other than a tab ([^ ]*),
 followed by a tab.)</p>
 <p>Similarly, our second regular expression identifies rests in the last token:</p>
@@ -601,7 +601,7 @@ followed by a tab.)</p>
 commands within a single invocation of <strong>humsed</strong>:</p>
 <p>`` humsed &#8216;s/^[^ ]*r[^ ]* /. /; s/ [^ ]*r[^ ]*$/ ./&#8217; example15.1``</p>
 <p>The following output results:</p>
-<p>`` <a href="#id59"><span class="problematic" id="id60">**</span></a>kern**kern
+<p>`` <a href="#id60"><span class="problematic" id="id61">**</span></a>kern**kern
 `` <em>M4/4*M4/4
 `` =1-=1-
 `` 8c2cc
@@ -620,7 +620,7 @@ output will identify some implicit intervals as well:</p>
 &gt;&gt; | ditto -p``</p>
 <p>Below we see the output assembled with the output from the corresponding
 <a class="reference external" href="../../man/hint">hint</a> command:</p>
-<p>`` <a href="#id63"><span class="problematic" id="id64">**</span></a>kern**kern**hint
+<p>`` <a href="#id64"><span class="problematic" id="id65">**</span></a>kern**kern**hint
 `` <em>M4/4*M4/4*M4/4
 `` =1-=1-=1-
 `` 8c2ccP8
@@ -632,7 +632,7 @@ output will identify some implicit intervals as well:</p>
 `` (8d)8bM6
 `` =2=2=2
 `` 2.c 2.e2.g 2.ccM3 m3 P4
-`` *-</em>-<a href="#id65"><span class="problematic" id="id66">*</span></a>-``</p>
+`` *-</em>-<a href="#id66"><span class="problematic" id="id67">*</span></a>-``</p>
 </div>
 <div class="section" id="the-ydelta-command">
 <h2>The <em>ydelta</em> Command<a class="headerlink" href="#the-ydelta-command" title="Permalink to this headline">¶</a></h2>
@@ -641,7 +641,7 @@ other numerical value). We might begin by using the <strong>semits</strong> comm
 translate Example 15.1 to a <a class="reference external" href="../../rep/semits">**semits</a> representation.</p>
 <p>`` semits example15.1``</p>
 <p>The resulting output would be as follows:</p>
-<p>`` <a href="#id67"><span class="problematic" id="id68">**</span></a>semits**semits
+<p>`` <a href="#id68"><span class="problematic" id="id69">**</span></a>semits**semits
 `` <em>M4/4*M4/4
 `` =1-=1-
 `` 012
@@ -656,19 +656,19 @@ translate Example 15.1 to a <a class="reference external" href="../../rep/semits
 `` *-</em>-``</p>
 <p>Numerical differences for values on a single data record can be computed
 using the <a class="reference external" href="../../man/ydelta">ydelta</a> command. The <strong>ydelta</strong> command is comparable to
-<a href="#id98"><span class="problematic" id="id99">`**xdelta**,`_</span></a> however, numerical differences are calculated between
+<a class="reference external" href="../../man/xdelta">xdelta</a>, however, numerical differences are calculated between
 simultaneous numerical values (delta-<em>y</em>) rather than between successive
 numerical values (delta-<em>x</em>).</p>
 <p>Like the <a class="reference external" href="../../man/hint">hint</a> command, <strong>ydelta</strong> always outputs a single spine. The
 user must specify which input spines are to be processed using the <strong>-i</strong>
-option. In the following command, only <a href="#id71"><span class="problematic" id="id72">**</span></a>semits input is to be processed:</p>
-<p>`` semits example15.1 | ydelta -s = -i &#8216;<a href="#id73"><span class="problematic" id="id74">**</span></a>semits&#8217;``</p>
+option. In the following command, only <a href="#id72"><span class="problematic" id="id73">**</span></a>semits input is to be processed:</p>
+<p>`` semits example15.1 | ydelta -s = -i &#8216;<a href="#id74"><span class="problematic" id="id75">**</span></a>semits&#8217;``</p>
 <p>The <strong>-s</strong> option allows the user to identify data records to be <em>skipped</em>
-while processing. In this case, the regular expression <a href="#id75"><span class="problematic" id="id76">`</span></a>=&#8217; is used to
+while processing. In this case, the regular expression <a href="#id76"><span class="problematic" id="id77">`</span></a>=&#8217; is used to
 identify barlines, so measure numbers will be excluded when processing the
 numerical data.</p>
 <p>The above command yields the following output:</p>
-<p>`` <a href="#id77"><span class="problematic" id="id78">**</span></a>Ysemits
+<p>`` <a href="#id78"><span class="problematic" id="id79">**</span></a>Ysemits
 `` *
 `` =1-
 `` 12
@@ -680,7 +680,7 @@ numerical data.</p>
 `` .
 `` =2
 `` 4 7 12
-`` <a href="#id79"><span class="problematic" id="id80">*</span></a>-``</p>
+`` <a href="#id80"><span class="problematic" id="id81">*</span></a>-``</p>
 <p>Notice that <strong>ydelta</strong> prepends the upper-case letter <cite>Y&#8217; to the given input
 interpretation. All output values are calculated with respect to the lowest
 value in the current data record. Hence, the ```4 7 12`</cite> in the last data
@@ -692,9 +692,9 @@ brackets using the <strong>-o</strong> option.)</p>
 when more than one value is present on a given input data record. As in the
 case of <strong>hint,</strong> we might use the <strong>ditto</strong> command to propagate pitch
 values &#8211; replacing all the null data tokens. A suitable command would be:</p>
-<p>`` semits example15.1 | ditto -s = | ydelta -s = -i &#8216;<a href="#id81"><span class="problematic" id="id82">**</span></a>semits&#8217;``</p>
+<p>`` semits example15.1 | ditto -s = | ydelta -s = -i &#8216;<a href="#id82"><span class="problematic" id="id83">**</span></a>semits&#8217;``</p>
 <p>The resulting output would be:</p>
-<p>`` <a href="#id83"><span class="problematic" id="id84">**</span></a>Ysemits
+<p>`` <a href="#id84"><span class="problematic" id="id85">**</span></a>Ysemits
 `` *
 `` =1-
 `` 12
@@ -706,7 +706,7 @@ values &#8211; replacing all the null data tokens. A suitable command would be:<
 `` .
 `` =2
 `` 4 7 12
-`` <a href="#id85"><span class="problematic" id="id86">*</span></a>-``</p>
+`` <a href="#id86"><span class="problematic" id="id87">*</span></a>-``</p>
 </div>
 <div class="section" id="more-examples-using-the-ydelta-command">
 <h2>More Examples Using the <em>ydelta</em> Command<a class="headerlink" href="#more-examples-using-the-ydelta-command" title="Permalink to this headline">¶</a></h2>
@@ -720,14 +720,14 @@ calculate the actual semitone interval distances. The <a class="reference extern
 be used to eliminate non-data records, and the <strong>grep -v</strong> command can be
 used to further eliminate barlines. Finally, we can calculate the mean
 interval distance using the <strong>stats</strong> command:</p>
-<p>`` ditto -s = temp1 | ydelta -s = -i &#8216;<a href="#id87"><span class="problematic" id="id88">**</span></a>semits&#8217; | rid -GLId &gt;
+<p>`` ditto -s = temp1 | ydelta -s = -i &#8216;<a href="#id88"><span class="problematic" id="id89">**</span></a>semits&#8217; | rid -GLId &gt;
 &gt;&gt; | grep -v = | stats``</p>
 <p>Suppose we have a two-part input. Are there tritone intervals (explicit and
 passing) that are not spelled as either an augmented fourth or diminished
 fifth? We can answer this question by using both <strong>hint</strong> and <strong>ydelta</strong> and
 a suitable sequence of <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> commands. The <strong>ditto</strong> command is used to
 ensure that both explicit and passing intervals are generated.</p>
-<p>`` ditto -s = 2part | semits | ydelta -s = -i &#8216;<a href="#id90"><span class="problematic" id="id91">**</span></a>semits&#8217; &gt; temp1``
+<p>`` ditto -s = 2part | semits | ydelta -s = -i &#8216;<a href="#id91"><span class="problematic" id="id92">**</span></a>semits&#8217; &gt; temp1``
 `` ditto -s = 2part | hint &gt; temp2``
 `` assemble temp1 temp2 | rid -GLId | grep ^6 | grep -v A4 &gt;
 &gt;&gt; | grep -v d5``</p>

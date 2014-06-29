@@ -333,52 +333,52 @@ display musical notation.</li>
 <a class="reference external" href="../../man/midi">midi</a> and <a class="reference external" href="../../man/perform">perform</a> commands.</li>
 <li><strong>*Searching for things.*</strong> When searching for things within
 specified files, appropriate commands include: <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a>,
-<a href="#id19"><span class="problematic" id="id20">`**yank -m**,`_</span></a> <a href="#id21"><span class="problematic" id="id22">`**patt**,`_</span></a> <a href="#id23"><span class="problematic" id="id24">`**pattern**,`_</span></a> <a href="#id25"><span class="problematic" id="id26">`**correl**,`_</span></a> <a class="reference external" href="../../man/simil">simil</a>
-and <a href="#id27"><span class="problematic" id="id28">`**humdrum -v**.`_</span></a> When searching for files that meet certain
+<a href="#id46"><span class="problematic" id="id47">`**yank -m**,`_</span></a> <a class="reference external" href="../../man/patt">patt</a>, <a class="reference external" href="../../man/pattern">pattern</a>, <a class="reference external" href="../../man/correl">correl</a>, <a class="reference external" href="../../man/simil">simil</a>
+and <a href="#id48"><span class="problematic" id="id49">`**humdrum -v**.`_</span></a> When searching for files that meet certain
 conditions, appropriate commands include <strong>grep -l</strong>, <strong>egrep -l</strong> and
-<strong>find</strong>. Most of these search tools rely extensively on regular
+<a class="reference external" href="http://en.wikipedia.org/wiki/Find">find</a>. Most of these search tools rely extensively on regular
 expressions to define patterns of characters.</li>
 <li><strong>*Counting things.*</strong> Appropriate commands include: <a class="reference external" href="http://en.wikipedia.org/wiki/Wc_(Unix)">wc</a>, <strong>wc
 -l</strong>, <strong>grep -c</strong>, <strong>egrep -c</strong>, <a class="reference external" href="../../man/census">census</a> and <strong>census -k</strong>.
 Eliminating unnecessary or confounding information can be achieved using
-<a href="#id29"><span class="problematic" id="id30">`**rid**,`_</span></a> <a href="#id31"><span class="problematic" id="id32">`**extract**,`_</span></a> <strong>grep -v</strong>, <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> and <a href="#id33"><span class="problematic" id="id34">`**humsed**.`_</span></a></li>
+<a class="reference external" href="../../man/rid">rid</a>, <a class="reference external" href="../../man/extract">extract</a>, <strong>grep -v</strong>, <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> and <a class="reference external" href="../../man/humsed">humsed</a>.</li>
 <li><strong>*Editing things.*</strong> Manual editing may be done using any text
-editor, such as <strong>emacs</strong> or <strong>vi</strong>. Automated (or &#8220;stream&#8221;) editing may
-be done using <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> and <a href="#id35"><span class="problematic" id="id36">`**humsed**.`_</span></a></li>
+editor, such as <a class="reference external" href="http://en.wikipedia.org/wiki/Emacs">emacs</a> or <a class="reference external" href="http://en.wikipedia.org/wiki/Vi">vi</a>. Automated (or &#8220;stream&#8221;) editing may
+be done using <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> and <a class="reference external" href="../../man/humsed">humsed</a>.</li>
 <li><strong>*Editorializing.*</strong> E.g., add an editorial footnote to a specified
 note or passage; indicate that a passage differs from the composer&#8217;s
 autograph.</li>
 <li><strong>*Transforming or translating between representations.*</strong>
-Appropriate commands include: <a href="#id37"><span class="problematic" id="id38">`**cents**,`_</span></a> <a href="#id39"><span class="problematic" id="id40">`**deg**,`_</span></a> <a href="#id41"><span class="problematic" id="id42">`**degree**,`_</span></a>
-<strong>dur</strong>, <a href="#id43"><span class="problematic" id="id44">`**freq**,`_</span></a> <a href="#id45"><span class="problematic" id="id46">`**hint**,`_</span></a> <a href="#id47"><span class="problematic" id="id48">`**humsed**,`_</span></a> <a href="#id49"><span class="problematic" id="id50">`**iv**,`_</span></a> <a href="#id51"><span class="problematic" id="id52">`**kern**,`_</span></a>
-<a href="#id53"><span class="problematic" id="id54">`**mint**,`_</span></a> <a href="#id55"><span class="problematic" id="id56">`**pc**,`_</span></a> <a href="#id57"><span class="problematic" id="id58">`**pf**,`_</span></a> <a href="#id59"><span class="problematic" id="id60">`**pitch**,`_</span></a> <a href="#id61"><span class="problematic" id="id62">`**reihe**,`_</span></a>
-<a href="#id63"><span class="problematic" id="id64">`**semits**,`_</span></a> <a href="#id65"><span class="problematic" id="id66">`**solfa**,`_</span></a> <a href="#id67"><span class="problematic" id="id68">`**solfg**,`_</span></a> <strong>text</strong>, <a href="#id69"><span class="problematic" id="id70">`**tonh**,`_</span></a>
-<a class="reference external" href="../../man/trans">trans</a> and <a href="#id71"><span class="problematic" id="id72">`**vox**.`_</span></a></li>
+Appropriate commands include: <a class="reference external" href="../../man/cents">cents</a>, <a class="reference external" href="../../man/deg">deg</a>, <a class="reference external" href="../../man/degree">degree</a>,
+<strong>dur</strong>, <a class="reference external" href="../../man/freq">freq</a>, <a class="reference external" href="../../man/hint">hint</a>, <a class="reference external" href="../../man/humsed">humsed</a>, <a class="reference external" href="../../man/iv">iv</a>, <a class="reference external" href="../../man/kern">kern</a>,
+<a class="reference external" href="../../man/mint">mint</a>, <a class="reference external" href="../../man/pc">pc</a>, <a class="reference external" href="../../man/pf">pf</a>, <a class="reference external" href="../../man/pitch">pitch</a>, <a class="reference external" href="../../man/reihe">reihe</a>,
+<a class="reference external" href="../../man/semits">semits</a>, <a class="reference external" href="../../man/solfa">solfa</a>, <a class="reference external" href="../../man/solfg">solfg</a>, <strong>text</strong>, <a class="reference external" href="../../man/tonh">tonh</a>,
+<a class="reference external" href="../../man/trans">trans</a> and <a class="reference external" href="../../man/vox">vox</a>.</li>
 <li><strong>*Arithmetic transformations of representations.*</strong> Manipulating
-numerical values can be done using <a href="#id73"><span class="problematic" id="id74">`**xdelta**,`_</span></a> <a href="#id75"><span class="problematic" id="id76">`**ydelta**,`_</span></a>
-<a class="reference external" href="../../man/recode">recode</a> and <strong>awk</strong>.</li>
+numerical values can be done using <a class="reference external" href="../../man/xdelta">xdelta</a>, <a class="reference external" href="../../man/ydelta">ydelta</a>,
+<a class="reference external" href="../../man/recode">recode</a> and <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a>.</li>
 <li><strong>*Extracting or selecting information.*</strong> Appropriate commands
-include: <a href="#id77"><span class="problematic" id="id78">`**extract**,`_</span></a> <a href="#id79"><span class="problematic" id="id80">`**yank**,`_</span></a> <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a>, <a href="#id81"><span class="problematic" id="id82">`**yank
--m**,`_</span></a> <a href="#id83"><span class="problematic" id="id84">`**thru**,`_</span></a> <a href="#id85"><span class="problematic" id="id86">`**strophe**,`_</span></a> <a class="reference external" href="../../man/rend">rend</a> and <strong>csplit</strong>.</li>
+include: <a class="reference external" href="../../man/extract">extract</a>, <a class="reference external" href="../../man/yank">yank</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a>, <a href="#id50"><span class="problematic" id="id51">`**yank
+-m**,`_</span></a> <a class="reference external" href="../../man/thru">thru</a>, <a class="reference external" href="../../man/strophe">strophe</a>, <a class="reference external" href="../../man/rend">rend</a> and <strong>csplit</strong>.</li>
 <li><strong>*Linking or joining information.*</strong> Appropriate commands include:
-<a href="#id87"><span class="problematic" id="id88">`**assemble**,`_</span></a> <a class="reference external" href="http://en.wikipedia.org/wiki/Cat_(Unix)">cat</a>, <a href="#id89"><span class="problematic" id="id90">`**cleave**,`_</span></a> <a href="#id91"><span class="problematic" id="id92">`**timebase**,`_</span></a> <a href="#id93"><span class="problematic" id="id94">`**context**,`_</span></a>
+<a class="reference external" href="../../man/assemble">assemble</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/Cat_(Unix)">cat</a>, <a class="reference external" href="../../man/cleave">cleave</a>, <a class="reference external" href="../../man/timebase">timebase</a>, <a class="reference external" href="../../man/context">context</a>,
 <a class="reference external" href="../../man/ditto">ditto</a> and <strong>join</strong>.</li>
 <li><strong>*Generating inventories of things.*</strong> Appropriate commands include:
 <strong>sort</strong> and <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a>. Once again, unnecessary or confounding information
-can be eliminated using <a href="#id95"><span class="problematic" id="id96">`**rid**,`_</span></a> <a href="#id97"><span class="problematic" id="id98">`**extract**,`_</span></a> <strong>grep -v</strong>, <a href="#id99"><span class="problematic" id="id100">`**yank
--m**,`_</span></a> <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> or <a href="#id101"><span class="problematic" id="id102">`**humsed**.`_</span></a></li>
+can be eliminated using <a class="reference external" href="../../man/rid">rid</a>, <a class="reference external" href="../../man/extract">extract</a>, <strong>grep -v</strong>, <a href="#id52"><span class="problematic" id="id53">`**yank
+-m**,`_</span></a> <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> or <a class="reference external" href="../../man/humsed">humsed</a>.</li>
 <li><strong>*Classifying things.*</strong> Numerical values can be classified using
-<a href="#id103"><span class="problematic" id="id104">`**recode**;`_</span></a> non-numerical data can be classified using <a href="#id105"><span class="problematic" id="id106">`**humsed**.`_</span></a></li>
-<li><strong>*Labelling things.*</strong> Appropriate commands include: <a href="#id107"><span class="problematic" id="id108">`**patt -t**,`_</span></a>
-<a href="#id109"><span class="problematic" id="id110">`**recode**,`_</span></a> <a class="reference external" href="../../man/humsed">humsed</a> and <a href="#id111"><span class="problematic" id="id112">`**timebase**.`_</span></a></li>
+<a class="reference external" href="../../man/recode">recode</a>; non-numerical data can be classified using <a class="reference external" href="../../man/humsed">humsed</a>.</li>
+<li><strong>*Labelling things.*</strong> Appropriate commands include: <a href="#id54"><span class="problematic" id="id55">`**patt -t**,`_</span></a>
+<a class="reference external" href="../../man/recode">recode</a>, <a class="reference external" href="../../man/humsed">humsed</a> and <a class="reference external" href="../../man/timebase">timebase</a>.</li>
 <li><strong>*Comparing whether things are the same or similar.*</strong> Appropriate
 commands include: <strong>diff</strong>, <strong>diff3</strong>, <strong>cmp</strong>, <a class="reference external" href="../../man/correl">correl</a> and
-<a href="#id113"><span class="problematic" id="id114">`**simil**.`_</span></a></li>
+<a class="reference external" href="../../man/simil">simil</a>.</li>
 <li><strong>*Capturing data.*</strong> MIDI data can be input via <a class="reference external" href="../../man/encode">encode</a> and
-<a href="#id115"><span class="problematic" id="id116">`**record.**`_</span></a></li>
-<li><strong>*Trouble-shooting.*</strong> Appropriate commands include: <a href="#id117"><span class="problematic" id="id118">`**humdrum**,`_</span></a>
-<a href="#id119"><span class="problematic" id="id120">`**humdrum -v**,`_</span></a> <a href="#id121"><span class="problematic" id="id122">`**proof**,`_</span></a> <a href="#id123"><span class="problematic" id="id124">`**proof -k**,`_</span></a> <a href="#id125"><span class="problematic" id="id126">`**veritas**,`_</span></a>
-<a class="reference external" href="../../man/midi">midi</a> and <a href="#id127"><span class="problematic" id="id128">`**perform**.`_</span></a></li>
+<a href="#id56"><span class="problematic" id="id57">`**record.**`_</span></a></li>
+<li><strong>*Trouble-shooting.*</strong> Appropriate commands include: <a class="reference external" href="../../man/humdrum">humdrum</a>,
+<a href="#id58"><span class="problematic" id="id59">`**humdrum -v**,`_</span></a> <a class="reference external" href="../../man/proof">proof</a>, <a href="#id60"><span class="problematic" id="id61">`**proof -k**,`_</span></a> <a class="reference external" href="../../man/veritas">veritas</a>,
+<a class="reference external" href="../../man/midi">midi</a> and <a class="reference external" href="../../man/perform">perform</a>.</li>
 </ul>
 <p>Not all of the existing Humdrum Tools were covered in this book. Nor were all
 of the available options described for all of the tools discussed. Exploring
@@ -396,22 +396,22 @@ provide useful guidelines:</p>
 </ul>
 <p>Do I want a count or inventory?</p>
 <blockquote>
-<div><a href="#id6"><span class="problematic" id="id7">``</span></a>115 instances of ...</div></blockquote>
+<div><a href="#id20"><span class="problematic" id="id21">``</span></a>115 instances of ...</div></blockquote>
 <p>28 instances of ...``</p>
 <blockquote>
 <div><p>Do I want to output a found pattern?</p>
-<p><a href="#id8"><span class="problematic" id="id9">``</span></a>pattern found in line ...</p>
+<p><a href="#id22"><span class="problematic" id="id23">``</span></a>pattern found in line ...</p>
 </div></blockquote>
 <p>pattern not found ...``</p>
 <blockquote>
 <div><p>Do I want a comparison?</p>
-<p><a href="#id10"><span class="problematic" id="id11">``</span></a>file X is the same as file Y</p>
+<p><a href="#id24"><span class="problematic" id="id25">``</span></a>file X is the same as file Y</p>
 </div></blockquote>
 <p>X is similar to Y
 X and Y are different``</p>
 <ul>
 <li><p class="first"><em>What materials are available for processing?</em></p>
-<p>&gt; Use <strong>find</strong> and <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to locate useful materials.</p>
+<p>&gt; Use <a class="reference external" href="http://en.wikipedia.org/wiki/Find">find</a> and <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to locate useful materials.</p>
 </li>
 <li><p class="first"><em>What materials do I need to create?</em></p>
 <p>&gt; Use <a class="reference external" href="../../man/encode">encode</a> to create new data. Use <a class="reference external" href="../../man/humdrum">humdrum</a> and
@@ -425,18 +425,18 @@ classes &#8211; such as <em>up</em>, <em>down</em>, <em>leap</em>, <em>long</em>
 </li>
 </ul>
 <p>&gt;
-&gt;     Use translating/transforming commands such as <a href="#id129"><span class="problematic" id="id130">`**mint**,`_</span></a>
-<a href="#id131"><span class="problematic" id="id132">`**ydelta**,`_</span></a> <a href="#id133"><span class="problematic" id="id134">`**pcset**,`_</span></a> etc to translate the data to a different
+&gt;     Use translating/transforming commands such as <a class="reference external" href="../../man/mint">mint</a>,
+<a class="reference external" href="../../man/ydelta">ydelta</a>, <a class="reference external" href="../../man/pcset">pcset</a>, etc to translate the data to a different
 representation.</p>
 <ul>
 <li><p class="first"><em>What data should I eliminate?</em></p>
-<p>&gt; Use <a href="#id135"><span class="problematic" id="id136">`**rid**,`_</span></a> <a href="#id137"><span class="problematic" id="id138">`**extract**,`_</span></a> <a href="#id139"><span class="problematic" id="id140">`**yank**,`_</span></a> <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a>,
-<a href="#id141"><span class="problematic" id="id142">`**humsed**,`_</span></a> <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a>, <strong>uniq -d</strong> and <strong>grep -v</strong> to eliminate
+<p>&gt; Use <a class="reference external" href="../../man/rid">rid</a>, <a class="reference external" href="../../man/extract">extract</a>, <a class="reference external" href="../../man/yank">yank</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a>,
+<a class="reference external" href="../../man/humsed">humsed</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a>, <strong>uniq -d</strong> and <strong>grep -v</strong> to eliminate
 selective materials.</p>
 </li>
 <li><p class="first"><em>What data do I need to coordinate?</em></p>
 <p>&gt; Use <a class="reference external" href="../../man/context">context</a> to generate contextual information. Use
-<a href="#id143"><span class="problematic" id="id144">`**assemble**,`_</span></a> <a class="reference external" href="../../man/rend">rend</a> and <a class="reference external" href="../../man/cleave">cleave</a> to link information
+<a class="reference external" href="../../man/assemble">assemble</a>, <a class="reference external" href="../../man/rend">rend</a> and <a class="reference external" href="../../man/cleave">cleave</a> to link information
 together.</p>
 </li>
 <li><p class="first"><em>How do I know my results are worthwhile?</em></p>

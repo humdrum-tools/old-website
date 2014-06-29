@@ -15,13 +15,18 @@ my @files = @ARGV;
 
 # Unix command hyperlinks:
 my %UXCOM;
-$UXCOM{'sed'}   = "http://en.wikipedia.org/wiki/Sed";
-$UXCOM{'grep'}  = "http://en.wikipedia.org/wiki/Grep";
-$UXCOM{'wc'}    = "http://en.wikipedia.org/wiki/Wc_(Unix)";
-$UXCOM{'egrep'} = "http://en.wikipedia.org/wiki/Egrep#Variations";
-$UXCOM{'uniq'}  = "http://en.wikipedia.org/wiki/Uniq";
-$UXCOM{'cat'}   = "http://en.wikipedia.org/wiki/Cat_(Unix)";
-$UXCOM{'cksum'} = "http://en.wikipedia.org/wiki/Cksum";
+$UXCOM{'sed'}    = "http://en.wikipedia.org/wiki/Sed";
+$UXCOM{'grep'}   = "http://en.wikipedia.org/wiki/Grep";
+$UXCOM{'wc'}     = "http://en.wikipedia.org/wiki/Wc_(Unix)";
+$UXCOM{'egrep'}  = "http://en.wikipedia.org/wiki/Egrep#Variations";
+$UXCOM{'uniq'}   = "http://en.wikipedia.org/wiki/Uniq";
+$UXCOM{'cat'}    = "http://en.wikipedia.org/wiki/Cat_(Unix)";
+$UXCOM{'cksum'}  = "http://en.wikipedia.org/wiki/Cksum";
+$UXCOM{'awk'}    = "http://en.wikipedia.org/wiki/Awk";
+$UXCOM{'perl'}   = "http://en.wikipedia.org/wiki/Perl";
+$UXCOM{'vi'}     = "http://en.wikipedia.org/wiki/Vi";
+$UXCOM{'emacs'}  = "http://en.wikipedia.org/wiki/Emacs";
+$UXCOM{'find'}   = "http://en.wikipedia.org/wiki/Find";
 
 my $file;
 foreach $file (@files) {
@@ -56,7 +61,26 @@ sub cleanContent {
    my $exinterp;
 
 
-   # change **uniq** to <uniq http://en.wikipedia.org/wiki/Uniq>`_
+   # Change `**command**,`_ to `command <../../man/command>`_,
+   while ($contents =~ /`\*\*([a-zA-Z]+)\*\*([^a-zA-Z0-9`*])`_/) {
+      $pre     = $`;
+      $post    = $';
+      $command = $1;
+      $other   = $2;
+      if (-r "../man/$command.rst") {
+         $contents = "$pre`$command <../../man/$command>`_$other$post";
+         print "ACTION on $command\n";
+      } else {
+         $contents = "$pre`**97867564534231$command**$other`_$post";
+         print "XACTION on $command\n";
+      }
+   }
+   $contents =~ s/97867564534231//g;
+
+
+   ##
+   ## change **uniq** to <uniq http://en.wikipedia.org/wiki/Uniq>`_
+   ## 
    foreach $command (keys %UXCOM) {
       $contents =~ s/\*\*$command\*\*/`$command <$UXCOM{$command}>`_/g;
    }

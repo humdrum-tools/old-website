@@ -494,6 +494,6 @@ can be set at particular points and conditional branch statements executed.
 Stream-editing scripts have been written to execute programs of considerable
 complexity. However, for most tasks, the simple substitute (**s**) and delete
 (**d**) operations are the most useful. For further information about stream
-editing using `sed <http://en.wikipedia.org/wiki/Sed>`_, refer to the book on `sed <http://en.wikipedia.org/wiki/Sed>`_ and **awk** written by
+editing using `sed <http://en.wikipedia.org/wiki/Sed>`_, refer to the book on `sed <http://en.wikipedia.org/wiki/Sed>`_ and `awk <http://en.wikipedia.org/wiki/Awk>`_ written by
 Dale Dougherty (listed in the bibliography).
 

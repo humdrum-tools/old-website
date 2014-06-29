@@ -1,0 +1,815 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapter 20: Strophes, Verses, and Repeats &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../../"/>
+   <link rel="stylesheet" type"text/css" href="../../../_static/humdrum.css">
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../../" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/">Humdrum Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../install/github/">Installing Humdrum Tools from GitHub</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../">The Humdrum User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ch01/">Chapter 1: Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch02/">Chapter 2: Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch03/">Chapter 3: Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch04/">Chapter 4: Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch05/">Chapter 5: The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch06/">Chapter 6: Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch07/">Chapter 7: MIDI Output Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch08/">Chapter 8: The Shell (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch09/">Chapter 9: Searching with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch10/">Chapter 10: Musical Uses of Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch11/">Chapter 11: Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch12/">Chapter 12: Selecting Musical Parts and Passages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch13/">Chapter 13: Assembling Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch14/">Chapter 14: Stream Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch15/">Chapter 15: Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch16/">Chapter 16: The Shell (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch17/">Chapter 17: Creating Inventories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch18/">Chapter 18: Fingers, Footsteps and Frets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch19/">Chapter 19: Musical Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch20/">Chapter 20: Strophes, Verses, and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch21/">Chapter 21: Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch22/">Chapter 22: Classifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch23/">Chapter 23: Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch24/">Chapter 24: The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch25/">Chapter 25: Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch26/">Chapter 26: Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch27/">Chapter 27: Text and Lyrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch28/">Chapter 28: Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch29/">Chapter 29: Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch30/">Chapter 30:MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch31/">Chapter 31: Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch32/">Chapter 32: The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch33/">Chapter 33: Word Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch34/">Chapter 34: Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch35/">Chapter 35: Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch36/">Chapter 33: Sound and Spectra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch37/">Chapter 37: Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch38/">Chapter 38: Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch39/">Chapter 39: Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch40/">Chapter 40: Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../bibliography/">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sample.problems/">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../humextra/">Humdrum Extras</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/intro/">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/rhythm/">2. Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/melody/">Melody and Pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/harmony/">Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/data/">Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/searching/">Music Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/midi/">MIDI Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/notation/">Graphical Musical Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/other/">Other Useful Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../humextra/programming/">Programming Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../cookbook/">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../cookbook/vimHighlighting/">Syntax Coloring in Vim</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../man/">Humdrum Command Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/assemble/">Command: assemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/barks/">Command: barks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cbr/">Command: cbr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/census/">Command: census</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cents/">Command: cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cleave/">Command: cleave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/cocho/">Command: cocho</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/context/">Command: context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/correl/">Command: correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/deg/">Command: deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/degree/">Command: degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/diss/">Command: diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ditto/">Command: ditto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/dur/">Command: dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ekern/">Command: ekern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/encode/">Command: encode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/extract/">Command: extract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/fade/">Command: fade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/fields/">Command: fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/freq/">Command: freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/hint/">Command: hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/humdrum/">Command: humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/humsed/">Command: humsed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/humver/">Command: humver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/infot/">Command: infot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/iv/">Command: iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/kern/">Command: kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/key/">Command: key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/melac/">Command: melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/melvel/">Command: melvel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/metpos/">Command: metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/midi/">Command: midi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/midreset/">Command: midreset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/mint/">Command: mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ms/">Command: ms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/nf/">Command: nf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/num/">Command: num</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/patt/">Command: patt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pattern/">Command: pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pc/">Command: pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pcset/">Command: pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/perform/">Command: perform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pf/">Command: pf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/pitch/">Command: pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/proof/">Command: proof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/recode/">Command: recode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/record/">Command: record</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/regexp/">Command: regexp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/reihe/">Command: reihe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/rend/">Command: rend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/rid/">Command: rid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/scramble/">Command: scramble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/semits/">Command: semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/simil/">Command: simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/smf/">Command: smf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/solfa/">Command: solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/solfg/">Command: solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/specc/">Command: specc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/spect/">Command: spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/strophe/">Command: strophe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/synco/">Command: synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/tacet/">Command: tacet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/text/">Command: text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/themefinder/">Command: thmea</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/thru/">Command: thru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/timebase/">Command: timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/tonh/">Command: tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/trans/">Command: trans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/urrhythm/">Command: urrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/veritas/">Command: veritas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/vox/">Command: vox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/xdelta/">Command: xdelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/yank/">Command: yank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/ydelta/">Command: ydelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../man/#commands">Commands</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../rep/">Humdrum Data Representations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/barlines/">Representation: barlines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/IPA/">Representation: **IPA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/MIDI/">Representation: **MIDI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/Tonh/">Representation: **Tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/URrhythm/">Representation: **URrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/Zeit/">Representation: **Zeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/bhatk/">Representation: **bhatk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/cents/">Representation: **cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/correl/">Representation: **correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/dB/">Representation: **dB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/date/">Representation: **date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/deg/">Representation: **deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/degree/">Representation: **degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/diss/">Representation: **diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/dur/">Representation: **dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/embel/">Representation: **embel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/freq/">Representation: **freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/fret/">Representation: **fret</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/harm/">Representation: **harm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/hildegard/">Representation: **hildegard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/hint/">Representation: **hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/iv/">Representation: **iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/kern/">Representation: **kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/melac/">Representation: **melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/metpos/">Representation: **metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/mint/">Representation: **mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/ordo/">Representation: **ordo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/pc/">Representation: **pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/pcset/">Representation: **pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/pitch/">Representation: **pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/recip/">Representation: **recip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/semits/">Representation: **semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/silbe/">Representation: **silbe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/simil/">Representation: **simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/solfa/">Representation: **solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/solfg/">Representation: **solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/specC/">Representation: **specC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/spect/">Representation: **spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/synco/">Representation: **synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/takt/">Representation: **takt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/text/">Representation: **text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/time/">Representation: **time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/timebase/">Representation: **timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rep/vox/">Representation: **vox#</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../">Docs</a> &raquo;</li>
+      
+    <li>Chapter 20: Strophes, Verses, and Repeats</li>
+      <li class="wy-breadcrumbs-aside">
+        
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="chapter-20-strophes-verses-and-repeats">
+<h1>Chapter 20: Strophes, Verses, and Repeats<a class="headerlink" href="#chapter-20-strophes-verses-and-repeats" title="Permalink to this headline">¶</a></h1>
+<p>We often tend to think of musical information as a linear stream of
+successive events. However, there are many circumstances where musical
+information exhibits more complex structures. These include such structural
+devices as repeats, da capos, first and second ending, multiple verses,
+alternative or <em>ossia</em> passages, different performance renditions, divergent
+sources, and competing editions or versions.</p>
+<p>This chapter describes the basic Humdrum mechanisms for representing non-
+linear musical structures. The two critical mechanisms are the Humdrum
+<em>section</em> and <em>strophe</em>. We will encounter examples using the <a class="reference external" href="../../man/yank">yank</a>,
+<a class="reference external" href="../../man/thru">thru</a>, and <a class="reference external" href="../../man/strophe">strophe</a> commands.</p>
+<div class="section" id="section-labels">
+<h2>Section Labels<a class="headerlink" href="#section-labels" title="Permalink to this headline">¶</a></h2>
+<p>Musical scores are often notated to take advantage of repetitions in the
+music. Devices such as repeat marks, <em>Da Capo</em>, <em>Dal Segno</em>, <em>Codas</em>, and
+other mechanisms make it possible to represent a musical work in an
+abbreviated format. Humdrum provides corresponding mechanisms that allow
+works to be represented in succinct ways.</p>
+<p>Humdrum files may be logically divided into segments or passages by encoding
+Humdrum <em>section labels.</em> A section label is a type of tandem interpretation
+that consists of a single asterisk, followed by a greater-than sign, followed
+by a keyword that labels the section. The following are examples of section
+labels.</p>
+<p>`` <a href="#id1"><span class="problematic" id="id2">*</span></a>&gt;Coda
+<a href="#id3"><span class="problematic" id="id4">*</span></a>&gt;1st Ending
+<a href="#id5"><span class="problematic" id="id6">*</span></a>&gt;Refrain
+<a href="#id7"><span class="problematic" id="id8">*</span></a>&gt;Exposition&gt;2nd Theme ``</p>
+<p>Notice that spaces can appear in section labels &#8211; as in <tt class="docutils literal"><span class="pre">1st</span> <span class="pre">Ending</span></tt>.
+Sections begin with a section label and generally end when another section
+label is encountered. Sections also end whenever all spines are assigned new
+exclusive interpretations, or all spines terminate. If there is more than one
+spine present in a passage, identical section labels must appear concurrently
+in all spines.</p>
+</div>
+<div class="section" id="expansion-lists">
+<h2>Expansion Lists<a class="headerlink" href="#expansion-lists" title="Permalink to this headline">¶</a></h2>
+<p>Rather than encode multiple copies of a passage, a single instance may be
+encoded and labelled as a section. The complete version of the work can be
+reconstructed by referring to an <em>expansion list.</em> An expansion list is
+another tandem interpretation that contains an ordered list of section
+labels. The list is specified in square brackets. Like section labels,
+expansion lists begin with an asterisk followed by a greater-than sign. In
+effect, the expansion list indicates how the abbreviated file should be
+expanded to a full-length encoding. Consider the following expansion list:</p>
+<p>`` <a href="#id9"><span class="problematic" id="id10">*</span></a>&gt;[verse1,refrain,verse2,refrain] ``</p>
+<p>This list indicates that the abbreviated file contains (at least) three
+sections, labelled &#8220;<tt class="docutils literal"><span class="pre">verse1</span></tt>,&#8221; &#8220;<tt class="docutils literal"><span class="pre">verse2</span></tt>&#8221; and &#8220;<tt class="docutils literal"><span class="pre">refrain</span></tt>.&#8221; When the
+file is expanded, the &#8220;<tt class="docutils literal"><span class="pre">refrain</span></tt>&#8221; section should be repeated following each
+verse.</p>
+</div>
+<div class="section" id="using-yank-to-extract-sections">
+<h2>Using <em>yank</em> to Extract Sections<a class="headerlink" href="#using-yank-to-extract-sections" title="Permalink to this headline">¶</a></h2>
+<p>We encountered the <a class="reference external" href="../../man/yank">yank</a> command earlier in <a class="reference external" href="../ch12">Chapter 12</a>. Recall that
+<strong>yank</strong> can be used to extract material by <em>section</em> using the <strong>-s</strong>
+option. For example, if the appropriate section is labelled, we might extract
+the coda of a work as follows:</p>
+<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-s</span> <span class="pre">Coda</span> <span class="pre">-r</span> <span class="pre">1</span></tt> <em>file</em></p>
+<p>Recall that the <strong>-r</strong> option is mandatory with <strong>yank</strong>; in this case, it
+identifies the <em>first</em> occurrence of a section labelled <tt class="docutils literal"><span class="pre">Coda</span></tt>.</p>
+</div>
+<div class="section" id="using-the-thru-command-to-expand-encodings">
+<h2>Using the <em>thru</em> Command to Expand Encodings<a class="headerlink" href="#using-the-thru-command-to-expand-encodings" title="Permalink to this headline">¶</a></h2>
+<p>The Humdrum <a class="reference external" href="../../man/thru">thru</a> command expands <em>abbreviated format</em> representations
+to a so-called <em>through-composed format</em> in which repeated passages are
+expanded according to an expansion list. When the <strong>thru</strong> command is
+invoked, it eliminates any expansion lists present in the input; in addition,
+<strong>thru</strong> places a <tt class="docutils literal"><span class="pre">*thru</span></tt> tandem interpretation in all spines immediately
+following each instance of an exclusive interpretation in the input. This
+marks the file as being in a through-composed format. Any other <tt class="docutils literal"><span class="pre">*thru</span></tt>
+tandem interpretations encountered in the input are subsequently discarded.
+As a result, running a file through <strong>thru</strong> twice will not result in further
+changes to the file.</p>
+</div>
+<div class="section" id="alternative-versions">
+<h2>Alternative Versions<a class="headerlink" href="#alternative-versions" title="Permalink to this headline">¶</a></h2>
+<p>For works encoded in an abbreviated format, it is not always useful to expand
+it according to a single fixed recipe. Depending on the performance practice,
+individual performer, or edition, certain repeats may be avoided, passages
+may be added, or material eliminated altogether. In short, several different
+versions or interpretations of the overall organization of a work may exist.</p>
+<p>Humdrum provides a mechanism by which several alternative versions of the
+overall organization of a work may co-exist in the same file. This is
+achieved simply by encoding more than one expansion list. In order to
+distinguish different versions, each expansion list is given a unique
+<em>version label</em>.  Consider the following expansion lists:</p>
+<p>`` <a href="#id13"><span class="problematic" id="id14">*</span></a>&gt;Gould1982[A,A,B]
+<a href="#id15"><span class="problematic" id="id16">*</span></a>&gt;Landowska[A,A,B,B] ``</p>
+<p>Here we see two expansion lists, one carries the version label <tt class="docutils literal"><span class="pre">Gould1982</span></tt>
+and the other is labelled version <tt class="docutils literal"><span class="pre">Landowska</span></tt>. These expansion lists might
+encode different interpretations of the repeats in a rounded binary form &#8211;
+Landowska performed the second repeat whereas Gould (1982) did not. When the
+<strong>thru</strong> command is invoked, the user can specify which <em>version</em> is intended
+using the <strong>-v</strong> option. The appropriate through-composed expansion will be
+output.</p>
+<p>The following example illustrates the use of the <strong>thru</strong> command in
+selecting particular versions of data in a file. Three sections are encoded
+in the file &#8211; labelled A, B and C. Each section in this example contains
+just a single data record. Three expansion lists are encoded: one is
+unlabelled, a second is labelled <tt class="docutils literal"><span class="pre">long</span></tt> and a third is labelled <tt class="docutils literal"><span class="pre">weird</span></tt>.</p>
+<p><tt class="docutils literal"><span class="pre">example``**example</span>
+<span class="pre">``*&gt;[A,B,A,C]``*&gt;[A,B,A,C]</span>
+<span class="pre">``*&gt;long[A,A,B,A,C]``*&gt;long[A,A,B,A,C]</span>
+<span class="pre">``*&gt;weird[C,A,C]``*&gt;weird[C,A,C]</span>
+<span class="pre">``*&gt;A``*&gt;A</span>
+<span class="pre">``data-A``data-A</span>
+<span class="pre">``*&gt;B``*&gt;B</span>
+<span class="pre">``data-B``data-B</span>
+<span class="pre">``*&gt;C``*&gt;C</span>
+<span class="pre">``data-C``data-C</span>
+<span class="pre">``*-``*-</span></tt></p>
+<p>Consider the following command:</p>
+<p><tt class="docutils literal"><span class="pre">thru</span> <span class="pre">-v</span> <span class="pre">weird</span> <span class="pre">file</span></tt></p>
+<p>The corresponding &#8220;through-composed&#8221; output would be as follows:</p>
+<p><tt class="docutils literal"><span class="pre">example``**example</span>
+<span class="pre">``*thru``*thru</span>
+<span class="pre">``*&gt;C``*&gt;C</span>
+<span class="pre">``data-C``data-C</span>
+<span class="pre">``*&gt;A``*&gt;A</span>
+<span class="pre">``data-A``data-A</span>
+<span class="pre">``*&gt;C``*&gt;C</span>
+<span class="pre">``data-C``data-C</span>
+<span class="pre">``*-``*-</span></tt></p>
+<p>Notice that all expansion-list records have been eliminated from the output.
+A <tt class="docutils literal"><span class="pre">*thru</span></tt> tandem interpretation has been added to all output spines
+immediately following the exclusive interpretation. Also notice that there
+are now two sections in the output sharing the same label (<tt class="docutils literal"><span class="pre">*&gt;C</span></tt>). This
+duplication of section-labels is not permitted in abbreviated-format
+encodings and can only occur in through-composed documents.</p>
+<p>Without the <strong>-v</strong> option, <strong>thru</strong> expands the abbreviated file according to
+the <em>unlabelled</em> (default) expansion list. So the following command would
+result in an output consisting of section A, followed by section B, followed
+by section A (again), followed by section C:</p>
+<p><tt class="docutils literal"><span class="pre">thru</span> <span class="pre">file</span></tt></p>
+</div>
+<div class="section" id="section-types">
+<h2>Section Types<a class="headerlink" href="#section-types" title="Permalink to this headline">¶</a></h2>
+<p>Suppose we had two different theorists &#8211; Smith and Jones &#8211; who had analyzed
+the same work differently. Smith thinks there are basically two sections in
+the work, whereas Jones argues that there are essentially three sections.
+Humdrum permits alternative schemes of section labels to coexist in a file by
+allowing the user to designate section <em>types</em>. A section label is considered
+to have a &#8220;type&#8221; when more than one greater-than sign (<tt class="docutils literal"><span class="pre">&gt;</span></tt>) is present in
+the label. Consider the following example of sections defined by Smith and
+Jones:</p>
+<p><tt class="docutils literal"><span class="pre">**Example</span>
+<span class="pre">``*&gt;Smith&gt;A</span>
+<span class="pre">``*&gt;Jones&gt;A</span>
+<span class="pre">``data1</span>
+<span class="pre">``*&gt;Jones&gt;B</span>
+<span class="pre">``data2</span>
+<span class="pre">``*&gt;Smith&gt;B</span>
+<span class="pre">``data3</span>
+<span class="pre">``*&gt;Jones&gt;C</span>
+<span class="pre">``data4</span></tt>
+<a href="#id17"><span class="problematic" id="id18">``</span></a><a href="#id19"><span class="problematic" id="id20">*</span></a>-</p>
+<p>Both Smith and Jones label the work as beginning with section <a href="#id21"><span class="problematic" id="id22">`</span></a>A&#8217;. Later
+Jones&#8217;s <a href="#id23"><span class="problematic" id="id24">`</span></a>B&#8217; section begins; then Smith&#8217;s <a href="#id25"><span class="problematic" id="id26">`</span></a>B&#8217; section; then Jones&#8217;s <a href="#id27"><span class="problematic" id="id28">`</span></a>C&#8217;
+section. Note that Smith&#8217;s <a href="#id29"><span class="problematic" id="id30">`</span></a>B&#8217; section also contains the material Jones has
+identified as section <a href="#id31"><span class="problematic" id="id32">`</span></a>C&#8217;.</p>
+<p>Normally, the <strong>yank</strong> command extracts a labelled section up to the next
+occurrence of a section label. However, the <strong>-t</strong> option causes <strong>yank</strong> to
+ignore all section labels except for a specified type. We could extract
+Smith&#8217;s <a href="#id33"><span class="problematic" id="id34">`</span></a>B&#8217; section by using the <strong>-t</strong> option to limit extraction to
+&#8220;Smith&#8221;-type section labels:</p>
+<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-t</span> <span class="pre">Smith</span> <span class="pre">-s</span> <span class="pre">B</span></tt></p>
+<p>This command would produce the following output:</p>
+<p><tt class="docutils literal"><span class="pre">**Example</span>
+<span class="pre">``*&gt;Smith&gt;B</span>
+<span class="pre">``data3</span>
+<span class="pre">``*&gt;Jones&gt;C</span>
+<span class="pre">``data4</span></tt>
+<a href="#id35"><span class="problematic" id="id36">``</span></a><a href="#id37"><span class="problematic" id="id38">*</span></a>-</p>
+<p>Without the <strong>-t</strong> option, <strong>yank</strong> will simply extract material up to the
+occurrence of the next section label. Note that section types can be used to
+define innumerable alternative organizations for a single document.</p>
+</div>
+<div class="section" id="hierarchical-sections">
+<h2>Hierarchical Sections<a class="headerlink" href="#hierarchical-sections" title="Permalink to this headline">¶</a></h2>
+<p>For many applications, it is useful to define &#8220;nested&#8221; structures where two
+or more sections form part of a larger section. Humdrum section labels allow
+users to distinguish hierarchical <em>levels</em>. Levels are indicated by the
+number of greater-than signs following the section type. Consider the
+following:</p>
+<p><a href="#id39"><span class="problematic" id="id40">``</span></a><a href="#id41"><span class="problematic" id="id42">**</span></a>Example
+<a href="#id43"><span class="problematic" id="id44">``</span></a><em>&gt;Form&gt;Exposition
+``data1
+``</em>&gt;Form&gt;&gt;1st Theme
+<a href="#id45"><span class="problematic" id="id46">``</span></a>data2
+<a href="#id47"><span class="problematic" id="id48">``</span></a><em>&gt;Form&gt;&gt;2nd Theme
+``data3
+``</em>&gt;Form&gt;Development
+<a href="#id49"><span class="problematic" id="id50">``</span></a>data4
+<a href="#id51"><span class="problematic" id="id52">``</span></a><em>&gt;Form&gt;Recapitulation
+``</em>&gt;Form&gt;&gt;1st Theme
+<a href="#id53"><span class="problematic" id="id54">``</span></a>data5
+<a href="#id55"><span class="problematic" id="id56">``</span></a><em>&gt;Form&gt;&gt;2nd Theme
+``data6
+``</em>&gt;Form&gt;Coda
+<a href="#id57"><span class="problematic" id="id58">``</span></a>data7
+<a href="#id59"><span class="problematic" id="id60">``</span></a><a href="#id61"><span class="problematic" id="id62">*</span></a>-</p>
+<p>All of the above section labels are identified as type <tt class="docutils literal"><span class="pre">Form</span></tt>. However, two
+levels are distinguished (denoted by <tt class="docutils literal"><span class="pre">&gt;</span></tt> and <tt class="docutils literal"><span class="pre">&gt;&gt;</span></tt>). Subsections are
+specified by increasing the number of greater-than signs, hence <tt class="docutils literal"><span class="pre">2nd</span> <span class="pre">Theme</span></tt>
+is a subsection. When <strong>yank</strong> is invoked, it will extract the identified
+section up to the next section of comparable level. The operation is
+illustrated in the following sample commands: indicating the first and second
+themes.</p>
+<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-t</span> <span class="pre">Form</span> <span class="pre">-s</span> <span class="pre">'1st</span> <span class="pre">Theme'</span> <span class="pre">-r</span> <span class="pre">1(``extracts</span> <span class="pre">up</span> <span class="pre">to</span> <span class="pre">``&gt;Form&gt;&gt;2nd</span> <span class="pre">Theme</span></tt>)
+<tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-t</span> <span class="pre">Form</span> <span class="pre">-s</span> <span class="pre">'2nd</span> <span class="pre">Theme'</span> <span class="pre">-r</span> <span class="pre">1(``extracts</span> <span class="pre">up</span> <span class="pre">to</span> <span class="pre">``&gt;Form&gt;Development</span></tt>)
+<tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-t</span> <span class="pre">Form</span> <span class="pre">-s</span> <span class="pre">'Exposition'</span> <span class="pre">-r</span> <span class="pre">1(``extracts</span> <span class="pre">up</span> <span class="pre">to</span> <span class="pre">``&gt;Form&gt;Development</span></tt>)</p>
+<p>For example, the second theme from the recapitulation can be extracted as
+follows:</p>
+<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-t</span> <span class="pre">Form</span> <span class="pre">-s</span> <span class="pre">'2nd</span> <span class="pre">Theme'</span> <span class="pre">-r</span> <span class="pre">2</span></tt></p>
+<p>Alternatively:</p>
+<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-t</span> <span class="pre">Form</span> <span class="pre">-s</span> <span class="pre">Recapitulation</span></tt> <a href="#id63"><span class="problematic" id="id64">*</span></a>file*`` | yank -t Form -s &#8216;2nd Theme&#8217;
+-r 1``</p>
+</div>
+<div class="section" id="using-the-yank-and-thru-commands">
+<h2>Using the <em>yank</em> and <em>thru</em> Commands<a class="headerlink" href="#using-the-yank-and-thru-commands" title="Permalink to this headline">¶</a></h2>
+<p>Section labels can be used in a wide number of applications. By way of
+illustration, here are a few pipeline processes involving section labels.
+First, we might ask the question &#8211; how does the user know what sections
+labels are present in a document? This is a task for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>:</p>
+<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'^\*&gt;'</span></tt> <em>file</em></p>
+<p>This command will also output any expansion-lists. If we want to restrict our
+output to identifying which <em>versions</em> are available for a document we would
+look for the presence of square brackets:</p>
+<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'^\*&gt;.*\[.*\]'</span></tt> <em>file</em></p>
+<p>How many notes are there in the exposition?</p>
+<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-t</span> <span class="pre">Form</span> <span class="pre">-s</span> <span class="pre">Exposition</span> <span class="pre">-r</span> <span class="pre">1</span></tt> <a href="#id65"><span class="problematic" id="id66">*</span></a>file*`` | census*``</p>
+<p>How many phrases are there in the development?</p>
+<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-t</span> <span class="pre">Form</span> <span class="pre">-s</span> <span class="pre">Development</span> <span class="pre">-r</span> <span class="pre">1</span></tt> <a href="#id67"><span class="problematic" id="id68">*</span></a>file*`` | grep -c &#8216;{&#8216;``</p>
+<p>Extract the figured bass for the third recitative:</p>
+<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-s</span> <span class="pre">Recitativo</span> <span class="pre">-r</span> <span class="pre">3</span></tt> <a href="#id69"><span class="problematic" id="id70">*</span></a>file*`` | extract -i &#8216;<a href="#id71"><span class="problematic" id="id72">**</span></a>B-num&#8217;``</p>
+<p>Compare the estimated key for the second theme in the exposition versus the
+estimated key for the second theme in the recapitulation:</p>
+<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-t</span> <span class="pre">Form</span> <span class="pre">-s</span> <span class="pre">'2nd</span> <span class="pre">Theme'</span> <span class="pre">-r</span> <span class="pre">1</span></tt> <a href="#id73"><span class="problematic" id="id74">*</span></a>file*`` | key``
+<tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-t</span> <span class="pre">Form</span> <span class="pre">-s</span> <span class="pre">'2nd</span> <span class="pre">Theme'</span> <span class="pre">-r</span> <span class="pre">2</span></tt> <a href="#id75"><span class="problematic" id="id76">*</span></a>file*`` | key``</p>
+<p>Determine the nominal (non-rubato) duration of Gould&#8217;s performance of the
+work:</p>
+<p><tt class="docutils literal"><span class="pre">thru</span> <span class="pre">-v</span> <span class="pre">Gould1982</span></tt> <a href="#id77"><span class="problematic" id="id78">*</span></a>file*`` | extract -i &#8216;<a href="#id79"><span class="problematic" id="id80">**</span></a>kern&#8217; | extract -f 1 &gt;
+&gt;&gt; | dur -d | rid -GLId | grep -v &#8216;^=&#8217; | stats | grep -i total``</p>
+<p>Perform the first three measures from the second section of a binary form:</p>
+<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-s</span> <span class="pre">B</span></tt> <a href="#id81"><span class="problematic" id="id82">*</span></a>file*`` | yank -o = -r 1-3 | midi | perform``</p>
+</div>
+<div class="section" id="strophic-representations">
+<h2>Strophic Representations<a class="headerlink" href="#strophic-representations" title="Permalink to this headline">¶</a></h2>
+<p>Section labels and versions allow Humdrum users to select alternative groups
+of (horizontal) records within a Humdrum file or document. In other
+circumstances it is useful to be able to select alternative (vertical) paths
+within a file. Strophic representations may be conceived as &#8220;alternative
+concurrent paths&#8221; through a Humdrum document. Examples of alternative
+concurrent representation paths might include (1) texts for different verses
+of a song, (2) alternative renditions of the same passage (such as <em>ossia</em>
+passages), or (3) differing editorial interpretations of a given note or
+sequence of notes.</p>
+<p>Structurally, strophic data must begin from a single common spine, split
+apart into two or more alternative spines, and then rejoin to form a single
+spine. Since the strophes split from a common spine, they all necessarily
+begin by sharing the same exclusive interpretation. Different exclusive
+interpretations may be introduced in the strophic passage &#8211; provided all
+strophic spines end up sharing the same data type just prior to being
+rejoined.</p>
+<p>The beginning of a strophic passage is signalled by the presence of a
+<em>strophic passage initiator</em> &#8211; a single asterisk followed by the keyword
+&#8220;strophe&#8221; (<tt class="docutils literal"><span class="pre">*strophe</span></tt>). The end of a strophic passage is signalled by the
+<em>strophic passage terminator</em> &#8211; a single asterisk followed by the upper-case
+letter <cite>S&#8217; followed by a minus sign (``*S-`</cite>). Each spine within the strophic
+passage begins with a <em>strophe label</em> and ends with a <em>strophe end indicator</em>
+(<tt class="docutils literal"><span class="pre">*S/fin</span></tt>). Strophe labels may consist of either alphanumeric names, or
+numbers. Numerical labels should be used when the strophic data imply some
+sort of order, such as verses in a song. Alphanumeric labels are convenient
+for distinguishing different editions or <em>ossia</em> passages. The following
+example encodes a melodic phrase containing four numbered verses from &#8220;Das
+Wandern&#8221; from <em>Die Schoene Muellerin</em> by Schubert:</p>
+<p><tt class="docutils literal"><span class="pre">`</span>
+<span class="pre">$</span>
+<span class="pre">``!!</span> <span class="pre">Franz``Schubert,``Das</span> <span class="pre">Wandern'</span> <span class="pre">from</span> <span class="pre">&quot;Die</span> <span class="pre">Schoene</span> <span class="pre">Muellerin&quot;</span>
+<span class="pre">\*\*kern**silbe</span>
+<span class="pre">``*k[b-e-]``*Deutsch</span>
+<span class="pre">``*``*solo</span>
+<span class="pre">``*&gt;[1,1,1,1]``*&gt;[1,1,1,1]</span>
+<span class="pre">``*&gt;1``*&gt;1</span>
+<span class="pre">``*``*strophe</span>
+<span class="pre">``*``*^</span>
+<span class="pre">``*``*^``*^</span>
+<span class="pre">``*``*S/1``*S/2``*S/3``*S/4</span>
+<span class="pre">``8f``Das``Vom``Das``Die</span>
+<span class="pre">``=5``=5``=5``=5``=5</span>
+<span class="pre">``8f``Wan-``Was-``sehn``Stei-</span>
+<span class="pre">``8b-</span></tt>-dern``-ser``wir``-ne
+<tt class="docutils literal"><span class="pre">8a``ist``ha-``auch``selbst,</span>
+<span class="pre">``8ee-``des</span></tt>-ben``den``so
+<tt class="docutils literal"><span class="pre">=6``=6``=6``=6``=6</span>
+<span class="pre">``(16dd``Mul-``wir's``Ra-</span>
+<span class="pre">``16ff)``|``|``|``|</span>
+<span class="pre">``(16dd</span></tt>-lers``ge-<tt class="docutils literal"><span class="pre">-dern``sie</span>
+<span class="pre">``16b-)``|``|``|``|</span>
+<span class="pre">``8f``Lust,</span></tt>-lernt,``ab,``sind,
+<tt class="docutils literal"><span class="pre">8dd``das``vom``den``die</span>
+<span class="pre">``=7``=7``=7``=7``=7</span>
+<span class="pre">``(8.cc``Wan-``Was-``Ra-``Stei-</span>
+<span class="pre">``16a)``|``|``|``|</span>
+<span class="pre">``8b-</span></tt>-dern!``-ser!``-dern!``-ne!
+<a href="#id83"><span class="problematic" id="id84">``</span></a>8r``%``%``%``%
+<a href="#id85"><span class="problematic" id="id86">``</span></a><em>``*S/fin``*S/fin``*S/fin``*S/fin
+``*``*v``*v``*v``*v
+``*``*S-
+``</em>-<a href="#id87"><span class="problematic" id="id88">``</span></a><a href="#id89"><span class="problematic" id="id90">*</span></a>-</p>
+<p>`` Notice that this file contains a single section labelled <a href="#id91"><span class="problematic" id="id92">`</span></a>1&#8217; and that an
+expansion list occurs near the beginning of the file that indicates section 1
+is to be repeated 4 times in total.</p>
+<p>The strophic passage pertains only to the spine marked <a class="reference external" href="../../rep/silbe">**silbe</a>. The
+<a class="reference external" href="../../rep/silbe">**silbe</a> representation pertains to syllabic text encoding and is a
+pre-defined representation in Humdrum. The <a class="reference external" href="../../rep/silbe">**silbe</a> representation is
+discussed in <a class="reference external" href="../ch27">Chapter 27</a>. Following the strophic passage indicator
+(<tt class="docutils literal"><span class="pre">*strophe</span></tt>), the spine is split apart until the required number of verses
+are generated. Then each spine is labelled with its own strophe label. Since
+the verses have an order, it is appropriate to label them with numbers:
+<tt class="docutils literal"><span class="pre">*S/1,</span> <span class="pre">*S/2,</span></tt> and so on. The individual verses are terminated with strophe
+end indicators (<tt class="docutils literal"><span class="pre">*S/fin</span></tt>), the spines rejoin, and then a strophic passage
+terminator (<tt class="docutils literal"><span class="pre">*S-</span></tt>) marks the end of the strophic passage.</p>
+</div>
+<div class="section" id="the-strophe-command">
+<h2>The <em>strophe</em> Command<a class="headerlink" href="#the-strophe-command" title="Permalink to this headline">¶</a></h2>
+<p>The Humdrum <strong>strophe</strong> command can be used to isolate or extract selective
+strophic data. The <strong>-x</strong> option for <strong>strophe</strong> allows the user to extract a
+particular labelled strophe. Consider, for example the effect of the
+following command:</p>
+<p><tt class="docutils literal"><span class="pre">strophe</span> <span class="pre">-x</span> <span class="pre">3</span> <span class="pre">schubert</span></tt></p>
+<p>Using the above data, the result is:</p>
+<p><tt class="docutils literal"><span class="pre">!!</span> <span class="pre">Franz</span> <span class="pre">Schubert,</span> <span class="pre">`Das</span> <span class="pre">Wandern'</span> <span class="pre">from</span> <span class="pre">&quot;Die</span> <span class="pre">Schoene</span> <span class="pre">Muellerin&quot;</span>
+<span class="pre">&gt;</span> <span class="pre">**kern**silbe</span>
+<span class="pre">&gt;</span> <span class="pre">*k[b-e-]*Deutsch</span>
+<span class="pre">&gt;</span> <span class="pre">*&gt;[1,1,1,1]*&gt;[1,1,1,1]</span>
+<span class="pre">&gt;</span> <span class="pre">**solo</span>
+<span class="pre">&gt;</span> <span class="pre">*&gt;1*&gt;1</span>
+<span class="pre">&gt;</span> <span class="pre">8fDas</span>
+<span class="pre">&gt;</span> <span class="pre">=5=5</span>
+<span class="pre">&gt;</span> <span class="pre">8fsehn</span>
+<span class="pre">&gt;</span> <span class="pre">8b-wir</span>
+<span class="pre">&gt;</span> <span class="pre">8aauch</span>
+<span class="pre">&gt;</span> <span class="pre">8ee-den</span>
+<span class="pre">&gt;</span> <span class="pre">=6=6</span>
+<span class="pre">&gt;</span> <span class="pre">(16ddRa-</span>
+<span class="pre">&gt;</span> <span class="pre">16ff)|</span>
+<span class="pre">&gt;</span> <span class="pre">(16dd-dern</span>
+<span class="pre">&gt;</span> <span class="pre">16b-)|</span>
+<span class="pre">&gt;</span> <span class="pre">8fab,</span>
+<span class="pre">&gt;</span> <span class="pre">8ddden</span>
+<span class="pre">&gt;</span> <span class="pre">=7=7</span>
+<span class="pre">&gt;</span> <span class="pre">(8.ccRa-</span>
+<span class="pre">&gt;</span> <span class="pre">16a)|</span>
+<span class="pre">&gt;</span> <span class="pre">8b--dern!</span>
+<span class="pre">&gt;</span> <span class="pre">8r%</span>
+<span class="pre">&gt;</span> <span class="pre">*-*-</span></tt></p>
+<p>Notice that all of the tandem interpretations related to the strophe
+organization are eliminated from the output.</p>
+<p>Suppose that we wanted to create a through-composed version of the entire
+work. We would expect as output, just two spines &#8211; the **kern_ spine
+and the <a class="reference external" href="../../rep/silbe">**silbe</a> spine. First, we need to create the full length version
+using the <strong>thru</strong> command. This will take the default expansion list, and
+repeat the appropriate section for each successive verse.</p>
+<p><tt class="docutils literal"><span class="pre">thru</span> <span class="pre">schubert</span></tt></p>
+<p>The effect of this will be to simply repeat section 1 four times. However,
+each repetition will contain all four verses. We can use the <strong>strophe</strong>
+command to eliminate the unwanted verse texts at each verse. When no option
+is given, <strong>strophe</strong> operates by preserving strophes in numerical order.
+That is, when it encounters the first strophic section it will preserve
+strophe #1 (<tt class="docutils literal"><span class="pre">*S/1</span></tt>); then when it encounters the next strophic section it
+will preserve strophe #2 (<tt class="docutils literal"><span class="pre">*S/2</span></tt>). And so on. In summary, the follow
+command will create a proper through-composed rendition of the Schubert
+lieder illustrated above.</p>
+<p><tt class="docutils literal"><span class="pre">thru</span> <span class="pre">schubert</span> <span class="pre">|</span> <span class="pre">strophe</span></tt></p>
+<p>Incidentally, the input passage need not necessary begin with strophe #1. The
+<strong>strophe</strong> command will adapt to the input, and use the lowest previously
+unencountered strophe number.</p>
+</div>
+<div class="section" id="using-the-strophe-and-thru-commands">
+<h2>Using the <em>strophe</em> and <em>thru</em> Commands<a class="headerlink" href="#using-the-strophe-and-thru-commands" title="Permalink to this headline">¶</a></h2>
+<p>As noted, the strophe technique can be used to encode different editorial
+interpretations of a single work. Suppose for example that we had two
+editions of the Bach chorale harmonizations: Erk and Reimenschneider. We
+could select the Erk edition as follows:</p>
+<p><tt class="docutils literal"><span class="pre">strophe</span> <span class="pre">-x</span> <span class="pre">Erk</span> <span class="pre">chorale166</span></tt></p>
+<p>In a strophic song, suppose we would like to compare the number of syllables
+in the first and second verses. We begin by selecting the appropriate verse,
+extract the syllable spine, eliminate all non-data records, eliminate any
+other special signifiers (like barlines), and finally count the number of
+remaining records. We repeat this procedure for both verses:</p>
+<p><tt class="docutils literal"><span class="pre">strophe</span> <span class="pre">-x</span> <span class="pre">1</span></tt> <a href="#id96"><span class="problematic" id="id97">*</span></a>file*`` | extract -i &#8216;<a href="#id98"><span class="problematic" id="id99">**</span></a>silbe&#8217; | rid -GLId &gt;
+&gt;&gt; | grep -v [=|%] | wc -l``
+&gt;
+<tt class="docutils literal"><span class="pre">strophe</span> <span class="pre">-x</span> <span class="pre">2</span></tt> <a href="#id100"><span class="problematic" id="id101">*</span></a>file*`` | extract -i &#8216;<a href="#id102"><span class="problematic" id="id103">**</span></a>silbe&#8217; | rid -GLId &gt;
+&gt;&gt; | grep -v [=|%] | wc -l``</p>
+<p>(In the <a class="reference external" href="../../rep/silbe">**silbe</a> representation, the vertical bar (|) and the percent sign
+(%) have special meanings so the <strong>grep -v</strong> is used to eliminate them along
+with barlines.)</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="reprise">
+<h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
+<p>Between stophes and sections, highly non-linear musical documents can be
+constructed. We have seen how section labels can be defined, how lists of
+sections (&#8220;expansion lists&#8221;) can be constructed and expanded to through-
+composed formats using the <strong>thru</strong> command. An unlabelled expansion list is
+the default version. Other versions have labelled expansion lists.</p>
+<p>Several different <em>types</em> of section labels can coexist in the same document
+and the <strong>yank</strong> command can be instructed to ignore all sections other than
+a certain type via the <strong>-t</strong> option.</p>
+<p>The basic ideas introduced in this chapter are summarized in the following
+table.</p>
+<p>&gt; sectionpassage defined by a section label, ends with occurrence of
+&gt; section label of identical or higher level
+&gt; section labeltandem interpretation beginning: <tt class="docutils literal"><span class="pre">*&gt;</span></tt> and not containing
+&gt; square brackets
+&gt; section typefirst part of section label: <tt class="docutils literal"><span class="pre">*&gt;*type</span></tt>&gt;*
+&gt; expansion listtandem interpretation beginning <tt class="docutils literal"><span class="pre">*&gt;</span></tt> and containing a list
+of
+&gt; section labels in square brackets, e.g. <tt class="docutils literal"><span class="pre">*&gt;[A,B,A]</span></tt>
+&gt; versiona labelled expansion list, e.g. <tt class="docutils literal"><span class="pre">*&gt;ternary[A,B,A]</span></tt>
+&gt; levelhierarchical level of a section, designed by the number of <cite>&gt;&#8217;
+&gt; following the section type, e.g. ``*&gt;type&gt;&gt;&gt;name`</cite> is lower
+&gt; than <tt class="docutils literal"><span class="pre">*&gt;type&gt;name</span></tt>
+&gt; abbreviated formatHumdrum document encoded using expansion lists
+&gt; through-composedHumdrum document encoded without expansion lists
+<cite>thru &lt;../../man/thru&gt;`_command to create a through-composed document from an
+&gt; abbrevatiated format
+``thru -v``command to create a particular version of a through-composed
+&gt; document
+``yank -s``command to extract sections
+``yank -t -s``command to extract sections limited to sections of a
+particular type
+&gt; strophe1. alternative spine path, 2. command for extracting a particular
+&gt; strophe
+&gt; strophic passage initiatortandem interpretation indicating the beginning of
+a strophe (``*strophe`</cite>)
+&gt; strophic passage terminatortandem interpretation indicating the end of a
+strophe (<tt class="docutils literal"><span class="pre">*S-</span></tt>)
+&gt; strophe labeltandem interpretation labelling one of several alternative
+spine-
+&gt; paths, begins <tt class="docutils literal"><span class="pre">*S/</span></tt>
+&gt; strophe end indicatortandem interpretation indicating the end of some spine
+path,
+&gt; e.g. <tt class="docutils literal"><span class="pre">*S/fin</span></tt></p>
+<p><em>Summary of terms related to sections and strophes</em></p>
+<p>In <a class="reference external" href="../ch37">Chapter 37</a> we will see further examples of how sections and strophes
+are especially useful when producing electronic editions.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  <hr/>
+  
+
+
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+   
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-52162357-1', 'humdrum.org');
+  ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>

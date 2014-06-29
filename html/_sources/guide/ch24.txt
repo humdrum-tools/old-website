@@ -845,11 +845,11 @@ designations:
 ``extract -i '*alto,*tenor'``* *`` | semits -x``
 
 Next we need to compare the two parts at each moment in order to determine
-whether they have the same numerical value. The Unix **awk** command will
+whether they have the same numerical value. The Unix `awk <http://en.wikipedia.org/wiki/Awk>`_ command will
 allow us to do some arithmetic. Awk auto- matically parses an input, so the
 value of the first spine is referred to as `$1', the value of the second
-spine is `$2' and so on. The **awk** expression ``1==$2'`` is a test of
-whether the first and second spines are equivalent. The **awk** action
+spine is `$2' and so on. The `awk <http://en.wikipedia.org/wiki/Awk>`_ expression ``1==$2'`` is a test of
+whether the first and second spines are equivalent. The `awk <http://en.wikipedia.org/wiki/Awk>`_ action
 ```print NR'`` means to print the current line number (record number is
 ```NR'``).
 
@@ -858,7 +858,7 @@ the semitone value is the same for both the alto and tenor voices:
 
 ``extract -i '*alto,*tenor'  | semits -x | awk '{if($1==$2) print NR}'``
 
-There is a problem with this pipeline however. The **awk** command will match
+There is a problem with this pipeline however. The `awk <http://en.wikipedia.org/wiki/Awk>`_ command will match
 all sorts of non-numeric inputs -- such as where null tokens (.) occur in
 both parts at the same time. Consequently, we need to be careful to avoid
 non-numeric inputs and comments.
@@ -872,7 +872,7 @@ lower-case letter `t' preceded by a backslash. Hence the expression
 `[^0-9\t-]' will match only those lines consisting solely of numbers, the
 minus sign, and tabs.
 
-The following **awk** script will output the line numbers for all inputs
+The following `awk <http://en.wikipedia.org/wiki/Awk>`_ script will output the line numbers for all inputs
 where the first and second spines contain identical numbers:
 
 ``awk '{if($0~/[^0-9\t-]/)next}{if($1==$2) print NR}'``
@@ -897,7 +897,7 @@ than a nominally lower voice.
 The relations "higher" and "lower" suggest the use of an arithmetic operator
 such as greater-than (>) or less-than (<). In brief, we will approach this
 question by translating the pitches to a numerical scale, and then use the
-general-purpose Unix **awk** command to test whether the nominally lower
+general-purpose Unix `awk <http://en.wikipedia.org/wiki/Awk>`_ command to test whether the nominally lower
 voice is truly lower.
 
 First we need to translate the pitch representation to some sort of numerical
@@ -919,8 +919,8 @@ problem. Hence:
 
 ``extract -i '*alto,*tenor'  | semits -x | ditto -s =``
 
-Finally, we can use the Unix **awk** command to do a little arithmetic. Once
-again, in **awk**, ``1'`` and ``2'`` refer to the first and second input
+Finally, we can use the Unix `awk <http://en.wikipedia.org/wiki/Awk>`_ command to do a little arithmetic. Once
+again, in `awk <http://en.wikipedia.org/wiki/Awk>`_, ``1'`` and ``2'`` refer to the first and second input
 fields, and the built-in variable ``NR'`` refers to the current record
 (line) number. The expression ``{if($1>$2) print NR}'`` is a miniature
 program that says: "if the first input field is numerically greater than the
@@ -934,7 +934,7 @@ spine, then tell us where that occurs.
 
 Since the `**semits <../../rep/semits>`_ representation uses the lower-case letter `r' to
 represent a rest, we should avoid the possibility of comparing a number
-(note) with a rest. We can use a variation on the same **awk** script as we
+(note) with a rest. We can use a variation on the same `awk <http://en.wikipedia.org/wiki/Awk>`_ script as we
 used when checking for unisons:
 
 ``awk '{if($0~/[^0-9\t-]/)next}{if($1>$2) print NR}'``
@@ -967,7 +967,7 @@ Having transformed the pitch input to a numerical form, we simply need to
 check whether the difference between the two semitone values is greater than
 12 semitones.
 
-The **awk** portion of our command is modified so that we are informed if the
+The `awk <http://en.wikipedia.org/wiki/Awk>`_ portion of our command is modified so that we are informed if the
 nominally higher voice is more than 12 semitones away from the other voice:
 
 ``extract -i '*soprano,*alto'  | semits -x | ditto -s = | awk
