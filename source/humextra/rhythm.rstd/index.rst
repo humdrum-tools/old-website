@@ -67,7 +67,7 @@ tuplet bases.
 |
 
 In other words when `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ encodes reciprocal durations
-of rhythms, the durations must always have a 1 in the numerator
+of notes, the durations must always have a 1 in the numerator
 (excluding duration additions from augmentation dots).  For example
 an eighth note is represented in `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ or `\*\*kern <http://www.humdrum.org/Humdrum/representations/kern.rep.html>`_
 data as ``8``.  This means that the duration of an eighth note is
@@ -310,7 +310,7 @@ for the `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.htm
 
 .. image:: rhythm.rstd/Example_messy/messy.svg
 	:align: center
-	:width: 50%
+	:width: 60%
 
 .. :Example:End: 2.5
 
@@ -327,7 +327,8 @@ by 3/5 then by 1/2 and finally by 2/5:
 
 .. math::
 
-	50 = \frac{1}{\frac{1}{4} \times \left[\left(\frac{3}{5}\right)\left(\frac{1}{3}\right)\left(\frac{2}{5}\right)\right]  } = 4 \times \left[\left(\frac{5}{3}\right)\left(\frac{3}{1}\right)\left(\frac{5}{2}\right)\right] = 4 \times \frac{25}{2}
+	50 & = & \frac{1}{\frac{1}{4} \times \left[\left(\frac{3}{5}\right)\left(\frac{1}{3}\right)\left(\frac{2}{5}\right)\right]  }  \\
+	& = & 4 \times \left[\left(\frac{5}{3}\right)\left(\frac{3}{1}\right)\left(\frac{5}{2}\right)\right] = 4 \times \frac{25}{2}
 
 Going from `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ data to graphical music notation poses
 a problem in the general case, since the ordering of the subdividing
@@ -349,7 +350,7 @@ following equation:
 
 .. image:: rhythm.rstd/Example_nested2/nested2.svg
 	:align: center
-	:width: 50%
+	:width: 60%
 
 .. :Example:End: 2.6
 
