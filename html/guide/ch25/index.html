@@ -116,7 +116,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">2. Rhythm and Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody and Pitch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
@@ -302,7 +302,7 @@
 <p>There is no precise way to measure similarity. However, there are several
 useful techniques that can be used to estimate the degree of similarity
 between different types of information. In this chapter we discuss two
-general tools for characterizing similarity: <a href="#id123"><span class="problematic" id="id124">`**correl**`_</span></a> and <a href="#id125"><span class="problematic" id="id126">`**simil**`_</span></a>.
+general tools for characterizing similarity: <a class="reference external" href="../../man/correl">correl</a> and <a class="reference external" href="../../man/simil">simil</a>.
 The <strong>correl</strong> command can be used to measure numerical similarity between
 two sets of numbers. The <strong>simil</strong> command can be used to measure similarity
 between non-numeric data.</p>
@@ -332,7 +332,7 @@ might look as follows:</p>
 longer notes. The longest notes are fairly high (12 and 16 semits), whereas
 most of the shortest notes (4 and 5 semits) are lower. There are some
 exceptions, however, such as the 0.5 sec. duration for a pitch of 14 semits.</p>
-<p>The Humdrum <a href="#id127"><span class="problematic" id="id128">`**correl**`_</span></a> command allows us to characterize more precisely
+<p>The Humdrum <a class="reference external" href="../../man/correl">correl</a> command allows us to characterize more precisely
 the degree of similarity between two sets of numbers. The <strong>correl</strong> command
 expects precisely two input spines; it is easily invoked:</p>
 <p>`` correl inputfile``</p>
@@ -345,7 +345,7 @@ of numbers rise and fall in precise synchrony &#8211; although the magnitude of
 the numbers may differ. For example, the following input exhibits a
 correlation of +1.0 &#8211; even though the two sets of numbers differ in overall
 magnitude.</p>
-<p>`` <a href="#id3"><span class="problematic" id="id4">**</span></a>foo**bar
+<p>`` <a href="#id4"><span class="problematic" id="id5">**</span></a>foo**bar
 &gt; 1100
 &gt; 3300
 &gt; 2200
@@ -411,13 +411,13 @@ a passage of second species counterpoint. In second species counterpoint,
 there are two pitches in the upper voice for each pitch in the lower voice.
 Translating our pitch data to semitones will result in a failure of the
 matched-pairs criterion. There are two ways of overcoming this problem. One
-method is to use <a href="#id129"><span class="problematic" id="id130">`**ditto**`_</span></a> to repeat the sustained semitone value for the
+method is to use <a class="reference external" href="../../man/ditto">ditto</a> to repeat the sustained semitone value for the
 slower-moving part:</p>
 <p>`` semits species2.krn | ditto -s ^= | correl -s ^=``</p>
 <p>Another approach would be to omit from consideration those notes that are not
 concurrent with a note in the other voice. The <strong>-m</strong> option for <strong>correl</strong>
 disables the matched-pairs criterion. That is, if numerical data is missing
-from either one of the input spines, <a href="#id131"><span class="problematic" id="id132">`**correl**`_</span></a> will simply discard the
+from either one of the input spines, <a class="reference external" href="../../man/correl">correl</a> will simply discard the
 entire data record from the correlation calculation. Using this approach, we
 would omit the <strong>ditto</strong> command:</p>
 <p>`` semits species2.krn | correl -m -s ^=``</p>
@@ -432,24 +432,24 @@ the degree of numerical similarity between two spines. A more valuable use of
 excerpt or template. In this mode of operation, the input consists of a
 single input spine plus a separate template that represents a pattern being
 sought.</p>
-<p>The <strong>-f</strong> option for <a href="#id133"><span class="problematic" id="id134">`**correl**`_</span></a> allows the user to specify a file that
+<p>The <strong>-f</strong> option for <a class="reference external" href="../../man/correl">correl</a> allows the user to specify a file that
 acts as a template which is then scanned across some input. By way of
 example, suppose we are looking for motivic instances similar to the first
 four notes of <em>Frere Jacques</em>. Our template file might look as follows:</p>
 <p>&gt; .. image:: guide.figures/ch25.0.gif</p>
-<p>`` <a href="#id5"><span class="problematic" id="id6">**</span></a>semits
+<p>`` <a href="#id8"><span class="problematic" id="id9">**</span></a>semits
 &gt; 0
 &gt; 2
 &gt; 4
 &gt; 0
-&gt; <a href="#id7"><span class="problematic" id="id8">*</span></a>-``</p>
+&gt; <a href="#id10"><span class="problematic" id="id11">*</span></a>-``</p>
 <p>We would like to scan an entire work looking for possible matches or similar
 passages. The following example shows a sample input and corresponding output
 &#8211; given the above template. The left-most spine is the original input
-represented using the French <a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id135"><span class="problematic" id="id136">`**solfg```_</span></a> scheme. The middle spine is the
-input (translated to <a href="#id11"><span class="problematic" id="id12">``</span></a><a href="#id137"><span class="problematic" id="id138">`**semits```_</span></a>) supplied to the <strong>correl</strong> command. The
+represented using the French <a class="reference external" href="../../rep/solfg">**solfg</a> scheme. The middle spine is the
+input (translated to <a class="reference external" href="../../rep/semits">**semits</a>) supplied to the <strong>correl</strong> command. The
 right-most spine was generated using the following command:</p>
-<p>`` <a href="#id13"><span class="problematic" id="id14">**</span></a>solfg**semits**correl
+<p>`` <a href="#id12"><span class="problematic" id="id13">**</span></a>solfg**semits**correl
 &gt; =1=1=1
 &gt; do01.000
 &gt; re2-0.500
@@ -468,10 +468,10 @@ right-most spine was generated using the following command:</p>
 &gt; mi40.982
 &gt; fa5.
 &gt; so7.
-&gt; <em>-</em>-<a href="#id15"><span class="problematic" id="id16">*</span></a>-``</p>
-<p>The similarity values generated by <strong>correl</strong> are output as a <tt class="docutils literal"><span class="pre">`**correl```_</span>
-<span class="pre">spine.</span> <span class="pre">Each</span> <span class="pre">successive</span> <span class="pre">value</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">output</span> <span class="pre">spine</span> <span class="pre">is</span> <span class="pre">matched</span> <span class="pre">with</span> <span class="pre">a</span> <span class="pre">data</span> <span class="pre">token</span>
-<span class="pre">in</span> <span class="pre">the</span> <span class="pre">target</span> <span class="pre">input</span> <span class="pre">file</span> <span class="pre">(``**semits</span></tt>). For example, the initial output
+&gt; <em>-</em>-<a href="#id14"><span class="problematic" id="id15">*</span></a>-``</p>
+<p>The similarity values generated by <strong>correl</strong> are output as a <a class="reference external" href="../../rep/correl">**correl</a>
+spine. Each successive value in the output spine is matched with a data token
+in the target input file (<a class="reference external" href="../../rep/semits">**semits</a>). For example, the initial output
 value (1.000) indicates that an exact positive correlation occurs between the
 template and the input. Another exact positive correlation occurs at the
 beginning of measure 2. More interesting, perhaps, are the high correlations
@@ -483,19 +483,19 @@ melodic similarity.</p>
 <p>For more sophisticated melodic similarity searches, both pitch and rhythm
 might be considered. Two different correlations can be calculated &#8211; one for
 semitone contour similarity and one for durational similarity. We can
-generate two <tt class="docutils literal"><span class="pre">**correl</span></tt> spines as follows. First generate <tt class="docutils literal"><span class="pre">**semits</span></tt> and
+generate two <a class="reference external" href="../../rep/correl">**correl</a> spines as follows. First generate <a class="reference external" href="../../rep/semits">**semits</a> and
 `` <strong>dur`` data so our inputs to **correl</strong> are numerical.</p>
 <p>`` semits inputfile &gt; temp.sem``
 `` dur inputfile &gt; temp.dur``</p>
-<p>Generate independent <tt class="docutils literal"><span class="pre">**correl</span></tt> spines for the semitone pitch and duration
+<p>Generate independent <a class="reference external" href="../../rep/correl">**correl</a> spines for the semitone pitch and duration
 data, and assemble the two spines together:</p>
 <p>`` correl -s ^= -f template.sem temp.sem &gt; correl.sem``
 `` correl -s ^= -f template.dur temp.dur &gt; correl.dur``
 `` assemble correl.sem correl.dur``</p>
-<p>The resulting output consists of two <tt class="docutils literal"><span class="pre">**correl</span></tt> spines: one tracing the
+<p>The resulting output consists of two <a class="reference external" href="../../rep/correl">**correl</a> spines: one tracing the
 moment-by-moment pitch similarity, and the other tracing the moment-by-moment
 duration similarity. The output might appear as follows:</p>
-<p>`` <a href="#id17"><span class="problematic" id="id18">**</span></a>correl**correl
+<p>`` <a href="#id22"><span class="problematic" id="id23">**</span></a>correl**correl
 &gt; 0.4380.284
 &gt; -0.1180.226
 &gt; 0.487-0.008
@@ -510,11 +510,11 @@ composite similarity measure. For example, one might sum together the
 correlations on each line: passages that exhibit high pitch/duration
 similarity will tend to have a large positive summed score. Alternatively,
 one might set a threshold for both each of the pitch and duration correlation
-coefficients and use <a href="#id139"><span class="problematic" id="id140">`**recode**`_</span></a> to mark promising points of high
+coefficients and use <a class="reference external" href="../../man/recode">recode</a> to mark promising points of high
 correlation. Values between +0.8 and +1.0 might be recoded as &#8220;similar&#8221;;
 values between +0.5 and +0.8 might be recoded as &#8220;maybe&#8221;; all other values
-might be recoded as null tokens. Assembling the recoded <a href="#id19"><span class="problematic" id="id20">``</span></a><a href="#id141"><span class="problematic" id="id142">`**correl```_</span></a>
-spines, one could use <strong>grep</strong> to search for moments in the score that are
+might be recoded as null tokens. Assembling the recoded <a class="reference external" href="../../rep/correl">**correl</a>
+spines, one could use <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to search for moments in the score that are
 suitable marked as &#8220;similar&#8221; for both pitch and duration.</p>
 <p>Finally, a word of caution is in order regarding the use of the <strong>correl</strong>
 command. Correlation coefficients indicate only the magnitude of the
@@ -536,7 +536,7 @@ pitch range. Moreover, the word &#8220;bassoon&#8221; is more similar in spellin
 we characterize the &#8220;distance&#8221; between objects? How <em>much</em> is the difference
 in pitch range between a &#8216;cello and a bassoon? How <em>much</em> is the difference
 in spelling between &#8220;bassoon&#8221; and &#8220;baboon&#8221;?</p>
-<p>In the <a href="#id143"><span class="problematic" id="id144">`**correl**`_</span></a> command, the criterion of similarity arises from the
+<p>In the <a class="reference external" href="../../man/correl">correl</a> command, the criterion of similarity arises from the
 user&#8217;s choice of input representations. If the input represents duration,
 then the results pertain to durational similarity. If the input represents
 frequency, then the results pertain to frequency similarity. The <em>metric</em>
@@ -544,7 +544,7 @@ used by <strong>correl</strong> is a linear numerical correlation. Since <strong
 deal only with numerical data, it is referred to as &#8220;parametric&#8221; method for
 measuring similarity. However, we know that non-numerical data can also be
 similar. An &#8220;apple&#8221; is more similar to an &#8220;orange&#8221; than it is to a &#8220;bassoon.&#8221;</p>
-<p>The <a href="#id145"><span class="problematic" id="id146">`**simil**`_</span></a> command is a &#8220;non-parametric&#8221; tool for characterizing
+<p>The <a class="reference external" href="../../man/simil">simil</a> command is a &#8220;non-parametric&#8221; tool for characterizing
 similarity. Like <strong>correl,</strong> the criterion of similarity depends on the
 user&#8217;s choice of input representations. If the input represents metric
 position, then the results pertain to metric-position similarity. If the
@@ -556,8 +556,8 @@ required to transform one representation to another. By way of example,
 consider the spelling of the words &#8220;bassoon&#8221; and &#8220;baboon.&#8221; Suppose we are
 allowed the following operations: (1) insertion of a character, (2) deletion
 of a character, and (3) substitution of a character. We can transform
-&#8220;bassoon&#8221; to &#8220;baboon&#8221; by deleting a letter <a href="#id21"><span class="problematic" id="id22">`</span></a>s&#8217; and substituting the letter
-<a href="#id23"><span class="problematic" id="id24">`</span></a>b&#8217; for the remaining letter <a href="#id25"><span class="problematic" id="id26">`</span></a>s&#8217;. If each edit operation was assigned a
+&#8220;bassoon&#8221; to &#8220;baboon&#8221; by deleting a letter <a href="#id27"><span class="problematic" id="id28">`</span></a>s&#8217; and substituting the letter
+<a href="#id29"><span class="problematic" id="id30">`</span></a>b&#8217; for the remaining letter <a href="#id31"><span class="problematic" id="id32">`</span></a>s&#8217;. If each edit operation was assigned a
 &#8220;penalty&#8221; value of 1.0, then we would say that the edit-distance between
 &#8220;bassoon&#8221; and &#8220;baboon&#8221; is 2.0.</p>
 <p>Before we describe <strong>simil</strong> in detail, let&#8217;s examine some sample inputs and
@@ -565,20 +565,20 @@ outputs. Two inputs are required by <strong>simil</strong> &#8211; the <em>sourc
 inputs. Both inputs must contain single columns of data; multi-column inputs
 are forbidden. The <em>source</em> input must conform to the Humdrum syntax, however
 the <em>template</em> should contain only data records.</p>
-<p>Depending on the mode of operation, <a href="#id147"><span class="problematic" id="id148">`**simil**`_</span></a> outputs either one or two
+<p>Depending on the mode of operation, <a class="reference external" href="../../man/simil">simil</a> outputs either one or two
 spines of continuous information regarding the similarity of the two inputs.
 The length of <strong>simil</strong>&#8216;s output matches that of the <em>source</em> file.</p>
 <p>The following example illustrates the operation of <strong>simil</strong>. Like
 <strong>correl</strong>, <strong>simil</strong> provides a template mode where a relatively short
 template is scanned over a source input. In the following example, the source
-input is given in the left-most spine (labelled <tt class="docutils literal"><span class="pre">**foo</span></tt>) and is held in a
+input is given in the left-most spine (labelled <tt class="docutils literal"><span class="pre">foo</span></tt>) and is held in a
 file named <tt class="docutils literal"><span class="pre">source</span></tt>; the middle column consists of the letters A, B and C,
 and is held in a file named <tt class="docutils literal"><span class="pre">template</span></tt>. The following command:</p>
 <p>`` simil source template``</p>
-<p>generates the third column (labelled <a href="#id27"><span class="problematic" id="id28">``</span></a><a href="#id149"><span class="problematic" id="id150">`**simil```_</span></a>):</p>
+<p>generates the third column (labelled <a class="reference external" href="../../rep/simil">**simil</a>):</p>
 <p>&gt; (source(template(simil
 &gt; inputinput)output)
-`` <a href="#id29"><span class="problematic" id="id30">**</span></a>fooA**simil
+`` <a href="#id35"><span class="problematic" id="id36">**</span></a>fooA**simil
 &gt; XB0.51
 &gt; AC1.00
 &gt; B0.51
@@ -592,10 +592,10 @@ and is held in a file named <tt class="docutils literal"><span class="pre">templ
 &gt; A.
 &gt; <em>-</em>-``</p>
 <p>Each succesive value in the output spine is matched with a data token in the
-source input file. For example, the second value (1.00) in the <tt class="docutils literal"><span class="pre">**simil</span></tt>
+source input file. For example, the second value (1.00) in the <a class="reference external" href="../../rep/simil">**simil</a>
 spine arises from an exact match of the (A,B,C) pattern beginning with the
 second data token in the source input. The second highest value (0.72) occurs
-in both the sixth and seventh <tt class="docutils literal"><span class="pre">**simil</span></tt> data records, indicating that
+in both the sixth and seventh <a class="reference external" href="../../rep/simil">**simil</a> data records, indicating that
 fairly similar sequences occur beginning with the sixth and seventh data
 records in the source input. Specifically, <strong>simil</strong> has recognized that the
 sequence (A,B,B,C) is only one edit-operation (a deletion) different from the
@@ -609,7 +609,7 @@ bears little resemblance to the template.</p>
 of a harmonic pattern: <em>I-IV-V-I</em>.</p>
 <p>&gt; (source(template(simil
 &gt; inputinput)output)
-`` <a href="#id31"><span class="problematic" id="id32">**</span></a>harmI**simil
+`` <a href="#id39"><span class="problematic" id="id40">**</span></a>harmI**simil
 &gt; IIV0.87
 &gt; viV0.87
 &gt; ii7I0.51
@@ -629,11 +629,11 @@ that facilitates recognition of interchangeable or equivalent data. For
 example, in the follow example, the harmonic data given above has been
 reclassified (using <strong>humsed</strong>) so that the number of distinct harmonic
 categories has been reduced. For example, the <tt class="docutils literal"><span class="pre">ii7</span></tt> chord has been
-classified as a form of <a href="#id33"><span class="problematic" id="id34">``</span></a>subdom``inant function. Notice how the
-`` <a href="#id151"><span class="problematic" id="id152">`**simil```_</span></a> values better reflect the presumed harmonic similarity:</p>
+classified as a form of <a href="#id41"><span class="problematic" id="id42">``</span></a>subdom``inant function. Notice how the
+`` <a href="#id139"><span class="problematic" id="id140">`**simil```_</span></a> values better reflect the presumed harmonic similarity:</p>
 <p>&gt; (source(template(simil
 &gt; inputinput)output)
-`` <a href="#id35"><span class="problematic" id="id36">**</span></a>Harmtonic**simil
+`` <a href="#id43"><span class="problematic" id="id44">**</span></a>Harmtonic**simil
 &gt; tonicsubdom0.92
 &gt; subdomdom0.90
 &gt; subdomtonic0.87
@@ -649,7 +649,7 @@ classified as a form of <a href="#id33"><span class="problematic" id="id34">``</
 </div>
 <div class="section" id="defining-edit-penalties">
 <h2>Defining Edit Penalties<a class="headerlink" href="#defining-edit-penalties" title="Permalink to this headline">¶</a></h2>
-<p>Technically, the <a href="#id153"><span class="problematic" id="id154">`**simil**`_</span></a> command implements a Damerau-Levenshtein metric
+<p>Technically, the <a class="reference external" href="../../man/simil">simil</a> command implements a Damerau-Levenshtein metric
 for edit distance (see Orpen &amp; Huron, 1992). Permissible edit operations
 include substitutions and deletions. Each edit action incurs a penalty, and
 the cumulative edit-distance determines the similarity.</p>
@@ -696,7 +696,7 @@ strings is 0.37.</p>
 <p>Some user-defined weightings may give rise to peculiar results &#8211; such as
 negative costs &#8211; but <strong>simil</strong> does not forbid this. <strong>Simil</strong> generates
 warning messages if the weightings seem illogical; for example, if the cost
-of R1 is more than that of D1. In addition, <a href="#id155"><span class="problematic" id="id156">`**simil**`_</span></a> will abort operation
+of R1 is more than that of D1. In addition, <a class="reference external" href="../../man/simil">simil</a> will abort operation
 if the defined edit penalties transgress the triangular inequality rule (see
 Orpen &amp; Huron, 1992). The default weighting for all operations is +1.0.</p>
 <p>Below is a sample initialization file that defines the R1 substitution as
@@ -713,7 +713,7 @@ defining an arbitrarily high edit penalty.</p>
 unless the length of the template is considered. For example, 3 editing
 operations constitutes a rather modest change for a template consisting of 20
 elements. However, 3 edit operations is significant for a template consisting
-of only 5 elements. As a result, in the default operation, <a href="#id157"><span class="problematic" id="id158">`**simil**`_</span></a>
+of only 5 elements. As a result, in the default operation, <a class="reference external" href="../../man/simil">simil</a>
 scales the edit-distance scores according to the length of the comparison
 template. This ensures that all similarity values remain between 0 and 1.</p>
 <p>Now that we better understand the operation of <em>simil</em>, let&#8217;s return to our
@@ -729,7 +729,7 @@ assigned for repetition.</p>
 following results:</p>
 <p>&gt; (source(template(simil
 &gt; inputinput)output)
-`` <a href="#id37"><span class="problematic" id="id38">**</span></a>Harmtonic**simil
+`` <a href="#id48"><span class="problematic" id="id49">**</span></a>Harmtonic**simil
 &gt; tonicsubdom0.94
 &gt; subdomdom0.91
 &gt; subdomtonic0.87
@@ -744,32 +744,32 @@ following results:</p>
 &gt; <em>-</em>-``</p>
 <p>Notice that the similarity measure for the pattern (tonic, subdom, subdom,
 dom, dom, tonic) has increased from 0.91 to 0.94.</p>
-<p>The <a href="#id159"><span class="problematic" id="id160">`**simil**`_</span></a> command can be used to characterize innumerable types of
+<p>The <a class="reference external" href="../../man/simil">simil</a> command can be used to characterize innumerable types of
 similarity. Suppose, for example, that we wanted to identify similar
 fingering patterns in music for guitar. Consider the following work by
 Ferdinando Carulli:</p>
 <p>`` !!!COM: Carulli, Ferdinando
 `` !!!OTL: Larghetto, Opus 124, No. 23
 `` !! For guitar.
-`` <a href="#id39"><span class="problematic" id="id40">**</span></a>fret
-`` <a href="#id41"><span class="problematic" id="id42">*</span></a>ICstr
-`` <a href="#id43"><span class="problematic" id="id44">*</span></a>Iguitr
-`` <a href="#id45"><span class="problematic" id="id46">*</span></a>AT:E2
-`` <a href="#id47"><span class="problematic" id="id48">*</span></a>RT:0:5:10:15:19:24
-`` <a href="#id49"><span class="problematic" id="id50">*</span></a>MM60
-`` : : : : <a href="#id51"><span class="problematic" id="id52">|</span></a>0M :
+`` <a href="#id51"><span class="problematic" id="id52">**</span></a>fret
+`` <a href="#id53"><span class="problematic" id="id54">*</span></a>ICstr
+`` <a href="#id55"><span class="problematic" id="id56">*</span></a>Iguitr
+`` <a href="#id57"><span class="problematic" id="id58">*</span></a>AT:E2
+`` <a href="#id59"><span class="problematic" id="id60">*</span></a>RT:0:5:10:15:19:24
+`` <a href="#id61"><span class="problematic" id="id62">*</span></a>MM60
+`` : : : : <a href="#id63"><span class="problematic" id="id64">|</span></a>0M :
 `` =1
-`` <a href="#id53"><span class="problematic" id="id54">|</span></a>0P : : <a href="#id55"><span class="problematic" id="id56">|</span></a>1bI : <a href="#id57"><span class="problematic" id="id58">|</span></a>0A
-`` : : : <a href="#id59"><span class="problematic" id="id60">|</span></a>1bI : <a href="#id61"><span class="problematic" id="id62">|</span></a>0A
-`` <a href="#id63"><span class="problematic" id="id64">|</span></a>0P : : <a href="#id65"><span class="problematic" id="id66">|</span></a>2bI : <a href="#id67"><span class="problematic" id="id68">|</span></a>2bA
-`` : : : <a href="#id69"><span class="problematic" id="id70">|</span></a>4dI : <a href="#id71"><span class="problematic" id="id72">|</span></a>4eA
-`` : : : <a href="#id73"><span class="problematic" id="id74">|</span></a>2bI : <a href="#id75"><span class="problematic" id="id76">|</span></a>2bA
+`` <a href="#id65"><span class="problematic" id="id66">|</span></a>0P : : <a href="#id67"><span class="problematic" id="id68">|</span></a>1bI : <a href="#id69"><span class="problematic" id="id70">|</span></a>0A
+`` : : : <a href="#id71"><span class="problematic" id="id72">|</span></a>1bI : <a href="#id73"><span class="problematic" id="id74">|</span></a>0A
+`` <a href="#id75"><span class="problematic" id="id76">|</span></a>0P : : <a href="#id77"><span class="problematic" id="id78">|</span></a>2bI : <a href="#id79"><span class="problematic" id="id80">|</span></a>2bA
+`` : : : <a href="#id81"><span class="problematic" id="id82">|</span></a>4dI : <a href="#id83"><span class="problematic" id="id84">|</span></a>4eA
+`` : : : <a href="#id85"><span class="problematic" id="id86">|</span></a>2bI : <a href="#id87"><span class="problematic" id="id88">|</span></a>2bA
 `` =2
-`` <a href="#id77"><span class="problematic" id="id78">|</span></a>0P : : <a href="#id79"><span class="problematic" id="id80">|</span></a>1bI : <a href="#id81"><span class="problematic" id="id82">|</span></a>0A
-`` : : : <a href="#id83"><span class="problematic" id="id84">|</span></a>1bI : <a href="#id85"><span class="problematic" id="id86">|</span></a>0A
-`` <a href="#id87"><span class="problematic" id="id88">|</span></a>0 : : <a href="#id89"><span class="problematic" id="id90">|</span></a>2bI : <a href="#id91"><span class="problematic" id="id92">|</span></a>2bA
-`` : : : <a href="#id93"><span class="problematic" id="id94">|</span></a>4dI : <a href="#id95"><span class="problematic" id="id96">|</span></a>4eA
-`` : : : <a href="#id97"><span class="problematic" id="id98">|</span></a>2bI : <a href="#id99"><span class="problematic" id="id100">|</span></a>2bA
+`` <a href="#id89"><span class="problematic" id="id90">|</span></a>0P : : <a href="#id91"><span class="problematic" id="id92">|</span></a>1bI : <a href="#id93"><span class="problematic" id="id94">|</span></a>0A
+`` : : : <a href="#id95"><span class="problematic" id="id96">|</span></a>1bI : <a href="#id97"><span class="problematic" id="id98">|</span></a>0A
+`` <a href="#id99"><span class="problematic" id="id100">|</span></a>0 : : <a href="#id101"><span class="problematic" id="id102">|</span></a>2bI : <a href="#id103"><span class="problematic" id="id104">|</span></a>2bA
+`` : : : <a href="#id105"><span class="problematic" id="id106">|</span></a>4dI : <a href="#id107"><span class="problematic" id="id108">|</span></a>4eA
+`` : : : <a href="#id109"><span class="problematic" id="id110">|</span></a>2bI : <a href="#id111"><span class="problematic" id="id112">|</span></a>2bA
 `` =3</p>
 <p>We might be interested in a fret-board fingering pattern that consists of the
 following successive finger combinations:</p>
@@ -778,11 +778,11 @@ index finger
 ring and little fingers
 index finger</p>
 <p>In order to search for similar fingering patterns, we need to eliminate all
-but the relevant information from our representation. In the <a href="#id101"><span class="problematic" id="id102">``</span></a><a href="#id161"><span class="problematic" id="id162">`**fret```_</span></a>
+but the relevant information from our representation. In the <a class="reference external" href="../../rep/fret">**fret</a>
 scheme, fret-board fingerings are indicated by the lower-case letters <em>a</em> to
 <em>e</em> (<em>a*=thumb, *b*=index finger, *c*=middle finger, etc.). The lower-case
 *n</em> is used to explicitly indicate no finger (i.e. open string(s)). We can
-prepare our input using the following <a href="#id163"><span class="problematic" id="id164">`**humsed**`_</span></a> command. We delete all
+prepare our input using the following <a class="reference external" href="../../man/humsed">humsed</a> command. We delete all
 barlines, and then eliminate all characters other than the letters <em>a</em> to
 <em>e</em>. Any resulting empty lines we replace by the letter <em>n</em>.</p>
 <p>`` grep -v ^= carulli | humsed &#8216;s/[^a-e]//g; s/^$/n/&#8217; carulli``</p>
@@ -790,12 +790,12 @@ barlines, and then eliminate all characters other than the letters <em>a</em> to
 <p>`` !!!COM: Carulli, Ferdinando
 `` !!!OTL: Larghetto, Opus 124, No. 23
 `` !! For guitar.
-`` <a href="#id103"><span class="problematic" id="id104">**</span></a>fret
-`` <a href="#id105"><span class="problematic" id="id106">*</span></a>ICstr
-`` <a href="#id107"><span class="problematic" id="id108">*</span></a>Iguitr
-`` <a href="#id109"><span class="problematic" id="id110">*</span></a>AT:E2
-`` <a href="#id111"><span class="problematic" id="id112">*</span></a>RT:0:5:10:15:19:24
-`` <a href="#id113"><span class="problematic" id="id114">*</span></a>MM60
+`` <a href="#id113"><span class="problematic" id="id114">**</span></a>fret
+`` <a href="#id115"><span class="problematic" id="id116">*</span></a>ICstr
+`` <a href="#id117"><span class="problematic" id="id118">*</span></a>Iguitr
+`` <a href="#id119"><span class="problematic" id="id120">*</span></a>AT:E2
+`` <a href="#id121"><span class="problematic" id="id122">*</span></a>RT:0:5:10:15:19:24
+`` <a href="#id123"><span class="problematic" id="id124">*</span></a>MM60
 `` n
 `` b
 `` b
@@ -815,7 +815,7 @@ barlines, and then eliminate all characters other than the letters <em>a</em> to
 </div>
 <div class="section" id="the-accent-command">
 <h2>The <em>accent</em> Command<a class="headerlink" href="#the-accent-command" title="Permalink to this headline">¶</a></h2>
-<p>Both the <a href="#id165"><span class="problematic" id="id166">`**correl**`_</span></a> and <a href="#id167"><span class="problematic" id="id168">`**simil**`_</span></a> tools presume that all data tokens
+<p>Both the <a class="reference external" href="../../man/correl">correl</a> and <a class="reference external" href="../../man/simil">simil</a> tools presume that all data tokens
 are equally important. In the case of <strong>correl</strong>, each number is weighted
 equally in calculating the coefficient of correlation. In the case of
 <strong>simil</strong>, each data token has the same potential for disrupting the
@@ -827,7 +827,7 @@ if we first &#8220;filter&#8221; our data &#8211; selecting only the most import
 data for consideration.</p>
 <p>The <strong>accent</strong> command implements a sophisticated model of the perceptual
 salience or noticeability for various pitches. The command accepts only
-monophonic <a href="#id169"><span class="problematic" id="id170">`\*\*kern`_</span></a> input and outputs a spine containing numerical
+monophonic <a class="reference external" href="../../rep/kern">**kern</a> input and outputs a spine containing numerical
 values estimating the noticeability of each note. Output accent values vary
 between 0 (minimum accent) and 1 (maximum accent). Input is limited to only a
 single **kern data spine.</p>
@@ -883,13 +883,13 @@ the Ocean</em>.</p>
 &gt;``=3``=3
 &gt;``4d``0.696 <tt class="docutils literal"><span class="pre">*</span></tt>
 &gt;``2B``0.659 <tt class="docutils literal"><span class="pre">*</span></tt>
-&gt;``*-<a href="#id115"><span class="problematic" id="id116">``</span></a><a href="#id117"><span class="problematic" id="id118">*</span></a>-</p>
+&gt;``*-<a href="#id127"><span class="problematic" id="id128">``</span></a><a href="#id129"><span class="problematic" id="id130">*</span></a>-</p>
 <p>The similarity between these two passages is more evident when the
 perceptually more salient tones are considered alone. Using the
-`` <a href="#id171"><span class="problematic" id="id172">`**accent```_</span></a> data, we might simplify one or both passages by extracting
+`` <a href="#id141"><span class="problematic" id="id142">`**accent```_</span></a> data, we might simplify one or both passages by extracting
 only those notes whose accent value exceeds some threshold. In the above
 examples, a threshold of 0.6 might be appropriate (marked with an asterisk).
-We can isolate these tones by using the <a href="#id173"><span class="problematic" id="id174">`**recode**`_</span></a> and <a href="#id175"><span class="problematic" id="id176">`**yank**`_</span></a>
+We can isolate these tones by using the <a class="reference external" href="../../man/recode">recode</a> and <a class="reference external" href="../../man/yank">yank</a>
 commands. First, we create an appropriate reassignment file for <strong>recode</strong>.
 In this case we have classified all notes as either primary, secondary, or
 tertiary:</p>
@@ -898,8 +898,8 @@ tertiary:</p>
 else tertiary``</p>
 <p>Assuming this file is named <tt class="docutils literal"><span class="pre">reassign</span></tt>, we can pre-process our passage as
 follows:</p>
-<p>`` recode -f reassign -s ^= -i &#8216;<a href="#id119"><span class="problematic" id="id120">**</span></a>accent&#8217; inputfile &gt;
-&gt;&gt; | yank -m primary -r 0 | extract -i &#8216;<a href="#id121"><span class="problematic" id="id122">**</span></a>kern&#8217; &gt; primary.krn``</p>
+<p>`` recode -f reassign -s ^= -i &#8216;<a href="#id132"><span class="problematic" id="id133">**</span></a>accent&#8217; inputfile &gt;
+&gt;&gt; | yank -m primary -r 0 | extract -i &#8216;<a href="#id134"><span class="problematic" id="id135">**</span></a>kern&#8217; &gt; primary.krn``</p>
 <p>The file <tt class="docutils literal"><span class="pre">primary.krn</span></tt> contains only those notes having the highest
 estimated accent values. Using this file, we can continue processing using
 either a parametric (<strong>correl</strong>) or non-parametric (<strong>simil</strong>) similarity
@@ -909,7 +909,7 @@ method.</p>
 <div class="section" id="reprise">
 <h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
 <p>In this chapter we have introduced two types of similarity tools:
-<a href="#id177"><span class="problematic" id="id178">`**correl**`_</span></a> and <a href="#id179"><span class="problematic" id="id180">`**simil**`_</span></a>. For both tools, the criterion of similarity
+<a class="reference external" href="../../man/correl">correl</a> and <a class="reference external" href="../../man/simil">simil</a>. For both tools, the criterion of similarity
 depends on the user&#8217;s choice of input representation. For example, if the
 input represents fret-board finger patterns, then the similarity measures
 will reflect fret-board fingering similarity. Users need to choose carefully
@@ -927,7 +927,7 @@ define the edit penalties associated with different kinds of modifications.
 This allows the user to tailor the similarity measures to better suit the
 type of data being considered.</p>
 <p>The tools described in this chapter complement the pattern searching tools
-(such as <a href="#id181"><span class="problematic" id="id182">`**patt**`_</span></a>, <a href="#id183"><span class="problematic" id="id184">`**pattern**`_</span></a> and <strong>grep</strong>) described earlier.</p>
+(such as <a class="reference external" href="../../man/patt">patt</a>, <a class="reference external" href="../../man/pattern">pattern</a> and <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>) described earlier.</p>
 </div>
 </div>
 

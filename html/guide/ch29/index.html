@@ -116,7 +116,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">2. Rhythm and Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody and Pitch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
@@ -299,8 +299,8 @@
             
   <div class="section" id="chapter-29-differences-and-commonalities">
 <h1>Chapter 29: Differences and Commonalities<a class="headerlink" href="#chapter-29-differences-and-commonalities" title="Permalink to this headline">¶</a></h1>
-<p>In <a href="#id13"><span class="problematic" id="id14">`Chapter 25`_</span></a> we introduced the problem of similarity via the Humdrum
-<a href="#id15"><span class="problematic" id="id16">`**simil**`_</span></a> and <a href="#id17"><span class="problematic" id="id18">`**correl**`_</span></a> commands. This chapter revisits the problem of
+<p>In <a class="reference external" href="../ch25">Chapter 25</a> we introduced the problem of similarity via the Humdrum
+<a class="reference external" href="../../man/simil">simil</a> and <a class="reference external" href="../../man/correl">correl</a> commands. This chapter revisits the problem of
 similarity by focussing on differences and commonalities. Specifically, this
 chapter introduces three additional tools, the UNIX <strong>cmp</strong>, <strong>diff</strong> and
 <strong>comm</strong> commands. Although these commands are less sophisticated than the
@@ -319,14 +319,14 @@ golden&#8221;).</p>
 <p>Sometimes files differ in ways that may be uninteresting. For example, we may
 suspect that a single work has been attributed to two different composers.
 The encoded files may differ only in that the <tt class="docutils literal"><span class="pre">!!!COM:</span></tt> reference records
-are different. We can pre-process the files using <a href="#id19"><span class="problematic" id="id20">`**rid**`_</span></a> in order to
+are different. We can pre-process the files using <a class="reference external" href="../../man/rid">rid</a> in order to
 determine whether the scores are otherwise identical.</p>
 <p><tt class="docutils literal"><span class="pre">rid</span> <span class="pre">-G</span> <span class="pre">file1</span> <span class="pre">&gt;</span> <span class="pre">temp1</span></tt>
 <tt class="docutils literal"><span class="pre">rid</span> <span class="pre">-G</span> <span class="pre">file2</span> <span class="pre">&gt;</span> <span class="pre">temp2</span></tt>
 <tt class="docutils literal"><span class="pre">cmp</span> <span class="pre">temp1</span> <span class="pre">temp2</span></tt></p>
 <p>Of course one of the works might be transposed with respect to the other. We
 can circumvent this problem by translating the data to some key-independent
-representation such as <tt class="docutils literal"><span class="pre">solfa</span></tt> or <tt class="docutils literal"><span class="pre">deg</span></tt>:</p>
+representation such as <a class="reference external" href="../../man/solfa">solfa</a> or <a class="reference external" href="../../man/deg">deg</a>:</p>
 <p><tt class="docutils literal"><span class="pre">rid</span> <span class="pre">-GL</span> <span class="pre">file1</span> <span class="pre">|</span> <span class="pre">solfa</span> <span class="pre">&gt;</span> <span class="pre">temp1</span></tt>
 <tt class="docutils literal"><span class="pre">rid</span> <span class="pre">-GL</span> <span class="pre">file2</span> <span class="pre">|</span> <span class="pre">solfa</span> <span class="pre">&gt;</span> <span class="pre">temp2</span></tt>
 <tt class="docutils literal"><span class="pre">cmp</span> <span class="pre">temp1</span> <span class="pre">temp2</span></tt></p>
@@ -384,7 +384,7 @@ same lyrics. Many otherwise similar texts might differ in trivial ways. For
 example, texts may differ in punctuation or in the use of upper- and lower-
 case characters. The <strong>diff</strong> command provides a <strong>-i</strong> option that ignores
 distinctions between upper- and lower-case characters. Punctuation marks can
-be eliminated by adding a suitable <a href="#id21"><span class="problematic" id="id22">`**humsed**`_</span></a> filter.</p>
+be eliminated by adding a suitable <a class="reference external" href="../../man/humsed">humsed</a> filter.</p>
 <p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**silbe'</span> <span class="pre">file1</span> <span class="pre">|</span> <span class="pre">text</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/[^a-zA-Z</span> <span class="pre">]//g'</span> <span class="pre">\</span>
 <span class="pre">&gt;</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">&gt;</span> <span class="pre">temp1</span>
@@ -538,7 +538,7 @@ columns. For example, the command <strong>comm -13</strong> will suppress column
 three (outputing column two). (Empty lines are also suppressed with these
 options.) A convenient measure of similarity is to express the shared
 vocabulary items as a percentage of the total combined vocabularies. We can
-do this using the word-count command, <strong>wc</strong>. The first command counts the
+do this using the word-count command, <a class="reference external" href="http://en.wikipedia.org/wiki/Wc_(Unix)">wc</a>. The first command counts the
 total number of words and the second command counts the total number of
 shared words:</p>
 <p><tt class="docutils literal"><span class="pre">comm</span> <span class="pre">inventory1</span> <span class="pre">inventory2</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l</span></tt>
@@ -590,7 +590,7 @@ common each word is. Our inventory files might now appear as follows:</p>
 <p>Comparing these two inventories will produce little in common due to the
 presence of the numbers. For example, the records &#8220;<tt class="docutils literal"><span class="pre">3</span> <span class="pre">et</span></tt>&#8221; and &#8220;<tt class="docutils literal"><span class="pre">4</span> <span class="pre">et</span></tt>&#8221;
 will be deemed entirely different. However, we can eliminate the numbers
-using an appropriate <strong>sed</strong> command leaving us with vocabulary lists that
+using an appropriate <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> command leaving us with vocabulary lists that
 are ordered according to the frequency of occurrence of the words. If we
 apply the <strong>comm</strong> command to these lists then the commonality measures will
 be sensitive to the relative frequency of words within the vocabularies.</p>
@@ -605,9 +605,9 @@ command identifies which (sorted) lines two files share in common; <strong>comm<
 also allows us to identify which lines are unique to just one of the files.</p>
 <p>The value of these tools is amplified when the inputs are pre-processed to
 eliminate unwanted or distracting data, and when post-processing is done
-(using <strong>wc</strong>) to estimate the magnitude of the differences or commonalities.</p>
-<p>Together with the <a href="#id23"><span class="problematic" id="id24">`**simil**`_</span></a> and <a href="#id25"><span class="problematic" id="id26">`**correl**`_</span></a> commands discussed in
-<a href="#id27"><span class="problematic" id="id28">`Chapter 25,`_</span></a> these five tools provide a variety of means for characterizing
+(using <a class="reference external" href="http://en.wikipedia.org/wiki/Wc_(Unix)">wc</a>) to estimate the magnitude of the differences or commonalities.</p>
+<p>Together with the <a class="reference external" href="../../man/simil">simil</a> and <a class="reference external" href="../../man/correl">correl</a> commands discussed in
+<a class="reference external" href="../ch25">Chapter 25</a>, these five tools provide a variety of means for characterizing
 differences, commonalities, and similarities.</p>
 </div>
 </div>

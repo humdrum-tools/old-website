@@ -116,7 +116,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">2. Rhythm and Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody and Pitch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
@@ -300,11 +300,11 @@
   <div class="section" id="chapter-30-midi-input-tools">
 <h1>Chapter 30:MIDI Input Tools<a class="headerlink" href="#chapter-30-midi-input-tools" title="Permalink to this headline">¶</a></h1>
 <p>The Humdrum Toolkit provides two tools for inputting MIDI data. In this
-chapter we briefly introduce the <a href="#id15"><span class="problematic" id="id16">`**record**`_</span></a> and <a href="#id17"><span class="problematic" id="id18">`**encode**`_</span></a> commands.
+chapter we briefly introduce the <a class="reference external" href="../../man/record">record</a> and <a class="reference external" href="../../man/encode">encode</a> commands.
 These tools provide ways for capturing MIDI input and translating them to
 representations that conform to the Humdrum syntax. The <strong>record</strong> command
-translates a live or computer-generated MIDI performance to the <a href="#id1"><span class="problematic" id="id2">``</span></a><strong>MIDI``_
-representation. The **encode</strong> command provides an interactive editor that
+translates a live or computer-generated MIDI performance to the <a class="reference external" href="../../rep/MIDI">**MIDI</a>
+representation. The <strong>encode</strong> command provides an interactive editor that
 translates MIDI events to any pre-defined or user-defined Humdrum
 representation.</p>
 <p>Note that the Humdrum <strong>record</strong> and <strong>encode</strong> commands are currently
@@ -312,13 +312,12 @@ available only for the DOS operating system. These commands can be used only
 with computers that have MIDI capable hardware.</p>
 <div class="section" id="the-record-command">
 <h2>The <em>record</em> Command<a class="headerlink" href="#the-record-command" title="Permalink to this headline">¶</a></h2>
-<p>The <a href="#id19"><span class="problematic" id="id20">`**record**`_</span></a> command captures a stream of input MIDI data and translates
-this data into the Humdrum <tt class="docutils literal"><span class="pre">**MIDI</span></tt> representation described in <a href="#id21"><span class="problematic" id="id22">`Chapter
-7.`_</span></a> The input data is obtained from a MIDI instrument such as a keyboard
+<p>The <a class="reference external" href="../../man/record">record</a> command captures a stream of input MIDI data and translates
+this data into the Humdrum <a class="reference external" href="../../rep/MIDI">**MIDI</a> representation described in <a class="reference external" href="../ch07">Chapter 7</a>. The input data is obtained from a MIDI instrument such as a keyboard
 synthesizer.</p>
 <p>Recording commences as soon as the command is invoked and recording ceases
 when any key is pressed &#8211; with the exception of the space bar. Pressing the
-space bar causes a <tt class="docutils literal"><span class="pre">**MIDI</span></tt> barline token to be output. Measure numbers are
+space bar causes a <a class="reference external" href="../../rep/MIDI">**MIDI</a> barline token to be output. Measure numbers are
 incremented automatically beginning with measure 1.</p>
 <p>Only MIDI key-press activity (including after-touch) information is recorded.
 MIDI &#8220;system-exclusive&#8221; instructions and other non-key-press data are not
@@ -333,17 +332,17 @@ terminated.</p>
 </div>
 <div class="section" id="the-encode-command">
 <h2>The <em>encode</em> Command<a class="headerlink" href="#the-encode-command" title="Permalink to this headline">¶</a></h2>
-<p>The <a href="#id23"><span class="problematic" id="id24">`**encode**`_</span></a> command provides an interactive editor for capturing
+<p>The <a class="reference external" href="../../man/encode">encode</a> command provides an interactive editor for capturing
 Humdrum data from a MIDI input, such as a keyboard synthesizer. MIDI events
 are mapped to user-defined signifiers so <strong>encode</strong> can be used to enter data
 directly into a particular representation such as **kern_,
-<a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id25"><span class="problematic" id="id26">`**fret``_</span></a>, <a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">**</span></a>solfg``_, etc. Since the mapping of MIDI events to
+<a class="reference external" href="../../rep/fret">**fret</a>, <a class="reference external" href="../../rep/solfg">**solfg</a>, etc. Since the mapping of MIDI events to
 Humdrum data tokens is arbitrary, users can enter data using a representation
 design by the user.</p>
 <p>The <strong>encode</strong> command is limited to encoding information one spine at a
 time. A typical use of <strong>encode</strong> is to encode individual musical parts or
-voices using a representation like <a href="#id9"><span class="problematic" id="id10">**</span></a>kern. A full score is generated from the
-individual parts using the <a href="#id27"><span class="problematic" id="id28">`**timebase**`_</span></a> and <a href="#id29"><span class="problematic" id="id30">`**assemble**`_</span></a> commands.</p>
+voices using a representation like <a href="#id5"><span class="problematic" id="id6">**</span></a>kern. A full score is generated from the
+individual parts using the <a class="reference external" href="../../man/timebase">timebase</a> and <a class="reference external" href="../../man/assemble">assemble</a> commands.</p>
 <p>The <strong>encode</strong> command implements a full-screen interactive editor similar to
 the <strong>vi</strong> text editor. When invoked, the screen is divided into three
 display regions, including a <em>status window</em>, a <em>command window</em>, and a
@@ -383,9 +382,9 @@ events to any arbitrary output string and to arrange the ranges and number of
 classes as needed.</p>
 <p>The Humdrum Toolkit provides a large selection of predefined configuration
 files for use with <strong>encode</strong>. Depending on the configuration, the input may
-be mapped to a particular representation such as <a href="#id11"><span class="problematic" id="id12">**</span></a>kern. For example, Humdrum
+be mapped to a particular representation such as <a href="#id7"><span class="problematic" id="id8">**</span></a>kern. For example, Humdrum
 provides a configuration file that is optimized for encoding lute tablatures
-using the <a href="#id13"><span class="problematic" id="id14">**</span></a>fret representation. Other configuration files are optimized for
+using the <a href="#id9"><span class="problematic" id="id10">**</span></a>fret representation. Other configuration files are optimized for
 particular keys. For example, one may select a configuration file that
 interprets the MIDI events in the key of C# minor; in this case, playing the
 pitch C will result in a default encoding of B#.</p>
@@ -401,7 +400,7 @@ skills.</p>
 <div class="section" id="reprise">
 <h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
 <p>In this chapter we have briefly identified two tools for capturing MIDI-
-related input: <a href="#id31"><span class="problematic" id="id32">`**encode**`_</span></a> and <a href="#id33"><span class="problematic" id="id34">`**record**`_</span></a>. These tools allow MIDI data
+related input: <a class="reference external" href="../../man/encode">encode</a> and <a class="reference external" href="../../man/record">record</a>. These tools allow MIDI data
 to be translated to a Humdrum format. Further information regarding these
 tools is given in the <em>Humdrum Toolkit Reference Manual.</em></p>
 </div>

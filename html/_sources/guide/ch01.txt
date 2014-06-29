@@ -1,3 +1,7 @@
+
+.. |star| unicode:: 0x2749
+
+
 =====================================
 Chapter 1: Humdrum: A Brief Tour
 =====================================
@@ -126,7 +130,7 @@ tools can be grouped roughly into the following sixteen types of operations.
 
 If the above functions sound vague, that's because the corresponding Humdrum
 tools are similarly broad in their function. For example, the Humdrum
-``patt`` tool can be used to locate Landini cadences, label statements of
+`patt <../../man/patt>`_ tool can be used to locate Landini cadences, label statements of
 12-tone rows, or search for piano fingering patterns in Liszt. All three
 tasks involve searching for a sequential pattern that might have concurrent
 features as well.
@@ -143,19 +147,19 @@ will see.
 Although computers are typically not good at interpreting data, interpretive
 software will become increasingly important as computational musicology
 continues to develop. Humdrum provides a handful of tools that *interpret*
-data in various ways. For example, the ``key`` command implements the
+data in various ways. For example, the `key <../../man/key>`_ command implements the
 Krumhansl and Kessler method for estimating the key of a music passage. The
-``melac`` command implements Joseph Thomassen's model of melodic accent.
+`melac <../../man/melac>`_ command implements Joseph Thomassen's model of melodic accent.
 Other interpretive tools characterize syncopation or implement Johnson-
 Laird's model of rhythmic prototypes.
 
 The names of some of the Humdrum tools will be readily recognizable by
-musicians. Humdrum tools such as ``key``, ``pitch``, ``record``,
-``tacet``, ``trans``, and ``reihe`` may evoke fairly accurate ideas
+musicians. Humdrum tools such as `key <../../man/key>`_, `pitch <../../man/pitch>`_, `record <../../man/record>`_,
+`tacet <../../man/tacet>`_, `trans <../../man/trans>`_, and `reihe <../../man/reihe>`_ may evoke fairly accurate ideas
 about what they do. Ironically, the most recognizable tools are typically the
 least useful tools in the toolkit -- because they are so specialized. The
-most powerful Humdrum tools have names such as ``cleave``, ``humsed``,
-``simil``, ``recode``, ``context``, ``patt``, and ``yank``.
+most powerful Humdrum tools have names such as `cleave <../../man/cleave>`_, `humsed <../../man/humsed>`_,
+`simil <../../man/simil>`_, `recode <../../man/recode>`_, `context <../../man/context>`_, `patt <../../man/patt>`_, and `yank <../../man/yank>`_.
 
 By itself, each individual tool in the Humdrum Toolkit is quite modest in its
 effect. However, the tools are not intended to be self-sufficient. They are
@@ -253,7 +257,7 @@ combination of an asterisk and hyphen.
 **Table 1.3** A Humdrum Equivalent to Table 1.2
 
 .. csv-table::
-	:header: "\*\*Note", "\*\*Pitch", "\*\*Duration", "\*\*Valves"
+	:header: "\ |star|\ |star|\ Note", "\ |star|\ |star|\ Pitch", "\ |star|\ |star|\ Duration", "\ |star|\ |star|\ Valves"
 
 	1st note    , C4            , Quarter       , 0  
 	2nd note    , B3            , Eighth        , 2  
@@ -263,7 +267,7 @@ combination of an asterisk and hyphen.
 	6th note    , A4            , Quarter       , 1-2
 	7th note    , G4            , Eighth        , 0  
 	8th note    , Ab4           , Quarter       , 2-3
-	*-          , *-            , *-            , *- 
+	\ |star|\ -          , \ |star|\ -            , \ |star|\ -            , \ |star|\ - 
 
 
 It does not matter what characters appear in the table -- numbers, letters,
@@ -319,7 +323,7 @@ Some Sample Commands
 --------------------
 
 One group of tools is used to extract or select sections of data. Vertical
-spines of data can be extracted from a Humdrum file using the `**extract**`_
+spines of data can be extracted from a Humdrum file using the `extract <../../man/extract>`_
 command. For example, if a file encodes four musical parts, then the
 **extract** command might be used to isolate one or more given parts. The
 command
@@ -347,7 +351,7 @@ may be isolated:
 
 ``extract -i '\*LDeutsch' filename``
 
-Segments or passages of music can be extracted using the `**yank**`_ command.
+Segments or passages of music can be extracted using the `yank <../../man/yank>`_ command.
 Segments can be defined by sections, phrases, measures, or other any user-
 specified marker. For example, the following command extracts the section
 labelled "Trio" from a minuet & trio:
@@ -380,13 +384,13 @@ notated tempo from a file named ``Cui``:
 ``yank -s '\*>Coda' Cui | yank -o ^= -r 1,$ | midi | perform -t .5``
 
 Some tools translate from one representation to another. For example, the
-`**mint**`_ command generates melodic interval information. The following
+`mint <../../man/mint>`_ command generates melodic interval information. The following
 command locates all tritones -- including compound (octave) equivalents:
 
 ``mint -c filename | egrep -n '((d5)|(A4))'``
 
 Incidentally, Humdrum data can be processed by many common commands that are
-not part of the Humdrum Toolkit. The **egrep** command in the above pipeline
+not part of the Humdrum Toolkit. The `egrep <http://en.wikipedia.org/wiki/Egrep#Variations>`_ command in the above pipeline
 is a common computer utility and is not part of the Humdrum Toolkit.
 
 Depending on the type of translation, the resulting data can be searched for

@@ -3,7 +3,7 @@ Chapter 5: The Humdrum Syntax
 ================================
 
 In the previous chapters we have seen several examples of pre-defined Humdrum
-representations, such as \*\*kern_, ``**solfa``_ and ``**MIDI``_.
+representations, such as \*\*kern_, `**solfa <../../rep/solfa>`_ and `**MIDI <../../rep/MIDI>`_.
 These representations exhibit a number of common properties, including the
 manner in which the data are organized in spines. In this chapter, we provide
 a complete description of the Humdrum representation syntax. This chapter
@@ -50,7 +50,7 @@ comments, interpretations, or data records on the same line.
 Comment Records
 ---------------
 
-As we noted in `Chapter 2,`_ there are two kinds of comments: global comments
+As we noted in `Chapter 2 <../ch02>`_, there are two kinds of comments: global comments
 and local comments. *Global comments* pertain to all concurrent parts,
 whereas *local comments* pertain to some specific column of data (such as a
 particular staff, instrument, note, finger, etc.). Comments are lines that
@@ -159,7 +159,7 @@ alternating events, such as might be produced by walking or running. Notice
 that null tokens (.) indicate nothing at all and merely act as place-holders
 to maintain the format of the two spines. Notice also that interpretations
 must be defined for each spine, and that each interpretation consists of some
-keyword appended to the double asterisks (e.g. ``**left``). No intervening
+keyword appended to the double asterisks (e.g. ``left``). No intervening
 spaces are permitted between the interpretation *keyword* (``left``) and the
 asterisks; however, spaces may appear as part of the keyword itself. In
 addition, when more than one spine is present, both the data tokens and the
@@ -192,7 +192,7 @@ attribute of "left."
 
 Users are free to define as many different exclusive and tandem
 interpretations as they wish. For example, a user might define the
-interpretation ``**bowing`` that would be suitable for encoding detailed
+interpretation ``bowing`` that would be suitable for encoding detailed
 bowing information in works for strings. For each exclusive interpretation,
 the Humdrum user can re-define the meaning of all of the text characters,
 with the exception of the tab and the carriage return, which always retain
@@ -515,7 +515,7 @@ The *humdrum* Command
 --------
 
 One of the most important commands in the Humdrum Toolkit is the
-`**humdrum**`_ command itself. This command is used to identify whether a
+`humdrum <../../man/humdrum>`_ command itself. This command is used to identify whether a
 file or other input stream conforms to the above Humdrum syntax. Where
 appropriate, the **humdrum** command issues error messages identifying the
 type and location of any syntactic transgressions. If no infractions are

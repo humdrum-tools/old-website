@@ -116,7 +116,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">2. Rhythm and Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody and Pitch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
@@ -304,20 +304,20 @@ distinctive sounds that can prove to be musically useful. Poets and
 composers often arrange or choose texts so that the sequence of sounds
 create alliteration, onomatopoeia, rhythm, rhyme and other sonorous
 effects. This chapter introduces the
-<tt class="docutils literal"><span class="pre">`**IPA</span></tt> &lt;representations/IPA.rep.html&gt;`__ scheme for representing
+<a class="reference external" href="../../rep/IPA">**IPA</a> &lt;representations/IPA.rep.html&gt;`__ scheme for representing
 speech sounds. This representation provides a companion to the
-<tt class="docutils literal"><span class="pre">`**text</span></tt> &lt;representations/text.rep.html&gt;`__ and
-<tt class="docutils literal"><span class="pre">`**silbe</span></tt> &lt;representations/silbe.rep.html&gt;`__ representations
+<a class="reference external" href="../../rep/text">**text</a> &lt;representations/text.rep.html&gt;`__ and
+<a class="reference external" href="../../rep/silbe">**silbe</a> &lt;representations/silbe.rep.html&gt;`__ representations
 discussed in <a class="reference external" href="guide27.html">Chapter 27.</a> Various sonorous processes
 are illustrated.</p>
 <div class="section" id="the-ipa-representation">
 <h2>The **IPA Representation<a class="headerlink" href="#the-ipa-representation" title="Permalink to this headline">¶</a></h2>
-<p>The Humdrum <tt class="docutils literal"><span class="pre">`**IPA</span></tt> &lt;representations/IPA.rep.html&gt;`__ scheme provides
-a way to represent the International Phonetic Alphabet. The <tt class="docutils literal"><span class="pre">**IPA</span></tt>
+<p>The Humdrum <a class="reference external" href="../../rep/IPA">**IPA</a> &lt;representations/IPA.rep.html&gt;`__ scheme provides
+a way to represent the International Phonetic Alphabet. The <a class="reference external" href="../../rep/IPA">**IPA</a>
 scheme is based on the transliteration scheme developed by linguist Evan
 Kirshenbaum. The scheme is suitable for representing the basic phonemes
 found in most of the world&#8217;s languages. The table below summarizes the
-<tt class="docutils literal"><span class="pre">**IPA</span></tt> mappings for various phonemes.</p>
+<a class="reference external" href="../../rep/IPA">**IPA</a> mappings for various phonemes.</p>
 <blockquote>
 <div>&#64;
 <strong>schwa</strong>§ as in (unaccented) <em>banana, collide, alone</em> or
@@ -440,9 +440,9 @@ below the consonant.</li>
 or hooked beneath the consonant.</li>
 </ul>
 <p>Humdrum does not provide a tool for translating from
-<tt class="docutils literal"><span class="pre">`**text</span></tt> &lt;representations/text.rep.html&gt;`__ or
-<tt class="docutils literal"><span class="pre">`**silbe</span></tt> &lt;representations/silbe.rep.html&gt;`__ representations to
-<tt class="docutils literal"><span class="pre">`**IPA</span></tt> &lt;representations/IPA.rep.html&gt;`__. However, there are a
+<a class="reference external" href="../../rep/text">**text</a> &lt;representations/text.rep.html&gt;`__ or
+<a class="reference external" href="../../rep/silbe">**silbe</a> &lt;representations/silbe.rep.html&gt;`__ representations to
+<a class="reference external" href="../../rep/IPA">**IPA</a> &lt;representations/IPA.rep.html&gt;`__. However, there are a
 number of commercial text-to-phoneme translators available for most
 common languages.</p>
 </div>
@@ -453,42 +453,11 @@ successive words commence with the same sound. A famous example of
 alliteration is found at the beginning of William Shakespeare&#8217;s
 <em>Tempest</em>:</p>
 <blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">**text</span></tt>
-**IPA</td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">Full</span></tt>
-ful</td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">fathom</span></tt>
-f&amp;D&#64;m</td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">five</span></tt>
-fAiv</td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">thy</span></tt>
-DAi</td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">father</span></tt>
-fADR</td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">lies</span></tt>
-lAiz</td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">*-</span></tt>
-*-</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p>Given an <tt class="docutils literal"><span class="pre">**IPA</span></tt> input, occurrences of alliteration can be found by
+<div></div></blockquote>
+<p>Given an <a class="reference external" href="../../rep/IPA">**IPA</a> input, occurrences of alliteration can be found by
 first isolating the initial phoneme for each word using <strong>humsed</strong>. This
 task requires some additional knowledge about using
-<a class="reference external" href="commands/humsed.html">**humsed**</a>. Both <strong>sed</strong> and <strong>humsed</strong>
+<a class="reference external" href="commands/humsed.html">**humsed**</a>. Both <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> and <strong>humsed</strong>
 provide a &#8220;back reference&#8221; construction that allows users to manipulate
 a matched expression without knowing the precise matched sequence of
 characters. The expression to be matched is indicated via parentheses
@@ -502,40 +471,19 @@ Consider, by way of illustration, the following command:</p>
 <div><tt class="docutils literal"><span class="pre">sed</span> <span class="pre">'s/^\(.\).*/\1/'</span></tt></div></blockquote>
 <p>In this command, the referenced expression consists of the period (match
 any single character). Notice that this expression is back-referenced in
-the replacement string &#8211; <tt class="docutils literal"><span class="pre">\1</span></tt>. In other words, this <strong>sed</strong> command
+the replacement string &#8211; <tt class="docutils literal"><span class="pre">\1</span></tt>. In other words, this <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> command
 carries out the following operation: find a single character at the
 beginning of a line followed by zero or more characters. Replace this
 entire string by just the first character in the line.</p>
 <p>Let&#8217;s now use this back-reference technique in our alliteration search.
-First we extract the <tt class="docutils literal"><span class="pre">`**IPA</span></tt> &lt;representations/IPA.rep.html&gt;`__ spine
+First we extract the <a class="reference external" href="../../rep/IPA">**IPA</a> &lt;representations/IPA.rep.html&gt;`__ spine
 and use <strong>humsed</strong> to eliminate all but the first character in each data
 record:</p>
 <blockquote>
 <div><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**IPA'</span> <span class="pre">Tempest</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/^\(.\).*/\1/'</span></tt></div></blockquote>
 <p>The result is:</p>
 <blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">**IPA</span></tt></td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">f</span></tt></td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">f</span></tt></td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">f</span></tt></td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">D</span></tt></td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">f</span></tt></td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">*-</span></tt></td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
+<div></div></blockquote>
 <p>We can now amalgamate successive initial phonemes by using the
 <a class="reference external" href="commands/context.html">**context**</a> command. Suppose we are
 interested in identifying alliterations where three or more words begin
@@ -550,30 +498,7 @@ multiple stops:</p>
 </div></blockquote>
 <p>The revised output is:</p>
 <blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">**IPA</span></tt></td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">fff</span></tt></td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">ffD</span></tt></td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">fDf</span></tt></td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">Dfl</span></tt></td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">.</span></tt></td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">.</span></tt></td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">*-</span></tt></td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
+<div></div></blockquote>
 <p>Now we need to identify any data records that contain three identical
 sigifiers. Once again, we can use the back-reference feature for
 <strong>humsed</strong>.</p>
@@ -584,32 +509,9 @@ sigifiers. Once again, we can use the back-reference feature for
 </div></blockquote>
 <p>The resulting output is:</p>
 <blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">**IPA</span></tt></td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">allit:</span> <span class="pre">f</span></tt></td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">ffD</span></tt></td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">fDf</span></tt></td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">Dfl</span></tt></td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">.</span></tt></td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">.</span></tt></td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">*-</span></tt></td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
+<div></div></blockquote>
 <p>Let&#8217;s add one further refinement which illustrates yet another feature
-provided by <strong>sed</strong> and <strong>humsed</strong>. Recall that operations such as
+provided by <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> and <strong>humsed</strong>. Recall that operations such as
 substitions (<tt class="docutils literal"><span class="pre">s</span></tt>) and deletions (<tt class="docutils literal"><span class="pre">d</span></tt>) can be preceded by a regular
 expression that limits the operation only to those lines that match the
 expression. For example, the command <tt class="docutils literal"><span class="pre">sed</span> <span class="pre">'/=/s/[0-9]//g'</span></tt> will
@@ -632,30 +534,7 @@ final revised pipeline transforms non-alliteration data to null tokens:</p>
 </div></blockquote>
 <p>The final output is:</p>
 <blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">**IPA</span></tt></td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">allit:</span> <span class="pre">f</span></tt></td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">.</span></tt></td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">.</span></tt></td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">.</span></tt></td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">.</span></tt></td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">.</span></tt></td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">*-</span></tt></td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
+<div></div></blockquote>
 </div>
 <div class="section" id="classifying-phonemes">
 <h2>Classifying Phonemes<a class="headerlink" href="#classifying-phonemes" title="Permalink to this headline">¶</a></h2>
@@ -705,7 +584,7 @@ Sullivan operetta exhibits a preponderance of high vowels. We might
 begin by creating a re-assignment file where the estimated height of
 each vowel is given a value between 1 (low) and 10 (high). We can
 estimate the overall average vowel height for a piece by averaging these
-values together. The basic pipeline will extract the pertinent <tt class="docutils literal"><span class="pre">**IPA</span></tt>
+values together. The basic pipeline will extract the pertinent <a class="reference external" href="../../rep/IPA">**IPA</a>
 spine, eliminate all non-vowel phonemes, add spaces between each vowel,
 and then assign estimated heights to each vowel. Finally, non-data
 records are eliminated using <a class="reference external" href="commands/rid.html">**rid**</a> and the
@@ -782,34 +661,7 @@ some other) text. Our first order of business is to identify
 phrase-terminating points. Let&#8217;s assume we already have some phrase
 indicators (via curly braces {}). Our input might begin as follows:</p>
 <blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">**text</span></tt>
-**IPA</td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">We're</span></tt>
-{wRr</td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">all</span></tt>
-Al</td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">in</span></tt>
-In</td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">the</span></tt>
-D&#64;</td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">dumps,</span></tt>
-<a class="reference external" href="mailto:d&#37;&#52;&#48;mps">d<span>&#64;</span>mps</a>}</td>
-</tr>
-<tr class="row-odd"><td>etc.</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
+<div></div></blockquote>
 <p>Using <a class="reference external" href="commands/extract.html">**extract**</a>, <strong>context</strong> and <strong>rid</strong>
 we can isolate each poetic phrase:</p>
 <blockquote>
@@ -818,7 +670,7 @@ we can isolate each poetic phrase:</p>
 <blockquote>
 <div><tt class="docutils literal"><span class="pre">{wRr</span> <span class="pre">Al</span> <span class="pre">In</span> <span class="pre">D&#64;</span> <span class="pre">d&#64;mps}</span>&nbsp; <span class="pre">{foR</span> <span class="pre">dAim&#64;nds</span> <span class="pre">Ar</span> <span class="pre">tr&#64;mps}</span>&nbsp; <span class="pre">{D&#64;</span> <span class="pre">kIt&#64;ns</span> <span class="pre">Ar</span> <span class="pre">gAn</span> <span class="pre">tu</span> <span class="pre">seint</span> <span class="pre">pAUls}</span>&nbsp; <span class="pre">{D&#64;</span> <span class="pre">beibiz</span> <span class="pre">Ar</span> <span class="pre">bIt}</span>&nbsp; <span class="pre">{D&#64;</span> <span class="pre">munz</span> <span class="pre">In</span> <span class="pre">&#64;</span> <span class="pre">fIt}</span>&nbsp; <span class="pre">{&amp;nd</span> <span class="pre">D&#64;</span> <span class="pre">h&amp;uz&#64;z</span> <span class="pre">Ar</span> <span class="pre">bIlt</span> <span class="pre">wITAut</span> <span class="pre">wAUls}</span></tt></div></blockquote>
 <p>The rhyming portion of words typically consist of a final vowel plus any
-subsequent consonants. We can isolate these phonemes using <strong>sed</strong>.
+subsequent consonants. We can isolate these phonemes using <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a>.
 Notice our use of back reference to preserve the final phonemes:</p>
 <blockquote>
 <div>`` ... | sed &#8216;s/.*([&#64;VR&amp;AaEiIoOWuUy][<a class="reference external" href="mailto:^&#37;&#52;&#48;VR&amp;AaEiIoOWuUy">^<span>&#64;</span>VR&amp;AaEiIoOWuUy</a>]*}$)/1/&#8217;``</div></blockquote>
@@ -844,8 +696,8 @@ Notice our use of back reference to preserve the final phonemes:</p>
 </tbody>
 </table>
 </div></blockquote>
-<p>A little further processing can remove the closing braces using <strong>sed</strong>,
-and eliminate the duplicate lines using <strong>sort</strong> and <strong>uniq</strong>.</p>
+<p>A little further processing can remove the closing braces using <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a>,
+and eliminate the duplicate lines using <strong>sort</strong> and <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a>.</p>
 <blockquote>
 <div>`` ... | humsed &#8216;s/}//&#8217; | sort | uniq``</div></blockquote>
 <p>The output can then be changed into a set of substitutions for a
@@ -869,11 +721,11 @@ processing our original file would be as follows:</p>
 <p><tt class="docutils literal"><span class="pre">B</span></tt></p>
 <p><tt class="docutils literal"><span class="pre">C</span></tt></p>
 <p><tt class="docutils literal"><span class="pre">C</span></tt></p>
-<p><a href="#id1"><span class="problematic" id="id2">``</span></a>B  ``</p>
+<p><a href="#id14"><span class="problematic" id="id15">``</span></a>B  ``</p>
 <p>Note that the entire analytic procedure can be placed in a shell
-script and applied to any input containing <tt class="docutils literal"><span class="pre">**IPA</span></tt> text. The
+script and applied to any input containing <a class="reference external" href="../../rep/IPA">**IPA</a> text. The
 following script adds a number of refinements.</p>
-<p><a href="#id3"><span class="problematic" id="id4">``</span></a># RHYME  #  # This script determines the rhyme scheme for an input file containing  # an <a href="#id5"><span class="problematic" id="id6">**</span></a>IPA spine.  This script assumes that the input contains curly  # braces indicating phrase endings.  #  # USAGE:  rhyme     extract -i &#8216;<a href="#id7"><span class="problematic" id="id8">**</span></a>IPA&#8217; $1 | extract -f 1 | context -b { -e } | rid -GLId ``</p>
+<p><a href="#id17"><span class="problematic" id="id18">``</span></a># RHYME  #  # This script determines the rhyme scheme for an input file containing  # an <a href="#id19"><span class="problematic" id="id20">**</span></a>IPA spine.  This script assumes that the input contains curly  # braces indicating phrase endings.  #  # USAGE:  rhyme     extract -i &#8216;<a href="#id21"><span class="problematic" id="id22">**</span></a>IPA&#8217; $1 | extract -f 1 | context -b { -e } | rid -GLId ``</p>
 <blockquote>
 <div><div class="line-block">
 <div class="line"><br /></div>
@@ -917,13 +769,13 @@ print temp
 <div class="line">rm rhyme.sed.$$</div>
 </div>
 </div>
-<p>By focusing on phonetic signifiers, the <tt class="docutils literal"><span class="pre">**IPA</span></tt> representation
+<p>By focusing on phonetic signifiers, the <a class="reference external" href="../../rep/IPA">**IPA</a> representation
 provides opportunities for analyzing many sonorous aspects of vocal
 sounds &#8211; including alliteration, vowel coloration, rhyme, and other
 effects. Although we did not illustrate it in this chapter, the
-<tt class="docutils literal"><span class="pre">`**IPA</span></tt> &lt;representations/IPA.rep.html&gt;`__ representation can be
+<a class="reference external" href="../../rep/IPA">**IPA</a> &lt;representations/IPA.rep.html&gt;`__ representation can be
 used in conjunction witht the
-<tt class="docutils literal"><span class="pre">`**silbe</span></tt> &lt;representations/silbe.rep.html&gt;`__ representation to
+<a class="reference external" href="../../rep/silbe">**silbe</a> &lt;representations/silbe.rep.html&gt;`__ representation to
 characterize complex aspects of rhythm and rhyme in vocal texts.</p>
 </div></blockquote>
 </div>

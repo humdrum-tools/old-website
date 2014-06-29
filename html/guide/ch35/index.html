@@ -116,7 +116,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">2. Rhythm and Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody and Pitch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
@@ -299,10 +299,10 @@
             
   <div class="section" id="chapter-35-layers">
 <h1>Chapter 35: Layers<a class="headerlink" href="#chapter-35-layers" title="Permalink to this headline">¶</a></h1>
-<p>In <a href="#id9"><span class="problematic" id="id10">`Chapters 11`_</span></a> and <a href="#id11"><span class="problematic" id="id12">`15`_</span></a> we examined different kinds of intervals,
+<p>In <a href="#id5"><span class="problematic" id="id6">`Chapters 11`_</span></a> and <a href="#id7"><span class="problematic" id="id8">`15`_</span></a> we examined different kinds of intervals,
 including both harmonic and melodic intervals. A number of different types of
 intervals were distinguished and we learned how to calculate such intervals.
-One type of melodic interval mentioned in <a href="#id13"><span class="problematic" id="id14">`Chapter 11`_</span></a> is the <em>distance
+One type of melodic interval mentioned in <a class="reference external" href="../ch11">Chapter 11</a> is the <em>distance
 interval</em> &#8211; an interval between pitches which are separated by intervening
 musical materials. In this chapter we consider more sophisticated ways of
 determining distance intervals. These types of intervals are the foundation
@@ -370,8 +370,8 @@ convenient ways of parsing the harmonies.</p>
 <span class="pre">``*-</span></tt></p>
 <p>We can collapse the arpeggiated chords using the <strong>context</strong> command:</p>
 <p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">=</span> <span class="pre">-o</span> <span class="pre">=</span> <span class="pre">copland</span></tt></p>
-<p>Identify the chords is facilitated by using the pitch-class (<a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">**</span></a>pc``_)
-representation described in <a href="#id15"><span class="problematic" id="id16">`Chapter 34.`_</span></a></p>
+<p>Identify the chords is facilitated by using the pitch-class (<a class="reference external" href="../../rep/pc">**pc</a>)
+representation described in <a class="reference external" href="../ch34">Chapter 34</a>.</p>
 <p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">=</span> <span class="pre">-o</span> <span class="pre">=</span> <span class="pre">copland</span> <span class="pre">|</span> <span class="pre">pc</span> <span class="pre">-a</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-d</span></tt></p>
 <p>The corresponding output is:</p>
 <p><tt class="docutils literal"><span class="pre">!!!COM:</span> <span class="pre">Copland,</span> <span class="pre">A.</span>
@@ -390,7 +390,7 @@ representation described in <a href="#id15"><span class="problematic" id="id16">
 convenient to reduce the sets to (2,7,B) and (0,2,6,9) respectively. For this
 task, we can use a The following awk script eliminates repeated tokens within
 a record: (huniq: We might call this script <strong>huniq</strong> since it acts like a
-horizontal version of the <strong>uniq</strong> command:</p>
+horizontal version of the <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command:</p>
 <p><tt class="docutils literal"><span class="pre">awk</span> <span class="pre">'{</span>
 <span class="pre">&gt;</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">#</span> <span class="pre">A</span> <span class="pre">script</span> <span class="pre">to</span> <span class="pre">eliminate</span> <span class="pre">repeated</span> <span class="pre">tokens</span> <span class="pre">within</span> <span class="pre">a</span> <span class="pre">record.</span>
@@ -410,12 +410,12 @@ horizontal version of the <strong>uniq</strong> command:</p>
 <span class="pre">&gt;&gt;</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">}'</span> <span class="pre">$1</span></tt></p>
 <p>Applying this script to our output !!!COM: Copland, A. !!!OTL: El Salon
-Mexico <a href="#id5"><span class="problematic" id="id6">**</span></a>pc <em>Itromp *clefG2 *k[] *M4/4 r 2 7 B 2 B 7 0 9 2 6 0 9 6 2 6 r *-
+Mexico <a href="#id1"><span class="problematic" id="id2">**</span></a>pc <em>Itromp *clefG2 *k[] *M4/4 r 2 7 B 2 B 7 0 9 2 6 0 9 6 2 6 r *-
 Identifying implicit harmonic intervals can be a little more taxing. Let&#8217;s
 begin by considering a monophonic passage that exhibits a pseudo-polyphonic
 or compound melodic tendency. A passage from Bach&#8217;s &#8220;Gigue&#8221; from the solo
 &#8216;cello *Suite No. 3</em> is shown in Example 35.1.</p>
-<p><a href="#id7"><span class="problematic" id="id8">**</span></a>Example 35.1* J.S. Bach, &#8220;Gigue&#8221; from <em>Suite No. 3</em> for solo &#8216;cello
+<p><a href="#id3"><span class="problematic" id="id4">**</span></a>Example 35.1* J.S. Bach, &#8220;Gigue&#8221; from <em>Suite No. 3</em> for solo &#8216;cello
 (excerpt).</p>
 <p>&gt; .. image:: guide.figures/ch35.1.gif</p>
 <p><tt class="docutils literal"><span class="pre">**kern</span>

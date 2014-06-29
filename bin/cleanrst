@@ -13,6 +13,16 @@ use strict;
 
 my @files = @ARGV;
 
+# Unix command hyperlinks:
+my %UXCOM;
+$UXCOM{'sed'}   = "http://en.wikipedia.org/wiki/Sed";
+$UXCOM{'grep'}  = "http://en.wikipedia.org/wiki/Grep";
+$UXCOM{'wc'}    = "http://en.wikipedia.org/wiki/Wc_(Unix)";
+$UXCOM{'egrep'} = "http://en.wikipedia.org/wiki/Egrep#Variations";
+$UXCOM{'uniq'}  = "http://en.wikipedia.org/wiki/Uniq";
+$UXCOM{'cat'}   = "http://en.wikipedia.org/wiki/Cat_(Unix)";
+$UXCOM{'cksum'} = "http://en.wikipedia.org/wiki/Cksum";
+
 my $file;
 foreach $file (@files) {
    processFile($file);
@@ -36,12 +46,141 @@ sub processFile {
 
 
 sub cleanContent {
-   my ($content) = @_;
-  
-   #$content =~ s/``\*\*kern````/``**kern``/g;
-   $content =~ s/``\\*\\*kern``/\\*\\*kern/g;
+   my ($contents) = @_;
+   my $pre;
+   my $post;
+   my $number;
+   my $n;
+   my $command;
+   my $other;
+   my $exinterp;
 
-   return $content;
+
+   # change **uniq** to <uniq http://en.wikipedia.org/wiki/Uniq>`_
+   foreach $command (keys %UXCOM) {
+      $contents =~ s/\*\*$command\*\*/`$command <$UXCOM{$command}>`_/g;
+   }
+
+return $contents; ###Previous processing below this line ###############
+
+   # change  `\*\*kern`_   to <../../rep/kern>`_
+   $contents =~ s/`\\\*\\\*kern`_/`**kern <..\/..\/rep\/kern>`_/g;
+
+   # change ```**MIDI```_ to `**MIDI <../rep/MIDI>`_
+   while ($contents =~ /``+\*\*([a-zA-Z]+)``+_*/) {
+      $pre     = $`;
+      $post    = $';
+      $exinterp = $1;
+      if (-r "../rep/$exinterp.rst") {
+         $contents = "$pre`**$exinterp <../../rep/$exinterp>`_$post";
+         print "ACTION on $exinterp\n";
+      } else {
+         $contents = "$pre``97867564534231$exinterp``$post";
+         print "XACTION on $exinterp\n";
+      }
+   }
+   $contents =~ s/97867564534231//g;
+
+
+   while ($contents =~ /`Chapter\s+(\d+)([^a-zA-Z0-9`]?)`_/) {
+      $pre     = $`;
+      $post    = $';
+      $n       = $1;
+      $other   = $2;
+      $number  = $n;
+      $number  = "0$number" if $n < 10;
+      $contents = "$pre`Chapter $n <../ch$number>`_$other$post";
+      print "ACTION on $number\n";
+   }
+
+
+   # Change ``command`` to   `command <../../man/command>`_
+   while ($contents =~ /``([a-zA-Z]+)``/) {
+      $pre     = $`;
+      $post    = $';
+      $command = $1;
+      if (-r "../man/$command.rst") {
+         $contents = "$pre`$command <../../man/$command>`_$post";
+         print "ACTION on $command\n";
+      } else {
+         $contents = "$pre``97867564534231$command``$post";
+         print "XACTION on $command\n";
+      }
+   }
+   $contents =~ s/97867564534231//g;
+
+
+   # Change `**command**`_ to `command <../../man/command>`_
+   while ($contents =~ /`\*\*([a-zA-Z]+)\*\*`_/) {
+      $pre     = $`;
+      $post    = $';
+      $command = $1;
+      if (-r "../man/$command.rst") {
+         $contents = "$pre`$command <../../man/$command>`_$post";
+         print "ACTION on $command\n";
+      } else {
+         $contents = "$pre`**97867564534231$command**`_$post";
+         print "XACTION on $command\n";
+      }
+   }
+   $contents =~ s/97867564534231//g;
+
+   $contents =~ s/\`_\.\./`_./g;     # Change `_..  to  `_.
+   $contents =~ s/\`_\.,/`_,/g;      # Change `_.,  to  `_,
+   $contents =~ s/\`_,\./`_,/g;      # Change `_,.  to  `_,
+
+   # Change `Chapter 9. <ch09.html>`_ to `Chapter 9 <../ch09>`_.
+   while ($contents =~ /`Chapter\s+(\d+)\. <ch(\d+).html>`_/) {
+      $pre     = $`;
+      $post    = $';
+      $number  = $2;
+      $n       = int($number);
+      $contents = "$pre`Chapter $n <../ch$number>`_.$post";
+      print "ACTION on $number\n";
+   }
+
+   # Change `Chapter 2,`_ to `Chapter 2 <ch02.html>`_,
+   while ($contents =~ /`Chapter\s+(\d+),`_/) {
+      $pre     = $`;
+      $post    = $';
+      $n       = $1;
+      $number  = $n;
+      $number  = "0$number" if $n < 10;
+      $contents = "$pre`Chapter $n. <ch$number.html>`_,$post";
+      print "ACTION on $number\n";
+   }
+
+   # Change `Chapter 25.`_ to `Chapter 25 <ch25.html>`_.
+   while ($contents =~ /`Chapter\s+(\d+)\.`_/) {
+      $pre     = $`;
+      $post    = $';
+      $n       = $1;
+      $number  = $n;
+      $number  = "0$number" if $n < 10;
+      $contents = "$pre`Chapter $n. <ch$number.html>`_.$post";
+      print "ACTION on $number\n";
+   }
+
+
+   # Change ``**kern```` to ``**kern``
+   $contents =~ s/``\*\*kern````/``**kern``/g;
+
+   # Change ``\*\*kern`` to \*\*kern
+   $contents =~ s/``\\*\\*kern``/\\*\\*kern/g;
+
+   # Change chapter links:
+   #    `Chapter 27. <guide27.html>`_
+   # To
+   #    `Chapter 27. <ch27.html>`_
+   while ($contents =~ /`Chapter\s+(\d+)\.\s+<guide(\d+)\.html>`_/) {
+      $pre  = $`;
+      $post = $';
+      $number = $2;
+      $n = int($number);
+      $contents = "$pre`Chapter $n. <ch$number.html>`_$post";
+   }
+
+#   return $contents;
 }
 
 

@@ -90,7 +90,7 @@ will print the sum of ``2`` and `3``, namely 32.
 Arithmetic Operations
 ---------------------
 
-Suppose that we have two ``**semits``_ spines as input and we would like to
+Suppose that we have two `**semits <../../rep/semits>`_ spines as input and we would like to
 print the semitone difference between the two parts for each sonority.
 Typically, the higher part is placed in the right-most spine, so it makes
 most sense to subtract $1 from $2. Negative numbers mean that the nominally
@@ -236,7 +236,7 @@ The *for* Loop
 -----
 
 Often we would like to repeat a process for several concurrent spines. For
-example, suppose we had four spines of ``**solfa``_ data and we want to
+example, suppose we had four spines of `**solfa <../../rep/solfa>`_ data and we want to
 output the total number of leading-tones for each sonority. Awk provides a
 **for** instruction that allows us to cycle through a series of values. The
 **for**-loop construction has the following syntax:
@@ -270,8 +270,8 @@ is, for each line of input).
 
 It would be nice if our program could adapt to inputs containing any number
 of spines. For each line of input, awk automatically identifies the number of
-input tokens or fields and stores the value in the varible ``NF``. Simply
-replacing the number ``4`` by ``NF`` will achieve our goal. In our revised
+input tokens or fields and stores the value in the varible `NF <../../man/NF>`_. Simply
+replacing the number ``4`` by `NF <../../man/NF>`_ will achieve our goal. In our revised
 program we have also added some comments to clarify our code. Like the shell,
 awk comments consist of material following the octothorpe character (#): ****
 

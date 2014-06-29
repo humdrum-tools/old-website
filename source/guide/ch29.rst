@@ -2,8 +2,8 @@
 Chapter 29: Differences and Commonalities
 ==================================================
 
-In `Chapter 25`_ we introduced the problem of similarity via the Humdrum
-`**simil**`_ and `**correl**`_ commands. This chapter revisits the problem of
+In `Chapter 25 <../ch25>`_ we introduced the problem of similarity via the Humdrum
+`simil <../../man/simil>`_ and `correl <../../man/correl>`_ commands. This chapter revisits the problem of
 similarity by focussing on differences and commonalities. Specifically, this
 chapter introduces three additional tools, the UNIX **cmp**, **diff** and
 **comm** commands. Although these commands are less sophisticated than the
@@ -30,7 +30,7 @@ golden").
 Sometimes files differ in ways that may be uninteresting. For example, we may
 suspect that a single work has been attributed to two different composers.
 The encoded files may differ only in that the ``!!!COM:`` reference records
-are different. We can pre-process the files using `**rid**`_ in order to
+are different. We can pre-process the files using `rid <../../man/rid>`_ in order to
 determine whether the scores are otherwise identical.
 
 ``rid -G file1 > temp1``
@@ -39,7 +39,7 @@ determine whether the scores are otherwise identical.
 
 Of course one of the works might be transposed with respect to the other. We
 can circumvent this problem by translating the data to some key-independent
-representation such as ``solfa`` or ``deg``:
+representation such as `solfa <../../man/solfa>`_ or `deg <../../man/deg>`_:
 
 ``rid -GL file1 | solfa > temp1``
 ``rid -GL file2 | solfa > temp2``
@@ -113,7 +113,7 @@ same lyrics. Many otherwise similar texts might differ in trivial ways. For
 example, texts may differ in punctuation or in the use of upper- and lower-
 case characters. The **diff** command provides a **-i** option that ignores
 distinctions between upper- and lower-case characters. Punctuation marks can
-be eliminated by adding a suitable `**humsed**`_ filter.
+be eliminated by adding a suitable `humsed <../../man/humsed>`_ filter.
 
 ``extract -i '**silbe' file1 | text | humsed 's/[^a-zA-Z ]//g' \
 >
@@ -283,7 +283,7 @@ columns. For example, the command **comm -13** will suppress columns one and
 three (outputing column two). (Empty lines are also suppressed with these
 options.) A convenient measure of similarity is to express the shared
 vocabulary items as a percentage of the total combined vocabularies. We can
-do this using the word-count command, **wc**. The first command counts the
+do this using the word-count command, `wc <http://en.wikipedia.org/wiki/Wc_(Unix)>`_. The first command counts the
 total number of words and the second command counts the total number of
 shared words:
 
@@ -340,7 +340,7 @@ common each word is. Our inventory files might now appear as follows:
 Comparing these two inventories will produce little in common due to the
 presence of the numbers. For example, the records "``3 et``" and "``4 et``"
 will be deemed entirely different. However, we can eliminate the numbers
-using an appropriate **sed** command leaving us with vocabulary lists that
+using an appropriate `sed <http://en.wikipedia.org/wiki/Sed>`_ command leaving us with vocabulary lists that
 are ordered according to the frequency of occurrence of the words. If we
 apply the **comm** command to these lists then the commonality measures will
 be sensitive to the relative frequency of words within the vocabularies.
@@ -359,9 +359,9 @@ also allows us to identify which lines are unique to just one of the files.
 
 The value of these tools is amplified when the inputs are pre-processed to
 eliminate unwanted or distracting data, and when post-processing is done
-(using **wc**) to estimate the magnitude of the differences or commonalities.
+(using `wc <http://en.wikipedia.org/wiki/Wc_(Unix)>`_) to estimate the magnitude of the differences or commonalities.
 
-Together with the `**simil**`_ and `**correl**`_ commands discussed in
-`Chapter 25,`_ these five tools provide a variety of means for characterizing
+Together with the `simil <../../man/simil>`_ and `correl <../../man/correl>`_ commands discussed in
+`Chapter 25 <../ch25>`_, these five tools provide a variety of means for characterizing
 differences, commonalities, and similarities.
 

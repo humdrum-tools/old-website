@@ -5,7 +5,7 @@ Chapter 35: Layers
 In `Chapters 11`_ and `15`_ we examined different kinds of intervals,
 including both harmonic and melodic intervals. A number of different types of
 intervals were distinguished and we learned how to calculate such intervals.
-One type of melodic interval mentioned in `Chapter 11`_ is the *distance
+One type of melodic interval mentioned in `Chapter 11 <../ch11>`_ is the *distance
 interval* -- an interval between pitches which are separated by intervening
 musical materials. In this chapter we consider more sophisticated ways of
 determining distance intervals. These types of intervals are the foundation
@@ -85,8 +85,8 @@ We can collapse the arpeggiated chords using the **context** command:
 
 ``context -b = -o = copland``
 
-Identify the chords is facilitated by using the pitch-class (``**pc``_)
-representation described in `Chapter 34.`_
+Identify the chords is facilitated by using the pitch-class (`**pc <../../rep/pc>`_)
+representation described in `Chapter 34 <../ch34>`_.
 
 ``context -b = -o = copland | pc -a | rid -d``
 
@@ -109,7 +109,7 @@ In order to identify these as G major and D dominant chords it would be
 convenient to reduce the sets to (2,7,B) and (0,2,6,9) respectively. For this
 task, we can use a The following awk script eliminates repeated tokens within
 a record: (huniq: We might call this script **huniq** since it acts like a
-horizontal version of the **uniq** command:
+horizontal version of the `uniq <http://en.wikipedia.org/wiki/Uniq>`_ command:
 
 ``awk '{
 >

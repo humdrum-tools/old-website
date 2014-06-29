@@ -116,7 +116,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">2. Rhythm and Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody and Pitch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
@@ -301,15 +301,15 @@
 <h1>Chapter 19: Musical Contexts<a class="headerlink" href="#chapter-19-musical-contexts" title="Permalink to this headline">¶</a></h1>
 <p>Much of what makes an event of interest is the context of the event. We may
 be interested in what precedes or follows a note or chord. We have already
-seen how the <strong>-A</strong> and <strong>-B</strong> options for <strong>grep</strong> can be used to output
-<a href="#id35"><span class="problematic" id="id36">`before&#8217; and `after&#8217; contexts. In `Chapter 21`_</span></a> we will see how the
-<a href="#id37"><span class="problematic" id="id38">`**patt**`_</span></a> and <a href="#id39"><span class="problematic" id="id40">`**pattern**`_</span></a> commands can provide further flexibility for
+seen how the <strong>-A</strong> and <strong>-B</strong> options for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> can be used to output
+<a class="reference external" href="../ch21">before&#8217; and `after&#8217; contexts. In `Chapter 21</a> we will see how the
+<a class="reference external" href="../../man/patt">patt</a> and <a class="reference external" href="../../man/pattern">pattern</a> commands can provide further flexibility for
 searching.</p>
 <p>However, in this chapter we introduce the deceptively simple <strong>context</strong>
 command.</p>
 <div class="section" id="the-context-command">
 <h2>The <em>context</em> Command<a class="headerlink" href="#the-context-command" title="Permalink to this headline">¶</a></h2>
-<p>The effect of the <a href="#id41"><span class="problematic" id="id42">`**context**`_</span></a> command is easier to illustrate than
+<p>The effect of the <a class="reference external" href="../../man/context">context</a> command is easier to illustrate than
 describe. Consider a file (named <tt class="docutils literal"><span class="pre">input</span></tt>) that contains the numbers 1
 through 6 on successive lines. A null token is interposed between the numbers
 2 and 3:</p>
@@ -351,12 +351,12 @@ the output.</p>
 <p>The <strong>-n 3</strong> option tells <strong>context</strong> how many data tokens to amalgamate on
 each output line. With the specification <strong>-n 2</strong>, just two data tokens would
 be amalgamated on each output line.</p>
-<p>How might <a href="#id43"><span class="problematic" id="id44">`**context**`_</span></a> be useful? Suppose we wanted to determine how
+<p>How might <a class="reference external" href="../../man/context">context</a> be useful? Suppose we wanted to determine how
 harmonic octave intervals are approached in Bach&#8217;s two-part keyboard
 <em>Inventions</em>. What harmonic interval tends to precede an octave? We can use
-the <a href="#id45"><span class="problematic" id="id46">`**hint**`_</span></a> command to generate the harmonic intervals for each
+the <a class="reference external" href="../../man/hint">hint</a> command to generate the harmonic intervals for each
 successive sonority. To calculate all <em>passing intervals</em>, we will preprocess
-using <a href="#id47"><span class="problematic" id="id48">`**ditto**`_</span></a>:</p>
+using <a class="reference external" href="../../man/ditto">ditto</a>:</p>
 <p><tt class="docutils literal"><span class="pre">ditto</span> <span class="pre">inventions*</span> <span class="pre">|</span> <span class="pre">hint</span></tt></p>
 <p>Typical outputs might look like this:</p>
 <p><tt class="docutils literal"><span class="pre">M3</span>
@@ -396,10 +396,10 @@ end of the line. Hence:</p>
 equals-sign &#8211; that is, to omit barlines from the amalgamated multiple stops.
 (The <strong>-o</strong> option accepts any regular expression as a parameter, so omitted
 data can be defined in a much more refined manner than simply specifying an
-equals-sign.) The <strong>grep</strong> command grabs all of the lines ending with <tt class="docutils literal"><span class="pre">P8</span></tt>.
+equals-sign.) The <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command grabs all of the lines ending with <tt class="docutils literal"><span class="pre">P8</span></tt>.
 We can now create an inventory of harmonic interval pairs and order them from
 least common to most common:</p>
-<p><a href="#id1"><span class="problematic" id="id2">``</span></a>ditto inventions* | hint | context -n 2 -o = </p>
+<p><a href="#id3"><span class="problematic" id="id4">``</span></a>ditto inventions* | hint | context -n 2 -o = </p>
 <p>&gt;
 &gt;&gt; | grep &#8216; P8$&#8217; | sort | uniq -c | sort -rn``</p>
 <p>In the case of Bach&#8217;s fifteen two-part <em>Inventions</em> the results look as
@@ -419,23 +419,23 @@ follows:</p>
 minor and major tenths rather than expanding from a major sixth interval.</p>
 <p>This same basic process can be used to address a variety of similar problems.
 For example, suppose we wanted to determine the most common word following
-&#8220;gloria&#8221; in Gregorian chant texts. We first extract the <a href="#id3"><span class="problematic" id="id4">``</span></a><strong>text``_ spine,
-use **context</strong> to create pairs of words, and search in the normal way:</p>
+&#8220;gloria&#8221; in Gregorian chant texts. We first extract the <a class="reference external" href="../../rep/text">**text</a> spine,
+use <strong>context</strong> to create pairs of words, and search in the normal way:</p>
 <p><a href="#id5"><span class="problematic" id="id6">``</span></a>extract -i &#8216;<a href="#id7"><span class="problematic" id="id8">**</span></a>text&#8217; chants* | context -n 2 </p>
 <p>&gt;
 &gt;&gt; | grep -i &#8216; gloria$&#8217; | sort | uniq -c | sort -nr``</p>
-<p>A slight change to the regular expression for <strong>grep</strong> will allow us to
+<p>A slight change to the regular expression for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> will allow us to
 determine what word typically <em>follows</em> after the word &#8220;gloria.&#8221; In this
 case, we need to anchor the word &#8220;gloria&#8221; to the beginning of the line by
 using the caret (^).</p>
-<p><a href="#id9"><span class="problematic" id="id10">``</span></a>extract -i &#8216;<a href="#id11"><span class="problematic" id="id12">**</span></a>text&#8217; chants* | context -n 2 </p>
+<p><a href="#id10"><span class="problematic" id="id11">``</span></a>extract -i &#8216;<a href="#id12"><span class="problematic" id="id13">**</span></a>text&#8217; chants* | context -n 2 </p>
 <p>&gt;
 &gt;&gt; | grep -i &#8216;^gloria &#8216; | sort | uniq -c | sort -nr``</p>
 <p>Suppose we wanted to determine what scale degree most commonly precedes the
 dominant pitch in a sample of Czech folksongs. First we translate the
-folksongs to the <a href="#id13"><span class="problematic" id="id14">``</span></a><strong>deg``_ representation using the **deg</strong> command, and
+folksongs to the <a class="reference external" href="../../rep/deg">**deg</a> representation using the <strong>deg</strong> command, and
 then process as above:</p>
-<p><a href="#id15"><span class="problematic" id="id16">``</span></a>deg Czech* | context -n 2 -o = | grep &#8216;5 &#8216; | sort </p>
+<p><a href="#id14"><span class="problematic" id="id15">``</span></a>deg Czech* | context -n 2 -o = | grep &#8216;5 &#8216; | sort </p>
 <p>&gt;
 &gt;&gt; | uniq -c | sort -nr``</p>
 </div>
@@ -444,19 +444,19 @@ then process as above:</p>
 <p>The V-I progression is the most common chord progression in Western tonal
 music. After the V-I progression, what is the most common chord progression
 in Bach&#8217;s chorale harmonizations? We will assume that a Roman numeral
-<a href="#id17"><span class="problematic" id="id18">``</span></a><a href="#id19"><span class="problematic" id="id20">**</span></a>harm``_ spine already exists. First we extract the appropriate spine.
+<a class="reference external" href="../../rep/harm">**harm</a> spine already exists. First we extract the appropriate spine.
 Then we create context records holding pairs of harmony data (omitting
 barlines). Then we eliminate global and local comments, interpretations, and
 null data. We then sort the data records, eliminate duplicates while
 counting, and then sort by numerical count in reverse order.</p>
-<p><a href="#id21"><span class="problematic" id="id22">``</span></a>extract -i &#8216;<a href="#id23"><span class="problematic" id="id24">**</span></a>harm&#8217; chorales* | context -n 2 -o = </p>
+<p><a href="#id16"><span class="problematic" id="id17">``</span></a>extract -i &#8216;<a href="#id18"><span class="problematic" id="id19">**</span></a>harm&#8217; chorales* | context -n 2 -o = </p>
 <p>&gt;
 &gt;&gt; | rid -GLId | sort | uniq -c | sort -nr``</p>
 <p>Of course, there is no need to restrict ourselves to pairs of successive data
 tokens (i.e. <strong>-n 2</strong>) as we have done in the above example. Given a database
 of melodies, we can determine the most common sequence of five melodic
 intervals as follows:</p>
-<p><a href="#id25"><span class="problematic" id="id26">``</span></a>mint melodies* | context -n 5 -o = | rid -GLId | sort </p>
+<p><a href="#id20"><span class="problematic" id="id21">``</span></a>mint melodies* | context -n 5 -o = | rid -GLId | sort </p>
 <p>&gt;
 &gt;&gt; | uniq -c | sort -nr``</p>
 </div>
@@ -470,7 +470,7 @@ progression that is realized as a series of arpeggiation figures.</p>
 <p>The harmonic structure can be made more explicit by amalgamating all of the
 notes in each arpeggio. There are several possible ways of doing this, but
 the slurs are particularly useful delineators. The <strong>-b</strong> option for
-<a href="#id49"><span class="problematic" id="id50">`**context**`_</span></a> allows the user to specify a regular expression that marks the
+<a class="reference external" href="../../man/context">context</a> allows the user to specify a regular expression that marks the
 <em>beginning</em> of each collection of data tokens. Consider the following
 command:</p>
 <p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">'('</span> <span class="pre">Anderson</span></tt></p>
@@ -503,7 +503,7 @@ the barlines prove useful in further processing.</p>
 <p>In the above passage by Anderson, the close of each slur provides a
 convenient marker for ending each chord. We can be more explicit in defining
 the grouping boundaries by also including the <strong>-e</strong> option for
-<a href="#id51"><span class="problematic" id="id52">`**context**`_</span></a>. This option allows the user to specify a regular expression
+<a class="reference external" href="../../man/context">context</a>. This option allows the user to specify a regular expression
 that marks the <em>end</em> of each collection of data tokens. A suitably revised
 command would be:</p>
 <p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">'('</span> <span class="pre">-e</span> <span class="pre">')'</span> <span class="pre">Anderson</span></tt></p>
@@ -543,7 +543,7 @@ tool such as <strong>ghostview</strong> to display the output:</p>
 signature disagrees with the total duration for each measure.</p>
 <p>Having reformatted our input data using <strong>context</strong>, we can continue by
 translating the data to another representation. For example, we might use the
-<a href="#id53"><span class="problematic" id="id54">`**deg**`_</span></a> command to reformulate each pitch group as scale degrees. This
+<a class="reference external" href="../../man/deg">deg</a> command to reformulate each pitch group as scale degrees. This
 might allow us to search for particular harmonic patterns such as (say) an
 augmented sixth chord:</p>
 <p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">'('</span> <span class="pre">-e</span> <span class="pre">')'</span> <span class="pre">Anderson</span> <span class="pre">|</span> <span class="pre">deg</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'6-'</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'4+'</span> <span class="pre">\</span>
@@ -551,7 +551,7 @@ augmented sixth chord:</p>
 <span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'1'</span></tt></p>
 <p>Any regular expression can be used to identify the beginning and/or ending of
 an amalgamated group. For example, tokens might be grouped by barlines.
-Suppose the <a href="#id55"><span class="problematic" id="id56">`**census**`_</span></a> command tells us that a monophonic work contains
+Suppose the <a class="reference external" href="../../man/census">census</a> command tells us that a monophonic work contains
 sixty-fourth notes. We might want to know whether the sixty-fourth notes all
 tend to happen in one or two measures, or whether they occur throughout the
 work. Just how many measures contain sixty-fourth notes?</p>
@@ -569,33 +569,33 @@ cross over phrase boundaries:</p>
 <p>As in the case of the <strong>-b</strong> option, the <strong>-e</strong> option can be used by itself.
 This option might prove useful, for example, when collecting all chord
 functions preceding a cadence. In Bach&#8217;s chorale harmonizations, for example,
-cadences are conveniently marked by a pause. In the <tt class="docutils literal"><span class="pre">**harm</span></tt>
+cadences are conveniently marked by a pause. In the <a class="reference external" href="../../rep/harm">**harm</a>
 representation, pauses are indicated by the semicolon (<tt class="docutils literal"><span class="pre">;</span></tt>). We can create
 phrase related harmonic sequences as follows:</p>
 <p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-o</span> <span class="pre">=</span> <span class="pre">-e</span> <span class="pre">';'</span> <span class="pre">input</span></tt></p>
 <p>For example, we might count the number of harmonic functions in each phrase
 as follows:</p>
 <p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-o</span> <span class="pre">=</span> <span class="pre">-e</span> <span class="pre">';'</span> <span class="pre">input</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">awk</span> <span class="pre">'{print</span> <span class="pre">$NF}'</span></tt></p>
-<p>In <a href="#id57"><span class="problematic" id="id58">`Chapter 22`_</span></a> we will learn how to classify data into discrete categories.
-Using the <a href="#id59"><span class="problematic" id="id60">`**recode**`_</span></a> command described in that chapter, we might group
+<p>In <a class="reference external" href="../ch22">Chapter 22</a> we will learn how to classify data into discrete categories.
+Using the <a class="reference external" href="../../man/recode">recode</a> command described in that chapter, we might group
 notes together according to changes of melodic direction. That is, each group
 of would consist of notes that are all ascending or all descending in pitch.</p>
 </div>
 <div class="section" id="using-context-with-sed-and-humsed">
 <h2>Using <em>context</em> with <em>sed</em> and <em>humsed</em><a class="headerlink" href="#using-context-with-sed-and-humsed" title="Permalink to this headline">¶</a></h2>
-<p>The stream-editors (<strong>sed</strong> and <strong>humsed</strong>) are especially handy companions
+<p>The stream-editors (<a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> and <strong>humsed</strong>) are especially handy companions
 for <strong>context</strong>. Suppose we wanted to identify by measure number those
-measures that contain a <em>iii-V</em> progression. Given a <tt class="docutils literal"><span class="pre">**harm</span></tt> input, we
+measures that contain a <em>iii-V</em> progression. Given a <a class="reference external" href="../../rep/harm">**harm</a> input, we
 would first amalgamate all harmony tokens for each measure.</p>
 <p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">^=</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'iii</span> <span class="pre">V'</span> <span class="pre">|</span> <span class="pre">sed</span> <span class="pre">'s/</span> <span class="pre">.*//;</span> <span class="pre">s/=//'</span></tt></p>
-<p>Here we have used <strong>grep</strong> to isolate all those records that contain the
-character sequence <tt class="docutils literal"><span class="pre">iii</span> <span class="pre">V</span></tt>. We have then used <strong>sed</strong> to eliminate all data
+<p>Here we have used <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to isolate all those records that contain the
+character sequence <tt class="docutils literal"><span class="pre">iii</span> <span class="pre">V</span></tt>. We have then used <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> to eliminate all data
 following the first occurrence of a space. This will leave only the barline
 token &#8211; including the measure number.</p>
-<p>When using <strong>grep</strong> it is common for the output to no longer conform to the
-Humdrum syntax. This is the reason why we used <strong>sed</strong> rather than
-<a href="#id61"><span class="problematic" id="id62">`**humsed**`_</span></a> in the above example.) Remember that we can always use the
-<a href="#id63"><span class="problematic" id="id64">`**yank**`_</span></a> -m command to create &#8220;grep-like&#8221; output that still conforms to
+<p>When using <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> it is common for the output to no longer conform to the
+Humdrum syntax. This is the reason why we used <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> rather than
+<a class="reference external" href="../../man/humsed">humsed</a> in the above example.) Remember that we can always use the
+<a class="reference external" href="../../man/yank">yank</a> -m command to create &#8220;grep-like&#8221; output that still conforms to
 the Humdrum syntax. If we wanted to maintain the Humdrum syntax, an
 equivalent to the above command would be:</p>
 <p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">^=</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">yank</span> <span class="pre">-m</span> <span class="pre">'iii</span> <span class="pre">V'</span> <span class="pre">-r</span> <span class="pre">0</span> <span class="pre">\</span>
@@ -612,7 +612,7 @@ that have been preceded by a <em>iii V</em> progression in the previous measure.
 <p>Consider another example. Suppose we wanted to determine whether the first
 pitch in a phrase tends to be lower than the last pitch in a phrase. As
 before, we might first amalgamate all notes in each phrase onto individual
-data records. We can use <a href="#id65"><span class="problematic" id="id66">`**humsed**`_</span></a> to eliminate all notes other than the
+data records. We can use <a class="reference external" href="../../man/humsed">humsed</a> to eliminate all notes other than the
 first and last. The regular expression <tt class="docutils literal"><span class="pre">/</span> <span class="pre">.*</span> <span class="pre">/</span></tt> specifies any sequence of
 characters preceded by a space and followed by a space. Replacing matching
 strings with a single space will leave output data records consisting of
@@ -620,9 +620,9 @@ double-stops. The first note of the double-stop will be the first note of the
 phrase, and the second note of the double-stop will be the last note of the
 same phrase:</p>
 <p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">{</span> <span class="pre">-e</span> <span class="pre">}</span> <span class="pre">file</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/</span> <span class="pre">.*</span> <span class="pre">/</span> <span class="pre">/'</span></tt></p>
-<p>We can continue processing by piping the output to the <a href="#id67"><span class="problematic" id="id68">`**semits**`_</span></a> command.
+<p>We can continue processing by piping the output to the <a class="reference external" href="../../man/semits">semits</a> command.
 This will leave pairs of numbers representing the semitone distances from
-middle C. We might then isolate the data records by using <a href="#id69"><span class="problematic" id="id70">`**rid**`_</span></a>.</p>
+middle C. We might then isolate the data records by using <a class="reference external" href="../../man/rid">rid</a>.</p>
 <p>`` . . . | semits | rid -GLId | awk &#8216;{print $2-$1}&#8217;``</p>
 <p>Finally, we have used the UNIX <strong>awk</strong> utility to carry out some simple
 numerical processing: in this case, substracting the first semitone value
@@ -644,7 +644,7 @@ different types of data together. For example, how many ascending major sixth
 intervals occur in phrases that end on the dominant? For this question, we
 need concurrent access to both melodic interval data as well as scale degree
 information. The solution to such questions typically involves linking
-different types of data together using the <a href="#id71"><span class="problematic" id="id72">`**assemble**`_</span></a> command. Suppose
+different types of data together using the <a class="reference external" href="../../man/assemble">assemble</a> command. Suppose
 the first phrase in our input begins as follows:</p>
 <p><tt class="docutils literal"><span class="pre">**kern</span>
 <span class="pre">&gt;</span> <span class="pre">*F:</span>
@@ -666,7 +666,7 @@ the first phrase in our input begins as follows:</p>
 temporary file of scale degree information:</p>
 <p><tt class="docutils literal"><span class="pre">mint</span> <span class="pre">inputfile</span> <span class="pre">&gt;</span> <span class="pre">temp.mnt</span></tt></p>
 <p>Then we amalgamate the pitch data according the phrasing information, and
-translate the resulting data to the <a href="#id27"><span class="problematic" id="id28">``</span></a><a href="#id29"><span class="problematic" id="id30">**</span></a>deg``_ representation:</p>
+translate the resulting data to the <a class="reference external" href="../../rep/deg">**deg</a> representation:</p>
 <p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">{</span> <span class="pre">-e</span> <span class="pre">}</span> <span class="pre">-o</span> <span class="pre">^=</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">deg</span> <span class="pre">&gt;</span> <span class="pre">temp.deg</span></tt></p>
 <p>Next we assemble the two temporary files together to form a single document.</p>
 <p><tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">temp.mnt</span> <span class="pre">temp.deg</span></tt></p>
@@ -689,8 +689,8 @@ translate the resulting data to the <a href="#id27"><span class="problematic" id
 &gt; etc.</p>
 <p>We need to search for the interval of an ascending major sixth (<tt class="docutils literal"><span class="pre">+M6</span></tt>)
 associated with a phrase ending on the dominant (<tt class="docutils literal"><span class="pre">5$</span></tt>). Before using the
-approprate <strong>grep</strong> command, we need to use <a href="#id73"><span class="problematic" id="id74">`**ditto**`_</span></a> to propagate the
-scale degree data over the null data tokens in the <tt class="docutils literal"><span class="pre">**deg</span></tt> spine; <strong>ditto</strong>
+approprate <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command, we need to use <a class="reference external" href="../../man/ditto">ditto</a> to propagate the
+scale degree data over the null data tokens in the <a class="reference external" href="../../rep/deg">**deg</a> spine; <strong>ditto</strong>
 will generate the following output:</p>
 <p><tt class="docutils literal"><span class="pre">**mint**deg</span>
 <span class="pre">&gt;</span> <span class="pre">*F:*F:</span>
@@ -708,7 +708,7 @@ will generate the following output:</p>
 <span class="pre">&gt;</span> <span class="pre">=34+</span> <span class="pre">^5</span> <span class="pre">^3</span> <span class="pre">v2</span> <span class="pre">v1</span> <span class="pre">^2</span> <span class="pre">v6</span> <span class="pre">^7</span> <span class="pre">v5</span>
 <span class="pre">&gt;</span> <span class="pre">-M34+</span> <span class="pre">^5</span> <span class="pre">^3</span> <span class="pre">v2</span> <span class="pre">v1</span> <span class="pre">^2</span> <span class="pre">v6</span> <span class="pre">^7</span> <span class="pre">v5</span></tt>
 &gt; etc.</p>
-<p>Finally, we use <strong>grep</strong> to search for the composite data:</p>
+<p>Finally, we use <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to search for the composite data:</p>
 <p><tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">temp.mnt</span> <span class="pre">temp.deg</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'^+M6.*5$'</span></tt></p>
 <p>In addition to linking together different types of data, sometimes we may
 also need to use a stream editor to modify the data in some way. Suppose we
@@ -726,7 +726,7 @@ degree:</p>
 <tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">temp1</span> <span class="pre">temp2</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'^[v^]*1</span> <span class="pre">'</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">\</span>
 <span class="pre">&gt;</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-rn</span> <span class="pre">&gt;</span> <span class="pre">inventory.pre</span></tt></p>
-<p>For the intervals following the tonic, we need to use <a href="#id75"><span class="problematic" id="id76">`**context**`_</span></a> -n 2.
+<p>For the intervals following the tonic, we need to use <a class="reference external" href="../../man/context">context</a> -n 2.
 This will create pairs of intervals: the first interval will indicate the
 approach, and the second interval in each pair will indicate the
 continuation.</p>
@@ -773,7 +773,7 @@ instances as follows:</p>
 <p><tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">lower.tmp</span> <span class="pre">upper.tmp</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">\</span>
 <span class="pre">&gt;</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">'4[+-].*</span> <span class="pre">.*4([^+-])|$'</span></tt></p>
-<p>The regular expression given to <strong>egrep</strong> searches for a subdominant pitch in
+<p>The regular expression given to <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a> searches for a subdominant pitch in
 the lower voice that is either raised or lowered &#8211; concurrent with a
 subdominant pitch in the upper voice that has not been modified. Notice the
 use of the tab character in the regular expressions to specify the precise
@@ -790,7 +790,7 @@ contexts.</p>
 </div>
 <div class="section" id="using-context-with-the-p-option">
 <h2>Using <em>context</em> with the <em>-p</em> Option<a class="headerlink" href="#using-context-with-the-p-option" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>-p</strong> option for <a href="#id77"><span class="problematic" id="id78">`**context**`_</span></a> allows the output data records to be
+<p>The <strong>-p</strong> option for <a class="reference external" href="../../man/context">context</a> allows the output data records to be
 &#8220;pushed&#8221; forward by a specified number of lines. Consider the normal
 operation of <strong>context</strong> as illustrated below. The left-hand spine represents
 the input and the right-hand spine represents the output where the option
@@ -841,13 +841,13 @@ Similarly, consider the effect of the following command:</p>
 token at the end of the spine. In summary, the <strong>-p</strong> option pushes the
 context records by a specified number of lines. This allows us to move the
 contextual information around, and so provides more possibilities for
-searching. In the above case, the pitch <a href="#id31"><span class="problematic" id="id32">`</span></a>e&#8217; is aligned with contextual
-information that indicates the two pitches that precede <a href="#id33"><span class="problematic" id="id34">`</span></a>e&#8217; and the one pitch
+searching. In the above case, the pitch <a href="#id39"><span class="problematic" id="id40">`</span></a>e&#8217; is aligned with contextual
+information that indicates the two pitches that precede <a href="#id41"><span class="problematic" id="id42">`</span></a>e&#8217; and the one pitch
 that follows it.</p>
 <p>By way of example, suppose we are looking for a submediant pitch that is
 approached by two melodic intervals of an ascending major third followed by a
-descending major second. First, we generate independent <tt class="docutils literal"><span class="pre">**mint``_</span> <span class="pre">and</span>
-<span class="pre">``**deg``_</span> <span class="pre">outputs.</span> <span class="pre">Next</span> <span class="pre">we</span> <span class="pre">process</span> <span class="pre">the</span> <span class="pre">``**mint</span></tt> data using <strong>context</strong>
+descending major second. First, we generate independent <a class="reference external" href="../../rep/mint">**mint</a> and
+<a class="reference external" href="../../rep/deg">**deg</a> outputs. Next we process the <a class="reference external" href="../../rep/mint">**mint</a> data using <strong>context</strong>
 to create pairs of successive intervals. Without the <strong>-p</strong> option, the
 assembled output might look as follows:</p>
 <p><tt class="docutils literal"><span class="pre">**deg**mint</span>
@@ -880,16 +880,16 @@ assembled output might look as follows:</p>
 <p>The <strong>context</strong> command essentially transforms sequences of events into
 collections of pseudo-concurrent events. This pseudo-concurrent arrangement
 enables processing using line-oriented or record-oriented tools &#8211; most
-notably <strong>grep</strong>, <strong>sed</strong>, <a href="#id79"><span class="problematic" id="id80">`**humsed**`_</span></a> and <strong>awk</strong>. For example, it
-facilitates pattern searching using <strong>grep</strong> and also allows useful
+notably <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a>, <a class="reference external" href="../../man/humsed">humsed</a> and <strong>awk</strong>. For example, it
+facilitates pattern searching using <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> and also allows useful
 manipulations via tools such as <strong>humsed</strong>. The manner by which data tokens
 are collected together can be defined by a starting marker or an ending
 marker or both. Particular types of data can be excluded or omitted from the
 collections using the <strong>-o</strong> option, and the collections can be transported
 or pushed forward through the spine using the <strong>-p</strong> option.</p>
-<p>We&#8217;ve seen a number of ways by which <a href="#id81"><span class="problematic" id="id82">`**context**`_</span></a> can be used to establish
-a particular context for data. In <a href="#id83"><span class="problematic" id="id84">`Chapter 21`_</span></a> we will see how the
-<a href="#id85"><span class="problematic" id="id86">`**patt**`_</span></a> command can be used to establish other kinds of contexts and how
+<p>We&#8217;ve seen a number of ways by which <a class="reference external" href="../../man/context">context</a> can be used to establish
+a particular context for data. In <a class="reference external" href="../ch21">Chapter 21</a> we will see how the
+<a class="reference external" href="../../man/patt">patt</a> command can be used to establish other kinds of contexts and how
 both of these commands can be used together.</p>
 </div>
 </div>

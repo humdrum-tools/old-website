@@ -116,7 +116,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">2. Rhythm and Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody and Pitch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
@@ -350,7 +350,7 @@ sound output can be generated from the **kern representation.</p>
 the Humdrum representation procedes vertically down the page. The
 representation begins with the keyword **kern which indicates that the
 ensuing encoded material conforms to the kern representation. The encoded
-passage ends with a special <a href="#id9"><span class="problematic" id="id10">`*terminator*`_</span></a> token (<tt class="docutils literal"><span class="pre">*-</span></tt>).</p>
+passage ends with a special <a href="#id10"><span class="problematic" id="id11">`*terminator*`_</span></a> token (<tt class="docutils literal"><span class="pre">*-</span></tt>).</p>
 <p>The clef is identified as a G-clef positioned on the second line of the staff
 (i.e., a treble clef). The key signature is encoded as a single flat, B-flat:
 the minus sign here indicates a flat. The meter signature (2/2) is encoded
@@ -438,7 +438,7 @@ measure numbers have been added following the barline indicator (=). Although
 measure numbers may not be present in the printed score, it is normal to
 include them in **kern  encodings.</p>
 <p>A notable feature when representing multi-part music is the presence of place
-holders called <a href="#id11"><span class="problematic" id="id12">`*null tokens*.`_</span></a> A null token is represented by a single
+holders called <a href="#id12"><span class="problematic" id="id13">`*null tokens*.`_</span></a> A null token is represented by a single
 isolated period character (.). Not all musical parts will have a new note
 with each successive sonority. A null token maintains the grid structure for
 a sustained pitch while another part is moving.</p>
@@ -553,8 +553,7 @@ second phrase has begun.</p>
 <p>Example 2.3 ends with a repeat sign. The **kern  representation makes a
 distinction between repeat signs that appear in the score and repeat signs
 that are obeyed in performance. In this example, only the visual or
-orthographic rendering of the barline has been encoded. Later, in <a href="#id13"><span class="problematic" id="id14">`Chapter
-20,`_</span></a> we will see how sectional repeats are functionally represented. The
+orthographic rendering of the barline has been encoded. Later, in <a class="reference external" href="../ch20">Chapter 20</a>, we will see how sectional repeats are functionally represented. The
 visual appearance of the final barline is encoded as follows: <tt class="docutils literal"><span class="pre">=:|!</span></tt>. The
 equals-sign indicates the logical presence of a barline. The colon indicates
 the repeat sign, followed by a thin line (<tt class="docutils literal"><span class="pre">|</span></tt>), followed by a thick line
@@ -682,7 +681,7 @@ spine. <em>Global comments</em> by contrast completely ignore the spines.</p>
 </div>
 <div class="section" id="reference-records">
 <h2>Reference Records<a class="headerlink" href="#reference-records" title="Permalink to this headline">¶</a></h2>
-<p>A particularly important type of global comment is the <a href="#id15"><span class="problematic" id="id16">`*reference record.*`_</span></a>
+<p>A particularly important type of global comment is the <a href="#id14"><span class="problematic" id="id15">`*reference record.*`_</span></a>
 Reference records are formal ways of encoding &#8220;library-type&#8221; information
 pertaining to a Humdrum document. Reference records provide standardized ways
 of encoding bibliographic information &#8211; suitable for computer-based access.</p>
@@ -754,7 +753,7 @@ interpretive and often open to disagreement. Nevertheless, explicit analytic
 information often proves useful in electronic documents.</p>
 <p>An especially useful analytic reference record is the AIN &#8216; record for
 encoding instrumentation. This reference record follows a strict syntax. Each
-instrument has an official Humdrum abbrevation. <a href="#id17"><span class="problematic" id="id18">`**Appendix II**`_</span></a> identifies
+instrument has an official Humdrum abbrevation. <a href="#id16"><span class="problematic" id="id17">`**Appendix II**`_</span></a> identifies
 a number of the more common instrument codes. Instrumentation reference
 records always specify the instrumentation in alphabetical order by
 instrument abbrevation separated by a single space. For example, the
@@ -773,7 +772,7 @@ can be used to encode core information for common musical scores; **kern
 is used to represent <em>functional</em> information rather than <em>orthographic</em>
 (visual) information. In <a class="reference external" href="../ch06">Chapter 6</a> an expanded description of **kern
 will be given that includes a much wider variety of concepts and situations
-than we have encountered in this chapter. <a href="#id19"><span class="problematic" id="id20">`**Appendices I**`_</span></a> and <a href="#id21"><span class="problematic" id="id22">`**II**`_</span></a>
+than we have encountered in this chapter. <a href="#id18"><span class="problematic" id="id19">`**Appendices I**`_</span></a> and <a href="#id20"><span class="problematic" id="id21">`**II**`_</span></a>
 provide expanded information pertaining to Reference Records.</p>
 <p>Although we have only demonstrated the encoding of fairly simple information,
 we can already begin processing such data in musically useful ways. In the

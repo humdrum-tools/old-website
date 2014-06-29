@@ -10,11 +10,11 @@ sonorous dimension of music, including rhyme schemes, word-rhythms, and
 phonetic and syllabic effects such as alliteration, vowel-coloration.
 
 Humdrum provides three pre-defined representations pertinent to text or
-lyrics. The ``**text``_ representation can be used to represent *words*;
-the ``**silbe``_ representation can be used to represent *syllables*; and
-the ``**IPA``_ representation can be used to represent *phonemes* (via the
-International Phonetic Alphabet). Discussion of the ``**IPA`` representation
-will be delayed until `Chapter 34.`_ In this chapter we will look at various
+lyrics. The `**text <../../rep/text>`_ representation can be used to represent *words*;
+the `**silbe <../../rep/silbe>`_ representation can be used to represent *syllables*; and
+the `**IPA <../../rep/IPA>`_ representation can be used to represent *phonemes* (via the
+International Phonetic Alphabet). Discussion of the `**IPA <../../rep/IPA>`_ representation
+will be delayed until `Chapter 34 <../ch34>`_. In this chapter we will look at various
 representational and processing issues related to the manipulation of words
 and syllables.
 
@@ -24,9 +24,9 @@ The ***text* and ***silbe* Representations
 
 Syllable- and word-oriented representations are illustrated in the following
 excerpt from a motet by Byrd (Example 27.1). The encoded Humdrum data
-includes three spines: ``**text``, ``**silbe`` and \*\*kern. Normally, only
-the ``**silbe`` and \*\*kern data would be encoded -- since the ``**text``
-spine can be generated from the ``**silbe`` representation.
+includes three spines: `**text <../../rep/text>`_, `**silbe <../../rep/silbe>`_ and \*\*kern. Normally, only
+the `**silbe <../../rep/silbe>`_ and \*\*kern data would be encoded -- since the `**text <../../rep/text>`_
+spine can be generated from the `**silbe <../../rep/silbe>`_ representation.
 
 **Example 27.1.** From William Byrd, *Why Do I use my paper ink and pen.*
 
@@ -95,17 +95,17 @@ spine can be generated from the ``**silbe`` representation.
 >> *-*-*-``
 
 Note that all three representations in Example 27.1 make use of the common
-system for representing barlines. In the ``**text``_ representation tokens
+system for representing barlines. In the `**text <../../rep/text>`_ representation tokens
 represent individual words. In some scores, several words will be associated
 with a single moment (or pitch), as in the case of *recitativo* passages.
 Multi-word tokens are encoded as Humdrum multiple-stops with a space
 separating each word on a record.
 
-In the ``**silbe``_ representation tokens represent individual syllables.
-In ``**silbe`` the hyphen (-) is used explicitly to signify syllable
+In the `**silbe <../../rep/silbe>`_ representation tokens represent individual syllables.
+In `**silbe <../../rep/silbe>`_ the hyphen (-) is used explicitly to signify syllable
 boundaries and the tilde (~) is used to signify boundaries between hyphenated
 words (necessarily also a syllable boundary). In other words, four types of
-syllables are distinguished by ``**silbe``: (1) a single-syllable word, (2) a
+syllables are distinguished by `**silbe <../../rep/silbe>`_: (1) a single-syllable word, (2) a
 word-initiating syllable, (3) a word-completing syllable, and (4) a mid-word
 syllable. The following table illustrates how these signifiers are used:
 
@@ -121,7 +121,7 @@ syllable. The following table illustrates how these signifiers are used:
 > *~text-*a word-initating syllable continuing a hyphenated multi-word
 > *-text~*a word-completing syllable -- part of a hyphenated multi-word
 
-Both the ``**text`` and ``**silbe`` representations are able to distinguish
+Both the `**text <../../rep/text>`_ and `**silbe <../../rep/silbe>`_ representations are able to distinguish
 different tones of voice such as spoken voice, whispered voice, laughing
 voice, emotional voice, *Sprechstimme* and humming. In addition, there are
 signifiers for indicating untexted laughter and untexted sobs or crys. Some
@@ -149,7 +149,7 @@ sample signifiers are shown in Table 26.2
 > ``&``sob or cry (no text)
 > ```beginning of emotional voice
 > ``end of emotional voice
-> ``*``follows stressed word (``**test``) or stressed syllable (``**silbe``)
+> ``*``follows stressed word (``test``) or stressed syllable (`**silbe <../../rep/silbe>`_)
 
 *Signifiers common to ****text** and ****silbe***
 
@@ -158,11 +158,11 @@ The *text* Command
 --------
 
 In most notated music, lyrics are written using a syllabic representation
-rather than a word-oriented representation. The ``**silbe`` representation is
-typically a better representation of the score than ``**text``. However, for
+rather than a word-oriented representation. The `**silbe <../../rep/silbe>`_ representation is
+typically a better representation of the score than `**text <../../rep/text>`_. However, for
 many analytic applications, words often prove to be more convenient. The
-Humdrum **text** command can be used to translate ``**silbe`` data to
-``**text`` data. In general, syllabic information is useful for addressing
+Humdrum **text** command can be used to translate `**silbe <../../rep/silbe>`_ data to
+`**text <../../rep/text>`_ data. In general, syllabic information is useful for addressing
 questions related to rhythm and rhyme, whereas text information is more
 useful for addressing questions related to semantics, metaphor, word-
 painting, etc.
@@ -173,24 +173,24 @@ Invoking the **text** command is straightforward:
 
 A simple text-related task might be looking for occurrences of a particular
 word, such as the German "Liebe" (love). If the lyrics are encoded in the
-```**text``_ representation, then a simple **grep** will suffice:
+`**text <../../rep/text>`_ representation, then a simple `grep <http://en.wikipedia.org/wiki/Grep>`_ will suffice:
 
 > ``grep -n 'Liebe' schubert``
 
 Recall that the **-n** option gives the line number of any occurrences found.
-If the input is encoded in the ``**silbe``_ representation, then the output
-of **text** can be piped to **grep**:
+If the input is encoded in the `**silbe <../../rep/silbe>`_ representation, then the output
+of **text** can be piped to `grep <http://en.wikipedia.org/wiki/Grep>`_:
 
 > ``extract -i '**silbe' schubert | text | grep -n 'Liebe'``
 
-Given a ``**silbe`` input, a inventory of words can be generated using
-**sort** and **uniq** in the usual way:
+Given a `**silbe <../../rep/silbe>`_ input, a inventory of words can be generated using
+**sort** and `uniq <http://en.wikipedia.org/wiki/Uniq>`_ in the usual way:
 
 > ``extract -i '**silbe' song | text | rid -GLId | sort | uniq``
 
 Frequently, it is useful to search for a group of words rather than
 individual words. Suppose we are looking for the phrase "white Pangur." The
-`**context**`_ command can be used to amalgamate words as multiple stops. If
+`context <../../man/context>`_ command can be used to amalgamate words as multiple stops. If
 we are looking for a phrase consisting of just two words, we might use the
 **-n 2** option for **context**:
 
@@ -210,8 +210,8 @@ The *fmt* Command
 --------
 
 Another common task is simply to provide a readable text of the text or
-lyrics of a work. Given a ``**text`` representation, we can use the
-`**rid**`_ command to eliminate all records except non-null data records.
+lyrics of a work. Given a `**text <../../rep/text>`_ representation, we can use the
+`rid <../../man/rid>`_ command to eliminate all records except non-null data records.
 This will result in a list of words -- one word per line. UNIX provides a
 simple text formatter called **fmt** that will assemble words or lines into a
 block text where all output lines are roughly the same width.  Consider the
@@ -242,7 +242,7 @@ Domus pudici pectoris tem plum repente fit Dei:
 intacta nesciens virum, concepit alvo filium.``
 
 Another useful output would have the text arranged with one sentence or
-phrase on each line. As before we can use the `**context**`_ command with the
+phrase on each line. As before we can use the `context <../../man/context>`_ command with the
 **-e** option to amalgamate words, where each amalgamated line ends with a
 punctuation mark:
 
@@ -271,7 +271,7 @@ according to explicit phrase marks in the \*\*kern_ data. This will
 require a little more work, but it's worth going through the steps since the
 same process can be applied to any representation. First, we will need to
 transfer the end-of-phrase signifier (``}``') from the \*\*kern spine to
-the ``**silbe`` spine. This transfer entails four steps. (1) Extract the
+the `**silbe <../../rep/silbe>`_ spine. This transfer entails four steps. (1) Extract the
 monophonic \*\*kern spine and eliminate all data signifiers except closing
 curly braces (``}``'). Store the result in a temporary file:
 
@@ -279,17 +279,17 @@ curly braces (``}``'). Store the result in a temporary file:
 >
 >> > temp1``
 
-Notice that `**humsed**`_ has been given two substitution commands. The first
+Notice that `humsed <../../man/humsed>`_ has been given two substitution commands. The first
 eliminates all data signifiers except the close curly brace. The second
 substitution transforms empty output lines to null data records by adding a
 single period.
 
-(2) Extract the ``**silbe`` spine, translate it to ``**text`` and store the
+(2) Extract the `**silbe <../../rep/silbe>`_ spine, translate it to `**text <../../rep/text>`_ and store the
 result in another temporary file:
 
 > ``extract -i '**silbe' chant12 | text > temp2``
 
-(3) Assemble the two temporary files together and use the `**cleave**`_
+(3) Assemble the two temporary files together and use the `cleave <../../man/cleave>`_
 command to join the end-of-phrase marker to the syllable representation.
 
 > ``assemble temp1 temp2 | cleave -i '**kern,**text' \
@@ -321,7 +321,7 @@ tem plum repente fit Dei: }
 intacta nesciens virum, }
 concepit alvo filium. }``
 
-We could clean up the output by using the **sed** command to remove the
+We could clean up the output by using the `sed <http://en.wikipedia.org/wiki/Sed>`_ command to remove the
 trailing closed curly brace. We simple add the following to the pipeline:
 
 > `` . . . | sed 's/}//'``
@@ -329,7 +329,7 @@ trailing closed curly brace. We simple add the following to the pipeline:
 You might have noticed that each of the above phrases seems to consist of
 eight syllables. We can confirm this by returning to the syllabic rather than
 word-oriented output. For the above command sequence, simply omit the
-**text** command and replace ``**text`` with ``**silbe``. The revised script
+**text** command and replace `**text <../../rep/text>`_ with `**silbe <../../rep/silbe>`_. The revised script
 becomes:
 
 > ``extract -i '**kern' chant12 | humsed 's/[^}]*//; s/^$/./' \
@@ -435,7 +435,7 @@ syllable and ``1`` indicates a stressed syllable:
 0 1 0 1 0 0 1 0
 0 1 0 1 0 1 0 0``
 
-The above output was generated using the `**humsed**`_ command. Any syllable
+The above output was generated using the `humsed <../../man/humsed>`_ command. Any syllable
 containing a trailing asterisk (``*``) is re-written as a `1', otherwise as a
 `0'.
 
@@ -461,7 +461,7 @@ With the following results:
 We can create a summary rhythmic pattern by adding together the values in
 each column -- that is, counting the number of accented syllables that occur
 in each syllable position within the phrase. We can isolate each column using
-the UNIX **cut** command; **cut** is analogous to the Humdrum `**extract**`_
+the UNIX **cut** command; **cut** is analogous to the Humdrum `extract <../../man/extract>`_
 command. Fields are delineated by white space (tabs or spaces). For example,
 **cut -f 1** will isolate the first column of numbers. We can then pipe the
 results to the **stats** utility in order to calculate the numerical total.
@@ -518,20 +518,20 @@ identifies the keyword.
 >> ``chant212``Dominus a **cena**``, misit aquam``
 >> etc.
 
-We would also like to provide a **grep**-like search tool so users can search
+We would also like to provide a `grep <http://en.wikipedia.org/wiki/Grep>`_-like search tool so users can search
 for particular keywords.
 
 The following script will generate our concordance file. For each file
-specified in the input, we extract the ``**silbe`` spine and store it. We
+specified in the input, we extract the `**silbe <../../rep/silbe>`_ spine and store it. We
 then process this spine no less than three times. In the first pass, we
-translate from the ``**silbe`` to the ``**text`` representation, and generate
+translate from the `**silbe <../../rep/silbe>`_ to the `**text <../../rep/text>`_ representation, and generate
 a context of 5 words (**-n 5**) making sure to omit barlines (**-o =**). We
 also pad the amalgamated line with three null tokens (**-p 3**) so the
 context is centered near the third word in the sequence. In the second pass,
-we generate a new spine (``**nums``) that contains only bar numbers. The
-`**ditto**`_ command is used to ensure that every data record contains a bar
+we generate a new spine (``nums``) that contains only bar numbers. The
+`ditto <../../man/ditto>`_ command is used to ensure that every data record contains a bar
 number. To ensure that pick-up bars are numbered with the value 0, we've used
-`**humsed**`_ to replace any leading null-tokens with the number 0. In the
+`humsed <../../man/humsed>`_ to replace any leading null-tokens with the number 0. In the
 third pass, we replace every data token with the name of the file. Finally,
 we assemble all three of these spines, eliminate everything but data records,
 and also eliminate lines that don't contain any text. All of this processing
@@ -566,10 +566,10 @@ rm temp[1-4]``
 Having generated our concordance file, we can now create a simple tool that
 allows us to search for keywords. Suppose we kept our concordance information
 in a file called ``~/home/concord/master``. In essence, we'd like to create a
-command akin to **grep** -- but one that searches this file solely according
-to the third word in the in the context. We cannot use **grep** directly
+command akin to `grep <http://en.wikipedia.org/wiki/Grep>`_ -- but one that searches this file solely according
+to the third word in the in the context. We cannot use `grep <http://en.wikipedia.org/wiki/Grep>`_ directly
 since it will find all occurrences of a word no matter where it occurs in the
-context. We need to tell **grep** to ignore all other data. The filename, bar
+context. We need to tell `grep <http://en.wikipedia.org/wiki/Grep>`_ to ignore all other data. The filename, bar
 number, and context fields are separated by tabs. We can ignore the first two
 fields by eliminating everything up to the last tab in the line. Since words
 are separated by blank space, the expression ``[^ ]+`` will match a word not
@@ -581,7 +581,7 @@ Below is a simple one-line script for a command called **keyword.** The user
 simply types the command **keyword** followed by a regular expression that
 will allow him/her to search for a given word in context. Note that since
 we've used the extended regular expression character `+' -- we must invoke
-**egrep** rather than **grep** in our script:
+`egrep <http://en.wikipedia.org/wiki/Egrep#Variations>`_ rather than `grep <http://en.wikipedia.org/wiki/Grep>`_ in our script:
 
 >
 ``# KEYWORD - A script for searching a master concordance file
@@ -609,7 +609,7 @@ output a line that places the word in context -- specifically the preceding
 and following four words.
 
 First we transform and isolate the text data using the **text** and
-`**extract**`_ commands:
+`extract <../../man/extract>`_ commands:
 
 > ``text inputfile | extract -i '**text' ``
 
@@ -628,7 +628,7 @@ used the backslash to escape a control-M character:
 >> | egrep -4 '^|(like)|(as)$'``
 
 Having ensured that there is no more than one word per line we can now search
-for a line contain *just* "like" or "as." The **-4** option for **egrep**
+for a line contain *just* "like" or "as." The **-4** option for `egrep <http://en.wikipedia.org/wiki/Egrep#Variations>`_
 causes any matched lines to be output with four preceding and four following
 lines of context. In addition, an extra line is added consisting of two
 dashes (``--``) to segregate each pattern output. That is, for each match,
@@ -636,8 +636,8 @@ ten lines of output are typically given. In order to generate our final
 output, we need to transform the linear list of words into a horizontal list
 where each line represents a single match for "like" or "as."
 
-The `**context**`_ command would enable us to do this. Unfortunately,
-however, the output from **egrep** fails to conform to the Humdrum syntax. In
+The `context <../../man/context>`_ command would enable us to do this. Unfortunately,
+however, the output from `egrep <http://en.wikipedia.org/wiki/Egrep#Variations>`_ fails to conform to the Humdrum syntax. In
 particular, adding ``^\*`` to the regular expression will fail to ensure a
 proper Humdrum output since preceding and following contextual lines will
 also be output.
@@ -645,7 +645,7 @@ also be output.
 The **hum** command is a special command that takes non-Humdrum input and
 adds sufficient interpretation records so as to make the input conform to the
 Humdrum syntax. Typically, this means simply adding a generic initial
-exclusive interpretation (``**A``) and a spine-path terminator (``*-``). If
+exclusive interpretation (``A``) and a spine-path terminator (``*-``). If
 the input contains tabs, then appropriate spines will be added. If the input
 contains empty lines, then they will be changed to null data records.
 
@@ -654,7 +654,7 @@ contains empty lines, then they will be changed to null data records.
 >> | egrep -4 '^|(like)|(as)$' | hum``
 
 Now we can make use of the **context** command. Each context ends with the
-double-dash delimiters generated by **egrep**. The `**rid**`_ command can be
+double-dash delimiters generated by `egrep <http://en.wikipedia.org/wiki/Egrep#Variations>`_. The `rid <../../man/rid>`_ command can be
 used to eliminate the interpretations added by **hum**.
 
 > ``text inputfile | extract -i '**text' | humsed 's/ */\^M/g' \
@@ -677,19 +677,19 @@ of the words high/hoch/haut and determine the average pitch. We can then
 contrast this average pitch with the average pitch for the repertory as a
 whole. Any significant difference might alert us to possible word painting.
 
-First we translate any pitch data to ``**semits``_ and any ``**silbe`` data
-to ``**text``. We will also filter the outputs to ensure that only
-``**semits`` and ``**text`` are present.
+First we translate any pitch data to `**semits <../../rep/semits>`_ and any `**silbe <../../rep/silbe>`_ data
+to `**text <../../rep/text>`_. We will also filter the outputs to ensure that only
+`**semits <../../rep/semits>`_ and `**text <../../rep/text>`_ are present.
 
 > ``semits * | text | extract -i '**semits,**text'``
 
 Since a word may be sustained through more than one pitch, and a pitch may be
-intoned for more than one word, we should use the `**ditto**`_ command to
+intoned for more than one word, we should use the `ditto <../../man/ditto>`_ command to
 ensure that null tokens are filled-in.
 
 > ``semits * | text | extract -i '**semits,**text' | ditto -s =``
 
-Next, we can use **egrep** to search for the words of interest:
+Next, we can use `egrep <http://en.wikipedia.org/wiki/Egrep#Variations>`_ to search for the words of interest:
 
 > ``semits * | text | extract -i '**semits,**text' | ditto -s = \
 >
@@ -698,7 +698,7 @@ Next, we can use **egrep** to search for the words of interest:
 Notice the addition of the expression ``^\*`` in the search pattern. This
 expression will match any Humdrum interpretation records and so ensures that
 the output conforms to the Humdrum syntax. We can now isolate the
-``**semits`` data and pass the output to **stats** in order to determine the
+`**semits <../../rep/semits>`_ data and pass the output to **stats** in order to determine the
 average pitch for the words coinciding with the words high/hoch/haut:
 
 > ``semits * | text | extract -i '**semits,**text' | ditto -s = \
@@ -744,7 +744,7 @@ lyrics are most emotionally charged. One way to generate a crude index of
 emotionality is to measure the average ratings for the ten most emotion-laden
 words in a given input.
 
-The `**humsed**`_ command provides an appropriate place to start. In effect,
+The `humsed <../../man/humsed>`_ command provides an appropriate place to start. In effect,
 we would take a table (such as Table 26.4) and use it to create a series of
 substitutions. Emotionally-charged words would be replaced by a numerical
 rating. Our **humsed** script would have the following form. Notice that the
@@ -767,15 +767,15 @@ anything other than a number to a null data token. In other words, words that
 are not present in the emotionality list are not rated.
 
 In order to process our input, any syllabic text would first be translated to
-the ``**text`` representation, and all other spines discarded using **extract
+the `**text <../../rep/text>`_ representation, and all other spines discarded using **extract
 -i**.
 
-> ``text`` *inputfile*`` | extract -i '**text' ...``
+> `text <../../man/text>`_ *inputfile*`` | extract -i '**text' ...``
 
 Then we would translate the words using our "emotionality" script, eliminate
 everything other than data records, and calculate the numerical statistics:
 
-> ``text`` *inputfile*`` | extract -i '**text' | humsed -f emotion \
+> `text <../../man/text>`_ *inputfile*`` | extract -i '**text' | humsed -f emotion \
 >
 >> | rid -GLId | stats``
 
@@ -797,7 +797,7 @@ allows us to access a specified number of lines at the end of a file. The ten
 highest and lowest values are then concatenated together and piped to the
 **stats** command:
 
-> ``text`` *inputfile*`` | extract -i '**text' | humsed -f emotion \
+> `text <../../man/text>`_ *inputfile*`` | extract -i '**text' | humsed -f emotion \
 >
 >> | rid -GLId | sort -n > temp
 >
@@ -827,10 +827,10 @@ emotionally charged words.
 Another variant of this approach might be to identify those words in a text
 which are most emotionally charged. Suppose we wanted to determine the
 location of the most emotionally charged word. A combination of **sort** and
-**grep** can be applied to this task. First we generate a spine containing
+`grep <http://en.wikipedia.org/wiki/Grep>`_ can be applied to this task. First we generate a spine containing
 the emotional-charge values taking care to eliminate the signs:
 
-> ``text`` *inputfile*`` | extract -i '**text' | humsed -f emotion \
+> `text <../../man/text>`_ *inputfile*`` | extract -i '**text' | humsed -f emotion \
 >
 >> | humsed 's/[+-]//g' > charges``
 
@@ -877,11 +877,11 @@ Reprise
 -------
 
 In this chapter we have introduced two text-related representations:
-```**text``_ and ``**silbe``_. We have examined the **text** command
-(which translates from ``**silbe`` to ``**text``). We have also been exposed
+`**text <../../rep/text>`_ and `**silbe <../../rep/silbe>`_. We have examined the **text** command
+(which translates from `**silbe <../../rep/silbe>`_ to `**text <../../rep/text>`_). We have also been exposed
 to the UNIX **fmt** command (a simple text formatter), the **cut** command
 (similar to **extract -f**), and the **head** and **tail** commands.
 
-In `Chapter 34`_ we will examine further representations and processes
+In `Chapter 34 <../ch34>`_ we will examine further representations and processes
 related to phonetic data.
 

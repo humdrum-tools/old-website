@@ -9,8 +9,17 @@
 # Description:   re-restrctured text to restructured text converter.
 #
 
-
 use strict;
+
+# Unix command hyperlinks:
+my %UXCOM;
+$UXCOM{'sed'}   = "http://en.wikipedia.org/wiki/Sed";
+$UXCOM{'grep'}  = "http://en.wikipedia.org/wiki/Grep";
+$UXCOM{'wc'}    = "http://en.wikipedia.org/wiki/Wc_(Unix)";
+$UXCOM{'egrep'} = "http://en.wikipedia.org/wiki/Egrep#Variations";
+$UXCOM{'uniq'} = "http://en.wikipedia.org/wiki/Uniq";
+$UXCOM{'cat'} = "http://en.wikipedia.org/wiki/Cat_(Unix)";
+$UXCOM{'cksum'} = "http://en.wikipedia.org/wiki/Cksum";
 
 my $humtable = "humtable -k";
 
@@ -54,6 +63,7 @@ sub resolveCounters {
    my $pre;
    my $post;
    my $label;
+   my $final;
    my $number;
    my $size = @$cont;
    for ($i=0; $i<$size; $i++) {
@@ -61,14 +71,35 @@ sub resolveCounters {
          $pre    = $`;
          $post   = $';
          $label  = $1;
-         $number = $LABELS{"$label"};
-         if ($number =~ /^\s*$/) {
-	    print "Error: Label \"$label\" is not defined.\n";
-            $number = "XXXXX";
-         }
-         $$cont[$i] = "$pre$number$post";
+         $final  = getNumbers($label);
+         $$cont[$i] = "$pre$final$post";
       }
    }
+}
+
+
+
+##############################
+##
+## getNumbers -- Convert a label into counters for the label(s).
+##
+
+sub getNumbers {
+   my ($label) = @_;
+   my @labels = split(/[^a-zA-Z0-9_]+/, $label);
+   my $output = $label;
+   my $item;
+   my $number;
+   foreach $item (@labels) {
+      $number = $LABELS{$item};
+      if ($number =~ /^\s*$/) {
+         print "Error: Label \"$item\" is not defined.\n";
+         $number = "XXXXXXXXXXXXXXX";
+      }
+      $output =~ s/$item/$number/g;
+
+   }
+   return $output;
 }
 
 
@@ -104,7 +135,11 @@ sub getLabels {
          if ($output{$label} !~ /^\s*$/) {
             die "Error: label already exists: \"$label\"\n";
          } else {
-            print "Creating label \"$label\" with counter = $number\n";
+            print "CREATING $category\tlabel \"$label\"\t";
+            if (length($label) < 8) {
+               print "\t";
+            }
+            print "with counter = $number\n";
          }
          $output{$label} = $number;
          $$cont[$i] = "$pre$number$post";
@@ -147,6 +182,24 @@ sub processContents {
 
       if ($contents[$i] =~ /^\.\.\s+humdrumio\s*:\s*:/) {
          @contents = processHumdrumio($i, @contents);
+      }
+
+      while ($contents[$i] =~ /:html:uxcom:`\s*([^`\s]+)\s*`/) {
+         $match = $1;
+         $pre = $`;
+         $post = $';
+         $contents[$i]  = $pre;
+         $contents[$i] .= "<a href=$UXCOM{$match}>$match</a>";
+         $contents[$i] .= $post;
+      }
+
+      while ($contents[$i] =~ /:uxcom:`\s*([^`\s]+)\s*`/) {
+         $match = $1;
+         $pre = $`;
+         $post = $';
+         $contents[$i]  = $pre;
+         $contents[$i] .= "`$match <$UXCOM{$match}>`_";
+         $contents[$i] .= $post;
       }
 
       while ($contents[$i] =~ /:html:hxcom:`\s*([^`\s]+)\s*`/) {
@@ -223,7 +276,7 @@ sub processHumdrumio {
 
    my $i;
    $i = $line+1;
-   while ($contents[$i] =~ /^\s*:([^\s]+):\s*(.*)\s*/) {
+   while ($contents[$i] =~ /^\s+:([^\s]+):\s*(.*)\s*/) {
       $key = $1;
       $value = $2;
       $contents[$i] = "";
@@ -282,15 +335,27 @@ sub printHumdrumioAsLiteralInclude {
    my $outputtabwidth = $opt->{"outputtabwidth"};
 
    my $entry;
+
+   my $shortin = $inputfile;
+   my $shortout = $outputfile;
+   $shortin  =~ s/[^\/]*\///;
+   $shortout =~ s/[^\/]*\///;
    
    if ($style eq "wide") {
+
+      if (!-r $shortin) {
+         print "ERROR: cannot find $shortin\n";
+      }
+      if (!-r $shortout) {
+         print "ERROR: cannot find $shortout\n";
+      }
 
       $entry = <<EOT;
 .. raw:: html
 
 	<table width="100%"><tr> <td style="background-color: #cccccc;" colspan="3" align="center">
 	   &#x21d2;&nbsp;&nbsp;<tt style="border: none; background-color: #cccccc;">$transform</tt>&nbsp;&nbsp;&#x21d2;
-	</td></tr><tr><td width="48%>
+	</td></tr><tr><td width="49%>
 
 .. literalinclude:: $inputfile
 	:language: humdrum
@@ -298,7 +363,7 @@ $inputtabwidth
 
 .. raw:: html
 
-	</td><td width="4%">&nbsp;</td><td width="48%">
+	</td><td width="2%">&nbsp;</td><td width="49%">
 
 .. literalinclude:: $outputfile
 	:language: humdrum
@@ -310,6 +375,9 @@ $outputtabwidth
 EOT
 
    } elsif ($style eq "outputonly") {
+      if (!-r $shortout) {
+         print "ERROR: cannot find $shortout\n";
+      }
 
       $entry = <<EOT;
 .. raw:: html
@@ -328,6 +396,13 @@ $outputtabwidth
 EOT
 
    } else {
+
+      if (!-r $shortin) {
+         print "ERROR: cannot find $shortin\n";
+      }
+      if (!-r $shortout) {
+         print "ERROR: cannot find $shortout\n";
+      }
 
       $entry = <<EOT;
 .. raw:: html
@@ -402,18 +477,18 @@ sub printHumdrumioAsHumtable {
 
    my $shortin = $inputfile;
    my $shortout = $outputfile;
-   $shortin  =~ s/.*\///;
-   $shortout =~ s/.*\///;
+   $shortin  =~ s/[^\/]*\///;
+   $shortout =~ s/[^\/]*\///;
 
    if (validHumdrum($shortin)) {
       $inhtml = `humtable $shortin`;
    } else {
-      $inhtml = "$shortin NOT FOUND";
+      $inhtml = "$shortin NOT FOUND XXXXXXXXXXXXXXXXXXXXX";
    }
    if (validHumdrum($shortout)) {
       $outhtml = `humtable $shortout`;
    } else {
-      $outhtml = "$shortout NOT FOUND";
+      $outhtml = "$shortout NOT FOUND XXXXXXXXXXXXXXXXXXXXX";
    }
    
    $inhtml =~ s/^/\t/gm;
@@ -426,9 +501,9 @@ sub printHumdrumioAsHumtable {
 
 	<table width="100%"><tr> <td style="background-color: #cccccc;" colspan="3" align="center">
 	   &#x21d2;&nbsp;&nbsp;<tt style="border: none; background-color: #cccccc;">$transform</tt>&nbsp;&nbsp;&#x21d2;
-	</td></tr><tr><td width="48%>
+	</td></tr><tr><td width="49%">
 $inhtml
-	</td><td width="4%">&nbsp;</td><td width="48%">
+	</td><td width="2%">&nbsp;</td><td width="49%">
 $outhtml
 	</td></tr></table>
 EOT

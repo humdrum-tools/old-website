@@ -11,8 +11,8 @@ sources, and competing editions or versions.
 
 This chapter describes the basic Humdrum mechanisms for representing non-
 linear musical structures. The two critical mechanisms are the Humdrum
-*section* and *strophe*. We will encounter examples using the `**yank**`_,
-`**thru**`_, and `**strophe**`_ commands.
+*section* and *strophe*. We will encounter examples using the `yank <../../man/yank>`_,
+`thru <../../man/thru>`_, and `strophe <../../man/strophe>`_ commands.
 
 
 Section Labels
@@ -66,7 +66,7 @@ verse.
 Using *yank* to Extract Sections
 --------------------
 
-We encountered the `**yank**`_ command earlier in `Chapter 12.`_ Recall that
+We encountered the `yank <../../man/yank>`_ command earlier in `Chapter 12 <../ch12>`_. Recall that
 **yank** can be used to extract material by *section* using the **-s**
 option. For example, if the appropriate section is labelled, we might extract
 the coda of a work as follows:
@@ -80,7 +80,7 @@ identifies the *first* occurrence of a section labelled ``Coda``.
 Using the *thru* Command to Expand Encodings
 ----------------------------
 
-The Humdrum `**thru**`_ command expands *abbreviated format* representations
+The Humdrum `thru <../../man/thru>`_ command expands *abbreviated format* representations
 to a so-called *through-composed format* in which repeated passages are
 expanded according to an expansion list. When the **thru** command is
 invoked, it eliminates any expansion lists present in the input; in addition,
@@ -126,7 +126,7 @@ unlabelled, a second is labelled ``long`` and a third is labelled ``weird``.
 
 
 
-``**example``**example
+``example``**example
 ``*>[A,B,A,C]``*>[A,B,A,C]
 ``*>long[A,A,B,A,C]``*>long[A,A,B,A,C]
 ``*>weird[C,A,C]``*>weird[C,A,C]
@@ -146,7 +146,7 @@ The corresponding "through-composed" output would be as follows:
 
 
 
-``**example``**example
+``example``**example
 ``*thru``*thru
 ``*>C``*>C
 ``data-C``data-C
@@ -284,7 +284,7 @@ Using the *yank* and *thru* Commands
 Section labels can be used in a wide number of applications. By way of
 illustration, here are a few pipeline processes involving section labels.
 First, we might ask the question -- how does the user know what sections
-labels are present in a document? This is a task for **grep**:
+labels are present in a document? This is a task for `grep <http://en.wikipedia.org/wiki/Grep>`_:
 
 ``grep '^\*>'`` *file*
 
@@ -399,10 +399,10 @@ $
 expansion list occurs near the beginning of the file that indicates section 1
 is to be repeated 4 times in total.
 
-The strophic passage pertains only to the spine marked ``**silbe``. The
-```**silbe``_ representation pertains to syllabic text encoding and is a
-pre-defined representation in Humdrum. The ``**silbe`` representation is
-discussed in `Chapter 27.`_ Following the strophic passage indicator
+The strophic passage pertains only to the spine marked `**silbe <../../rep/silbe>`_. The
+`**silbe <../../rep/silbe>`_ representation pertains to syllabic text encoding and is a
+pre-defined representation in Humdrum. The `**silbe <../../rep/silbe>`_ representation is
+discussed in `Chapter 27 <../ch27>`_. Following the strophic passage indicator
 (``*strophe``), the spine is split apart until the required number of verses
 are generated. Then each spine is labelled with its own strophe label. Since
 the verses have an order, it is appropriate to label them with numbers:
@@ -456,7 +456,7 @@ organization are eliminated from the output.
 
 Suppose that we wanted to create a through-composed version of the entire
 work. We would expect as output, just two spines -- the \*\*kern_ spine
-and the ``**silbe`` spine. First, we need to create the full length version
+and the `**silbe <../../rep/silbe>`_ spine. First, we need to create the full length version
 using the **thru** command. This will take the default expansion list, and
 repeat the appropriate section for each successive verse.
 
@@ -503,7 +503,7 @@ remaining records. We repeat this procedure for both verses:
 >
 >> | grep -v [=\|%] | wc -l``
 
-(In the ``**silbe`` representation, the vertical bar (|) and the percent sign
+(In the `**silbe <../../rep/silbe>`_ representation, the vertical bar (|) and the percent sign
 (%) have special meanings so the **grep -v** is used to eliminate them along
 with barlines.)
 
@@ -542,7 +542,7 @@ of
 > than ``*>type>name``
 > abbreviated formatHumdrum document encoded using expansion lists
 > through-composedHumdrum document encoded without expansion lists
-``thru``command to create a through-composed document from an
+`thru <../../man/thru>`_command to create a through-composed document from an
 > abbrevatiated format
 ``thru -v``command to create a particular version of a through-composed
 > document
@@ -564,6 +564,6 @@ path,
 
 *Summary of terms related to sections and strophes*
 
-In `Chapter 37`_ we will see further examples of how sections and strophes
+In `Chapter 37 <../ch37>`_ we will see further examples of how sections and strophes
 are especially useful when producing electronic editions.
 

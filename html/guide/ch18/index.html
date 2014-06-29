@@ -116,7 +116,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">2. Rhythm and Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody and Pitch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
@@ -303,7 +303,7 @@
 Humdrum representations &#8211; **kern in particular. Of course the Humdrum
 syntax provides opportunities for an unlimited number of representations. In
 this chapter, we will consider some less common representations. Most of the
-chapter will deal with the <a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">**</span></a>fret``_ representation &#8211; a pre-defined
+chapter will deal with the <a class="reference external" href="../../rep/fret">**fret</a> representation &#8211; a pre-defined
 Humdrum representation for fretted instrument tablatures. However, we will
 begin with a grab-bag of unorthodox representations.</p>
 <div class="section" id="heart-beats-and-other-esoterica">
@@ -389,16 +389,16 @@ example, the following scheme is fashioned after the Benesh dance notation:</p>
 <span class="pre">``*e:``*</span>
 <span class="pre">``!!</span> <span class="pre">First</span> <span class="pre">Couplet</span>
 <span class="pre">``!</span></tt>! Half Coupee
-<tt class="docutils literal"><span class="pre">4.gg</span></tt> | <a href="#id111"><span class="problematic" id="id112">|u|</span></a> | |
+<tt class="docutils literal"><span class="pre">4.gg</span></tt> | <a href="#id118"><span class="problematic" id="id119">|u|</span></a> | |
 <tt class="docutils literal"><span class="pre">.``%|+|</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">|</span>
-<span class="pre">``.</span></tt> <a href="#id113"><span class="problematic" id="id114">|=|v|</span></a> | |
+<span class="pre">``.</span></tt> <a href="#id120"><span class="problematic" id="id121">|=|v|</span></a> | |
 <tt class="docutils literal"><span class="pre">.``(|</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">|</span>
 <span class="pre">``.``(|-|</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">|{</span>
-<span class="pre">``8ff#</span></tt> <a href="#id115"><span class="problematic" id="id116">|_|</span></a> | | <a href="#id117"><span class="problematic" id="id118">|2
+<span class="pre">``8ff#</span></tt> <a href="#id122"><span class="problematic" id="id123">|_|</span></a> | | <a href="#id124"><span class="problematic" id="id125">|2
 ``=1``&#8212;&#8212;&#8212;&#8211;
-``2ee``m|</span></a> | | | <a href="#id119"><span class="problematic" id="id120">|}
+``2ee``m|</span></a> | | | <a href="#id126"><span class="problematic" id="id127">|}
 ``!``! Bound
-``.``_|^|</span></a> | | <a href="#id121"><span class="problematic" id="id122">|{
+``.``_|^|</span></a> | | <a href="#id128"><span class="problematic" id="id129">|{
 ``.``(|+|</span></a> | | |
 <tt class="docutils literal"><span class="pre">4.b</span></tt>-| | | | |
 <tt class="docutils literal"><span class="pre">.``(|+|</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">|}</span>
@@ -407,10 +407,10 @@ example, the following scheme is fashioned after the Benesh dance notation:</p>
 <span class="pre">``=2</span></tt>&#8212;&#8212;&#8212;&#8211;
 <tt class="docutils literal"><span class="pre">!</span></tt>! Bouree
 <tt class="docutils literal"><span class="pre">4g</span></tt> | | | | |
-<tt class="docutils literal"><span class="pre">.</span></tt> <a href="#id123"><span class="problematic" id="id124">|=|</span></a> | | |
-<tt class="docutils literal"><span class="pre">4e</span></tt> <a href="#id125"><span class="problematic" id="id126">|=|</span></a> | | <a href="#id127"><span class="problematic" id="id128">|}
+<tt class="docutils literal"><span class="pre">.</span></tt> <a href="#id130"><span class="problematic" id="id131">|=|</span></a> | | |
+<tt class="docutils literal"><span class="pre">4e</span></tt> <a href="#id132"><span class="problematic" id="id133">|=|</span></a> | | <a href="#id134"><span class="problematic" id="id135">|}
 ``.``_|=|</span></a> | | |
-<tt class="docutils literal"><span class="pre">4g</span></tt> <a href="#id129"><span class="problematic" id="id130">|o|</span></a> | | |
+<tt class="docutils literal"><span class="pre">4g</span></tt> <a href="#id136"><span class="problematic" id="id137">|o|</span></a> | | |
 <tt class="docutils literal"><span class="pre">!</span></tt>! Bouree
 <tt class="docutils literal"><span class="pre">4a``_|+|+|</span> <span class="pre">|</span> <span class="pre">|</span>
 <span class="pre">``=3</span></tt>&#8212;&#8212;&#8212;&#8211;
@@ -421,22 +421,22 @@ Reference Manual</em> provides detailed advice on how to go about designing
 special-purpose Humdrum representations.</p>
 <p>For the remainder of this chapter we will examine a pre-defined
 representation scheme for fretted instrument tablatures. Although not all
-users will be interested in the <tt class="docutils literal"><span class="pre">**fret</span></tt> representation, it provides an
+users will be interested in the <a class="reference external" href="../../rep/fret">**fret</a> representation, it provides an
 instructive contrast to the score- and MIDI-based representations that we
 have relied on for most of the examples in this book.</p>
 </div>
 <div class="section" id="the-fret-representation">
-<h2>The <a href="#id5"><span class="problematic" id="id6">**</span></a><em>fret</em> Representation<a class="headerlink" href="#the-fret-representation" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="docutils literal"><span class="pre">**fret``_</span> <span class="pre">representation</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">pre-defined</span> <span class="pre">Humdrum</span> <span class="pre">scheme</span> <span class="pre">that</span>
-<span class="pre">provides</span> <span class="pre">a</span> <span class="pre">comprehensive</span> <span class="pre">system</span> <span class="pre">for</span> <span class="pre">representing</span> <span class="pre">performance</span> <span class="pre">aspects</span> <span class="pre">for</span>
-<span class="pre">fretted</span> <span class="pre">instruments.</span> <span class="pre">The</span> <span class="pre">``**fret</span></tt> scheme is suitable for representing
+<h2>The <a href="#id2"><span class="problematic" id="id3">**</span></a><em>fret</em> Representation<a class="headerlink" href="#the-fret-representation" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="../../rep/fret">**fret</a> representation is a pre-defined Humdrum scheme that
+provides a comprehensive system for representing performance aspects for
+fretted instruments. The <a class="reference external" href="../../rep/fret">**fret</a> scheme is suitable for representing
 tablature information for most fretted instruments, such as various guitars,
 lute, mandore, theorbo, chitarrone, mandoline, banjo, dulcimer, and even
-viols. The <tt class="docutils literal"><span class="pre">**fret</span></tt> interpretation is not limited to equal-temperament
+viols. The <a class="reference external" href="../../rep/fret">**fret</a> interpretation is not limited to equal-temperament
 tuning, and so can be used to represent non-Western fretted instruments, such
 as the <em>oud</em> and the <em>sitar</em>.</p>
-<p>The <tt class="docutils literal"><span class="pre">**fret</span></tt> representation is performance-oriented rather than
-notationally-oriented. Thus <tt class="docutils literal"><span class="pre">**fret</span></tt> is not suitable for distinguishing
+<p>The <a class="reference external" href="../../rep/fret">**fret</a> representation is performance-oriented rather than
+notationally-oriented. Thus <a class="reference external" href="../../rep/fret">**fret</a> is not suitable for distinguishing
 different visual renderings &#8211; such as differences between traditional French
 or German lute tablatures. Some other Humdrum representation should be used
 if the user&#8217;s goal is to distinguish different forms of visual signifiers.</p>
@@ -449,10 +449,10 @@ the lowest string using the <tt class="docutils literal"><span class="pre">*AT:<
 six-string guitar, the lowest pitch is normally tuned to E2, and so would be
 encoded with the following tandem interpretation:</p>
 <p><tt class="docutils literal"><span class="pre">*AT:E2</span></tt></p>
-<p>The <tt class="docutils literal"><span class="pre">*AT:</span></tt> interpretation makes use of <tt class="docutils literal"><span class="pre">**pitch``_-type</span> <span class="pre">pitch</span>
-<span class="pre">designations</span> <span class="pre">and</span> <span class="pre">may</span> <span class="pre">also</span> <span class="pre">include</span> <span class="pre">cents</span> <span class="pre">deviation.</span> <span class="pre">For</span> <span class="pre">example,</span> <span class="pre">an</span> <span class="pre">instrument</span>
-<span class="pre">tuned</span> <span class="pre">45</span> <span class="pre">cents</span> <span class="pre">sharp</span> <span class="pre">might</span> <span class="pre">be</span> <span class="pre">represented</span> <span class="pre">as</span> <span class="pre">``*AT:E2+45</span></tt>. Encoding the
-absolute tuning is optional with <a href="#id7"><span class="problematic" id="id8">``</span></a><a href="#id9"><span class="problematic" id="id10">**</span></a>fret``_; when absent, a default tuning
+<p>The <tt class="docutils literal"><span class="pre">*AT:</span></tt> interpretation makes use of <a class="reference external" href="../../rep/pitch">**pitch</a>-type pitch
+designations and may also include cents deviation. For example, an instrument
+tuned 45 cents sharp might be represented as <tt class="docutils literal"><span class="pre">*AT:E2+45</span></tt>. Encoding the
+absolute tuning is optional with <a class="reference external" href="../../rep/fret">**fret</a>; when absent, a default tuning
 of E2 will be assumed by various processing tools.</p>
 <p>A second tandem interpretation (<tt class="docutils literal"><span class="pre">*RT:</span></tt>) specifies the relative tuning as
 well as the number and arrangement of strings. Some instruments pair strings
@@ -498,8 +498,8 @@ three courses in octaves.</p>
 <p>For non-Western and other instruments, it is possible to encode non-integer
 semitone values for various strings, such as a string tuned 9.91 semitones
 above the lowest string.</p>
-<p>In addition to the absolute and relative tunings, <tt class="docutils literal"><span class="pre">**fret``_</span> <span class="pre">also</span> <span class="pre">allows</span>
-<span class="pre">the</span> <span class="pre">user</span> <span class="pre">to</span> <span class="pre">specify</span> <span class="pre">the</span> <span class="pre">tuning</span> <span class="pre">of</span> <span class="pre">successive</span> <span class="pre">frets</span> <span class="pre">using</span> <span class="pre">the</span> <span class="pre">``FT:</span></tt> tandem
+<p>In addition to the absolute and relative tunings, <a class="reference external" href="../../rep/fret">**fret</a> also allows
+the user to specify the tuning of successive frets using the <tt class="docutils literal"><span class="pre">FT:</span></tt> tandem
 interpretation. In Western instruments, frets are normally placed in semitone
 increments. For a 12-fret instrument, this semitone arrangement may be
 explicitly represented using the following tandem interpretation:</p>
@@ -516,7 +516,7 @@ constructed with nine 1/4-tone fret positions can be encoded as follows:</p>
 identical fret distances. That is, if the first fret is positioned 1 semitone
 above the open string, then this relative pitch arrangement must be true of
 all strings.</p>
-<p>The <a href="#id11"><span class="problematic" id="id12">``</span></a><a href="#id13"><span class="problematic" id="id14">**</span></a>fret``_ representation distinguishes three types of data tokens:
+<p>The <a class="reference external" href="../../rep/fret">**fret</a> representation distinguishes three types of data tokens:
 tablature-tokens, rests, and barlines. <em>Tablature-tokens</em> encode information
 regarding the fret/finger positions, the manner by which individual strings
 are plucked (or bowed), pitch-bending, vibrato, damping, harmonics, and other
@@ -531,10 +531,10 @@ encodes the plucking of the first and sixth string:</p>
 status, (2) fret position, (3) bowing/strumming, (4) finger action, and (5)
 percussive effects. In addition, the tablature-token can encode bowing and
 strumming information.</p>
-<p>In the <tt class="docutils literal"><span class="pre">**fret``_</span> <span class="pre">representation,</span> <span class="pre">the</span> <span class="pre">status</span> <span class="pre">of</span> <span class="pre">a</span> <span class="pre">string/course</span> <span class="pre">can</span> <span class="pre">occupy</span>
-<span class="pre">one</span> <span class="pre">of</span> <span class="pre">sixteen</span> <span class="pre">states.</span> <span class="pre">An</span> <span class="pre">*inactive*</span> <span class="pre">string</span> <span class="pre">is</span> <span class="pre">signified</span> <span class="pre">by</span> <span class="pre">th-nus</span> <span class="pre">sign</span>
-<span class="pre">(</span></tt>-<tt class="docutils literal"><span class="pre">).</span> <span class="pre">An</span> <span class="pre">ordinary</span> <span class="pre">*plucked*</span> <span class="pre">string</span> <span class="pre">is</span> <span class="pre">represented</span> <span class="pre">by</span> <span class="pre">the</span> <span class="pre">vertical</span> <span class="pre">line</span>
-<span class="pre">(``|</span></tt>). Plucking near the bridge (<em>plucked ponticello</em>) is represented by
+<p>In the <a class="reference external" href="../../rep/fret">**fret</a> representation, the status of a string/course can occupy
+one of sixteen states. An <em>inactive</em> string is signified by th-nus sign
+(<tt class="docutils literal"><span class="pre">-</span></tt>). An ordinary <em>plucked</em> string is represented by the vertical line
+(<tt class="docutils literal"><span class="pre">|</span></tt>). Plucking near the bridge (<em>plucked ponticello</em>) is represented by
 the slash character (<tt class="docutils literal"><span class="pre">/</span></tt>). Plucking near the tone-hole (<em>plucked sul
 tasto</em>) is represented by the backslash character (<tt class="docutils literal"><span class="pre">\</span></tt>). The repeated
 <em>plucked-tremolo</em> (commonly used on the mandoline) is represented using the
@@ -559,17 +559,17 @@ to the tuning specified in the relative-tuning interpretation. In most
 representations, the lower-pitched strings will be toward the left side of
 the tablature token.</p>
 <p><em>Fret-position</em> information is indicated through the use of numbers, with the
-first fret signified by the number <a href="#id15"><span class="problematic" id="id16">`</span></a>1&#8217;. Fret-position numbers are encoded
+first fret signified by the number <a href="#id13"><span class="problematic" id="id14">`</span></a>1&#8217;. Fret-position numbers are encoded
 immediately to the right of their respective string/course. For example, the
 following tablature-token encodes a six-string/course instrument in which the
 second and third strings are both stopped at the second fret.</p>
 <p><tt class="docutils literal"><span class="pre">|</span> <span class="pre">|2</span> <span class="pre">|2</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">|</span></tt></p>
 <p>Example 18.2 shows a sample passage for guitar with a corresponding
-<tt class="docutils literal"><span class="pre">**fret</span></tt> representation displayed beneath. The <tt class="docutils literal"><span class="pre">**fret</span></tt> representation
-does not encode duration information. It is common to join the <tt class="docutils literal"><span class="pre">**fret</span></tt>
-spine with a <tt class="docutils literal"><span class="pre">**recip``_</span> <span class="pre">spine</span> <span class="pre">representing</span> <span class="pre">the</span> <span class="pre">nominal</span> <span class="pre">duration</span> <span class="pre">data.</span> <span class="pre">In</span>
-<span class="pre">example</span> <span class="pre">18.2</span> <span class="pre">a</span> <span class="pre">\*\*kern_</span> <span class="pre">spine</span> <span class="pre">is</span> <span class="pre">also</span> <span class="pre">shown</span> <span class="pre">indicating</span> <span class="pre">the</span> <span class="pre">pitches</span> <span class="pre">in</span>
-<span class="pre">the</span> <span class="pre">``**fret</span></tt> representation.</p>
+<a class="reference external" href="../../rep/fret">**fret</a> representation displayed beneath. The <a class="reference external" href="../../rep/fret">**fret</a> representation
+does not encode duration information. It is common to join the <a class="reference external" href="../../rep/fret">**fret</a>
+spine with a <a class="reference external" href="../../rep/recip">**recip</a> spine representing the nominal duration data. In
+example 18.2 a **kern_ spine is also shown indicating the pitches in
+the <a class="reference external" href="../../rep/fret">**fret</a> representation.</p>
 <p><strong>Example 18.2.</strong> J.S. Bach, <em>Anna Magdalena Bach Notebook</em> Menuet II. Guitar
 arr.</p>
 <p>&gt; .. image:: guide.figures/ch18.2.gif</p>
@@ -578,39 +578,39 @@ arr.</p>
 ``**``*RT:0,12:5,17:10,22:14,14:19,19:24,24
 ``*M3/4``*``*M3/4
 ``=1``=1``=1
-``4``E e g`</cite>- <a href="#id17"><span class="problematic" id="id18">|</span></a>4 - - - <a href="#id19"><span class="problematic" id="id20">|</span></a>0
-<tt class="docutils literal"><span class="pre">8``c</span></tt>- : : <a href="#id21"><span class="problematic" id="id22">|</span></a>3 : :
-<tt class="docutils literal"><span class="pre">8``d</span></tt>- : : : <a href="#id23"><span class="problematic" id="id24">|</span></a>0 x
-<tt class="docutils literal"><span class="pre">8``D</span> <span class="pre">d</span> <span class="pre">e</span></tt>- <a href="#id25"><span class="problematic" id="id26">|</span></a>2 : : <a href="#id27"><span class="problematic" id="id28">|</span></a>2 :
-<tt class="docutils literal"><span class="pre">8``f</span></tt>- : : : <a href="#id29"><span class="problematic" id="id30">|</span></a>3 :
+``4``E e g`</cite>- <a href="#id19"><span class="problematic" id="id20">|</span></a>4 - - - <a href="#id21"><span class="problematic" id="id22">|</span></a>0
+<tt class="docutils literal"><span class="pre">8``c</span></tt>- : : <a href="#id23"><span class="problematic" id="id24">|</span></a>3 : :
+<tt class="docutils literal"><span class="pre">8``d</span></tt>- : : : <a href="#id25"><span class="problematic" id="id26">|</span></a>0 x
+<tt class="docutils literal"><span class="pre">8``D</span> <span class="pre">d</span> <span class="pre">e</span></tt>- <a href="#id27"><span class="problematic" id="id28">|</span></a>2 : : <a href="#id29"><span class="problematic" id="id30">|</span></a>2 :
+<tt class="docutils literal"><span class="pre">8``f</span></tt>- : : : <a href="#id31"><span class="problematic" id="id32">|</span></a>3 :
 <tt class="docutils literal"><span class="pre">=2``=2``=2</span>
-<span class="pre">``4``E</span> <span class="pre">e</span> <span class="pre">g</span></tt>- <a href="#id31"><span class="problematic" id="id32">|</span></a>4 : : : <a href="#id33"><span class="problematic" id="id34">|</span></a>0
-<tt class="docutils literal"><span class="pre">4``c</span></tt>- : : <a href="#id35"><span class="problematic" id="id36">|</span></a>3 : :
-<tt class="docutils literal"><span class="pre">4``c</span></tt>- : : <a href="#id37"><span class="problematic" id="id38">|</span></a>3 : x
+<span class="pre">``4``E</span> <span class="pre">e</span> <span class="pre">g</span></tt>- <a href="#id33"><span class="problematic" id="id34">|</span></a>4 : : : <a href="#id35"><span class="problematic" id="id36">|</span></a>0
+<tt class="docutils literal"><span class="pre">4``c</span></tt>- : : <a href="#id37"><span class="problematic" id="id38">|</span></a>3 : :
+<tt class="docutils literal"><span class="pre">4``c</span></tt>- : : <a href="#id39"><span class="problematic" id="id40">|</span></a>3 : x
 <tt class="docutils literal"><span class="pre">=3``=3``=3</span>
-<span class="pre">``4``F</span> <span class="pre">f</span> <span class="pre">a</span></tt>- <a href="#id39"><span class="problematic" id="id40">|</span></a>5 : : : <a href="#id41"><span class="problematic" id="id42">|</span></a>2W
-<tt class="docutils literal"><span class="pre">8``f</span></tt>- : : : <a href="#id43"><span class="problematic" id="id44">|</span></a>3 :
-<tt class="docutils literal"><span class="pre">8``g</span></tt>- : : : : <a href="#id45"><span class="problematic" id="id46">|</span></a>0
-<tt class="docutils literal"><span class="pre">8``a</span></tt>- : : : : <a href="#id47"><span class="problematic" id="id48">|</span></a>2
-<tt class="docutils literal"><span class="pre">8``b</span></tt>- : : : : <a href="#id49"><span class="problematic" id="id50">|</span></a>4
+<span class="pre">``4``F</span> <span class="pre">f</span> <span class="pre">a</span></tt>- <a href="#id41"><span class="problematic" id="id42">|</span></a>5 : : : <a href="#id43"><span class="problematic" id="id44">|</span></a>2W
+<tt class="docutils literal"><span class="pre">8``f</span></tt>- : : : <a href="#id45"><span class="problematic" id="id46">|</span></a>3 :
+<tt class="docutils literal"><span class="pre">8``g</span></tt>- : : : : <a href="#id47"><span class="problematic" id="id48">|</span></a>0
+<tt class="docutils literal"><span class="pre">8``a</span></tt>- : : : : <a href="#id49"><span class="problematic" id="id50">|</span></a>2
+<tt class="docutils literal"><span class="pre">8``b</span></tt>- : : : : <a href="#id51"><span class="problematic" id="id52">|</span></a>4
 <tt class="docutils literal"><span class="pre">=4``=4``=4</span>
-<span class="pre">``2``E</span> <span class="pre">e</span> <span class="pre">cc</span></tt>- <a href="#id51"><span class="problematic" id="id52">|</span></a>4 : : : <a href="#id53"><span class="problematic" id="id54">|</span></a>5v
-<tt class="docutils literal"><span class="pre">*-``*-``*-`</span>
-<span class="pre">The</span> <span class="pre">``**fret</span></tt> representation also provides several short-hand abbreviations
-for common ornaments and effects. Trills are indicated by the letters <a href="#id55"><span class="problematic" id="id56">`</span></a>t&#8217;
-(one semitone) and <a href="#id57"><span class="problematic" id="id58">`</span></a>T&#8217; (two semitones). Mordents are indicated by the letters
-<a href="#id59"><span class="problematic" id="id60">`</span></a>m&#8217; (one semitone) and <a href="#id61"><span class="problematic" id="id62">`</span></a>D&#8217; (two semitones). Inverted mordents are indicated
-by the letters <a href="#id63"><span class="problematic" id="id64">`</span></a>w&#8217; (one semitone) and <a href="#id65"><span class="problematic" id="id66">`</span></a>W&#8217; (two semitones). Turns are
-indicated by the letters <a href="#id67"><span class="problematic" id="id68">`</span></a>S&#8217; and <a href="#id69"><span class="problematic" id="id70">`</span></a>$&#8217; (for the inverted &#8220;Wagnerian&#8221; turn). Two
-types of vibrato are distinguished: <a href="#id71"><span class="problematic" id="id72">`</span></a>v&#8217; for transverse vibrato and <a href="#id73"><span class="problematic" id="id74">`</span></a>V&#8217; for
+<span class="pre">``2``E</span> <span class="pre">e</span> <span class="pre">cc</span></tt>- <a href="#id53"><span class="problematic" id="id54">|</span></a>4 : : : <a href="#id55"><span class="problematic" id="id56">|</span></a>5v
+<a href="#id57"><span class="problematic" id="id58">``</span></a><em>-``</em>-<a href="#id59"><span class="problematic" id="id60">``</span></a><a href="#id61"><span class="problematic" id="id62">*</span></a>-`
+The <a class="reference external" href="../../rep/fret">**fret</a> representation also provides several short-hand abbreviations
+for common ornaments and effects. Trills are indicated by the letters <a href="#id64"><span class="problematic" id="id65">`</span></a>t&#8217;
+(one semitone) and <a href="#id66"><span class="problematic" id="id67">`</span></a>T&#8217; (two semitones). Mordents are indicated by the letters
+<a href="#id68"><span class="problematic" id="id69">`</span></a>m&#8217; (one semitone) and <a href="#id70"><span class="problematic" id="id71">`</span></a>D&#8217; (two semitones). Inverted mordents are indicated
+by the letters <a href="#id72"><span class="problematic" id="id73">`</span></a>w&#8217; (one semitone) and <a href="#id74"><span class="problematic" id="id75">`</span></a>W&#8217; (two semitones). Turns are
+indicated by the letters <a href="#id76"><span class="problematic" id="id77">`</span></a>S&#8217; and <a href="#id78"><span class="problematic" id="id79">`</span></a>$&#8217; (for the inverted &#8220;Wagnerian&#8221; turn). Two
+types of vibrato are distinguished: <a href="#id80"><span class="problematic" id="id81">`</span></a>v&#8217; for transverse vibrato and <a href="#id82"><span class="problematic" id="id83">`</span></a>V&#8217; for
 lateral vibrato. Pitch bending is signified by the tilde (~).</p>
-<p>Apart from tablature-tokens, <tt class="docutils literal"><span class="pre">**fret</span></tt> also permits the encoding of rests
-and barlines. Rests tokens are denoted simply by the lower-case letter <a href="#id75"><span class="problematic" id="id76">`</span></a>r&#8217;.
+<p>Apart from tablature-tokens, <a class="reference external" href="../../rep/fret">**fret</a> also permits the encoding of rests
+and barlines. Rests tokens are denoted simply by the lower-case letter <a href="#id85"><span class="problematic" id="id86">`</span></a>r&#8217;.
 Barlines are represented using the &#8220;common system&#8221; for barlines used by
 **kern and other representations.</p>
 </div>
 <div class="section" id="additional-features-of-fret">
-<h2>Additional Features of <a href="#id77"><span class="problematic" id="id78">**</span></a><em>fret</em><a class="headerlink" href="#additional-features-of-fret" title="Permalink to this headline">¶</a></h2>
+<h2>Additional Features of <a href="#id87"><span class="problematic" id="id88">**</span></a><em>fret</em><a class="headerlink" href="#additional-features-of-fret" title="Permalink to this headline">¶</a></h2>
 <p><em>Bowing-direction</em> and <em>strumming</em> information is prepended to the beginning
 of the tablature-token. The direction of bowing/strumming is encoded using
 the left and right angle brackets: <tt class="docutils literal"><span class="pre">&gt;</span></tt> means to bow/strum from the strings
@@ -630,14 +630,14 @@ represented as:</p>
 <span class="pre">&gt;|</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">|</span></tt></p>
 <p>Notice that there is no space between the right angle bracket and the first
 vertical bar.</p>
-<p>The <a href="#id79"><span class="problematic" id="id80">``</span></a><a href="#id81"><span class="problematic" id="id82">**</span></a>fret``_ representation also permits the optional encoding of
+<p>The <a class="reference external" href="../../rep/fret">**fret</a> representation also permits the optional encoding of
 <em>fingering</em> information. For the plucking-hand (normally right hand),
 traditional musical abbreviations are used: <em>P</em> (pollex) for the thumb, <em>I</em>
 (index) for the index finger, <em>M</em> (medius) for the middle finger, <em>A</em>
 (annularis) for the ring finger, and <em>Q</em> (quintus) for the little finger. In
 addition, the lower-case letter <em>p</em> is used to signify the palm of the hand.
-Note that these letters are applied only to the <a href="#id83"><span class="problematic" id="id84">`</span></a>plucking&#8217; hand. In the case
-of the <a href="#id85"><span class="problematic" id="id86">`</span></a>fret-board&#8217; hand, the lower-case letters <em>a-e</em> are used to denote the
+Note that these letters are applied only to the <a href="#id90"><span class="problematic" id="id91">`</span></a>plucking&#8217; hand. In the case
+of the <a href="#id92"><span class="problematic" id="id93">`</span></a>fret-board&#8217; hand, the lower-case letters <em>a-e</em> are used to denote the
 thumb, index finger, middle finger, ring finger, and little fingers,
 respectively. Like the fret information, fingering information is encoded
 immediately to the right of the string to which the information applies. By
@@ -652,30 +652,30 @@ courses/strings, the other strings are allows to ring.</p>
 <p><tt class="docutils literal"><span class="pre">&gt;|P</span> <span class="pre">|2bP</span> <span class="pre">|2cP</span> <span class="pre">|P</span> <span class="pre">|P</span> <span class="pre">|P</span>
 <span class="pre">&gt;|P</span> <span class="pre">xIM</span> <span class="pre">xIM</span> <span class="pre">:</span> <span class="pre">:</span> <span class="pre">:</span></tt></p>
 <p>Notice that in damping the vibrations of the second and third strings, both
-the index and middle fingers of the <a href="#id87"><span class="problematic" id="id88">`</span></a>pluck&#8217; hand are used on both strings.</p>
+the index and middle fingers of the <a href="#id94"><span class="problematic" id="id95">`</span></a>pluck&#8217; hand are used on both strings.</p>
 <p>On rare occasions, guitarists will substitute fingers on the fret-board while
 a string remains sounding. The following example illustrates such a finger-
 substitution where the middle finger is replaced by the ring finger:</p>
 <p><tt class="docutils literal"><span class="pre">|</span> <span class="pre">|2b</span> <span class="pre">|2c</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">|</span>
 <span class="pre">:</span> <span class="pre">:2b</span> <span class="pre">:2d</span> <span class="pre">:</span> <span class="pre">:</span> <span class="pre">:</span></tt></p>
-<p>Note that in the <tt class="docutils literal"><span class="pre">**fret</span></tt> representation, no special signifiers are
-provided for so-called <cite>hammer-on&#8217; or (ascending-slur), nor for the so-called
+<p>Note that in the <a class="reference external" href="../../rep/fret">**fret</a> representation, no special signifiers are
+provided for so-called <a class="reference external" href="../../rep/fret">hammer-on&#8217; or (ascending-slur), nor for the so-called
 `pull-off&#8217; or (descending-slur). During the ascending-slur, the sound is
 produced simply by engaging the next fret. This can be represented in
-``**fret`</cite> by using the &#8220;let ring&#8221; signifier (:) in conjunction with the
+`**fret</a> by using the &#8220;let ring&#8221; signifier (:) in conjunction with the
 appropriate fret notation. The descending-slur can be similarly notated.</p>
-<p>Four types of &#8220;percussion effects&#8221; can be represented using <tt class="docutils literal"><span class="pre">**fret</span></tt>. The
+<p>Four types of &#8220;percussion effects&#8221; can be represented using <a class="reference external" href="../../rep/fret">**fret</a>. The
 two most common <em>tambours</em> involve tapping on the bridge (represented by the
-lower-case letter <a href="#id89"><span class="problematic" id="id90">`</span></a>u&#8217;) and tapping on the strings near the bridge
-(represented by the upper-case letter <a href="#id91"><span class="problematic" id="id92">`</span></a>U&#8217;). A simple <a href="#id93"><span class="problematic" id="id94">`</span></a>tap&#8217; on the top-plate
-is represented by the lower-case letter <a href="#id95"><span class="problematic" id="id96">`</span></a>y&#8217;, whereas a lower-pitched <a href="#id97"><span class="problematic" id="id98">`</span></a>thump&#8217;
-on the top-plate is represented by the upper-case letter <a href="#id99"><span class="problematic" id="id100">`</span></a>Y&#8217;. When sounded
+lower-case letter <a href="#id98"><span class="problematic" id="id99">`</span></a>u&#8217;) and tapping on the strings near the bridge
+(represented by the upper-case letter <a href="#id100"><span class="problematic" id="id101">`</span></a>U&#8217;). A simple <a href="#id102"><span class="problematic" id="id103">`</span></a>tap&#8217; on the top-plate
+is represented by the lower-case letter <a href="#id104"><span class="problematic" id="id105">`</span></a>y&#8217;, whereas a lower-pitched <a href="#id106"><span class="problematic" id="id107">`</span></a>thump&#8217;
+on the top-plate is represented by the upper-case letter <a href="#id108"><span class="problematic" id="id109">`</span></a>Y&#8217;. When sounded
 alone, these signifiers appear on a line by themselves. When sounded in
 conjunction with a plucked or (uncommonly) bowed string, these signifiers
 appear at the beginning of the tablature-token.</p>
-<p>The complete system of signifiers used by <a href="#id101"><span class="problematic" id="id102">``</span></a><a href="#id103"><span class="problematic" id="id104">**</span></a>fret``_ is summarized in
+<p>The complete system of signifiers used by <a class="reference external" href="../../rep/fret">**fret</a> is summarized in
 Table 18.1.</p>
-<p><a href="#id105"><span class="problematic" id="id106">**</span></a>Table 18.1.* Signifiers used by <a href="#id107"><span class="problematic" id="id108">**</span></a><em>fret</em>.</p>
+<p><a href="#id111"><span class="problematic" id="id112">**</span></a>Table 18.1.* Signifiers used by <a href="#id113"><span class="problematic" id="id114">**</span></a><em>fret</em>.</p>
 <p>&gt; <strong>Fret-board (left) Hand</strong>
 &gt; 1first fret position
 &gt; 2second fret position, ...
@@ -700,7 +700,7 @@ Table 18.1.</p>
 &gt; nno finger (of fret hand)
 &gt; <strong>Pluck (right) Hand</strong>
 &gt; -unplucked or unactivated string
-&gt; <a href="#id109"><span class="problematic" id="id110">|</span></a>plucked string (normal)
+&gt; <a href="#id115"><span class="problematic" id="id116">|</span></a>plucked string (normal)
 &gt; /plucked string &#8211; near bridge (ponticello)
 &gt; plucked string &#8211; near tone-hole (sul tasto)
 &gt; #tremolo (plucked, ala mandoline)
@@ -734,9 +734,9 @@ Table 18.1.</p>
 &gt; y`tap&#8217; on top-plate
 &gt; Y`thump&#8217; on top-plate</p>
 <p><em>Summary of ***fret</em> Signifiers*</p>
-<p>A number of pitch-related Humdrum commands accept <tt class="docutils literal"><span class="pre">**fret</span></tt> encoded data as
-inputs, including <a href="#id131"><span class="problematic" id="id132">`**cents**,`_</span></a> <a href="#id133"><span class="problematic" id="id134">`**freq**,`_</span></a> <a href="#id135"><span class="problematic" id="id136">`**kern**,`_</span></a> <a href="#id137"><span class="problematic" id="id138">`**pitch**,`_</span></a>
-<a href="#id139"><span class="problematic" id="id140">`**semits**,`_</span></a> <a href="#id141"><span class="problematic" id="id142">`**solfg**,`_</span></a> and <a href="#id143"><span class="problematic" id="id144">`**tonh**.`_</span></a></p>
+<p>A number of pitch-related Humdrum commands accept <a class="reference external" href="../../rep/fret">**fret</a> encoded data as
+inputs, including <a href="#id138"><span class="problematic" id="id139">`**cents**,`_</span></a> <a href="#id140"><span class="problematic" id="id141">`**freq**,`_</span></a> <a href="#id142"><span class="problematic" id="id143">`**kern**,`_</span></a> <a href="#id144"><span class="problematic" id="id145">`**pitch**,`_</span></a>
+<a href="#id146"><span class="problematic" id="id147">`**semits**,`_</span></a> <a href="#id148"><span class="problematic" id="id149">`**solfg**,`_</span></a> and <a href="#id150"><span class="problematic" id="id151">`**tonh**.`_</span></a></p>
 </div>
 <hr class="docutils" />
 <div class="section" id="reprise">

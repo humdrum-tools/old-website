@@ -4,9 +4,9 @@ Chapter 19: Musical Contexts
 
 Much of what makes an event of interest is the context of the event. We may
 be interested in what precedes or follows a note or chord. We have already
-seen how the **-A** and **-B** options for **grep** can be used to output
-`before' and `after' contexts. In `Chapter 21`_ we will see how the
-`**patt**`_ and `**pattern**`_ commands can provide further flexibility for
+seen how the **-A** and **-B** options for `grep <http://en.wikipedia.org/wiki/Grep>`_ can be used to output
+`before' and `after' contexts. In `Chapter 21 <../ch21>`_ we will see how the
+`patt <../../man/patt>`_ and `pattern <../../man/pattern>`_ commands can provide further flexibility for
 searching.
 
 However, in this chapter we introduce the deceptively simple **context**
@@ -16,7 +16,7 @@ command.
 The *context* Command
 --------
 
-The effect of the `**context**`_ command is easier to illustrate than
+The effect of the `context <../../man/context>`_ command is easier to illustrate than
 describe. Consider a file (named ``input``) that contains the numbers 1
 through 6 on successive lines. A null token is interposed between the numbers
 2 and 3:
@@ -70,12 +70,12 @@ The **-n 3** option tells **context** how many data tokens to amalgamate on
 each output line. With the specification **-n 2**, just two data tokens would
 be amalgamated on each output line.
 
-How might `**context**`_ be useful? Suppose we wanted to determine how
+How might `context <../../man/context>`_ be useful? Suppose we wanted to determine how
 harmonic octave intervals are approached in Bach's two-part keyboard
 *Inventions*. What harmonic interval tends to precede an octave? We can use
-the `**hint**`_ command to generate the harmonic intervals for each
+the `hint <../../man/hint>`_ command to generate the harmonic intervals for each
 successive sonority. To calculate all *passing intervals*, we will preprocess
-using `**ditto**`_:
+using `ditto <../../man/ditto>`_:
 
 ``ditto inventions* | hint``
 
@@ -121,7 +121,7 @@ The **-o =** option tells **context** to omit any data tokens matching the
 equals-sign -- that is, to omit barlines from the amalgamated multiple stops.
 (The **-o** option accepts any regular expression as a parameter, so omitted
 data can be defined in a much more refined manner than simply specifying an
-equals-sign.) The **grep** command grabs all of the lines ending with ``P8``.
+equals-sign.) The `grep <http://en.wikipedia.org/wiki/Grep>`_ command grabs all of the lines ending with ``P8``.
 We can now create an inventory of harmonic interval pairs and order them from
 least common to most common:
 
@@ -150,7 +150,7 @@ minor and major tenths rather than expanding from a major sixth interval.
 
 This same basic process can be used to address a variety of similar problems.
 For example, suppose we wanted to determine the most common word following
-"gloria" in Gregorian chant texts. We first extract the ``**text``_ spine,
+"gloria" in Gregorian chant texts. We first extract the `**text <../../rep/text>`_ spine,
 use **context** to create pairs of words, and search in the normal way:
 
 ``extract -i '**text' chants* | context -n 2 \
@@ -158,7 +158,7 @@ use **context** to create pairs of words, and search in the normal way:
 >
 >> | grep -i ' gloria$' | sort | uniq -c | sort -nr``
 
-A slight change to the regular expression for **grep** will allow us to
+A slight change to the regular expression for `grep <http://en.wikipedia.org/wiki/Grep>`_ will allow us to
 determine what word typically *follows* after the word "gloria." In this
 case, we need to anchor the word "gloria" to the beginning of the line by
 using the caret (^).
@@ -170,7 +170,7 @@ using the caret (^).
 
 Suppose we wanted to determine what scale degree most commonly precedes the
 dominant pitch in a sample of Czech folksongs. First we translate the
-folksongs to the ``**deg``_ representation using the **deg** command, and
+folksongs to the `**deg <../../rep/deg>`_ representation using the **deg** command, and
 then process as above:
 
 ``deg Czech* | context -n 2 -o = | grep '5 ' | sort \
@@ -185,7 +185,7 @@ Harmonic Progressions
 The V-I progression is the most common chord progression in Western tonal
 music. After the V-I progression, what is the most common chord progression
 in Bach's chorale harmonizations? We will assume that a Roman numeral
-``**harm``_ spine already exists. First we extract the appropriate spine.
+`**harm <../../rep/harm>`_ spine already exists. First we extract the appropriate spine.
 Then we create context records holding pairs of harmony data (omitting
 barlines). Then we eliminate global and local comments, interpretations, and
 null data. We then sort the data records, eliminate duplicates while
@@ -222,7 +222,7 @@ progression that is realized as a series of arpeggiation figures.
 The harmonic structure can be made more explicit by amalgamating all of the
 notes in each arpeggio. There are several possible ways of doing this, but
 the slurs are particularly useful delineators. The **-b** option for
-`**context**`_ allows the user to specify a regular expression that marks the
+`context <../../man/context>`_ allows the user to specify a regular expression that marks the
 *beginning* of each collection of data tokens. Consider the following
 command:
 
@@ -262,7 +262,7 @@ the barlines prove useful in further processing.
 In the above passage by Anderson, the close of each slur provides a
 convenient marker for ending each chord. We can be more explicit in defining
 the grouping boundaries by also including the **-e** option for
-`**context**`_. This option allows the user to specify a regular expression
+`context <../../man/context>`_. This option allows the user to specify a regular expression
 that marks the *end* of each collection of data tokens. A suitably revised
 command would be:
 
@@ -314,7 +314,7 @@ signature disagrees with the total duration for each measure.
 
 Having reformatted our input data using **context**, we can continue by
 translating the data to another representation. For example, we might use the
-`**deg**`_ command to reformulate each pitch group as scale degrees. This
+`deg <../../man/deg>`_ command to reformulate each pitch group as scale degrees. This
 might allow us to search for particular harmonic patterns such as (say) an
 augmented sixth chord:
 
@@ -324,7 +324,7 @@ augmented sixth chord:
 
 Any regular expression can be used to identify the beginning and/or ending of
 an amalgamated group. For example, tokens might be grouped by barlines.
-Suppose the `**census**`_ command tells us that a monophonic work contains
+Suppose the `census <../../man/census>`_ command tells us that a monophonic work contains
 sixty-fourth notes. We might want to know whether the sixty-fourth notes all
 tend to happen in one or two measures, or whether they occur throughout the
 work. Just how many measures contain sixty-fourth notes?
@@ -350,7 +350,7 @@ cross over phrase boundaries:
 As in the case of the **-b** option, the **-e** option can be used by itself.
 This option might prove useful, for example, when collecting all chord
 functions preceding a cadence. In Bach's chorale harmonizations, for example,
-cadences are conveniently marked by a pause. In the ``**harm``
+cadences are conveniently marked by a pause. In the `**harm <../../rep/harm>`_
 representation, pauses are indicated by the semicolon (``;``). We can create
 phrase related harmonic sequences as follows:
 
@@ -361,8 +361,8 @@ as follows:
 
 ``context -o = -e ';' input | rid -GLId | awk '{print $NF}'``
 
-In `Chapter 22`_ we will learn how to classify data into discrete categories.
-Using the `**recode**`_ command described in that chapter, we might group
+In `Chapter 22 <../ch22>`_ we will learn how to classify data into discrete categories.
+Using the `recode <../../man/recode>`_ command described in that chapter, we might group
 notes together according to changes of melodic direction. That is, each group
 of would consist of notes that are all ascending or all descending in pitch.
 
@@ -370,22 +370,22 @@ of would consist of notes that are all ascending or all descending in pitch.
 Using *context* with *sed* and *humsed*
 ------
 
-The stream-editors (**sed** and **humsed**) are especially handy companions
+The stream-editors (`sed <http://en.wikipedia.org/wiki/Sed>`_ and **humsed**) are especially handy companions
 for **context**. Suppose we wanted to identify by measure number those
-measures that contain a *iii-V* progression. Given a ``**harm`` input, we
+measures that contain a *iii-V* progression. Given a `**harm <../../rep/harm>`_ input, we
 would first amalgamate all harmony tokens for each measure.
 
 ``context -b ^= inputfile | grep 'iii V' | sed 's/ .*//; s/=//'``
 
-Here we have used **grep** to isolate all those records that contain the
-character sequence ``iii V``. We have then used **sed** to eliminate all data
+Here we have used `grep <http://en.wikipedia.org/wiki/Grep>`_ to isolate all those records that contain the
+character sequence ``iii V``. We have then used `sed <http://en.wikipedia.org/wiki/Sed>`_ to eliminate all data
 following the first occurrence of a space. This will leave only the barline
 token -- including the measure number.
 
-When using **grep** it is common for the output to no longer conform to the
-Humdrum syntax. This is the reason why we used **sed** rather than
-`**humsed**`_ in the above example.) Remember that we can always use the
-`**yank**`_ -m command to create "grep-like" output that still conforms to
+When using `grep <http://en.wikipedia.org/wiki/Grep>`_ it is common for the output to no longer conform to the
+Humdrum syntax. This is the reason why we used `sed <http://en.wikipedia.org/wiki/Sed>`_ rather than
+`humsed <../../man/humsed>`_ in the above example.) Remember that we can always use the
+`yank <../../man/yank>`_ -m command to create "grep-like" output that still conforms to
 the Humdrum syntax. If we wanted to maintain the Humdrum syntax, an
 equivalent to the above command would be:
 
@@ -407,7 +407,7 @@ that have been preceded by a *iii V* progression in the previous measure.
 Consider another example. Suppose we wanted to determine whether the first
 pitch in a phrase tends to be lower than the last pitch in a phrase. As
 before, we might first amalgamate all notes in each phrase onto individual
-data records. We can use `**humsed**`_ to eliminate all notes other than the
+data records. We can use `humsed <../../man/humsed>`_ to eliminate all notes other than the
 first and last. The regular expression ``/ .* /`` specifies any sequence of
 characters preceded by a space and followed by a space. Replacing matching
 strings with a single space will leave output data records consisting of
@@ -417,9 +417,9 @@ same phrase:
 
 ``context -b { -e } file | humsed 's/ .* / /'``
 
-We can continue processing by piping the output to the `**semits**`_ command.
+We can continue processing by piping the output to the `semits <../../man/semits>`_ command.
 This will leave pairs of numbers representing the semitone distances from
-middle C. We might then isolate the data records by using `**rid**`_.
+middle C. We might then isolate the data records by using `rid <../../man/rid>`_.
 
 `` . . . | semits | rid -GLId | awk '{print $2-$1}'``
 
@@ -447,7 +447,7 @@ different types of data together. For example, how many ascending major sixth
 intervals occur in phrases that end on the dominant? For this question, we
 need concurrent access to both melodic interval data as well as scale degree
 information. The solution to such questions typically involves linking
-different types of data together using the `**assemble**`_ command. Suppose
+different types of data together using the `assemble <../../man/assemble>`_ command. Suppose
 the first phrase in our input begins as follows:
 
 
@@ -475,7 +475,7 @@ temporary file of scale degree information:
 ``mint inputfile > temp.mnt``
 
 Then we amalgamate the pitch data according the phrasing information, and
-translate the resulting data to the ``**deg``_ representation:
+translate the resulting data to the `**deg <../../rep/deg>`_ representation:
 
 ``context -b { -e } -o ^= inputfile | deg > temp.deg``
 
@@ -506,8 +506,8 @@ The first phrase output will appear as follows:
 
 We need to search for the interval of an ascending major sixth (``+M6``)
 associated with a phrase ending on the dominant (``5$``). Before using the
-approprate **grep** command, we need to use `**ditto**`_ to propagate the
-scale degree data over the null data tokens in the ``**deg`` spine; **ditto**
+approprate `grep <http://en.wikipedia.org/wiki/Grep>`_ command, we need to use `ditto <../../man/ditto>`_ to propagate the
+scale degree data over the null data tokens in the `**deg <../../rep/deg>`_ spine; **ditto**
 will generate the following output:
 
 
@@ -529,7 +529,7 @@ will generate the following output:
 > -M34+ ^5 ^3 v2 v1 ^2 v6 ^7 v5``
 > etc.
 
-Finally, we use **grep** to search for the composite data:
+Finally, we use `grep <http://en.wikipedia.org/wiki/Grep>`_ to search for the composite data:
 
 ``assemble temp.mnt temp.deg | ditto | grep '^+M6.*5$'``
 
@@ -552,7 +552,7 @@ degree:
 >
 >> | sort -rn > inventory.pre``
 
-For the intervals following the tonic, we need to use `**context**`_ -n 2.
+For the intervals following the tonic, we need to use `context <../../man/context>`_ -n 2.
 This will create pairs of intervals: the first interval will indicate the
 approach, and the second interval in each pair will indicate the
 continuation.
@@ -611,7 +611,7 @@ instances as follows:
 >
 >> | egrep '4[+-].* .*4([^+-])|$'``
 
-The regular expression given to **egrep** searches for a subdominant pitch in
+The regular expression given to `egrep <http://en.wikipedia.org/wiki/Egrep#Variations>`_ searches for a subdominant pitch in
 the lower voice that is either raised or lowered -- concurrent with a
 subdominant pitch in the upper voice that has not been modified. Notice the
 use of the tab character in the regular expressions to specify the precise
@@ -632,7 +632,7 @@ contexts.
 Using *context* with the *-p* Option
 -------
 
-The **-p** option for `**context**`_ allows the output data records to be
+The **-p** option for `context <../../man/context>`_ allows the output data records to be
 "pushed" forward by a specified number of lines. Consider the normal
 operation of **context** as illustrated below. The left-hand spine represents
 the input and the right-hand spine represents the output where the option
@@ -705,8 +705,8 @@ that follows it.
 
 By way of example, suppose we are looking for a submediant pitch that is
 approached by two melodic intervals of an ascending major third followed by a
-descending major second. First, we generate independent ``**mint``_ and
-``**deg``_ outputs. Next we process the ``**mint`` data using **context**
+descending major second. First, we generate independent `**mint <../../rep/mint>`_ and
+`**deg <../../rep/deg>`_ outputs. Next we process the `**mint <../../rep/mint>`_ data using **context**
 to create pairs of successive intervals. Without the **-p** option, the
 assembled output might look as follows:
 
@@ -751,16 +751,16 @@ Reprise
 The **context** command essentially transforms sequences of events into
 collections of pseudo-concurrent events. This pseudo-concurrent arrangement
 enables processing using line-oriented or record-oriented tools -- most
-notably **grep**, **sed**, `**humsed**`_ and **awk**. For example, it
-facilitates pattern searching using **grep** and also allows useful
+notably `grep <http://en.wikipedia.org/wiki/Grep>`_, `sed <http://en.wikipedia.org/wiki/Sed>`_, `humsed <../../man/humsed>`_ and **awk**. For example, it
+facilitates pattern searching using `grep <http://en.wikipedia.org/wiki/Grep>`_ and also allows useful
 manipulations via tools such as **humsed**. The manner by which data tokens
 are collected together can be defined by a starting marker or an ending
 marker or both. Particular types of data can be excluded or omitted from the
 collections using the **-o** option, and the collections can be transported
 or pushed forward through the spine using the **-p** option.
 
-We've seen a number of ways by which `**context**`_ can be used to establish
-a particular context for data. In `Chapter 21`_ we will see how the
-`**patt**`_ command can be used to establish other kinds of contexts and how
+We've seen a number of ways by which `context <../../man/context>`_ can be used to establish
+a particular context for data. In `Chapter 21 <../ch21>`_ we will see how the
+`patt <../../man/patt>`_ command can be used to establish other kinds of contexts and how
 both of these commands can be used together.
 

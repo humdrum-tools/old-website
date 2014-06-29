@@ -116,7 +116,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">2. Rhythm and Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody and Pitch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
@@ -299,7 +299,7 @@
             
   <div class="section" id="chapter-24-the-shell-iii">
 <h1>Chapter 24: The Shell (III)<a class="headerlink" href="#chapter-24-the-shell-iii" title="Permalink to this headline">¶</a></h1>
-<p>In <a href="#id115"><span class="problematic" id="id116">`Chapter 16`_</span></a> we learned about the <strong>alias</strong> feature of the shell. The
+<p>In <a class="reference external" href="../ch16">Chapter 16</a> we learned about the <strong>alias</strong> feature of the shell. The
 <strong>alias</strong> command allowed us to create new commands by assigning a complex
 pipeline to a single-word command. In this chapter we will learn how to use
 the shell to write more complex programs. Shell programs allow users to
@@ -386,14 +386,14 @@ specified input file &#8211; simply by typing the filename in the command.</p>
 more specifically, to works with a known key. Before processing a work, we
 might want to have <strong>Schenker</strong> test for the presence of a tandem
 interpretation specifying the key.</p>
-<p>Let&#8217;s begin by using <strong>grep</strong> to search for a key tandem interpretation. An
-appropriate <strong>grep</strong> command would be:</p>
+<p>Let&#8217;s begin by using <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to search for a key tandem interpretation. An
+appropriate <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command would be:</p>
 <p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'^\*[A-Ga-g][#-]*:'</span> <span class="pre">$1</span></tt></p>
 <p>Recall that we can assign the output of any command to a shell variable by
 placing the command within back-quotes or greves, i.e. <cite>...</cite>. Let&#8217;s assign
 the key interpretation to the variable KEY:</p>
 <p><tt class="docutils literal"><span class="pre">KEY=`grep</span> <span class="pre">'^\*[A-Ga-g][#-]*:'</span> <span class="pre">$1</span></tt></p>
-<p>If no key indicator is found by <strong>grep</strong>, then the variable KEY will be
+<p>If no key indicator is found by <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>, then the variable KEY will be
 empty. We can test for this condition using the shell <strong>if</strong> statement.</p>
 <p><tt class="docutils literal"><span class="pre">KEY=`grep</span> <span class="pre">'^\*[A-Ga-g][#-]*:'</span> <span class="pre">$1`</span>
 <span class="pre">if</span> <span class="pre">[</span> <span class="pre">&quot;$KEY&quot;</span> <span class="pre">=</span> <span class="pre">&quot;&quot;</span> <span class="pre">]</span>
@@ -423,11 +423,11 @@ the rest of our <strong>Schenker</strong> script. The complete script would be a
 <span class="pre">&gt;</span>
 <span class="pre">&gt;</span> <span class="pre">else</span></tt>
 &gt;
-&gt;``extract -i &#8216;<a href="#id17"><span class="problematic" id="id18">**</span></a>Ursatz&#8217; $1 | humsed &#8216;/X/d&#8217; </p>
+&gt;``extract -i &#8216;<a href="#id19"><span class="problematic" id="id20">**</span></a>Ursatz&#8217; $1 | humsed &#8216;/X/d&#8217; </p>
 <p>&gt;&gt;
 &gt;&gt;&gt; | context -o Y -b Z &gt; Ursatz``
 &gt;&gt;
-&gt;``extract -i &#8216;<a href="#id19"><span class="problematic" id="id20">**</span></a>Urlinie&#8217; $1 | humsed &#8216;/X/d&#8217; </p>
+&gt;``extract -i &#8216;<a href="#id21"><span class="problematic" id="id22">**</span></a>Urlinie&#8217; $1 | humsed &#8216;/X/d&#8217; </p>
 <p>&gt;&gt;
 &gt;&gt;&gt; | context -o Y -b Z &gt; Urlinie
 &gt;&gt;
@@ -493,12 +493,12 @@ of nine classic rules of voice-leading for a two-part input. A number of
 refinements have been added to the program &#8211; including input file checking,
 and formatting of the output.</p>
 <p>The program is invoked as follows:</p>
-<p><a href="#id21"><span class="problematic" id="id22">``</span></a>leader ``</p>
+<p><a href="#id23"><span class="problematic" id="id24">``</span></a>leader ``</p>
 <p>The input is assumed to contain two voices, each in a separate **kern_
 spine. The nominally lower voice should be in the first spine. For music
 containing more than two voices, the Humdrum <strong>extract</strong> command should be
 used to select successive pairs of voices for processing by <strong>leader</strong>.</p>
-<p><a href="#id23"><span class="problematic" id="id24">``</span></a># LEADER
+<p><a href="#id25"><span class="problematic" id="id26">``</span></a># LEADER
 #
 # A shell program to check for voice-leading infractions.
 # This command is invoked as:
@@ -506,7 +506,7 @@ used to select successive pairs of voices for processing by <strong>leader</stro
 # leader
 #
 # where  is assumed to be a file containing two voices, each
-# in a separate <a href="#id25"><span class="problematic" id="id26">**</span></a>kern spine, where the nominally lower voice is in the
+# in a separate <a href="#id27"><span class="problematic" id="id28">**</span></a>kern spine, where the nominally lower voice is in the
 # first spine.</p>
 <p># Before processing, ensure that a proper input file has been specified.
 if [ ! -f $1 ]
@@ -524,16 +524,16 @@ echo &#8216;Range for Lower voice:&#8217;
 extract -f 1 $1 | census -k | egrep &#8216;Highest|Lowest&#8217; | sed &#8216;s/^/ /&#8217;</p>
 <p># 2. Check for augmented or diminished melodic intervals.
 extract -f 1 $1 | mint -b r | sed &#8216;/[[Ad][Ad]*]/d&#8217; | egrep -n
-&#8216;^[^!*].*[Ad][^1]&#8217; <a href="#id27"><span class="problematic" id="id28">|</span></a>sed &#8216;s/:/ (/;s/$/)/;s/^/Augmented or diminished melodic interval at line: /&#8217;
+&#8216;^[^!*].*[Ad][^1]&#8217; <a href="#id29"><span class="problematic" id="id30">|</span></a>sed &#8216;s/:/ (/;s/$/)/;s/^/Augmented or diminished melodic interval at line: /&#8217;
 extract -f 2 $1 | mint -b r | sed &#8216;/[[Ad][Ad]*]/d&#8217; | egrep -n
-&#8216;^[^!*].*[Ad][^1]&#8217; <a href="#id29"><span class="problematic" id="id30">|</span></a>sed &#8216;s/:/ (/;s/$/)/;s/^/Augmented or diminished melodic interval at line: /&#8217;</p>
+&#8216;^[^!*].*[Ad][^1]&#8217; <a href="#id31"><span class="problematic" id="id32">|</span></a>sed &#8216;s/:/ (/;s/$/)/;s/^/Augmented or diminished melodic interval at line: /&#8217;</p>
 <p># 3. Check for consecutive fifths and octaves.
 echo &#8216;P5&#8217; &gt; $TMPDIR/template; echo &#8216;P5&#8217; &gt;&gt; $TMPDIR/template
 hint -c $1 | patt -f $TMPDIR/template -s = | sed &#8216;s/ of file.*/./;s/.*Pattern/Consecutive fifth/&#8217;
 echo &#8216;P1&#8217; &gt; $TMPDIR/template; echo &#8216;P1&#8217; &gt;&gt; $TMPDIR/template
 hint -c $1 | patt -f $TMPDIR/template -s = | sed &#8216;s/ of file.*/./;s/.*Pattern/Consecutive octave/&#8217;</p>
 <p># 4. Check for doubling of the leading-tone.
-deg $1 | extract -i &#8216;<a href="#id31"><span class="problematic" id="id32">**</span></a>deg&#8217; | ditto -s = | sed &#8216;s/^=.*/=/&#8217; | egrep -n &#8216;^7.*7|^[^!*].*7.*7&#8217; | egrep -v &#8216;7[-+]&#8217; | sed &#8216;s/:.*/./;s/^/Leading-tone doubled at line: /&#8217;</p>
+deg $1 | extract -i &#8216;<a href="#id33"><span class="problematic" id="id34">**</span></a>deg&#8217; | ditto -s = | sed &#8216;s/^=.*/=/&#8217; | egrep -n &#8216;^7.*7|^[^!*].*7.*7&#8217; | egrep -v &#8216;7[-+]&#8217; | sed &#8216;s/:.*/./;s/^/Leading-tone doubled at line: /&#8217;</p>
 <p># 5. Check for unisons.
 semits -x $1 | ditto -s = | awk &#8216;{if($0~/[^0-9t-]/)next}{if($1==$2) print &#8220;Unison at line: &#8221; NR}&#8217;</p>
 <p># 6. Check for the crossing of parts.
@@ -595,7 +595,7 @@ as a way to introduce various pattern-searching techniques.</p>
 features of any Humdrum input. With the <strong>-k</strong> option, <strong>census</strong> provides a
 summary of a further ten features pertaining to **kern format inputs.
 This includes the highest and lowest notes present.</p>
-<p><a href="#id33"><span class="problematic" id="id34">``</span></a>census -k ``</p>
+<p><a href="#id35"><span class="problematic" id="id36">``</span></a>census -k ``</p>
 <p>Since we are interested in the highest and lowest notes for each individual
 part (rather than for the whole piece), we should <strong>extract</strong> each part
 before processing it with <strong>census.</strong></p>
@@ -611,8 +611,8 @@ sequence of commands into a single pipeline:</p>
 <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*tenor'</span>&nbsp; <span class="pre">|</span> <span class="pre">census</span> <span class="pre">-k</span>
 <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*bass'</span>&nbsp; <span class="pre">|</span> <span class="pre">census</span> <span class="pre">-k</span></tt></p>
 <p>If we wanted to get a little fancier, we could filter the output so that only
-the highest and lowest pitch information is output. The UNIX <strong>grep</strong> command
-will let us define a string for searching; <strong>egrep</strong> permits compound
+the highest and lowest pitch information is output. The UNIX <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command
+will let us define a string for searching; <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a> permits compound
 strings, such as the use of the OR bar (|):</p>
 <p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*soprano'</span>&nbsp; <span class="pre">|</span> <span class="pre">census</span> <span class="pre">-k</span> <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">'Highest|Lowest'</span></tt></p>
 </div>
@@ -622,8 +622,8 @@ strings, such as the use of the OR bar (|):</p>
 <div class="section" id="rule-avoid-parts-that-move-by-augmented-or-diminished-intervals">
 <h3>RULE: &#8220;Avoid parts that move by augmented or diminished intervals.<a class="headerlink" href="#rule-avoid-parts-that-move-by-augmented-or-diminished-intervals" title="Permalink to this headline">¶</a></h3>
 <p>Implementing this is simple. We first translate our pitch- related data to
-the melodic interval format &#8211; <a href="#id35"><span class="problematic" id="id36">``</span></a><strong>mint``_. This can be done using the
-Humdrum **mint</strong> command. For example, consider the following melodic
+the melodic interval format &#8211; <a class="reference external" href="../../rep/mint">**mint</a>. This can be done using the
+Humdrum <strong>mint</strong> command. For example, consider the following melodic
 fragment from the 2nd movement of Bach&#8217;s Brandenburg Concerto No. 5:</p>
 <p><tt class="docutils literal"><span class="pre">**kern</span>
 <span class="pre">&gt;</span> <span class="pre">8r</span>
@@ -651,27 +651,27 @@ descending intervals; &#8216;P&#8217; means perfect, &#8216;M&#8217; means major
 <span class="pre">&gt;</span> <span class="pre">+m2</span>
 <span class="pre">&gt;</span> <span class="pre">*-</span></tt></p>
 <p>Searching for diminished or augmented intervals is as simple as using the
-Unix <strong>grep</strong> command, with the appropriate regular expression:</p>
-<p><a href="#id37"><span class="problematic" id="id38">``</span></a>grep -n &#8216;[Ad]&#8217; ``</p>
-<p>The <strong>-n</strong> option will cause <strong>grep</strong> to prepend the line number of any
+Unix <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command, with the appropriate regular expression:</p>
+<p><a href="#id39"><span class="problematic" id="id40">``</span></a>grep -n &#8216;[Ad]&#8217; ``</p>
+<p>The <strong>-n</strong> option will cause <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to prepend the line number of any
 matching patterns, so we can refer back to the original input file.</p>
-<p>In order to avoid the letters <a href="#id39"><span class="problematic" id="id40">`</span></a>A&#8217; or <a href="#id41"><span class="problematic" id="id42">`</span></a>d&#8217; found in comments or
+<p>In order to avoid the letters <a href="#id42"><span class="problematic" id="id43">`</span></a>A&#8217; or <a href="#id44"><span class="problematic" id="id45">`</span></a>d&#8217; found in comments or
 interpretations, we might consider using the Humdrum <strong>rid</strong> command:</p>
 <p><tt class="docutils literal"><span class="pre">rid</span> <span class="pre">-GLI</span>&nbsp; <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-n</span> <span class="pre">'[Ad]'</span></tt></p>
-<p>However, this will cause the line numbers output by <strong>grep</strong> to be wrong. The
+<p>However, this will cause the line numbers output by <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to be wrong. The
 line numbers will correspond to the input file with the comments and
 interpretations removed.</p>
-<p>A better approach is to send the complete file to <strong>grep</strong>, and use a more
+<p>A better approach is to send the complete file to <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>, and use a more
 circumspect regular expression to eliminate comments and interpretations
-within <strong>grep</strong>. <strong>egrep</strong> allows us to define more complex regular
+within <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>. <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a> allows us to define more complex regular
 expressions:</p>
 <p><tt class="docutils literal"><span class="pre">egrep</span> <span class="pre">'^[^!*].*[Ad]'</span></tt></p>
-<p>The expression <a href="#id43"><span class="problematic" id="id44">`</span></a>^[^!*]&#8217; means &#8220;not an exclamation mark or asterisk at the
-beginning of a line.&#8221; The expression <a href="#id45"><span class="problematic" id="id46">`</span></a>.*[Ad]&#8217; means &#8220;zero or more instances
-of any character followed by either an upper-case letter <a href="#id47"><span class="problematic" id="id48">`</span></a>A&#8217; or a lower-case
-letter <a href="#id49"><span class="problematic" id="id50">`</span></a>d&#8217;.</p>
+<p>The expression <a href="#id50"><span class="problematic" id="id51">`</span></a>^[^!*]&#8217; means &#8220;not an exclamation mark or asterisk at the
+beginning of a line.&#8221; The expression <a href="#id52"><span class="problematic" id="id53">`</span></a>.*[Ad]&#8217; means &#8220;zero or more instances
+of any character followed by either an upper-case letter <a href="#id54"><span class="problematic" id="id55">`</span></a>A&#8217; or a lower-case
+letter <a href="#id56"><span class="problematic" id="id57">`</span></a>d&#8217;.</p>
 <p>In other words, the complete regular expression matches any line that
-contains either an upper-case <a href="#id51"><span class="problematic" id="id52">`</span></a>A&#8217; or lower-case <a href="#id53"><span class="problematic" id="id54">`</span></a>d&#8217; as long as the beginning
+contains either an upper-case <a href="#id58"><span class="problematic" id="id59">`</span></a>A&#8217; or lower-case <a href="#id60"><span class="problematic" id="id61">`</span></a>d&#8217; as long as the beginning
 of the line does not start with an exclamation mark (i.e. Humdrum comment) or
 an asterisk (i.e. Humdrum interpretation).</p>
 <p>If we want to look for augmented or diminished intervals in a particular part
@@ -695,7 +695,7 @@ patterns that span more than one line or record. For this example, we&#8217;ll u
 <strong>patt</strong>.</p>
 <p>First, we need to reformat our input so the data represent harmonic intervals
 rather than pitches. The Humdrum <strong>hint</strong> command will change most pitch
-representations to the harmonic interval representation &#8211; <a href="#id55"><span class="problematic" id="id56">``</span></a><a href="#id57"><span class="problematic" id="id58">**</span></a>hint``_.
+representations to the harmonic interval representation &#8211; <a class="reference external" href="../../rep/hint">**hint</a>.
 Consider, for example, the following input:</p>
 <p><tt class="docutils literal"><span class="pre">**kern</span> <span class="pre">**kern</span>
 <span class="pre">&gt;</span> <span class="pre">=1</span> <span class="pre">=1</span>
@@ -705,7 +705,7 @@ Consider, for example, the following input:</p>
 <span class="pre">&gt;</span> <span class="pre">2F</span> <span class="pre">2c</span>
 <span class="pre">&gt;</span> <span class="pre">*-</span> <span class="pre">*-</span></tt></p>
 <p>Given the following command:</p>
-<p><a href="#id59"><span class="problematic" id="id60">``</span></a>hint ``</p>
+<p><a href="#id62"><span class="problematic" id="id63">``</span></a>hint ``</p>
 <p>The following output will be produced:</p>
 <p><tt class="docutils literal"><span class="pre">**hint</span>
 <span class="pre">&gt;</span> <span class="pre">=1</span>
@@ -723,8 +723,8 @@ perfect fifth tokens. We might store the following pattern in the file
 &#8220;template&#8221;:</p>
 <p><tt class="docutils literal"><span class="pre">P5</span>
 <span class="pre">&gt;</span> <span class="pre">P5</span></tt></p>
-<p>(Note that if we were looking for consecutive <a href="#id61"><span class="problematic" id="id62">`</span></a>fifths&#8217; that need not
-necessarily be <a href="#id63"><span class="problematic" id="id64">`</span></a>perfect,&#8217; we could simply eliminate the letter &#8220;P&#8221; in each
+<p>(Note that if we were looking for consecutive <a href="#id64"><span class="problematic" id="id65">`</span></a>fifths&#8217; that need not
+necessarily be <a href="#id66"><span class="problematic" id="id67">`</span></a>perfect,&#8217; we could simply eliminate the letter &#8220;P&#8221; in each
 interval given in the template.)</p>
 <p>Given the above output from the <strong>hint</strong> command, we could search for
 occurrences of the defined pattern using the following command:</p>
@@ -732,7 +732,7 @@ occurrences of the defined pattern using the following command:</p>
 pattern-template has been stored. The <strong>-s</strong> option tells <strong>patt</strong> of any
 input records that should be skipped during the search process. The <strong>-s</strong>
 option is followed by a regular expression &#8211; in this case the equals-sign &#8211;
-so that any input records containing the equals-sign (i.e. <tt class="docutils literal"><span class="pre">**hint</span></tt>
+so that any input records containing the equals-sign (i.e. <a class="reference external" href="../../rep/hint">**hint</a>
 barlines) are ignored.</p>
 <p>The default output from <strong>patt</strong> identifies the location of any instances of
 the pattern it finds in the source document.</p>
@@ -753,7 +753,7 @@ would be to define slightly more complex regular expressions in our template
 file, e.g.</p>
 <p><tt class="docutils literal"><span class="pre">P5|P12|P19</span>
 <span class="pre">&gt;</span> <span class="pre">P5|P12|P19</span></tt></p>
-<p>In regular expressions the vertical bar (|) denotes the logical <a href="#id65"><span class="problematic" id="id66">`</span></a>OR&#8217;
+<p>In regular expressions the vertical bar (|) denotes the logical <a href="#id69"><span class="problematic" id="id70">`</span></a>OR&#8217;
 operation. So the above pattern says &#8220;a perfect fifth OR a perfect twelfth OR
 a perfect nineteenth followed by a ...&#8221;)</p>
 <p>Another refinement relates to the selection of voices. So far, we have
@@ -801,8 +801,8 @@ following passage is in B minor:</p>
 <span class="pre">&gt;</span> <span class="pre">8dd</span>
 <span class="pre">&gt;</span> <span class="pre">*-</span></tt></p>
 <p>The <strong>deg</strong> command can be used to transform this representation to scale
-degree. The passage begins on the dominant (degree <a href="#id67"><span class="problematic" id="id68">`</span></a>5&#8217;), ascends (^) to the
-tonic (<a href="#id69"><span class="problematic" id="id70">`</span></a>1&#8217;), ascends to the supertonic (^2), ascends to the median (^3) and
+degree. The passage begins on the dominant (degree <a href="#id71"><span class="problematic" id="id72">`</span></a>5&#8217;), ascends (^) to the
+tonic (<a href="#id73"><span class="problematic" id="id74">`</span></a>1&#8217;), ascends to the supertonic (^2), ascends to the median (^3) and
 then descends to the leading- tone (v7), etc.:</p>
 <p><tt class="docutils literal"><span class="pre">**deg</span>
 <span class="pre">&gt;</span> <span class="pre">*b:</span>
@@ -817,11 +817,11 @@ then descends to the leading- tone (v7), etc.:</p>
 <span class="pre">&gt;</span> <span class="pre">*-</span></tt></p>
 <p>The following command will eliminate durations or other possible number
 representations that might conflict with scale-degree designations:</p>
-<p><a href="#id71"><span class="problematic" id="id72">``</span></a>deg ``</p>
+<p><a href="#id75"><span class="problematic" id="id76">``</span></a>deg ``</p>
 <p>Having translated the representation in this way, we need to search for any
-lines which contain two instances of the number <a href="#id73"><span class="problematic" id="id74">`</span></a>7&#8217; &#8211; that is, two
+lines which contain two instances of the number <a href="#id77"><span class="problematic" id="id78">`</span></a>7&#8217; &#8211; that is, two
 concurrent instances of the leading-tone.</p>
-<p>Searching for the number <a href="#id75"><span class="problematic" id="id76">`</span></a>7&#8217; is easily done using the standard Unix <strong>grep</strong>
+<p>Searching for the number <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">7&#8217; is easily done using the standard Unix `grep</a>
 (get regular expression) command:</p>
 <p><tt class="docutils literal"><span class="pre">deg</span>&nbsp; <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-n</span> <span class="pre">'7'</span></tt></p>
 <p>This will find and output all records that contain the number 7; the <strong>-n</strong>
@@ -835,7 +835,7 @@ means &#8220;zero or more instances of ...&#8221; Hence, the regular expression 
 by the number 7&#8221;. In short, this expression will match any record in which
 the number 7 occurs at least twice.</p>
 <p>As in the case of our earlier search for augmented and diminished intervals,
-<strong>grep</strong> is insensitive to whether the matching character string is found in
+<a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> is insensitive to whether the matching character string is found in
 a data record, or whether it occurs in a Humdrum comment or interpretation.
 In order to avoid matching comments or interpretations, a further refinement
 to our regular expression is appropriate.</p>
@@ -850,13 +850,13 @@ characters, followed by another number 7.</p>
 that do not represent scale degree information. It is possible that these
 other kinds of data may also make use of the number 7 &#8211; but <em>not</em> to
 represent the leading-tone. In other words, it is possible that a matching
-<a href="#id77"><span class="problematic" id="id78">`</span></a>7&#8217; has nothing to do with scale degrees. We can ensure that this doesn&#8217;t
+<a href="#id80"><span class="problematic" id="id81">`</span></a>7&#8217; has nothing to do with scale degrees. We can ensure that this doesn&#8217;t
 happen by first ensuring that <em>only</em> scale-degree spines are present in the
 input to be searched.</p>
 <p>In order to do this, we can use the Humdrum <strong>extract</strong> command as a filter,
 and identify the types of interpretations we want to pass. In the following
 modification to our pipe, the <strong>extract</strong> command has been used to ensure
-that only <a href="#id79"><span class="problematic" id="id80">``</span></a><a href="#id81"><span class="problematic" id="id82">**</span></a>deg``_ spines are present:</p>
+that only <a class="reference external" href="../../rep/deg">**deg</a> spines are present:</p>
 <p><tt class="docutils literal"><span class="pre">deg</span>&nbsp; <span class="pre">|</span> <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**deg'</span> <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">-n</span> <span class="pre">'^7.*7|^[^!*].*7.*7'</span></tt></p>
 <p>There are still some refinements that we could add to this command sequence,
 but as it stands it is guaranteed to find all doubled leading-tones &#8211;
@@ -901,7 +901,7 @@ the output from the <strong>deg</strong> command for the above example:</p>
 <span class="pre">&gt;</span> <span class="pre">v6</span> <span class="pre">^1</span>
 <span class="pre">&gt;</span> <span class="pre">*-</span> <span class="pre">*-</span></tt></p>
 <p>Notice that the two null tokens in the left-hand spine have been replaced by
-copies of the most recent data token. Now our <strong>grep</strong> command will find the
+copies of the most recent data token. Now our <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command will find the
 two leading tones in the second last data record.</p>
 <p>In summary, the complete command pipeline would be:</p>
 <p><tt class="docutils literal"><span class="pre">deg</span>&nbsp; <span class="pre">|</span> <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**deg'</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">-n</span> <span class="pre">'^7.*7|^[^!*].*7.*7'</span></tt></p>
@@ -921,7 +921,7 @@ enharmonically equivalent pitches have the same representation &#8211; and so wi
 facilitate comparison.</p>
 <p>The Humdrum <strong>semits</strong> command translates pitches to semitone distances where
 middle C is denoted as zero. For example, where two voices both play B3 at
-the same time, both the parts will have a <a href="#id83"><span class="problematic" id="id84">``</span></a><a href="#id85"><span class="problematic" id="id86">**</span></a>semits``_ value of minus one
+the same time, both the parts will have a <a class="reference external" href="../../rep/semits">**semits</a> value of minus one
 (-1).</p>
 <p>Like the <strong>deg</strong> command, the <strong>semits</strong> command provides a <strong>&#8220;-x</strong> option
 that eliminates from the output stream any characters that don&#8217;t pertain to
@@ -944,13 +944,13 @@ the semitone value is the same for both the alto and tenor voices:</p>
 all sorts of non-numeric inputs &#8211; such as where null tokens (.) occur in
 both parts at the same time. Consequently, we need to be careful to avoid
 non-numeric inputs and comments.</p>
-<p>The regular expression <a href="#id87"><span class="problematic" id="id88">`</span></a>[^0-9]&#8217; will match any line that doesn&#8217;t consist
-solely of numbers. The expression <a href="#id89"><span class="problematic" id="id90">`</span></a>[^0-9-]&#8217; will match any line that doesn&#8217;t
+<p>The regular expression <a href="#id83"><span class="problematic" id="id84">`</span></a>[^0-9]&#8217; will match any line that doesn&#8217;t consist
+solely of numbers. The expression <a href="#id85"><span class="problematic" id="id86">`</span></a>[^0-9-]&#8217; will match any line that doesn&#8217;t
 consist solely of numbers or the minus sign. Since the tab character will
 also be present in our data records, we should also include the tab in our
 regular expression. The tab may be denoted in regular expressions by the
-lower-case letter <a href="#id91"><span class="problematic" id="id92">`</span></a>t&#8217; preceded by a backslash. Hence the expression
-<a href="#id93"><span class="problematic" id="id94">`</span></a>[^0-9t-]&#8217; will match only those lines consisting solely of numbers, the
+lower-case letter <a href="#id87"><span class="problematic" id="id88">`</span></a>t&#8217; preceded by a backslash. Hence the expression
+<a href="#id89"><span class="problematic" id="id90">`</span></a>[^0-9t-]&#8217; will match only those lines consisting solely of numbers, the
 minus sign, and tabs.</p>
 <p>The following <strong>awk</strong> script will output the line numbers for all inputs
 where the first and second spines contain identical numbers:</p>
@@ -974,8 +974,8 @@ general-purpose Unix <strong>awk</strong> command to test whether the nominally 
 voice is truly lower.</p>
 <p>First we need to translate the pitch representation to some sort of numerical
 form. We have several options. We could translate the pitches to frequency
-(<tt class="docutils literal"><span class="pre">**freq``_),</span> <span class="pre">or</span> <span class="pre">we</span> <span class="pre">could</span> <span class="pre">translate</span> <span class="pre">them</span> <span class="pre">to</span> <span class="pre">semitones</span> <span class="pre">(``**semits</span></tt>), or
-we could translate them to cents (<a href="#id95"><span class="problematic" id="id96">**</span></a>cents). Let&#8217;s use <tt class="docutils literal"><span class="pre">**semits</span></tt>. Once
+(<a class="reference external" href="../../rep/freq">**freq</a>), or we could translate them to semitones (<a class="reference external" href="../../rep/semits">**semits</a>), or
+we could translate them to cents (<a href="#id92"><span class="problematic" id="id93">**</span></a>cents). Let&#8217;s use <a class="reference external" href="../../rep/semits">**semits</a>. Once
 again, in this representation, middle-C is represented by the number zero,
 and all other pitches are represented by their semitone distance (positive or
 negative) with respect to this reference.</p>
@@ -996,7 +996,7 @@ second field for the current line, then print the line number&#8221;:</p>
 <span class="pre">print</span> <span class="pre">NR}'</span></tt></p>
 <p>In short, if the left-most spine has a lower numerical value than the second
 spine, then tell us where that occurs.</p>
-<p>Since the <tt class="docutils literal"><span class="pre">**semits</span></tt> representation uses the lower-case letter <a href="#id97"><span class="problematic" id="id98">`</span></a>r&#8217; to
+<p>Since the <a class="reference external" href="../../rep/semits">**semits</a> representation uses the lower-case letter <a href="#id96"><span class="problematic" id="id97">`</span></a>r&#8217; to
 represent a rest, we should avoid the possibility of comparing a number
 (note) with a rest. We can use a variation on the same <strong>awk</strong> script as we
 used when checking for unisons:</p>
@@ -1004,9 +1004,9 @@ used when checking for unisons:</p>
 <p>Finally, the complete pipeline for identifying crossed parts:</p>
 <p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*soprano,*alto'</span>&nbsp; <span class="pre">|</span> <span class="pre">semits</span> <span class="pre">-x</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">|</span> <span class="pre">awk</span>
 <span class="pre">'{if($0~/[^0-9\t-]/)next}{if($1&gt;$2)</span> <span class="pre">print</span> <span class="pre">NR}'</span></tt>
-extract -i &#8216;<a href="#id99"><span class="problematic" id="id100">*</span></a>alto,*tenor&#8217;  | semits -x | ditto -s = | awk
+extract -i &#8216;<a href="#id98"><span class="problematic" id="id99">*</span></a>alto,*tenor&#8217;  | semits -x | ditto -s = | awk
 &#8216;{if($0~/[^0-9t-]/)next}{if($1&gt;$2) print NR}&#8217;
-extract -i &#8216;<a href="#id101"><span class="problematic" id="id102">*</span></a>tenor,*bass&#8217;  | semits -x | ditto -s = | awk
+extract -i &#8216;<a href="#id100"><span class="problematic" id="id101">*</span></a>tenor,*bass&#8217;  | semits -x | ditto -s = | awk
 &#8216;{if($0~/[^0-9t-]/)next}{if($1&gt;$2) print NR}&#8217;</p>
 </div>
 </div>
@@ -1102,7 +1102,7 @@ of the parts moves by step.&#8221;
 the two voices must be separated by an octave (or two octaves, or a unison,
 etc.). (This suggests that we use the <strong>hint</strong> command with the <strong>-c</strong> option
 in order to reduce compound intervals to their non-compound equivalents.)
-Second, the voices must be moving in the same direction. (The <tt class="docutils literal"><span class="pre">**deg</span></tt>
+Second, the voices must be moving in the same direction. (The <a class="reference external" href="../../rep/deg">**deg</a>
 representation may be suitable here, since it distinguishes notes according
 to whether they are approached from below (&#8220;^&#8221;) or above (&#8220;v&#8221;).) Third, both
 voices must be moving by leap (e.g. more than two semitones).</p>
@@ -1122,7 +1122,7 @@ following two situations:</p>
 &gt; P1 v v leap leap</p>
 <p>Any other situation means that the exposed octaves rule has not been
 violated.</p>
-<p>In other words, our final test can be expressed using the following <strong>egrep</strong>
+<p>In other words, our final test can be expressed using the following <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a>
 command:</p>
 <p><tt class="docutils literal"><span class="pre">egrep</span> <span class="pre">-n</span> <span class="pre">'P1.*^.*^.*leap.*leap|P1.*v.*v.*leap.*leap'</span></tt></p>
 <p>Now all we need to do is generate our five spines and assemble them in the
@@ -1131,16 +1131,16 @@ proper order.</p>
 the <strong>-c</strong> option means that all intervals an octave or greater will be
 represented by the within-octave equivalent.</p>
 <p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*alto,*tenor'</span>&nbsp; <span class="pre">|</span> <span class="pre">hint</span> <span class="pre">-c</span> <span class="pre">&gt;</span> <span class="pre">spine1</span></tt></p>
-<p>The second and third spines can be generated using the Humdrum <a href="#id117"><span class="problematic" id="id118">`**deg**`_</span></a>
+<p>The second and third spines can be generated using the Humdrum <a class="reference external" href="../../man/deg">deg</a>
 command:</p>
 <p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*alto'</span>&nbsp; <span class="pre">|</span> <span class="pre">deg</span> <span class="pre">&gt;</span> <span class="pre">spine2</span>
 <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*tenor'</span>&nbsp; <span class="pre">|</span> <span class="pre">deg</span> <span class="pre">&gt;</span> <span class="pre">spine3</span></tt></p>
 <p>The fourth and fifth spines require a little more work. First, we calculate
-the melodic intervals for each voice using the Humdrum <a href="#id119"><span class="problematic" id="id120">`**mint**`_</span></a> command.</p>
+the melodic intervals for each voice using the Humdrum <a class="reference external" href="../../man/mint">mint</a> command.</p>
 <p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'*alto'</span>&nbsp; <span class="pre">|</span> <span class="pre">mint</span> <span class="pre">...</span></tt></p>
 <p>Secondly, we need to change all data tokens indicating intervals greater than
 a diatonic second (3 or more semitones) into the data token consisting of the
-(arbitrary) character string &#8220;leap&#8221;. This can be done using the <a href="#id121"><span class="problematic" id="id122">`**humsed**`_</span></a>
+(arbitrary) character string &#8220;leap&#8221;. This can be done using the <a class="reference external" href="../../man/humsed">humsed</a>
 stream editor.</p>
 <p>`` ... humsed &#8216;s/.*[3-9].*/leap/&#8217; &gt; spine4 [spine5 for the other voice]``</p>
 <p>Putting it all together, the following command sequence will let us identify

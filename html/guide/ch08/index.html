@@ -116,7 +116,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">2. Rhythm and Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody and Pitch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
@@ -465,29 +465,29 @@ a common command:</p>
 <li>one or more input file names,</li>
 <li>output redirection.</li>
 </ul>
-<p>Each of these components is separated by <a href="#id7"><span class="problematic" id="id8">`blank space&#8217; (tabs or spaces). A
-command begins with the command name &#8211; such as **uniq**, **sort**, or
-`**pitch**.`_</span></a> A command argument is a special requirement of only some
+<p>Each of these components is separated by &#8216;blank space&#8217; (tabs or spaces). A
+command begins with the command name &#8211; such as <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a>, <strong>sort</strong>, or
+<a href="#id11"><span class="problematic" id="id12">`**pitch**.`_</span></a> A command argument is a special requirement of only some
 commands. A good example of a command argument is the search pattern given to
-the <strong>grep</strong> command. In the following command, <strong>grep</strong> is the command name,
+the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command. In the following command, <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> is the command name,
 &#8220;Lennon&#8221; is the command argument and <tt class="docutils literal"><span class="pre">beatles</span></tt> is the input file name:</p>
 <p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">Lennon</span> <span class="pre">beatles</span></tt></p>
 <p>For most commands, it is possible to process more than one input file. These
 files are simply listed at the end of the command. For example, the following
-<strong>grep</strong> command searches for the string &#8220;McCartney&#8221; in the file <tt class="docutils literal"><span class="pre">beatles</span></tt>
+<a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command searches for the string &#8220;McCartney&#8221; in the file <tt class="docutils literal"><span class="pre">beatles</span></tt>
 and in the file <tt class="docutils literal"><span class="pre">wings</span></tt>:</p>
 <p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">McCartney</span> <span class="pre">beatles</span> <span class="pre">wings</span></tt></p>
 <p>Most commands provide <em>options</em> that modify the behavior of the command in
 some way. Command options are designated by a leading dash character. The
 specific option is usually indicated by a single alphabetic letter, such as
-the <strong>-b</strong> option (spoken: &#8220;dash-B&#8221; option). In the <strong>uniq</strong> command, the
+the <strong>-b</strong> option (spoken: &#8220;dash-B&#8221; option). In the <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command, the
 <strong>-c</strong> option causes a count to be prepended to each output line. In the
-following command, <strong>uniq</strong> is the command name, <strong>-c</strong> is the option, and
+following command, <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> is the command name, <strong>-c</strong> is the option, and
 <tt class="docutils literal"><span class="pre">ghana32</span></tt> is the name of the input file:</p>
 <p><tt class="docutils literal"><span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">ghana32</span></tt></p>
 <p>In many cases, the option is followed by a <em>parameter</em> that specifies further
 information pertaining to the invoked option. In the following command,
-<a href="#id9"><span class="problematic" id="id10">`**recode**`_</span></a> is the command name, <strong>-f</strong> is the option, <strong>reassign</strong> is the
+<a class="reference external" href="../../man/recode">recode</a> is the command name, <strong>-f</strong> is the option, <strong>reassign</strong> is the
 parameter used by the <strong>-f</strong> option, and <strong>gagaku</strong> is the name of the input
 file:</p>
 <p><tt class="docutils literal"><span class="pre">recode</span> <span class="pre">-f</span> <span class="pre">reassign</span> <span class="pre">gagaku</span></tt></p>
@@ -498,7 +498,7 @@ may be combined. For example, the <strong>-a</strong> and <strong>-b</strong> op
 as <strong>-ab</strong> (or as <strong>-ba)</strong> &#8211; provided neither option requires a parameter.</p>
 <p>Whenever an option requires a parameter, the option must be specified alone
 and followed immediately by the appropriate parameter. For example, in the
-following command, the command name is <a href="#id11"><span class="problematic" id="id12">`**trans**,`_</span></a> the <strong>-d</strong> option is
+following command, the command name is <a href="#id13"><span class="problematic" id="id14">`**trans**,`_</span></a> the <strong>-d</strong> option is
 followed by the numerical parameter <strong>3</strong>; the parameter for the <strong>-c</strong>
 option is the number <strong>4</strong> and the input file is named <strong>gambia21</strong>.</p>
 <p><tt class="docutils literal"><span class="pre">trans</span> <span class="pre">-d</span> <span class="pre">3</span> <span class="pre">-c</span> <span class="pre">4</span> <span class="pre">gambia21</span></tt></p>
@@ -517,7 +517,7 @@ typed manually at the terminal, or from the output of preceding commands.
 When input text is entered manually it must be terminated with an end-of-file
 character (control-D) on a separate line. (On Microsoft operating systems the
 end-of-file character is control-Z.) When input is received from preceding
-commands, the output is sent via a UNIX pipe (<a href="#id3"><span class="problematic" id="id4">`</span></a><a href="#id5"><span class="problematic" id="id6">|</span></a>&#8216;) as discussed above.</p>
+commands, the output is sent via a UNIX pipe (<a href="#id7"><span class="problematic" id="id8">`</span></a><a href="#id9"><span class="problematic" id="id10">|</span></a>&#8216;) as discussed above.</p>
 <p>The different ways of providing input to a command are illustrated in the
 following examples. In the first example, the input (if any) is taken from
 the terminal (keyboard). In the second example, the input is <em>explicitly</em>

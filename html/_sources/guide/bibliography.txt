@@ -100,7 +100,7 @@ Computer Assisted Research in the Humanities, 552 pages, ISBN 0-936943-10-6.
 
 Huron, David (1996).
 The melodic arch in Western folksongs. *Computing in Musicology,* Vol. 10
-(1996) pp. 3-23. `**Text**`_
+(1996) pp. 3-23. `Text <../../man/Text>`_
 
 Huron, David (1997).
 Humdrum and Kern: Selective feature encoding. In: E. Selfridge-Field
@@ -109,7 +109,7 @@ Massachusetts: MIT Press, 1997; pp.375-401.
 
 Huron, David (1999).
 "Zohar Eitan: Highpoints: A Study of Melodic Peaks [review of]."
-*Music Perception,* Vol. 16, No. 2 (1999) pp. 257-264. `**Text**`_
+*Music Perception,* Vol. 16, No. 2 (1999) pp. 257-264. `Text <../../man/Text>`_
 
 Huron, David (1999).
 *Music Research Using Humdrum: A User's Guide.* Stanford, California: Center

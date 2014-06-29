@@ -116,7 +116,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">2. Rhythm and Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody and Pitch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
@@ -350,7 +350,7 @@ simple distribution that indicates:</p>
 input so only the data of interest is present. Second we need to <em>sort</em> like-
 with-like. And third we need to <em>count</em> the number of occurrences of each
 type of data token.</p>
-<p>Let&#8217;s begin by discussing the second process. In <a href="#id19"><span class="problematic" id="id20">`Chapter 3`_</span></a> we saw how the
+<p>Let&#8217;s begin by discussing the second process. In <a class="reference external" href="../ch03">Chapter 3</a> we saw how the
 UNIX <strong>sort</strong> command will rearrange lines of data so that they are in
 alphabetical/numerical order. The command:</p>
 <p><tt class="docutils literal"><span class="pre">sort</span> <span class="pre">alpha</span> <span class="pre">&gt;</span> <span class="pre">sorted.alpha</span></tt></p>
@@ -370,8 +370,8 @@ beginning of the output. Notice also that all of the lines beginning with the
 letter <a href="#id3"><span class="problematic" id="id4">`</span></a>A&#8217; are now collected on successive lines in the output. Similarly,
 the <a href="#id5"><span class="problematic" id="id6">`</span></a>B&#8217;s have been rearranged on successive lines.</p>
 <p>The third step in generating an inventory is to count the number of
-occurrences of each unique data token. The <strong>uniq</strong> command described in
-<a href="#id21"><span class="problematic" id="id22">`Chapter 3`_</span></a> will eliminate successive duplicate lines. For example, if we
+occurrences of each unique data token. The <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command described in
+<a class="reference external" href="../ch03">Chapter 3</a> will eliminate successive duplicate lines. For example, if we
 type:</p>
 <p><tt class="docutils literal"><span class="pre">uniq</span> <span class="pre">sorted.alpha</span></tt></p>
 <p>The output will be as follows:</p>
@@ -381,10 +381,10 @@ type:</p>
 <span class="pre">``B</span>
 <span class="pre">``C</span></tt></p>
 <p>Notice that repetitions of the data &#8220;A&#8221; and &#8220;B&#8221; have disappeared. The simple
-<strong>uniq</strong> command is useful for telling us <em>how many different things</em> there
+<a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command is useful for telling us <em>how many different things</em> there
 are in an input. For example, the above output identifies just five different
 records &#8211; and three different types of data records.</p>
-<p>Recall that the <strong>-c</strong> option for <strong>uniq</strong> will cause a <a href="#id7"><span class="problematic" id="id8">`</span></a>count&#8217; to be
+<p>Recall that the <strong>-c</strong> option for <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> will cause a <a href="#id10"><span class="problematic" id="id11">`</span></a>count&#8217; to be
 prepended to each output line. The command:</p>
 <p><tt class="docutils literal"><span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">sorted.alpha</span> <span class="pre">&gt;</span> <span class="pre">unique.alpha</span></tt></p>
 <p>will produce the following output:</p>
@@ -393,9 +393,9 @@ prepended to each output line. The command:</p>
 <span class="pre">``3A</span>
 <span class="pre">``2B</span>
 <span class="pre">``1C</span></tt></p>
-<p>The prepended counts tell us that <a href="#id9"><span class="problematic" id="id10">`</span></a>A&#8217; occurs three times, <a href="#id11"><span class="problematic" id="id12">`</span></a>B&#8217; occurs twice,
+<p>The prepended counts tell us that <a href="#id12"><span class="problematic" id="id13">`</span></a>A&#8217; occurs three times, <a href="#id14"><span class="problematic" id="id15">`</span></a>B&#8217; occurs twice,
 and all other records occur just once.</p>
-<p>In the above output, <tt class="docutils literal"><span class="pre">**alpha</span></tt>, and <tt class="docutils literal"><span class="pre">*-</span></tt> are Humdrum interpretations
+<p>In the above output, <tt class="docutils literal"><span class="pre">alpha</span></tt>, and <tt class="docutils literal"><span class="pre">*-</span></tt> are Humdrum interpretations
 rather than data, so we probably don&#8217;t want them to appear in our inventory.
 If our file had contained comments, or null data records, then these would
 have also appeared in our output, although we are not likely to be interested
@@ -405,14 +405,14 @@ prefer to omit from our final output.</p>
 </div>
 <div class="section" id="filtering-data-with-the-rid-command">
 <h2>Filtering Data with the <em>rid</em> Command<a class="headerlink" href="#filtering-data-with-the-rid-command" title="Permalink to this headline">¶</a></h2>
-<p>As we saw in <a href="#id23"><span class="problematic" id="id24">`Chapter 13,`_</span></a> the <a href="#id25"><span class="problematic" id="id26">`**rid**`_</span></a> command can be used to eliminate
+<p>As we saw in <a class="reference external" href="../ch13">Chapter 13</a>, the <a class="reference external" href="../../man/rid">rid</a> command can be used to eliminate
 various classes of Humdrum records. For example, <strong>rid -G</strong> eliminates all
 global comments; <strong>rid -D</strong> eliminates all data records, etc. The option
 combination <strong>-GLId</strong> is very common with <strong>rid</strong> since only data records are
 retained in the output. That is, eliminating all global and local comments,
 omitting all interpretations, and deleting all null data records will result
 in an output consisting only of non-null data records.</p>
-<p>Returning to our <tt class="docutils literal"><span class="pre">**alpha</span></tt> data, we can eliminate everything but data
+<p>Returning to our <tt class="docutils literal"><span class="pre">alpha</span></tt> data, we can eliminate everything but data
 records as follows:</p>
 <p><tt class="docutils literal"><span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">alpha</span> <span class="pre">&gt;</span> <span class="pre">filtered.alpha</span></tt></p>
 <p>By way of summary, generating an inventory is a three-step process. First we
@@ -458,14 +458,14 @@ the result will be as follows:</p>
 the user&#8217;s goal, this may or may not be the most appropriate output.</p>
 <p>A situation where this approach might be desired arises when we are counting
 the number of different spellings of chords (e.g., how many different
-sonorous arrangements are there?). If <a href="#id13"><span class="problematic" id="id14">**</span></a>alpha and <a href="#id15"><span class="problematic" id="id16">**</span></a>bet represent pitches in
+sonorous arrangements are there?). If <a href="#id16"><span class="problematic" id="id17">**</span></a>alpha and <a href="#id18"><span class="problematic" id="id19">**</span></a>bet represent pitches in
 two concurrent voices, then it may be important to have both concurrent data
 tokens participating in the inventory.</p>
 <p>In other circumstances, we may not want this. For example, if we are
 interested only in alpha-related data, we need to eliminate the irrelevant
 <strong>bet data so it won&#8217;t interfere. This can be done using the Humdrum
 **extract</strong> command.</p>
-<p>For example, we can create an inventory of just the <tt class="docutils literal"><span class="pre">**bet</span></tt> data:</p>
+<p>For example, we can create an inventory of just the <tt class="docutils literal"><span class="pre">bet</span></tt> data:</p>
 <p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**bet'</span> <span class="pre">alphabet</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">\</span>
 <span class="pre">&gt;</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">&gt;</span> <span class="pre">inventory.bet</span></tt></p>
@@ -478,7 +478,7 @@ separate spine. In such cases, we will need to use <strong>extract</strong> seve
 so that each spine is placed in a separate file:</p>
 <p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**alpha'</span> <span class="pre">alphabet</span> <span class="pre">&gt;</span> <span class="pre">justalpha</span></tt>
 <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**bet'</span> <span class="pre">alphabet</span> <span class="pre">&gt;</span> <span class="pre">justbet</span></tt></p>
-<p>The <strong>cat</strong> command can then be used to concatenate the files end-to-end so
+<p>The <a class="reference external" href="http://en.wikipedia.org/wiki/Cat_(Unix)">cat</a> command can then be used to concatenate the files end-to-end so
 they form a single column of data. With each data token of interest is on its
 own line, we can generate the appropriate inventory:</p>
 <p><tt class="docutils literal"><span class="pre">cat</span> <span class="pre">justalpha</span> <span class="pre">justbet</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></tt></p>
@@ -521,11 +521,11 @@ Humdrum input, sorted from the most common to the least common data:</p>
 percentage values rather than the actual numerical count. This can be
 calculated by dividing each of the inventory count numbers by the total
 number of data records processed. A convenient way to count records is via
-the UNIX <strong>wc</strong> (word count) command. The <strong>wc</strong> command provides three
-options. With the <strong>-c</strong> option, <strong>wc</strong> counts the number of characters in an
-input. With the <strong>-w</strong> option, <strong>wc</strong> counts the number of words in an input.
+the UNIX <a class="reference external" href="http://en.wikipedia.org/wiki/Wc_(Unix)">wc</a> (word count) command. The <a class="reference external" href="http://en.wikipedia.org/wiki/Wc_(Unix)">wc</a> command provides three
+options. With the <strong>-c</strong> option, <a class="reference external" href="http://en.wikipedia.org/wiki/Wc_(Unix)">wc</a> counts the number of characters in an
+input. With the <strong>-w</strong> option, <a class="reference external" href="http://en.wikipedia.org/wiki/Wc_(Unix)">wc</a> counts the number of words in an input.
 A &#8220;word&#8221; is defined as any sequence of characters delineated by white space,
-such as spaces, tabs or new lines. With the <strong>-l</strong> option, <strong>wc</strong> counts the
+such as spaces, tabs or new lines. With the <strong>-l</strong> option, <a class="reference external" href="http://en.wikipedia.org/wiki/Wc_(Unix)">wc</a> counts the
 nmber of lines or records in the input.</p>
 <p>We can count the total number of non-null data records in a Humdrum input
 using the following pipeline:</p>
@@ -542,8 +542,8 @@ corresponding type of data.</p>
 </div>
 <div class="section" id="excluding-or-seeking-rare-events">
 <h2>Excluding or Seeking Rare Events<a class="headerlink" href="#excluding-or-seeking-rare-events" title="Permalink to this headline">¶</a></h2>
-<p>Recall from <a href="#id27"><span class="problematic" id="id28">`Chapter 3`_</span></a> that the <strong>uniq</strong> command provides other options
-(besides the <strong>-c</strong> option). The <strong>-d</strong> option causes <strong>uniq</strong> to output
+<p>Recall from <a class="reference external" href="../ch03">Chapter 3</a> that the <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command provides other options
+(besides the <strong>-c</strong> option). The <strong>-d</strong> option causes <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> to output
 <em>only</em> those records that are duplicated. In other words, records that occur
 only once are eliminated from the input. This option can be useful when there
 are a lot of single-occurrence data tokens and you are only interested in
@@ -557,7 +557,7 @@ for rare circumstances in our data.</p>
 <div class="section" id="transforming-and-editing-inventory-data">
 <h2>Transforming and Editing Inventory Data<a class="headerlink" href="#transforming-and-editing-inventory-data" title="Permalink to this headline">¶</a></h2>
 <p>Notice that two data records must be identical in order for them to be
-considered &#8220;the same&#8221; by <strong>sort</strong> and <strong>uniq</strong>. This means that records such
+considered &#8220;the same&#8221; by <strong>sort</strong> and <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a>. This means that records such
 as the following are considered entirely different:</p>
 <p><tt class="docutils literal"><span class="pre">ABC</span>
 <span class="pre">``abc</span>
@@ -566,7 +566,7 @@ as the following are considered entirely different:</p>
 <span class="pre">``ABC.</span>
 <span class="pre">``CBA</span></tt></p>
 <p>Remember that step #1 in generating inventories requires that we filter the
-data so only the data of interest is passed to <strong>sort</strong> and <strong>uniq</strong>. This
+data so only the data of interest is passed to <strong>sort</strong> and <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a>. This
 means we must be careful about the state of the input. Depending on your
 goal, we will either want to <em>translate</em> the input to some other more
 appropriate representation, or <em>edit</em> the existing representation in order to
@@ -574,11 +574,11 @@ discard or transform otherwise confounding data.</p>
 <p><em>Translating</em> data involves changing from one type of information to another
 &#8211; that is, changing the exclusive interpretations. For example, if we want
 to produce an inventory of melodic intervals, then we might use the
-<a href="#id29"><span class="problematic" id="id30">`**mint**`_</span></a> or <a href="#id31"><span class="problematic" id="id32">`**xdelta**`_</span></a> commands to generate a suitable representation.
+<a class="reference external" href="../../man/mint">mint</a> or <a class="reference external" href="../../man/xdelta">xdelta</a> commands to generate a suitable representation.
 Alternatively, we might want to generate an inventory of scale degrees using
-the <a href="#id33"><span class="problematic" id="id34">`**deg**`_</span></a> or <a href="#id35"><span class="problematic" id="id36">`**solfa**`_</span></a> commands.</p>
+the <a class="reference external" href="../../man/deg">deg</a> or <a class="reference external" href="../../man/solfa">solfa</a> commands.</p>
 <p>Instead of translating our data, we might wish to edit the data using the
-<strong>sed</strong> or <a href="#id37"><span class="problematic" id="id38">`**humsed**`_</span></a> stream editors. Suppose we had a file (named
+<a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> or <a class="reference external" href="../../man/humsed">humsed</a> stream editors. Suppose we had a file (named
 &#8220;notes&#8221;) consisting of pitch information, and we wanted to create an
 inventory of the diatonic pitch-letter names. Our input might look like this:</p>
 <p><tt class="docutils literal"><span class="pre">**notes</span>
@@ -599,7 +599,7 @@ inventory of the diatonic pitch-letter names. Our input might look like this:</p
 <span class="pre">``1F#</span></tt></p>
 <p>But this inventory distinguishes D-sharp from D-natural &#8211; which is not what
 we want. The answer is to filter our input so that the sharps are removed.</p>
-<p>Adding the appropriate <a href="#id39"><span class="problematic" id="id40">`**humsed**`_</span></a> command to our pipe:</p>
+<p>Adding the appropriate <a class="reference external" href="../../man/humsed">humsed</a> command to our pipe:</p>
 <p><tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/#//'</span> <span class="pre">notes</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></tt></p>
 <p>&#8211; will produce the following output:</p>
 <p><tt class="docutils literal"><span class="pre">1A</span>
@@ -630,9 +630,8 @@ input is monophonic **kern data.</p>
 <p><tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/[^#-]//g'</span> <span class="pre">montev*</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></tt></p>
 <p><em>Did Bartok&#8217;s preferred articulation marks change</em> <em>over his lifetime?</em>
 Assume that copies of early and late works have been concatenated to the
-files <tt class="docutils literal"><span class="pre">early</span></tt> and <tt class="docutils literal"><span class="pre">late</span></tt>. The <a href="#id41"><span class="problematic" id="id42">`**humsed**`_</span></a> command here eliminates all
-data with the exception of **kern_ articulation marks. (See <a href="#id43"><span class="problematic" id="id44">`Chapter
-6`_</span></a> for details on <a href="#id17"><span class="problematic" id="id18">**</span></a>kern articulation marks.)</p>
+files <tt class="docutils literal"><span class="pre">early</span></tt> and <tt class="docutils literal"><span class="pre">late</span></tt>. The <a class="reference external" href="../../man/humsed">humsed</a> command here eliminates all
+data with the exception of **kern_ articulation marks. (See <a class="reference external" href="../ch06">Chapter 6</a> for details on <a href="#id31"><span class="problematic" id="id32">**</span></a>kern articulation marks.)</p>
 <p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**kern'</span> <span class="pre">early</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/[^&quot;`~^:I]//g'</span> <span class="pre">\</span>
 <span class="pre">&gt;</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></tt>
@@ -655,7 +654,7 @@ two durations (such as eighths and sixteenths, or</em> <em>eighths and quarters)
 above command for each work and inspect the results.)</p>
 <p><em>What is the most common instrumental combination for sonorities</em> <em>by
 Mussorgsky?</em></p>
-<p>&gt; This problem is addressed in <a href="#id45"><span class="problematic" id="id46">`Chapter 36.`_</span></a></p>
+<p>&gt; This problem is addressed in <a class="reference external" href="../ch36">Chapter 36</a>.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="reprise">

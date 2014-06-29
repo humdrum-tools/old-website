@@ -116,7 +116,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">2. Rhythm and Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody and Pitch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
@@ -301,18 +301,18 @@
 <h1>Chapter 26: Moving Signifiers Between Spines<a class="headerlink" href="#chapter-26-moving-signifiers-between-spines" title="Permalink to this headline">¶</a></h1>
 <p>In many types of tasks is it useful to be able to transfer signifiers from
 one spine to another. In this chapter we will discuss two commands. The
-<a href="#id19"><span class="problematic" id="id20">`**rend**`_</span></a> command makes it possible to split characters in a single spine
-and distribute them across two or more spines. The <a href="#id21"><span class="problematic" id="id22">`**cleave**`_</span></a> command does
+<a class="reference external" href="../../man/rend">rend</a> command makes it possible to split characters in a single spine
+and distribute them across two or more spines. The <a class="reference external" href="../../man/cleave">cleave</a> command does
 the reverse: it allows characters that are distributed across two or more
 spines to be gathered into a single new spine. These two commands provide
 opportunities to create Humdrum spines that contain precisely the information
 of interest to the user.</p>
 <div class="section" id="the-rend-command">
 <h2>The <em>rend</em> Command<a class="headerlink" href="#the-rend-command" title="Permalink to this headline">¶</a></h2>
-<p>The <a href="#id23"><span class="problematic" id="id24">`**rend**`_</span></a> command allows a Humdrum spine to be broken apart into two or
+<p>The <a class="reference external" href="../../man/rend">rend</a> command allows a Humdrum spine to be broken apart into two or
 more spines. Different pieces of information can be distributed to the
 individual output spines. Consider for example the following spine containing
-<a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">**</span></a>pitch``_ data:</p>
+<a class="reference external" href="../../rep/pitch">**pitch</a> data:</p>
 <p><tt class="docutils literal"><span class="pre">**pitch</span>
 <span class="pre">&gt;</span> <span class="pre">Ab3</span>
 <span class="pre">&gt;</span> <span class="pre">F#4</span>
@@ -325,7 +325,7 @@ spines:</p>
 <span class="pre">&gt;</span> <span class="pre">4F##</span>
 <span class="pre">&gt;</span> <span class="pre">5C.</span>
 <span class="pre">&gt;</span> <span class="pre">*-*-*-</span></tt></p>
-<p>The operation of <a href="#id25"><span class="problematic" id="id26">`**rend**`_</span></a> requires a reassignment file where each line
+<p>The operation of <a class="reference external" href="../../man/rend">rend</a> requires a reassignment file where each line
 contains an output exclusive interpretation, followed by a tab, followed by a
 regular expression. In the above case, the reassignment file (<tt class="docutils literal"><span class="pre">reassign</span></tt>)
 contained the following:</p>
@@ -333,24 +333,24 @@ contained the following:</p>
 <span class="pre">&gt;</span> <span class="pre">**note[A-Gb#x]</span>
 <span class="pre">&gt;</span> <span class="pre">**accidental[b#x]</span></tt></p>
 <p>The first line tells <strong>rend</strong> that any signifiers matching the character-
-class 0-9 should be output in a spine labelled <tt class="docutils literal"><span class="pre">**octave</span></tt>. The second line
+class 0-9 should be output in a spine labelled <tt class="docutils literal"><span class="pre">octave</span></tt>. The second line
 causes signifiers matching the upper-case letters A to G and the <tt class="docutils literal"><span class="pre">b</span></tt>, <tt class="docutils literal"><span class="pre">#</span></tt>
-and <tt class="docutils literal"><span class="pre">x</span></tt> signifiers to be output in a spine labelled <tt class="docutils literal"><span class="pre">**note</span></tt>. The third
+and <tt class="docutils literal"><span class="pre">x</span></tt> signifiers to be output in a spine labelled <tt class="docutils literal"><span class="pre">note</span></tt>. The third
 line causes signifiers matching just <tt class="docutils literal"><span class="pre">b</span></tt>, <tt class="docutils literal"><span class="pre">#</span></tt> and <tt class="docutils literal"><span class="pre">x</span></tt> to be output in a
-spine labelled <tt class="docutils literal"><span class="pre">**accidental</span></tt>.</p>
+spine labelled <tt class="docutils literal"><span class="pre">accidental</span></tt>.</p>
 <p>The above output was generated by invoking the following command:</p>
 <p><tt class="docutils literal"><span class="pre">rend</span> <span class="pre">-i</span> <span class="pre">'**pitch'</span> <span class="pre">-f</span> <span class="pre">reassign</span></tt> <em>inputfile</em></p>
 <p>Note that the <strong>-i</strong> and <strong>-f</strong> options are mandatory. The <strong>-i</strong> option
-tells <a href="#id27"><span class="problematic" id="id28">`**rend**`_</span></a> which input spines to process and the <strong>-f</strong> option tells
+tells <a class="reference external" href="../../man/rend">rend</a> which input spines to process and the <strong>-f</strong> option tells
 <strong>rend</strong> the name of the file containing the spine-reassignments.</p>
 <p>The <strong>rend</strong> command is typically paired with a subsequent <strong>cleave</strong>
 command.</p>
 </div>
 <div class="section" id="the-cleave-command">
 <h2>The <em>cleave</em> Command<a class="headerlink" href="#the-cleave-command" title="Permalink to this headline">¶</a></h2>
-<p>The <a href="#id29"><span class="problematic" id="id30">`**cleave**`_</span></a> command amalgamates concurrent data tokens in two or more
+<p>The <a class="reference external" href="../../man/cleave">cleave</a> command amalgamates concurrent data tokens in two or more
 spines into a single data spine. In effect, <strong>cleave</strong> does the opposite of
-<a href="#id31"><span class="problematic" id="id32">`**rend**`_</span></a>. By way of example, <strong>cleave</strong> can be used to transform the
+<a class="reference external" href="../../man/rend">rend</a>. By way of example, <strong>cleave</strong> can be used to transform the
 following:</p>
 <p><tt class="docutils literal"><span class="pre">**A**B**C</span>
 <span class="pre">&gt;</span> <span class="pre">abc</span>
@@ -364,15 +364,15 @@ following:</p>
 <p>Specifically, the above &#8220;cleaving&#8221; would be done using the following command:</p>
 <p><tt class="docutils literal"><span class="pre">cleave</span> <span class="pre">-i</span> <span class="pre">'**A,**B,**C'</span> <span class="pre">-o</span> <span class="pre">'**new'</span></tt> <em>inputfile</em></p>
 <p>Both the <strong>-i</strong> and <strong>-o</strong> options are mandatory. The <strong>-i</strong> option tells
-<a href="#id33"><span class="problematic" id="id34">`**cleave**`_</span></a> which exclusive interpretations should be cleaved together. In
+<a class="reference external" href="../../man/cleave">cleave</a> which exclusive interpretations should be cleaved together. In
 the above case, we have provided a list of three types of data. The <strong>-o</strong>
-option tells <a href="#id35"><span class="problematic" id="id36">`**cleave**`_</span></a> what to call the resulting cleaved spine. In this
-case, we&#8217;ve simply called the result <tt class="docutils literal"><span class="pre">**new</span></tt>.</p>
+option tells <a class="reference external" href="../../man/cleave">cleave</a> what to call the resulting cleaved spine. In this
+case, we&#8217;ve simply called the result <tt class="docutils literal"><span class="pre">new</span></tt>.</p>
 <p>Suppose that we would like to automatically add key-velocities to some
-<tt class="docutils literal"><span class="pre">**MIDI``_</span> <span class="pre">data</span> <span class="pre">that</span> <span class="pre">reflect</span> <span class="pre">the</span> <span class="pre">normal</span> <span class="pre">accents</span> <span class="pre">arising</span> <span class="pre">from</span> <span class="pre">the</span> <span class="pre">meter.</span>
-<span class="pre">For</span> <span class="pre">example,</span> <span class="pre">in</span> <span class="pre">4/4</span> <span class="pre">meter,</span> <span class="pre">we</span> <span class="pre">would</span> <span class="pre">like</span> <span class="pre">the</span> <span class="pre">first</span> <span class="pre">note</span> <span class="pre">in</span> <span class="pre">each</span> <span class="pre">measure</span> <span class="pre">to</span> <span class="pre">be</span>
-<span class="pre">strongest,</span> <span class="pre">the</span> <span class="pre">third</span> <span class="pre">beat</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">next</span> <span class="pre">most</span> <span class="pre">strongest</span> <span class="pre">and</span> <span class="pre">so</span> <span class="pre">on.</span> <span class="pre">Recall</span> <span class="pre">that</span>
-<span class="pre">``**MIDI</span></tt> data tokens consist of three elements: (1) the duration in MIDI
+<a class="reference external" href="../../rep/MIDI">**MIDI</a> data that reflect the normal accents arising from the meter.
+For example, in 4/4 meter, we would like the first note in each measure to be
+strongest, the third beat to be next most strongest and so on. Recall that
+<a class="reference external" href="../../rep/MIDI">**MIDI</a> data tokens consist of three elements: (1) the duration in MIDI
 clock ticks, (2) the key number (also on/off indication), and (3) the key
 velocity. In order to add accents, we need to change the key velocity values.
 The maximum MIDI key velocity value is 127; the minimum value is 0; and the
@@ -391,9 +391,9 @@ default value is 64.</p>
 <span class="pre">&gt;</span> <span class="pre">=2</span>
 <span class="pre">&gt;</span> <span class="pre">2cc</span>
 <span class="pre">&gt;</span> <span class="pre">*-</span></tt></p>
-<p>The <a href="#id37"><span class="problematic" id="id38">`**metpos**`_</span></a> command can be used to identify the metric position of
+<p>The <a class="reference external" href="../../man/metpos">metpos</a> command can be used to identify the metric position of
 various note onsets. Before using <strong>metpos</strong> however, we must use the
-<a href="#id39"><span class="problematic" id="id40">`**timebase**`_</span></a> command to create an isorhythmic record structure. Since the
+<a class="reference external" href="../../man/timebase">timebase</a> command to create an isorhythmic record structure. Since the
 shortest note is an eighth-note, the appropriate command is as follows.</p>
 <p><tt class="docutils literal"><span class="pre">timebase</span> <span class="pre">-t</span> <span class="pre">8</span> <span class="pre">scale</span> <span class="pre">&gt;</span> <span class="pre">scale.tb</span></tt></p>
 <p>Using the timebased output, we can then invoke the <strong>metpos</strong> command:</p>
@@ -419,9 +419,9 @@ metric position spine (on the right):</p>
 <span class="pre">&gt;</span> <span class="pre">.4</span>
 <span class="pre">&gt;</span> <span class="pre">*-*-</span></tt></p>
 <p>Let&#8217;s now eliminate the null data tokens introduced by <strong>timebase</strong>. Using
-<a href="#id41"><span class="problematic" id="id42">`**humsed**`_</span></a>, we delete each data record beginning with a period character:</p>
+<a class="reference external" href="../../man/humsed">humsed</a>, we delete each data record beginning with a period character:</p>
 <p><tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'/^\./d'</span> <span class="pre">scale.met</span> <span class="pre">&gt;</span> <span class="pre">scale.tmp</span></tt></p>
-<p>Next, we can use the <a href="#id43"><span class="problematic" id="id44">`**recode**`_</span></a> command to change the metric position
+<p>Next, we can use the <a class="reference external" href="../../man/recode">recode</a> command to change the metric position
 values to appropriate MIDI key velocities. We might use the following
 reassignment file (named <tt class="docutils literal"><span class="pre">accent</span></tt>):</p>
 <p>&gt; ==1100
@@ -447,7 +447,7 @@ using the <strong>-s</strong> (skip) option:</p>
 <span class="pre">&gt;</span> <span class="pre">=2=2</span>
 <span class="pre">&gt;</span> <span class="pre">2cc100</span>
 <span class="pre">&gt;</span> <span class="pre">*-*-</span></tt></p>
-<p>Now we can use the <a href="#id45"><span class="problematic" id="id46">`**midi**`_</span></a> command to generate <tt class="docutils literal"><span class="pre">**MIDI</span></tt> data:</p>
+<p>Now we can use the <a class="reference external" href="../../man/midi">midi</a> command to generate <a class="reference external" href="../../rep/MIDI">**MIDI</a> data:</p>
 <p><tt class="docutils literal"><span class="pre">midi</span> <span class="pre">scale.acc</span> <span class="pre">&gt;</span> <span class="pre">scale.mid</span></tt></p>
 <p>The result is given below:</p>
 <p><tt class="docutils literal"><span class="pre">**MIDI**metpos</span>
@@ -466,9 +466,9 @@ using the <strong>-s</strong> (skip) option:</p>
 <span class="pre">&gt;</span> <span class="pre">36/-71/64</span> <span class="pre">36/72/64100</span>
 <span class="pre">&gt;</span> <span class="pre">144/-72/64.</span>
 <span class="pre">&gt;</span> <span class="pre">*-*-</span></tt></p>
-<p>Before using <a href="#id47"><span class="problematic" id="id48">`**cleave**`_</span></a> to join the new key velocity values to the
-<tt class="docutils literal"><span class="pre">**MIDI</span></tt> data we need to delete the current key-down velocities. These are
-the values <a href="#id49"><span class="problematic" id="id50">`64&#8217; preceding the tab character. The `**humsed**`_</span></a> command can be
+<p>Before using <a class="reference external" href="../../man/cleave">cleave</a> to join the new key velocity values to the
+<a class="reference external" href="../../rep/MIDI">**MIDI</a> data we need to delete the current key-down velocities. These are
+the values <a class="reference external" href="../../man/humsed">64&#8217; preceding the tab character. The `humsed</a> command can be
 used as follows:</p>
 <p><tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/64``*tab*/*tab*</span></tt>/&#8217; scale.mid &gt; scale.tmp``</p>
 <p>The modified output will now be:</p>
@@ -488,7 +488,7 @@ used as follows:</p>
 <span class="pre">&gt;</span> <span class="pre">36/-71/64</span> <span class="pre">36/72/100</span>
 <span class="pre">&gt;</span> <span class="pre">144/-72/.</span>
 <span class="pre">&gt;</span> <span class="pre">*-*-</span></tt></p>
-<p>Finally, we use <a href="#id51"><span class="problematic" id="id52">`**cleave**`_</span></a> to add the new key-down velocities.</p>
+<p>Finally, we use <a class="reference external" href="../../man/cleave">cleave</a> to add the new key-down velocities.</p>
 <p><tt class="docutils literal"><span class="pre">cleave</span> <span class="pre">-i</span> <span class="pre">'**MIDI,**metpos'</span> <span class="pre">-o</span> <span class="pre">'**MIDI'</span> <span class="pre">scale.tmp</span> <span class="pre">&gt;</span> <span class="pre">scale.mid</span></tt></p>
 <p>The final output is:</p>
 <p><tt class="docutils literal"><span class="pre">**MIDI</span>
@@ -518,16 +518,16 @@ duration context, gross pitch height, and scale step. Sample data tokens for
 our representation and their meanings are given in the following table.
 Notice that the order of signifiers is important:</p>
 <p>&gt; <strong>token**meaning</strong>
-<a href="#id5"><span class="problematic" id="id6">``</span></a>LSLHto``long-short-long rhythm, high pitch, tonic
-<a href="#id7"><span class="problematic" id="id8">``</span></a>LLSLsd``long-long-short rhythm, low pitch, subdominant
-<a href="#id9"><span class="problematic" id="id10">``</span></a>MLSMlt``medium-long-short rhythm, medium pitch, leading tone
-<a href="#id11"><span class="problematic" id="id12">``</span></a>r``rest</p>
-<p>In <a href="#id53"><span class="problematic" id="id54">`Chapter 22`_</span></a> we learned how to use <a href="#id55"><span class="problematic" id="id56">`**recode**`_</span></a> to classify various
-numerical ranges and <a href="#id57"><span class="problematic" id="id58">`**humsed**`_</span></a> to classify non-numeric data. We already
+<a href="#id14"><span class="problematic" id="id15">``</span></a>LSLHto``long-short-long rhythm, high pitch, tonic
+<a href="#id16"><span class="problematic" id="id17">``</span></a>LLSLsd``long-long-short rhythm, low pitch, subdominant
+<a href="#id18"><span class="problematic" id="id19">``</span></a>MLSMlt``medium-long-short rhythm, medium pitch, leading tone
+<a href="#id20"><span class="problematic" id="id21">``</span></a>r``rest</p>
+<p>In <a class="reference external" href="../ch22">Chapter 22</a> we learned how to use <a class="reference external" href="../../man/recode">recode</a> to classify various
+numerical ranges and <a class="reference external" href="../../man/humsed">humsed</a> to classify non-numeric data. We already
 know how to create the elements of our new representation.</p>
-<p>The scale degree information can be created by using <a href="#id59"><span class="problematic" id="id60">`**deg**`_</span></a> and
+<p>The scale degree information can be created by using <a class="reference external" href="../../man/deg">deg</a> and
 <strong>humsed</strong> can be used to transform the signifiers as in the following
-<tt class="docutils literal"><span class="pre">degree</span></tt> file:</p>
+<a class="reference external" href="../../man/degree">degree</a> file:</p>
 <p><tt class="docutils literal"><span class="pre">s/1.*/to/</span>
 <span class="pre">s/2.*/st/</span>
 <span class="pre">s/3.*/me/</span>
@@ -536,20 +536,20 @@ know how to create the elements of our new representation.</p>
 <span class="pre">s/6.*/sm/</span>
 <span class="pre">s/7.*/lt/</span></tt></p>
 <p>We can classify the pitch ranges into high, medium, and low using the
-<a href="#id61"><span class="problematic" id="id62">`**semits**`_</span></a> command, followed by <strong>recode</strong>. For example, we could
-transform the <a href="#id13"><span class="problematic" id="id14">``</span></a><a href="#id15"><span class="problematic" id="id16">**</span></a>semits``_ data using the following reassignment file:</p>
+<a class="reference external" href="../../man/semits">semits</a> command, followed by <strong>recode</strong>. For example, we could
+transform the <a class="reference external" href="../../rep/semits">**semits</a> data using the following reassignment file:</p>
 <p><tt class="docutils literal"><span class="pre">&lt;0L</span>
 <span class="pre">&gt;</span> <span class="pre">&gt;16H</span>
 <span class="pre">&gt;</span> <span class="pre">&gt;=0M</span>
 <span class="pre">&gt;</span> <span class="pre">elser</span></tt></p>
 <p>Durations can be similarly classified into long (L), medium (M), and short
-(S) using the <a href="#id63"><span class="problematic" id="id64">`**dur**`_</span></a> command, followed by <em>recode</em>.</p>
+(S) using the <a class="reference external" href="../../man/dur">dur</a> command, followed by <em>recode</em>.</p>
 <p><tt class="docutils literal"><span class="pre">&gt;1.0L</span>
 <span class="pre">&gt;</span> <span class="pre">&gt;0.5M</span>
 <span class="pre">&gt;</span> <span class="pre">&gt;0S</span></tt></p>
-<p>Using <a href="#id65"><span class="problematic" id="id66">`**context**`_</span></a> <strong>-n 3</strong> we could then create contextual <a href="#id17"><span class="problematic" id="id18">`</span></a>triples&#8217; so
+<p>Using <a class="reference external" href="../../man/context">context</a> <strong>-n 3</strong> we could then create contextual <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">triples&#8217; so
 that data records contain three durations. Suppose also that we have used
-<strong>sed</strong> to change the names of the exclusive interpretations so they are more
+`sed</a> to change the names of the exclusive interpretations so they are more
 appropriate. As a result we have three spines that, when assembled together
 are organized as in Example 26.1</p>
 <p><strong>Example 26.1</strong></p>
@@ -562,7 +562,7 @@ are organized as in Example 26.1</p>
 <p>We need to process the first spine with <strong>humsed</strong> again to eliminate the
 spaces in the multiple stops. The rhythm spine would be processed as follows:</p>
 <p><tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/</span> <span class="pre">//g'</span> <span class="pre">rhythm</span> <span class="pre">&gt;</span> <span class="pre">rhythm.new</span></tt></p>
-<p>We could assemble these spines using the <a href="#id67"><span class="problematic" id="id68">`**assemble**`_</span></a> command:</p>
+<p>We could assemble these spines using the <a class="reference external" href="../../man/assemble">assemble</a> command:</p>
 <p><tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">rhythm.new</span> <span class="pre">range</span> <span class="pre">scale.step</span> <span class="pre">&gt;</span> <span class="pre">newfile</span></tt></p>
 <p>Finally we can use <strong>cleave</strong> to amalgamate all of the data into a single
 final spine.</p>
@@ -581,10 +581,10 @@ duration on the altered tone. Etc.</p>
 <hr class="docutils" />
 <div class="section" id="reprise">
 <h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
-<p>In this chapter we have seen how <a href="#id69"><span class="problematic" id="id70">`**rend**`_</span></a> and <a href="#id71"><span class="problematic" id="id72">`**cleave**`_</span></a> can be used to
+<p>In this chapter we have seen how <a class="reference external" href="../../man/rend">rend</a> and <a class="reference external" href="../../man/cleave">cleave</a> can be used to
 take bits and pieces of signifiers from potentially many spines, and assemble
 a composite Humdrum spine that contains precisely the information of
-interest. Before amalgamating spines, you can use the <a href="#id73"><span class="problematic" id="id74">`**humsed**`_</span></a> command
+interest. Before amalgamating spines, you can use the <a class="reference external" href="../../man/humsed">humsed</a> command
 to translate the characters/signifiers so that you use your preferred way of
 representing something.</p>
 </div>

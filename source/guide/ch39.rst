@@ -88,17 +88,17 @@ high quality data and preparing the files in an appropriate manner.
 
 **Tips:**
 
--   Use the `**humdrum**`_ command to ensure that the input data conforms
+-   Use the `humdrum <../../man/humdrum>`_ command to ensure that the input data conforms
     to the Humdrum syntax.
--   Use the `**humdrum**`_ **-v** command to determine whether the kind
+-   Use the `humdrum <../../man/humdrum>`_ **-v** command to determine whether the kind
     of data (signifiers) you are interested in are truly present in all of
     the files to be searched.
--   Use the `**proof**`_ command to ensure that any `\*\*kern`_ data is
+-   Use the `proof <../../man/proof>`_ command to ensure that any `**kern <../../rep/kern>`_ data is
     properly encoded.
 -   Visually inspect sample passages from the input data. Do not rely
     solely on the **ms** command; instead, look at the actual ASCII text data
     using the **more** command.
--   Use the `**midi**`_ and `**perform**`_ commands to listen to sample
+-   Use the `midi <../../man/midi>`_ and `perform <../../man/perform>`_ commands to listen to sample
     passages; ensure that the data makes sense.
 -   If you are uncertain of the quality of the data, try encoding a
     randomly selected subset and then use the UNIX **diff** command to
@@ -106,30 +106,30 @@ high quality data and preparing the files in an appropriate manner.
     data.
 -   Always read any release notes or README files that accompany the
     data.
--   Use **grep** to search for *warning* and *Nota Bene* reference
+-   Use `grep <http://en.wikipedia.org/wiki/Grep>`_ to search for *warning* and *Nota Bene* reference
     records (``!!!RWG:`` and ``!!!ONB:``). These records may contain
     important editorial notes or warnings.
 -   Where appropriate, expand files to through-composed versions (using
-    `**thru**`_) before searching. If more than one editorial version is
+    `thru <../../man/thru>`_) before searching. If more than one editorial version is
     present in a document, select the most appropriate edition before
     processing.
 -   Create an inventory of all the types of data tokens present in an
     input. Inspect the inventory list to determine whether any unexpected
     data are present.
 -   If necessary, eliminate certain types of data that might confound or
-    interfere with your search in some way. Use `**rid**`_, **grep -v**,
-    `**extract**`_ **-i**, **sed** and/or `**humsed**`_ to restrict the data.
+    interfere with your search in some way. Use `rid <../../man/rid>`_, **grep -v**,
+    `extract <../../man/extract>`_ **-i**, `sed <http://en.wikipedia.org/wiki/Sed>`_ and/or `humsed <../../man/humsed>`_ to restrict the data.
 
 **(2) Ensure that you are searching all of the intended data:**
 
--   Use **grep** to search for titles, or composers, or opus numbers,
+-   Use `grep <http://en.wikipedia.org/wiki/Grep>`_ to search for titles, or composers, or opus numbers,
     etc., in order to ensure that the file or files you are searching are the
     ones you want. Also check to ensure that you are not searching materials
     that don't belong in the input.
 -   Be wary of searching duplicated materials. Create inventories of
     titles, opus numbers, etc., and use **uniq -d** to identify unwanted
     duplicate copies of works or files.
--   Use the **ls -l** or **wc** commands to determine the size of the
+-   Use the **ls -l** or `wc <http://en.wikipedia.org/wiki/Wc_(Unix)>`_ commands to determine the size of the
     search data. Does the amount of input data seem unduly small or unduly
     large?
 -   Use the **find** command to search the system for other files that
@@ -142,8 +142,8 @@ or inappropriate search templates.**
 
 -   Be careful when formulating regular expressions. Read aloud the
     meaning of the regular expression.
--   Do not use *extended* regular expressions with the **grep** command.
-    Use **egrep** instead.
+-   Do not use *extended* regular expressions with the `grep <http://en.wikipedia.org/wiki/Grep>`_ command.
+    Use `egrep <http://en.wikipedia.org/wiki/Egrep#Variations>`_ instead.
 -   Ensure that you know which characters in your search template are
     meta-characters.
 -   Execute your command from a shell script file so that you don't
@@ -151,7 +151,7 @@ or inappropriate search templates.**
 -   Maintain a command history file so that you have a permanent record
     of what you did. Depending on the system settings, the UNIX **history**
     command will display the past 100 (or more) commands you have executed.
-    Place this information in a permanent ``record`` file as follows:
+    Place this information in a permanent `record <../../man/record>`_ file as follows:
 
     ``history > record``
 
@@ -163,7 +163,7 @@ or inappropriate search templates.**
     ability of your regular expressions to catch all cases. Included "lures"
     in your test -- i.e., patterns that are close to what you want, but
     should be rejected.
--   Use extra caution when using "not" logic. For example, the **grep**
+-   Use extra caution when using "not" logic. For example, the `grep <http://en.wikipedia.org/wiki/Grep>`_
     expression "not-A" (i.e. ``[^A]``) will still match records containing
     the letter ``A`` as long as one non-A letter is present. The commands
 
@@ -183,7 +183,7 @@ or inappropriate search templates.**
     correct. Remember that visual inspection will only help you identify
     *false hits.* Visual inspection of the output will not help you identify
     *misses.*
--   Use the `**midi**`_ and `**perform**`_ commands to proof-listen to
+-   Use the `midi <../../man/midi>`_ and `perform <../../man/perform>`_ commands to proof-listen to
     your output. Again remember that aural inspection will only help you
     identify *false hits.*
 -   Ask whether the output makes sense. Given the amount of music
@@ -192,7 +192,7 @@ or inappropriate search templates.**
     modification that you know should produce a different result.
 -   Look for converging evidence. Try two or three contrasting approaches
     to ensure that the same answer arises for each approach. For example, try
-    searching each part individually using the `**extract**`_ command.
+    searching each part individually using the `extract <../../man/extract>`_ command.
 
 **(4) Ensure that you understand how a given search tool or option**
 **operates.**
@@ -200,14 +200,14 @@ or inappropriate search templates.**
 **Tips:**
 
 -   Remember that *extended* regular expressions require the use of
-    **egrep** rather than **grep**.
+    `egrep <http://en.wikipedia.org/wiki/Egrep#Variations>`_ rather than `grep <http://en.wikipedia.org/wiki/Grep>`_.
 -   Re-read the documentation to ensure that each software tool does what
     you think it does.
 -   Refer to the examples given in the *Humdrum Reference Manual* in
     order to ensure that you understand what a given option does.
 -   Compare outputs using different options. Ensure that your selected
     option(s) is matching the correct pattern.
--   Use the `**humver**`_ command to determine which version of the
+-   Use the `humver <../../man/humver>`_ command to determine which version of the
     Humdrum Toolkit you are using. Ensure that the documentation pertains to
     the correct version.
 -   Read the "Release Notes" for the software you use. Known software
@@ -250,7 +250,7 @@ processing errors.
     add one software tool at a time while inspecting the results at each
     stage.
 -   Use the UNIX **tee** command to generate files at intermediate points
-    in the processing. Use the `**assemble**`_ command to align inputs and
+    in the processing. Use the `assemble <../../man/assemble>`_ command to align inputs and
     outputs at various stages in the processing.
 -   Execute your finalized pipeline from a shell script in order to avoid
     undetected typing errors.

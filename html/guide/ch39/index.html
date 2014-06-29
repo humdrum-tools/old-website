@@ -116,7 +116,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">2. Rhythm and Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody and Pitch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
@@ -372,17 +372,17 @@ is inaccurate.</strong> You can increase the accuracy of your search by choosing
 high quality data and preparing the files in an appropriate manner.</p>
 <p><strong>Tips:</strong></p>
 <ul class="simple">
-<li>Use the <a href="#id1"><span class="problematic" id="id2">`**humdrum**`_</span></a> command to ensure that the input data conforms
+<li>Use the <a class="reference external" href="../../man/humdrum">humdrum</a> command to ensure that the input data conforms
 to the Humdrum syntax.</li>
-<li>Use the <a href="#id3"><span class="problematic" id="id4">`**humdrum**`_</span></a> <strong>-v</strong> command to determine whether the kind
+<li>Use the <a class="reference external" href="../../man/humdrum">humdrum</a> <strong>-v</strong> command to determine whether the kind
 of data (signifiers) you are interested in are truly present in all of
 the files to be searched.</li>
-<li>Use the <a href="#id5"><span class="problematic" id="id6">`**proof**`_</span></a> command to ensure that any <a href="#id7"><span class="problematic" id="id8">`\*\*kern`_</span></a> data is
+<li>Use the <a class="reference external" href="../../man/proof">proof</a> command to ensure that any <a class="reference external" href="../../rep/kern">**kern</a> data is
 properly encoded.</li>
 <li>Visually inspect sample passages from the input data. Do not rely
 solely on the <strong>ms</strong> command; instead, look at the actual ASCII text data
 using the <strong>more</strong> command.</li>
-<li>Use the <a href="#id9"><span class="problematic" id="id10">`**midi**`_</span></a> and <a href="#id11"><span class="problematic" id="id12">`**perform**`_</span></a> commands to listen to sample
+<li>Use the <a class="reference external" href="../../man/midi">midi</a> and <a class="reference external" href="../../man/perform">perform</a> commands to listen to sample
 passages; ensure that the data makes sense.</li>
 <li>If you are uncertain of the quality of the data, try encoding a
 randomly selected subset and then use the UNIX <strong>diff</strong> command to
@@ -390,30 +390,30 @@ identify any differences between the original data and the re-encoded
 data.</li>
 <li>Always read any release notes or README files that accompany the
 data.</li>
-<li>Use <strong>grep</strong> to search for <em>warning</em> and <em>Nota Bene</em> reference
+<li>Use <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to search for <em>warning</em> and <em>Nota Bene</em> reference
 records (<tt class="docutils literal"><span class="pre">!!!RWG:</span></tt> and <tt class="docutils literal"><span class="pre">!!!ONB:</span></tt>). These records may contain
 important editorial notes or warnings.</li>
 <li>Where appropriate, expand files to through-composed versions (using
-<a href="#id13"><span class="problematic" id="id14">`**thru**`_</span></a>) before searching. If more than one editorial version is
+<a class="reference external" href="../../man/thru">thru</a>) before searching. If more than one editorial version is
 present in a document, select the most appropriate edition before
 processing.</li>
 <li>Create an inventory of all the types of data tokens present in an
 input. Inspect the inventory list to determine whether any unexpected
 data are present.</li>
 <li>If necessary, eliminate certain types of data that might confound or
-interfere with your search in some way. Use <a href="#id15"><span class="problematic" id="id16">`**rid**`_</span></a>, <strong>grep -v</strong>,
-<a href="#id17"><span class="problematic" id="id18">`**extract**`_</span></a> <strong>-i</strong>, <strong>sed</strong> and/or <a href="#id19"><span class="problematic" id="id20">`**humsed**`_</span></a> to restrict the data.</li>
+interfere with your search in some way. Use <a class="reference external" href="../../man/rid">rid</a>, <strong>grep -v</strong>,
+<a class="reference external" href="../../man/extract">extract</a> <strong>-i</strong>, <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> and/or <a class="reference external" href="../../man/humsed">humsed</a> to restrict the data.</li>
 </ul>
 <p><strong>(2) Ensure that you are searching all of the intended data:</strong></p>
 <ul class="simple">
-<li>Use <strong>grep</strong> to search for titles, or composers, or opus numbers,
+<li>Use <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to search for titles, or composers, or opus numbers,
 etc., in order to ensure that the file or files you are searching are the
 ones you want. Also check to ensure that you are not searching materials
 that don&#8217;t belong in the input.</li>
 <li>Be wary of searching duplicated materials. Create inventories of
 titles, opus numbers, etc., and use <strong>uniq -d</strong> to identify unwanted
 duplicate copies of works or files.</li>
-<li>Use the <strong>ls -l</strong> or <strong>wc</strong> commands to determine the size of the
+<li>Use the <strong>ls -l</strong> or <a class="reference external" href="http://en.wikipedia.org/wiki/Wc_(Unix)">wc</a> commands to determine the size of the
 search data. Does the amount of input data seem unduly small or unduly
 large?</li>
 <li>Use the <strong>find</strong> command to search the system for other files that
@@ -426,8 +426,8 @@ or inappropriate search templates.</strong></p>
 <li><p class="first">Be careful when formulating regular expressions. Read aloud the
 meaning of the regular expression.</p>
 </li>
-<li><p class="first">Do not use <em>extended</em> regular expressions with the <strong>grep</strong> command.
-Use <strong>egrep</strong> instead.</p>
+<li><p class="first">Do not use <em>extended</em> regular expressions with the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command.
+Use <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a> instead.</p>
 </li>
 <li><p class="first">Ensure that you know which characters in your search template are
 meta-characters.</p>
@@ -438,7 +438,7 @@ inadvertently make a typing error when entering the command.</p>
 <li><p class="first">Maintain a command history file so that you have a permanent record
 of what you did. Depending on the system settings, the UNIX <strong>history</strong>
 command will display the past 100 (or more) commands you have executed.
-Place this information in a permanent <tt class="docutils literal"><span class="pre">record</span></tt> file as follows:</p>
+Place this information in a permanent <a class="reference external" href="../../man/record">record</a> file as follows:</p>
 <p><tt class="docutils literal"><span class="pre">history</span> <span class="pre">&gt;</span> <span class="pre">record</span></tt></p>
 <p>In addition, keep records of the precise regular expressions used for
 a given project. These records will help you determine later whether you
@@ -450,7 +450,7 @@ ability of your regular expressions to catch all cases. Included &#8220;lures&#8
 in your test &#8211; i.e., patterns that are close to what you want, but
 should be rejected.</p>
 </li>
-<li><p class="first">Use extra caution when using &#8220;not&#8221; logic. For example, the <strong>grep</strong>
+<li><p class="first">Use extra caution when using &#8220;not&#8221; logic. For example, the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>
 expression &#8220;not-A&#8221; (i.e. <tt class="docutils literal"><span class="pre">[^A]</span></tt>) will still match records containing
 the letter <tt class="docutils literal"><span class="pre">A</span></tt> as long as one non-A letter is present. The commands</p>
 <p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">[^A]</span></tt></p>
@@ -472,7 +472,7 @@ can re-use them in later projects.</li>
 correct. Remember that visual inspection will only help you identify
 <em>false hits.</em> Visual inspection of the output will not help you identify
 <em>misses.</em></li>
-<li>Use the <a href="#id21"><span class="problematic" id="id22">`**midi**`_</span></a> and <a href="#id23"><span class="problematic" id="id24">`**perform**`_</span></a> commands to proof-listen to
+<li>Use the <a class="reference external" href="../../man/midi">midi</a> and <a class="reference external" href="../../man/perform">perform</a> commands to proof-listen to
 your output. Again remember that aural inspection will only help you
 identify <em>false hits.</em></li>
 <li>Ask whether the output makes sense. Given the amount of music
@@ -481,21 +481,21 @@ searched, does it make sense to find the number of occurrences found?</li>
 modification that you know should produce a different result.</li>
 <li>Look for converging evidence. Try two or three contrasting approaches
 to ensure that the same answer arises for each approach. For example, try
-searching each part individually using the <a href="#id25"><span class="problematic" id="id26">`**extract**`_</span></a> command.</li>
+searching each part individually using the <a class="reference external" href="../../man/extract">extract</a> command.</li>
 </ul>
 <p><strong>(4) Ensure that you understand how a given search tool or option</strong>
 <strong>operates.</strong></p>
 <p><strong>Tips:</strong></p>
 <ul class="simple">
 <li>Remember that <em>extended</em> regular expressions require the use of
-<strong>egrep</strong> rather than <strong>grep</strong>.</li>
+<a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a> rather than <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>.</li>
 <li>Re-read the documentation to ensure that each software tool does what
 you think it does.</li>
 <li>Refer to the examples given in the <em>Humdrum Reference Manual</em> in
 order to ensure that you understand what a given option does.</li>
 <li>Compare outputs using different options. Ensure that your selected
 option(s) is matching the correct pattern.</li>
-<li>Use the <a href="#id27"><span class="problematic" id="id28">`**humver**`_</span></a> command to determine which version of the
+<li>Use the <a class="reference external" href="../../man/humver">humver</a> command to determine which version of the
 Humdrum Toolkit you are using. Ensure that the documentation pertains to
 the correct version.</li>
 <li>Read the &#8220;Release Notes&#8221; for the software you use. Known software
@@ -534,7 +534,7 @@ confidence in your pipeline use a <em>different</em> sample of input data. Again
 add one software tool at a time while inspecting the results at each
 stage.</li>
 <li>Use the UNIX <strong>tee</strong> command to generate files at intermediate points
-in the processing. Use the <a href="#id29"><span class="problematic" id="id30">`**assemble**`_</span></a> command to align inputs and
+in the processing. Use the <a class="reference external" href="../../man/assemble">assemble</a> command to align inputs and
 outputs at various stages in the processing.</li>
 <li>Execute your finalized pipeline from a shell script in order to avoid
 undetected typing errors.</li>

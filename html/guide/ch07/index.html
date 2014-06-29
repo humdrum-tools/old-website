@@ -116,7 +116,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">2. Rhythm and Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody and Pitch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
@@ -302,17 +302,17 @@
 <p>MIDI is a standard method for exchanging information between sound
 synthesizers and controlling computers. Humdrum provides a number of MIDI-
 related tools that allow MIDI data to be input and output. In this chapter we
-will discuss the output-related tools: <a href="#id13"><span class="problematic" id="id14">`**midi**`_</span></a>, <a href="#id15"><span class="problematic" id="id16">`**perform**`_</span></a>,
-<a href="#id17"><span class="problematic" id="id18">`**smf**`_</span></a> and <a href="#id19"><span class="problematic" id="id20">`**tacet**`_</span></a>. MIDI input tools are discussed in <a href="#id21"><span class="problematic" id="id22">`Chapter 30.`_</span></a></p>
+will discuss the output-related tools: <a class="reference external" href="../../man/midi">midi</a>, <a class="reference external" href="../../man/perform">perform</a>,
+<a class="reference external" href="../../man/smf">smf</a> and <a class="reference external" href="../../man/tacet">tacet</a>. MIDI input tools are discussed in <a class="reference external" href="../ch30">Chapter 30</a>.</p>
 <div class="section" id="the-midi-representation">
 <h2>The <a href="#id1"><span class="problematic" id="id2">**</span></a><em>MIDI</em> Representation<a class="headerlink" href="#the-midi-representation" title="Permalink to this headline">¶</a></h2>
-<p>Humdrum provides a <tt class="docutils literal"><span class="pre">`**MIDI```_</span> <span class="pre">representation</span> <span class="pre">that</span> <span class="pre">closely</span> <span class="pre">parallels</span> <span class="pre">the</span>
-<span class="pre">commercial</span> <span class="pre">MIDI</span> <span class="pre">specification</span> <span class="pre">but</span> <span class="pre">conforms</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">Humdrum</span> <span class="pre">data</span> <span class="pre">format.</span> <span class="pre">This</span>
-<span class="pre">representation</span> <span class="pre">provides</span> <span class="pre">an</span> <span class="pre">intermediate</span> <span class="pre">format;</span> <span class="pre">using</span> <span class="pre">Humdrum</span> <span class="pre">commands</span> <span class="pre">such</span>
-<span class="pre">as</span> <span class="pre">`**perform**`_</span> <span class="pre">and</span> <span class="pre">`**smf**,`_</span> <span class="pre">true</span> <span class="pre">MIDI</span> <span class="pre">data</span> <span class="pre">can</span> <span class="pre">be</span> <span class="pre">generated.</span> <span class="pre">However,</span>
-<span class="pre">since</span> <span class="pre">the</span> <span class="pre">``**MIDI</span></tt> representation conforms to the Humdrum syntax, the data
+<p>Humdrum provides a <a class="reference external" href="../../rep/MIDI">**MIDI</a> representation that closely parallels the
+commercial MIDI specification but conforms to the Humdrum data format. This
+representation provides an intermediate format; using Humdrum commands such
+as <a class="reference external" href="../../man/perform">perform</a> and <a href="#id42"><span class="problematic" id="id43">`**smf**,`_</span></a> true MIDI data can be generated. However,
+since the <a class="reference external" href="../../rep/MIDI">**MIDI</a> representation conforms to the Humdrum syntax, the data
 can be manipulated, modified and searched in the same way as other Humdrum
-data. For example, we can use <strong>grep</strong> to search MIDI data, etc.</p>
+data. For example, we can use <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to search MIDI data, etc.</p>
 <p>MIDI is a type of &#8220;tablature&#8221; notation. It describes a set of performance
 actions rather than specifying either the sounded result or the analytic
 notation. MIDI represents note-related events for various &#8220;channels.&#8221; MIDI
@@ -321,7 +321,7 @@ and system-exclusive codes. The original commercial MIDI standard is unable
 to represent many other musically pertinent signifiers such as pitch spelling
 (e.g., F-sharp versus G-flat), stem directions, ties, slurs, phrasing, etc.
 In addition, MIDI does not represent rests.</p>
-<p>A simple <a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id23"><span class="problematic" id="id24">`**MIDI```_</span></a> example is given below. It consists just a single note
+<p>A simple <a class="reference external" href="../../rep/MIDI">**MIDI</a> example is given below. It consists just a single note
 (middle C):</p>
 <p><tt class="docutils literal"><span class="pre">!!</span> <span class="pre">A</span> <span class="pre">single</span> <span class="pre">MIDI</span> <span class="pre">note.</span>
 <span class="pre">``**MIDI</span>
@@ -329,30 +329,30 @@ In addition, MIDI does not represent rests.</p>
 <span class="pre">``54/60/64</span>
 <span class="pre">``80/-60/64</span>
 <span class="pre">``*-</span></tt></p>
-<p>Notice that there are two <tt class="docutils literal"><span class="pre">**MIDI</span></tt> data tokens: one to specify note-on and
-one to specify note-off events. Each <tt class="docutils literal"><span class="pre">**MIDI</span></tt> data token consists of three
+<p>Notice that there are two <a class="reference external" href="../../rep/MIDI">**MIDI</a> data tokens: one to specify note-on and
+one to specify note-off events. Each <a class="reference external" href="../../rep/MIDI">**MIDI</a> data token consists of three
 elements or components, delimited by a slash character (/). The first element
 in the data token represents the number of clock ticks before the current
 event is to occur. The absolute duration of a single clock tick is determined
-by the <tt class="docutils literal"><span class="pre">**MIDI</span></tt> clock speed, which is variable. In our example, 54 clock
+by the <a class="reference external" href="../../rep/MIDI">**MIDI</a> clock speed, which is variable. In our example, 54 clock
 ticks elapse before the note is turned on, and another 80 clock ticks elapse
 before the note is turned off. The initial pause before the first note begins
 is not necessary; however, many MIDI cards introduce a brief delay before
 beginning to send the first data in a stream. The leading pause prevents a
 &#8220;rushed&#8221; burst of initial notes.</p>
-<p>The second element in a data token represents the <tt class="docutils literal"><span class="pre">**MIDI</span></tt> key number.
+<p>The second element in a data token represents the <a class="reference external" href="../../rep/MIDI">**MIDI</a> key number.
 Successive numbers refer to semitone pitches where middle C is designated key
 <tt class="docutils literal"><span class="pre">60</span></tt>. Key-off events are represented by negative integers, so <tt class="docutils literal"><span class="pre">-60</span></tt> means
 turn off key <tt class="docutils literal"><span class="pre">60</span></tt>. Key numbers range between 1 and 127.</p>
-<p>The third element in a data token represents the <tt class="docutils literal"><span class="pre">**MIDI</span></tt> key velocity.
+<p>The third element in a data token represents the <a class="reference external" href="../../rep/MIDI">**MIDI</a> key velocity.
 MIDI instruments normally interpret key velocity as dynamic or accent
 information. Higher key-velocity values are associated with accented notes.
 In the case of key-off events, the key-velocity component represents the key-
 up velocity.</p>
-<p>Unlike most other Humdrum representations, the <tt class="docutils literal"><span class="pre">`**MIDI```_</span> <span class="pre">format</span> <span class="pre">requires</span>
-<span class="pre">two</span> <span class="pre">data</span> <span class="pre">tokens</span> <span class="pre">for</span> <span class="pre">each</span> <span class="pre">note.</span> <span class="pre">The</span> <span class="pre">following</span> <span class="pre">example</span> <span class="pre">shows</span> <span class="pre">a</span> <span class="pre">three</span> <span class="pre">note</span>
-<span class="pre">C-major</span> <span class="pre">triad.</span> <span class="pre">The</span> <span class="pre">`\*\*kern`_</span> <span class="pre">data</span> <span class="pre">is</span> <span class="pre">shown</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">left</span> <span class="pre">spine</span> <span class="pre">with</span> <span class="pre">the</span>
-<span class="pre">corresponding</span> <span class="pre">``**MIDI</span></tt> data in the right spine. Notice that each data token
+<p>Unlike most other Humdrum representations, the <a class="reference external" href="../../rep/MIDI">**MIDI</a> format requires
+two data tokens for each note. The following example shows a three note
+C-major triad. The <a class="reference external" href="../../rep/kern">**kern</a> data is shown in the left spine with the
+corresponding <a class="reference external" href="../../rep/MIDI">**MIDI</a> data in the right spine. Notice that each data token
 consists of three subtokens, one for each note:</p>
 <p><tt class="docutils literal"><span class="pre">!!</span> <span class="pre">A</span> <span class="pre">C-majortriad.</span>
 <span class="pre">``**kern**MIDI</span>
@@ -366,7 +366,7 @@ clock ticks before the key-off commands are executed. Notice that all key-off
 events occur simultaneously.</p>
 <p>Suppose we add a second chord consisting of the dyad D4 and F4. The dyad
 begins at the same time that the C major triad ends. This results in five
-subtokens in the corresponding <tt class="docutils literal"><span class="pre">**MIDI</span></tt> data record. Three key-off events
+subtokens in the corresponding <a class="reference external" href="../../rep/MIDI">**MIDI</a> data record. Three key-off events
 are synchronous with two key-on events:</p>
 <p><tt class="docutils literal"><span class="pre">!!</span> <span class="pre">Two</span> <span class="pre">chords.</span>
 <span class="pre">``**kern**MIDI</span>
@@ -409,7 +409,7 @@ Darius Milhaud&#8217;s <em>Touches Blanches</em>.</p>
 <span class="pre">``4G.72/-62/64</span> <span class="pre">72/55/64.</span>
 <span class="pre">``..72/-55/6472/-67/64</span>
 <span class="pre">``*-*-*-*-</span></tt></p>
-<p>The <a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id25"><span class="problematic" id="id26">`**MIDI```_</span></a> representation always expects a tandem interpretation
+<p>The <a class="reference external" href="../../rep/MIDI">**MIDI</a> representation always expects a tandem interpretation
 indicating the MIDI channel assignment. In Example 7.1 both parts have been
 assigned to channel 1. Once again, simultaneous key-on and key-off events
 often appear as double-stops. Also notice that an additional data record is
@@ -417,34 +417,34 @@ required at the end of the passage in order to turn off the final notes.</p>
 </div>
 <div class="section" id="the-midi-command">
 <h2>The <em>midi</em> Command<a class="headerlink" href="#the-midi-command" title="Permalink to this headline">¶</a></h2>
-<p>The <a href="#id27"><span class="problematic" id="id28">`**midi**`_</span></a> command converts Humdrum <a href="#id29"><span class="problematic" id="id30">`\*\*kern`_</span></a> data into Humdrum
-<tt class="docutils literal"><span class="pre">**MIDI</span></tt> data. By way of example, the above <tt class="docutils literal"><span class="pre">**MIDI</span></tt> data can be
+<p>The <a class="reference external" href="../../man/midi">midi</a> command converts Humdrum <a class="reference external" href="../../rep/kern">**kern</a> data into Humdrum
+<a class="reference external" href="../../rep/MIDI">**MIDI</a> data. By way of example, the above <a class="reference external" href="../../rep/MIDI">**MIDI</a> data can be
 generated as follows:</p>
 <p><tt class="docutils literal"><span class="pre">midi</span> <span class="pre">inven05.krn</span> <span class="pre">&gt;</span> <span class="pre">inven05.hmd</span></tt></p>
 <p>The <tt class="docutils literal"><span class="pre">.hmd</span></tt> filename extension is a common way of designating Humdrum
-<tt class="docutils literal"><span class="pre">MIDI</span></tt> data.</p>
+<a class="reference external" href="../../man/MIDI">MIDI</a> data.</p>
 <p>Since the **kern representation does not encode key-velocity information,
 the <strong>midi</strong> command assumes a default key velocity of 64 (from a range of 1
 to 127). If the input is monophonic, <strong>midi</strong> will also allow the user to set
 a fixed note duration using the <strong>-d</strong> option. This is useful for auditing
 notes that do not have duration values. For example, a Gregorian chant might
 be represented without durations. The following command takes a file
-containing a 12-tone row (pitch information only) and produces a <tt class="docutils literal"><span class="pre">**MIDI</span></tt>
+containing a 12-tone row (pitch information only) and produces a <a class="reference external" href="../../rep/MIDI">**MIDI</a>
 output where all notes assigned to a quarter duration:</p>
 <p><tt class="docutils literal"><span class="pre">midi</span> <span class="pre">-d</span> <span class="pre">4</span> <span class="pre">tonerow</span> <span class="pre">&gt;</span> <span class="pre">tonerow.hmd</span></tt></p>
-<p>The most common use of <tt class="docutils literal"><span class="pre">**MIDI</span></tt> data is to create a standard MIDI file
+<p>The most common use of <a class="reference external" href="../../rep/MIDI">**MIDI</a> data is to create a standard MIDI file
 using the <strong>smf</strong> command, or to listen to the output using the <strong>perform</strong>
-command. In some cases, it is useful to carry out processing of <tt class="docutils literal"><span class="pre">**MIDI</span></tt>
+command. In some cases, it is useful to carry out processing of <a class="reference external" href="../../rep/MIDI">**MIDI</a>
 data itself.</p>
 </div>
 <div class="section" id="the-perform-command">
 <h2>The <em>perform</em> Command<a class="headerlink" href="#the-perform-command" title="Permalink to this headline">¶</a></h2>
-<p>The <a href="#id31"><span class="problematic" id="id32">`**perform**`_</span></a> command allows the user to listen to synthesized
-performances of <tt class="docutils literal"><span class="pre">**MIDI</span></tt>-format input. When invoked, <strong>perform</strong> provides a
+<p>The <a class="reference external" href="../../man/perform">perform</a> command allows the user to listen to synthesized
+performances of <a class="reference external" href="../../rep/MIDI">**MIDI</a>-format input. When invoked, <strong>perform</strong> provides a
 simple interactive environment suitable for proof-listening and other
 audition tasks.</p>
 <p>The <strong>perform</strong> command accepts any Humdrum input; however, only
-<a href="#id7"><span class="problematic" id="id8">``</span></a><a href="#id33"><span class="problematic" id="id34">`**MIDI```_</span></a> spines present in the input stream are performed. Non-MIDI
+<a class="reference external" href="../../rep/MIDI">**MIDI</a> spines present in the input stream are performed. Non-MIDI
 spines are simply ignored and do not affect the sound output. The <strong>perform</strong>
 command generates serial MIDI data which are sent directly to a MIDI
 controller card or on-board sound-card.</p>
@@ -460,7 +460,7 @@ user to pause and resume playback, to change tempo, to move to any measure by
 absolute or relative reference, and to search forward or backward for
 commented markers. The <strong>perform</strong> command remains active until either the
 end of the score is reached or the user terminates performance by typing the
-letter <a href="#id9"><span class="problematic" id="id10">`</span></a>q&#8217; or the escape key (ESC).</p>
+letter <a href="#id27"><span class="problematic" id="id28">`</span></a>q&#8217; or the escape key (ESC).</p>
 <p>Playback can be paused by typing the space-bar and resumed by typing any key.
 Typing the carriage return by itself will return to the beginning of the
 score and re-initiate playback. If a number is typed before pressing the
@@ -501,14 +501,14 @@ used a sequence of data records such as the following:</p>
 screen during playback, this means that the Humdrum data will also appear on
 the screen as it is being played. In addition, the commented data records are
 accessible to the forward- and backward-search commands. For example, in the
-<a href="#id35"><span class="problematic" id="id36">`\*\*kern`_</span></a> representation, pauses are indicated by a semicolon; hence the
+<a class="reference external" href="../../rep/kern">**kern</a> representation, pauses are indicated by a semicolon; hence the
 user might search for the next pause symbol by typing:</p>
 <p><tt class="docutils literal"><span class="pre">/;</span></tt></p>
 <p>Similarly, the user could search for a particular pitch, e.g.</p>
 <p><tt class="docutils literal"><span class="pre">/gg#</span></tt></p>
 <p>Since the <strong>perform</strong> command accepts any Humdrum input, other Humdrum data
 may be used for searching. For example, the input data might contain melodic
-interval data (see <a href="#id37"><span class="problematic" id="id38">`Chapter 11`_</span></a>), allowing the user to search for a
+interval data (see <a class="reference external" href="../ch11">Chapter 11</a>), allowing the user to search for a
 particular interval such as a diminished octave:</p>
 <p><tt class="docutils literal"><span class="pre">/d8</span></tt></p>
 <p>If the string pattern is found in the input, <strong>perform</strong> will move
@@ -538,23 +538,23 @@ notes per minute.</p>
 performances; for instance, an intermittently functioning MIDI cable may fail
 to convey a &#8220;note-off&#8221; instruction to an active synthesizer. The <strong>p</strong>
 command (&#8220;panic&#8221;) turns off all active notes. Should a cipher remain after
-terminating the <strong>perform</strong> command, the Humdrum <a href="#id39"><span class="problematic" id="id40">`**tacet**`_</span></a> command can be
+terminating the <strong>perform</strong> command, the Humdrum <a class="reference external" href="../../man/tacet">tacet</a> command can be
 used to send &#8220;all-notoff&#8221; commands on all MIDI channels.</p>
-<p>In <a href="#id41"><span class="problematic" id="id42">`Chapter 12,`_</span></a> we will see how <strong>perform</strong> can be used in conjunction with
-other commands (such as <a href="#id43"><span class="problematic" id="id44">`**extract**`_</span></a> and <a href="#id45"><span class="problematic" id="id46">`**yank**`_</span></a>) to listen selectively
-to specific parts or passages. In <a href="#id47"><span class="problematic" id="id48">`Chapter 21`_</span></a> we will use <strong>perform</strong> in
-conjunction with the <a href="#id49"><span class="problematic" id="id50">`**patt**`_</span></a> command to listen to patterns (such as
+<p>In <a class="reference external" href="../ch12">Chapter 12</a>, we will see how <strong>perform</strong> can be used in conjunction with
+other commands (such as <a class="reference external" href="../../man/extract">extract</a> and <a class="reference external" href="../../man/yank">yank</a>) to listen selectively
+to specific parts or passages. In <a class="reference external" href="../ch21">Chapter 21</a> we will use <strong>perform</strong> in
+conjunction with the <a class="reference external" href="../../man/patt">patt</a> command to listen to patterns (such as
 harmonic, rhythmic and melodic patterns) found in some repertory.</p>
 </div>
 <div class="section" id="the-smf-command">
 <h2>The <em>smf</em> Command<a class="headerlink" href="#the-smf-command" title="Permalink to this headline">¶</a></h2>
-<p>Another MIDI-related tool is the <a href="#id51"><span class="problematic" id="id52">`**smf**`_</span></a> command. This command allows the
-user to create &#8220;standard MIDI files&#8221; from Humdrum <tt class="docutils literal"><span class="pre">**MIDI</span></tt>-format files.
+<p>Another MIDI-related tool is the <a class="reference external" href="../../man/smf">smf</a> command. This command allows the
+user to create &#8220;standard MIDI files&#8221; from Humdrum <a class="reference external" href="../../rep/MIDI">**MIDI</a>-format files.
 Standard MIDI files are industry-standard binary files that can be imported
 by a variety of MIDI applications software packages on many different
 platforms, including sequencer programs and most music notation packages.</p>
-<p>The <strong>smf</strong> command translates only <tt class="docutils literal"><span class="pre">**MIDI</span></tt> input spines; all
-non-<tt class="docutils literal"><span class="pre">**MIDI</span></tt> spines are simply ignored. Suppose we begin with a
+<p>The <strong>smf</strong> command translates only <a class="reference external" href="../../rep/MIDI">**MIDI</a> input spines; all
+non-<a class="reference external" href="../../rep/MIDI">**MIDI</a> spines are simply ignored. Suppose we begin with a
 **kern-format file named <tt class="docutils literal"><span class="pre">joplin</span></tt>. We can create a standard MIDI file
 as follows:</p>
 <p><tt class="docutils literal"><span class="pre">midi</span> <span class="pre">joplin</span> <span class="pre">|</span> <span class="pre">smf</span> <span class="pre">&gt;</span> <span class="pre">joplin.smf</span></tt></p>
@@ -566,17 +566,17 @@ default MIDI key velocity. See the <em>Humdrum Reference Manual</em> for details
 <div class="section" id="reprise">
 <h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
 <p>In this chapter we have learned how Humdrum data can be output as MIDI data.
-Humdrum provides a <tt class="docutils literal"><span class="pre">**MIDI</span></tt> representation that closely parallels MIDI but
+Humdrum provides a <a class="reference external" href="../../rep/MIDI">**MIDI</a> representation that closely parallels MIDI but
 remains in conformity with the Humdrum syntax. This means that the data can
 still be processed with other Humdrum tools (as we will see in later
 chapters).</p>
-<p>The <a href="#id53"><span class="problematic" id="id54">`**midi**`_</span></a> command can translate <a href="#id55"><span class="problematic" id="id56">`\*\*kern`_</span></a> data to <a href="#id11"><span class="problematic" id="id12">``</span></a><a href="#id57"><span class="problematic" id="id58">`**MIDI```_</span></a> and
-the <a href="#id59"><span class="problematic" id="id60">`**perform**`_</span></a> and <a href="#id61"><span class="problematic" id="id62">`**smf**`_</span></a> commands can be used to generate true MIDI
+<p>The <a class="reference external" href="../../man/midi">midi</a> command can translate <a class="reference external" href="../../rep/kern">**kern</a> data to <a class="reference external" href="../../rep/MIDI">**MIDI</a> and
+the <a class="reference external" href="../../man/perform">perform</a> and <a class="reference external" href="../../man/smf">smf</a> commands can be used to generate true MIDI
 data for listening. The <strong>perform</strong> command provides a simple interactive
 command-line sequencer for playing whatever input is provided. The <strong>smf</strong>
 command generates standard MIDI files that can be used to transport MIDI data
 to a vast array of commercial and non-commerical applications software. In
-<a href="#id63"><span class="problematic" id="id64">`Chapter 30`_</span></a> we will explore some of the Humdrum tools for inputting MIDI
+<a class="reference external" href="../ch30">Chapter 30</a> we will explore some of the Humdrum tools for inputting MIDI
 data into Humdrum.</p>
 </div>
 </div>

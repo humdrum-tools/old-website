@@ -67,10 +67,10 @@ When searching through the specific *PATH*, **find** is able to carry out a
 wide variety of possible tests on each file. One simple action is to test
 whether the file-name conforms to a given regular expression. Consider, for
 example, the goal of identifying all files representing pitch-class
-(``**pc``_) information. The Humdrum convention is to identify these files
+(`**pc <../../rep/pc>`_) information. The Humdrum convention is to identify these files
 by adding the ``.pc`` extension to the filename -- such as ``opus24.pc``. The
 following **find** command will traverse through the ``/scores`` directory
-(and all sub-directories) searching for files that contain the ``pc`` file
+(and all sub-directories) searching for files that contain the `pc <../../man/pc>`_ file
 extension:
 
 ``find /scores -name *.pc``
@@ -127,16 +127,16 @@ For most music research applications, we are interested in identifying files
 on the basis of their contents. That is, we'd like to know what's inside the
 file before we take any action.
 
-The **grep** command is especially useful in determining whether certain
+The `grep <http://en.wikipedia.org/wiki/Grep>`_ command is especially useful in determining whether certain
 items of information are present in a file. For example, the following
 command identifies all files in the path ``/scores`` that contain passages in
 7/8 meter:
 
 ``find /scores -type f -exec grep -l '\*M7/8' "{}" ";"``
 
-Recall that the **-l** option for **grep** causes the output to consist only
+Recall that the **-l** option for `grep <http://en.wikipedia.org/wiki/Grep>`_ causes the output to consist only
 of names of files that contain the sought regular expression. Note that the
-**-type f** option has been specified in order to ensure that the **grep**
+**-type f** option has been specified in order to ensure that the `grep <http://en.wikipedia.org/wiki/Grep>`_
 command is only executed for files.
 
 The structure of the above command can be used to search for all sorts of
@@ -176,7 +176,7 @@ directory that are rondos:
 
 ``find . -exec grep -il '!!!AFR.*rondo' "{}" ";"``
 
-Recall that the **-i** option for **grep** makes the pattern-match
+Recall that the **-i** option for `grep <http://en.wikipedia.org/wiki/Grep>`_ makes the pattern-match
 insensitive to upper- or lower-case.
 
 The following command identifies all files in the path ``non-western`` that
@@ -240,7 +240,7 @@ meters.
 Using *find* with the *xargs* Command
 --------
 
-As we saw in `Chapter 10,`_ the **xargs** command can be used to propagate
+As we saw in `Chapter 10 <../ch10>`_, the **xargs** command can be used to propagate
 file names from command to command within a pipeline. Using **xargs** in
 conjunction with **find** provides a powerful means for finding works that
 conform to highly complex criteria. For example, the following command
@@ -270,7 +270,7 @@ of key signature:
 
 As a further example of the use of **xargs**, consider the following
 extension of the above pipeline. The **grep -v** command causes only those
-files containing more than one key signature to be passed. The **sed**
+files containing more than one key signature to be passed. The `sed <http://en.wikipedia.org/wiki/Sed>`_
 command eliminates the colon and the number appended to the filenames. The
 ensuing **grep -c** counts the number of meter signatures in each file. The
 final **grep -v** passes only those filenames containing 2 or more meter
@@ -360,7 +360,7 @@ file-system looking for files that conform to specific criteria. In
 musicological tasks, the **find** command is especially well suited to
 assembling a repertory of scores that exhibit some characteristic(s) of
 interest. Multiple selection criteria can be accommodated by using one or
-more pipes in conjunction with the **grep** command.
+more pipes in conjunction with the `grep <http://en.wikipedia.org/wiki/Grep>`_ command.
 
 For convenience, it is often helpful to create a new directory that holds all
 of works selected for a study repertory. On UNIX systems, file "links" can be

@@ -222,18 +222,18 @@ a common command:
 -   one or more input file names,
 -   output redirection.
 
-Each of these components is separated by `blank space' (tabs or spaces). A
-command begins with the command name -- such as **uniq**, **sort**, or
+Each of these components is separated by 'blank space' (tabs or spaces). A
+command begins with the command name -- such as `uniq <http://en.wikipedia.org/wiki/Uniq>`_, **sort**, or
 `**pitch**.`_ A command argument is a special requirement of only some
 commands. A good example of a command argument is the search pattern given to
-the **grep** command. In the following command, **grep** is the command name,
+the `grep <http://en.wikipedia.org/wiki/Grep>`_ command. In the following command, `grep <http://en.wikipedia.org/wiki/Grep>`_ is the command name,
 "Lennon" is the command argument and ``beatles`` is the input file name:
 
 ``grep Lennon beatles``
 
 For most commands, it is possible to process more than one input file. These
 files are simply listed at the end of the command. For example, the following
-**grep** command searches for the string "McCartney" in the file ``beatles``
+`grep <http://en.wikipedia.org/wiki/Grep>`_ command searches for the string "McCartney" in the file ``beatles``
 and in the file ``wings``:
 
 ``grep McCartney beatles wings``
@@ -241,16 +241,16 @@ and in the file ``wings``:
 Most commands provide *options* that modify the behavior of the command in
 some way. Command options are designated by a leading dash character. The
 specific option is usually indicated by a single alphabetic letter, such as
-the **-b** option (spoken: "dash-B" option). In the **uniq** command, the
+the **-b** option (spoken: "dash-B" option). In the `uniq <http://en.wikipedia.org/wiki/Uniq>`_ command, the
 **-c** option causes a count to be prepended to each output line. In the
-following command, **uniq** is the command name, **-c** is the option, and
+following command, `uniq <http://en.wikipedia.org/wiki/Uniq>`_ is the command name, **-c** is the option, and
 ``ghana32`` is the name of the input file:
 
 ``uniq -c ghana32``
 
 In many cases, the option is followed by a *parameter* that specifies further
 information pertaining to the invoked option. In the following command,
-`**recode**`_ is the command name, **-f** is the option, **reassign** is the
+`recode <../../man/recode>`_ is the command name, **-f** is the option, **reassign** is the
 parameter used by the **-f** option, and **gagaku** is the name of the input
 file:
 

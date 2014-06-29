@@ -4,30 +4,28 @@ The Humdrum Toolkit: Software for Music Research
 Welcome
 ----------
 
-Welcome to the new website for the Humdrum tools 
-for computational music analysis.
-Here you will find instructions on downloading, 
+Welcome to the website for Humdrum tools for computational
+music analysis.  Here you will find instructions on downloading,
 installing, and using the Humdrum Toolkit.
 
-We've split the site into the `Humdrum User Guide <http://humdrum-tools.github.io/humdrum-tools/guide/index.html>`_
-(Huron, 1995), an explanation of Craig Sapp's Humdrum
-Extras, and a Humdrum Cookbook.  While the original documentation is
-transfer onto this website, you can vew the original HTML documentation
-`here <Humdrum>`_.
+We've split the site into the `Humdrum User Guide <guide>`_ (Huron,
+1995), an explanation of Craig Sapp's `Humdrum Extras <humextra>`_,
+and a `Humdrum Cookbook <cookbook>`_.  While the original documentation
+is transferred onto this website, you can view the original HTML
+documentation `here <Humdrum>`_.
 
 
 What is Humdrum?
 ~~~~~~~~~~~~~~~~
 
-Humdrum is a set of command-line tools that facilitates musical 
-analysis. Because it's a set of command-line tools, 
-it's program-language agnostic. Many have employed 
-Humdrum tools in larger scripts that use PERL, Ruby, Python, Bash, LISP, and C++.
+Humdrum is a set of command-line tools that facilitates musical
+analysis. Because it's a set of command-line tools, it's program-language
+agnostic. Many have employed Humdrum tools in larger scripts that
+use PERL, Ruby, Python, Bash, LISP, and C++.
 
-David Huron created Humdrum in the 1980s, 
-and it has been used steadily for decades. 
-We will be updating the site soon to include
-a list of studies and publications that have used the toolkit. 
+David Huron created Humdrum in the 1980s, and it has been used
+steadily for decades.  We will be updating the site soon to include
+a list of studies and publications that have used the toolkit.
 
 
 Documentation

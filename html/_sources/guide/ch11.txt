@@ -9,8 +9,8 @@ pitches are concurrent the distance is referred to as a *harmonic interval.*
 The simplicity of these definitions is deceptive. In real music, the
 determination of pitch intervals can be surprisingly complicated. In this
 chapter we will discuss Humdrum tools related to melodic pitch intervals --
-specifically the `**mint**`_ (melodic interval) and `**xdelta**`_ commands.
-Discussion of harmonic intervals will be delayed until `Chapter 15.`_
+specifically the `mint <../../man/mint>`_ (melodic interval) and `xdelta <../../man/xdelta>`_ commands.
+Discussion of harmonic intervals will be delayed until `Chapter 15 <../ch15>`_.
 
 
 Types of Melodic Intervals
@@ -112,9 +112,9 @@ cents, frequency differences, or even differences in cochlear coordinates.
 Melodic Intervals Using the *mint* Command
 --------
 
-The Humdrum `**mint**`_ command calculates melodic intervals for pitch-
-related representations such as `\*\*kern`_, ```**pitch```_, ```**solfg```_
-and ```**Tonh```_. Output intervals are expressed using the traditional
+The Humdrum `mint <../../man/mint>`_ command calculates melodic intervals for pitch-
+related representations such as `**kern <../../rep/kern>`_, `**pitch <../../rep/pitch>`_, `**solfg <../../rep/solfg>`_
+and `**Tonh <../../rep/Tonh>`_. Output intervals are expressed using the traditional
 diatonic terms where both interval quality and interval size are specified.
 Interval qualities include perfect (``P``), major (``M``), minor (``m``),
 augmented (``A``) and diminished (``d``). Interval qualities may also be
@@ -155,7 +155,7 @@ via the **-t** option for **mint.**
 
 Sometimes it is useful to maintain the initial starting pitches in the
 output. The presence of these "offset" pitch values can prove useful in later
-reconstructing the original pitches from the ```**mint```_ interval data.
+reconstructing the original pitches from the `**mint <../../rep/mint>`_ interval data.
 When the **-o** option is invoked, **mint** outputs the initial starting
 pitches (placed in square brackets) from which the subsequent melodic
 intervals have been calculated.
@@ -193,7 +193,7 @@ just prior to the barline.
 Depending on the regular expression given, the **-b** option can used for a
 variety of specialized intervals. For example, suppose that we wanted to
 avoid calculating intervals between the last note of a phrase and the first
-note of the next phrase. In the `\*\*kern`_ representation, the open and
+note of the next phrase. In the `**kern <../../rep/kern>`_ representation, the open and
 closed curly braces are used to indicate the beginnings and ends of phrases.
 We need to tell **mint** to break interval calculations each time an end-of-
 phrase signifier is encountered:
@@ -247,7 +247,7 @@ intervals would be omitted.
 Calculating Distance Intervals Using the *mint -s* Command
 --------
 
-Another option provided by `**mint**`_ is the **-s** or skip option. Like the
+Another option provided by `mint <../../man/mint>`_ is the **-s** or skip option. Like the
 **-b** option, this option requires a subsequent regular expression. Any
 token matching this expression is transformed to a null data token and is
 ignored when processing. One possible use for this option is to help
@@ -312,11 +312,11 @@ arpeggiated major chord -- from C5 to G4 (down a P4), to E4 (down a m3) to C4
 Using duration information is a somewhat limited technique for calculating
 distance intervals. Typically, users will want to define much more refined
 ways of identifying structural tones. More sophisticated methods for
-calculating distance intervals are discussed in `Chapter 35`_ on "Layers."
+calculating distance intervals are discussed in `Chapter 35 <../ch35>`_ on "Layers."
 
 Cross-voice melodic intervals can be calculated by amalgamating several
-spines into a single spine. In `Chapter 26`_ we will learn more about the
-`**cleave**`_ command. But here is a typical use:
+spines into a single spine. In `Chapter 26 <../ch26>`_ we will learn more about the
+`cleave <../../man/cleave>`_ command. But here is a typical use:
 
 `` cleave -d ' ' -i '**kern' -o '**kern' example11a``
 
@@ -383,7 +383,7 @@ tenth (``M10``) will be output as a major third (``M3``).
 Diatonic Intervals, Absolute Intervals and Contour
 --------------------------------------------------
 
-The `**mint**`_ command provides three further options of interest. The
+The `mint <../../man/mint>`_ command provides three further options of interest. The
 **-d** option causes **mint** to output only the diatonic interval size
 without the interval quality information. The **-a** option causes **mint**
 to output absolute pitch intervals without distinguishing ascending intervals
@@ -417,7 +417,7 @@ Maurice Chevalier?
 `` mint Chevalier* | grep -c '-[Mm]2'``
 
 An alternative way of achieving the same goal might simplify the regular
-expression to **grep** and use the **-d** (diatonic) option for **mint**:
+expression to `grep <http://en.wikipedia.org/wiki/Grep>`_ and use the **-d** (diatonic) option for **mint**:
 
 `` mint -d Chevalier* | grep -c '+2'``
 `` mint -d Chevalier* | grep -c '-2'``
@@ -427,7 +427,7 @@ parts of a score:
 
 `` extract -i '*Ivox' Platters | mint -c | egrep '(A4)|(d5)'``
 
-Here we have used the extended regular expression capabilities of **egrep**
+Here we have used the extended regular expression capabilities of `egrep <http://en.wikipedia.org/wiki/Egrep#Variations>`_
 to specify an either/or pattern.
 
 Suppose we had a directory containing only files encoding melodies using the
@@ -451,11 +451,11 @@ Calculating Melodic Intervals Using the *xdelta* Command
 --------
 
 Often it is useful to calculate melodic intervals in purely numerical values,
-such as the number semitones or the number of cents. The `**xdelta**`_
+such as the number semitones or the number of cents. The `xdelta <../../man/xdelta>`_
 command provides a general tool for calculating numerical differences between
 successive values within individual spines. In order to use **xdelta** to
 calculate semitone differences, we first need to transform our representation
-to ```**semits```_ (discussed in `Chapter 4`_). Recall that in the
+to `**semits <../../rep/semits>`_ (discussed in `Chapter 4 <../ch04>`_). Recall that in the
 `` **semits`` representation, middle C is designated by the value zero, and
 all other pitches are represented by their (positive or negative) semitone
 distance. A C-major scale would appear as follows:
@@ -493,11 +493,11 @@ and all subsequent values represent the numerical *difference* between
 successive values. If the scale had been descending in pitch, then the
 difference values would be negative.
 
-Notice also that the input interpretation (``**semits``) has been modified to
+Notice also that the input interpretation (`**semits <../../rep/semits>`_) has been modified to
 `` **Xsemits``). The input representation for **xdelta** does not matter. The
 output is always modified so the letter X is prepended to the representation.
 This means that **xdelta** could as easily be used to calculate differences
-in cents (``**Xcents``), frequency (``**Xfreq``) or any other representation
+in cents (``Xcents``), frequency (``Xfreq``) or any other representation
 that contains numbers.
 
 When **xdelta** encounters multiple-stops, it behaves in a manner similar to
@@ -520,7 +520,7 @@ The **xdelta** command produces the following output:
 `` 13 5 -2
 `` *-``
 
-Once again, the interpretation has been modified to ``**Xsemits`` and the
+Once again, the interpretation has been modified to ``Xsemits`` and the
 leading value has been changed to a null token. In going from the value 3 to
 the values 2 and 5, the output differences are -1 and +2 respectively. In
 going from the values 2 and 5 to the values -1, 7 and 14, we see the outer
@@ -578,14 +578,14 @@ different types of melodic intervals including *voiced melodic intervals*,
 outer intervals*, *unvoiced inner intervals*, *distance intervals*, and *tied
 note intervals*.
 
-In this chapter we have seen how to use the `**mint**`_ command to calculate
+In this chapter we have seen how to use the `mint <../../man/mint>`_ command to calculate
 these various kinds of intervals. Specifically, we have illustrated how to
 calculate voiced intervals, interrupted intervals, unvoiced outer intervals
-and unvoiced inner intervals. In `Chapter 26`_ we will show how to calculate
-cross-voice intervals, and in `Chapter 35`_ ("Layers") we will consider how
+and unvoiced inner intervals. In `Chapter 26 <../ch26>`_ we will show how to calculate
+cross-voice intervals, and in `Chapter 35 <../ch35>`_ ("Layers") we will consider how
 to calculate distance intervals.
 
-We have also seen how `**xdelta**`_ can be used to measure purely numerical
+We have also seen how `xdelta <../../man/xdelta>`_ can be used to measure purely numerical
 distances between successive values. As we will see, **xdelta** will prove
 useful in many other applications apart from calculating pitch distances.
 

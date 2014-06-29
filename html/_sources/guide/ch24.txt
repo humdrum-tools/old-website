@@ -2,7 +2,7 @@
 Chapter 24: The Shell (III)
 ==============================
 
-In `Chapter 16`_ we learned about the **alias** feature of the shell. The
+In `Chapter 16 <../ch16>`_ we learned about the **alias** feature of the shell. The
 **alias** command allowed us to create new commands by assigning a complex
 pipeline to a single-word command. In this chapter we will learn how to use
 the shell to write more complex programs. Shell programs allow users to
@@ -114,8 +114,8 @@ more specifically, to works with a known key. Before processing a work, we
 might want to have **Schenker** test for the presence of a tandem
 interpretation specifying the key.
 
-Let's begin by using **grep** to search for a key tandem interpretation. An
-appropriate **grep** command would be:
+Let's begin by using `grep <http://en.wikipedia.org/wiki/Grep>`_ to search for a key tandem interpretation. An
+appropriate `grep <http://en.wikipedia.org/wiki/Grep>`_ command would be:
 
 ``grep '^\*[A-Ga-g][#-]*:' $1``
 
@@ -125,7 +125,7 @@ the key interpretation to the variable KEY:
 
 ``KEY=`grep '^\*[A-Ga-g][#-]*:' $1``
 
-If no key indicator is found by **grep**, then the variable KEY will be
+If no key indicator is found by `grep <http://en.wikipedia.org/wiki/Grep>`_, then the variable KEY will be
 empty. We can test for this condition using the shell **if** statement.
 
 ``KEY=`grep '^\*[A-Ga-g][#-]*:' $1`
@@ -409,8 +409,8 @@ extract -i '*tenor'  | census -k
 extract -i '*bass'  | census -k``
 
 If we wanted to get a little fancier, we could filter the output so that only
-the highest and lowest pitch information is output. The UNIX **grep** command
-will let us define a string for searching; **egrep** permits compound
+the highest and lowest pitch information is output. The UNIX `grep <http://en.wikipedia.org/wiki/Grep>`_ command
+will let us define a string for searching; `egrep <http://en.wikipedia.org/wiki/Egrep#Variations>`_ permits compound
 strings, such as the use of the OR bar (|):
 
 ``extract -i '*soprano'  | census -k | egrep 'Highest|Lowest'``
@@ -424,7 +424,7 @@ RULE: "Avoid parts that move by augmented or diminished intervals.
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Implementing this is simple. We first translate our pitch- related data to
-the melodic interval format -- ``**mint``_. This can be done using the
+the melodic interval format -- `**mint <../../rep/mint>`_. This can be done using the
 Humdrum **mint** command. For example, consider the following melodic
 fragment from the 2nd movement of Bach's Brandenburg Concerto No. 5:
 
@@ -461,11 +461,11 @@ descending intervals; 'P' means perfect, 'M' means major, 'm' means minor,
 > *-``
 
 Searching for diminished or augmented intervals is as simple as using the
-Unix **grep** command, with the appropriate regular expression:
+Unix `grep <http://en.wikipedia.org/wiki/Grep>`_ command, with the appropriate regular expression:
 
 ``grep -n '[Ad]' ``
 
-The **-n** option will cause **grep** to prepend the line number of any
+The **-n** option will cause `grep <http://en.wikipedia.org/wiki/Grep>`_ to prepend the line number of any
 matching patterns, so we can refer back to the original input file.
 
 In order to avoid the letters `A' or `d' found in comments or
@@ -473,13 +473,13 @@ interpretations, we might consider using the Humdrum **rid** command:
 
 ``rid -GLI  | grep -n '[Ad]'``
 
-However, this will cause the line numbers output by **grep** to be wrong. The
+However, this will cause the line numbers output by `grep <http://en.wikipedia.org/wiki/Grep>`_ to be wrong. The
 line numbers will correspond to the input file with the comments and
 interpretations removed.
 
-A better approach is to send the complete file to **grep**, and use a more
+A better approach is to send the complete file to `grep <http://en.wikipedia.org/wiki/Grep>`_, and use a more
 circumspect regular expression to eliminate comments and interpretations
-within **grep**. **egrep** allows us to define more complex regular
+within `grep <http://en.wikipedia.org/wiki/Grep>`_. `egrep <http://en.wikipedia.org/wiki/Egrep#Variations>`_ allows us to define more complex regular
 expressions:
 
 ``egrep '^[^!*].*[Ad]'``
@@ -523,7 +523,7 @@ patterns that span more than one line or record. For this example, we'll use
 
 First, we need to reformat our input so the data represent harmonic intervals
 rather than pitches. The Humdrum **hint** command will change most pitch
-representations to the harmonic interval representation -- ``**hint``_.
+representations to the harmonic interval representation -- `**hint <../../rep/hint>`_.
 Consider, for example, the following input:
 
 
@@ -577,7 +577,7 @@ occurrences of the defined pattern using the following command:
 pattern-template has been stored. The **-s** option tells **patt** of any
 input records that should be skipped during the search process. The **-s**
 option is followed by a regular expression -- in this case the equals-sign --
-so that any input records containing the equals-sign (i.e. ``**hint``
+so that any input records containing the equals-sign (i.e. `**hint <../../rep/hint>`_
 barlines) are ignored.
 
 The default output from **patt** identifies the location of any instances of
@@ -700,7 +700,7 @@ Having translated the representation in this way, we need to search for any
 lines which contain two instances of the number `7' -- that is, two
 concurrent instances of the leading-tone.
 
-Searching for the number `7' is easily done using the standard Unix **grep**
+Searching for the number `7' is easily done using the standard Unix `grep <http://en.wikipedia.org/wiki/Grep>`_
 (get regular expression) command:
 
 ``deg  | grep -n '7'``
@@ -720,7 +720,7 @@ by the number 7". In short, this expression will match any record in which
 the number 7 occurs at least twice.
 
 As in the case of our earlier search for augmented and diminished intervals,
-**grep** is insensitive to whether the matching character string is found in
+`grep <http://en.wikipedia.org/wiki/Grep>`_ is insensitive to whether the matching character string is found in
 a data record, or whether it occurs in a Humdrum comment or interpretation.
 In order to avoid matching comments or interpretations, a further refinement
 to our regular expression is appropriate.
@@ -745,7 +745,7 @@ input to be searched.
 In order to do this, we can use the Humdrum **extract** command as a filter,
 and identify the types of interpretations we want to pass. In the following
 modification to our pipe, the **extract** command has been used to ensure
-that only ``**deg``_ spines are present:
+that only `**deg <../../rep/deg>`_ spines are present:
 
 ``deg  | extract -i '**deg' | egrep -n '^7.*7|^[^!*].*7.*7'``
 
@@ -805,7 +805,7 @@ If we now invoke the **ditto** command, the modified output is:
 > *- *-``
 
 Notice that the two null tokens in the left-hand spine have been replaced by
-copies of the most recent data token. Now our **grep** command will find the
+copies of the most recent data token. Now our `grep <http://en.wikipedia.org/wiki/Grep>`_ command will find the
 two leading tones in the second last data record.
 
 In summary, the complete command pipeline would be:
@@ -833,7 +833,7 @@ facilitate comparison.
 
 The Humdrum **semits** command translates pitches to semitone distances where
 middle C is denoted as zero. For example, where two voices both play B3 at
-the same time, both the parts will have a ``**semits``_ value of minus one
+the same time, both the parts will have a `**semits <../../rep/semits>`_ value of minus one
 (-1).
 
 Like the **deg** command, the **semits** command provides a **"-x** option
@@ -902,8 +902,8 @@ voice is truly lower.
 
 First we need to translate the pitch representation to some sort of numerical
 form. We have several options. We could translate the pitches to frequency
-(``**freq``_), or we could translate them to semitones (``**semits``), or
-we could translate them to cents (**cents). Let's use ``**semits``. Once
+(`**freq <../../rep/freq>`_), or we could translate them to semitones (`**semits <../../rep/semits>`_), or
+we could translate them to cents (**cents). Let's use `**semits <../../rep/semits>`_. Once
 again, in this representation, middle-C is represented by the number zero,
 and all other pitches are represented by their semitone distance (positive or
 negative) with respect to this reference.
@@ -932,7 +932,7 @@ print NR}'``
 In short, if the left-most spine has a lower numerical value than the second
 spine, then tell us where that occurs.
 
-Since the ``**semits`` representation uses the lower-case letter `r' to
+Since the `**semits <../../rep/semits>`_ representation uses the lower-case letter `r' to
 represent a rest, we should avoid the possibility of comparing a number
 (note) with a rest. We can use a variation on the same **awk** script as we
 used when checking for unisons:
@@ -1076,7 +1076,7 @@ Violations of the exposed octaves rules must meet three conditions. First,
 the two voices must be separated by an octave (or two octaves, or a unison,
 etc.). (This suggests that we use the **hint** command with the **-c** option
 in order to reduce compound intervals to their non-compound equivalents.)
-Second, the voices must be moving in the same direction. (The ``**deg``
+Second, the voices must be moving in the same direction. (The `**deg <../../rep/deg>`_
 representation may be suitable here, since it distinguishes notes according
 to whether they are approached from below ("^") or above ("v").) Third, both
 voices must be moving by leap (e.g. more than two semitones).
@@ -1105,7 +1105,7 @@ following two situations:
 Any other situation means that the exposed octaves rule has not been
 violated.
 
-In other words, our final test can be expressed using the following **egrep**
+In other words, our final test can be expressed using the following `egrep <http://en.wikipedia.org/wiki/Egrep#Variations>`_
 command:
 
 ``egrep -n 'P1.*^.*^.*leap.*leap|P1.*v.*v.*leap.*leap'``
@@ -1119,20 +1119,20 @@ represented by the within-octave equivalent.
 
 ``extract -i '*alto,*tenor'  | hint -c > spine1``
 
-The second and third spines can be generated using the Humdrum `**deg**`_
+The second and third spines can be generated using the Humdrum `deg <../../man/deg>`_
 command:
 
 ``extract -i '*alto'  | deg > spine2
 extract -i '*tenor'  | deg > spine3``
 
 The fourth and fifth spines require a little more work. First, we calculate
-the melodic intervals for each voice using the Humdrum `**mint**`_ command.
+the melodic intervals for each voice using the Humdrum `mint <../../man/mint>`_ command.
 
 ``extract -i '*alto'  | mint ...``
 
 Secondly, we need to change all data tokens indicating intervals greater than
 a diatonic second (3 or more semitones) into the data token consisting of the
-(arbitrary) character string "leap". This can be done using the `**humsed**`_
+(arbitrary) character string "leap". This can be done using the `humsed <../../man/humsed>`_
 stream editor.
 
 `` ... humsed 's/.*[3-9].*/leap/' > spine4 [spine5 for the other voice]``

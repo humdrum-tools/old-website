@@ -116,7 +116,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">2. Rhythm and Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody and Pitch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
@@ -306,14 +306,14 @@ user-specified set of editing instructions. A stream editor can be used, for
 example, to automatically transform a document from British spelling to
 American spelling. Stream editors are especially useful when processing large
 numbers of documents &#8211; such as a series of files encoding some musical
-repertory. In this chapter we will introduce two stream editors: <strong>sed</strong> and
-<a href="#id51"><span class="problematic" id="id52">`**humsed**`_</span></a>.</p>
+repertory. In this chapter we will introduce two stream editors: <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> and
+<a class="reference external" href="../../man/humsed">humsed</a>.</p>
 <div class="section" id="the-sed-and-humsed-commands">
 <h2>The <em>sed</em> and <em>humsed</em> Commands<a class="headerlink" href="#the-sed-and-humsed-commands" title="Permalink to this headline">¶</a></h2>
-<p>The <a href="#id53"><span class="problematic" id="id54">`**humsed**`_</span></a> command is simply a Humdrum version of the UNIX <strong>sed</strong>
-stream editor. The syntax and operation of <strong>sed</strong> and <strong>humsed</strong> are
+<p>The <a class="reference external" href="../../man/humsed">humsed</a> command is simply a Humdrum version of the UNIX <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a>
+stream editor. The syntax and operation of <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> and <strong>humsed</strong> are
 virtually identical. However, <strong>humsed</strong> will modify only Humdrum data
-records, whereas <strong>sed</strong> will modify any type of record, including Humdrum
+records, whereas <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> will modify any type of record, including Humdrum
 comments and interpretations. Both stream editors provide operations for
 <em>substitution</em>, <em>insertion</em>, <em>deletion</em>, <em>transliteration</em>, <em>file-read</em> and
 <em>file-write</em>. When used in combination, these operations can completely
@@ -322,7 +322,7 @@ transform an input stream or document.</p>
 <div class="section" id="simple-substitutions">
 <h2>Simple Substitutions<a class="headerlink" href="#simple-substitutions" title="Permalink to this headline">¶</a></h2>
 <p>The most frequently used stream-editing operation is substitution. Both
-<strong>humsed</strong> and <strong>sed</strong> designate substitutions by the lower-case letter
+<strong>humsed</strong> and <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> designate substitutions by the lower-case letter
 <tt class="docutils literal"><span class="pre">s</span></tt>. Substitutions require two strings: the <em>target string</em> to be replaced,
 and the <em>replacement string</em> to be introduced. The syntax for substitutions
 is as follows:</p>
@@ -330,7 +330,7 @@ is as follows:</p>
 <p>No spaces are permitted between these elements. The delimiter can be any
 character; however, the same delimiter character must be used throughout the
 operation. The following substitution command causes occurrences of the
-letter <a href="#id1"><span class="problematic" id="id2">`</span></a>A&#8217; to be replaced by the letter <a href="#id3"><span class="problematic" id="id4">`</span></a>B&#8217;:</p>
+letter <a href="#id6"><span class="problematic" id="id7">`</span></a>A&#8217; to be replaced by the letter <a href="#id8"><span class="problematic" id="id9">`</span></a>B&#8217;:</p>
 <p><tt class="docutils literal"><span class="pre">s/A/B/</span></tt></p>
 <p>Since the slash character (/) appears immediately following the <tt class="docutils literal"><span class="pre">s</span></tt>, it
 becomes the delimiter for the rest of the operation. In this case no option
@@ -341,7 +341,7 @@ character, the above command is functionally identical to the following:</p>
 either the target string or the replacement string it can be escaped using
 the backslash character.</p>
 <p>There are two ways to execute a substition operation such as given above. One
-way is to give the substitution as a command-line argument to <strong>sed</strong> or
+way is to give the substitution as a command-line argument to <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> or
 <strong>humsed</strong>:</p>
 <p><tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">s%A%B%</span> <span class="pre">filename</span></tt></p>
 <p>Alternatively, the operation can be placed in a file (for example, named
@@ -349,7 +349,7 @@ way is to give the substitution as a command-line argument to <strong>sed</stron
 <p><tt class="docutils literal"><span class="pre">s%A%B%</span></tt></p>
 <p>Then the stream editor can be invoked to execute the operations contained in
 this file using the <strong>-f</strong> option:</p>
-<p><a href="#id5"><span class="problematic" id="id6">``</span></a>humsed -f revise <a href="#id7"><span class="problematic" id="id8">``</span></a><em>inputfile</em></p>
+<p><a href="#id11"><span class="problematic" id="id12">``</span></a>humsed -f revise <a href="#id13"><span class="problematic" id="id14">``</span></a><em>inputfile</em></p>
 <p>By default the output will be displayed on the screen. Using file-redirection
 (&gt;) the output can be placed in some other file. Note that you should never
 redirect the output to the same file as the input &#8211; this will destroy the
@@ -367,11 +367,11 @@ shell, we have escaped the entire substitution operation by placing it in
 single quotes. (Alternatively, we could place a backslash immediately before
 the double-quote character.) Note also the presence of the <tt class="docutils literal"><span class="pre">g</span></tt> option at
 the end of the string. Permissible options include any positive integer or
-the letter <tt class="docutils literal"><span class="pre">g</span></tt>. Without any option, the <strong>sed</strong> and <strong>humsed</strong> substitute
+the letter <tt class="docutils literal"><span class="pre">g</span></tt>. Without any option, the <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> and <strong>humsed</strong> substitute
 (s) operation will replace only the <em>first</em> occurrence of the string in each
 data record. The <tt class="docutils literal"><span class="pre">g</span></tt> option specifies a &#8220;global&#8221; substitution, in that all
 occurrences on a given data record are replaced. If the option consisted of
-the number <a href="#id9"><span class="problematic" id="id10">`</span></a>3&#8217;, then only the third instance of the target string would be
+the number <a href="#id16"><span class="problematic" id="id17">`</span></a>3&#8217;, then only the third instance of the target string would be
 replaced on each line.</p>
 </div>
 <div class="section" id="selective-elimination-of-data">
@@ -392,7 +392,7 @@ information:</p>
 <p>Sometimes we need to restrict the circumstances where the data are
 eliminated. For example, we might want to eliminate all measure numbers.
 Eliminating all numbers from a **kern file will have the undesirable
-consequence of eliminating all note durations as well. Most <a href="#id55"><span class="problematic" id="id56">`**humsed**`_</span></a>
+consequence of eliminating all note durations as well. Most <a class="reference external" href="../../man/humsed">humsed</a>
 operations can be <em>preceded</em> by a regular expression delineated by slashes.
 This tells <strong>humsed</strong> to execute this substitution only if the data record
 matches the leading regular expression. For example, the following command
@@ -403,21 +403,21 @@ pattern where the first character in the line is an equals sign; if you find
 this pattern look for zero or more instances of any number between zero and
 nine, and replace that by an empty string; do this substitution for all
 numbers on the current data record.</p>
-<p>Incidentally, Humdrum provides a <a href="#id57"><span class="problematic" id="id58">`**num**`_</span></a> command that can be used to
-insert numbers in data records. The <a href="#id59"><span class="problematic" id="id60">`**num**`_</span></a> command supports an elaborate
+<p>Incidentally, Humdrum provides a <a class="reference external" href="../../man/num">num</a> command that can be used to
+insert numbers in data records. The <a class="reference external" href="../../man/num">num</a> command supports an elaborate
 set of options, but is not used often, so we won&#8217;t describe it here. The
 following command renumbers all of the barlines in an input so that the first
 measure begins with the number 72. (Refer to the <em>Humdrum Reference Manual</em>
 for details regarding <strong>num</strong>.)</p>
-<p><tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">/^=/sX=[0-9]*X=Xg</span></tt> <a href="#id11"><span class="problematic" id="id12">*</span></a>inputfile*`` | num -n ^= -x == -p = -o 72``</p>
-<p>Suppose we wanted to eliminate all octave numbers from a <a href="#id13"><span class="problematic" id="id14">``</span></a><a href="#id15"><span class="problematic" id="id16">**</span></a>pitch``_
+<p><tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">/^=/sX=[0-9]*X=Xg</span></tt> <a href="#id20"><span class="problematic" id="id21">*</span></a>inputfile*`` | num -n ^= -x == -p = -o 72``</p>
+<p>Suppose we wanted to eliminate all octave numbers from a <a class="reference external" href="../../rep/pitch">**pitch</a>
 representation. In this case we want to delete all numbers except when they
 occur in conjunction with a barline. Our substitution should occur only when
 the current record does not match a leading equals sign:</p>
 <p><tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">/^[^=]/s%[0-9]%%g</span></tt> <em>inputfile</em></p>
 <p>Suppose we wanted to determine which of two MIDI performances exhibits more
 dynamic range &#8211; that is, which performance has a greater variability in key-
-down velocities. Recall from <a href="#id61"><span class="problematic" id="id62">`Chapter 7`_</span></a> that MIDI data tokens consist of
+down velocities. Recall from <a class="reference external" href="../ch07">Chapter 7</a> that MIDI data tokens consist of
 three elements separated by slashes (/). The third element is the key
 velocity. First, we want to eliminate key-up data tokens. These tokens can be
 distinguished by the minus sign associated with the second data element. An
@@ -461,14 +461,14 @@ as follows:</p>
 <span class="pre">&gt;</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">stats</span></tt></p>
 <p>The <strong>extract</strong> command has been added to ensure that we only process
-<a href="#id17"><span class="problematic" id="id18">``</span></a><strong>MIDI``_ data; the **grep</strong> command ensures that possible barlines are
+<a class="reference external" href="../../rep/MIDI">**MIDI</a> data; the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command ensures that possible barlines are
 eliminated, and the <strong>rid</strong> command eliminates comments and interpretations
 prior to passing the data to the <strong>stats</strong> command.</p>
 </div>
 <div class="section" id="eliminate-everything-but">
 <h2>Eliminate Everything But ...<a class="headerlink" href="#eliminate-everything-but" title="Permalink to this headline">¶</a></h2>
-<p>A common use for <a href="#id63"><span class="problematic" id="id64">`**humsed**`_</span></a> is to eliminate signifiers that are not of
-interest. Stream editors like <strong>sed</strong> and <strong>humsed</strong> can be used to
+<p>A common use for <a class="reference external" href="../../man/humsed">humsed</a> is to eliminate signifiers that are not of
+interest. Stream editors like <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> and <strong>humsed</strong> can be used to
 dramatically simplify a representation.</p>
 <p>Did Monteverdi use equivalent numbers of sharps and flats? Or did he favor
 one accidental over the other? A simple way to determine this is to throw
@@ -485,7 +485,7 @@ The following command replaces all data tokens by null tokens:</p>
 by zero or more instances of not-a-tab characters, by a single period
 character.) This sort of command can be useful in generating a file that
 maintains the <em>structure</em> but not the <em>content</em> of some document.
-Incidentally, neither the <strong>sed</strong> nor the <strong>humsed</strong> commands support
+Incidentally, neither the <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> nor the <strong>humsed</strong> commands support
 extended regular expressions, so we are not able to use the <tt class="docutils literal"><span class="pre">+</span></tt>
 metacharacter in the above substitution.</p>
 </div>
@@ -500,25 +500,25 @@ following command:</p>
 <p>Note that this is functionally equivalent to:</p>
 <p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">^=</span></tt> <em>inputfile</em></p>
 <p>In the general case, <strong>humsed /.../d</strong> is preferable to <strong>grep -v</strong>. Remember
-that <a href="#id65"><span class="problematic" id="id66">`**humsed**`_</span></a> only manipulates Humdrum data records; it never touches
-comments or interpretations. The <strong>grep</strong> command has no such restriction.
+that <a class="reference external" href="../../man/humsed">humsed</a> only manipulates Humdrum data records; it never touches
+comments or interpretations. The <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command has no such restriction.
 Consider, for example, the following command to eliminate grace notes
 (acciaccaturas) from a **kern-format file.</p>
 <p><tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'/q/d'</span></tt> <em>inputfile</em></p>
 <p>By contrast, the command:</p>
 <p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">q</span></tt> <em>inputfile</em></p>
 <p>would also eliminate any comments or interpretation records containing the
-letter <a href="#id19"><span class="problematic" id="id20">`</span></a>q&#8217;.</p>
+letter <a href="#id27"><span class="problematic" id="id28">`</span></a>q&#8217;.</p>
 <p>Suppose that we wanted to know whether a melody still evokes a certain key
 perception even if we eliminate all the tonic pitches. First we translate the
 representation to scale degree and assemble this file with the original
 **kern representation for the melody.</p>
-<p><tt class="docutils literal"><span class="pre">deg</span></tt> <a href="#id21"><span class="problematic" id="id22">*</span></a>input*`` &gt; temp``
-<tt class="docutils literal"><span class="pre">assemble</span></tt> <a href="#id23"><span class="problematic" id="id24">*</span></a>input*`` temp | humsed &#8216;/1$/d&#8217; | midi | perform``</p>
+<p><a class="reference external" href="../../man/deg">deg</a> <a href="#id29"><span class="problematic" id="id30">*</span></a>input*`` &gt; temp``
+<a class="reference external" href="../../man/assemble">assemble</a> <a href="#id31"><span class="problematic" id="id32">*</span></a>input*`` temp | humsed &#8216;/1$/d&#8217; | midi | perform``</p>
 <p>Of course deleting all of the tonic notes will disrupt the original rhythm.
 An alternative is to replace all tonic pitches by rests:</p>
 <p><tt class="docutils literal"><span class="pre">deg</span> <span class="pre">``*input*</span></tt> &gt; temp``
-<tt class="docutils literal"><span class="pre">assemble</span></tt> <a href="#id25"><span class="problematic" id="id26">*</span></a>input*`` temp | humsed &#8216;/1$/s%[A-Ga-g#-]*%r%&#8217; | midi &gt;
+<a class="reference external" href="../../man/assemble">assemble</a> <a href="#id34"><span class="problematic" id="id35">*</span></a>input*`` temp | humsed &#8216;/1$/s%[A-Ga-g#-]*%r%&#8217; | midi &gt;
 &gt;&gt; | perform``</p>
 <p>Perhaps we might want to eliminate all the pitch information, and simply
 listen to the rhythmic structure of a work. That is, we might change all of
@@ -534,7 +534,7 @@ Humdrum input. For example, we might wish to add an explicit breath-mark
 <p>Any occurrence of the ampersand (<tt class="docutils literal"><span class="pre">&amp;</span></tt>) in the replacement string of a
 substitution is a standard stream-editing convention which means &#8220;the matched
 string.&#8221; Suppose we want to add a tenuto mark to every quarter-note in a
-work. The following substitution seeks the number <a href="#id27"><span class="problematic" id="id28">`</span></a>4&#8217; followed by any
+work. The following substitution seeks the number <a href="#id36"><span class="problematic" id="id37">`</span></a>4&#8217; followed by any
 character that is not a digit or period. This pattern is replaced by itself
 (&amp;) followed by a tilde (~), the **kern_ signifier for a tenuto mark:</p>
 <p><tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">s/4[^0-9.]/&amp;~/g</span></tt> <em>inputfile</em></p>
@@ -546,11 +546,11 @@ operations can be invoked by separating each operation by a semicolon. In the
 following example, we change all **kern quarter-notes to eighth-note
 durations:</p>
 <p><tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/4[A-Ga-g]/8&amp;/g;</span> <span class="pre">s/84/8/g'</span></tt> <em>inputfile</em></p>
-<p>The first substitution finds strings that match the number <a href="#id29"><span class="problematic" id="id30">`</span></a>4&#8217; followed by an
+<p>The first substitution finds strings that match the number <a href="#id38"><span class="problematic" id="id39">`</span></a>4&#8217; followed by an
 upper- or lower-case letter from A to G. The matched string is then output
-preceded by the number <a href="#id31"><span class="problematic" id="id32">`</span></a>8&#8217;. This operation will change all quarter notes and
+preceded by the number <a href="#id40"><span class="problematic" id="id41">`</span></a>8&#8217;. This operation will change all quarter notes and
 rests to eighty-fourth durations. The ensuing substitution operation changes
-<a href="#id33"><span class="problematic" id="id34">`</span></a>84&#8217; to <a href="#id35"><span class="problematic" id="id36">`</span></a>8&#8217; and so completes the transformation.</p>
+<a href="#id42"><span class="problematic" id="id43">`</span></a>84&#8217; to <a href="#id44"><span class="problematic" id="id45">`</span></a>8&#8217; and so completes the transformation.</p>
 </div>
 <div class="section" id="switching-signifiers">
 <h2>Switching Signifiers<a class="headerlink" href="#switching-signifiers" title="Permalink to this headline">¶</a></h2>
@@ -570,7 +570,7 @@ changes occurrences of the temporary string <tt class="docutils literal"><span c
 <p>When several instructions are involved in stream editing, it can be
 inconvenient to type multiple operations on the command line. It is easier to
 place the editing instructions in a file, and use the <strong>-f</strong> option (with
-either <strong>sed</strong> or <a href="#id67"><span class="problematic" id="id68">`**humsed**`_</span></a>) to execute from the file. Consider, for
+either <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> or <a class="reference external" href="../../man/humsed">humsed</a>) to execute from the file. Consider, for
 example, the task of rhythmic diminution, where the durations of notes are
 halved. We might create a file called <tt class="docutils literal"><span class="pre">diminute</span></tt> containing the following
 operations:</p>
@@ -591,10 +591,10 @@ diminution values. We can execute these commands as follows:</p>
 </div>
 <div class="section" id="writing-to-a-file">
 <h2>Writing to a File<a class="headerlink" href="#writing-to-a-file" title="Permalink to this headline">¶</a></h2>
-<p>A useful feature of <a href="#id69"><span class="problematic" id="id70">`**humsed**`_</span></a> is the &#8220;write&#8221; or <tt class="docutils literal"><span class="pre">w</span></tt> operation. This
+<p>A useful feature of <a class="reference external" href="../../man/humsed">humsed</a> is the &#8220;write&#8221; or <tt class="docutils literal"><span class="pre">w</span></tt> operation. This
 operation causes a line to be written to the end of a specified file.
 Suppose, for example, we wanted to collect all seventh chords into a separate
-file called <tt class="docutils literal"><span class="pre">sevenths</span></tt>. With a <a href="#id37"><span class="problematic" id="id38">``</span></a><a href="#id39"><span class="problematic" id="id40">**</span></a>harm``_-format input, the appropriate
+file called <tt class="docutils literal"><span class="pre">sevenths</span></tt>. With a <a class="reference external" href="../../rep/harm">**harm</a>-format input, the appropriate
 command would be:</p>
 <p><tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'/7/w</span> <span class="pre">sevenths'</span></tt> <em>inputfile.hrm</em></p>
 <p>Each line containing the number 7 wll be written to a file named
@@ -603,18 +603,18 @@ command would be:</p>
 <tt class="docutils literal"><span class="pre">pauses</span></tt>.</p>
 <p><tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'/;/w</span> <span class="pre">pauses'</span></tt> <em>inputfile</em></p>
 <p>Of course there are other ways of achieving the same goal:</p>
-<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-m</span> <span class="pre">';'</span> <span class="pre">0</span></tt> <a href="#id41"><span class="problematic" id="id42">*</span></a>inputfile*`` &gt; pauses``</p>
+<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-m</span> <span class="pre">';'</span> <span class="pre">0</span></tt> <a href="#id49"><span class="problematic" id="id50">*</span></a>inputfile*`` &gt; pauses``</p>
 <p>Or even:</p>
 <p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">';'</span></tt> <em>inputfile*`` | grep -v &#8216;^[!</em>]&#8217; &gt; pauses``</p>
 <p>In some cases, a stream editor can be used to eliminate or modify data that
 will confound subsequent processing. For example, suppose we wanted to count
 the number of phrases that begin on the subdominant and the number of phrases
-that end on the subdominant. The <a href="#id71"><span class="problematic" id="id72">`**deg**`_</span></a> command will allow us to identify
-subdominant pitches (via the number <a href="#id43"><span class="problematic" id="id44">`</span></a>4&#8217;). Since we would like to maintain the
+that end on the subdominant. The <a class="reference external" href="../../man/deg">deg</a> command will allow us to identify
+subdominant pitches (via the number <a href="#id52"><span class="problematic" id="id53">`</span></a>4&#8217;). Since we would like to maintain the
 phrase indicators, we will avoid the <strong>-x</strong> option for <strong>deg</strong>. However, the
 <strong>-x</strong> option will pass <em>all</em> of the non-pitch related signifiers, including
 the duration data which encodes numbers. Hence, we will not be able to
-distinguish the subdominant (<a href="#id45"><span class="problematic" id="id46">`</span></a>4&#8217;) pitch from a **kern quarter-note (<a href="#id47"><span class="problematic" id="id48">`</span></a>4&#8217;).
+distinguish the subdominant (<a href="#id54"><span class="problematic" id="id55">`</span></a>4&#8217;) pitch from a **kern quarter-note (<a href="#id56"><span class="problematic" id="id57">`</span></a>4&#8217;).
 The problem is resolved by first eliminating all of the duration information
 (numbers) from the original input:</p>
 <p><tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/[0-9.]//g'</span> <span class="pre">input.krn</span> <span class="pre">|</span> <span class="pre">deg</span> <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">-c</span> <span class="pre">'({.*4)|4.*{)'</span></tt>
@@ -641,14 +641,13 @@ s/-.*[^-]$/END/; s/^[^-].</em>-/BEGIN/&#8217; &gt; lyrics``
 </div>
 <div class="section" id="reading-a-file-as-input">
 <h2>Reading a File as Input<a class="headerlink" href="#reading-a-file-as-input" title="Permalink to this headline">¶</a></h2>
-<p>Another useful feature is the <a href="#id73"><span class="problematic" id="id74">`**humsed**`_</span></a> &#8220;read&#8221; or <tt class="docutils literal"><span class="pre">r</span></tt> operation.
+<p>Another useful feature is the <a class="reference external" href="../../man/humsed">humsed</a> &#8220;read&#8221; or <tt class="docutils literal"><span class="pre">r</span></tt> operation.
 Whenever a leading regular expression is matched, a file is read in at that
 point. Suppose, for example, that we want to annotate a file with Humdrum
 comments identifying the presence of cadential 6-4 chords. First, we might
 create a file &#8211; <tt class="docutils literal"><span class="pre">comment.6-4</span></tt> &#8211; containing the following Humdrum comment:</p>
 <p><tt class="docutils literal"><span class="pre">!!</span> <span class="pre">A</span> <span class="pre">likely</span> <span class="pre">cadential</span> <span class="pre">6-4</span> <span class="pre">progression.</span></tt></p>
-<p>We can use the Humdrum <a href="#id75"><span class="problematic" id="id76">`**pattern**`_</span></a> command (to be described in <a href="#id77"><span class="problematic" id="id78">`Chapter
-21`_</span></a>), as follows:</p>
+<p>We can use the Humdrum <a class="reference external" href="../../man/pattern">pattern</a> command (to be described in <a class="reference external" href="../ch21">Chapter 21</a>), as follows:</p>
 <p>File <tt class="docutils literal"><span class="pre">template</span></tt>:</p>
 <p>`` .*``
 <tt class="docutils literal"><span class="pre">Ic</span></tt>
@@ -656,25 +655,25 @@ create a file &#8211; <tt class="docutils literal"><span class="pre">comment.6-4
 <tt class="docutils literal"><span class="pre">=</span> <span class="pre">*</span></tt>
 <tt class="docutils literal"><span class="pre">V[^I]</span></tt></p>
 <p>Command:</p>
-<p><tt class="docutils literal"><span class="pre">pattern</span> <span class="pre">-f</span> <span class="pre">template</span></tt> <a href="#id49"><span class="problematic" id="id50">*</span></a>inputfile*`` &gt; output``
+<p><tt class="docutils literal"><span class="pre">pattern</span> <span class="pre">-f</span> <span class="pre">template</span></tt> <a href="#id59"><span class="problematic" id="id60">*</span></a>inputfile*`` &gt; output``
 <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'cadential-64/r</span> <span class="pre">comment.6-4'</span> <span class="pre">output</span> <span class="pre">&gt;</span> <span class="pre">commented.output</span></tt></p>
 </div>
 <hr class="docutils" />
 <div class="section" id="reprise">
 <h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>sed</strong> and <a href="#id79"><span class="problematic" id="id80">`**humsed**`_</span></a> commands provide stream editors that can
+<p>The <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> and <a class="reference external" href="../../man/humsed">humsed</a> commands provide stream editors that can
 automatically edit a data stream. We&#8217;ve seen that multiple operations can be
 carried out, either from the command line or from a file containing editing
-instructions. It should be noted that the <strong>sed</strong> and <strong>humsed</strong> commands
+instructions. It should be noted that the <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> and <strong>humsed</strong> commands
 provide many more editing facilities than those discussed in this chapter.
-Some 25 operations are provided by <strong>sed</strong> and <strong>humsed</strong>. For example,
+Some 25 operations are provided by <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> and <strong>humsed</strong>. For example,
 segments of text can be stored in various buffers, the contents of these
 buffers modified, and the results placed anywhere in the output text. Markers
 can be set at particular points and conditional branch statements executed.
 Stream-editing scripts have been written to execute programs of considerable
 complexity. However, for most tasks, the simple substitute (<strong>s</strong>) and delete
 (<strong>d</strong>) operations are the most useful. For further information about stream
-editing using <strong>sed</strong>, refer to the book on <strong>sed</strong> and <strong>awk</strong> written by
+editing using <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a>, refer to the book on <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> and <strong>awk</strong> written by
 Dale Dougherty (listed in the bibliography).</p>
 </div>
 </div>

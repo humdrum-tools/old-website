@@ -116,7 +116,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">2. Rhythm and Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody and Pitch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
@@ -304,11 +304,11 @@ considering the representation and manipulation of sound-related
 information. In this chapter we introduce some special-purpose tools
 related to sound analysis, sound synthesis, and auditory perception. We
 have already encountered the
-<tt class="docutils literal"><span class="pre">`**freq</span></tt> &lt;representations/freq.rep.html&gt;`__ and
-<tt class="docutils literal"><span class="pre">`**cents</span></tt> &lt;representations/cents.rep.html&gt;`__ representations in
+<a class="reference external" href="../../rep/freq">**freq</a> &lt;representations/freq.rep.html&gt;`__ and
+<a class="reference external" href="../../rep/cents">**cents</a> &lt;representations/cents.rep.html&gt;`__ representations in
 <a class="reference external" href="guide04.html">Chapter 4.</a> Much of this chapter will center on the
-<tt class="docutils literal"><span class="pre">`**spect</span></tt> &lt;representations/spect.rep.html&gt;`__ representation. Three
-tools will be discussed in connection with <tt class="docutils literal"><span class="pre">**spect</span></tt>: the <strong>spect</strong>,
+<a class="reference external" href="../../rep/spect">**spect</a> &lt;representations/spect.rep.html&gt;`__ representation. Three
+tools will be discussed in connection with <a class="reference external" href="../../rep/spect">**spect</a>: the <strong>spect</strong>,
 <strong>mask</strong> and <strong>sdiss</strong> commands. <strong>Spect</strong> accesses a database of
 analyzed instrument tones to generate harmonic spectra for all notes for
 various orchestral instruments over their complete ranges; <strong>mask</strong> can
@@ -323,7 +323,7 @@ score data for the popular <em>Csound</em> digital sound synthesis language.</p>
 <div class="section" id="the-spect-representation">
 <h2>The <em>**spect</em> Representation<a class="headerlink" href="#the-spect-representation" title="Permalink to this headline">¶</a></h2>
 <p>A useful predefined sound-related representations that in Humdrum is the
-<tt class="docutils literal"><span class="pre">**spect</span></tt> scheme. The <tt class="docutils literal"><span class="pre">`**spect</span></tt> &lt;representations/spect.rep.html&gt;`__
+<a class="reference external" href="../../rep/spect">**spect</a> scheme. The <a class="reference external" href="../../rep/spect">**spect</a> &lt;representations/spect.rep.html&gt;`__
 representation is used to represent successive acoustic spectra. Each
 data record represents a complete spectrum specified as a set of
 concurrent discrete frequency components. Each frequency component in
@@ -332,7 +332,7 @@ semicolon (;). These paired values encode the frequency and amplitude
 for a single spectral component. Frequency values are positive values
 representing <em>hertz</em>. Amplitude values are positive values representing
 the sound pressure level in decibels (dB SPL). Most sonorities consist
-of more than one pure tone component, so <tt class="docutils literal"><span class="pre">**spect</span></tt> data records
+of more than one pure tone component, so <a class="reference external" href="../../rep/spect">**spect</a> data records
 typically encode a number of multiple stops.</p>
 <p>Example 36.1 shows a sample document containing five spectra and a
 barline. The first data record encodes an ambient spectrum (&#8220;silence&#8221;)
@@ -343,41 +343,20 @@ at 523 Hz and 785 Hz at 57 dB SPL and 35 dB SPL, respectively. Following
 the barline are two data records that represent two different
 amalgamations of the preceding two three-component spectra. Notice that
 these two spectra are identical; only the order of the components
-differs. In the <tt class="docutils literal"><span class="pre">**spect</span></tt> representation there is no special
+differs. In the <a class="reference external" href="../../rep/spect">**spect</a> representation there is no special
 requirement that the spectral components be encoded in any particular
 order. However, it is often convenient to have the components assembled
 from left to right in ascending frequency order. This can be achieved by
 passing an input through the <strong>spect</strong> command.</p>
 <p><strong>Example 36.1</strong></p>
 <blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">**spect</span></tt></td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">A</span></tt></td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">261;47</span> <span class="pre">523;57</span> <span class="pre">785;35</span></tt></td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">330;57</span> <span class="pre">659;35</span> <span class="pre">989;27</span></tt></td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">=1</span></tt></td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">261;47</span> <span class="pre">523;57</span> <span class="pre">785;35</span> <span class="pre">330;57</span> <span class="pre">659;35</span> <span class="pre">989;27</span></tt></td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">261;47</span> <span class="pre">330;57</span> <span class="pre">523;57</span> <span class="pre">659;35</span> <span class="pre">785;35</span> <span class="pre">989;27</span></tt></td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
+<div></div></blockquote>
 </div>
 <div class="section" id="the-sharc-database-and-spect-command">
 <h2>The SHARC Database and <em>spect</em> Command<a class="headerlink" href="#the-sharc-database-and-spect-command" title="Permalink to this headline">¶</a></h2>
 <p>More commonly, the <strong>spect</strong> command is used to generate a
-<tt class="docutils literal"><span class="pre">`**spect</span></tt> &lt;representations/spect.rep.html&gt;`__ (acoustic spectral
-data) output from a <tt class="docutils literal"><span class="pre">`**semits</span></tt> &lt;representations/semits.rep.html&gt;`__
+<a class="reference external" href="../../rep/spect">**spect</a> &lt;representations/spect.rep.html&gt;`__ (acoustic spectral
+data) output from a <a class="reference external" href="../../rep/semits">**semits</a> &lt;representations/semits.rep.html&gt;`__
 score input. The <strong>spect</strong> command recognizes instrument tandem
 interpretations (e.g., *Iclarinet) and fetches a corresponding spectral
 data file (<tt class="docutils literal"><span class="pre">clarinet.spe</span></tt>). These files are derived from the SHARC
@@ -412,14 +391,14 @@ JPEG-encoded audio is indistinguishable from the original uncompressed
 audio, yet the scheme eliminates those aspects of the sound which are
 masked.</p>
 <p>The Humdrum <strong>mask</strong> command implements a common masking algorithm. It
-accepts as input any <tt class="docutils literal"><span class="pre">**spect</span></tt> data, and for each sonority modifies
+accepts as input any <a class="reference external" href="../../rep/spect">**spect</a> data, and for each sonority modifies
 the spectrum so that masked frequencies are attenuated accordingly.
 So-called &#8220;forward&#8221; and &#8220;backward&#8221; masking are not taken into account in
 this utlity. No options are provided, and the command is invoked as
 follows:</p>
 <blockquote>
-<div><tt class="docutils literal"><span class="pre">mask</span></tt> <em>inputfile</em>`` &gt; <a href="#id1"><span class="problematic" id="id2">``</span></a><em>outputfile</em></div></blockquote>
-<p>Both the output and input to the <strong>mask</strong> command are <tt class="docutils literal"><span class="pre">**spect</span></tt>
+<div><tt class="docutils literal"><span class="pre">mask</span></tt> <em>inputfile</em>`` &gt; <a href="#id8"><span class="problematic" id="id9">``</span></a><em>outputfile</em></div></blockquote>
+<p>Both the output and input to the <strong>mask</strong> command are <a class="reference external" href="../../rep/spect">**spect</a>
 representations. A tandem interpretation (<tt class="docutils literal"><span class="pre">*masked</span></tt>) is added to the
 output to indicate that the sonorities already reflect the influence of
 masking. Some sound utilities (such as the <strong>sdiss</strong> command) already
@@ -445,56 +424,20 @@ dissonance described by Kameoka and Kuriyagawa (1969a/b). (The Humdrum
 <strong>sdiss</strong> command itself was written by Keith Mashinter.) The <strong>sdiss</strong>
 command characterizes the degree of sensory dissonance for successive
 vertical sonorities or acoustical moments. The command accepts as input
-one or more <tt class="docutils literal"><span class="pre">**spect</span></tt> spines and produces a single
-<tt class="docutils literal"><span class="pre">`**sdiss</span></tt> &lt;representations/sdiss.rep.html&gt;`__ spine as output. For
-each <tt class="docutils literal"><span class="pre">**spect</span></tt> data record, <strong>sdiss</strong> produces a single numerical
+one or more <a class="reference external" href="../../rep/spect">**spect</a> spines and produces a single
+<tt class="docutils literal"><span class="pre">sdiss</span></tt> &lt;representations/sdiss.rep.html&gt;`__ spine as output. For
+each <a class="reference external" href="../../rep/spect">**spect</a> data record, <strong>sdiss</strong> produces a single numerical
 value representing the aggregate sensory dissonance. The greater the
 output value, the greater the dissonance.</p>
 <p>Example 36.2 illustrates some sample inputs and outputs for <strong>sdiss</strong>.
 The left-most spine provides double-stops for
-<tt class="docutils literal"><span class="pre">`**kern</span></tt> &lt;representations/kern.rep.html&gt;`__ data for violin. The
-middle spine provides corresponding <tt class="docutils literal"><span class="pre">**spect</span></tt> data using the <strong>spect</strong>
+<a class="reference external" href="../../rep/kern">**kern</a> &lt;representations/kern.rep.html&gt;`__ data for violin. The
+middle spine provides corresponding <a class="reference external" href="../../rep/spect">**spect</a> data using the <strong>spect</strong>
 command. The right-most spine shows the result of passing the
-<tt class="docutils literal"><span class="pre">**spect</span></tt> data through the <strong>sdiss</strong> command.</p>
+<a class="reference external" href="../../rep/spect">**spect</a> data through the <strong>sdiss</strong> command.</p>
 <p><strong>Example 36.2</strong></p>
 <blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">**kern</span></tt>
-**spect</td>
-<td>**sdiss</td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">*Ivioln</span></tt>
-*Ivioln</td>
-<td>*Ivioln</td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">4c</span> <span class="pre">4e</span></tt>
-.</td>
-<td>.</td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">4G</span> <span class="pre">4d</span></tt>
-.</td>
-<td>.</td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">4f</span> <span class="pre">4g</span></tt>
-.</td>
-<td>.</td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">4e</span> <span class="pre">4g</span></tt>
-.</td>
-<td>.</td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">*-</span></tt>
-*-</td>
-<td>*-</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
+<div></div></blockquote>
 <p>Note that sensory dissonance is known to be influenced by the number of
 complex tones in the sonority. That is, three-note sonorities are
 virtually always more dissonant than three-note sonorities, etc.
@@ -527,7 +470,7 @@ envelope, spectral content, etc. Example 36.3 shows a sample Csound
 score corresponding to the opening measures of a Mozart clarinet trio.</p>
 <p><strong>Example 36.3</strong> W.A. Mozart <em>Clarinet Quintet</em>.</p>
 <blockquote>
-<div><p><a href="#id3"><span class="problematic" id="id4">|image5|</span></a></p>
+<div><p><a href="#id15"><span class="problematic" id="id16">|image5|</span></a></p>
 <p><tt class="docutils literal"><span class="pre">;</span> <span class="pre">W.A.</span> <span class="pre">Mozart,</span> <span class="pre">Second</span> <span class="pre">trio</span> <span class="pre">from</span> <span class="pre">Clarinet</span> <span class="pre">Quintet</span></tt>
 <tt class="docutils literal"><span class="pre">f1</span> <span class="pre">0</span> <span class="pre">512</span> <span class="pre">10</span> <span class="pre">5</span> <span class="pre">3</span> <span class="pre">1</span> <span class="pre">;</span> <span class="pre">three</span> <span class="pre">harmonics</span> <span class="pre">in</span> <span class="pre">waveform</span> <span class="pre">table</span></tt>
 <tt class="docutils literal"><span class="pre">t0</span> <span class="pre">96;</span> <span class="pre">tempo</span> <span class="pre">of</span> <span class="pre">96</span> <span class="pre">beats</span> <span class="pre">per</span> <span class="pre">minute</span> <span class="pre">``</span>

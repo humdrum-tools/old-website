@@ -15,7 +15,7 @@ isolate specific types of information, such as the figured bass, melodic
 interval information, or vocal text.
 
 In this chapter we will explore two Humdrum tools for extracting material:
-`**extract**`_ and `**yank**`_.
+`extract <../../man/extract>`_ and `yank <../../man/yank>`_.
 
 We know that Humdrum representations are structured like a grid with
 horizontal data ("records") representing concurrent information, and vertical
@@ -31,7 +31,7 @@ measures, phrases, or sections.
 Extracting Spines: The *extract* Command
 --------
 
-The `**extract**`_ command allows the user to select one or more spines from
+The `extract <../../man/extract>`_ command allows the user to select one or more spines from
 a Humdrum input. The command is typically used to extract parts (such as a
 tuba part) from some multi-part score. However, **extract** can also be used
 to isolate dynamic markings, musical lyrics, or any other stream of
@@ -155,7 +155,7 @@ Typically, it is inconvenient to have to determine the numerical position of
 various spines in order to extract them. With the **-i** option, **extract**
 outputs all spines containing a specified *interpretation.* Suppose we had a
 file containing a Schubert song, including vocal score, piano accompaniment
-and vocal text (encoded using ``**text``_). The vocal text from the file
+and vocal text (encoded using `**text <../../rep/text>`_). The vocal text from the file
 ``lieder`` can be extracted as follows:
 
 ``extract -i '**text' lieder``
@@ -166,15 +166,15 @@ simultaneously. For example:
 
 ``extract -i '**semits,**MIDI' hildegard``
 
-will extract all spines in the file ``hildegard`` containing ``**semits``_
-or ``**MIDI``_ data.
+will extract all spines in the file ``hildegard`` containing `**semits <../../rep/semits>`_
+or `**MIDI <../../rep/MIDI>`_ data.
 
 An important use of the **-i** option for **extract** is to ensure that a
 particular input contains only a specified type of information. For example,
 the lower-case letter ``r``' represents a rest in the \*\*kern_
 representation. If we wish to determine which sonorities contain rests, we
-might want to use **grep** to search for this letter. However, the input
-might contain other Humdrum interpretations (such as ``**text``) where the
+might want to use `grep <http://en.wikipedia.org/wiki/Grep>`_ to search for this letter. However, the input
+might contain other Humdrum interpretations (such as `**text <../../rep/text>`_) where the
 presence of the letter ``r``' does not signify a rest. We can ensure that
 our search is limited to \*\*kern data by using the **extract** command:
 
@@ -250,7 +250,7 @@ will result in the output:
 > z
 > *-``
 
-The ``**foo`` and ``**bar`` data are mutually exclusive. Now consider an
+The ``foo`` and ``bar`` data are mutually exclusive. Now consider an
 input file where ``foo`` and ``bar`` are tandem interpretations:
 
 ``**foobar
@@ -304,7 +304,7 @@ Using *extract* in Pipelines
 Of course the output from **extract** can be used to generate inputs for
 other Humdrum tools. Here are a few examples.
 
-Recall that the `**census**`_ command tells us basic information about a
+Recall that the `census <../../man/census>`_ command tells us basic information about a
 file. With the **-k** option, **census** will tell us the number of barlines,
 the number of rests, the number of notes, the highest and lowest notes, and
 the longest and shortest notes for a **kern input. The following commands can
@@ -314,15 +314,15 @@ woodwind parts:
 ``extract -i '*Ifagot' ives | census -k``
 ``extract -i '*ICww' ives | census -k``
 
-With the `**midi**`_ and `**perform**`_ commands, **extract** allows the user
+With the `midi <../../man/midi>`_ and `perform <../../man/perform>`_ commands, **extract** allows the user
 to hear particular parts. For example, the following command extracts the
-bass and soprano voices, translates them to ``**MIDI``_ data, and plays the
+bass and soprano voices, translates them to `**MIDI <../../rep/MIDI>`_ data, and plays the
 output:
 
 ``extract -i '*Ibass,*Isopran' lassus | midi | perform``
 
 We might extract a particular part (such as the trumpet part) and use the
-`**trans**`_ command to transpose it to another key:
+`trans <../../man/trans>`_ command to transpose it to another key:
 
 ``extract -i '*Itromp' purcell | trans -d +1 -c +2``
 
@@ -343,7 +343,7 @@ augmented second, and then print the transposed part:
 Extracting Spines that Meander
 ------------------------------
 
-As we saw in `Chapter 5,`_ spines can move around via various spine-path
+As we saw in `Chapter 5 <../ch05>`_, spines can move around via various spine-path
 interpretations. Changes of spine position will cause havoc when extracting
 by fields (the **-f** option); **extract** will generate an error message and
 terminate. With the **-i** option, **extract** will follow the material
@@ -360,10 +360,10 @@ Consider the following input:
 > Aa1a2bx
 > *-*-*-*-*-``
 
-Suppose we want to extract the second spine (the first ``**dip``) spine.
+Suppose we want to extract the second spine (the first ``dip``) spine.
 Using the field option (**-f**) will generate an error message since this
 spine splits. Similarly, using the interpretation (**-i**) option will fail
-because the output will contain *all* of the ``**dip`` spines.
+because the output will contain *all* of the ``dip`` spines.
 
 The **extract** command provides a third **-p** option that traces specific
 spine *paths.* Like the **-f** option, the **-p** option requires one or more
@@ -393,7 +393,7 @@ column, may end up as some other column (or columns) in the input.
 
 There are complex circumstances where the **-p** option will not guarantee an
 output that conforms to the Humdrum syntax. When using the **-p** option it
-is prudent to check the output using the `**humdrum**`_ command in order to
+is prudent to check the output using the `humdrum <../../man/humdrum>`_ command in order to
 ensure that the output is valid. A full discussion of the **-p** option is
 given in the *Humdrum Reference Manual.*
 
@@ -411,7 +411,7 @@ for further information.
 Extracting Passages: The *yank* Command
 --------
 
-A useful companion to the **extract** command is the Humdrum `**yank**`_
+A useful companion to the **extract** command is the Humdrum `yank <../../man/yank>`_
 command. The **yank** command can be used to selectively extract segments or
 passages from a Humdrum input. The yanked material can be identified by
 absolute line numbers, or relative to some marker. In addition, **yank** is
@@ -458,7 +458,7 @@ spine-path interpretations that specify how 4 spines became 5 spines.
 Yanking by Marker
 -----------------
 
-Alternatively, `**yank**`_ can output lines relative to some user-defined
+Alternatively, `yank <../../man/yank>`_ can output lines relative to some user-defined
 *marker.* This mode of operation can be invoked using the **-m** option.
 Markers are specified using regular expressions. The range option (**-r**)
 specifies which lines are to be output whenever a marker is encountered.  For
@@ -482,14 +482,14 @@ construction:
 
 ``yank -m *regexp* -r 0``
 
-This command is analogous to the familiar **grep** command. However, the
+This command is analogous to the familiar `grep <http://en.wikipedia.org/wiki/Grep>`_ command. However, the
 output from **yank** will preserve all of the appropriate interpretations. In
 short, **yank** guarantees that the output conforms to the Humdrum syntax,
-whereas **grep** does not.
+whereas `grep <http://en.wikipedia.org/wiki/Grep>`_ does not.
 
 Suppose, for example, that we wanted to calculate the pitch intervals between
 notes that either begin or end a phrase in a monophonic input. If we use
-**grep** to search for \*\*kern_ phrase indicators, we will be unable to
+`grep <http://en.wikipedia.org/wiki/Grep>`_ to search for \*\*kern_ phrase indicators, we will be unable to
 process the resulting (non-Humdrum) output, since it will typically consist
 of just data records:
 
@@ -534,7 +534,7 @@ this data may be addressed as logical segment "zero." For example,
 
 can be used to yank all records prior to the first common system barline.
 Notice that *actual* measure numbers are irrelevant with the **-o** option:
-`**yank**`_ selects segments according to their *ordinal* position in the
+`yank <../../man/yank>`_ selects segments according to their *ordinal* position in the
 input stream rather than according to their *cardinal* label.
 
 Not all segments are defined by a single marker. For example, unlike
@@ -576,9 +576,9 @@ will yank any leading (anacrusis) material in each of the three files.
 Yanking by Section
 ------------------
 
-When the **-s** option is invoked, `**yank**`_ extracts passages according to
+When the **-s** option is invoked, `yank <../../man/yank>`_ extracts passages according to
 Humdrum section labels encoded in the input. Humdrum section labels will be
-described fully in `Chapter 20.`_ For now, we can simply note that section
+described fully in `Chapter 20 <../ch20>`_. For now, we can simply note that section
 labels are tandem interpretations that conform to the syntax:
 
 ``*>*label_name*``
@@ -592,7 +592,7 @@ a section labelled ``First Theme`` in the file ``mendelssohn``:
 
 Note that with "through-composed" Humdrum files it is possible to have more
 than one section containing the same section-label. Such situations are
-described in `Chapter 20.`_
+described in `Chapter 20 <../ch20>`_.
 
 
 Examples Using *yank*
@@ -697,7 +697,7 @@ highest note in the trumpet part in measure 29?
 
 ``extract -i '*Itromp' tallis | yank -n = -r 29 | census -k``
 
-Also, we can combine **yank** with the `**midi**`_ and `**perform**`_
+Also, we can combine **yank** with the `midi <../../man/midi>`_ and `perform <../../man/perform>`_
 commands to hear particular sections. Play the Trio section in a Waldteufel
 waltz:
 
@@ -755,15 +755,15 @@ Reprise
 -------
 
 In this chapter we have learned how to extract musical parts using
-**extract** and how to grab musical passages using `**yank**`_. We saw that
-the `**extract**`_ command is also useful for isolating specific types of
+**extract** and how to grab musical passages using `yank <../../man/yank>`_. We saw that
+the `extract <../../man/extract>`_ command is also useful for isolating specific types of
 information, such as the lyrics, or ensuring that no other type of
 information is present in a data stream. In the case of **yank** we saw that
 passages can be extracted by defining arbitrary delimiters. In addition to
 extracting by measures, by sonorities, or by labelled sections, we can
 extract by rests, phrase marks -- in fact, by any user-defined marker. We
 also saw how the command **yank -m *regular-expression* -r 0** can be used as
-a more sophisticated version of **grep** -- a search tool that ensures the
+a more sophisticated version of `grep <http://en.wikipedia.org/wiki/Grep>`_ -- a search tool that ensures the
 output will conform to the Humdrum syntax.
 
 In the next chapter we will discuss how segments of music can be put back

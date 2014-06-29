@@ -5,20 +5,20 @@ Chapter 7: MIDI Output Tools
 MIDI is a standard method for exchanging information between sound
 synthesizers and controlling computers. Humdrum provides a number of MIDI-
 related tools that allow MIDI data to be input and output. In this chapter we
-will discuss the output-related tools: `**midi**`_, `**perform**`_,
-`**smf**`_ and `**tacet**`_. MIDI input tools are discussed in `Chapter 30.`_
+will discuss the output-related tools: `midi <../../man/midi>`_, `perform <../../man/perform>`_,
+`smf <../../man/smf>`_ and `tacet <../../man/tacet>`_. MIDI input tools are discussed in `Chapter 30 <../ch30>`_.
 
 
 The ***MIDI* Representation
 ---------------
 
-Humdrum provides a ```**MIDI```_ representation that closely parallels the
+Humdrum provides a `**MIDI <../../rep/MIDI>`_ representation that closely parallels the
 commercial MIDI specification but conforms to the Humdrum data format. This
 representation provides an intermediate format; using Humdrum commands such
-as `**perform**`_ and `**smf**,`_ true MIDI data can be generated. However,
-since the ``**MIDI`` representation conforms to the Humdrum syntax, the data
+as `perform <../../man/perform>`_ and `**smf**,`_ true MIDI data can be generated. However,
+since the `**MIDI <../../rep/MIDI>`_ representation conforms to the Humdrum syntax, the data
 can be manipulated, modified and searched in the same way as other Humdrum
-data. For example, we can use **grep** to search MIDI data, etc.
+data. For example, we can use `grep <http://en.wikipedia.org/wiki/Grep>`_ to search MIDI data, etc.
 
 MIDI is a type of "tablature" notation. It describes a set of performance
 actions rather than specifying either the sounded result or the analytic
@@ -29,7 +29,7 @@ to represent many other musically pertinent signifiers such as pitch spelling
 (e.g., F-sharp versus G-flat), stem directions, ties, slurs, phrasing, etc.
 In addition, MIDI does not represent rests.
 
-A simple ```**MIDI```_ example is given below. It consists just a single note
+A simple `**MIDI <../../rep/MIDI>`_ example is given below. It consists just a single note
 (middle C):
 
 ``!! A single MIDI note.
@@ -39,33 +39,33 @@ A simple ```**MIDI```_ example is given below. It consists just a single note
 ``80/-60/64
 ``*-``
 
-Notice that there are two ``**MIDI`` data tokens: one to specify note-on and
-one to specify note-off events. Each ``**MIDI`` data token consists of three
+Notice that there are two `**MIDI <../../rep/MIDI>`_ data tokens: one to specify note-on and
+one to specify note-off events. Each `**MIDI <../../rep/MIDI>`_ data token consists of three
 elements or components, delimited by a slash character (/). The first element
 in the data token represents the number of clock ticks before the current
 event is to occur. The absolute duration of a single clock tick is determined
-by the ``**MIDI`` clock speed, which is variable. In our example, 54 clock
+by the `**MIDI <../../rep/MIDI>`_ clock speed, which is variable. In our example, 54 clock
 ticks elapse before the note is turned on, and another 80 clock ticks elapse
 before the note is turned off. The initial pause before the first note begins
 is not necessary; however, many MIDI cards introduce a brief delay before
 beginning to send the first data in a stream. The leading pause prevents a
 "rushed" burst of initial notes.
 
-The second element in a data token represents the ``**MIDI`` key number.
+The second element in a data token represents the `**MIDI <../../rep/MIDI>`_ key number.
 Successive numbers refer to semitone pitches where middle C is designated key
 ``60``. Key-off events are represented by negative integers, so ``-60`` means
 turn off key ``60``. Key numbers range between 1 and 127.
 
-The third element in a data token represents the ``**MIDI`` key velocity.
+The third element in a data token represents the `**MIDI <../../rep/MIDI>`_ key velocity.
 MIDI instruments normally interpret key velocity as dynamic or accent
 information. Higher key-velocity values are associated with accented notes.
 In the case of key-off events, the key-velocity component represents the key-
 up velocity.
 
-Unlike most other Humdrum representations, the ```**MIDI```_ format requires
+Unlike most other Humdrum representations, the `**MIDI <../../rep/MIDI>`_ format requires
 two data tokens for each note. The following example shows a three note
-C-major triad. The `\*\*kern`_ data is shown in the left spine with the
-corresponding ``**MIDI`` data in the right spine. Notice that each data token
+C-major triad. The `**kern <../../rep/kern>`_ data is shown in the left spine with the
+corresponding `**MIDI <../../rep/MIDI>`_ data in the right spine. Notice that each data token
 consists of three subtokens, one for each note:
 
 ``!! A C-majortriad.
@@ -82,7 +82,7 @@ events occur simultaneously.
 
 Suppose we add a second chord consisting of the dyad D4 and F4. The dyad
 begins at the same time that the C major triad ends. This results in five
-subtokens in the corresponding ``**MIDI`` data record. Three key-off events
+subtokens in the corresponding `**MIDI <../../rep/MIDI>`_ data record. Three key-off events
 are synchronous with two key-on events:
 
 ``!! Two chords.
@@ -133,7 +133,7 @@ Darius Milhaud's *Touches Blanches*.
 ``..72/-55/6472/-67/64
 ``*-*-*-*-``
 
-The ```**MIDI```_ representation always expects a tandem interpretation
+The `**MIDI <../../rep/MIDI>`_ representation always expects a tandem interpretation
 indicating the MIDI channel assignment. In Example 7.1 both parts have been
 assigned to channel 1. Once again, simultaneous key-on and key-off events
 often appear as double-stops. Also notice that an additional data record is
@@ -143,14 +143,14 @@ required at the end of the passage in order to turn off the final notes.
 The *midi* Command
 --------
 
-The `**midi**`_ command converts Humdrum `\*\*kern`_ data into Humdrum
-``**MIDI`` data. By way of example, the above ``**MIDI`` data can be
+The `midi <../../man/midi>`_ command converts Humdrum `**kern <../../rep/kern>`_ data into Humdrum
+`**MIDI <../../rep/MIDI>`_ data. By way of example, the above `**MIDI <../../rep/MIDI>`_ data can be
 generated as follows:
 
 ``midi inven05.krn > inven05.hmd``
 
 The ``.hmd`` filename extension is a common way of designating Humdrum
-``MIDI`` data.
+`MIDI <../../man/MIDI>`_ data.
 
 Since the \*\*kern representation does not encode key-velocity information,
 the **midi** command assumes a default key velocity of 64 (from a range of 1
@@ -158,27 +158,27 @@ to 127). If the input is monophonic, **midi** will also allow the user to set
 a fixed note duration using the **-d** option. This is useful for auditing
 notes that do not have duration values. For example, a Gregorian chant might
 be represented without durations. The following command takes a file
-containing a 12-tone row (pitch information only) and produces a ``**MIDI``
+containing a 12-tone row (pitch information only) and produces a `**MIDI <../../rep/MIDI>`_
 output where all notes assigned to a quarter duration:
 
 ``midi -d 4 tonerow > tonerow.hmd``
 
-The most common use of ``**MIDI`` data is to create a standard MIDI file
+The most common use of `**MIDI <../../rep/MIDI>`_ data is to create a standard MIDI file
 using the **smf** command, or to listen to the output using the **perform**
-command. In some cases, it is useful to carry out processing of ``**MIDI``
+command. In some cases, it is useful to carry out processing of `**MIDI <../../rep/MIDI>`_
 data itself.
 
 
 The *perform* Command
 --------
 
-The `**perform**`_ command allows the user to listen to synthesized
-performances of ``**MIDI``-format input. When invoked, **perform** provides a
+The `perform <../../man/perform>`_ command allows the user to listen to synthesized
+performances of `**MIDI <../../rep/MIDI>`_-format input. When invoked, **perform** provides a
 simple interactive environment suitable for proof-listening and other
 audition tasks.
 
 The **perform** command accepts any Humdrum input; however, only
-```**MIDI```_ spines present in the input stream are performed. Non-MIDI
+`**MIDI <../../rep/MIDI>`_ spines present in the input stream are performed. Non-MIDI
 spines are simply ignored and do not affect the sound output. The **perform**
 command generates serial MIDI data which are sent directly to a MIDI
 controller card or on-board sound-card.
@@ -249,7 +249,7 @@ Since, by default, the **perform** command echoes all global comments on the
 screen during playback, this means that the Humdrum data will also appear on
 the screen as it is being played. In addition, the commented data records are
 accessible to the forward- and backward-search commands. For example, in the
-`\*\*kern`_ representation, pauses are indicated by a semicolon; hence the
+`**kern <../../rep/kern>`_ representation, pauses are indicated by a semicolon; hence the
 user might search for the next pause symbol by typing:
 
 ``/;``
@@ -260,7 +260,7 @@ Similarly, the user could search for a particular pitch, e.g.
 
 Since the **perform** command accepts any Humdrum input, other Humdrum data
 may be used for searching. For example, the input data might contain melodic
-interval data (see `Chapter 11`_), allowing the user to search for a
+interval data (see `Chapter 11 <../ch11>`_), allowing the user to search for a
 particular interval such as a diminished octave:
 
 ``/d8``
@@ -299,27 +299,27 @@ In rare circumstances, ciphers (stuck notes) can occur during MIDI
 performances; for instance, an intermittently functioning MIDI cable may fail
 to convey a "note-off" instruction to an active synthesizer. The **p**
 command ("panic") turns off all active notes. Should a cipher remain after
-terminating the **perform** command, the Humdrum `**tacet**`_ command can be
+terminating the **perform** command, the Humdrum `tacet <../../man/tacet>`_ command can be
 used to send "all-notoff" commands on all MIDI channels.
 
-In `Chapter 12,`_ we will see how **perform** can be used in conjunction with
-other commands (such as `**extract**`_ and `**yank**`_) to listen selectively
-to specific parts or passages. In `Chapter 21`_ we will use **perform** in
-conjunction with the `**patt**`_ command to listen to patterns (such as
+In `Chapter 12 <../ch12>`_, we will see how **perform** can be used in conjunction with
+other commands (such as `extract <../../man/extract>`_ and `yank <../../man/yank>`_) to listen selectively
+to specific parts or passages. In `Chapter 21 <../ch21>`_ we will use **perform** in
+conjunction with the `patt <../../man/patt>`_ command to listen to patterns (such as
 harmonic, rhythmic and melodic patterns) found in some repertory.
 
 
 The *smf* Command
 --------
 
-Another MIDI-related tool is the `**smf**`_ command. This command allows the
-user to create "standard MIDI files" from Humdrum ``**MIDI``-format files.
+Another MIDI-related tool is the `smf <../../man/smf>`_ command. This command allows the
+user to create "standard MIDI files" from Humdrum `**MIDI <../../rep/MIDI>`_-format files.
 Standard MIDI files are industry-standard binary files that can be imported
 by a variety of MIDI applications software packages on many different
 platforms, including sequencer programs and most music notation packages.
 
-The **smf** command translates only ``**MIDI`` input spines; all
-non-``**MIDI`` spines are simply ignored. Suppose we begin with a
+The **smf** command translates only `**MIDI <../../rep/MIDI>`_ input spines; all
+non-`**MIDI <../../rep/MIDI>`_ spines are simply ignored. Suppose we begin with a
 \*\*kern-format file named ``joplin``. We can create a standard MIDI file
 as follows:
 
@@ -336,17 +336,17 @@ Reprise
 -------
 
 In this chapter we have learned how Humdrum data can be output as MIDI data.
-Humdrum provides a ``**MIDI`` representation that closely parallels MIDI but
+Humdrum provides a `**MIDI <../../rep/MIDI>`_ representation that closely parallels MIDI but
 remains in conformity with the Humdrum syntax. This means that the data can
 still be processed with other Humdrum tools (as we will see in later
 chapters).
 
-The `**midi**`_ command can translate `\*\*kern`_ data to ```**MIDI```_ and
-the `**perform**`_ and `**smf**`_ commands can be used to generate true MIDI
+The `midi <../../man/midi>`_ command can translate `**kern <../../rep/kern>`_ data to `**MIDI <../../rep/MIDI>`_ and
+the `perform <../../man/perform>`_ and `smf <../../man/smf>`_ commands can be used to generate true MIDI
 data for listening. The **perform** command provides a simple interactive
 command-line sequencer for playing whatever input is provided. The **smf**
 command generates standard MIDI files that can be used to transport MIDI data
 to a vast array of commercial and non-commerical applications software. In
-`Chapter 30`_ we will explore some of the Humdrum tools for inputting MIDI
+`Chapter 30 <../ch30>`_ we will explore some of the Humdrum tools for inputting MIDI
 data into Humdrum.
 

@@ -7,21 +7,21 @@ The subject of rhythm touches on nearly every aspect of music. Musical
 elements such as pitch, harmony, and dynamics can all be regarded from the
 point-of-view of temporal patterns of events. A number of complex tasks arise
 from rhythm-related In this chapter, two rhythm-related tools are introduced:
-`**dur**`_ and `**metpos**`_.
+`dur <../../man/dur>`_ and `metpos <../../man/metpos>`_.
 
 
 The ***recip* Representation
 ---------------
 
 For many types of processing tasks it is helpful to have a representation
-that encodes rhythmic information only. The ``**recip``_ representation is
+that encodes rhythmic information only. The `**recip <../../rep/recip>`_ representation is
 simply a subset of \*\*kern_ that excludes all information apart from the
-nominal note durations and common system barlines. In addition, ``**recip``
+nominal note durations and common system barlines. In addition, `**recip <../../rep/recip>`_
 distinguishes rests from notes by including the ``r``' signifier. Without an
 accompanying ``r``' a duration is assumed to pertain to a note.
 
-Generating ``**recip`` data from \*\*kern is straightforward using
-`**humsed**`_. For a single-spine input, the following command will make the
+Generating `**recip <../../rep/recip>`_ data from \*\*kern is straightforward using
+`humsed <../../man/humsed>`_. For a single-spine input, the following command will make the
 translation:
 
 ``humsed '/^[^=]/s/[^0-9.r ]//g; s/^$/./' input.krn \
@@ -32,13 +32,13 @@ The first **humsed** substitution eliminates all data other than the numbers
 0 to 9, the period, the lower-case ``r``, and the space (for multiple-stops).
 Barlines remain untouched in the output. The second **humsed** substitution
 changes any empty lines to null data tokens; this might be necessary in the
-case of grace notes. The ensuing **sed** command is used simply to change the
-exclusive interpretation from \*\*kern to ``**recip``.
+case of grace notes. The ensuing `sed <http://en.wikipedia.org/wiki/Sed>`_ command is used simply to change the
+exclusive interpretation from \*\*kern to `**recip <../../rep/recip>`_.
 
 A simple type of processing might entail creating an inventory of rhythmic
 patterns. Suppose we wanted to determine the most common rhythmic pattern
-spanning a measure. Using a monophonic ``**recip`` input, we could use
-`**context**`_ to amalgamate the appropriate data tokens:
+spanning a measure. Using a monophonic `**recip <../../rep/recip>`_ input, we could use
+`context <../../man/context>`_ to amalgamate the appropriate data tokens:
 
 ``context -b ^= -o ^= input.recip | rid -GLId | sort \
 >
@@ -61,10 +61,10 @@ just seven patterns. The most characteristic patterns are the second one:
 The *dur* Command
 --------
 
-The `**dur**`_ command produces ``**dur``_ output from either a \*\*kern
-or ``**recip`` input. The ``**dur`` representation scheme consists simply of
+The `dur <../../man/dur>`_ command produces `**dur <../../rep/dur>`_ output from either a \*\*kern
+or `**recip <../../rep/recip>`_ input. The `**dur <../../rep/dur>`_ representation scheme consists simply of
 the elapsed duration of notes and rests, expressed in seconds. The following
-example shows a simple ``**dur`` representation (right spine) with a
+example shows a simple `**dur <../../rep/dur>`_ representation (right spine) with a
 corresponding \*\*kern input:
 
 
@@ -83,14 +83,14 @@ corresponding \*\*kern input:
 > =2=2
 > *-*-``
 
-As in the case of ``**recip``, the ``**dur`` representation designates rests
+As in the case of `**recip <../../rep/recip>`_, the `**dur <../../rep/dur>`_ representation designates rests
 via the lower-case ``r`` and uses the common system for barlines. Notice that
-``**dur`` assumes a metronome indication of quarter-note equals 60 beats per
+`**dur <../../rep/dur>`_ assumes a metronome indication of quarter-note equals 60 beats per
 minute if no other metronome marking is given.
 
 Suppose that we wanted to estimate the total duration of some monophonic
 passage (ignoring rubato). We can do this by translating the score to
-``**dur``, eliminating everything but notes and rests, and sending the output
+`**dur <../../rep/dur>`_, eliminating everything but notes and rests, and sending the output
 to the **stats** command:
 
 ``dur -d inputfile.krn | rid -GLId | grep -v '^=' | stats``
@@ -119,7 +119,7 @@ tokens.
 >
 >> | grep -v '^=' | grep -v r | stats``
 
-The `**dur**`_ command provides a **-e** option that allows the user to echo
+The `dur <../../man/dur>`_ command provides a **-e** option that allows the user to echo
 specified signifiers in the output. The **-e** option is followed by a
 regular expression indicating what patterns are to be passed to the output.
 This option allows us to "mark" notes of special interest. For example,
@@ -131,9 +131,9 @@ marked a staccato.
 >> | stats``
 
 The **-e** option ensures that \*\*kern staccato marks (') are passed along
-to the output. The `**rid**`_ command eliminates everything but Humdrum data
-records. Then **grep** is used to isolate only those notes containing a
-staccato mark. The **sed** script is used to eliminate the apostrophe, and
+to the output. The `rid <../../man/rid>`_ command eliminates everything but Humdrum data
+records. Then `grep <http://en.wikipedia.org/wiki/Grep>`_ is used to isolate only those notes containing a
+staccato mark. The `sed <http://en.wikipedia.org/wiki/Sed>`_ script is used to eliminate the apostrophe, and
 finally the numbers are passed to the **stats** command. The ``max`` value
 from **stats** will identify the duration (in seconds) of the longest note
 marked staccato.
@@ -164,7 +164,7 @@ Similarly, do semitone trills tend to be shorter than whole-tone trills?
 >
 >> | stats``
 
-Of course, we can also use `**dur**`_ in conjunction with `**yank**`_ in
+Of course, we can also use `dur <../../man/dur>`_ in conjunction with `yank <../../man/yank>`_ in
 order to investigate particular musical segments or passages. How much
 shorter is the recapitulation compared with the original exposition?
 
@@ -187,9 +187,9 @@ How much longer is a passage if all the repeats are played?
 
 ``thru inputfile | dur | rid -GLID | stats -o ^=``
 
-Recall that the `**xdelta**`_ command can be used to calculate numerical
+Recall that the `xdelta <../../man/xdelta>`_ command can be used to calculate numerical
 differences between successive values. If the input to **xdelta** is
-``**dur`` duration information, then we can determine rates of change of
+`**dur <../../rep/dur>`_ duration information, then we can determine rates of change of
 duration. Most music exhibits lengthy passages of similar duration notes --
 as in a sequence of sixteenth notes. In French overtures, successive notes
 are often of highly contrasting durations (longer, very-short, long, etc.).
@@ -206,7 +206,7 @@ smoother or less angular note-to-note rhythms.
 Classifying Durations
 ---------------------
 
-We can use the `**recode**`_ command to classify durations into a finite set
+We can use the `recode <../../man/recode>`_ command to classify durations into a finite set
 of categories. Suppose, for example, we wish to create a inventory of
 long/short rhythmic patterns. We might use **recode** with reassignments such
 as the following:
@@ -233,7 +233,7 @@ A typical output might appears as follows:
 > 114short long short``
 
 Notice that we might do a similar inventory based on durational *differences*
-rather than on durations. For example, the `**xdelta**`_ command will allow
+rather than on durations. For example, the `xdelta <../../man/xdelta>`_ command will allow
 us to distinguish short*er* note relationships from long*er* relationships.
 Our reassignment file would be as follows:
 
@@ -252,7 +252,7 @@ And our processing would be:
 Using *yank* with the *timebase* Command
 --------
 
-Recall that the `**timebase**`_ command can be used to reformat an input so
+Recall that the `timebase <../../man/timebase>`_ command can be used to reformat an input so
 that each data record represents an equivalent elapsed duration. For example,
 in a 4/4 meter, the following command will format the output so that each
 full measure consists of precisely 16 data records (not including the barline
@@ -277,7 +277,7 @@ hence:
 Note that this process will extract only those notes that begin sounding with
 the onset of the fourth beat. Some notes may have begun prior to the fourth
 beat and yet are sustained into the beat. If we want to extract the *sounded*
-sonority, we can use the `**ditto**`_ command. Begin by expanding the work
+sonority, we can use the `ditto <../../man/ditto>`_ command. Begin by expanding the work
 with a timebase that ensures all notes are present. For a work whose shortest
 note is a 32nd note, we can use an appropriately small timebase value. Then
 use the **ditto** command to propagate all sustained notes forward through
@@ -299,12 +299,12 @@ In some cases, we would like to yank materials that do not themselves contain
 explicit durational information. Suppose, for example, that for a waltz
 repertory, we want to contrast those chord functions that tend to occur on
 the first beat with those that happen on the third beat. We will need to have
-an input that includes both a ``**harm``_ spine encoding the Roman numeral
-harmonic analysis, as well as one or more \*\*kern or ``**recip`` spines
+an input that includes both a `**harm <../../rep/harm>`_ spine encoding the Roman numeral
+harmonic analysis, as well as one or more \*\*kern or `**recip <../../rep/recip>`_ spines
 that include the durational information. We can use the **timebase** command
 to expand the output accordingly -- cuing on the duration information
-provided by \*\*kern or ``**recip``. Having suitable expanded the input, we
-can dispense with everything but the ``**harm`` spine. For works in 3/4
+provided by \*\*kern or `**recip <../../rep/recip>`_. Having suitable expanded the input, we
+can dispense with everything but the `**harm <../../rep/harm>`_ spine. For works in 3/4
 meter, the following pipeline would provide an inventory of chords occurring
 on the first beat of each bar:
 
@@ -325,7 +325,7 @@ therefore the beginning of the third beat will coincide with the 5th eighth
 The *metpos* Command
 --------
 
-The `**metpos**`_ command generates a ``**metpos``_ output spine containing
+The `metpos <../../man/metpos>`_ command generates a `**metpos <../../rep/metpos>`_ output spine containing
 numbers that indicate the metric strength of each sonority. By "metric
 position" we mean the position of importance in the metric hierarchy for a
 measure.
@@ -338,7 +338,7 @@ triple meters, **metpos** assumes that the second and third beats in the
 measure are both assigned to the second level in the metric hierarchy.) All
 other metric positions in the measure (beats, sub-beats, sub-sub-beats, etc.)
 are assigned successively increasing numerical values according to their
-placement in the metric hierarchy. In summary, larger ``**metpos`` values
+placement in the metric hierarchy. In summary, larger `**metpos <../../rep/metpos>`_ values
 signify sonorities of *lesser* metric significance.
 
 By way of illustration, consider the case of successive eighth notes in a 2/4
@@ -348,7 +348,7 @@ are: 1,4,3,4,2,4,3,4. In the case of 6/8 meter, successive sixteenth
 durations exhibit a metric hierarchy of: 1,4,3,4,3,4,2,4,3,4,3,4.
 
 For correct operation, the **metpos** command must be supplied with an input
-that has been formatted using the `**timebase**`_ command. That is, each data
+that has been formatted using the `timebase <../../man/timebase>`_ command. That is, each data
 record (ignoring barlines) must represent an equivalent duration of time. In
 addition, **metpos** must be informed of both the *meter signature* and the
 *timebase* for the given input passage. This information can be specified via
@@ -412,12 +412,12 @@ corresponding output from **metpos**:
 > =20=20=20
 > *-*-*-``
 
-Notice that `**metpos**`_ adapts to changing meter signatures, and correctly
+Notice that `metpos <../../man/metpos>`_ adapts to changing meter signatures, and correctly
 distinguishes between metric accent patterns such as 6/4 (measure 16) and 3/2
 (measure 19).
 
-The ``**metpos``_ values provide additional ways of addressing various
-rhythmic questions. We might use `**recode**`_ for example, to recode the
+The `**metpos <../../rep/metpos>`_ values provide additional ways of addressing various
+rhythmic questions. We might use `recode <../../man/recode>`_ for example, to recode the
 numerical outputs from **metpos** into a smaller set of discrete categories.
 For example, we might classify metric positions using the following
 reassignment file:
@@ -426,7 +426,7 @@ reassignment file:
 > >=3secondary
 > elseweak``
 
-The words `strong', `secondary', and `weak' can then be sought by **grep** or
+The words `strong', `secondary', and `weak' can then be sought by `grep <http://en.wikipedia.org/wiki/Grep>`_ or
 **yank -m**, allowing us to isolate points of particular metric stress. Since
 **metpos** adapts to changing meters, we can confidently process inputs that
 may contain mixtures of meters.
@@ -435,7 +435,7 @@ may contain mixtures of meters.
 Changes of Stress
 -----------------
 
-Once again we can make use of `**xdelta**`_ to identify relationships between
+Once again we can make use of `xdelta <../../man/xdelta>`_ to identify relationships between
 successive metric position values. Suppose we had a collection of Hungarian
 melodies and we wanted to determine how each degree is approached in terms of
 metric strength. That is, we would like to count the number of tonic pitches
@@ -449,8 +449,8 @@ strong-to-weak, etc. A suitable inventory will involve creating two spines of
 information -- scale-degree and relative metric strength.
 
 Assuming that our Hungarian melodies encode key information, creating a
-``**deg``_ spine is straightforward. Recall that the **-a** option for
-`**deg**`_ avoids distinguishing the direction of approach (from above or
+`**deg <../../rep/deg>`_ spine is straightforward. Recall that the **-a** option for
+`deg <../../man/deg>`_ avoids distinguishing the direction of approach (from above or
 below):
 
 ``deg -a magyar*.krn > magyar.deg``
@@ -469,7 +469,7 @@ data.
 ``metpos magyar.tb > magyar.mp``
 
 Note that **metpos** automatically echoes the input along with the new
-``**metpos`` spine. At this point, the result might look as follows:
+`**metpos <../../rep/metpos>`_ spine. At this point, the result might look as follows:
 
 ``!!!OTL: Graf Friedrich In Oesterraaich sin di Gassen sou enge
 \*\*kern**metpos
@@ -514,16 +514,16 @@ The result is as follows:
 ``8dd``1``
 > etc.
 
-Notice that the successive ``**metpos`` values will now allow us to
+Notice that the successive `**metpos <../../rep/metpos>`_ values will now allow us to
 characterize the changes in stress between successive notes: 2 followed by 3
 indicates a strong-to-weak change of metric position, 3 followed by 1
 indicates a weak-to-strong change of metric position. We can use
-`**xdelta**`_ to calculate the differences in metric position values:
+`xdelta <../../man/xdelta>`_ to calculate the differences in metric position values:
 positive differences will indicate weak-to-strong changes and negative
 differences will indicate strong-to-weak changes. If both values have the
 same metric position value, then the successive notes hold equal positions in
 the metric hierarchy. Before using **xdelta** we need to isolate the
-``**metpos`` spine using **extract**:
+`**metpos <../../rep/metpos>`_ spine using **extract**:
 
 ``humsed '/^\./d' magyar.mp | extract -i '**metpos' \
 >
@@ -545,7 +545,7 @@ The result is:
 ``-2``
 > etc.
 
-Now we can use `**recode**`_ to classify the changes of metric position
+Now we can use `recode <../../man/recode>`_ to classify the changes of metric position
 according. Our reassignment file (named ``reassign``):
 
 ``>0strong-to-weak
@@ -559,9 +559,9 @@ Appending the appropriate command:
 >> | xdelta -s ^= | recode -f reassign -i '**Xmetpos' -s ^= > magyar.xmp``
 
 Now we can assemble the resulting metric change spine with our original
-``**deg``_ spine. Each data record will contain the scale degree in the
+`**deg <../../rep/deg>`_ spine. Each data record will contain the scale degree in the
 first spine and the change of metric position data in the second spine. The
-final task is to create an inventory using `**rid**`_, **sort** and **uniq**:
+final task is to create an inventory using `rid <../../man/rid>`_, **sort** and `uniq <http://en.wikipedia.org/wiki/Uniq>`_:
 
 ``assemble magyar.deg magyar.xmp | rid -GLId | grep -v ^= \
 >
@@ -621,17 +621,17 @@ Reprise
 There are a vast number of issues raised in rhythm-related processing. In
 this chapter we have touched on a few of the more basic tasks. These include
 identifying the durations of various passages using **dur**; classifying and
-contextualizing durations using `**recode**`_ and `**context**`_; isolating
-particular rhythmic moments using `**timebase**`_ and `**yank**`_ **-m**;
-determining relative metric positions using `**metpos**`_; and characterizing
-metric syncopation using `**synco**`_.
+contextualizing durations using `recode <../../man/recode>`_ and `context <../../man/context>`_; isolating
+particular rhythmic moments using `timebase <../../man/timebase>`_ and `yank <../../man/yank>`_ **-m**;
+determining relative metric positions using `metpos <../../man/metpos>`_; and characterizing
+metric syncopation using `synco <../../man/synco>`_.
 
 Processing data that does not explicitly contain duration-related information
-(such as ``**harm`` or ``**deg``) often requires some preparation. It is
+(such as `**harm <../../rep/harm>`_ or `**deg <../../rep/deg>`_) often requires some preparation. It is
 often useful to maintain a coordinated file where the spines of interest are
 linked with duration-related spines that assist in processing.
 
 One further topic related to rhythm remains to be discussed. The **accent**
 command allows the user to distinguish notes according to their estimated
-perceptual importance. We will consider **accent** in `Chapter 31.`_
+perceptual importance. We will consider **accent** in `Chapter 31 <../ch31>`_.
 

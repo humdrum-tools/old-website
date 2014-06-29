@@ -116,7 +116,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">2. Rhythm and Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody and Pitch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
@@ -333,16 +333,16 @@ us resolve questions of interpretation, but computers are unable to
 bring such sophistication to the task.</p>
 <p>Humdrum provides two pre-defined representations for score-related
 dynamic markings. One representation
-(<tt class="docutils literal"><span class="pre">`**dyn</span></tt> &lt;representations/dyn.rep.html&gt;`__) attempts to represent the
+(<tt class="docutils literal"><span class="pre">dyn</span></tt> &lt;representations/dyn.rep.html&gt;`__) attempts to represent the
 dynamic markings as they appear in a visual rendering of a score. That
-is, <tt class="docutils literal"><span class="pre">**dyn</span></tt> represents the visual or orthographic information. A
-second representation (<tt class="docutils literal"><span class="pre">`**dynam</span></tt> &lt;representations/dynam.rep.html&gt;`__)
+is, <tt class="docutils literal"><span class="pre">dyn</span></tt> represents the visual or orthographic information. A
+second representation (<tt class="docutils literal"><span class="pre">dynam</span></tt> &lt;representations/dynam.rep.html&gt;`__)
 provides a &#8220;rationalized&#8221; or canonical means for interpreting
 score-related dynamic indications. Users will want to choose one or the
 other representation depending on the analytic task being pursued.</p>
-<p>In the first instance, <tt class="docutils literal"><span class="pre">**dynam</span></tt> uses standardized data tokens to
+<p>In the first instance, <tt class="docutils literal"><span class="pre">dynam</span></tt> uses standardized data tokens to
 represent particular dynamic levels. Table 28.1 shows the standard
-representations for <tt class="docutils literal"><span class="pre">**dynam</span></tt>. For example, the token <tt class="docutils literal"><span class="pre">pp</span></tt>
+representations for <tt class="docutils literal"><span class="pre">dynam</span></tt>. For example, the token <tt class="docutils literal"><span class="pre">pp</span></tt>
 represents the concept of pianissimo, even if the visual rendering may
 be <em>pp</em> or <em>pianissimo</em> or <em>pianiss.</em>, etc.</p>
 <p><strong>Table 28.1.</strong></p>
@@ -421,7 +421,7 @@ be <em>pp</em> or <em>pianissimo</em> or <em>pianiss.</em>, etc.</p>
 </tbody>
 </table>
 <p>In the case of crescendo and diminuendo markings,
-<tt class="docutils literal"><span class="pre">`**dynam</span></tt> &lt;representations/dynam.rep.html&gt;`__ requires an explicit
+<tt class="docutils literal"><span class="pre">dynam</span></tt> &lt;representations/dynam.rep.html&gt;`__ requires an explicit
 interpretation of where the dynamic marking begins and ends. The
 beginning of a crescendo is indicated by the less-than sign (<tt class="docutils literal"><span class="pre">&lt;</span></tt>). The
 end of the crescendo is marked by the open square bracket (<tt class="docutils literal"><span class="pre">]</span></tt>).
@@ -429,13 +429,13 @@ Between the beginning and end points, <em>continuation signifiers</em> are
 encoded. For crescendos, continuations are indicated using the open
 parenthesis; for diminuendos, continuations are indicated using the
 closed parenthesis.</p>
-<p>In the <tt class="docutils literal"><span class="pre">**dynam</span></tt> representation, no distinction is made for various
+<p>In the <tt class="docutils literal"><span class="pre">dynam</span></tt> representation, no distinction is made for various
 ways a composer might indicate a crescendo or a diminuendo. For example,
 it doesn&#8217;t matter whether a diminuendo is notated as <em>dim.</em>, <em>dimin.</em>,
 <em>diminuendo</em>, <em>decres.</em>, <em>decresc.</em>, <em>decresendo</em>, <em>calando</em>, <em>morendo</em>,
 <em>se perdant</em>, <em>cédéz</em>, <em>gradually quieter</em>, or via a hairpin or wedge
 graphic diminuendo. All are represented by <tt class="docutils literal"><span class="pre">&gt;</span></tt> ... <tt class="docutils literal"><span class="pre">)</span></tt> ... <tt class="docutils literal"><span class="pre">]</span></tt>.</p>
-<p>The <tt class="docutils literal"><span class="pre">**dynam</span></tt> representation also requires explicit resolution of
+<p>The <tt class="docutils literal"><span class="pre">dynam</span></tt> representation also requires explicit resolution of
 possibly ambiguous dynamic markings. In many cases, the user will be
 required to add dynamic markings that are only implicit in the original
 score. Interpreted dynamics are preceded by the upper-case letter <tt class="docutils literal"><span class="pre">X</span></tt>,
@@ -445,14 +445,14 @@ so an interpreted diminuendo will be represented by <tt class="docutils literal"
 introduced by the editor. In scholarly publications these editorialisms
 are indicated in parentheses or square brackets. Such interpreted
 dynamics are preceded by the lower-case letter <tt class="docutils literal"><span class="pre">x</span></tt>.</p>
-<p>The use of the <tt class="docutils literal"><span class="pre">`**dynam</span></tt> &lt;representations/dynam.rep.html&gt;`__
+<p>The use of the <tt class="docutils literal"><span class="pre">dynam</span></tt> &lt;representations/dynam.rep.html&gt;`__
 representation is illustrated in Example 28.1.</p>
 <p><strong>Example 28.1</strong></p>
 <blockquote>
-<div><a href="#id1"><span class="problematic" id="id2">|image5|</span></a></div></blockquote>
+<div><a href="#id10"><span class="problematic" id="id11">|image5|</span></a></div></blockquote>
 <p>This example might be encoded as follows:</p>
 <blockquote>
-<div><tt class="docutils literal"><span class="pre">**dynam</span></tt>
+<div><tt class="docutils literal"><span class="pre">dynam</span></tt>
 **kern
 *staff1
 *staff1
@@ -476,7 +476,7 @@ pp
 =
 *-
 *-</div></blockquote>
-<p>The <tt class="docutils literal"><span class="pre">**dynam</span></tt> encoding is interpreted as follows: the level begins
+<p>The <tt class="docutils literal"><span class="pre">dynam</span></tt> encoding is interpreted as follows: the level begins
 <em>piano</em> with a crescendo beginning prior to the second chord; the
 crescendo continues until after the third chord and then the level
 abruptly drops to <em>pianissimo</em> with the onset of the fourth chord.
@@ -490,7 +490,7 @@ short, a crescendo (or diminuendo) marking is always assumed to increase
 <p>If appropriate, a user can render implicit dynamic shading explicitly.
 For example, a user might choose to re-code Example 28.1 as either</p>
 <blockquote>
-<div><tt class="docutils literal"><span class="pre">**dynam</span></tt>
+<div><tt class="docutils literal"><span class="pre">dynam</span></tt>
 **kern
 *staff1
 *staff1
@@ -516,7 +516,7 @@ pp
 *-</div></blockquote>
 <p>or</p>
 <blockquote>
-<div><tt class="docutils literal"><span class="pre">**dynam</span></tt>
+<div><tt class="docutils literal"><span class="pre">dynam</span></tt>
 **kern
 *staff1
 *staff1
@@ -542,14 +542,14 @@ pp
 *-</div></blockquote>
 <p>Notice that null data records may be inserted as necessary to clarify
 the moment of dynamic change. The
-<tt class="docutils literal"><span class="pre">`**dynam</span></tt> &lt;representations/dynam.rep.html&gt;`__ representation makes
+<tt class="docutils literal"><span class="pre">dynam</span></tt> &lt;representations/dynam.rep.html&gt;`__ representation makes
 use of the common system for representing barlines.</p>
 </div>
 <div class="section" id="the-dyn-representation">
 <h2>The <em>**dyn</em> Representation<a class="headerlink" href="#the-dyn-representation" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="docutils literal"><span class="pre">**dyn</span></tt> representation provides a method for representing the
-orthographic appearance of notated dynamic markings. Unlike <tt class="docutils literal"><span class="pre">**dynam</span></tt>,
-the <tt class="docutils literal"><span class="pre">**dyn</span></tt> representation distinguishes between different ways of
+<p>The <tt class="docutils literal"><span class="pre">dyn</span></tt> representation provides a method for representing the
+orthographic appearance of notated dynamic markings. Unlike <tt class="docutils literal"><span class="pre">dynam</span></tt>,
+the <tt class="docutils literal"><span class="pre">dyn</span></tt> representation distinguishes between different ways of
 identifying a dynamic marking. For example, <em>dim.</em>, <em>dimin.</em>,
 <em>diminuendo</em>, <em>decres.</em>, <em>decresc.</em>, <em>decresendo</em>, are all regarded as
 different from each other. Composers often have idiosyncratic ways of
@@ -623,11 +623,11 @@ line of a corresponding staff; this number appears in curly braces.</p>
 <p><strong>Example 28.2:</strong> Arnold Schoenberg, <em>Three Piano Pieces, Op. 11, No.
 2</em>, excerpt.</p>
 <blockquote>
-<div><a href="#id3"><span class="problematic" id="id4">|image6|</span></a></div></blockquote>
-<p>Using the <tt class="docutils literal"><span class="pre">**dyn</span></tt> representation, Example 28.2 might be encoded as
+<div><a href="#id12"><span class="problematic" id="id13">|image6|</span></a></div></blockquote>
+<p>Using the <tt class="docutils literal"><span class="pre">dyn</span></tt> representation, Example 28.2 might be encoded as
 follows:</p>
 <blockquote>
-<div><tt class="docutils literal"><span class="pre">**dyn</span></tt>
+<div><tt class="docutils literal"><span class="pre">dyn</span></tt>
 **kern
 **kern
 **kern
@@ -770,7 +770,7 @@ follows:</p>
 *-</div></blockquote>
 <p>The <tt class="docutils literal"><span class="pre">*staff1/2</span></tt> tandem interpretation indicates that the dynamic
 markings pertain to both staffs 1 and 2, however all vertical
-<tt class="docutils literal"><span class="pre">`**dyn</span></tt> &lt;representations/dyn.rep.html&gt;`__ distance measures are
+<tt class="docutils literal"><span class="pre">dyn</span></tt> &lt;representations/dyn.rep.html&gt;`__ distance measures are
 encoded with respect to staff 1. (Reversing the numerical order &#8211;
 <tt class="docutils literal"><span class="pre">*staff2/1</span></tt> &#8211; would cause all distances to be measured with respect
 to staff 2.) The token <tt class="docutils literal"><span class="pre">0.8f{-4}</span></tt> means that the signifier <em>f</em> is
@@ -787,7 +787,7 @@ staff 1. Changing this value allows tilted wedges to be represented.</p>
 </div>
 <div class="section" id="the-db-representation">
 <h2>The <em>**dB</em> Representation<a class="headerlink" href="#the-db-representation" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="docutils literal"><span class="pre">`**dB</span></tt> &lt;representations/dB.rep.html&gt;`__ representation provides a
+<p>The <a class="reference external" href="../../rep/dB">**dB</a> &lt;representations/dB.rep.html&gt;`__ representation provides a
 way to represent intensity in decibels. Decibels can be expressed in
 relative or absolute terms. Absolute values are represented according to
 sound pressure level (SPL). An absolute representation is indicated by
@@ -797,7 +797,7 @@ circumstances. A quiet room is roughly 40 dB in intensity; a
 conversation produces roughly 70 dB, a vacuum cleaner produces roughly
 80 dB, a noisy factory produces roughly 90 dB, and a passing loud
 motorcycle generates roughly 100 dB (SPL).</p>
-<p>The <tt class="docutils literal"><span class="pre">**dB</span></tt> representation provides a convenient way to represent sound
+<p>The <a class="reference external" href="../../rep/dB">**dB</a> representation provides a convenient way to represent sound
 intensity in a numerical form. A numerical representation allows us to
 carry out a variety of calculations and comparisons.</p>
 </div>
@@ -805,7 +805,7 @@ carry out a variety of calculations and comparisons.</p>
 <h2>The <em>db</em> Command<a class="headerlink" href="#the-db-command" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>db</strong> command translates dynamic markings to dynamic level
 expressed in decibels; specifically, <strong>db</strong> translates from the
-<tt class="docutils literal"><span class="pre">**dynam</span></tt> representation to <tt class="docutils literal"><span class="pre">**dB</span></tt> representation. By default,
+<tt class="docutils literal"><span class="pre">dynam</span></tt> representation to <a class="reference external" href="../../rep/dB">**dB</a> representation. By default,
 <strong>db</strong> uses the following mapping:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -889,7 +889,7 @@ measure 6, and a mezzo-forte marking appears in measure 7. The
 right-most spine shows the corresponding output generated by the <strong>db</strong>
 command. It shows an interpolation between the two dynamic levels.</p>
 <blockquote>
-<div><tt class="docutils literal"><span class="pre">**dynam</span></tt>
+<div><tt class="docutils literal"><span class="pre">dynam</span></tt>
 **dB
 *SPL
 *
@@ -936,7 +936,7 @@ ignored in the calculation.</p>
 </div>
 <div class="section" id="processing-dynamic-information">
 <h2>Processing Dynamic Information<a class="headerlink" href="#processing-dynamic-information" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="docutils literal"><span class="pre">`**dB</span></tt> &lt;representations/dB.rep.html&gt;`__ representation can be
+<p>The <a class="reference external" href="../../rep/dB">**dB</a> &lt;representations/dB.rep.html&gt;`__ representation can be
 used to assist a number of tasks related to musical dynamics. Suppose,
 for example, that we want to compare the average overall dynamic levels
 for two arabesques:</p>
@@ -974,7 +974,7 @@ dynamic levels and pitch height for Klezmer music. That is, does the
 music tend to be quieter for lower pitches and louder for higher
 pitches? A straightforward way to determine this is to compare dynamic
 level with pitch height &#8211; represented in semitones
-(<tt class="docutils literal"><span class="pre">`**semits</span></tt> &lt;representations/semits.rep.html&gt;`__). The
+(<a class="reference external" href="../../rep/semits">**semits</a> &lt;representations/semits.rep.html&gt;`__). The
 <a class="reference external" href="commands/correl.html">**correl**</a> command can then be used to
 measure Pearson&#8217;s coefficient of correlation. If there is a relationship
 between pitch height and dynamic level then the correlation should be
@@ -982,7 +982,7 @@ positive.</p>
 <blockquote>
 <div><tt class="docutils literal"><span class="pre">semits</span> <span class="pre">klezmer</span> <span class="pre">|</span> <span class="pre">correl</span> <span class="pre">-s</span> <span class="pre">^=</span> <span class="pre">-m</span></tt></div></blockquote>
 <p>This command assumes an input consisting of two spines &#8211; one
-pitch-related and a <tt class="docutils literal"><span class="pre">**dB</span></tt> spine. The <strong>-s</strong> option for <strong>correl</strong> is
+pitch-related and a <a class="reference external" href="../../rep/dB">**dB</a> spine. The <strong>-s</strong> option for <strong>correl</strong> is
 used to skip barlines so bar numbers aren&#8217;t included in the calculation.
 The <strong>-m</strong> option for <strong>correl</strong> disables the &#8220;matched pairs&#8221; criterion.
 Normally, if a number is found in one spine but not the other then
@@ -1014,11 +1014,11 @@ these notes from a subsequent correlation:</p>
 to see many relatively abrupt dynamic contrasts, such as alternations
 between <em>forte</em> and <em>piano</em>. There are several ways of approaching this
 question. One approach might translate
-<tt class="docutils literal"><span class="pre">`**dynam</span></tt> &lt;representations/dynam.rep.html&gt;`__ data to
-<tt class="docutils literal"><span class="pre">`**dB</span></tt> &lt;representations/dB.rep.html&gt;`__ data and then calculate the
+<tt class="docutils literal"><span class="pre">dynam</span></tt> &lt;representations/dynam.rep.html&gt;`__ data to
+<a class="reference external" href="../../rep/dB">**dB</a> &lt;representations/dB.rep.html&gt;`__ data and then calculate the
 average (or maximum) changes in dynamic level. If a work contains many
 crescendos and diminuendos markings, then most of the changes in
-<tt class="docutils literal"><span class="pre">**dB</span></tt> values will be small. Conversely, alternations between
+<a class="reference external" href="../../rep/dB">**dB</a> values will be small. Conversely, alternations between
 contrasting dynamic levels will cause the average decibel differences to
 be larger. The <a class="reference external" href="commands/xdelta.html">**xdelta**</a> command can be used
 to calculate the changes in dynamic level. Notice that it is important
@@ -1033,7 +1033,7 @@ to approach zero.</p>
 <p>Another approach to this problem might be to count the number of dynamic
 contrasts, avoiding the use of the <strong>db</strong> command. In the following
 pipeline, we use <a class="reference external" href="commands/context.html">**context**</a> to generate
-pairs of dynamic markings, and then use <strong>grep</strong> to count the number of
+pairs of dynamic markings, and then use <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to count the number of
 alternations between <em>f</em> and <em>p</em>.</p>
 <blockquote>
 <div><p><tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**dynam'</span> <span class="pre">haendel</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">'[][()=rX]'</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-d</span> <span class="pre">\</span></tt></p>
@@ -1074,16 +1074,16 @@ Actual sound pressure levels will depend on the timbre of the MIDI
 sounds, the specific pitch played, and the volume on the output
 amplifier. Nevertheless, a rough estimate of sound pressure level may be
 useful for various analytic tasks. Recall that in the
-<tt class="docutils literal"><span class="pre">`**MIDI</span></tt> &lt;representations/MIDI.rep.html&gt;`__ representation,
+<a class="reference external" href="../../rep/MIDI">**MIDI</a> &lt;representations/MIDI.rep.html&gt;`__ representation,
 key-velocity data is encoded as the final number in three-number tokens
 where numbers are separated by slashes. The first value in the triplet
 is elapsed clock ticks and the second value is the MIDI key number
 (positive for key-on events, negative for key-off events). By way of
 reminder, the following example shows three
-<tt class="docutils literal"><span class="pre">`**kern</span></tt> &lt;representations/kern.rep.html&gt;`__ notes with a
+<a class="reference external" href="../../rep/kern">**kern</a> &lt;representations/kern.rep.html&gt;`__ notes with a
 corresponding **MIDI representation.</p>
 <blockquote>
-<div><tt class="docutils literal"><span class="pre">**kern</span></tt>
+<div><a class="reference external" href="../../rep/kern">**kern</a>
 **MIDI
 *
 *Ch1
@@ -1178,25 +1178,25 @@ pipeline:</p>
 <blockquote>
 <div>| recode -f reassign | sed &#8216;s/**MIDI/**dB/&#8217;</div></blockquote>
 </div></blockquote>
-<p>Notice the use of the <strong>sed</strong> command to replace the **MIDI
+<p>Notice the use of the <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> command to replace the **MIDI
 interpretation by a **dB interpretation.</p>
 </div>
 <div class="section" id="reprise">
 <h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
 <p>In this chapter we have introduced three representations related to
-musical dynamics. The <tt class="docutils literal"><span class="pre">`**dyn</span></tt> &lt;representations/dyn.rep.html&gt;`__
+musical dynamics. The <tt class="docutils literal"><span class="pre">dyn</span></tt> &lt;representations/dyn.rep.html&gt;`__
 representation allows us to encode dynamic markings as they appear
 visually in a printed score. Unfortunately, traditional notated dynamic
 markings are often confusing or ambiguous. In order to facilitate some
 types of analytic processing it is useful to generate a more
 rationalized interpretation of the dynamics of a work. The
-<tt class="docutils literal"><span class="pre">`**dynam</span></tt> &lt;representations/dynam.rep.html&gt;`__ representation provides
+<tt class="docutils literal"><span class="pre">dynam</span></tt> &lt;representations/dynam.rep.html&gt;`__ representation provides
 a canonical scheme for representing basic notated dynamic markings where
 ambiguities are resolved by explicitly interpreting the meaning of
 dynamic markings. A third scheme
-(<tt class="docutils literal"><span class="pre">`**dB</span></tt> &lt;representations/dB.rep.html&gt;`__) provides a scheme for
+(<a class="reference external" href="../../rep/dB">**dB</a> &lt;representations/dB.rep.html&gt;`__) provides a scheme for
 representing continuous dynamic levels in decibels. We have seen that
-the <strong>db</strong> command (which translates from <tt class="docutils literal"><span class="pre">**dynam</span></tt> to <tt class="docutils literal"><span class="pre">**dB</span></tt>)
+the <strong>db</strong> command (which translates from <tt class="docutils literal"><span class="pre">dynam</span></tt> to <a class="reference external" href="../../rep/dB">**dB</a>)
 allows us to pose and answer a variety of questions related to the
 dynamic organization of music.</p>
 </div>

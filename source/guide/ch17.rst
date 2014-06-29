@@ -66,7 +66,7 @@ input so only the data of interest is present. Second we need to *sort* like-
 with-like. And third we need to *count* the number of occurrences of each
 type of data token.
 
-Let's begin by discussing the second process. In `Chapter 3`_ we saw how the
+Let's begin by discussing the second process. In `Chapter 3 <../ch03>`_ we saw how the
 UNIX **sort** command will rearrange lines of data so that they are in
 alphabetical/numerical order. The command:
 
@@ -93,8 +93,8 @@ letter `A' are now collected on successive lines in the output. Similarly,
 the `B's have been rearranged on successive lines.
 
 The third step in generating an inventory is to count the number of
-occurrences of each unique data token. The **uniq** command described in
-`Chapter 3`_ will eliminate successive duplicate lines. For example, if we
+occurrences of each unique data token. The `uniq <http://en.wikipedia.org/wiki/Uniq>`_ command described in
+`Chapter 3 <../ch03>`_ will eliminate successive duplicate lines. For example, if we
 type:
 
 ``uniq sorted.alpha``
@@ -110,11 +110,11 @@ The output will be as follows:
 ``C``
 
 Notice that repetitions of the data "A" and "B" have disappeared. The simple
-**uniq** command is useful for telling us *how many different things* there
+`uniq <http://en.wikipedia.org/wiki/Uniq>`_ command is useful for telling us *how many different things* there
 are in an input. For example, the above output identifies just five different
 records -- and three different types of data records.
 
-Recall that the **-c** option for **uniq** will cause a `count' to be
+Recall that the **-c** option for `uniq <http://en.wikipedia.org/wiki/Uniq>`_ will cause a `count' to be
 prepended to each output line. The command:
 
 ``uniq -c sorted.alpha > unique.alpha``
@@ -132,7 +132,7 @@ will produce the following output:
 The prepended counts tell us that `A' occurs three times, `B' occurs twice,
 and all other records occur just once.
 
-In the above output, ``**alpha``, and ``*-`` are Humdrum interpretations
+In the above output, ``alpha``, and ``*-`` are Humdrum interpretations
 rather than data, so we probably don't want them to appear in our inventory.
 If our file had contained comments, or null data records, then these would
 have also appeared in our output, although we are not likely to be interested
@@ -144,7 +144,7 @@ prefer to omit from our final output.
 Filtering Data with the *rid* Command
 --------
 
-As we saw in `Chapter 13,`_ the `**rid**`_ command can be used to eliminate
+As we saw in `Chapter 13 <../ch13>`_, the `rid <../../man/rid>`_ command can be used to eliminate
 various classes of Humdrum records. For example, **rid -G** eliminates all
 global comments; **rid -D** eliminates all data records, etc. The option
 combination **-GLId** is very common with **rid** since only data records are
@@ -152,7 +152,7 @@ retained in the output. That is, eliminating all global and local comments,
 omitting all interpretations, and deleting all null data records will result
 in an output consisting only of non-null data records.
 
-Returning to our ``**alpha`` data, we can eliminate everything but data
+Returning to our ``alpha`` data, we can eliminate everything but data
 records as follows:
 
 ``rid -GLId alpha > filtered.alpha``
@@ -222,7 +222,7 @@ interested only in alpha-related data, we need to eliminate the irrelevant
 **bet data so it won't interfere. This can be done using the Humdrum
 **extract** command.
 
-For example, we can create an inventory of just the ``**bet`` data:
+For example, we can create an inventory of just the ``bet`` data:
 
 ``extract -i '**bet' alphabet | rid -GLId | sort | uniq -c \
 >
@@ -244,7 +244,7 @@ so that each spine is placed in a separate file:
 ``extract -i '**alpha' alphabet > justalpha``
 ``extract -i '**bet' alphabet > justbet``
 
-The **cat** command can then be used to concatenate the files end-to-end so
+The `cat <http://en.wikipedia.org/wiki/Cat_(Unix)>`_ command can then be used to concatenate the files end-to-end so
 they form a single column of data. With each data token of interest is on its
 own line, we can generate the appropriate inventory:
 
@@ -306,11 +306,11 @@ In other circumstances, it may be helpful to determine the proportion or
 percentage values rather than the actual numerical count. This can be
 calculated by dividing each of the inventory count numbers by the total
 number of data records processed. A convenient way to count records is via
-the UNIX **wc** (word count) command. The **wc** command provides three
-options. With the **-c** option, **wc** counts the number of characters in an
-input. With the **-w** option, **wc** counts the number of words in an input.
+the UNIX `wc <http://en.wikipedia.org/wiki/Wc_(Unix)>`_ (word count) command. The `wc <http://en.wikipedia.org/wiki/Wc_(Unix)>`_ command provides three
+options. With the **-c** option, `wc <http://en.wikipedia.org/wiki/Wc_(Unix)>`_ counts the number of characters in an
+input. With the **-w** option, `wc <http://en.wikipedia.org/wiki/Wc_(Unix)>`_ counts the number of words in an input.
 A "word" is defined as any sequence of characters delineated by white space,
-such as spaces, tabs or new lines. With the **-l** option, **wc** counts the
+such as spaces, tabs or new lines. With the **-l** option, `wc <http://en.wikipedia.org/wiki/Wc_(Unix)>`_ counts the
 nmber of lines or records in the input.
 
 We can count the total number of non-null data records in a Humdrum input
@@ -335,8 +335,8 @@ corresponding type of data.
 Excluding or Seeking Rare Events
 --------------------------------
 
-Recall from `Chapter 3`_ that the **uniq** command provides other options
-(besides the **-c** option). The **-d** option causes **uniq** to output
+Recall from `Chapter 3 <../ch03>`_ that the `uniq <http://en.wikipedia.org/wiki/Uniq>`_ command provides other options
+(besides the **-c** option). The **-d** option causes `uniq <http://en.wikipedia.org/wiki/Uniq>`_ to output
 *only* those records that are duplicated. In other words, records that occur
 only once are eliminated from the input. This option can be useful when there
 are a lot of single-occurrence data tokens and you are only interested in
@@ -354,7 +354,7 @@ Transforming and Editing Inventory Data
 ---------------------------------------
 
 Notice that two data records must be identical in order for them to be
-considered "the same" by **sort** and **uniq**. This means that records such
+considered "the same" by **sort** and `uniq <http://en.wikipedia.org/wiki/Uniq>`_. This means that records such
 as the following are considered entirely different:
 
 
@@ -367,7 +367,7 @@ as the following are considered entirely different:
 ``CBA``
 
 Remember that step #1 in generating inventories requires that we filter the
-data so only the data of interest is passed to **sort** and **uniq**. This
+data so only the data of interest is passed to **sort** and `uniq <http://en.wikipedia.org/wiki/Uniq>`_. This
 means we must be careful about the state of the input. Depending on your
 goal, we will either want to *translate* the input to some other more
 appropriate representation, or *edit* the existing representation in order to
@@ -376,12 +376,12 @@ discard or transform otherwise confounding data.
 *Translating* data involves changing from one type of information to another
 -- that is, changing the exclusive interpretations. For example, if we want
 to produce an inventory of melodic intervals, then we might use the
-`**mint**`_ or `**xdelta**`_ commands to generate a suitable representation.
+`mint <../../man/mint>`_ or `xdelta <../../man/xdelta>`_ commands to generate a suitable representation.
 Alternatively, we might want to generate an inventory of scale degrees using
-the `**deg**`_ or `**solfa**`_ commands.
+the `deg <../../man/deg>`_ or `solfa <../../man/solfa>`_ commands.
 
 Instead of translating our data, we might wish to edit the data using the
-**sed** or `**humsed**`_ stream editors. Suppose we had a file (named
+`sed <http://en.wikipedia.org/wiki/Sed>`_ or `humsed <../../man/humsed>`_ stream editors. Suppose we had a file (named
 "notes") consisting of pitch information, and we wanted to create an
 inventory of the diatonic pitch-letter names. Our input might look like this:
 
@@ -411,7 +411,7 @@ Without modification, our inventory would appear as follows:
 But this inventory distinguishes D-sharp from D-natural -- which is not what
 we want. The answer is to filter our input so that the sharps are removed.
 
-Adding the appropriate `**humsed**`_ command to our pipe:
+Adding the appropriate `humsed <../../man/humsed>`_ command to our pipe:
 
 ``humsed 's/#//' notes | rid -GLId | sort | uniq -c``
 
@@ -456,9 +456,8 @@ input is monophonic \*\*kern data.
 
 *Did Bartok's preferred articulation marks change* *over his lifetime?*
 Assume that copies of early and late works have been concatenated to the
-files ``early`` and ``late``. The `**humsed**`_ command here eliminates all
-data with the exception of \*\*kern_ articulation marks. (See `Chapter
-6`_ for details on **kern articulation marks.)
+files ``early`` and ``late``. The `humsed <../../man/humsed>`_ command here eliminates all
+data with the exception of \*\*kern_ articulation marks. (See `Chapter 6 <../ch06>`_ for details on **kern articulation marks.)
 
 ``extract -i '**kern' early | humsed 's/[^"`~^:I]//g' \
 >
@@ -490,7 +489,7 @@ above command for each work and inspect the results.)
 *What is the most common instrumental combination for sonorities* *by
 Mussorgsky?*
 
-> This problem is addressed in `Chapter 36.`_
+> This problem is addressed in `Chapter 36 <../ch36>`_.
 
 --------
 

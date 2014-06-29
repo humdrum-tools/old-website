@@ -2,15 +2,36 @@
 .. |rarrow| unicode:: 0x21d2
 	:trim:
 
+.. |nbsp| unicode:: 0xA0
+	:trim:
+
+.. Humdrum Extras Chapter Sequence:
+	:label:ch:`intro:`:	Introduction
+	:label:ch:`rhythm`:	Rhythm and Time
+	:label:ch:`melody`:	Melody and Pitch
+	:label:ch:`harmony:`:	Harmony
+	:label:ch:`data`:	Data Entry
+	:label:ch:`searching`:	Music Searching
+	:label:ch:`midi`:	MIDI Rendering
+	:label:ch:`notation`:	Notation Rendering
+	:label:ch:`other`:	Other Useful Tools
+
+.. Section counters for the "Rhythm and Time" chapter:
+	:label:sec:`extensions`:	**kern and **recip Extensions
+	:label:sec:`scaling`:	Rhythm scaling
+	:label:sec:`composite`:	Composite rhythms
+
+.. ########################################################################
+
 ===========================================================================
-Rhythm and Time
+:counter:`rhythm`. Rhythm and Time
 ===========================================================================
 
-This chapter discusses various concepts and tools related to rhythm and 
-time.
+This chapter discusses various concepts and Humdrum Extras tools
+related to rhythm and time.
 
 
-Extensions to :exinterp:`recip` and :exinterp:`kern` rhythms
+:counter:`rhythm.extensions`. Extensions to :exinterp:`recip` and :exinterp:`kern` rhythms
 ===========================================================================
 
 
@@ -24,16 +45,23 @@ the whole note.  The value ``4`` means 1/4th of a whole note; ``4.``
 means 1/4 of a whole note plus half of that (1/8 of a whole note).
 Rhythms which are composed of equal divisions of whole notes plus
 augmentation dots can be represented in this system. But a problem
-occurs when trying to represent other rhythms as illustrated in Example
-:counter:`53eighth`, like triplet whole-notes or non-power-of-two
+occurs when trying to represent other rhythms as illustrated in
+Example :counter:`rhythm.53eighth`, like triplet whole-notes or non-power-of-two
 tuplet bases.
 
-**Example :label:ex:`53eighth`.** Difficult rhythms to represent 
-in :exinterp:`recip` data.
 
-.. image:: rhythm.rstd/53eighth.svg
+.. :Example:Start: :counter:`rhythm`.:label:ex:`53eighth`
+
+**Example :counter:`rhythm.53eighth`:** Difficult rhythms to represent in 
+:exinterp:`recip` data.
+
+.. image:: rhythm.rstd/Example_53eighth/53eighth.svg
 	:align: center
 	:width: 100%
+
+.. :Example:End: :counter:`rhythm.53eighth`
+
+
 |
 |
 
@@ -74,8 +102,10 @@ the symbol ``40%3`` can be used, where the ``%`` sign indicates a
 reciprocal duration ratio with a denominator other than one is being
 represented.
 
+.. :Table:Start: :label:table:`ratsample`
 
-**Table :label:table:`ratsample`.** Sample rational encodings of rhythms in :exinterp:`recip` and :exinterp:`kern` representations.
+**Table :counter:`rhythm.ratsample`:** Sample rational encodings of
+rhythms in :exinterp:`recip` and :exinterp:`kern` representations.
 
 .. csv-table::
 	:header: Encoding, Reciprocal dur., Dur. (whole-note units), Musical name
@@ -99,6 +129,8 @@ represented.
 	``16%3``,	16/3,	3/16,	4:3-tuplet quarter-note
 	``8.``,		8/1+dot |rarrow| 16/3, 1/8+dot |rarrow| 3/16, Dotted eighth-note
 
+.. :Table:End: :counter:`rhythm.ratsample`
+
 Notice that the duration 3/16 at the bottom of the table can represent
 both 4:3-tuplet quarter notes and dotted eighth-notes (both have a
 duration of 0.75 quarter notes).  The augmentation dot count is
@@ -109,21 +141,35 @@ is mostly backwards-compatible with :exinterp:`kern`.  The ``%``
 sign is a user signifier in :exinterp:`kern`, meaning it does not
 have a fixed meaning, and can be given a temporary meaning.  For
 the rational rhythm extension this character is reserved to separate
-the two integers in a reciprocal duration value.  For generating
-compatible rhythmic values for standard Humdrum Tools that don't
-recognize the extension use the :hxcom:`rscale` program to scale
-the rhythm to a timebase which does not require the extension.  For
-example if the duration of triplet whole-notes are decreased by
-half, they become triplet half-notes which are representable in the
-standard :exinterp:`recip` system:
+the two integers in a reciprocal duration value.  Example
+:counter:`rhythm.halve` shows the method for generating compatible
+rhythms for standard Humdrum Tools that don't recognize the extension
+use the :hxcom:`rscale` program to scale the rhythm to a timebase
+which does not require the extension.  For example if the duration
+of triplet whole-notes are decreased by half, they become triplet
+half-notes which are representable in the standard :exinterp:`recip`
+system.
 
-**Example :label:ex:`halve`.** Halving the duration of notes in a :exinterp:`kern` score.
+
+.. :Example:Start: :counter:`rhythm`.:label:ex:`halve`
+
+**Example :counter:`rhythm.halve`:** Halving note duration in a
+:exinterp:`kern` score to remove rational rhythms.  The ``-o``
+option will read the ``!!rscale: 1/2`` structured global command
+to return the the original rhythmic scale after processing with
+Humdrum Toolkit programs.
 
 .. humdrumio::
-	:inputfile:	rhythm.rstd/tripletwholenotes.krn
-	:outputfile:	rhythm.rstd/triplethalfnotes.krn
+	:inputfile:	rhythm.rstd/Example_halve/tripletwholenotes.krn
+	:outputfile:	rhythm.rstd/Example_halve/triplethalfnotes.krn
 	:transform:	:hxcom:`rscale` -f 1/2
 
+.. humdrumio::
+	:inputfile:	rhythm.rstd/Example_halve/triplethalfnotes.krn
+	:outputfile:	rhythm.rstd/Example_halve/tripletwholenotes-original.krn
+	:transform:	:hxcom:`rscale` -o
+
+.. :Example:End: :counter:`rhythm.halve`
 
 
 "Zero" extension to :exinterp:`recip` rhythm interpretation
@@ -139,28 +185,39 @@ represents a maxima (octuple whole note); however, most Humdrum
 Toolkit rhythm-parsing programs do not understand these longer
 durations.  The Humdrum Extras programs will recognize all such
 rhythms, and will increase the power-of-two to parse ``0000``,
-``00000`` or larger exotic rhythmic values:
+``00000`` or larger exotic rhythm values:
 
-**Example :label:ex:`zerobig`.** Duration of various large rhythms in quarter-note units using
-the "zero" representation.
+
+.. :Example:Start: :counter:`rhythm`.:label:ex:`zerobig`
+
+**Example :counter:`rhythm.zerobig`:** Duration of various large rhythms
+in quarter-note units using the "zero" representation.
 
 .. humdrumio::
-	:inputfile:	rhythm.rstd/zero.krn
-	:outputfile:	rhythm.rstd/zero-beat-d.krn
+	:inputfile:	rhythm.rstd/Example_zerobig/zero.krn
+	:outputfile:	rhythm.rstd/Example_zerobig/zero-beat-d.krn
 	:transform:	:hxcom:`beat` -d
 
-Compare this to durational equivalents in the rational representation
-in Example :counter:`ratbig`, where the analyzed durations of the
-:exinterp:`recip` rhythms in the right column match to those in
-Example :counter:`zerobig`.
+.. :Example:End: :counter:`rhythm.zerobig`
 
-**Example :label:ex:`ratbig`.** Duration of various large rhythms in quarter-note units using
+
+Compare this to durational equivalents in the rational representation
+in Example :counter:`rhythm.ratbig`, where the analyzed durations of the
+:exinterp:`recip` rhythms in the right column match to those in
+Example :counter:`rhythm.zerobig`.
+
+
+.. :Example:Start: :counter:`rhythm`.:label:ex:`ratbig`
+
+**Example :counter:`rhythm.ratbig`:** Duration of various large rhythms in quarter-note units using
 the rational representation.
 
 .. humdrumio::
-	:inputfile:	rhythm.rstd/zero-rational.krn
-	:outputfile:	rhythm.rstd/zero-rational-beat-d.krn
+	:inputfile:	rhythm.rstd/Example_ratbig/zero-rational.krn
+	:outputfile:	rhythm.rstd/Example_ratbig/zero-rational-beat-d.krn
 	:transform:	:hxcom:`beat` -d
+
+.. :Example:End: :counter:`rhythm.ratbig`
 
 
 Nested tuplets
@@ -169,28 +226,34 @@ Nested tuplets
 Nested tuplets are a recursive representation of rhythm which allows
 for iterative non-binary subdivisions.  It is a further generalization
 of rhythm that is not accounted for in the :exinterp:`recip`
-representation.  Consider the music in Example :counter:`messy`
+representation.  Consider the music in Example :counter:`rhythm.messy`
 where quintuplets and septuplets are further subdivided into other
 tuplets.  In the top part of the example, the third quintuplet
 quarter-note is further divided into triplets, with two of those
 triplet notes even further subdivided into a quintuplet.
 
-**Example :label:ex:`messy`.** Nested tuplets, with notes equal to
-1/50 of a whole note marked in red (see Example :counter:`messykern`
+
+.. :Example:Start: :counter:`rhythm`.:label:ex:`messy`
+
+**Example :counter:`rhythm.messy`:** Nested tuplets, with notes equal to
+1/50 of a whole note marked in red (see Example :counter:`rhythm.messykern`
 for the :exinterp:`recip` representation of this music).
 
-.. image:: rhythm.rstd/messy.svg
+.. image:: rhythm.rstd/Example_messy/messy.svg
 	:align: center
 	:width: 50%
 
+.. :Example:End: :counter:`rhythm.messy`
+
+
 |
 |
 
-The reciprocal duration of the shortest notes on the top line of
-Example :counter:`messy` (highlited in red) are ``50`` in the
+The reciprocal durations of the shortest notes on the top line of
+Example :counter:`rhythm.messy` (highlighted in red) are ``50`` in the
 :exinterp:`recip` representation.  The following equation demonstrates
 the process of dividing the quarter note three successive times to
-arrive at this rhythmic value: the quarter note is first subdivided
+arrive at this rhythm value: the quarter note is first subdivided
 by 3/5 then by 1/2 and finally by 2/5:
 
 .. math::
@@ -201,7 +264,7 @@ Going from :exinterp:`recip` data to graphical music notation poses
 a problem in the general case, since the ordering of the subdividing
 factors are not specified in the data token ``50``.  In other words,
 this rhythm can be approached from any number of tuplet subdivisions
-of notes.  Consider the smallest notes in Example :counter:`nested2`.
+of notes.  Consider the smallest notes in Example :counter:`rhythm.nested2`.
 These are also represented as ``50`` rhythms, as can be seen in the
 following equation:
 
@@ -209,12 +272,19 @@ following equation:
 
 	50 = 4 \times \left[\left(\frac{5}{4}\right)\left(\frac{2}{1}\right)\left(\frac{5}{1}\right)\right] = 4 \times \frac{25}{2}
 
-**Example :label:ex:`nested2`.** Alternate notational interpretation of the
+
+.. :Example:Start: :counter:`rhythm`.:label:ex:`nested2`
+
+**Example :counter:`rhythm.nested2`:** Alternate notational interpretation of the
 :exinterp:`recip` token ``50`` (highlighted in red).
 
-.. image:: rhythm.rstd/nested2.svg
+.. image:: rhythm.rstd/Example_nested2/nested2.svg
 	:align: center
 	:width: 50%
+
+.. :Example:End: :counter:`rhythm.nested2`
+
+
 |
 |
 
@@ -225,77 +295,129 @@ to notation renders on how to organize the notation.  Layout codes
 are structured local comments which start with ``!LO:``, followed
 by the specific layout code, which is ``TUP`` for tuplets, followed by
 a colon-separated list of parameters for the layout code.  Example
-:counter:`messykern` show the music of Example :counter:`messy`
+:counter:`rhythm.messykern` show the music of Example :counter:`rhythm.messy`
 encoded as Humdrum :exinterp:`kern` data.  The layout code in the
 second spine on line 4 of the file (``!LO:TUP:r=2.:t=5``) indicates
-the outer quintuplet bracket.  The ``r=2.`` parameter is the rhythmic value
+the outer quintuplet bracket.  The ``r=2.`` parameter is the rhythm value
 (reciprocal duration) of the bracket, and the second parameter,
 ``t=5`` indicates that the tuplet's duration will be split into 5
 equal parts.
 
 
-**Example :label:ex:`messykern`.** :exinterp:`recip` encoding of the
-music in Example :counter:`messy`, including tuplet layout codes.
+.. :Example:Start: :counter:`rhythm`.:label:ex:`messykern`
+
+**Example :counter:`rhythm.messykern`:** :exinterp:`recip` encoding of the
+music in Example :counter:`rhythm.messy`, including tuplet layout codes.
 
 .. humdrumio::
-	:file:		rhythm.rstd/messy.krn
+	:file:		rhythm.rstd/Example_messykern/messy.krn
 	:linenos:	true
 	:style:		fileonly
 	:display:	humtable
 
+.. :Example:End: :counter:`rhythm.messykern`
+
+
 |
 |
 |
 |
 
-Rhythm scaling
+:counter:`rhythm.scaling`. Rhythm scaling
 ===========================================================================
 
 The :hxcom:`rscale` program can be used to multiply or divide the duration
 of all rhythms in a score.  The two main purposes of rhythmic scaling are
-(1) to remove rational representations, and (2) to switch between early
-and modern rhythmic units for the beat.
+(1) to remove rational rhythm representations, and (2) to switch between early
+and modern rhythm units for the beat.
 
 The Humdrum Toolkit programs will not understand reciprocal rhythms
 such as ``3%2`` for triplet whole notes.  Typically a datafile with
 rational rhythms will contain a line such as ``!!!rscale-alt: 1/2``
 which indicates that the original file contains reciprocal rhythms,
-and a rhythmic-scaling by 1/2 will remove them.  For example, if
+and a rhythm-scaling by 1/2 will remove them.  For example, if
 ``3%2`` (triplet whole-note) is halved, then the reciprocal rhythm
-becomes ``3`` (triplet half-note).
+becomes ``3`` (triplet half-note).  See the 
+:hxcom:`rscale` usage in Example :counter:`rhythm.halve` for 
+such cases.
 
-Compare the following two results from the :htcom:`census` command
-when searching for the largest note value in the JRP repertory of
-Pierre de la Rue:
+A related concept is the ``*rscale:`` tandem interpretation which
+indicates that a rhythmic scaling should be applied to a spine when
+creating graphical notation.  This interpretation is used frequently
+in Humdrum scores of music from the early Renaissance created by
+the `Josquin Research Project <http://josquin.stanford.edu>`_ (`also
+available on GitHub
+<https://github.com/josquin-research-project/jrp-scores>`_).  Music
+of the fifteenth century was written in `mensural notation
+<http://en.wikipedia.org/wiki/Mensural_notation>`_, and the JRP
+edition tries faithfully preserve the original rhythm levels in
+modern notation, with the beat typically occurring at the whole-note
+level rather than the quarter note.
 
-.. code::
+JRP Humdrum scores are in *resolved* notation, such that a whole note
+in one part is always equal in duration to a whole note in another
+part.  When an original part is in a different rhythmic scaling
+from the other parts (typically the *cantus firmus*),
+the rhythms are scaled to match the other parts, along with an ``*rscale:``
+interpretation giving the factor which needs to be applied
+to the part to generate rhythmic values of the original notation.
+Example :counter:`rhythm.jos0602c` demonstrates this sort of case.
+Two parts switch to reverse-C mensuration in the second measure
+while at the same time, increasing their rhythmic durations by a
+factor of two.  Notice that the first and third parts have two whole
+notes per measure at this point while the second and fourth parts have 
+four whole notes per measure.
 
-	humcat -s h://jrp/Rue | census -k
 
-.. literalinclude:: rhythm.rstd/Rue.census
+.. :Example:Start: :counter:`rhythm`.:label:ex:`jos0602c`
 
+**Example :counter:`rhythm.jos0602c`:** Josquin, Missa *L'homme armé* sexti toni, `Credo <http://josquin.stanford.edu/cgi-bin/jrp?a=notationwitheditorial&f=Jos0602c-Missa_Lhomme_arme_sexti_toni-Credo>`_, mm. 234--7.
 
-
-
-**Example :label:ex:`jos0602c`.** Josquin, Missa *L'homme armé* sexti toni, Credo, mm. 234--7.
-
-.. image:: rhythm.rstd/jos0602c.svg
+.. image:: rhythm.rstd/Example_jos0602c/jos0602c.svg
 	:align: center
 	:width: 100%
 
 |
 
 .. humdrumio::
-	:file:		rhythm.rstd/jos0602c.krn
+	:file:		rhythm.rstd/Example_jos0602c/jos0602c.krn
 	:style:		fileonly
 	:display:	humtable
 
+.. :Example:End: :counter:`rhythm.jos0602c`
+
+|
+|
+
+The music can easily be converted to resolved and reduced notation as shown
+in Example :counter:`rhythm.reduced`.
+
+
+.. :Example:Start: :counter:`rhythm`.:label:ex:`reduced`
+
+**Example :counter:`rhythm.reduced`:** Resolved and reduced version of
+the music in Example :counter:`rhythm.jos0602c`.
+
+.. image:: rhythm.rstd/Example_reduced/reduced.svg
+	:align: center
+	:width: 100%
+
+.. humdrumio::
+	:inputfile:	
+	:outputfile:	rhythm.rstd/Example_reduced/reduced.krn
+	:transform:	:hxcom:`rscale` -f 1/2 jrp://Jos0602c | :hxcom:`autostem` | :uxcom:`sed` 's/\*rscale:/*Xrscale:/g; s/\*met(/*Xmet(/g'
+	:style:		outputonly
+	:display:	humtable
+	:outputtabwidth:	12
+
+.. :Example:End: :counter:`rhythm.reduced`
+
+
 |
 |
 |
 
-
-Composite rhythm
+:counter:`rhythm.composite`. Composite rhythm
 ===========================================================================
 
 The :hxcom:`beat` program can be used to calculate the duration of
@@ -308,11 +430,14 @@ of all parts.  In measures 1, 3 and 4, no single part contains a
 complete measure of eighth notes, but when considered together the
 rhythmic texture is a sequence of continuous eighth notes.
 
-**Example :label:ex:`compositebach`.** J.S. Bach, Chorale *Hilf, Gott, 
+
+.. :Example:Start: :counter:`rhythm`.:label:ex:`compositebach`
+
+**Example :counter:`rhythm.compositebach`:** J.S. Bach, Chorale *Hilf, Gott, 
 laß mir's gelingen*, BWV 343, mm. 16--19. Composite rhythm of all parts given 
 on the bottom line of the system.
 
-.. image:: rhythm.rstd/chor199i.svg
+.. image:: rhythm.rstd/Example_compositebach/chor199i.svg
 	:align: center
 	:width: 100%
 	:alt: myank -m 16-19 h://371chorales/chor199.krn  | satb2gs | ridx -GL
@@ -320,10 +445,12 @@ on the bottom line of the system.
 |
 
 .. humdrumio::
-	:inputfile:	rhythm.rstd/durationinput.krn
-	:outputfile:	rhythm.rstd/durationoutput-dp.krn
+	:inputfile:	rhythm.rstd/Example_compositebach/durationinput.krn
+	:outputfile:	rhythm.rstd/Example_compositebach/durationoutput-dp.krn
 	:transform:	:hxcom:`beat` -dp
 	:style:		wide
+
+.. :Example:End: :counter:`rhythm.compositebach`
 
 
 The ``-d`` option for :hxcom:`beat` is used to extract the
@@ -339,31 +466,40 @@ note (rather than a quarter note with the default floating-point
 duration vales).
 
 
-**Example :label:ex:`ratbach`.** Extracting durations as rational numbers instead 
-of floating-point values.
+.. :Example:Start: :counter:`rhythm`.:label:ex:`ratbach`
+
+**Example :counter:`rhythm.ratbach`:** Extracting durations as rational
+numbers instead of floating-point values.
 
 .. humdrumio::
 	:inputfile:	
-	:outputfile:	rhythm.rstd/durationoutput-dpf.krn
+	:outputfile:	rhythm.rstd/Example_ratbach/durationoutput-dpf.krn
 	:transform:	:hxcom:`myank` -m 16-19 h://370chorales/chor199.krn | :hxcom:`ridx` -GL | :hxcom:`beat` -dpf
 	:style:		outputonly
 	:display:	humtable
 	:outputtabwidth:	12
 
+.. :Example:End: :counter:`rhythm.ratbach`
+
 
 Here is an example of extracting the distribution of durations
 for the composite rhythm of 370 Bach chorales:
 
-**Example :label:ex:`durfreq`.** Create a frequency distribution of composite rhythm durations in 370 Bach chorales.
+
+.. :Example:Start: :counter:`rhythm`.:label:ex:`durfreq`
+
+**Example :counter:`rhythm.durfreq`:** Create a frequency distribution of composite rhythm durations in 370 Bach chorales.
 
 .. humdrumio::
 	:inputfile:	
-	:outputfile:	rhythm.rstd/chorale-composite-rhythm.txt
+	:outputfile:	rhythm.rstd/Example_durfreq/chorale-composite-rhythm.txt
 	:transform:	:hxcom:`beat` -df h://370chorales | :hxcom:`ridx` -H | sortcount -p
 	:style:		outputonly
 
+.. :Example:End: :counter:`rhythm.durfreq`
 
-The most common composite rhythmic value is the eighth note (69.43%), then in
+
+The most common composite rhythm value is the eighth note (69.43%), then in
 decreasing frequency: quarter note, sixteenth note, half note, 
 dotted half note, whole note, dotted quarter note, 32nd note, dotted eighth
 note, breve, and dotted whole note.
@@ -397,18 +533,23 @@ septuplets in the last measure are
 which is the :exinterp:`recip` rhythm ``56%3``.
 
 
-**Example :label:ex:`nocturne`.** F. Chopin, Nocturne in B major, op. 9/3, mm. 8--10.
+.. :Example:Start: :counter:`rhythm`.:label:ex:`nocturne`
 
-.. image:: rhythm.rstd/noc9-3.svg
+**Example :counter:`rhythm.nocturne`:** F. Chopin, Nocturne in B major,
+op. 9/3, mm. 8--10.
+
+.. image:: rhythm.rstd/Example_nocturne/noc9-3.svg
 	:align: center
 	:width: 100%
 
 .. humdrumio::
-	:inputfile:	rhythm.rstd/noc9-3.krn
-	:outputfile:	rhythm.rstd/noc9-3-pdf.krn
+	:inputfile:	rhythm.rstd/Example_nocturne/noc9-3.krn
+	:outputfile:	rhythm.rstd/Example_nocturne/noc9-3-pdf.krn
 	:transform:	:hxcom:`beat` -dpf 
 	:style:		outputonly
 	:display:	humtable
 	:outputtabwidth:	15
+
+.. :Example:End: :counter:`rhythm.nocturne`
 
 

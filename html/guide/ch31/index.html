@@ -116,7 +116,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">Rhythm and Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">2. Rhythm and Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody and Pitch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
@@ -346,10 +346,10 @@ a good idea to limit the searches to small segments of the file system.</p>
 wide variety of possible tests on each file. One simple action is to test
 whether the file-name conforms to a given regular expression. Consider, for
 example, the goal of identifying all files representing pitch-class
-(<tt class="docutils literal"><span class="pre">**pc``_)</span> <span class="pre">information.</span> <span class="pre">The</span> <span class="pre">Humdrum</span> <span class="pre">convention</span> <span class="pre">is</span> <span class="pre">to</span> <span class="pre">identify</span> <span class="pre">these</span> <span class="pre">files</span>
-<span class="pre">by</span> <span class="pre">adding</span> <span class="pre">the</span> <span class="pre">``.pc</span></tt> extension to the filename &#8211; such as <tt class="docutils literal"><span class="pre">opus24.pc</span></tt>. The
+(<a class="reference external" href="../../rep/pc">**pc</a>) information. The Humdrum convention is to identify these files
+by adding the <tt class="docutils literal"><span class="pre">.pc</span></tt> extension to the filename &#8211; such as <tt class="docutils literal"><span class="pre">opus24.pc</span></tt>. The
 following <strong>find</strong> command will traverse through the <tt class="docutils literal"><span class="pre">/scores</span></tt> directory
-(and all sub-directories) searching for files that contain the <tt class="docutils literal"><span class="pre">pc</span></tt> file
+(and all sub-directories) searching for files that contain the <a class="reference external" href="../../man/pc">pc</a> file
 extension:</p>
 <p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-name</span> <span class="pre">*.pc</span></tt></p>
 <p>The above command uses the <strong>-name</strong> option followed by the appropriate
@@ -392,14 +392,14 @@ deletes all directories whose names have the <tt class="docutils literal"><span 
 <p>For most music research applications, we are interested in identifying files
 on the basis of their contents. That is, we&#8217;d like to know what&#8217;s inside the
 file before we take any action.</p>
-<p>The <strong>grep</strong> command is especially useful in determining whether certain
+<p>The <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command is especially useful in determining whether certain
 items of information are present in a file. For example, the following
 command identifies all files in the path <tt class="docutils literal"><span class="pre">/scores</span></tt> that contain passages in
 7/8 meter:</p>
 <p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'\*M7/8'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
-<p>Recall that the <strong>-l</strong> option for <strong>grep</strong> causes the output to consist only
+<p>Recall that the <strong>-l</strong> option for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> causes the output to consist only
 of names of files that contain the sought regular expression. Note that the
-<strong>-type f</strong> option has been specified in order to ensure that the <strong>grep</strong>
+<strong>-type f</strong> option has been specified in order to ensure that the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>
 command is only executed for files.</p>
 <p>The structure of the above command can be used to search for all sorts of
 pertinent musical information. For example, recall that the <tt class="docutils literal"><span class="pre">*IC</span></tt> tandem
@@ -426,7 +426,7 @@ written in compound meters:</p>
 <p>The following command identifies all files beginning from the current
 directory that are rondos:</p>
 <p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">.</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-il</span> <span class="pre">'!!!AFR.*rondo'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
-<p>Recall that the <strong>-i</strong> option for <strong>grep</strong> makes the pattern-match
+<p>Recall that the <strong>-i</strong> option for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> makes the pattern-match
 insensitive to upper- or lower-case.</p>
 <p>The following command identifies all files in the path <tt class="docutils literal"><span class="pre">non-western</span></tt> that
 have been designated as having heterophonic textures:</p>
@@ -472,7 +472,7 @@ meters.</p>
 </div>
 <div class="section" id="using-find-with-the-xargs-command">
 <h2>Using <em>find</em> with the <em>xargs</em> Command<a class="headerlink" href="#using-find-with-the-xargs-command" title="Permalink to this headline">¶</a></h2>
-<p>As we saw in <a href="#id1"><span class="problematic" id="id2">`Chapter 10,`_</span></a> the <strong>xargs</strong> command can be used to propagate
+<p>As we saw in <a class="reference external" href="../ch10">Chapter 10</a>, the <strong>xargs</strong> command can be used to propagate
 file names from command to command within a pipeline. Using <strong>xargs</strong> in
 conjunction with <strong>find</strong> provides a powerful means for finding works that
 conform to highly complex criteria. For example, the following command
@@ -496,7 +496,7 @@ of key signature:</p>
 <span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">':[01]$'</span></tt></p>
 <p>As a further example of the use of <strong>xargs</strong>, consider the following
 extension of the above pipeline. The <strong>grep -v</strong> command causes only those
-files containing more than one key signature to be passed. The <strong>sed</strong>
+files containing more than one key signature to be passed. The <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a>
 command eliminates the colon and the number appended to the filenames. The
 ensuing <strong>grep -c</strong> counts the number of meter signatures in each file. The
 final <strong>grep -v</strong> passes only those filenames containing 2 or more meter
@@ -562,7 +562,7 @@ file-system looking for files that conform to specific criteria. In
 musicological tasks, the <strong>find</strong> command is especially well suited to
 assembling a repertory of scores that exhibit some characteristic(s) of
 interest. Multiple selection criteria can be accommodated by using one or
-more pipes in conjunction with the <strong>grep</strong> command.</p>
+more pipes in conjunction with the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command.</p>
 <p>For convenience, it is often helpful to create a new directory that holds all
 of works selected for a study repertory. On UNIX systems, file &#8220;links&#8221; can be
 created, so that there is no need to make multiple copies of the same score.

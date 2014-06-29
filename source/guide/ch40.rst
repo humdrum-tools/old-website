@@ -4,7 +4,7 @@ Chapter 40: Conclusion
 
 
 
-In `Chapter 1,`_ we noted that computers are quite limited in what they are
+In `Chapter 1 <../ch01>`_, we noted that computers are quite limited in what they are
 able to do. We noted in particular that computers are not good at
 *interpreting* data. Because so much music scholarship hinges on
 interpretations, this would seem to preclude computers from being of much
@@ -39,21 +39,21 @@ to the type of operation. There are roughly a dozen or so classes of tasks:
 -   ***Displaying things.*** The **ms** command can be used to print or
     display musical notation.
 -   ***Auditing.*** MIDI sound output can be generated using the
-    `**midi**`_ and `**perform**`_ commands.
+    `midi <../../man/midi>`_ and `perform <../../man/perform>`_ commands.
 -   ***Searching for things.*** When searching for things within
-    specified files, appropriate commands include: **grep**, **egrep**,
-    `**yank -m**,`_ `**patt**,`_ `**pattern**,`_ `**correl**,`_ `**simil**`_
+    specified files, appropriate commands include: `grep <http://en.wikipedia.org/wiki/Grep>`_, `egrep <http://en.wikipedia.org/wiki/Egrep#Variations>`_,
+    `**yank -m**,`_ `**patt**,`_ `**pattern**,`_ `**correl**,`_ `simil <../../man/simil>`_
     and `**humdrum -v**.`_ When searching for files that meet certain
     conditions, appropriate commands include **grep -l**, **egrep -l** and
     **find**. Most of these search tools rely extensively on regular
     expressions to define patterns of characters.
--   ***Counting things.*** Appropriate commands include: **wc**, **wc
-    -l**, **grep -c**, **egrep -c**, `**census**`_ and **census -k**.
+-   ***Counting things.*** Appropriate commands include: `wc <http://en.wikipedia.org/wiki/Wc_(Unix)>`_, **wc
+    -l**, **grep -c**, **egrep -c**, `census <../../man/census>`_ and **census -k**.
     Eliminating unnecessary or confounding information can be achieved using
-    `**rid**,`_ `**extract**,`_ **grep -v**, **sed** and `**humsed**.`_
+    `**rid**,`_ `**extract**,`_ **grep -v**, `sed <http://en.wikipedia.org/wiki/Sed>`_ and `**humsed**.`_
 -   ***Editing things.*** Manual editing may be done using any text
     editor, such as **emacs** or **vi**. Automated (or "stream") editing may
-    be done using **sed** and `**humsed**.`_
+    be done using `sed <http://en.wikipedia.org/wiki/Sed>`_ and `**humsed**.`_
 -   ***Editorializing.*** E.g., add an editorial footnote to a specified
     note or passage; indicate that a passage differs from the composer's
     autograph.
@@ -62,32 +62,32 @@ to the type of operation. There are roughly a dozen or so classes of tasks:
     **dur**, `**freq**,`_ `**hint**,`_ `**humsed**,`_ `**iv**,`_ `**kern**,`_
     `**mint**,`_ `**pc**,`_ `**pf**,`_ `**pitch**,`_ `**reihe**,`_
     `**semits**,`_ `**solfa**,`_ `**solfg**,`_ **text**, `**tonh**,`_
-    `**trans**`_ and `**vox**.`_
+    `trans <../../man/trans>`_ and `**vox**.`_
 -   ***Arithmetic transformations of representations.*** Manipulating
     numerical values can be done using `**xdelta**,`_ `**ydelta**,`_
-    `**recode**`_ and **awk**.
+    `recode <../../man/recode>`_ and **awk**.
 -   ***Extracting or selecting information.*** Appropriate commands
-    include: `**extract**,`_ `**yank**,`_ **grep**, **egrep**, `**yank
-    -m**,`_ `**thru**,`_ `**strophe**,`_ `**rend**`_ and **csplit**.
+    include: `**extract**,`_ `**yank**,`_ `grep <http://en.wikipedia.org/wiki/Grep>`_, `egrep <http://en.wikipedia.org/wiki/Egrep#Variations>`_, `**yank
+    -m**,`_ `**thru**,`_ `**strophe**,`_ `rend <../../man/rend>`_ and **csplit**.
 -   ***Linking or joining information.*** Appropriate commands include:
-    `**assemble**,`_ **cat**, `**cleave**,`_ `**timebase**,`_ `**context**,`_
-    `**ditto**`_ and **join**.
+    `**assemble**,`_ `cat <http://en.wikipedia.org/wiki/Cat_(Unix)>`_, `**cleave**,`_ `**timebase**,`_ `**context**,`_
+    `ditto <../../man/ditto>`_ and **join**.
 -   ***Generating inventories of things.*** Appropriate commands include:
-    **sort** and **uniq**. Once again, unnecessary or confounding information
+    **sort** and `uniq <http://en.wikipedia.org/wiki/Uniq>`_. Once again, unnecessary or confounding information
     can be eliminated using `**rid**,`_ `**extract**,`_ **grep -v**, `**yank
-    -m**,`_ **sed** or `**humsed**.`_
+    -m**,`_ `sed <http://en.wikipedia.org/wiki/Sed>`_ or `**humsed**.`_
 -   ***Classifying things.*** Numerical values can be classified using
     `**recode**;`_ non-numerical data can be classified using `**humsed**.`_
 -   ***Labelling things.*** Appropriate commands include: `**patt -t**,`_
-    `**recode**,`_ `**humsed**`_ and `**timebase**.`_
+    `**recode**,`_ `humsed <../../man/humsed>`_ and `**timebase**.`_
 -   ***Comparing whether things are the same or similar.*** Appropriate
-    commands include: **diff**, **diff3**, **cmp**, `**correl**`_ and
+    commands include: **diff**, **diff3**, **cmp**, `correl <../../man/correl>`_ and
     `**simil**.`_
--   ***Capturing data.*** MIDI data can be input via `**encode**`_ and
+-   ***Capturing data.*** MIDI data can be input via `encode <../../man/encode>`_ and
     `**record.**`_
 -   ***Trouble-shooting.*** Appropriate commands include: `**humdrum**,`_
     `**humdrum -v**,`_ `**proof**,`_ `**proof -k**,`_ `**veritas**,`_
-    `**midi**`_ and `**perform**.`_
+    `midi <../../man/midi>`_ and `**perform**.`_
 
 Not all of the existing Humdrum Tools were covered in this book. Nor were all
 of the available options described for all of the tools discussed. Exploring
@@ -123,17 +123,17 @@ X and Y are different``
 
 -   *What materials are available for processing?*
 
-    > Use **find** and **grep** to locate useful materials.
+    > Use **find** and `grep <http://en.wikipedia.org/wiki/Grep>`_ to locate useful materials.
 
 -   *What materials do I need to create?*
 
-    > Use `**encode**`_ to create new data. Use `**humdrum**`_ and
-    `**proof**`_ to check the data. If necessary, define your own Humdrum
+    > Use `encode <../../man/encode>`_ to create new data. Use `humdrum <../../man/humdrum>`_ and
+    `proof <../../man/proof>`_ to check the data. If necessary, define your own Humdrum
     representation for a given purpose.
 
 -   *How do I transform my data so it is easier to process?*
 
-    > Use `**recode**`_ and `**humsed**`_ to classify data into various
+    > Use `recode <../../man/recode>`_ and `humsed <../../man/humsed>`_ to classify data into various
     classes -- such as *up*, *down*, *leap*, *long*, *short*, *difficult*,
     *easy*, *clarion register*, *dominant*, etc.
 >
@@ -143,18 +143,18 @@ representation.
 
 -   *What data should I eliminate?*
 
-    > Use `**rid**,`_ `**extract**,`_ `**yank**,`_ **sed**,
-    `**humsed**,`_ **uniq**, **uniq -d** and **grep -v** to eliminate
+    > Use `**rid**,`_ `**extract**,`_ `**yank**,`_ `sed <http://en.wikipedia.org/wiki/Sed>`_,
+    `**humsed**,`_ `uniq <http://en.wikipedia.org/wiki/Uniq>`_, **uniq -d** and **grep -v** to eliminate
     selective materials.
 
 -   *What data do I need to coordinate?*
 
-    > Use `**context**`_ to generate contextual information. Use
-    `**assemble**,`_ `**rend**`_ and `**cleave**`_ to link information
+    > Use `context <../../man/context>`_ to generate contextual information. Use
+    `**assemble**,`_ `rend <../../man/rend>`_ and `cleave <../../man/cleave>`_ to link information
     together.
 
 -   *How do I know my results are worthwhile?*
 
-    > Use comparative tests whenever you can. Use `**scramble**`_ -r,
-    **scramble -t**, **tac** and `**reihe**`_ -s to generate control groups.
+    > Use comparative tests whenever you can. Use `scramble <../../man/scramble>`_ -r,
+    **scramble -t**, **tac** and `reihe <../../man/reihe>`_ -s to generate control groups.
 
