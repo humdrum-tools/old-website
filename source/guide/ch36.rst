@@ -1,3 +1,19 @@
+
+.. |**cents|	replace:: \*\*cents
+.. _\*\*cents:	../../rep/cents
+
+.. |**freq|	replace:: \*\*freq
+.. _\*\*freq:	../../rep/freq
+
+.. |**kern|	replace:: \*\*kern
+.. _\*\*kern:	../../rep/kern
+
+.. |**semits|	replace:: \*\*semits
+.. _\*\*semits:	../../rep/semits
+
+.. |**spect|	replace:: \*\*spect
+.. _\*\*spect:	../../rep/spect
+
 ===============================
 Chapter 33: Sound and Spectra
 ===============================
@@ -7,16 +23,15 @@ considering the representation and manipulation of sound-related
 information. In this chapter we introduce some special-purpose tools
 related to sound analysis, sound synthesis, and auditory perception. We
 have already encountered the
-`**freq <../../rep/freq>`_ <representations/freq.rep.html>`__ and
-`**cents <../../rep/cents>`_ <representations/cents.rep.html>`__ representations in
+|**freq|_\ <representations/freq.rep.html>`__ and
+|**cents|_\ <representations/cents.rep.html>`__ representations in
 `Chapter 4. <guide04.html>`__ Much of this chapter will center on the
-`**spect <../../rep/spect>`_ <representations/spect.rep.html>`__ representation. Three
-tools will be discussed in connection with `**spect <../../rep/spect>`_: the **spect**,
-**mask** and **sdiss** commands. **Spect** accesses a database of
+|**spect|_\ <representations/spect.rep.html>`__ representation. Three
+tools will be discussed in connection with |**spect|_\ : the |spect|_ ,**mask**and**sdiss**commands. |Spect|_ accesses a database of
 analyzed instrument tones to generate harmonic spectra for all notes for
-various orchestral instruments over their complete ranges; **mask** can
+various orchestral instruments over their complete ranges;**mask**can
 be used to modify a spectrum so that masked frequencies are attenuated
-in a manner that simulates human hearing; **sdiss** characterizes the
+in a manner that simulates human hearing;**sdiss**characterizes the
 degree of sensory dissonance for arbitrary sonorities.
 
 In addition, we will consider how Humdrum data can be used in
@@ -29,7 +44,7 @@ The *\*\*spect* Representation
 ------------------------------
 
 A useful predefined sound-related representations that in Humdrum is the
-`**spect <../../rep/spect>`_ scheme. The `**spect <../../rep/spect>`_ <representations/spect.rep.html>`__
+|**spect|_ scheme. The |**spect|_\ <representations/spect.rep.html>`__
 representation is used to represent successive acoustic spectra. Each
 data record represents a complete spectrum specified as a set of
 concurrent discrete frequency components. Each frequency component in
@@ -38,7 +53,7 @@ semicolon (;). These paired values encode the frequency and amplitude
 for a single spectral component. Frequency values are positive values
 representing *hertz*. Amplitude values are positive values representing
 the sound pressure level in decibels (dB SPL). Most sonorities consist
-of more than one pure tone component, so `**spect <../../rep/spect>`_ data records
+of more than one pure tone component, so |**spect|_ data records
 typically encode a number of multiple stops.
 
 Example 36.1 shows a sample document containing five spectra and a
@@ -50,16 +65,16 @@ at 523 Hz and 785 Hz at 57 dB SPL and 35 dB SPL, respectively. Following
 the barline are two data records that represent two different
 amalgamations of the preceding two three-component spectra. Notice that
 these two spectra are identical; only the order of the components
-differs. In the `**spect <../../rep/spect>`_ representation there is no special
+differs. In the |**spect|_ representation there is no special
 requirement that the spectral components be encoded in any particular
 order. However, it is often convenient to have the components assembled
 from left to right in ascending frequency order. This can be achieved by
-passing an input through the **spect** command.
+passing an input through the |spect|_ command.
 
 **Example 36.1**
 
     +-------------------------------------------------+
-    | `**spect <../../rep/spect>`_                                     |
+    | |**spect|_\ |
     +-------------------------------------------------+
     | ``A``                                           |
     +-------------------------------------------------+
@@ -77,21 +92,21 @@ passing an input through the **spect** command.
 The SHARC Database and *spect* Command
 --------------------------------------
 
-More commonly, the **spect** command is used to generate a
-`**spect <../../rep/spect>`_ <representations/spect.rep.html>`__ (acoustic spectral
-data) output from a `**semits <../../rep/semits>`_ <representations/semits.rep.html>`__
-score input. The **spect** command recognizes instrument tandem
+More commonly, the |spect|_ command is used to generate a
+|**spect|_\ <representations/spect.rep.html>`__ (acoustic spectral
+data) output from a |**semits|_\ <representations/semits.rep.html>`__
+score input. The |spect|_ command recognizes instrument tandem
 interpretations (e.g., \*Iclarinet) and fetches a corresponding spectral
 data file (``clarinet.spe``). These files are derived from the SHARC
 database of music instrument spectra created by Gregory Sandell (1991).
 The file contains precise spectral measurements for recordings of the
 instrument playing each note throughout the instrument's range. Suppose
-that the input to **spect** contains the note F#5 for oboe (i.e., semits
-value 18). Then **spect** will retrieve the spectral information for a
+that the input to |spect|_ contains the note F#5 for oboe (i.e., semits
+value 18). Then |spect|_ will retrieve the spectral information for a
 recording of an oboe playing F#5 and add it to the composite spectrum
 for the particular sonority.
 
-If more than one instrument is playing concurrently, then **spect** will
+If more than one instrument is playing concurrently, then |spect|_ will
 generate an output record representing the aggregate of all the spectral
 components generated by all of the sounding instruments.
 
@@ -117,8 +132,8 @@ JPEG-encoded audio is indistinguishable from the original uncompressed
 audio, yet the scheme eliminates those aspects of the sound which are
 masked.
 
-The Humdrum **mask** command implements a common masking algorithm. It
-accepts as input any `**spect <../../rep/spect>`_ data, and for each sonority modifies
+The Humdrum**mask**command implements a common masking algorithm. It
+accepts as input any |**spect|_ data, and for each sonority modifies
 the spectrum so that masked frequencies are attenuated accordingly.
 So-called "forward" and "backward" masking are not taken into account in
 this utlity. No options are provided, and the command is invoked as
@@ -126,14 +141,14 @@ follows:
 
     ``mask`` *inputfile*\ `` > ``\ *outputfile*
 
-Both the output and input to the **mask** command are `**spect <../../rep/spect>`_
+Both the output and input to the**mask**command are |**spect|_
 representations. A tandem interpretation (``*masked``) is added to the
 output to indicate that the sonorities already reflect the influence of
-masking. Some sound utilities (such as the **sdiss** command) already
+masking. Some sound utilities (such as the**sdiss**command) already
 take into account the effects of masking, and so an input containing the
 ``*masked`` interpretation will cause an error to be generated.
-Similarly, the **mask** command itself will generate an error if the
-input sonorities have already been modified using the **mask** command.
+Similarly, the**mask**command itself will generate an error if the
+input sonorities have already been modified using the**mask**command.
 
 The *sdiss* Command
 -------------------
@@ -150,28 +165,25 @@ established that one aspect of dissonance perception is related to the
 physiology of the ear. This aspect of dissonance is referred to as
 low-level or *sensory dissonance*.
 
-The **sdiss** command implements a measurement method for sensory
-dissonance described by Kameoka and Kuriyagawa (1969a/b). (The Humdrum
-**sdiss** command itself was written by Keith Mashinter.) The **sdiss**
-command characterizes the degree of sensory dissonance for successive
+The**sdiss**command implements a measurement method for sensory
+dissonance described by Kameoka and Kuriyagawa (1969a/b). (The Humdrum**sdiss**command itself was written by Keith Mashinter.) The**sdiss**command characterizes the degree of sensory dissonance for successive
 vertical sonorities or acoustical moments. The command accepts as input
-one or more `**spect <../../rep/spect>`_ spines and produces a single
+one or more |**spect|_ spines and produces a single
 ``sdiss`` <representations/sdiss.rep.html>`__ spine as output. For
-each `**spect <../../rep/spect>`_ data record, **sdiss** produces a single numerical
+each |**spect|_ data record,**sdiss**produces a single numerical
 value representing the aggregate sensory dissonance. The greater the
 output value, the greater the dissonance.
 
-Example 36.2 illustrates some sample inputs and outputs for **sdiss**.
+Example 36.2 illustrates some sample inputs and outputs for**sdiss**.
 The left-most spine provides double-stops for
-`**kern <../../rep/kern>`_ <representations/kern.rep.html>`__ data for violin. The
-middle spine provides corresponding `**spect <../../rep/spect>`_ data using the **spect**
-command. The right-most spine shows the result of passing the
-`**spect <../../rep/spect>`_ data through the **sdiss** command.
+|**kern|_\ <representations/kern.rep.html>`__ data for violin. The
+middle spine provides corresponding |**spect|_ data using the |spect|_ command. The right-most spine shows the result of passing the
+|**spect|_ data through the**sdiss**command.
 
 **Example 36.2**
 
     +--------------------------------------+--------------------------------------+
-    | `**kern <../../rep/kern>`_                           | \*\*sdiss                            |
+    | |**kern|_\ | \*\*sdiss                            |
     | \*\*spect                            |                                      |
     +--------------------------------------+--------------------------------------+
     | ``*Ivioln``                          | \*Ivioln                             |
@@ -412,12 +424,11 @@ Reprise
 -------
 
 In this chapter we have seen that Humdrum score-related data can be
-transformed into spectral information using the **spect** command. This
+transformed into spectral information using the |spect|_ command. This
 allows us to reconstitute a score as a sequence of sonorous spectra --
-which might be used for studies in timbre or orchestration. The **mask**
-tool can be used to revise a spectral description so that it reflects
+which might be used for studies in timbre or orchestration. The**mask**tool can be used to revise a spectral description so that it reflects
 how listeners hear rather than the actual acoustical information
-present. The **sdiss** command can be used to characterize successive
+present. The**sdiss**command can be used to characterize successive
 spectra in terms of the estimated sensory dissonance.
 
 We have also seen that Humdrum data can be connected to other

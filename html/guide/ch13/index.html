@@ -69,11 +69,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../">The Humdrum User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ch01/">1. Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern(I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch03/">3. Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch04/">4. Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch05/">5. The Humdrum Syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern(II)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch07/">7. MIDI Output Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch08/">8. The Shell (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch09/">9. Searching with Regular Expressions</a></li>
@@ -313,7 +313,9 @@ second file. For example, the following command will concatenate together the
 files <tt class="docutils literal"><span class="pre">mov.1</span></tt>, <tt class="docutils literal"><span class="pre">mov.2</span></tt> and <tt class="docutils literal"><span class="pre">mov.3</span></tt> and place the result in the file
 `` complete``. The order of concatenation is the same as the order of file
 names given on the command line:</p>
-<p>`` cat mov.1 mov.2 mov.3 &gt; complete``</p>
+<div class="highlight-bash"><div class="highlight"><pre>cat mov.1 mov.2 mov.3 &gt; <span class="nb">complete</span>
+</pre></div>
+</div>
 <p>If each of the concatenated files conforms to the Humdrum syntax, then the
 resulting combined file is guaranteed to conform to the Humdrum syntax.
 However, in many cases, there may be redundant information present in the
@@ -367,16 +369,15 @@ output such as the following:</p>
 the <a class="reference external" href="../../rep/kern">**kern</a> exclusive interpretations are repeated. This organization
 has a number of repercussions for various Humdrum tools. For example, the
 <a class="reference external" href="../../man/mint">mint</a> command calculates melodic intervals between successive notes
-within a spine. However, <strong>mint</strong> will not calculate intervals between
+within a spine. However, <a class="reference external" href="../../man/mint">mint</a> will not calculate intervals between
 pitches that are separated by a spine-path terminator. In other words, in the
-above output, <strong>mint</strong> will fail to calculate the melodic intervals between
+above output, <a class="reference external" href="../../man/mint">mint</a> will fail to calculate the melodic intervals between
 notes in successive measures.</p>
 </div>
 <div class="section" id="the-rid-command">
 <h2>The <em>rid</em> Command<a class="headerlink" href="#the-rid-command" title="Permalink to this headline">¶</a></h2>
-<p>This problem can be resolved by using the Humdrum <a class="reference external" href="../../man/rid">rid</a> command. The
-<strong>rid</strong> command can be used to eliminate various kinds of records. Each
-option for <strong>rid</strong> eliminates a different class of records. Here are the
+<p>This problem can be resolved by using the Humdrum <a class="reference external" href="../../man/rid">rid</a> command. The <a class="reference external" href="../../man/rid">rid</a> command can be used to eliminate various kinds of records. Each
+option for <a class="reference external" href="../../man/rid">rid</a> eliminates a different class of records. Here are the
 record classes with their associated options:</p>
 <p>&gt; -Geliminate all global comments
 &gt; -geliminate only global comments that are empty
@@ -400,16 +401,22 @@ certain class (upper-case) from <em>empty</em>, <em>null</em> or <em>repeated</e
 certain class (lower-case).</p>
 <p>By way of example, the following command will eliminate all global comments
 (including reference records) from the input:</p>
-<p>`` rid -G Saint-Saens``</p>
+<div class="highlight-bash"><div class="highlight"><pre>rid -G Saint-Saens
+</pre></div>
+</div>
 <p>Similarly, the following command will eliminate all tandem interpretations
 from an input:</p>
-<p>`` rid -T Vaughan-Williams``</p>
+<div class="highlight-bash"><div class="highlight"><pre>rid -T Vaughan-Williams
+</pre></div>
+</div>
 <p>Options can be combined. The following command eliminates all global and
 local comments, interpretations, and null data records:</p>
-<p>`` rid -GLId``</p>
-<p>The option combination <strong>-GLId</strong> is very common with <strong>rid</strong> since only non-
+<div class="highlight-bash"><div class="highlight"><pre>rid -GLId
+</pre></div>
+</div>
+<p>The option combination <tt class="docutils literal"><span class="pre">-GLId</span></tt> is very common with <a class="reference external" href="../../man/rid">rid</a> since only non-
 null data records are retained in the output.</p>
-<p>With the <strong>-u</strong> option, <strong>rid</strong> will remove &#8220;unnecessary&#8221; exclusive
+<p>With the <tt class="docutils literal"><span class="pre">-u</span></tt> option, <a class="reference external" href="../../man/rid">rid</a> will remove &#8220;unnecessary&#8221; exclusive
 interpretations. Exclusive interpretations are deemed unnecessary if they
 don&#8217;t change the current status of the data. In the following example, the
 second <tt class="docutils literal"><span class="pre">psaltery</span></tt> interpretation is redundant. The <strong>rid -u</strong> command
@@ -425,12 +432,14 @@ interpretation &#8211; leaving a continuous data spine.</p>
 *-
 </pre></div>
 </div>
-<p>In addition, <strong>rid</strong> provides a <strong>-t</strong> option which removes &#8220;duplicate&#8221; or
+<p>In addition, <a class="reference external" href="../../man/rid">rid</a> provides a <tt class="docutils literal"><span class="pre">-t</span></tt> option which removes &#8220;duplicate&#8221; or
 repeated tandem interpretations. In the above example there is no need to
 repeat the meter signature and key signature in each measure.  The following
 command will concatenate each of the three measures together, and then
 eliminate the unwanted interpretations:</p>
-<p>`` cat bar1 bar2 bar3 | rid -ut``</p>
+<div class="highlight-bash"><div class="highlight"><pre>cat bar1 bar2 bar3 | rid -ut
+</pre></div>
+</div>
 <p>The resulting output is given below:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>!! File 1
 **kern  **kern  **kern  **kern
@@ -468,7 +477,7 @@ eliminate the unwanted interpretations:</p>
 <p>Of course care should be exercised when concatenating inputs together.
 Although an output may conform to the Humdrum syntax, the result can
 nevertheless violate conventions for a specific representation such as
-`` <a href="#id3"><span class="problematic" id="id4">**</span></a>kern``. For example, if we were to concatenate measure 85 to measure 87,
+`` <a href="#id4"><span class="problematic" id="id5">**</span></a>kern``. For example, if we were to concatenate measure 85 to measure 87,
 it is possible that tied-notes won&#8217;t match up, or that phrases will begin
 without ending, etc. These anomalies may cause problems with subsequent
 processing.</p>
@@ -503,8 +512,10 @@ E
 *-
 </pre></div>
 </div>
-<p>These two files can be aligned side by side using <strong>assemble</strong>:</p>
-<p>`` assemble letters numbers``</p>
+<p>These two files can be aligned side by side using <a class="reference external" href="../../man/assemble">assemble</a> :</p>
+<div class="highlight-bash"><div class="highlight"><pre>assemble letters numbers
+</pre></div>
+</div>
 <p>The resulting output is:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>!! Assemble example
 !! File 1
@@ -524,18 +535,16 @@ in the same order as specified on the command line. (2) Local comments are
 preserved in their appropriate spines. (3) When identical global comments
 occur at the same location in both files, only a single instance of the
 comment is output. (4) Dissimilar global comments are output successively.</p>
-<p>The files joined by <strong>assemble</strong> are not confined to a single spine. For
+<p>The files joined by <a class="reference external" href="../../man/assemble">assemble</a> are not confined to a single spine. For
 example, one input file may contain 2 spines and a second file may contain 20
 spines. The resulting output will contain 22 spines. There is no limit to the
 number of files that can be assembled at one time.</p>
-<p>In many cases, the input files will have dissimilar lengths. The <strong>assemble</strong>
-command will correctly terminate the appropriate spines. For example, in the
+<p>In many cases, the input files will have dissimilar lengths. The <a class="reference external" href="../../man/assemble">assemble</a> command will correctly terminate the appropriate spines. For example, in the
 above case, if the <tt class="docutils literal"><span class="pre">numbers</span></tt> file contained only the numbers 1 to 3, the
 assembled output would appear as follows:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>!! Assemble example
 !! File 1
-!! File 2
-**Letters**Numbers
+!! File 2**Letters**Numbers
 ! A to E! 1 to 3
 A1
 B2
@@ -546,7 +555,7 @@ E
 *-
 </pre></div>
 </div>
-<p>If the order of the input files was reversed, <strong>assemble</strong> would produce an
+<p>If the order of the input files was reversed, <a class="reference external" href="../../man/assemble">assemble</a> would produce an
 output with the appropriate spine-path changes:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>!! Assemble example
 !! File 2
@@ -569,7 +578,7 @@ Humdrum syntax.</p>
 <div class="section" id="aligning-durations-using-the-timebase-command">
 <h2>Aligning Durations Using the <em>timebase</em> Command<a class="headerlink" href="#aligning-durations-using-the-timebase-command" title="Permalink to this headline">¶</a></h2>
 <p>Suppose now that we wanted to join two hypothetical files containing
-`` <a href="#id42"><span class="problematic" id="id43">`**kern```_</span></a> data. The first file contains two quarter notes, whereas the
+`` <a href="#id16"><span class="problematic" id="id17">`**kern```_</span></a> data. The first file contains two quarter notes, whereas the
 second file contains four eighth notes:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>!! File 1
 **kern
@@ -587,16 +596,18 @@ second file contains four eighth notes:</p>
 *-
 </pre></div>
 </div>
-<p>Using <strong>assemble</strong> to paste them together will clearly lead to an
+<p>Using <a class="reference external" href="../../man/assemble">assemble</a> to paste them together will clearly lead to an
 uncoordinated result. The two quarter notes in file 1 will be incorrectly
 matched with the first two eighth notes in file 2.</p>
 <p>The Humdrum <a class="reference external" href="../../man/timebase">timebase</a> command can be used to reformat either
-`` <a href="#id44"><span class="problematic" id="id45">`**kern```_</span></a> or <a class="reference external" href="../../rep/recip">**recip</a> inputs so that each output data record
+`` <a href="#id18"><span class="problematic" id="id19">`**kern```_</span></a> or <a class="reference external" href="../../rep/recip">**recip</a> inputs so that each output data record
 represents an equivalent slice (elapsed duration) of time. (Barlines are
-ignored by <strong>timebase</strong>.) The <strong>timebase</strong> command achieves this by padding
+ignored by <a class="reference external" href="../../man/timebase">timebase</a> .) The <a class="reference external" href="../../man/timebase">timebase</a> command achieves this by padding
 an input with null data records. In the above case, we would preprocess file
 1 as follows:</p>
-<p>`` timebase -t 8 file1 &gt; file1.tb``</p>
+<div class="highlight-bash"><div class="highlight"><pre>timebase -t 8 file1 &gt; file1.tb
+</pre></div>
+</div>
 <p>The new file would look like this:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>!! File 1
 **kern
@@ -607,11 +618,12 @@ an input with null data records. In the above case, we would preprocess file
 *-
 </pre></div>
 </div>
-<p>The <strong>-t</strong> option is used to indicate the &#8220;time base&#8221; &#8211; in this case, an
+<p>The <tt class="docutils literal"><span class="pre">-t</span></tt> option is used to indicate the &#8220;time base&#8221; &#8211; in this case, an
 eighth duration. Since all non-barline data records in both files represent
-elapsed durations of an eighth-note, we can continue by using the
-<strong>assemble</strong> command as before. The command:</p>
-<p>`` assemble file1.tb file2``</p>
+elapsed durations of an eighth-note, we can continue by using the <a class="reference external" href="../../man/assemble">assemble</a> command as before. The command:</p>
+<div class="highlight-bash"><div class="highlight"><pre>assemble file1.tb file2
+</pre></div>
+</div>
 <p>will result in the following two-part score:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>!! File 1
 !! File 2
@@ -633,8 +645,7 @@ revised <tt class="docutils literal"><span class="pre">file2</span></tt>:</p>
 *-
 </pre></div>
 </div>
-<p>Before assembling the two parts, we would need to apply the <strong>timebase</strong>
-command to this file (using the same 8th-note time-base value). Assembling
+<p>Before assembling the two parts, we would need to apply the <a class="reference external" href="../../man/timebase">timebase</a> command to this file (using the same 8th-note time-base value). Assembling
 the two &#8220;time-based&#8221; files would produce the following result:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>!! File 1
 !! File 2
@@ -649,10 +660,12 @@ the two &#8220;time-based&#8221; files would produce the following result:</p>
 <p>Notice that we have a spurious null data record in the last line; both parts
 encode null tokens. For most processing, the presence of null data records is
 inconsequential. However, if we wish, these null data records can be
-eliminated using the <strong>rid</strong> command with the <strong>-d</strong> option. In fact it is
-common to follow an <strong>assemble</strong> command with <strong>rid -d</strong> to strip away
+eliminated using the <a class="reference external" href="../../man/rid">rid</a> command with the <tt class="docutils literal"><span class="pre">-d</span></tt> option. In fact it is
+common to follow an <a class="reference external" href="../../man/assemble">assemble</a> command with <strong>rid -d</strong> to strip away
 unnecessary null data records. The command:</p>
-<p>`` assemble file1.tb file2.tb | rid -d``</p>
+<div class="highlight-bash"><div class="highlight"><pre>assemble file1.tb file2.tb | rid -d
+</pre></div>
+</div>
 <p>would result in the following output:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>!! File 1
 !! File 2
@@ -677,9 +690,11 @@ single-spine inputs. Consider, the following input:</p>
 <p>The following command will cause the addition of null data records so that
 each data record represents an elapsed time of a 32nd duration. Incidentally,
 notice that any spine contain non-rhythmic data &#8211; such as the
-`` <a href="#id9"><span class="problematic" id="id10">**</span></a>commentary`` spine in the above example &#8211; is also transformed so that
+`` <a href="#id6"><span class="problematic" id="id7">**</span></a>commentary`` spine in the above example &#8211; is also transformed so that
 synchronous data is maintained.</p>
-<p>`` timebase -t 32 Corelli``</p>
+<div class="highlight-bash"><div class="highlight"><pre>timebase -t 32 Corelli
+</pre></div>
+</div>
 <p>The corresponding output is as follows.</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**kern  **kern  **kern  **kern  **commentary
 *tb32   *tb32   *tb32   *tb32   *tb32
@@ -698,7 +713,7 @@ synchronous data is maintained.</p>
 *-      *-      *-      *-      *-
 </pre></div>
 </div>
-<p>Notice that <strong>timebase</strong> has added a tandem interpretation (<tt class="docutils literal"><span class="pre">*tb32</span></tt>). This
+<p>Notice that <a class="reference external" href="../../man/timebase">timebase</a> has added a tandem interpretation (<tt class="docutils literal"><span class="pre">*tb32</span></tt>). This
 indicates that the output has been processed so that each non-barline data
 record represents an elapsed duration equivalent to a thirty-second note.</p>
 </div>
@@ -706,7 +721,7 @@ record represents an elapsed duration equivalent to a thirty-second note.</p>
 <h2>Assembling N-tuplets<a class="headerlink" href="#assembling-n-tuplets" title="Permalink to this headline">¶</a></h2>
 <p>Typically, one can simply use the shortest duration present as a guide for a
 suitable time-base value. The shortest duration can be determined using the
-<a class="reference external" href="../../man/census">census</a> -k command described in <a class="reference external" href="../ch04">Chapter 4</a>. However, tuplets require
+<a class="reference external" href="../../man/census">census</a>-k command described in <a class="reference external" href="../ch04">Chapter 4</a>. However, tuplets require
 a little more sophistication. Suppose we wanted to assemble two parts, one
 containing just eighth-notes and the other containing just quarter-note
 triplets. (The quarter-note triplets will be encoded as three notes in the
@@ -736,7 +751,7 @@ rhythmic structure will appear as follows:</p>
 will not work since a 6th note is not an integral multiple of the eighth
 duration. We need to find a <em>common duration factor</em> for both values. The
 shortest common duration is a 24th note (there are three 24th notes in an 8th
-note, and four 24th notes in a 6th note). Applying the time-base value <a href="#id11"><span class="problematic" id="id12">`</span></a>24&#8217;
+note, and four 24th notes in a 6th note). Applying the time-base value <a href="#id8"><span class="problematic" id="id9">`</span></a>24&#8217;
 to both files will allow us to coordinate them properly. Remember that <strong>rid
 -d</strong> can be used to eliminate unnecessary null data records once we have
 finished assembling the spines. In the worst case, you can determine a common
@@ -748,12 +763,12 @@ guaranteed to work for both files.</p>
 <h2>Checking an Assembled Score Using <em>proof</em><a class="headerlink" href="#checking-an-assembled-score-using-proof" title="Permalink to this headline">¶</a></h2>
 <p>In assembling any score from a set of parts, there is always the danger of
 using the wrong time-base value. When parts are miscoordinated, it is
-typically the consequence of one or more notes being discarded by
-<strong>timebase</strong>. Fortunately, such miscoordinations are easily detected by
-applying the <a class="reference external" href="../../man/proof">proof</a> command to any assembled **kern output. The
-<strong>proof</strong> utility checks **kern representations for a wide variety of
+typically the consequence of one or more notes being discarded by <a class="reference external" href="../../man/timebase">timebase</a> . Fortunately, such miscoordinations are easily detected by
+applying the <a class="reference external" href="../../man/proof">proof</a> command to any assembled <a class="reference external" href="../../rep/kern">**kern</a> output. The <a class="reference external" href="../../man/proof">proof</a> utility checks <a class="reference external" href="../../rep/kern">**kern</a> representations for a wide variety of
 possible encoding errors or ambiguities:</p>
-<p>`` proof fullscore``</p>
+<div class="highlight-bash"><div class="highlight"><pre>proof fullscore
+</pre></div>
+</div>
 <p>By way of summary, creating a full score from a set of <a class="reference external" href="../../rep/kern">**kern</a> parts
 involves the following five tasks: (1) Identify a common duration factor for
 all the parts. Use <a class="reference external" href="../../man/census">census</a> to determine the shortest duration; if any
@@ -761,32 +776,36 @@ of the parts contains an N-tuplet, then the common duration factor may be
 smaller than the shortest note. (2) Use the <a class="reference external" href="../../man/timebase">timebase</a> command to expand
 each input file separately using the common duration factor. (3) Assemble the
 parts using <a class="reference external" href="../../man/assemble">assemble</a>. (4) If desired, eliminate unnecessary null data
-records usingi <a href="#id46"><span class="problematic" id="id47">`**rid -d**.`_</span></a> (5) Check the assembled score for rhythmic
+records usingi <a href="#id20"><span class="problematic" id="id21">`**rid -d**.`_</span></a> (5) Check the assembled score for rhythmic
 coherence using the <a class="reference external" href="../../man/proof">proof</a> command.</p>
 </div>
 <div class="section" id="other-uses-for-the-timebase-command">
 <h2>Other Uses for the <em>timebase</em> Command<a class="headerlink" href="#other-uses-for-the-timebase-command" title="Permalink to this headline">¶</a></h2>
-<p>The most common use of <strong>timebase</strong> is as a way of expanding a file by
-padding it with null data records. However, <strong>timebase</strong> can also be used to
+<p>The most common use of <a class="reference external" href="../../man/timebase">timebase</a> is as a way of expanding a file by
+padding it with null data records. However, <a class="reference external" href="../../man/timebase">timebase</a> can also be used to
 contract a file, giving us only those sonorities that lie a fixed duration
-apart. For example, specifying a time-base of <strong>-t 2</strong> will cause only those
+apart. For example, specifying a time-base of <tt class="docutils literal"><span class="pre">-t</span> <span class="pre">2</span></tt> will cause only those
 sonorities that are separated by a half-note duration to be output. This sort
 of rhythmic reduction can be useful in certain circumstances. For example,
 suppose you suspect there may be a hemiola tendency in a given work by
 Brahms, where the duration separating hemiola notes is a dotted-quarter. The
 command:</p>
-<p>`` timebase -t 4. brahms``</p>
+<div class="highlight-bash"><div class="highlight"><pre>timebase -t 4. brahms
+</pre></div>
+</div>
 <p>can be used to extract only those sonorities that are separated by a dotted-
 quarter duration.</p>
 <p>Similarly, suppose we want to extract all sonorities falling on the third
 beat of a waltz written in 3/2 meter. First we would edit the input file so
 it begins on the third beat of some measure. Then we could use the following
 command:</p>
-<p>`` grep -v ^= waltz | timebase -t 1. &gt; 3rd_beat``</p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -v ^<span class="o">=</span> waltz | timebase -t 1. &gt; 3rd_beat
+</pre></div>
+</div>
 <p>Note that the use of <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> here is essential in order to eliminate
-barlines. The <strong>timebase</strong> command resets itself with each barline, so time-
+barlines. The <a class="reference external" href="../../man/timebase">timebase</a> command resets itself with each barline, so time-
 base durations are calculated from the beginning of the bar. When barlines
-are eliminated, <strong>timebase</strong> cannot synchronize to the beginning of each bar
+are eliminated, <a class="reference external" href="../../man/timebase">timebase</a> cannot synchronize to the beginning of each bar
 and so simply floats along at the fixed time-base.</p>
 </div>
 <div class="section" id="additional-uses-of-assemble-and-timebase">
@@ -795,30 +814,40 @@ and so simply floats along at the fixed time-base.</p>
 assemble entire scores together. Suppose we wanted to listen to a theme at
 the same time as one of its variations. We might first use <a class="reference external" href="../../man/yank">yank</a> to
 extract the appropriate sections. At the same time we might determine a
-common duration factor and expand them using <strong>timebase</strong>.</p>
-<p>`` yank -s Theme -r 1 blacksmith | timebase -t 32 &gt; temp1``
-`` yank -s &#8216;Variation 1&#8217; -r 1 blacksmith | timebase -t 32 &gt; temp2``</p>
+common duration factor and expand them using <a class="reference external" href="../../man/timebase">timebase</a> .</p>
+<div class="highlight-bash"><div class="highlight"><pre>yank -s Theme -r 1 blacksmith | timebase -t 32 &gt; temp1
+yank -s <span class="s1">&#39;Variation 1&#39;</span> -r 1 blacksmith | timebase -t 32 &gt; temp2
+</pre></div>
+</div>
 <p>Then we assemble the two sections together, translate to the <a class="reference external" href="../../rep/MIDI">**MIDI</a>
 representation and use <a class="reference external" href="../../man/perform">perform</a> to listen to both sections at the same
 time:</p>
-<p>`` assemble temp1 temp2 | midi | perform``</p>
+<div class="highlight-bash"><div class="highlight"><pre>assemble temp1 temp2 | midi | perform
+</pre></div>
+</div>
 <p>Similarly, suppose we would like to compare the bass lines for each variation
 in some set. We might extract each of the bass lines, assemble them into a
-single score, and then use the <strong>ms</strong> and <strong>ghostview</strong> commands to allow us
+single score, and then use the <a href="#id22"><span class="problematic" id="id23">|ms|_</span></a> and**ghostview**commands to allow us
 to see all of the bass lines for all of the variations concurrently.</p>
-<p>`` yank -s &#8216;Variation 1&#8217; -r 1 goldberg | timebase -t 16 &gt; temp1``
-`` yank -s &#8216;Variation 2&#8217; -r 1 goldberg | timebase -t 16 &gt; temp2``
-etc. ...
-`` assemble temp1 temp2 temp3 ... | rid -d | ms &gt; basslines.ps``
-`` ghostview basslines.ps``</p>
-<p>The most common use of <strong>assemble</strong> is not to assemble parts, but to assemble
+<div class="highlight-bash"><div class="highlight"><pre>yank -s <span class="s1">&#39;Variation 1&#39;</span> -r 1 goldberg | timebase -t 16 &gt; temp1
+yank -s <span class="s1">&#39;Variation 2&#39;</span> -r 1 goldberg | timebase -t 16 &gt; temp2
+</pre></div>
+</div>
+<p>etc. ...</p>
+<div class="highlight-bash"><div class="highlight"><pre>assemble temp1 temp2 temp3 ... | rid -d | ms &gt; basslines.ps
+ghostview basslines.ps
+</pre></div>
+</div>
+<p>The most common use of <a class="reference external" href="../../man/assemble">assemble</a> is not to assemble parts, but to assemble
 different types of concurrent information. Suppose we would like to determine
 whether descending minor seconds are more likely to be <em>fa-mi</em> rather than
 <em>do-ti</em>. We can use the <a class="reference external" href="../../man/mint">mint</a> command to characterize melodic
 intervals, and the <a class="reference external" href="../../man/solfa">solfa</a> command to characterize scale degrees. Assume
 that our input is monophonic:</p>
-<p>`` mint melodies &gt; temp1``
-`` solfa melodies &gt; temp2``</p>
+<div class="highlight-bash"><div class="highlight"><pre>mint melodies &gt; temp1
+solfa melodies &gt; temp2
+</pre></div>
+</div>
 <p>The files <tt class="docutils literal"><span class="pre">temp1</span></tt> and <tt class="docutils literal"><span class="pre">temp2</span></tt> will have the same length, so we can
 assemble them together. This will generate an output consisting of two
 spines, <a class="reference external" href="../../rep/mint">**mint</a> and <a class="reference external" href="../../rep/solfa">**solfa</a>. In effect, the <a class="reference external" href="../../rep/mint">**mint</a> spine
@@ -826,8 +855,10 @@ data will tell us the interval used to approach the scale degree encoded in
 the <a class="reference external" href="../../rep/solfa">**solfa</a> spine. We can use <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to search for the appropriate
 combinations of interval and scale degree and count the number of
 occurrences:</p>
-<p>`` assemble temp1 temp2 | grep -c &#8216;-m2.*mi&#8217;``
-`` assemble temp1 temp2 | grep -c &#8216;-m2.*ti&#8217;``</p>
+<div class="highlight-bash"><div class="highlight"><pre>assemble temp1 temp2 | grep -c <span class="s1">&#39;-m2.*mi&#39;</span>
+assemble temp1 temp2 | grep -c <span class="s1">&#39;-m2.*ti&#39;</span>
+</pre></div>
+</div>
 <p>This same approach can be used to address (innumerable) questions pertaining
 to concurrent patterns. For example, suppose we have a <a class="reference external" href="../../rep/harm">**harm</a> spine
 that identifies the <cite>Roman numeral&#8217; functional harmony for some choral work.
@@ -835,38 +866,44 @@ We can identify complex situations such as the following: for the soprano
 voice, count how many subdominant pitches are approached by an interval of a
 rising third or a rising sixth and coincide with a dominant seventh chord.
 First, let&#8217;s extract the soprano line and create a corresponding scale degree
-representation using **deg**. We can use the **-a** option to avoid
-outputting the melodic direction signifiers (``^`</cite> and <tt class="docutils literal"><span class="pre">v</span></tt>):</p>
-<p>`` extract -i &#8216;<a href="#id24"><span class="problematic" id="id25">*</span></a>Isopran&#8217; howells | deg -a &gt; temp1``</p>
+representation using |deg|_ . We can use the `</cite>-a`` option to avoid
+outputting the melodic direction signifiers (<tt class="docutils literal"><span class="pre">^</span></tt> and <tt class="docutils literal"><span class="pre">v</span></tt>):</p>
+<div class="highlight-bash"><div class="highlight"><pre>extract -i <span class="s1">&#39;*Isopran&#39;</span> howells | deg -a &gt; temp1
+</pre></div>
+</div>
 <p>Next, let&#8217;s again extract the soprano voice and create a corresponding
-melodic interval representation using <strong>mint</strong>. Since we are not interested
-in interval qualities we can invoke the <strong>-d</strong> option to output only diatonic
+melodic interval representation using <a class="reference external" href="../../man/mint">mint</a> . Since we are not interested
+in interval qualities we can invoke the <tt class="docutils literal"><span class="pre">-d</span></tt> option to output only diatonic
 interval sizes.</p>
-<p>`` extract -i &#8216;<a href="#id26"><span class="problematic" id="id27">*</span></a>Isopran&#8217; howells | mint -d &gt; temp2``
-`` extract -i &#8216;<a href="#id28"><span class="problematic" id="id29">**</span></a>harm&#8217; howells &gt; temp3``</p>
+<div class="highlight-bash"><div class="highlight"><pre>extract -i <span class="s1">&#39;*Isopran&#39;</span> howells | mint -d &gt; temp2
+extract -i <span class="s1">&#39;**harm&#39;</span> howells &gt; temp3
+</pre></div>
+</div>
 <p>We have also extracted the <a class="reference external" href="../../rep/harm">**harm</a> spine and placed it in the file
 `` temp3``. If we assemble together our three temporary files, the result will
 have three spines: <a class="reference external" href="../../rep/deg">**deg</a>, <a class="reference external" href="../../rep/mint">**mint</a> and <a class="reference external" href="../../rep/harm">**harm</a>. We can now use
 <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to search and count all instances of subdominant pitches that are
 approached by ascending thirds/sixths and that coincide with dominant seventh
-chords (in the **kern representation: <tt class="docutils literal"><span class="pre">`V7</span></tt>&#8216;):</p>
-<p>`` assemble temp1 temp2 temp3 | grep -c &#8216;^4``**``+[36]``**``V7``</p>
-<p>The <strong>timebase</strong> command can also be used for tasks other than assembling
+chords (in the <a class="reference external" href="../../rep/kern">**kern</a> representation: <tt class="docutils literal"><span class="pre">`V7</span></tt>&#8216;):</p>
+<div class="highlight-bash"><div class="highlight"><pre>assemble temp1 temp2 temp3 | grep -c &#39;^4``**``+[36]``**``V7
+</pre></div>
+</div>
+<p>The <a class="reference external" href="../../man/timebase">timebase</a> command can also be used for tasks other than assembling
 parts together. Suppose we would like to determine whether secondary dominant
 chords are more likely to appear on the third beat than other beats in a
-triple meter work. The <strong>timebase</strong> command can be used to reformat a score
+triple meter work. The <a class="reference external" href="../../man/timebase">timebase</a> command can be used to reformat a score
 so that each measure occupies the same number of data records. For example,
 in a 3/4 meter, an eighth-note time-base will mean that each measure will
 contain six data records, and the fifth data record will correspond to the
 onset of the third beat. Recall from <a class="reference external" href="../ch12">Chapter 12</a> that the <strong>yank -m</strong>
 command allows us to extract particular data records following a specified
 marker. In the following command, we have defined the marker as a barline
-(<tt class="docutils literal"><span class="pre">-m</span> <span class="pre">^=</span></tt>) and instructed <strong>yank</strong> to fetch the fifth line following each
+(<tt class="docutils literal"><span class="pre">-m</span> <span class="pre">^=</span></tt>) and instructed <a class="reference external" href="../../man/yank">yank</a> to fetch the fifth line following each
 occurrence of the marker (<tt class="docutils literal"><span class="pre">-r</span> <span class="pre">5</span></tt>). In our example, the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command is
 being used to count V/V chords occurring on third beats:</p>
 <p>`` timebase -t 8 strauss | solfa | yank -m = -r 5 | grep re &gt;
 &gt;&gt; | grep fe | grep -c la``</p>
-<p>We can repeat this command for beats one and two by changing the <strong>-r</strong>
+<p>We can repeat this command for beats one and two by changing the <tt class="docutils literal"><span class="pre">-r</span></tt>
 parameter to 1 and 3 respectively.</p>
 </div>
 <hr class="docutils" />
@@ -875,18 +912,18 @@ parameter to 1 and 3 respectively.</p>
 <p>In this chapter we have learned how to concatenate musical passages together
 using the <a class="reference external" href="http://en.wikipedia.org/wiki/Cat_(Unix)">cat</a> command. We also learned how to eliminate redundant
 exclusive and tandem interpretations from concatenated outputs using the
-<strong>-u</strong> and <strong>-t</strong> options for <a class="reference external" href="../../man/rid">rid</a>. In addition, we learned how to
+<tt class="docutils literal"><span class="pre">-u</span></tt> and <tt class="docutils literal"><span class="pre">-t</span></tt> options for <a class="reference external" href="../../man/rid">rid</a>. In addition, we learned how to
 assemble two or more spines into a single output file using <a class="reference external" href="../../man/assemble">assemble</a>.
 In the case of <a class="reference external" href="../../rep/kern">**kern</a> and <a class="reference external" href="../../rep/recip">**recip</a> representations, we learned
 how to use the <a class="reference external" href="../../man/timebase">timebase</a> command to preprocess each constituent file so
 that all data records represent equivalent elapsed durations. Having
-assembled a full score from parts, <strong>rid</strong> <strong>-d</strong> can be used to eliminate
+assembled a full score from parts, <a class="reference external" href="../../man/rid">rid</a> <tt class="docutils literal"><span class="pre">-d</span></tt> can be used to eliminate
 any residual or unnecessary null data records. The <a class="reference external" href="../../man/proof">proof</a> command can
-be used to ensure that any assembled **kern data is correctly aligned.</p>
-<p>Finally, we learned that the <strong>timebase</strong> command can be used for other
+be used to ensure that any assembled <a class="reference external" href="../../rep/kern">**kern</a> data is correctly aligned.</p>
+<p>Finally, we learned that the <a class="reference external" href="../../man/timebase">timebase</a> command can be used for other
 analytic purposes. Specifically, it can be used to reduce a score
 rhythmically so only particular onset points or beats are retained. In
-<a class="reference external" href="../ch23">Chapter 23</a> we will see additional uses of <strong>timebase</strong> for a variety of
+<a class="reference external" href="../ch23">Chapter 23</a> we will see additional uses of <a class="reference external" href="../../man/timebase">timebase</a> for a variety of
 types of rhythmic tasks.</p>
 </div>
 </div>

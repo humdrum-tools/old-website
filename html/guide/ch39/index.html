@@ -69,11 +69,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../">The Humdrum User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ch01/">1. Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern(I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch03/">3. Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch04/">4. Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch05/">5. The Humdrum Syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern(II)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch07/">7. MIDI Output Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch08/">8. The Shell (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch09/">9. Searching with Regular Expressions</a></li>
@@ -374,18 +374,18 @@ high quality data and preparing the files in an appropriate manner.</p>
 <ul class="simple">
 <li>Use the <a class="reference external" href="../../man/humdrum">humdrum</a> command to ensure that the input data conforms
 to the Humdrum syntax.</li>
-<li>Use the <a class="reference external" href="../../man/humdrum">humdrum</a> <strong>-v</strong> command to determine whether the kind
+<li>Use the <a class="reference external" href="../../man/humdrum">humdrum</a><tt class="docutils literal"><span class="pre">-v</span></tt> command to determine whether the kind
 of data (signifiers) you are interested in are truly present in all of
 the files to be searched.</li>
 <li>Use the <a class="reference external" href="../../man/proof">proof</a> command to ensure that any <a class="reference external" href="../../rep/kern">**kern</a> data is
 properly encoded.</li>
 <li>Visually inspect sample passages from the input data. Do not rely
-solely on the <strong>ms</strong> command; instead, look at the actual ASCII text data
-using the <strong>more</strong> command.</li>
+solely on the <a href="#id8"><span class="problematic" id="id9">|ms|_</span></a> command; instead, look at the actual ASCII text data
+using the**more**command.</li>
 <li>Use the <a class="reference external" href="../../man/midi">midi</a> and <a class="reference external" href="../../man/perform">perform</a> commands to listen to sample
 passages; ensure that the data makes sense.</li>
 <li>If you are uncertain of the quality of the data, try encoding a
-randomly selected subset and then use the UNIX <strong>diff</strong> command to
+randomly selected subset and then use the UNIX**diff**command to
 identify any differences between the original data and the re-encoded
 data.</li>
 <li>Always read any release notes or README files that accompany the
@@ -393,17 +393,21 @@ data.</li>
 <li>Use <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to search for <em>warning</em> and <em>Nota Bene</em> reference
 records (<tt class="docutils literal"><span class="pre">!!!RWG:</span></tt> and <tt class="docutils literal"><span class="pre">!!!ONB:</span></tt>). These records may contain
 important editorial notes or warnings.</li>
-<li>Where appropriate, expand files to through-composed versions (using
-<a class="reference external" href="../../man/thru">thru</a>) before searching. If more than one editorial version is
-present in a document, select the most appropriate edition before
-processing.</li>
+<li>Where appropriate, expand files to through-composed versions (using</li>
+</ul>
+<dl class="docutils">
+<dt><a class="reference external" href="../../man/thru">thru</a>) before searching. If more than one editorial version is</dt>
+<dd>present in a document, select the most appropriate edition before
+processing.</dd>
+</dl>
+<ul class="simple">
 <li>Create an inventory of all the types of data tokens present in an
 input. Inspect the inventory list to determine whether any unexpected
 data are present.</li>
 <li>If necessary, eliminate certain types of data that might confound or
-interfere with your search in some way. Use <a class="reference external" href="../../man/rid">rid</a>, <strong>grep -v</strong>,
-<a class="reference external" href="../../man/extract">extract</a> <strong>-i</strong>, <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> and/or <a class="reference external" href="../../man/humsed">humsed</a> to restrict the data.</li>
+interfere with your search in some way. Use <a class="reference external" href="../../man/rid">rid</a>, <strong>grep -v</strong>,</li>
 </ul>
+<p><a class="reference external" href="../../man/extract">extract</a><tt class="docutils literal"><span class="pre">-i</span></tt>, <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> and/or <a class="reference external" href="../../man/humsed">humsed</a> to restrict the data.</p>
 <p><strong>(2) Ensure that you are searching all of the intended data:</strong></p>
 <ul class="simple">
 <li>Use <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to search for titles, or composers, or opus numbers,
@@ -436,8 +440,7 @@ meta-characters.</p>
 inadvertently make a typing error when entering the command.</p>
 </li>
 <li><p class="first">Maintain a command history file so that you have a permanent record
-of what you did. Depending on the system settings, the UNIX <strong>history</strong>
-command will display the past 100 (or more) commands you have executed.
+of what you did. Depending on the system settings, the UNIX**history**command will display the past 100 (or more) commands you have executed.
 Place this information in a permanent <a class="reference external" href="../../man/record">record</a> file as follows:</p>
 <p><tt class="docutils literal"><span class="pre">history</span> <span class="pre">&gt;</span> <span class="pre">record</span></tt></p>
 <p>In addition, keep records of the precise regular expressions used for
@@ -533,7 +536,7 @@ Visually inspect the output following the addition of each process.</li>
 confidence in your pipeline use a <em>different</em> sample of input data. Again
 add one software tool at a time while inspecting the results at each
 stage.</li>
-<li>Use the UNIX <strong>tee</strong> command to generate files at intermediate points
+<li>Use the UNIX**tee**command to generate files at intermediate points
 in the processing. Use the <a class="reference external" href="../../man/assemble">assemble</a> command to align inputs and
 outputs at various stages in the processing.</li>
 <li>Execute your finalized pipeline from a shell script in order to avoid

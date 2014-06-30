@@ -1,3 +1,13 @@
+
+.. |NF|	replace:: NF
+.. _NF:	../../man/NF
+
+.. |**semits|	replace:: \*\*semits
+.. _\*\*semits:	../../rep/semits
+
+.. |**solfa|	replace:: \*\*solfa
+.. _\*\*solfa:	../../rep/solfa
+
 ===============================
 Chapter 32: The Shell (IV)
 ===============================
@@ -100,7 +110,7 @@ will print the sum of ``2`` and `3``, namely 32.
 Arithmetic Operations
 ---------------------
 
-Suppose that we have two `**semits <../../rep/semits>`_ spines as input and we would like to
+Suppose that we have two |**semits|_ spines as input and we would like to
 print the semitone difference between the two parts for each sonority.
 Typically, the higher part is placed in the right-most spine, so it makes
 most sense to subtract $1 from $2. Negative numbers mean that the nominally
@@ -134,7 +144,7 @@ Conditional Statements
 ----------------------
 
 Often we'd like to avoid processing certain records. For example, we might
-wish to avoid processing barlines. The awk **if** statement can be used to
+wish to avoid processing barlines. The awk**if**statement can be used to
 restrict the operation to particular circumstances. Consider the following
 awk program:
 
@@ -142,7 +152,7 @@ awk program:
 
 	awk '{if ($0 !~/^=/) print $1 - $2}'
 
-The **if** condition is given in parentheses. The string given between the
+The**if**condition is given in parentheses. The string given between the
 slashes (``/^=/``) is a regular expression: in this case, it identifies any
 equals sign that occurs at the beginning of an input line. The tilde means
 "match" and the exclamation mark means "not". Hence the program means: if the
@@ -150,7 +160,7 @@ entire line (``0``) does not match (``!~``) an equals sign occuring at the
 beginning of the line (``/^=/``), then print the value of the first token
 minus the value of the second token (``print $1 - $2``).
 
-Awk also provide an **else** condition. The syntax is:
+Awk also provide an**else**condition. The syntax is:
 
 > if (condition)
 >
@@ -270,10 +280,8 @@ The *for* Loop
 -----
 
 Often we would like to repeat a process for several concurrent spines. For
-example, suppose we had four spines of `**solfa <../../rep/solfa>`_ data and we want to
-output the total number of leading-tones for each sonority. Awk provides a
-**for** instruction that allows us to cycle through a series of values. The
-**for**-loop construction has the following syntax:
+example, suppose we had four spines of |**solfa|_ data and we want to
+output the total number of leading-tones for each sonority. Awk provides a**for**instruction that allows us to cycle through a series of values. The**for``-loop construction has the following syntax:
 
 
 ::
@@ -304,10 +312,10 @@ is, for each line of input).
 
 It would be nice if our program could adapt to inputs containing any number
 of spines. For each line of input, awk automatically identifies the number of
-input tokens or fields and stores the value in the varible `NF <../../man/NF>`_. Simply
-replacing the number ``4`` by `NF <../../man/NF>`_ will achieve our goal. In our revised
+input tokens or fields and stores the value in the varible |NF|_\ . Simply
+replacing the number ``4`` by |NF|_ will achieve our goal. In our revised
 program we have also added some comments to clarify our code. Like the shell,
-awk comments consist of material following the octothorpe character (#): ****
+awk comments consist of material following the octothorpe character (#): ``**
 
 .. code-block:: awk
 
@@ -322,8 +330,7 @@ awk comments consist of material following the octothorpe character (#): ****
 A problem with the above script is that it will attempt to count occurrences
 of ``ti`` in Humdrum comments, interpretations, and barlines. We can improve
 our program by echoing these in the output without processing them. Another
-refinement makes use of the awk **next** instruction. Whenever a **next**
-statement is encountered, the program immediately moves on to the next input
+refinement makes use of the awk**next**instruction. Whenever a**next**statement is encountered, the program immediately moves on to the next input
 line and begins processing again from the start of the program.
 
 .. code-block:: awk

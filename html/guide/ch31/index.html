@@ -69,11 +69,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../">The Humdrum User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ch01/">1. Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern(I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch03/">3. Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch04/">4. Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch05/">5. The Humdrum Syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern(II)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch07/">7. MIDI Output Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch08/">8. The Shell (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch09/">9. Searching with Regular Expressions</a></li>
@@ -346,25 +346,31 @@ a good idea to limit the searches to small segments of the file system.</p>
 wide variety of possible tests on each file. One simple action is to test
 whether the file-name conforms to a given regular expression. Consider, for
 example, the goal of identifying all files representing pitch-class
-(<a class="reference external" href="../../rep/pc">**pc</a>) information. The Humdrum convention is to identify these files
+( <a class="reference external" href="../../rep/pc">**pc</a>) information. The Humdrum convention is to identify these files
 by adding the <tt class="docutils literal"><span class="pre">.pc</span></tt> extension to the filename &#8211; such as <tt class="docutils literal"><span class="pre">opus24.pc</span></tt>. The
 following <a class="reference external" href="http://en.wikipedia.org/wiki/Find">find</a> command will traverse through the <tt class="docutils literal"><span class="pre">/scores</span></tt> directory
 (and all sub-directories) searching for files that contain the <a class="reference external" href="../../man/pc">pc</a> file
 extension:</p>
-<p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-name</span> <span class="pre">*.pc</span></tt></p>
-<p>The above command uses the <strong>-name</strong> option followed by the appropriate
+<div class="highlight-bash"><div class="highlight"><pre>find /scores -name *.pc
+</pre></div>
+</div>
+<p>The above command uses the <tt class="docutils literal"><span class="pre">-name</span></tt> option followed by the appropriate
 regular expression. This command is unusual in that it has no explicit
 <em>action</em>. In such cases, the implied action is to print or display the name
 of all files whose names match the regular expression.</p>
 <p>Note that regular expressions may be literal strings. This means we can
 locate a specific named file. For example, the following command will locate
 all files named <tt class="docutils literal"><span class="pre">findme</span></tt>:</p>
-<p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">/</span> <span class="pre">-name</span> <span class="pre">findme</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>find / -name findme
+</pre></div>
+</div>
 <p>An example of an explicit <em>ACTION</em> might be to delete files conforming to a
 particular criterion. For example, the following command searches the
 <tt class="docutils literal"><span class="pre">/scores</span></tt> path for files whose names contain the <tt class="docutils literal"><span class="pre">.tmp</span></tt> extension. Any
-matching file is then deleted using the UNIX <strong>rm</strong> command:</p>
-<p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-name</span> <span class="pre">*.tmp</span> <span class="pre">-exec</span> <span class="pre">rm</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+matching file is then deleted using the UNIX**rm**command:</p>
+<div class="highlight-bash"><div class="highlight"><pre>find /scores -name *.tmp -exec rm <span class="s2">&quot;{}&quot;</span> <span class="s2">&quot;;&quot;</span>
+</pre></div>
+</div>
 <p>This command illustrates a number of features of the <a class="reference external" href="http://en.wikipedia.org/wiki/Find">find</a> command. The
 search begins from the <em>path</em> <tt class="docutils literal"><span class="pre">/scores</span></tt>. The <em>option</em> <tt class="docutils literal"><span class="pre">-name</span> <span class="pre">*.tmp</span></tt>
 identifies the search condition. The <tt class="docutils literal"><span class="pre">-exec</span></tt> flag identifies the <em>action</em>
@@ -376,16 +382,19 @@ replaced by the filename found to match the regular expression. For example,
 if the first file found is named <tt class="docutils literal"><span class="pre">xyz.tmp</span></tt> the braces will be replaced by
 the string <tt class="docutils literal"><span class="pre">xyz.tmp</span></tt>. The quotation marks around the braces and around the
 semi-colon are necessary in order to prevent the UNIX shell interpreter from
-substituting inappropriate information before passing the command line to
-<strong>rm</strong>.</p>
-<p>Note that the <strong>-name</strong> option defaults to filenames only; it does not apply
+substituting inappropriate information before passing the command line to**rm**.</p>
+<p>Note that the <tt class="docutils literal"><span class="pre">-name</span></tt> option defaults to filenames only; it does not apply
 to directory names. The above command is equivalent to the more explicit
 form:</p>
-<p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">-name</span> <span class="pre">*.tmp</span> <span class="pre">-exec</span> <span class="pre">rm</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
-<p>The <strong>-type</strong> option can be used to match regular files (<strong>f</strong>), directories
+<div class="highlight-bash"><div class="highlight"><pre>find /scores -type f -name *.tmp -exec rm <span class="s2">&quot;{}&quot;</span> <span class="s2">&quot;;&quot;</span>
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">-type</span></tt> option can be used to match regular files (<strong>f</strong>), directories
 (<strong>d</strong>), or network files (<strong>n</strong>). By way of example, the following command
 deletes all directories whose names have the <tt class="docutils literal"><span class="pre">.tmp</span></tt> extension.</p>
-<p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-type</span> <span class="pre">d</span> <span class="pre">-name</span> <span class="pre">*.tmp</span> <span class="pre">-exec</span> <span class="pre">rmdir</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>find /scores -type d -name *.tmp -exec rmdir <span class="s2">&quot;{}&quot;</span> <span class="s2">&quot;;&quot;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="content-searching">
 <h2>Content Searching<a class="headerlink" href="#content-searching" title="Permalink to this headline">¶</a></h2>
@@ -396,10 +405,12 @@ file before we take any action.</p>
 items of information are present in a file. For example, the following
 command identifies all files in the path <tt class="docutils literal"><span class="pre">/scores</span></tt> that contain passages in
 7/8 meter:</p>
-<p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'\*M7/8'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
-<p>Recall that the <strong>-l</strong> option for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> causes the output to consist only
+<div class="highlight-bash"><div class="highlight"><pre>find /scores -type f -exec grep -l <span class="s1">&#39;\*M7/8&#39;</span> <span class="s2">&quot;{}&quot;</span> <span class="s2">&quot;;&quot;</span>
+</pre></div>
+</div>
+<p>Recall that the <tt class="docutils literal"><span class="pre">-l</span></tt> option for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> causes the output to consist only
 of names of files that contain the sought regular expression. Note that the
-<strong>-type f</strong> option has been specified in order to ensure that the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>
+<tt class="docutils literal"><span class="pre">-type</span> <span class="pre">f</span></tt> option has been specified in order to ensure that the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>
 command is only executed for files.</p>
 <p>The structure of the above command can be used to search for all sorts of
 pertinent musical information. For example, recall that the <tt class="docutils literal"><span class="pre">*IC</span></tt> tandem
@@ -407,40 +418,60 @@ interpretation is used to encode instrument classes such as strings, voice,
 percussion, etc. The following command searches all files in the path
 <tt class="docutils literal"><span class="pre">scores</span></tt> and generates a list of those files that encode scores containing
 one or more brass instruments:</p>
-<p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">scores</span> <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'\*ICbras'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>find scores -type f -exec grep -l <span class="s1">&#39;\*ICbras&#39;</span> <span class="s2">&quot;{}&quot;</span> <span class="s2">&quot;;&quot;</span>
+</pre></div>
+</div>
 <p>The following command identifies all files in the path <tt class="docutils literal"><span class="pre">/scores</span></tt>, that
 contain passages in the key of C major:</p>
-<p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'\*C:'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>find /scores -type f -exec grep -l <span class="s1">&#39;\*C:&#39;</span> <span class="s2">&quot;{}&quot;</span> <span class="s2">&quot;;&quot;</span>
+</pre></div>
+</div>
 <p>The following command identifies all files in the path <tt class="docutils literal"><span class="pre">/scores</span></tt>, that
 contain passages in any minor key:</p>
-<p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'\*[a-g][#-]*:'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>find /scores -type f -exec grep -l <span class="s1">&#39;\*[a-g][#-]*:&#39;</span> <span class="s2">&quot;{}&quot;</span> <span class="s2">&quot;;&quot;</span>
+</pre></div>
+</div>
 <p>Humdrum reference records are ideal targets for such searches since reference
 records encode information such as the composer&#8217;s name, composer&#8217;s dates,
 title of work, date of composition, movement number, instrumentation, meter
 classification, and so on. For example, the following command identifies all
 files in the path <tt class="docutils literal"><span class="pre">/scores</span></tt> that are composed by Franck:</p>
-<p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'!!!COM.*Franck'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>find /scores -type f -exec grep -l <span class="s1">&#39;!!!COM.*Franck&#39;</span> <span class="s2">&quot;{}&quot;</span> <span class="s2">&quot;;&quot;</span>
+</pre></div>
+</div>
 <p>The following command identifies all files in the path <tt class="docutils literal"><span class="pre">/scores</span></tt> that are
 written in compound meters:</p>
-<p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'!!!AMT.*compound'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>find /scores -type f -exec grep -l <span class="s1">&#39;!!!AMT.*compound&#39;</span> <span class="s2">&quot;{}&quot;</span> <span class="s2">&quot;;&quot;</span>
+</pre></div>
+</div>
 <p>The following command identifies all files beginning from the current
 directory that are rondos:</p>
-<p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">.</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-il</span> <span class="pre">'!!!AFR.*rondo'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
-<p>Recall that the <strong>-i</strong> option for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> makes the pattern-match
+<div class="highlight-bash"><div class="highlight"><pre>find . -exec grep -il <span class="s1">&#39;!!!AFR.*rondo&#39;</span> <span class="s2">&quot;{}&quot;</span> <span class="s2">&quot;;&quot;</span>
+</pre></div>
+</div>
+<p>Recall that the <tt class="docutils literal"><span class="pre">-i</span></tt> option for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> makes the pattern-match
 insensitive to upper- or lower-case.</p>
 <p>The following command identifies all files in the path <tt class="docutils literal"><span class="pre">non-western</span></tt> that
 have been designated as having heterophonic textures:</p>
-<p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">non-western</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-il</span> <span class="pre">'!!!AST.*heterophony'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>find non-western -exec grep -il <span class="s1">&#39;!!!AST.*heterophony&#39;</span> <span class="s2">&quot;{}&quot;</span> <span class="s2">&quot;;&quot;</span>
+</pre></div>
+</div>
 <p>In the path <tt class="docutils literal"><span class="pre">/scores/jazz</span></tt>, we might want to identify all files that
 contain the style-designation &#8220;bebop:&#8221;</p>
-<p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores/jazz</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-il</span> <span class="pre">'!!!AST.*bebop'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>find /scores/jazz -exec grep -il <span class="s1">&#39;!!!AST.*bebop&#39;</span> <span class="s2">&quot;{}&quot;</span> <span class="s2">&quot;;&quot;</span>
+</pre></div>
+</div>
 <p>The following command identifies all files in the path <tt class="docutils literal"><span class="pre">18th-century</span></tt>, that
 include French horns and oboes:</p>
-<p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">18th-century</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-il</span> <span class="pre">'!!!AIN.*cor.*oboe'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>find 18th-century -exec grep -il <span class="s1">&#39;!!!AIN.*cor.*oboe&#39;</span> <span class="s2">&quot;{}&quot;</span> <span class="s2">&quot;;&quot;</span>
+</pre></div>
+</div>
 <p>Of course, more complex regular expressions can be also be defined. For
 example, the following command identifies all works composed between 1805 and
 1809:</p>
-<p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">/</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'!!!ODT.*180[5-9]'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>find / -exec grep -l <span class="s1">&#39;!!!ODT.*180[5-9]&#39;</span> <span class="s2">&quot;{}&quot;</span> <span class="s2">&quot;;&quot;</span>
+</pre></div>
+</div>
 <p>There is no restriction on the complexity of the regular expression. The
 following command identifies all works composed between 1812 and 1840:</p>
 <p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">/</span> <span class="pre">-exec</span> <span class="pre">egrep</span> <span class="pre">-l</span> <span class="pre">'!!!ODT.*18(1[2-9])|([23][0-9])|(40)'</span> <span class="pre">\</span>
@@ -472,8 +503,8 @@ meters.</p>
 </div>
 <div class="section" id="using-find-with-the-xargs-command">
 <h2>Using <em>find</em> with the <em>xargs</em> Command<a class="headerlink" href="#using-find-with-the-xargs-command" title="Permalink to this headline">¶</a></h2>
-<p>As we saw in <a class="reference external" href="../ch10">Chapter 10</a>, the <strong>xargs</strong> command can be used to propagate
-file names from command to command within a pipeline. Using <strong>xargs</strong> in
+<p>As we saw in <a class="reference external" href="../ch10">Chapter 10</a>, the**xargs**command can be used to propagate
+file names from command to command within a pipeline. Using**xargs**in
 conjunction with <a class="reference external" href="http://en.wikipedia.org/wiki/Find">find</a> provides a powerful means for finding works that
 conform to highly complex criteria. For example, the following command
 identifies all files in the path <tt class="docutils literal"><span class="pre">/corelli</span></tt> that contain a change of meter
@@ -494,7 +525,7 @@ of key signature:</p>
 <p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-type</span> <span class="pre">f</span> <span class="pre">-name</span> <span class="pre">'*'</span> <span class="pre">|</span> <span class="pre">xargs</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'^\*k\['</span> <span class="pre">\</span>
 <span class="pre">&gt;</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">':[01]$'</span></tt></p>
-<p>As a further example of the use of <strong>xargs</strong>, consider the following
+<p>As a further example of the use of**xargs**, consider the following
 extension of the above pipeline. The <strong>grep -v</strong> command causes only those
 files containing more than one key signature to be passed. The <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a>
 command eliminates the colon and the number appended to the filenames. The
@@ -507,7 +538,7 @@ signatures.</p>
 <span class="pre">xargs</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'^\*M[0-9]'</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">':[01]$'</span></tt></p>
 <p>In summary, the above pipeline identifies all scores that contain both a
 change of key signature as well as a change of meter signature.</p>
-<p>The <strong>xargs</strong> command can also be used to process a list of files &#8211; where
+<p>The**xargs**command can also be used to process a list of files &#8211; where
 the list has been stored in a file. For example, suppose we used the <a class="reference external" href="http://en.wikipedia.org/wiki/Find">find</a>
 command to locate all scores in compound meters written for woodwind quintet:</p>
 <p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">.</span> <span class="pre">-name</span> <span class="pre">'*'</span> <span class="pre">|</span> <span class="pre">xargs</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'!!!AMT:.*compound'</span> <span class="pre">\</span>
@@ -515,7 +546,9 @@ command to locate all scores in compound meters written for woodwind quintet:</p
 <span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">xargs</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'!!!AIN:</span> <span class="pre">clars</span> <span class="pre">cor</span> <span class="pre">fagot</span> <span class="pre">flt</span> <span class="pre">oboe'</span> <span class="pre">&gt;</span> <span class="pre">scorelist</span></tt></p>
 <p>The resulting list of files can be used for further processing. For example,
 we might search these files for any scores containing changes of key:</p>
-<p><tt class="docutils literal"><span class="pre">cat</span> <span class="pre">scorelist</span> <span class="pre">|</span> <span class="pre">xargs</span> <span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'^\*[A-Ga-g][#-]*:'</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">':[01]$'</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>cat scorelist | xargs grep -c <span class="s1">&#39;^\*[A-Ga-g][#-]*:&#39;</span> | grep -v <span class="s1">&#39;:[01]$&#39;</span>
+</pre></div>
+</div>
 <p>The output identifies all scores in compound meters written for woodwind
 quintet that contain changes of key.</p>
 </div>
@@ -532,13 +565,15 @@ files.</p>
 <p>Suppose you wanted to make a directory of all scores containing vocal parts.
 The following command creates a file (<tt class="docutils literal"><span class="pre">vocalfiles</span></tt>) listing all files in
 the path <tt class="docutils literal"><span class="pre">/scores</span></tt> that contain one or more vocal parts:</p>
-<p><tt class="docutils literal"><span class="pre">find</span> <span class="pre">/scores</span> <span class="pre">-exec</span> <span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'!!!AIN.*vox'</span> <span class="pre">&quot;{}&quot;</span> <span class="pre">&quot;;&quot;</span> <span class="pre">&gt;</span> <span class="pre">vocalfiles</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>find /scores -exec grep -l <span class="s1">&#39;!!!AIN.*vox&#39;</span> <span class="s2">&quot;{}&quot;</span> <span class="s2">&quot;;&quot;</span> &gt; vocalfiles
+</pre></div>
+</div>
 <p>The contents of <tt class="docutils literal"><span class="pre">vocalfiles</span></tt> might look like the following:</p>
 <p><tt class="docutils literal"><span class="pre">/scores/bach/cantatas/cant140.krn</span>
 <span class="pre">/scores/bach/chorales/chor217.krn</span>
 <span class="pre">/scores/bach/chorales/midi/chor368.hmd</span></tt>
 etc.</p>
-<p>We can create an appropriate new directory using the <strong>mkdir</strong> command.</p>
+<p>We can create an appropriate new directory using the**mkdir**command.</p>
 <p><tt class="docutils literal"><span class="pre">mkdir</span> <span class="pre">vocal</span></tt></p>
 <p>Next, edit the file containing the list of filenames as follows. Insert <strong>ln
 -s</strong> prior to each filename, and append the directory name <tt class="docutils literal"><span class="pre">vocal</span></tt> at the
@@ -547,8 +582,8 @@ end of each line.</p>
 <span class="pre">ln</span> <span class="pre">-s</span> <span class="pre">/scores/bach/chorales/chor217.krn</span> <span class="pre">vocal</span>
 <span class="pre">ln</span> <span class="pre">-s</span> <span class="pre">/scores/bach/chorales/midi/chor368.hmd</span> <span class="pre">vocal</span></tt>
 etc.</p>
-<p>(The <strong>-s</strong> option for <strong>ln</strong> is used to create a so-called &#8220;symbolic&#8221; link.)</p>
-<p>Using the <strong>chmod</strong> command, we can make this file executable, and then we
+<p>(The <tt class="docutils literal"><span class="pre">-s</span></tt> option for**ln**is used to create a so-called &#8220;symbolic&#8221; link.)</p>
+<p>Using the**chmod**command, we can make this file executable, and then we
 can execute it:</p>
 <p><tt class="docutils literal"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">vocalfiles</span>
 <span class="pre">./vocalfiles</span></tt></p>

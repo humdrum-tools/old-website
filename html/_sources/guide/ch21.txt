@@ -1,37 +1,100 @@
+
+.. |Chapter 15|	replace:: Chapter 15
+.. _Chapter 15:	../ch15
+
+.. |Chapter 19|	replace:: Chapter 19
+.. _Chapter 19:	../ch19
+
+.. |Chapter 26|	replace:: Chapter 26
+.. _Chapter 26:	../ch26
+
+.. |Chapter 35|	replace:: Chapter 35
+.. _Chapter 35:	../ch35
+
+.. |Chapter 4|	replace:: Chapter 4
+.. _Chapter 4:	../ch04
+
+.. |context|	replace:: context
+.. _context:	../../man/context
+
+.. |correl|	replace:: correl
+.. _correl:	../../man/correl
+
+.. |deg|	replace:: deg
+.. _deg:	../../man/deg
+
+.. |ditto|	replace:: ditto
+.. _ditto:	../../man/ditto
+
+.. |hint|	replace:: hint
+.. _hint:	../../man/hint
+
+.. |humsed|	replace:: humsed
+.. _humsed:	../../man/humsed
+
+.. |patt|	replace:: patt
+.. _patt:	../../man/patt
+
+.. |pattern|	replace:: pattern
+.. _pattern:	../../man/pattern
+
+.. |rid|	replace:: rid
+.. _rid:	../../man/rid
+
+.. |simil|	replace:: simil
+.. _simil:	../../man/simil
+
+.. |solfa|	replace:: solfa
+.. _solfa:	../../man/solfa
+
+.. |**Tonh|	replace:: \*\*Tonh
+.. _\*\*Tonh:	../../rep/Tonh
+
+.. |**deg|	replace:: \*\*deg
+.. _\*\*deg:	../../rep/deg
+
+.. |**harm|	replace:: \*\*harm
+.. _\*\*harm:	../../rep/harm
+
+.. |**hint|	replace:: \*\*hint
+.. _\*\*hint:	../../rep/hint
+
+.. |**kern|	replace:: \*\*kern
+.. _\*\*kern:	../../rep/kern
+
 =====================================
 Chapter 21: Searching for Patterns
 =====================================
 
 The `grep <http://en.wikipedia.org/wiki/Grep>`_ and `egrep <http://en.wikipedia.org/wiki/Egrep#Variations>`_ commands are useful for identifying patterns that
-occur on single lines. As we saw in `Chapter 19 <../ch19>`_, the `context <../../man/context>`_ command
+occur on single lines. As we saw in |Chapter 19|_\ , the |context|_ command
 can be used to amalgamate groups of successive data tokens on a single line
 -- and so facilitate searching for sequential patterns using `grep <http://en.wikipedia.org/wiki/Grep>`_ or
-`egrep <http://en.wikipedia.org/wiki/Egrep#Variations>`_. For many tasks, the combination of **context** and `grep <http://en.wikipedia.org/wiki/Grep>`_
+`egrep <http://en.wikipedia.org/wiki/Egrep#Variations>`_. For many tasks, the combination of |context|_ and `grep <http://en.wikipedia.org/wiki/Grep>`_
 provides the most convenient way to search for user-specified patterns.
 However, not all patterns can be conveniently identified using this approach.
 In this chapter we will introduce two additional tools that are intended to
-search directly for sequential patterns without having to use **context** to
+search directly for sequential patterns without having to use |context|_ to
 create pseudo-simultaneous collections.
 
 
 The *patt* Command
 --------
 
-The `patt <../../man/patt>`_ command may be regarded as a two-dimensional version of
-`grep <http://en.wikipedia.org/wiki/Grep>`_. Like `grep <http://en.wikipedia.org/wiki/Grep>`_, **patt** searches for lines that match user-
-specified regular expressions. However, unlike `grep <http://en.wikipedia.org/wiki/Grep>`_, **patt** can search
+The |patt|_ command may be regarded as a two-dimensional version of
+`grep <http://en.wikipedia.org/wiki/Grep>`_. Like `grep <http://en.wikipedia.org/wiki/Grep>`_, |patt|_ searches for lines that match user-
+specified regular expressions. However, unlike `grep <http://en.wikipedia.org/wiki/Grep>`_, |patt|_ can search
 for a sequence of records that match a sequence of user-specified regular
-expressions. Specifically, **patt** will look for an input line that matches
-the first (of potential many) user-specified regular expression. Then
-**patt** will determine whether the following input line matches the second
+expressions. Specifically, |patt|_ will look for an input line that matches
+the first (of potential many) user-specified regular expression. Then |patt|_ will determine whether the following input line matches the second
 user-specified regular expression ... and so on, until the entire sequence of
 the user-specified regular expressions are exhausted. A pattern match is
 deemed to occur only if all of the successive regular expressions match a
 contiguous sequence of input lines.
 
-The operation of **patt** is easier to describe through an example. Consider
+The operation of |patt|_ is easier to describe through an example. Consider
 the following input using the German *Tonhohe* pitch designations described
-in `Chapter 4 <../ch04>`_. Recall that the `**Tonh <../../rep/Tonh>`_ system of pitch names allows
+in |Chapter 4|_\ . Recall that the |**Tonh|_ system of pitch names allows
 Bach to spell his name (B=B-flat; H=B-natural). Less well-known is the fact
 that Dmitri Shostakovich also used the German pitch system to create motives
 based on his name: D-S-C-H (S=Es=E-flat). (The German transliteration of the
@@ -46,8 +109,7 @@ cyrillic is Schostakowitsch.)
 	H3
 	*-
 
-Suppose we were looking for possible instances of D-S-C-H. The **patt**
-command requires a template file that contains one or more successive regular
+Suppose we were looking for possible instances of D-S-C-H. The |patt|_ command requires a template file that contains one or more successive regular
 expressions. A suitable template file (named ``dmitri``) would be as follows:
 
 `` D
@@ -59,10 +121,10 @@ We would invoke the search as follows:
 
 `` patt -f dmitri`` *inputfile*
 
-The **-f** option is mandatory: it conveys to **patt** the name of the
+The ``-f`` option is mandatory: it conveys to |patt|_ the name of the
 template file used in the search.
 
-In the default operation, **patt** simply outputs a global comment
+In the default operation, |patt|_ simply outputs a global comment
 identifying the location of any matching segments. One global comment is
 output for each matching pattern. In the above case, the output would be as
 follows:
@@ -71,7 +133,7 @@ follows:
 
 	!! Pattern found at line 2 of file Tonh
 
-The `patt <../../man/patt>`_ command will also identify any overlapping patterns. For
+The |patt|_ command will also identify any overlapping patterns. For
 example, suppose we had an input containing an ostinato figure in minor
 thirds:
 
@@ -80,7 +142,7 @@ thirds:
 > .. image:: guide.figures/ch21.1.gif
 
 >
->``**Tonh**Tonh
+>`` |Tonh|_ Tonh
 >``*k[b-e-]*K[b-e-]
 >``*M9/8*M9/8
 >``=1-=1-
@@ -95,7 +157,7 @@ thirds:
 >``H3D4
 >``==``
 
-If we applied the above **patt** command to this ``ostinato`` file, we would
+If we applied the above |patt|_ command to this ``ostinato`` file, we would
 get the following output:
 
 .. code-block:: humdrum
@@ -103,10 +165,12 @@ get the following output:
 	!! Pattern found at line 8 of file ostinato``
 	!! Pattern found at line 11 of file ostinato
 
-We can instruct **patt** to output specific instances of the pattern using
-the **-e** (echo) option. Consider the following command:
+We can instruct |patt|_ to output specific instances of the pattern using
+the ``-e`` (echo) option. Consider the following command:
 
-`` patt -f dmitri -e ostinato``
+.. code-block:: bash
+
+	patt -f dmitri -e ostinato
 
 The resulting output would be:
 
@@ -147,15 +211,16 @@ in minor keys. The following `grep <http://en.wikipedia.org/wiki/Grep>`_ command
 current directory for a tandem interpretation indicating a minor key. Recall
 that minor keys are identified by an asterisk followed by a lower-case pitch-
 letter name, followed by an optional accidental, followed by the colon
-character. The **-l** option will list all files that containing a matching
+character. The ``-l`` option will list all files that containing a matching
 record:
 
-`` grep -l '^\*[a-g][-#]*:' *``
+.. code-block:: bash
 
-Recall that the `deg <../../man/deg>`_ command is mode sensitive, whereas the
-`solfa <../../man/solfa>`_ command is mode insensitive. That is, in the key of C major,
-**deg** will represent the pitch E as ``3`` and in C minor **deg** will
-represent the pitch E (natural) as ``3+``. By contrast, the **solfa** command
+	grep -l '^\*[a-g][-#]*:' *
+
+Recall that the |deg|_ command is mode sensitive, whereas the
+|solfa|_ command is mode insensitive. That is, in the key of C major, |deg|_ will represent the pitch E as ``3`` and in C minor |deg|_ will
+represent the pitch E (natural) as ``3+``. By contrast, the |solfa|_ command
 will represent E as ```mi``' whether the mode is major or minor.
 
 In order to locate picardy thirds, we can look for raised mediants in the
@@ -166,16 +231,17 @@ pitch immediately prior to a double barline. Our template file (dubbed
 `` 3[+]
 ==``
 
-Notice that the plus sign has been placed in square brackets. The **patt**
-command accepts only *extended* regular expressions. The plus sign is a
+Notice that the plus sign has been placed in square brackets. The |patt|_ command accepts only *extended* regular expressions. The plus sign is a
 metacharacter that normally indicates "one or more instances." So placing it
 in square brackets causes the special meaning to be escaped.
 
 In order to search for such picardy thirds, we should translate each input
-file to the `**deg <../../rep/deg>`_ representation, and then search for raised mediants
+file to the |**deg|_ representation, and then search for raised mediants
 immediately prior to a double bar:
 
-`` deg *inputfile.krn* | patt -f picardy``
+.. code-block:: bash
+
+	deg *inputfile.krn* | patt -f picardy
 
 A problem with this search strategy is that it assumes that the raised third
 will occur in the final sonority prior to the double barline. One possible
@@ -190,7 +256,7 @@ Bach's *Well-Tempered Clavier*:
 >
 >``!!!COM: Bach, Johann Sebastian
 >``!!!XEN: The Well-Tempered Clavier, Volume 2, Fugue 4.
->``**kern**kern**kern
+>`` |kern|_ kern**kern
 >``*clefF4*clefG2*clefG2
 >``*M12/16*M12/16*M12/16
 >``*k[f#c#g#d#]*k[f#c#g#d#]*k[f#c#g#d#]
@@ -215,23 +281,27 @@ Bach's *Well-Tempered Clavier*:
 >``======
 >``*-*-*-``
 
-The **patt** command provides a **-s** option that allows the user to skip or
+The |patt|_ command provides a ``-s`` option that allows the user to skip or
 ignore certain records in the input. Any regular expression can be given as a
-parameter for the **-s** option. In the following pipeline, we have
-instruction **patt** to skip over any records matching the lower-case letter
-`` `r``' (the \*\*kern rest signifier):
+parameter for the ``-s`` option. In the following pipeline, we have
+instruction |patt|_ to skip over any records matching the lower-case letter
+`` `r``' (the |**kern|_ rest signifier):
 
-`` deg ``*inputfile.krn*`` | patt -s r -f picardy``
+.. code-block:: bash
+
+	deg ``*inputfile.krn*`` | patt -s r -f picardy
 
 Even ignoring rests may not be sufficient to identify the raised third near
 the double barline. For example, if any other note from the tonic chord
 follows after the raised third, then the third will appear several records
 prior to the double barline. We can solve this problem by using the
-`ditto <../../man/ditto>`_ command discussed in `Chapter 15 <../ch15>`_; **ditto** can be used to
+|ditto|_ command discussed in |Chapter 15|_\ ; |ditto|_ can be used to
 propagate the raised third through the sustained final chord. Our revised
 pipeline is:
 
-`` deg bach.krn | ditto -s = | patt -s r -f picardy``
+.. code-block:: bash
+
+	deg bach.krn | ditto -s = | patt -s r -f picardy
 
 A similar approach can be used to identify consecutive fifths or octaves
 between two voices. A template file (dubbed ``5ths``) might consist of the
@@ -241,15 +311,17 @@ following pattern:
 P5``
 
 In order to identify consecutive fifths, we might extract two parts of
-interest, and then translate to the `**hint <../../rep/hint>`_ harmonic-interval
-representation. The **-c** option for `hint <../../man/hint>`_ collapses compound
+interest, and then translate to the |**hint|_ harmonic-interval
+representation. The ``-c`` option for |hint|_ collapses compound
 intervals to their non-compound equivalents so consecutive twelfths,
 nineteenths, etc. will also be identified. In the following command pipeline,
-notice the use of the **-s** option for `patt <../../man/patt>`_ in order to skip
+notice the use of the ``-s`` option for |patt|_ in order to skip
 barlines. This ensures that crossing a barline does not result in a failure
 to identify a consecutive fifth.
 
-`` extract -i '*Ibass,*Itenor' Fux | hint -c | patt -s = -f 5ths``
+.. code-block:: bash
+
+	extract -i '*Ibass,*Itenor' Fux | hint -c | patt -s = -f 5ths
 
 Sometimes patterns will tend to be obscured by the presence of other
 information. For example, suppose we want to identify possible Landini
@@ -268,9 +340,9 @@ to help identify this distinctive cadential formula.
 > .. image:: guide.figures/ch21.4.gif
 
 
-Below is a `**kern <../../rep/kern>`_ encoding of the final two measures along with
-corresponding `**hint <../../rep/hint>`_ and `**deg <../../rep/deg>`_ spines. The **hint spine was
-generated using `hint <../../man/hint>`_ **-l** in order to generate intervals with
+Below is a |**kern|_ encoding of the final two measures along with
+corresponding |**hint|_ and |**deg|_ spines. The **hint spine was
+generated using |hint|_\ ``-l`` in order to generate intervals with
 respect to the lowest pitch.
 
 .. code-block:: humdrum
@@ -291,16 +363,14 @@ respect to the lowest pitch.
 	==``==``==``========
 	*-``*-``*-``*-*-*-*-
 
-Notice that **hint** has failed to generate the passing interval forming the
-perfect fifth between the E and the A. This can be remedied by using
-**ditto** to duplicate all of the pitches. This will cause **hint** to
+Notice that |hint|_ has failed to generate the passing interval forming the
+perfect fifth between the E and the A. This can be remedied by using |ditto|_ to duplicate all of the pitches. This will cause |hint|_ to
 generate all of the passing harmonic intervals. The revised **hint spine is
 given below.
 
 .. code-block:: humdrum
 
-	!!!COM: Landini, Francesco
-	**kern**kern**kern**hint**deg**deg**deg
+	!!!COM: Landini, Francesco |kern|_ kern |kern|_ hint |deg|_ deg**deg
 	*clefF4*clefG2*clefG2****
 	*M3/4*M3/4*M3/4*M3/4*M3/4*M3/4*M3/4
 	=======
@@ -323,9 +393,11 @@ interval template file (dubbed ``LandCadence``):
 `` 8``
 
 Using this template, we can identify Landini cadences as follows. (Notice the
-use of **-s ^=** to skip barlines.)
+use of ``-s ^=`` to skip barlines.)
 
-`` ditto -s ^= input | hint -l | patt -s ^= -f LandCadence``
+.. code-block:: bash
+
+	ditto -s ^= input | hint -l | patt -s ^= -f LandCadence
 
 It is possible that the 6-5-8 figured bass might arise in non-cadential
 situations, so a more circumspect template might also include some scale-
@@ -343,7 +415,7 @@ commands would be the following:
 deg inputfile > temp2
 assemble temp1 temp2 | patt -s ^= -f Landini-Cadence``
 
-In general, **patt** templates can be used to specify both concurrent
+In general, |patt|_ templates can be used to specify both concurrent
 conditions as well as dynamic or temporal conditions. This allows users to
 define patterns involving a multitude of conditions involving many different
 types of data.
@@ -352,20 +424,20 @@ types of data.
 Using *patt*'s Tag Option
 -------------
 
-So far, we have seen that `patt <../../man/patt>`_ provides two kinds of output. In the
-default operation, **patt** outputs a simple global comment each time it
-finds a matching segment in the input. With the **-e** option, **patt** will
-also echo the specific passage(s) found. In addition, **patt** provides a
-third type of output using the **-t** option.
+So far, we have seen that |patt|_ provides two kinds of output. In the
+default operation, |patt|_ outputs a simple global comment each time it
+finds a matching segment in the input. With the ``-e`` option, |patt|_ will
+also echo the specific passage(s) found. In addition, |patt|_ provides a
+third type of output using the ``-t`` option.
 
-When the **-t** option is invoked, **patt** will output the original input,
+When the ``-t`` option is invoked, |patt|_ will output the original input,
 plus an addition ``patt`` spine. The ``patt`` spine typically consists of
 mostly null tokens. However, each time the input matches the sought pattern,
 a user-defined "tag" will appear in the ``patt`` spine. Consider the
 following example.
 
 Suppose we are interested in identifying deceptive cadences in Bach's chorale
-harmonizations. Imagine that we already have a `**harm <../../rep/harm>`_ spine containing
+harmonizations. Imagine that we already have a |**harm|_ spine containing
 a Roman numeral harmonic analysis. There are different ways of defining a
 deceptive cadence, but a frequent definition is that it involves a dominant
 chord followed by a submediant chord in a cadential context. In the case of
@@ -381,10 +453,12 @@ by a character other than the upper-case letter ``I``. This record will be
 followed by a record containing either ``vi`` or ``VI`` followed by a
 semicolon."
 
-When invoking the **patt** command, we can specify our preferred output tag
-along with the **-t** option as follows:
+When invoking the |patt|_ command, we can specify our preferred output tag
+along with the ``-t`` option as follows:
 
-`` extract -i '**harm' bwv269.krn | patt -f template -t deceptive``
+.. code-block:: bash
+
+	extract -i '**harm' bwv269.krn | patt -f template -t deceptive
 
 .. code-block:: humdrum
 
@@ -402,9 +476,9 @@ along with the **-t** option as follows:
 	V;	.
 	etc.
 
- In `Chapter 26 <../ch26>`_ we will learn how to collapse several spines into a single
+ In |Chapter 26|_ we will learn how to collapse several spines into a single
  spine. This will allow us to assemble the results from several "passes"
- using **patt** -- one pass for each type of cadence. For example, we could
+ using |patt|_ -- one pass for each type of cadence. For example, we could
  collapse several tagged outputs to produce a single spine that identifies
  all of the various types of cadences:
 
@@ -424,11 +498,10 @@ along with the **-t** option as follows:
 	V;	.
 	etc.
 
- There are no restrictions as to the types of tags that can be generated by
- **patt**. A user might tag the beginning of motivic or thematic statements,
+ There are no restrictions as to the types of tags that can be generated by |patt|_ . A user might tag the beginning of motivic or thematic statements,
  various harmonic progressions, variation techniques, fingering patterns,
- quotations or allusions, stylistic cliches, etc. In `Chapter 35 <../ch35>`_ we will
- use the **-t** option to label different set forms for statements of a
+ quotations or allusions, stylistic cliches, etc. In |Chapter 35|_ we will
+ use the ``-t`` option to label different set forms for statements of a
  twelve-tone row, such as primes, inversions, retrogrades, and retrograde
  inversions. We will use suitable tags to identify the specific
  transpositions: P0, I7, R11, RI8, etc.
@@ -485,24 +558,25 @@ measures 28-30.
 	etc.
 	*-
 
- The **-m** option for `patt <../../man/patt>`_ invokes a "multi-record matching" mode.
- In this mode, **patt** attempts to match as many successive regular
+ The ``-m`` option for |patt|_ invokes a "multi-record matching" mode.
+ In this mode, |patt|_ attempts to match as many successive regular
  expressions in the template file as possible for a given input record,
  before continuing with the next input and template records. In this way,
  several records in the template file may possibly match a single input
  record. In the above case, the tone-row template will be matched and the
  `P0' tag issued if the following command is issued:
 
-`` patt -f tonerow -t P0 -m Krenek``
+.. code-block:: bash
+
+	patt -f tonerow -t P0 -m Krenek
 
 
 The *pattern* Command
 --------
 
- Not all patterns can be identified using **patt**. The Humdrum
- `pattern <../../man/pattern>`_ command permits an additional regular expression feature that
- is especially useful in musical applications. Specifically, **pattern**
- permits the defining of patterns spanning more than one line or record.
+ Not all patterns can be identified using |patt|_ . The Humdrum
+|pattern|_ command permits an additional regular expression feature that
+ is especially useful in musical applications. Specifically, |pattern|_ permits the defining of patterns spanning more than one line or record.
  Record-repetition operators are specified by following the regular
  expression with a tab -- followed by either ``+``, ``*``, or ``?``. For
  example, consider the following Humdrum-extension regular expression:
@@ -528,7 +602,7 @@ Z?``
 
  Record-repetition operators can be used in conjunction with all of the
  other regular expression features. For example, the following regular
- expression matches one or more successive `**kern <../../rep/kern>`_ data records
+ expression matches one or more successive |**kern|_ data records
  containing the pitch ```G``' (naturals only) followed optionally by a single
  ```G#``' followed by one or more records containing one or more pitches from
  an A major triad -- the last of which must end a phrase:
@@ -548,14 +622,14 @@ Patterns of Patterns
 
  Music often exhibits hierarchical structures where particular types of
  patterns may be embedded in other patterns, or where low-level patterns join
- together to form higher-level patterns. As we have seen, the **-t** (tag)
- option for the **patt** command allows a new output spine to be generated.
+ together to form higher-level patterns. As we have seen, the ``-t`` (tag)
+ option for the |patt|_ command allows a new output spine to be generated.
  This spine contains user-defined labels marking the beginning of each found
  pattern. The labels can contain any user-defined text string such as
  ``authentic cadence``, ``episode``, ``Motive 3b``, ``augmentation``,
  ``triplet figuration``, or ``prolongation``.
 
- As we will see in `Chapter 26 <../ch26>`_, the contents of several spines can be
+ As we will see in |Chapter 26|_\ , the contents of several spines can be
  amalgamated to form a single spine. This means that the results for several
  independent pattern searches can be assembled into a single "pattern" spine.
  Several pattern spines may be created that related to patterns found at
@@ -564,7 +638,7 @@ Patterns of Patterns
  further pattern searches thus providing unbounded possibilities for
  searching for patterns of patterns.
 
- Consider, for example, the following template for the `pattern <../../man/pattern>`_
+ Consider, for example, the following template for the |pattern|_
  command:
 
 `` Theme 1 (tonic)+
@@ -575,7 +649,7 @@ Coda?``
  The template reads "one or more instances of ``Theme 1 (tonic)``, followed
  by zero or more instances of ``Bridge``, followed by one or more instances
  of ``Theme 2 (tonic)``, followed by zero or one instance of ``Coda``." This
- template might be used by **pattern** to identify a Recapitulation. Together
+ template might be used by |pattern|_ to identify a Recapitulation. Together
  with outputs from parallel searches for `Exposition' and `Development' the
  results of a `Recapitulation' search might similarly be amalgamated and used
  as an input for a higher level search for works exhibiting a sonata-allegro
@@ -589,11 +663,11 @@ Reprise
 
  In this chapter and previous chapters we have identified several search-
  related tools, including the UNIX `grep <http://en.wikipedia.org/wiki/Grep>`_ and `egrep <http://en.wikipedia.org/wiki/Egrep#Variations>`_ commands as well as
- the Humdrum `patt <../../man/patt>`_ and `pattern <../../man/pattern>`_ commands. Each of these tools has
+ the Humdrum |patt|_ and |pattern|_ commands. Each of these tools has
  different strengths and weaknesses and it is not always clear which tool is
  best for a given task. When searching, don't forget to consider how
- `context <../../man/context>`_, `humsed <../../man/humsed>`_, `rid <../../man/rid>`_ and other tools might facilitate
+|context|_\ , |humsed|_\ , |rid|_ and other tools might facilitate
  the searching task. In future chapters will will consider how "similarity"
- tools such as `correl <../../man/correl>`_ and `simil <../../man/simil>`_ can contribute to more
+ tools such as |correl|_ and |simil|_ can contribute to more
  sophisticated pattern searches.
 

@@ -1,3 +1,52 @@
+
+.. |Chapter 14|	replace:: Chapter 14
+.. _Chapter 14:	../ch14
+
+.. |Chapter 29|	replace:: Chapter 29
+.. _Chapter 29:	../ch29
+
+.. |context|	replace:: context
+.. _context:	../../man/context
+
+.. |ditto|	replace:: ditto
+.. _ditto:	../../man/ditto
+
+.. |dur|	replace:: dur
+.. _dur:	../../man/dur
+
+.. |humsed|	replace:: humsed
+.. _humsed:	../../man/humsed
+
+.. |mint|	replace:: mint
+.. _mint:	../../man/mint
+
+.. |recode|	replace:: recode
+.. _recode:	../../man/recode
+
+.. |rid|	replace:: rid
+.. _rid:	../../man/rid
+
+.. |semits|	replace:: semits
+.. _semits:	../../man/semits
+
+.. |xdelta|	replace:: xdelta
+.. _xdelta:	../../man/xdelta
+
+.. |yank|	replace:: yank
+.. _yank:	../../man/yank
+
+.. |ydelta|	replace:: ydelta
+.. _ydelta:	../../man/ydelta
+
+.. |**harm|	replace:: \*\*harm
+.. _\*\*harm:	../../rep/harm
+
+.. |**kern|	replace:: \*\*kern
+.. _\*\*kern:	../../rep/kern
+
+.. |**semits|	replace:: \*\*semits
+.. _\*\*semits:	../../rep/semits
+
 ==========================
 Chapter 22: Classifying
 ==========================
@@ -9,7 +58,7 @@ Many of the most important analytic tasks involve classifying or categorizing
 various things. In this chapter we will discuss two general approaches to
 classifying: *parametric* classifying and *non-parametric* classifying. In
 the first instance, we will see how numerical data can be categorized
-according to arithmetic ranges. We will then revisit the `humsed <../../man/humsed>`_
+according to arithmetic ranges. We will then revisit the |humsed|_
 command and learn how it can be used to classify different types of non-
 numeric data tokens.
 
@@ -22,44 +71,48 @@ representing the moment-to-moment heart-rate of a listener. Heart rate is
 related to arousal level and so we might use our data to identify passages
 that tend to arouse listeners. Since the average heart-rate of listeners
 differs, we are interested primarily in the rate-of-change. We can use the
-`xdelta <../../man/xdelta>`_ command to calculate the differences in heart-rate between
+|xdelta|_ command to calculate the differences in heart-rate between
 successive values.
 
-> ``xdelta -s = heart.dat > changes``
+.. code-block:: bash
+
+	xdelta -s = heart.dat > changes
 
 The example below displays the input (left) spine and the corresponding
 output (right) spine for the above command:
 
-> ``**heart*Xheart
-> =133=133
-> 550
-> 561
-> 55-1
-> =134=134
-> 583
-> 56-2
-> 55-1
-> =135=135
-> 572
-> 55-2
-> 561
-> =136=136
-> 55-1
-> 605
-> 622
-> =137=137
-> 61-1
-> 59-2
-> 590
-> =138=138
-> *-*-``
+.. code-block:: humdrum
+
+	**heart*Xheart
+	=133=133
+	550
+	561
+	55-1
+	=134=134
+	583
+	56-2
+	55-1
+	=135=135
+	572
+	55-2
+	561
+	=136=136
+	55-1
+	605
+	622
+	=137=137
+	61-1
+	59-2
+	590
+	=138=138
+	*-*-
 
 A certain amount of heart-rate variation is to be expected because of
 monitoring equipment and other variables. So we are primarily interested in
 large changes of heart-rate, such as the change occurring in measure 136. The
-`recode <../../man/recode>`_ command allows us to classify numerical data according to value
+|recode|_ command allows us to classify numerical data according to value
 or range. In the above case, we may be interested in identifying acceleration
-or decelerations that exceed some threshold. The **recode** command requires
+or decelerations that exceed some threshold. The |recode|_ command requires
 that the user supply a *reassignment file* that specifies how numerical
 values are to be reassigned. In our heart-rate application, we might create
 the following reassignment file, named ``reassign``. Reassignment files obey
@@ -76,12 +129,14 @@ numerical value is less than -3, then output the string "``-event``";
 otherwise output a string consisting of an isolated period (``.``). We can
 invoke an appropriate command as follows:
 
-> ``recode -f reassign -i '**Xheart' -s ^= changes``
+.. code-block:: bash
 
-The **-f** option is required, and is used to identify the file containing
-the reassignment information. The **-i** option is also required, and is used
+	recode -f reassign -i '**Xheart' -s ^= changes
+
+The ``-f`` option is required, and is used to identify the file containing
+the reassignment information. The ``-i`` option is also required, and is used
 to identify the exclusive interpretation for the data to be processed. The
-**-s** option tells **recode** to skip records matching some specified
+``-s`` option tells |recode|_ to skip records matching some specified
 regular expression -- in this case, to skip barlines. Finally, "``changes``"
 is the name of our input file.
 
@@ -112,7 +167,7 @@ example is given below:
 > =138
 > *-``
 
-Notice that we have used **recode** to drastically reduce the volume of data
+Notice that we have used |recode|_ to drastically reduce the volume of data
 by transforming the input into a set of more basic cateogires.
 
 Having constructed our new output spine, we can further process this
@@ -120,7 +175,7 @@ information in various ways. For example, we might assemble this spine to our
 original musical score. Then we might then use **grep -n** to located any
 points in the score where a heart-rate related event has occurred.
 
-Permissible relational operators used by `recode <../../man/recode>`_ include the following:
+Permissible relational operators used by |recode|_ include the following:
 
 > ==equals
 > !=not equal
@@ -141,14 +196,14 @@ replacement is made. Consider the following reassignment file:
 The order of specification is important here. If the ``MEDIUM`` condition was
 specified prior to the ``HIGH`` condition, then all values greater than one
 hundred would be categorized as ``MEDIUM`` rather than as ``HIGH``. Only a
-single **else** condition is allowed in a reassignment file; when it is
+single**else**condition is allowed in a reassignment file; when it is
 present, the else statement should appear as the last reassignment.
 
 
 Classifying Intervals
 ---------------------
 
-The `recode <../../man/recode>`_ command has innumerable applications. Suppose we wanted to
+The |recode|_ command has innumerable applications. Suppose we wanted to
 determine how frequently ascending melodic leaps are followed by a descending
 step. Let's consider two different ways of distinguishing steps and leaps: a
 "semitone" method and a "diatonic" method. In the first method, we might
@@ -162,10 +217,10 @@ define a step interval as either one or two semitones. Our reassignment file
 > <=-3down-leap``
 
 Given this reassignment file, we can now begin our processing. In the first
-method, we translate to semitone data using `semits <../../man/semits>`_, translate to
-semitone-differences using `xdelta <../../man/xdelta>`_, and then classify into five
-interval types using `recode <../../man/recode>`_. The `context <../../man/context>`_ **-n 2** command will
-create pairs of interval types, then `rid <../../man/rid>`_, **sort** and **uniq -c** are
+method, we translate to semitone data using |semits|_\ , translate to
+semitone-differences using |xdelta|_\ , and then classify into five
+interval types using |recode|_\ . The |context|_\ ``-n 2`` command will
+create pairs of interval types, then |rid|_\ ,**sort**and **uniq -c** are
 used to generate an inventory. Finally, we use `grep <http://en.wikipedia.org/wiki/Grep>`_ to identify what
 happens following ascending leaps:
 
@@ -177,7 +232,7 @@ happens following ascending leaps:
 An alternative way of distinguishing steps from leaps is by diatonic
 interval. For example, we might consider a diminished third to be a leap,
 while an augmented second may be considered a step. In this case, we can use
-the `mint <../../man/mint>`_ command to determine the melodic interval size; the **-d**
+the |mint|_ command to determine the melodic interval size; the ``-d``
 option limits the output to diatonic intervals and excludes the interval
 quality (perfect, major, minor, etc.). The appropriate reassignment file
 would be:
@@ -199,7 +254,7 @@ The appropriate command pipe would be:
 Clarinet Registers
 ------------------
 
-Consider another use of the `recode <../../man/recode>`_ command.  Imagine that we wanted to
+Consider another use of the |recode|_ command.  Imagine that we wanted to
 arrange Claude Debussy's *Syrinx* for soprano clarinet instead of flute. Our
 principle concern as arranger is determining what key would be especially
 well suited to the clarinet. Tone color is particularly important for this
@@ -210,14 +265,13 @@ and piercing), and the *throat* register (weak and breathy).
 
 **Example 22.1.** Clarinet registers (notated at concert pitch).
 
-> .. image:: guide.figures/ch22.1.gif
-
->
->> *chalemeau*throat**clarion**altissimo*
+.. image:: examples/ex22-1.svg
+	:align: center
+	:width: 100%
 
 Suppose we wanted to pick a key that satisfies two conditions: (1) it is not
 out of range for the clarinet, and (2) it minimizes the number of notes
-played in the throat register. We can use **recode** to classify all pitches
+played in the throat register. We can use |recode|_ to classify all pitches
 according to the following reassignments:
 
 > ``>=30too-high
@@ -227,7 +281,7 @@ according to the following reassignments:
 > >=-10chalemeau
 > elsetoo-low``
 
-Now we simply explore various transpositions using **trans** and create an
+Now we simply explore various transpositions using |trans|_ and create an
 inventory of pitch types. For Debussy's *Syrinx*, the minimum number of
 throat tones (without exceeding the clarinet's range) occurs when we
 transpose down a major sixth:
@@ -240,7 +294,7 @@ transpose down a major sixth:
 Open and Close Position Chords
 ------------------------------
 
-Inputs to the `recode <../../man/recode>`_ command can be quite sophisticated. Consider, for
+Inputs to the |recode|_ command can be quite sophisticated. Consider, for
 example, the task of classifying chords as "open" or "close" position.
 According to one definition, a chord is said to be in "open" position when
 the the interval separating the soprano and tenor voices is an octave or
@@ -257,9 +311,9 @@ voices. Our reassignment file might be as follows:
 > ``>12open``
 
 We will need to extract the soprano and tenor voices, translate the pitch
-representation to `**semits <../../rep/semits>`_ and use `ydelta <../../man/ydelta>`_ to calculate the
+representation to |**semits|_ and use |ydelta|_ to calculate the
 semitone distance between the two voices. In the following set of commands,
-we have also added the `ditto <../../man/ditto>`_ command to ensure that there are semitone
+we have also added the |ditto|_ command to ensure that there are semitone
 values for each sonority.
 
 > ``extract -i '*Itenor,*Isopran'`` *inputfile*`` | semits -x | ditto \
@@ -278,7 +332,7 @@ Flute Fingering Transitions
 ---------------------------
 
 There is no fixed limit to the length of a reassignment file. Consider for
-example, the following file named ``map``. Each `**semits <../../rep/semits>`_ value from C4
+example, the following file named ``map``. Each |**semits|_ value from C4
 (0) to C7 (36) has been assigned to a schematic representation of flute
 fingerings. The letter `X' indicates a closed key, whereas the letter `O'
 indicates an open key. The first letter pertains to the left thumb; the next
@@ -307,11 +361,13 @@ Fingerings are shown only for the first octave (from C4 to C5):
 Suppose we wanted to determine what kinds of fingering *transitions* occur in
 Joachim Quantz's flute concertos. Since instrument fingerings are insensitive
 to enharmonic spelling, an appropriate input representation would be
-`**semits <../../rep/semits>`_. Having used `recode <../../man/recode>`_ to translate the pitches to
+|**semits|_\ . Having used |recode|_ to translate the pitches to
 fingerings, we can then use **context -n 2** to generate diads of successive
 finger combinations.
 
-> ``semits con* | recode -f map -s = | context -n 2 -o = > fingers``
+.. code-block:: bash
+
+	semits con* | recode -f map -s = | context -n 2 -o = > fingers
 
 For example, if our input contains the pitch G5 followed by B4, the
 appropriate data record in the ``fingers`` file would be the following
@@ -322,19 +378,21 @@ Humdrum double-stop:
 We could create an inventory of finger transitions by continuing the
 processing:
 
-> ``rid -GLI fingers | sort | uniq -c | sort -n``
+.. code-block:: bash
+
+	rid -GLI fingers | sort | uniq -c | sort -n
 
 We could create a similar reassignment file containing fingers pertaining to
 the pre-Boehm flute. Suppose the revised reassignment file was called
 ``premodern``. We could determine how the finger transitions differ between
-the pre-Boehm traverse flute and the modern flute. In `Chapter 29 <../ch29>`_ we will
-see how the **diff** command can be used to identify differences between two
+the pre-Boehm traverse flute and the modern flute. In |Chapter 29|_ we will
+see how the**diff**command can be used to identify differences between two
 spines. This will allow us to identify specific places in the score where
 Baroque and modern fingerings differ.
 
-The **recode** command can be used for innumerable other kinds of
-classifications. For example, \*\*kern_ durations might be expressed in
-seconds (using the `dur <../../man/dur>`_ command), and the elapsed times then classified
+The |recode|_ command can be used for innumerable other kinds of
+classifications. For example, |**kern|_\ durations might be expressed in
+seconds (using the |dur|_ command), and the elapsed times then classified
 as *long*, *short* and *medium* (say). Sound pressure levels (in decibels)
 might be classified as dynamic markings (***ff***, ***mf***, ***mp***,
 ***pp***, etc.), and so on.
@@ -343,10 +401,10 @@ might be classified as dynamic markings (***ff***, ***mf***, ***mp***,
 Classifying with *humsed*
 ------
 
-The `recode <../../man/recode>`_ command is restricted to classifying numerical data only.
+The |recode|_ command is restricted to classifying numerical data only.
 For many applications, it is useful to be able to classify data according to
-non-numerical criteria. As we saw in `Chapter 14 <../ch14>`_, stream editors such as
-`sed <http://en.wikipedia.org/wiki/Sed>`_ and `humsed <../../man/humsed>`_ provide automated substitution operations. Such
+non-numerical criteria. As we saw in |Chapter 14|_\ , stream editors such as
+`sed <http://en.wikipedia.org/wiki/Sed>`_ and |humsed|_ provide automated substitution operations. Such
 string substitutions can be used for non-parametric classifying. We can
 illustrate this with **humsed.**
 
@@ -355,9 +413,9 @@ Suppose we wanted to classify various flute finger-transitions as either
 fingering, E5 to A5 is a moderate fingering, whereas C5 to D5 is difficult.
 As before, it is best to use a semitone representation so we don't need to
 consider differences in enharmonic pitch spelling. We can use the
-`semits <../../man/semits>`_ command to transform all pitches. Then we can use **context -n
+|semits|_ command to transform all pitches. Then we can use **context -n
 2** to generate pairs of successive pitches as double-stops. We can then
-create a **humsed** script file (let's call it ``difficulty``) containing
+create a |humsed|_ script file (let's call it ``difficulty``) containing
 substitutions such as the following:
 
 > ``s/5 7/easy/``[i.e. F4 to G4]
@@ -367,12 +425,14 @@ substitutions such as the following:
 
 We can apply the script as follows:
 
-> ``humsed -f difficulty sonata*``
+.. code-block:: bash
+
+	humsed -f difficulty sonata*
 
 Since there are a large number of possible pitch transitions, our script file
 is apt to be especially large. However, notes an octave apart have a high
 likelihood of having identical fingerings on the modern flute. A more
-succinct **humsed** script would deal with fingering transitions rather than
+succinct |humsed|_ script would deal with fingering transitions rather than
 pitch transitions.
 
 >
@@ -400,8 +460,8 @@ fingering transitions.
 Classifying Cadences
 --------------------
 
-Consider another application where we use **humsed** to classify cadences.
-Suppose we have Roman-numeral harmonic data (as provided by the `**harm <../../rep/harm>`_
+Consider another application where we use |humsed|_ to classify cadences.
+Suppose we have Roman-numeral harmonic data (as provided by the |**harm|_
 representation). In the case of Bach's chorale harmonizations, for example,
 cadences are clearly evident by the presence of pauses (designated by the
 semicolon). We can easily create a spine that identifies only cadences.
@@ -423,8 +483,7 @@ etc.
 ``s/^[IiVv].*$/./``
 
 (The precise file will depend on your preferred way of labeling cadences.)
-Remember that, unlike the **recode** command, all of the substitutions in a
-**humsed** or `sed <http://en.wikipedia.org/wiki/Sed>`_ script are applied to every input line. The final
+Remember that, unlike the |recode|_ command, all of the substitutions in a |humsed|_ or `sed <http://en.wikipedia.org/wiki/Sed>`_ script are applied to every input line. The final
 substitution causes any record beginning with either an *i*, *i*, *v* or *V*
 to be changed to a null data token. In effect, any progression that is not
 deemed to be an authentic, plagal or deceptive cadence is transformed to a
@@ -435,11 +494,11 @@ cadence spine using the following pipeline:
 >
 >> | humsed -f cadences | sed 's/\*\*harm/**cadences/'``
 
-We first extract the `**harm <../../rep/harm>`_ spine using **extract**. We then generate a
-sequence of two-chord progressions using **context** -- taking care to omit
-barlines (``-o =``). We then use **humsed** to run the script of cadence-name
+We first extract the |**harm|_ spine using |extract|_ . We then generate a
+sequence of two-chord progressions using |context|_ -- taking care to omit
+barlines (``-o =``). We then use |humsed|_ to run the script of cadence-name
 substitutions. Finally, we use the `sed <http://en.wikipedia.org/wiki/Sed>`_ command to change the name of the
-exclusive interpretation from `**harm <../../rep/harm>`_ to something more suitable --
+exclusive interpretation from |**harm|_ to something more suitable --
 ``cadences``.
 
 Many more sophisticated variants of this sort of procedure may be used. For
@@ -454,12 +513,14 @@ Orchestration
 
 One of the simplest classifications in a musical score is whether or not an
 instrument is sounding or resting. Suppose we extracted the viola part from
-Beethoven's Symphony No. 1. We might use the **ditto** command to ensure that
+Beethoven's Symphony No. 1. We might use the |ditto|_ command to ensure that
 each data record encodes either a note, rest, or barline:
 
-> ``extract -i '*Iviola' symphony1 | ditto -s =``
+.. code-block:: bash
 
-Let's append to this pipeline a **humsed** command that makes two string
+	extract -i '*Iviola' symphony1 | ditto -s =
+
+Let's append to this pipeline a |humsed|_ command that makes two string
 substitutions. The first substitution replaces all data records containing
 the lower-case letter ``r`` (i.e., rests) with the string ``-viola``. The
 second substitution changes any record that does not begin with either a
@@ -527,44 +588,60 @@ instrumental combinations in Beethoven's orchestration. For example, the
 following command will count the number of sonorities where the oboe and
 bassoon sound concurrently:
 
-> ``grep -c '+fagot.*+oboe' orchestra``
+.. code-block:: bash
+
+	grep -c '+fagot.*+oboe' orchestra
 
 It is better to express this count as a proportion of the total work. We can
 count the total number of sonorities in the work by omitting any leading plus
 or minus sign:
 
-> ``grep -c 'fagot.*oboe' orchestra``
+.. code-block:: bash
+
+	grep -c 'fagot.*oboe' orchestra
 
 How often are the oboe and bassoon resting at the same time?
 
-> ``grep -c '-fagot.*-oboe' orchestra``
+.. code-block:: bash
+
+	grep -c '-fagot.*-oboe' orchestra
 
 Excluding *tutti* sections, do the trumpet and flute tend to "repell" each
 others' presence?
 
-> ``grep '\-' orchestra | grep -c '+tromp.*-flt' orchestra``
-``grep '\-' orchestra | grep -c '+tromp.*+flt' orchestra``
-``grep '\-' orchestra | grep -c '-tromp.*-flt' orchestra``
-``grep '\-' orchestra | grep -c '-tromp.*+flt' orchestra``
+.. code-block:: bash
+
+	grep '\-' orchestra | grep -c '+tromp.*-flt' orchestra
+
+.. code-block:: bash
+
+	grep '\-' orchestra | grep -c '+tromp.*+flt' orchestra
+	grep '\-' orchestra | grep -c '-tromp.*-flt' orchestra
+	grep '\-' orchestra | grep -c '-tromp.*+flt' orchestra
 
 When all of the woodwinds are playing, which of the remaining instruments is
 Beethoven most likely to omit from the texture?
 
-> ``grep '+fagot.*+clars.*+oboe.*+flt' orchestra | grep -c '-cbass'``
-``grep '+fagot.*+clars.*+oboe.*+flt' orchestra | grep -c '-cello'``
-``grep '+fagot.*+clars.*+oboe.*+flt' orchestra | grep -c '-viola'``
-``grep '+fagot.*+clars.*+oboe.*+flt' orchestra | grep -c '-violn'``
+.. code-block:: bash
+
+	grep '+fagot.*+clars.*+oboe.*+flt' orchestra | grep -c '-cbass'
+
+.. code-block:: bash
+
+	grep '+fagot.*+clars.*+oboe.*+flt' orchestra | grep -c '-cello'
+	grep '+fagot.*+clars.*+oboe.*+flt' orchestra | grep -c '-viola'
+	grep '+fagot.*+clars.*+oboe.*+flt' orchestra | grep -c '-violn'
 etc.
 
 Many refinements can be added to this basic approach. For example, instead of
 classifying instruments as simply being "present" or "absent," we might
 distinguish various registers for each instrument -- as we did with the
-clarinet when describing **recode**. We could then determine whether
+clarinet when describing |recode|_ . We could then determine whether
 Beethoven tends to link, say, activity in the chalemeau register of the
 clarinet with low register activity in the strings.
 
 Further refinements might include relating orchestration to structural
-aspects of the music. For example, we might use **yank** to extract sections
+aspects of the music. For example, we might use |yank|_ to extract sections
 of movements; we could then compare possible differences of orchestration
 between the first and second themes, for example. Similarly, we could reduce
 instruments to instrument classes, and examine how brass, woodwinds, strings,
@@ -583,7 +660,7 @@ ranges of numerical values into a finite set of classes or categories; (2) a
 *non-parametric* classification maps one set of words or terms into a second
 (usually smaller) set of words (used to label various classes or categories).
 In this chapter, we have seen that, for any Humdrum representation,
-parametric classification can be done using the `recode <../../man/recode>`_ command and
+parametric classification can be done using the |recode|_ command and
 non-parametric classification can be achieved using the *substitution*
-operation provided by the `humsed <../../man/humsed>`_ command.
+operation provided by the |humsed|_ command.
 

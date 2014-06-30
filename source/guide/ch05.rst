@@ -1,9 +1,25 @@
+
+.. |Chapter 2|	replace:: Chapter 2
+.. _Chapter 2:	../ch02
+
+.. |humdrum|	replace:: humdrum
+.. _humdrum:	../../man/humdrum
+
+.. |**MIDI|	replace:: \*\*MIDI
+.. _\*\*MIDI:	../../rep/MIDI
+
+.. |**kern|	replace:: \*\*kern
+.. _\*\*kern:	../../rep/kern
+
+.. |**solfa|	replace:: \*\*solfa
+.. _\*\*solfa:	../../rep/solfa
+
 ================================
 Chapter 5: The Humdrum Syntax
 ================================
 
 In the previous chapters we have seen several examples of pre-defined Humdrum
-representations, such as \*\*kern_, `**solfa <../../rep/solfa>`_ and `**MIDI <../../rep/MIDI>`_.
+representations, such as |**kern|_\ _, |**solfa|_ and |**MIDI|_\ .
 These representations exhibit a number of common properties, including the
 manner in which the data are organized in spines. In this chapter, we provide
 a complete description of the Humdrum representation syntax. This chapter
@@ -50,7 +66,7 @@ comments, interpretations, or data records on the same line.
 Comment Records
 ---------------
 
-As we noted in `Chapter 2 <../ch02>`_, there are two kinds of comments: global comments
+As we noted in |Chapter 2|_\ , there are two kinds of comments: global comments
 and local comments. *Global comments* pertain to all concurrent parts,
 whereas *local comments* pertain to some specific column of data (such as a
 particular staff, instrument, note, finger, etc.). Comments are lines that
@@ -144,7 +160,7 @@ begins with a null token. Without the presence of interpretations, the
 meaning of this file is indeterminate. The file below contains two spines
 that have been labelled using Humdrum interpretations: ``
 
-> **left**right
+>**left**right
 > X.
 > .X
 > X.
@@ -172,7 +188,7 @@ Interpretations can be cascaded so that a single spine has more than one
 interpretation associated with it. This is done through the addition of
 tandem interpretations. Consider the following example: ``
 
-> **foot**foot**arm**arm
+>**foot**foot**arm**arm
 > *left*right*left*right
 > X..X
 > .XX.
@@ -517,11 +533,11 @@ The *humdrum* Command
 --------
 
 One of the most important commands in the Humdrum Toolkit is the
-`humdrum <../../man/humdrum>`_ command itself. This command is used to identify whether a
+|humdrum|_ command itself. This command is used to identify whether a
 file or other input stream conforms to the above Humdrum syntax. Where
-appropriate, the **humdrum** command issues error messages identifying the
+appropriate, the |humdrum|_ command issues error messages identifying the
 type and location of any syntactic transgressions. If no infractions are
-found, **humdrum** produces no output (i.e., in UNIX parlance "silence is
+found, |humdrum|_ produces no output (i.e., in UNIX parlance "silence is
 golden"). All of the commands in the Humdrum toolkit assume that the inputs
 given to them conform to the Humdrum syntax. Whenever you encounter a
 problem, you should always test the input to assure that it is in the proper

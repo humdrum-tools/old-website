@@ -69,11 +69,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../">The Humdrum User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ch01/">1. Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern(I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch03/">3. Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch04/">4. Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch05/">5. The Humdrum Syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern(II)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch07/">7. MIDI Output Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch08/">8. The Shell (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch09/">9. Searching with Regular Expressions</a></li>
@@ -377,18 +377,18 @@ intervals.</p>
 <p>As in the case of melodic intervals, harmonic intervals can be calculated
 according to a variety of units &#8211; including diatonic intervals, semitones,
 cents, frequency, and even cochlear coordinates. We will consider just two
-tools for calculating harmonic intervals: <strong>hint</strong> and <strong>ydelta.</strong></p>
+tools for calculating harmonic intervals: <a class="reference external" href="../../man/hint">hint</a> and <strong>ydelta.</strong></p>
 </div>
 <div class="section" id="harmonic-intervals-using-the-hint-command">
 <h2>Harmonic Intervals Using the <em>hint</em> Command<a class="headerlink" href="#harmonic-intervals-using-the-hint-command" title="Permalink to this headline">¶</a></h2>
 <p>The Humdrum <a class="reference external" href="../../man/hint">hint</a> command calculates harmonic intervals for pitch-
 related representations such as <a class="reference external" href="../../rep/kern">**kern</a>, <a class="reference external" href="../../rep/pitch">**pitch</a>,
-`` <a href="#id45"><span class="problematic" id="id46">`**solfg```_</span></a>, and <a class="reference external" href="../../rep/Tonh">**Tonh</a>. As in the case of the <strong>mint</strong> command,
+`` <a href="#id35"><span class="problematic" id="id36">`**solfg```_</span></a>, and <a class="reference external" href="../../rep/Tonh">**Tonh</a>. As in the case of the <a href="#id37"><span class="problematic" id="id38">|mint|_</span></a> command,
 output intervals are expressed as a combination of diatonic interval size
 plus interval quality (such as <a href="#id2"><span class="problematic" id="id3">`</span></a>perfect fourth&#8217; and <a href="#id4"><span class="problematic" id="id5">`</span></a>minor ninth&#8217;).</p>
-<p>In the default operation, <strong>hint</strong> calculates only explicit harmonic
+<p>In the default operation, <a class="reference external" href="../../man/hint">hint</a> calculates only explicit harmonic
 intervals; for sonorities containing more than two pitches, only stacked
-harmonic intervals are calculated. The output from the <strong>hint</strong> command
+harmonic intervals are calculated. The output from the <a class="reference external" href="../../man/hint">hint</a> command
 always consists of a single <a class="reference external" href="../../rep/hint">**hint</a> spine. Any number of spines may be
 present in the input, but only pitch-related spines are processed. Given the
 default invocation, the output corresponding to Example 15.1 is as follows:</p>
@@ -412,11 +412,11 @@ outputting of a hyphen (<tt class="docutils literal"><span class="pre">-</span><
 present, but there are no explicit harmonic intervals. Input records that
 contain no pitch tokens result in the outputting of a null token (.). If a
 single duplicated pitch is present, then the output will indicate a perfect
-unison (P1).  Unisons can be suppressed from the output via the <strong>-u</strong> option
-for <strong>hint</strong>.</p>
+unison (P1).  Unisons can be suppressed from the output via the <tt class="docutils literal"><span class="pre">-u</span></tt> option
+for <a class="reference external" href="../../man/hint">hint</a> .</p>
 <p>When more than two pitches are present in a sonority, <em>permuted harmonic
-intervals</em> can be calculated by invoking the <strong>-a</strong> option (i.e. <em>all</em>
-intervals). For example, with the <strong>-a</strong> option, the final chord in Example
+intervals</em> can be calculated by invoking the <tt class="docutils literal"><span class="pre">-a</span></tt> option (i.e. <em>all</em>
+intervals). For example, with the <tt class="docutils literal"><span class="pre">-a</span></tt> option, the final chord in Example
 15.1 would produce the following output:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**hint
 *all
@@ -427,7 +427,7 @@ M3 P5 P8 m3 m6 P4
 <p>Notice the presence of the <tt class="docutils literal"><span class="pre">*all</span></tt> tandem interpretation in the above
 output. This interpretation is added to the output in order to warn users
 that the representation should not be interpreted as stacked intervals.</p>
-<p><em>Bass-related harmonic intervals</em> can be calculated with the <strong>-l</strong> option.
+<p><em>Bass-related harmonic intervals</em> can be calculated with the <tt class="docutils literal"><span class="pre">-l</span></tt> option.
 In this case, harmonic intervals are calculated with respect to the lowest
 pitch in the sonority. This option is helpful in determining figured bass.
 For the final chord in Example 12.1 the corresponding output would be</p>
@@ -436,14 +436,16 @@ M3 P5 P8
 *-
 </pre></div>
 </div>
-<p>Two further options for <strong>hint</strong> allow the user to tailor how the intervals
-are represented. The <strong>-c</strong> option causes compound intervals such as a minor
+<p>Two further options for <a class="reference external" href="../../man/hint">hint</a> allow the user to tailor how the intervals
+are represented. The <tt class="docutils literal"><span class="pre">-c</span></tt> option causes compound intervals such as a minor
 tenth (m10) to be output as non-compound equivalents (m3). This means that
-the interval of an octave (P8) will be rendered as a unison (P1). The <strong>-d</strong>
+the interval of an octave (P8) will be rendered as a unison (P1). The <tt class="docutils literal"><span class="pre">-d</span></tt>
 option suppresses the outputting of interval qualities and results in only
 diatonic interval sizes being output. Again, this option is helpful in
 determining figured bass. The command:</p>
-<p>`` hint -clud``</p>
+<div class="highlight-bash"><div class="highlight"><pre>hint -clud
+</pre></div>
+</div>
 <p>will produce the following output for the final major chord in Example 12.1:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**hint
 3 5
@@ -453,11 +455,11 @@ determining figured bass. The command:</p>
 </div>
 <div class="section" id="propagating-data-using-the-ditto-command">
 <h2>Propagating Data Using the <em>ditto</em> Command<a class="headerlink" href="#propagating-data-using-the-ditto-command" title="Permalink to this headline">¶</a></h2>
-<p>In the default operation, <strong>hint</strong> calculates intervals only between pitches
+<p>In the default operation, <a class="reference external" href="../../man/hint">hint</a> calculates intervals only between pitches
 that are explicitly present in an input data record. This means that passing
 intervals are not calculated.</p>
 <p>In order to generate passing intervals, we will make use of the Humdrum
-<a class="reference external" href="../../man/ditto">ditto</a> command. The <strong>ditto</strong> command replaces null tokens with the
+<a class="reference external" href="../../man/ditto">ditto</a> command. The <a class="reference external" href="../../man/ditto">ditto</a> command replaces null tokens with the
 previous non-null data token in the same spine. Suppose we had an arbitrary
 input such as the following:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**flip  **flop
@@ -471,7 +473,7 @@ C       .
 *-      *-
 </pre></div>
 </div>
-<p>The effect of <strong>ditto</strong> would be the following:</p>
+<p>The effect of <a class="reference external" href="../../man/ditto">ditto</a> would be the following:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**flip  **flop
 A       xyz
 A       jkl
@@ -485,8 +487,10 @@ C       abc
 </div>
 <p>Each null token has been replaced by the preceding data token within the
 spine.</p>
-<p>Consider the effect of <strong>ditto</strong> on the **kern data in Example 15.1:</p>
-<p>`` ditto -p example15.1``</p>
+<p>Consider the effect of <a class="reference external" href="../../man/ditto">ditto</a> on the <a class="reference external" href="../../rep/kern">**kern</a> data in Example 15.1:</p>
+<div class="highlight-bash"><div class="highlight"><pre>ditto -p example15.1
+</pre></div>
+</div>
 <p>The following output results:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**kern  **kern
 *M4/4   *M4/4
@@ -503,12 +507,14 @@ spine.</p>
 *-      *-
 </pre></div>
 </div>
-<p>Notice that the half-note C5 has been repeated. The <strong>-p</strong> option has caused
+<p>Notice that the half-note C5 has been repeated. The <tt class="docutils literal"><span class="pre">-p</span></tt> option has caused
 each repetition of the data token to be placed in parentheses so they can be
 easily recognized. By using <strong>ditto,</strong> we have transformed previously passing
 intervals into explicit sonorities whose intervals can now be identified by
 <strong>hint.</strong> We can combine the two commands in a single pipeline:</p>
-<p>`` ditto example15.1 | hint``</p>
+<div class="highlight-bash"><div class="highlight"><pre>ditto example15.1 | hint
+</pre></div>
+</div>
 <p>The resulting output for Example 15.1 includes the two passing intervals (m7
 and m6) in the first measure:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**hint
@@ -527,7 +533,7 @@ M3 m3 P4
 </pre></div>
 </div>
 <p>The <a class="reference external" href="../../man/ditto">ditto</a>, command provides two additional options that are worthy of
-note: the <strong>-s</strong> and <strong>-c</strong> options. The <strong>-s</strong> option allows <strong>ditto</strong> to
+note: the <tt class="docutils literal"><span class="pre">-s</span></tt> and <tt class="docutils literal"><span class="pre">-c</span></tt> options. The <tt class="docutils literal"><span class="pre">-s</span></tt> option allows <a class="reference external" href="../../man/ditto">ditto</a> to
 skip or ignore the presence of certain data records. Suppose, for example,
 that we had a barline in the midst of some null tokens:</p>
 <p>&gt; A
@@ -540,33 +546,40 @@ types of data tokens, so the result might be:</p>
 &gt; A
 &gt; =
 &gt; A</p>
-<p>By providing <strong>ditto</strong> with a suitable regular expression, we can have the
-data token <a href="#id8"><span class="problematic" id="id9">`</span></a>A&#8217; skip over the barline:</p>
-<p>`` ditto -s ^=``</p>
+<p>By providing <a class="reference external" href="../../man/ditto">ditto</a> with a suitable regular expression, we can have the
+data token <a href="#id6"><span class="problematic" id="id7">`</span></a>A&#8217; skip over the barline:</p>
+<div class="highlight-bash"><div class="highlight"><pre>ditto -s ^<span class="o">=</span>
+</pre></div>
+</div>
 <p>Without this option, the final data token in the above example would be an
-equals-sign rather than the token <a href="#id10"><span class="problematic" id="id11">`</span></a>A&#8217;.</p>
-<p>The <strong>-c</strong> option for <strong>ditto</strong> allows the user to selectively identify which
+equals-sign rather than the token <a href="#id8"><span class="problematic" id="id9">`</span></a>A&#8217;.</p>
+<p>The <tt class="docutils literal"><span class="pre">-c</span></tt> option for <a class="reference external" href="../../man/ditto">ditto</a> allows the user to selectively identify which
 characters are propagated. For example, the following command will cause only
-the lower-case letters <a href="#id12"><span class="problematic" id="id13">`</span></a>a&#8217; and <a href="#id14"><span class="problematic" id="id15">`</span></a>b&#8217; to be propagated:</p>
-<p>`` ditto -c ab``</p>
+the lower-case letters <a href="#id10"><span class="problematic" id="id11">`</span></a>a&#8217; and <a href="#id12"><span class="problematic" id="id13">`</span></a>b&#8217; to be propagated:</p>
+<div class="highlight-bash"><div class="highlight"><pre>ditto -c ab
+</pre></div>
+</div>
 <p>This feature allows users to replicate only certain kinds of data &#8211; such as
 pitches, durations, dynamic marks, etc.</p>
-<p>As we will see in future chapters, the <strong>ditto</strong> command proves useful in a
+<p>As we will see in future chapters, the <a class="reference external" href="../../man/ditto">ditto</a> command proves useful in a
 wide variety of situations apart from calculating intervals.</p>
 </div>
 <div class="section" id="using-the-ditto-and-hint-commands">
 <h2>Using the <em>ditto</em> and <em>hint</em> Commands<a class="headerlink" href="#using-the-ditto-and-hint-commands" title="Permalink to this headline">¶</a></h2>
-<p>Let&#8217;s pause and consider some of the ways we might use the <strong>ditto</strong> and
-<strong>hint</strong> commands. First, let&#8217;s determine if some input contains a particular
+<p>Let&#8217;s pause and consider some of the ways we might use the <a class="reference external" href="../../man/ditto">ditto</a> and <a class="reference external" href="../../man/hint">hint</a> commands. First, let&#8217;s determine if some input contains a particular
 interval. Are there any augmented sixth intervals in Bach&#8217;s two-part
 inventions? The following commands look for explicit and passing sixths
-respectively. Notice the use of the <strong>-c</strong> option so octave equivalents will
+respectively. Notice the use of the <tt class="docutils literal"><span class="pre">-c</span></tt> option so octave equivalents will
 also be identified:</p>
-<p>`` hint -c inventio* | grep A6``
-`` ditto -s ^= inventio* | hint -c | grep A6``</p>
+<div class="highlight-bash"><div class="highlight"><pre>hint -c inventio* | grep A6
+ditto -s ^<span class="o">=</span> inventio* | hint -c | grep A6
+</pre></div>
+</div>
 <p>Are there any diminished octave intervals between any two concurrent notes in
 any of Beethoven&#8217;s piano sonatas?</p>
-<p>`` ditto -s ^= sonatas* | hint -a | grep d8``</p>
+<div class="highlight-bash"><div class="highlight"><pre>ditto -s ^<span class="o">=</span> sonatas* | hint -a | grep d8
+</pre></div>
+</div>
 <p>In orchestral works, some pairs of instruments are more likely than others to
 double each other at the unison or octave. What proportion of the intervals
 formed by the oboe and flute notes are doubled? Since we are looking for a
@@ -574,35 +587,39 @@ proportion, we need to make two counts: the total number of (explicit)
 intervals formed by the oboe and flute, and the number of those intervals
 that are octave equivalents. (We will assume that there is only one oboe and
 one flute part in the file <tt class="docutils literal"><span class="pre">Rimsky-K</span></tt>:)</p>
-<p>`` extract -i &#8216;<a href="#id16"><span class="problematic" id="id17">*</span></a>Ioboe,*Iflts&#8217; Rimsky-K | hint -c | rid -GLId &gt;
+<p>`` extract -i &#8216;<a href="#id14"><span class="problematic" id="id15">*</span></a>Ioboe,*Iflts&#8217; Rimsky-K | hint -c | rid -GLId &gt;
 &gt;&gt; | grep -c P1``
 &gt;
 &gt;
-`` extract -i &#8216;<a href="#id18"><span class="problematic" id="id19">*</span></a>Ioboe,*Iflts&#8217; Rimsky-K | hint -c | rid -GLId &gt;
+`` extract -i &#8216;<a href="#id16"><span class="problematic" id="id17">*</span></a>Ioboe,*Iflts&#8217; Rimsky-K | hint -c | rid -GLId &gt;
 &gt;&gt; | grep -c [MmPAd]``</p>
 <p>The second <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> counts the total number of intervals by looking for all
 of the interval qualities (major, minor, perfect, etc.)</p>
 <p>Suppose we have extracted two horn parts from an orchestral score. Are octave
 intervals between the horns more likely to occur on the dominant pitch or the
 tonic pitch?</p>
-<p>`` solfa horns &gt; temp1``
-`` hint horns &gt; temp2``
-`` assemble temp1 temp2 | grep -c ^do.*P8``
-`` assemble temp1 temp2 | grep -c ^so.*P8``</p>
+<div class="highlight-bash"><div class="highlight"><pre>solfa horns &gt; temp1
+hint horns &gt; temp2
+assemble temp1 temp2 | grep -c ^do.*P8
+assemble temp1 temp2 | grep -c ^so.*P8
+</pre></div>
+</div>
 </div>
 <div class="section" id="determining-implicit-harmonic-intervals">
 <h2>Determining Implicit Harmonic Intervals<a class="headerlink" href="#determining-implicit-harmonic-intervals" title="Permalink to this headline">¶</a></h2>
 <p>Recall that <em>implicit harmonic intervals</em> may be deemed to occur between
 tones that don&#8217;t actually sound at the same time. This arises when one part
 has a rest while the other part is sounding. Note that if we could eliminate
-rest tokens, then we could use <strong>ditto</strong> to repeat previous pitch tokens in
+rest tokens, then we could use <a class="reference external" href="../../man/ditto">ditto</a> to repeat previous pitch tokens in
 place of the rests and so generate implicit harmonic intervals.</p>
 <p>The <a class="reference external" href="../../man/humsed">humsed</a> command (described in <a class="reference external" href="../ch14">Chapter 14</a>) is well suited to this
-task. We want to transform any data token containing the letter <a href="#id20"><span class="problematic" id="id21">`</span></a>r&#8217; to a null
+task. We want to transform any data token containing the letter <a href="#id18"><span class="problematic" id="id19">`</span></a>r&#8217; to a null
 token. Consider the following substitution:</p>
-<p>`` humsed &#8216;s/.*r.*/. ./&#8217; example15.1``</p>
+<div class="highlight-bash"><div class="highlight"><pre>humsed <span class="s1">&#39;s/.*r.*/. ./&#39;</span> example15.1
+</pre></div>
+</div>
 <p>Unfortunately, this isn&#8217;t quite right. The above substitution will find any
-data record containing the letter <a href="#id22"><span class="problematic" id="id23">`</span></a>r&#8217; and transform the entire record to a
+data record containing the letter <a href="#id20"><span class="problematic" id="id21">`</span></a>r&#8217; and transform the entire record to a
 single null data record. We need to address individual data tokens. In this
 example, rest tokens may be in two possible positions: the first token in the
 record or the last token in the record. We need two different regular
@@ -610,14 +627,16 @@ expressions to address each of these conditions. First, a regular expression
 to identify rests in the first token:</p>
 <p>`` /^[^ ]*r[^ ]* /``</p>
 <p>(That is, the beginning of the record (^), followed by zero or more instances
-of any character other than a tab ([^ ]*), followed by the letter <a href="#id24"><span class="problematic" id="id25">`</span></a>r&#8217;,
+of any character other than a tab ([^ ]*), followed by the letter <a href="#id22"><span class="problematic" id="id23">`</span></a>r&#8217;,
 followed by zero or more instances of any character other than a tab ([^ ]*),
 followed by a tab.)</p>
 <p>Similarly, our second regular expression identifies rests in the last token:</p>
 <p>`` / [^ ]*r[^ ]*$/``</p>
 <p>Now we can eliminate rest tokens using the following two substitution
-commands within a single invocation of <strong>humsed</strong>:</p>
-<p>`` humsed &#8216;s/^[^ ]*r[^ ]* /. /; s/ [^ ]*r[^ ]*$/ ./&#8217; example15.1``</p>
+commands within a single invocation of <a class="reference external" href="../../man/humsed">humsed</a> :</p>
+<div class="highlight-bash"><div class="highlight"><pre>humsed <span class="s1">&#39;s/^[^ ]*r[^ ]* /. /; s/ [^ ]*r[^ ]*$/ ./&#39;</span> example15.1
+</pre></div>
+</div>
 <p>The following output results:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**kern  **kern
 *M4/4   *M4/4
@@ -659,9 +678,11 @@ output will identify some implicit intervals as well:</p>
 <div class="section" id="the-ydelta-command">
 <h2>The <em>ydelta</em> Command<a class="headerlink" href="#the-ydelta-command" title="Permalink to this headline">¶</a></h2>
 <p>Often it is useful to represent intervals by the number of semitones (or some
-other numerical value). We might begin by using the <strong>semits</strong> command to
+other numerical value). We might begin by using the <a href="#id39"><span class="problematic" id="id40">|semits|_</span></a> command to
 translate Example 15.1 to a <a class="reference external" href="../../rep/semits">**semits</a> representation.</p>
-<p>`` semits example15.1``</p>
+<div class="highlight-bash"><div class="highlight"><pre>semits example15.1
+</pre></div>
+</div>
 <p>The resulting output would be as follows:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**semits        **semits
 *M4/4   *M4/4
@@ -679,16 +700,18 @@ r       11
 </pre></div>
 </div>
 <p>Numerical differences for values on a single data record can be computed
-using the <a class="reference external" href="../../man/ydelta">ydelta</a> command. The <strong>ydelta</strong> command is comparable to
+using the <a class="reference external" href="../../man/ydelta">ydelta</a> command. The <a class="reference external" href="../../man/ydelta">ydelta</a> command is comparable to
 <a class="reference external" href="../../man/xdelta">xdelta</a>, however, numerical differences are calculated between
 simultaneous numerical values (delta-<em>y</em>) rather than between successive
 numerical values (delta-<em>x</em>).</p>
-<p>Like the <a class="reference external" href="../../man/hint">hint</a> command, <strong>ydelta</strong> always outputs a single spine. The
-user must specify which input spines are to be processed using the <strong>-i</strong>
-option. In the following command, only <a href="#id30"><span class="problematic" id="id31">**</span></a>semits input is to be processed:</p>
-<p>`` semits example15.1 | ydelta -s = -i &#8216;<a href="#id32"><span class="problematic" id="id33">**</span></a>semits&#8217;``</p>
-<p>The <strong>-s</strong> option allows the user to identify data records to be <em>skipped</em>
-while processing. In this case, the regular expression <a href="#id34"><span class="problematic" id="id35">`</span></a>=&#8217; is used to
+<p>Like the <a class="reference external" href="../../man/hint">hint</a> command, <a class="reference external" href="../../man/ydelta">ydelta</a> always outputs a single spine. The
+user must specify which input spines are to be processed using the <tt class="docutils literal"><span class="pre">-i</span></tt>
+option. In the following command, only <a href="#id24"><span class="problematic" id="id25">**</span></a>semits input is to be processed:</p>
+<div class="highlight-bash"><div class="highlight"><pre>semits example15.1 | ydelta -s <span class="o">=</span> -i <span class="s1">&#39;**semits&#39;</span>
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">-s</span></tt> option allows the user to identify data records to be <em>skipped</em>
+while processing. In this case, the regular expression <a href="#id26"><span class="problematic" id="id27">`</span></a>=&#8217; is used to
 identify barlines, so measure numbers will be excluded when processing the
 numerical data.</p>
 <p>The above command yields the following output:</p>
@@ -707,18 +730,20 @@ numerical data.</p>
 *-
 </pre></div>
 </div>
-<p>Notice that <strong>ydelta</strong> prepends the upper-case letter <cite>Y&#8217; to the given input
+<p>Notice that <a class="reference external" href="../../man/ydelta">ydelta</a> prepends the upper-case letter <cite>Y&#8217; to the given input
 interpretation. All output values are calculated with respect to the lowest
 value in the current data record. Hence, the ```4 7 12`</cite> in the last data
 record means that there are pitches 4 semitones above the lowest note, 7
 semitones above the lowest note, and 12 semitones above the lowest note. (If
 necessary, the lowest or offset value for each record can be output in square
-brackets using the <strong>-o</strong> option.)</p>
-<p>Like the <strong>hint</strong> command, <strong>ydelta</strong> calculates numerical intervals only
+brackets using the <tt class="docutils literal"><span class="pre">-o</span></tt> option.)</p>
+<p>Like the <a class="reference external" href="../../man/hint">hint</a> command, <a class="reference external" href="../../man/ydelta">ydelta</a> calculates numerical intervals only
 when more than one value is present on a given input data record. As in the
-case of <strong>hint,</strong> we might use the <strong>ditto</strong> command to propagate pitch
+case of <strong>hint,</strong> we might use the <a class="reference external" href="../../man/ditto">ditto</a> command to propagate pitch
 values &#8211; replacing all the null data tokens. A suitable command would be:</p>
-<p>`` semits example15.1 | ditto -s = | ydelta -s = -i &#8216;<a href="#id36"><span class="problematic" id="id37">**</span></a>semits&#8217;``</p>
+<div class="highlight-bash"><div class="highlight"><pre>semits example15.1 | ditto -s <span class="o">=</span> | ydelta -s <span class="o">=</span> -i <span class="s1">&#39;**semits&#39;</span>
+</pre></div>
+</div>
 <p>The resulting output would be:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**Ysemits
 *
@@ -741,23 +766,27 @@ values &#8211; replacing all the null data tokens. A suitable command would be:<
 <p>What is the average semitone distance between the cantus and altus voices in
 Lassus motets? We can answer this question by first extracting the
 appropriate voices and translating to a semitone representation.</p>
-<p>`` extract -f 1,2 motet* | semits &gt; temp1``</p>
-<p>Using <strong>ditto</strong> we can expand the pitched material so that concurrently-
-sounding tones will generate explicit intervals. We then use <strong>ydelta</strong> to
+<div class="highlight-bash"><div class="highlight"><pre>extract -f 1,2 motet* | semits &gt; temp1
+</pre></div>
+</div>
+<p>Using <a class="reference external" href="../../man/ditto">ditto</a> we can expand the pitched material so that concurrently-
+sounding tones will generate explicit intervals. We then use <a class="reference external" href="../../man/ydelta">ydelta</a> to
 calculate the actual semitone interval distances. The <a class="reference external" href="../../man/rid">rid</a> command can
 be used to eliminate non-data records, and the <strong>grep -v</strong> command can be
 used to further eliminate barlines. Finally, we can calculate the mean
-interval distance using the <strong>stats</strong> command:</p>
-<p>`` ditto -s = temp1 | ydelta -s = -i &#8216;<a href="#id38"><span class="problematic" id="id39">**</span></a>semits&#8217; | rid -GLId &gt;
+interval distance using the**stats**command:</p>
+<p>`` ditto -s = temp1 | ydelta -s = -i &#8216;<a href="#id28"><span class="problematic" id="id29">**</span></a>semits&#8217; | rid -GLId &gt;
 &gt;&gt; | grep -v = | stats``</p>
 <p>Suppose we have a two-part input. Are there tritone intervals (explicit and
 passing) that are not spelled as either an augmented fourth or diminished
-fifth? We can answer this question by using both <strong>hint</strong> and <strong>ydelta</strong> and
-a suitable sequence of <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> commands. The <strong>ditto</strong> command is used to
+fifth? We can answer this question by using both <a class="reference external" href="../../man/hint">hint</a> and <a class="reference external" href="../../man/ydelta">ydelta</a> and
+a suitable sequence of <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> commands. The <a class="reference external" href="../../man/ditto">ditto</a> command is used to
 ensure that both explicit and passing intervals are generated.</p>
-<p>`` ditto -s = 2part | semits | ydelta -s = -i &#8216;<a href="#id41"><span class="problematic" id="id42">**</span></a>semits&#8217; &gt; temp1``
-`` ditto -s = 2part | hint &gt; temp2``
-`` assemble temp1 temp2 | rid -GLId | grep ^6 | grep -v A4 &gt;
+<div class="highlight-bash"><div class="highlight"><pre>ditto -s <span class="o">=</span> 2part | semits | ydelta -s <span class="o">=</span> -i <span class="s1">&#39;**semits&#39;</span> &gt; temp1
+ditto -s <span class="o">=</span> 2part | hint &gt; temp2
+</pre></div>
+</div>
+<p>`` assemble temp1 temp2 | rid -GLId | grep ^6 | grep -v A4 &gt;
 &gt;&gt; | grep -v d5``</p>
 <p>Notice the use of <strong>grep -v</strong> to first exclude any records that match an
 augmented fourth, and then to exclude any remaining records that match a

@@ -1,3 +1,34 @@
+
+.. |assemble|	replace:: assemble
+.. _assemble:	../../man/assemble
+
+.. |cleave|	replace:: cleave
+.. _cleave:	../../man/cleave
+
+.. |encode|	replace:: encode
+.. _encode:	../../man/encode
+
+.. |humdrum|	replace:: humdrum
+.. _humdrum:	../../man/humdrum
+
+.. |midi|	replace:: midi
+.. _midi:	../../man/midi
+
+.. |perform|	replace:: perform
+.. _perform:	../../man/perform
+
+.. |thru|	replace:: thru
+.. _thru:	../../man/thru
+
+.. |trans|	replace:: trans
+.. _trans:	../../man/trans
+
+.. |veritas|	replace:: veritas
+.. _veritas:	../../man/veritas
+
+.. |**kern|	replace:: \*\*kern
+.. _\*\*kern:	../../rep/kern
+
 ========================================
 Chapter 37: Electronic Music Editing
 ========================================
@@ -55,7 +86,7 @@ pitch information.
 
 Note that it is always possible to incorporate additional information at a
 later date. Additional information can be inserted into a Humdrum encoding by
-using the `assemble <../../man/assemble>`_ and `cleave <../../man/cleave>`_ commands. In general, it is
+using the |assemble|_ and |cleave|_ commands. In general, it is
 important that the encoding of electronic documents not consume all of a
 researcher's efforts and resources. The most common problem that beset early
 projects in computational musicology was that researchers rarely got past the
@@ -129,7 +160,7 @@ parties. It is likely to take decades before the financial and legal issues
 are satisfactorily addressed.
 
 In some cases, you will be translating from one electronic format to another
--- such as from MIDI to \*\*kern_. Once again, be conscious of any
+-- such as from MIDI to |**kern|_\ _. Once again, be conscious of any
 copyright issues that are raised. Few experiences are more discouraging than
 discovering that your work cannot be distributed because you failed to
 consider seriously the copyright issues involved.
@@ -188,7 +219,7 @@ Encoding
 Once you have established your materials and have decided on the type of
 encoding, you can go ahead and begin encoding the documents in random order.
 Use whatever resources are available to you. These might include scanning
-software, MIDI performance capture, or the Humdrum `encode <../../man/encode>`_ command.
+software, MIDI performance capture, or the Humdrum |encode|_ command.
 Begin by encoding a sample section or sections. Spend some time determining
 ways to increase your productivity.
 
@@ -210,20 +241,24 @@ all parts into a single full score.
 Transposing Instruments
 -----------------------
 
-In the case of the \*\*kern representation, all parts are represented at
+In the case of the |**kern|_ representation, all parts are represented at
 concert pitch. It is typically easier to encode the parts as written and then
-transpose the result using the Humdrum `trans <../../man/trans>`_ command. For example,
+transpose the result using the Humdrum |trans|_ command. For example,
 material for B-flat trumpet or B-flat clarinet can be transposed using the
 following command:
 
-``trans -d -1 -c -2``
+.. code-block:: bash
+
+	trans -d -1 -c -2
 
 In the case of clarinet in A, a suitable transposition would be:
 
-``trans -d -2 -c -3``
+.. code-block:: bash
 
-The **trans** command adds a transposition interpretation to the output in
-order to identify that the material has been shifted. In the \*\*kern
+	trans -d -2 -c -3
+
+The |trans|_ command adds a transposition interpretation to the output in
+order to identify that the material has been shifted. In the |**kern|_
 representation, transposed instruments must be explicitly identified using a
 special "transposing-instrument interpretation" (see *Humdrum Reference
 Manual* -- Section 3 for details). A suitable interpretation can be created
@@ -299,7 +334,7 @@ A common encoding error is to render mid-movement double barlines as
 Ornamentation
 -------------
 
-The \*\*kern representation makes a distinction between whole-tone and
+The |**kern|_ representation makes a distinction between whole-tone and
 semitone trills and mordents. Typically, each ornament must be examined
 manually and the correct code selected.
 
@@ -308,8 +343,8 @@ sort of editorial decision will be necessary. One possibility is to add the
 kern `x' signifier immediately following the `T' or `t'. This indicates that
 the trill size is an "editorial interpretation."
 
-The \*\*kern representation treats appoggiaturas in a special way. In
-general, \*\*kern is oriented to representing things in a manner closer to
+The |**kern|_ representation treats appoggiaturas in a special way. In
+general, |**kern|_ is oriented to representing things in a manner closer to
 how they sound. Consequently, appoggiaturas are encoded as they would be
 logically performed. For example, a quarter-note preceded by an appoggiatura
 (small note) would be performed as two eighth-notes. Similarly, a dotted
@@ -342,7 +377,7 @@ include the space character:
 ``*>1st Theme``
 
 If you include section labels, you must also include a Humdrum "Expansion
-List" to indicate how the sections are connected. The Humdrum `thru <../../man/thru>`_
+List" to indicate how the sections are connected. The Humdrum |thru|_
 command causes a through-composed version of a file to be generated according
 to the expansion list. For example, an expansion list for a simple binary
 work may be encoded as:
@@ -356,7 +391,7 @@ Whenever a work/movement includes repeats or Da Capos, section labels and
 expansion lists must be encoded. In some cases, there is more than one way of
 interpreting how to realize the repeats. The most "conventional" realization
 should be encoded with the *unnamed expansion list.* This will specify the
-default expansion using the Humdrum **thru** command. Suppose for example,
+default expansion using the Humdrum |thru|_ command. Suppose for example,
 that you are encoding a typical minuet and trio. The conventional performance
 practice involves repeating all sections of both the minuet and trio, but
 then avoiding the repeats in the minuet following the Da Capo. A suitable
@@ -378,7 +413,7 @@ editorial footnotes, local comments, global comments, interpretation data,
 *sic* and *ossia* designations, version labels, sectional labels, and
 expansion lists.
 
-The \*\*kern_ representation provides several special-purpose signifiers
+The |**kern|_\ representation provides several special-purpose signifiers
 to help make explicit various classes of editorial amendments,
 interpretations, or commentaries. Five types of editorial signifiers are
 available: (1) *sic* (information is encoded literally, but is questionable)
@@ -391,7 +426,7 @@ intervention) signified by the ``X`` character; (5) *footnote* (accompanying
 local or global comment provides a text commentary pertaining to specified
 data token) signified by ``?``.
 
-One of the most onerous impositions of the \*\*kern representation is the
+One of the most onerous impositions of the |**kern|_ representation is the
 requirement that the music be interpreted into a coherent spine organization.
 Why not avoid interpreting the voicings?
 
@@ -489,29 +524,35 @@ Proof-reading Materials
 -----------------------
 
 Once you have encoded your document, you should create a error-checking
-strategy. The Humdrum `humdrum <../../man/humdrum>`_ command can be used to identify whether
+strategy. The Humdrum |humdrum|_ command can be used to identify whether
 the final encoded output conforms to the Humdrum syntax:
 
-``humdrum full.krn``
+.. code-block:: bash
 
-Use the Humdrum `**proof`_** **-k** command to identify any syntactical
-errors in any encoded \*\*kern data:
+	humdrum full.krn
 
-``proof -k full.krn``
+Use the Humdrum `**proof`_** ``-k`` command to identify any syntactical
+errors in any encoded |**kern|_ data:
+
+.. code-block:: bash
+
+	proof -k full.krn
 
 One of the best ways to ensure that musical data makes sense is to listen to
-it. The Humdrum `midi <../../man/midi>`_ and `perform <../../man/perform>`_ commands can be used to listen
-to your data. The **-c** option for **midi** causes the Humdrum data to be
+it. The Humdrum |midi|_ and |perform|_ commands can be used to listen
+to your data. The ``-c`` option for |midi|_ causes the Humdrum data to be
 displayed while the MIDI data is performed. This can further help in locating
 errors.
 
-``midi -c full.krn | perform``
+.. code-block:: bash
 
-The **perform** command allows you to *pause* (press the space bar), to
+	midi -c full.krn | perform
+
+The |perform|_ command allows you to *pause* (press the space bar), to
 *move* to a particular measure (type a measure number followed by enter), to
 increase (type <) or decrease (type >) the *tempo,* and to *return* to the
 beginning of the score (type enter). There are many other functions within
-the **perform** command; refer to the *Humdrum Reference Manual* -- section 4
+the |perform|_ command; refer to the *Humdrum Reference Manual* -- section 4
 for further details.
 
 
@@ -525,11 +566,11 @@ modification to this file that I've forgotten about? Has someone tampered
 with this data?
 
 Humdrum provides a means for ensuring that a particular file is what it
-purports to be. The `veritas <../../man/veritas>`_ command provides a formal means for
+purports to be. The |veritas|_ command provides a formal means for
 verifying that a given Humdrum file is identical to the original distribution
 file and has not been modified in some way.
 
-The **veritas** command works by looking for a VTS reference record in the
+The |veritas|_ command works by looking for a VTS reference record in the
 file. It then calculates a "checksum" for the file (excluding the VTS record
 itself) and compares this value with the encoded VTS value. If these values
 differ, a warning is issued that the file has been modified in some way.
@@ -545,7 +586,7 @@ command:
 the calculated checksum value. Finally, insert the ``!!!VTS: ``' reference
 record designator.
 
-You can check that everything is fine by invoking the **veritas** command:
+You can check that everything is fine by invoking the |veritas|_ command:
 
 > The command will complain only if the VTS checksum value does not
 correspond to the computed checksum for the file. Finally, be sure to include
@@ -559,7 +600,7 @@ Preparing a Distribution
 
 Finally, you may want to prepare the material you have encoded for public
 distribution. Rename the score files and collect them into a coherent
-repertory. If your data is encoded in the \*\*kern format, be sure to use
+repertory. If your data is encoded in the |**kern|_ format, be sure to use
 the ``.krn`` file extension. Place all resulting Humdrum files in a single
 directory.
 

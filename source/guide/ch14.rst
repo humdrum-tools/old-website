@@ -1,3 +1,37 @@
+
+.. |Chapter 21|	replace:: Chapter 21
+.. _Chapter 21:	../ch21
+
+.. |Chapter 7|	replace:: Chapter 7
+.. _Chapter 7:	../ch07
+
+.. |assemble|	replace:: assemble
+.. _assemble:	../../man/assemble
+
+.. |deg|	replace:: deg
+.. _deg:	../../man/deg
+
+.. |humsed|	replace:: humsed
+.. _humsed:	../../man/humsed
+
+.. |num|	replace:: num
+.. _num:	../../man/num
+
+.. |pattern|	replace:: pattern
+.. _pattern:	../../man/pattern
+
+.. |**MIDI|	replace:: \*\*MIDI
+.. _\*\*MIDI:	../../rep/MIDI
+
+.. |**harm|	replace:: \*\*harm
+.. _\*\*harm:	../../rep/harm
+
+.. |**kern|	replace:: \*\*kern
+.. _\*\*kern:	../../rep/kern
+
+.. |**pitch|	replace:: \*\*pitch
+.. _\*\*pitch:	../../rep/pitch
+
 =============================
 Chapter 14: Stream Editing
 =============================
@@ -10,15 +44,15 @@ example, to automatically transform a document from British spelling to
 American spelling. Stream editors are especially useful when processing large
 numbers of documents -- such as a series of files encoding some musical
 repertory. In this chapter we will introduce two stream editors: `sed <http://en.wikipedia.org/wiki/Sed>`_ and
-`humsed <../../man/humsed>`_.
+|humsed|_\ .
 
 
 The *sed* and *humsed* Commands
 ---------
 
-The `humsed <../../man/humsed>`_ command is simply a Humdrum version of the UNIX `sed <http://en.wikipedia.org/wiki/Sed>`_
-stream editor. The syntax and operation of `sed <http://en.wikipedia.org/wiki/Sed>`_ and **humsed** are
-virtually identical. However, **humsed** will modify only Humdrum data
+The |humsed|_ command is simply a Humdrum version of the UNIX `sed <http://en.wikipedia.org/wiki/Sed>`_
+stream editor. The syntax and operation of `sed <http://en.wikipedia.org/wiki/Sed>`_ and |humsed|_ are
+virtually identical. However, |humsed|_ will modify only Humdrum data
 records, whereas `sed <http://en.wikipedia.org/wiki/Sed>`_ will modify any type of record, including Humdrum
 comments and interpretations. Both stream editors provide operations for
 *substitution*, *insertion*, *deletion*, *transliteration*, *file-read* and
@@ -29,13 +63,12 @@ transform an input stream or document.
 Simple Substitutions
 --------------------
 
-The most frequently used stream-editing operation is substitution. Both
-**humsed** and `sed <http://en.wikipedia.org/wiki/Sed>`_ designate substitutions by the lower-case letter
+The most frequently used stream-editing operation is substitution. Both |humsed|_ and `sed <http://en.wikipedia.org/wiki/Sed>`_ designate substitutions by the lower-case letter
 ``s``. Substitutions require two strings: the *target string* to be replaced,
 and the *replacement string* to be introduced. The syntax for substitutions
 is as follows:
 
-> **s****
+>**s****
 
 No spaces are permitted between these elements. The delimiter can be any
 character; however, the same delimiter character must be used throughout the
@@ -56,10 +89,11 @@ either the target string or the replacement string it can be escaped using
 the backslash character.
 
 There are two ways to execute a substition operation such as given above. One
-way is to give the substitution as a command-line argument to `sed <http://en.wikipedia.org/wiki/Sed>`_ or
-**humsed**:
+way is to give the substitution as a command-line argument to `sed <http://en.wikipedia.org/wiki/Sed>`_ or |humsed|_ :
 
-``humsed s%A%B% filename``
+.. code-block:: bash
+
+	humsed s%A%B% filename
 
 Alternatively, the operation can be placed in a file (for example, named
 ``revise``):
@@ -67,7 +101,7 @@ Alternatively, the operation can be placed in a file (for example, named
 ``s%A%B%``
 
 Then the stream editor can be invoked to execute the operations contained in
-this file using the **-f** option:
+this file using the ``-f`` option:
 
 ``humsed -f revise ``*inputfile*
 
@@ -75,11 +109,11 @@ By default the output will be displayed on the screen. Using file-redirection
 (>) the output can be placed in some other file. Note that you should never
 redirect the output to the same file as the input -- this will destroy the
 original input file. If necessary, send the output to a temporary file, and
-then use the UNIX **mv** command to rename the output.
+then use the UNIX**mv**command to rename the output.
 
-Suppose that you had encoded a musical work in the \*\*kern representation.
+Suppose that you had encoded a musical work in the |**kern|_ representation.
 Having finished the encoding, you realize that what you thought were
-*pizzicato* marks are really *spiccato* marks. In the \*\*kern_
+*pizzicato* marks are really *spiccato* marks. In the |**kern|_\ _
 representation, pizzicatos are indicated by the double quote (``"``) whereas
 spiccatos are represented by the lower-case letter ``s``. We can change all
 pizzicato marks to spiccato marks using the following command:
@@ -91,7 +125,7 @@ shell, we have escaped the entire substitution operation by placing it in
 single quotes. (Alternatively, we could place a backslash immediately before
 the double-quote character.) Note also the presence of the ``g`` option at
 the end of the string. Permissible options include any positive integer or
-the letter ``g``. Without any option, the `sed <http://en.wikipedia.org/wiki/Sed>`_ and **humsed** substitute
+the letter ``g``. Without any option, the `sed <http://en.wikipedia.org/wiki/Sed>`_ and |humsed|_ substitute
 (s) operation will replace only the *first* occurrence of the string in each
 data record. The ``g`` option specifies a "global" substitution, in that all
 occurrences on a given data record are replaced. If the option consisted of
@@ -106,12 +140,12 @@ The *target string* in substitution operations is actually a regular
 expression. This means that we can specify patterns using the full power of
 regular expression syntax. Frequently, it is useful to eliminate certain
 kinds of information from a file. For example, we can eliminate all sharps
-and flats from a \*\*kern-format file as follows:
+and flats from a |**kern|_\ -format file as follows:
 
 ``humsed s/[#-]//g`` *inputfile*
 
 Suppose we wanted to eliminate all beaming information in a score. In the
-\*\*kern representation, open and closed beams are represented by ``L`` and
+|**kern|_ representation, open and closed beams are represented by ``L`` and
 ``J`` respectively; partial beams are represented by ``K`` and ``k``.
 
 ``humsed s/[JLkK]//g`` *inputfile*
@@ -123,10 +157,10 @@ information:
 
 Sometimes we need to restrict the circumstances where the data are
 eliminated. For example, we might want to eliminate all measure numbers.
-Eliminating all numbers from a \*\*kern file will have the undesirable
-consequence of eliminating all note durations as well. Most `humsed <../../man/humsed>`_
+Eliminating all numbers from a |**kern|_ file will have the undesirable
+consequence of eliminating all note durations as well. Most |humsed|_
 operations can be *preceded* by a regular expression delineated by slashes.
-This tells **humsed** to execute this substitution only if the data record
+This tells |humsed|_ to execute this substitution only if the data record
 matches the leading regular expression. For example, the following command
 eliminates measure numbers but not note durations:
 
@@ -138,16 +172,18 @@ this pattern look for zero or more instances of any number between zero and
 nine, and replace that by an empty string; do this substitution for all
 numbers on the current data record.
 
-Incidentally, Humdrum provides a `num <../../man/num>`_ command that can be used to
-insert numbers in data records. The `num <../../man/num>`_ command supports an elaborate
+Incidentally, Humdrum provides a |num|_ command that can be used to
+insert numbers in data records. The |num|_ command supports an elaborate
 set of options, but is not used often, so we won't describe it here. The
 following command renumbers all of the barlines in an input so that the first
 measure begins with the number 72. (Refer to the *Humdrum Reference Manual*
-for details regarding **num**.)
+for details regarding |num|_ .)
 
-``humsed /^=/sX=[0-9]*X=Xg`` *inputfile*`` | num -n ^= -x == -p = -o 72``
+.. code-block:: bash
 
-Suppose we wanted to eliminate all octave numbers from a `**pitch <../../rep/pitch>`_
+	humsed /^=/sX=[0-9]*X=Xg`` *inputfile*`` | num -n ^= -x == -p = -o 72
+
+Suppose we wanted to eliminate all octave numbers from a |**pitch|_
 representation. In this case we want to delete all numbers except when they
 occur in conjunction with a barline. Our substitution should occur only when
 the current record does not match a leading equals sign:
@@ -156,7 +192,7 @@ the current record does not match a leading equals sign:
 
 Suppose we wanted to determine which of two MIDI performances exhibits more
 dynamic range -- that is, which performance has a greater variability in key-
-down velocities. Recall from `Chapter 7 <../ch07>`_ that MIDI data tokens consist of
+down velocities. Recall from |Chapter 7|_ that MIDI data tokens consist of
 three elements separated by slashes (/). The third element is the key
 velocity. First, we want to eliminate key-up data tokens. These tokens can be
 distinguished by the minus sign associated with the second data element. An
@@ -179,9 +215,9 @@ The *stats* Command
 --------
 
 We can determine the range or variance of these velocity values by piping the
-output to the **stats** command. The **stats** command calculates basic
+output to the**stats**command. The**stats**command calculates basic
 statistical information for any input consisting of a column of numbers. A
-sample output from **stats** might appear as follows:
+sample output from**stats**might appear as follows:
 
 ``n:124
 > total:5700
@@ -210,17 +246,17 @@ as follows:
 >
 >> | rid -GLId | stats``
 
-The **extract** command has been added to ensure that we only process
-`**MIDI <../../rep/MIDI>`_ data; the `grep <http://en.wikipedia.org/wiki/Grep>`_ command ensures that possible barlines are
-eliminated, and the **rid** command eliminates comments and interpretations
-prior to passing the data to the **stats** command.
+The |extract|_ command has been added to ensure that we only process
+|**MIDI|_ data; the `grep <http://en.wikipedia.org/wiki/Grep>`_ command ensures that possible barlines are
+eliminated, and the |rid|_ command eliminates comments and interpretations
+prior to passing the data to the**stats**command.
 
 
 Eliminate Everything But ...
 ----------------------------
 
-A common use for `humsed <../../man/humsed>`_ is to eliminate signifiers that are not of
-interest. Stream editors like `sed <http://en.wikipedia.org/wiki/Sed>`_ and **humsed** can be used to
+A common use for |humsed|_ is to eliminate signifiers that are not of
+interest. Stream editors like `sed <http://en.wikipedia.org/wiki/Sed>`_ and |humsed|_ can be used to
 dramatically simplify a representation.
 
 Did Monteverdi use equivalent numbers of sharps and flats? Or did he favor
@@ -228,9 +264,11 @@ one accidental over the other? A simple way to determine this is to throw
 away everything but the sharps and flats. We can generate an inventory of
 just sharps and flats:
 
-``humsed 's/[^#-]//g' montev* | rid -GLId | sort | uniq -c``
+.. code-block:: bash
 
-In some tasks, we might wish to transform a \*\*kern-format file so that
+	humsed 's/[^#-]//g' montev* | rid -GLId | sort | uniq -c
+
+In some tasks, we might wish to transform a |**kern|_\ -format file so that
 only pitch-related information is preserved:
 
 ``humsed 's/[^a-gA-G#-]//g'`` *inputfile*
@@ -244,7 +282,7 @@ The following command replaces all data tokens by null tokens:
 by zero or more instances of not-a-tab characters, by a single period
 character.) This sort of command can be useful in generating a file that
 maintains the *structure* but not the *content* of some document.
-Incidentally, neither the `sed <http://en.wikipedia.org/wiki/Sed>`_ nor the **humsed** commands support
+Incidentally, neither the `sed <http://en.wikipedia.org/wiki/Sed>`_ nor the |humsed|_ commands support
 extended regular expressions, so we are not able to use the ``+``
 metacharacter in the above substitution.
 
@@ -265,10 +303,10 @@ Note that this is functionally equivalent to:
 ``grep -v ^=`` *inputfile*
 
 In the general case, **humsed /.../d** is preferable to **grep -v**. Remember
-that `humsed <../../man/humsed>`_ only manipulates Humdrum data records; it never touches
+that |humsed|_ only manipulates Humdrum data records; it never touches
 comments or interpretations. The `grep <http://en.wikipedia.org/wiki/Grep>`_ command has no such restriction.
 Consider, for example, the following command to eliminate grace notes
-(acciaccaturas) from a \*\*kern-format file.
+(acciaccaturas) from a |**kern|_\ -format file.
 
 ``humsed '/q/d'`` *inputfile*
 
@@ -282,16 +320,18 @@ letter `q'.
 Suppose that we wanted to know whether a melody still evokes a certain key
 perception even if we eliminate all the tonic pitches. First we translate the
 representation to scale degree and assemble this file with the original
-\*\*kern representation for the melody.
+|**kern|_ representation for the melody.
 
-`deg <../../man/deg>`_ *input*`` > temp``
-`assemble <../../man/assemble>`_ *input*`` temp | humsed '/1$/d' | midi | perform``
+|deg|_\ *input*`` > temp``
+|assemble|_\ *input*`` temp | humsed '/1$/d' | midi | perform``
 
 Of course deleting all of the tonic notes will disrupt the original rhythm.
 An alternative is to replace all tonic pitches by rests:
 
-``deg ``*input*`` > temp``
-`assemble <../../man/assemble>`_ *input*`` temp | humsed '/1$/s%[A-Ga-g#-]*%r%' | midi \
+.. code-block:: bash
+
+	deg ``*input*`` > temp
+|assemble|_\ *input*`` temp | humsed '/1$/s%[A-Ga-g#-]*%r%' | midi \
 >
 >> | perform``
 
@@ -299,7 +339,9 @@ Perhaps we might want to eliminate all the pitch information, and simply
 listen to the rhythmic structure of a work. That is, we might change all of
 the pitches in a work to a single pitch -- in the following case, middle C:
 
-``humsed 's/[A-Ga-g#-]*/c/' | midi | perform``
+.. code-block:: bash
+
+	humsed 's/[A-Ga-g#-]*/c/' | midi | perform
 
 
 Adding Information
@@ -307,7 +349,7 @@ Adding Information
 
 The substitute command can also be used to add information to points in a
 Humdrum input. For example, we might wish to add an explicit breath-mark
-(``,``) to the end of each phrase in a \*\*kern-format input:
+(``,``) to the end of each phrase in a |**kern|_\ -format input:
 
 ``humsed s/}/},/g`` *inputfile*
 
@@ -316,7 +358,7 @@ substitution is a standard stream-editing convention which means "the matched
 string." Suppose we want to add a tenuto mark to every quarter-note in a
 work. The following substitution seeks the number `4' followed by any
 character that is not a digit or period. This pattern is replaced by itself
-(&) followed by a tilde (~), the \*\*kern_ signifier for a tenuto mark:
+(&) followed by a tilde (~), the |**kern|_\ signifier for a tenuto mark:
 
 ``humsed s/4[^0-9.]/&~/g`` *inputfile*
 
@@ -326,7 +368,7 @@ Multiple Substitutions
 
 Some tasks may require more than one substitution command. Multiple
 operations can be invoked by separating each operation by a semicolon. In the
-following example, we change all \*\*kern quarter-notes to eighth-note
+following example, we change all |**kern|_ quarter-notes to eighth-note
 durations:
 
 ``humsed 's/4[A-Ga-g]/8&/g; s/84/8/g'`` *inputfile*
@@ -344,12 +386,12 @@ Switching Signifiers
 In some situations, we will want to switch two or more signifiers -- make all
 A's B's and all B's A's. These sorts of tasks require three substitutions and
 involve creating a unique temporary string. For example, the following
-command changes all \*\*kern_ up-bows to down-bows and vice versa.
+command changes all |**kern|_\ up-bows to down-bows and vice versa.
 
 ``humsed 's/u/ABC/g; s/v/u/g; s/ABC/v/g'`` *inputfile*
 
 The first substitution changes down-bows (``u``') to the unique temporary
-string ``ABC``. (In the \*\*kern representation ``ABC`` is an illegal pitch
+string ``ABC``. (In the |**kern|_ representation ``ABC`` is an illegal pitch
 representation, so it is bound to be a unique character string.) The second
 substitution changes up-bows (``v``) to down-bows. The third substitution
 changes occurrences of the temporary string ``ABC`` to up-bows.
@@ -360,8 +402,8 @@ Executing from a File
 
 When several instructions are involved in stream editing, it can be
 inconvenient to type multiple operations on the command line. It is easier to
-place the editing instructions in a file, and use the **-f** option (with
-either `sed <http://en.wikipedia.org/wiki/Sed>`_ or `humsed <../../man/humsed>`_) to execute from the file. Consider, for
+place the editing instructions in a file, and use the ``-f`` option (with
+either `sed <http://en.wikipedia.org/wiki/Sed>`_ or |humsed|_\ ) to execute from the file. Consider, for
 example, the task of rhythmic diminution, where the durations of notes are
 halved. We might create a file called ``diminute`` containing the following
 operations:
@@ -387,10 +429,10 @@ diminution values. We can execute these commands as follows:
 Writing to a File
 -----------------
 
-A useful feature of `humsed <../../man/humsed>`_ is the "write" or ``w`` operation. This
+A useful feature of |humsed|_ is the "write" or ``w`` operation. This
 operation causes a line to be written to the end of a specified file.
 Suppose, for example, we wanted to collect all seventh chords into a separate
-file called ``sevenths``. With a `**harm <../../rep/harm>`_-format input, the appropriate
+file called ``sevenths``. With a |**harm|_\ -format input, the appropriate
 command would be:
 
 ``humsed '/7/w sevenths'`` *inputfile.hrm*
@@ -405,40 +447,53 @@ Similarly, we could copy all sonorities containing pauses to the file
 
 Of course there are other ways of achieving the same goal:
 
-``yank -m ';' 0`` *inputfile*`` > pauses``
+.. code-block:: bash
+
+	yank -m ';' 0`` *inputfile*`` > pauses
 
 Or even:
 
-``grep ';'`` *inputfile*`` | grep -v '^[!*]' > pauses``
+.. code-block:: bash
+
+	grep ';'`` *inputfile*`` | grep -v '^[!*]' > pauses
 
 In some cases, a stream editor can be used to eliminate or modify data that
 will confound subsequent processing. For example, suppose we wanted to count
 the number of phrases that begin on the subdominant and the number of phrases
-that end on the subdominant. The `deg <../../man/deg>`_ command will allow us to identify
+that end on the subdominant. The |deg|_ command will allow us to identify
 subdominant pitches (via the number `4'). Since we would like to maintain the
-phrase indicators, we will avoid the **-x** option for **deg**. However, the
-**-x** option will pass *all* of the non-pitch related signifiers, including
+phrase indicators, we will avoid the ``-x`` option for |deg|_ . However, the
+``-x`` option will pass *all* of the non-pitch related signifiers, including
 the duration data which encodes numbers. Hence, we will not be able to
-distinguish the subdominant (`4') pitch from a \*\*kern quarter-note (`4').
+distinguish the subdominant (`4') pitch from a |**kern|_ quarter-note (`4').
 The problem is resolved by first eliminating all of the duration information
 (numbers) from the original input:
 
-``humsed 's/[0-9.]//g' input.krn | deg | egrep -c '({.*4)|4.*{)'``
-``humsed 's/[0-9.]//g' input.krn | deg | egrep -c '(}.*4)|4.*})'``
+.. code-block:: bash
+
+	humsed 's/[0-9.]//g' input.krn | deg | egrep -c '({.*4)|4.*{)'
+	humsed 's/[0-9.]//g' input.krn | deg | egrep -c '(}.*4)|4.*})'
 
 In texts for vocal works, identify the number of notes per syllable.
 
-``extract -i '**kern'`` *input*`` | humsed 's/X//g' > tune``
-``extract -i '`**silbe`_'`` *input*`` | humsed 's/[a-zA-Z]*/X/' > lyrics``
+.. code-block:: bash
+
+	extract -i '**kern'`` *input*`` | humsed 's/X//g' > tune
+	extract -i '`**silbe`_'`` *input*`` | humsed 's/[a-zA-Z]*/X/' > lyrics
 ``assemble tune lyrics | cleave -i '**kern,**silbe' -o '**new' \
 >
 >> > combined``
 >
-``context -b X -o '[r=]' combined | rid -GLId | awk '{print NF}'``
+
+.. code-block:: bash
+
+	context -b X -o '[r=]' combined | rid -GLId | awk '{print NF}'
 
 Identify the number of notes per word rather than per syllable.
 
-``extract -i '**kern'`` *input*`` > tune``
+.. code-block:: bash
+
+	extract -i '**kern'`` *input*`` > tune
 ``extract -i '**silbe'`` *input*`` | humsed 's/^[^-].*[^-]$/BEGIN_END/;
 s/-.*[^-]$/END/; s/^[^-].*-/BEGIN/' > lyrics``
 ``assemble tune lyrics | cleave -i '**kern,**silbe' -o '**new' \
@@ -453,7 +508,7 @@ s/-.*[^-]$/END/; s/^[^-].*-/BEGIN/' > lyrics``
 Reading a File as Input
 -----------------------
 
-Another useful feature is the `humsed <../../man/humsed>`_ "read" or ``r`` operation.
+Another useful feature is the |humsed|_\ "read" or ``r`` operation.
 Whenever a leading regular expression is matched, a file is read in at that
 point. Suppose, for example, that we want to annotate a file with Humdrum
 comments identifying the presence of cadential 6-4 chords. First, we might
@@ -463,7 +518,7 @@ create a file -- ``comment.6-4`` -- containing the following Humdrum comment:
 
 	!! A likely cadential 6-4 progression.
 
-We can use the Humdrum `pattern <../../man/pattern>`_ command (to be described in `Chapter 21 <../ch21>`_), as follows:
+We can use the Humdrum |pattern|_ command (to be described in |Chapter 21|_\ ), as follows:
 
 File ``template``:
 
@@ -475,8 +530,10 @@ File ``template``:
 
 Command:
 
-``pattern -f template`` *inputfile*`` > output``
-``humsed 'cadential-64/r comment.6-4' output > commented.output``
+.. code-block:: bash
+
+	pattern -f template`` *inputfile*`` > output
+	humsed 'cadential-64/r comment.6-4' output > commented.output
 
 --------
 
@@ -484,12 +541,12 @@ Command:
 Reprise
 -------
 
-The `sed <http://en.wikipedia.org/wiki/Sed>`_ and `humsed <../../man/humsed>`_ commands provide stream editors that can
+The `sed <http://en.wikipedia.org/wiki/Sed>`_ and |humsed|_ commands provide stream editors that can
 automatically edit a data stream. We've seen that multiple operations can be
 carried out, either from the command line or from a file containing editing
-instructions. It should be noted that the `sed <http://en.wikipedia.org/wiki/Sed>`_ and **humsed** commands
+instructions. It should be noted that the `sed <http://en.wikipedia.org/wiki/Sed>`_ and |humsed|_ commands
 provide many more editing facilities than those discussed in this chapter.
-Some 25 operations are provided by `sed <http://en.wikipedia.org/wiki/Sed>`_ and **humsed**. For example,
+Some 25 operations are provided by `sed <http://en.wikipedia.org/wiki/Sed>`_ and |humsed|_ . For example,
 segments of text can be stored in various buffers, the contents of these
 buffers modified, and the results placed anywhere in the output text. Markers
 can be set at particular points and conditional branch statements executed.

@@ -69,11 +69,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../">The Humdrum User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ch01/">1. Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern(I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch03/">3. Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch04/">4. Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch05/">5. The Humdrum Syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern(II)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch07/">7. MIDI Output Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch08/">8. The Shell (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch09/">9. Searching with Regular Expressions</a></li>
@@ -304,16 +304,15 @@ considering the representation and manipulation of sound-related
 information. In this chapter we introduce some special-purpose tools
 related to sound analysis, sound synthesis, and auditory perception. We
 have already encountered the
-<a class="reference external" href="../../rep/freq">**freq</a> &lt;representations/freq.rep.html&gt;`__ and
-<a class="reference external" href="../../rep/cents">**cents</a> &lt;representations/cents.rep.html&gt;`__ representations in
+<a class="reference external" href="../../rep/freq">**freq</a>&lt;representations/freq.rep.html&gt;`__ and
+<a class="reference external" href="../../rep/cents">**cents</a>&lt;representations/cents.rep.html&gt;`__ representations in
 <a class="reference external" href="guide04.html">Chapter 4.</a> Much of this chapter will center on the
-<a class="reference external" href="../../rep/spect">**spect</a> &lt;representations/spect.rep.html&gt;`__ representation. Three
-tools will be discussed in connection with <a class="reference external" href="../../rep/spect">**spect</a>: the <strong>spect</strong>,
-<strong>mask</strong> and <strong>sdiss</strong> commands. <strong>Spect</strong> accesses a database of
+<a class="reference external" href="../../rep/spect">**spect</a>&lt;representations/spect.rep.html&gt;`__ representation. Three
+tools will be discussed in connection with <a class="reference external" href="../../rep/spect">**spect</a>: the <a href="#id25"><span class="problematic" id="id26">|spect|_</span></a> ,**mask**and**sdiss**commands. <a href="#id27"><span class="problematic" id="id28">|Spect|_</span></a> accesses a database of
 analyzed instrument tones to generate harmonic spectra for all notes for
-various orchestral instruments over their complete ranges; <strong>mask</strong> can
+various orchestral instruments over their complete ranges;**mask**can
 be used to modify a spectrum so that masked frequencies are attenuated
-in a manner that simulates human hearing; <strong>sdiss</strong> characterizes the
+in a manner that simulates human hearing;**sdiss**characterizes the
 degree of sensory dissonance for arbitrary sonorities.</p>
 <p>In addition, we will consider how Humdrum data can be used in
 conjunction with non-Humdrum tools &#8211; such as digital sound editors,
@@ -323,7 +322,7 @@ score data for the popular <em>Csound</em> digital sound synthesis language.</p>
 <div class="section" id="the-spect-representation">
 <h2>The <em>**spect</em> Representation<a class="headerlink" href="#the-spect-representation" title="Permalink to this headline">¶</a></h2>
 <p>A useful predefined sound-related representations that in Humdrum is the
-<a class="reference external" href="../../rep/spect">**spect</a> scheme. The <a class="reference external" href="../../rep/spect">**spect</a> &lt;representations/spect.rep.html&gt;`__
+<a class="reference external" href="../../rep/spect">**spect</a> scheme. The <a class="reference external" href="../../rep/spect">**spect</a>&lt;representations/spect.rep.html&gt;`__
 representation is used to represent successive acoustic spectra. Each
 data record represents a complete spectrum specified as a set of
 concurrent discrete frequency components. Each frequency component in
@@ -347,27 +346,27 @@ differs. In the <a class="reference external" href="../../rep/spect">**spect</a>
 requirement that the spectral components be encoded in any particular
 order. However, it is often convenient to have the components assembled
 from left to right in ascending frequency order. This can be achieved by
-passing an input through the <strong>spect</strong> command.</p>
+passing an input through the <a href="#id29"><span class="problematic" id="id30">|spect|_</span></a> command.</p>
 <p><strong>Example 36.1</strong></p>
 <blockquote>
 <div></div></blockquote>
 </div>
 <div class="section" id="the-sharc-database-and-spect-command">
 <h2>The SHARC Database and <em>spect</em> Command<a class="headerlink" href="#the-sharc-database-and-spect-command" title="Permalink to this headline">¶</a></h2>
-<p>More commonly, the <strong>spect</strong> command is used to generate a
-<a class="reference external" href="../../rep/spect">**spect</a> &lt;representations/spect.rep.html&gt;`__ (acoustic spectral
-data) output from a <a class="reference external" href="../../rep/semits">**semits</a> &lt;representations/semits.rep.html&gt;`__
-score input. The <strong>spect</strong> command recognizes instrument tandem
+<p>More commonly, the <a href="#id31"><span class="problematic" id="id32">|spect|_</span></a> command is used to generate a
+<a class="reference external" href="../../rep/spect">**spect</a>&lt;representations/spect.rep.html&gt;`__ (acoustic spectral
+data) output from a <a class="reference external" href="../../rep/semits">**semits</a>&lt;representations/semits.rep.html&gt;`__
+score input. The <a href="#id33"><span class="problematic" id="id34">|spect|_</span></a> command recognizes instrument tandem
 interpretations (e.g., *Iclarinet) and fetches a corresponding spectral
 data file (<tt class="docutils literal"><span class="pre">clarinet.spe</span></tt>). These files are derived from the SHARC
 database of music instrument spectra created by Gregory Sandell (1991).
 The file contains precise spectral measurements for recordings of the
 instrument playing each note throughout the instrument&#8217;s range. Suppose
-that the input to <strong>spect</strong> contains the note F#5 for oboe (i.e., semits
-value 18). Then <strong>spect</strong> will retrieve the spectral information for a
+that the input to <a href="#id35"><span class="problematic" id="id36">|spect|_</span></a> contains the note F#5 for oboe (i.e., semits
+value 18). Then <a href="#id37"><span class="problematic" id="id38">|spect|_</span></a> will retrieve the spectral information for a
 recording of an oboe playing F#5 and add it to the composite spectrum
 for the particular sonority.</p>
-<p>If more than one instrument is playing concurrently, then <strong>spect</strong> will
+<p>If more than one instrument is playing concurrently, then <a href="#id39"><span class="problematic" id="id40">|spect|_</span></a> will
 generate an output record representing the aggregate of all the spectral
 components generated by all of the sounding instruments.</p>
 <p>The SHARC database includes most orchestral instruments including
@@ -390,22 +389,22 @@ recordings that have been processed using the JPEG compression scheme.
 JPEG-encoded audio is indistinguishable from the original uncompressed
 audio, yet the scheme eliminates those aspects of the sound which are
 masked.</p>
-<p>The Humdrum <strong>mask</strong> command implements a common masking algorithm. It
+<p>The Humdrum**mask**command implements a common masking algorithm. It
 accepts as input any <a class="reference external" href="../../rep/spect">**spect</a> data, and for each sonority modifies
 the spectrum so that masked frequencies are attenuated accordingly.
 So-called &#8220;forward&#8221; and &#8220;backward&#8221; masking are not taken into account in
 this utlity. No options are provided, and the command is invoked as
 follows:</p>
 <blockquote>
-<div><tt class="docutils literal"><span class="pre">mask</span></tt> <em>inputfile</em>`` &gt; <a href="#id8"><span class="problematic" id="id9">``</span></a><em>outputfile</em></div></blockquote>
-<p>Both the output and input to the <strong>mask</strong> command are <a class="reference external" href="../../rep/spect">**spect</a>
+<div><tt class="docutils literal"><span class="pre">mask</span></tt> <em>inputfile</em>`` &gt; <a href="#id1"><span class="problematic" id="id2">``</span></a><em>outputfile</em></div></blockquote>
+<p>Both the output and input to the**mask**command are <a class="reference external" href="../../rep/spect">**spect</a>
 representations. A tandem interpretation (<tt class="docutils literal"><span class="pre">*masked</span></tt>) is added to the
 output to indicate that the sonorities already reflect the influence of
-masking. Some sound utilities (such as the <strong>sdiss</strong> command) already
+masking. Some sound utilities (such as the**sdiss**command) already
 take into account the effects of masking, and so an input containing the
 <tt class="docutils literal"><span class="pre">*masked</span></tt> interpretation will cause an error to be generated.
-Similarly, the <strong>mask</strong> command itself will generate an error if the
-input sonorities have already been modified using the <strong>mask</strong> command.</p>
+Similarly, the**mask**command itself will generate an error if the
+input sonorities have already been modified using the**mask**command.</p>
 </div>
 <div class="section" id="the-sdiss-command">
 <h2>The <em>sdiss</em> Command<a class="headerlink" href="#the-sdiss-command" title="Permalink to this headline">¶</a></h2>
@@ -419,22 +418,19 @@ are even known to be influenced by the personality of the listener.</p>
 established that one aspect of dissonance perception is related to the
 physiology of the ear. This aspect of dissonance is referred to as
 low-level or <em>sensory dissonance</em>.</p>
-<p>The <strong>sdiss</strong> command implements a measurement method for sensory
-dissonance described by Kameoka and Kuriyagawa (1969a/b). (The Humdrum
-<strong>sdiss</strong> command itself was written by Keith Mashinter.) The <strong>sdiss</strong>
-command characterizes the degree of sensory dissonance for successive
+<p>The**sdiss**command implements a measurement method for sensory
+dissonance described by Kameoka and Kuriyagawa (1969a/b). (The Humdrum**sdiss**command itself was written by Keith Mashinter.) The**sdiss**command characterizes the degree of sensory dissonance for successive
 vertical sonorities or acoustical moments. The command accepts as input
 one or more <a class="reference external" href="../../rep/spect">**spect</a> spines and produces a single
 <tt class="docutils literal"><span class="pre">sdiss</span></tt> &lt;representations/sdiss.rep.html&gt;`__ spine as output. For
-each <a class="reference external" href="../../rep/spect">**spect</a> data record, <strong>sdiss</strong> produces a single numerical
+each <a class="reference external" href="../../rep/spect">**spect</a> data record,**sdiss**produces a single numerical
 value representing the aggregate sensory dissonance. The greater the
 output value, the greater the dissonance.</p>
-<p>Example 36.2 illustrates some sample inputs and outputs for <strong>sdiss</strong>.
+<p>Example 36.2 illustrates some sample inputs and outputs for**sdiss**.
 The left-most spine provides double-stops for
-<a class="reference external" href="../../rep/kern">**kern</a> &lt;representations/kern.rep.html&gt;`__ data for violin. The
-middle spine provides corresponding <a class="reference external" href="../../rep/spect">**spect</a> data using the <strong>spect</strong>
-command. The right-most spine shows the result of passing the
-<a class="reference external" href="../../rep/spect">**spect</a> data through the <strong>sdiss</strong> command.</p>
+<a class="reference external" href="../../rep/kern">**kern</a>&lt;representations/kern.rep.html&gt;`__ data for violin. The
+middle spine provides corresponding <a class="reference external" href="../../rep/spect">**spect</a> data using the <a href="#id41"><span class="problematic" id="id42">|spect|_</span></a> command. The right-most spine shows the result of passing the
+<a class="reference external" href="../../rep/spect">**spect</a> data through the**sdiss**command.</p>
 <p><strong>Example 36.2</strong></p>
 <blockquote>
 <div></div></blockquote>
@@ -470,7 +466,7 @@ envelope, spectral content, etc. Example 36.3 shows a sample Csound
 score corresponding to the opening measures of a Mozart clarinet trio.</p>
 <p><strong>Example 36.3</strong> W.A. Mozart <em>Clarinet Quintet</em>.</p>
 <blockquote>
-<div><p><a href="#id15"><span class="problematic" id="id16">|image5|</span></a></p>
+<div><p><a href="#id21"><span class="problematic" id="id22">|image5|</span></a></p>
 <p><tt class="docutils literal"><span class="pre">;</span> <span class="pre">W.A.</span> <span class="pre">Mozart,</span> <span class="pre">Second</span> <span class="pre">trio</span> <span class="pre">from</span> <span class="pre">Clarinet</span> <span class="pre">Quintet</span></tt>
 <tt class="docutils literal"><span class="pre">f1</span> <span class="pre">0</span> <span class="pre">512</span> <span class="pre">10</span> <span class="pre">5</span> <span class="pre">3</span> <span class="pre">1</span> <span class="pre">;</span> <span class="pre">three</span> <span class="pre">harmonics</span> <span class="pre">in</span> <span class="pre">waveform</span> <span class="pre">table</span></tt>
 <tt class="docutils literal"><span class="pre">t0</span> <span class="pre">96;</span> <span class="pre">tempo</span> <span class="pre">of</span> <span class="pre">96</span> <span class="pre">beats</span> <span class="pre">per</span> <span class="pre">minute</span> <span class="pre">``</span>
@@ -649,12 +645,11 @@ up-to-date information.</p>
 <div class="section" id="reprise">
 <h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
 <p>In this chapter we have seen that Humdrum score-related data can be
-transformed into spectral information using the <strong>spect</strong> command. This
+transformed into spectral information using the <a href="#id43"><span class="problematic" id="id44">|spect|_</span></a> command. This
 allows us to reconstitute a score as a sequence of sonorous spectra &#8211;
-which might be used for studies in timbre or orchestration. The <strong>mask</strong>
-tool can be used to revise a spectral description so that it reflects
+which might be used for studies in timbre or orchestration. The**mask**tool can be used to revise a spectral description so that it reflects
 how listeners hear rather than the actual acoustical information
-present. The <strong>sdiss</strong> command can be used to characterize successive
+present. The**sdiss**command can be used to characterize successive
 spectra in terms of the estimated sensory dissonance.</p>
 <p>We have also seen that Humdrum data can be connected to other
 sound-related software, such as <em>Csound</em>. Since Humdrum data consists of

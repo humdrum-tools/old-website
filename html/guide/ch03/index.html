@@ -31,7 +31,7 @@
     <link rel="top" title="humdrum-tools 1 documentation" href="../../"/>
         <link rel="up" title="The Humdrum User Guide" href="../"/>
         <link rel="next" title="Chapter 4: Basic Pitch Translations" href="../ch04/"/>
-        <link rel="prev" title="Chapter 2: Representing Music Using **kern (I)" href="../ch02/"/>
+        <link rel="prev" title="Chapter 2: Representing Music Using **kern(I)" href="../ch02/"/>
    <link rel="stylesheet" type"text/css" href="../../_static/humdrum.css">
 
 
@@ -69,11 +69,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../">The Humdrum User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ch01/">1. Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern(I)</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Chapter 3: Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch04/">4. Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch05/">5. The Humdrum Syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern(II)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch07/">7. MIDI Output Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch08/">8. The Shell (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch09/">9. Searching with Regular Expressions</a></li>
@@ -320,8 +320,8 @@ by the name of a file. The command</p>
 <p>Most commands provide <em>options</em> that will modify the operation of the command
 in a particular way. In UNIX-style commands, options follow after the command
 name and are typically specified by a single letter preceded by a hyphen. The
-<strong>-k</strong> option with the <strong>census</strong> command will give further information
-pertaining to the Humdrum <a href="#id5"><span class="problematic" id="id6">`</span></a><strong>kern`representation. With the **-k</strong> option,
+<tt class="docutils literal"><span class="pre">-k</span></tt> option with the <a class="reference external" href="../../man/census">census</a> command will give further information
+pertaining to the Humdrum <cite>**kern`representation. With the `</cite>-k`` option,
 the output includes the number of notes in the file, the longest, shortest,
 highest, and lowest notes, the maximum number of concurrent notes or voices,
 the number of rests, and the number of barlines. For example, the command:</p>
@@ -341,7 +341,7 @@ the number of rests, and the number of barlines. For example, the command:</p>
 <p>Notice that a distinction is made between the number of notes and the number
 of noteheads. A tied note is considered to be a single &#8220;note,&#8221; although it
 may be notated using two or more noteheads.</p>
-<p>The output from <strong>census</strong> can be restricted to a particular item of
+<p>The output from <a class="reference external" href="../../man/census">census</a> can be restricted to a particular item of
 information by &#8220;piping&#8221; the output to the UNIX <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command.</p>
 </div>
 <div class="section" id="simple-searches-using-the-grep-command">
@@ -375,7 +375,7 @@ opus91:!! Andante
 opus98:!! Andante</cite></p>
 <p>By default, <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> distinguishes upper- and lower-case characters, so the
 above command will not match strings such as &#8220;<cite>ANDANTE</cite>&#8221;. However, the
-<strong>-i</strong> option tells <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to ignore the case when searching. E.g.,</p>
+<tt class="docutils literal"><span class="pre">-i</span></tt> option tells <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to ignore the case when searching. E.g.,</p>
 <p><cite>grep -i &#8216;Andante&#8217; *</cite></p>
 <p>Sought patterns may occur in any line, including data records and comments.
 The following command will identify the presence of any double-sharps in the
@@ -385,7 +385,7 @@ file <cite>schumann.krn</cite>.</p>
 <div class="section" id="pattern-locations-using-grep-n">
 <h2>Pattern Locations Using grep -n<a class="headerlink" href="#pattern-locations-using-grep-n" title="Permalink to this headline">¶</a></h2>
 <p>If a pattern is found, it is sometimes helpful to know the precise location
-of the pattern. The <strong>-n</strong> option tells <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to prepend the <em>line number</em>
+of the pattern. The <tt class="docutils literal"><span class="pre">-n</span></tt> option tells <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to prepend the <em>line number</em>
 for each matching instance. The following command identifies the line numbers
 for lines containing a double sharp for the file <cite>melody.krn</cite>:</p>
 <p><cite>grep -n &#8216;##&#8217; melody.krn</cite></p>
@@ -399,7 +399,7 @@ file <cite>melody.krn</cite>.</p>
 <div class="section" id="counting-pattern-occurrences-using-grep-c">
 <h2>Counting Pattern Occurrences Using grep -c<a class="headerlink" href="#counting-pattern-occurrences-using-grep-c" title="Permalink to this headline">¶</a></h2>
 <p>In some cases, the user is interested in counting the total number of
-instances of a found pattern. The <strong>-c</strong> option causes <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to output a
+instances of a found pattern. The <tt class="docutils literal"><span class="pre">-c</span></tt> option causes <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to output a
 numerical <em>count</em> of the number of lines containing matching instances. For
 example, in the <cite>**kern`representation, the beginning of each phrase is
 marked by the presence of an open curly brace (``{</cite>&#8216;). So the following
@@ -415,8 +415,8 @@ incorrect. More carefully constructed patterns require a better knowledge of
 <div class="section" id="searching-for-reference-information">
 <h2>Searching for Reference Information<a class="headerlink" href="#searching-for-reference-information" title="Permalink to this headline">¶</a></h2>
 <p>As we saw in <a class="reference external" href="../ch02">Chapter 2</a>, Humdrum files typically encode library-type
-information using reference records. For example, the <a href="#id57"><span class="problematic" id="id58">`**composer&#8217;s name**`_</span></a>
-is encoded in a <a href="#id59"><span class="problematic" id="id60">`!!!COM:`record, and the `**title**`_</span></a> is encoded via the
+information using reference records. For example, the <a href="#id53"><span class="problematic" id="id54">`**composer&#8217;s name**`_</span></a>
+is encoded in a <a href="#id55"><span class="problematic" id="id56">`!!!COM:`record, and the `**title**`_</span></a> is encoded via the
 <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">!!!OTL:`record. In conjunction with the `grep</a> command, these three-
 letter codes provide useful tags to search for pertinent information. For
 example, the following command will identify the composer for the file
@@ -446,8 +446,8 @@ foster22:!!!OTL: Better Times are Coming
 foster23:!!!OTL: When this Dreadful War is Ended
 foster24:!!!OTL: Hard Times Comes Again No More</cite></p>
 <p>Remember that when a wildcard is used in filenames, <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> prepends the
-filename prior to found patterns. These filename <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">headers&#8217; can be eliminated
-by selecting the **-h** option for `grep</a>:</p>
+filename prior to found patterns. These filename <cite>headers&#8217; can be eliminated
+by selecting the `</cite>-h`` option for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>:</p>
 <p><cite>grep -h &#8216;!!!OTL:&#8217; *</cite></p>
 <p>(N.B. Some older versions of <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> do not support all of the options
 described here. Filename headers can be stripped from the output by using the
@@ -458,9 +458,9 @@ file by following the command with a greater-than sign (&gt;) followed by a
 filename. For example, the following command places the output from <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>
 in a file called <cite>titles</cite>:</p>
 <p><cite>grep -h &#8216;!!!OTL:&#8217; * &gt; titles</cite></p>
-<p>Beware that if the file <a href="#id18"><span class="problematic" id="id19">`</span></a>titles`already exists then it will be over
-written and its previous contents lost. With the <strong>-h</strong> option the file
-<a href="#id20"><span class="problematic" id="id21">`</span></a>titles`might contain the following lines:</p>
+<p>Beware that if the file <cite>titles`already exists then it will be over
+written and its previous contents lost. With the `</cite>-h`` option the file
+<a href="#id16"><span class="problematic" id="id17">`</span></a>titles`might contain the following lines:</p>
 <p><cite>!!!OTL: Oh! Susanna
 !!!OTL: Jeanie with the Light Brown Hair
 !!!OTL: Beautiful Dreamer
@@ -478,11 +478,11 @@ written and its previous contents lost. With the <strong>-h</strong> option the 
 </div>
 <div class="section" id="the-sort-command">
 <h2>The <em>sort</em> Command<a class="headerlink" href="#the-sort-command" title="Permalink to this headline">¶</a></h2>
-<p>The UNIX operating system provides a general sorting utility called <strong>sort</strong>.
+<p>The UNIX operating system provides a general sorting utility called**sort**.
 We might use this utility to rearrange the titles in alphabetical order:</p>
 <p><cite>sort titles</cite></p>
 <p>Rather than using an intermediate file, we can directly connect the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>
-and <strong>sort</strong> commands using a UNIX &#8220;pipe.&#8221; The vertical bar (<cite>|</cite>) creates a
+and**sort**commands using a UNIX &#8220;pipe.&#8221; The vertical bar (<cite>|</cite>) creates a
 connection between the output of one command and the input of the next
 command. We can combine the above two commands to create an alphabetical
 listing of all titles in the current directory:</p>
@@ -526,8 +526,7 @@ discarded.</p>
 chorale harmonizations, we can use the following command pipeline.</p>
 <p><cite>grep -h &#8216;!!!OTL:&#8217; * | sort | uniq</cite></p>
 <p>Note that our &#8220;pipeline&#8221; consists of three successive commands with the
-outputs connected to the inputs using the UNIX pipe symbol (<cite>|</cite>). The
-<strong>sort</strong> command is essential in order to collect identical titles as
+outputs connected to the inputs using the UNIX pipe symbol (<cite>|</cite>). The**sort**command is essential in order to collect identical titles as
 successive lines before passing the list to <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a>.</p>
 <p>Suppose you wanted to ensure that all of the works in the current directory
 are composed by the same composer. The same command structure can be used,
@@ -539,7 +538,7 @@ odd score will be obvious without having to look through long lists:</p>
 <p><cite>!!!COM: Beethoven, Ludwig van</cite>
 <cite>!!!COM: Stamitz, Carl Philipp</cite></p>
 <p>Of course we can make similar lists for other types of information available
-in reference records. The <a href="#id29"><span class="problematic" id="id30">`</span></a>AIN`reference record encodes instrumentation.
+in reference records. The <a href="#id25"><span class="problematic" id="id26">`</span></a>AIN`reference record encodes instrumentation.
 We could make a list of various instrumental combinations used for scores in
 the current directory:</p>
 <p><cite>grep -h &#8216;!!!AIN:&#8217; * | sort | uniq</cite></p>
@@ -547,14 +546,14 @@ the current directory:</p>
 <div class="section" id="options-for-the-uniq-command">
 <h2>Options for the <em>uniq</em> Command<a class="headerlink" href="#options-for-the-uniq-command" title="Permalink to this headline">¶</a></h2>
 <p>Like <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>, the <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command provides several options that modify its
-behavior. The <strong>-d</strong> option causes only those records to be output which are
-<em>duplicated</em> (i.e. two or more instances). Conversely, the <strong>-u</strong> option
+behavior. The <tt class="docutils literal"><span class="pre">-d</span></tt> option causes only those records to be output which are
+<em>duplicated</em> (i.e. two or more instances). Conversely, the <tt class="docutils literal"><span class="pre">-u</span></tt> option
 causes only those records to be output that are truly <em>unique</em> (i.e. only a
 single instance is present in the input).</p>
 <p>Suppose, for example, that we want to know which of the Bach chorales are
 harmonizations of the same tunes &#8211; that is, have the same titles. (Of course
 the same chorale might be known by two or more titles, but let&#8217;s defer this
-problem until <a class="reference external" href="../ch25">Chapter 25</a>.) The <strong>-d</strong> option will only output the
+problem until <a class="reference external" href="../ch25">Chapter 25</a>.) The <tt class="docutils literal"><span class="pre">-d</span></tt> option will only output the
 duplicate records:</p>
 <p><cite>grep -h &#8216;!!!OTL:&#8217; * | sort | uniq -d</cite></p>
 <p>The output will identify those titles which appear in two or more files in
@@ -572,7 +571,7 @@ the current directory. The output might look as follows:</p>
 !!!OTL: Jesu, meiner Seelen Wonne</cite></p>
 <p>Having established which titles are duplicates, a logical next step might be
 to identify the specific files involved. We can use <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> again to search
-for a specific title. Without the <strong>-h</strong> option, the output will identify the
+for a specific title. Without the <tt class="docutils literal"><span class="pre">-h</span></tt> option, the output will identify the
 appropriate filenames. For example:</p>
 <p><cite>grep &#8216;!!!OTL: Befiehl du deine Wege&#8217; *</cite></p>
 <p>might produce the following output:</p>
@@ -580,7 +579,7 @@ appropriate filenames. For example:</p>
 <cite>bwv271.krn:!!!OTL: Befiehl du deine Wege</cite>
 <cite>bwv272.krn:!!!OTL: Befiehl du deine Wege</cite></p>
 <p>Sometimes we would like to have an output that contains <em>only</em> the
-<em>filenames</em> containing the sought pattern. The <strong>-l</strong> option causes <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>
+<em>filenames</em> containing the sought pattern. The <tt class="docutils literal"><span class="pre">-l</span></tt> option causes <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>
 to output only filenames that contain one or more instances of the sought
 pattern:</p>
 <p><cite>grep -l &#8216;!!!OTL: Befiehl du deine Wege&#8217; *</cite></p>
@@ -588,16 +587,16 @@ pattern:</p>
 <p><cite>bwv270.krn</cite>
 <cite>bwv271.krn</cite>
 <cite>bwv272.krn</cite></p>
-<p>As we&#8217;ve already notes, the <strong>-u</strong> option for <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> causes only unique
+<p>As we&#8217;ve already notes, the <tt class="docutils literal"><span class="pre">-u</span></tt> option for <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> causes only unique
 entries in a list to be passed to the output. This is often useful in
 identifying works that differ in some way from other works in a group or
 corpus. For example, in some repertory, you may remember that a particular
 work had a different instrumentation than the other works. But you may not be
-able to remember what the specific instrumentation was. Use the <strong>-u</strong> option
+able to remember what the specific instrumentation was. Use the <tt class="docutils literal"><span class="pre">-u</span></tt> option
 for <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> to produce a list consisting of only those works whose
 instrumentation differs from all others:</p>
 <p><cite>grep -h &#8216;!!!AIN:&#8217; * | sort | uniq -u</cite></p>
-<p>As in the case of the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command, <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> also supports a <strong>-c</strong>
+<p>As in the case of the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command, <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> also supports a <tt class="docutils literal"><span class="pre">-c</span></tt>
 option which counts the number of occurrences of a pattern. For example, if
 we want to count the number of works by each composer in the current
 directory:</p>
@@ -610,8 +609,7 @@ directory:</p>
 4 !!!COM: Josquin Des Pres`</p>
 <p>Notice that the number of instances is prepended to the reference records.</p>
 <p>Incidentally, if we wanted to rearrange this list in order of the number of
-works, we could pass the above output to yet another <strong>sort</strong> command. Since
-<strong>sort</strong> sorts from left to right, it will begin sorting according to the
+works, we could pass the above output to yet another**sort**command. Since**sort**sorts from left to right, it will begin sorting according to the
 numerical values at the extreme left. The command</p>
 <p><cite>grep -h &#8216;!!!COM:&#8217; * | sort | uniq -c | sort -n</cite></p>
 <p>will rearrange the above output as follows:</p>
@@ -620,23 +618,21 @@ numerical values at the extreme left. The command</p>
 4 !!!COM: Josquin Des Pres
 9 !!!COM: Berardi, Angelo
 12 !!!COM: Zarlino, Gioseffo`</p>
-<p>It is important to understand that the two <strong>sort</strong> commands in our pipeline
-achieve different goals but use the same process. The first <strong>sort</strong> command
+<p>It is important to understand that the two**sort**commands in our pipeline
+achieve different goals but use the same process. The first**sort**command
 sorts the composer&#8217;s names into alphabetical order. This is done so that the
 ensuing <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command is able to count successive identical records. Since
-the <strong>uniq -c</strong> command prepends numerical counts, the subsequent <strong>sort</strong>
-sorts first according to the numbers to the left of the reference records.</p>
-<p>As a final note, we might mention that, like <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> and <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a>, the
-<strong>sort</strong> command has several options. One option, the <strong>-r</strong> option, causes
+the <strong>uniq -c</strong> command prepends numerical counts, the subsequent**sort**sorts first according to the numbers to the left of the reference records.</p>
+<p>As a final note, we might mention that, like <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> and <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a>, the**sort**command has several options. One option, the <tt class="docutils literal"><span class="pre">-r</span></tt> option, causes
 the output to be arranged in reverse order. This can be useful in producing
 lists that are ordered from most common to least common.</p>
 </div>
 <div class="section" id="reprise">
 <h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
 <p>In this chapter we have introduced some elementary ways of processing Humdrum
-files. We noted that the <strong>census</strong> command can be used to identify basic
-statistics about a file. The <strong>-k</strong> option for <strong>census</strong> provides basic
-information related to <a href="#id42"><span class="problematic" id="id43">`</span></a><a href="#id44"><span class="problematic" id="id45">**</span></a>kern`files, such as the number of notes and
+files. We noted that the <a class="reference external" href="../../man/census">census</a> command can be used to identify basic
+statistics about a file. The <tt class="docutils literal"><span class="pre">-k</span></tt> option for <a class="reference external" href="../../man/census">census</a> provides basic
+information related to <a href="#id38"><span class="problematic" id="id39">`</span></a><a href="#id40"><span class="problematic" id="id41">**</span></a>kern`files, such as the number of notes and
 rests, the highest and lowest notes, the number of barlines, etc.</p>
 <p>In this chapter we also introduced simple searching techniques using the
 <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command; <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> provides a useful way of locating particular
@@ -644,25 +640,24 @@ patterns of text characters in files. We used <a class="reference external" href
 titles, instrumentation and other information. Most of our examples were
 limited to searching for Humdrum reference records. In later chapters we will
 use <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> in more sophisticated searches. We noted several useful options
-for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>: the <strong>-c</strong> option causes a count to be output of the number of
-instances of the pattern in each file. The <strong>-i</strong> option causes <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to
+for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>: the <tt class="docutils literal"><span class="pre">-c</span></tt> option causes a count to be output of the number of
+instances of the pattern in each file. The <tt class="docutils literal"><span class="pre">-i</span></tt> option causes <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to
 ignore any distinction between upper- and lower-case characters when
-searching for patterns. The <strong>-h</strong> option causes <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to suppress
+searching for patterns. The <tt class="docutils literal"><span class="pre">-h</span></tt> option causes <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to suppress
 outputting the filenames prior to found patterns when more than one file is
-searched. The <strong>-l</strong> option results in only the filenames being output. In a
+searched. The <tt class="docutils literal"><span class="pre">-l</span></tt> option results in only the filenames being output. In a
 later chapter we will encounter a number of other useful options provided by
 <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>.</p>
 <p>Also discussed in this chapter was the <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command; <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> provides a
 useful utility for eliminating or isolating duplicate records or lines. Once
-again a number of useful options were introduced. The <strong>-c</strong> option causes
+again a number of useful options were introduced. The <tt class="docutils literal"><span class="pre">-c</span></tt> option causes
 <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> to prepend a count of the number of duplicate input lines. The
-<strong>-d</strong> option results in only duplicate input lines being noted in the
-output. The <strong>-u</strong> option does the reverse: only those input lines that are
+<tt class="docutils literal"><span class="pre">-d</span></tt> option results in only duplicate input lines being noted in the
+output. The <tt class="docutils literal"><span class="pre">-u</span></tt> option does the reverse: only those input lines that are
 unique are passed to the output.</p>
-<p>Finally, we introduced the UNIX <strong>sort</strong> utility. This command rearranges the
-order of successive input lines so they are in alphabetic/numeric order. The
-<strong>sort</strong> command provides a wealth of useful options; however, we mentioned
-only the <strong>-r</strong> option &#8211; which causes the output to be sorted in reverse
+<p>Finally, we introduced the UNIX**sort**utility. This command rearranges the
+order of successive input lines so they are in alphabetic/numeric order. The**sort**command provides a wealth of useful options; however, we mentioned
+only the <tt class="docutils literal"><span class="pre">-r</span></tt> option &#8211; which causes the output to be sorted in reverse
 order.</p>
 </div>
 </div>
@@ -677,7 +672,7 @@ order.</p>
         <center><a href="../ch04/" class="btn btn-neutral float-right" title="Chapter 4: Basic Pitch Translations">Next <span class="fa fa-arrow-circle-right"></span></a></center>
       
       
-        <a href="../ch02/" class="btn btn-neutral" title="Chapter 2: Representing Music Using **kern (I)"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../ch02/" class="btn btn-neutral" title="Chapter 2: Representing Music Using **kern(I)"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
       
              <center><a href="../../_sources/guide/ch03.txt" rel="nofollow"> View page source</a></center>

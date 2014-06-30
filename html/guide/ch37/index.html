@@ -69,11 +69,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../">The Humdrum User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ch01/">1. Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern(I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch03/">3. Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch04/">4. Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch05/">5. The Humdrum Syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern(II)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch07/">7. MIDI Output Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch08/">8. The Shell (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch09/">9. Searching with Regular Expressions</a></li>
@@ -320,7 +320,7 @@ cases, an electronic edition may be prepared from another electronic form &#8211
 such as MIDI. When translating between two formats, it is important to be
 familiar with both representations. Descriptions of a number of popular
 electronic music formats may be found in Eleanor Selfridge-Field&#8217;s
-encyclopedic <a href="#id31"><span class="problematic" id="id32">`*Handbook of Musical Codes*`_</span></a> (1997).</p>
+encyclopedic <a href="#id29"><span class="problematic" id="id30">`*Handbook of Musical Codes*`_</span></a> (1997).</p>
 <p>The principal processes involved in electronic editing include identifying
 possible sources and alternative versions, selecting and encoding the
 material, proofing the material (using both automated and manual methods),
@@ -407,7 +407,7 @@ preparation of electronic documents from their publication catalogue by third
 parties. It is likely to take decades before the financial and legal issues
 are satisfactorily addressed.</p>
 <p>In some cases, you will be translating from one electronic format to another
-&#8211; such as from MIDI to **kern_. Once again, be conscious of any
+&#8211; such as from MIDI to <a class="reference external" href="../../rep/kern">**kern</a>_. Once again, be conscious of any
 copyright issues that are raised. Few experiences are more discouraging than
 discovering that your work cannot be distributed because you failed to
 consider seriously the copyright issues involved.</p>
@@ -474,16 +474,20 @@ all parts into a single full score.</p>
 </div>
 <div class="section" id="transposing-instruments">
 <h2>Transposing Instruments<a class="headerlink" href="#transposing-instruments" title="Permalink to this headline">¶</a></h2>
-<p>In the case of the **kern representation, all parts are represented at
+<p>In the case of the <a class="reference external" href="../../rep/kern">**kern</a> representation, all parts are represented at
 concert pitch. It is typically easier to encode the parts as written and then
 transpose the result using the Humdrum <a class="reference external" href="../../man/trans">trans</a> command. For example,
 material for B-flat trumpet or B-flat clarinet can be transposed using the
 following command:</p>
-<p><tt class="docutils literal"><span class="pre">trans</span> <span class="pre">-d</span> <span class="pre">-1</span> <span class="pre">-c</span> <span class="pre">-2</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>trans -d -1 -c -2
+</pre></div>
+</div>
 <p>In the case of clarinet in A, a suitable transposition would be:</p>
-<p><tt class="docutils literal"><span class="pre">trans</span> <span class="pre">-d</span> <span class="pre">-2</span> <span class="pre">-c</span> <span class="pre">-3</span></tt></p>
-<p>The <strong>trans</strong> command adds a transposition interpretation to the output in
-order to identify that the material has been shifted. In the **kern
+<div class="highlight-bash"><div class="highlight"><pre>trans -d -2 -c -3
+</pre></div>
+</div>
+<p>The <a class="reference external" href="../../man/trans">trans</a> command adds a transposition interpretation to the output in
+order to identify that the material has been shifted. In the <a class="reference external" href="../../rep/kern">**kern</a>
 representation, transposed instruments must be explicitly identified using a
 special &#8220;transposing-instrument interpretation&#8221; (see <em>Humdrum Reference
 Manual</em> &#8211; Section 3 for details). A suitable interpretation can be created
@@ -499,7 +503,7 @@ transpostion interpretation would be modified from</p>
 <p>Humdrum provides standardized instrumentation indicators. Three different
 types of indication are appropriate: (1) the instrument name as indicated in
 the source, (2) standardized instrument name, and (3) instrument class.
-Standardized instrument names can be found in <a href="#id33"><span class="problematic" id="id34">`**Appendix II**`_</span></a>. For
+Standardized instrument names can be found in <a href="#id31"><span class="problematic" id="id32">`**Appendix II**`_</span></a>. For
 example, the standard indicator for &#8220;harpsichord&#8221; is <a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">*</span></a>Icemba``_.</p>
 <p>Standardized instrument class designators include <tt class="docutils literal"><span class="pre">*ICklav</span></tt> for keyboard
 instruments and <tt class="docutils literal"><span class="pre">*ICidio</span></tt> for percussion instruments, etc., and instrument
@@ -540,15 +544,15 @@ encoded:</p>
 </div>
 <div class="section" id="ornamentation">
 <h2>Ornamentation<a class="headerlink" href="#ornamentation" title="Permalink to this headline">¶</a></h2>
-<p>The **kern representation makes a distinction between whole-tone and
+<p>The <a class="reference external" href="../../rep/kern">**kern</a> representation makes a distinction between whole-tone and
 semitone trills and mordents. Typically, each ornament must be examined
 manually and the correct code selected.</p>
 <p>In some cases, the size of the trill or mordent will be ambiguous and so some
 sort of editorial decision will be necessary. One possibility is to add the
 kern <a href="#id13"><span class="problematic" id="id14">`</span></a>x&#8217; signifier immediately following the <a href="#id15"><span class="problematic" id="id16">`</span></a>T&#8217; or <a href="#id17"><span class="problematic" id="id18">`</span></a>t&#8217;. This indicates that
 the trill size is an &#8220;editorial interpretation.&#8221;</p>
-<p>The **kern representation treats appoggiaturas in a special way. In
-general, **kern is oriented to representing things in a manner closer to
+<p>The <a class="reference external" href="../../rep/kern">**kern</a> representation treats appoggiaturas in a special way. In
+general, <a class="reference external" href="../../rep/kern">**kern</a> is oriented to representing things in a manner closer to
 how they sound. Consequently, appoggiaturas are encoded as they would be
 logically performed. For example, a quarter-note preceded by an appoggiatura
 (small note) would be performed as two eighth-notes. Similarly, a dotted
@@ -586,7 +590,7 @@ label.</p>
 expansion lists must be encoded. In some cases, there is more than one way of
 interpreting how to realize the repeats. The most &#8220;conventional&#8221; realization
 should be encoded with the <em>unnamed expansion list.</em> This will specify the
-default expansion using the Humdrum <strong>thru</strong> command. Suppose for example,
+default expansion using the Humdrum <a class="reference external" href="../../man/thru">thru</a> command. Suppose for example,
 that you are encoding a typical minuet and trio. The conventional performance
 practice involves repeating all sections of both the minuet and trio, but
 then avoiding the repeats in the minuet following the Da Capo. A suitable
@@ -602,7 +606,7 @@ expansion-list-label <em>ossia</em>):</p>
 editorial footnotes, local comments, global comments, interpretation data,
 <em>sic</em> and <em>ossia</em> designations, version labels, sectional labels, and
 expansion lists.</p>
-<p>The **kern_ representation provides several special-purpose signifiers
+<p>The <a class="reference external" href="../../rep/kern">**kern</a>representation provides several special-purpose signifiers
 to help make explicit various classes of editorial amendments,
 interpretations, or commentaries. Five types of editorial signifiers are
 available: (1) <em>sic</em> (information is encoded literally, but is questionable)
@@ -614,7 +618,7 @@ such as the interpretation of accidentals in <em>musica ficta</em>) signified by
 intervention) signified by the <tt class="docutils literal"><span class="pre">X</span></tt> character; (5) <em>footnote</em> (accompanying
 local or global comment provides a text commentary pertaining to specified
 data token) signified by <tt class="docutils literal"><span class="pre">?</span></tt>.</p>
-<p>One of the most onerous impositions of the **kern representation is the
+<p>One of the most onerous impositions of the <a class="reference external" href="../../rep/kern">**kern</a> representation is the
 requirement that the music be interpreted into a coherent spine organization.
 Why not avoid interpreting the voicings?</p>
 <p>The answer to this question is that editorial interventions are often
@@ -701,21 +705,27 @@ types and format for different reference records.</p>
 <p>Once you have encoded your document, you should create a error-checking
 strategy. The Humdrum <a class="reference external" href="../../man/humdrum">humdrum</a> command can be used to identify whether
 the final encoded output conforms to the Humdrum syntax:</p>
-<p><tt class="docutils literal"><span class="pre">humdrum</span> <span class="pre">full.krn</span></tt></p>
-<p>Use the Humdrum <a href="#id25"><span class="problematic" id="id26">`</span></a><strong>proof`_</strong> <strong>-k</strong> command to identify any syntactical
-errors in any encoded **kern data:</p>
-<p><tt class="docutils literal"><span class="pre">proof</span> <span class="pre">-k</span> <span class="pre">full.krn</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>humdrum full.krn
+</pre></div>
+</div>
+<p>Use the Humdrum <cite>**proof`_** `</cite>-k`` command to identify any syntactical
+errors in any encoded <a class="reference external" href="../../rep/kern">**kern</a> data:</p>
+<div class="highlight-bash"><div class="highlight"><pre>proof -k full.krn
+</pre></div>
+</div>
 <p>One of the best ways to ensure that musical data makes sense is to listen to
 it. The Humdrum <a class="reference external" href="../../man/midi">midi</a> and <a class="reference external" href="../../man/perform">perform</a> commands can be used to listen
-to your data. The <strong>-c</strong> option for <strong>midi</strong> causes the Humdrum data to be
+to your data. The <tt class="docutils literal"><span class="pre">-c</span></tt> option for <a class="reference external" href="../../man/midi">midi</a> causes the Humdrum data to be
 displayed while the MIDI data is performed. This can further help in locating
 errors.</p>
-<p><tt class="docutils literal"><span class="pre">midi</span> <span class="pre">-c</span> <span class="pre">full.krn</span> <span class="pre">|</span> <span class="pre">perform</span></tt></p>
-<p>The <strong>perform</strong> command allows you to <em>pause</em> (press the space bar), to
+<div class="highlight-bash"><div class="highlight"><pre>midi -c full.krn | perform
+</pre></div>
+</div>
+<p>The <a class="reference external" href="../../man/perform">perform</a> command allows you to <em>pause</em> (press the space bar), to
 <em>move</em> to a particular measure (type a measure number followed by enter), to
 increase (type &lt;) or decrease (type &gt;) the <em>tempo,</em> and to <em>return</em> to the
 beginning of the score (type enter). There are many other functions within
-the <strong>perform</strong> command; refer to the <em>Humdrum Reference Manual</em> &#8211; section 4
+the <a class="reference external" href="../../man/perform">perform</a> command; refer to the <em>Humdrum Reference Manual</em> &#8211; section 4
 for further details.</p>
 </div>
 <div class="section" id="data-integrity-using-the-vts-checksum-record">
@@ -729,7 +739,7 @@ with this data?</p>
 purports to be. The <a class="reference external" href="../../man/veritas">veritas</a> command provides a formal means for
 verifying that a given Humdrum file is identical to the original distribution
 file and has not been modified in some way.</p>
-<p>The <strong>veritas</strong> command works by looking for a VTS reference record in the
+<p>The <a class="reference external" href="../../man/veritas">veritas</a> command works by looking for a VTS reference record in the
 file. It then calculates a &#8220;checksum&#8221; for the file (excluding the VTS record
 itself) and compares this value with the encoded VTS value. If these values
 differ, a warning is issued that the file has been modified in some way.</p>
@@ -739,9 +749,9 @@ reference record.</p>
 <p>In order to calculate the checksum value for a given file, use the following
 command:</p>
 <p>&gt; Open the original file and move to the bottom of the document. Then read in
-the calculated checksum value. Finally, insert the <a href="#id27"><span class="problematic" id="id28">``</span></a>!!!VTS: <a href="#id29"><span class="problematic" id="id30">``</span></a>&#8216; reference
+the calculated checksum value. Finally, insert the <a href="#id25"><span class="problematic" id="id26">``</span></a>!!!VTS: <a href="#id27"><span class="problematic" id="id28">``</span></a>&#8216; reference
 record designator.</p>
-<p>You can check that everything is fine by invoking the <strong>veritas</strong> command:</p>
+<p>You can check that everything is fine by invoking the <a class="reference external" href="../../man/veritas">veritas</a> command:</p>
 <p>&gt; The command will complain only if the VTS checksum value does not
 correspond to the computed checksum for the file. Finally, be sure to include
 the checksum value in an index or README file for the distribution. This
@@ -752,7 +762,7 @@ has not been modified.</p>
 <h2>Preparing a Distribution<a class="headerlink" href="#preparing-a-distribution" title="Permalink to this headline">¶</a></h2>
 <p>Finally, you may want to prepare the material you have encoded for public
 distribution. Rename the score files and collect them into a coherent
-repertory. If your data is encoded in the **kern format, be sure to use
+repertory. If your data is encoded in the <a class="reference external" href="../../rep/kern">**kern</a> format, be sure to use
 the <tt class="docutils literal"><span class="pre">.krn</span></tt> file extension. Place all resulting Humdrum files in a single
 directory.</p>
 <p>Create a <tt class="docutils literal"><span class="pre">README</span></tt> file similar to others in Humdrum data distributions. The

@@ -1,3 +1,19 @@
+
+.. |Chapter 14|	replace:: Chapter 14
+.. _Chapter 14:	../ch14
+
+.. |Chapter 2|	replace:: Chapter 2
+.. _Chapter 2:	../ch02
+
+.. |Chapter 25|	replace:: Chapter 25
+.. _Chapter 25:	../ch25
+
+.. |Chapter 9|	replace:: Chapter 9
+.. _Chapter 9:	../ch09
+
+.. |census|	replace:: census
+.. _census:	../../man/census
+
 ========================================
 Chapter 3: Some Initial Processing
 ========================================
@@ -11,7 +27,7 @@ tasks.
 The *census* Command
 -----------------------
 
-The Humdrum `census <../../man/census>`_ command provides basic information about an input
+The Humdrum |census|_ command provides basic information about an input
 stream or file. We can invoke the command by typing the command name followed
 by the name of a file. The command
 
@@ -31,8 +47,8 @@ might produce the following output:
 Most commands provide *options* that will modify the operation of the command
 in a particular way. In UNIX-style commands, options follow after the command
 name and are typically specified by a single letter preceded by a hyphen. The
-**-k** option with the **census** command will give further information
-pertaining to the Humdrum `**kern`representation. With the **-k** option,
+``-k`` option with the |census|_ command will give further information
+pertaining to the Humdrum `**kern`representation. With the ``-k`` option,
 the output includes the number of notes in the file, the longest, shortest,
 highest, and lowest notes, the maximum number of concurrent notes or voices,
 the number of rests, and the number of barlines. For example, the command:
@@ -57,7 +73,7 @@ Notice that a distinction is made between the number of notes and the number
 of noteheads. A tied note is considered to be a single "note," although it
 may be notated using two or more noteheads.
 
-The output from **census** can be restricted to a particular item of
+The output from |census|_ can be restricted to a particular item of
 information by "piping" the output to the UNIX `grep <http://en.wikipedia.org/wiki/Grep>`_ command.
 
 
@@ -68,7 +84,7 @@ The UNIX `grep <http://en.wikipedia.org/wiki/Grep>`_ command is a popular tool f
 match some specified pattern. Patterns may be simple strings of characters,
 or may be more complicated constructions defined using the UNIX *regular
 expression* syntax. Regular expressions will be described in detail in
-`Chapter 9 <../ch09>`_. The command name "`grep`" is an acronym for "get regular
+|Chapter 9|_\ . The command name "`grep`" is an acronym for "get regular
 expression."
 
 Useful patterns are often literal character strings, such as keywords. For
@@ -101,7 +117,7 @@ opus98:!! Andante`
 
 By default, `grep <http://en.wikipedia.org/wiki/Grep>`_ distinguishes upper- and lower-case characters, so the
 above command will not match strings such as "`ANDANTE`". However, the
-**-i** option tells `grep <http://en.wikipedia.org/wiki/Grep>`_ to ignore the case when searching. E.g.,
+``-i`` option tells `grep <http://en.wikipedia.org/wiki/Grep>`_ to ignore the case when searching. E.g.,
 
 `grep -i 'Andante' *`
 
@@ -116,7 +132,7 @@ Pattern Locations Using grep -n
 -------------------------------
 
 If a pattern is found, it is sometimes helpful to know the precise location
-of the pattern. The **-n** option tells `grep <http://en.wikipedia.org/wiki/Grep>`_ to prepend the *line number*
+of the pattern. The ``-n`` option tells `grep <http://en.wikipedia.org/wiki/Grep>`_ to prepend the *line number*
 for each matching instance. The following command identifies the line numbers
 for lines containing a double sharp for the file `melody.krn`:
 
@@ -136,7 +152,7 @@ Counting Pattern Occurrences Using grep -c
 ------------------------------------------
 
 In some cases, the user is interested in counting the total number of
-instances of a found pattern. The **-c** option causes `grep <http://en.wikipedia.org/wiki/Grep>`_ to output a
+instances of a found pattern. The ``-c`` option causes `grep <http://en.wikipedia.org/wiki/Grep>`_ to output a
 numerical *count* of the number of lines containing matching instances. For
 example, in the `**kern`representation, the beginning of each phrase is
 marked by the presence of an open curly brace (``{`'). So the following
@@ -149,13 +165,13 @@ As noted, the `grep <http://en.wikipedia.org/wiki/Grep>`_ command will search al
 matching instances of the specified pattern. If a curly brace were to appear
 in a comment or other non-data record, then our phrase-count would be
 incorrect. More carefully constructed patterns require a better knowledge of
-*regular expressions.* Regular expressions are discussed in `Chapter 9 <../ch09>`_.
+*regular expressions.* Regular expressions are discussed in |Chapter 9|_\ .
 
 
 Searching for Reference Information
 -----------------------------------
 
-As we saw in `Chapter 2 <../ch02>`_, Humdrum files typically encode library-type
+As we saw in |Chapter 2|_\ , Humdrum files typically encode library-type
 information using reference records. For example, the `**composer's name**`_
 is encoded in a `!!!COM:`record, and the `**title**`_ is encoded via the
 `!!!OTL:`record. In conjunction with the `grep <http://en.wikipedia.org/wiki/Grep>`_ command, these three-
@@ -198,13 +214,13 @@ foster24:!!!OTL: Hard Times Comes Again No More`
 
 Remember that when a wildcard is used in filenames, `grep <http://en.wikipedia.org/wiki/Grep>`_ prepends the
 filename prior to found patterns. These filename `headers' can be eliminated
-by selecting the **-h** option for `grep <http://en.wikipedia.org/wiki/Grep>`_:
+by selecting the ``-h`` option for `grep <http://en.wikipedia.org/wiki/Grep>`_:
 
 `grep -h '!!!OTL:' *`
 
 (N.B. Some older versions of `grep <http://en.wikipedia.org/wiki/Grep>`_ do not support all of the options
 described here. Filename headers can be stripped from the output by using the
-UNIX `sed <http://en.wikipedia.org/wiki/Sed>`_ command described in `Chapter 14 <../ch14>`_.)
+UNIX `sed <http://en.wikipedia.org/wiki/Sed>`_ command described in |Chapter 14|_\ .)
 
 We might place the resulting list of titles in a separate file using the UNIX
 *file redirection* construction. The output of a command can be placed into a
@@ -215,7 +231,7 @@ in a file called `titles`:
 `grep -h '!!!OTL:' * > titles`
 
 Beware that if the file `titles`already exists then it will be over
-written and its previous contents lost. With the **-h** option the file
+written and its previous contents lost. With the ``-h`` option the file
 `titles`might contain the following lines:
 
 `!!!OTL: Oh! Susanna
@@ -237,13 +253,13 @@ written and its previous contents lost. With the **-h** option the file
 The *sort* Command
 -------------------
 
-The UNIX operating system provides a general sorting utility called **sort**.
+The UNIX operating system provides a general sorting utility called**sort**.
 We might use this utility to rearrange the titles in alphabetical order:
 
 `sort titles`
 
 Rather than using an intermediate file, we can directly connect the `grep <http://en.wikipedia.org/wiki/Grep>`_
-and **sort** commands using a UNIX "pipe." The vertical bar (`|`) creates a
+and**sort**commands using a UNIX "pipe." The vertical bar (`|`) creates a
 connection between the output of one command and the input of the next
 command. We can combine the above two commands to create an alphabetical
 listing of all titles in the current directory:
@@ -301,8 +317,7 @@ chorale harmonizations, we can use the following command pipeline.
 `grep -h '!!!OTL:' * | sort | uniq`
 
 Note that our "pipeline" consists of three successive commands with the
-outputs connected to the inputs using the UNIX pipe symbol (`|`). The
-**sort** command is essential in order to collect identical titles as
+outputs connected to the inputs using the UNIX pipe symbol (`|`). The**sort**command is essential in order to collect identical titles as
 successive lines before passing the list to `uniq <http://en.wikipedia.org/wiki/Uniq>`_.
 
 Suppose you wanted to ensure that all of the works in the current directory
@@ -330,15 +345,15 @@ Options for the *uniq* Command
 -------------------
 
 Like `grep <http://en.wikipedia.org/wiki/Grep>`_, the `uniq <http://en.wikipedia.org/wiki/Uniq>`_ command provides several options that modify its
-behavior. The **-d** option causes only those records to be output which are
-*duplicated* (i.e. two or more instances). Conversely, the **-u** option
+behavior. The ``-d`` option causes only those records to be output which are
+*duplicated* (i.e. two or more instances). Conversely, the ``-u`` option
 causes only those records to be output that are truly *unique* (i.e. only a
 single instance is present in the input).
 
 Suppose, for example, that we want to know which of the Bach chorales are
 harmonizations of the same tunes -- that is, have the same titles. (Of course
 the same chorale might be known by two or more titles, but let's defer this
-problem until `Chapter 25 <../ch25>`_.) The **-d** option will only output the
+problem until |Chapter 25|_\ .) The ``-d`` option will only output the
 duplicate records:
 
 `grep -h '!!!OTL:' * | sort | uniq -d`
@@ -360,7 +375,7 @@ the current directory. The output might look as follows:
 
 Having established which titles are duplicates, a logical next step might be
 to identify the specific files involved. We can use `grep <http://en.wikipedia.org/wiki/Grep>`_ again to search
-for a specific title. Without the **-h** option, the output will identify the
+for a specific title. Without the ``-h`` option, the output will identify the
 appropriate filenames. For example:
 
 `grep '!!!OTL: Befiehl du deine Wege' *`
@@ -372,7 +387,7 @@ might produce the following output:
 `bwv272.krn:!!!OTL: Befiehl du deine Wege`
 
 Sometimes we would like to have an output that contains *only* the
-*filenames* containing the sought pattern. The **-l** option causes `grep <http://en.wikipedia.org/wiki/Grep>`_
+*filenames* containing the sought pattern. The ``-l`` option causes `grep <http://en.wikipedia.org/wiki/Grep>`_
 to output only filenames that contain one or more instances of the sought
 pattern:
 
@@ -384,18 +399,18 @@ The output would appear as follows:
 `bwv271.krn`
 `bwv272.krn`
 
-As we've already notes, the **-u** option for `uniq <http://en.wikipedia.org/wiki/Uniq>`_ causes only unique
+As we've already notes, the ``-u`` option for `uniq <http://en.wikipedia.org/wiki/Uniq>`_ causes only unique
 entries in a list to be passed to the output. This is often useful in
 identifying works that differ in some way from other works in a group or
 corpus. For example, in some repertory, you may remember that a particular
 work had a different instrumentation than the other works. But you may not be
-able to remember what the specific instrumentation was. Use the **-u** option
+able to remember what the specific instrumentation was. Use the ``-u`` option
 for `uniq <http://en.wikipedia.org/wiki/Uniq>`_ to produce a list consisting of only those works whose
 instrumentation differs from all others:
 
 `grep -h '!!!AIN:' * | sort | uniq -u`
 
-As in the case of the `grep <http://en.wikipedia.org/wiki/Grep>`_ command, `uniq <http://en.wikipedia.org/wiki/Uniq>`_ also supports a **-c**
+As in the case of the `grep <http://en.wikipedia.org/wiki/Grep>`_ command, `uniq <http://en.wikipedia.org/wiki/Uniq>`_ also supports a ``-c``
 option which counts the number of occurrences of a pattern. For example, if
 we want to count the number of works by each composer in the current
 directory:
@@ -414,8 +429,7 @@ The output might appear as follows:
 Notice that the number of instances is prepended to the reference records.
 
 Incidentally, if we wanted to rearrange this list in order of the number of
-works, we could pass the above output to yet another **sort** command. Since
-**sort** sorts from left to right, it will begin sorting according to the
+works, we could pass the above output to yet another**sort**command. Since**sort**sorts from left to right, it will begin sorting according to the
 numerical values at the extreme left. The command
 
 `grep -h '!!!COM:' * | sort | uniq -c | sort -n`
@@ -429,15 +443,13 @@ will rearrange the above output as follows:
 12 !!!COM: Zarlino, Gioseffo`
 
 
-It is important to understand that the two **sort** commands in our pipeline
-achieve different goals but use the same process. The first **sort** command
+It is important to understand that the two**sort**commands in our pipeline
+achieve different goals but use the same process. The first**sort**command
 sorts the composer's names into alphabetical order. This is done so that the
 ensuing `uniq <http://en.wikipedia.org/wiki/Uniq>`_ command is able to count successive identical records. Since
-the **uniq -c** command prepends numerical counts, the subsequent **sort**
-sorts first according to the numbers to the left of the reference records.
+the **uniq -c** command prepends numerical counts, the subsequent**sort**sorts first according to the numbers to the left of the reference records.
 
-As a final note, we might mention that, like `grep <http://en.wikipedia.org/wiki/Grep>`_ and `uniq <http://en.wikipedia.org/wiki/Uniq>`_, the
-**sort** command has several options. One option, the **-r** option, causes
+As a final note, we might mention that, like `grep <http://en.wikipedia.org/wiki/Grep>`_ and `uniq <http://en.wikipedia.org/wiki/Uniq>`_, the**sort**command has several options. One option, the ``-r`` option, causes
 the output to be arranged in reverse order. This can be useful in producing
 lists that are ordered from most common to least common.
 
@@ -446,8 +458,8 @@ Reprise
 ------------------
 
 In this chapter we have introduced some elementary ways of processing Humdrum
-files. We noted that the **census** command can be used to identify basic
-statistics about a file. The **-k** option for **census** provides basic
+files. We noted that the |census|_ command can be used to identify basic
+statistics about a file. The ``-k`` option for |census|_ provides basic
 information related to `**kern`files, such as the number of notes and
 rests, the highest and lowest notes, the number of barlines, etc.
 
@@ -457,27 +469,26 @@ patterns of text characters in files. We used `grep <http://en.wikipedia.org/wik
 titles, instrumentation and other information. Most of our examples were
 limited to searching for Humdrum reference records. In later chapters we will
 use `grep <http://en.wikipedia.org/wiki/Grep>`_ in more sophisticated searches. We noted several useful options
-for `grep <http://en.wikipedia.org/wiki/Grep>`_: the **-c** option causes a count to be output of the number of
-instances of the pattern in each file. The **-i** option causes `grep <http://en.wikipedia.org/wiki/Grep>`_ to
+for `grep <http://en.wikipedia.org/wiki/Grep>`_: the ``-c`` option causes a count to be output of the number of
+instances of the pattern in each file. The ``-i`` option causes `grep <http://en.wikipedia.org/wiki/Grep>`_ to
 ignore any distinction between upper- and lower-case characters when
-searching for patterns. The **-h** option causes `grep <http://en.wikipedia.org/wiki/Grep>`_ to suppress
+searching for patterns. The ``-h`` option causes `grep <http://en.wikipedia.org/wiki/Grep>`_ to suppress
 outputting the filenames prior to found patterns when more than one file is
-searched. The **-l** option results in only the filenames being output. In a
+searched. The ``-l`` option results in only the filenames being output. In a
 later chapter we will encounter a number of other useful options provided by
 `grep <http://en.wikipedia.org/wiki/Grep>`_.
 
 Also discussed in this chapter was the `uniq <http://en.wikipedia.org/wiki/Uniq>`_ command; `uniq <http://en.wikipedia.org/wiki/Uniq>`_ provides a
 useful utility for eliminating or isolating duplicate records or lines. Once
-again a number of useful options were introduced. The **-c** option causes
+again a number of useful options were introduced. The ``-c`` option causes
 `uniq <http://en.wikipedia.org/wiki/Uniq>`_ to prepend a count of the number of duplicate input lines. The
-**-d** option results in only duplicate input lines being noted in the
-output. The **-u** option does the reverse: only those input lines that are
+``-d`` option results in only duplicate input lines being noted in the
+output. The ``-u`` option does the reverse: only those input lines that are
 unique are passed to the output.
 
-Finally, we introduced the UNIX **sort** utility. This command rearranges the
-order of successive input lines so they are in alphabetic/numeric order. The
-**sort** command provides a wealth of useful options; however, we mentioned
-only the **-r** option -- which causes the output to be sorted in reverse
+Finally, we introduced the UNIX**sort**utility. This command rearranges the
+order of successive input lines so they are in alphabetic/numeric order. The**sort**command provides a wealth of useful options; however, we mentioned
+only the ``-r`` option -- which causes the output to be sorted in reverse
 order.
 
 

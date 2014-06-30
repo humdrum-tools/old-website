@@ -1,3 +1,16 @@
+
+.. |Chapter 11|	replace:: Chapter 11
+.. _Chapter 11:	../ch11
+
+.. |Chapter 34|	replace:: Chapter 34
+.. _Chapter 34:	../ch34
+
+.. |**kern|	replace:: \*\*kern
+.. _\*\*kern:	../../rep/kern
+
+.. |**pc|	replace:: \*\*pc
+.. _\*\*pc:	../../rep/pc
+
 ====================
 Chapter 35: Layers
 ====================
@@ -5,7 +18,7 @@ Chapter 35: Layers
 In `Chapters 11`_ and `15`_ we examined different kinds of intervals,
 including both harmonic and melodic intervals. A number of different types of
 intervals were distinguished and we learned how to calculate such intervals.
-One type of melodic interval mentioned in `Chapter 11 <../ch11>`_ is the *distance
+One type of melodic interval mentioned in |Chapter 11|_ is the *distance
 interval* -- an interval between pitches which are separated by intervening
 musical materials. In this chapter we consider more sophisticated ways of
 determining distance intervals. These types of intervals are the foundation
@@ -30,7 +43,7 @@ convenient ways of parsing the harmonies.
 > .. image:: guide.figures/ch35.4.gif
 
 
-A \*\*kern_ encoding of the passage is given below:
+A |**kern|_\ encoding of the passage is given below:
 
 .. code-block:: humdrum
 
@@ -83,14 +96,18 @@ A \*\*kern_ encoding of the passage is given below:
 	=
 	*-
 
-We can collapse the arpeggiated chords using the **context** command:
+We can collapse the arpeggiated chords using the |context|_ command:
 
-``context -b = -o = copland``
+.. code-block:: bash
 
-Identify the chords is facilitated by using the pitch-class (`**pc <../../rep/pc>`_)
-representation described in `Chapter 34 <../ch34>`_.
+	context -b = -o = copland
 
-``context -b = -o = copland | pc -a | rid -d``
+Identify the chords is facilitated by using the pitch-class ( |**pc|_\ )
+representation described in |Chapter 34|_\ .
+
+.. code-block:: bash
+
+	context -b = -o = copland | pc -a | rid -d
 
 The corresponding output is:
 
@@ -112,7 +129,7 @@ The corresponding output is:
 In order to identify these as G major and D dominant chords it would be
 convenient to reduce the sets to (2,7,B) and (0,2,6,9) respectively. For this
 task, we can use a The following awk script eliminates repeated tokens within
-a record: (huniq: We might call this script **huniq** since it acts like a
+a record: (huniq: We might call this script**huniq**since it acts like a
 horizontal version of the `uniq <http://en.wikipedia.org/wiki/Uniq>`_ command:
 
 

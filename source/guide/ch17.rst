@@ -1,3 +1,37 @@
+
+.. |Chapter 13|	replace:: Chapter 13
+.. _Chapter 13:	../ch13
+
+.. |Chapter 3|	replace:: Chapter 3
+.. _Chapter 3:	../ch03
+
+.. |Chapter 36|	replace:: Chapter 36
+.. _Chapter 36:	../ch36
+
+.. |Chapter 6|	replace:: Chapter 6
+.. _Chapter 6:	../ch06
+
+.. |deg|	replace:: deg
+.. _deg:	../../man/deg
+
+.. |humsed|	replace:: humsed
+.. _humsed:	../../man/humsed
+
+.. |mint|	replace:: mint
+.. _mint:	../../man/mint
+
+.. |rid|	replace:: rid
+.. _rid:	../../man/rid
+
+.. |solfa|	replace:: solfa
+.. _solfa:	../../man/solfa
+
+.. |xdelta|	replace:: xdelta
+.. _xdelta:	../../man/xdelta
+
+.. |**kern|	replace:: \*\*kern
+.. _\*\*kern:	../../rep/kern
+
 =======================================
 Chapter 17: Creating Inventories
 =======================================
@@ -68,8 +102,8 @@ input so only the data of interest is present. Second we need to *sort* like-
 with-like. And third we need to *count* the number of occurrences of each
 type of data token.
 
-Let's begin by discussing the second process. In `Chapter 3 <../ch03>`_ we saw how the
-UNIX **sort** command will rearrange lines of data so that they are in
+Let's begin by discussing the second process. In |Chapter 3|_ we saw how the
+UNIX**sort**command will rearrange lines of data so that they are in
 alphabetical/numerical order. The command:
 
 ``sort alpha > sorted.alpha``
@@ -98,10 +132,12 @@ the `B's have been rearranged on successive lines.
 
 The third step in generating an inventory is to count the number of
 occurrences of each unique data token. The `uniq <http://en.wikipedia.org/wiki/Uniq>`_ command described in
-`Chapter 3 <../ch03>`_ will eliminate successive duplicate lines. For example, if we
+|Chapter 3|_ will eliminate successive duplicate lines. For example, if we
 type:
 
-``uniq sorted.alpha``
+.. code-block:: bash
+
+	uniq sorted.alpha
 
 The output will be as follows:
 
@@ -120,10 +156,12 @@ Notice that repetitions of the data "A" and "B" have disappeared. The simple
 are in an input. For example, the above output identifies just five different
 records -- and three different types of data records.
 
-Recall that the **-c** option for `uniq <http://en.wikipedia.org/wiki/Uniq>`_ will cause a `count' to be
+Recall that the ``-c`` option for `uniq <http://en.wikipedia.org/wiki/Uniq>`_ will cause a `count' to be
 prepended to each output line. The command:
 
-``uniq -c sorted.alpha > unique.alpha``
+.. code-block:: bash
+
+	uniq -c sorted.alpha > unique.alpha
 
 will produce the following output:
 
@@ -150,10 +188,10 @@ prefer to omit from our final output.
 Filtering Data with the *rid* Command
 --------
 
-As we saw in `Chapter 13 <../ch13>`_, the `rid <../../man/rid>`_ command can be used to eliminate
+As we saw in |Chapter 13|_\ , the |rid|_ command can be used to eliminate
 various classes of Humdrum records. For example, **rid -G** eliminates all
 global comments; **rid -D** eliminates all data records, etc. The option
-combination **-GLId** is very common with **rid** since only data records are
+combination ``-GLId`` is very common with |rid|_ since only data records are
 retained in the output. That is, eliminating all global and local comments,
 omitting all interpretations, and deleting all null data records will result
 in an output consisting only of non-null data records.
@@ -161,18 +199,22 @@ in an output consisting only of non-null data records.
 Returning to our ``alpha`` data, we can eliminate everything but data
 records as follows:
 
-``rid -GLId alpha > filtered.alpha``
+.. code-block:: bash
+
+	rid -GLId alpha > filtered.alpha
 
 By way of summary, generating an inventory is a three-step process. First we
 *filter* the input so only the data of interest is present. Typically, this
-means using the **rid** command with one or more options to eliminate
+means using the |rid|_ command with one or more options to eliminate
 comments, interpretations, and perhaps null data records. Second we *sort*
-the data using the **sort** command so that identical records are amalgamated
+the data using the**sort**command so that identical records are amalgamated
 as neighbors. Finally, we use the **uniq -c** to *count* the number of
 occurrences of each type of data token. All three steps can be amalgamated
 into a single pipeline:
 
-``rid -GLId alpha | sort | uniq -c > inventory.alpha``
+.. code-block:: bash
+
+	rid -GLId alpha | sort | uniq -c > inventory.alpha
 
 Notice that the inventory will pertain to whatever data was provided in the
 original input. We've been using the abstract data "A", "B", and "C".
@@ -227,8 +269,7 @@ tokens participating in the inventory.
 
 In other circumstances, we may not want this. For example, if we are
 interested only in alpha-related data, we need to eliminate the irrelevant
-**bet data so it won't interfere. This can be done using the Humdrum
-**extract** command.
+**bet data so it won't interfere. This can be done using the Humdrum |extract|_ command.
 
 For example, we can create an inventory of just the ``bet`` data:
 
@@ -246,17 +287,21 @@ The resulting ``inventory.bet`` file will contain:
 -- meaning 5 occurrences of the data "$50" and 1 occurrence of "$200".
 
 Sometimes it is useful to create an aggregate inventory of the data in each
-separate spine. In such cases, we will need to use **extract** several times
+separate spine. In such cases, we will need to use |extract|_ several times
 so that each spine is placed in a separate file:
 
-``extract -i '**alpha' alphabet > justalpha``
-``extract -i '**bet' alphabet > justbet``
+.. code-block:: bash
+
+	extract -i '**alpha' alphabet > justalpha
+	extract -i '**bet' alphabet > justbet
 
 The `cat <http://en.wikipedia.org/wiki/Cat_(Unix)>`_ command can then be used to concatenate the files end-to-end so
 they form a single column of data. With each data token of interest is on its
 own line, we can generate the appropriate inventory:
 
-``cat justalpha justbet | rid -GLId | sort | uniq -c``
+.. code-block:: bash
+
+	cat justalpha justbet | rid -GLId | sort | uniq -c
 
 
 Sorting By Frequency of Occurrence
@@ -269,8 +314,7 @@ difficult to scan through the output to find the most frequent or least
 frequent occurrences. For such long outputs, it might be more convenient to
 produce an output sorted according to frequency of occurrence. Notice that
 each output record from **uniq -c** begins with a number, and so the output
-is ideally suited for numerical sorting. We've already learned that the
-**sort** command rearranges input records in alphabetic/numeric order.
+is ideally suited for numerical sorting. We've already learned that the**sort**command rearranges input records in alphabetic/numeric order.
 
 If we type
 
@@ -286,7 +330,7 @@ The output will be as follows:
 
 Now the output is sorted so that the least frequent occurrences are at the
 beginning, and the most frequent occurrences are at the end of the output.
-Incidentally, **sort** has a **-r** option that causes the output to be
+Incidentally,**sort**has a ``-r`` option that causes the output to be
 sorted in reverse order. If we use **sort -r**, then the most common
 occurrences will be placed at the beginning of the output:
 
@@ -304,7 +348,9 @@ Once again, we can amalgamate all of the required commands into a single
 pipeline. The following pipeline produces an inventory for any type of
 Humdrum input, sorted from the most common to the least common data:
 
-``rid -GLId alpha | sort | uniq -c | sort -r > inventory.alpha``
+.. code-block:: bash
+
+	rid -GLId alpha | sort | uniq -c | sort -r > inventory.alpha
 
 
 Counting with the *wc* Command
@@ -315,16 +361,18 @@ percentage values rather than the actual numerical count. This can be
 calculated by dividing each of the inventory count numbers by the total
 number of data records processed. A convenient way to count records is via
 the UNIX `wc <http://en.wikipedia.org/wiki/Wc_(Unix)>`_ (word count) command. The `wc <http://en.wikipedia.org/wiki/Wc_(Unix)>`_ command provides three
-options. With the **-c** option, `wc <http://en.wikipedia.org/wiki/Wc_(Unix)>`_ counts the number of characters in an
-input. With the **-w** option, `wc <http://en.wikipedia.org/wiki/Wc_(Unix)>`_ counts the number of words in an input.
+options. With the ``-c`` option, `wc <http://en.wikipedia.org/wiki/Wc_(Unix)>`_ counts the number of characters in an
+input. With the ``-w`` option, `wc <http://en.wikipedia.org/wiki/Wc_(Unix)>`_ counts the number of words in an input.
 A "word" is defined as any sequence of characters delineated by white space,
-such as spaces, tabs or new lines. With the **-l** option, `wc <http://en.wikipedia.org/wiki/Wc_(Unix)>`_ counts the
+such as spaces, tabs or new lines. With the ``-l`` option, `wc <http://en.wikipedia.org/wiki/Wc_(Unix)>`_ counts the
 nmber of lines or records in the input.
 
 We can count the total number of non-null data records in a Humdrum input
 using the following pipeline:
 
-``rid -GLId alpha | wc -l``
+.. code-block:: bash
+
+	rid -GLId alpha | wc -l
 
 This will give us the total number of items in our inventory. Simple division
 will generate the percentages for each type of data record.
@@ -333,7 +381,9 @@ Suppose, for example, that the total number of data records was determined to
 be 874. Using the UNIX `awk <http://en.wikipedia.org/wiki/Awk>`_ command will allow us to easily generate the
 percentages for each data type via the command:
 
-``awk '{print $1/847*100 "\t" $2}' inventory.alpha``
+.. code-block:: bash
+
+	awk '{print $1/847*100 "\t" $2}' inventory.alpha
 
 This will create a two-column output. The first column will indicate the
 percentage of occurrence, and the second column will identify the
@@ -343,8 +393,8 @@ corresponding type of data.
 Excluding or Seeking Rare Events
 --------------------------------
 
-Recall from `Chapter 3 <../ch03>`_ that the `uniq <http://en.wikipedia.org/wiki/Uniq>`_ command provides other options
-(besides the **-c** option). The **-d** option causes `uniq <http://en.wikipedia.org/wiki/Uniq>`_ to output
+Recall from |Chapter 3|_ that the `uniq <http://en.wikipedia.org/wiki/Uniq>`_ command provides other options
+(besides the ``-c`` option). The ``-d`` option causes `uniq <http://en.wikipedia.org/wiki/Uniq>`_ to output
 *only* those records that are duplicated. In other words, records that occur
 only once are eliminated from the input. This option can be useful when there
 are a lot of single-occurrence data tokens and you are only interested in
@@ -362,7 +412,7 @@ Transforming and Editing Inventory Data
 ---------------------------------------
 
 Notice that two data records must be identical in order for them to be
-considered "the same" by **sort** and `uniq <http://en.wikipedia.org/wiki/Uniq>`_. This means that records such
+considered "the same" by**sort**and `uniq <http://en.wikipedia.org/wiki/Uniq>`_. This means that records such
 as the following are considered entirely different:
 
 
@@ -375,7 +425,7 @@ as the following are considered entirely different:
 ``CBA``
 
 Remember that step #1 in generating inventories requires that we filter the
-data so only the data of interest is passed to **sort** and `uniq <http://en.wikipedia.org/wiki/Uniq>`_. This
+data so only the data of interest is passed to**sort**and `uniq <http://en.wikipedia.org/wiki/Uniq>`_. This
 means we must be careful about the state of the input. Depending on your
 goal, we will either want to *translate* the input to some other more
 appropriate representation, or *edit* the existing representation in order to
@@ -384,12 +434,12 @@ discard or transform otherwise confounding data.
 *Translating* data involves changing from one type of information to another
 -- that is, changing the exclusive interpretations. For example, if we want
 to produce an inventory of melodic intervals, then we might use the
-`mint <../../man/mint>`_ or `xdelta <../../man/xdelta>`_ commands to generate a suitable representation.
+|mint|_ or |xdelta|_ commands to generate a suitable representation.
 Alternatively, we might want to generate an inventory of scale degrees using
-the `deg <../../man/deg>`_ or `solfa <../../man/solfa>`_ commands.
+the |deg|_ or |solfa|_ commands.
 
 Instead of translating our data, we might wish to edit the data using the
-`sed <http://en.wikipedia.org/wiki/Sed>`_ or `humsed <../../man/humsed>`_ stream editors. Suppose we had a file (named
+`sed <http://en.wikipedia.org/wiki/Sed>`_ or |humsed|_ stream editors. Suppose we had a file (named
 "notes") consisting of pitch information, and we wanted to create an
 inventory of the diatonic pitch-letter names. Our input might look like this:
 
@@ -421,9 +471,11 @@ Without modification, our inventory would appear as follows:
 But this inventory distinguishes D-sharp from D-natural -- which is not what
 we want. The answer is to filter our input so that the sharps are removed.
 
-Adding the appropriate `humsed <../../man/humsed>`_ command to our pipe:
+Adding the appropriate |humsed|_ command to our pipe:
 
-``humsed 's/#//' notes | rid -GLId | sort | uniq -c``
+.. code-block:: bash
+
+	humsed 's/#//' notes | rid -GLId | sort | uniq -c
 
 -- will produce the following output:
 
@@ -445,8 +497,10 @@ commands given below can be used to solve the question posed:
 
 *Does Liszt use a greater variety of harmonies than Chopin?*
 
-``extract -i '`**harm`_' liszt* | rid -GLId | sort | uniq | wc -l``
-``extract -i '**harm' chopin* | rid -GLId | sort | uniq | wc -l``
+.. code-block:: bash
+
+	extract -i '`**harm`_' liszt* | rid -GLId | sort | uniq | wc -l
+	extract -i '**harm' chopin* | rid -GLId | sort | uniq | wc -l
 
 *What is the most frequently used dynamic marking in Beethoven,* *and how
 does Beethoven's practice compare with that of Brahms?*
@@ -460,14 +514,16 @@ does Beethoven's practice compare with that of Brahms?*
 >> | sort -r | head -1``
 
 *Are flats more common than sharps in Monteverdi?* Let's presume that the
-input is monophonic \*\*kern data.
+input is monophonic |**kern|_ data.
 
-``humsed 's/[^#-]//g' montev* | rid -GLId | sort | uniq -c``
+.. code-block:: bash
+
+	humsed 's/[^#-]//g' montev* | rid -GLId | sort | uniq -c
 
 *Did Bartok's preferred articulation marks change* *over his lifetime?*
 Assume that copies of early and late works have been concatenated to the
-files ``early`` and ``late``. The `humsed <../../man/humsed>`_ command here eliminates all
-data with the exception of \*\*kern_ articulation marks. (See `Chapter 6 <../ch06>`_ for details on **kern articulation marks.)
+files ``early`` and ``late``. The |humsed|_ command here eliminates all
+data with the exception of |**kern|_\ articulation marks. (See |Chapter 6|_ for details on **kern articulation marks.)
 
 ``extract -i '**kern' early | humsed 's/[^"`~^:I]//g' \
 >
@@ -481,14 +537,18 @@ data with the exception of \*\*kern_ articulation marks. (See `Chapter 6 <../ch0
 melodies than in (say) French chanson?* Once again assume that the inputs are
 monophonic.
 
-``deg -t pop* | grep -c '4'``
-``deg -t chanson* | grep -c '4'``
+.. code-block:: bash
+
+	deg -t pop* | grep -c '4'
+	deg -t chanson* | grep -c '4'
 
 *How frequent are light-related words such as "lumen"* *or "lumine" in the
 different monastic offices for* Thomas of Canterbury? Familiarity with
 regular expressions helps:
 
-``extract -i '`**text`_' office* | egrep -ic 'lum.+n[e]*$'``
+.. code-block:: bash
+
+	extract -i '`**text`_' office* | egrep -ic 'lum.+n[e]*$'
 
 *Is it true that 90 percent of the notes in a given work by Bach* *use just
 two durations (such as eighths and sixteenths, or* *eighths and quarters)?*
@@ -499,7 +559,7 @@ above command for each work and inspect the results.)
 *What is the most common instrumental combination for sonorities* *by
 Mussorgsky?*
 
-> This problem is addressed in `Chapter 36 <../ch36>`_.
+> This problem is addressed in |Chapter 36|_\ .
 
 --------
 

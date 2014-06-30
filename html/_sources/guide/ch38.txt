@@ -1,3 +1,31 @@
+
+.. |Chapter 33|	replace:: Chapter 33
+.. _Chapter 33:	../ch33
+
+.. |Chapter 35|	replace:: Chapter 35
+.. _Chapter 35:	../ch35
+
+.. |ditto|	replace:: ditto
+.. _ditto:	../../man/ditto
+
+.. |patt|	replace:: patt
+.. _patt:	../../man/patt
+
+.. |reihe|	replace:: reihe
+.. _reihe:	../../man/reihe
+
+.. |rid|	replace:: rid
+.. _rid:	../../man/rid
+
+.. |scramble|	replace:: scramble
+.. _scramble:	../../man/scramble
+
+.. |semits|	replace:: semits
+.. _semits:	../../man/semits
+
+.. |xdelta|	replace:: xdelta
+.. _xdelta:	../../man/xdelta
+
 =======================================
 Chapter 38: Systematic Musicology
 =======================================
@@ -80,7 +108,7 @@ instrumentation, date or period of composition, duration of work, tempi, and
 so on.
 
 Humdrum users can use the `find <http://en.wikipedia.org/wiki/Find>`_ and `grep <http://en.wikipedia.org/wiki/Grep>`_ commands to identify works
-that match particular controlled characteristics (see `Chapter 33 <../ch33>`_). For
+that match particular controlled characteristics (see |Chapter 33|_\ ). For
 example, the following command might locate all files that contain scores in
 triple meter. The results are placed in a file called ``control``:
 
@@ -90,7 +118,7 @@ triple meter. The results are placed in a file called ``control``:
 
 In some cases, the number of possible control works is excessively large. In
 this case one can make a random selection from the control list using the
-`scramble <../../man/scramble>`_ command described later.
+|scramble|_ command described later.
 
 Note that in many instances it is difficult to establish a good comparison
 repertory. For example, suppose we find significant differences between
@@ -134,26 +162,28 @@ illustrate this procedure by working through the problem of small melodic
 intervals.
 
 We begin by measuring the average melodic interval size in semitones for a
-sample of actual melodies. We can use the `semits <../../man/semits>`_ command to translate
-data to semitone representations and then use the `xdelta <../../man/xdelta>`_ command to
-calculate numerical differences. The **-a** option for **xdelta** causes only
-absolute (unsigned) values to be calculated. The `rid <../../man/rid>`_ command can be
+sample of actual melodies. We can use the |semits|_ command to translate
+data to semitone representations and then use the |xdelta|_ command to
+calculate numerical differences. The ``-a`` option for |xdelta|_ causes only
+absolute (unsigned) values to be calculated. The |rid|_ command can be
 used to eliminate everything but data records and the `grep <http://en.wikipedia.org/wiki/Grep>`_ command can be
 used to eliminate barlines and rests. We can then calculate the average
-interval size by piping the output to the **stats** command. For typical folk
+interval size by piping the output to the**stats**command. For typical folk
 melodies, the average interval size is roughly two semitones.
 
-`` semits melody | xdelta -a | rid -GLId | grep -v '[=r]' | stats``
+.. code-block:: bash
+
+	semits melody | xdelta -a | rid -GLId | grep -v '[=r]' | stats
 
 Next, we need to determine the average melodic interval size that would
 result for a random re-ordering of the pitches within each melody. We can do
-this using the Humdrum **scramble** command.
+this using the Humdrum |scramble|_ command.
 
 
 Using the *scramble* Command
 --------
 
-The `scramble <../../man/scramble>`_ command is useful for randomizing the arrangement of
+The |scramble|_ command is useful for randomizing the arrangement of
 Humdrum data. Suppose we had the following Humdrum input:
 
 .. code-block:: humdrum
@@ -168,9 +198,11 @@ Humdrum data. Suppose we had the following Humdrum input:
 
 We can scramble the order of data records using the following command:
 
-`` scramble -r numbers``
+.. code-block:: bash
 
-The **-r** option indicates that it is the order of records which should be
+	scramble -r numbers
+
+The ``-r`` option indicates that it is the order of records which should be
 randomized. A possible output might look like this:
 
 .. code-block:: humdrum
@@ -184,7 +216,7 @@ randomized. A possible output might look like this:
 	*-
 
 Notice that only data records are scrambled: comments and interpretations
-stay put. Each time `scramble <../../man/scramble>`_ is invoked, it produces a different
+stay put. Each time |scramble|_ is invoked, it produces a different
 random ordering.
 
 Returning to our melodic interval problem, we can now generate an inventory
@@ -210,7 +242,9 @@ chords. We can address this question by comparing Haydn's actual harmonic
 progressions with randomly generated progressions. First we count the total
 number of *V-IV* progressions:
 
-`` extract -i '**harm' haydn | context -n 2 -o ^= | grep -c '^V IV$'``
+.. code-block:: bash
+
+	extract -i '**harm' haydn | context -n 2 -o ^= | grep -c '^V IV$'
 
 Next we randomly re-order his harmonies and count the number of *V-IV*
 progressions:
@@ -225,19 +259,23 @@ is, the tritone is "sought-out" rather than "avoided" in his writing. Suppose
 we are looking at a two-part invention. We begin by counting the number of
 augmented elevenths in his actual writing:
 
-`` ditto -s = bach | hint | grep -c 'A11'``
+.. code-block:: bash
+
+	ditto -s = bach | hint | grep -c 'A11'
 
 We can create a random comparison by extracting one of the parts, scrambling
 the order of notes, and then re-assembling the scrambled part with the
 original. The resulting harmonic intervals arise from a random juxtaposition
 of parts.
 
-`` extract -f 1 bach > temp1``
-`` extract -f 2 bach > temp2``
-`` scramble -r temp1 > temp1.scr``
-`` assemble temp1.scr temp2 | ditto -s = | hint | grep -c 'A11'``
+.. code-block:: bash
 
-Note that the **scramble** command also provides a **-t** option so that the
+	extract -f 1 bach > temp1
+	extract -f 2 bach > temp2
+	scramble -r temp1 > temp1.scr
+	assemble temp1.scr temp2 | ditto -s = | hint | grep -c 'A11'
+
+Note that the |scramble|_ command also provides a ``-t`` option so that the
 order of tokens within a data record can be randomly re-arranged.
 
 
@@ -250,8 +288,8 @@ the part of the composer? Or should we expect a fair number of such patterns
 to occur simply by chance?
 
 One way of determining the chance frequency of B-A-C-H might be to randomize
-the order of pitches using the `scramble <../../man/scramble>`_ command, and then use
-`patt <../../man/patt>`_ to count the number of occurrences in the reordered melodies.
+the order of pitches using the |scramble|_ command, and then use
+|patt|_ to count the number of occurrences in the reordered melodies.
 Unfortunately, we already know that musical lines tend to be constructed
 using small intervals, and the pitches B-A-C-H are very close together. Since
 random reordering of the pitches will reduce the proportion of small
@@ -265,15 +303,15 @@ was first, then our control repertory would preserve both the frequency of
 occurrence of all the pitches, and also preserve the pitch-proximity
 distribution.
 
-The UNIX **tac** command can be used to reverse the order of records. Suppose
+The UNIX**tac**command can be used to reverse the order of records. Suppose
 we had an input consisting of the number 1 through 10 on successive lines.
-The **tac** command would transform this input so that the output consists of
+The**tac**command would transform this input so that the output consists of
 the reverse ordering of numbers from 10 to 1.
 
-If we apply **tac** to a Humdrum file, then the result will no longer conform
+If we apply**tac**to a Humdrum file, then the result will no longer conform
 to the Humdrum syntax -- the spine-path terminators will appear at the
 beginning of the file and the exclusive interpretations will appear at the
-end of the file. If we use **tac** we could simply restore the correct syntax
+end of the file. If we use**tac**we could simply restore the correct syntax
 by hand-editing the file and moving the exclusive interpretations and the
 spine-path terminators to their proper locations. We now have a "retrograde"
 passage.
@@ -302,12 +340,14 @@ One approach to answering this question is to use an *autophase procedure*
 (Huron, 1991a). The essence of this approach is to shift two spines with
 respect to each other.
 
-Recall that the `reihe <../../man/reihe>`_ command (`Chapter 35 <../ch35>`_) provides a **-s** option
+Recall that the |reihe|_ command ( |Chapter 35|_\ ) provides a ``-s`` option
 that causes a shift in the serial position of data tokens. For example,
 suppose we had an input consisting of the numbers 1 through 5. The following
 command:
 
-`` reihe -s +1* file*``
+.. code-block:: bash
+
+	reihe -s +1* file*
 
 Will cause all data tokens to be moved forward one position, and the last
 data token to be moved to the beginning:
@@ -324,20 +364,26 @@ data token to be moved to the beginning:
 
 Let's apply this technique to our problem of whether a given composer tends
 to avoid octaves between the soprano and bass voices. First, we extract each
-of the voices. Let's also eliminate barlines and use `ditto <../../man/ditto>`_ to
+of the voices. Let's also eliminate barlines and use |ditto|_ to
 replicate the pitch values through null tokens.
 
-`` extract -i '*sopran' composition | grep -v = | ditto > voice1``
-`` extract -i '*bass' composition | grep -v = | ditto > voice2``
+.. code-block:: bash
 
-Now let's shift one part with respect to the other using `reihe <../../man/reihe>`_ **-s**.
+	extract -i '*sopran' composition | grep -v = | ditto > voice1
+	extract -i '*bass' composition | grep -v = | ditto > voice2
 
-`` reihe -s voice1 > voice1.shifted``
+Now let's shift one part with respect to the other using |reihe|_\ ``-s``.
+
+.. code-block:: bash
+
+	reihe -s voice1 > voice1.shifted
 
 Now we reassemble the parts, determine the harmonic intervals present, and
 count the number of octave intervals:
 
-`` assemble voice2 voice1.shifted | hint | grep -c 'P8'``
+.. code-block:: bash
+
+	assemble voice2 voice1.shifted | hint | grep -c 'P8'
 
 In effect, we have concocted a control group, by shifting the parts with
 respect to each other. Of course we have utterly destroyed the *relationship

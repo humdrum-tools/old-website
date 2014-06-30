@@ -1,3 +1,61 @@
+
+.. |Chapter 12|	replace:: Chapter 12
+.. _Chapter 12:	../ch12
+
+.. |Chapter 23|	replace:: Chapter 23
+.. _Chapter 23:	../ch23
+
+.. |Chapter 4|	replace:: Chapter 4
+.. _Chapter 4:	../ch04
+
+.. |assemble|	replace:: assemble
+.. _assemble:	../../man/assemble
+
+.. |census|	replace:: census
+.. _census:	../../man/census
+
+.. |mint|	replace:: mint
+.. _mint:	../../man/mint
+
+.. |perform|	replace:: perform
+.. _perform:	../../man/perform
+
+.. |proof|	replace:: proof
+.. _proof:	../../man/proof
+
+.. |rid|	replace:: rid
+.. _rid:	../../man/rid
+
+.. |solfa|	replace:: solfa
+.. _solfa:	../../man/solfa
+
+.. |timebase|	replace:: timebase
+.. _timebase:	../../man/timebase
+
+.. |yank|	replace:: yank
+.. _yank:	../../man/yank
+
+.. |**MIDI|	replace:: \*\*MIDI
+.. _\*\*MIDI:	../../rep/MIDI
+
+.. |**deg|	replace:: \*\*deg
+.. _\*\*deg:	../../rep/deg
+
+.. |**harm|	replace:: \*\*harm
+.. _\*\*harm:	../../rep/harm
+
+.. |**kern|	replace:: \*\*kern
+.. _\*\*kern:	../../rep/kern
+
+.. |**mint|	replace:: \*\*mint
+.. _\*\*mint:	../../rep/mint
+
+.. |**recip|	replace:: \*\*recip
+.. _\*\*recip:	../../rep/recip
+
+.. |**solfa|	replace:: \*\*solfa
+.. _\*\*solfa:	../../rep/solfa
+
 ================================
 Chapter 13: Assembling Scores
 ================================
@@ -6,7 +64,7 @@ In the previous chapter we learned how to extract parts and passages from
 Humdrum files. In this chapter we discuss the reverse procedures: how to
 assemble and coordinate larger documents from individual segments and parts.
 We will discuss four tools: the UNIX `cat <http://en.wikipedia.org/wiki/Cat_(Unix)>`_ command, and the Humdrum
-`assemble <../../man/assemble>`_, `timebase <../../man/timebase>`_ and `rid <../../man/rid>`_ commands.
+|assemble|_\ , |timebase|_ and |rid|_ commands.
 
 
 The *cat* Command
@@ -20,7 +78,9 @@ files ``mov.1``, ``mov.2`` and ``mov.3`` and place the result in the file
 `` complete``. The order of concatenation is the same as the order of file
 names given on the command line:
 
-`` cat mov.1 mov.2 mov.3 > complete``
+.. code-block:: bash
+
+	cat mov.1 mov.2 mov.3 > complete
 
 If each of the concatenated files conforms to the Humdrum syntax, then the
 resulting combined file is guaranteed to conform to the Humdrum syntax.
@@ -74,21 +134,20 @@ output such as the following:
 	*-	*-	*-	*-
 
 Notice that each complete measure ends with spine-path terminators and that
-the `**kern <../../rep/kern>`_ exclusive interpretations are repeated. This organization
+the |**kern|_ exclusive interpretations are repeated. This organization
 has a number of repercussions for various Humdrum tools. For example, the
-`mint <../../man/mint>`_ command calculates melodic intervals between successive notes
-within a spine. However, **mint** will not calculate intervals between
+|mint|_ command calculates melodic intervals between successive notes
+within a spine. However, |mint|_ will not calculate intervals between
 pitches that are separated by a spine-path terminator. In other words, in the
-above output, **mint** will fail to calculate the melodic intervals between
+above output, |mint|_ will fail to calculate the melodic intervals between
 notes in successive measures.
 
 
 The *rid* Command
 --------
 
-This problem can be resolved by using the Humdrum `rid <../../man/rid>`_ command. The
-**rid** command can be used to eliminate various kinds of records. Each
-option for **rid** eliminates a different class of records. Here are the
+This problem can be resolved by using the Humdrum |rid|_ command. The |rid|_ command can be used to eliminate various kinds of records. Each
+option for |rid|_ eliminates a different class of records. Here are the
 record classes with their associated options:
 
 > -Geliminate all global comments
@@ -117,22 +176,28 @@ certain class (lower-case).
 By way of example, the following command will eliminate all global comments
 (including reference records) from the input:
 
-`` rid -G Saint-Saens``
+.. code-block:: bash
+
+	rid -G Saint-Saens
 
 Similarly, the following command will eliminate all tandem interpretations
 from an input:
 
-`` rid -T Vaughan-Williams``
+.. code-block:: bash
+
+	rid -T Vaughan-Williams
 
 Options can be combined. The following command eliminates all global and
 local comments, interpretations, and null data records:
 
-`` rid -GLId``
+.. code-block:: bash
 
-The option combination **-GLId** is very common with **rid** since only non-
+	rid -GLId
+
+The option combination ``-GLId`` is very common with |rid|_ since only non-
 null data records are retained in the output.
 
-With the **-u** option, **rid** will remove "unnecessary" exclusive
+With the ``-u`` option, |rid|_ will remove "unnecessary" exclusive
 interpretations. Exclusive interpretations are deemed unnecessary if they
 don't change the current status of the data. In the following example, the
 second ``psaltery`` interpretation is redundant. The **rid -u** command
@@ -150,13 +215,15 @@ interpretation -- leaving a continuous data spine.
 	.
 	*-
 
-In addition, **rid** provides a **-t** option which removes "duplicate" or
+In addition, |rid|_ provides a ``-t`` option which removes "duplicate" or
 repeated tandem interpretations. In the above example there is no need to
 repeat the meter signature and key signature in each measure.  The following
 command will concatenate each of the three measures together, and then
 eliminate the unwanted interpretations:
 
-`` cat bar1 bar2 bar3 | rid -ut``
+.. code-block:: bash
+
+	cat bar1 bar2 bar3 | rid -ut
 
 The resulting output is given below:
 
@@ -208,7 +275,7 @@ Assembling Parts Using the *assemble* Command
 
 Assembling parts into a full score is slightly more challenging than
 concatenating together musical segments. The principle tool for joining
-spines together is the `assemble <../../man/assemble>`_ command. Consider the following two
+spines together is the |assemble|_ command. Consider the following two
 files:
 
 .. code-block:: humdrum
@@ -237,9 +304,11 @@ files:
 	5
 	*-
 
-These two files can be aligned side by side using **assemble**:
+These two files can be aligned side by side using |assemble|_ :
 
-`` assemble letters numbers``
+.. code-block:: bash
+
+	assemble letters numbers
 
 The resulting output is:
 
@@ -263,13 +332,12 @@ preserved in their appropriate spines. (3) When identical global comments
 occur at the same location in both files, only a single instance of the
 comment is output. (4) Dissimilar global comments are output successively.
 
-The files joined by **assemble** are not confined to a single spine. For
+The files joined by |assemble|_ are not confined to a single spine. For
 example, one input file may contain 2 spines and a second file may contain 20
 spines. The resulting output will contain 22 spines. There is no limit to the
 number of files that can be assembled at one time.
 
-In many cases, the input files will have dissimilar lengths. The **assemble**
-command will correctly terminate the appropriate spines. For example, in the
+In many cases, the input files will have dissimilar lengths. The |assemble|_ command will correctly terminate the appropriate spines. For example, in the
 above case, if the ``numbers`` file contained only the numbers 1 to 3, the
 assembled output would appear as follows:
 
@@ -277,8 +345,7 @@ assembled output would appear as follows:
 
 	!! Assemble example
 	!! File 1
-	!! File 2
-	**Letters**Numbers
+	!! File 2**Letters**Numbers
 	! A to E! 1 to 3
 	A1
 	B2
@@ -288,7 +355,7 @@ assembled output would appear as follows:
 	E
 	*-
 
-If the order of the input files was reversed, **assemble** would produce an
+If the order of the input files was reversed, |assemble|_ would produce an
 output with the appropriate spine-path changes:
 
 .. code-block:: humdrum
@@ -307,7 +374,7 @@ output with the appropriate spine-path changes:
 	*-
 
 Note that if all of the input files conform to the Humdrum syntax, then
-`assemble <../../man/assemble>`_ guarantees that the assembled output will also conform to the
+|assemble|_ guarantees that the assembled output will also conform to the
 Humdrum syntax.
 
 
@@ -336,18 +403,20 @@ second file contains four eighth notes:
 	8g
 	*-
 
-Using **assemble** to paste them together will clearly lead to an
+Using |assemble|_ to paste them together will clearly lead to an
 uncoordinated result. The two quarter notes in file 1 will be incorrectly
 matched with the first two eighth notes in file 2.
 
-The Humdrum `timebase <../../man/timebase>`_ command can be used to reformat either
-`` `**kern```_ or `**recip <../../rep/recip>`_ inputs so that each output data record
+The Humdrum |timebase|_ command can be used to reformat either
+`` `**kern```_ or |**recip|_ inputs so that each output data record
 represents an equivalent slice (elapsed duration) of time. (Barlines are
-ignored by **timebase**.) The **timebase** command achieves this by padding
+ignored by |timebase|_ .) The |timebase|_ command achieves this by padding
 an input with null data records. In the above case, we would preprocess file
 1 as follows:
 
-`` timebase -t 8 file1 > file1.tb``
+.. code-block:: bash
+
+	timebase -t 8 file1 > file1.tb
 
 The new file would look like this:
 
@@ -361,12 +430,13 @@ The new file would look like this:
 	.
 	*-
 
-The **-t** option is used to indicate the "time base" -- in this case, an
+The ``-t`` option is used to indicate the "time base" -- in this case, an
 eighth duration. Since all non-barline data records in both files represent
-elapsed durations of an eighth-note, we can continue by using the
-**assemble** command as before. The command:
+elapsed durations of an eighth-note, we can continue by using the |assemble|_ command as before. The command:
 
-`` assemble file1.tb file2``
+.. code-block:: bash
+
+	assemble file1.tb file2
 
 will result in the following two-part score:
 
@@ -393,8 +463,7 @@ revised ``file2``:
 	4f
 	*-
 
-Before assembling the two parts, we would need to apply the **timebase**
-command to this file (using the same 8th-note time-base value). Assembling
+Before assembling the two parts, we would need to apply the |timebase|_ command to this file (using the same 8th-note time-base value). Assembling
 the two "time-based" files would produce the following result:
 
 .. code-block:: humdrum
@@ -411,11 +480,13 @@ the two "time-based" files would produce the following result:
 Notice that we have a spurious null data record in the last line; both parts
 encode null tokens. For most processing, the presence of null data records is
 inconsequential. However, if we wish, these null data records can be
-eliminated using the **rid** command with the **-d** option. In fact it is
-common to follow an **assemble** command with **rid -d** to strip away
+eliminated using the |rid|_ command with the ``-d`` option. In fact it is
+common to follow an |assemble|_ command with **rid -d** to strip away
 unnecessary null data records. The command:
 
-`` assemble file1.tb file2.tb | rid -d``
+.. code-block:: bash
+
+	assemble file1.tb file2.tb | rid -d
 
 would result in the following output:
 
@@ -429,7 +500,7 @@ would result in the following output:
 	4d	4f
 	*-	*-
 
-The `timebase <../../man/timebase>`_ command can be applied to multi-spine inputs as well as
+The |timebase|_ command can be applied to multi-spine inputs as well as
 single-spine inputs. Consider, the following input:
 
 
@@ -450,7 +521,9 @@ notice that any spine contain non-rhythmic data -- such as the
 `` **commentary`` spine in the above example -- is also transformed so that
 synchronous data is maintained.
 
-`` timebase -t 32 Corelli``
+.. code-block:: bash
+
+	timebase -t 32 Corelli
 
 The corresponding output is as follows.
 
@@ -474,7 +547,7 @@ The corresponding output is as follows.
 	.	.	.	.	.
 	*-	*-	*-	*-	*-
 
-Notice that **timebase** has added a tandem interpretation (``*tb32``). This
+Notice that |timebase|_ has added a tandem interpretation (``*tb32``). This
 indicates that the output has been processed so that each non-barline data
 record represents an elapsed duration equivalent to a thirty-second note.
 
@@ -484,7 +557,7 @@ Assembling N-tuplets
 
 Typically, one can simply use the shortest duration present as a guide for a
 suitable time-base value. The shortest duration can be determined using the
-`census <../../man/census>`_ -k command described in `Chapter 4 <../ch04>`_. However, tuplets require
+|census|_\ -k command described in |Chapter 4|_\ . However, tuplets require
 a little more sophistication. Suppose we wanted to assemble two parts, one
 containing just eighth-notes and the other containing just quarter-note
 triplets. (The quarter-note triplets will be encoded as three notes in the
@@ -532,39 +605,41 @@ Checking an Assembled Score Using *proof*
 
 In assembling any score from a set of parts, there is always the danger of
 using the wrong time-base value. When parts are miscoordinated, it is
-typically the consequence of one or more notes being discarded by
-**timebase**. Fortunately, such miscoordinations are easily detected by
-applying the `proof <../../man/proof>`_ command to any assembled \*\*kern output. The
-**proof** utility checks \*\*kern representations for a wide variety of
+typically the consequence of one or more notes being discarded by |timebase|_ . Fortunately, such miscoordinations are easily detected by
+applying the |proof|_ command to any assembled |**kern|_ output. The |proof|_ utility checks |**kern|_ representations for a wide variety of
 possible encoding errors or ambiguities:
 
-`` proof fullscore``
+.. code-block:: bash
 
-By way of summary, creating a full score from a set of `**kern <../../rep/kern>`_ parts
+	proof fullscore
+
+By way of summary, creating a full score from a set of |**kern|_ parts
 involves the following five tasks: (1) Identify a common duration factor for
-all the parts. Use `census <../../man/census>`_ to determine the shortest duration; if any
+all the parts. Use |census|_ to determine the shortest duration; if any
 of the parts contains an N-tuplet, then the common duration factor may be
-smaller than the shortest note. (2) Use the `timebase <../../man/timebase>`_ command to expand
+smaller than the shortest note. (2) Use the |timebase|_ command to expand
 each input file separately using the common duration factor. (3) Assemble the
-parts using `assemble <../../man/assemble>`_. (4) If desired, eliminate unnecessary null data
+parts using |assemble|_\ . (4) If desired, eliminate unnecessary null data
 records usingi `**rid -d**.`_ (5) Check the assembled score for rhythmic
-coherence using the `proof <../../man/proof>`_ command.
+coherence using the |proof|_ command.
 
 
 Other Uses for the *timebase* Command
 --------
 
-The most common use of **timebase** is as a way of expanding a file by
-padding it with null data records. However, **timebase** can also be used to
+The most common use of |timebase|_ is as a way of expanding a file by
+padding it with null data records. However, |timebase|_ can also be used to
 contract a file, giving us only those sonorities that lie a fixed duration
-apart. For example, specifying a time-base of **-t 2** will cause only those
+apart. For example, specifying a time-base of ``-t 2`` will cause only those
 sonorities that are separated by a half-note duration to be output. This sort
 of rhythmic reduction can be useful in certain circumstances. For example,
 suppose you suspect there may be a hemiola tendency in a given work by
 Brahms, where the duration separating hemiola notes is a dotted-quarter. The
 command:
 
-`` timebase -t 4. brahms``
+.. code-block:: bash
+
+	timebase -t 4. brahms
 
 can be used to extract only those sonorities that are separated by a dotted-
 quarter duration.
@@ -574,12 +649,14 @@ beat of a waltz written in 3/2 meter. First we would edit the input file so
 it begins on the third beat of some measure. Then we could use the following
 command:
 
-`` grep -v ^= waltz | timebase -t 1. > 3rd_beat``
+.. code-block:: bash
+
+	grep -v ^= waltz | timebase -t 1. > 3rd_beat
 
 Note that the use of `grep <http://en.wikipedia.org/wiki/Grep>`_ here is essential in order to eliminate
-barlines. The **timebase** command resets itself with each barline, so time-
+barlines. The |timebase|_ command resets itself with each barline, so time-
 base durations are calculated from the beginning of the bar. When barlines
-are eliminated, **timebase** cannot synchronize to the beginning of each bar
+are eliminated, |timebase|_ cannot synchronize to the beginning of each bar
 and so simply floats along at the fixed time-base.
 
 
@@ -588,91 +665,110 @@ Additional Uses of *assemble* and *timebase*
 
 Although we normally assemble parts together, sometimes it is useful to
 assemble entire scores together. Suppose we wanted to listen to a theme at
-the same time as one of its variations. We might first use `yank <../../man/yank>`_ to
+the same time as one of its variations. We might first use |yank|_ to
 extract the appropriate sections. At the same time we might determine a
-common duration factor and expand them using **timebase**.
+common duration factor and expand them using |timebase|_ .
 
-`` yank -s Theme -r 1 blacksmith | timebase -t 32 > temp1``
-`` yank -s 'Variation 1' -r 1 blacksmith | timebase -t 32 > temp2``
+.. code-block:: bash
 
-Then we assemble the two sections together, translate to the `**MIDI <../../rep/MIDI>`_
-representation and use `perform <../../man/perform>`_ to listen to both sections at the same
+	yank -s Theme -r 1 blacksmith | timebase -t 32 > temp1
+	yank -s 'Variation 1' -r 1 blacksmith | timebase -t 32 > temp2
+
+Then we assemble the two sections together, translate to the |**MIDI|_
+representation and use |perform|_ to listen to both sections at the same
 time:
 
-`` assemble temp1 temp2 | midi | perform``
+.. code-block:: bash
+
+	assemble temp1 temp2 | midi | perform
 
 Similarly, suppose we would like to compare the bass lines for each variation
 in some set. We might extract each of the bass lines, assemble them into a
-single score, and then use the **ms** and **ghostview** commands to allow us
+single score, and then use the |ms|_ and**ghostview**commands to allow us
 to see all of the bass lines for all of the variations concurrently.
 
-`` yank -s 'Variation 1' -r 1 goldberg | timebase -t 16 > temp1``
-`` yank -s 'Variation 2' -r 1 goldberg | timebase -t 16 > temp2``
-etc. ...
-`` assemble temp1 temp2 temp3 ... | rid -d | ms > basslines.ps``
-`` ghostview basslines.ps``
+.. code-block:: bash
 
-The most common use of **assemble** is not to assemble parts, but to assemble
+	yank -s 'Variation 1' -r 1 goldberg | timebase -t 16 > temp1
+	yank -s 'Variation 2' -r 1 goldberg | timebase -t 16 > temp2
+etc. ...
+
+.. code-block:: bash
+
+	assemble temp1 temp2 temp3 ... | rid -d | ms > basslines.ps
+	ghostview basslines.ps
+
+The most common use of |assemble|_ is not to assemble parts, but to assemble
 different types of concurrent information. Suppose we would like to determine
 whether descending minor seconds are more likely to be *fa-mi* rather than
-*do-ti*. We can use the `mint <../../man/mint>`_ command to characterize melodic
-intervals, and the `solfa <../../man/solfa>`_ command to characterize scale degrees. Assume
+*do-ti*. We can use the |mint|_ command to characterize melodic
+intervals, and the |solfa|_ command to characterize scale degrees. Assume
 that our input is monophonic:
 
-`` mint melodies > temp1``
-`` solfa melodies > temp2``
+.. code-block:: bash
+
+	mint melodies > temp1
+	solfa melodies > temp2
 
 The files ``temp1`` and ``temp2`` will have the same length, so we can
 assemble them together. This will generate an output consisting of two
-spines, `**mint <../../rep/mint>`_ and `**solfa <../../rep/solfa>`_. In effect, the `**mint <../../rep/mint>`_ spine
+spines, |**mint|_ and |**solfa|_\ . In effect, the |**mint|_ spine
 data will tell us the interval used to approach the scale degree encoded in
-the `**solfa <../../rep/solfa>`_ spine. We can use `grep <http://en.wikipedia.org/wiki/Grep>`_ to search for the appropriate
+the |**solfa|_ spine. We can use `grep <http://en.wikipedia.org/wiki/Grep>`_ to search for the appropriate
 combinations of interval and scale degree and count the number of
 occurrences:
 
-`` assemble temp1 temp2 | grep -c '-m2.*mi'``
-`` assemble temp1 temp2 | grep -c '-m2.*ti'``
+.. code-block:: bash
+
+	assemble temp1 temp2 | grep -c '-m2.*mi'
+	assemble temp1 temp2 | grep -c '-m2.*ti'
 
 This same approach can be used to address (innumerable) questions pertaining
-to concurrent patterns. For example, suppose we have a `**harm <../../rep/harm>`_ spine
+to concurrent patterns. For example, suppose we have a |**harm|_ spine
 that identifies the `Roman numeral' functional harmony for some choral work.
 We can identify complex situations such as the following: for the soprano
 voice, count how many subdominant pitches are approached by an interval of a
 rising third or a rising sixth and coincide with a dominant seventh chord.
 First, let's extract the soprano line and create a corresponding scale degree
-representation using **deg**. We can use the **-a** option to avoid
+representation using |deg|_ . We can use the ``-a`` option to avoid
 outputting the melodic direction signifiers (``^`` and ``v``):
 
-`` extract -i '*Isopran' howells | deg -a > temp1``
+.. code-block:: bash
+
+	extract -i '*Isopran' howells | deg -a > temp1
 
 Next, let's again extract the soprano voice and create a corresponding
-melodic interval representation using **mint**. Since we are not interested
-in interval qualities we can invoke the **-d** option to output only diatonic
+melodic interval representation using |mint|_ . Since we are not interested
+in interval qualities we can invoke the ``-d`` option to output only diatonic
 interval sizes.
 
-`` extract -i '*Isopran' howells | mint -d > temp2``
-`` extract -i '**harm' howells > temp3``
+.. code-block:: bash
 
-We have also extracted the `**harm <../../rep/harm>`_ spine and placed it in the file
+	extract -i '*Isopran' howells | mint -d > temp2
+	extract -i '**harm' howells > temp3
+
+We have also extracted the |**harm|_ spine and placed it in the file
 `` temp3``. If we assemble together our three temporary files, the result will
-have three spines: `**deg <../../rep/deg>`_, `**mint <../../rep/mint>`_ and `**harm <../../rep/harm>`_. We can now use
+have three spines: |**deg|_\ , |**mint|_ and |**harm|_\ . We can now use
 `grep <http://en.wikipedia.org/wiki/Grep>`_ to search and count all instances of subdominant pitches that are
 approached by ascending thirds/sixths and that coincide with dominant seventh
-chords (in the \*\*kern representation: ```V7``'):
+chords (in the |**kern|_ representation: ```V7``'):
 
-`` assemble temp1 temp2 temp3 | grep -c '^4``**``+[36]``**``V7``
+.. code-block:: bash
 
-The **timebase** command can also be used for tasks other than assembling
+	assemble temp1 temp2 temp3 | grep -c '^4``**``+[36]``**``V7
+
+The |timebase|_ command can also be used for tasks other than assembling
 parts together. Suppose we would like to determine whether secondary dominant
 chords are more likely to appear on the third beat than other beats in a
-triple meter work. The **timebase** command can be used to reformat a score
+triple meter work. The |timebase|_ command can be used to reformat a score
 so that each measure occupies the same number of data records. For example,
 in a 3/4 meter, an eighth-note time-base will mean that each measure will
 contain six data records, and the fifth data record will correspond to the
-onset of the third beat. Recall from `Chapter 12 <../ch12>`_ that the **yank -m**
+onset of the third beat. Recall from |Chapter 12|_ that the **yank -m**
 command allows us to extract particular data records following a specified
 marker. In the following command, we have defined the marker as a barline
-(``-m ^=``) and instructed **yank** to fetch the fifth line following each
+(``-m ^=``) and instructed |yank|_ to fetch the fifth line following each
 occurrence of the marker (``-r 5``). In our example, the `grep <http://en.wikipedia.org/wiki/Grep>`_ command is
 being used to count V/V chords occurring on third beats:
 
@@ -680,7 +776,7 @@ being used to count V/V chords occurring on third beats:
 >
 >> | grep fe | grep -c la``
 
-We can repeat this command for beats one and two by changing the **-r**
+We can repeat this command for beats one and two by changing the ``-r``
 parameter to 1 and 3 respectively.
 
 --------
@@ -692,18 +788,18 @@ Reprise
 In this chapter we have learned how to concatenate musical passages together
 using the `cat <http://en.wikipedia.org/wiki/Cat_(Unix)>`_ command. We also learned how to eliminate redundant
 exclusive and tandem interpretations from concatenated outputs using the
-**-u** and **-t** options for `rid <../../man/rid>`_. In addition, we learned how to
-assemble two or more spines into a single output file using `assemble <../../man/assemble>`_.
-In the case of `**kern <../../rep/kern>`_ and `**recip <../../rep/recip>`_ representations, we learned
-how to use the `timebase <../../man/timebase>`_ command to preprocess each constituent file so
+``-u`` and ``-t`` options for |rid|_\ . In addition, we learned how to
+assemble two or more spines into a single output file using |assemble|_\ .
+In the case of |**kern|_ and |**recip|_ representations, we learned
+how to use the |timebase|_ command to preprocess each constituent file so
 that all data records represent equivalent elapsed durations. Having
-assembled a full score from parts, **rid** **-d** can be used to eliminate
-any residual or unnecessary null data records. The `proof <../../man/proof>`_ command can
-be used to ensure that any assembled \*\*kern data is correctly aligned.
+assembled a full score from parts, |rid|_ ``-d`` can be used to eliminate
+any residual or unnecessary null data records. The |proof|_ command can
+be used to ensure that any assembled |**kern|_ data is correctly aligned.
 
-Finally, we learned that the **timebase** command can be used for other
+Finally, we learned that the |timebase|_ command can be used for other
 analytic purposes. Specifically, it can be used to reduce a score
 rhythmically so only particular onset points or beats are retained. In
-`Chapter 23 <../ch23>`_ we will see additional uses of **timebase** for a variety of
+|Chapter 23|_ we will see additional uses of |timebase|_ for a variety of
 types of rhythmic tasks.
 

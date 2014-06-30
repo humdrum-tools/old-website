@@ -1,3 +1,34 @@
+
+.. |Chapter 13|	replace:: Chapter 13
+.. _Chapter 13:	../ch13
+
+.. |Chapter 21|	replace:: Chapter 21
+.. _Chapter 21:	../ch21
+
+.. |Chapter 3|	replace:: Chapter 3
+.. _Chapter 3:	../ch03
+
+.. |humsed|	replace:: humsed
+.. _humsed:	../../man/humsed
+
+.. |rend|	replace:: rend
+.. _rend:	../../man/rend
+
+.. |rid|	replace:: rid
+.. _rid:	../../man/rid
+
+.. |xdelta|	replace:: xdelta
+.. _xdelta:	../../man/xdelta
+
+.. |yank|	replace:: yank
+.. _yank:	../../man/yank
+
+.. |ydelta|	replace:: ydelta
+.. _ydelta:	../../man/ydelta
+
+.. |**kern|	replace:: \*\*kern
+.. _\*\*kern:	../../rep/kern
+
 =====================================================
 Chapter 9: Searching with Regular Expressions
 =====================================================
@@ -8,7 +39,7 @@ of action may be taken. The pattern may be copied, counted, deleted,
 replaced, isolated, modified, or expanded. A successful pattern match might
 even be used to initiate further pattern searches.
 
-In `Chapter 3 <../ch03>`_ we introduced simple searching using the `grep <http://en.wikipedia.org/wiki/Grep>`_ command. We
+In |Chapter 3|_ we introduced simple searching using the `grep <http://en.wikipedia.org/wiki/Grep>`_ command. We
 used `grep <http://en.wikipedia.org/wiki/Grep>`_ to search for strings of characters that match a particular
 pre-defined string. This chapter describes the full power of *regular
 expressions* for defining complex patterns of characters. Becoming skilled
@@ -567,30 +598,30 @@ to Humdrum-format inputs:
 *Regular expressions suitable for all Humdrum inputs.*
 
 By way of illustration, the next table shows examples of regular expressions
-appropriate for processing \*\*kern_ representations.
+appropriate for processing |**kern|_\ representations.
 
 
 
-> ^=match any \*\*kern barline or double barline
-> ^=[^=]match \*\*kern single barlines but not double barlines
+> ^=match any |**kern|_ barline or double barline
+> ^=[^=]match |**kern|_ single barlines but not double barlines
 > ^[^=]match any token other than a barline or double barline
-> ;match any \*\*kern note or barline containing a pause
-> Tmatch any \*\*kern note containing a whole-tone trill
-> [Tt]match any \*\*kern note containing a whole-tone or
+> ;match any |**kern|_ note or barline containing a pause
+> Tmatch any |**kern|_ note containing a whole-tone trill
+> [Tt]match any |**kern|_ note containing a whole-tone or
 > half-tone trill
-> -match any \*\*kern note containing at least one flat
-> [#]match any \*\*kern note containing a sharp, double-
+> -match any |**kern|_ note containing at least one flat
+> [#]match any |**kern|_ note containing a sharp, double-
 > sharp, etc.
-> [#n-;]match any \*\*kern note containing an accidental,
+> [#n-;]match any |**kern|_ note containing an accidental,
 > including a natural
 > [A-Ga-g]+match any diatonic pitch letter-name
-> [0-9]+/. match \*\*kern dotted durations
+> [0-9]+/. match |**kern|_ dotted durations
 > [0-9]+/./.[^.] match only doubly-dotted durations
-> [Gg]+[^#-]match any \*\*kern pitch `G' that does not have a sharp
+> [Gg]+[^#-]match any |**kern|_ pitch `G' that does not have a sharp
 > or flat
 > (^|[^g])gg($|[^g#-])match only the pitch `gg' (G5)
 > {.*r|r.*{match all phrases that start with a rest
-> ^4[^0-9.]|[^0-9]4([^0-9.]|$)match \*\*kern quarter durations
+> ^4[^0-9.]|[^0-9]4([^0-9.]|$)match |**kern|_ quarter durations
 > ^(8|16)[^0-9.]|[^0-9](8|16)[^0-9.]match eighth and sixteenth durations only
 > (([Ee]+-)|([Gg]+-)|([Bb]+-))($|[^-])match any note from E-flat minor chord
 
@@ -610,7 +641,7 @@ $
 $ 
 
 For example, the following regular expression can be used to match
-\*\*kern_ trills without possibly mistaking comments or interpretations:
+|**kern|_\ trills without possibly mistaking comments or interpretations:
 
 ```
 $ 
@@ -620,12 +651,12 @@ $
 ```
 $ 
 
-For Humdrum commands such as `humsed <../../man/humsed>`_, `rend <../../man/rend>`_, `yank <../../man/yank>`_,
-`xdelta <../../man/xdelta>`_, and `ydelta <../../man/ydelta>`_, regular expressions are applied only to
+For Humdrum commands such as |humsed|_\ , |rend|_\ , |yank|_\ ,
+|xdelta|_\ , and |ydelta|_\ , regular expressions are applied only to
 data records so there is no need to use the more complex expressions. In many
 circumstances, we will see that it is convenient to use the Humdrum
-`rid <../../man/rid>`_ command to explicitly remove comments and interpretations prior to
-processing (see `Chapter 13 <../ch13>`_).
+|rid|_ command to explicitly remove comments and interpretations prior to
+processing (see |Chapter 13|_\ ).
 
 
 Basic, Extended, and Humdrum-Extended Regular Expressions
@@ -640,7 +671,7 @@ single-character wild-card (``.``), the repetition operators (``*``) and
 classes (``[...]``), or complementary character classes (``[^...]``).
 Parenthesis grouping is supported in basic regular expressions, but the
 parentheses must be used in conjunction with the backslash to *enable* this
-function (i.e.`` \( \) ``). In `Chapter 3 <../ch03>`_ we introduced the `grep <http://en.wikipedia.org/wiki/Grep>`_
+function (i.e.`` \( \) ``). In |Chapter 3|_ we introduced the `grep <http://en.wikipedia.org/wiki/Grep>`_
 command; `grep <http://en.wikipedia.org/wiki/Grep>`_ supports only basic regular expressions.
 
 "Extended" regular expressions include the following: the single-character
@@ -652,9 +683,9 @@ parenthesis grouping. Extended regular expressions are supported by the
 the search patterns are interpreted according to extended regular expression
 syntax.
 
-The Humdrum **pattern** command further extends regular expression syntax by
+The Humdrum |pattern|_ command further extends regular expression syntax by
 providing multi-record repetition operators that prove very useful in musical
-applications. These Humdrum extensions will be discussed in `Chapter 21 <../ch21>`_.
+applications. These Humdrum extensions will be discussed in |Chapter 21|_\ .
 
 --------
 

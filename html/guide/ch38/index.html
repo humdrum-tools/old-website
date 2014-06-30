@@ -69,11 +69,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../">The Humdrum User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ch01/">1. Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern(I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch03/">3. Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch04/">4. Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch05/">5. The Humdrum Syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern(II)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch07/">7. MIDI Output Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch08/">8. The Shell (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch09/">9. Searching with Regular Expressions</a></li>
@@ -411,16 +411,18 @@ intervals.</p>
 <p>We begin by measuring the average melodic interval size in semitones for a
 sample of actual melodies. We can use the <a class="reference external" href="../../man/semits">semits</a> command to translate
 data to semitone representations and then use the <a class="reference external" href="../../man/xdelta">xdelta</a> command to
-calculate numerical differences. The <strong>-a</strong> option for <strong>xdelta</strong> causes only
+calculate numerical differences. The <tt class="docutils literal"><span class="pre">-a</span></tt> option for <a class="reference external" href="../../man/xdelta">xdelta</a> causes only
 absolute (unsigned) values to be calculated. The <a class="reference external" href="../../man/rid">rid</a> command can be
 used to eliminate everything but data records and the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command can be
 used to eliminate barlines and rests. We can then calculate the average
-interval size by piping the output to the <strong>stats</strong> command. For typical folk
+interval size by piping the output to the**stats**command. For typical folk
 melodies, the average interval size is roughly two semitones.</p>
-<p>`` semits melody | xdelta -a | rid -GLId | grep -v &#8216;[=r]&#8217; | stats``</p>
+<div class="highlight-bash"><div class="highlight"><pre>semits melody | xdelta -a | rid -GLId | grep -v <span class="s1">&#39;[=r]&#39;</span> | stats
+</pre></div>
+</div>
 <p>Next, we need to determine the average melodic interval size that would
 result for a random re-ordering of the pitches within each melody. We can do
-this using the Humdrum <strong>scramble</strong> command.</p>
+this using the Humdrum <a class="reference external" href="../../man/scramble">scramble</a> command.</p>
 </div>
 <div class="section" id="using-the-scramble-command">
 <h2>Using the <em>scramble</em> Command<a class="headerlink" href="#using-the-scramble-command" title="Permalink to this headline">¶</a></h2>
@@ -436,8 +438,10 @@ Humdrum data. Suppose we had the following Humdrum input:</p>
 </pre></div>
 </div>
 <p>We can scramble the order of data records using the following command:</p>
-<p>`` scramble -r numbers``</p>
-<p>The <strong>-r</strong> option indicates that it is the order of records which should be
+<div class="highlight-bash"><div class="highlight"><pre>scramble -r numbers
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">-r</span></tt> option indicates that it is the order of records which should be
 randomized. A possible output might look like this:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**numbers
 3
@@ -469,10 +473,12 @@ progression may simply be an artifact of the relative scarcity of subdominant
 chords. We can address this question by comparing Haydn&#8217;s actual harmonic
 progressions with randomly generated progressions. First we count the total
 number of <em>V-IV</em> progressions:</p>
-<p>`` extract -i &#8216;<a href="#id4"><span class="problematic" id="id5">**</span></a>harm&#8217; haydn | context -n 2 -o ^= | grep -c &#8216;^V IV$&#8217;``</p>
+<div class="highlight-bash"><div class="highlight"><pre>extract -i <span class="s1">&#39;**harm&#39;</span> haydn | context -n 2 -o ^<span class="o">=</span> | grep -c <span class="s1">&#39;^V IV$&#39;</span>
+</pre></div>
+</div>
 <p>Next we randomly re-order his harmonies and count the number of <em>V-IV</em>
 progressions:</p>
-<p>`` scramble -r haydn | extract -i &#8216;<a href="#id6"><span class="problematic" id="id7">**</span></a>harm&#8217; | context -n 2 -o ^= | grep -c
+<p>`` scramble -r haydn | extract -i &#8216;<a href="#id2"><span class="problematic" id="id3">**</span></a>harm&#8217; | context -n 2 -o ^= | grep -c
 &#8216;^V IV$&#8217;``</p>
 <p>In some cases, problems can be addressed by randomizing one part of voice
 with respect to another. For example, there is strong evidence that Bach uses
@@ -480,16 +486,20 @@ more augmented eleventh harmonic intervals than would occur by chance. That
 is, the tritone is &#8220;sought-out&#8221; rather than &#8220;avoided&#8221; in his writing. Suppose
 we are looking at a two-part invention. We begin by counting the number of
 augmented elevenths in his actual writing:</p>
-<p>`` ditto -s = bach | hint | grep -c &#8216;A11&#8217;``</p>
+<div class="highlight-bash"><div class="highlight"><pre>ditto -s <span class="o">=</span> bach | hint | grep -c <span class="s1">&#39;A11&#39;</span>
+</pre></div>
+</div>
 <p>We can create a random comparison by extracting one of the parts, scrambling
 the order of notes, and then re-assembling the scrambled part with the
 original. The resulting harmonic intervals arise from a random juxtaposition
 of parts.</p>
-<p>`` extract -f 1 bach &gt; temp1``
-`` extract -f 2 bach &gt; temp2``
-`` scramble -r temp1 &gt; temp1.scr``
-`` assemble temp1.scr temp2 | ditto -s = | hint | grep -c &#8216;A11&#8217;``</p>
-<p>Note that the <strong>scramble</strong> command also provides a <strong>-t</strong> option so that the
+<div class="highlight-bash"><div class="highlight"><pre>extract -f 1 bach &gt; temp1
+extract -f 2 bach &gt; temp2
+scramble -r temp1 &gt; temp1.scr
+assemble temp1.scr temp2 | ditto -s <span class="o">=</span> | hint | grep -c <span class="s1">&#39;A11&#39;</span>
+</pre></div>
+</div>
+<p>Note that the <a class="reference external" href="../../man/scramble">scramble</a> command also provides a <tt class="docutils literal"><span class="pre">-t</span></tt> option so that the
 order of tokens within a data record can be randomly re-arranged.</p>
 </div>
 <div class="section" id="retrograde-controls-using-the-tac-command">
@@ -512,14 +522,14 @@ could rearrange the notes so that the first note was last and the last note
 was first, then our control repertory would preserve both the frequency of
 occurrence of all the pitches, and also preserve the pitch-proximity
 distribution.</p>
-<p>The UNIX <strong>tac</strong> command can be used to reverse the order of records. Suppose
+<p>The UNIX**tac**command can be used to reverse the order of records. Suppose
 we had an input consisting of the number 1 through 10 on successive lines.
-The <strong>tac</strong> command would transform this input so that the output consists of
+The**tac**command would transform this input so that the output consists of
 the reverse ordering of numbers from 10 to 1.</p>
-<p>If we apply <strong>tac</strong> to a Humdrum file, then the result will no longer conform
+<p>If we apply**tac**to a Humdrum file, then the result will no longer conform
 to the Humdrum syntax &#8211; the spine-path terminators will appear at the
 beginning of the file and the exclusive interpretations will appear at the
-end of the file. If we use <strong>tac</strong> we could simply restore the correct syntax
+end of the file. If we use**tac**we could simply restore the correct syntax
 by hand-editing the file and moving the exclusive interpretations and the
 spine-path terminators to their proper locations. We now have a &#8220;retrograde&#8221;
 passage.</p>
@@ -542,11 +552,13 @@ little?</p>
 <p>One approach to answering this question is to use an <em>autophase procedure</em>
 (Huron, 1991a). The essence of this approach is to shift two spines with
 respect to each other.</p>
-<p>Recall that the <a class="reference external" href="../../man/reihe">reihe</a> command (<a class="reference external" href="../ch35">Chapter 35</a>) provides a <strong>-s</strong> option
+<p>Recall that the <a class="reference external" href="../../man/reihe">reihe</a> command ( <a class="reference external" href="../ch35">Chapter 35</a>) provides a <tt class="docutils literal"><span class="pre">-s</span></tt> option
 that causes a shift in the serial position of data tokens. For example,
 suppose we had an input consisting of the numbers 1 through 5. The following
 command:</p>
-<p>`` reihe -s +1* file*``</p>
+<div class="highlight-bash"><div class="highlight"><pre>reihe -s +1* file*
+</pre></div>
+</div>
 <p>Will cause all data tokens to be moved forward one position, and the last
 data token to be moved to the beginning:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**numbers
@@ -562,13 +574,19 @@ data token to be moved to the beginning:</p>
 to avoid octaves between the soprano and bass voices. First, we extract each
 of the voices. Let&#8217;s also eliminate barlines and use <a class="reference external" href="../../man/ditto">ditto</a> to
 replicate the pitch values through null tokens.</p>
-<p>`` extract -i &#8216;<a href="#id9"><span class="problematic" id="id10">*</span></a>sopran&#8217; composition | grep -v = | ditto &gt; voice1``
-`` extract -i &#8216;<a href="#id11"><span class="problematic" id="id12">*</span></a>bass&#8217; composition | grep -v = | ditto &gt; voice2``</p>
-<p>Now let&#8217;s shift one part with respect to the other using <a class="reference external" href="../../man/reihe">reihe</a> <strong>-s</strong>.</p>
-<p>`` reihe -s voice1 &gt; voice1.shifted``</p>
+<div class="highlight-bash"><div class="highlight"><pre>extract -i <span class="s1">&#39;*sopran&#39;</span> composition | grep -v <span class="o">=</span> | ditto &gt; voice1
+extract -i <span class="s1">&#39;*bass&#39;</span> composition | grep -v <span class="o">=</span> | ditto &gt; voice2
+</pre></div>
+</div>
+<p>Now let&#8217;s shift one part with respect to the other using <a class="reference external" href="../../man/reihe">reihe</a><tt class="docutils literal"><span class="pre">-s</span></tt>.</p>
+<div class="highlight-bash"><div class="highlight"><pre>reihe -s voice1 &gt; voice1.shifted
+</pre></div>
+</div>
 <p>Now we reassemble the parts, determine the harmonic intervals present, and
 count the number of octave intervals:</p>
-<p>`` assemble voice2 voice1.shifted | hint | grep -c &#8216;P8&#8217;``</p>
+<div class="highlight-bash"><div class="highlight"><pre>assemble voice2 voice1.shifted | hint | grep -c <span class="s1">&#39;P8&#39;</span>
+</pre></div>
+</div>
 <p>In effect, we have concocted a control group, by shifting the parts with
 respect to each other. Of course we have utterly destroyed the <em>relationship
 between the two parts.</em> However, many things remain untouched. The bass voice
@@ -598,7 +616,7 @@ let X=$X+1
 &gt;
 &gt; done
 rm spine[12] temp
-<a href="#id14"><span class="problematic" id="id15">``</span></a>``
+<a href="#id4"><span class="problematic" id="id5">``</span></a>``
 $</p>
 <p>This <em>autophase</em> procedure has been used to address many differ kinds of
 questions pertaining to how musical parts interrelate.</p>

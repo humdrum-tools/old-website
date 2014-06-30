@@ -69,11 +69,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../">The Humdrum User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ch01/">1. Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern(I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch03/">3. Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch04/">4. Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch05/">5. The Humdrum Syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern(II)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch07/">7. MIDI Output Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch08/">8. The Shell (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch09/">9. Searching with Regular Expressions</a></li>
@@ -299,7 +299,7 @@
             
   <div class="section" id="chapter-35-layers">
 <h1>Chapter 35: Layers<a class="headerlink" href="#chapter-35-layers" title="Permalink to this headline">¶</a></h1>
-<p>In <a href="#id5"><span class="problematic" id="id6">`Chapters 11`_</span></a> and <a href="#id7"><span class="problematic" id="id8">`15`_</span></a> we examined different kinds of intervals,
+<p>In <a href="#id7"><span class="problematic" id="id8">`Chapters 11`_</span></a> and <a href="#id9"><span class="problematic" id="id10">`15`_</span></a> we examined different kinds of intervals,
 including both harmonic and melodic intervals. A number of different types of
 intervals were distinguished and we learned how to calculate such intervals.
 One type of melodic interval mentioned in <a class="reference external" href="../ch11">Chapter 11</a> is the <em>distance
@@ -319,7 +319,7 @@ major chord is followed by a D dominant seventh chord. The barlines provide
 convenient ways of parsing the harmonies.</p>
 <p><strong>Example 35.1</strong> Aaron Copland, <em>El Salon Mexico</em>.</p>
 <p>&gt; .. image:: guide.figures/ch35.4.gif</p>
-<p>A **kern_ encoding of the passage is given below:</p>
+<p>A <a class="reference external" href="../../rep/kern">**kern</a>encoding of the passage is given below:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>!!!COM: Copland, A.
 !!!OTL: El Salon Mexico
 **kern
@@ -370,11 +370,15 @@ convenient ways of parsing the harmonies.</p>
 *-
 </pre></div>
 </div>
-<p>We can collapse the arpeggiated chords using the <strong>context</strong> command:</p>
-<p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">=</span> <span class="pre">-o</span> <span class="pre">=</span> <span class="pre">copland</span></tt></p>
-<p>Identify the chords is facilitated by using the pitch-class (<a class="reference external" href="../../rep/pc">**pc</a>)
+<p>We can collapse the arpeggiated chords using the <a href="#id11"><span class="problematic" id="id12">|context|_</span></a> command:</p>
+<div class="highlight-bash"><div class="highlight"><pre>context -b <span class="o">=</span> -o <span class="o">=</span> copland
+</pre></div>
+</div>
+<p>Identify the chords is facilitated by using the pitch-class ( <a class="reference external" href="../../rep/pc">**pc</a>)
 representation described in <a class="reference external" href="../ch34">Chapter 34</a>.</p>
-<p><tt class="docutils literal"><span class="pre">context</span> <span class="pre">-b</span> <span class="pre">=</span> <span class="pre">-o</span> <span class="pre">=</span> <span class="pre">copland</span> <span class="pre">|</span> <span class="pre">pc</span> <span class="pre">-a</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-d</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>context -b <span class="o">=</span> -o <span class="o">=</span> copland | pc -a | rid -d
+</pre></div>
+</div>
 <p>The corresponding output is:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>!!!COM: Copland, A.
 !!!OTL: El Salon Mexico
@@ -393,7 +397,7 @@ representation described in <a class="reference external" href="../ch34">Chapter
 <p>In order to identify these as G major and D dominant chords it would be
 convenient to reduce the sets to (2,7,B) and (0,2,6,9) respectively. For this
 task, we can use a The following awk script eliminates repeated tokens within
-a record: (huniq: We might call this script <strong>huniq</strong> since it acts like a
+a record: (huniq: We might call this script**huniq**since it acts like a
 horizontal version of the <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command:</p>
 <div class="highlight-awk"><div class="highlight"><pre><span class="nx">awk</span> <span class="s1">&#39;{</span>
 <span class="s1">   # A script to eliminate repeated tokens within a record.</span>

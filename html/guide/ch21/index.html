@@ -69,11 +69,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../">The Humdrum User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ch01/">1. Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern(I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch03/">3. Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch04/">4. Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch05/">5. The Humdrum Syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern(II)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch07/">7. MIDI Output Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch08/">8. The Shell (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch09/">9. Searching with Regular Expressions</a></li>
@@ -303,26 +303,25 @@
 occur on single lines. As we saw in <a class="reference external" href="../ch19">Chapter 19</a>, the <a class="reference external" href="../../man/context">context</a> command
 can be used to amalgamate groups of successive data tokens on a single line
 &#8211; and so facilitate searching for sequential patterns using <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> or
-<a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a>. For many tasks, the combination of <strong>context</strong> and <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>
+<a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a>. For many tasks, the combination of <a class="reference external" href="../../man/context">context</a> and <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>
 provides the most convenient way to search for user-specified patterns.
 However, not all patterns can be conveniently identified using this approach.
 In this chapter we will introduce two additional tools that are intended to
-search directly for sequential patterns without having to use <strong>context</strong> to
+search directly for sequential patterns without having to use <a class="reference external" href="../../man/context">context</a> to
 create pseudo-simultaneous collections.</p>
 <div class="section" id="the-patt-command">
 <h2>The <em>patt</em> Command<a class="headerlink" href="#the-patt-command" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="../../man/patt">patt</a> command may be regarded as a two-dimensional version of
-<a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>. Like <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>, <strong>patt</strong> searches for lines that match user-
-specified regular expressions. However, unlike <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>, <strong>patt</strong> can search
+<a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>. Like <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>, <a class="reference external" href="../../man/patt">patt</a> searches for lines that match user-
+specified regular expressions. However, unlike <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>, <a class="reference external" href="../../man/patt">patt</a> can search
 for a sequence of records that match a sequence of user-specified regular
-expressions. Specifically, <strong>patt</strong> will look for an input line that matches
-the first (of potential many) user-specified regular expression. Then
-<strong>patt</strong> will determine whether the following input line matches the second
+expressions. Specifically, <a class="reference external" href="../../man/patt">patt</a> will look for an input line that matches
+the first (of potential many) user-specified regular expression. Then <a class="reference external" href="../../man/patt">patt</a> will determine whether the following input line matches the second
 user-specified regular expression ... and so on, until the entire sequence of
 the user-specified regular expressions are exhausted. A pattern match is
 deemed to occur only if all of the successive regular expressions match a
 contiguous sequence of input lines.</p>
-<p>The operation of <strong>patt</strong> is easier to describe through an example. Consider
+<p>The operation of <a class="reference external" href="../../man/patt">patt</a> is easier to describe through an example. Consider
 the following input using the German <em>Tonhohe</em> pitch designations described
 in <a class="reference external" href="../ch04">Chapter 4</a>. Recall that the <a class="reference external" href="../../rep/Tonh">**Tonh</a> system of pitch names allows
 Bach to spell his name (B=B-flat; H=B-natural). Less well-known is the fact
@@ -337,8 +336,7 @@ H3
 *-
 </pre></div>
 </div>
-<p>Suppose we were looking for possible instances of D-S-C-H. The <strong>patt</strong>
-command requires a template file that contains one or more successive regular
+<p>Suppose we were looking for possible instances of D-S-C-H. The <a class="reference external" href="../../man/patt">patt</a> command requires a template file that contains one or more successive regular
 expressions. A suitable template file (named <tt class="docutils literal"><span class="pre">dmitri</span></tt>) would be as follows:</p>
 <p>`` D
 `` Es
@@ -346,9 +344,9 @@ expressions. A suitable template file (named <tt class="docutils literal"><span 
 `` H``</p>
 <p>We would invoke the search as follows:</p>
 <p>`` patt -f dmitri`` <em>inputfile</em></p>
-<p>The <strong>-f</strong> option is mandatory: it conveys to <strong>patt</strong> the name of the
+<p>The <tt class="docutils literal"><span class="pre">-f</span></tt> option is mandatory: it conveys to <a class="reference external" href="../../man/patt">patt</a> the name of the
 template file used in the search.</p>
-<p>In the default operation, <strong>patt</strong> simply outputs a global comment
+<p>In the default operation, <a class="reference external" href="../../man/patt">patt</a> simply outputs a global comment
 identifying the location of any matching segments. One global comment is
 output for each matching pattern. In the above case, the output would be as
 follows:</p>
@@ -358,10 +356,10 @@ follows:</p>
 <p>The <a class="reference external" href="../../man/patt">patt</a> command will also identify any overlapping patterns. For
 example, suppose we had an input containing an ostinato figure in minor
 thirds:</p>
-<p><strong>Example 21.1.</strong> <a href="#id8"><span class="problematic" id="id9">`</span></a>DSCH&#8217; Ostinato.</p>
+<p><strong>Example 21.1.</strong> <a href="#id9"><span class="problematic" id="id10">`</span></a>DSCH&#8217; Ostinato.</p>
 <p>&gt; .. image:: guide.figures/ch21.1.gif</p>
 <p>&gt;
-&gt;``**Tonh**Tonh
+&gt;`` <a href="#id36"><span class="problematic" id="id37">|Tonh|_</span></a> Tonh
 &gt;``*k[b-e-]*K[b-e-]
 &gt;``*M9/8*M9/8
 &gt;``=1-=1-
@@ -375,15 +373,17 @@ thirds:</p>
 &gt;``C4Es4
 &gt;``H3D4
 &gt;``==``</p>
-<p>If we applied the above <strong>patt</strong> command to this <tt class="docutils literal"><span class="pre">ostinato</span></tt> file, we would
+<p>If we applied the above <a class="reference external" href="../../man/patt">patt</a> command to this <tt class="docutils literal"><span class="pre">ostinato</span></tt> file, we would
 get the following output:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>!! Pattern found at line 8 of file ostinato``
 !! Pattern found at line 11 of file ostinato
 </pre></div>
 </div>
-<p>We can instruct <strong>patt</strong> to output specific instances of the pattern using
-the <strong>-e</strong> (echo) option. Consider the following command:</p>
-<p>`` patt -f dmitri -e ostinato``</p>
+<p>We can instruct <a class="reference external" href="../../man/patt">patt</a> to output specific instances of the pattern using
+the <tt class="docutils literal"><span class="pre">-e</span></tt> (echo) option. Consider the following command:</p>
+<div class="highlight-bash"><div class="highlight"><pre>patt -f dmitri -e ostinato
+</pre></div>
+</div>
 <p>The resulting output would be:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>!! Pattern found at line 4 of file ostinato
 **Tonh  **Tonh
@@ -417,28 +417,30 @@ in minor keys. The following <a class="reference external" href="http://en.wikip
 current directory for a tandem interpretation indicating a minor key. Recall
 that minor keys are identified by an asterisk followed by a lower-case pitch-
 letter name, followed by an optional accidental, followed by the colon
-character. The <strong>-l</strong> option will list all files that containing a matching
+character. The <tt class="docutils literal"><span class="pre">-l</span></tt> option will list all files that containing a matching
 record:</p>
-<p>`` grep -l &#8216;^*[a-g][-#]*:&#8217; <a href="#id11"><span class="problematic" id="id12">*</span></a><a href="#id13"><span class="problematic" id="id14">``</span></a></p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -l <span class="s1">&#39;^\*[a-g][-#]*:&#39;</span> *
+</pre></div>
+</div>
 <p>Recall that the <a class="reference external" href="../../man/deg">deg</a> command is mode sensitive, whereas the
-<a class="reference external" href="../../man/solfa">solfa</a> command is mode insensitive. That is, in the key of C major,
-<strong>deg</strong> will represent the pitch E as <tt class="docutils literal"><span class="pre">3</span></tt> and in C minor <strong>deg</strong> will
-represent the pitch E (natural) as <tt class="docutils literal"><span class="pre">3+</span></tt>. By contrast, the <strong>solfa</strong> command
+<a class="reference external" href="../../man/solfa">solfa</a> command is mode insensitive. That is, in the key of C major, <a class="reference external" href="../../man/deg">deg</a> will represent the pitch E as <tt class="docutils literal"><span class="pre">3</span></tt> and in C minor <a class="reference external" href="../../man/deg">deg</a> will
+represent the pitch E (natural) as <tt class="docutils literal"><span class="pre">3+</span></tt>. By contrast, the <a class="reference external" href="../../man/solfa">solfa</a> command
 will represent E as <tt class="docutils literal"><span class="pre">`mi</span></tt>&#8216; whether the mode is major or minor.</p>
 <p>In order to locate picardy thirds, we can look for raised mediants in the
-`` <a href="#id15"><span class="problematic" id="id16">**</span></a>deg`` representation. Specifically, we can look for a raised mediant
+`` <a href="#id12"><span class="problematic" id="id13">**</span></a>deg`` representation. Specifically, we can look for a raised mediant
 pitch immediately prior to a double barline. Our template file (dubbed
 &#8220;<tt class="docutils literal"><span class="pre">picardy</span></tt>&#8221;) might look as follows:</p>
 <p>`` 3[+]
 ==``</p>
-<p>Notice that the plus sign has been placed in square brackets. The <strong>patt</strong>
-command accepts only <em>extended</em> regular expressions. The plus sign is a
+<p>Notice that the plus sign has been placed in square brackets. The <a class="reference external" href="../../man/patt">patt</a> command accepts only <em>extended</em> regular expressions. The plus sign is a
 metacharacter that normally indicates &#8220;one or more instances.&#8221; So placing it
 in square brackets causes the special meaning to be escaped.</p>
 <p>In order to search for such picardy thirds, we should translate each input
 file to the <a class="reference external" href="../../rep/deg">**deg</a> representation, and then search for raised mediants
 immediately prior to a double bar:</p>
-<p>`` deg <em>inputfile.krn</em> | patt -f picardy``</p>
+<div class="highlight-bash"><div class="highlight"><pre>deg *inputfile.krn* | patt -f picardy
+</pre></div>
+</div>
 <p>A problem with this search strategy is that it assumes that the raised third
 will occur in the final sonority prior to the double barline. One possible
 confound might be the presence of one or more rests following the final
@@ -449,7 +451,7 @@ Bach&#8217;s <em>Well-Tempered Clavier</em>:</p>
 <p>&gt;
 &gt;``!!!COM: Bach, Johann Sebastian
 &gt;``!!!XEN: The Well-Tempered Clavier, Volume 2, Fugue 4.
-&gt;``**kern**kern**kern
+&gt;`` <a href="#id38"><span class="problematic" id="id39">|kern|_</span></a> kern**kern
 &gt;``*clefF4*clefG2*clefG2
 &gt;``*M12/16*M12/16*M12/16
 &gt;``*k[f#c#g#d#]*k[f#c#g#d#]*k[f#c#g#d#]
@@ -473,20 +475,24 @@ Bach&#8217;s <em>Well-Tempered Clavier</em>:</p>
 &gt;``4.r4.r4.r
 &gt;``======
 &gt;``</em>-<em>-</em>-``</p>
-<p>The <strong>patt</strong> command provides a <strong>-s</strong> option that allows the user to skip or
+<p>The <a class="reference external" href="../../man/patt">patt</a> command provides a <tt class="docutils literal"><span class="pre">-s</span></tt> option that allows the user to skip or
 ignore certain records in the input. Any regular expression can be given as a
-parameter for the <strong>-s</strong> option. In the following pipeline, we have
-instruction <strong>patt</strong> to skip over any records matching the lower-case letter
-`` <cite>r`</cite>&#8216; (the **kern rest signifier):</p>
-<p>`` deg <tt class="docutils literal"><span class="pre">*inputfile.krn*</span></tt> | patt -s r -f picardy``</p>
+parameter for the <tt class="docutils literal"><span class="pre">-s</span></tt> option. In the following pipeline, we have
+instruction <a class="reference external" href="../../man/patt">patt</a> to skip over any records matching the lower-case letter
+`` <cite>r`</cite>&#8216; (the <a class="reference external" href="../../rep/kern">**kern</a> rest signifier):</p>
+<div class="highlight-bash"><div class="highlight"><pre>deg <span class="sb">``</span>*inputfile.krn*<span class="sb">``</span> | patt -s r -f picardy
+</pre></div>
+</div>
 <p>Even ignoring rests may not be sufficient to identify the raised third near
 the double barline. For example, if any other note from the tonic chord
 follows after the raised third, then the third will appear several records
 prior to the double barline. We can solve this problem by using the
-<a class="reference external" href="../../man/ditto">ditto</a> command discussed in <a class="reference external" href="../ch15">Chapter 15</a>; <strong>ditto</strong> can be used to
+<a class="reference external" href="../../man/ditto">ditto</a> command discussed in <a class="reference external" href="../ch15">Chapter 15</a>; <a class="reference external" href="../../man/ditto">ditto</a> can be used to
 propagate the raised third through the sustained final chord. Our revised
 pipeline is:</p>
-<p>`` deg bach.krn | ditto -s = | patt -s r -f picardy``</p>
+<div class="highlight-bash"><div class="highlight"><pre>deg bach.krn | ditto -s <span class="o">=</span> | patt -s r -f picardy
+</pre></div>
+</div>
 <p>A similar approach can be used to identify consecutive fifths or octaves
 between two voices. A template file (dubbed <tt class="docutils literal"><span class="pre">5ths</span></tt>) might consist of the
 following pattern:</p>
@@ -494,13 +500,15 @@ following pattern:</p>
 P5``</p>
 <p>In order to identify consecutive fifths, we might extract two parts of
 interest, and then translate to the <a class="reference external" href="../../rep/hint">**hint</a> harmonic-interval
-representation. The <strong>-c</strong> option for <a class="reference external" href="../../man/hint">hint</a> collapses compound
+representation. The <tt class="docutils literal"><span class="pre">-c</span></tt> option for <a class="reference external" href="../../man/hint">hint</a> collapses compound
 intervals to their non-compound equivalents so consecutive twelfths,
 nineteenths, etc. will also be identified. In the following command pipeline,
-notice the use of the <strong>-s</strong> option for <a class="reference external" href="../../man/patt">patt</a> in order to skip
+notice the use of the <tt class="docutils literal"><span class="pre">-s</span></tt> option for <a class="reference external" href="../../man/patt">patt</a> in order to skip
 barlines. This ensures that crossing a barline does not result in a failure
 to identify a consecutive fifth.</p>
-<p>`` extract -i &#8216;<a href="#id20"><span class="problematic" id="id21">*</span></a>Ibass,*Itenor&#8217; Fux | hint -c | patt -s = -f 5ths``</p>
+<div class="highlight-bash"><div class="highlight"><pre>extract -i <span class="s1">&#39;*Ibass,*Itenor&#39;</span> Fux | hint -c | patt -s <span class="o">=</span> -f 5ths
+</pre></div>
+</div>
 <p>Sometimes patterns will tend to be obscured by the presence of other
 information. For example, suppose we want to identify possible Landini
 cadences such as the cadence shown in Example 21.4. Landini cadences are
@@ -515,8 +523,8 @@ to help identify this distinctive cadential formula.</p>
 <p><strong>Example 21.4.</strong> Francesco Landini, Excerpt from <em>Non avra ma&#8217; pieta</em>.</p>
 <p>&gt; .. image:: guide.figures/ch21.4.gif</p>
 <p>Below is a <a class="reference external" href="../../rep/kern">**kern</a> encoding of the final two measures along with
-corresponding <a class="reference external" href="../../rep/hint">**hint</a> and <a class="reference external" href="../../rep/deg">**deg</a> spines. The <strong>hint spine was
-generated using `hint &lt;../../man/hint&gt;`_ **-l</strong> in order to generate intervals with
+corresponding <a class="reference external" href="../../rep/hint">**hint</a> and <a class="reference external" href="../../rep/deg">**deg</a> spines. The <a href="#id14"><span class="problematic" id="id15">**</span></a>hint spine was
+generated using <a class="reference external" href="../../man/hint">hint</a><tt class="docutils literal"><span class="pre">-l</span></tt> in order to generate intervals with
 respect to the lowest pitch.</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>!!!COM: Landini, Francesco
 **kern  **kern  **kern  **hint  **deg   **deg   **deg
@@ -535,13 +543,11 @@ respect to the lowest pitch.</p>
 *-``*-``*-``*-*-*-*-
 </pre></div>
 </div>
-<p>Notice that <strong>hint</strong> has failed to generate the passing interval forming the
-perfect fifth between the E and the A. This can be remedied by using
-<strong>ditto</strong> to duplicate all of the pitches. This will cause <strong>hint</strong> to
-generate all of the passing harmonic intervals. The revised <a href="#id24"><span class="problematic" id="id25">**</span></a>hint spine is
+<p>Notice that <a class="reference external" href="../../man/hint">hint</a> has failed to generate the passing interval forming the
+perfect fifth between the E and the A. This can be remedied by using <a class="reference external" href="../../man/ditto">ditto</a> to duplicate all of the pitches. This will cause <a class="reference external" href="../../man/hint">hint</a> to
+generate all of the passing harmonic intervals. The revised <a href="#id16"><span class="problematic" id="id17">**</span></a>hint spine is
 given below.</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>!!!COM: Landini, Francesco
-**kern**kern**kern**hint**deg**deg**deg
+<div class="highlight-humdrum"><div class="highlight"><pre>!!!COM: Landini, Francesco |kern|_ kern |kern|_ hint |deg|_ deg**deg
 *clefF4*clefG2*clefG2****
 *M3/4*M3/4*M3/4*M3/4*M3/4*M3/4*M3/4
 =======
@@ -563,8 +569,10 @@ interval template file (dubbed <tt class="docutils literal"><span class="pre">La
 `` 5
 `` 8``</p>
 <p>Using this template, we can identify Landini cadences as follows. (Notice the
-use of <strong>-s ^=</strong> to skip barlines.)</p>
-<p>`` ditto -s ^= input | hint -l | patt -s ^= -f LandCadence``</p>
+use of <tt class="docutils literal"><span class="pre">-s</span> <span class="pre">^=</span></tt> to skip barlines.)</p>
+<div class="highlight-bash"><div class="highlight"><pre>ditto -s ^<span class="o">=</span> input | hint -l | patt -s ^<span class="o">=</span> -f LandCadence
+</pre></div>
+</div>
 <p>It is possible that the 6-5-8 figured bass might arise in non-cadential
 situations, so a more circumspect template might also include some scale-
 degree movements as well. The following template file (dubbed <tt class="docutils literal"><span class="pre">Landini-</span>
@@ -577,7 +585,7 @@ commands would be the following:</p>
 <p>`` ditto -s ^= inputfile | hint -l &gt; temp1
 deg inputfile &gt; temp2
 assemble temp1 temp2 | patt -s ^= -f Landini-Cadence``</p>
-<p>In general, <strong>patt</strong> templates can be used to specify both concurrent
+<p>In general, <a class="reference external" href="../../man/patt">patt</a> templates can be used to specify both concurrent
 conditions as well as dynamic or temporal conditions. This allows users to
 define patterns involving a multitude of conditions involving many different
 types of data.</p>
@@ -585,11 +593,11 @@ types of data.</p>
 <div class="section" id="using-patt-s-tag-option">
 <h2>Using <em>patt</em>&#8216;s Tag Option<a class="headerlink" href="#using-patt-s-tag-option" title="Permalink to this headline">¶</a></h2>
 <p>So far, we have seen that <a class="reference external" href="../../man/patt">patt</a> provides two kinds of output. In the
-default operation, <strong>patt</strong> outputs a simple global comment each time it
-finds a matching segment in the input. With the <strong>-e</strong> option, <strong>patt</strong> will
-also echo the specific passage(s) found. In addition, <strong>patt</strong> provides a
-third type of output using the <strong>-t</strong> option.</p>
-<p>When the <strong>-t</strong> option is invoked, <strong>patt</strong> will output the original input,
+default operation, <a class="reference external" href="../../man/patt">patt</a> outputs a simple global comment each time it
+finds a matching segment in the input. With the <tt class="docutils literal"><span class="pre">-e</span></tt> option, <a class="reference external" href="../../man/patt">patt</a> will
+also echo the specific passage(s) found. In addition, <a class="reference external" href="../../man/patt">patt</a> provides a
+third type of output using the <tt class="docutils literal"><span class="pre">-t</span></tt> option.</p>
+<p>When the <tt class="docutils literal"><span class="pre">-t</span></tt> option is invoked, <a class="reference external" href="../../man/patt">patt</a> will output the original input,
 plus an addition <tt class="docutils literal"><span class="pre">patt</span></tt> spine. The <tt class="docutils literal"><span class="pre">patt</span></tt> spine typically consists of
 mostly null tokens. However, each time the input matches the sought pattern,
 a user-defined &#8220;tag&#8221; will appear in the <tt class="docutils literal"><span class="pre">patt</span></tt> spine. Consider the
@@ -604,13 +612,15 @@ symbol. Our search template might look as follows:</p>
 <p>`` ^V([^I]|$)
 (vi)|(VI);``</p>
 <p>This template means: &#8220;look for an upper-case letter <tt class="docutils literal"><span class="pre">V</span></tt> appearing at the
-beginning of a line that is followed by either the end of the line (<a href="#id27"><span class="problematic" id="id28">``</span></a><tt class="docutils literal"><span class="pre">)</span> <span class="pre">or</span>
+beginning of a line that is followed by either the end of the line (<a href="#id18"><span class="problematic" id="id19">``</span></a><tt class="docutils literal"><span class="pre">)</span> <span class="pre">or</span>
 <span class="pre">by</span> <span class="pre">a</span> <span class="pre">character</span> <span class="pre">other</span> <span class="pre">than</span> <span class="pre">the</span> <span class="pre">upper-case</span> <span class="pre">letter</span> <span class="pre">``I</span></tt>. This record will be
 followed by a record containing either <tt class="docutils literal"><span class="pre">vi</span></tt> or <tt class="docutils literal"><span class="pre">VI</span></tt> followed by a
 semicolon.&#8221;</p>
-<p>When invoking the <strong>patt</strong> command, we can specify our preferred output tag
-along with the <strong>-t</strong> option as follows:</p>
-<p>`` extract -i &#8216;<a href="#id29"><span class="problematic" id="id30">**</span></a>harm&#8217; bwv269.krn | patt -f template -t deceptive``</p>
+<p>When invoking the <a class="reference external" href="../../man/patt">patt</a> command, we can specify our preferred output tag
+along with the <tt class="docutils literal"><span class="pre">-t</span></tt> option as follows:</p>
+<div class="highlight-bash"><div class="highlight"><pre>extract -i <span class="s1">&#39;**harm&#39;</span> bwv269.krn | patt -f template -t deceptive
+</pre></div>
+</div>
 <div class="highlight-humdrum"><div class="highlight"><pre>       **harm  **patt
        I       .
        I       .
@@ -625,9 +635,9 @@ along with the <strong>-t</strong> option as follows:</p>
        V;      .
        etc.
 
-In `Chapter 26 &lt;../ch26&gt;`_ we will learn how to collapse several spines into a single
+In |Chapter 26|_ we will learn how to collapse several spines into a single
 spine. This will allow us to assemble the results from several &quot;passes&quot;
-using **patt** -- one pass for each type of cadence. For example, we could
+using |patt|_ -- one pass for each type of cadence. For example, we could
 collapse several tagged outputs to produce a single spine that identifies
 all of the various types of cadences:
 </pre></div>
@@ -646,11 +656,10 @@ all of the various types of cadences:
        V;      .
        etc.
 
-There are no restrictions as to the types of tags that can be generated by
-**patt**. A user might tag the beginning of motivic or thematic statements,
+There are no restrictions as to the types of tags that can be generated by |patt|_ . A user might tag the beginning of motivic or thematic statements,
 various harmonic progressions, variation techniques, fingering patterns,
-quotations or allusions, stylistic cliches, etc. In `Chapter 35 &lt;../ch35&gt;`_ we will
-use the **-t** option to label different set forms for statements of a
+quotations or allusions, stylistic cliches, etc. In |Chapter 35|_ we will
+use the ``-t`` option to label different set forms for statements of a
 twelve-tone row, such as primes, inversions, retrogrades, and retrograde
 inversions. We will use suitable tags to identify the specific
 transpositions: P0, I7, R11, RI8, etc.
@@ -701,8 +710,8 @@ the above Krenek passage would be:</div></blockquote>
        etc.
        *-
 
-The **-m** option for `patt &lt;../../man/patt&gt;`_ invokes a &quot;multi-record matching&quot; mode.
-In this mode, **patt** attempts to match as many successive regular
+The ``-m`` option for |patt|_ invokes a &quot;multi-record matching&quot; mode.
+In this mode, |patt|_ attempts to match as many successive regular
 expressions in the template file as possible for a given input record,
 before continuing with the next input and template records. In this way,
 several records in the template file may possibly match a single input
@@ -710,18 +719,21 @@ record. In the above case, the tone-row template will be matched and the
 `P0&#39; tag issued if the following command is issued:
 </pre></div>
 </div>
-<p>`` patt -f tonerow -t P0 -m Krenek``</p>
+<div class="highlight-bash"><div class="highlight"><pre>patt -f tonerow -t P0 -m Krenek
+</pre></div>
+</div>
 </div>
 <div class="section" id="the-pattern-command">
 <h2>The <em>pattern</em> Command<a class="headerlink" href="#the-pattern-command" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div>Not all patterns can be identified using <strong>patt</strong>. The Humdrum
-<a class="reference external" href="../../man/pattern">pattern</a> command permits an additional regular expression feature that
-is especially useful in musical applications. Specifically, <strong>pattern</strong>
-permits the defining of patterns spanning more than one line or record.
+<div>Not all patterns can be identified using <a class="reference external" href="../../man/patt">patt</a> . The Humdrum</div></blockquote>
+<dl class="docutils">
+<dt><a class="reference external" href="../../man/pattern">pattern</a> command permits an additional regular expression feature that</dt>
+<dd>is especially useful in musical applications. Specifically, <a class="reference external" href="../../man/pattern">pattern</a> permits the defining of patterns spanning more than one line or record.
 Record-repetition operators are specified by following the regular
 expression with a tab &#8211; followed by either <tt class="docutils literal"><span class="pre">+</span></tt>, <tt class="docutils literal"><span class="pre">*</span></tt>, or <tt class="docutils literal"><span class="pre">?</span></tt>. For
-example, consider the following Humdrum-extension regular expression:</div></blockquote>
+example, consider the following Humdrum-extension regular expression:</dd>
+</dl>
 <p>`` X+
 Y*
 Z?``</p>
@@ -746,22 +758,22 @@ expression matches one or more successive <a class="reference external" href="..
 containing the pitch <tt class="docutils literal"><span class="pre">`G</span></tt>&#8216; (naturals only) followed optionally by a single
 <tt class="docutils literal"><span class="pre">`G#</span></tt>&#8216; followed by one or more records containing one or more pitches from
 an A major triad &#8211; the last of which must end a phrase:</p>
-<p><a href="#id32"><span class="problematic" id="id33">``</span></a></p>
+<p><a href="#id20"><span class="problematic" id="id21">``</span></a></p>
 </div></blockquote>
 <p>&gt; [Gg]+[^#-] +
 [Gg]+#[^#] ?
 ([Aa]+|([Cc]+#)|[Ee]+)[^#-] *
 (}.*([Aa]+|([Cc]+#)|[Ee]+)[^#-]))|(([Aa]+|([Cc]+#)|[Ee]+)[^#-].*})</p>
 <blockquote>
-<div><a href="#id34"><span class="problematic" id="id35">``</span></a></div></blockquote>
+<div><a href="#id22"><span class="problematic" id="id23">``</span></a></div></blockquote>
 </div>
 <div class="section" id="patterns-of-patterns">
 <h2>Patterns of Patterns<a class="headerlink" href="#patterns-of-patterns" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Music often exhibits hierarchical structures where particular types of
 patterns may be embedded in other patterns, or where low-level patterns join
-together to form higher-level patterns. As we have seen, the <strong>-t</strong> (tag)
-option for the <strong>patt</strong> command allows a new output spine to be generated.
+together to form higher-level patterns. As we have seen, the <tt class="docutils literal"><span class="pre">-t</span></tt> (tag)
+option for the <a class="reference external" href="../../man/patt">patt</a> command allows a new output spine to be generated.
 This spine contains user-defined labels marking the beginning of each found
 pattern. The labels can contain any user-defined text string such as
 <tt class="docutils literal"><span class="pre">authentic</span> <span class="pre">cadence</span></tt>, <tt class="docutils literal"><span class="pre">episode</span></tt>, <tt class="docutils literal"><span class="pre">Motive</span> <span class="pre">3b</span></tt>, <tt class="docutils literal"><span class="pre">augmentation</span></tt>,
@@ -785,9 +797,9 @@ Coda?``</p>
 <div>The template reads &#8220;one or more instances of <tt class="docutils literal"><span class="pre">Theme</span> <span class="pre">1</span> <span class="pre">(tonic)</span></tt>, followed
 by zero or more instances of <tt class="docutils literal"><span class="pre">Bridge</span></tt>, followed by one or more instances
 of <tt class="docutils literal"><span class="pre">Theme</span> <span class="pre">2</span> <span class="pre">(tonic)</span></tt>, followed by zero or one instance of <tt class="docutils literal"><span class="pre">Coda</span></tt>.&#8221; This
-template might be used by <strong>pattern</strong> to identify a Recapitulation. Together
-with outputs from parallel searches for <a href="#id37"><span class="problematic" id="id38">`</span></a>Exposition&#8217; and <a href="#id39"><span class="problematic" id="id40">`</span></a>Development&#8217; the
-results of a <a href="#id41"><span class="problematic" id="id42">`</span></a>Recapitulation&#8217; search might similarly be amalgamated and used
+template might be used by <a class="reference external" href="../../man/pattern">pattern</a> to identify a Recapitulation. Together
+with outputs from parallel searches for <a href="#id24"><span class="problematic" id="id25">`</span></a>Exposition&#8217; and <a href="#id26"><span class="problematic" id="id27">`</span></a>Development&#8217; the
+results of a <a href="#id28"><span class="problematic" id="id29">`</span></a>Recapitulation&#8217; search might similarly be amalgamated and used
 as an input for a higher level search for works exhibiting a sonata-allegro
 structure.</div></blockquote>
 </div>
@@ -798,11 +810,13 @@ structure.</div></blockquote>
 related tools, including the UNIX <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> and <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a> commands as well as
 the Humdrum <a class="reference external" href="../../man/patt">patt</a> and <a class="reference external" href="../../man/pattern">pattern</a> commands. Each of these tools has
 different strengths and weaknesses and it is not always clear which tool is
-best for a given task. When searching, don&#8217;t forget to consider how
-<a class="reference external" href="../../man/context">context</a>, <a class="reference external" href="../../man/humsed">humsed</a>, <a class="reference external" href="../../man/rid">rid</a> and other tools might facilitate
-the searching task. In future chapters will will consider how &#8220;similarity&#8221;
+best for a given task. When searching, don&#8217;t forget to consider how</div></blockquote>
+<dl class="docutils">
+<dt><a class="reference external" href="../../man/context">context</a>, <a class="reference external" href="../../man/humsed">humsed</a>, <a class="reference external" href="../../man/rid">rid</a> and other tools might facilitate</dt>
+<dd>the searching task. In future chapters will will consider how &#8220;similarity&#8221;
 tools such as <a class="reference external" href="../../man/correl">correl</a> and <a class="reference external" href="../../man/simil">simil</a> can contribute to more
-sophisticated pattern searches.</div></blockquote>
+sophisticated pattern searches.</dd>
+</dl>
 </div>
 </div>
 

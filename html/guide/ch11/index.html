@@ -69,11 +69,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../">The Humdrum User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ch01/">1. Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern(I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch03/">3. Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch04/">4. Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch05/">5. The Humdrum Syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern(II)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch07/">7. MIDI Output Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch08/">8. The Shell (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch09/">9. Searching with Regular Expressions</a></li>
@@ -305,12 +305,12 @@ pitches are concurrent the distance is referred to as a <em>harmonic interval.</
 <p>The simplicity of these definitions is deceptive. In real music, the
 determination of pitch intervals can be surprisingly complicated. In this
 chapter we will discuss Humdrum tools related to melodic pitch intervals &#8211;
-specifically the <a class="reference external" href="../../man/mint">mint</a> (melodic interval) and <a class="reference external" href="../../man/xdelta">xdelta</a> commands.
+specifically the <a class="reference external" href="../../man/mint">mint</a>(melodic interval) and <a class="reference external" href="../../man/xdelta">xdelta</a> commands.
 Discussion of harmonic intervals will be delayed until <a class="reference external" href="../ch15">Chapter 15</a>.</p>
 <div class="section" id="types-of-melodic-intervals">
 <h2>Types of Melodic Intervals<a class="headerlink" href="#types-of-melodic-intervals" title="Permalink to this headline">¶</a></h2>
 <p>Example 11.1 provides a contrived illustration of seven different types of
-melodic intervals. (The corresponding **kern representation is given on
+melodic intervals. (The corresponding <a class="reference external" href="../../rep/kern">**kern</a> representation is given on
 the following page.) The simplest melodic interval is calculated between
 successive pitches within the same voice or part. We might call this a
 <em>voiced melodic interval.</em> Examples of voiced melodic intervals are the
@@ -347,7 +347,7 @@ the last measure (D5).</p>
 or more parts. For example, Example 11.2 shows a plausible reinterpretation
 of the voicings for the first measure. Here the quarter-note G is presumed to
 continue from the preceding eighth-note F rather than from the half-note C.
-In the context of the original **kern encoding above, we might call such
+In the context of the original <a class="reference external" href="../../rep/kern">**kern</a> encoding above, we might call such
 intervals <em>cross-voice melodic intervals.</em></p>
 <p><strong>Example 11.2</strong> Possible re-interpretation of opening measure for Example
 11.1.</p>
@@ -359,7 +359,7 @@ stops, it is common to perceive the outer-most notes as connected. Hence, the
 B would resolve to the C and the F would resolve to the E. We might call such
 intervals <em>unvoiced outer intervals.</em> We may call them <em>unvoiced</em> because
 they aren&#8217;t encoded using separate spines. The voicings are implied,
-principally because the notes form an <a href="#id1"><span class="problematic" id="id2">`</span></a>upper&#8217; or <a href="#id3"><span class="problematic" id="id4">`</span></a>lower&#8217; part.</p>
+principally because the notes form an <a href="#id2"><span class="problematic" id="id3">`</span></a>upper&#8217; or <a href="#id4"><span class="problematic" id="id5">`</span></a>lower&#8217; part.</p>
 <p>The multiple-stops in the lower voice illustrate even more possibilities.
 Apart from the unvoiced outer intervals (D-&gt;C and G-&gt;G), there are other
 possible melodic intervals. These include D-&gt;E and G-&gt;E. We might refer to
@@ -397,12 +397,12 @@ doubly augmented (<tt class="docutils literal"><span class="pre">AA</span></tt>)
 interval sizes are indicated by numbers (1=unison, 2=second, ... 8=octave,
 9=ninth, etc.). Ascending and descending intervals are distinguished by a
 leading plus sign (+) or minus sign (-) respectively.</p>
-<p>In the default operation, <strong>mint</strong> outputs three of the seven types of
+<p>In the default operation, <a class="reference external" href="../../man/mint">mint</a> outputs three of the seven types of
 melodic intervals. These are <em>voiced melodic intervals,</em> <em>unvoiced outer
 intervals</em> and <em>interrupted melodic intervals;</em> By way of illustration,
-Example 11.3 shows the output from the <strong>mint</strong> command for the input shown
+Example 11.3 shows the output from the <a class="reference external" href="../../man/mint">mint</a> command for the input shown
 in Example 11.1.</p>
-<p><strong>Example 11.3</strong> Default interval outputs from the <strong>mint</strong> command
+<p><strong>Example 11.3</strong> Default interval outputs from the <a class="reference external" href="../../man/mint">mint</a> command
 corresponding to Example 11.1.</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**mint  **mint
 *M4/4   *M4/4
@@ -423,19 +423,21 @@ corresponding to Example 11.1.</p>
 calculated, and that no unison has appeared for the tied note in the lower
 voice.</p>
 <p>If desired, the unison intervals between successive tied notes can be output
-via the <strong>-t</strong> option for <strong>mint.</strong></p>
+via the <tt class="docutils literal"><span class="pre">-t</span></tt> option for <strong>mint.</strong></p>
 <p>Sometimes it is useful to maintain the initial starting pitches in the
 output. The presence of these &#8220;offset&#8221; pitch values can prove useful in later
 reconstructing the original pitches from the <a class="reference external" href="../../rep/mint">**mint</a> interval data.
-When the <strong>-o</strong> option is invoked, <strong>mint</strong> outputs the initial starting
+When the <tt class="docutils literal"><span class="pre">-o</span></tt> option is invoked, <a class="reference external" href="../../man/mint">mint</a> outputs the initial starting
 pitches (placed in square brackets) from which the subsequent melodic
 intervals have been calculated.</p>
-<p>In order to avoid outputting interrupted intervals, the <strong>-b</strong> (break) option
+<p>In order to avoid outputting interrupted intervals, the <tt class="docutils literal"><span class="pre">-b</span></tt> (break) option
 can be used. This option requires a subsequent regular expression that
 defines the contexts where the interval calculation should be suspended and
-restarted. A common invocation would identify **kern rests (<tt class="docutils literal"><span class="pre">r</span></tt>) as a
+restarted. A common invocation would identify <a class="reference external" href="../../rep/kern">**kern</a> rests (<tt class="docutils literal"><span class="pre">r</span></tt>) as a
 suitable place to break melodic interval calculations. For example,</p>
-<p>``  mint -b r inputfile``</p>
+<div class="highlight-bash"><div class="highlight"><pre>mint -b r inputfile
+</pre></div>
+</div>
 <p>would produce the following output when applied to Example 11.1:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**mint  **mint
 *M4/4   *M4/4
@@ -455,30 +457,36 @@ P1      .
 <p>Notice that the perfect fourth (+P4) has been replaced by a null token at the
 beginning of measure 2. In addition, the rest token <tt class="docutils literal"><span class="pre">`r</span></tt>&#8216; has been echoed
 just prior to the barline.</p>
-<p>Depending on the regular expression given, the <strong>-b</strong> option can used for a
+<p>Depending on the regular expression given, the <tt class="docutils literal"><span class="pre">-b</span></tt> option can used for a
 variety of specialized intervals. For example, suppose that we wanted to
 avoid calculating intervals between the last note of a phrase and the first
 note of the next phrase. In the <a class="reference external" href="../../rep/kern">**kern</a> representation, the open and
 closed curly braces are used to indicate the beginnings and ends of phrases.
-We need to tell <strong>mint</strong> to break interval calculations each time an end-of-
+We need to tell <a class="reference external" href="../../man/mint">mint</a> to break interval calculations each time an end-of-
 phrase signifier is encountered:</p>
-<p>`` mint -b &#8216;}&#8217; inputfile``</p>
-<p>Similarly, the **kern representation uses the semicolon (<tt class="docutils literal"><span class="pre">;</span></tt>) to
-represent pauses. We might instruct <strong>mint</strong> to avoid calculating intervals
+<div class="highlight-bash"><div class="highlight"><pre>mint -b <span class="s1">&#39;}&#39;</span> inputfile
+</pre></div>
+</div>
+<p>Similarly, the <a class="reference external" href="../../rep/kern">**kern</a> representation uses the semicolon (<tt class="docutils literal"><span class="pre">;</span></tt>) to
+represent pauses. We might instruct <a class="reference external" href="../../man/mint">mint</a> to avoid calculating intervals
 between notes having pauses and the subsequent note:</p>
-<p>`` mint -b &#8216;;&#8217; inputfile``</p>
-<p>Since the <strong>-b</strong> option accepts regular expressions, we can combine patterns.
-For example, the following command instructs <strong>mint</strong> to calculate melodic
+<div class="highlight-bash"><div class="highlight"><pre>mint -b <span class="s1">&#39;;&#39;</span> inputfile
+</pre></div>
+</div>
+<p>Since the <tt class="docutils literal"><span class="pre">-b</span></tt> option accepts regular expressions, we can combine patterns.
+For example, the following command instructs <a class="reference external" href="../../man/mint">mint</a> to calculate melodic
 intervals, not including intervals spanning phrase boundaries, and not
 following notes with pauses:</p>
-<p>`` mint -b &#8216;[;}]&#8217; inputfile``</p>
+<div class="highlight-bash"><div class="highlight"><pre>mint -b <span class="s1">&#39;[;}]&#39;</span> inputfile
+</pre></div>
+</div>
 </div>
 <div class="section" id="unvoiced-inner-intervals">
 <h2>Unvoiced Inner Intervals<a class="headerlink" href="#unvoiced-inner-intervals" title="Permalink to this headline">¶</a></h2>
-<p>Unvoiced inner intervals can be included in the output by using the <strong>-i</strong> or
-<strong>-I</strong> options. With the <strong>-I</strong> option, unvoiced inner intervals appear in
+<p>Unvoiced inner intervals can be included in the output by using the <tt class="docutils literal"><span class="pre">-i</span></tt> or
+<tt class="docutils literal"><span class="pre">-I</span></tt> options. With the <tt class="docutils literal"><span class="pre">-I</span></tt> option, unvoiced inner intervals appear in
 the output in parentheses. For example, the following output is generated for
-Example 1.1 with the <strong>-I</strong> option. Notice the addition of <tt class="docutils literal"><span class="pre">(+M2)</span></tt> and
+Example 1.1 with the <tt class="docutils literal"><span class="pre">-I</span></tt> option. Notice the addition of <tt class="docutils literal"><span class="pre">(+M2)</span></tt> and
 `` (-2)``. The rising major second arises from the pitches D4 and E4; the
 falling minor third arises from the pitches G4 and E4.</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**mint  **mint
@@ -496,13 +504,13 @@ P1      .
 *-*-
 </pre></div>
 </div>
-<p>With the <strong>-i</strong> option, the parentheses surrounding the unvoiced inner
+<p>With the <tt class="docutils literal"><span class="pre">-i</span></tt> option, the parentheses surrounding the unvoiced inner
 intervals would be omitted.</p>
 </div>
 <div class="section" id="calculating-distance-intervals-using-the-mint-s-command">
 <h2>Calculating Distance Intervals Using the <em>mint -s</em> Command<a class="headerlink" href="#calculating-distance-intervals-using-the-mint-s-command" title="Permalink to this headline">¶</a></h2>
-<p>Another option provided by <a class="reference external" href="../../man/mint">mint</a> is the <strong>-s</strong> or skip option. Like the
-<strong>-b</strong> option, this option requires a subsequent regular expression. Any
+<p>Another option provided by <a class="reference external" href="../../man/mint">mint</a> is the <tt class="docutils literal"><span class="pre">-s</span></tt> or skip option. Like the
+<tt class="docutils literal"><span class="pre">-b</span></tt> option, this option requires a subsequent regular expression. Any
 token matching this expression is transformed to a null data token and is
 ignored when processing. One possible use for this option is to help
 calculate <em>distance intervals.</em> Consider Example 11.4 where all of the
@@ -529,9 +537,11 @@ calculate the intervals only between the eighth notes.</p>
 *-
 </pre></div>
 </div>
-<p>We can use the skip option to instruct <strong>mint</strong> to ignore any note token
+<p>We can use the skip option to instruct <a class="reference external" href="../../man/mint">mint</a> to ignore any note token
 matching the string <tt class="docutils literal"><span class="pre">`16</span></tt>&#8216;:</p>
-<p>``  mint -s 16 inputfile``</p>
+<div class="highlight-bash"><div class="highlight"><pre>mint -s 16 inputfile
+</pre></div>
+</div>
 <p>This command would produce an output that highlights the descending
 arpeggiated major chord &#8211; from C5 to G4 (down a P4), to E4 (down a m3) to C4
 (down a M3).</p>
@@ -561,8 +571,10 @@ calculating distance intervals are discussed in <a class="reference external" hr
 <p>Cross-voice melodic intervals can be calculated by amalgamating several
 spines into a single spine. In <a class="reference external" href="../ch26">Chapter 26</a> we will learn more about the
 <a class="reference external" href="../../man/cleave">cleave</a> command. But here is a typical use:</p>
-<p>`` cleave -d &#8216; &#8216; -i &#8216;<a href="#id9"><span class="problematic" id="id10">**</span></a>kern&#8217; -o &#8216;<a href="#id11"><span class="problematic" id="id12">**</span></a>kern&#8217; example11a``</p>
-<p>With the **kern encoding for Example 11.1 as input, the corresponding
+<div class="highlight-bash"><div class="highlight"><pre>cleave -d <span class="s1">&#39; &#39;</span> -i <span class="s1">&#39;**kern&#39;</span> -o <span class="s1">&#39;**kern&#39;</span> example11a
+</pre></div>
+</div>
+<p>With the <a class="reference external" href="../../rep/kern">**kern</a> encoding for Example 11.1 as input, the corresponding
 output would be:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**kern
 *M4/4
@@ -579,14 +591,14 @@ output would be:</p>
 *-
 </pre></div>
 </div>
-<p>Note that this output doesn&#8217;t quite conform to the **kern syntax: the
+<p>Note that this output doesn&#8217;t quite conform to the <a class="reference external" href="../../rep/kern">**kern</a> syntax: the
 barlines have been duplicated as double-stops, and the durations aren&#8217;t right
-for multiple-stops. We can clean up the output using <a href="#id32"><span class="problematic" id="id33">`**humsed,**`_</span></a> but the
+for multiple-stops. We can clean up the output using <a href="#id14"><span class="problematic" id="id15">`**humsed,**`_</span></a> but the
 incoherent durations won&#8217;t cause problems if our intention is to calculate
 pitch intervals.</p>
-<p>If we pipe the above output through the <strong>mint</strong> command, the appropriate
+<p>If we pipe the above output through the <a class="reference external" href="../../man/mint">mint</a> command, the appropriate
 command pipeline becomes:</p>
-<p>`` cleave -d &#8216; &#8216; -i &#8216;<a href="#id13"><span class="problematic" id="id14">**</span></a>kern&#8217; -o &#8216;<a href="#id15"><span class="problematic" id="id16">**</span></a>kern&#8217; example11a &gt;
+<p>`` cleave -d &#8216; &#8216; -i &#8216;<a href="#id6"><span class="problematic" id="id7">**</span></a>kern&#8217; -o &#8216;<a href="#id8"><span class="problematic" id="id9">**</span></a>kern&#8217; example11a &gt;
 &gt;&gt; | humsed &#8216;s/ =.*//&#8217; | mint -I``</p>
 <p>The corresponding melodic interval output is:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**mint
@@ -615,57 +627,72 @@ tenth (<tt class="docutils literal"><span class="pre">M10</span></tt>) will be o
 <div class="section" id="diatonic-intervals-absolute-intervals-and-contour">
 <h2>Diatonic Intervals, Absolute Intervals and Contour<a class="headerlink" href="#diatonic-intervals-absolute-intervals-and-contour" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="../../man/mint">mint</a> command provides three further options of interest. The
-<strong>-d</strong> option causes <strong>mint</strong> to output only the diatonic interval size
-without the interval quality information. The <strong>-a</strong> option causes <strong>mint</strong>
-to output absolute pitch intervals without distinguishing ascending intervals
+<tt class="docutils literal"><span class="pre">-d</span></tt> option causes <a class="reference external" href="../../man/mint">mint</a> to output only the diatonic interval size
+without the interval quality information. The <tt class="docutils literal"><span class="pre">-a</span></tt> option causes <a class="reference external" href="../../man/mint">mint</a> to output absolute pitch intervals without distinguishing ascending intervals
 from descending intervals. That is, the leading plus (+) and minus (-) signs
 are discarded.</p>
-<p>Finally, the <strong>-A</strong> option causes <strong>mint</strong> to output just one of three
+<p>Finally, the <tt class="docutils literal"><span class="pre">-A</span></tt> option causes <a class="reference external" href="../../man/mint">mint</a> to output just one of three
 states: a plus sign (+) indicating a rising interval, the minus sign (-)
 indicating a falling interval, and the number zero (0) indicating no pitch
-movement (i.e., unison). In short, the <strong>-A</strong> option outputs only gross
-contour. The <strong>-a</strong> and <strong>-A</strong> options are complementary.</p>
+movement (i.e., unison). In short, the <tt class="docutils literal"><span class="pre">-A</span></tt> option outputs only gross
+contour. The <tt class="docutils literal"><span class="pre">-a</span></tt> and <tt class="docutils literal"><span class="pre">-A</span></tt> options are complementary.</p>
 </div>
 <div class="section" id="using-the-mint-command">
 <h2>Using the <em>mint</em> Command<a class="headerlink" href="#using-the-mint-command" title="Permalink to this headline">¶</a></h2>
-<p>Consider some of the following uses of the <strong>mint</strong> command.</p>
+<p>Consider some of the following uses of the <a class="reference external" href="../../man/mint">mint</a> command.</p>
 <p>Are there any major or minor ninth melodic intervals in the file <tt class="docutils literal"><span class="pre">Sinatra</span></tt>?</p>
-<p>`` mint Sinatra | grep &#8216;[Mm][9]&#8217;``</p>
+<div class="highlight-bash"><div class="highlight"><pre>mint Sinatra | grep <span class="s1">&#39;[Mm][9]&#39;</span>
+</pre></div>
+</div>
 <p>Are there any compound melodic intervals in the file <tt class="docutils literal"><span class="pre">Piaf</span></tt>?</p>
-<p>`` mint Piaf | egrep &#8216;([Mm][9])|([MmPAd][1-9][0-9]&#8217;&#8216;``</p>
+<div class="highlight-bash"><div class="highlight"><pre>mint Piaf | egrep &#39;([Mm][9])|([MmPAd][1-9][0-9]&#39;&#39;
+</pre></div>
+</div>
 <p>Are descending seconds more common than ascending seconds in melodies by
 Maurice Chevalier?</p>
-<p>`` mint Chevalier* | grep -c &#8216;+[Mm]2&#8217;``
-`` mint Chevalier* | grep -c &#8216;-[Mm]2&#8217;``</p>
+<div class="highlight-bash"><div class="highlight"><pre>mint Chevalier* | grep -c <span class="s1">&#39;+[Mm]2&#39;</span>
+mint Chevalier* | grep -c <span class="s1">&#39;-[Mm]2&#39;</span>
+</pre></div>
+</div>
 <p>An alternative way of achieving the same goal might simplify the regular
-expression to <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> and use the <strong>-d</strong> (diatonic) option for <strong>mint</strong>:</p>
-<p>`` mint -d Chevalier* | grep -c &#8216;+2&#8217;``
-`` mint -d Chevalier* | grep -c &#8216;-2&#8217;``</p>
+expression to <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> and use the <tt class="docutils literal"><span class="pre">-d</span></tt> (diatonic) option for <a class="reference external" href="../../man/mint">mint</a> :</p>
+<div class="highlight-bash"><div class="highlight"><pre>mint -d Chevalier* | grep -c <span class="s1">&#39;+2&#39;</span>
+mint -d Chevalier* | grep -c <span class="s1">&#39;-2&#39;</span>
+</pre></div>
+</div>
 <p>Identify whether there are any tritone melodic intervals in any of the vocal
 parts of a score:</p>
-<p>`` extract -i &#8216;<a href="#id18"><span class="problematic" id="id19">*</span></a>Ivox&#8217; Platters | mint -c | egrep &#8216;(A4)|(d5)&#8217;``</p>
+<div class="highlight-bash"><div class="highlight"><pre>extract -i <span class="s1">&#39;*Ivox&#39;</span> Platters | mint -c | egrep <span class="s1">&#39;(A4)|(d5)&#39;</span>
+</pre></div>
+</div>
 <p>Here we have used the extended regular expression capabilities of <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a>
 to specify an either/or pattern.</p>
 <p>Suppose we had a directory containing only files encoding melodies using the
-`` <a href="#id34"><span class="problematic" id="id35">`**mint```_</span></a> representation. Does any melody in the current directory
+`` <a href="#id16"><span class="problematic" id="id17">`**mint```_</span></a> representation. Does any melody in the current directory
 contain both an ascending major sixth and a descending major sixth?</p>
-<p>`` grep -l &#8216;+M6&#8217; * | xargs grep &#8216;-M6&#8217;``</p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -l <span class="s1">&#39;+M6&#39;</span> * | xargs grep <span class="s1">&#39;-M6&#39;</span>
+</pre></div>
+</div>
 <p>Do the vocal lines of Louis Jourdain contain successive ascending major
 thirds (such as forming an augmented triad)?</p>
-<p>`` mint Jourdain | grep -v = | uniq -d | grep &#8216;+M3&#8217;``</p>
+<div class="highlight-bash"><div class="highlight"><pre>mint Jourdain | grep -v <span class="o">=</span> | uniq -d | grep <span class="s1">&#39;+M3&#39;</span>
+</pre></div>
+</div>
 <p>What is the longest run of rising intervals in the vocal lines of Marlene
 Dietrich?</p>
-<p>`` mint -A Dietrich | grep -v = | uniq -cd | grep &#8216;+&#8217; | sort -n``</p>
+<div class="highlight-bash"><div class="highlight"><pre>mint -A Dietrich | grep -v <span class="o">=</span> | uniq -cd | grep <span class="s1">&#39;+&#39;</span> | sort -n
+</pre></div>
+</div>
 </div>
 <div class="section" id="calculating-melodic-intervals-using-the-xdelta-command">
 <h2>Calculating Melodic Intervals Using the <em>xdelta</em> Command<a class="headerlink" href="#calculating-melodic-intervals-using-the-xdelta-command" title="Permalink to this headline">¶</a></h2>
 <p>Often it is useful to calculate melodic intervals in purely numerical values,
 such as the number semitones or the number of cents. The <a class="reference external" href="../../man/xdelta">xdelta</a>
 command provides a general tool for calculating numerical differences between
-successive values within individual spines. In order to use <strong>xdelta</strong> to
+successive values within individual spines. In order to use <a class="reference external" href="../../man/xdelta">xdelta</a> to
 calculate semitone differences, we first need to transform our representation
-to <a class="reference external" href="../../rep/semits">**semits</a> (discussed in <a class="reference external" href="../ch04">Chapter 4</a>). Recall that in the
-`` <a href="#id21"><span class="problematic" id="id22">**</span></a>semits`` representation, middle C is designated by the value zero, and
+to <a class="reference external" href="../../rep/semits">**semits</a>(discussed in <a class="reference external" href="../ch04">Chapter 4</a>). Recall that in the
+`` <a href="#id10"><span class="problematic" id="id11">**</span></a>semits`` representation, middle C is designated by the value zero, and
 all other pitches are represented by their (positive or negative) semitone
 distance. A C-major scale would appear as follows:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**semits
@@ -699,14 +726,14 @@ distance. A C-major scale would appear as follows:</p>
 and all subsequent values represent the numerical <em>difference</em> between
 successive values. If the scale had been descending in pitch, then the
 difference values would be negative.</p>
-<p>Notice also that the input interpretation (<a class="reference external" href="../../rep/semits">**semits</a>) has been modified to
-`` <strong>Xsemits``). The input representation for **xdelta</strong> does not matter. The
+<p>Notice also that the input interpretation ( <a class="reference external" href="../../rep/semits">**semits</a>) has been modified to
+`` <a href="#id12"><span class="problematic" id="id13">**</span></a>Xsemits``). The input representation for <a class="reference external" href="../../man/xdelta">xdelta</a> does not matter. The
 output is always modified so the letter X is prepended to the representation.
-This means that <strong>xdelta</strong> could as easily be used to calculate differences
+This means that <a class="reference external" href="../../man/xdelta">xdelta</a> could as easily be used to calculate differences
 in cents (<tt class="docutils literal"><span class="pre">Xcents</span></tt>), frequency (<tt class="docutils literal"><span class="pre">Xfreq</span></tt>) or any other representation
 that contains numbers.</p>
-<p>When <strong>xdelta</strong> encounters multiple-stops, it behaves in a manner similar to
-the <strong>mint</strong> command by calculating the numerical equivalent of unvoiced
+<p>When <a class="reference external" href="../../man/xdelta">xdelta</a> encounters multiple-stops, it behaves in a manner similar to
+the <a class="reference external" href="../../man/mint">mint</a> command by calculating the numerical equivalent of unvoiced
 inner intervals. Consider the following example:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**semits
 3
@@ -716,7 +743,7 @@ inner intervals. Consider the following example:</p>
 *-
 </pre></div>
 </div>
-<p>The <strong>xdelta</strong> command produces the following output:</p>
+<p>The <a class="reference external" href="../../man/xdelta">xdelta</a> command produces the following output:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**Xsemits
 .
 -1 2
@@ -731,10 +758,10 @@ the values 2 and 5, the output differences are -1 and +2 respectively. In
 going from the values 2 and 5 to the values -1, 7 and 14, we see the outer
 differences (-1 - 2 = -3) and (14 - 5 = 9). The inner differences are output
 in parentheses: (7 - 2 = 5) and (7 - 5 = 2).</p>
-<p>Like the <strong>mint</strong> command, <strong>xdelta</strong> provides a <strong>-b</strong> option to break
-calculations of numerical differences and a <strong>-s</strong> option to skip or
+<p>Like the <a class="reference external" href="../../man/mint">mint</a> command, <a class="reference external" href="../../man/xdelta">xdelta</a> provides a <tt class="docutils literal"><span class="pre">-b</span></tt> option to break
+calculations of numerical differences and a <tt class="docutils literal"><span class="pre">-s</span></tt> option to skip or
 completely ignore certain data tokens when processing. An important use of
-the <strong>-s</strong> option is to ignore barlines. Consider the following example:</p>
+the <tt class="docutils literal"><span class="pre">-s</span></tt> option is to ignore barlines. Consider the following example:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**cents
 100
 400
@@ -746,14 +773,18 @@ the <strong>-s</strong> option is to ignore barlines. Consider the following exa
 </div>
 <p>The proper way to calculate differences in cents is to ensure that measure
 numbers are ignored:</p>
-<p>`` xdelta -s ^= inputfile``</p>
+<div class="highlight-bash"><div class="highlight"><pre>xdelta -s ^<span class="o">=</span> inputfile
+</pre></div>
+</div>
 <p>Failure to skip the barline will cause a difference to be calculated between
 800 and =2 (i.e., -798) and between =2 and 600 (i.e., 598).</p>
-<p>Outputs from <strong>xdelta</strong> can be processed again using <strong>xdelta</strong> in order to
+<p>Outputs from <a class="reference external" href="../../man/xdelta">xdelta</a> can be processed again using <a class="reference external" href="../../man/xdelta">xdelta</a> in order to
 calculate the differences of the differences. For example, we can calculate
-the second derivative of successive cents by using a pipeline containing two
-<strong>xdelta</strong> commands:</p>
-<p>`` xdelta -s ^= <a href="#id24"><span class="problematic" id="id25">*</span></a>inputfile*`` <a href="#id26"><span class="problematic" id="id27">``</span></a>| xdelta -s ^= ``</p>
+the second derivative of successive cents by using a pipeline containing two <a class="reference external" href="../../man/xdelta">xdelta</a> commands:</p>
+<div class="highlight-bash"><div class="highlight"><pre>xdelta -s ^<span class="o">=</span> *inputfile*
+| xdelta -s ^<span class="o">=</span>
+</pre></div>
+</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="reprise">
@@ -777,10 +808,10 @@ note intervals</em>.</p>
 these various kinds of intervals. Specifically, we have illustrated how to
 calculate voiced intervals, interrupted intervals, unvoiced outer intervals
 and unvoiced inner intervals. In <a class="reference external" href="../ch26">Chapter 26</a> we will show how to calculate
-cross-voice intervals, and in <a class="reference external" href="../ch35">Chapter 35</a> (&#8220;Layers&#8221;) we will consider how
+cross-voice intervals, and in <a class="reference external" href="../ch35">Chapter 35</a>(&#8220;Layers&#8221;) we will consider how
 to calculate distance intervals.</p>
 <p>We have also seen how <a class="reference external" href="../../man/xdelta">xdelta</a> can be used to measure purely numerical
-distances between successive values. As we will see, <strong>xdelta</strong> will prove
+distances between successive values. As we will see, <a class="reference external" href="../../man/xdelta">xdelta</a> will prove
 useful in many other applications apart from calculating pitch distances.</p>
 </div>
 </div>

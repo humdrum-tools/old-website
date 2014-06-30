@@ -69,11 +69,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../">The Humdrum User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ch01/">1. Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern(I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch03/">3. Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch04/">4. Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch05/">5. The Humdrum Syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern(II)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch07/">7. MIDI Output Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch08/">8. The Shell (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch09/">9. Searching with Regular Expressions</a></li>
@@ -402,20 +402,20 @@ tokens separated by a tab:</p>
 <div class="section" id="conditional-statements">
 <h2>Conditional Statements<a class="headerlink" href="#conditional-statements" title="Permalink to this headline">¶</a></h2>
 <p>Often we&#8217;d like to avoid processing certain records. For example, we might
-wish to avoid processing barlines. The awk <strong>if</strong> statement can be used to
+wish to avoid processing barlines. The awk**if**statement can be used to
 restrict the operation to particular circumstances. Consider the following
 awk program:</p>
 <div class="highlight-awk"><div class="highlight"><pre><span class="nx">awk</span> <span class="s1">&#39;{if ($0 !~/^=/) print $1 - $2}&#39;</span>
 </pre></div>
 </div>
-<p>The <strong>if</strong> condition is given in parentheses. The string given between the
+<p>The**if**condition is given in parentheses. The string given between the
 slashes (<tt class="docutils literal"><span class="pre">/^=/</span></tt>) is a regular expression: in this case, it identifies any
 equals sign that occurs at the beginning of an input line. The tilde means
 &#8220;match&#8221; and the exclamation mark means &#8220;not&#8221;. Hence the program means: if the
 entire line (<tt class="docutils literal"><span class="pre">0</span></tt>) does not match (<tt class="docutils literal"><span class="pre">!~</span></tt>) an equals sign occuring at the
 beginning of the line (<tt class="docutils literal"><span class="pre">/^=/</span></tt>), then print the value of the first token
 minus the value of the second token (<tt class="docutils literal"><span class="pre">print</span> <span class="pre">$1</span> <span class="pre">-</span> <span class="pre">$2</span></tt>).</p>
-<p>Awk also provide an <strong>else</strong> condition. The syntax is:</p>
+<p>Awk also provide an**else**condition. The syntax is:</p>
 <p>&gt; if (condition)
 &gt;
 &gt;&gt; [then] {do something}
@@ -510,9 +510,7 @@ improve the readability of our program.</p>
 <h2>The <em>for</em> Loop<a class="headerlink" href="#the-for-loop" title="Permalink to this headline">¶</a></h2>
 <p>Often we would like to repeat a process for several concurrent spines. For
 example, suppose we had four spines of <a class="reference external" href="../../rep/solfa">**solfa</a> data and we want to
-output the total number of leading-tones for each sonority. Awk provides a
-<strong>for</strong> instruction that allows us to cycle through a series of values. The
-<strong>for</strong>-loop construction has the following syntax:</p>
+output the total number of leading-tones for each sonority. Awk provides a**for**instruction that allows us to cycle through a series of values. The**for``-loop construction has the following syntax:</p>
 <div class="highlight-python"><div class="highlight"><pre>for (initial-value; condition-for-continuing; increment-action)
 {do something repeatedly}
 </pre></div>
@@ -540,7 +538,7 @@ of spines. For each line of input, awk automatically identifies the number of
 input tokens or fields and stores the value in the varible <a class="reference external" href="../../man/NF">NF</a>. Simply
 replacing the number <tt class="docutils literal"><span class="pre">4</span></tt> by <a class="reference external" href="../../man/NF">NF</a> will achieve our goal. In our revised
 program we have also added some comments to clarify our code. Like the shell,
-awk comments consist of material following the octothorpe character (#): <a href="#id7"><span class="problematic" id="id8">**</span></a><a href="#id9"><span class="problematic" id="id10">**</span></a></p>
+awk comments consist of material following the octothorpe character (#): <a href="#id6"><span class="problematic" id="id7">``</span></a><a href="#id8"><span class="problematic" id="id9">**</span></a></p>
 <div class="highlight-awk"><div class="highlight"><pre>awk &#39;{
    # A program to count occurrences of the leading-tone.
    count = 0
@@ -553,8 +551,7 @@ awk comments consist of material following the octothorpe character (#): <a href
 <p>A problem with the above script is that it will attempt to count occurrences
 of <tt class="docutils literal"><span class="pre">ti</span></tt> in Humdrum comments, interpretations, and barlines. We can improve
 our program by echoing these in the output without processing them. Another
-refinement makes use of the awk <strong>next</strong> instruction. Whenever a <strong>next</strong>
-statement is encountered, the program immediately moves on to the next input
+refinement makes use of the awk**next**instruction. Whenever a**next**statement is encountered, the program immediately moves on to the next input
 line and begins processing again from the start of the program.</p>
 <div class="highlight-awk"><div class="highlight"><pre><span class="nx">awk</span> <span class="s1">&#39;{</span>
 <span class="s1">   # A program to count occurrences of the leading-tone.</span>

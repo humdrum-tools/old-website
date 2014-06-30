@@ -1,0 +1,149 @@
+#!/usr/bin/perl
+#
+# Programmer:    Craig Stuart Sapp <craig.stanford.edu>
+# Creation Date: Mon Jun 30 12:40:31 PDT 2014
+# Last Modified: Mon Jun 30 12:40:31 PDT 2014
+# Filename:      makereplace
+# Syntax:        perl 5
+#
+# Description: Convert explicit links into replacement directives
+#              so that the links can be changed easier in the future.
+#
+#              These are for links to the man and rep pages.
+#              Could also be done for Unix commands.
+
+use strict;
+my @files = @ARGV;
+my $file;
+
+foreach $file (@files) {
+   processFile($file);
+}
+
+exit(0);
+
+
+##############################
+##
+## processFile --
+##
+
+sub processFile {
+   my ($file) = @_;
+   my %MANS;
+   my %REPS;
+   my %CHAPS;
+   my $addcount = 0;
+   my %madds;
+   my %cadds;
+   my %radds;
+   my $i;
+   my $replace;
+   my $abbr;
+   my $addxstar;
+   my $line;
+   my $key;
+   my $add;
+   my $replacement;
+
+   open (FILE, $file) or die;
+   my @contents = <FILE>;
+   close FILE;
+
+   for ($i=0; $i<@contents; $i++) {
+      $line = $contents[$i];
+      if ($line =~ /^\.\.\s+\|([^|]+)\|\s+replace\s*::\s*(.*)/) {
+         $abbr = $1;
+         $replacement = $2;
+         if ($replacement =~ /\.\.\/man/) {
+            $MANS{$abbr} = $replacement;
+         } elsif ($replacement =~ /\.\.\/rep/) {
+            $REPS{$abbr} = $replacement;
+         } elsif ($replacement =~ /\.\.\/ch\d\d/) {
+            $CHAPS{$abbr} = $replacement;
+         }
+      }
+      next if $line =~ /^\.\./;
+
+      while ($line =~ /\s*`([a-zA-Z0-9]+)\s+<..\/..\/man\/([a-zA-Z0-9]+)>`_\s*/) {
+         $add = $1;
+         $replace = "`$add <../../man/$add>`_";
+         if ($MANS{$add} =~ /^\s*$/) {
+            $MANS{$add} = $replace;
+            $madds{$add} = $replace;
+            $addcount++;
+         }
+         $line =~ s/\s*`$add\s+<..\/..\/man\/$add>`_\s*/ |$add|_ /g;
+         chomp($line);
+         $contents[$i] = "$line\n";
+      }
+
+      while ($line =~ /\s*`([a-zA-Z0-9]+\s+\d+)\s+<..\/ch(\d\d)>`_\s*/) {
+         $add = $1;
+         $replace = "`$add <../ch$2>`_";
+         if ($CHAPS{$add} =~ /^\s*$/) {
+            $CHAPS{$add} = $replace;
+            $cadds{$add} = $replace;
+            $addcount++;
+         }
+         $line =~ s/\s*`$add\s+<..\/ch\d\d>`_\s*/ |$add|_ /g;
+         chomp($line);
+         $contents[$i] = "$line\n";
+      }
+
+      while ($line =~ /\s*`\**([a-zA-Z0-9]+)\s+<..\/..\/rep\/([a-zA-Z0-9]+)>`_\s*/) {
+         $add = "**$1";
+         $addxstar = $add;
+         $addxstar =~ s/^\*+//;
+         $replace = "`**$addxstar <../../rep/$add>`_";
+         if ($REPS{$add} =~ /^\s*$/) {
+            $REPS{$add} = $replace;
+            $radds{$add} = $replace;
+            $addcount++;
+         }
+         $line =~ s/\s*`\**$addxstar\s+<..\/..\/rep\/$addxstar>`_\s*/ |**$addxstar|_ /g;
+         chomp($line);
+         $contents[$i] = "$line\n";
+      }
+      $contents[$i] =~ s/(?<=\|_) (?=[^a-zA-Z0-9 ])/\\ /g;
+      $contents[$i] =~ s/\\ _ /\\ /g;
+      $contents[$i] =~ s/^ [|]/|/;
+      $contents[$i] =~ s/\\ $//;
+   }
+
+   if ($addcount == 0) {
+      return;
+   }
+
+   my $number;
+   my $xkey;
+   my $ykey;
+   open (FILE, ">$file") or die;
+   print FILE "\n";
+
+   foreach $key (sort keys %cadds) {
+      $key =~ /(\d+)/;
+      $number = $1;
+      $number = "0$number" if $number < 10;
+      print FILE ".. |$key|\treplace:: $key\n";
+      print FILE ".. _$key:\t../ch$number\n";
+      print FILE "\n";
+   }
+   foreach $key (sort keys %madds) {
+      print FILE ".. |$key|\treplace:: $key\n";
+      print FILE ".. _$key:\t../../man/$key\n";
+      print FILE "\n";
+   }
+   foreach $key (sort keys %radds) {
+      $xkey = $key;
+      $xkey =~ s/^\*+//;
+      $ykey = "\\*\\*$xkey";
+      print FILE ".. |$key|\treplace:: $ykey\n";
+      print FILE ".. _$ykey:\t../../rep/$xkey\n";
+      print FILE "\n";
+   }
+   print FILE @contents;
+}
+
+
+

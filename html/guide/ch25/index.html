@@ -69,11 +69,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../">The Humdrum User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ch01/">1. Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern(I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch03/">3. Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch04/">4. Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch05/">5. The Humdrum Syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern(II)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch07/">7. MIDI Output Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch08/">8. The Shell (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch09/">9. Searching with Regular Expressions</a></li>
@@ -303,11 +303,11 @@
 useful techniques that can be used to estimate the degree of similarity
 between different types of information. In this chapter we discuss two
 general tools for characterizing similarity: <a class="reference external" href="../../man/correl">correl</a> and <a class="reference external" href="../../man/simil">simil</a>.
-The <strong>correl</strong> command can be used to measure numerical similarity between
-two sets of numbers. The <strong>simil</strong> command can be used to measure similarity
+The <a class="reference external" href="../../man/correl">correl</a> command can be used to measure numerical similarity between
+two sets of numbers. The <a class="reference external" href="../../man/simil">simil</a> command can be used to measure similarity
 between non-numeric data.</p>
-<p>In addition, we will discuss the <strong>accent</strong> command &#8211; a tool which estimates
-how salient or noticeable a given note is. The <strong>accent</strong> command can be used
+<p>In addition, we will discuss the**accent**command &#8211; a tool which estimates
+how salient or noticeable a given note is. The**accent**command can be used
 to pre-process musical passages so only those notes of greatest importance
 are considered when measuring musical similarity.</p>
 <div class="section" id="the-correl-command">
@@ -335,12 +335,14 @@ longer notes. The longest notes are fairly high (12 and 16 semits), whereas
 most of the shortest notes (4 and 5 semits) are lower. There are some
 exceptions, however, such as the 0.5 sec. duration for a pitch of 14 semits.</p>
 <p>The Humdrum <a class="reference external" href="../../man/correl">correl</a> command allows us to characterize more precisely
-the degree of similarity between two sets of numbers. The <strong>correl</strong> command
+the degree of similarity between two sets of numbers. The <a class="reference external" href="../../man/correl">correl</a> command
 expects precisely two input spines; it is easily invoked:</p>
-<p>`` correl inputfile``</p>
-<p>For the above semitone/duration data, <strong>correl</strong> will output the value
+<div class="highlight-bash"><div class="highlight"><pre>correl inputfile
+</pre></div>
+</div>
+<p>For the above semitone/duration data, <a class="reference external" href="../../man/correl">correl</a> will output the value
 +0.515.</p>
-<p>Technically, the <strong>correl</strong> command calculates Pearson&#8217;s coefficient of
+<p>Technically, the <a class="reference external" href="../../man/correl">correl</a> command calculates Pearson&#8217;s coefficient of
 correlation between two spines containing numerical data. Correlation
 coefficients range between +1 and -1. A value of +1 indicates that both sets
 of numbers rise and fall in precise synchrony &#8211; although the magnitude of
@@ -365,10 +367,10 @@ is falling &#8211; and vice versa. By contrast, a correlation coefficient of zer
 means that the two sets of numbers are statistically independent of each
 other. For example, comparing two large sets of random numbers will result in
 a correlation coefficient near zero.</p>
-<p>The <strong>correl</strong> command attends only to numerical input data. Non-numerical
+<p>The <a class="reference external" href="../../man/correl">correl</a> command attends only to numerical input data. Non-numerical
 data is simply ignored. If a data token contains a mix of numeric and non-
 numeric characters, then only the first complete numerical subtoken is
-considered. The following examples illustrate how <strong>correl</strong> interprets mixed
+considered. The following examples illustrate how <a class="reference external" href="../../man/correl">correl</a> interprets mixed
 data tokens:</p>
 <p><strong>Table 25.1</strong></p>
 <p>&gt; tokeninterpretation
@@ -382,33 +384,34 @@ data tokens:</p>
 &gt; <a class="reference external" href="mailto:$17&#37;&#52;&#48;217">$17<span>&#64;</span>217</a>
 &gt; =28b28
 &gt; a1b2 c.3.d1 0.3``</p>
-<p><em>Numerical interpretations of data tokens by **correl**</em>.</p>
+<p><a href="#id3"><span class="problematic" id="id4">*</span></a>Numerical interpretations of data tokens by <a class="reference external" href="../../man/correl">correl</a> <a href="#id5"><span class="problematic" id="id6">*</span></a>.</p>
 <p>Notice in the last example that multiple-stops are treated as potentially
 independent numbers. For example, if the data token encodes a double-stop,
-then <strong>correl</strong> will determine whether both subtokens can be interpreted
+then <a class="reference external" href="../../man/correl">correl</a> will determine whether both subtokens can be interpreted
 numerically.</p>
-<p>In normal operation, the <strong>correl</strong> command expects numerical data to be
+<p>In normal operation, the <a class="reference external" href="../../man/correl">correl</a> command expects numerical data to be
 precisely matched in both input spines. That is, if a particular data record
 contains no numbers in the left spine, it should also contain no numbers in
 the right spine. Similarly, if the left spine contains three numbers (in a
 triple stop) then the right spine must also contain three numbers in the same
-record. If there is any breach of the criterion of number pairing, <strong>correl</strong>
-will issue an error message and stop.</p>
+record. If there is any breach of the criterion of number pairing, <a class="reference external" href="../../man/correl">correl</a> will issue an error message and stop.</p>
 <p>Suppose we had a passage of two-part, first species counterpoint and we were
 interested in whether the two voices tend toward contrary and oblique motion
 rather than parallel and similar motion. In first species counterpoint, each
 pitch in the upper voice is matched with a pitch in the lower voice. We could
 measure the pitch-related correlation between the two parts as follows:</p>
-<p>`` semits species1.krn | correl -s ^=``</p>
+<div class="highlight-bash"><div class="highlight"><pre>semits species1.krn | correl -s ^<span class="o">=</span>
+</pre></div>
+</div>
 <p>The output will consist of a single numerical value. If the value is
 positive, then it indicates that the parts tend to move up and down together
 in pitch. That is, a positive correlation indicates a preponderance of
 parallel and similar contrapuntal motion. Conversely, a negative correlation
 would indicate a preponderance of contrary and oblique motion.</p>
-<p>Notice the use of the <strong>-s</strong> option in the above command. Since common system
+<p>Notice the use of the <tt class="docutils literal"><span class="pre">-s</span></tt> option in the above command. Since common system
 barlines often contain measure numbers (e.g. <tt class="docutils literal"><span class="pre">=28</span></tt>), they are interpretable
 as numeric data. For most inputs, the user will not want to have measure
-numbers participate in the similarity calculation. The <strong>-s</strong> option allows
+numbers participate in the similarity calculation. The <tt class="docutils literal"><span class="pre">-s</span></tt> option allows
 the user to specify a regular expression indicating data records to skip.</p>
 <p>Now suppose that we wanted to measure a similar pitch-related correlation for
 a passage of second species counterpoint. In second species counterpoint,
@@ -417,26 +420,28 @@ Translating our pitch data to semitones will result in a failure of the
 matched-pairs criterion. There are two ways of overcoming this problem. One
 method is to use <a class="reference external" href="../../man/ditto">ditto</a> to repeat the sustained semitone value for the
 slower-moving part:</p>
-<p>`` semits species2.krn | ditto -s ^= | correl -s ^=``</p>
+<div class="highlight-bash"><div class="highlight"><pre>semits species2.krn | ditto -s ^<span class="o">=</span> | correl -s ^<span class="o">=</span>
+</pre></div>
+</div>
 <p>Another approach would be to omit from consideration those notes that are not
-concurrent with a note in the other voice. The <strong>-m</strong> option for <strong>correl</strong>
-disables the matched-pairs criterion. That is, if numerical data is missing
+concurrent with a note in the other voice. The <tt class="docutils literal"><span class="pre">-m</span></tt> option for <a class="reference external" href="../../man/correl">correl</a> disables the matched-pairs criterion. That is, if numerical data is missing
 from either one of the input spines, <a class="reference external" href="../../man/correl">correl</a> will simply discard the
 entire data record from the correlation calculation. Using this approach, we
-would omit the <strong>ditto</strong> command:</p>
-<p>`` semits species2.krn | correl -m -s ^=``</p>
-<p>Note that in formal statistical tests, the <strong>-m</strong> option should never be
+would omit the <a class="reference external" href="../../man/ditto">ditto</a> command:</p>
+<div class="highlight-bash"><div class="highlight"><pre>semits species2.krn | correl -m -s ^<span class="o">=</span>
+</pre></div>
+</div>
+<p>Note that in formal statistical tests, the <tt class="docutils literal"><span class="pre">-m</span></tt> option should never be
 used.</p>
 </div>
 <div class="section" id="using-a-template-with-correl">
 <h2>Using a Template with <em>correl</em><a class="headerlink" href="#using-a-template-with-correl" title="Permalink to this headline">¶</a></h2>
-<p>In the above examples, <strong>correl</strong> generates a single output value indicating
-the degree of numerical similarity between two spines. A more valuable use of
-<strong>correl</strong> involves scanning a spine for portions that are similar to a brief
+<p>In the above examples, <a class="reference external" href="../../man/correl">correl</a> generates a single output value indicating
+the degree of numerical similarity between two spines. A more valuable use of <a class="reference external" href="../../man/correl">correl</a> involves scanning a spine for portions that are similar to a brief
 excerpt or template. In this mode of operation, the input consists of a
 single input spine plus a separate template that represents a pattern being
 sought.</p>
-<p>The <strong>-f</strong> option for <a class="reference external" href="../../man/correl">correl</a> allows the user to specify a file that
+<p>The <tt class="docutils literal"><span class="pre">-f</span></tt> option for <a class="reference external" href="../../man/correl">correl</a> allows the user to specify a file that
 acts as a template which is then scanned across some input. By way of
 example, suppose we are looking for motivic instances similar to the first
 four notes of <em>Frere Jacques</em>. Our template file might look as follows:</p>
@@ -453,7 +458,7 @@ four notes of <em>Frere Jacques</em>. Our template file might look as follows:</
 passages. The following example shows a sample input and corresponding output
 &#8211; given the above template. The left-most spine is the original input
 represented using the French <a class="reference external" href="../../rep/solfg">**solfg</a> scheme. The middle spine is the
-input (translated to <a class="reference external" href="../../rep/semits">**semits</a>) supplied to the <strong>correl</strong> command. The
+input (translated to <a class="reference external" href="../../rep/semits">**semits</a>) supplied to the <a class="reference external" href="../../man/correl">correl</a> command. The
 right-most spine was generated using the following command:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**solfg **semits        **correl
 =1      =1      =1
@@ -477,29 +482,33 @@ so      7       .
 *-      *-      *-
 </pre></div>
 </div>
-<p>The similarity values generated by <strong>correl</strong> are output as a <a class="reference external" href="../../rep/correl">**correl</a>
+<p>The similarity values generated by <a class="reference external" href="../../man/correl">correl</a> are output as a <a class="reference external" href="../../rep/correl">**correl</a>
 spine. Each successive value in the output spine is matched with a data token
-in the target input file (<a class="reference external" href="../../rep/semits">**semits</a>). For example, the initial output
+in the target input file ( <a class="reference external" href="../../rep/semits">**semits</a>). For example, the initial output
 value (1.000) indicates that an exact positive correlation occurs between the
 template and the input. Another exact positive correlation occurs at the
 beginning of measure 2. More interesting, perhaps, are the high correlations
 (+0.982) at the beginning of measures 3 and 4. Although the semitone patterns
 differ (do, re, mi = +2 +2 semits; mi, fa, so = +1 +2 semits), the
 correlations remain high because of the approximate numerical similarity.
-This property gives <strong>correl</strong> a certain flexibility when searching for
+This property gives <a class="reference external" href="../../man/correl">correl</a> a certain flexibility when searching for
 melodic similarity.</p>
 <p>For more sophisticated melodic similarity searches, both pitch and rhythm
 might be considered. Two different correlations can be calculated &#8211; one for
 semitone contour similarity and one for durational similarity. We can
 generate two <a class="reference external" href="../../rep/correl">**correl</a> spines as follows. First generate <a class="reference external" href="../../rep/semits">**semits</a> and
-`` <strong>dur`` data so our inputs to **correl</strong> are numerical.</p>
-<p>`` semits inputfile &gt; temp.sem``
-`` dur inputfile &gt; temp.dur``</p>
+`` <a href="#id7"><span class="problematic" id="id8">**</span></a>dur`` data so our inputs to <a class="reference external" href="../../man/correl">correl</a> are numerical.</p>
+<div class="highlight-bash"><div class="highlight"><pre>semits inputfile &gt; temp.sem
+dur inputfile &gt; temp.dur
+</pre></div>
+</div>
 <p>Generate independent <a class="reference external" href="../../rep/correl">**correl</a> spines for the semitone pitch and duration
 data, and assemble the two spines together:</p>
-<p>`` correl -s ^= -f template.sem temp.sem &gt; correl.sem``
-`` correl -s ^= -f template.dur temp.dur &gt; correl.dur``
-`` assemble correl.sem correl.dur``</p>
+<div class="highlight-bash"><div class="highlight"><pre>correl -s ^<span class="o">=</span> -f template.sem temp.sem &gt; correl.sem
+correl -s ^<span class="o">=</span> -f template.dur temp.dur &gt; correl.dur
+assemble correl.sem correl.dur
+</pre></div>
+</div>
 <p>The resulting output consists of two <a class="reference external" href="../../rep/correl">**correl</a> spines: one tracing the
 moment-by-moment pitch similarity, and the other tracing the moment-by-moment
 duration similarity. The output might appear as follows:</p>
@@ -526,8 +535,7 @@ values between +0.5 and +0.8 might be recoded as &#8220;maybe&#8221;; all other 
 might be recoded as null tokens. Assembling the recoded <a class="reference external" href="../../rep/correl">**correl</a>
 spines, one could use <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to search for moments in the score that are
 suitable marked as &#8220;similar&#8221; for both pitch and duration.</p>
-<p>Finally, a word of caution is in order regarding the use of the <strong>correl</strong>
-command. Correlation coefficients indicate only the magnitude of the
+<p>Finally, a word of caution is in order regarding the use of the <a class="reference external" href="../../man/correl">correl</a> command. Correlation coefficients indicate only the magnitude of the
 association between two sets of data. High correlation values can occur
 purely by chance. In particular, the noteworthiness (statistical
 significance) of a correlation value depends on the number of input values
@@ -550,7 +558,7 @@ in spelling between &#8220;bassoon&#8221; and &#8220;baboon&#8221;?</p>
 user&#8217;s choice of input representations. If the input represents duration,
 then the results pertain to durational similarity. If the input represents
 frequency, then the results pertain to frequency similarity. The <em>metric</em>
-used by <strong>correl</strong> is a linear numerical correlation. Since <strong>correl</strong> can
+used by <a class="reference external" href="../../man/correl">correl</a> is a linear numerical correlation. Since <a class="reference external" href="../../man/correl">correl</a> can
 deal only with numerical data, it is referred to as &#8220;parametric&#8221; method for
 measuring similarity. However, we know that non-numerical data can also be
 similar. An &#8220;apple&#8221; is more similar to an &#8220;orange&#8221; than it is to a &#8220;bassoon.&#8221;</p>
@@ -560,56 +568,57 @@ user&#8217;s choice of input representations. If the input represents metric
 position, then the results pertain to metric-position similarity. If the
 input represents phonetic text, then the results pertain to phonetic
 similarity, etc.</p>
-<p>The <em>metric</em> used by <strong>simil</strong> is a so-called &#8220;edit distance&#8221; metric. The
+<p>The <em>metric</em> used by <a class="reference external" href="../../man/simil">simil</a> is a so-called &#8220;edit distance&#8221; metric. The
 degree of similarity is characterized by how much modification would be
 required to transform one representation to another. By way of example,
 consider the spelling of the words &#8220;bassoon&#8221; and &#8220;baboon.&#8221; Suppose we are
 allowed the following operations: (1) insertion of a character, (2) deletion
 of a character, and (3) substitution of a character. We can transform
-&#8220;bassoon&#8221; to &#8220;baboon&#8221; by deleting a letter <a href="#id13"><span class="problematic" id="id14">`</span></a>s&#8217; and substituting the letter
-<a href="#id15"><span class="problematic" id="id16">`</span></a>b&#8217; for the remaining letter <a href="#id17"><span class="problematic" id="id18">`</span></a>s&#8217;. If each edit operation was assigned a
+&#8220;bassoon&#8221; to &#8220;baboon&#8221; by deleting a letter <a href="#id9"><span class="problematic" id="id10">`</span></a>s&#8217; and substituting the letter
+<a href="#id11"><span class="problematic" id="id12">`</span></a>b&#8217; for the remaining letter <a href="#id13"><span class="problematic" id="id14">`</span></a>s&#8217;. If each edit operation was assigned a
 &#8220;penalty&#8221; value of 1.0, then we would say that the edit-distance between
 &#8220;bassoon&#8221; and &#8220;baboon&#8221; is 2.0.</p>
-<p>Before we describe <strong>simil</strong> in detail, let&#8217;s examine some sample inputs and
-outputs. Two inputs are required by <strong>simil</strong> &#8211; the <em>source</em> and <em>template</em>
+<p>Before we describe <a class="reference external" href="../../man/simil">simil</a> in detail, let&#8217;s examine some sample inputs and
+outputs. Two inputs are required by <a class="reference external" href="../../man/simil">simil</a> &#8211; the <em>source</em> and <em>template</em>
 inputs. Both inputs must contain single columns of data; multi-column inputs
 are forbidden. The <em>source</em> input must conform to the Humdrum syntax, however
 the <em>template</em> should contain only data records.</p>
 <p>Depending on the mode of operation, <a class="reference external" href="../../man/simil">simil</a> outputs either one or two
 spines of continuous information regarding the similarity of the two inputs.
-The length of <strong>simil</strong>&#8216;s output matches that of the <em>source</em> file.</p>
-<p>The following example illustrates the operation of <strong>simil</strong>. Like
-<strong>correl</strong>, <strong>simil</strong> provides a template mode where a relatively short
+The length of <a class="reference external" href="../../man/simil">simil</a> &#8216;s output matches that of the <em>source</em> file.</p>
+<p>The following example illustrates the operation of <a class="reference external" href="../../man/simil">simil</a> . Like <a class="reference external" href="../../man/correl">correl</a> , <a class="reference external" href="../../man/simil">simil</a> provides a template mode where a relatively short
 template is scanned over a source input. In the following example, the source
 input is given in the left-most spine (labelled <tt class="docutils literal"><span class="pre">foo</span></tt>) and is held in a
 file named <tt class="docutils literal"><span class="pre">source</span></tt>; the middle column consists of the letters A, B and C,
 and is held in a file named <tt class="docutils literal"><span class="pre">template</span></tt>. The following command:</p>
-<p>`` simil source template``</p>
+<div class="highlight-bash"><div class="highlight"><pre>simil <span class="nb">source </span>template
+</pre></div>
+</div>
 <p>generates the third column (labelled <a class="reference external" href="../../rep/simil">**simil</a>):</p>
 <p>&gt; (source(template(simil
 &gt; inputinput)output)
-`` <a href="#id21"><span class="problematic" id="id22">**</span></a>fooA**simil
-&gt; XB0.51
-&gt; AC1.00
-&gt; B0.51
-&gt; C0.37
-&gt; D0.51
-&gt; A0.72
-&gt; B0.72
-&gt; B0.51
-&gt; C0.51
-&gt; B.
-&gt; A.
-&gt; <em>-</em>-``</p>
+<tt class="docutils literal"><span class="pre">**fooA**simil</span>
+<span class="pre">&gt;</span> <span class="pre">XB0.51</span>
+<span class="pre">&gt;</span> <span class="pre">AC1.00</span>
+<span class="pre">&gt;</span> <span class="pre">B0.51</span>
+<span class="pre">&gt;</span> <span class="pre">C0.37</span>
+<span class="pre">&gt;</span> <span class="pre">D0.51</span>
+<span class="pre">&gt;</span> <span class="pre">A0.72</span>
+<span class="pre">&gt;</span> <span class="pre">B0.72</span>
+<span class="pre">&gt;</span> <span class="pre">B0.51</span>
+<span class="pre">&gt;</span> <span class="pre">C0.51</span>
+<span class="pre">&gt;</span> <span class="pre">B.</span>
+<span class="pre">&gt;</span> <span class="pre">A.</span>
+<span class="pre">&gt;</span> <span class="pre">*-*-</span></tt></p>
 <p>Each succesive value in the output spine is matched with a data token in the
 source input file. For example, the second value (1.00) in the <a class="reference external" href="../../rep/simil">**simil</a>
 spine arises from an exact match of the (A,B,C) pattern beginning with the
 second data token in the source input. The second highest value (0.72) occurs
 in both the sixth and seventh <a class="reference external" href="../../rep/simil">**simil</a> data records, indicating that
 fairly similar sequences occur beginning with the sixth and seventh data
-records in the source input. Specifically, <strong>simil</strong> has recognized that the
+records in the source input. Specifically, <a class="reference external" href="../../man/simil">simil</a> has recognized that the
 sequence (A,B,B,C) is only one edit-operation (a deletion) different from the
-template (A,B,C). In the ensuing record, <strong>simil</strong> has recognized that the
+template (A,B,C). In the ensuing record, <a class="reference external" href="../../man/simil">simil</a> has recognized that the
 sequence (B,B,C) is also only one edit-operation (substitute A for B)
 different from (A,B,C). Notice that the final value (0.51) indicates that the
 edit distance for (C,B,A) is less like the template. Also notice that the
@@ -619,43 +628,43 @@ bears little resemblance to the template.</p>
 of a harmonic pattern: <em>I-IV-V-I</em>.</p>
 <p>&gt; (source(template(simil
 &gt; inputinput)output)
-`` <a href="#id25"><span class="problematic" id="id26">**</span></a>harmI**simil
-&gt; IIV0.87
-&gt; viV0.87
-&gt; ii7I0.51
-&gt; V0.38
-&gt; V70.41
-&gt; I0.82
-&gt; r0.41
-&gt; V/V0.38
-&gt; V.
-&gt; iii.
-&gt; iiib.
-&gt; <em>-</em>-``</p>
-<p>It is important to understand that <strong>simil</strong> operates by comparing entire
+<tt class="docutils literal"><span class="pre">**harmI**simil</span>
+<span class="pre">&gt;</span> <span class="pre">IIV0.87</span>
+<span class="pre">&gt;</span> <span class="pre">viV0.87</span>
+<span class="pre">&gt;</span> <span class="pre">ii7I0.51</span>
+<span class="pre">&gt;</span> <span class="pre">V0.38</span>
+<span class="pre">&gt;</span> <span class="pre">V70.41</span>
+<span class="pre">&gt;</span> <span class="pre">I0.82</span>
+<span class="pre">&gt;</span> <span class="pre">r0.41</span>
+<span class="pre">&gt;</span> <span class="pre">V/V0.38</span>
+<span class="pre">&gt;</span> <span class="pre">V.</span>
+<span class="pre">&gt;</span> <span class="pre">iii.</span>
+<span class="pre">&gt;</span> <span class="pre">iiib.</span>
+<span class="pre">&gt;</span> <span class="pre">*-*-</span></tt></p>
+<p>It is important to understand that <a class="reference external" href="../../man/simil">simil</a> operates by comparing entire
 data tokens, so the token <tt class="docutils literal"><span class="pre">V7</span></tt> differs as much from <tt class="docutils literal"><span class="pre">V</span></tt> as the token
 `` vi``. It is the user&#8217;s responsibility to choose an input representation
 that facilitates recognition of interchangeable or equivalent data. For
 example, in the follow example, the harmonic data given above has been
-reclassified (using <strong>humsed</strong>) so that the number of distinct harmonic
+reclassified (using <a class="reference external" href="../../man/humsed">humsed</a> ) so that the number of distinct harmonic
 categories has been reduced. For example, the <tt class="docutils literal"><span class="pre">ii7</span></tt> chord has been
-classified as a form of <a href="#id27"><span class="problematic" id="id28">``</span></a>subdom``inant function. Notice how the
-`` <a href="#id51"><span class="problematic" id="id52">`**simil```_</span></a> values better reflect the presumed harmonic similarity:</p>
+classified as a form of <a href="#id15"><span class="problematic" id="id16">``</span></a>subdom``inant function. Notice how the
+`` <a href="#id34"><span class="problematic" id="id35">`**simil```_</span></a> values better reflect the presumed harmonic similarity:</p>
 <p>&gt; (source(template(simil
 &gt; inputinput)output)
-`` <a href="#id29"><span class="problematic" id="id30">**</span></a>Harmtonic**simil
-&gt; tonicsubdom0.92
-&gt; subdomdom0.90
-&gt; subdomtonic0.87
-&gt; dom0.44
-&gt; dom0.41
-&gt; tonic0.83
-&gt; r0.66
-&gt; secondary0.41
-&gt; dom.
-&gt; mediant.
-&gt; mediant.
-&gt; <em>-</em>-``</p>
+<tt class="docutils literal"><span class="pre">**Harmtonic**simil</span>
+<span class="pre">&gt;</span> <span class="pre">tonicsubdom0.92</span>
+<span class="pre">&gt;</span> <span class="pre">subdomdom0.90</span>
+<span class="pre">&gt;</span> <span class="pre">subdomtonic0.87</span>
+<span class="pre">&gt;</span> <span class="pre">dom0.44</span>
+<span class="pre">&gt;</span> <span class="pre">dom0.41</span>
+<span class="pre">&gt;</span> <span class="pre">tonic0.83</span>
+<span class="pre">&gt;</span> <span class="pre">r0.66</span>
+<span class="pre">&gt;</span> <span class="pre">secondary0.41</span>
+<span class="pre">&gt;</span> <span class="pre">dom.</span>
+<span class="pre">&gt;</span> <span class="pre">mediant.</span>
+<span class="pre">&gt;</span> <span class="pre">mediant.</span>
+<span class="pre">&gt;</span> <span class="pre">*-*-</span></tt></p>
 </div>
 <div class="section" id="defining-edit-penalties">
 <h2>Defining Edit Penalties<a class="headerlink" href="#defining-edit-penalties" title="Permalink to this headline">¶</a></h2>
@@ -663,7 +672,7 @@ classified as a form of <a href="#id27"><span class="problematic" id="id28">``</
 for edit distance (see Orpen &amp; Huron, 1992). Permissible edit operations
 include substitutions and deletions. Each edit action incurs a penalty, and
 the cumulative edit-distance determines the similarity.</p>
-<p>In the default operation, <strong>simil</strong> assigns equivalent edit penalties (1.0)
+<p>In the default operation, <a class="reference external" href="../../man/simil">simil</a> assigns equivalent edit penalties (1.0)
 for deletions and substitutions. However, the user can explicitly define
 these penalties via an initialization file. The initialization file must be
 named <tt class="docutils literal"><span class="pre">simil.rc</span></tt> and be located in the current directory or the user&#8217;s home
@@ -679,7 +688,7 @@ shown in Table 25.2.</p>
 &gt; S1Substitute a token that is repeated in String 1 only
 &gt; S2Substitute a token that is repeated in String 2 only
 &gt; S3Substitute a token that is repeated in String 1 and String 2</p>
-<p><em>Edit operations used by **simil**</em>.</p>
+<p><a href="#id17"><span class="problematic" id="id18">*</span></a>Edit operations used by <a class="reference external" href="../../man/simil">simil</a> <a href="#id19"><span class="problematic" id="id20">*</span></a>.</p>
 <p>In describing the edit operations, String 1 is the source string and String 2
 is the template string. Notice that there is no overt edit operation for
 insertion: an insertion in String 1 is equivalent to a deletion in String 2.
@@ -690,21 +699,21 @@ inputs may represent a basic melody and an embellished variant of the melody.
 Using asymmetrical penalties allows the user to specify that the deletion of
 tones from the embellished version is less costly than deletion of tones from
 the basic melody.</p>
-<p>Since repetition is a common form of musical variation, <strong>simil</strong> allows the
+<p>Since repetition is a common form of musical variation, <a class="reference external" href="../../man/simil">simil</a> allows the
 user to distinguish between repeated and non-repeated tokens. A repeated
 token is defined as one that is immediately preceded by an identical token.
 Thus, in deleting a sequence of identical symbols in String 1, say, all
 deletions except the first occurrence are R1 operations, whereas the deletion
 of the first occurrence is a D1 operation.</p>
 <p>Note that the minimum theoretical edit-distance for any set of penalty
-weightings can be determined empirically by providing <strong>simil</strong> with source
+weightings can be determined empirically by providing <a class="reference external" href="../../man/simil">simil</a> with source
 and template strings that share no symbols in common. For example, the source
 input may consist entirely of numbers, whereas the template input consists
 entirely of alphabetic characters. In the case where all edit operations are
 assigned a penalty of +1.0, the minimum quantitative similarity between two
 strings is 0.37.</p>
 <p>Some user-defined weightings may give rise to peculiar results &#8211; such as
-negative costs &#8211; but <strong>simil</strong> does not forbid this. <strong>Simil</strong> generates
+negative costs &#8211; but <a class="reference external" href="../../man/simil">simil</a> does not forbid this. <a class="reference external" href="../../man/simil">simil</a> generates
 warning messages if the weightings seem illogical; for example, if the cost
 of R1 is more than that of D1. In addition, <a class="reference external" href="../../man/simil">simil</a> will abort operation
 if the defined edit penalties transgress the triangular inequality rule (see
@@ -739,19 +748,19 @@ assigned for repetition.</p>
 following results:</p>
 <p>&gt; (source(template(simil
 &gt; inputinput)output)
-`` <a href="#id34"><span class="problematic" id="id35">**</span></a>Harmtonic**simil
-&gt; tonicsubdom0.94
-&gt; subdomdom0.91
-&gt; subdomtonic0.87
-&gt; dom0.45
-&gt; dom0.41
-&gt; tonic0.84
-&gt; r0.68
-&gt; secondary0.42
-&gt; dom.
-&gt; mediant.
-&gt; mediant.
-&gt; <em>-</em>-``</p>
+<tt class="docutils literal"><span class="pre">**Harmtonic**simil</span>
+<span class="pre">&gt;</span> <span class="pre">tonicsubdom0.94</span>
+<span class="pre">&gt;</span> <span class="pre">subdomdom0.91</span>
+<span class="pre">&gt;</span> <span class="pre">subdomtonic0.87</span>
+<span class="pre">&gt;</span> <span class="pre">dom0.45</span>
+<span class="pre">&gt;</span> <span class="pre">dom0.41</span>
+<span class="pre">&gt;</span> <span class="pre">tonic0.84</span>
+<span class="pre">&gt;</span> <span class="pre">r0.68</span>
+<span class="pre">&gt;</span> <span class="pre">secondary0.42</span>
+<span class="pre">&gt;</span> <span class="pre">dom.</span>
+<span class="pre">&gt;</span> <span class="pre">mediant.</span>
+<span class="pre">&gt;</span> <span class="pre">mediant.</span>
+<span class="pre">&gt;</span> <span class="pre">*-*-</span></tt></p>
 <p>Notice that the similarity measure for the pattern (tonic, subdom, subdom,
 dom, dom, tonic) has increased from 0.91 to 0.94.</p>
 <p>The <a class="reference external" href="../../man/simil">simil</a> command can be used to characterize innumerable types of
@@ -797,7 +806,9 @@ scheme, fret-board fingerings are indicated by the lower-case letters <em>a</em>
 prepare our input using the following <a class="reference external" href="../../man/humsed">humsed</a> command. We delete all
 barlines, and then eliminate all characters other than the letters <em>a</em> to
 <em>e</em>. Any resulting empty lines we replace by the letter <em>n</em>.</p>
-<p>`` grep -v ^= carulli | humsed &#8216;s/[^a-e]//g; s/^$/n/&#8217; carulli``</p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -v ^<span class="o">=</span> carulli | humsed <span class="s1">&#39;s/[^a-e]//g; s/^$/n/&#39;</span> carulli
+</pre></div>
+</div>
 <p>The corresponding output would be as follows:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>!!!COM: Carulli, Ferdinando
 !!!OTL: Larghetto, Opus 124, No. 23
@@ -830,22 +841,21 @@ bb
 <div class="section" id="the-accent-command">
 <h2>The <em>accent</em> Command<a class="headerlink" href="#the-accent-command" title="Permalink to this headline">¶</a></h2>
 <p>Both the <a class="reference external" href="../../man/correl">correl</a> and <a class="reference external" href="../../man/simil">simil</a> tools presume that all data tokens
-are equally important. In the case of <strong>correl</strong>, each number is weighted
-equally in calculating the coefficient of correlation. In the case of
-<strong>simil</strong>, each data token has the same potential for disrupting the
+are equally important. In the case of <a class="reference external" href="../../man/correl">correl</a> , each number is weighted
+equally in calculating the coefficient of correlation. In the case of <a class="reference external" href="../../man/simil">simil</a> , each data token has the same potential for disrupting the
 similarity measure.</p>
 <p>In musical circumstances, we are aware that not all notes are equally
 important. Some notes are more perceptually more noticeable. The
-effectiveness of both <strong>correl</strong> and <strong>simil</strong> can be increased significantly
+effectiveness of both <a class="reference external" href="../../man/correl">correl</a> and <a class="reference external" href="../../man/simil">simil</a> can be increased significantly
 if we first &#8220;filter&#8221; our data &#8211; selecting only the most important &#8211; s of
 data for consideration.</p>
-<p>The <strong>accent</strong> command implements a sophisticated model of the perceptual
+<p>The**accent**command implements a sophisticated model of the perceptual
 salience or noticeability for various pitches. The command accepts only
 monophonic <a class="reference external" href="../../rep/kern">**kern</a> input and outputs a spine containing numerical
 values estimating the noticeability of each note. Output accent values vary
 between 0 (minimum accent) and 1 (maximum accent). Input is limited to only a
-single **kern data spine.</p>
-<p>The <strong>accent</strong> command takes into account seven factors: (1) the duration of
+single <a class="reference external" href="../../rep/kern">**kern</a> data spine.</p>
+<p>The**accent**command takes into account seven factors: (1) the duration of
 notes (agogic stress), (2) the amount of melodic (or pitch-related) accent,
 (3) metric position, (4) position in scale-degree hierarchy, (5)
 primacy/recency contexts, (6) explicit accent/articulation marks, and (7)
@@ -854,7 +864,7 @@ melodic expectancy, past experience, or other factors known to influence the
 perceptual salience of particular notes.</p>
 <p>By way of illustration, consider the two passages shown in Example 25.1: from
 Wagner&#8217;s <em>Rienzi</em> opera, and the Scottish folksong <strong>My Bonnie</strong>. Two sample
-outputs from <strong>accent</strong> are given below. In both examples the left-most spine
+outputs from**accent**are given below. In both examples the left-most spine
 shows the input, and the right-most spine shows the corresponding output:</p>
 <p><strong>Example 25.1.</strong> Richard Wagner, <em>Rienzi</em> Theme. Anon. <em>My Bonnie Lies Over
 the Ocean</em>.</p>
@@ -863,7 +873,7 @@ the Ocean</em>.</p>
 <p>&gt;
 &gt;``!!!COM: Wagner, Richard
 &gt;``!!!OTL: Rienzi Overture
-&gt;**kern**accent
+&gt; <a class="reference external" href="../../rep/kern">**kern</a><a href="#id21"><span class="problematic" id="id22">**</span></a>accent
 &gt;``*M4/4``*M4/4
 &gt;``*D:<tt class="docutils literal"><span class="pre">*D:</span>
 <span class="pre">&gt;``=1``=1</span>
@@ -882,7 +892,7 @@ the Ocean</em>.</p>
 &gt;``*-<tt class="docutils literal"><span class="pre">*-</span>
 <span class="pre">&gt;</span>
 <span class="pre">&gt;</span></tt>!!!OTL: My Bonnie Lies Over the Ocean
-&gt;**kern**accent
+&gt; <a class="reference external" href="../../rep/kern">**kern</a><a href="#id23"><span class="problematic" id="id24">**</span></a>accent
 &gt;``*M3/4``*M3/4
 &gt;``*G:<tt class="docutils literal"><span class="pre">*G:</span>
 <span class="pre">&gt;``4d``0.705</span> <span class="pre">``*</span></tt>
@@ -897,14 +907,14 @@ the Ocean</em>.</p>
 &gt;``=3``=3
 &gt;``4d``0.696 <tt class="docutils literal"><span class="pre">*</span></tt>
 &gt;``2B``0.659 <tt class="docutils literal"><span class="pre">*</span></tt>
-&gt;``*-<a href="#id39"><span class="problematic" id="id40">``</span></a><a href="#id41"><span class="problematic" id="id42">*</span></a>-</p>
+&gt;``*-<a href="#id25"><span class="problematic" id="id26">``</span></a><a href="#id27"><span class="problematic" id="id28">*</span></a>-</p>
 <p>The similarity between these two passages is more evident when the
 perceptually more salient tones are considered alone. Using the
-`` <a href="#id53"><span class="problematic" id="id54">`**accent```_</span></a> data, we might simplify one or both passages by extracting
+`` <a href="#id36"><span class="problematic" id="id37">`**accent```_</span></a> data, we might simplify one or both passages by extracting
 only those notes whose accent value exceeds some threshold. In the above
 examples, a threshold of 0.6 might be appropriate (marked with an asterisk).
 We can isolate these tones by using the <a class="reference external" href="../../man/recode">recode</a> and <a class="reference external" href="../../man/yank">yank</a>
-commands. First, we create an appropriate reassignment file for <strong>recode</strong>.
+commands. First, we create an appropriate reassignment file for <a class="reference external" href="../../man/recode">recode</a> .
 In this case we have classified all notes as either primary, secondary, or
 tertiary:</p>
 <p>`` &gt;=0.6 primary
@@ -912,11 +922,11 @@ tertiary:</p>
 else tertiary``</p>
 <p>Assuming this file is named <tt class="docutils literal"><span class="pre">reassign</span></tt>, we can pre-process our passage as
 follows:</p>
-<p>`` recode -f reassign -s ^= -i &#8216;<a href="#id44"><span class="problematic" id="id45">**</span></a>accent&#8217; inputfile &gt;
-&gt;&gt; | yank -m primary -r 0 | extract -i &#8216;<a href="#id46"><span class="problematic" id="id47">**</span></a>kern&#8217; &gt; primary.krn``</p>
+<p>`` recode -f reassign -s ^= -i &#8216;<a href="#id29"><span class="problematic" id="id30">**</span></a>accent&#8217; inputfile &gt;
+&gt;&gt; | yank -m primary -r 0 | extract -i &#8216;<a href="#id31"><span class="problematic" id="id32">**</span></a>kern&#8217; &gt; primary.krn``</p>
 <p>The file <tt class="docutils literal"><span class="pre">primary.krn</span></tt> contains only those notes having the highest
 estimated accent values. Using this file, we can continue processing using
-either a parametric (<strong>correl</strong>) or non-parametric (<strong>simil</strong>) similarity
+either a parametric ( <a class="reference external" href="../../man/correl">correl</a> ) or non-parametric ( <a class="reference external" href="../../man/simil">simil</a> ) similarity
 method.</p>
 </div>
 <hr class="docutils" />
@@ -929,14 +939,13 @@ input represents fret-board finger patterns, then the similarity measures
 will reflect fret-board fingering similarity. Users need to choose carefully
 the type of pre-processing required to address the specific domain of
 interest.</p>
-<p>In particular, we noted that the Humdrum <strong>accent</strong> provides a useful way of
+<p>In particular, we noted that the Humdrum**accent**provides a useful way of
 pre-processing passages so that only the structurally most important notes
 are considered during processing.</p>
-<p>The <strong>correl</strong> command provides a way for measuring <em>parametric</em> similarity
-&#8211; where similarity is based on numerical resemblance. By contrast, the
-<strong>simil</strong> command provides a way for measuring <em>non-parametric</em> similarity:
+<p>The <a class="reference external" href="../../man/correl">correl</a> command provides a way for measuring <em>parametric</em> similarity
+&#8211; where similarity is based on numerical resemblance. By contrast, the <a class="reference external" href="../../man/simil">simil</a> command provides a way for measuring <em>non-parametric</em> similarity:
 similar inputs are ones that require the least editing in order for one input
-to be made equivalent to the other. We saw that <strong>simil</strong> allows the user to
+to be made equivalent to the other. We saw that <a class="reference external" href="../../man/simil">simil</a> allows the user to
 define the edit penalties associated with different kinds of modifications.
 This allows the user to tailor the similarity measures to better suit the
 type of data being considered.</p>

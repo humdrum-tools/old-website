@@ -69,11 +69,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../">The Humdrum User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ch01/">1. Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern(I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch03/">3. Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch04/">4. Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch05/">5. The Humdrum Syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern(II)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch07/">7. MIDI Output Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch08/">8. The Shell (I)</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Chapter 9: Searching with Regular Expressions</a></li>
@@ -705,27 +705,27 @@ to Humdrum-format inputs:</p>
 &gt; ^*f#: match key interpretation indicating F# minor</p>
 <p><em>Regular expressions suitable for all Humdrum inputs.</em></p>
 <p>By way of illustration, the next table shows examples of regular expressions
-appropriate for processing **kern_ representations.</p>
-<p>&gt; ^=match any **kern barline or double barline
-&gt; ^=[^=]match **kern single barlines but not double barlines
+appropriate for processing <a class="reference external" href="../../rep/kern">**kern</a>representations.</p>
+<p>&gt; ^=match any <a class="reference external" href="../../rep/kern">**kern</a> barline or double barline
+&gt; ^=[^=]match <a class="reference external" href="../../rep/kern">**kern</a> single barlines but not double barlines
 &gt; ^[^=]match any token other than a barline or double barline
-&gt; ;match any **kern note or barline containing a pause
-&gt; Tmatch any **kern note containing a whole-tone trill
-&gt; [Tt]match any **kern note containing a whole-tone or
+&gt; ;match any <a class="reference external" href="../../rep/kern">**kern</a> note or barline containing a pause
+&gt; Tmatch any <a class="reference external" href="../../rep/kern">**kern</a> note containing a whole-tone trill
+&gt; [Tt]match any <a class="reference external" href="../../rep/kern">**kern</a> note containing a whole-tone or
 &gt; half-tone trill
-&gt; -match any **kern note containing at least one flat
-&gt; [#]match any **kern note containing a sharp, double-
+&gt; -match any <a class="reference external" href="../../rep/kern">**kern</a> note containing at least one flat
+&gt; [#]match any <a class="reference external" href="../../rep/kern">**kern</a> note containing a sharp, double-
 &gt; sharp, etc.
-&gt; [#n-;]match any **kern note containing an accidental,
+&gt; [#n-;]match any <a class="reference external" href="../../rep/kern">**kern</a> note containing an accidental,
 &gt; including a natural
 &gt; [A-Ga-g]+match any diatonic pitch letter-name
-&gt; [0-9]+/. match **kern dotted durations
+&gt; [0-9]+/. match <a class="reference external" href="../../rep/kern">**kern</a> dotted durations
 &gt; [0-9]+/./.[^.] match only doubly-dotted durations
-&gt; [Gg]+[^#-]match any **kern pitch <a href="#id182"><span class="problematic" id="id183">`</span></a>G&#8217; that does not have a sharp
+&gt; [Gg]+[^#-]match any <a class="reference external" href="../../rep/kern">**kern</a> pitch <a href="#id182"><span class="problematic" id="id183">`</span></a>G&#8217; that does not have a sharp
 &gt; or flat
 &gt; (^|[^g])gg($|[^g#-])match only the pitch <a href="#id184"><span class="problematic" id="id185">`</span></a>gg&#8217; (G5)
 &gt; {.*r|r.*{match all phrases that start with a rest
-&gt; ^4[^0-9.]|[^0-9]4([^0-9.]|$)match **kern quarter durations
+&gt; ^4[^0-9.]|[^0-9]4([^0-9.]|$)match <a class="reference external" href="../../rep/kern">**kern</a> quarter durations
 &gt; ^(8|16)[^0-9.]|[^0-9](8|16)[^0-9.]match eighth and sixteenth durations only
 &gt; (([Ee]+-)|([Gg]+-)|([Bb]+-))($|[^-])match any note from E-flat minor chord</p>
 <p><em>Regular expressions suitable for **kern data records.</em></p>
@@ -739,7 +739,7 @@ $</p>
 <p><a href="#id188"><span class="problematic" id="id189">``</span></a>`
 $</p>
 <p>For example, the following regular expression can be used to match
-**kern_ trills without possibly mistaking comments or interpretations:</p>
+<a class="reference external" href="../../rep/kern">**kern</a>trills without possibly mistaking comments or interpretations:</p>
 <p><a href="#id190"><span class="problematic" id="id191">``</span></a>`
 $</p>
 <p>&gt; (^[^*!].*[Tt])|(^[Tt])</p>
@@ -773,7 +773,7 @@ parenthesis grouping. Extended regular expressions are supported by the
 <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a> command; <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a> operates in the same manner as <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>, only
 the search patterns are interpreted according to extended regular expression
 syntax.</p>
-<p>The Humdrum <strong>pattern</strong> command further extends regular expression syntax by
+<p>The Humdrum <a href="#id204"><span class="problematic" id="id205">|pattern|_</span></a> command further extends regular expression syntax by
 providing multi-record repetition operators that prove very useful in musical
 applications. These Humdrum extensions will be discussed in <a class="reference external" href="../ch21">Chapter 21</a>.</p>
 </div>

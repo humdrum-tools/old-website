@@ -1,15 +1,28 @@
+
+.. |Chapter 13|	replace:: Chapter 13
+.. _Chapter 13:	../ch13
+
+.. |Chapter 2|	replace:: Chapter 2
+.. _Chapter 2:	../ch02
+
+.. |timebase|	replace:: timebase
+.. _timebase:	../../man/timebase
+
+.. |**kern|	replace:: \*\*kern
+.. _\*\*kern:	../../rep/kern
+
 ========================================================
-Chapter 6: Representing Music Using \*\*kern (II)
+Chapter 6: Representing Music Using |**kern|_\ (II)
 ========================================================
 
 In this chapter we return to consider several more advanced topics related to
-the \*\*kern representation.
+the |**kern|_ representation.
 
 
 Tuplets
 =======
 
-As we saw in `Chapter 2 <../ch02>`_, \*\*kern durations are represented using a
+As we saw in |Chapter 2|_\ , |**kern|_ durations are represented using a
 reciprocal number notation. With the exception of the value zero, durations
 are represented by reciprocal numerical values corresponding to the American
 duration names: "1" for whole note, "8" for eighth, "32" for thirty-second,
@@ -26,20 +39,20 @@ reciprocal logic. Consider, for example, the quarter-note triplet duration.
 Three quarter triplets occur in the time of four quarters or one whole
 duration. If we divide a whole duration (``1``) into three equal parts,
 each part has a duration of one-third. The corresponding reciprocal integer
-for 1/3 is 3, hence \*\*kern represents a quarter-note triplet as a "third-
+for 1/3 is 3, hence |**kern|_ represents a quarter-note triplet as a "third-
 note", ``3``. Similarly, eighth-note triplets are represented by the integer
 6 and sixteenth-note triplets are represented by the integer 12. Eighth-note
 quintuplets (5 in the time of 4) will be represented by the value 10 (a half
 duration divided by 5).
 
-In general, the way to determine the \*\*kern equivalent of an arbitrary
+In general, the way to determine the |**kern|_ equivalent of an arbitrary
 "tuplet" duration is to multiply the number of tuplets by the total duration
 which they occupy. If 7 notes of equal duration occupy the duration of a
 whole-note (``1``), then each septuplet is represented by the value 7 (i.e.
 1 x 7). A more extreme example is 23 notes in the time of a doubly dotted
-quarter. The appropriate \*\*kern duration can be found by multiplying 4 by
+quarter. The appropriate |**kern|_ duration can be found by multiplying 4 by
 23 (equals 92) and adding the appropriate augmentation dots. Thus "92.." is
-the correct \*\*kern encoding for a note whose duration is 23 notes in the
+the correct |**kern|_ encoding for a note whose duration is 23 notes in the
 time of a doubly-dotted quarter.
 
 By way of illustration, example 6.1 shows an excerpt from Sigfrid Karg-
@@ -75,7 +88,7 @@ be a sixteenth note, a quintuplet sixteenth, or some other duration.
 Grace Notes, Gruppettos and Appoggiaturas
 -----------------------------------------
 
-The \*\*kern representation also allows for the encoding of grace notes
+The |**kern|_ representation also allows for the encoding of grace notes
 (acciaccaturas, non-canonical gruppettos, and appoggiaturas.
 
 Depending on the expected analytic application, one way to handle these
@@ -86,7 +99,7 @@ analytic status, a special designation for these notes can be useful for
 certain types of studies.
 
 *Grace notes* (acciaccaturas) are visually rendered as miniature notes with a
-slash drawn through the stem. In the \*\*kern representation these notes
+slash drawn through the stem. In the |**kern|_ representation these notes
 are treated as "durationless" notes and are designated by the lower-case
 letter "``q``". Hence, the token "``G#q``" denotes a G#3 grace note with an
 indeterminate duration.
@@ -102,11 +115,11 @@ durations, but all such notes are also designated by the upper-case letter
 When processed by various tools in the Humdrum Toolkit, these notes may be
 treated as equivalent to their notated durations. Alternatively, in some
 types of processing these notes may be discarded. For example, the Humdrum
-`timebase <../../man/timebase>`_ command (described in `Chapter 13 <../ch13>`_) eliminates acciaccaturas
+|timebase|_ command (described in |Chapter 13|_\ ) eliminates acciaccaturas
 and gruppetto notes. Note that data records containing acciaccaturas or
 gruppetto notes must *not* also include normal notes.
 
-In the case of *appoggiaturas,* \*\*kern requires that they be encoded as
+In the case of *appoggiaturas,* |**kern|_ requires that they be encoded as
 performed. An appropriate duration is assigned to the appoggiatura according
 to common performance practice. The duration of the subsequent note is
 reduced by a corresponding amount. The status of the two notes forming the
@@ -119,12 +132,12 @@ letter ``p``.
 Multiple Stops
 --------------
 
-In the \*\*kern representation, spines typically represent individual
+In the |**kern|_ representation, spines typically represent individual
 musical parts or voices. Occasionally, a nominally single "part" contains
 more than one concurrent note. A good example of such a situation occurs when
 a violin plays a double stop.
 
-The \*\*kern representation provides three different ways of representing
+The |**kern|_ representation provides three different ways of representing
 such situations: (1) multiple stops (chords), (2) spine splitting and rejoining, and
 (3) introduction and retiring of a momentary "part". Each of these
 representation methods captures a different way of interpreting the music.
@@ -132,44 +145,48 @@ The best representation will depend on the editorial or processing goal.
 
 First we will consider the generic Humdrum *subtoken.* A data token becomes a
 multiple stop when two or more subtokens are present, separated by single
-spaces. By way of illustration, the following \*\*kern data represents a
+spaces. By way of illustration, the following |**kern|_ data represents a
 scale played in ascending thirds:
 
-> ``**kern
-> 4c 4e
-> 8d 8f
-> 8e 8g
-> 8f 8a
-> 8g 8b
-> 8a 8cc
-> 8b 8dd
-> 4cc 4ee
-> *-``
+.. code-block:: humdrum
 
-An important restriction for multiple stops in the \*\*kern representation
+	**kern
+	4c 4e
+	8d 8f
+	8e 8g
+	8f 8a
+	8g 8b
+	8a 8cc
+	8b 8dd
+	4cc 4ee
+	*-
+
+An important restriction for multiple stops in the |**kern|_ representation
 is that they must encode notes of the same duration. In the above example,
 the left and right components of the multiple stop always share the same
 duration. (Note that this is a restriction of multiple stops in the
-\*\*kern representation only, and does not necessarily apply to other
+|**kern|_ representation only, and does not necessarily apply to other
 Humdrum representations.)
 
 Notice that multiple stops are represented with a single spine (that is,
 there are no tabs present).
 
-Multiple stops may occur at any point in a \*\*kern spine. For example, the
-following \*\*kern data represents a scale that begins and ends with
+Multiple stops may occur at any point in a |**kern|_ spine. For example, the
+following |**kern|_ data represents a scale that begins and ends with
 chords:
 
-> ``**kern
-> 4c 4e 4g
-> 8d
-> 8e
-> 8f
-> 8g
-> 8a
-> 8b
-> 4cc 4ee 4gg 4ccc
-> *-``
+.. code-block:: humdrum
+
+	**kern
+	4c 4e 4g
+	8d
+	8e
+	8f
+	8g
+	8a
+	8b
+	4cc 4ee 4gg 4ccc
+	*-
 
 The first chord has been encoded as a triple stop, whereas the last chord has
 been encoded as a quadruple stop. Notice once again that all of the notes
@@ -194,7 +211,7 @@ within a single part.
 	:language: kern
 
 
-When encoding multiple stops in the \*\*kern representation, some note
+When encoding multiple stops in the |**kern|_ representation, some note
 attributes should be encoded for each note in the multiple stop, whereas
 other markings should be encoded only once for the entire multiple stop.
 Note-related attributes such as articulation marks, stem directions, and ties
@@ -209,7 +226,7 @@ of the double stops. Similarly, separate ties have been encoded for both
 notes in the double stop.
 
 
-**Example 6.3.** Attribute encoding for \*\*kern multiple stops (chords).
+**Example 6.3.** Attribute encoding for |**kern|_ multiple stops (chords).
 
 .. image:: examples/ex6-3.svg
 	:align: center
@@ -223,7 +240,7 @@ Further Examples
 ----------------
 
 Example 6.4 shows an excerpt from a Chopin *Etude* that illustrates a number
-of subtle features in the \*\*kern representation.
+of subtle features in the |**kern|_ representation.
 
 The opening measure consists solely of gruppetto notes; each has been
 designated by the upper-case letter `Q'. The double-barline has been
@@ -247,7 +264,7 @@ the grace note.
 
 The grace-note E-natural coincides with the end of the first phrase and the
 beginning of the second phrase. The phrases are said to be "elided"
-(overlapping). Since \*\*kern phrases are represented by open and close
+(overlapping). Since |**kern|_ phrases are represented by open and close
 braces, the ampersand character is used to indicate elisions.
 
 Notice that the "inner" accompaniment chords have been encoded as double
@@ -272,11 +289,11 @@ are ordered in the correct temporal sequence.
 Reprise
 -------
 
-This chapter completes our survey of the \*\*kern representation. We have
+This chapter completes our survey of the |**kern|_ representation. We have
 noted an number of subtleties related to encoding tuplets, multiple stops,
 gruppettos, acciaccaturas, elided phrases, and spine path changes.
 
-A more complete description of the \*\*kern_ representation may be found
+A more complete description of the |**kern|_\ representation may be found
 in the *Humdrum Reference Manual.*
 
 

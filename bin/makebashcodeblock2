@@ -1,0 +1,106 @@
+#!/usr/bin/perl
+#
+# Programmer:    Craig Stuart Sapp <craig.stanford.edu>
+# Creation Date: Mon Jun 30 15:07:04 PDT 2014
+# Last Modified: Mon Jun 30 15:07:07 PDT 2014
+# Filename:      makereplace
+# Syntax:        perl 5
+#
+# Description: Convert single-line bash commands into a code block.
+
+use strict;
+my @files = @ARGV;
+my $file;
+
+# Unix command hyperlinks:
+my %UXCOM;
+$UXCOM{'sed'}    = "http://en.wikipedia.org/wiki/Sed";
+$UXCOM{'grep'}   = "http://en.wikipedia.org/wiki/Grep";
+$UXCOM{'wc'}     = "http://en.wikipedia.org/wiki/Wc_(Unix)";
+$UXCOM{'egrep'}  = "http://en.wikipedia.org/wiki/Egrep#Variations";
+$UXCOM{'uniq'}   = "http://en.wikipedia.org/wiki/Uniq";
+$UXCOM{'cat'}    = "http://en.wikipedia.org/wiki/Cat_(Unix)";
+$UXCOM{'cksum'}  = "http://en.wikipedia.org/wiki/Cksum";
+$UXCOM{'awk'}    = "http://en.wikipedia.org/wiki/Awk";
+$UXCOM{'perl'}   = "http://en.wikipedia.org/wiki/Perl";
+$UXCOM{'vi'}     = "http://en.wikipedia.org/wiki/Vi";
+$UXCOM{'emacs'}  = "http://en.wikipedia.org/wiki/Emacs";
+$UXCOM{'find'}   = "http://en.wikipedia.org/wiki/Find";
+
+foreach $file (@files) {
+   processFile($file);
+}
+
+exit(0);
+
+
+##############################
+##
+## processFile --
+##
+
+sub processFile {
+   my ($file) = @_;
+
+   open (FILE, $file) or die;
+   my @contents = <FILE>;
+   close FILE;
+   my $counter = 0;
+
+   my $i;
+   for ($i=0; $i<@contents; $i++) {
+#      next if $contents[$i-1] !~ /^\s*$/;
+      if ($contents[$i] =~ /^>+\s*``\s*([a-z]+)\s+(.*)\s*``\s*$/) {
+         createBashCodeBlock($i, \@contents);
+      }
+   }
+   open (FILE, ">$file") or die;
+   print FILE @contents;
+   close FILE;
+
+}
+
+
+##############################
+##
+## createBashCodeBlock --
+##
+
+sub createBashCodeBlock {
+   my ($index, $cont) = @_;
+   
+   my $name;
+   my $command;
+   my $good = 0;
+   my $i = $index;
+
+   return if $$cont[$i] !~ /^>+\s*``\s*([a-z]+)\s+(.*)\s*``\s*$/;
+   $name    = $1;
+   $command = $2;
+
+   if (-r "../man/$name.rst") {
+      $good = 1;
+   } elsif ($UXCOM{$name} !~ /^\s*$/) {
+      $good = 1;
+   }
+   return if $good == 0;
+
+   $command =~ s/``\s+``/\n\t/g;
+   if ($$cont[$i-1] !~ /^\s*$/) {
+      $$cont[$i] = "\n";
+   } else {
+      $$cont[$i] = "";
+   }
+   $$cont[$i] .= ".. code-block:: bash\n\n\t$name $command\n";
+
+   my $i = $index + 1;
+   while ($$cont[$i] =~ /^>+\s*``\s*([a-z]+.*)\s*``\s*$/) {
+      $$cont[$i] = "\t$1\n";
+      $i++;
+   }
+
+}
+
+
+
+

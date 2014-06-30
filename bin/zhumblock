@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/perl -w
 #
 # Programmer:    Craig Stuart Sapp <craig.stanford.edu>
 # Creation Date: Sun Jun 29 00:56:54 PDT 2014
@@ -42,6 +42,7 @@ use strict;
 
 my @files = @ARGV;
 my $file;
+
 foreach $file (@files) {
    processFile($file);
 }
@@ -73,6 +74,7 @@ sub processFile {
       }
       next if $blankline == 0;
       checkBlock($i, \@contents);
+      checkBlockType2($i, \@contents);
    }
 
    open (FILE, ">$file") or die;
@@ -80,6 +82,46 @@ sub processFile {
    close FILE;
 }
 
+
+
+###############################
+##
+## checkBlockType2 --
+##
+## Also could do:
+## [blank line]
+## >\s*``\s*([\*!][\*!].*)
+## >\s*(.*)
+## >\s*(.*)
+## >\s*(.*)
+## >\s*(.*)``
+## [blank line]
+
+sub checkBlockType2 {
+   my ($index, $cont) = @_;
+
+   my $line = $$cont[$index]; 
+   if ($line !~ /^>\s*``\s*[\*\!][\*\!]/) {
+      return;
+   }
+   my $ending = 0;
+
+   $line =~ s/^>\s*``\s*//;
+
+   $$cont[$index] = ".. code-block:: humdrum\n\n\t$line";
+   my $i = $index+1;
+   while ($i < @$cont) {
+      $line = $$cont[$i];
+      last if $line =~ /^\s*$/;
+      chomp($line);
+      $line =~ s/^>\s*``\s*//;
+      $line =~ s/\s*``\s*$//;
+      $line =~ s/\s+$//;
+      $line =~ s/^>\s*//;
+      $$cont[$i] = "\t$line\n";
+      $i++;
+   }
+}
 
 
 

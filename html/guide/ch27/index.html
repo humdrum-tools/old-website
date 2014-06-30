@@ -69,11 +69,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../">The Humdrum User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ch01/">1. Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern(I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch03/">3. Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch04/">4. Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch05/">5. The Humdrum Syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern(II)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch07/">7. MIDI Output Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch08/">8. The Shell (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch09/">9. Searching with Regular Expressions</a></li>
@@ -317,15 +317,15 @@ and syllables.</p>
 <h2>The <a href="#id2"><span class="problematic" id="id3">**</span></a><em>text</em> and <a href="#id4"><span class="problematic" id="id5">**</span></a><em>silbe</em> Representations<a class="headerlink" href="#the-text-and-silbe-representations" title="Permalink to this headline">¶</a></h2>
 <p>Syllable- and word-oriented representations are illustrated in the following
 excerpt from a motet by Byrd (Example 27.1). The encoded Humdrum data
-includes three spines: <a class="reference external" href="../../rep/text">**text</a>, <a class="reference external" href="../../rep/silbe">**silbe</a> and **kern. Normally, only
-the <a class="reference external" href="../../rep/silbe">**silbe</a> and **kern data would be encoded &#8211; since the <a class="reference external" href="../../rep/text">**text</a>
+includes three spines: <a class="reference external" href="../../rep/text">**text</a>, <a class="reference external" href="../../rep/silbe">**silbe</a> and <a class="reference external" href="../../rep/kern">**kern</a>. Normally, only
+the <a class="reference external" href="../../rep/silbe">**silbe</a> and <a class="reference external" href="../../rep/kern">**kern</a> data would be encoded &#8211; since the <a class="reference external" href="../../rep/text">**text</a>
 spine can be generated from the <a class="reference external" href="../../rep/silbe">**silbe</a> representation.</p>
 <p><strong>Example 27.1.</strong> From William Byrd, <em>Why Do I use my paper ink and pen.</em></p>
 <p>&gt; .. image:: guide.figures/ch27.1.gif</p>
 <p>&gt;
 &gt;&gt; <tt class="docutils literal"><span class="pre">!!!COM:</span> <span class="pre">Byrd,</span> <span class="pre">William</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">!!!OTL:</span> <span class="pre">Why</span> <span class="pre">do</span> <span class="pre">I</span> <span class="pre">use</span> <span class="pre">my</span> <span class="pre">paper</span> <span class="pre">ink</span> <span class="pre">and</span> <span class="pre">pen.</span>
-<span class="pre">&gt;&gt;</span> <span class="pre">**text**silbe**kern</span>
+<span class="pre">&gt;&gt;</span> <span class="pre">|text|_</span> <span class="pre">silbe**kern</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">*LEnglish*LEnglish*</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">=11=11=11</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">``..2r</span>
@@ -397,15 +397,15 @@ syllables are distinguished by <a class="reference external" href="../../rep/sil
 word-initiating syllable, (3) a word-completing syllable, and (4) a mid-word
 syllable. The following table illustrates how these signifiers are used:</p>
 <p><strong>Table 26.1.</strong></p>
-<p>&gt; <a href="#id15"><span class="problematic" id="id16">*</span></a>text*a single-syllable word
-&gt; <a href="#id17"><span class="problematic" id="id18">*</span></a>text-<a href="#id19"><span class="problematic" id="id20">*</span></a>a word-initiating syllable
-&gt; <a href="#id21"><span class="problematic" id="id22">*</span></a>-text*a word-completing syllable
-&gt; <a href="#id23"><span class="problematic" id="id24">*</span></a>-text-<a href="#id25"><span class="problematic" id="id26">*</span></a>a mid-word syllable
-&gt; <a href="#id27"><span class="problematic" id="id28">*</span></a>text~*a single-syllable word beginning a hyphenated multi-word
-&gt; <a href="#id29"><span class="problematic" id="id30">*</span></a>~text*a single-syllable word completing a hyphenated multi-word
-&gt; <a href="#id31"><span class="problematic" id="id32">*</span></a>~text~*a single-syllabe word continuing a hyphenated multi-word
-&gt; <a href="#id33"><span class="problematic" id="id34">*</span></a>~text-<a href="#id35"><span class="problematic" id="id36">*</span></a>a word-initating syllable continuing a hyphenated multi-word
-&gt; <a href="#id37"><span class="problematic" id="id38">*</span></a>-text~*a word-completing syllable &#8211; part of a hyphenated multi-word</p>
+<p>&gt; <a href="#id6"><span class="problematic" id="id7">*</span></a>text*a single-syllable word
+&gt; <a href="#id8"><span class="problematic" id="id9">*</span></a>text-<a href="#id10"><span class="problematic" id="id11">*</span></a>a word-initiating syllable
+&gt; <a href="#id12"><span class="problematic" id="id13">*</span></a>-text*a word-completing syllable
+&gt; <a href="#id14"><span class="problematic" id="id15">*</span></a>-text-<a href="#id16"><span class="problematic" id="id17">*</span></a>a mid-word syllable
+&gt; <a href="#id18"><span class="problematic" id="id19">*</span></a>text~*a single-syllable word beginning a hyphenated multi-word
+&gt; <a href="#id20"><span class="problematic" id="id21">*</span></a>~text*a single-syllable word completing a hyphenated multi-word
+&gt; <a href="#id22"><span class="problematic" id="id23">*</span></a>~text~*a single-syllabe word continuing a hyphenated multi-word
+&gt; <a href="#id24"><span class="problematic" id="id25">*</span></a>~text-<a href="#id26"><span class="problematic" id="id27">*</span></a>a word-initating syllable continuing a hyphenated multi-word
+&gt; <a href="#id28"><span class="problematic" id="id29">*</span></a>-text~*a word-completing syllable &#8211; part of a hyphenated multi-word</p>
 <p>Both the <a class="reference external" href="../../rep/text">**text</a> and <a class="reference external" href="../../rep/silbe">**silbe</a> representations are able to distinguish
 different tones of voice such as spoken voice, whispered voice, laughing
 voice, emotional voice, <em>Sprechstimme</em> and humming. In addition, there are
@@ -432,8 +432,8 @@ sample signifiers are shown in Table 26.2</p>
 <span class="pre">&gt;</span> <span class="pre">``&amp;``sob</span> <span class="pre">or</span> <span class="pre">cry</span> <span class="pre">(no</span> <span class="pre">text)</span>
 <span class="pre">&gt;</span> <span class="pre">```beginning</span> <span class="pre">of</span> <span class="pre">emotional</span> <span class="pre">voice</span>
 <span class="pre">&gt;</span> <span class="pre">``end</span> <span class="pre">of</span> <span class="pre">emotional</span> <span class="pre">voice</span>
-<span class="pre">&gt;</span> <span class="pre">``*``follows</span> <span class="pre">stressed</span> <span class="pre">word</span> <span class="pre">(``test</span></tt>) or stressed syllable (<a class="reference external" href="../../rep/silbe">**silbe</a>)</p>
-<p><em>Signifiers common to ****text*</em> and <strong>**silbe*</strong></p>
+<span class="pre">&gt;</span> <span class="pre">``*``follows</span> <span class="pre">stressed</span> <span class="pre">word</span> <span class="pre">(``test</span></tt>) or stressed syllable ( <a class="reference external" href="../../rep/silbe">**silbe</a>)</p>
+<p><em>Signifiers common to *</em> <a class="reference external" href="../../man/text">text</a> and <strong>**silbe*</strong></p>
 </div>
 <div class="section" id="the-text-command">
 <h2>The <em>text</em> Command<a class="headerlink" href="#the-text-command" title="Permalink to this headline">¶</a></h2>
@@ -441,37 +441,48 @@ sample signifiers are shown in Table 26.2</p>
 rather than a word-oriented representation. The <a class="reference external" href="../../rep/silbe">**silbe</a> representation is
 typically a better representation of the score than <a class="reference external" href="../../rep/text">**text</a>. However, for
 many analytic applications, words often prove to be more convenient. The
-Humdrum <strong>text</strong> command can be used to translate <a class="reference external" href="../../rep/silbe">**silbe</a> data to
+Humdrum <a class="reference external" href="../../man/text">text</a> command can be used to translate <a class="reference external" href="../../rep/silbe">**silbe</a> data to
 <a class="reference external" href="../../rep/text">**text</a> data. In general, syllabic information is useful for addressing
 questions related to rhythm and rhyme, whereas text information is more
 useful for addressing questions related to semantics, metaphor, word-
 painting, etc.</p>
-<p>Invoking the <strong>text</strong> command is straightforward:</p>
-<p>&gt; <tt class="docutils literal"><span class="pre">text</span> <span class="pre">inputfile</span> <span class="pre">&gt;</span> <span class="pre">outputfile</span></tt></p>
+<p>Invoking the <a class="reference external" href="../../man/text">text</a> command is straightforward:</p>
+<div class="highlight-bash"><div class="highlight"><pre>text inputfile &gt; outputfile
+</pre></div>
+</div>
 <p>A simple text-related task might be looking for occurrences of a particular
 word, such as the German &#8220;Liebe&#8221; (love). If the lyrics are encoded in the
 <a class="reference external" href="../../rep/text">**text</a> representation, then a simple <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> will suffice:</p>
-<p>&gt; <tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-n</span> <span class="pre">'Liebe'</span> <span class="pre">schubert</span></tt></p>
-<p>Recall that the <strong>-n</strong> option gives the line number of any occurrences found.
+<div class="highlight-bash"><div class="highlight"><pre>grep -n <span class="s1">&#39;Liebe&#39;</span> schubert
+</pre></div>
+</div>
+<p>Recall that the <tt class="docutils literal"><span class="pre">-n</span></tt> option gives the line number of any occurrences found.
 If the input is encoded in the <a class="reference external" href="../../rep/silbe">**silbe</a> representation, then the output
-of <strong>text</strong> can be piped to <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>:</p>
-<p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**silbe'</span> <span class="pre">schubert</span> <span class="pre">|</span> <span class="pre">text</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-n</span> <span class="pre">'Liebe'</span></tt></p>
-<p>Given a <a class="reference external" href="../../rep/silbe">**silbe</a> input, a inventory of words can be generated using
-<strong>sort</strong> and <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> in the usual way:</p>
-<p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**silbe'</span> <span class="pre">song</span> <span class="pre">|</span> <span class="pre">text</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span></tt></p>
+of <a class="reference external" href="../../man/text">text</a> can be piped to <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>:</p>
+<div class="highlight-bash"><div class="highlight"><pre>extract -i <span class="s1">&#39;**silbe&#39;</span> schubert | text | grep -n <span class="s1">&#39;Liebe&#39;</span>
+</pre></div>
+</div>
+<p>Given a <a class="reference external" href="../../rep/silbe">**silbe</a> input, a inventory of words can be generated using**sort**and <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> in the usual way:</p>
+<div class="highlight-bash"><div class="highlight"><pre>extract -i <span class="s1">&#39;**silbe&#39;</span> song | text | rid -GLId | sort | uniq
+</pre></div>
+</div>
 <p>Frequently, it is useful to search for a group of words rather than
 individual words. Suppose we are looking for the phrase &#8220;white Pangur.&#8221; The
 <a class="reference external" href="../../man/context">context</a> command can be used to amalgamate words as multiple stops. If
 we are looking for a phrase consisting of just two words, we might use the
-<strong>-n 2</strong> option for <strong>context</strong>:</p>
-<p>&gt; <tt class="docutils literal"><span class="pre">text</span> <span class="pre">barber</span> <span class="pre">|</span> <span class="pre">context</span> <span class="pre">-n</span> <span class="pre">2</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-i</span> <span class="pre">'white</span> <span class="pre">Pangur'</span></tt></p>
+<tt class="docutils literal"><span class="pre">-n</span> <span class="pre">2</span></tt> option for <a class="reference external" href="../../man/context">context</a> :</p>
+<div class="highlight-bash"><div class="highlight"><pre>text barber | context -n 2 | grep -i <span class="s1">&#39;white Pangur&#39;</span>
+</pre></div>
+</div>
 <p>Alternatively, we might amalgamate words so they form sentences, or at least
 phrases. Puntuation marks provide a convenient marker for ending the
-amalgamation process carried out by <strong>context</strong>. In the following command, we
+amalgamation process carried out by <a class="reference external" href="../../man/context">context</a> . In the following command, we
 have defined a regular expression with a character-class containing all of
 the puntuation marks. The output from this command will display all
 punctuated phrases (one per line) that contain the phrase &#8220;white Pangur.&#8221;</p>
-<p>&gt; <tt class="docutils literal"><span class="pre">text</span> <span class="pre">|</span> <span class="pre">context</span> <span class="pre">-e</span> <span class="pre">'[.,;?!]'</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-i</span> <span class="pre">'white</span> <span class="pre">Pangur'</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>text | context -e <span class="s1">&#39;[.,;?!]&#39;</span> | grep -i <span class="s1">&#39;white Pangur&#39;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="the-fmt-command">
 <h2>The <em>fmt</em> Command<a class="headerlink" href="#the-fmt-command" title="Permalink to this headline">¶</a></h2>
@@ -479,15 +490,17 @@ punctuated phrases (one per line) that contain the phrase &#8220;white Pangur.&#
 lyrics of a work. Given a <a class="reference external" href="../../rep/text">**text</a> representation, we can use the
 <a class="reference external" href="../../man/rid">rid</a> command to eliminate all records except non-null data records.
 This will result in a list of words &#8211; one word per line. UNIX provides a
-simple text formatter called <strong>fmt</strong> that will assemble words or lines into a
+simple text formatter called**fmt**that will assemble words or lines into a
 block text where all output lines are roughly the same width.  Consider the
 Gregorian chant <em>A Solis Ortus</em> from the <em>Liber Usualis</em> (shown in Example
 27.2.)</p>
 <p><strong>Example 27.2.</strong> Beginning of chant <em>A Solis Ortus</em>.</p>
 <p>&gt; .. image:: guide.figures/ch27.2.gif</p>
 <p>The Latin text for this chant can be formatted as follows:</p>
-<p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**silbe'</span> <span class="pre">chant12</span> <span class="pre">|</span> <span class="pre">text</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">fmt</span> <span class="pre">-50</span></tt></p>
-<p>The <strong>-50</strong> option tells <strong>fmt</strong> to place no more than 50 characters per
+<div class="highlight-bash"><div class="highlight"><pre>extract -i <span class="s1">&#39;**silbe&#39;</span> chant12 | text | rid -GLId | fmt -50
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">-50</span></tt> option tells**fmt**to place no more than 50 characters per
 line. The default line-length is 72 characters. The above pipeline produces
 the following output:</p>
 <p>&gt;
@@ -501,7 +514,7 @@ the following output:</p>
 <span class="pre">intacta</span> <span class="pre">nesciens</span> <span class="pre">virum,</span> <span class="pre">concepit</span> <span class="pre">alvo</span> <span class="pre">filium.</span></tt></p>
 <p>Another useful output would have the text arranged with one sentence or
 phrase on each line. As before we can use the <a class="reference external" href="../../man/context">context</a> command with the
-<strong>-e</strong> option to amalgamate words, where each amalgamated line ends with a
+<tt class="docutils literal"><span class="pre">-e</span></tt> option to amalgamate words, where each amalgamated line ends with a
 punctuation mark:</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**silbe'</span> <span class="pre">chant12</span> <span class="pre">|</span> <span class="pre">text</span> <span class="pre">|</span> <span class="pre">context</span> <span class="pre">-e</span> <span class="pre">'[.,;:?!]'</span> <span class="pre">\</span>
 <span class="pre">&gt;</span>
@@ -521,12 +534,12 @@ punctuation mark:</p>
 <span class="pre">intacta</span> <span class="pre">nesciens</span> <span class="pre">virum,</span>
 <span class="pre">concepit</span> <span class="pre">alvo</span> <span class="pre">filium.</span></tt></p>
 <p>Yet another way of arranging the text output would be to parse the text
-according to explicit phrase marks in the **kern_ data. This will
+according to explicit phrase marks in the <a class="reference external" href="../../rep/kern">**kern</a>data. This will
 require a little more work, but it&#8217;s worth going through the steps since the
 same process can be applied to any representation. First, we will need to
-transfer the end-of-phrase signifier (<tt class="docutils literal"><span class="pre">}</span></tt>&#8216;) from the **kern spine to
+transfer the end-of-phrase signifier (<tt class="docutils literal"><span class="pre">}</span></tt>&#8216;) from the <a class="reference external" href="../../rep/kern">**kern</a> spine to
 the <a class="reference external" href="../../rep/silbe">**silbe</a> spine. This transfer entails four steps. (1) Extract the
-monophonic **kern spine and eliminate all data signifiers except closing
+monophonic <a class="reference external" href="../../rep/kern">**kern</a> spine and eliminate all data signifiers except closing
 curly braces (<tt class="docutils literal"><span class="pre">}</span></tt>&#8216;). Store the result in a temporary file:</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**kern'</span> <span class="pre">chant12</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/[^}]*//;</span> <span class="pre">s/^$/./'</span> <span class="pre">\</span>
 <span class="pre">&gt;</span>
@@ -537,16 +550,20 @@ substitution transforms empty output lines to null data records by adding a
 single period.</p>
 <p>(2) Extract the <a class="reference external" href="../../rep/silbe">**silbe</a> spine, translate it to <a class="reference external" href="../../rep/text">**text</a> and store the
 result in another temporary file:</p>
-<p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**silbe'</span> <span class="pre">chant12</span> <span class="pre">|</span> <span class="pre">text</span> <span class="pre">&gt;</span> <span class="pre">temp2</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>extract -i <span class="s1">&#39;**silbe&#39;</span> chant12 | text &gt; temp2
+</pre></div>
+</div>
 <p>(3) Assemble the two temporary files together and use the <a class="reference external" href="../../man/cleave">cleave</a>
 command to join the end-of-phrase marker to the syllable representation.</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">temp1</span> <span class="pre">temp2</span> <span class="pre">|</span> <span class="pre">cleave</span> <span class="pre">-i</span> <span class="pre">'**kern,**text'</span> <span class="pre">\</span>
 <span class="pre">&gt;</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">-o</span> <span class="pre">'**text'</span> <span class="pre">&gt;</span> <span class="pre">temp3</span></tt></p>
-<p>With this cleaved data we can now use the <strong>context</strong> command to amalgamate
-phrase-related text. Finally, <strong>rid</strong> is used to eliminate everything but
+<p>With this cleaved data we can now use the <a class="reference external" href="../../man/context">context</a> command to amalgamate
+phrase-related text. Finally, <a class="reference external" href="../../man/rid">rid</a> is used to eliminate everything but
 non-null data records.</p>
-<p>&gt; <tt class="docutils literal"><span class="pre">context</span> <span class="pre">-o</span> <span class="pre">=</span> <span class="pre">-e</span> <span class="pre">}</span> <span class="pre">temp3</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>context -o <span class="o">=</span> -e <span class="o">}</span> temp3 | rid -GLId
+</pre></div>
+</div>
 <p>The result is as follows:</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">A</span> <span class="pre">solis</span> <span class="pre">ortus</span> <span class="pre">cardine</span> <span class="pre">}</span>
 <span class="pre">ad</span> <span class="pre">usque</span> <span class="pre">terrae</span> <span class="pre">limitem,</span> <span class="pre">}</span>
@@ -569,20 +586,23 @@ trailing closed curly brace. We simple add the following to the pipeline:</p>
 <p>&gt; `` . . . | sed &#8216;s/}//&#8217;``</p>
 <p>You might have noticed that each of the above phrases seems to consist of
 eight syllables. We can confirm this by returning to the syllabic rather than
-word-oriented output. For the above command sequence, simply omit the
-<strong>text</strong> command and replace <a class="reference external" href="../../rep/text">**text</a> with <a class="reference external" href="../../rep/silbe">**silbe</a>. The revised script
+word-oriented output. For the above command sequence, simply omit the <a class="reference external" href="../../man/text">text</a> command and replace <a class="reference external" href="../../rep/text">**text</a> with <a class="reference external" href="../../rep/silbe">**silbe</a>. The revised script
 becomes:</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**kern'</span> <span class="pre">chant12</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/[^}]*//;</span> <span class="pre">s/^$/./'</span> <span class="pre">\</span>
 <span class="pre">&gt;</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">&gt;</span> <span class="pre">temp1</span></tt>
 &gt;
-&gt;
-<tt class="docutils literal"><span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**silbe'</span> <span class="pre">chant12</span> <span class="pre">&gt;</span> <span class="pre">temp2</span></tt>
-<tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">temp1</span> <span class="pre">temp2</span> <span class="pre">|</span> <span class="pre">cleave</span> <span class="pre">-i</span> <span class="pre">'**kern,**silbe'</span> <span class="pre">\</span>
+&gt;</p>
+<div class="highlight-bash"><div class="highlight"><pre>extract -i <span class="s1">&#39;**silbe&#39;</span> chant12 &gt; temp2
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">temp1</span> <span class="pre">temp2</span> <span class="pre">|</span> <span class="pre">cleave</span> <span class="pre">-i</span> <span class="pre">'**kern,**silbe'</span> <span class="pre">\</span>
 <span class="pre">&gt;</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">-o</span> <span class="pre">'**silbe'</span> <span class="pre">&gt;</span> <span class="pre">temp3</span></tt>
-&gt;
-&gt; <tt class="docutils literal"><span class="pre">context</span> <span class="pre">-o</span> <span class="pre">=</span> <span class="pre">-e</span> <span class="pre">}</span> <span class="pre">temp3</span> <span class="pre">|</span> <span class="pre">rid</span> <span class="pre">-GLId</span> <span class="pre">|</span> <span class="pre">sed</span> <span class="pre">'s/}//'</span></tt></p>
+&gt;</p>
+<div class="highlight-bash"><div class="highlight"><pre>context -o <span class="o">=</span> -e <span class="o">}</span> temp3 | rid -GLId | sed <span class="s1">&#39;s/}//&#39;</span>
+</pre></div>
+</div>
 <p>The corresponding output is:</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">A</span> <span class="pre">so/-</span> <span class="pre">-lis</span> <span class="pre">or/-</span> <span class="pre">-tus</span> <span class="pre">car/-</span> <span class="pre">-di-</span> <span class="pre">-ne</span>
 <span class="pre">ad</span> <span class="pre">us-</span> <span class="pre">-que</span> <span class="pre">ter/-</span> <span class="pre">-rae</span> <span class="pre">li/-</span> <span class="pre">-mi-</span> <span class="pre">-tem,</span>
@@ -606,7 +626,9 @@ syllables in each phrase, we would output a count of the number of syllables
 in each phrase. The standard <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a> utility allows us to write simple in-
 line programs. The following <a class="reference external" href="http://en.wikipedia.org/wiki/Awk">awk</a> script simply outputs the number of
 fields (white-space separated text) in each input line:</p>
-<p>&gt; <tt class="docutils literal"><span class="pre">awk</span> <span class="pre">'{print</span> <span class="pre">NF}'</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>awk <span class="s1">&#39;{print NF}&#39;</span>
+</pre></div>
+</div>
 <p>If we add this to the end of our command sequence, then the output would
 simply be a sequence of numbers &#8211; where each number indicates the number of
 syllables in successive phrases. In the case of <em>O Solis Ortus</em> our output
@@ -617,21 +639,21 @@ syllable/phrase schemes can be generated for any syllable-related input. The
 following script counts the number of syllables in successive phrases for a
 single input file.</p>
 <p>&gt;
-<a href="#id58"><span class="problematic" id="id59">``</span></a># SYLLABLE - count the number of syllables in each phrase
+<a href="#id32"><span class="problematic" id="id33">``</span></a># SYLLABLE - count the number of syllables in each phrase
 #
 # Usage: syllable filename [ &gt; outputfile]
 #
-extract -i &#8216;<a href="#id60"><span class="problematic" id="id61">**</span></a>kern&#8217; $1 | humsed &#8216;s/[^}]*//; s/^$/./&#8217; &gt; temp1
-extract -i &#8216;<a href="#id62"><span class="problematic" id="id63">**</span></a>silbe&#8217; $1 &gt; temp2
-assemble temp1 temp2 | cleave -i &#8216;<a href="#id64"><span class="problematic" id="id65">**</span></a>kern,**silbe&#8217; -o &#8216;<a href="#id66"><span class="problematic" id="id67">**</span></a>silbe&#8217; </p>
-<div class="section" id="id68">
-<h3>&gt;<a class="headerlink" href="#id68" title="Permalink to this headline">¶</a></h3>
+extract -i &#8216;<a href="#id34"><span class="problematic" id="id35">**</span></a>kern&#8217; $1 | humsed &#8216;s/[^}]*//; s/^$/./&#8217; &gt; temp1
+extract -i &#8216;<a href="#id36"><span class="problematic" id="id37">**</span></a>silbe&#8217; $1 &gt; temp2
+assemble temp1 temp2 | cleave -i &#8216;<a href="#id38"><span class="problematic" id="id39">**</span></a>kern,**silbe&#8217; -o &#8216;<a href="#id40"><span class="problematic" id="id41">**</span></a>silbe&#8217; </p>
+<div class="section" id="id42">
+<h3>&gt;<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line">context -o = -e } | rid -GLId | sed &#8216;s/}//&#8217; | awk &#8216;{print NF}&#8217;</div>
 </div>
 </div>
-<div class="section" id="id69">
-<h3>&gt;<a class="headerlink" href="#id69" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id43">
+<h3>&gt;<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h3>
 <p>rm temp[12]``</p>
 <p>Variations on this theme abound. For example, if we wish to determine the
 number of syllables between successive punctuation marks, the following
@@ -665,8 +687,8 @@ syllable and <tt class="docutils literal"><span class="pre">1</span></tt> indica
 <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span>
 <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span> <span class="pre">0</span></tt></p>
 <p>The above output was generated using the <a class="reference external" href="../../man/humsed">humsed</a> command. Any syllable
-containing a trailing asterisk (<tt class="docutils literal"><span class="pre">*</span></tt>) is re-written as a <a href="#id71"><span class="problematic" id="id72">`</span></a>1&#8217;, otherwise as a
-<a href="#id73"><span class="problematic" id="id74">`</span></a>0&#8217;.</p>
+containing a trailing asterisk (<tt class="docutils literal"><span class="pre">*</span></tt>) is re-written as a <a href="#id44"><span class="problematic" id="id45">`</span></a>1&#8217;, otherwise as a
+<a href="#id46"><span class="problematic" id="id47">`</span></a>0&#8217;.</p>
 <p>&gt; `` . . . | humsed &#8216;s/[^ ][^ ]**/1/g; s/[^1][^1]*$/0/g&#8217;``</p>
 <p>With the above output, we can generate an inventory of phrase-related text-
 rhythms.</p>
@@ -684,10 +706,10 @@ rhythms.</p>
 <p>We can create a summary rhythmic pattern by adding together the values in
 each column &#8211; that is, counting the number of accented syllables that occur
 in each syllable position within the phrase. We can isolate each column using
-the UNIX <strong>cut</strong> command; <strong>cut</strong> is analogous to the Humdrum <a class="reference external" href="../../man/extract">extract</a>
+the UNIX**cut**command;**cut**is analogous to the Humdrum <a class="reference external" href="../../man/extract">extract</a>
 command. Fields are delineated by white space (tabs or spaces). For example,
 <strong>cut -f 1</strong> will isolate the first column of numbers. We can then pipe the
-results to the <strong>stats</strong> utility in order to calculate the numerical total.
+results to the**stats**utility in order to calculate the numerical total.
 For example,</p>
 <p><tt class="docutils literal"><span class="pre">.</span> <span class="pre">.</span> <span class="pre">.</span> <span class="pre">|</span> <span class="pre">cut</span> <span class="pre">-f</span> <span class="pre">1</span> <span class="pre">|</span> <span class="pre">stats</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'total'</span></tt>
 <tt class="docutils literal"><span class="pre">.</span> <span class="pre">.</span> <span class="pre">.</span> <span class="pre">|</span> <span class="pre">cut</span> <span class="pre">-f</span> <span class="pre">2</span> <span class="pre">|</span> <span class="pre">stats</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">'total'</span></tt>
@@ -700,7 +722,7 @@ position of the phrase, nine stressed syllables in the second syllable
 position, and so on. These results suggest the following rhythmic structure:
 medium-strong-weak-strong-weak-strong-weak-weak. By way of conclusion, it
 appears that this work has a strongly rhythmic text structure &#8211; implying
-that this <a href="#id75"><span class="problematic" id="id76">`</span></a>chant&#8217; might have been sung rhythmically.</p>
+that this <a href="#id48"><span class="problematic" id="id49">`</span></a>chant&#8217; might have been sung rhythmically.</p>
 </div>
 <div class="section" id="concordance">
 <h2>Concordance<a class="headerlink" href="#concordance" title="Permalink to this headline">¶</a></h2>
@@ -716,21 +738,21 @@ third column gives a five-word context where the middle word (in bold)
 identifies the keyword.</p>
 <p>&gt; <strong>Table 26.3.</strong>
 &gt;
-&gt;&gt; <tt class="docutils literal"><span class="pre">chant294``ut</span> <span class="pre">possim</span> <span class="pre">**cantare**</span></tt>, Alleluia: gaudebunt``
-&gt;&gt; <tt class="docutils literal"><span class="pre">chant297``mea,</span> <span class="pre">dum</span> <span class="pre">**cantavero**</span></tt> tibi: Alleluia,``
-&gt;&gt; <tt class="docutils literal"><span class="pre">chant271``Cantate</span> <span class="pre">Domino</span> <span class="pre">**canticum**</span></tt> novum Alleluia:``
-&gt;&gt; <tt class="docutils literal"><span class="pre">chant544``Cantate</span> <span class="pre">Domino</span> <span class="pre">**canticum**</span></tt> novum, quia``
-&gt;&gt; <tt class="docutils literal"><span class="pre">chant2410``Cantate</span> <span class="pre">Domino</span> <span class="pre">**canticum**</span></tt> novum: quia``
-&gt;&gt; <tt class="docutils literal"><span class="pre">chant4214``totus</span> <span class="pre">non</span> <span class="pre">**capit**</span></tt> orbis, in``
-&gt;&gt; <tt class="docutils literal"><span class="pre">chant475``et</span> <span class="pre">exaltavit</span> <span class="pre">**caput**</span></tt> ejus; et``
-&gt;&gt; <tt class="docutils literal"><span class="pre">chant121``solis</span> <span class="pre">ortus</span> <span class="pre">**cardine**</span></tt> ad usque``
-&gt;&gt; <tt class="docutils literal"><span class="pre">chant144``arrisit</span> <span class="pre">orto</span> <span class="pre">**caritas**</span></tt>: Maria, dives``
-&gt;&gt; <tt class="docutils literal"><span class="pre">chant127``induit:</span> <span class="pre">ut</span> <span class="pre">**carne**</span></tt> carnem liberans,``
-&gt;&gt; <tt class="docutils literal"><span class="pre">chant585``et</span> <span class="pre">in</span> <span class="pre">**carne**</span></tt> mea videbo``
-&gt;&gt; <tt class="docutils literal"><span class="pre">chant127``ut</span> <span class="pre">carne</span> <span class="pre">**carnem**</span></tt> liberans, ne``
-&gt;&gt; <tt class="docutils literal"><span class="pre">chant146``sola</span> <span class="pre">quae</span> <span class="pre">**casto**</span></tt> potes fovere``
-&gt;&gt; <tt class="docutils literal"><span class="pre">chant173``et</span> <span class="pre">discerne</span> <span class="pre">**causam**</span></tt> meam de``
-&gt;&gt; <tt class="docutils literal"><span class="pre">chant212``Dominus</span> <span class="pre">a</span> <span class="pre">**cena**</span></tt>, misit aquam``
+&gt;&gt; <tt class="docutils literal"><span class="pre">chant294``ut</span> <span class="pre">possim**cantare**</span></tt>, Alleluia: gaudebunt``
+&gt;&gt; <tt class="docutils literal"><span class="pre">chant297``mea,</span> <span class="pre">dum**cantavero**</span></tt> tibi: Alleluia,``
+&gt;&gt; <tt class="docutils literal"><span class="pre">chant271``Cantate</span> <span class="pre">Domino**canticum**</span></tt> novum Alleluia:``
+&gt;&gt; <tt class="docutils literal"><span class="pre">chant544``Cantate</span> <span class="pre">Domino**canticum**</span></tt> novum, quia``
+&gt;&gt; <tt class="docutils literal"><span class="pre">chant2410``Cantate</span> <span class="pre">Domino**canticum**</span></tt> novum: quia``
+&gt;&gt; <tt class="docutils literal"><span class="pre">chant4214``totus</span> <span class="pre">non**capit**</span></tt> orbis, in``
+&gt;&gt; <tt class="docutils literal"><span class="pre">chant475``et</span> <span class="pre">exaltavit**caput**</span></tt> ejus; et``
+&gt;&gt; <tt class="docutils literal"><span class="pre">chant121``solis</span> <span class="pre">ortus**cardine**</span></tt> ad usque``
+&gt;&gt; <tt class="docutils literal"><span class="pre">chant144``arrisit</span> <span class="pre">orto**caritas**</span></tt>: Maria, dives``
+&gt;&gt; <tt class="docutils literal"><span class="pre">chant127``induit:</span> <span class="pre">ut**carne**</span></tt> carnem liberans,``
+&gt;&gt; <tt class="docutils literal"><span class="pre">chant585``et</span> <span class="pre">in**carne**</span></tt> mea videbo``
+&gt;&gt; <tt class="docutils literal"><span class="pre">chant127``ut</span> <span class="pre">carne**carnem**</span></tt> liberans, ne``
+&gt;&gt; <tt class="docutils literal"><span class="pre">chant146``sola</span> <span class="pre">quae**casto**</span></tt> potes fovere``
+&gt;&gt; <tt class="docutils literal"><span class="pre">chant173``et</span> <span class="pre">discerne**causam**</span></tt> meam de``
+&gt;&gt; <tt class="docutils literal"><span class="pre">chant212``Dominus</span> <span class="pre">a**cena**</span></tt>, misit aquam``
 &gt;&gt; etc.</p>
 <p>We would also like to provide a <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>-like search tool so users can search
 for particular keywords.</p>
@@ -738,8 +760,8 @@ for particular keywords.</p>
 specified in the input, we extract the <a class="reference external" href="../../rep/silbe">**silbe</a> spine and store it. We
 then process this spine no less than three times. In the first pass, we
 translate from the <a class="reference external" href="../../rep/silbe">**silbe</a> to the <a class="reference external" href="../../rep/text">**text</a> representation, and generate
-a context of 5 words (<strong>-n 5</strong>) making sure to omit barlines (<strong>-o =</strong>). We
-also pad the amalgamated line with three null tokens (<strong>-p 3</strong>) so the
+a context of 5 words (<tt class="docutils literal"><span class="pre">-n</span> <span class="pre">5</span></tt>) making sure to omit barlines (<tt class="docutils literal"><span class="pre">-o</span> <span class="pre">=</span></tt>). We
+also pad the amalgamated line with three null tokens (<tt class="docutils literal"><span class="pre">-p</span> <span class="pre">3</span></tt>) so the
 context is centered near the third word in the sequence. In the second pass,
 we generate a new spine (<tt class="docutils literal"><span class="pre">nums</span></tt>) that contains only bar numbers. The
 <a class="reference external" href="../../man/ditto">ditto</a> command is used to ensure that every data record contains a bar
@@ -751,28 +773,28 @@ and also eliminate lines that don&#8217;t contain any text. All of this processi
 is carried out in a while-loop that cycles through all of the files provided
 when the command is invoked.</p>
 <p>&gt;
-<a href="#id82"><span class="problematic" id="id83">``</span></a>while [ $# -ne 0 ]
+<a href="#id51"><span class="problematic" id="id52">``</span></a>while [ $# -ne 0 ]
 do</p>
-<div class="section" id="id84">
-<h3>&gt;<a class="headerlink" href="#id84" title="Permalink to this headline">¶</a></h3>
-<p>extract -i &#8216;<a href="#id85"><span class="problematic" id="id86">**</span></a>silbe&#8217; $1 &gt; temp1
+<div class="section" id="id53">
+<h3>&gt;<a class="headerlink" href="#id53" title="Permalink to this headline">¶</a></h3>
+<p>extract -i &#8216;<a href="#id54"><span class="problematic" id="id55">**</span></a>silbe&#8217; $1 &gt; temp1
 text temp1 | context -o = -n 5 -p 3 &gt; temp2
-num -n = -a &#8216;<a href="#id87"><span class="problematic" id="id88">**</span></a>nums&#8217; temp1 | extract -i &#8216;<a href="#id89"><span class="problematic" id="id90">**</span></a>nums&#8217; </p>
+num -n = -a &#8216;<a href="#id56"><span class="problematic" id="id57">**</span></a>nums&#8217; temp1 | extract -i &#8216;<a href="#id58"><span class="problematic" id="id59">**</span></a>nums&#8217; </p>
 </div>
-<div class="section" id="id91">
-<h3>&gt;&gt;<a class="headerlink" href="#id91" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id60">
+<h3>&gt;&gt;<a class="headerlink" href="#id60" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line">ditto | humsed &#8216;s/./0/&#8217; &gt; temp3</div>
 </div>
 </div>
-<div class="section" id="id92">
-<h3>&gt;&gt;<a class="headerlink" href="#id92" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id61">
+<h3>&gt;&gt;<a class="headerlink" href="#id61" title="Permalink to this headline">¶</a></h3>
 <p>humsed &#8220;s/.*/$1/&#8221; temp1 &gt; temp4
 assemble temp4 temp3 temp2 | rid -GLId | sed &#8216;/.* .$/d&#8217;
 shift;</p>
 </div>
-<div class="section" id="id93">
-<h3>&gt;<a class="headerlink" href="#id93" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id62">
+<h3>&gt;<a class="headerlink" href="#id62" title="Permalink to this headline">¶</a></h3>
 <p>done
 rm temp[1-4]``</p>
 <p>Having generated our concordance file, we can now create a simple tool that
@@ -785,11 +807,11 @@ context. We need to tell <a class="reference external" href="http://en.wikipedia
 number, and context fields are separated by tabs. We can ignore the first two
 fields by eliminating everything up to the last tab in the line. Since words
 are separated by blank space, the expression <tt class="docutils literal"><span class="pre">[^</span> <span class="pre">]+</span></tt> will match a word not
-containing spaces. In short, the regular expression &#8220;<a href="#id97"><span class="problematic" id="id98">``</span></a>^.**tab*[^ ]+ [^ ]+
-<a href="#id99"><span class="problematic" id="id100">``</span></a>&#8221; will match everything up to the first tab, followed by two additional
+containing spaces. In short, the regular expression &#8220;<a href="#id66"><span class="problematic" id="id67">``</span></a>^.**tab*[^ ]+ [^ ]+
+<a href="#id68"><span class="problematic" id="id69">``</span></a>&#8221; will match everything up to the first tab, followed by two additional
 words. All we need to do is paste our keyword to the end of this expression.</p>
 <p>Below is a simple one-line script for a command called <strong>keyword.</strong> The user
-simply types the command <strong>keyword</strong> followed by a regular expression that
+simply types the command**keyword**followed by a regular expression that
 will allow him/her to search for a given word in context. Note that since
 we&#8217;ve used the extended regular expression character <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">+&#8217; &#8211; we must invoke
 `egrep</a> rather than <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> in our script:</p>
@@ -810,16 +832,17 @@ concordance to help identify metaphor or image related words (such as
 or metaphorical link is created between two things (&#8220;My love is like a red
 red rose.&#8221;) In English, similes are often (though not always) signalled by
 the presence of the words &#8220;like&#8221; or &#8220;as.&#8221;</p>
-<p>A simple task involves searching for <a href="#id102"><span class="problematic" id="id103">`</span></a>like&#8217; or <a href="#id104"><span class="problematic" id="id105">`</span></a>as&#8217; in the lyrics of some
+<p>A simple task involves searching for <a href="#id71"><span class="problematic" id="id72">`</span></a>like&#8217; or <a href="#id73"><span class="problematic" id="id74">`</span></a>as&#8217; in the lyrics of some
 input. For each occurrence of these words, suppose that we would like to
 output a line that places the word in context &#8211; specifically the preceding
 and following four words.</p>
-<p>First we transform and isolate the text data using the <strong>text</strong> and
+<p>First we transform and isolate the text data using the <a class="reference external" href="../../man/text">text</a> and
 <a class="reference external" href="../../man/extract">extract</a> commands:</p>
-<p>&gt; <a href="#id107"><span class="problematic" id="id108">``</span></a>text inputfile | extract -i &#8216;<a href="#id109"><span class="problematic" id="id110">**</span></a>text&#8217; ``</p>
+<div class="highlight-bash"><div class="highlight"><pre>text inputfile | extract -i <span class="s1">&#39;**text&#39;</span>
+</pre></div>
+</div>
 <p>Since the input may contain multiple-stops, we might consider the precaution
-of ensuring no more than one word per data record. For this we can use
-<strong>humsed</strong>. Specifically, we can replace any spaces by a carriage return.
+of ensuring no more than one word per data record. For this we can use <a class="reference external" href="../../man/humsed">humsed</a> . Specifically, we can replace any spaces by a carriage return.
 Since the carriage return is interpreted by the shell as the instruction to
 begin executing a command, we need to escape it. Depending on the shell, the
 carriage return can be escaped in various ways. One way is to precede the
@@ -830,7 +853,7 @@ used the backslash to escape a control-M character:</p>
 <span class="pre">&gt;</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">-4</span> <span class="pre">'^|(like)|(as)$'</span></tt></p>
 <p>Having ensured that there is no more than one word per line we can now search
-for a line contain <em>just</em> &#8220;like&#8221; or &#8220;as.&#8221; The <strong>-4</strong> option for <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a>
+for a line contain <em>just</em> &#8220;like&#8221; or &#8220;as.&#8221; The <tt class="docutils literal"><span class="pre">-4</span></tt> option for <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a>
 causes any matched lines to be output with four preceding and four following
 lines of context. In addition, an extra line is added consisting of two
 dashes (<tt class="docutils literal"><span class="pre">--</span></tt>) to segregate each pattern output. That is, for each match,
@@ -842,7 +865,7 @@ however, the output from <a class="reference external" href="http://en.wikipedia
 particular, adding <tt class="docutils literal"><span class="pre">^\*</span></tt> to the regular expression will fail to ensure a
 proper Humdrum output since preceding and following contextual lines will
 also be output.</p>
-<p>The <strong>hum</strong> command is a special command that takes non-Humdrum input and
+<p>The**hum**command is a special command that takes non-Humdrum input and
 adds sufficient interpretation records so as to make the input conform to the
 Humdrum syntax. Typically, this means simply adding a generic initial
 exclusive interpretation (<tt class="docutils literal"><span class="pre">A</span></tt>) and a spine-path terminator (<tt class="docutils literal"><span class="pre">*-</span></tt>). If
@@ -851,9 +874,9 @@ contains empty lines, then they will be changed to null data records.</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">text</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**text'</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/</span> <span class="pre">*/\^M/g'</span> <span class="pre">\</span>
 <span class="pre">&gt;</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">-4</span> <span class="pre">'^|(like)|(as)$'</span> <span class="pre">|</span> <span class="pre">hum</span></tt></p>
-<p>Now we can make use of the <strong>context</strong> command. Each context ends with the
+<p>Now we can make use of the <a class="reference external" href="../../man/context">context</a> command. Each context ends with the
 double-dash delimiters generated by <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a>. The <a class="reference external" href="../../man/rid">rid</a> command can be
-used to eliminate the interpretations added by <strong>hum</strong>.</p>
+used to eliminate the interpretations added by**hum**.</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">text</span> <span class="pre">inputfile</span> <span class="pre">|</span> <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**text'</span> <span class="pre">|</span> <span class="pre">humsed</span> <span class="pre">'s/</span> <span class="pre">*/\^M/g'</span> <span class="pre">\</span>
 <span class="pre">&gt;</span>
 <span class="pre">&gt;&gt;</span> <span class="pre">|</span> <span class="pre">egrep</span> <span class="pre">-4</span> <span class="pre">'^|(like)|(as)$'</span> <span class="pre">|</span> <span class="pre">hum</span> <span class="pre">|</span> <span class="pre">context</span> <span class="pre">-e</span> <span class="pre">'--'</span> <span class="pre">\</span>
@@ -873,11 +896,15 @@ whole. Any significant difference might alert us to possible word painting.</p>
 <p>First we translate any pitch data to <a class="reference external" href="../../rep/semits">**semits</a> and any <a class="reference external" href="../../rep/silbe">**silbe</a> data
 to <a class="reference external" href="../../rep/text">**text</a>. We will also filter the outputs to ensure that only
 <a class="reference external" href="../../rep/semits">**semits</a> and <a class="reference external" href="../../rep/text">**text</a> are present.</p>
-<p>&gt; <tt class="docutils literal"><span class="pre">semits</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">text</span> <span class="pre">|</span> <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**semits,**text'</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>semits * | text | extract -i <span class="s1">&#39;**semits,**text&#39;</span>
+</pre></div>
+</div>
 <p>Since a word may be sustained through more than one pitch, and a pitch may be
 intoned for more than one word, we should use the <a class="reference external" href="../../man/ditto">ditto</a> command to
 ensure that null tokens are filled-in.</p>
-<p>&gt; <tt class="docutils literal"><span class="pre">semits</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">text</span> <span class="pre">|</span> <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**semits,**text'</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>semits * | text | extract -i <span class="s1">&#39;**semits,**text&#39;</span> | ditto -s <span class="o">=</span>
+</pre></div>
+</div>
 <p>Next, we can use <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a> to search for the words of interest:</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">semits</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">text</span> <span class="pre">|</span> <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**semits,**text'</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">\</span>
 <span class="pre">&gt;</span>
@@ -885,7 +912,7 @@ ensure that null tokens are filled-in.</p>
 <p>Notice the addition of the expression <tt class="docutils literal"><span class="pre">^\*</span></tt> in the search pattern. This
 expression will match any Humdrum interpretation records and so ensures that
 the output conforms to the Humdrum syntax. We can now isolate the
-<a class="reference external" href="../../rep/semits">**semits</a> data and pass the output to <strong>stats</strong> in order to determine the
+<a class="reference external" href="../../rep/semits">**semits</a> data and pass the output to**stats**in order to determine the
 average pitch for the words coinciding with the words high/hoch/haut:</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">semits</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">text</span> <span class="pre">|</span> <span class="pre">extract</span> <span class="pre">-i</span> <span class="pre">'**semits,**text'</span> <span class="pre">|</span> <span class="pre">ditto</span> <span class="pre">-s</span> <span class="pre">=</span> <span class="pre">\</span>
 <span class="pre">&gt;</span>
@@ -924,7 +951,7 @@ words in a given input.</p>
 <p>The <a class="reference external" href="../../man/humsed">humsed</a> command provides an appropriate place to start. In effect,
 we would take a table (such as Table 26.4) and use it to create a series of
 substitutions. Emotionally-charged words would be replaced by a numerical
-rating. Our <strong>humsed</strong> script would have the following form. Notice that the
+rating. Our <a class="reference external" href="../../man/humsed">humsed</a> script would have the following form. Notice that the
 first substitution is used to eliminate punctuation marks.</p>
 <p>&gt; ``
 &gt; s/[.,;:&#8217;<cite>&#8221;!?]//g
@@ -941,10 +968,10 @@ are not present in the emotionality list are not rated.</p>
 <p>In order to process our input, any syllabic text would first be translated to
 the <a class="reference external" href="../../rep/text">**text</a> representation, and all other spines discarded using <strong>extract
 -i</strong>.</p>
-<p>&gt; <a class="reference external" href="../../man/text">text</a> <a href="#id125"><span class="problematic" id="id126">*</span></a>inputfile*`` | extract -i &#8216;<a href="#id127"><span class="problematic" id="id128">**</span></a>text&#8217; ...``</p>
+<p>&gt; <a class="reference external" href="../../man/text">text</a><a href="#id78"><span class="problematic" id="id79">*</span></a>inputfile*`` | extract -i &#8216;<a href="#id80"><span class="problematic" id="id81">**</span></a>text&#8217; ...``</p>
 <p>Then we would translate the words using our &#8220;emotionality&#8221; script, eliminate
 everything other than data records, and calculate the numerical statistics:</p>
-<p>&gt; <a class="reference external" href="../../man/text">text</a> <a href="#id130"><span class="problematic" id="id131">*</span></a>inputfile*`` | extract -i &#8216;<a href="#id132"><span class="problematic" id="id133">**</span></a>text&#8217; | humsed -f emotion &gt;
+<p>&gt; <a class="reference external" href="../../man/text">text</a><a href="#id82"><span class="problematic" id="id83">*</span></a>inputfile*`` | extract -i &#8216;<a href="#id84"><span class="problematic" id="id85">**</span></a>text&#8217; | humsed -f emotion &gt;
 &gt;&gt; | rid -GLId | stats``</p>
 <p>In general, works whose lyrics express predominantly positive emotions ought
 to exhibit positive emotionality estimates. Similarly, works expressing
@@ -954,16 +981,14 @@ problems may arise. First, a large number of fairly neutral words will tend
 to dilute an otherwise large positive or negative score. It may be preferable
 to observe the maximum positive and negative values. Alternatively, it may be
 appropriate to limit the average to (say) the ten most emotionally charged
-words. We can do this by sorting the numerical values and using the <strong>head</strong>
-and <strong>tail</strong> commands to select the highest or lowest values. In our revised
+words. We can do this by sorting the numerical values and using the**head**and**tail**commands to select the highest or lowest values. In our revised
 processing, we use <strong>sort -n</strong> to sort the values in numerical order &#8211;
-placing the output in a temporary file. The UNIX <strong>head</strong> command allows us
+placing the output in a temporary file. The UNIX**head**command allows us
 to access a specified number of lines at the beginning of a file: the option
-<strong>-5</strong> specifies the first five lines. Similarly, the UNIX <strong>tail</strong> command
+<tt class="docutils literal"><span class="pre">-5</span></tt> specifies the first five lines. Similarly, the UNIX**tail**command
 allows us to access a specified number of lines at the end of a file. The ten
-highest and lowest values are then concatenated together and piped to the
-<strong>stats</strong> command:</p>
-<p>&gt; <a class="reference external" href="../../man/text">text</a> <a href="#id135"><span class="problematic" id="id136">*</span></a>inputfile*`` | extract -i &#8216;<a href="#id137"><span class="problematic" id="id138">**</span></a>text&#8217; | humsed -f emotion &gt;
+highest and lowest values are then concatenated together and piped to the**stats**command:</p>
+<p>&gt; <a class="reference external" href="../../man/text">text</a><a href="#id86"><span class="problematic" id="id87">*</span></a>inputfile*`` | extract -i &#8216;<a href="#id88"><span class="problematic" id="id89">**</span></a>text&#8217; | humsed -f emotion &gt;
 &gt;&gt; | rid -GLId | sort -n &gt; temp
 &gt;
 &gt; head -5 temp &gt; lowest
@@ -973,31 +998,34 @@ cat highest lowest | stats``</p>
 emotionally-charged work might include a rough balance of passionate words
 expressing both positive and negative emotions. This might result in an
 average near zero and be mistaken for lyrics that exhibit little
-emotionality. The <strong>stats</strong> command outputs a variance measure that can be
+emotionality. The**stats**command outputs a variance measure that can be
 used to gauge the spread of the data. However, another way to address this
 problem is by ignoring the plus and minus signs in the input. That is, a
 rough index of emotionality &#8211; independent of whether the emotion is
 predominantly negative or positive would simply focus on the most emotionally
 charged words.</p>
-<p>The plus and minus signs can be eliminated using a simple <strong>humsed</strong>
-substitution prior to numerical sorting:</p>
-<p>&gt; <tt class="docutils literal"><span class="pre">humsed</span> <span class="pre">'s/[+-]//g'</span></tt></p>
-<p>Once again, we could use the <strong>head</strong> command to isolate the 10 or 20 most
+<p>The plus and minus signs can be eliminated using a simple <a class="reference external" href="../../man/humsed">humsed</a> substitution prior to numerical sorting:</p>
+<div class="highlight-bash"><div class="highlight"><pre>humsed <span class="s1">&#39;s/[+-]//g&#39;</span>
+</pre></div>
+</div>
+<p>Once again, we could use the**head**command to isolate the 10 or 20 most
 emotionally charged words.</p>
 <p>Another variant of this approach might be to identify those words in a text
 which are most emotionally charged. Suppose we wanted to determine the
-location of the most emotionally charged word. A combination of <strong>sort</strong> and
+location of the most emotionally charged word. A combination of**sort**and
 <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> can be applied to this task. First we generate a spine containing
 the emotional-charge values taking care to eliminate the signs:</p>
-<p>&gt; <a class="reference external" href="../../man/text">text</a> <a href="#id141"><span class="problematic" id="id142">*</span></a>inputfile*`` | extract -i &#8216;<a href="#id143"><span class="problematic" id="id144">**</span></a>text&#8217; | humsed -f emotion &gt;
+<p>&gt; <a class="reference external" href="../../man/text">text</a><a href="#id91"><span class="problematic" id="id92">*</span></a>inputfile*`` | extract -i &#8216;<a href="#id93"><span class="problematic" id="id94">**</span></a>text&#8217; | humsed -f emotion &gt;
 &gt;&gt; | humsed &#8216;s/[+-]//g&#8217; &gt; charges``</p>
 <p>Next we assemble this new spine with the original input:</p>
 <p>&gt; <tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">charges</span></tt> <em>inputfile</em></p>
-<p>We can isolate data records using <strong>rid</strong> and then use <strong>sort -n</strong> to sort
+<p>We can isolate data records using <a class="reference external" href="../../man/rid">rid</a> and then use <strong>sort -n</strong> to sort
 according to the numbers present in the first column. The most emotional
 charged word will be at the end of the file (largest number) so we can use
 <strong>tail -1</strong> to identify the word:</p>
-<p>&gt; <tt class="docutils literal"><span class="pre">assemble</span> <span class="pre">charges</span></tt> <a href="#id145"><span class="problematic" id="id146">*</span></a>inputfile*`` | rid -GLId | sort -n | tail -1``</p>
+<div class="highlight-bash"><div class="highlight"><pre>assemble charges<span class="sb">``</span> *inputfile*<span class="sb">``</span> | rid -GLId | sort -n | tail -1
+</pre></div>
+</div>
 <p>Having established what word has been estimated as having the highest
 emotional-charge, we can then use <strong>grep -n</strong> to establish the location(s) of
 this word in the original input file.</p>
@@ -1024,10 +1052,10 @@ record used to identify genres.</p>
 <div class="section" id="reprise">
 <h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
 <p>In this chapter we have introduced two text-related representations:
-<a class="reference external" href="../../rep/text">**text</a> and <a class="reference external" href="../../rep/silbe">**silbe</a>. We have examined the <strong>text</strong> command
+<a class="reference external" href="../../rep/text">**text</a> and <a class="reference external" href="../../rep/silbe">**silbe</a>. We have examined the <a class="reference external" href="../../man/text">text</a> command
 (which translates from <a class="reference external" href="../../rep/silbe">**silbe</a> to <a class="reference external" href="../../rep/text">**text</a>). We have also been exposed
-to the UNIX <strong>fmt</strong> command (a simple text formatter), the <strong>cut</strong> command
-(similar to <strong>extract -f</strong>), and the <strong>head</strong> and <strong>tail</strong> commands.</p>
+to the UNIX**fmt**command (a simple text formatter), the**cut**command
+(similar to <strong>extract -f</strong>), and the**head**and**tail**commands.</p>
 <p>In <a class="reference external" href="../ch34">Chapter 34</a> we will examine further representations and processes
 related to phonetic data.</p>
 </div>

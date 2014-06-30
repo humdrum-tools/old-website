@@ -69,11 +69,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../">The Humdrum User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ch01/">1. Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern(I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch03/">3. Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch04/">4. Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch05/">5. The Humdrum Syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern(II)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch07/">7. MIDI Output Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch08/">8. The Shell (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch09/">9. Searching with Regular Expressions</a></li>
@@ -328,24 +328,32 @@ system&#8221; for representing barlines. The following command counts the number
 barlines in the file <tt class="docutils literal"><span class="pre">czech37.krn</span></tt>. Note that the caret anchor (<tt class="docutils literal"><span class="pre">^</span></tt>) is
 used to avoid inadvertent matches of the equals sign that might appear in
 Humdrum comments or interpretations.</p>
-<p>`` grep -c ^= czech37.krn``</p>
-<p>Recall that the dollar sign (<a href="#id5"><span class="problematic" id="id6">``</span></a><tt class="docutils literal"><span class="pre">)</span> <span class="pre">can</span> <span class="pre">be</span> <span class="pre">used</span> <span class="pre">to</span> <span class="pre">anchor</span> <span class="pre">an</span> <span class="pre">expression</span> <span class="pre">to</span>
+<div class="highlight-bash"><div class="highlight"><pre>grep -c ^<span class="o">=</span> czech37.krn
+</pre></div>
+</div>
+<p>Recall that the dollar sign (<a href="#id6"><span class="problematic" id="id7">``</span></a><tt class="docutils literal"><span class="pre">)</span> <span class="pre">can</span> <span class="pre">be</span> <span class="pre">used</span> <span class="pre">to</span> <span class="pre">anchor</span> <span class="pre">an</span> <span class="pre">expression</span> <span class="pre">to</span>
 <span class="pre">the</span> <span class="pre">end</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">line.</span> <span class="pre">The</span> <span class="pre">following</span> <span class="pre">command</span> <span class="pre">determines</span> <span class="pre">whether</span> <span class="pre">numbered</span>
 <span class="pre">measure</span> <span class="pre">9</span> <span class="pre">is</span> <span class="pre">present</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">file</span> <span class="pre">``france12.krn</span></tt>; the dollar sign ensures
 that measure 9 is not mistaken for measure 90, 930, etc.</p>
-<p>`` grep ^=9$ france12.krn``</p>
+<div class="highlight-bash"><div class="highlight"><pre>grep ^<span class="o">=</span>9<span class="nv">$ </span>france12.krn
+</pre></div>
+</div>
 <p>The asterisk means &#8220;zero or more&#8221; instances of the preceding expression. For
 example, the following regular expression will match any reference record or
 global comment in the file <tt class="docutils literal"><span class="pre">clara29</span></tt>:</p>
-<p>`` grep &#8216;^!!!*&#8217; clara29``</p>
+<div class="highlight-bash"><div class="highlight"><pre>grep <span class="s1">&#39;^!!!*&#39;</span> clara29
+</pre></div>
+</div>
 <p>Suppose we want to list all of the global comments for all files in the
 current directory:</p>
-<p>`` grep &#8216;^!!!*&#8217; <a href="#id7"><span class="problematic" id="id8">*</span></a><a href="#id9"><span class="problematic" id="id10">``</span></a></p>
+<div class="highlight-bash"><div class="highlight"><pre>grep <span class="s1">&#39;^!!!*&#39;</span> *
+</pre></div>
+</div>
 <p>Notice that the two asterisks serve different functions in the above command.
 The first asterisk means &#8220;zero or more instances&#8221; and is part of the regular
 expression passed to <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>. The second asterisk means &#8220;all files in the
 current directory&#8221; and is expanded by the shell. The first asterisk is
-<a href="#id12"><span class="problematic" id="id13">`</span></a>protected&#8217; from the shell by the single quotes. Otherwise, the first
+<a href="#id9"><span class="problematic" id="id10">`</span></a>protected&#8217; from the shell by the single quotes. Otherwise, the first
 asterisk might be expanded by the shell to a list of all files in the current
 directory.</p>
 <p>In regular expressions, the period character (<tt class="docutils literal"><span class="pre">.</span></tt>) matches any single
@@ -353,73 +361,105 @@ character. For example, the expression <tt class="docutils literal"><span class=
 `` <cite>AXB`</cite>&#8216; and <tt class="docutils literal"><span class="pre">`AAB</span></tt>&#8216; etc. The following command identifies all eighth-
 notes containing at least one flat, and whose pitch lies within an octave of
 middle C.</p>
-<p>`` grep 8.- <a href="#id14"><span class="problematic" id="id15">*</span></a>.krn``</p>
+<div class="highlight-bash"><div class="highlight"><pre>grep 8.- *.krn
+</pre></div>
+</div>
 <p>Frequently it is necessary to turn off the special meanings for
-metacharacters such as ^, $, and <a href="#id16"><span class="problematic" id="id17">*</span></a>. Recall that this can be done by inserting
+metacharacters such as ^, $, and <a href="#id11"><span class="problematic" id="id12">*</span></a>. Recall that this can be done by inserting
 a backslash (<tt class="docutils literal"><span class="pre">\</span></tt>) immediately prior to the metacharacter. In the
-`` <a href="#id120"><span class="problematic" id="id121">`**kern```_</span></a> representation the caret signifies an accent. In a monophonic
+`` <a href="#id41"><span class="problematic" id="id42">`**kern```_</span></a> representation the caret signifies an accent. In a monophonic
 input, we might count the number of notes that have a notated accent as
 follows:</p>
-<p>`` grep -c &#8216;^&#8217; danmark3.krn``</p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -c <span class="s1">&#39;\^&#39;</span> danmark3.krn
+</pre></div>
+</div>
 <p>In the following command we have used the backslash to escape the special
-meaning of the asterisk. The <strong>-l</strong> option causes <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to output only the
+meaning of the asterisk. The <tt class="docutils literal"><span class="pre">-l</span></tt> option causes <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to output only the
 names of any files that contain a line matching the pattern. Hence, the
 following command identifies those files in the current directory that encode
 music in 9/8 meter:</p>
-<p>`` grep -l &#8216;^*M9/8&#8217; <a href="#id19"><span class="problematic" id="id20">*</span></a><a href="#id21"><span class="problematic" id="id22">``</span></a></p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -l <span class="s1">&#39;^\*M9/8&#39;</span> *
+</pre></div>
+</div>
 <p>Recall that square brackets can be used to indicate character classes where
 any of the characters in the class can be used to match the expression. The
 following command identifies those files in the current directory that encode
 music in either 3/8 or 9/8 meter:</p>
-<p>`` grep -l &#8216;*M[39]/8&#8217; <a href="#id23"><span class="problematic" id="id24">*</span></a><a href="#id25"><span class="problematic" id="id26">``</span></a></p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -l <span class="s1">&#39;\*M[39]/8&#39;</span> *
+</pre></div>
+</div>
 <p>One of the most frequently used regular expressions consists of the period
 followed by the asterisk (<tt class="docutils literal"><span class="pre">.*</span></tt>). Recall that this expression will match
 <em>any</em> string including the null string (i.e. nothing at all). This expression
 commonly appears between two other character strings. For example, we can
 identify all files in the current directory whose instrumentation includes a
 trumpet:</p>
-<p>`` grep -l &#8216;!!!AIN.*tromp&#8217; <a href="#id27"><span class="problematic" id="id28">*</span></a><a href="#id29"><span class="problematic" id="id30">``</span></a></p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -l <span class="s1">&#39;!!!AIN.*tromp&#39;</span> *
+</pre></div>
+</div>
 <p>The <tt class="docutils literal"><span class="pre">.*</span></tt> expression is needed since we don&#8217;t know what other instruments
 might be listed following <tt class="docutils literal"><span class="pre">AIN</span></tt> and before <tt class="docutils literal"><span class="pre">tromp</span></tt>.  Instrumentation
 reference records require that instrument codes appear in alphabetical order.
 This makes it easier to conduct searches for combinations of instruments. For
 example, we can identify all scores in the current directory whose
 instrumentation includes both trumpet and cornet as follows:</p>
-<p>`` grep -l &#8216;!!!AIN.*cornt.*tromp&#8217; <a href="#id31"><span class="problematic" id="id32">*</span></a><a href="#id33"><span class="problematic" id="id34">``</span></a></p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -l <span class="s1">&#39;!!!AIN.*cornt.*tromp&#39;</span> *
+</pre></div>
+</div>
 <p>There are many variants on the use of the <tt class="docutils literal"><span class="pre">.*</span></tt> expression. The following
 command identifies all files that contain a record having the word <tt class="docutils literal"><span class="pre">Drei</span></tt>
-followed by the word &#8220;<tt class="docutils literal"><span class="pre">Koenige</span></tt>&#8221;. (Notice the use of the <strong>-i</strong> option in
+followed by the word &#8220;<tt class="docutils literal"><span class="pre">Koenige</span></tt>&#8221;. (Notice the use of the <tt class="docutils literal"><span class="pre">-i</span></tt> option in
 order to ignore the case of the letters.)</p>
-<p>`` grep -li &#8216;Drei.*Koenige&#8217; <a href="#id35"><span class="problematic" id="id36">*</span></a><a href="#id37"><span class="problematic" id="id38">``</span></a></p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -li <span class="s1">&#39;Drei.*Koenige&#39;</span> *
+</pre></div>
+</div>
 <p>This command will match such strings as: <em>Die Heiligen Drei Koenige</em>, <em>Drei
 Koenige,</em> <em>Dreikoenigslied,</em> etc.</p>
 <p>The <tt class="docutils literal"><span class="pre">`!!!AGN</span></tt>&#8216; reference record is used to encode genre-related keywords.
 The following command lists all files that are ballads.</p>
-<p>`` grep -l &#8216;!!!AGN.*Ballad&#8217; <a href="#id39"><span class="problematic" id="id40">*</span></a><a href="#id41"><span class="problematic" id="id42">``</span></a></p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -l <span class="s1">&#39;!!!AGN.*Ballad&#39;</span> *
+</pre></div>
+</div>
 <p>List all files that have the word <tt class="docutils literal"><span class="pre">Amour</span></tt> in the title:</p>
-<p>`` grep -li &#8216;!!!OLT.*Amour&#8217; <a href="#id43"><span class="problematic" id="id44">*</span></a><a href="#id45"><span class="problematic" id="id46">``</span></a></p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -li <span class="s1">&#39;!!!OLT.*Amour&#39;</span> *
+</pre></div>
+</div>
 <p>List any works that bear a dedication:</p>
-<p>`` grep -l &#8216;!!!ODE:&#8217; <a href="#id47"><span class="problematic" id="id48">*</span></a><a href="#id49"><span class="problematic" id="id50">``</span></a></p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -l <span class="s1">&#39;!!!ODE:&#39;</span> *
+</pre></div>
+</div>
 <p>List those works that are in irregular meters:</p>
-<p>`` grep -l &#8216;!!!AMT.*irregular&#8217; <a href="#id51"><span class="problematic" id="id52">*</span></a><a href="#id53"><span class="problematic" id="id54">``</span></a></p>
-<p>The <strong>-L</strong> option for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> causes the output to contain a list of files
+<div class="highlight-bash"><div class="highlight"><pre>grep -l <span class="s1">&#39;!!!AMT.*irregular&#39;</span> *
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">-L</span></tt> option for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> causes the output to contain a list of files
 <em>not</em> containing the regular expression. For example, we could identify those
 works that don&#8217;t bear any dedication:</p>
-<p>`` grep -L &#8216;!!!ODE:&#8217; <a href="#id56"><span class="problematic" id="id57">*</span></a><a href="#id58"><span class="problematic" id="id59">``</span></a></p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -L <span class="s1">&#39;!!!ODE:&#39;</span> *
+</pre></div>
+</div>
 <p>List those works <em>not</em> composed by Schumann:</p>
-<p>`` grep -L &#8216;!!!COM: Schumann&#8217; <a href="#id60"><span class="problematic" id="id61">*</span></a><a href="#id62"><span class="problematic" id="id63">``</span></a></p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -L <span class="s1">&#39;!!!COM: Schumann&#39;</span> *
+</pre></div>
+</div>
 <p>Identify any works that don&#8217;t contain any double barlines:</p>
-<p>`` grep -L &#8216;^==&#8217; <a href="#id64"><span class="problematic" id="id65">*</span></a><a href="#id66"><span class="problematic" id="id67">``</span></a></p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -L <span class="s1">&#39;^==&#39;</span> *
+</pre></div>
+</div>
 <p>How many works in the current directory are in simple-triple meter?</p>
-<p>`` grep -c &#8216;!!!AMT.*simple.*triple&#8217; <a href="#id68"><span class="problematic" id="id69">*</span></a><a href="#id70"><span class="problematic" id="id71">``</span></a></p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -c <span class="s1">&#39;!!!AMT.*simple.*triple&#39;</span> *
+</pre></div>
+</div>
 <p>When searching for more complex patterns it may be necessary to use <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>
 more than once. Consider, for example, the problem of identifying works whose
 titles contain both the words <tt class="docutils literal"><span class="pre">Liebe</span></tt> and <tt class="docutils literal"><span class="pre">Tod</span></tt>. The first of the
 following commands will identify only those titles that contain <tt class="docutils literal"><span class="pre">Liebe</span></tt>
 followed by <tt class="docutils literal"><span class="pre">Tod</span></tt>, whereas the second command will identify only those
 titles that contain <tt class="docutils literal"><span class="pre">Tod</span></tt> followed by <tt class="docutils literal"><span class="pre">Liebe</span></tt>:</p>
-<p>`` grep &#8216;!!!OTL.*Liebe.*Tod&#8217; <a href="#id73"><span class="problematic" id="id74">*</span></a>``
-`` grep &#8216;!!!OTL.*Tod.*Liebe&#8217; <a href="#id75"><span class="problematic" id="id76">*</span></a><a href="#id77"><span class="problematic" id="id78">``</span></a></p>
+<div class="highlight-bash"><div class="highlight"><pre>grep <span class="s1">&#39;!!!OTL.*Liebe.*Tod&#39;</span> *
+grep <span class="s1">&#39;!!!OTL.*Tod.*Liebe&#39;</span> *
+</pre></div>
+</div>
 <p>A better solution is to pipe the output between two <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> commands. Recall
 that the vertical bar (<cite>|&#8217;) conveyes or &#8220;pipes&#8221; the output from one command
 to the input of a subsequent command. The following command passes all opus-
@@ -427,25 +467,37 @@ title records (``OTL`</cite>) containing the word <tt class="docutils literal"><
 which passes only those records also containing the word <tt class="docutils literal"><span class="pre">Tod</span></tt>. Since both
 <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> commands process the entire input line, it does not matter whether
 the word <tt class="docutils literal"><span class="pre">Tod</span></tt> precedes or follows the word <tt class="docutils literal"><span class="pre">Liebe</span></tt>:</p>
-<p>`` grep &#8216;!!!OTL.*Liebe&#8217; * | grep &#8216;Tod&#8217;``</p>
-<p>The <strong>-v</strong> option for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> causes a &#8220;reverse&#8221; or &#8220;negative&#8221; output.
+<div class="highlight-bash"><div class="highlight"><pre>grep <span class="s1">&#39;!!!OTL.*Liebe&#39;</span> * | grep <span class="s1">&#39;Tod&#39;</span>
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">-v</span></tt> option for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> causes a &#8220;reverse&#8221; or &#8220;negative&#8221; output.
 Instead of outputting all records that <em>match</em> the specified regular
-expression, the <strong>-v</strong> option causes only those records to be output that do
+expression, the <tt class="docutils literal"><span class="pre">-v</span></tt> option causes only those records to be output that do
 <em>not</em> match the given regular expression. For example, the following command
 eliminates all comments from the file <tt class="docutils literal"><span class="pre">polska24.krn</span></tt>:</p>
-<p>`` grep -v &#8216;^!&#8217; polska24.krn``</p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -v <span class="s1">&#39;^!&#39;</span> polska24.krn
+</pre></div>
+</div>
 <p>Similarly, the following command eliminates all whole-note rests:</p>
-<p>`` grep -v 1r <a href="#id83"><span class="problematic" id="id84">*</span></a><a href="#id85"><span class="problematic" id="id86">``</span></a></p>
-<p>The <strong>-v</strong> option is especially convenient in pipelines. For example, the
+<div class="highlight-bash"><div class="highlight"><pre>grep -v 1r *
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">-v</span></tt> option is especially convenient in pipelines. For example, the
 following command identifies all those files whose instrumentation includes a
 cornet but not a trumpet:</p>
-<p>`` grep &#8216;!!!AIN.*cornt&#8217; * | grep -v &#8216;tromp&#8217;``</p>
+<div class="highlight-bash"><div class="highlight"><pre>grep <span class="s1">&#39;!!!AIN.*cornt&#39;</span> * | grep -v <span class="s1">&#39;tromp&#39;</span>
+</pre></div>
+</div>
 <p>The following command identifies those works in compound meters that are not
 also quadruple meters:</p>
-<p>`` grep &#8216;!!!AMT.*compound&#8217; * | grep -v &#8216;quadruple&#8217;``</p>
+<div class="highlight-bash"><div class="highlight"><pre>grep <span class="s1">&#39;!!!AMT.*compound&#39;</span> * | grep -v <span class="s1">&#39;quadruple&#39;</span>
+</pre></div>
+</div>
 <p>Similarly, the following command identifies those notes that begin a phrase,
 but are not rests.</p>
-<p>`` grep &#8216;^{&#8216; * | grep -v r``</p>
+<div class="highlight-bash"><div class="highlight"><pre>grep <span class="s1">&#39;^{&#39;</span> * | grep -v r
+</pre></div>
+</div>
 </div>
 <div class="section" id="german-french-italian-and-neapolitan-sixths">
 <h2>German, French, Italian, and Neapolitan Sixths<a class="headerlink" href="#german-french-italian-and-neapolitan-sixths" title="Permalink to this headline">¶</a></h2>
@@ -454,12 +506,14 @@ for various types of special chords. Suppose, for example, that we wanted to
 identify occurrences of augmented sixth chords. An augmented sixth chord is
 characterized by an augmented sixth interval occurring between the lowered
 sixth scale-degree and the raised fourth scale-degree. In <a class="reference external" href="../ch04">Chapter 4</a>, we
-saw that the <strong>solfa</strong> command represents pitches with respect to an encoded
+saw that the <a class="reference external" href="../../man/solfa">solfa</a> command represents pitches with respect to an encoded
 tonic pitch. In the <a class="reference external" href="../../rep/solfa">**solfa</a> representation, the lowered sixth and
 raised fourth degrees will be represented as <tt class="docutils literal"><span class="pre">6-</span></tt> and <tt class="docutils literal"><span class="pre">4+</span></tt> respectively.
 First we translate the input to the <a class="reference external" href="../../rep/solfa">**solfa</a> representation, and then we
 search for records matching the appropriate regular expression:</p>
-<p>`` solfa input | grep &#8216;6-.*4+&#8217;``</p>
+<div class="highlight-bash"><div class="highlight"><pre>solfa input | grep <span class="s1">&#39;6-.*4+&#39;</span>
+</pre></div>
+</div>
 <p>Notice that the expression <tt class="docutils literal"><span class="pre">`6-.*4+</span></tt>&#8216; presumes that the lowered sixth
 degree is lower in pitch than the raised fourth degree. For augmented sixth
 chords, this is a reasonable presumption. In the unlikely situation that the
@@ -467,7 +521,9 @@ raised fourth degree is lower in pitch than the lowered sixth degree, we
 would need to also search for the expression <tt class="docutils literal"><span class="pre">`4+.*6-</span></tt>&#8216;. Alternatively, we
 could use two separate <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> commands, eliminating the constraint of
 order:</p>
-<p>`` solfa input | grep &#8216;6-&#8216; | grep &#8216;4+&#8217;``</p>
+<div class="highlight-bash"><div class="highlight"><pre>solfa input | grep <span class="s1">&#39;6-&#39;</span> | grep <span class="s1">&#39;4+&#39;</span>
+</pre></div>
+</div>
 <p>Augmented sixth chords can be further classified as either German, French, or
 Italian sixths. The German sixth contains the lowered mediant whereas the
 French sixth contains the supertonic pitch; the Italian sixth contains
@@ -482,40 +538,49 @@ chords are based on the lowered supertonic with the third of the chord
 <p>Depending on the key, Neapolitan chords are sometimes notated enharmonically
 as a raised tonic chord. Suppose we were looking for such enharmonically
 spelled Neapolitan chords:</p>
-<p>`` solfa input | grep &#8216;3+.*1+&#8217; | grep &#8216;5+&#8217;``</p>
+<div class="highlight-bash"><div class="highlight"><pre>solfa input | grep <span class="s1">&#39;3+.*1+&#39;</span> | grep <span class="s1">&#39;5+&#39;</span>
+</pre></div>
+</div>
 <p>Occassionally, Neapolitan chords are missing the fifth of the chord (the
 lowered sixth degree of the scale). We might search for an example of such a
 chord:</p>
-<p>`` solfa input | grep &#8216;2-&#8216; | grep &#8216;4&#8217; | grep -v &#8216;6-&#8216;``</p>
+<div class="highlight-bash"><div class="highlight"><pre>solfa input | grep <span class="s1">&#39;2-&#39;</span> | grep <span class="s1">&#39;4&#39;</span> | grep -v <span class="s1">&#39;6-&#39;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="and-searches-using-the-xargs-command">
 <h2>AND-Searches Using the <em>xargs</em> Command<a class="headerlink" href="#and-searches-using-the-xargs-command" title="Permalink to this headline">¶</a></h2>
 <p>In some cases, we want to identify those files that match two entirely
-different patterns (in different records). Recall that the <strong>-l</strong> option
+different patterns (in different records). Recall that the <tt class="docutils literal"><span class="pre">-l</span></tt> option
 causes <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to output the <em>filename</em> rather than the matching record. If
 we could pass along these file names to another <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command, we could
 search those same files for yet another pattern.</p>
-<p>The UNIX <strong>xargs</strong> command provides a useful way of transferring the output
+<p>The UNIX**xargs**command provides a useful way of transferring the output
 from one command to be used as final arguments for a subsequent command. For
 example, the following command takes each file whose opus title contains the
 word <tt class="docutils literal"><span class="pre">Liebe</span></tt> and counts the number of phrases.</p>
-<p>`` grep -l &#8216;!!!OTL:.*Liebe&#8217; * | xargs grep -c &#8216;^{&#8216;``</p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -l <span class="s1">&#39;!!!OTL:.*Liebe&#39;</span> * | xargs grep -c <span class="s1">&#39;^{&#39;</span>
+</pre></div>
+</div>
 <p>In this case the <strong>grep -l</strong> command outputs a list of names of files
-containing the string <tt class="docutils literal"><span class="pre">Liebe</span></tt> in an OTL reference record. The <strong>xargs</strong>
-command causes these filenames to be appended to the end of the following
+containing the string <tt class="docutils literal"><span class="pre">Liebe</span></tt> in an OTL reference record. The**xargs**command causes these filenames to be appended to the end of the following
 <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command. The <strong>grep -c</strong> command will thus be applied only to those
 files already identified by the previous <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> as containing <tt class="docutils literal"><span class="pre">Liebe</span></tt> in
 the title.</p>
 <p>A set of such pipelines can be used to answer more sophisticated questions.
 For example, are drinking songs more apt to be in triple meter?</p>
-<p>`` grep -l &#8216;!!!AMT.*triple&#8217; * | xargs grep -l &#8216;!!!AGN.*Trinklied&#8217;``
-`` grep -l &#8216;!!!AMT.*duple&#8217; * | xargs grep -l &#8216;!!!AGN.*Trinklied&#8217;``
-`` grep -l &#8216;!!!AMT.*quadruple&#8217; * | xargs grep -l &#8216;!!!AGN.*Trinklied&#8217;``</p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -l <span class="s1">&#39;!!!AMT.*triple&#39;</span> * | xargs grep -l <span class="s1">&#39;!!!AGN.*Trinklied&#39;</span>
+grep -l <span class="s1">&#39;!!!AMT.*duple&#39;</span> * | xargs grep -l <span class="s1">&#39;!!!AGN.*Trinklied&#39;</span>
+grep -l <span class="s1">&#39;!!!AMT.*quadruple&#39;</span> * | xargs grep -l <span class="s1">&#39;!!!AGN.*Trinklied&#39;</span>
+</pre></div>
+</div>
 <p>Similarly, the following commands determine whether files whose titles
 contain the word <em>death</em> are more apt to be in minor keys:</p>
-<p>`` grep -li &#8216;!!!OTL.*death&#8217; * | xargs grep -c &#8216;^*[a-g][#-]*:&#8217;``
-`` grep -li &#8216;!!!OTL.*death&#8217; * | xargs grep -c &#8216;^*[A-G][#-]*:&#8217;``</p>
-<p>Note that the <strong>xargs</strong> command can be used again and again to continue
+<div class="highlight-bash"><div class="highlight"><pre>grep -li <span class="s1">&#39;!!!OTL.*death&#39;</span> * | xargs grep -c <span class="s1">&#39;^\*[a-g][#-]*:&#39;</span>
+grep -li <span class="s1">&#39;!!!OTL.*death&#39;</span> * | xargs grep -c <span class="s1">&#39;^\*[A-G][#-]*:&#39;</span>
+</pre></div>
+</div>
+<p>Note that the**xargs**command can be used again and again to continue
 propagating file names as arguments to subsequent searches. For example, the
 following command outputs the key signatures for all works originating from
 Africa that are written in 3/4 meter:</p>
@@ -526,7 +591,7 @@ current directory that encode 17th century organ works containing passages in
 6/8 meter:</p>
 <p>`` grep -l &#8216;!!!ODT.*16[0-9][0-9]/&#8217; | xargs grep -l &gt;
 &gt;&gt; &#8216;!!!AIN.*organ&#8217; | xargs grep -l &#8216;*M6/8&#8217;``</p>
-<p>Using the <strong>-L</strong> option allows us to form even more complex criteria by
+<p>Using the <tt class="docutils literal"><span class="pre">-L</span></tt> option allows us to form even more complex criteria by
 excluding certain works. For example, the following variation of the above
 command outputs the names of all files in the current directory that encode
 17th century organ works that do not contain passages in 6/8 meter:</p>
@@ -535,10 +600,10 @@ command outputs the names of all files in the current directory that encode
 </div>
 <div class="section" id="or-searches-using-the-grep-f-command">
 <h2>OR-Searches Using the <em>grep -f</em> Command<a class="headerlink" href="#or-searches-using-the-grep-f-command" title="Permalink to this headline">¶</a></h2>
-<p>In effect, the above pipelines provide logical <strong>AND</strong> structures: e.g.
+<p>In effect, the above pipelines provide logical**AND**structures: e.g.
 identify works composed in the 17th century AND written for organ AND
-containing a passage in 6/8 meter. The <strong>-f</strong> option for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> provides a
-way of creating logical <strong>OR</strong> searches. With the <strong>-f</strong> option, we specify a
+containing a passage in 6/8 meter. The <tt class="docutils literal"><span class="pre">-f</span></tt> option for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> provides a
+way of creating logical**OR**searches. With the <tt class="docutils literal"><span class="pre">-f</span></tt> option, we specify a
 file containing the patterns being sought. For example, we might create a
 file called <tt class="docutils literal"><span class="pre">criteria</span></tt> containing the following three regular expressions:</p>
 <div class="highlight-python"><div class="highlight"><pre>!!!ODT.*16[0-9][0-9]/
@@ -547,13 +612,15 @@ file called <tt class="docutils literal"><span class="pre">criteria</span></tt> 
 </pre></div>
 </div>
 <p>We would invoke <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> as follows:</p>
-<p>`` grep -l -f criteria <a href="#id97"><span class="problematic" id="id98">*</span></a><a href="#id99"><span class="problematic" id="id100">``</span></a></p>
-<p>The <strong>-f</strong> option tells <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to fetch the file <tt class="docutils literal"><span class="pre">criteria</span></tt> and use the
+<div class="highlight-bash"><div class="highlight"><pre>grep -l -f criteria *
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">-f</span></tt> option tells <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to fetch the file <tt class="docutils literal"><span class="pre">criteria</span></tt> and use the
 records in this file as regular expressions. A match is made if any of the
 regular expressions is found.</p>
 <p>The output would consist of a list of all files in the current directory that
 encode works composed in the 17th century OR written for organ OR in 6/8
-meter. The <strong>-f</strong> option is more typically used to specify several variations
+meter. The <tt class="docutils literal"><span class="pre">-f</span></tt> option is more typically used to specify several variations
 of the same idea. For example, suppose we were searching for D major triads
 in <a class="reference external" href="../../rep/pitch">**pitch</a> data. We could use a file containing the following regular
 expressions:</p>
@@ -567,20 +634,26 @@ expressions:</p>
 </div>
 <p>Depending on the application, it may be easier to construct such pattern
 files than to use a lengthy pipeline. That is:</p>
-<p>`` grep -f Dmajor <a href="#id102"><span class="problematic" id="id103">*</span></a><a href="#id104"><span class="problematic" id="id105">``</span></a></p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -f Dmajor *
+</pre></div>
+</div>
 <p>may be less cumbersome than:</p>
-<p>`` grep [Dd] * | grep [Ff]# | grep [Aa]``</p>
-<p>The <strong>-f</strong> option can be combined with <strong>-L</strong>. For example, suppose we wanted
+<div class="highlight-bash"><div class="highlight"><pre>grep <span class="o">[</span>Dd<span class="o">]</span> * | grep <span class="o">[</span>Ff<span class="o">]</span><span class="c"># | grep [Aa]</span>
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">-f</span></tt> option can be combined with <tt class="docutils literal"><span class="pre">-L</span></tt>. For example, suppose we wanted
 to identify all works in the current directory that are not in the keys of C
 major, G major, B-flat major or D minor. Our regular expression file would
 contain the following regular expressions:</p>
 <p>`` ^*[CGd]:``
 `` ^*B-:``</p>
 <p>The corresponding command would be:</p>
-<p>`` grep -L -f criteria <a href="#id106"><span class="problematic" id="id107">*</span></a><a href="#id108"><span class="problematic" id="id109">``</span></a></p>
-<p>Another way of thinking of the <strong>-f</strong> option is that it allows us to define
+<div class="highlight-bash"><div class="highlight"><pre>grep -L -f criteria *
+</pre></div>
+</div>
+<p>Another way of thinking of the <tt class="docutils literal"><span class="pre">-f</span></tt> option is that it allows us to define
 equivalences. Consider, for example, the task of counting all of the notes in
-a **kern melody that belong to a particular whole-tone pitch set. Let&#8217;s
+a <a class="reference external" href="../../rep/kern">**kern</a> melody that belong to a particular whole-tone pitch set. Let&#8217;s
 create two files, one called <tt class="docutils literal"><span class="pre">whole1</span></tt> and the other called <tt class="docutils literal"><span class="pre">whole2</span></tt>. The
 file <tt class="docutils literal"><span class="pre">whole1</span></tt> might contain the following regular expressions:</p>
 <p>&gt;
@@ -595,18 +668,22 @@ file <tt class="docutils literal"><span class="pre">whole1</span></tt> might con
 [Bb]-([^-]|$)``</p>
 <p>Notice that the regular expressions have been carefully defined. The first
 regular expression defines a pattern consisting of either an upper- or lower-
-case letter <a href="#id110"><span class="problematic" id="id111">`</span></a>C&#8217; followed either by a character that is neither a sharp (#)
-nor a flat (-) nor another letter <a href="#id112"><span class="problematic" id="id113">`</span></a>C&#8217;, nor is followed by the end of the line
+case letter <a href="#id29"><span class="problematic" id="id30">`</span></a>C&#8217; followed either by a character that is neither a sharp (#)
+nor a flat (-) nor another letter <a href="#id31"><span class="problematic" id="id32">`</span></a>C&#8217;, nor is followed by the end of the line
 ($).</p>
 <p>Recall that parenthesis grouping (...) is part of the <em>extended</em> regular
 expression syntax. Therefore, we should use the <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a> rather than the
 <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command with the above expressions. We can count the number of notes
-in a monophonic **kern input that belong to this whole-tone set:</p>
-<p>`` egrep -c -f whole1 debussy``</p>
+in a monophonic <a class="reference external" href="../../rep/kern">**kern</a> input that belong to this whole-tone set:</p>
+<div class="highlight-bash"><div class="highlight"><pre>egrep -c -f whole1 debussy
+</pre></div>
+</div>
 <p>If the file <tt class="docutils literal"><span class="pre">whole2</span></tt> contains regular expressions for the complementary
 pitch set, we could similarly count the number of pitches that belong to this
 alternative set:</p>
-<p>`` egrep -c -f whole2 debussy``</p>
+<div class="highlight-bash"><div class="highlight"><pre>egrep -c -f whole2 debussy
+</pre></div>
+</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="reprise">
@@ -617,10 +694,8 @@ patterns in a file or input stream. However, the various options for <a class="r
 be used to isolate data, to count occurrences of patterns, to eliminate
 unwanted lines, to identify files for processing, and to avoid files that
 contain certain information.</p>
-<p>We have seen how the <strong>xargs</strong> command can be used to carry out
-<strong>AND</strong>-searches where each work must conform to multiple criteria. We have
-also seen how the <strong>-f</strong> option for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> can be used to permit
-<strong>OR</strong>-searches where a work needs to conform only to one of a set of
+<p>We have seen how the**xargs**command can be used to carry out**AND``-searches where each work must conform to multiple criteria. We have
+also seen how the <a href="#id37"><span class="problematic" id="id38">``</span></a>-f** option for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> can be used to permit**OR**-searches where a work needs to conform only to one of a set of
 possible criteria.</p>
 <p>Although this chapter has focussed principally on the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command, the
 ensuing chapters will show that regular expressions are used by a wide

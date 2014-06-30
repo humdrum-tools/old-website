@@ -30,7 +30,7 @@
   
     <link rel="top" title="humdrum-tools 1 documentation" href="../../"/>
         <link rel="up" title="The Humdrum User Guide" href="../"/>
-        <link rel="next" title="Chapter 6: Representing Music Using **kern (II)" href="../ch06/"/>
+        <link rel="next" title="Chapter 6: Representing Music Using **kern(II)" href="../ch06/"/>
         <link rel="prev" title="Chapter 4: Basic Pitch Translations" href="../ch04/"/>
    <link rel="stylesheet" type"text/css" href="../../_static/humdrum.css">
 
@@ -69,11 +69,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../">The Humdrum User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ch01/">1. Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern(I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch03/">3. Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch04/">4. Basic Pitch Translations</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Chapter 5: The Humdrum Syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern(II)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch07/">7. MIDI Output Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch08/">8. The Shell (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch09/">9. Searching with Regular Expressions</a></li>
@@ -300,7 +300,7 @@
   <div class="section" id="chapter-5-the-humdrum-syntax">
 <h1>Chapter 5: The Humdrum Syntax<a class="headerlink" href="#chapter-5-the-humdrum-syntax" title="Permalink to this headline">¶</a></h1>
 <p>In the previous chapters we have seen several examples of pre-defined Humdrum
-representations, such as **kern_, <a class="reference external" href="../../rep/solfa">**solfa</a> and <a class="reference external" href="../../rep/MIDI">**MIDI</a>.
+representations, such as <a class="reference external" href="../../rep/kern">**kern</a>_, <a class="reference external" href="../../rep/solfa">**solfa</a> and <a class="reference external" href="../../rep/MIDI">**MIDI</a>.
 These representations exhibit a number of common properties, including the
 manner in which the data are organized in spines. In this chapter, we provide
 a complete description of the Humdrum representation syntax. This chapter
@@ -421,7 +421,7 @@ The first and third spines begin with data tokens, while the second spine
 begins with a null token. Without the presence of interpretations, the
 meaning of this file is indeterminate. The file below contains two spines
 that have been labelled using Humdrum interpretations: ``</p>
-<p>&gt; <a href="#id3"><span class="problematic" id="id4">**</span></a>left**right
+<p>&gt;**left**right
 &gt; X.
 &gt; .X
 &gt; X.
@@ -446,7 +446,7 @@ sign.</p>
 <p>Interpretations can be cascaded so that a single spine has more than one
 interpretation associated with it. This is done through the addition of
 tandem interpretations. Consider the following example: ``</p>
-<p>&gt; <a href="#id5"><span class="problematic" id="id6">**</span></a>foot**foot**arm**arm
+<p>&gt;**foot**foot**arm**arm
 &gt; <em>left*right*left*right
 &gt; X..X
 &gt; .XX.
@@ -468,7 +468,7 @@ interpretation <tt class="docutils literal"><span class="pre">bowing</span></tt>
 bowing information in works for strings. For each exclusive interpretation,
 the Humdrum user can re-define the meaning of all of the text characters,
 with the exception of the tab and the carriage return, which always retain
-their functions as <a href="#id7"><span class="problematic" id="id8">`</span></a>token/spine separator&#8217; and <a href="#id9"><span class="problematic" id="id10">`</span></a>record separator&#8217;
+their functions as <a href="#id3"><span class="problematic" id="id4">`</span></a>token/spine separator&#8217; and <a href="#id5"><span class="problematic" id="id6">`</span></a>record separator&#8217;
 respectively. The characters ! . * can also be re-defined, although there are
 some restrictions as to how they can be used. Specifically, the exclamation
 mark cannot occur in the first column of the record unless it is used to
@@ -517,8 +517,8 @@ following sequence of Humdrum-like data records: ``</p>
 &gt; AB
 &gt; AB</p>
 <p>`` At the point where three spines are reduced to two spines the continuity
-is ambiguous: Has spine <a href="#id11"><span class="problematic" id="id12">`</span></a>3&#8217; been discontinued? Or is spine <a href="#id13"><span class="problematic" id="id14">`</span></a>B&#8217; a continuation
-of spine <a href="#id15"><span class="problematic" id="id16">`</span></a>3&#8217; with spine <a href="#id17"><span class="problematic" id="id18">`</span></a>A&#8217; a continuation of spine <a href="#id19"><span class="problematic" id="id20">`</span></a>1&#8217; or <a href="#id21"><span class="problematic" id="id22">`</span></a>2&#8217;? For some
+is ambiguous: Has spine <a href="#id7"><span class="problematic" id="id8">`</span></a>3&#8217; been discontinued? Or is spine <a href="#id9"><span class="problematic" id="id10">`</span></a>B&#8217; a continuation
+of spine <a href="#id11"><span class="problematic" id="id12">`</span></a>3&#8217; with spine <a href="#id13"><span class="problematic" id="id14">`</span></a>A&#8217; a continuation of spine <a href="#id15"><span class="problematic" id="id16">`</span></a>1&#8217; or <a href="#id17"><span class="problematic" id="id18">`</span></a>2&#8217;? For some
 representations such questions will be of little concern; however, in other
 circumstances, the manner in which the spines continue will be of critical
 importance. For example, if all of the above spines encoded pitch information
@@ -539,45 +539,45 @@ indicators, one of which we have already encountered:</p>
 </ul>
 <p>Spine path indicators use the following signifiers: the plus sign (add a
 spine), the minus sign (terminate a spine), the caret (split a spine), the
-lower-case letter <a href="#id23"><span class="problematic" id="id24">`</span></a>v&#8217; (join spines), and the lower-case letter <a href="#id25"><span class="problematic" id="id26">`</span></a>x&#8217; (exchange
+lower-case letter <a href="#id19"><span class="problematic" id="id20">`</span></a>v&#8217; (join spines), and the lower-case letter <a href="#id21"><span class="problematic" id="id22">`</span></a>x&#8217; (exchange
 spines). In addition to these, a <em>null interpretation</em> exists whose purpose
 is merely to act as a place-holder in interpretation records:</p>
-<p><a href="#id27"><span class="problematic" id="id28">``</span></a><em>+``add a new spine (to the right of the current spine)
-``</em>-<a href="#id29"><span class="problematic" id="id30">``</span></a>terminate a current spine
-<a href="#id31"><span class="problematic" id="id32">``</span></a><a href="#id33"><span class="problematic" id="id34">*</span></a>^``split a spine (into two)
-<a href="#id35"><span class="problematic" id="id36">``</span></a><a href="#id37"><span class="problematic" id="id38">*</span></a>v``join (two or more) spines into one
-<a href="#id39"><span class="problematic" id="id40">``</span></a><a href="#id41"><span class="problematic" id="id42">*</span></a>x``exchange the position of two spines
-<a href="#id43"><span class="problematic" id="id44">``</span></a><a href="#id45"><span class="problematic" id="id46">*</span></a><a href="#id47"><span class="problematic" id="id48">``</span></a>null interpretation (place holder)</p>
+<p><a href="#id23"><span class="problematic" id="id24">``</span></a><em>+``add a new spine (to the right of the current spine)
+``</em>-<a href="#id25"><span class="problematic" id="id26">``</span></a>terminate a current spine
+<a href="#id27"><span class="problematic" id="id28">``</span></a><a href="#id29"><span class="problematic" id="id30">*</span></a>^``split a spine (into two)
+<a href="#id31"><span class="problematic" id="id32">``</span></a><a href="#id33"><span class="problematic" id="id34">*</span></a>v``join (two or more) spines into one
+<a href="#id35"><span class="problematic" id="id36">``</span></a><a href="#id37"><span class="problematic" id="id38">*</span></a>x``exchange the position of two spines
+<a href="#id39"><span class="problematic" id="id40">``</span></a><a href="#id41"><span class="problematic" id="id42">*</span></a><a href="#id43"><span class="problematic" id="id44">``</span></a>null interpretation (place holder)</p>
 <p><em>Spine Path Interpretations</em> Spine paths are types of interpretations, so the
 spine path indicators are encoded as Humdrum interpretations, using the
 asterisk signifier (*). The following examples illustrate a few possible path
 changes:</p>
-<p><a href="#id49"><span class="problematic" id="id50">``</span></a>`
+<p><a href="#id45"><span class="problematic" id="id46">``</span></a>`
 $</p>
 <p>&gt; 123
-&gt; <a href="#id51"><span class="problematic" id="id52">**</span></a>-<a href="#id53"><span class="problematic" id="id54">*</span></a><tt class="docutils literal"><span class="pre">(elimination</span> <span class="pre">of</span> <span class="pre">spine</span> <span class="pre">#2)</span></tt>
+&gt; <a href="#id47"><span class="problematic" id="id48">**</span></a>-<a href="#id49"><span class="problematic" id="id50">*</span></a><tt class="docutils literal"><span class="pre">(elimination</span> <span class="pre">of</span> <span class="pre">spine</span> <span class="pre">#2)</span></tt>
 &gt; 13
 &gt; 123
-&gt; <a href="#id55"><span class="problematic" id="id56">**</span></a>x*x``(exchange spines #2 and #3)``
+&gt; <a href="#id51"><span class="problematic" id="id52">**</span></a>x*x``(exchange spines #2 and #3)``
 &gt; 132
 &gt; 123
-&gt; <a href="#id57"><span class="problematic" id="id58">**</span></a>^*``(splitting of spine #2)``
+&gt; <a href="#id53"><span class="problematic" id="id54">**</span></a>^*``(splitting of spine #2)``
 &gt; 12a2b3
 &gt; 123
-&gt; <a href="#id59"><span class="problematic" id="id60">**</span></a>v*v``(amalgamation of spines #2 and #3)``
+&gt; <a href="#id55"><span class="problematic" id="id56">**</span></a>v*v``(amalgamation of spines #2 and #3)``
 &gt; 12&amp;3</p>
 <p>`` Notice that in cases where two or more spines are amalgamated, the spines
 must be adjacent neighbors. For example, the arrangement below is forbidden
 by the Humdrum syntax since it is not clear whether spines #1 and #3
 amalgamate into spine <cite>A&#8217; or spine `B&#8217;. `</cite></p>
 <p>&gt; 123
-&gt; <a href="#id61"><span class="problematic" id="id62">*</span></a>v**v``(syntactically illegal)``
+&gt; <a href="#id57"><span class="problematic" id="id58">*</span></a>v**v``(syntactically illegal)``
 &gt; AB</p>
 <p>`` In such cases, amalgamating the two outer spines can be accomplished by
 first using the exchange path signifier. Here we exchange spines #2 and #3
 before amalgamating the original first and third spines: ``</p>
 <p>&gt; 123
-&gt; <a href="#id63"><span class="problematic" id="id64">**</span></a>x*x
+&gt; <a href="#id59"><span class="problematic" id="id60">**</span></a>x*x
 &gt; <em>v*v</em>
 &gt; 1&amp;32</p>
 <p>`` In cases where the user wishes to amalgamate several spines, a number of
@@ -587,53 +587,53 @@ and #2 are first joined together (momentarily defining three spines: 1&amp;2, 3,
 spine #3 (previous spine #4) are then joined: ``</p>
 <p>&gt; 1234
 &gt; <em>v*v*</em>
-&gt; <a href="#id65"><span class="problematic" id="id66">**</span></a>v*v
+&gt; <a href="#id61"><span class="problematic" id="id62">**</span></a>v*v
 &gt; 1&amp;23&amp;4</p>
 <p>`` In addition, it is possible to join more than two spines at the same time:
-<a href="#id67"><span class="problematic" id="id68">``</span></a>`
+<a href="#id63"><span class="problematic" id="id64">``</span></a>`
 $</p>
 <p>&gt; 1234
-&gt; <a href="#id69"><span class="problematic" id="id70">*</span></a>v*v*v*v
+&gt; <a href="#id65"><span class="problematic" id="id66">*</span></a>v*v*v*v
 &gt; 1&amp;2&amp;3&amp;4</p>
 <p>`` In cases where a new spine is introduced, it is essential to indicate the
-exclusive interpretation that applies to the new data. Thus an <a href="#id71"><span class="problematic" id="id72">`</span></a>add spine&#8217;
+exclusive interpretation that applies to the new data. Thus an <a href="#id67"><span class="problematic" id="id68">`</span></a>add spine&#8217;
 indication must be followed by a second interpretation record:</p>
 <p><tt class="docutils literal"><span class="pre">123</span>
 <span class="pre">&gt;</span> <span class="pre">**+*``(add</span> <span class="pre">a</span> <span class="pre">new</span> <span class="pre">spine.)</span></tt>
-&gt; <a href="#id73"><span class="problematic" id="id74">**</span></a><a href="#id75"><span class="problematic" id="id76">**</span></a>inter*``(define exclusive interpretation for the new spine)``
+&gt; <a href="#id69"><span class="problematic" id="id70">**</span></a><a href="#id71"><span class="problematic" id="id72">**</span></a>inter*``(define exclusive interpretation for the new spine)``
 &gt; 12new3</p>
 <p>Failing to follow the introduction of a new spine by a subsequent exclusive
 interpretation is illegal.</p>
 <p>The following examples illustrate a variety of more complex path
 redefinitions: ``</p>
 <p>&gt; 1234
-&gt; <a href="#id77"><span class="problematic" id="id78">*</span></a>v*v*^*^
+&gt; <a href="#id73"><span class="problematic" id="id74">*</span></a>v*v*^*^
 &gt; 1&amp;23a3b4a4b</p>
-<p><a href="#id79"><span class="problematic" id="id80">``</span></a>`
+<p><a href="#id75"><span class="problematic" id="id76">``</span></a>`
 $</p>
-<p><a href="#id81"><span class="problematic" id="id82">``</span></a>`
+<p><a href="#id77"><span class="problematic" id="id78">``</span></a>`
 $</p>
 <p>&gt; 12345
 &gt; <strong>-</strong>-*
-&gt; <a href="#id83"><span class="problematic" id="id84">*</span></a>v*v*v
+&gt; <a href="#id79"><span class="problematic" id="id80">*</span></a>v*v*v
 &gt; 1&amp;3&amp;5</p>
-<p><a href="#id85"><span class="problematic" id="id86">``</span></a>`
+<p><a href="#id81"><span class="problematic" id="id82">``</span></a>`
 $</p>
-<p><a href="#id87"><span class="problematic" id="id88">``</span></a>`
+<p><a href="#id83"><span class="problematic" id="id84">``</span></a>`
 $</p>
 <p>&gt; 12345
 &gt; <strong>-**^*+
 &gt; *******new
 &gt; *v*v**</strong>
 &gt; 1&amp;34a4b5new</p>
-<p><a href="#id89"><span class="problematic" id="id90">``</span></a>`
+<p><a href="#id85"><span class="problematic" id="id86">``</span></a>`
 $</p>
-<p><a href="#id91"><span class="problematic" id="id92">``</span></a>`
+<p><a href="#id87"><span class="problematic" id="id88">``</span></a>`
 $</p>
 <p>&gt; 1234
 &gt; <em>x*x*</em>
-&gt; <a href="#id93"><span class="problematic" id="id94">**</span></a>x*x*
-&gt; <a href="#id95"><span class="problematic" id="id96">**</span></a><a href="#id97"><span class="problematic" id="id98">*</span></a>x*x
+&gt; <a href="#id89"><span class="problematic" id="id90">**</span></a>x*x*
+&gt; <a href="#id91"><span class="problematic" id="id92">**</span></a><a href="#id93"><span class="problematic" id="id94">*</span></a>x*x
 &gt; 2341</p>
 <p>`` Note that with judicious planning, the user can completely reconfigure all
 spines within a Humdrum file.</p>
@@ -684,7 +684,7 @@ interpretation.</li>
 <li>A totally empty file (i.e. a file containing no records).</li>
 </ul>
 <p>In addition, each spine in a Humdrum file must ultimately end with a path
-terminator (<a href="#id99"><span class="problematic" id="id100">*</span></a>-). Only global comments (or new exclusive interpretations) may
+terminator (<a href="#id95"><span class="problematic" id="id96">*</span></a>-). Only global comments (or new exclusive interpretations) may
 occur following the termination of all spines. A property of Humdrum files is
 that the concatenation of two or more Humdrum files will always result in a
 Humdrum file.</p>
@@ -710,7 +710,7 @@ record must be equivalent to the number of currently active spines. ``</p>
 &gt; Tandem interpretationAny record beginning with a single asterisk (*) where
 none of the
 &gt; spines begin with two asterisks.
-&gt; Path indicatorOne of five special tandem interpretations <a href="#id101"><span class="problematic" id="id102">*</span></a>+ <a href="#id103"><span class="problematic" id="id104">*</span></a>- <a href="#id105"><span class="problematic" id="id106">*</span></a>v <a href="#id107"><span class="problematic" id="id108">*</span></a>^ <a href="#id109"><span class="problematic" id="id110">*</span></a>x
+&gt; Path indicatorOne of five special tandem interpretations <a href="#id97"><span class="problematic" id="id98">*</span></a>+ <a href="#id99"><span class="problematic" id="id100">*</span></a>- <a href="#id101"><span class="problematic" id="id102">*</span></a>v <a href="#id103"><span class="problematic" id="id104">*</span></a>^ <a href="#id105"><span class="problematic" id="id106">*</span></a>x
 found only
 &gt; in tandem interpretation records.
 &gt; Null interpretationAn interpretation for a given spine or spines consisting
@@ -743,9 +743,9 @@ to the Humdrum syntax:</p>
 <p>One of the most important commands in the Humdrum Toolkit is the
 <a class="reference external" href="../../man/humdrum">humdrum</a> command itself. This command is used to identify whether a
 file or other input stream conforms to the above Humdrum syntax. Where
-appropriate, the <strong>humdrum</strong> command issues error messages identifying the
+appropriate, the <a class="reference external" href="../../man/humdrum">humdrum</a> command issues error messages identifying the
 type and location of any syntactic transgressions. If no infractions are
-found, <strong>humdrum</strong> produces no output (i.e., in UNIX parlance &#8220;silence is
+found, <a class="reference external" href="../../man/humdrum">humdrum</a> produces no output (i.e., in UNIX parlance &#8220;silence is
 golden&#8221;). All of the commands in the Humdrum toolkit assume that the inputs
 given to them conform to the Humdrum syntax. Whenever you encounter a
 problem, you should always test the input to assure that it is in the proper
@@ -842,7 +842,7 @@ anywhere, but must be preceded in the spine by some exclusive interpretation.</p
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <center><a href="../ch06/" class="btn btn-neutral float-right" title="Chapter 6: Representing Music Using **kern (II)">Next <span class="fa fa-arrow-circle-right"></span></a></center>
+        <center><a href="../ch06/" class="btn btn-neutral float-right" title="Chapter 6: Representing Music Using **kern(II)">Next <span class="fa fa-arrow-circle-right"></span></a></center>
       
       
         <a href="../ch04/" class="btn btn-neutral" title="Chapter 4: Basic Pitch Translations"><span class="fa fa-arrow-circle-left"></span> Previous</a>

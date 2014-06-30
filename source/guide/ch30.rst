@@ -1,17 +1,45 @@
+
+.. |Chapter 7|	replace:: Chapter 7
+.. _Chapter 7:	../ch07
+
+.. |assemble|	replace:: assemble
+.. _assemble:	../../man/assemble
+
+.. |encode|	replace:: encode
+.. _encode:	../../man/encode
+
+.. |record|	replace:: record
+.. _record:	../../man/record
+
+.. |timebase|	replace:: timebase
+.. _timebase:	../../man/timebase
+
+.. |**MIDI|	replace:: \*\*MIDI
+.. _\*\*MIDI:	../../rep/MIDI
+
+.. |**fret|	replace:: \*\*fret
+.. _\*\*fret:	../../rep/fret
+
+.. |**kern|	replace:: \*\*kern
+.. _\*\*kern:	../../rep/kern
+
+.. |**solfg|	replace:: \*\*solfg
+.. _\*\*solfg:	../../rep/solfg
+
 ===============================
 Chapter 30:MIDI Input Tools
 ===============================
 
 The Humdrum Toolkit provides two tools for inputting MIDI data. In this
-chapter we briefly introduce the `record <../../man/record>`_ and `encode <../../man/encode>`_ commands.
+chapter we briefly introduce the |record|_ and |encode|_ commands.
 These tools provide ways for capturing MIDI input and translating them to
-representations that conform to the Humdrum syntax. The **record** command
-translates a live or computer-generated MIDI performance to the `**MIDI <../../rep/MIDI>`_
-representation. The **encode** command provides an interactive editor that
+representations that conform to the Humdrum syntax. The |record|_ command
+translates a live or computer-generated MIDI performance to the |**MIDI|_
+representation. The |encode|_ command provides an interactive editor that
 translates MIDI events to any pre-defined or user-defined Humdrum
 representation.
 
-Note that the Humdrum **record** and **encode** commands are currently
+Note that the Humdrum |record|_ and |encode|_ commands are currently
 available only for the DOS operating system. These commands can be used only
 with computers that have MIDI capable hardware.
 
@@ -19,13 +47,13 @@ with computers that have MIDI capable hardware.
 The *record* Command
 --------
 
-The `record <../../man/record>`_ command captures a stream of input MIDI data and translates
-this data into the Humdrum `**MIDI <../../rep/MIDI>`_ representation described in `Chapter 7 <../ch07>`_. The input data is obtained from a MIDI instrument such as a keyboard
+The |record|_ command captures a stream of input MIDI data and translates
+this data into the Humdrum |**MIDI|_ representation described in |Chapter 7|_\ . The input data is obtained from a MIDI instrument such as a keyboard
 synthesizer.
 
 Recording commences as soon as the command is invoked and recording ceases
 when any key is pressed -- with the exception of the space bar. Pressing the
-space bar causes a `**MIDI <../../rep/MIDI>`_ barline token to be output. Measure numbers are
+space bar causes a |**MIDI|_ barline token to be output. Measure numbers are
 incremented automatically beginning with measure 1.
 
 Only MIDI key-press activity (including after-touch) information is recorded.
@@ -40,26 +68,28 @@ terminated.
 
 The recorded output is normally directed to a file as in the following:
 
-``record > filippa``
+.. code-block:: bash
+
+	record > filippa
 
 
 The *encode* Command
 --------
 
-The `encode <../../man/encode>`_ command provides an interactive editor for capturing
+The |encode|_ command provides an interactive editor for capturing
 Humdrum data from a MIDI input, such as a keyboard synthesizer. MIDI events
-are mapped to user-defined signifiers so **encode** can be used to enter data
-directly into a particular representation such as \*\*kern_,
-`**fret <../../rep/fret>`_, `**solfg <../../rep/solfg>`_, etc. Since the mapping of MIDI events to
+are mapped to user-defined signifiers so |encode|_ can be used to enter data
+directly into a particular representation such as |**kern|_\ _,
+|**fret|_\ , |**solfg|_\ , etc. Since the mapping of MIDI events to
 Humdrum data tokens is arbitrary, users can enter data using a representation
 design by the user.
 
-The **encode** command is limited to encoding information one spine at a
-time. A typical use of **encode** is to encode individual musical parts or
+The |encode|_ command is limited to encoding information one spine at a
+time. A typical use of |encode|_ is to encode individual musical parts or
 voices using a representation like **kern. A full score is generated from the
-individual parts using the `timebase <../../man/timebase>`_ and `assemble <../../man/assemble>`_ commands.
+individual parts using the |timebase|_ and |assemble|_ commands.
 
-The **encode** command implements a full-screen interactive editor similar to
+The |encode|_ command implements a full-screen interactive editor similar to
 the `vi <http://en.wikipedia.org/wiki/Vi>`_ text editor. When invoked, the screen is divided into three
 display regions, including a *status window*, a *command window*, and a
 larger *text window*. The *status window* displays various items of basic
@@ -67,7 +97,7 @@ information about the file being edited. The **command window** allows the
 user to execute general-purpose commands to manipulate the data. The **text
 window** is used to display, encode and edit the encoded Humdrum text.
 
-When the **encode** command is invoked, its operation is determined by a
+When the |encode|_ command is invoked, its operation is determined by a
 configuration file (that may be written or edited by the user). This
 configuration file contains a series of definitions that map MIDI events to
 output strings. For example, the instruction
@@ -81,7 +111,7 @@ window.
 Such mappings can be made for each individual MIDI key. In addition, the user
 may define mappings for *key velocity*. For example, the following
 instruction in the configuration file will map any key-velocities between 90
-and 127 MIDI units to the apostrophe character (the \*\*kern_ signifier
+and 127 MIDI units to the apostrophe character (the |**kern|_\ signifier
 for a staccato note):
 
 ``VEL 90 127 '``
@@ -106,7 +136,7 @@ events to any arbitrary output string and to arrange the ranges and number of
 classes as needed.
 
 The Humdrum Toolkit provides a large selection of predefined configuration
-files for use with **encode**. Depending on the configuration, the input may
+files for use with |encode|_ . Depending on the configuration, the input may
 be mapped to a particular representation such as **kern. For example, Humdrum
 provides a configuration file that is optimized for encoding lute tablatures
 using the **fret representation. Other configuration files are optimized for
@@ -114,12 +144,12 @@ particular keys. For example, one may select a configuration file that
 interprets the MIDI events in the key of C# minor; in this case, playing the
 pitch C will result in a default encoding of B#.
 
-The **encode** command provides many additional features that facilitate
+The |encode|_ command provides many additional features that facilitate
 encoding Humdrum data from a MIDI input device. These include setting
 metronome values, assigning the beat, rearranging the order of signifiers,
 making global and local substitutions, replaying an interpreted input,
 defining buffers and string constants, and so on. Using the configuration
-files, users can tailor the **encode** editor to suit specific needs and
+files, users can tailor the |encode|_ editor to suit specific needs and
 skills.
 
 --------
@@ -129,7 +159,7 @@ Reprise
 -------
 
 In this chapter we have briefly identified two tools for capturing MIDI-
-related input: `encode <../../man/encode>`_ and `record <../../man/record>`_. These tools allow MIDI data
+related input: |encode|_ and |record|_\ . These tools allow MIDI data
 to be translated to a Humdrum format. Further information regarding these
 tools is given in the *Humdrum Toolkit Reference Manual.*
 

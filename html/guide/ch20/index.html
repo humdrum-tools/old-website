@@ -69,11 +69,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../">The Humdrum User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ch01/">1. Humdrum: A Brief Tour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern(I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch03/">3. Some Initial Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch04/">4. Basic Pitch Translations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch05/">5. The Humdrum Syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern(II)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch07/">7. MIDI Output Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch08/">8. The Shell (I)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ch09/">9. Searching with Regular Expressions</a></li>
@@ -350,25 +350,23 @@ verse.</p>
 </div>
 <div class="section" id="using-yank-to-extract-sections">
 <h2>Using <em>yank</em> to Extract Sections<a class="headerlink" href="#using-yank-to-extract-sections" title="Permalink to this headline">¶</a></h2>
-<p>We encountered the <a class="reference external" href="../../man/yank">yank</a> command earlier in <a class="reference external" href="../ch12">Chapter 12</a>. Recall that
-<strong>yank</strong> can be used to extract material by <em>section</em> using the <strong>-s</strong>
+<p>We encountered the <a class="reference external" href="../../man/yank">yank</a> command earlier in <a class="reference external" href="../ch12">Chapter 12</a>. Recall that <a class="reference external" href="../../man/yank">yank</a> can be used to extract material by <em>section</em> using the <tt class="docutils literal"><span class="pre">-s</span></tt>
 option. For example, if the appropriate section is labelled, we might extract
 the coda of a work as follows:</p>
 <p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-s</span> <span class="pre">Coda</span> <span class="pre">-r</span> <span class="pre">1</span></tt> <em>file</em></p>
-<p>Recall that the <strong>-r</strong> option is mandatory with <strong>yank</strong>; in this case, it
+<p>Recall that the <tt class="docutils literal"><span class="pre">-r</span></tt> option is mandatory with <a class="reference external" href="../../man/yank">yank</a> ; in this case, it
 identifies the <em>first</em> occurrence of a section labelled <tt class="docutils literal"><span class="pre">Coda</span></tt>.</p>
 </div>
 <div class="section" id="using-the-thru-command-to-expand-encodings">
 <h2>Using the <em>thru</em> Command to Expand Encodings<a class="headerlink" href="#using-the-thru-command-to-expand-encodings" title="Permalink to this headline">¶</a></h2>
 <p>The Humdrum <a class="reference external" href="../../man/thru">thru</a> command expands <em>abbreviated format</em> representations
 to a so-called <em>through-composed format</em> in which repeated passages are
-expanded according to an expansion list. When the <strong>thru</strong> command is
-invoked, it eliminates any expansion lists present in the input; in addition,
-<strong>thru</strong> places a <tt class="docutils literal"><span class="pre">*thru</span></tt> tandem interpretation in all spines immediately
+expanded according to an expansion list. When the <a class="reference external" href="../../man/thru">thru</a> command is
+invoked, it eliminates any expansion lists present in the input; in addition, <a class="reference external" href="../../man/thru">thru</a> places a <tt class="docutils literal"><span class="pre">*thru</span></tt> tandem interpretation in all spines immediately
 following each instance of an exclusive interpretation in the input. This
 marks the file as being in a through-composed format. Any other <tt class="docutils literal"><span class="pre">*thru</span></tt>
 tandem interpretations encountered in the input are subsequently discarded.
-As a result, running a file through <strong>thru</strong> twice will not result in further
+As a result, running a file through <a class="reference external" href="../../man/thru">thru</a> twice will not result in further
 changes to the file.</p>
 </div>
 <div class="section" id="alternative-versions">
@@ -383,16 +381,15 @@ overall organization of a work may co-exist in the same file. This is
 achieved simply by encoding more than one expansion list. In order to
 distinguish different versions, each expansion list is given a unique
 <em>version label</em>.  Consider the following expansion lists:</p>
-<p>`` <a href="#id13"><span class="problematic" id="id14">*</span></a>&gt;Gould1982[A,A,B]
-<a href="#id15"><span class="problematic" id="id16">*</span></a>&gt;Landowska[A,A,B,B] ``</p>
+<p>`` <a href="#id11"><span class="problematic" id="id12">*</span></a>&gt;Gould1982[A,A,B]
+<a href="#id13"><span class="problematic" id="id14">*</span></a>&gt;Landowska[A,A,B,B] ``</p>
 <p>Here we see two expansion lists, one carries the version label <tt class="docutils literal"><span class="pre">Gould1982</span></tt>
 and the other is labelled version <tt class="docutils literal"><span class="pre">Landowska</span></tt>. These expansion lists might
 encode different interpretations of the repeats in a rounded binary form &#8211;
-Landowska performed the second repeat whereas Gould (1982) did not. When the
-<strong>thru</strong> command is invoked, the user can specify which <em>version</em> is intended
-using the <strong>-v</strong> option. The appropriate through-composed expansion will be
+Landowska performed the second repeat whereas Gould (1982) did not. When the <a class="reference external" href="../../man/thru">thru</a> command is invoked, the user can specify which <em>version</em> is intended
+using the <tt class="docutils literal"><span class="pre">-v</span></tt> option. The appropriate through-composed expansion will be
 output.</p>
-<p>The following example illustrates the use of the <strong>thru</strong> command in
+<p>The following example illustrates the use of the <a class="reference external" href="../../man/thru">thru</a> command in
 selecting particular versions of data in a file. Three sections are encoded
 in the file &#8211; labelled A, B and C. Each section in this example contains
 just a single data record. Three expansion lists are encoded: one is
@@ -409,7 +406,9 @@ unlabelled, a second is labelled <tt class="docutils literal"><span class="pre">
 <span class="pre">``data-C``data-C</span>
 <span class="pre">``*-``*-</span></tt></p>
 <p>Consider the following command:</p>
-<p><tt class="docutils literal"><span class="pre">thru</span> <span class="pre">-v</span> <span class="pre">weird</span> <span class="pre">file</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>thru -v weird file
+</pre></div>
+</div>
 <p>The corresponding &#8220;through-composed&#8221; output would be as follows:</p>
 <p><tt class="docutils literal"><span class="pre">example``**example</span>
 <span class="pre">``*thru``*thru</span>
@@ -426,11 +425,13 @@ immediately following the exclusive interpretation. Also notice that there
 are now two sections in the output sharing the same label (<tt class="docutils literal"><span class="pre">*&gt;C</span></tt>). This
 duplication of section-labels is not permitted in abbreviated-format
 encodings and can only occur in through-composed documents.</p>
-<p>Without the <strong>-v</strong> option, <strong>thru</strong> expands the abbreviated file according to
+<p>Without the <tt class="docutils literal"><span class="pre">-v</span></tt> option, <a class="reference external" href="../../man/thru">thru</a> expands the abbreviated file according to
 the <em>unlabelled</em> (default) expansion list. So the following command would
 result in an output consisting of section A, followed by section B, followed
 by section A (again), followed by section C:</p>
-<p><tt class="docutils literal"><span class="pre">thru</span> <span class="pre">file</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>thru file
+</pre></div>
+</div>
 </div>
 <div class="section" id="section-types">
 <h2>Section Types<a class="headerlink" href="#section-types" title="Permalink to this headline">¶</a></h2>
@@ -455,16 +456,18 @@ data4
 *-
 </pre></div>
 </div>
-<p>Both Smith and Jones label the work as beginning with section <a href="#id17"><span class="problematic" id="id18">`</span></a>A&#8217;. Later
-Jones&#8217;s <a href="#id19"><span class="problematic" id="id20">`</span></a>B&#8217; section begins; then Smith&#8217;s <a href="#id21"><span class="problematic" id="id22">`</span></a>B&#8217; section; then Jones&#8217;s <a href="#id23"><span class="problematic" id="id24">`</span></a>C&#8217;
-section. Note that Smith&#8217;s <a href="#id25"><span class="problematic" id="id26">`</span></a>B&#8217; section also contains the material Jones has
-identified as section <a href="#id27"><span class="problematic" id="id28">`</span></a>C&#8217;.</p>
-<p>Normally, the <strong>yank</strong> command extracts a labelled section up to the next
-occurrence of a section label. However, the <strong>-t</strong> option causes <strong>yank</strong> to
+<p>Both Smith and Jones label the work as beginning with section <a href="#id15"><span class="problematic" id="id16">`</span></a>A&#8217;. Later
+Jones&#8217;s <a href="#id17"><span class="problematic" id="id18">`</span></a>B&#8217; section begins; then Smith&#8217;s <a href="#id19"><span class="problematic" id="id20">`</span></a>B&#8217; section; then Jones&#8217;s <a href="#id21"><span class="problematic" id="id22">`</span></a>C&#8217;
+section. Note that Smith&#8217;s <a href="#id23"><span class="problematic" id="id24">`</span></a>B&#8217; section also contains the material Jones has
+identified as section <a href="#id25"><span class="problematic" id="id26">`</span></a>C&#8217;.</p>
+<p>Normally, the <a class="reference external" href="../../man/yank">yank</a> command extracts a labelled section up to the next
+occurrence of a section label. However, the <tt class="docutils literal"><span class="pre">-t</span></tt> option causes <a class="reference external" href="../../man/yank">yank</a> to
 ignore all section labels except for a specified type. We could extract
-Smith&#8217;s <a href="#id29"><span class="problematic" id="id30">`</span></a>B&#8217; section by using the <strong>-t</strong> option to limit extraction to
+Smith&#8217;s <cite>B&#8217; section by using the `</cite>-t`` option to limit extraction to
 &#8220;Smith&#8221;-type section labels:</p>
-<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-t</span> <span class="pre">Smith</span> <span class="pre">-s</span> <span class="pre">B</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>yank -t Smith -s B
+</pre></div>
+</div>
 <p>This command would produce the following output:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>**Example
 *&gt;Smith&gt;B
@@ -474,7 +477,7 @@ data4
 *-
 </pre></div>
 </div>
-<p>Without the <strong>-t</strong> option, <strong>yank</strong> will simply extract material up to the
+<p>Without the <tt class="docutils literal"><span class="pre">-t</span></tt> option, <a class="reference external" href="../../man/yank">yank</a> will simply extract material up to the
 occurrence of the next section label. Note that section types can be used to
 define innumerable alternative organizations for a single document.</p>
 </div>
@@ -507,7 +510,7 @@ data7
 <p>All of the above section labels are identified as type <tt class="docutils literal"><span class="pre">Form</span></tt>. However, two
 levels are distinguished (denoted by <tt class="docutils literal"><span class="pre">&gt;</span></tt> and <tt class="docutils literal"><span class="pre">&gt;&gt;</span></tt>). Subsections are
 specified by increasing the number of greater-than signs, hence <tt class="docutils literal"><span class="pre">2nd</span> <span class="pre">Theme</span></tt>
-is a subsection. When <strong>yank</strong> is invoked, it will extract the identified
+is a subsection. When <a class="reference external" href="../../man/yank">yank</a> is invoked, it will extract the identified
 section up to the next section of comparable level. The operation is
 illustrated in the following sample commands: indicating the first and second
 themes.</p>
@@ -516,9 +519,11 @@ themes.</p>
 <tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-t</span> <span class="pre">Form</span> <span class="pre">-s</span> <span class="pre">'Exposition'</span> <span class="pre">-r</span> <span class="pre">1(``extracts</span> <span class="pre">up</span> <span class="pre">to</span> <span class="pre">``&gt;Form&gt;Development</span></tt>)</p>
 <p>For example, the second theme from the recapitulation can be extracted as
 follows:</p>
-<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-t</span> <span class="pre">Form</span> <span class="pre">-s</span> <span class="pre">'2nd</span> <span class="pre">Theme'</span> <span class="pre">-r</span> <span class="pre">2</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>yank -t Form -s <span class="s1">&#39;2nd Theme&#39;</span> -r 2
+</pre></div>
+</div>
 <p>Alternatively:</p>
-<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-t</span> <span class="pre">Form</span> <span class="pre">-s</span> <span class="pre">Recapitulation</span></tt> <a href="#id31"><span class="problematic" id="id32">*</span></a>file*`` | yank -t Form -s &#8216;2nd Theme&#8217;
+<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-t</span> <span class="pre">Form</span> <span class="pre">-s</span> <span class="pre">Recapitulation</span></tt> <a href="#id27"><span class="problematic" id="id28">*</span></a>file*`` | yank -t Form -s &#8216;2nd Theme&#8217;
 -r 1``</p>
 </div>
 <div class="section" id="using-the-yank-and-thru-commands">
@@ -533,21 +538,31 @@ output to identifying which <em>versions</em> are available for a document we wo
 look for the presence of square brackets:</p>
 <p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'^\*&gt;.*\[.*\]'</span></tt> <em>file</em></p>
 <p>How many notes are there in the exposition?</p>
-<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-t</span> <span class="pre">Form</span> <span class="pre">-s</span> <span class="pre">Exposition</span> <span class="pre">-r</span> <span class="pre">1</span></tt> <a href="#id33"><span class="problematic" id="id34">*</span></a>file*`` | census*``</p>
+<div class="highlight-bash"><div class="highlight"><pre>yank -t Form -s Exposition -r 1<span class="sb">``</span> *file*<span class="sb">``</span> | census*
+</pre></div>
+</div>
 <p>How many phrases are there in the development?</p>
-<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-t</span> <span class="pre">Form</span> <span class="pre">-s</span> <span class="pre">Development</span> <span class="pre">-r</span> <span class="pre">1</span></tt> <a href="#id35"><span class="problematic" id="id36">*</span></a>file*`` | grep -c &#8216;{&#8216;``</p>
+<div class="highlight-bash"><div class="highlight"><pre>yank -t Form -s Development -r 1<span class="sb">``</span> *file*<span class="sb">``</span> | grep -c <span class="s1">&#39;{&#39;</span>
+</pre></div>
+</div>
 <p>Extract the figured bass for the third recitative:</p>
-<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-s</span> <span class="pre">Recitativo</span> <span class="pre">-r</span> <span class="pre">3</span></tt> <a href="#id37"><span class="problematic" id="id38">*</span></a>file*`` | extract -i &#8216;<a href="#id39"><span class="problematic" id="id40">**</span></a>B-num&#8217;``</p>
+<div class="highlight-bash"><div class="highlight"><pre>yank -s Recitativo -r 3<span class="sb">``</span> *file*<span class="sb">``</span> | extract -i <span class="s1">&#39;**B-num&#39;</span>
+</pre></div>
+</div>
 <p>Compare the estimated key for the second theme in the exposition versus the
 estimated key for the second theme in the recapitulation:</p>
-<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-t</span> <span class="pre">Form</span> <span class="pre">-s</span> <span class="pre">'2nd</span> <span class="pre">Theme'</span> <span class="pre">-r</span> <span class="pre">1</span></tt> <a href="#id41"><span class="problematic" id="id42">*</span></a>file*`` | key``
-<tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-t</span> <span class="pre">Form</span> <span class="pre">-s</span> <span class="pre">'2nd</span> <span class="pre">Theme'</span> <span class="pre">-r</span> <span class="pre">2</span></tt> <a href="#id43"><span class="problematic" id="id44">*</span></a>file*`` | key``</p>
+<div class="highlight-bash"><div class="highlight"><pre>yank -t Form -s <span class="s1">&#39;2nd Theme&#39;</span> -r 1<span class="sb">``</span> *file*<span class="sb">``</span> | key
+yank -t Form -s <span class="s1">&#39;2nd Theme&#39;</span> -r 2<span class="sb">``</span> *file*<span class="sb">``</span> | key
+</pre></div>
+</div>
 <p>Determine the nominal (non-rubato) duration of Gould&#8217;s performance of the
 work:</p>
-<p><tt class="docutils literal"><span class="pre">thru</span> <span class="pre">-v</span> <span class="pre">Gould1982</span></tt> <a href="#id45"><span class="problematic" id="id46">*</span></a>file*`` | extract -i &#8216;<a href="#id47"><span class="problematic" id="id48">**</span></a>kern&#8217; | extract -f 1 &gt;
+<p><tt class="docutils literal"><span class="pre">thru</span> <span class="pre">-v</span> <span class="pre">Gould1982</span></tt> <a href="#id29"><span class="problematic" id="id30">*</span></a>file*`` | extract -i &#8216;<a href="#id31"><span class="problematic" id="id32">**</span></a>kern&#8217; | extract -f 1 &gt;
 &gt;&gt; | dur -d | rid -GLId | grep -v &#8216;^=&#8217; | stats | grep -i total``</p>
 <p>Perform the first three measures from the second section of a binary form:</p>
-<p><tt class="docutils literal"><span class="pre">yank</span> <span class="pre">-s</span> <span class="pre">B</span></tt> <a href="#id49"><span class="problematic" id="id50">*</span></a>file*`` | yank -o = -r 1-3 | midi | perform``</p>
+<div class="highlight-bash"><div class="highlight"><pre>yank -s B<span class="sb">``</span> *file*<span class="sb">``</span> | yank -o <span class="o">=</span> -r 1-3 | midi | perform
+</pre></div>
+</div>
 </div>
 <div class="section" id="strophic-representations">
 <h2>Strophic Representations<a class="headerlink" href="#strophic-representations" title="Permalink to this headline">¶</a></h2>
@@ -582,7 +597,7 @@ Wandern&#8221; from <em>Die Schoene Muellerin</em> by Schubert:</p>
 <p><tt class="docutils literal"><span class="pre">`</span>
 <span class="pre">$</span>
 <span class="pre">``!!</span> <span class="pre">Franz``Schubert,``Das</span> <span class="pre">Wandern'</span> <span class="pre">from</span> <span class="pre">&quot;Die</span> <span class="pre">Schoene</span> <span class="pre">Muellerin&quot;</span>
-<span class="pre">\*\*kern**silbe</span>
+<span class="pre">|**kern|_\</span> <span class="pre">**silbe</span>
 <span class="pre">``*k[b-e-]``*Deutsch</span>
 <span class="pre">``*``*solo</span>
 <span class="pre">``*&gt;[1,1,1,1]``*&gt;[1,1,1,1]</span>
@@ -608,12 +623,12 @@ Wandern&#8221; from <em>Die Schoene Muellerin</em> by Schubert:</p>
 <span class="pre">``(8.cc``Wan-``Was-``Ra-``Stei-</span>
 <span class="pre">``16a)``|``|``|``|</span>
 <span class="pre">``8b-</span></tt>-dern!``-ser!``-dern!``-ne!
-<a href="#id51"><span class="problematic" id="id52">``</span></a>8r``%``%``%``%
-<a href="#id53"><span class="problematic" id="id54">``</span></a><em>``*S/fin``*S/fin``*S/fin``*S/fin
+<a href="#id33"><span class="problematic" id="id34">``</span></a>8r``%``%``%``%
+<a href="#id35"><span class="problematic" id="id36">``</span></a><em>``*S/fin``*S/fin``*S/fin``*S/fin
 ``*``*v``*v``*v``*v
 ``*``*S-
-``</em>-<a href="#id55"><span class="problematic" id="id56">``</span></a><a href="#id57"><span class="problematic" id="id58">*</span></a>-</p>
-<p>`` Notice that this file contains a single section labelled <a href="#id59"><span class="problematic" id="id60">`</span></a>1&#8217; and that an
+``</em>-<a href="#id37"><span class="problematic" id="id38">``</span></a><a href="#id39"><span class="problematic" id="id40">*</span></a>-</p>
+<p>`` Notice that this file contains a single section labelled <a href="#id41"><span class="problematic" id="id42">`</span></a>1&#8217; and that an
 expansion list occurs near the beginning of the file that indicates section 1
 is to be repeated 4 times in total.</p>
 <p>The strophic passage pertains only to the spine marked <a class="reference external" href="../../rep/silbe">**silbe</a>. The
@@ -629,11 +644,13 @@ terminator (<tt class="docutils literal"><span class="pre">*S-</span></tt>) mark
 </div>
 <div class="section" id="the-strophe-command">
 <h2>The <em>strophe</em> Command<a class="headerlink" href="#the-strophe-command" title="Permalink to this headline">¶</a></h2>
-<p>The Humdrum <strong>strophe</strong> command can be used to isolate or extract selective
-strophic data. The <strong>-x</strong> option for <strong>strophe</strong> allows the user to extract a
+<p>The Humdrum <a class="reference external" href="../../man/strophe">strophe</a> command can be used to isolate or extract selective
+strophic data. The <tt class="docutils literal"><span class="pre">-x</span></tt> option for <a class="reference external" href="../../man/strophe">strophe</a> allows the user to extract a
 particular labelled strophe. Consider, for example the effect of the
 following command:</p>
-<p><tt class="docutils literal"><span class="pre">strophe</span> <span class="pre">-x</span> <span class="pre">3</span> <span class="pre">schubert</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>strophe -x 3 schubert
+</pre></div>
+</div>
 <p>Using the above data, the result is:</p>
 <div class="highlight-humdrum"><div class="highlight"><pre>!! Franz Schubert, `Das Wandern&#39; from &quot;Die Schoene Muellerin&quot;
 **kern  **silbe
@@ -665,23 +682,25 @@ following command:</p>
 <p>Notice that all of the tandem interpretations related to the strophe
 organization are eliminated from the output.</p>
 <p>Suppose that we wanted to create a through-composed version of the entire
-work. We would expect as output, just two spines &#8211; the **kern_ spine
+work. We would expect as output, just two spines &#8211; the <a class="reference external" href="../../rep/kern">**kern</a>spine
 and the <a class="reference external" href="../../rep/silbe">**silbe</a> spine. First, we need to create the full length version
-using the <strong>thru</strong> command. This will take the default expansion list, and
+using the <a class="reference external" href="../../man/thru">thru</a> command. This will take the default expansion list, and
 repeat the appropriate section for each successive verse.</p>
-<p><tt class="docutils literal"><span class="pre">thru</span> <span class="pre">schubert</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>thru schubert
+</pre></div>
+</div>
 <p>The effect of this will be to simply repeat section 1 four times. However,
-each repetition will contain all four verses. We can use the <strong>strophe</strong>
-command to eliminate the unwanted verse texts at each verse. When no option
-is given, <strong>strophe</strong> operates by preserving strophes in numerical order.
+each repetition will contain all four verses. We can use the <a class="reference external" href="../../man/strophe">strophe</a> command to eliminate the unwanted verse texts at each verse. When no option
+is given, <a class="reference external" href="../../man/strophe">strophe</a> operates by preserving strophes in numerical order.
 That is, when it encounters the first strophic section it will preserve
 strophe #1 (<tt class="docutils literal"><span class="pre">*S/1</span></tt>); then when it encounters the next strophic section it
 will preserve strophe #2 (<tt class="docutils literal"><span class="pre">*S/2</span></tt>). And so on. In summary, the follow
 command will create a proper through-composed rendition of the Schubert
 lieder illustrated above.</p>
-<p><tt class="docutils literal"><span class="pre">thru</span> <span class="pre">schubert</span> <span class="pre">|</span> <span class="pre">strophe</span></tt></p>
-<p>Incidentally, the input passage need not necessary begin with strophe #1. The
-<strong>strophe</strong> command will adapt to the input, and use the lowest previously
+<div class="highlight-bash"><div class="highlight"><pre>thru schubert | strophe
+</pre></div>
+</div>
+<p>Incidentally, the input passage need not necessary begin with strophe #1. The <a class="reference external" href="../../man/strophe">strophe</a> command will adapt to the input, and use the lowest previously
 unencountered strophe number.</p>
 </div>
 <div class="section" id="using-the-strophe-and-thru-commands">
@@ -690,16 +709,18 @@ unencountered strophe number.</p>
 interpretations of a single work. Suppose for example that we had two
 editions of the Bach chorale harmonizations: Erk and Reimenschneider. We
 could select the Erk edition as follows:</p>
-<p><tt class="docutils literal"><span class="pre">strophe</span> <span class="pre">-x</span> <span class="pre">Erk</span> <span class="pre">chorale166</span></tt></p>
+<div class="highlight-bash"><div class="highlight"><pre>strophe -x Erk chorale166
+</pre></div>
+</div>
 <p>In a strophic song, suppose we would like to compare the number of syllables
 in the first and second verses. We begin by selecting the appropriate verse,
 extract the syllable spine, eliminate all non-data records, eliminate any
 other special signifiers (like barlines), and finally count the number of
 remaining records. We repeat this procedure for both verses:</p>
-<p><tt class="docutils literal"><span class="pre">strophe</span> <span class="pre">-x</span> <span class="pre">1</span></tt> <a href="#id64"><span class="problematic" id="id65">*</span></a>file*`` | extract -i &#8216;<a href="#id66"><span class="problematic" id="id67">**</span></a>silbe&#8217; | rid -GLId &gt;
+<p><tt class="docutils literal"><span class="pre">strophe</span> <span class="pre">-x</span> <span class="pre">1</span></tt> <a href="#id43"><span class="problematic" id="id44">*</span></a>file*`` | extract -i &#8216;<a href="#id45"><span class="problematic" id="id46">**</span></a>silbe&#8217; | rid -GLId &gt;
 &gt;&gt; | grep -v [=|%] | wc -l``
 &gt;
-<tt class="docutils literal"><span class="pre">strophe</span> <span class="pre">-x</span> <span class="pre">2</span></tt> <a href="#id68"><span class="problematic" id="id69">*</span></a>file*`` | extract -i &#8216;<a href="#id70"><span class="problematic" id="id71">**</span></a>silbe&#8217; | rid -GLId &gt;
+<tt class="docutils literal"><span class="pre">strophe</span> <span class="pre">-x</span> <span class="pre">2</span></tt> <a href="#id47"><span class="problematic" id="id48">*</span></a>file*`` | extract -i &#8216;<a href="#id49"><span class="problematic" id="id50">**</span></a>silbe&#8217; | rid -GLId &gt;
 &gt;&gt; | grep -v [=|%] | wc -l``</p>
 <p>(In the <a class="reference external" href="../../rep/silbe">**silbe</a> representation, the vertical bar (|) and the percent sign
 (%) have special meanings so the <strong>grep -v</strong> is used to eliminate them along
@@ -711,11 +732,11 @@ with barlines.)</p>
 <p>Between stophes and sections, highly non-linear musical documents can be
 constructed. We have seen how section labels can be defined, how lists of
 sections (&#8220;expansion lists&#8221;) can be constructed and expanded to through-
-composed formats using the <strong>thru</strong> command. An unlabelled expansion list is
+composed formats using the <a class="reference external" href="../../man/thru">thru</a> command. An unlabelled expansion list is
 the default version. Other versions have labelled expansion lists.</p>
 <p>Several different <em>types</em> of section labels can coexist in the same document
-and the <strong>yank</strong> command can be instructed to ignore all sections other than
-a certain type via the <strong>-t</strong> option.</p>
+and the <a class="reference external" href="../../man/yank">yank</a> command can be instructed to ignore all sections other than
+a certain type via the <tt class="docutils literal"><span class="pre">-t</span></tt> option.</p>
 <p>The basic ideas introduced in this chapter are summarized in the following
 table.</p>
 <p>&gt; sectionpassage defined by a section label, ends with occurrence of
@@ -732,17 +753,17 @@ of
 &gt; than <tt class="docutils literal"><span class="pre">*&gt;type&gt;name</span></tt>
 &gt; abbreviated formatHumdrum document encoded using expansion lists
 &gt; through-composedHumdrum document encoded without expansion lists
-<cite>thru &lt;../../man/thru&gt;`_command to create a through-composed document from an
+<a class="reference external" href="../../man/thru">thru</a> command to create a through-composed document from an
 &gt; abbrevatiated format
-``thru -v``command to create a particular version of a through-composed
-&gt; document
-``yank -s``command to extract sections
-``yank -t -s``command to extract sections limited to sections of a
-particular type
-&gt; strophe1. alternative spine path, 2. command for extracting a particular
-&gt; strophe
-&gt; strophic passage initiatortandem interpretation indicating the beginning of
-a strophe (``*strophe`</cite>)
+<tt class="docutils literal"><span class="pre">thru</span> <span class="pre">-v``command</span> <span class="pre">to</span> <span class="pre">create</span> <span class="pre">a</span> <span class="pre">particular</span> <span class="pre">version</span> <span class="pre">of</span> <span class="pre">a</span> <span class="pre">through-composed</span>
+<span class="pre">&gt;</span> <span class="pre">document</span>
+<span class="pre">``yank</span> <span class="pre">-s``command</span> <span class="pre">to</span> <span class="pre">extract</span> <span class="pre">sections</span>
+<span class="pre">``yank</span> <span class="pre">-t</span> <span class="pre">-s``command</span> <span class="pre">to</span> <span class="pre">extract</span> <span class="pre">sections</span> <span class="pre">limited</span> <span class="pre">to</span> <span class="pre">sections</span> <span class="pre">of</span> <span class="pre">a</span>
+<span class="pre">particular</span> <span class="pre">type</span>
+<span class="pre">&gt;</span> <span class="pre">strophe1.</span> <span class="pre">alternative</span> <span class="pre">spine</span> <span class="pre">path,</span> <span class="pre">2.</span> <span class="pre">command</span> <span class="pre">for</span> <span class="pre">extracting</span> <span class="pre">a</span> <span class="pre">particular</span>
+<span class="pre">&gt;</span> <span class="pre">strophe</span>
+<span class="pre">&gt;</span> <span class="pre">strophic</span> <span class="pre">passage</span> <span class="pre">initiatortandem</span> <span class="pre">interpretation</span> <span class="pre">indicating</span> <span class="pre">the</span> <span class="pre">beginning</span> <span class="pre">of</span>
+<span class="pre">a</span> <span class="pre">strophe</span> <span class="pre">(``*strophe</span></tt>)
 &gt; strophic passage terminatortandem interpretation indicating the end of a
 strophe (<tt class="docutils literal"><span class="pre">*S-</span></tt>)
 &gt; strophe labeltandem interpretation labelling one of several alternative
