@@ -11,7 +11,7 @@ installing, and using the Humdrum Toolkit as well as other resoures.
 We've split the site into the `Humdrum User Guide <guide>`_ (Huron,
 1995), an explanation of Craig Sapp's `Humdrum Extras <humextra>`_,
 and a `Humdrum Cookbook <cookbook>`_.  While the original Humdrum
-website is transferred to one, you can view the original HTML
+website content is transferred to this one, you can view the original HTML
 documentation `here <Humdrum>`_.
 
 
