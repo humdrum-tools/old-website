@@ -430,17 +430,19 @@ fragment from the 2nd movement of Bach's Brandenburg Concerto No. 5:
 
 
 
-``**kern
-> 8r
-> 8f#
-> 8b
-> 16.cc#
-> 32dd
-> 8a#
-> 16.b
-> 32cc#
-> 8dd
-> *-``
+.. code-block:: humdrum
+
+	**kern
+	8r
+	8f#
+	8b
+	16.cc#
+	32dd
+	8a#
+	16.b
+	32cc#
+	8dd
+	*-
 
 Given this input, the **mint** command will produce the following output.
 Plus signs indicate ascending intervals, while minus signs indicate
@@ -449,16 +451,18 @@ descending intervals; 'P' means perfect, 'M' means major, 'm' means minor,
 
 
 
-``**mint
-> [f#]
-> +P4
-> +M2
-> +m2
-> -d4
-> +m2
-> +M2
-> +m2
-> *-``
+.. code-block:: humdrum
+
+	**mint
+	[f#]
+	+P4
+	+M2
+	+m2
+	-d4
+	+m2
+	+M2
+	+m2
+	*-
 
 Searching for diminished or augmented intervals is as simple as using the
 Unix `grep <http://en.wikipedia.org/wiki/Grep>`_ command, with the appropriate regular expression:
@@ -528,13 +532,15 @@ Consider, for example, the following input:
 
 
 
-``**kern **kern
-> =1 =1
-> 4c 4e
-> 4G 4d
-> =2 =2
-> 2F 2c
-> *- *-``
+.. code-block:: humdrum
+
+	**kern	**kern
+	=1	=1
+	4c	4e
+	4G	4d
+	=2	=2
+	2F	2c
+	*-	*-
 
 Given the following command:
 
@@ -544,13 +550,15 @@ The following output will be produced:
 
 
 
-``**hint
-> =1
-> M3
-> P5
-> =2
-> P5
-> *-``
+.. code-block:: humdrum
+
+	**hint
+	=1
+	M3
+	P5
+	=2
+	P5
+	*-
 
 (Notice that, in this case, the consecutive fifths are separated by a
 barline.)
@@ -659,18 +667,20 @@ following passage is in B minor:
 
 
 
-``**kern
-> *b:
-> 8r
-> 8f#
-> 8b
-> 16.cc#
-> 32dd
-> 8a#
-> 16.b
-> 32cc#
-> 8dd
-> *-``
+.. code-block:: humdrum
+
+	**kern
+	*b:
+	8r
+	8f#
+	8b
+	16.cc#
+	32dd
+	8a#
+	16.b
+	32cc#
+	8dd
+	*-
 
 The **deg** command can be used to transform this representation to scale
 degree. The passage begins on the dominant (degree `5'), ascends (^) to the
@@ -679,17 +689,19 @@ then descends to the leading- tone (v7), etc.:
 
 
 
-``**deg
-> *b:
-> 5
-> ^1
-> ^2
-> ^3
-> v7
-> ^1
-> ^2
-> ^3
-> *-``
+.. code-block:: humdrum
+
+	**deg
+	*b:
+	5
+	^1
+	^2
+	^3
+	v7
+	^1
+	^2
+	^3
+	*-
 
 The following command will eliminate durations or other possible number
 representations that might conflict with scale-degree designations:
@@ -756,15 +768,17 @@ hypothetical passage:
 
 
 
-``**kern **kern
-> *C: *C:
-> 8c 8g
-> =1 =1
-> 4B 8g
-> . 16a
-> . 16b
-> 4A 4cc
-> *- *-``
+.. code-block:: humdrum
+
+	**kern	**kern
+	*C:	*C:
+	8c	8g
+	=1	=1
+	4B	8g
+	.	16a
+	.	16b
+	4A	4cc
+	*-	*-
 
 Given the above command sequence, no doubled leading-tones would be
 identified in this passage. However, we might wish to implement a more
@@ -780,29 +794,33 @@ the output from the **deg** command for the above example:
 
 
 
-``**deg **deg
-> *C: *C:
-> 1 5
-> =1 =1
-> v7 5
-> . ^6
-> . ^7
-> v6 ^1
-> *- *-``
+.. code-block:: humdrum
+
+	**deg	**deg
+	*C:	*C:
+	1	5
+	=1	=1
+	v7	5
+	.	^6
+	.	^7
+	v6	^1
+	*-	*-
 
 If we now invoke the **ditto** command, the modified output is:
 
 
 
-``**deg **deg
-> *C: *C:
-> 1 5
-> =1 =1
-> v7 5
-> v7 ^6
-> v7 ^7
-> v6 ^1
-> *- *-``
+.. code-block:: humdrum
+
+	**deg	**deg
+	*C:	*C:
+	1	5
+	=1	=1
+	v7	5
+	v7	^6
+	v7	^7
+	v6	^1
+	*-	*-
 
 Notice that the two null tokens in the left-hand spine have been replaced by
 copies of the most recent data token. Now our `grep <http://en.wikipedia.org/wiki/Grep>`_ command will find the
@@ -993,11 +1011,13 @@ The following passage illustrates a violation of the part overlapping rule:
 
 
 
-``**pitch **pitch
-> C4 E4
-> F4 A4
-> E4 G4
-> *- *-``
+.. code-block:: humdrum
+
+	**pitch	 **pitch
+	C4	 E4
+	F4	 A4
+	E4	 G4
+	*-	 *-
 
 (In the second sonority, the lower voice (F4) moves to a pitch higher than
 the previous pitch in the higher voice (E4).)

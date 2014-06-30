@@ -69,19 +69,21 @@ corresponding \*\*kern input:
 
 
 
-``**kern**dur
-> **MM60
-> =1=1
-> 12g0.3333
-> 12g0.3333
-> 12g0.3333
-> 4g1.0000
-> 4r1.0000r
-> 8g0.5000
-> 8g0.5000
-> 4g1.0000
-> =2=2
-> *-*-``
+.. code-block:: humdrum
+
+	**kern**dur
+	**MM60
+	=1=1
+	12g0.3333
+	12g0.3333
+	12g0.3333
+	4g1.0000
+	4r1.0000r
+	8g0.5000
+	8g0.5000
+	4g1.0000
+	=2=2
+	*-*-
 
 As in the case of `**recip <../../rep/recip>`_, the `**dur <../../rep/dur>`_ representation designates rests
 via the lower-case ``r`` and uses the common system for barlines. Notice that
@@ -360,57 +362,59 @@ The following extract from Bartok's "Two-Part Study" No. 121 from
 left-most columns show the original input; all three columns show the
 corresponding output from **metpos**:
 
-``**kern**kern**metpos
-> *tb8*tb8*tb8
-> =16=16=16
-> *M6/4*M6/4*M6/4
-> 8Gn8b-1
-> 8A8ccn4
-> 8B-8cc#}3
-> 8cn{8f#4
-> 8c#}8gn3
-> {8F#8a4
-> 8G8b-2
-> 8A8ccn4
-> 8B-4b-3
-> 8cn.4
-> 8c#}8fn}3
-> 8r8r4
-> =17=17=17
-> *M4/4*M4/4*M4/4
-> 8d2r1
-> 4.d.4
-> ..3
-> ..4
-> {2d_8dd2
-> .4.dd4
-> ..3
-> ..4
-> =18=18=18
-> 8d{1dd_1
-> 8A.4
-> 8F#.3
-> 8E.4
-> 8D.2
-> 8BB.4
-> 8D.3
-> 8E}.4
-> =19=19=19
-> *M3/2*M3/2*M3/2
-> {8F#8dd1
-> 8A8ffn4
-> 8c#8aa3
-> 8A8ff4
-> 8F#8dd2
-> 8A8ff4
-> 8F#8dd3
-> 8E8ccn4
-> 8D8b-2
-> 8BBn8gn4
-> 8D8b-3
-> 8E}8cc4
-> =20=20=20
-> *-*-*-``
+.. code-block:: humdrum
+
+	**kern**kern**metpos
+	*tb8*tb8*tb8
+	=16=16=16
+	*M6/4*M6/4*M6/4
+	8Gn8b-1
+	8A8ccn4
+	8B-8cc#}3
+	8cn{8f#4
+	8c#}8gn3
+	{8F#8a4
+	8G8b-2
+	8A8ccn4
+	8B-4b-3
+	8cn.4
+	8c#}8fn}3
+	8r8r4
+	=17=17=17
+	*M4/4*M4/4*M4/4
+	8d2r1
+	4.d.4
+	..3
+	..4
+	{2d_8dd2
+	.4.dd4
+	..3
+	..4
+	=18=18=18
+	8d{1dd_1
+	8A.4
+	8F#.3
+	8E.4
+	8D.2
+	8BB.4
+	8D.3
+	8E}.4
+	=19=19=19
+	*M3/2*M3/2*M3/2
+	{8F#8dd1
+	8A8ffn4
+	8c#8aa3
+	8A8ff4
+	8F#8dd2
+	8A8ff4
+	8F#8dd3
+	8E8ccn4
+	8D8b-2
+	8BBn8gn4
+	8D8b-3
+	8E}8cc4
+	=20=20=20
+	*-*-*-
 
 Notice that `metpos <../../man/metpos>`_ adapts to changing meter signatures, and correctly
 distinguishes between metric accent patterns such as 6/4 (measure 16) and 3/2
@@ -471,22 +475,24 @@ data.
 Note that **metpos** automatically echoes the input along with the new
 `**metpos <../../rep/metpos>`_ spine. At this point, the result might look as follows:
 
-``!!!OTL: Graf Friedrich In Oesterraaich sin di Gassen sou enge
-\*\*kern**metpos
-``*ICvox``*
-``*Ivox``*
-``*M3/4``*M3/4
-``*k[f#]``*
-``*G:``*
-``*tb16``*tb16
-``{8g``2
-``.``4
-``8b``3
-``.``4
-``=1``=1
-``8dd``1
-``.``4``
-> etc.
+.. code-block:: humdrum
+
+	!!!OTL: Graf Friedrich In Oesterraaich sin di Gassen sou enge
+	\*\*kern**metpos
+	*ICvox``*
+	*Ivox``*
+	*M3/4``*M3/4
+	*k[f#]``*
+	*G:``*
+	*tb16``*tb16
+	{8g``2
+	.``4
+	8b``3
+	.``4
+	=1``=1
+	8dd``1
+	.``4
+	etc.
 
 We want to be able to say that the relationship between the first eighth-note
 G and the eighth-note B is "strong-to-weak" and that the relationship between
@@ -500,19 +506,21 @@ with a period character:
 
 The result is as follows:
 
-``!!!OTL: Graf Friedrich In Oesterraaich sin di Gassen sou enge
-\*\*kern**metpos
-``*ICvox``*
-``*Ivox``*
-``*M3/4``*M3/4
-``*k[f#]``*
-``*G:``*
-``*tb16``*tb16
-``{8g``2
-``8b``3
-``=1``=1
-``8dd``1``
-> etc.
+.. code-block:: humdrum
+
+	!!!OTL: Graf Friedrich In Oesterraaich sin di Gassen sou enge
+	\*\*kern**metpos
+	*ICvox``*
+	*Ivox``*
+	*M3/4``*M3/4
+	*k[f#]``*
+	*G:``*
+	*tb16``*tb16
+	{8g``2
+	8b``3
+	=1``=1
+	8dd``1
+	etc.
 
 Notice that the successive `**metpos <../../rep/metpos>`_ values will now allow us to
 characterize the changes in stress between successive notes: 2 followed by 3
@@ -531,19 +539,21 @@ the metric hierarchy. Before using **xdelta** we need to isolate the
 
 The result is:
 
-``!!!OTL: Graf Friedrich In Oesterraaich sin di Gassen sou enge
-``**Xmetpos
-``*
-``*
-``*M3/4
-``*
-``*
-``*tb16
-``.
-``1
-``=1
-``-2``
-> etc.
+.. code-block:: humdrum
+
+	!!!OTL: Graf Friedrich In Oesterraaich sin di Gassen sou enge
+	**Xmetpos
+	*
+	*
+	*M3/4
+	*
+	*
+	*tb16
+	.
+	1
+	=1
+	-2
+	etc.
 
 Now we can use `recode <../../man/recode>`_ to classify the changes of metric position
 according. Our reassignment file (named ``reassign``):

@@ -26,119 +26,137 @@ In research activities, it is common to create representation schemes for a
 specific task. A user might define a spine that represents the heart-rate (in
 beats per minute) of a music listener:
 
-``**cardio
-``76
-``76
-``74
-``73
-``73
-``*-``
+.. code-block:: humdrum
+
+	**cardio
+	76
+	76
+	74
+	73
+	73
+	*-
 
 A scheme might be created to represent different types of contrapuntal
 motion:
 
-``**motion
-``similar
-``contrary
-``parallel
-``oblique
-``*-``
+.. code-block:: humdrum
+
+	**motion
+	similar
+	contrary
+	parallel
+	oblique
+	*-
 
 Chords might be classified -- using words:
 
-``**chords
-``minor
-``.
-``augmented
-``major
-``*-``
+.. code-block:: humdrum
+
+	**chords
+	minor
+	.
+	augmented
+	major
+	*-
 
 Or using abbreviations:
 
-``**chords
-``m
-``.
-``A
-``M
-``*-``
+.. code-block:: humdrum
+
+	**chords
+	m
+	.
+	A
+	M
+	*-
 
 Fingerings might be represented. Each hand may have a separate spine:
 
-``**finger**finger
-``*left*right
-``.1
-``1 52
-``.3
-``.5
-``1 52 5
-``*-*-``
+.. code-block:: humdrum
+
+	**finger	**finger
+	*left	*right
+	.	1
+	1 5	2
+	.	3
+	.	5
+	1 5	2 5
+	*-	*-
 
 Or the hands might be combined in a single spine:
 
-``**finger
-``R1
-``L1 L5 R2
-``R3
-``5
-``L1 L5 R2 R5
-``*-``
+.. code-block:: humdrum
+
+	**finger
+	R1
+	L1 L5 R2
+	R3
+	5
+	L1 L5 R2 R5
+	*-
 
 Time-scales might be large:
 
-``**Periods
-``Medieval
-``Renaissance
-``Baroque
-``Classical
-``Romantic
-``*-``
+.. code-block:: humdrum
+
+	**Periods
+	Medieval
+	Renaissance
+	Baroque
+	Classical
+	Romantic
+	*-
 
 Or miniscule:
 
-``**milliseconds
-``0.03
-``0.8
-``23.2
-``31.6
-``*-``
+.. code-block:: humdrum
+
+	**milliseconds
+	0.03
+	0.8
+	23.2
+	31.6
+	*-
 
 A user might define a highly refined special-purpose representation. For
 example, the following scheme is fashioned after the Benesh dance notation:
 
-``!! Kellom Tomlinson's``Gavot of 1720.
-``!! Transcribed from``Feuillet's notation.
-\*\*kern**Benesh
-``*MM120``*MM120
-``*M2/2``*M2
-``*e:``*
-``!! First Couplet
-``!``! Half Coupee
-``4.gg`` | |u| | |
-``.``%|+| | | |
-``.`` |=|v| | |
-``.``(| | | | |
-``.``(|-| | | |{
-``8ff#`` |_| | | |2
-``=1``-----------
-``2ee``m| | | | |}
-``!``! Bound
-``.``_|^| | | |{
-``.``(|+| | | |
-``4.b``-| | | | |
-``.``(|+| | | |}
-``.``_| | | | |{
-``8a``_|+|+| | |
-``=2``-----------
-``!``! Bouree
-``4g`` | | | | |
-``.`` |=| | | |
-``4e`` |=| | | |}
-``.``_|=| | | |
-``4g`` |o| | | |
-``!``! Bouree
-``4a``_|+|+| | |
-``=3``-----------
-``*-``*-``
+.. code-block:: humdrum
+
+	!! Kellom Tomlinson's Gavot of 1720.
+	!! Transcribed from Feuillet's notation.
+	**kern	**Benesh
+	*MM120	*MM120
+	*M2/2	*M2
+	*e:	*
+	!! First Couplet
+	!	! Half Coupee
+	4.gg	 | |u| | |
+	.	%|+| | | |
+	.	 |=|v| | |
+	.	(| | | | |
+	.	(|-| | | |{
+	8ff#	 |_| | | |2
+	=1	-----------
+	2ee	m| | | | |}
+	!	! Bound
+	.	_|^| | | |{
+	.	(|+| | | |
+	4.b	-| | | | |
+	.	(|+| | | |}
+	.	_| | | | |{
+	8a	_|+|+| | |
+	=2	-----------
+	!	! Bouree
+	4g	 | | | | |
+	.	 |=| | | |
+	4e	 |=| | | |}
+	.	_|=| | | |
+	4g	 |o| | | |
+	!	! Bouree
+	4a	_|+|+| | |
+	=3	-----------
+	*-	*-
 
 Depending on the task, user-defined schemes can be either carefully designed,
 or "throw-away" concoctions created for momentary purposes. The *Humdrum

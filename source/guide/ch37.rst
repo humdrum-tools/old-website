@@ -435,41 +435,45 @@ As many reference records should be added as possible since these are
 immensely useful to Humdrum users. Essential reference records include the
 following:
 
-``!!!COM:``composer's name`_
-``!!!CDT:``composer's dates`_
-``!!!OTL:``title (in original language)`_
-``!!!OMV:``movement number (if appropriate)`_
-``!!!OPS:``opus number (if appropriate)`_
-``!!!ODT:``date of composition`_
-``!!!OPC:``place of composition`_
-``!!!YEP:``publisher of electronic edition`_
-``!!!YEC:``date & owner of electronic copyright`_
-``!!!YER:``date electronic edition released`_
-``!!!YEM:``copyright message`_
-``!!!YEN:``country of copyright`_
-``!!!EED:``electronic editor`_
-``!!!ENC:``encoder of document`_
-``!!!EEV:``electronic edition version`_
-``!!!EFL:``file number, e.g. 1 or 4 (1/4)`_
-``!!!VTS:``checksum validation number (see below)`_
-``!!!AMT:``metric classification`_
-``!!!AIN:``instrumentation`_
+.. code-block:: humdrum
+
+	!!!COM:``composer's name`_
+	!!!CDT:``composer's dates`_
+	!!!OTL:``title (in original language)`_
+	!!!OMV:``movement number (if appropriate)`_
+	!!!OPS:``opus number (if appropriate)`_
+	!!!ODT:``date of composition`_
+	!!!OPC:``place of composition`_
+	!!!YEP:``publisher of electronic edition`_
+	!!!YEC:``date & owner of electronic copyright`_
+	!!!YER:``date electronic edition released`_
+	!!!YEM:``copyright message`_
+	!!!YEN:``country of copyright`_
+	!!!EED:``electronic editor`_
+	!!!ENC:``encoder of document`_
+	!!!EEV:``electronic edition version`_
+	!!!EFL:``file number, e.g. 1 or 4 (1/4)`_
+	!!!VTS:``checksum validation number (see below)`_
+	!!!AMT:``metric classification`_
+	!!!AIN:``instrumentation`_
 
 Where appropriate, the following reference records should also be included:
 
-``!!!CNT:``composer's nationality`_
-``!!!XEN:``title (English translation)`_
-``!!!OPR:``title of larger (or parent) work`_
-``!!!ODE:``dedication`_
-``!!!OCY:``country of composition`_
-``!!!PPR:``first publisher`_
-``!!!PDT:``date first published`_
-``!!!PPP:``place first published`_
-``!!!SCT:``scholarly catalogue name & number`_
-``!!!SMA:``manuscript acknowledgement`_
-``!!!AFR:``form of work`_
-``!!!AGN:``genre of work`_
-``!!!AST:``style of period`_
+.. code-block:: humdrum
+
+	!!!CNT:``composer's nationality`_
+	!!!XEN:``title (English translation)`_
+	!!!OPR:``title of larger (or parent) work`_
+	!!!ODE:``dedication`_
+	!!!OCY:``country of composition`_
+	!!!PPR:``first publisher`_
+	!!!PDT:``date first published`_
+	!!!PPP:``place first published`_
+	!!!SCT:``scholarly catalogue name & number`_
+	!!!SMA:``manuscript acknowledgement`_
+	!!!AFR:``form of work`_
+	!!!AGN:``genre of work`_
+	!!!AST:``style of period`_
 
 In general, place essential reference records at the beginning of a document.
 These will include the composer, title of the work, etc. Less important

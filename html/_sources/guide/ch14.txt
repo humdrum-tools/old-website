@@ -459,7 +459,9 @@ point. Suppose, for example, that we want to annotate a file with Humdrum
 comments identifying the presence of cadential 6-4 chords. First, we might
 create a file -- ``comment.6-4`` -- containing the following Humdrum comment:
 
-``!! A likely cadential 6-4 progression.``
+.. code-block:: humdrum
+
+	!! A likely cadential 6-4 progression.
 
 We can use the Humdrum `pattern <../../man/pattern>`_ command (to be described in `Chapter 21 <../ch21>`_), as follows:
 

@@ -185,17 +185,19 @@ Jones:
 
 
 
-``**Example
-``*>Smith>A
-``*>Jones>A
-``data1
-``*>Jones>B
-``data2
-``*>Smith>B
-``data3
-``*>Jones>C
-``data4``
-``*-
+.. code-block:: humdrum
+
+	**Example
+	*>Smith>A
+	*>Jones>A
+	data1
+	*>Jones>B
+	data2
+	*>Smith>B
+	data3
+	*>Jones>C
+	data4
+	*-
 
 Both Smith and Jones label the work as beginning with section `A'. Later
 Jones's `B' section begins; then Smith's `B' section; then Jones's `C'
@@ -214,12 +216,14 @@ This command would produce the following output:
 
 
 
-``**Example
-``*>Smith>B
-``data3
-``*>Jones>C
-``data4``
-``*-
+.. code-block:: humdrum
+
+	**Example
+	*>Smith>B
+	data3
+	*>Jones>C
+	data4
+	*-
 
 Without the **-t** option, **yank** will simply extract material up to the
 occurrence of the next section label. Note that section types can be used to
@@ -237,23 +241,25 @@ following:
 
 
 
-``**Example
-``*>Form>Exposition
-``data1
-``*>Form>>1st Theme
-``data2
-``*>Form>>2nd Theme
-``data3
-``*>Form>Development
-``data4
-``*>Form>Recapitulation
-``*>Form>>1st Theme
-``data5
-``*>Form>>2nd Theme
-``data6
-``*>Form>Coda
-``data7
-``*-
+.. code-block:: humdrum
+
+	**Example
+	*>Form>Exposition
+	data1
+	*>Form>>1st Theme
+	data2
+	*>Form>>2nd Theme
+	data3
+	*>Form>Development
+	data4
+	*>Form>Recapitulation
+	*>Form>>1st Theme
+	data5
+	*>Form>>2nd Theme
+	data6
+	*>Form>Coda
+	data7
+	*-
 
 All of the above section labels are identified as type ``Form``. However, two
 levels are distinguished (denoted by ``>`` and ``>>``). Subsections are
@@ -425,31 +431,33 @@ Using the above data, the result is:
 
 
 
-``!! Franz Schubert, `Das Wandern' from "Die Schoene Muellerin"
-> **kern**silbe
-> *k[b-e-]*Deutsch
-> *>[1,1,1,1]*>[1,1,1,1]
-> **solo
-> *>1*>1
-> 8fDas
-> =5=5
-> 8fsehn
-> 8b-wir
-> 8aauch
-> 8ee-den
-> =6=6
-> (16ddRa-
-> 16ff)|
-> (16dd-dern
-> 16b-)|
-> 8fab,
-> 8ddden
-> =7=7
-> (8.ccRa-
-> 16a)|
-> 8b--dern!
-> 8r%
-> *-*-``
+.. code-block:: humdrum
+
+	!! Franz Schubert, `Das Wandern' from "Die Schoene Muellerin"
+	**kern	**silbe
+	*k[b-e-]	*Deutsch
+	*>[1,1,1,1]	*>[1,1,1,1]
+	*	*solo
+	*>1	*>1
+	8f	Das
+	=5	=5
+	8f	sehn
+	8b-	wir
+	8a	auch
+	8ee-	den
+	=6	=6
+	(16dd	Ra-
+	16ff)	|
+	(16dd-	dern
+	16b-)	|
+	8fab	,
+	8dd	den
+	=7	=7
+	(8.cc	Ra-
+	16a)	|
+	8b-	-dern!
+	8r	%
+	*-	*-
 
 Notice that all of the tandem interpretations related to the strophe
 organization are eliminated from the output.

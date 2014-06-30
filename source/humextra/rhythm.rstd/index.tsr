@@ -7,7 +7,7 @@
 
 .. Humdrum Extras Chapter Sequence:
 	:label:ch:`intro:`:	Introduction
-	:label:ch:`rhythm`:	Rhythm and Time
+	:label:ch:`rhythm`:	Rhythm
 	:label:ch:`melody`:	Melody and Pitch
 	:label:ch:`harmony:`:	Harmony
 	:label:ch:`data`:	Data Entry
@@ -24,11 +24,11 @@
 .. ########################################################################
 
 ===========================================================================
-:counter:`rhythm`. Rhythm and Time
+:counter:`rhythm`. Rhythm 
 ===========================================================================
 
 This chapter discusses various concepts and Humdrum Extras tools
-related to rhythm and time.
+related to rhythm.
 
 
 :counter:`rhythm.extensions`. Extensions to :exinterp:`recip` and :exinterp:`kern` rhythms
@@ -176,16 +176,17 @@ Humdrum Toolkit programs.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A different extension to the :exinterp:`recip` rhythm representation
-uses the symbol ``0`` (zero) for breves (double whole notes).
-Note that ``q`` is used to represent grace notes with a zero notated
+uses the symbol ``0`` (zero) for breves (double whole notes).  Note
+that ``q`` is used to represent grace notes with a zero notated
 duration.  Most rhythm-parsing Humdrum Toolkit programs (such as
 :htcom:`census`) recognize this zero convention.  By extension, the
 symbol ``00`` represents a longa (quadruple whole note), and ``000``
 represents a maxima (octuple whole note); however, most Humdrum
 Toolkit rhythm-parsing programs do not understand these longer
-durations.  The Humdrum Extras programs will recognize all such
-rhythms, and will increase the power-of-two to parse ``0000``,
-``00000`` or larger exotic rhythm values:
+durations as well as exotic rhythm values such as ``0000`` for a
+double maxima, or ``00000`` for a quadruple maxima.  
+Example :counter:`rhythm.zerobig` shows how the :hxcom:`beat` command
+converts zero rhythms into durations in quarter-note units.
 
 
 .. :Example:Start: :counter:`rhythm`.:label:ex:`zerobig`
@@ -201,10 +202,10 @@ in quarter-note units using the "zero" representation.
 .. :Example:End: :counter:`rhythm.zerobig`
 
 
-Compare this to durational equivalents in the rational representation
-in Example :counter:`rhythm.ratbig`, where the analyzed durations of the
-:exinterp:`recip` rhythms in the right column match to those in
-Example :counter:`rhythm.zerobig`.
+Compare this to durational equivalents from rational representations
+of the same rhythms in Example :counter:`rhythm.ratbig`, where the
+analyzed durations of the :exinterp:`recip` rhythms in the right
+column match to those in Example :counter:`rhythm.zerobig`.
 
 
 .. :Example:Start: :counter:`rhythm`.:label:ex:`ratbig`
@@ -483,8 +484,12 @@ numbers instead of floating-point values.
 .. :Example:End: :counter:`rhythm.ratbach`
 
 
-Here is an example of extracting the distribution of durations
-for the composite rhythm of 370 Bach chorales:
+Example :counter:`rhythm.durfreq` gives an example of extracting
+the distribution of durations for the composite rhythm of 370 Bach
+chorales.  First the composite rhythm is extracted from the chorales.  Next the
+rhythm is stripped of its Humdrum syntax structure with :hxcom:`ridx` -H 
+(which is equivalent to ":htcom:`rid` -GLId | :uxcom:`grep` -v ^=") and then
+the raw data lines are sorted and counted with :hxcom:`sortcount`.
 
 
 .. :Example:Start: :counter:`rhythm`.:label:ex:`durfreq`

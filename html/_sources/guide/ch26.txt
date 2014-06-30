@@ -23,31 +23,37 @@ individual output spines. Consider for example the following spine containing
 
 
 
-``**pitch
-> Ab3
-> F#4
-> C5
-> *-``
+.. code-block:: humdrum
+
+	**pitch
+	Ab3
+	F#4
+	C5
+	*-
 
 The **rend** command might be used to structure this as three independent
 spines:
 
 
 
-``**octave**note**accidental
-> 3Abb
-> 4F##
-> 5C.
-> *-*-*-``
+.. code-block:: humdrum
+
+	**octave	**note	**accidental
+	3	Ab	b
+	4	F#	#
+	5	C	.
+	*-	*-	*-
 
 The operation of `rend <../../man/rend>`_ requires a reassignment file where each line
 contains an output exclusive interpretation, followed by a tab, followed by a
 regular expression. In the above case, the reassignment file (``reassign``)
 contained the following:
 
-``**octave[0-9]
-> **note[A-Gb#x]
-> **accidental[b#x]``
+.. code-block:: humdrum
+
+	*	*octave[0-9]
+	*	*note[A-Gb#x]
+	*	*accidental[b#x]
 
 The first line tells **rend** that any signifiers matching the character-
 class 0-9 should be output in a spine labelled ``octave``. The second line
@@ -76,17 +82,21 @@ spines into a single data spine. In effect, **cleave** does the opposite of
 `rend <../../man/rend>`_. By way of example, **cleave** can be used to transform the
 following:
 
-``**A**B**C
-> abc
-> ABC
-> *-*-*-``
+.. code-block:: humdrum
+
+	**A	**B	**C
+	a	b	c
+	A	B	C
+	*-	*-	*-
 
 into:
 
-``**new
-> abc
-> ABC
-> *-``
+.. code-block:: humdrum
+
+	**new
+	abc
+	ABC
+	*-
 
 Specifically, the above "cleaving" would be done using the following command:
 
@@ -110,19 +120,21 @@ default value is 64.
 
 Consider the following hypothetical input file:
 
-``**kern
-> *M4/4
-> =1-
-> 4c
-> 8d
-> 8e
-> 8f
-> 8g
-> 8a
-> 8b
-> =2
-> 2cc
-> *-``
+.. code-block:: humdrum
+
+	**kern
+	*M4/4
+	=1-
+	4c
+	8d
+	8e
+	8f
+	8g
+	8a
+	8b
+	=2
+	2cc
+	*-
 
 The `metpos <../../man/metpos>`_ command can be used to identify the metric position of
 various note onsets. Before using **metpos** however, we must use the
@@ -138,24 +150,26 @@ Using the timebased output, we can then invoke the **metpos** command:
 The resulting output contains both the original input (on the left) and the
 metric position spine (on the right):
 
-``**kern**metpos
-> *M4/4*M4/4
-> *tb8*tb8
-> =1-=1-
-> 4c1
-> .4
-> 8d3
-> 8e4
-> 8f2
-> 8g4
-> 8a3
-> 8b4
-> =2=2
-> 2cc1
-> .4
-> .3
-> .4
-> *-*-``
+.. code-block:: humdrum
+
+	**kern	**metpos
+	*M4/4	*M4/4
+	*tb8	*tb8
+	=1-	=1-
+	4	c1
+	.	4
+	8	d3
+	8	e4
+	8	f2
+	8	g4
+	8	a3
+	8	b4
+	=2	=2
+	2cc	1
+	.	4
+	.	3
+	.	4
+	*-	*-
 
 Let's now eliminate the null data tokens introduced by **timebase**. Using
 `humsed <../../man/humsed>`_, we delete each data record beginning with a period character:
@@ -179,20 +193,22 @@ using the **-s** (skip) option:
 
 The output will now appear as follows:
 
-``**kern**metpos
-> *M4/4*M4/4
-> *tb8*tb8
-> =1-=1-
-> 4c100
-> 8d60
-> 8e40
-> 8f80
-> 8g40
-> 8a60
-> 8b40
-> =2=2
-> 2cc100
-> *-*-``
+.. code-block:: humdrum
+
+	**kern	**metpos
+	*M4/4	*M4/4
+	*tb8	*tb8
+	=1-	=1-
+	4c	100
+	8d	60
+	8e	40
+	8f	80
+	8g	40
+	8a	60
+	8b	40
+	=2	=2
+	2cc	100
+	*-	*-
 
 Now we can use the `midi <../../man/midi>`_ command to generate `**MIDI <../../rep/MIDI>`_ data:
 
@@ -200,22 +216,24 @@ Now we can use the `midi <../../man/midi>`_ command to generate `**MIDI <../../r
 
 The result is given below:
 
-``**MIDI**metpos
-> *Ch1*
-> *M4/4*M4/4
-> *tb8*tb8
-> =1-=1-
-> 72/60/64100
-> 72/-60/64 72/62/6460
-> 36/-62/64 36/64/6440
-> 36/-64/64 36/65/6480
-> 36/-65/64 36/67/6440
-> 36/-67/64 36/69/6460
-> 36/-69/64 36/71/6440
-> =2=2
-> 36/-71/64 36/72/64100
-> 144/-72/64.
-> *-*-``
+.. code-block:: humdrum
+
+	**MIDI	**metpos
+	*Ch1	*
+	*M4/4	*M4/4
+	*tb8	*tb8
+	=1-	=1-
+	72/60/64	100
+	72/-60/64 72/62/64	60
+	36/-62/64 36/64/64	40
+	36/-64/64 36/65/64	80
+	36/-65/64 36/67/64	40
+	36/-67/64 36/69/64	60
+	36/-69/64 36/71/64	40
+	=2	=2
+	36/-71/64 36/72/64	100
+	144/-72/64	.
+	*-	*-
 
 Before using `cleave <../../man/cleave>`_ to join the new key velocity values to the
 `**MIDI <../../rep/MIDI>`_ data we need to delete the current key-down velocities. These are
@@ -226,22 +244,24 @@ used as follows:
 
 The modified output will now be:
 
-``**MIDI**metpos
-> *Ch1*
-> *M4/4*M4/4
-> *tb8*tb8
-> =1-=1-
-> 72/60/100
-> 72/-60/64 72/62/60
-> 36/-62/64 36/64/40
-> 36/-64/64 36/65/80
-> 36/-65/64 36/67/40
-> 36/-67/64 36/69/60
-> 36/-69/64 36/71/40
-> =2=2
-> 36/-71/64 36/72/100
-> 144/-72/.
-> *-*-``
+.. code-block:: humdrum
+
+	**MIDI	**metpos
+	*Ch1	*
+	*M4/4	*M4/4
+	*tb8	*tb8
+	=1-	=1-
+	72/60/100
+	72/-60/64 72/62/60
+	36/-62/64 36/64/40
+	36/-64/64 36/65/80
+	36/-65/64 36/67/40
+	36/-67/64 36/69/60
+	36/-69/64 36/71/40
+	=2	=2
+	36/-71/64 36/72/100
+	144/-72/	.
+	*-	*-
 
 Finally, we use `cleave <../../man/cleave>`_ to add the new key-down velocities.
 
@@ -249,22 +269,24 @@ Finally, we use `cleave <../../man/cleave>`_ to add the new key-down velocities.
 
 The final output is:
 
-``**MIDI
-> *
-> *M4/4
-> *tb8
-> =1-=1-
-> 72/60/100
-> 72/-60/64 72/62/60
-> 36/-62/64 36/64/40
-> 36/-64/64 36/65/80
-> 36/-65/64 36/67/40
-> 36/-67/64 36/69/60
-> 36/-69/64 36/71/40
-> =2=2
-> 36/-71/64 36/72/100
-> 144/-72/
-> *-``
+.. code-block:: humdrum
+
+	**MIDI
+	*
+	*M4/4
+	*tb8
+	=1-	=1-
+	72/60/100
+	72/-60/64 72/62/60
+	36/-62/64 36/64/40
+	36/-64/64 36/65/80
+	36/-65/64 36/67/40
+	36/-67/64 36/69/60
+	36/-69/64 36/71/40
+	=2	=2
+	36/-71/64 36/72/100
+	144/-72/
+	*-
 
 
 Creating Mixed Representations
@@ -326,12 +348,14 @@ are organized as in Example 26.1
 
 **Example 26.1**
 
-``**rhythm**range**scale-step
-> L S LHto
-> L L SLsd
-> M L SMlt
-> rrr
-> *-*-*-``
+.. code-block:: humdrum
+
+	**rhythm	**range	**scale-step
+	L S L	H	to
+	L L S	L	sd
+	M L S	M	lt
+	r	r	r
+	*-	*-	*-
 
 We need to process the first spine with **humsed** again to eliminate the
 spaces in the multiple stops. The rhythm spine would be processed as follows:

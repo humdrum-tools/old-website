@@ -216,11 +216,13 @@ first data record of the following example, the first spine contains two sub-
 tokens whereas the third spine contains three sub-tokens. Sub-tokens do not
 have their own spine organization and can appear and disappear as necessary:
 
-``**spine1**spine2**spine3
-> A BJX Y Z
-> ABJXYZ
-> A B C.X Z
-> *-*-*-``
+.. code-block:: humdrum
+
+	**spine1	**spine2	**spine3
+	A B	J	X Y Z
+	AB	J	XYZ
+	A B C		.X Z
+	*-	*-	*-
 
 Data sub-tokens are useful in a variety of circumstances. An appropriate use
 of sub-tokens might be to encode double- and triple-stops in string parts.
@@ -528,62 +530,72 @@ Humdrum format.
 The examples given below provide further illustrations of Humdrum
 representations:
 
-``**form
-> Introduction
-> Exposition
-> Development
-> Recapitulation
-> Coda
-> *-``
+.. code-block:: humdrum
 
-``**American**British
-> quartercrotchet
-> eighthquaver
-> dotted halfdotted minim
-> *-*-``
+	**form
+	Introduction
+	Exposition
+	Development
+	Recapitulation
+	Coda
+	*-
 
-``**Opus/No**Year
-> 23/11821
-> 23/21821
-> 23/31822?
-> 241822
-> *-*-``
+.. code-block:: humdrum
 
-``**recip**diaton**accidental**stem-dir**kern
-> 4c#/4c#/
-> 8d./8d/
-> 8e./8e/
-> 2f#/8f#/
-> *-*-*-*-*-``
+	**American	**British
+	quarter	crotchet
+	eighth	quaver
+	dotted half	dotted minim
+	*-	*-
 
-``**heart-rate
-> 74
-> 73
-> 74
-> 77
-> 78``
-> *-
+.. code-block:: humdrum
 
-``**foreground
-> flute
-> *^
-> fluteviolin1
-> *-*
-> violin1
-> *^
-> violin1bassoon
-> **^
-> violin1bassoon'cello
-> ***^
-> violin1bassoon'cellotrombone
-> *-*-*-*
-> trombone
-> *^
-> trombonetrumpet
-> *-*-``
+	**Opus/No	**Year
+	23/1	1821
+	23/2	1821
+	23/3	1822?
+	24	1822
+	*-	*-
 
-```
-$ 
+.. code-block:: humdrum
+
+	**recip	**diaton	**accidental	**stem-dir	**kern
+	4	c	#	/	4c#/
+	8	d	.	/	8d/
+	8	e	.	/	8e/
+	2	f	#	/	8f#/
+	*-	*-	*-	*-	*-
+
+.. code-block:: humdrum
+
+	**heart-rate
+	74
+	73
+	74
+	77
+	78
+	*-
+
+.. code-block:: humdrum
+
+	**foreground
+	flute
+	*^
+	flute	violin1
+	*-	*
+	violin1
+	*^
+	violin1	bassoon
+	*	*^
+	violin1	bassoon	'cello
+	*	*	*^
+	violin1	bassoon	'cello	trombone
+	*-	*-	*-	*
+	trombone
+	*^
+	trombone	trumpet
+	*-	*-
+
 
 --------
 

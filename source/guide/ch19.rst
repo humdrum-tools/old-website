@@ -233,26 +233,28 @@ begins. The appropriate output for measure 1 of Example 19.1 would be:
 
 
 
-``**kern
-> *clefG2
-> *k[b-]
-> *d:
-> *M4/4
-> =1-
-> (16dd 16ff 16dd 16a)
-> .
-> .
-> .
-> (16dd 16gg 16dd 16b-)
-> .
-> .
-> .
-> (16dd 16ff 16dd 16a)
-> .
-> .
-> .
-> (16f 16a 16f 16e) =2``
-> etc.
+.. code-block:: humdrum
+
+	**kern
+	*clefG2
+	*k[b-]
+	*d:
+	*M4/4
+	=1-
+	(16dd 16ff 16dd 16a)
+	.
+	.
+	.
+	(16dd 16gg 16dd 16b-)
+	.
+	.
+	.
+	(16dd 16ff 16dd 16a)
+	.
+	.
+	.
+	(16f 16a 16f 16e) =2
+	etc.
 
 Notice how the barline for measure 2 has been included in the fourth group.
 (Groups continue until the next open parenthesis is encountered.) Once again
@@ -272,31 +274,33 @@ The resulting output would begin as follows:
 
 
 
-``**kern
-> *clefG2
-> *k[b-]
-> *d:
-> *M4/4
-> =1-
-> (16dd 16ff 16dd 16a)
-> .
-> .
-> .
-> (16dd 16gg 16dd 16b-)
-> .
-> .
-> .
-> (16dd 16ff 16dd 16a)
-> .
-> .
-> .
-> (16f 16a 16f 16e)
-> .
-> .
-> .
-> =2
-> (16d 16ff 16dd 16a)``
-> etc.
+.. code-block:: humdrum
+
+	**kern
+	*clefG2
+	*k[b-]
+	*d:
+	*M4/4
+	=1-
+	(16dd 16ff 16dd 16a)
+	.
+	.
+	.
+	(16dd 16gg 16dd 16b-)
+	.
+	.
+	.
+	(16dd 16ff 16dd 16a)
+	.
+	.
+	.
+	(16f 16a 16f 16e)
+	.
+	.
+	.
+	=2
+	(16d 16ff 16dd 16a)
+	etc.
 
 We could pipe this output to the **ms** command in order to display the re-
 arranged passage. We place the output in a postscript file and use a display
@@ -452,22 +456,24 @@ the first phrase in our input begins as follows:
 
 
 
-``**kern
-> *F:
-> *M3/4
-> {8Bn
-> 8c
-> =1
-> 4.a
-> 8g
-> 4f
-> =2
-> 4g
-> 4d
-> 4e
-> =3
-> 2c}
-> *-``
+.. code-block:: humdrum
+
+	**kern
+	*F:
+	*M3/4
+	{8Bn
+	8c
+	=1
+	4.a
+	8g
+	4f
+	=2
+	4g
+	4d
+	4e
+	=3
+	2c}
+	*-
 
 We need to pursue two independent lines of processing. First we creat a
 temporary file of scale degree information:
@@ -487,22 +493,24 @@ The first phrase output will appear as follows:
 
 
 
-``**mint**deg
-> *F:*F:
-> *M3/4*M3/4
-> [B]4+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
-> +m2.
-> =1.
-> +M6.
-> -M2.
-> -M2.
-> =2.
-> +M2.
-> -P4.
-> +M2.
-> =3.
-> -M3.``
-> etc.
+.. code-block:: humdrum
+
+	**mint	**deg
+	*F:	*F:
+	*M3/4	*M3/4
+	[B]	4+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
+	+m2	.
+	=1	.
+	+M6	.
+	-M2	.
+	-M2	.
+	=2	.
+	+M2	.
+	-P4	.
+	+M2	.
+	=3	.
+	-M3	.
+	etc.
 
 We need to search for the interval of an ascending major sixth (``+M6``)
 associated with a phrase ending on the dominant (``5$``). Before using the
@@ -512,22 +520,24 @@ will generate the following output:
 
 
 
-``**mint**deg
-> *F:*F:
-> *M3/4*M3/4
-> [B]4+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
-> +m24+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
-> =14+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
-> +M64+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
-> -M24+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
-> -M24+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
-> =24+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
-> +M24+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
-> -P44+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
-> +M24+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
-> =34+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
-> -M34+ ^5 ^3 v2 v1 ^2 v6 ^7 v5``
-> etc.
+.. code-block:: humdrum
+
+	**mint	**deg
+	*F:	*F:
+	*M3/4	*M3/4
+	[B]	4+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
+	+m2	4+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
+	=1	4+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
+	+M6	4+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
+	-M2	4+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
+	-M2	4+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
+	=2	4+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
+	+M2	4+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
+	-P4	4+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
+	+M2	4+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
+	=3	4+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
+	-M3	4+ ^5 ^3 v2 v1 ^2 v6 ^7 v5
+	etc.
 
 Finally, we use `grep <http://en.wikipedia.org/wiki/Grep>`_ to search for the composite data:
 
@@ -589,17 +599,19 @@ would look as follows:
 
 
 
-``**deg**deg
-> *C:*C:
-> 1 ^2 ^33 ^4+ ^5+
-> ^2 ^3 ^4^4+ ^5+ ^6
-> ^3 ^4 ^5^5+ ^6 ^7
-> ^4 ^5 ^6^6 ^7 ^1+
-> ^5 ^6 ^7^7 ^1+ ^2+
-> ^6 ^7 ^1^1+ ^2+ ^3
-> ..
-> ..
-> *-*-``
+.. code-block:: humdrum
+
+	**deg	**deg
+	*C:	*C:
+	1 ^2 ^3	3 ^4+ ^5+
+	^2 ^3 ^4	^4+ ^5+ ^6
+	^3 ^4 ^5	^5+ ^6 ^7
+	^4 ^5 ^6	^6 ^7 ^1+
+	^5 ^6 ^7	^7 ^1+ ^2+
+	^6 ^7 ^1	^1+ ^2+ ^3
+	.	.
+	.	.
+	*-	*-
 
 In effect, each data record contains an agglomeration of three successive
 notes from both voices. Seaching for cross-relations would entail looking for
@@ -640,17 +652,19 @@ the input and the right-hand spine represents the output where the option
 
 
 
-``**kern**kern
-> *C:*C:
-> cc d
-> dd e
-> ee f
-> ff g
-> gg a
-> aa b
-> bb cc
-> cc.
-> *-*-``
+.. code-block:: humdrum
+
+	**kern	**kern
+	*C:	*C:
+	c	c d
+	d	d e
+	e	e f
+	f	f g
+	g	g a
+	a	a b
+	b	b cc
+	cc	.
+	*-	*-
 
 Now consider the effect of adding the **-p** option. In this case, the
 complete command is:
@@ -661,17 +675,19 @@ The corresponding result is:
 
 
 
-``**kern**kern
-> *C:*C:
-> c.
-> dc d
-> ed e
-> fe f
-> gf g
-> ag a
-> ba b
-> ccb cc
-> *-*-``
+.. code-block:: humdrum
+
+	**kern	**kern
+	*C:	*C:
+	c	.
+	d	c d
+	e	d e
+	f	e f
+	g	f g
+	a	g a
+	b	a b
+	cc	b cc
+	*-	*-
 
 The data records have been pushed forward by one line: a null token now
 appears at the beginning of the output spine rather than at the end.
@@ -683,17 +699,19 @@ The corresponding result is:
 
 
 
-``**kern**kern
-> *C:*C:
-> c.
-> d.
-> ec d e f
-> fd e f g
-> ge f g a
-> af g a b
-> bg a b cc
-> cc.
-> *-*-``
+.. code-block:: humdrum
+
+	**kern	**kern
+	*C:	*C:
+	c	.
+	d	.
+	e	c d e f
+	f	d e f g
+	g	e f g a
+	a	f g a b
+	b	g a b cc
+	cc	.
+	*-	*-
 
 The output is now padded with two preceding null tokens with a trailing null
 token at the end of the spine. In summary, the **-p** option pushes the
@@ -712,31 +730,35 @@ assembled output might look as follows:
 
 
 
-``**deg**mint
-> *C:*C:
-> 3[e] +m2
-> ^4+m2 +M2
-> ^5+M2 +M3
-> ^7+M3 -M2
-> v6-M2 +m3
-> ^1+m3 -P4
-> v5.
-> *-*-``
+.. code-block:: humdrum
+
+	**deg	**mint
+	*C:	*C:
+	3	[e] +m2
+	^4	+m2 +M2
+	^5	+M2 +M3
+	^7	+M3 -M2
+	v6	-M2 +m3
+	^1	+m3 -P4
+	v5	.
+	*-	*-
 
 With **-p 1** the output becomes:
 
 
 
-``**deg**mint
-> *C:*C:
-> 3.
-> ^4[e] +m2
-> ^5+m2 +M2
-> ^7+M2 +M3
-> v6+M3 -M2
-> ^1-M2 +m3
-> v5+m3 -P4
-> *-*-``
+.. code-block:: humdrum
+
+	**deg	**mint
+	*C:	*C:
+	3	.
+	^4	[e] +m2
+	^5	+m2 +M2
+	^7	+M2 +M3
+	v6	+M3 -M2
+	^1	-M2 +m3
+	v5	+m3 -P4
+	*-	*-
 
 Now we can search directly for the situation of interest:
 

@@ -8,7 +8,7 @@
 
 .. Humdrum Extras Chapter Sequence:
 	1:	Introduction
-	2:	Rhythm and Time
+	2:	Rhythm
 	3:	Melody and Pitch
 	4:	Harmony
 	5:	Data Entry
@@ -25,11 +25,11 @@
 .. ########################################################################
 
 ===========================================================================
-2. Rhythm and Time
+2. Rhythm 
 ===========================================================================
 
 This chapter discusses various concepts and Humdrum Extras tools
-related to rhythm and time.
+related to rhythm.
 
 
 2.1. Extensions to `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ and `\*\*kern <http://www.humdrum.org/Humdrum/representations/kern.rep.html>`_ rhythms
@@ -211,16 +211,17 @@ Humdrum Toolkit programs.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A different extension to the `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ rhythm representation
-uses the symbol ``0`` (zero) for breves (double whole notes).
-Note that ``q`` is used to represent grace notes with a zero notated
+uses the symbol ``0`` (zero) for breves (double whole notes).  Note
+that ``q`` is used to represent grace notes with a zero notated
 duration.  Most rhythm-parsing Humdrum Toolkit programs (such as
 `census <http://www.humdrum.org/Humdrum/commands/census.html>`_) recognize this zero convention.  By extension, the
 symbol ``00`` represents a longa (quadruple whole note), and ``000``
 represents a maxima (octuple whole note); however, most Humdrum
 Toolkit rhythm-parsing programs do not understand these longer
-durations.  The Humdrum Extras programs will recognize all such
-rhythms, and will increase the power-of-two to parse ``0000``,
-``00000`` or larger exotic rhythm values:
+durations as well as exotic rhythm values such as ``0000`` for a
+double maxima, or ``00000`` for a quadruple maxima.  
+Example 2.3 shows how the `beat <http://extras.humdrum.org/man/beat>`_ command
+converts zero rhythms into durations in quarter-note units.
 
 
 .. :Example:Start: 2.3
@@ -253,10 +254,10 @@ in quarter-note units using the "zero" representation.
 .. :Example:End: 2.3
 
 
-Compare this to durational equivalents in the rational representation
-in Example 2.4, where the analyzed durations of the
-`\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ rhythms in the right column match to those in
-Example 2.3.
+Compare this to durational equivalents from rational representations
+of the same rhythms in Example 2.4, where the
+analyzed durations of the `\*\*recip <http://www.humdrum.org/Humdrum/representations/recip.rep.html>`_ rhythms in the right
+column match to those in Example 2.3.
 
 
 .. :Example:Start: 2.4
@@ -713,8 +714,12 @@ numbers instead of floating-point values.
 .. :Example:End: 2.11
 
 
-Here is an example of extracting the distribution of durations
-for the composite rhythm of 370 Bach chorales:
+Example 2.12 gives an example of extracting
+the distribution of durations for the composite rhythm of 370 Bach
+chorales.  First the composite rhythm is extracted from the chorales.  Next the
+rhythm is stripped of its Humdrum syntax structure with `ridx <http://extras.humdrum.org/man/ridx>`_ -H 
+(which is equivalent to "`rid <http://www.humdrum.org/Humdrum/commands/rid.html>`_ -GLId | `grep <http://en.wikipedia.org/wiki/Grep>`_ -v ^=") and then
+the raw data lines are sorted and counted with `sortcount <http://extras.humdrum.org/man/sortcount>`_.
 
 
 .. :Example:Start: 2.12

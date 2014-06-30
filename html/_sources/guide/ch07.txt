@@ -32,12 +32,14 @@ In addition, MIDI does not represent rests.
 A simple `**MIDI <../../rep/MIDI>`_ example is given below. It consists just a single note
 (middle C):
 
-``!! A single MIDI note.
-``**MIDI
-``*Ch1
-``54/60/64
-``80/-60/64
-``*-``
+.. code-block:: humdrum
+
+	!! A single MIDI note.
+	**MIDI
+	*Ch1
+	54/60/64
+	80/-60/64
+	*-
 
 Notice that there are two `**MIDI <../../rep/MIDI>`_ data tokens: one to specify note-on and
 one to specify note-off events. Each `**MIDI <../../rep/MIDI>`_ data token consists of three
@@ -68,12 +70,14 @@ C-major triad. The `**kern <../../rep/kern>`_ data is shown in the left spine wi
 corresponding `**MIDI <../../rep/MIDI>`_ data in the right spine. Notice that each data token
 consists of three subtokens, one for each note:
 
-``!! A C-majortriad.
-``**kern**MIDI
-``**Ch1
-``2c 2e 2g72/60/64 72/64/64 72/67/64
-``.144/-60/64 144/-64/64 144/-67/64
-``*-*-``
+.. code-block:: humdrum
+
+	!! A C-major triad.
+	**kern	**MIDI
+	*	*Ch1
+	2c 2e 2g	72/60/64 72/64/64 72/67/64
+	.	144/-60/64 144/-64/64 144/-67/64
+	*-	*-
 
 Middle C corresponds to MIDI key 60; The pitches E4 and G4 correspond to MIDI
 keys 64 and 67 respectively. The half-note durations result in a delay of 144
@@ -85,13 +89,15 @@ begins at the same time that the C major triad ends. This results in five
 subtokens in the corresponding `**MIDI <../../rep/MIDI>`_ data record. Three key-off events
 are synchronous with two key-on events:
 
-``!! Two chords.
-``**kern**MIDI
-``**Ch1
-``2c 2e 2g72/60/64 72/64/64 72/67/64
-``4d 4f144/-60/64 144/-64/64 144/-67/64 144/62/64 144/65/64
-``.72/-62/64 72/-65/64
-``*-*-``
+.. code-block:: humdrum
+
+	!! Two chords.
+	**kern	**MIDI
+	*	*Ch1
+	2c 2e 2g	72/60/64 72/64/64 72/67/64
+	4d 4f	144/-60/64 144/-64/64 144/-67/64 144/62/64 144/65/64
+	.	72/-62/64 72/-65/64
+	*-	*-
 
 Notice that the difference in duration between the half-notes and quarter-
 notes is reflected when the notes are turned *off* rather than when the notes
@@ -102,36 +108,39 @@ Darius Milhaud's *Touches Blanches*.
 
 **Example 7.1** Excerpt from Darius Milhaud's *Touches Blanches*
 
-> .. image:: guide.figures/ch07.1.gif
+.. image:: examples/ex7-1.svg
+	:align: center
+	:width: 100%
 
+.. code-block:: humdrum
 
-``!!!: Milhaud, D.
-``!!!OTL: TouchesBlanches
-``**kern**kern**MIDI**MIDI
-``*staff2*staff1*Ch1*Ch1
-``*clefF4*clefG2*clefF4*clefG2
-``*k[]*k[]*k[]*k[]
-``*M3/4*M3/4*M3/4*M3/4
-``=1-=1-=1-=1-
-``4e(4g72/64/6472/67/64
-``4c2a)72/-64/64 72/60/6472/-67/64 72/69/64
-``4F.72/-60/64 72/53/64.
-``=2=2=2=2
-``4f(8a72/-53/64 72/65/6472/-69/64 72/69/64
-``.8b.36/-69/64 36/71/64
-``4d2g)36/-65/64 36/62/6436/-71/64 36/67/64
-``4G.72/-62/64 72/55/64.
-``=3=3=3=3
-``4e(4g72/-55/64 72/64/6472/-67/64 72/67/64
-``4c2a)72/-64/64 72/60/6472/-67/64 72/69/64
-``4F.72/-60/64 72/53/64.
-``=4=4=4=4
-``4f(8a72/-53/64 72/65/6472/-69/64 72/69/64
-``.8b.36/-69/64 36/71/64
-``4d2g)36/-65/64 36/62/6436/-71/64 36/67/64
-``4G.72/-62/64 72/55/64.
-``..72/-55/6472/-67/64
-``*-*-*-*-``
+	!!!: Milhaud, D.
+	!!!OTL: TouchesBlanches
+	**kern	**kern	**MIDI	**MIDI
+	*staff2	*staff1	*Ch1	*Ch1
+	*clefF4	*clefG2	*clefF4	*clefG2
+	*k[]	*k[]	*k[]	*k[]
+	*M3/4	*M3/4	*M3/4	*M3/4
+	=1-	=1-	=1-	=1-
+	4e	(4g	72/64/64	72/67/64
+	4c	2a)	72/-64/64 72/60/64	72/-67/64 72/69/64
+	4F	.	72/-60/64 72/53/64	.
+	=2	=2	=2	=2
+	4f	(8a	72/-53/64 72/65/64	72/-69/64 72/69/64
+	.	8b	.	36/-69/64 36/71/64
+	4d	2g)	36/-65/64 36/62/64	36/-71/64 36/67/64
+	4G	.	72/-62/64 72/55/64.
+	=3	=3	=3	=3
+	4e	(4g	72/-55/64 72/64/64	72/-67/64 72/67/64
+	4c	2a)	72/-64/64 72/60/64	72/-67/64 72/69/64
+	4F	.	72/-60/64 72/53/64	.
+	=4	=4	=4	=4
+	4f	(8a	72/-53/64 72/65/64	72/-69/64 72/69/64
+	.	8b	.	36/-69/64 36/71/64
+	4d	2g)	36/-65/64 36/62/64	36/-71/64 36/67/64
+	4G	.	72/-62/64 72/55/64	.
+	.	.	72/-55/64	72/-67/64
+	*-	*-	*-	*-
 
 The `**MIDI <../../rep/MIDI>`_ representation always expects a tandem interpretation
 indicating the MIDI channel assignment. In Example 7.1 both parts have been
@@ -141,7 +150,7 @@ required at the end of the passage in order to turn off the final notes.
 
 
 The *midi* Command
---------
+---------------------
 
 The `midi <../../man/midi>`_ command converts Humdrum `**kern <../../rep/kern>`_ data into Humdrum
 `**MIDI <../../rep/MIDI>`_ data. By way of example, the above `**MIDI <../../rep/MIDI>`_ data can be

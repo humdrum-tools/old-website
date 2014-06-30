@@ -38,14 +38,16 @@ For illustration purposes, consider the case of a Humdrum file named
 
 
 
-``**alpha
-``A
-``B
-``A
-``A
-``C
-``B
-``*-``
+.. code-block:: humdrum
+
+	**alpha
+	A
+	B
+	A
+	A
+	C
+	B
+	*-
 
 It doesn't matter what the data represent. The "``A``", "``B``", and "``C``"
 might signify different articulation marks, chords, harmonic intervals, or
@@ -77,14 +79,16 @@ will sort the file ``alpha`` and place the results in a file named
 
 
 
-``**alpha
-``*-
-``A
-``A
-``A
-``B
-``B
-``C``
+.. code-block:: humdrum
+
+	**alpha
+	*-
+	A
+	A
+	A
+	B
+	B
+	C
 
 Notice that the asterisk is treated as alphabetically prior to the the letter
 `A', so all the Humdrum interpretation records have been moved to the
@@ -103,11 +107,13 @@ The output will be as follows:
 
 
 
-``**alpha
-``*-
-``A
-``B
-``C``
+.. code-block:: humdrum
+
+	**alpha
+	*-
+	A
+	B
+	C
 
 Notice that repetitions of the data "A" and "B" have disappeared. The simple
 `uniq <http://en.wikipedia.org/wiki/Uniq>`_ command is useful for telling us *how many different things* there
@@ -187,14 +193,16 @@ markings and stem-directions, or whatever.
 
 
 
-``**alpha**bet
-``A$50
-``B$50
-``A$50
-``A$200
-``C$50
-``B$50
-``*-*-``
+.. code-block:: humdrum
+
+	**alpha	**bet
+	A	$50
+	B	$50
+	A	$50
+	A	$200
+	C	$50
+	B	$50
+	*-	*-
 
 If we apply our above inventory-generating commands for the file "alphabet,"
 the result will be as follows:
@@ -387,15 +395,17 @@ inventory of the diatonic pitch-letter names. Our input might look like this:
 
 
 
-``**notes
-``A
-``B
-``B
-``D
-``F#
-``D#
-``E
-``*-``
+.. code-block:: humdrum
+
+	**notes
+	A
+	B
+	B
+	D
+	F#
+	D#
+	E
+	*-
 
 Without modification, our inventory would appear as follows:
 

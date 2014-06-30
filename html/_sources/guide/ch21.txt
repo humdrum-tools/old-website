@@ -37,12 +37,14 @@ that Dmitri Shostakovich also used the German pitch system to create motives
 based on his name: D-S-C-H (S=Es=E-flat). (The German transliteration of the
 cyrillic is Schostakowitsch.)
 
-`` **Tonh
-`` D4
-`` Es4
-`` C4
-`` H3
-`` *-``
+.. code-block:: humdrum
+
+	**Tonh
+	D4
+	Es4
+	C4
+	H3
+	*-
 
 Suppose we were looking for possible instances of D-S-C-H. The **patt**
 command requires a template file that contains one or more successive regular
@@ -65,7 +67,9 @@ identifying the location of any matching segments. One global comment is
 output for each matching pattern. In the above case, the output would be as
 follows:
 
-`` !! Pattern found at line 2 of file Tonh``
+.. code-block:: humdrum
+
+	!! Pattern found at line 2 of file Tonh
 
 The `patt <../../man/patt>`_ command will also identify any overlapping patterns. For
 example, suppose we had an input containing an ostinato figure in minor
@@ -94,8 +98,10 @@ thirds:
 If we applied the above **patt** command to this ``ostinato`` file, we would
 get the following output:
 
-`` !! Pattern found at line 8 of file ostinato``
-`` !! Pattern found at line 11 of file ostinato``
+.. code-block:: humdrum
+
+	!! Pattern found at line 8 of file ostinato``
+	!! Pattern found at line 11 of file ostinato
 
 We can instruct **patt** to output specific instances of the pattern using
 the **-e** (echo) option. Consider the following command:
@@ -104,20 +110,22 @@ the **-e** (echo) option. Consider the following command:
 
 The resulting output would be:
 
-`` !! Pattern found at line 4 of file ostinato
-`` **Tonh``**Tonh
-`` H3``D4
-`` C4``Es4
-`` C4``Es4
-`` H3``D4
-`` *-``*-
-`` !! Pattern found at line 7 of file ostinato
-`` **Tonh``**Tonh
-`` H3``D4
-`` C4``Es4
-`` C4``Es4
-`` H3``D4
-`` *-``*-``
+.. code-block:: humdrum
+
+	!! Pattern found at line 4 of file ostinato
+	**Tonh	**Tonh
+	H3	D4
+	C4	Es4
+	C4	Es4
+	H3	D4
+	*-	*-
+	!! Pattern found at line 7 of file ostinato
+	**Tonh	**Tonh
+	H3	D4
+	C4	Es4
+	C4	Es4
+	H3	D4
+	*-	*-
 
 Notice that each instance of the found pattern is output as a stand-alone
 humdrum "mini-encoding," complete with initial exclusive interpretations and
@@ -265,21 +273,23 @@ corresponding `**hint <../../rep/hint>`_ and `**deg <../../rep/deg>`_ spines. Th
 generated using `hint <../../man/hint>`_ **-l** in order to generate intervals with
 respect to the lowest pitch.
 
-`` !!!COM: Landini, Francesco
-`` **kern\*\*kern**kern`**hint <../../rep/hint>`_**deg**deg**deg
-`` *clefF4``*clefG2``*clefG2``*``*``*``*
-`` *M3/4``*M3/4``*M3/4``*M3/4``*M3/4``*M3/4``*M3/4
-`` =``=``=``=``=``=``=
-`` 4A``4e``8e``P5 P5``v2``v6``^6
-`` .``.``8f``-..``^7-
-`` 4B-``4d``8g``M3 M6``^3-``v5^1
-`` .``.``4f#``-..``v7
-`` 4A``4c#``.``M3``v2``v4+.
-`` .``.``8e``-..``v6
-`` =``=``=``=``=``=``=
-`` 2.G``2.d``2.g``P5 P8``v1``^5``^1
-`` ==``==``==``========
-`` *-``*-``*-``*-*-*-*-``
+.. code-block:: humdrum
+
+	!!!COM: Landini, Francesco
+	**kern	**kern	**kern	**hint	**deg	**deg	**deg
+	*clefF4``*clefG2``*clefG2``*``*``*``*
+	*M3/4``*M3/4``*M3/4``*M3/4``*M3/4``*M3/4``*M3/4
+	=``=``=``=``=``=``=
+	4A``4e``8e``P5 P5``v2``v6``^6
+	.``.``8f``-..``^7-
+	4B-``4d``8g``M3 M6``^3-``v5^1
+	.``.``4f#``-..``v7
+	4A``4c#``.``M3``v2``v4+.
+	.``.``8e``-..``v6
+	=``=``=``=``=``=``=
+	2.G``2.d``2.g``P5 P8``v1``^5``^1
+	==``==``==``========
+	*-``*-``*-``*-*-*-*-
 
 Notice that **hint** has failed to generate the passing interval forming the
 perfect fifth between the E and the A. This can be remedied by using
@@ -287,21 +297,23 @@ perfect fifth between the E and the A. This can be remedied by using
 generate all of the passing harmonic intervals. The revised **hint spine is
 given below.
 
-`` !!!COM: Landini, Francesco
-`` **kern**kern**kern**hint**deg**deg**deg
-`` *clefF4*clefG2*clefG2****
-`` *M3/4*M3/4*M3/4*M3/4*M3/4*M3/4*M3/4
-`` =======
-`` 4A4e8eP5 P5v2v6^6
-`` ..8fP5 m6..^7-
-`` 4B-4d8gM3 M6^3-v5^1
-`` ..4f#M3 A5..v7
-`` 4A4c#.M3 M6v2v4+.
-`` ..8eM3 P5..v6
-`` =======
-`` 2.G2.d2.gP5 P8v1^5^1
-`` ==============
-`` *-*-*-*-*-*-*-``
+.. code-block:: humdrum
+
+	!!!COM: Landini, Francesco
+	**kern**kern**kern**hint**deg**deg**deg
+	*clefF4*clefG2*clefG2****
+	*M3/4*M3/4*M3/4*M3/4*M3/4*M3/4*M3/4
+	=======
+	4A4e8eP5 P5v2v6^6
+	..8fP5 m6..^7-
+	4B-4d8gM3 M6^3-v5^1
+	..4f#M3 A5..v7
+	4A4c#.M3 M6v2v4+.
+	..8eM3 P5..v6
+	=======
+	2.G2.d2.gP5 P8v1^5^1
+	==============
+	*-*-*-*-*-*-*-
 
 One way to identify Landini cadences is to use the following harmonic-
 interval template file (dubbed ``LandCadence``):
@@ -374,19 +386,21 @@ along with the **-t** option as follows:
 
 `` extract -i '**harm' bwv269.krn | patt -f template -t deceptive``
 
-`` **harm**patt
-`` I.
-`` I.
-`` ii7.
-`` Vdeceptive
-`` vi;.
-`` V.
-`` I.
-`` IV.
-`` IV.
-`` I.
-`` V;.``
-> etc.
+.. code-block:: humdrum
+
+	**harm	**patt
+	I	.
+	I	.
+	ii7	.
+	V	deceptive
+	vi;	.
+	V	.
+	I	.
+	IV	.
+	IV	.
+	I	.
+	V;	.
+	etc.
 
  In `Chapter 26 <../ch26>`_ we will learn how to collapse several spines into a single
  spine. This will allow us to assemble the results from several "passes"
@@ -394,19 +408,21 @@ along with the **-t** option as follows:
  collapse several tagged outputs to produce a single spine that identifies
  all of the various types of cadences:
 
-`` **harm**cadences
-I.
-I.
-ii7.
-Vdeceptive
-vi;.
-V.
-I.
-IV.
-IV.
-Ihalf
-V;.``
-etc.
+.. code-block:: humdrum
+
+	**harm	**cadences
+	I	.
+	I	.
+	ii7	.
+	V	deceptive
+	vi;	.
+	V	.
+	I	.
+	IV	.
+	IV	.
+	I	half
+	V;	.
+	etc.
 
  There are no restrictions as to the types of tags that can be generated by
  **patt**. A user might tag the beginning of motivic or thematic statements,
@@ -452,20 +468,22 @@ measures 28-30.
  Due to the diads, however, the corresponding pitch-class representation for
  the above Krenek passage would be:
 
-`` **pc
-2
-6
-5 1
-0
-=
-3 11
-9
-10
-10 8
-=
-7 4``
-etc.
-`` *-``
+.. code-block:: humdrum
+
+	**pc
+	2
+	6
+	5 1
+	0
+	=
+	3 11
+	9
+	10
+	10 8
+	=
+	7 4
+	etc.
+	*-
 
  The **-m** option for `patt <../../man/patt>`_ invokes a "multi-record matching" mode.
  In this mode, **patt** attempts to match as many successive regular

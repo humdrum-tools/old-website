@@ -1,0 +1,91 @@
+#!/usr/bin/perl
+#
+# Programmer:    Craig Stuart Sapp <craig.stanford.edu>
+# Creation Date: Mon Jun 30 01:55:33 PDT 2014
+# Last Modified: Mon Jun 30 01:55:33 PDT 2014
+# Filename:      /usr/local/humdrum-tools/doc/html/adjustsidebar
+# Syntax:        perl 5
+#
+# Description:   Remove "Chapter" from UG Sidebar listings.
+#
+
+use strict;
+
+my $basedir = $ARGV[0];
+processDirectory($basedir);
+exit(0);
+
+###########################################################################
+
+##############################
+##
+## processDirectory --
+##
+
+sub processDirectory {
+   my ($dir) = @_;
+   my @files;
+   my @dirs;
+   my $file;
+   opendir(DIR, $dir) or die;
+   while ($file = readdir(DIR)) {
+      next if $file =~ /^\./;
+      next if $file =~ /^\_/;
+      if (-d "$dir/$file") {
+         $dirs[@dirs] = $file;
+         next;
+      }
+      if ($file =~ /\.html$/) {
+         $files[@files] = $file;
+         next;
+      }
+   }
+   closedir(DIR);
+
+   foreach $file (@files) {
+      processFile("$dir/$file");
+   }
+   foreach $file (@dirs) {
+      processDirectory("$dir/$file");
+   }
+}
+
+
+
+
+##############################
+##
+## processFile --
+##
+## <li class="toctree-l2"><a class="reference internal" href="ch01/">Chapter 1: Humdrum: A Brief Tour</a></li>
+
+sub processFile($file) {
+   my ($file) = @_;
+   open (FILE, $file) or die;
+   my @contents = <FILE>;
+   close FILE;
+   my $pre;
+   my $post;
+   my $start;
+   my $num;
+   my $counter = 0;
+   my $line;
+   foreach $line (@contents) {
+      if ($line =~ /^(<li .*toctree.*ch\d+\/">)Chapter\s+(\d+):/) {
+         $pre = $`;
+         $post = $';
+         $start = $1;
+         $num = $2;
+         $counter++;
+         $line = "$pre$start$num.$post";
+      }
+   }
+
+   if ($counter > 0) {
+      print "Changing $file\n";
+      open (FILE, ">$file") or die;
+      print FILE @contents;
+   }
+}
+
+

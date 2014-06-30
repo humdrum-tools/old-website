@@ -338,9 +338,11 @@ way of creating logical **OR** searches. With the **-f** option, we specify a
 file containing the patterns being sought. For example, we might create a
 file called ``criteria`` containing the following three regular expressions:
 
-`` !!!ODT.*16[0-9][0-9]/
-!!!AIN.*organ
-\*M6/8``
+::
+
+	!!!ODT.*16[0-9][0-9]/
+	!!!AIN.*organ
+	\*M6/8
 
 We would invoke `grep <http://en.wikipedia.org/wiki/Grep>`_ as follows:
 
@@ -357,12 +359,14 @@ of the same idea. For example, suppose we were searching for D major triads
 in `**pitch <../../rep/pitch>`_ data. We could use a file containing the following regular
 expressions:
 
-`` [Dd].*[Ff]#.*[Aa]
-[Dd].*[Aa].* [Ff]#
-[Ff]#.*[Aa].*[Dd]
-[Ff]#.*[Dd].*[Aa]
-[Aa].*[Dd].*[Ff]#
-[Aa].*[Ff]#.*[Dd]``
+::
+
+	[Dd].*[Ff]#.*[Aa]
+	[Dd].*[Aa].* [Ff]#
+	[Ff]#.*[Aa].*[Dd]
+	[Ff]#.*[Dd].*[Aa]
+	[Aa].*[Dd].*[Ff]#
+	[Aa].*[Ff]#.*[Dd]
 
 Depending on the application, it may be easier to construct such pattern
 files than to use a lengthy pipeline. That is:

@@ -29,7 +29,7 @@ clean: clean-links
 ## base directory.
 ##
 
-doc: webpages clean-links links css-hack
+doc: webpages clean-links links css-hack sidebar-adjust
 	
 website:   webpages
 dirhtml:   webpages
@@ -46,6 +46,9 @@ css-hack:
 	-(cd html/_static/css; cp theme.css theme-old.css)
 	-(cd html/_static/css; sed 's/343131/3d5b73/g; s/background-color:#2980b9/background-color:#3d5b73/g' theme-old.css > theme.css)
 
+
+sidebar-adjust:
+	bin/adjustsidebar html
 
 ###########################################################################
 ##

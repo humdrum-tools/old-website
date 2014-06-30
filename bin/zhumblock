@@ -8,6 +8,7 @@
 #
 # Description:   Convert text in the format:
 #
+# [blank line]
 # ``\s*[*!][*!].*
 # >+\s*.*
 # >+\s*.*
@@ -15,7 +16,7 @@
 # >+\s*\*-.*``
 # [blank line]
 #
-# Change to:
+# into:
 #
 # .. code-block: humdrum
 # [blank line]
@@ -25,7 +26,7 @@
 # 	line 4
 # [blank line]
 #
-# Also:
+# Also could do:
 # [blank line]
 # ``\s*.*
 # ``\s*.*
@@ -57,17 +58,26 @@ sub processFile {
    open(FILE, $file) or die;
    my @contents = <FILE>;
    close FILE;
+   my $blankline = 0;
    my $i;
    my $line;
-   my @output;
    for ($i=0; $i<@contents; $i++) {
-      $line = $contents[$i];
-      #chomp($line);
+      if ($i > 0) {
+         if ($contents[$i-1] =~ /^\s*$/) {
+            $blankline = 1;
+         } else {
+            $blankline = 0;
+         }
+      } else {
+         $blankline = 0;
+      }
+      next if $blankline == 0;
       checkBlock($i, \@contents);
    }
 
-
-#   print @output;
+   open (FILE, ">$file") or die;
+   print FILE @contents;
+   close FILE;
 }
 
 
@@ -77,18 +87,33 @@ sub processFile {
 ##
 ## checkBlock --
 ##
+# [blank line]
+# ``\s*[*!][*!].*
+# >+\s*.*
+# >+\s*.*
+# >+\s*.*
+# >+\s*\*-.*``
+# [blank line]
 
 sub checkBlock {
    my ($index, $cont) = @_;
    my $line = $$cont[$index]; 
-   if ($line =~ /^``\s*[\*\!][\*\!]/) {
-      return;
+   return if $line !~ /^``\s*[\*\!][\*\!]/;
+
+   $line =~ s/^``\s*//;
+   $$cont[$index] = ".. code-block:: humdrum\n\n\t$line";
+   my $i = $index+1;
+   while ($i < @$cont) {
+      $line = $$cont[$i];
+      last if $line =~ /^\s*$/;
+      $line =~ s/^``\s*//;
+      $line =~ s/^\s*>+\s*//;
+      $line =~ s/``\s*$//;
+      chomp($line);
+      $$cont[$i] = "\t$line\n";
+      $i++;
    }
-   my $i;
-ggg
-
 }
-
 
 
 
