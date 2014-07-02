@@ -42,7 +42,7 @@ might produce the following output:
 | Number of data records: 91
 | Number of comments: 14
 | Number of interpretations: 7
-| Number of records: 112`
+| Number of records: 112
 |
 
 Most commands provide *options* that will modify the operation of the command
@@ -68,7 +68,7 @@ might produce the following *additional* output:
 | Number of rests: 1
 | Maximum number of voices: 1
 | Number of single barlines: 11
-| Number of double barlines: 1`
+| Number of double barlines: 1
 |
 
 Notice that a distinction is made between the number of notes and the number
@@ -145,7 +145,7 @@ The output might look like this:
 
 | 1109:{4g##
 | 1731:16g##
-| 3002:16f##`
+| 3002:16f##
 | 
 
 -- meaning that double sharps were found in lines 1109, 1731, and 3002 in the
@@ -214,7 +214,7 @@ The output might look as follows:
 | foster21:!!!OTL: Old Folks at Home
 | foster22:!!!OTL: Better Times are Coming
 | foster23:!!!OTL: When this Dreadful War is Ended
-| foster24:!!!OTL: Hard Times Comes Again No More`
+| foster24:!!!OTL: Hard Times Comes Again No More
 |
 
 Remember that when a wildcard is used in filenames, `grep <http://en.wikipedia.org/wiki/Grep>`_ prepends the
@@ -252,7 +252,7 @@ titles might contain the following lines:
 | !!!OTL: Old Folks at Home
 | !!!OTL: Better Times are Coming
 | !!!OTL: When this Dreadful War is Ended
-| !!!OTL: Hard Times Comes Again No More`
+| !!!OTL: Hard Times Comes Again No More
 |
 
 The *sort* Command
@@ -338,8 +338,8 @@ Even if the current directory contains hundreds of works by one composer (say
 Beethoven) and just a single work by another composer, the presence of the
 odd score will be obvious without having to look through long lists:
 
-| !!!COM: Beethoven, Ludwig van`
-| !!!COM: Stamitz, Carl Philipp`
+| !!!COM: Beethoven, Ludwig van
+| !!!COM: Stamitz, Carl Philipp
 
 Of course we can make similar lists for other types of information available
 in reference records. The `AIN`reference record encodes instrumentation.
@@ -379,7 +379,7 @@ the current directory. The output might look as follows:
 | !!!OTL: Herr, wie du willst, so schick's mit mir
 | !!!OTL: Ich dank' dir, lieber Herre
 | !!!OTL: Jesu, der du meine Seele
-| !!!OTL: Jesu, meiner Seelen Wonne`
+| !!!OTL: Jesu, meiner Seelen Wonne
 |
 
 Having established which titles are duplicates, a logical next step might be
@@ -391,9 +391,9 @@ appropriate filenames. For example:
 
 might produce the following output:
 
-| bwv270.krn:!!!OTL: Befiehl du deine Wege`
-| bwv271.krn:!!!OTL: Befiehl du deine Wege`
-| bwv272.krn:!!!OTL: Befiehl du deine Wege`
+| bwv270.krn:!!!OTL: Befiehl du deine Wege
+| bwv271.krn:!!!OTL: Befiehl du deine Wege
+| bwv272.krn:!!!OTL: Befiehl du deine Wege
 |
 
 Sometimes we would like to have an output that contains *only* the
@@ -405,9 +405,9 @@ pattern:
 
 The output would appear as follows:
 
-| bwv270.krn`
-| bwv271.krn`
-| bwv272.krn`
+| bwv270.krn
+| bwv271.krn
+| bwv272.krn
 |
 
 As we've already notes, the ``-u`` option for `uniq <http://en.wikipedia.org/wiki/Uniq>`_ causes only unique
@@ -434,7 +434,7 @@ The output might appear as follows:
 | 2 !!!COM: Caldara, Antonio
 | 12 !!!COM: Zarlino, Gioseffo
 | 2 !!!COM: Sweelinck, Jan Pieterszoon
-| 4 !!!COM: Josquin Des Pres`
+| 4 !!!COM: Josquin Des Pres
 |
 
 Notice that the number of instances is prepended to the reference records.
@@ -451,7 +451,7 @@ will rearrange the above output as follows:
 | 2 !!!COM: Sweelinck, Jan Pieterszoon
 | 4 !!!COM: Josquin Des Pres
 | 9 !!!COM: Berardi, Angelo
-| 12 !!!COM: Zarlino, Gioseffo`
+| 12 !!!COM: Zarlino, Gioseffo
 |
 
 It is important to understand that the two**sort**commands in our pipeline

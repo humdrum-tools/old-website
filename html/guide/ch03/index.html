@@ -318,7 +318,7 @@ by the name of a file. The command</p>
 <div class="line">Number of data records: 91</div>
 <div class="line">Number of comments: 14</div>
 <div class="line">Number of interpretations: 7</div>
-<div class="line">Number of records: 112`</div>
+<div class="line">Number of records: 112</div>
 <div class="line"><br /></div>
 </div>
 <p>Most commands provide <em>options</em> that will modify the operation of the command
@@ -342,7 +342,7 @@ the number of rests, and the number of barlines. For example, the command:</p>
 <div class="line">Number of rests: 1</div>
 <div class="line">Maximum number of voices: 1</div>
 <div class="line">Number of single barlines: 11</div>
-<div class="line">Number of double barlines: 1`</div>
+<div class="line">Number of double barlines: 1</div>
 <div class="line"><br /></div>
 </div>
 <p>Notice that a distinction is made between the number of notes and the number
@@ -403,7 +403,7 @@ for lines containing a double sharp for the file <cite>melody.krn</cite>:</p>
 <div class="line-block">
 <div class="line">1109:{4g##</div>
 <div class="line">1731:16g##</div>
-<div class="line">3002:16f##`</div>
+<div class="line">3002:16f##</div>
 <div class="line"><br /></div>
 </div>
 <p>&#8211; meaning that double sharps were found in lines 1109, 1731, and 3002 in the
@@ -458,7 +458,7 @@ Similarly, the following command will generate a list of all of the titles:</p>
 <div class="line">foster21:!!!OTL: Old Folks at Home</div>
 <div class="line">foster22:!!!OTL: Better Times are Coming</div>
 <div class="line">foster23:!!!OTL: When this Dreadful War is Ended</div>
-<div class="line">foster24:!!!OTL: Hard Times Comes Again No More`</div>
+<div class="line">foster24:!!!OTL: Hard Times Comes Again No More</div>
 <div class="line"><br /></div>
 </div>
 <p>Remember that when a wildcard is used in filenames, <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> prepends the
@@ -491,7 +491,7 @@ titles might contain the following lines:</p>
 <div class="line">!!!OTL: Old Folks at Home</div>
 <div class="line">!!!OTL: Better Times are Coming</div>
 <div class="line">!!!OTL: When this Dreadful War is Ended</div>
-<div class="line">!!!OTL: Hard Times Comes Again No More`</div>
+<div class="line">!!!OTL: Hard Times Comes Again No More</div>
 <div class="line"><br /></div>
 </div>
 </div>
@@ -564,8 +564,8 @@ only we would search for reference records encoding the composer&#8217;s name:</
 Beethoven) and just a single work by another composer, the presence of the
 odd score will be obvious without having to look through long lists:</p>
 <div class="line-block">
-<div class="line">!!!COM: Beethoven, Ludwig van`</div>
-<div class="line">!!!COM: Stamitz, Carl Philipp`</div>
+<div class="line">!!!COM: Beethoven, Ludwig van</div>
+<div class="line">!!!COM: Stamitz, Carl Philipp</div>
 </div>
 <p>Of course we can make similar lists for other types of information available
 in reference records. The <a href="#id23"><span class="problematic" id="id24">`</span></a>AIN`reference record encodes instrumentation.
@@ -599,7 +599,7 @@ the current directory. The output might look as follows:</p>
 <div class="line">!!!OTL: Herr, wie du willst, so schick&#8217;s mit mir</div>
 <div class="line">!!!OTL: Ich dank&#8217; dir, lieber Herre</div>
 <div class="line">!!!OTL: Jesu, der du meine Seele</div>
-<div class="line">!!!OTL: Jesu, meiner Seelen Wonne`</div>
+<div class="line">!!!OTL: Jesu, meiner Seelen Wonne</div>
 <div class="line"><br /></div>
 </div>
 <p>Having established which titles are duplicates, a logical next step might be
@@ -609,9 +609,9 @@ appropriate filenames. For example:</p>
 <p><cite>grep &#8216;!!!OTL: Befiehl du deine Wege&#8217; *</cite></p>
 <p>might produce the following output:</p>
 <div class="line-block">
-<div class="line">bwv270.krn:!!!OTL: Befiehl du deine Wege`</div>
-<div class="line">bwv271.krn:!!!OTL: Befiehl du deine Wege`</div>
-<div class="line">bwv272.krn:!!!OTL: Befiehl du deine Wege`</div>
+<div class="line">bwv270.krn:!!!OTL: Befiehl du deine Wege</div>
+<div class="line">bwv271.krn:!!!OTL: Befiehl du deine Wege</div>
+<div class="line">bwv272.krn:!!!OTL: Befiehl du deine Wege</div>
 <div class="line"><br /></div>
 </div>
 <p>Sometimes we would like to have an output that contains <em>only</em> the
@@ -621,9 +621,9 @@ pattern:</p>
 <p><cite>grep -l &#8216;!!!OTL: Befiehl du deine Wege&#8217; *</cite></p>
 <p>The output would appear as follows:</p>
 <div class="line-block">
-<div class="line">bwv270.krn`</div>
-<div class="line">bwv271.krn`</div>
-<div class="line">bwv272.krn`</div>
+<div class="line">bwv270.krn</div>
+<div class="line">bwv271.krn</div>
+<div class="line">bwv272.krn</div>
 <div class="line"><br /></div>
 </div>
 <p>As we&#8217;ve already notes, the <tt class="docutils literal"><span class="pre">-u</span></tt> option for <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> causes only unique
@@ -646,7 +646,7 @@ directory:</p>
 <div class="line">2 !!!COM: Caldara, Antonio</div>
 <div class="line">12 !!!COM: Zarlino, Gioseffo</div>
 <div class="line">2 !!!COM: Sweelinck, Jan Pieterszoon</div>
-<div class="line">4 !!!COM: Josquin Des Pres`</div>
+<div class="line">4 !!!COM: Josquin Des Pres</div>
 <div class="line"><br /></div>
 </div>
 <p>Notice that the number of instances is prepended to the reference records.</p>
@@ -660,7 +660,7 @@ numerical values at the extreme left. The command</p>
 <div class="line">2 !!!COM: Sweelinck, Jan Pieterszoon</div>
 <div class="line">4 !!!COM: Josquin Des Pres</div>
 <div class="line">9 !!!COM: Berardi, Angelo</div>
-<div class="line">12 !!!COM: Zarlino, Gioseffo`</div>
+<div class="line">12 !!!COM: Zarlino, Gioseffo</div>
 <div class="line"><br /></div>
 </div>
 <p>It is important to understand that the two**sort**commands in our pipeline
