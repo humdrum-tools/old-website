@@ -32,7 +32,7 @@ stream or file. We can invoke the command by typing the command name followed
 by the name of a file. The command
 
 .. code-block:: bash
-        census india01.krn
+   census india01.krn
 
 might produce the following output:
 
@@ -56,7 +56,7 @@ highest, and lowest notes, the maximum number of concurrent notes or voices,
 the number of rests, and the number of barlines. For example, the command:
 
 .. code-block:: bash
-        census -k india01.krn
+   census -k india01.krn
 
 might produce the following *additional* output:
 
@@ -96,7 +96,7 @@ example, the following command identifies whether the file `opus28.krn`
 contains the word "`Andante`":
 
 .. code-block:: bash
-        grep 'Andante' opus28.krn
+   grep 'Andante' opus28.krn
 
 Every line containing the specified pattern will be output. If no match is
 found, no output is given.
@@ -107,7 +107,7 @@ following command identifies all instances where the word "`Andante`"
 occurs; all files in the current directory are searched:
 
 .. code-block:: bash
-        grep 'Andante' *
+   grep 'Andante' *
 
 Once again, every line containing the sought pattern is echoed in the output.
 If more than one pattern is found, each instance of the pattern will be
@@ -127,14 +127,14 @@ above command will not match strings such as "`ANDANTE`". However, the
 ``-i`` option tells `grep <http://en.wikipedia.org/wiki/Grep>`_ to ignore the case when searching. E.g.,
 
 .. code-block:: bash
-        grep -i 'Andante' *
+   grep -i 'Andante' *
 
 Sought patterns may occur in any line, including data records and comments.
 The following command will identify the presence of any double-sharps in the
 file `schumann.krn`.
 
 .. code-block:: bash
-        grep '##' schumann.krn
+   grep '##' schumann.krn
 
 
 Pattern Locations Using grep -n
@@ -146,7 +146,7 @@ for each matching instance. The following command identifies the line numbers
 for lines containing a double sharp for the file `melody.krn`:
 
 .. code-block:: bash
-        grep -n '##' melody.krn
+   grep -n '##' melody.krn
 
 The output might look like this:
 
@@ -171,7 +171,7 @@ command can be used to count the number of phrases in the file
 `glazunov.krn`:
 
 .. code-block:: bash
-        grep -c '{' glazunov.krn
+   grep -c '{' glazunov.krn
 
 As noted, the `grep <http://en.wikipedia.org/wiki/Grep>`_ command will search all lines (including comments) for
 matching instances of the specified pattern. If a curly brace were to appear
@@ -192,24 +192,24 @@ example, the following command will identify the composer for the file
 `opus24.krn`:
 
 .. code-block:: bash
-        grep '!!!COM:' opus24.krn
+   grep '!!!COM:' opus24.krn
 
 The output might look like this:
 
 .. code-block:: bash
-        !!!COM: Boulanger, Nadia
+   !!!COM: Boulanger, Nadia
 
 Once again, a wildcard (i.e., the asterisk) can be used to address all of the
 files in the current directory. Hence the command
 
 .. code-block:: bash
-        grep '!!!COM:' *
+   grep '!!!COM:' *
 
 will produce a list of all composers of files in the current directory.
 Similarly, the following command will generate a list of all of the titles:
 
 .. code-block:: bash
-        grep '!!!OTL:' *
+   grep '!!!OTL:' *
 
 The output might look as follows:
 
@@ -234,7 +234,7 @@ filename prior to found patterns. These filename `headers' can be eliminated
 by selecting the ``-h`` option for `grep <http://en.wikipedia.org/wiki/Grep>`_:
 
 .. code-block:: bash
-        grep -h '!!!OTL:' *
+   grep -h '!!!OTL:' *
 
 (N.B. Some older versions of `grep <http://en.wikipedia.org/wiki/Grep>`_ do not support all of the options
 described here. Filename headers can be stripped from the output by using the
@@ -247,7 +247,7 @@ filename. For example, the following command places the output from `grep <http:
 in a file called `titles`:
 
 .. code-block:: bash
-        grep -h '!!!OTL:' * > titles
+   grep -h '!!!OTL:' * > titles
 
 Beware that if the file titles already exists then it will be over
 written and its previous contents lost. With the ``-h`` option the file
@@ -276,7 +276,7 @@ The UNIX operating system provides a general sorting utility called**sort**.
 We might use this utility to rearrange the titles in alphabetical order:
 
 .. code-block:: bash
-        sort titles
+   sort titles
 
 Rather than using an intermediate file, we can directly connect the `grep <http://en.wikipedia.org/wiki/Grep>`_
 and**sort**commands using a UNIX "pipe." The vertical bar (`|`) creates a
@@ -285,14 +285,14 @@ command. We can combine the above two commands to create an alphabetical
 listing of all titles in the current directory:
 
 .. code-block:: bash
-        grep '!!!OTL:' * | sort
+   grep '!!!OTL:' * | sort
 
 File redirection can be added at the end of a pipe so the final output is
 captured in a file. In the following case, the alphabetized titles are placed
 in the file `titles`:
 
 .. code-block:: bash
-        grep '!!!OTL:' * | sort > titles
+   grep '!!!OTL:' * | sort > titles
 
 
 The *uniq* Command
@@ -340,7 +340,7 @@ Returning to our problem of creating a list of unique titles for J.S. Bach's
 chorale harmonizations, we can use the following command pipeline.
 
 .. code-block:: bash
-        grep -h '!!!OTL:' * | sort | uniq
+   grep -h '!!!OTL:' * | sort | uniq
 
 Note that our "pipeline" consists of three successive commands with the
 outputs connected to the inputs using the UNIX pipe symbol (`|`). The**sort**command is essential in order to collect identical titles as
@@ -351,7 +351,7 @@ are composed by the same composer. The same command structure can be used,
 only we would search for reference records encoding the composer's name:
 
 .. code-block:: bash
-        grep -h '!!!COM:' * | sort | uniq
+   grep -h '!!!COM:' * | sort | uniq
 
 Even if the current directory contains hundreds of works by one composer (say
 Beethoven) and just a single work by another composer, the presence of the
@@ -366,7 +366,7 @@ We could make a list of various instrumental combinations used for scores in
 the current directory:
 
 .. code-block:: bash
-        grep -h '!!!AIN:' * | sort | uniq
+   grep -h '!!!AIN:' * | sort | uniq
 
 
 Options for the *uniq* Command
@@ -385,7 +385,7 @@ problem until |Chapter 25|_\ .) The ``-d`` option will only output the
 duplicate records:
 
 .. code-block:: bash
-        grep -h '!!!OTL:' * | sort | uniq -d
+   grep -h '!!!OTL:' * | sort | uniq -d
 
 The output will identify those titles which appear in two or more files in
 the current directory. The output might look as follows:
@@ -409,7 +409,7 @@ for a specific title. Without the ``-h`` option, the output will identify the
 appropriate filenames. For example:
 
 .. code-block:: bash
-        grep '!!!OTL: Befiehl du deine Wege' *
+   grep '!!!OTL: Befiehl du deine Wege' *
 
 might produce the following output:
 
@@ -424,7 +424,7 @@ to output only filenames that contain one or more instances of the sought
 pattern:
 
 .. code-block:: bash
-        grep -l '!!!OTL: Befiehl du deine Wege' *
+   grep -l '!!!OTL: Befiehl du deine Wege' *
 
 The output would appear as follows:
 
@@ -443,7 +443,7 @@ for `uniq <http://en.wikipedia.org/wiki/Uniq>`_ to produce a list consisting of 
 instrumentation differs from all others:
 
 .. code-block:: bash
-        grep -h '!!!AIN:' * | sort | uniq -u
+   grep -h '!!!AIN:' * | sort | uniq -u
 
 As in the case of the `grep <http://en.wikipedia.org/wiki/Grep>`_ command, `uniq <http://en.wikipedia.org/wiki/Uniq>`_ also supports a ``-c``
 option which counts the number of occurrences of a pattern. For example, if
@@ -451,7 +451,7 @@ we want to count the number of works by each composer in the current
 directory:
 
 .. code-block:: bash
-        grep -h '!!!OTL:' * | sort | uniq -c
+   grep -h '!!!OTL:' * | sort | uniq -c
 
 The output might appear as follows:
 
@@ -469,7 +469,7 @@ works, we could pass the above output to yet another**sort**command. Since**sort
 numerical values at the extreme left. The command
 
 .. code-block:: bash
-        grep -h '!!!COM:' * | sort | uniq -c | sort -n
+   grep -h '!!!COM:' * | sort | uniq -c | sort -n
 
 
 will rearrange the above output as follows:
