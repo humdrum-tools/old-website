@@ -308,7 +308,6 @@ tasks.</p>
 <p>The Humdrum <a class="reference external" href="../../man/census">census</a> command provides basic information about an input
 stream or file. We can invoke the command by typing the command name followed
 by the name of a file. The command</p>
-<p><tt class="docutils literal"><span class="pre">census</span> <span class="pre">india01.krn</span></tt></p>
 <p>might produce the following output:</p>
 <div class="line-block">
 <div class="line">HUMDRUM DATA</div>
@@ -329,7 +328,6 @@ pertaining to the Humdrum <cite>**kern`representation. With the `</cite>-k`` opt
 the output includes the number of notes in the file, the longest, shortest,
 highest, and lowest notes, the maximum number of concurrent notes or voices,
 the number of rests, and the number of barlines. For example, the command:</p>
-<p><tt class="docutils literal"><span class="pre">census</span> <span class="pre">-k</span> <span class="pre">india01.krn</span></tt></p>
 <p>might produce the following <em>additional</em> output:</p>
 <div class="line-block">
 <div class="line">KERN DATA</div>
@@ -362,14 +360,12 @@ expression.&#8221;</p>
 <p>Useful patterns are often literal character strings, such as keywords. For
 example, the following command identifies whether the file <cite>opus28.krn</cite>
 contains the word &#8220;<cite>Andante</cite>&#8221;:</p>
-<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'Andante'</span> <span class="pre">opus28.krn</span></tt></p>
 <p>Every line containing the specified pattern will be output. If no match is
 found, no output is given.</p>
 <p>Using a single command, all files in the current directory can be searched by
 substituting the asterisk (shell <em>wildcard</em>) in place of a filename. The
 following command identifies all instances where the word &#8220;<cite>Andante</cite>&#8221;
 occurs; all files in the current directory are searched:</p>
-<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'Andante'</span> <span class="pre">*</span></tt></p>
 <p>Once again, every line containing the sought pattern is echoed in the output.
 If more than one pattern is found, each instance of the pattern will be
 output on a separate line. Whenever an asterisk or &#8220;wildcard&#8221; is used as part
@@ -386,11 +382,9 @@ the output for all patterns that are found:</p>
 <p>By default, <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> distinguishes upper- and lower-case characters, so the
 above command will not match strings such as &#8220;<cite>ANDANTE</cite>&#8221;. However, the
 <tt class="docutils literal"><span class="pre">-i</span></tt> option tells <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to ignore the case when searching. E.g.,</p>
-<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-i</span> <span class="pre">'Andante'</span> <span class="pre">*</span></tt></p>
 <p>Sought patterns may occur in any line, including data records and comments.
 The following command will identify the presence of any double-sharps in the
 file <cite>schumann.krn</cite>.</p>
-<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'##'</span> <span class="pre">schumann.krn</span></tt></p>
 </div>
 <div class="section" id="pattern-locations-using-grep-n">
 <h2>Pattern Locations Using grep -n<a class="headerlink" href="#pattern-locations-using-grep-n" title="Permalink to this headline">¶</a></h2>
@@ -398,7 +392,6 @@ file <cite>schumann.krn</cite>.</p>
 of the pattern. The <tt class="docutils literal"><span class="pre">-n</span></tt> option tells <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to prepend the <em>line number</em>
 for each matching instance. The following command identifies the line numbers
 for lines containing a double sharp for the file <cite>melody.krn</cite>:</p>
-<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-n</span> <span class="pre">'##'</span> <span class="pre">melody.krn</span></tt></p>
 <p>The output might look like this:</p>
 <div class="line-block">
 <div class="line">1109:{4g##</div>
@@ -418,7 +411,6 @@ example, in the <cite>**kern`representation, the beginning of each phrase is
 marked by the presence of an open curly brace (``{</cite>&#8216;). So the following
 command can be used to count the number of phrases in the file
 <cite>glazunov.krn</cite>:</p>
-<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-c</span> <span class="pre">'{'</span> <span class="pre">glazunov.krn</span></tt></p>
 <p>As noted, the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command will search all lines (including comments) for
 matching instances of the specified pattern. If a curly brace were to appear
 in a comment or other non-data record, then our phrase-count would be
@@ -434,15 +426,11 @@ information using reference records. For example, the <tt class="docutils litera
 letter codes provide useful tags to search for pertinent information. For
 example, the following command will identify the composer for the file
 <cite>opus24.krn</cite>:</p>
-<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'!!!COM:'</span> <span class="pre">opus24.krn</span></tt></p>
 <p>The output might look like this:</p>
-<p><tt class="docutils literal"><span class="pre">!!!COM:</span> <span class="pre">Boulanger,</span> <span class="pre">Nadia</span></tt></p>
 <p>Once again, a wildcard (i.e., the asterisk) can be used to address all of the
 files in the current directory. Hence the command</p>
-<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'!!!COM:'</span> <span class="pre">*</span></tt></p>
 <p>will produce a list of all composers of files in the current directory.
 Similarly, the following command will generate a list of all of the titles:</p>
-<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'!!!OTL:'</span> <span class="pre">*</span></tt></p>
 <p>The output might look as follows:</p>
 <div class="line-block">
 <div class="line">foster11:!!!OTL: Oh! Susanna</div>
@@ -464,7 +452,6 @@ Similarly, the following command will generate a list of all of the titles:</p>
 <p>Remember that when a wildcard is used in filenames, <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> prepends the
 filename prior to found patterns. These filename <cite>headers&#8217; can be eliminated
 by selecting the `</cite>-h`` option for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>:</p>
-<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-h</span> <span class="pre">'!!!OTL:'</span> <span class="pre">*</span></tt></p>
 <p>(N.B. Some older versions of <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> do not support all of the options
 described here. Filename headers can be stripped from the output by using the
 UNIX <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> command described in <a class="reference external" href="../ch14">Chapter 14</a>.)</p>
@@ -473,7 +460,6 @@ UNIX <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</
 file by following the command with a greater-than sign (&gt;) followed by a
 filename. For example, the following command places the output from <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>
 in a file called <cite>titles</cite>:</p>
-<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-h</span> <span class="pre">'!!!OTL:'</span> <span class="pre">*</span> <span class="pre">&gt;</span> <span class="pre">titles</span></tt></p>
 <p>Beware that if the file titles already exists then it will be over
 written and its previous contents lost. With the <tt class="docutils literal"><span class="pre">-h</span></tt> option the file
 titles might contain the following lines:</p>
@@ -499,17 +485,14 @@ titles might contain the following lines:</p>
 <h2>The <em>sort</em> Command<a class="headerlink" href="#the-sort-command" title="Permalink to this headline">¶</a></h2>
 <p>The UNIX operating system provides a general sorting utility called**sort**.
 We might use this utility to rearrange the titles in alphabetical order:</p>
-<p><tt class="docutils literal"><span class="pre">sort</span> <span class="pre">titles</span></tt></p>
 <p>Rather than using an intermediate file, we can directly connect the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>
 and**sort**commands using a UNIX &#8220;pipe.&#8221; The vertical bar (<cite>|</cite>) creates a
 connection between the output of one command and the input of the next
 command. We can combine the above two commands to create an alphabetical
 listing of all titles in the current directory:</p>
-<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'!!!OTL:'</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">sort</span></tt></p>
 <p>File redirection can be added at the end of a pipe so the final output is
 captured in a file. In the following case, the alphabetized titles are placed
 in the file <cite>titles</cite>:</p>
-<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'!!!OTL:'</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">&gt;</span> <span class="pre">titles</span></tt></p>
 </div>
 <div class="section" id="the-uniq-command">
 <h2>The <em>uniq</em> Command<a class="headerlink" href="#the-uniq-command" title="Permalink to this headline">¶</a></h2>
@@ -552,14 +535,12 @@ trailing blank that is not present in the previous line, then the line is not
 discarded.</p>
 <p>Returning to our problem of creating a list of unique titles for J.S. Bach&#8217;s
 chorale harmonizations, we can use the following command pipeline.</p>
-<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-h</span> <span class="pre">'!!!OTL:'</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span></tt></p>
 <p>Note that our &#8220;pipeline&#8221; consists of three successive commands with the
 outputs connected to the inputs using the UNIX pipe symbol (<cite>|</cite>). The**sort**command is essential in order to collect identical titles as
 successive lines before passing the list to <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a>.</p>
 <p>Suppose you wanted to ensure that all of the works in the current directory
 are composed by the same composer. The same command structure can be used,
 only we would search for reference records encoding the composer&#8217;s name:</p>
-<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-h</span> <span class="pre">'!!!COM:'</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span></tt></p>
 <p>Even if the current directory contains hundreds of works by one composer (say
 Beethoven) and just a single work by another composer, the presence of the
 odd score will be obvious without having to look through long lists:</p>
@@ -571,7 +552,6 @@ odd score will be obvious without having to look through long lists:</p>
 in reference records. The <tt class="docutils literal"><span class="pre">AIN</span></tt> reference record encodes instrumentation.
 We could make a list of various instrumental combinations used for scores in
 the current directory:</p>
-<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-h</span> <span class="pre">'!!!AIN:'</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span></tt></p>
 </div>
 <div class="section" id="options-for-the-uniq-command">
 <h2>Options for the <em>uniq</em> Command<a class="headerlink" href="#options-for-the-uniq-command" title="Permalink to this headline">¶</a></h2>
@@ -585,7 +565,6 @@ harmonizations of the same tunes &#8211; that is, have the same titles. (Of cour
 the same chorale might be known by two or more titles, but let&#8217;s defer this
 problem until <a class="reference external" href="../ch25">Chapter 25</a>.) The <tt class="docutils literal"><span class="pre">-d</span></tt> option will only output the
 duplicate records:</p>
-<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-h</span> <span class="pre">'!!!OTL:'</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-d</span></tt></p>
 <p>The output will identify those titles which appear in two or more files in
 the current directory. The output might look as follows:</p>
 <div class="line-block">
@@ -606,7 +585,6 @@ the current directory. The output might look as follows:</p>
 to identify the specific files involved. We can use <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> again to search
 for a specific title. Without the <tt class="docutils literal"><span class="pre">-h</span></tt> option, the output will identify the
 appropriate filenames. For example:</p>
-<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">'!!!OTL:</span> <span class="pre">Befiehl</span> <span class="pre">du</span> <span class="pre">deine</span> <span class="pre">Wege'</span> <span class="pre">*</span></tt></p>
 <p>might produce the following output:</p>
 <div class="line-block">
 <div class="line">bwv270.krn:!!!OTL: Befiehl du deine Wege</div>
@@ -618,7 +596,6 @@ appropriate filenames. For example:</p>
 <em>filenames</em> containing the sought pattern. The <tt class="docutils literal"><span class="pre">-l</span></tt> option causes <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>
 to output only filenames that contain one or more instances of the sought
 pattern:</p>
-<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-l</span> <span class="pre">'!!!OTL:</span> <span class="pre">Befiehl</span> <span class="pre">du</span> <span class="pre">deine</span> <span class="pre">Wege'</span> <span class="pre">*</span></tt></p>
 <p>The output would appear as follows:</p>
 <div class="line-block">
 <div class="line">bwv270.krn</div>
@@ -634,12 +611,10 @@ work had a different instrumentation than the other works. But you may not be
 able to remember what the specific instrumentation was. Use the <tt class="docutils literal"><span class="pre">-u</span></tt> option
 for <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> to produce a list consisting of only those works whose
 instrumentation differs from all others:</p>
-<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-h</span> <span class="pre">'!!!AIN:'</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-u</span></tt></p>
 <p>As in the case of the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command, <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> also supports a <tt class="docutils literal"><span class="pre">-c</span></tt>
 option which counts the number of occurrences of a pattern. For example, if
 we want to count the number of works by each composer in the current
 directory:</p>
-<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-h</span> <span class="pre">'!!!OTL:'</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span></tt></p>
 <p>The output might appear as follows:</p>
 <div class="line-block">
 <div class="line">9 !!!COM: Berardi, Angelo</div>
@@ -653,7 +628,6 @@ directory:</p>
 <p>Incidentally, if we wanted to rearrange this list in order of the number of
 works, we could pass the above output to yet another**sort**command. Since**sort**sorts from left to right, it will begin sorting according to the
 numerical values at the extreme left. The command</p>
-<p><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-h</span> <span class="pre">'!!!COM:'</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span></tt></p>
 <p>will rearrange the above output as follows:</p>
 <div class="line-block">
 <div class="line">2 !!!COM: Caldara, Antonio</div>
