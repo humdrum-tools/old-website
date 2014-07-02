@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -313,30 +314,27 @@ of interest to the user.</p>
 more spines. Different pieces of information can be distributed to the
 individual output spines. Consider for example the following spine containing
 <a class="reference external" href="../../rep/pitch">**pitch</a> data:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**pitch
+<div class="highlight-humdrum"><pre>**pitch
 Ab3
 F#4
 C5
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>The <a class="reference external" href="../../man/rend">rend</a> command might be used to structure this as three independent
 spines:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**octave        **note  **accidental
+<div class="highlight-humdrum"><pre>**octave        **note  **accidental
 3       Ab      b
 4       F#      #
 5       C       .
-*-      *-      *-
-</pre></div>
+*-      *-      *-</pre>
 </div>
 <p>The operation of <a class="reference external" href="../../man/rend">rend</a> requires a reassignment file where each line
 contains an output exclusive interpretation, followed by a tab, followed by a
 regular expression. In the above case, the reassignment file (<tt class="docutils literal"><span class="pre">reassign</span></tt>)
 contained the following:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>*       *octave[0-9]
+<div class="highlight-humdrum"><pre>*       *octave[0-9]
 *       *note[A-Gb#x]
-*       *accidental[b#x]
-</pre></div>
+*       *accidental[b#x]</pre>
 </div>
 <p>The first line tells <a class="reference external" href="../../man/rend">rend</a> that any signifiers matching the character-
 class 0-9 should be output in a spine labelled <tt class="docutils literal"><span class="pre">octave</span></tt>. The second line
@@ -356,18 +354,16 @@ tells <a class="reference external" href="../../man/rend">rend</a> which input s
 spines into a single data spine. In effect, <a class="reference external" href="../../man/cleave">cleave</a> does the opposite of
 <a class="reference external" href="../../man/rend">rend</a>. By way of example, <a class="reference external" href="../../man/cleave">cleave</a> can be used to transform the
 following:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**A     **B     **C
+<div class="highlight-humdrum"><pre>**A     **B     **C
 a       b       c
 A       B       C
-*-      *-      *-
-</pre></div>
+*-      *-      *-</pre>
 </div>
 <p>into:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**new
+<div class="highlight-humdrum"><pre>**new
 abc
 ABC
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>Specifically, the above &#8220;cleaving&#8221; would be done using the following command:</p>
 <p><tt class="docutils literal"><span class="pre">cleave</span> <span class="pre">-i</span> <span class="pre">'**A,**B,**C'</span> <span class="pre">-o</span> <span class="pre">'**new'</span></tt> <em>inputfile</em></p>
@@ -386,7 +382,7 @@ velocity. In order to add accents, we need to change the key velocity values.
 The maximum MIDI key velocity value is 127; the minimum value is 0; and the
 default value is 64.</p>
 <p>Consider the following hypothetical input file:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**kern
+<div class="highlight-humdrum"><pre>**kern
 *M4/4
 =1-
 4c
@@ -398,8 +394,7 @@ default value is 64.</p>
 8b
 =2
 2cc
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>The <a class="reference external" href="../../man/metpos">metpos</a> command can be used to identify the metric position of
 various note onsets. Before using <a class="reference external" href="../../man/metpos">metpos</a> however, we must use the
@@ -414,7 +409,7 @@ shortest note is an eighth-note, the appropriate command is as follows.</p>
 </div>
 <p>The resulting output contains both the original input (on the left) and the
 metric position spine (on the right):</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**kern  **metpos
+<div class="highlight-humdrum"><pre>**kern  **metpos
 *M4/4   *M4/4
 *tb8    *tb8
 =1-     =1-
@@ -431,8 +426,7 @@ metric position spine (on the right):</p>
 .       4
 .       3
 .       4
-*-      *-
-</pre></div>
+*-      *-</pre>
 </div>
 <p>Let&#8217;s now eliminate the null data tokens introduced by <a class="reference external" href="../../man/timebase">timebase</a> . Using
 <a class="reference external" href="../../man/humsed">humsed</a>, we delete each data record beginning with a period character:</p>
@@ -453,7 +447,7 @@ using the <tt class="docutils literal"><span class="pre">-s</span></tt> (skip) o
 </pre></div>
 </div>
 <p>The output will now appear as follows:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**kern  **metpos
+<div class="highlight-humdrum"><pre>**kern  **metpos
 *M4/4   *M4/4
 *tb8    *tb8
 =1-     =1-
@@ -466,15 +460,14 @@ using the <tt class="docutils literal"><span class="pre">-s</span></tt> (skip) o
 8b      40
 =2      =2
 2cc     100
-*-      *-
-</pre></div>
+*-      *-</pre>
 </div>
 <p>Now we can use the <a class="reference external" href="../../man/midi">midi</a> command to generate <a class="reference external" href="../../rep/MIDI">**MIDI</a> data:</p>
 <div class="highlight-bash"><div class="highlight"><pre>midi scale.acc &gt; scale.mid
 </pre></div>
 </div>
 <p>The result is given below:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**MIDI  **metpos
+<div class="highlight-humdrum"><pre>**MIDI  **metpos
 *Ch1    *
 *M4/4   *M4/4
 *tb8    *tb8
@@ -489,8 +482,7 @@ using the <tt class="docutils literal"><span class="pre">-s</span></tt> (skip) o
 =2      =2
 36/-71/64 36/72/64      100
 144/-72/64      .
-*-      *-
-</pre></div>
+*-      *-</pre>
 </div>
 <p>Before using <a class="reference external" href="../../man/cleave">cleave</a> to join the new key velocity values to the
 <a class="reference external" href="../../rep/MIDI">**MIDI</a> data we need to delete the current key-down velocities. These are
@@ -500,7 +492,7 @@ used as follows:</p>
 </pre></div>
 </div>
 <p>The modified output will now be:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**MIDI  **metpos
+<div class="highlight-humdrum"><pre>**MIDI  **metpos
 *Ch1    *
 *M4/4   *M4/4
 *tb8    *tb8
@@ -515,15 +507,14 @@ used as follows:</p>
 =2      =2
 36/-71/64 36/72/100
 144/-72/        .
-*-      *-
-</pre></div>
+*-      *-</pre>
 </div>
 <p>Finally, we use <a class="reference external" href="../../man/cleave">cleave</a> to add the new key-down velocities.</p>
 <div class="highlight-bash"><div class="highlight"><pre>cleave -i <span class="s1">&#39;**MIDI,**metpos&#39;</span> -o <span class="s1">&#39;**MIDI&#39;</span> scale.tmp &gt; scale.mid
 </pre></div>
 </div>
 <p>The final output is:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**MIDI
+<div class="highlight-humdrum"><pre>**MIDI
 *
 *M4/4
 *tb8
@@ -538,8 +529,7 @@ used as follows:</p>
 =2      =2
 36/-71/64 36/72/100
 144/-72/
-*-
-</pre></div>
+*-</pre>
 </div>
 </div>
 <div class="section" id="creating-mixed-representations">
@@ -585,13 +575,12 @@ that data records contain three durations. Suppose also that we have used
 appropriate. As a result we have three spines that, when assembled together
 are organized as in Example 26.1</p>
 <p><strong>Example 26.1</strong></p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**rhythm        **range **scale-step
+<div class="highlight-humdrum"><pre>**rhythm        **range **scale-step
 L S L   H       to
 L L S   L       sd
 M L S   M       lt
 r       r       r
-*-      *-      *-
-</pre></div>
+*-      *-      *-</pre>
 </div>
 <p>We need to process the first spine with <a class="reference external" href="../../man/humsed">humsed</a> again to eliminate the
 spaces in the multiple stops. The rhythm spine would be processed as follows:</p>

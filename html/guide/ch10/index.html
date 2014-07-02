@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -606,10 +607,9 @@ containing a passage in 6/8 meter. The <tt class="docutils literal"><span class=
 way of creating logical**OR**searches. With the <tt class="docutils literal"><span class="pre">-f</span></tt> option, we specify a
 file containing the patterns being sought. For example, we might create a
 file called <tt class="docutils literal"><span class="pre">criteria</span></tt> containing the following three regular expressions:</p>
-<div class="highlight-python"><div class="highlight"><pre>!!!ODT.*16[0-9][0-9]/
+<div class="highlight-python"><pre>!!!ODT.*16[0-9][0-9]/
 !!!AIN.*organ
-\*M6/8
-</pre></div>
+\*M6/8</pre>
 </div>
 <p>We would invoke <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> as follows:</p>
 <div class="highlight-bash"><div class="highlight"><pre>grep -l -f criteria *
@@ -624,13 +624,12 @@ meter. The <tt class="docutils literal"><span class="pre">-f</span></tt> option 
 of the same idea. For example, suppose we were searching for D major triads
 in <a class="reference external" href="../../rep/pitch">**pitch</a> data. We could use a file containing the following regular
 expressions:</p>
-<div class="highlight-python"><div class="highlight"><pre>[Dd].*[Ff]#.*[Aa]
+<div class="highlight-python"><pre>[Dd].*[Ff]#.*[Aa]
 [Dd].*[Aa].* [Ff]#
 [Ff]#.*[Aa].*[Dd]
 [Ff]#.*[Dd].*[Aa]
 [Aa].*[Dd].*[Ff]#
-[Aa].*[Ff]#.*[Dd]
-</pre></div>
+[Aa].*[Ff]#.*[Dd]</pre>
 </div>
 <p>Depending on the application, it may be easier to construct such pattern
 files than to use a lengthy pipeline. That is:</p>

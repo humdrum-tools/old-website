@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -510,7 +511,7 @@ the octave of the starting pitch, but it does indicate contour information
 using the caret (<tt class="docutils literal"><span class="pre">^</span></tt>) for ascending and the lower-case <tt class="docutils literal"><span class="pre">v</span></tt> for descending
 pitches. Notice also the different ways of characterizing accidentals.</p>
 <p><strong>Example 4.1</strong></p>
-<div class="highlight-humdrum"><div class="highlight"><pre>!! Comparisonof pitch-relatedrepresentations. |kern|_ solfa**deg
+<div class="highlight-humdrum"><pre>!! Comparisonof pitch-relatedrepresentations. |kern|_ solfa**deg
 *M2/4*M2/4*M2/4
 *c:*c:*c:
 8.ccdo1
@@ -527,8 +528,7 @@ pitches. Notice also the different ways of characterizing accidentals.</p>
 =3=3=3
 2bntiv7
 ======
-*-*-*-
-</pre></div>
+*-*-*-</pre>
 </div>
 </div>
 <div class="section" id="pitch-translations">
@@ -566,7 +566,7 @@ French solfege, as well as <a class="reference external" href="../../rep/kern">*
 accidentals such as the D-sharp and B-flat. Also note the German use of H for
 B-natural.</p>
 <p><strong>Example 4.2</strong></p>
-<div class="highlight-humdrum"><div class="highlight"><pre>!! Comparisonof pitch-relatedrepresentations. |kern|_ pitch |Tonh|_ solfg
+<div class="highlight-humdrum"><pre>!! Comparisonof pitch-relatedrepresentations. |kern|_ pitch |Tonh|_ solfg
 *M2/4*M2/4*M2/4*M2/4
 *C:*C:*C:*C:
 8.ccC5C5do5
@@ -583,8 +583,7 @@ B-natural.</p>
 =3=3=3=3
 2bnB4H4si4
 ========
-*-*-*-*-
-</pre></div>
+*-*-*-*-</pre>
 </div>
 <p>In Example 4.3 four of the more technical representations are illustrated,
 including frequency and cents. Notice that the <a class="reference external" href="../../rep/MIDI">**MIDI</a> representation
@@ -592,7 +591,7 @@ uses key-numbers to represent pitch: key-on events are indicated by positive
 integers (between two slashes) and key-off events are indicated by negative
 integers. More detail concerning <a class="reference external" href="../../rep/MIDI">**MIDI</a> is given in <a class="reference external" href="../ch07">Chapter 7</a>.</p>
 <p><strong>Example 4.3</strong></p>
-<div class="highlight-humdrum"><div class="highlight"><pre>!! Comparisonof pitch-relatedrepresentations(continued). |kern|_ semits |cents|_ MIDI**freq
+<div class="highlight-humdrum"><pre>!! Comparisonof pitch-relatedrepresentations(continued). |kern|_ semits |cents|_ MIDI**freq
 *M2/4*M2/4*M2/4*Ch1*M2/4
 *C:*C:*C:*M2/4*C:
 ****C:*
@@ -611,8 +610,7 @@ integers. More detail concerning <a class="reference external" href="../../rep/M
 2bn111100/-60/ /71/493.88
 ==========
 .../-71/.
-*-*-*-*-*-
-</pre></div>
+*-*-*-*-*-</pre>
 </div>
 <p>Not all of the above pitch-related representations can be translated directly
 from one to another. Table 4.1 shows the possible translations supported by
@@ -676,7 +674,7 @@ diminished second (e.g. from F-sharp to G-flat):</p>
 </div>
 <p>Modal transpositions are also possible by omitting the chromatic offset
 option. Consider, for example, the following C major scale:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**kern
+<div class="highlight-humdrum"><pre>**kern
 d
 e
 f
@@ -684,15 +682,14 @@ g
 a
 b
 cc
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>We can transform this using the following diatonic transposition:</p>
 <div class="highlight-bash"><div class="highlight"><pre>trans -d +1
 </pre></div>
 </div>
 <p>The resulting output is the Dorian mode:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**kern
+<div class="highlight-humdrum"><pre>**kern
 *Trd1
 d
 e
@@ -702,8 +699,7 @@ a
 b
 cc
 dd
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>When using the <tt class="docutils literal"><span class="pre">-d</span></tt> option alone, <a class="reference external" href="../../man/trans">trans</a> eliminates all accidentals in
 the input. This can be potentially confusing, but it is often useful. Suppose

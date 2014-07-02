@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -511,9 +512,8 @@ improve the readability of our program.</p>
 <p>Often we would like to repeat a process for several concurrent spines. For
 example, suppose we had four spines of <a class="reference external" href="../../rep/solfa">**solfa</a> data and we want to
 output the total number of leading-tones for each sonority. Awk provides a**for**instruction that allows us to cycle through a series of values. The**for``-loop construction has the following syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre>for (initial-value; condition-for-continuing; increment-action)
-{do something repeatedly}
-</pre></div>
+<div class="highlight-python"><pre>for (initial-value; condition-for-continuing; increment-action)
+{do something repeatedly}</pre>
 </div>
 <p>In the case of counting the number of leading-tones for each of four spines,
 our program would be as follows:</p>
@@ -539,14 +539,13 @@ input tokens or fields and stores the value in the varible <a class="reference e
 replacing the number <tt class="docutils literal"><span class="pre">4</span></tt> by <a class="reference external" href="../../man/NF">NF</a> will achieve our goal. In our revised
 program we have also added some comments to clarify our code. Like the shell,
 awk comments consist of material following the octothorpe character (#): <a href="#id6"><span class="problematic" id="id7">``</span></a><a href="#id8"><span class="problematic" id="id9">**</span></a></p>
-<div class="highlight-awk"><div class="highlight"><pre>awk &#39;{
+<div class="highlight-awk"><pre>awk '{
    # A program to count occurrences of the leading-tone.
    count = 0
    for (i=1; i&lt;=NF; i++)
       {if ($i ~/ti/) count++}
    print count
-}&#39;``
-</pre></div>
+}'``</pre>
 </div>
 <p>A problem with the above script is that it will attempt to count occurrences
 of <tt class="docutils literal"><span class="pre">ti</span></tt> in Humdrum comments, interpretations, and barlines. We can improve

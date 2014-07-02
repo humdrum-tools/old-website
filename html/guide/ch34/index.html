@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -501,14 +502,13 @@ transpositions (<tt class="docutils literal"><span class="pre">-P</span></tt> op
 retrogrades (<tt class="docutils literal"><span class="pre">-R</span></tt> option) and for retrograde-inversions (<tt class="docutils literal"><span class="pre">-RI</span></tt> option).</p>
 <p>Inputs do not have to be 12-tone rows. The 5-tone row used in Igor
 Stravinsky&#8217;s &#8220;Dirge-Canons&#8221; from <em>In Memoriam Dylan Thomas</em> is as follows:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**pc
+<div class="highlight-humdrum"><pre>**pc
 2
 3
 6
 5
 4
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>The following command will generate a prime transposition of the tone-row so
 that it begins on pitch-class 6:</p>
@@ -516,14 +516,13 @@ that it begins on pitch-class 6:</p>
 </pre></div>
 </div>
 <p>The result is:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**pc
+<div class="highlight-humdrum"><pre>**pc
 6
 7
 10
 9
 8
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>Generating the inversion beginning at pitch-class 2 would be carried out
 using the following command.</p>
@@ -540,14 +539,13 @@ Consider the following command:</p>
 </div>
 <p>This shifts all of the data tokens back one position so the data begins with
 the second value in the input, and the first value is moved to the end:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**pc
+<div class="highlight-humdrum"><pre>**pc
 3
 6
 5
 4
 2
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>The shift option for <a class="reference external" href="../../man/reihe">reihe</a> can be used to shift <em>any</em> type of data &#8211; not
 just pitches of pitch-classes. For example, one might use the shift option to

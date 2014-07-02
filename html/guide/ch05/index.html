@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -485,12 +486,11 @@ interpretation, or null token, respectively.</p>
 first data record of the following example, the first spine contains two sub-
 tokens whereas the third spine contains three sub-tokens. Sub-tokens do not
 have their own spine organization and can appear and disappear as necessary:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**spine1        **spine2        **spine3
+<div class="highlight-humdrum"><pre>**spine1        **spine2        **spine3
 A B     J       X Y Z
 AB      J       XYZ
 A B C           .X Z
-*-      *-      *-
-</pre></div>
+*-      *-      *-</pre>
 </div>
 <p>Data sub-tokens are useful in a variety of circumstances. An appropriate use
 of sub-tokens might be to encode double- and triple-stops in string parts.</p>
@@ -752,48 +752,43 @@ problem, you should always test the input to assure that it is in the proper
 Humdrum format.</p>
 <p>The examples given below provide further illustrations of Humdrum
 representations:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**form
+<div class="highlight-humdrum"><pre>**form
 Introduction
 Exposition
 Development
 Recapitulation
 Coda
-*-
-</pre></div>
+*-</pre>
 </div>
-<div class="highlight-humdrum"><div class="highlight"><pre>**American      **British
+<div class="highlight-humdrum"><pre>**American      **British
 quarter crotchet
 eighth  quaver
 dotted half     dotted minim
-*-      *-
-</pre></div>
+*-      *-</pre>
 </div>
-<div class="highlight-humdrum"><div class="highlight"><pre>**Opus/No       **Year
+<div class="highlight-humdrum"><pre>**Opus/No       **Year
 23/1    1821
 23/2    1821
 23/3    1822?
 24      1822
-*-      *-
-</pre></div>
+*-      *-</pre>
 </div>
-<div class="highlight-humdrum"><div class="highlight"><pre>**recip **diaton        **accidental    **stem-dir      **kern
+<div class="highlight-humdrum"><pre>**recip **diaton        **accidental    **stem-dir      **kern
 4       c       #       /       4c#/
 8       d       .       /       8d/
 8       e       .       /       8e/
 2       f       #       /       8f#/
-*-      *-      *-      *-      *-
-</pre></div>
+*-      *-      *-      *-      *-</pre>
 </div>
-<div class="highlight-humdrum"><div class="highlight"><pre>**heart-rate
+<div class="highlight-humdrum"><pre>**heart-rate
 74
 73
 74
 77
 78
-*-
-</pre></div>
+*-</pre>
 </div>
-<div class="highlight-humdrum"><div class="highlight"><pre>**foreground
+<div class="highlight-humdrum"><pre>**foreground
 flute
 *^
 flute   violin1
@@ -802,15 +797,14 @@ violin1
 *^
 violin1 bassoon
 *       *^
-violin1 bassoon &#39;cello
+violin1 bassoon 'cello
 *       *       *^
-violin1 bassoon &#39;cello  trombone
+violin1 bassoon 'cello  trombone
 *-      *-      *-      *
 trombone
 *^
 trombone        trumpet
-*-      *-
-</pre></div>
+*-      *-</pre>
 </div>
 </div>
 <hr class="docutils" />

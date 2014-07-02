@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -443,7 +444,7 @@ allowing the user to designate section <em>types</em>. A section label is consid
 to have a &#8220;type&#8221; when more than one greater-than sign (<tt class="docutils literal"><span class="pre">&gt;</span></tt>) is present in
 the label. Consider the following example of sections defined by Smith and
 Jones:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**Example
+<div class="highlight-humdrum"><pre>**Example
 *&gt;Smith&gt;A
 *&gt;Jones&gt;A
 data1
@@ -453,8 +454,7 @@ data2
 data3
 *&gt;Jones&gt;C
 data4
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>Both Smith and Jones label the work as beginning with section <a href="#id15"><span class="problematic" id="id16">`</span></a>A&#8217;. Later
 Jones&#8217;s <a href="#id17"><span class="problematic" id="id18">`</span></a>B&#8217; section begins; then Smith&#8217;s <a href="#id19"><span class="problematic" id="id20">`</span></a>B&#8217; section; then Jones&#8217;s <a href="#id21"><span class="problematic" id="id22">`</span></a>C&#8217;
@@ -469,13 +469,12 @@ Smith&#8217;s <cite>B&#8217; section by using the `</cite>-t`` option to limit e
 </pre></div>
 </div>
 <p>This command would produce the following output:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**Example
+<div class="highlight-humdrum"><pre>**Example
 *&gt;Smith&gt;B
 data3
 *&gt;Jones&gt;C
 data4
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>Without the <tt class="docutils literal"><span class="pre">-t</span></tt> option, <a class="reference external" href="../../man/yank">yank</a> will simply extract material up to the
 occurrence of the next section label. Note that section types can be used to
@@ -488,7 +487,7 @@ or more sections form part of a larger section. Humdrum section labels allow
 users to distinguish hierarchical <em>levels</em>. Levels are indicated by the
 number of greater-than signs following the section type. Consider the
 following:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**Example
+<div class="highlight-humdrum"><pre>**Example
 *&gt;Form&gt;Exposition
 data1
 *&gt;Form&gt;&gt;1st Theme
@@ -504,8 +503,7 @@ data5
 data6
 *&gt;Form&gt;Coda
 data7
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>All of the above section labels are identified as type <tt class="docutils literal"><span class="pre">Form</span></tt>. However, two
 levels are distinguished (denoted by <tt class="docutils literal"><span class="pre">&gt;</span></tt> and <tt class="docutils literal"><span class="pre">&gt;&gt;</span></tt>). Subsections are
@@ -652,7 +650,7 @@ following command:</p>
 </pre></div>
 </div>
 <p>Using the above data, the result is:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>!! Franz Schubert, `Das Wandern&#39; from &quot;Die Schoene Muellerin&quot;
+<div class="highlight-humdrum"><pre>!! Franz Schubert, `Das Wandern' from "Die Schoene Muellerin"
 **kern  **silbe
 *k[b-e-]        *Deutsch
 *&gt;[1,1,1,1]     *&gt;[1,1,1,1]
@@ -676,8 +674,7 @@ following command:</p>
 16a)    |
 8b-     -dern!
 8r      %
-*-      *-
-</pre></div>
+*-      *-</pre>
 </div>
 <p>Notice that all of the tandem interpretations related to the strophe
 organization are eliminated from the output.</p>

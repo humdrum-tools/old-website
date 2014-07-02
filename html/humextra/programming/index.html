@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -2411,13 +2412,13 @@ int main<span class="o">(</span>int argc, char** argv<span class="o">)</span> <s
 <h3>Random melody generator<a class="headerlink" href="#random-melody-generator" title="Permalink to this headline">¶</a></h3>
 <p>The following program will generate a random melody, both in pitch and
 rhythm:</p>
-<div class="code cpp highlight-bash"><div class="highlight"><pre>#include &quot;humdrum.h&quot;
+<div class="code cpp highlight-bash"><pre>#include "humdrum.h"
 #include &lt;stdlib.h&gt;     // for drand48 random numbers
 #include &lt;time.h&gt;       // for time(NULL) function
 
 void printRandomMelody(int notecount, int seed) {
-   cout &lt;&lt; &quot;!!!seed:\t&quot; &lt;&lt; seed &lt;&lt; endl;
-   cout &lt;&lt; &quot;**kern\n&quot;;
+   cout &lt;&lt; "!!!seed:\t" &lt;&lt; seed &lt;&lt; endl;
+   cout &lt;&lt; "**kern\n";
    int pitch, rhythm;
    char buffer[1024] = {0};
    for (int i=0; i&lt;notecount; i++) {
@@ -2425,23 +2426,22 @@ void printRandomMelody(int notecount, int seed) {
       pitch  = int(drand48() * 24 + 12*4.5 + 3);
       cout &lt;&lt; rhythm &lt;&lt; Convert::base12ToKern(buffer, pitch) &lt;&lt; endl;
    }
-   cout &lt;&lt; &quot;*-\n&quot;;
+   cout &lt;&lt; "*-\n";
 }
 
 int main(int argc, char** argv) {
    Options options;
-   options.define(&quot;c|count=i:20&quot;, &quot;number of notes to generate&quot;);
-   options.define(&quot;s|seed=i:-1&quot;,  &quot;random number generator seed&quot;);
+   options.define("c|count=i:20", "number of notes to generate");
+   options.define("s|seed=i:-1",  "random number generator seed");
    options.process(argc, argv);
-   int seed = options.getInteger(&quot;seed&quot;);
+   int seed = options.getInteger("seed");
    if (seed &lt; 0) {
       seed = time(NULL);  // time in seconds since 1 Jan 1970
    }
    srand48(seed);
-   printRandomMelody(options.getInteger(&quot;count&quot;), seed);
+   printRandomMelody(options.getInteger("count"), seed);
    return 0;
-}
-</pre></div>
+}</pre>
 </div>
 <p>Here is some example output:</p>
 <p>The <tt class="docutils literal"><span class="pre">-s</span></tt> option can be used to generate a fixed random melody;
@@ -2455,8 +2455,7 @@ the default length of 20 note will be used.</p>
    | convert -quality 100 -density 300 - -trim -resize <span class="s1">&#39;33%&#39;</span> output.png
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../_images/random.svg"><div align="center" class="align-center"><img src="../../_images/random.svg" width="100%" /></div>
-</a>
+<div align="center" class="align-center"><img src="../../_images/random.svg" width="100%" /></div>
 <p>The Humdrum file data can be stored internally in a stream object. This
 stream object can be ready by a HumdrumFile object to be reprocessed
 within the program, or to be printed with ostream as a HumdrumFile
@@ -2464,7 +2463,7 @@ object. The following example demonstrates this. Also, since strstream
 was changed to stringstream in ANSI C99, there are some preprocessor
 instructions to allow using string streams in both older and newer
 standards (including differences in Visual C++ 6).</p>
-<div class="code cpp highlight-bash"><div class="highlight"><pre>#include &quot;humdrum.h&quot;
+<div class="code cpp highlight-bash"><pre>#include "humdrum.h"
 #include &lt;stdlib.h&gt;     // for drand48 random numbers
 #include &lt;time.h&gt;       // for time(NULL) function
 
@@ -2484,8 +2483,8 @@ standards (including differences in Visual C++ 6).</p>
 
 void getRandomMelody(HumdrumFile&amp; datafile, int notecount, int seed) {
    SSTREAM output;
-   output &lt;&lt; &quot;!!!seed:\t&quot; &lt;&lt; seed &lt;&lt; endl;
-   output &lt;&lt; &quot;**kern\n&quot;;
+   output &lt;&lt; "!!!seed:\t" &lt;&lt; seed &lt;&lt; endl;
+   output &lt;&lt; "**kern\n";
    int pitch, rhythm;
    char buffer[1024] = {0};
    for (int i=0; i&lt;notecount; i++) {
@@ -2493,7 +2492,7 @@ void getRandomMelody(HumdrumFile&amp; datafile, int notecount, int seed) {
       pitch  = int(drand48() * 24 + 12*4.5 + 3);
       output &lt;&lt; rhythm &lt;&lt; Convert::base12ToKern(buffer, pitch) &lt;&lt; endl;
    }
-   output &lt;&lt; &quot;*-\n&quot;;
+   output &lt;&lt; "*-\n";
    output &lt;&lt; ends;
    // It is possible to print to ostream:
    // cout &lt;&lt; output.CSTRING &lt;&lt; flush;
@@ -2502,20 +2501,19 @@ void getRandomMelody(HumdrumFile&amp; datafile, int notecount, int seed) {
 
 int main(int argc, char** argv) {
    Options options;
-   options.define(&quot;c|count=i:20&quot;, &quot;number of notes to generate&quot;);
-   options.define(&quot;s|seed=i:-1&quot;,  &quot;random number generator seed&quot;);
+   options.define("c|count=i:20", "number of notes to generate");
+   options.define("s|seed=i:-1",  "random number generator seed");
    options.process(argc, argv);
-   int seed = options.getInteger(&quot;seed&quot;);
+   int seed = options.getInteger("seed");
    if (seed &lt; 0) {
       seed = time(NULL);  // time in seconds since 1 Jan 1970
    }
    srand48(seed);
    HumdrumFile datafile;
-   getRandomMelody(datafile, options.getInteger(&quot;count&quot;), seed);
+   getRandomMelody(datafile, options.getInteger("count"), seed);
    cout &lt;&lt; datafile;
    return 0;
-}
-</pre></div>
+}</pre>
 </div>
 </div>
 <div class="section" id="markov-melody-analyzer-generator">

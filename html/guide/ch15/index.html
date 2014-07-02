@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -313,7 +314,7 @@ example of an explicit harmonic interval is the perfect octave in the first
 sonority of Example 15.1</p>
 <p><strong>Example 15.1</strong> Types of harmonic intervals.</p>
 <p>&gt; .. image:: guide.figures/ch15.1.gif</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**kern  **kern
+<div class="highlight-humdrum"><pre>**kern  **kern
 *M4/4   *M4/4
 =1-     =1-
 8c      2cc
@@ -325,8 +326,7 @@ sonority of Example 15.1</p>
 8r      8b
 =2      =2
 2.c 2.e 2.g 2.cc
-*-      *-
-</pre></div>
+*-      *-</pre>
 </div>
 <p>Less obvious harmonic intervals arise when tone onsets are not synchronous &#8211;
 yet both pitches are sustained simultaneously for a period of time. We might
@@ -392,7 +392,7 @@ harmonic intervals are calculated. The output from the <a class="reference exter
 always consists of a single <a class="reference external" href="../../rep/hint">**hint</a> spine. Any number of spines may be
 present in the input, but only pitch-related spines are processed. Given the
 default invocation, the output corresponding to Example 15.1 is as follows:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**hint
+<div class="highlight-humdrum"><pre>**hint
 *M4/4
 =1-
 P8
@@ -404,8 +404,7 @@ P8
 -
 =2
 M3 m3 P4
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>Notice that sonorities that contain only a single pitch result in the
 outputting of a hyphen (<tt class="docutils literal"><span class="pre">-</span></tt>). The hyphen indicates that pitched material is
@@ -418,11 +417,10 @@ for <a class="reference external" href="../../man/hint">hint</a> .</p>
 intervals</em> can be calculated by invoking the <tt class="docutils literal"><span class="pre">-a</span></tt> option (i.e. <em>all</em>
 intervals). For example, with the <tt class="docutils literal"><span class="pre">-a</span></tt> option, the final chord in Example
 15.1 would produce the following output:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**hint
+<div class="highlight-humdrum"><pre>**hint
 *all
 M3 P5 P8 m3 m6 P4
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>Notice the presence of the <tt class="docutils literal"><span class="pre">*all</span></tt> tandem interpretation in the above
 output. This interpretation is added to the output in order to warn users
@@ -431,10 +429,9 @@ that the representation should not be interpreted as stacked intervals.</p>
 In this case, harmonic intervals are calculated with respect to the lowest
 pitch in the sonority. This option is helpful in determining figured bass.
 For the final chord in Example 12.1 the corresponding output would be</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**hint
+<div class="highlight-humdrum"><pre>**hint
 M3 P5 P8
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>Two further options for <a class="reference external" href="../../man/hint">hint</a> allow the user to tailor how the intervals
 are represented. The <tt class="docutils literal"><span class="pre">-c</span></tt> option causes compound intervals such as a minor
@@ -447,10 +444,9 @@ determining figured bass. The command:</p>
 </pre></div>
 </div>
 <p>will produce the following output for the final major chord in Example 12.1:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**hint
+<div class="highlight-humdrum"><pre>**hint
 3 5
-*-
-</pre></div>
+*-</pre>
 </div>
 </div>
 <div class="section" id="propagating-data-using-the-ditto-command">
@@ -462,7 +458,7 @@ intervals are not calculated.</p>
 <a class="reference external" href="../../man/ditto">ditto</a> command. The <a class="reference external" href="../../man/ditto">ditto</a> command replaces null tokens with the
 previous non-null data token in the same spine. Suppose we had an arbitrary
 input such as the following:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**flip  **flop
+<div class="highlight-humdrum"><pre>**flip  **flop
 A       xyz
 .       jkl
 .       .
@@ -470,11 +466,10 @@ B       abc
 .       .
 C       .
 .       .
-*-      *-
-</pre></div>
+*-      *-</pre>
 </div>
 <p>The effect of <a class="reference external" href="../../man/ditto">ditto</a> would be the following:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**flip  **flop
+<div class="highlight-humdrum"><pre>**flip  **flop
 A       xyz
 A       jkl
 A       jkl
@@ -482,8 +477,7 @@ B       abc
 B       abc
 C       abc
 C       abc
-*-      *-
-</pre></div>
+*-      *-</pre>
 </div>
 <p>Each null token has been replaced by the preceding data token within the
 spine.</p>
@@ -492,7 +486,7 @@ spine.</p>
 </pre></div>
 </div>
 <p>The following output results:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**kern  **kern
+<div class="highlight-humdrum"><pre>**kern  **kern
 *M4/4   *M4/4
 =1-     =1-
 8c      2cc
@@ -504,8 +498,7 @@ spine.</p>
 8r      8b
 =2      =2
 2.c 2.e 2.g 2.cc
-*-      *-
-</pre></div>
+*-      *-</pre>
 </div>
 <p>Notice that the half-note C5 has been repeated. The <tt class="docutils literal"><span class="pre">-p</span></tt> option has caused
 each repetition of the data token to be placed in parentheses so they can be
@@ -517,7 +510,7 @@ intervals into explicit sonorities whose intervals can now be identified by
 </div>
 <p>The resulting output for Example 15.1 includes the two passing intervals (m7
 and m6) in the first measure:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**hint
+<div class="highlight-humdrum"><pre>**hint
 *M4/4
 =1-
 P8
@@ -529,8 +522,7 @@ m6
 -
 =2
 M3 m3 P4
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>The <a class="reference external" href="../../man/ditto">ditto</a>, command provides two additional options that are worthy of
 note: the <tt class="docutils literal"><span class="pre">-s</span></tt> and <tt class="docutils literal"><span class="pre">-c</span></tt> options. The <tt class="docutils literal"><span class="pre">-s</span></tt> option allows <a class="reference external" href="../../man/ditto">ditto</a> to
@@ -638,7 +630,7 @@ commands within a single invocation of <a class="reference external" href="../..
 </pre></div>
 </div>
 <p>The following output results:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**kern  **kern
+<div class="highlight-humdrum"><pre>**kern  **kern
 *M4/4   *M4/4
 =1-     =1-
 8c      2cc
@@ -650,8 +642,7 @@ commands within a single invocation of <a class="reference external" href="../..
 .       8b
 =2      =2
 2.c 2.e 2.g 2.cc
-*-      *-
-</pre></div>
+*-      *-</pre>
 </div>
 <p>If we now apply <a class="reference external" href="../../man/ditto">ditto</a> and recalculate the intervals, the resulting
 output will identify some implicit intervals as well:</p>
@@ -659,7 +650,7 @@ output will identify some implicit intervals as well:</p>
 &gt;&gt; | ditto -p``</p>
 <p>Below we see the output assembled with the output from the corresponding
 <a class="reference external" href="../../man/hint">hint</a> command:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**kern  **kern  **hint
+<div class="highlight-humdrum"><pre>**kern  **kern  **hint
 *M4/4   *M4/4   *M4/4
 =1-     =1-     =1-
 8c      2cc     P8
@@ -671,8 +662,7 @@ output will identify some implicit intervals as well:</p>
 (8d)    8b      M6
 =2      =2      =2
 2.c 2.e 2.g 2.cc        M3 m3 P4
-*-      *-      *-
-</pre></div>
+*-      *-      *-</pre>
 </div>
 </div>
 <div class="section" id="the-ydelta-command">
@@ -684,7 +674,7 @@ translate Example 15.1 to a <a class="reference external" href="../../rep/semits
 </pre></div>
 </div>
 <p>The resulting output would be as follows:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**semits        **semits
+<div class="highlight-humdrum"><pre>**semits        **semits
 *M4/4   *M4/4
 =1-     =1-
 0       12
@@ -696,8 +686,7 @@ r       9
 r       11
 =2      =2
 0 4     7 12
-*-      *-
-</pre></div>
+*-      *-</pre>
 </div>
 <p>Numerical differences for values on a single data record can be computed
 using the <a class="reference external" href="../../man/ydelta">ydelta</a> command. The <a class="reference external" href="../../man/ydelta">ydelta</a> command is comparable to
@@ -715,7 +704,7 @@ while processing. In this case, the regular expression <a href="#id26"><span cla
 identify barlines, so measure numbers will be excluded when processing the
 numerical data.</p>
 <p>The above command yields the following output:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**Ysemits
+<div class="highlight-humdrum"><pre>**Ysemits
 *
 =1-
 12
@@ -727,8 +716,7 @@ numerical data.</p>
 .
 =2
 4 7 12
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>Notice that <a class="reference external" href="../../man/ydelta">ydelta</a> prepends the upper-case letter <cite>Y&#8217; to the given input
 interpretation. All output values are calculated with respect to the lowest
@@ -745,7 +733,7 @@ values &#8211; replacing all the null data tokens. A suitable command would be:<
 </pre></div>
 </div>
 <p>The resulting output would be:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**Ysemits
+<div class="highlight-humdrum"><pre>**Ysemits
 *
 =1-
 12
@@ -757,8 +745,7 @@ values &#8211; replacing all the null data tokens. A suitable command would be:<
 .
 =2
 4 7 12
-*-
-</pre></div>
+*-</pre>
 </div>
 </div>
 <div class="section" id="more-examples-using-the-ydelta-command">

@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -306,7 +307,7 @@ chords in the <a class="reference external" href="http://www.humdrum.org/Humdrum
 pitches.  Here is an example conversion, using the Pachelbel&#8217;s canon
 chord sequence:</p>
 <p><strong>Example.</strong> Pachelbel&#8217;s canon chord sequence mapped onto pitches.</p>
-<table width="100%"><tr><td width="30%"><div class="highlight-humdrum"><div class="highlight"><pre>**harm
+<table width="100%"><tr><td width="30%"><div class="highlight-humdrum"><pre>**harm
 *C:
 I
 V
@@ -317,11 +318,11 @@ I
 IV
 V
 *-
-</pre></div>
+</pre>
 </div>
 </td><td align="center" width="30%">
    &#x21d2;&nbsp;<tt><a href=http://extras.humdrum.org/man/harm2kern>harm2kern</a></tt>&nbsp;&#x21d2;
-</td><td width="30%"><div class="highlight-humdrum"><div class="highlight"><pre>**kern
+</td><td width="30%"><div class="highlight-humdrum"><pre>**kern
 *C:
 C e g
 G b dd
@@ -332,7 +333,7 @@ C e g
 F a cc
 G b dd
 *-
-</pre></div>
+</pre>
 </div>
 </td></tr></table><p>Rhythm can be added to the output <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/kern.rep.html">**kern</a> data as shown
 in the following examples.  This is useful if you want to align
@@ -342,7 +343,7 @@ to each output chord note by using the <tt class="docutils literal"><span class=
 <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a> rhythm (although <tt class="docutils literal"><span class="pre">-P</span></tt> will also prefix any arbitrary
 text).</p>
 <p><strong>Example.</strong> Add half note rhythm to all chord notes using the <tt class="docutils literal"><span class="pre">-P</span></tt> (prefix) option.</p>
-<table width="100%"><tr><td width="30%"><div class="highlight-humdrum"><div class="highlight"><pre>**harm
+<table width="100%"><tr><td width="30%"><div class="highlight-humdrum"><pre>**harm
 *C:
 I
 V
@@ -353,11 +354,11 @@ I
 IV
 V
 *-
-</pre></div>
+</pre>
 </div>
 </td><td align="center" width="30%">
    &#x21d2;&nbsp;<tt><a href=http://extras.humdrum.org/man/harm2kern>harm2kern</a> -P 2</tt>&nbsp;&#x21d2;
-</td><td width="30%"><div class="highlight-humdrum"><div class="highlight"><pre>**kern
+</td><td width="30%"><div class="highlight-humdrum"><pre>**kern
 *C:
 2C 2e 2g
 2G 2b 2dd
@@ -368,10 +369,10 @@ V
 2F 2a 2cc
 2G 2b 2dd
 *-
-</pre></div>
+</pre>
 </div>
 </td></tr></table><p><strong>Example.</strong> Include a <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/recip.rep.html">**recip</a> or <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/kern.rep.html">**kern</a> spine with the input to automatically generate rhythmic values in output.</p>
-<table width="100%"><tr><td width="30%"><div class="highlight-humdrum"><div class="highlight"><pre>**recip	**harm
+<table width="100%"><tr><td width="30%"><div class="highlight-humdrum"><pre>**recip	**harm
 *	*C:
 4	I
 2	V
@@ -382,11 +383,11 @@ V
 2	IV
 1	V;
 *-	*-
-</pre></div>
+</pre>
 </div>
 </td><td align="center" width="30%">
    &#x21d2;&nbsp;<tt><a href=http://extras.humdrum.org/man/harm2kern>harm2kern</a> </tt>&nbsp;&#x21d2;
-</td><td width="30%"><div class="highlight-humdrum"><div class="highlight"><pre>**kern
+</td><td width="30%"><div class="highlight-humdrum"><pre>**kern
 *C:
 4C 4e 4g
 2G 2b 2dd
@@ -397,7 +398,7 @@ V
 2F 2a 2cc
 1G; 1b; 1dd;
 *-
-</pre></div>
+</pre>
 </div>
 </td></tr></table><p>Automatic transpositions of <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/harm.rep.html">**harm</a> data can be done
 before or after conversion to <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/kern.rep.html">**kern</a> data
@@ -405,7 +406,7 @@ with the <a class="reference external" href="http://extras.humdrum.org/man/trans
 input data was created by appending the conversion to <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/kern.rep.html">**kern</a>
 data to the input <a class="reference external" href="http://www.humdrum.org/Humdrum/representations/harm.rep.html">**harm</a> data by using the <tt class="docutils literal"><span class="pre">-a</span></tt> option.</p>
 <p><strong>Example.</strong> Transposing Pachelbel&#8217;s canon chords to F♯ major.</p>
-<table width="100%"><tr><td width="30%"><div class="highlight-humdrum"><div class="highlight"><pre>**harm	**kern
+<table width="100%"><tr><td width="30%"><div class="highlight-humdrum"><pre>**harm	**kern
 *C:	*C:
 I	C e g
 V	G b dd
@@ -416,11 +417,11 @@ I	C e g
 IV	F a cc
 V	G b dd
 *-	*-
-</pre></div>
+</pre>
 </div>
 </td><td align="center" width="30%">
    &#x21d2;&nbsp;<tt><a href=http://extras.humdrum.org/man/transpose>transpose</a> -qk f# </tt>&nbsp;&#x21d2;
-</td><td width="30%"><div class="highlight-humdrum"><div class="highlight"><pre>**harm	**kern
+</td><td width="30%"><div class="highlight-humdrum"><pre>**harm	**kern
 *F#:	*F#:
 I	F# a# cc#
 V	c# ee# gg#
@@ -431,11 +432,11 @@ I	F# a# cc#
 IV	B dd# ff#
 V	c# ee# gg#
 *-	*-
-</pre></div>
+</pre>
 </div>
 </td></tr></table><p>Here is a chord label sampler with conversions into pitches:</p>
 <p><strong>Example.</strong> Various chord types</p>
-<table width="100%"><tr><td width="30%"><div class="highlight-humdrum"><div class="highlight"><pre>**harm	**name
+<table width="100%"><tr><td width="30%"><div class="highlight-humdrum"><pre>**harm	**name
 *C:	*
 I	major triad
 i	minor triad
@@ -448,11 +449,11 @@ io7	dM seventh
 I7-	dM seventh
 N	Neapolitan chord
 *-	*-
-</pre></div>
+</pre>
 </div>
 </td><td align="center" width="30%">
    &#x21d2;&nbsp;<tt><a href=http://extras.humdrum.org/man/harm2kern>harm2kern</a> </tt>&nbsp;&#x21d2;
-</td><td width="30%"><div class="highlight-humdrum"><div class="highlight"><pre>**kern
+</td><td width="30%"><div class="highlight-humdrum"><pre>**kern
 *C:
 C e g
 C e- g
@@ -465,7 +466,7 @@ C e- g- b
 C e g b
 D- f a-
 *-
-</pre></div>
+</pre>
 </div>
 </td></tr></table></div>
 </div>

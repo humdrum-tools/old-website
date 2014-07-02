@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -428,14 +429,13 @@ this using the Humdrum <a class="reference external" href="../../man/scramble">s
 <h2>Using the <em>scramble</em> Command<a class="headerlink" href="#using-the-scramble-command" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="../../man/scramble">scramble</a> command is useful for randomizing the arrangement of
 Humdrum data. Suppose we had the following Humdrum input:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**numbers
+<div class="highlight-humdrum"><pre>**numbers
 1
 2
 3
 4
 5
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>We can scramble the order of data records using the following command:</p>
 <div class="highlight-bash"><div class="highlight"><pre>scramble -r numbers
@@ -443,14 +443,13 @@ Humdrum data. Suppose we had the following Humdrum input:</p>
 </div>
 <p>The <tt class="docutils literal"><span class="pre">-r</span></tt> option indicates that it is the order of records which should be
 randomized. A possible output might look like this:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**numbers
+<div class="highlight-humdrum"><pre>**numbers
 3
 2
 5
 1
 4
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>Notice that only data records are scrambled: comments and interpretations
 stay put. Each time <a class="reference external" href="../../man/scramble">scramble</a> is invoked, it produces a different
@@ -561,14 +560,13 @@ command:</p>
 </div>
 <p>Will cause all data tokens to be moved forward one position, and the last
 data token to be moved to the beginning:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**numbers
+<div class="highlight-humdrum"><pre>**numbers
 5
 1
 2
 3
 4
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>Let&#8217;s apply this technique to our problem of whether a given composer tends
 to avoid octaves between the soprano and bass voices. First, we extract each

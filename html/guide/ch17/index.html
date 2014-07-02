@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -328,15 +329,14 @@ What is the frequency of occurrence for various _____s?</p>
 one of these basic questions.</p>
 <p>For illustration purposes, consider the case of a Humdrum file named
 <tt class="docutils literal"><span class="pre">alpha</span></tt> containing the following simple input:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**alpha
+<div class="highlight-humdrum"><pre>**alpha
 A
 B
 A
 A
 C
 B
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>It doesn&#8217;t matter what the data represent. The &#8220;<tt class="docutils literal"><span class="pre">A</span></tt>&#8221;, &#8220;<tt class="docutils literal"><span class="pre">B</span></tt>&#8221;, and &#8220;<tt class="docutils literal"><span class="pre">C</span></tt>&#8221;
 might signify different articulation marks, chords, harmonic intervals, or
@@ -358,15 +358,14 @@ alphabetical/numerical order. The command:</p>
 <p><tt class="docutils literal"><span class="pre">sort</span> <span class="pre">alpha</span> <span class="pre">&gt;</span> <span class="pre">sorted.alpha</span></tt></p>
 <p>will sort the file <tt class="docutils literal"><span class="pre">alpha</span></tt> and place the results in a file named
 <tt class="docutils literal"><span class="pre">sorted.alpha</span></tt>. The file <tt class="docutils literal"><span class="pre">sorted.alpha</span></tt> will contain the following:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**alpha
+<div class="highlight-humdrum"><pre>**alpha
 *-
 A
 A
 A
 B
 B
-C
-</pre></div>
+C</pre>
 </div>
 <p>Notice that the asterisk is treated as alphabetically prior to the the letter
 <a href="#id1"><span class="problematic" id="id2">`</span></a>A&#8217;, so all the Humdrum interpretation records have been moved to the
@@ -381,12 +380,11 @@ type:</p>
 </pre></div>
 </div>
 <p>The output will be as follows:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**alpha
+<div class="highlight-humdrum"><pre>**alpha
 *-
 A
 B
-C
-</pre></div>
+C</pre>
 </div>
 <p>Notice that repetitions of the data &#8220;A&#8221; and &#8220;B&#8221; have disappeared. The simple
 <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command is useful for telling us <em>how many different things</em> there
@@ -452,15 +450,14 @@ data. For example, the following file (named <tt class="docutils literal"><span 
 spines, one with &#8220;alpha&#8221; data, and the second with &#8220;bet&#8221; data. These data
 types might represent melodic intervals and fingering information, or dynamic
 markings and stem-directions, or whatever.</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**alpha **bet
+<div class="highlight-humdrum"><pre>**alpha **bet
 A       $50
 B       $50
 A       $50
 A       $200
 C       $50
 B       $50
-*-      *-
-</pre></div>
+*-      *-</pre>
 </div>
 <p>If we apply our above inventory-generating commands for the file &#8220;alphabet,&#8221;
 the result will be as follows:</p>
@@ -605,7 +602,7 @@ the <a class="reference external" href="../../man/deg">deg</a> or <a class="refe
 <a class="reference external" href="http://en.wikipedia.org/wiki/Sed">sed</a> or <a class="reference external" href="../../man/humsed">humsed</a> stream editors. Suppose we had a file (named
 &#8220;notes&#8221;) consisting of pitch information, and we wanted to create an
 inventory of the diatonic pitch-letter names. Our input might look like this:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**notes
+<div class="highlight-humdrum"><pre>**notes
 A
 B
 B
@@ -613,8 +610,7 @@ D
 F#
 D#
 E
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>Without modification, our inventory would appear as follows:</p>
 <p><tt class="docutils literal"><span class="pre">1A</span>

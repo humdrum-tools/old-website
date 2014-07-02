@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -309,14 +310,16 @@ stream or file. We can invoke the command by typing the command name followed
 by the name of a file. The command</p>
 <p><cite>census india01.krn</cite></p>
 <p>might produce the following output:</p>
-<p><cite>HUMDRUM DATA
-&gt; Number of data tokens: 91
-&gt; Number of null tokens: 0
-&gt; Number of multiple-stops: 0
-&gt; Number of data records: 91
-&gt; Number of comments: 14
-&gt; Number of interpretations: 7
-&gt; Number of records: 112</cite></p>
+<div class="line-block">
+<div class="line">HUMDRUM DATA</div>
+<div class="line">Number of data tokens: 91</div>
+<div class="line">Number of null tokens: 0</div>
+<div class="line">Number of multiple-stops: 0</div>
+<div class="line">Number of data records: 91</div>
+<div class="line">Number of comments: 14</div>
+<div class="line">Number of interpretations: 7</div>
+<div class="line">Number of records: 112`</div>
+</div>
 <p>Most commands provide <em>options</em> that will modify the operation of the command
 in a particular way. In UNIX-style commands, options follow after the command
 name and are typically specified by a single letter preceded by a hyphen. The
@@ -327,17 +330,19 @@ highest, and lowest notes, the maximum number of concurrent notes or voices,
 the number of rests, and the number of barlines. For example, the command:</p>
 <p><cite>census -k india01.krn</cite></p>
 <p>might produce the following <em>additional</em> output:</p>
-<p><cite>KERN DATA
-&gt; Number of noteheads: 78
-&gt; Number of notes: 78
-&gt; Longest note: 1
-&gt; Shortest note: 16
-&gt; Highest note: cc
-&gt; Lowest note: c
-&gt; Number of rests: 1
-&gt; Maximum number of voices: 1
-&gt; Number of single barlines: 11
-&gt; Number of double barlines: 1</cite></p>
+<div class="line-block">
+<div class="line">KERN DATA</div>
+<div class="line">Number of noteheads: 78</div>
+<div class="line">Number of notes: 78</div>
+<div class="line">Longest note: 1</div>
+<div class="line">Shortest note: 16</div>
+<div class="line">Highest note: cc</div>
+<div class="line">Lowest note: c</div>
+<div class="line">Number of rests: 1</div>
+<div class="line">Maximum number of voices: 1</div>
+<div class="line">Number of single barlines: 11</div>
+<div class="line">Number of double barlines: 1`</div>
+</div>
 <p>Notice that a distinction is made between the number of notes and the number
 of noteheads. A tied note is considered to be a single &#8220;note,&#8221; although it
 may be notated using two or more noteheads.</p>
@@ -368,11 +373,13 @@ If more than one pattern is found, each instance of the pattern will be
 output on a separate line. Whenever an asterisk or &#8220;wildcard&#8221; is used as part
 of the filename, <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> causes the <em>name</em> of each file to be prepended to
 the output for all patterns that are found:</p>
-<p><cite>opus28:!! Andante
-opus29:!! Andante
-opus46:!! Andante
-opus91:!! Andante
-opus98:!! Andante</cite></p>
+<div class="line-block">
+<div class="line">opus28:!! Andante</div>
+<div class="line">opus29:!! Andante</div>
+<div class="line">opus46:!! Andante</div>
+<div class="line">opus91:!! Andante</div>
+<div class="line">opus98:!! Andante</div>
+</div>
 <p>By default, <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> distinguishes upper- and lower-case characters, so the
 above command will not match strings such as &#8220;<cite>ANDANTE</cite>&#8221;. However, the
 <tt class="docutils literal"><span class="pre">-i</span></tt> option tells <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to ignore the case when searching. E.g.,</p>
@@ -390,9 +397,11 @@ for each matching instance. The following command identifies the line numbers
 for lines containing a double sharp for the file <cite>melody.krn</cite>:</p>
 <p><cite>grep -n &#8216;##&#8217; melody.krn</cite></p>
 <p>The output might look like this:</p>
-<p><cite>1109:{4g##
-1731:16g##
-3002:16f##</cite></p>
+<div class="line-block">
+<div class="line">1109:{4g##</div>
+<div class="line">1731:16g##</div>
+<div class="line">3002:16f##`</div>
+</div>
 <p>&#8211; meaning that double sharps were found in lines 1109, 1731, and 3002 in the
 file <cite>melody.krn</cite>.</p>
 </div>
@@ -415,8 +424,8 @@ incorrect. More carefully constructed patterns require a better knowledge of
 <div class="section" id="searching-for-reference-information">
 <h2>Searching for Reference Information<a class="headerlink" href="#searching-for-reference-information" title="Permalink to this headline">¶</a></h2>
 <p>As we saw in <a class="reference external" href="../ch02">Chapter 2</a>, Humdrum files typically encode library-type
-information using reference records. For example, the <a href="#id53"><span class="problematic" id="id54">`**composer&#8217;s name**`_</span></a>
-is encoded in a <a href="#id55"><span class="problematic" id="id56">`!!!COM:`record, and the `**title**`_</span></a> is encoded via the
+information using reference records. For example, the <a href="#id51"><span class="problematic" id="id52">`**composer&#8217;s name**`_</span></a>
+is encoded in a <a href="#id53"><span class="problematic" id="id54">`!!!COM:`record, and the `**title**`_</span></a> is encoded via the
 <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">!!!OTL:`record. In conjunction with the `grep</a> command, these three-
 letter codes provide useful tags to search for pertinent information. For
 example, the following command will identify the composer for the file
@@ -431,20 +440,22 @@ files in the current directory. Hence the command</p>
 Similarly, the following command will generate a list of all of the titles:</p>
 <p><cite>grep &#8216;!!!OTL:&#8217; *</cite></p>
 <p>The output might look as follows:</p>
-<p><cite>foster11:!!!OTL: Oh! Susanna
-foster12:!!!OTL: Jeanie with the Light Brown Hair
-foster13:!!!OTL: Beautiful Dreamer
-foster14:!!!OTL: Gwine to Run All Night (or &#8216;De Camptown Race&#8217;)
-foster15:!!!OTL: My Old Kentucky Home, Good-Night
-foster16:!!!OTL: We are Coming, Father Abraam
-foster17:!!!OTL: Don&#8217;t Bet Your Money on De Shanghai
-foster18:!!!OTL: Gentle Annie
-foster19:!!!OTL: If You&#8217;ve Only Got a Moustache
-foster20:!!!OTL: Maggie by my Side
-foster21:!!!OTL: Old Folks at Home
-foster22:!!!OTL: Better Times are Coming
-foster23:!!!OTL: When this Dreadful War is Ended
-foster24:!!!OTL: Hard Times Comes Again No More</cite></p>
+<div class="line-block">
+<div class="line">foster11:!!!OTL: Oh! Susanna</div>
+<div class="line">foster12:!!!OTL: Jeanie with the Light Brown Hair</div>
+<div class="line">foster13:!!!OTL: Beautiful Dreamer</div>
+<div class="line">foster14:!!!OTL: Gwine to Run All Night (or &#8216;De Camptown Race&#8217;)</div>
+<div class="line">foster15:!!!OTL: My Old Kentucky Home, Good-Night</div>
+<div class="line">foster16:!!!OTL: We are Coming, Father Abraam</div>
+<div class="line">foster17:!!!OTL: Don&#8217;t Bet Your Money on De Shanghai</div>
+<div class="line">foster18:!!!OTL: Gentle Annie</div>
+<div class="line">foster19:!!!OTL: If You&#8217;ve Only Got a Moustache</div>
+<div class="line">foster20:!!!OTL: Maggie by my Side</div>
+<div class="line">foster21:!!!OTL: Old Folks at Home</div>
+<div class="line">foster22:!!!OTL: Better Times are Coming</div>
+<div class="line">foster23:!!!OTL: When this Dreadful War is Ended</div>
+<div class="line">foster24:!!!OTL: Hard Times Comes Again No More`</div>
+</div>
 <p>Remember that when a wildcard is used in filenames, <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> prepends the
 filename prior to found patterns. These filename <cite>headers&#8217; can be eliminated
 by selecting the `</cite>-h`` option for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>:</p>
@@ -458,23 +469,25 @@ file by following the command with a greater-than sign (&gt;) followed by a
 filename. For example, the following command places the output from <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>
 in a file called <cite>titles</cite>:</p>
 <p><cite>grep -h &#8216;!!!OTL:&#8217; * &gt; titles</cite></p>
-<p>Beware that if the file <cite>titles`already exists then it will be over
-written and its previous contents lost. With the `</cite>-h`` option the file
-<a href="#id16"><span class="problematic" id="id17">`</span></a>titles`might contain the following lines:</p>
-<p><cite>!!!OTL: Oh! Susanna
-!!!OTL: Jeanie with the Light Brown Hair
-!!!OTL: Beautiful Dreamer
-!!!OTL: Gwine to Run All Night (or &#8216;De Camptown Race&#8217;)
-!!!OTL: My Old Kentucky Home, Good-Night
-!!!OTL: We are Coming, Father Abraam
-!!!OTL: Don&#8217;t Bet Your Money on De Shanghai
-!!!OTL: Gentle Annie
-!!!OTL: If You&#8217;ve Only Got a Moustache
-!!!OTL: Maggie by my Side
-!!!OTL: Old Folks at Home
-!!!OTL: Better Times are Coming
-!!!OTL: When this Dreadful War is Ended
-!!!OTL: Hard Times Comes Again No More</cite></p>
+<p>Beware that if the file titles already exists then it will be over
+written and its previous contents lost. With the <tt class="docutils literal"><span class="pre">-h</span></tt> option the file
+titles might contain the following lines:</p>
+<div class="line-block">
+<div class="line">!!!OTL: Oh! Susanna</div>
+<div class="line">!!!OTL: Jeanie with the Light Brown Hair</div>
+<div class="line">!!!OTL: Beautiful Dreamer</div>
+<div class="line">!!!OTL: Gwine to Run All Night (or &#8216;De Camptown Race&#8217;)</div>
+<div class="line">!!!OTL: My Old Kentucky Home, Good-Night</div>
+<div class="line">!!!OTL: We are Coming, Father Abraam</div>
+<div class="line">!!!OTL: Don&#8217;t Bet Your Money on De Shanghai</div>
+<div class="line">!!!OTL: Gentle Annie</div>
+<div class="line">!!!OTL: If You&#8217;ve Only Got a Moustache</div>
+<div class="line">!!!OTL: Maggie by my Side</div>
+<div class="line">!!!OTL: Old Folks at Home</div>
+<div class="line">!!!OTL: Better Times are Coming</div>
+<div class="line">!!!OTL: When this Dreadful War is Ended</div>
+<div class="line">!!!OTL: Hard Times Comes Again No More`</div>
+</div>
 </div>
 <div class="section" id="the-sort-command">
 <h2>The <em>sort</em> Command<a class="headerlink" href="#the-sort-command" title="Permalink to this headline">¶</a></h2>
@@ -500,24 +513,30 @@ want to create an alphabetical list of titles, but you want to exclude
 duplicate titles. The UNIX <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command provides a useful utility for
 eliminating duplication. Without any option, <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> simply eliminates any
 successive repeated lines. For example, given the input:</p>
-<p><cite>1
-1
-1
-2
-2
-3</cite></p>
+<div class="line-block">
+<div class="line">1</div>
+<div class="line">1</div>
+<div class="line">1</div>
+<div class="line">2</div>
+<div class="line">2</div>
+<div class="line">3</div>
+</div>
 <p>the <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command will produce the following output:</p>
-<p><cite>1
-2
-3</cite></p>
+<div class="line-block">
+<div class="line">1</div>
+<div class="line">2</div>
+<div class="line">3</div>
+</div>
 <p>Note that <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> only discards <em>successive</em> repeated records; an input such
 as the following would remain unmodified by the <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command:</p>
-<p><cite>1
-2
-3
-1
-3
-1</cite></p>
+<div class="line-block">
+<div class="line">1</div>
+<div class="line">2</div>
+<div class="line">3</div>
+<div class="line">1</div>
+<div class="line">3</div>
+<div class="line">1</div>
+</div>
 <p>Another important point about <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> is that successive lines must be
 <em>exact repetitions</em> in order to be discarded. For example, if one line has a
 trailing blank that is not present in the previous line, then the line is not
@@ -535,10 +554,12 @@ only we would search for reference records encoding the composer&#8217;s name:</
 <p>Even if the current directory contains hundreds of works by one composer (say
 Beethoven) and just a single work by another composer, the presence of the
 odd score will be obvious without having to look through long lists:</p>
-<p><cite>!!!COM: Beethoven, Ludwig van</cite>
-<cite>!!!COM: Stamitz, Carl Philipp</cite></p>
+<div class="line-block">
+<div class="line">!!!COM: Beethoven, Ludwig van`</div>
+<div class="line">!!!COM: Stamitz, Carl Philipp`</div>
+</div>
 <p>Of course we can make similar lists for other types of information available
-in reference records. The <a href="#id25"><span class="problematic" id="id26">`</span></a>AIN`reference record encodes instrumentation.
+in reference records. The <a href="#id23"><span class="problematic" id="id24">`</span></a>AIN`reference record encodes instrumentation.
 We could make a list of various instrumental combinations used for scores in
 the current directory:</p>
 <p><cite>grep -h &#8216;!!!AIN:&#8217; * | sort | uniq</cite></p>
@@ -558,35 +579,41 @@ duplicate records:</p>
 <p><cite>grep -h &#8216;!!!OTL:&#8217; * | sort | uniq -d</cite></p>
 <p>The output will identify those titles which appear in two or more files in
 the current directory. The output might look as follows:</p>
-<p><cite>!!!OTL: Befiehl du deine Wege
-!!!OTL: Christ lag in Todesbanden
-!!!OTL: Christus, der ist mein Leben
-!!!OTL: Das alte Jahr vergangen ist
-!!!OTL: Ein&#8217; feste Burg ist unser Gott
-!!!OTL: Erbarm&#8217; dich mein, o Herre Gott
-!!!OTL: Herr, ich habe missgehandelt
-!!!OTL: Herr, wie du willst, so schick&#8217;s mit mir
-!!!OTL: Ich dank&#8217; dir, lieber Herre
-!!!OTL: Jesu, der du meine Seele
-!!!OTL: Jesu, meiner Seelen Wonne</cite></p>
+<div class="line-block">
+<div class="line">!!!OTL: Befiehl du deine Wege</div>
+<div class="line">!!!OTL: Christ lag in Todesbanden</div>
+<div class="line">!!!OTL: Christus, der ist mein Leben</div>
+<div class="line">!!!OTL: Das alte Jahr vergangen ist</div>
+<div class="line">!!!OTL: Ein&#8217; feste Burg ist unser Gott</div>
+<div class="line">!!!OTL: Erbarm&#8217; dich mein, o Herre Gott</div>
+<div class="line">!!!OTL: Herr, ich habe missgehandelt</div>
+<div class="line">!!!OTL: Herr, wie du willst, so schick&#8217;s mit mir</div>
+<div class="line">!!!OTL: Ich dank&#8217; dir, lieber Herre</div>
+<div class="line">!!!OTL: Jesu, der du meine Seele</div>
+<div class="line">!!!OTL: Jesu, meiner Seelen Wonne`</div>
+</div>
 <p>Having established which titles are duplicates, a logical next step might be
 to identify the specific files involved. We can use <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> again to search
 for a specific title. Without the <tt class="docutils literal"><span class="pre">-h</span></tt> option, the output will identify the
 appropriate filenames. For example:</p>
 <p><cite>grep &#8216;!!!OTL: Befiehl du deine Wege&#8217; *</cite></p>
 <p>might produce the following output:</p>
-<p><cite>bwv270.krn:!!!OTL: Befiehl du deine Wege</cite>
-<cite>bwv271.krn:!!!OTL: Befiehl du deine Wege</cite>
-<cite>bwv272.krn:!!!OTL: Befiehl du deine Wege</cite></p>
+<div class="line-block">
+<div class="line">bwv270.krn:!!!OTL: Befiehl du deine Wege`</div>
+<div class="line">bwv271.krn:!!!OTL: Befiehl du deine Wege`</div>
+<div class="line">bwv272.krn:!!!OTL: Befiehl du deine Wege`</div>
+</div>
 <p>Sometimes we would like to have an output that contains <em>only</em> the
 <em>filenames</em> containing the sought pattern. The <tt class="docutils literal"><span class="pre">-l</span></tt> option causes <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>
 to output only filenames that contain one or more instances of the sought
 pattern:</p>
 <p><cite>grep -l &#8216;!!!OTL: Befiehl du deine Wege&#8217; *</cite></p>
 <p>The output would appear as follows:</p>
-<p><cite>bwv270.krn</cite>
-<cite>bwv271.krn</cite>
-<cite>bwv272.krn</cite></p>
+<div class="line-block">
+<div class="line">bwv270.krn`</div>
+<div class="line">bwv271.krn`</div>
+<div class="line">bwv272.krn`</div>
+</div>
 <p>As we&#8217;ve already notes, the <tt class="docutils literal"><span class="pre">-u</span></tt> option for <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> causes only unique
 entries in a list to be passed to the output. This is often useful in
 identifying works that differ in some way from other works in a group or
@@ -602,22 +629,26 @@ we want to count the number of works by each composer in the current
 directory:</p>
 <p><cite>grep -h &#8216;!!!OTL:&#8217; * | sort | uniq -c</cite></p>
 <p>The output might appear as follows:</p>
-<p>` 9 !!!COM: Berardi, Angelo
-2 !!!COM: Caldara, Antonio
-12 !!!COM: Zarlino, Gioseffo
-2 !!!COM: Sweelinck, Jan Pieterszoon
-4 !!!COM: Josquin Des Pres`</p>
+<div class="line-block">
+<div class="line">9 !!!COM: Berardi, Angelo</div>
+<div class="line">2 !!!COM: Caldara, Antonio</div>
+<div class="line">12 !!!COM: Zarlino, Gioseffo</div>
+<div class="line">2 !!!COM: Sweelinck, Jan Pieterszoon</div>
+<div class="line">4 !!!COM: Josquin Des Pres`</div>
+</div>
 <p>Notice that the number of instances is prepended to the reference records.</p>
 <p>Incidentally, if we wanted to rearrange this list in order of the number of
 works, we could pass the above output to yet another**sort**command. Since**sort**sorts from left to right, it will begin sorting according to the
 numerical values at the extreme left. The command</p>
 <p><cite>grep -h &#8216;!!!COM:&#8217; * | sort | uniq -c | sort -n</cite></p>
 <p>will rearrange the above output as follows:</p>
-<p>` 2 !!!COM: Caldara, Antonio
-2 !!!COM: Sweelinck, Jan Pieterszoon
-4 !!!COM: Josquin Des Pres
-9 !!!COM: Berardi, Angelo
-12 !!!COM: Zarlino, Gioseffo`</p>
+<div class="line-block">
+<div class="line">2 !!!COM: Caldara, Antonio</div>
+<div class="line">2 !!!COM: Sweelinck, Jan Pieterszoon</div>
+<div class="line">4 !!!COM: Josquin Des Pres</div>
+<div class="line">9 !!!COM: Berardi, Angelo</div>
+<div class="line">12 !!!COM: Zarlino, Gioseffo`</div>
+</div>
 <p>It is important to understand that the two**sort**commands in our pipeline
 achieve different goals but use the same process. The first**sort**command
 sorts the composer&#8217;s names into alphabetical order. This is done so that the
@@ -632,7 +663,7 @@ lists that are ordered from most common to least common.</p>
 <p>In this chapter we have introduced some elementary ways of processing Humdrum
 files. We noted that the <a class="reference external" href="../../man/census">census</a> command can be used to identify basic
 statistics about a file. The <tt class="docutils literal"><span class="pre">-k</span></tt> option for <a class="reference external" href="../../man/census">census</a> provides basic
-information related to <a href="#id38"><span class="problematic" id="id39">`</span></a><a href="#id40"><span class="problematic" id="id41">**</span></a>kern`files, such as the number of notes and
+information related to <a href="#id36"><span class="problematic" id="id37">`</span></a><a href="#id38"><span class="problematic" id="id39">**</span></a>kern`files, such as the number of notes and
 rests, the highest and lowest notes, the number of barlines, etc.</p>
 <p>In this chapter we also introduced simple searching techniques using the
 <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command; <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> provides a useful way of locating particular

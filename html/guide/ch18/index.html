@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -318,87 +319,79 @@ some data.</p>
 <p>In research activities, it is common to create representation schemes for a
 specific task. A user might define a spine that represents the heart-rate (in
 beats per minute) of a music listener:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**cardio
+<div class="highlight-humdrum"><pre>**cardio
 76
 76
 74
 73
 73
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>A scheme might be created to represent different types of contrapuntal
 motion:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**motion
+<div class="highlight-humdrum"><pre>**motion
 similar
 contrary
 parallel
 oblique
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>Chords might be classified &#8211; using words:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**chords
+<div class="highlight-humdrum"><pre>**chords
 minor
 .
 augmented
 major
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>Or using abbreviations:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**chords
+<div class="highlight-humdrum"><pre>**chords
 m
 .
 A
 M
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>Fingerings might be represented. Each hand may have a separate spine:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**finger        **finger
+<div class="highlight-humdrum"><pre>**finger        **finger
 *left   *right
 .       1
 1 5     2
 .       3
 .       5
 1 5     2 5
-*-      *-
-</pre></div>
+*-      *-</pre>
 </div>
 <p>Or the hands might be combined in a single spine:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**finger
+<div class="highlight-humdrum"><pre>**finger
 R1
 L1 L5 R2
 R3
 5
 L1 L5 R2 R5
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>Time-scales might be large:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**Periods
+<div class="highlight-humdrum"><pre>**Periods
 Medieval
 Renaissance
 Baroque
 Classical
 Romantic
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>Or miniscule:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**milliseconds
+<div class="highlight-humdrum"><pre>**milliseconds
 0.03
 0.8
 23.2
 31.6
-*-
-</pre></div>
+*-</pre>
 </div>
 <p>A user might define a highly refined special-purpose representation. For
 example, the following scheme is fashioned after the Benesh dance notation:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>!! Kellom Tomlinson&#39;s Gavot of 1720.
-!! Transcribed from Feuillet&#39;s notation.
+<div class="highlight-humdrum"><pre>!! Kellom Tomlinson's Gavot of 1720.
+!! Transcribed from Feuillet's notation.
 **kern  **Benesh
 *MM120  *MM120
 *M2/2   *M2
@@ -430,8 +423,7 @@ example, the following scheme is fashioned after the Benesh dance notation:</p>
 !       ! Bouree
 4a      _|+|+| | |
 =3      -----------
-*-      *-
-</pre></div>
+*-      *-</pre>
 </div>
 <p>Depending on the task, user-defined schemes can be either carefully designed,
 or &#8220;throw-away&#8221; concoctions created for momentary purposes. The <em>Humdrum
