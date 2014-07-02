@@ -319,6 +319,7 @@ by the name of a file. The command</p>
 <div class="line">Number of comments: 14</div>
 <div class="line">Number of interpretations: 7</div>
 <div class="line">Number of records: 112`</div>
+<div class="line"><br /></div>
 </div>
 <p>Most commands provide <em>options</em> that will modify the operation of the command
 in a particular way. In UNIX-style commands, options follow after the command
@@ -342,6 +343,7 @@ the number of rests, and the number of barlines. For example, the command:</p>
 <div class="line">Maximum number of voices: 1</div>
 <div class="line">Number of single barlines: 11</div>
 <div class="line">Number of double barlines: 1`</div>
+<div class="line"><br /></div>
 </div>
 <p>Notice that a distinction is made between the number of notes and the number
 of noteheads. A tied note is considered to be a single &#8220;note,&#8221; although it
@@ -379,6 +381,7 @@ the output for all patterns that are found:</p>
 <div class="line">opus46:!! Andante</div>
 <div class="line">opus91:!! Andante</div>
 <div class="line">opus98:!! Andante</div>
+<div class="line"><br /></div>
 </div>
 <p>By default, <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> distinguishes upper- and lower-case characters, so the
 above command will not match strings such as &#8220;<cite>ANDANTE</cite>&#8221;. However, the
@@ -401,6 +404,7 @@ for lines containing a double sharp for the file <cite>melody.krn</cite>:</p>
 <div class="line">1109:{4g##</div>
 <div class="line">1731:16g##</div>
 <div class="line">3002:16f##`</div>
+<div class="line"><br /></div>
 </div>
 <p>&#8211; meaning that double sharps were found in lines 1109, 1731, and 3002 in the
 file <cite>melody.krn</cite>.</p>
@@ -455,6 +459,7 @@ Similarly, the following command will generate a list of all of the titles:</p>
 <div class="line">foster22:!!!OTL: Better Times are Coming</div>
 <div class="line">foster23:!!!OTL: When this Dreadful War is Ended</div>
 <div class="line">foster24:!!!OTL: Hard Times Comes Again No More`</div>
+<div class="line"><br /></div>
 </div>
 <p>Remember that when a wildcard is used in filenames, <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> prepends the
 filename prior to found patterns. These filename <cite>headers&#8217; can be eliminated
@@ -487,6 +492,7 @@ titles might contain the following lines:</p>
 <div class="line">!!!OTL: Better Times are Coming</div>
 <div class="line">!!!OTL: When this Dreadful War is Ended</div>
 <div class="line">!!!OTL: Hard Times Comes Again No More`</div>
+<div class="line"><br /></div>
 </div>
 </div>
 <div class="section" id="the-sort-command">
@@ -520,12 +526,14 @@ successive repeated lines. For example, given the input:</p>
 <div class="line">2</div>
 <div class="line">2</div>
 <div class="line">3</div>
+<div class="line"><br /></div>
 </div>
 <p>the <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command will produce the following output:</p>
 <div class="line-block">
 <div class="line">1</div>
 <div class="line">2</div>
 <div class="line">3</div>
+<div class="line"><br /></div>
 </div>
 <p>Note that <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> only discards <em>successive</em> repeated records; an input such
 as the following would remain unmodified by the <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command:</p>
@@ -536,6 +544,7 @@ as the following would remain unmodified by the <a class="reference external" hr
 <div class="line">1</div>
 <div class="line">3</div>
 <div class="line">1</div>
+<div class="line"><br /></div>
 </div>
 <p>Another important point about <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> is that successive lines must be
 <em>exact repetitions</em> in order to be discarded. For example, if one line has a
@@ -591,6 +600,7 @@ the current directory. The output might look as follows:</p>
 <div class="line">!!!OTL: Ich dank&#8217; dir, lieber Herre</div>
 <div class="line">!!!OTL: Jesu, der du meine Seele</div>
 <div class="line">!!!OTL: Jesu, meiner Seelen Wonne`</div>
+<div class="line"><br /></div>
 </div>
 <p>Having established which titles are duplicates, a logical next step might be
 to identify the specific files involved. We can use <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> again to search
@@ -602,6 +612,7 @@ appropriate filenames. For example:</p>
 <div class="line">bwv270.krn:!!!OTL: Befiehl du deine Wege`</div>
 <div class="line">bwv271.krn:!!!OTL: Befiehl du deine Wege`</div>
 <div class="line">bwv272.krn:!!!OTL: Befiehl du deine Wege`</div>
+<div class="line"><br /></div>
 </div>
 <p>Sometimes we would like to have an output that contains <em>only</em> the
 <em>filenames</em> containing the sought pattern. The <tt class="docutils literal"><span class="pre">-l</span></tt> option causes <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>
@@ -613,6 +624,7 @@ pattern:</p>
 <div class="line">bwv270.krn`</div>
 <div class="line">bwv271.krn`</div>
 <div class="line">bwv272.krn`</div>
+<div class="line"><br /></div>
 </div>
 <p>As we&#8217;ve already notes, the <tt class="docutils literal"><span class="pre">-u</span></tt> option for <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> causes only unique
 entries in a list to be passed to the output. This is often useful in
@@ -635,6 +647,7 @@ directory:</p>
 <div class="line">12 !!!COM: Zarlino, Gioseffo</div>
 <div class="line">2 !!!COM: Sweelinck, Jan Pieterszoon</div>
 <div class="line">4 !!!COM: Josquin Des Pres`</div>
+<div class="line"><br /></div>
 </div>
 <p>Notice that the number of instances is prepended to the reference records.</p>
 <p>Incidentally, if we wanted to rearrange this list in order of the number of
@@ -648,6 +661,7 @@ numerical values at the extreme left. The command</p>
 <div class="line">4 !!!COM: Josquin Des Pres</div>
 <div class="line">9 !!!COM: Berardi, Angelo</div>
 <div class="line">12 !!!COM: Zarlino, Gioseffo`</div>
+<div class="line"><br /></div>
 </div>
 <p>It is important to understand that the two**sort**commands in our pipeline
 achieve different goals but use the same process. The first**sort**command
