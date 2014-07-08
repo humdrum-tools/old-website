@@ -357,11 +357,11 @@ C-major triad. The <a class="reference external" href="../../rep/kern">**kern</a
 corresponding <a class="reference external" href="../../rep/MIDI">**MIDI</a> data in the right spine. Notice that each data token
 consists of three subtokens, one for each note:</p>
 <div class="highlight-humdrum"><pre>!! A C-major triad.
-**kern  **MIDI
-*       *Ch1
+**kern          **MIDI
+*               *Ch1
 2c 2e 2g        72/60/64 72/64/64 72/67/64
-.       144/-60/64 144/-64/64 144/-67/64
-*-      *-</pre>
+.               144/-60/64 144/-64/64 144/-67/64
+*-              *-</pre>
 </div>
 <p>Middle C corresponds to MIDI key 60; The pitches E4 and G4 correspond to MIDI
 keys 64 and 67 respectively. The half-note durations result in a delay of 144
@@ -372,12 +372,12 @@ begins at the same time that the C major triad ends. This results in five
 subtokens in the corresponding <a class="reference external" href="../../rep/MIDI">**MIDI</a> data record. Three key-off events
 are synchronous with two key-on events:</p>
 <div class="highlight-humdrum"><pre>!! Two chords.
-**kern  **MIDI
-*       *Ch1
+**kern          **MIDI
+*               *Ch1
 2c 2e 2g        72/60/64 72/64/64 72/67/64
-4d 4f   144/-60/64 144/-64/64 144/-67/64 144/62/64 144/65/64
-.       72/-62/64 72/-65/64
-*-      *-</pre>
+4d 4f           144/-60/64 144/-64/64 144/-67/64 144/62/64 144/65/64
+.               72/-62/64 72/-65/64
+*-              *-</pre>
 </div>
 <p>Notice that the difference in duration between the half-notes and quarter-
 notes is reflected when the notes are turned <em>off</em> rather than when the notes

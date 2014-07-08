@@ -116,11 +116,11 @@ consists of three subtokens, one for each note:
 .. code-block:: humdrum
 
 	!! A C-major triad.
-	**kern	**MIDI
-	*	*Ch1
+	**kern	        **MIDI
+	*	        *Ch1
 	2c 2e 2g	72/60/64 72/64/64 72/67/64
-	.	144/-60/64 144/-64/64 144/-67/64
-	*-	*-
+	.	        144/-60/64 144/-64/64 144/-67/64
+	*-	        *-
 
 Middle C corresponds to MIDI key 60; The pitches E4 and G4 correspond to MIDI
 keys 64 and 67 respectively. The half-note durations result in a delay of 144
@@ -135,12 +135,12 @@ are synchronous with two key-on events:
 .. code-block:: humdrum
 
 	!! Two chords.
-	**kern	**MIDI
-	*	*Ch1
+	**kern	        **MIDI
+	*	        *Ch1
 	2c 2e 2g	72/60/64 72/64/64 72/67/64
-	4d 4f	144/-60/64 144/-64/64 144/-67/64 144/62/64 144/65/64
-	.	72/-62/64 72/-65/64
-	*-	*-
+	4d 4f	        144/-60/64 144/-64/64 144/-67/64 144/62/64 144/65/64
+	.	        72/-62/64 72/-65/64
+	*-	        *-
 
 Notice that the difference in duration between the half-notes and quarter-
 notes is reflected when the notes are turned *off* rather than when the notes

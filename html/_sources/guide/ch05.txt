@@ -41,12 +41,12 @@ occupy the same horizontal line represent concurrent (or overlapping) events.
 The basic organization of Humdrum files may be schematically illustrated as
 follows:
 
-> successiveevents
-> concurrent events ->AJVetc.
-> BKWetc.
-> CLXetc.
-> DMYetc.
-> etc.etc.etc.
+| successive events
+| concurrent events -> AJVetc.
+| BKWetc.
+| CLXetc.
+| DMYetc.
+| etc.etc.etc.
 
 
 Types of Records
@@ -149,10 +149,10 @@ tokens. In Humdrum, there are two possible types of tokens:
 
 Consider, for example, the following file: ``
 
-> X.X
-> XXX
-> .XX
-> X.X
+| X.X
+| XXX
+| .XX
+| X.X
 
 `` This file consists of three vertical spines and four horizontal records.
 The first and third spines begin with data tokens, while the second spine
@@ -161,12 +161,12 @@ meaning of this file is indeterminate. The file below contains two spines
 that have been labelled using Humdrum interpretations: ``
 
 >**left**right
-> X.
-> .X
-> X.
-> .X
-> X.
-> *-*-
+| X.
+| .X
+| X.
+| .X
+| X.
+| *-*-
 
 `` The user has defined two interpretations: "left" and "right." The
 intention is to represent the footfalls of a person's left and right feet.
@@ -189,13 +189,13 @@ interpretation associated with it. This is done through the addition of
 tandem interpretations. Consider the following example: ``
 
 >**foot**foot**arm**arm
-> *left*right*left*right
-> X..X
-> .XX.
-> X..X
-> .XX.
-> X..X
-> *-*-*-*-
+| *left*right*left*right
+| X..X
+| .XX.
+| X..X
+| .XX.
+| X..X
+| *-*-*-*-
 
 `` In this case the categories "left" and "right" have been transformed to
 tandem interpretations. The first spine is interpreted both as "left" and as
@@ -263,12 +263,12 @@ vary the number of spines. However, files with varying numbers of spines can
 pose significant questions of interpretation. Consider, for example, the
 following sequence of Humdrum-like data records: ``
 
-> 123
-> 123
-> 123
-> AB
-> AB
-> AB
+| 123
+| 123
+| 123
+| AB
+| AB
+| AB
 
 `` At the point where three spines are reduced to two spines the continuity
 is ambiguous: Has spine `3' been discontinued? Or is spine `B' a continuation
@@ -313,36 +313,36 @@ changes:
 ```
 $ 
 
-> 123
-> **-*``(elimination of spine #2)``
-> 13
-> 123
-> **x*x``(exchange spines #2 and #3)``
-> 132
-> 123
-> **^*``(splitting of spine #2)``
-> 12a2b3
-> 123
-> **v*v``(amalgamation of spines #2 and #3)``
-> 12&3
+| 123
+| **-*``(elimination of spine #2)``
+| 13
+| 123
+| **x*x``(exchange spines #2 and #3)``
+| 132
+| 123
+| **^*``(splitting of spine #2)``
+| 12a2b3
+| 123
+| **v*v``(amalgamation of spines #2 and #3)``
+| 12&3
 
 `` Notice that in cases where two or more spines are amalgamated, the spines
 must be adjacent neighbors. For example, the arrangement below is forbidden
 by the Humdrum syntax since it is not clear whether spines #1 and #3
 amalgamate into spine `A' or spine `B'. ``
 
-> 123
-> *v**v``(syntactically illegal)``
-> AB
+| 123
+| *v**v``(syntactically illegal)``
+| AB
 
 `` In such cases, amalgamating the two outer spines can be accomplished by
 first using the exchange path signifier. Here we exchange spines #2 and #3
 before amalgamating the original first and third spines: ``
 
-> 123
-> **x*x
-> *v*v*
-> 1&32
+| 123
+| **x*x
+| *v*v*
+| 1&32
 
 `` In cases where the user wishes to amalgamate several spines, a number of
 interpretation records may be necessary. In the following example, spines #1
@@ -350,27 +350,27 @@ and #2 are first joined together (momentarily defining three spines: 1&2, 3,
 4). In the subsequent interpretation record, spine #2 (previous spine #3) and
 spine #3 (previous spine #4) are then joined: ``
 
-> 1234
-> *v*v**
-> **v*v
-> 1&23&4
+| 1234
+| *v*v**
+| **v*v
+| 1&23&4
 
 `` In addition, it is possible to join more than two spines at the same time:
 ```
 $ 
 
-> 1234
-> *v*v*v*v
-> 1&2&3&4
+| 1234
+| *v*v*v*v
+| 1&2&3&4
 
 `` In cases where a new spine is introduced, it is essential to indicate the
 exclusive interpretation that applies to the new data. Thus an `add spine'
 indication must be followed by a second interpretation record:
 
 ``123
-> **+*``(add a new spine.)``
-> ****inter*``(define exclusive interpretation for the new spine)``
-> 12new3
+| **+*``(add a new spine.)``
+| ****inter*``(define exclusive interpretation for the new spine)``
+| 12new3
 
 Failing to follow the introduction of a new spine by a subsequent exclusive
 interpretation is illegal.
@@ -378,9 +378,9 @@ interpretation is illegal.
 The following examples illustrate a variety of more complex path
 redefinitions: ``
 
-> 1234
-> *v*v*^*^
-> 1&23a3b4a4b
+| 1234
+| *v*v*^*^
+| 1&23a3b4a4b
 
 ```
 $ 
@@ -388,10 +388,10 @@ $
 ```
 $ 
 
-> 12345
-> **-**-*
-> *v*v*v
-> 1&3&5
+| 12345
+| **-**-*
+| \*v\*v\*v
+| 1&3&5
 
 ```
 $ 
@@ -399,11 +399,11 @@ $
 ```
 $ 
 
-> 12345
-> **-**^*+
-> *******new
-> *v*v****
-> 1&34a4b5new
+| 12345
+| **-**^*+
+| *******new
+| *v*v****
+| 1&34a4b5new
 
 ```
 $ 
@@ -411,11 +411,11 @@ $
 ```
 $ 
 
-> 1234
-> *x*x**
-> **x*x*
-> ***x*x
-> 2341
+| 1234
+| *x*x**
+| **x*x*
+| ***x*x
+| 2341
 
 `` Note that with judicious planning, the user can completely reconfigure all
 spines within a Humdrum file.
@@ -425,7 +425,7 @@ illegal constructions:
 
 ``123``
 ``*v**v``(The join-spine indication in spine #1 does not adjoin
-> spine #3.)
+| spine #3.)
 ``123``
 ``*x*x*x``(No more than two exchange interpretations at a time.)
 ``123``
@@ -470,7 +470,7 @@ conform to one of the following:
 -   A totally empty file (i.e. a file containing no records).
 
 In addition, each spine in a Humdrum file must ultimately end with a path
-terminator (*-). Only global comments (or new exclusive interpretations) may
+terminator (\*-). Only global comments (or new exclusive interpretations) may
 occur following the termination of all spines. A property of Humdrum files is
 that the concatenation of two or more Humdrum files will always result in a
 Humdrum file.
@@ -479,54 +479,58 @@ Additional interpretations may be added throughout the file. Global comments
 may appear anywhere in the file. However, local comments are much more
 restricted: (1) Local comments may not appear until after the first
 interpretation record, and (2) The number of sub-comments in a local comment
-record must be equivalent to the number of currently active spines. ``
+record must be equivalent to the number of currently active spines. 
 
-> CommentEither a global or local comment. Any record beginning
-> with an exclamation mark.
-> Global commentAny record beginning with two exclamation marks (!!).
-> Local commentAny record beginning with one and only one exclamation mark
+| Comment
+
+Either a global or local comment. Any record beginning
+with an exclamation mark.
+
+Global comment: 
+| Any record beginning with two exclamation marks (!!).
+| Local commentAny record beginning with one and only one exclamation mark
 (!).
-> Every spine in that record must also begin with an exclamation
-> mark.
-> Null commentA comment record containing no commentary; only the
-> appropriate exclamation mark(s) are present.
-> InterpretationEither an exclusive or tandem interpretation. Any record
-> beginning with an asterisk (*).
-> Exclusive interpretationAny record beginning with one or more asterisks
+| Every spine in that record must also begin with an exclamation
+| mark.
+| Null commentA comment record containing no commentary; only the
+| appropriate exclamation mark(s) are present.
+| InterpretationEither an exclusive or tandem interpretation. Any record
+| beginning with an asterisk (*).
+| Exclusive interpretationAny record beginning with one or more asterisks
 (*), where at
-> least one spine begins with two asterisks.
-> Tandem interpretationAny record beginning with a single asterisk (*) where
+| least one spine begins with two asterisks.
+| Tandem interpretationAny record beginning with a single asterisk (*) where
 none of the
-> spines begin with two asterisks.
-> Path indicatorOne of five special tandem interpretations *+ *- *v *^ *x
+| spines begin with two asterisks.
+| Path indicatorOne of five special tandem interpretations *+ *- \*v \*^ \*x
 found only
-> in tandem interpretation records.
-> Null interpretationAn interpretation for a given spine or spines consisting
+| in tandem interpretation records.
+| Null interpretationAn interpretation for a given spine or spines consisting
 of just the
-> interpretation signifier (i.e., a single asterisk).
-> Data recordAny record that is not a comment or interpretation. Must contain
-> the same number of tokens as the number of current spines.
-> Null tokenThe period (.) either alone on a single record or separated from
-> other characters by a tab. Appears only in data records.
-> Null data recordA data record consisting only of null tokens.
-> SpineA column-like "path" of information -- including data records,
-> local comments, and interpretations.
+| interpretation signifier (i.e., a single asterisk).
+| Data recordAny record that is not a comment or interpretation. Must contain
+| the same number of tokens as the number of current spines.
+| Null tokenThe period (.) either alone on a single record or separated from
+| other characters by a tab. Appears only in data records.
+| Null data recordA data record consisting only of null tokens.
+| SpineA column-like "path" of information -- including data records,
+| local comments, and interpretations.
 
 *Humdrum Terminology* As a supplement to the above "positive" definition of
 the Humdrum syntax, we can also describe various inputs that do *not* conform
 to the Humdrum syntax:
 
-> An empty record.
-> A record containing only tabs.
-> A record beginning with a tab.
-> A record ending with a tab.
-> Any record containing two successive tab characters.
-> Any data record having fewer or more spines than the immediately
-> preceding data record.
-> A record having only one join-spine indication.
-> A record having only one exchange-spine indication.
-> A record having more than two exchange-spine indications.
-> *Some Illegal Humdrum Constructions*
+| An empty record.
+| A record containing only tabs.
+| A record beginning with a tab.
+| A record ending with a tab.
+| Any record containing two successive tab characters.
+| Any data record having fewer or more spines than the immediately
+| preceding data record.
+| A record having only one join-spine indication.
+| A record having only one exchange-spine indication.
+| A record having more than two exchange-spine indications.
+| *Some Illegal Humdrum Constructions*
 
 
 The *humdrum* Command
