@@ -500,7 +500,7 @@ summary description of the effect of each expression:
         A+,     match one or more instances of letter `A'
         A?,     match a single instance of `A' or the null string
         A*,     match one or more instances of `A' or the null string
-        .*,     match any string, including the null string
+        .*,     match any string (including the null string)
         A.*B,   match any string starting with `A' up to and including `B'
         A|B,    match `A' or `B'
         (A)|(B),        match `A' or `B'
@@ -508,7 +508,7 @@ summary description of the effect of each expression:
         [^AB],  match any character other than `A' or `B'
         AB,     match `A' followed by `B'
         AB+,    match `A' followed by one or more `B's
-        (AB)+,  match one or more instances of `AB', e.g. ABAB
+        (AB)+,  match one or more instances of `AB' (e.g. ABAB)
         (AB)|(BA),      match `AB' or `BA'
         [^A]AA[^A],     match two `A's preceded and followed by characters other than `A's
         ^[^^],  match any character at the beginning of a record except the caret
@@ -553,8 +553,8 @@ appropriate for processing |**kern|_\ representations.
         T,      match any |**kern|_ note containing a whole-tone trill
         [Tt],   match any |**kern|_ note containing a whole-tone or half-tone trill
         -,      match any |**kern|_ note containing at least one flat
-        [#],    match any |**kern|_ note containing a sharp, double-sharp, etc.
-        [#n-;], match any |**kern|_ note containing an accidental, including a natural
+        [#],    match any |**kern|_ note containing a sharp (including a double-sharp etc.)
+        [#n-;], match any |**kern|_ note containing an accidental (including a natural)
         [A-Ga-g]+,      match any diatonic pitch letter-name    
         [0-9]+/.,        match |**kern|_ dotted durations
         [0-9]+/./.[^.], match only doubly-dotted durations
