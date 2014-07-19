@@ -328,11 +328,9 @@ pattern. As with the study of a musical instrument, practise is advised.</p>
 <h2>Literals<a class="headerlink" href="#literals" title="Permalink to this headline">¶</a></h2>
 <p>The simplest regular expressions are merely literal sequences of characters
 forming a character <strong>string,</strong> as in the pattern:</p>
-<p><a href="#id2"><span class="problematic" id="id3">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; car</p>
-<p><a href="#id4"><span class="problematic" id="id5">``</span></a>`
-$</p>
+<p>$</p>
 <p>This pattern will match any data string containing the sequence of letters
 c-a-r. The letters must be contiguous, so no character (including spaces) can
 be interposed between any of the letters. The above pattern is present in
@@ -353,11 +351,9 @@ interpreted as their literal selves. The simplest regular expression
 metacharacter is the period (<tt class="docutils literal"><span class="pre">.</span></tt>). The period matches <em>any single
 character</em> &#8211; including spaces, tabs, and other ASCII characters. For
 example, the pattern:</p>
-<p><a href="#id6"><span class="problematic" id="id7">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; c.u</p>
-<p><a href="#id8"><span class="problematic" id="id9">``</span></a>`
-$</p>
+<p>$</p>
 <p>will match any input string containing three characters, the first of which
 is the lower-case <tt class="docutils literal"><span class="pre">c</span></tt>&#8216; and the third of which is the lower-case <tt class="docutils literal"><span class="pre">u</span></tt>&#8216;.
 The pattern is present in strings such as &#8220;<tt class="docutils literal"><span class="pre">counterpoint</span></tt>&#8221; and
@@ -373,11 +369,9 @@ wants to use them as literals. The special meaning of metacharacters can be
 The backslash is said to be an <em>escape</em> character since it is used to release
 the metacharacter from its special function. For example, the regular
 expression</p>
-<p><a href="#id10"><span class="problematic" id="id11">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; .</p>
-<p><a href="#id12"><span class="problematic" id="id13">``</span></a>`
-$</p>
+<p>$</p>
 <p>will match the period character. The backslash itself may be escaped by
 preceding it by an additional backslash (i.e. <tt class="docutils literal"><span class="pre">\\</span></tt>).</p>
 </div>
@@ -385,11 +379,9 @@ preceding it by an additional backslash (i.e. <tt class="docutils literal"><span
 <h2>Repetition Operators<a class="headerlink" href="#repetition-operators" title="Permalink to this headline">¶</a></h2>
 <p>Another metacharacter is the plus sign (<tt class="docutils literal"><span class="pre">+</span></tt>). The plus sign means &#8220;one or
 more consecutive instances of the previous expression.&#8221; For example,</p>
-<p><a href="#id14"><span class="problematic" id="id15">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; fo+</p>
-<p><a href="#id16"><span class="problematic" id="id17">``</span></a>`
-$</p>
+<p>$</p>
 <p>specifies any character string beginning with a lower-case <tt class="docutils literal"><span class="pre">f</span></tt>&#8216; followed
 by one or more consecutive instances of the small letter <tt class="docutils literal"><span class="pre">o</span></tt>&#8216;. This
 pattern is present in such strings as &#8220;<tt class="docutils literal"><span class="pre">food</span></tt>&#8221; and &#8220;<tt class="docutils literal"><span class="pre">folly</span></tt>,&#8221; but not in
@@ -403,53 +395,43 @@ consist of just a single character. In regular expressions, parentheses ( )
 are metacharacters that can be used to bind several characters into a single
 unit or sub-expression. Consider, by way of example, the following regular
 expression:</p>
-<p><a href="#id18"><span class="problematic" id="id19">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; (fo)+</p>
-<p><a href="#id20"><span class="problematic" id="id21">``</span></a>`
-$</p>
+<p>$</p>
 <p>The parentheses now bind the letters <tt class="docutils literal"><span class="pre">f</span></tt>&#8216; and <tt class="docutils literal"><span class="pre">o</span></tt>&#8216; into a single two-
 character expression, and it is this expression that is now modified by the
 plus sign. The regular expression may be read as &#8220;one or more consecutive
 instances of the string <tt class="docutils literal"><span class="pre">fo</span></tt>&#8216;.&#8221; This pattern is present in strings like
 &#8220;<tt class="docutils literal"><span class="pre">food</span></tt>&#8221; (one instance) and &#8220;<tt class="docutils literal"><span class="pre">fofoe</span></tt>&#8221; (two instances).</p>
 <p>Of course we can mix metacharacters together. The expression:</p>
-<p><a href="#id22"><span class="problematic" id="id23">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; (.o)+</p>
-<p><a href="#id24"><span class="problematic" id="id25">``</span></a>`
-$</p>
+<p>$</p>
 <p>will match strings such as &#8220;<tt class="docutils literal"><span class="pre">polo</span></tt>&#8221; and the first four letters of
 &#8220;<tt class="docutils literal"><span class="pre">tomorrow</span></tt>.&#8221;</p>
 <p>Several sub-expressions may occur within a single regular expression. For
 example, the following regular expression means &#8220;one or more instances of the
 letter <tt class="docutils literal"><span class="pre">a</span></tt>&#8216;, followed by one or more instances of the string <tt class="docutils literal"><span class="pre">go</span></tt>&#8216;.&#8221;</p>
-<p><a href="#id26"><span class="problematic" id="id27">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; (a)+(go)+</p>
-<p><a href="#id28"><span class="problematic" id="id29">``</span></a>`
-$</p>
+<p>$</p>
 <p>This would match character strings in inputs such as &#8220;<tt class="docutils literal"><span class="pre">ago</span></tt>&#8221; and
 &#8220;<tt class="docutils literal"><span class="pre">agogic</span></tt>,&#8221; but not in &#8220;<tt class="docutils literal"><span class="pre">largo</span></tt>&#8221; (intervening <cite>r&#8217;) or &#8220;``gogo`</cite>&#8221; (no
 leading <tt class="docutils literal"><span class="pre">a</span></tt>&#8216;). Note that the parentheses around the letter <tt class="docutils literal"><span class="pre">a</span></tt>&#8216; can be
 omitted without changing the sense of the expression. The following
 expression mixes the <tt class="docutils literal"><span class="pre">+</span></tt> repetition operator with the wild-card (<tt class="docutils literal"><span class="pre">.</span></tt>):</p>
-<p><a href="#id30"><span class="problematic" id="id31">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; c+.m+</p>
-<p><a href="#id32"><span class="problematic" id="id33">``</span></a>`
-$</p>
+<p>$</p>
 <p>This pattern is present in strings such as &#8220;<tt class="docutils literal"><span class="pre">accompany</span></tt>,&#8221;
 &#8220;<tt class="docutils literal"><span class="pre">accommodate</span></tt>,&#8221; and &#8220;<tt class="docutils literal"><span class="pre">cymbal</span></tt>.&#8221; This pattern will also match strings
 such as &#8220;<tt class="docutils literal"><span class="pre">ccm</span></tt>&#8221; since the second <tt class="docutils literal"><span class="pre">c</span></tt>&#8216; can be understood to match the
 period metacharacter.</p>
 <p>A second repetition operator is the asterisk (<tt class="docutils literal"><span class="pre">*</span></tt>). The asterisk means
 &#8220;zero or more consecutive instances of the previous expression.&#8221; For example,</p>
-<p><a href="#id34"><span class="problematic" id="id35">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; Do*r</p>
-<p><a href="#id36"><span class="problematic" id="id37">``</span></a>`
-$</p>
+<p>$</p>
 <p>specifies any character string beginning with an upper-case <tt class="docutils literal"><span class="pre">D</span></tt>&#8216; followed
 by zero or more instances of the letter <tt class="docutils literal"><span class="pre">o</span></tt>&#8216; followed by the letter
 <tt class="docutils literal"><span class="pre">r</span></tt>&#8216;. This pattern is present in such strings as &#8220;<tt class="docutils literal"><span class="pre">Dorian</span></tt>,&#8221; &#8220;<tt class="docutils literal"><span class="pre">Doors</span></tt>&#8221;
@@ -458,11 +440,9 @@ asterisk modifies only the preceding expression &#8211; in this case the letter
 <tt class="docutils literal"><span class="pre">o</span></tt>&#8216;. Multi-character expressions may be modified by the asterisk
 repetition operator by placing the expression in parentheses. Thus, the
 regular expression:</p>
-<p><a href="#id38"><span class="problematic" id="id39">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; ba(na)*</p>
-<p><a href="#id40"><span class="problematic" id="id41">``</span></a>`
-$</p>
+<p>$</p>
 <p>will match strings such as &#8220;<tt class="docutils literal"><span class="pre">ba</span></tt>,&#8221; &#8220;<tt class="docutils literal"><span class="pre">bana</span></tt>,&#8221; &#8220;<tt class="docutils literal"><span class="pre">banana</span></tt>,&#8221;
 &#8220;<tt class="docutils literal"><span class="pre">bananana</span></tt>,&#8221; etc.</p>
 <p>Incidentally, notice that the asterisk metacharacter can be used to replace
@@ -472,22 +452,18 @@ the plus sign (<tt class="docutils literal"><span class="pre">+</span></tt>) met
 <p>A frequent construction used in regular expressions joins the wild-card
 (<tt class="docutils literal"><span class="pre">.</span></tt>) with the asterisk repetition character (<tt class="docutils literal"><span class="pre">*</span></tt>). The regular
 expression:</p>
-<p><a href="#id42"><span class="problematic" id="id43">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; .*</p>
-<p><a href="#id44"><span class="problematic" id="id45">``</span></a>`
-$</p>
+<p>$</p>
 <p>means &#8220;zero or more instances of any characters.&#8221; (Notice the plural
 &#8220;characters;&#8221; this means the repetition need not be of one specific
 character.) This expression will match <em>any string</em>, including nothing at all
 (the <em>null string</em>). By itself, this expression is not very useful. However
 it proves invaluable in combination with other expressions. For example, the
 expression:</p>
-<p><a href="#id46"><span class="problematic" id="id47">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; {.*}</p>
-<p><a href="#id48"><span class="problematic" id="id49">``</span></a>`
-$</p>
+<p>$</p>
 <p>will match any string beginning with a left curly brace and ending with a
 right curly brace. If we replaced the curly braces by the space character,
 then the resulting regular expression would match any string of characters
@@ -496,20 +472,16 @@ separated by spaces &#8211; such as printed words.</p>
 or one instance of the preceding expression.&#8221; This metacharacter is
 frequently useful when you want to specify the presence or absence of a
 single expression. For example, the pattern:</p>
-<p><a href="#id50"><span class="problematic" id="id51">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; Ch?o</p>
-<p><a href="#id52"><span class="problematic" id="id53">``</span></a>`
-$</p>
+<p>$</p>
 <p>is present in such strings as &#8220;<tt class="docutils literal"><span class="pre">Chopin</span></tt>&#8221; and &#8220;<tt class="docutils literal"><span class="pre">Corelli</span></tt>&#8221; but not
 &#8220;<tt class="docutils literal"><span class="pre">Chinese</span></tt>&#8221; or &#8220;<tt class="docutils literal"><span class="pre">cornet</span></tt>.&#8221;</p>
 <p>Once again, parentheses can be used to specify more complex expressions. The
 pattern:</p>
-<p><a href="#id54"><span class="problematic" id="id55">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; Ch?(o)+</p>
-<p><a href="#id56"><span class="problematic" id="id57">``</span></a>`
-$</p>
+<p>$</p>
 <p>is present in such strings as &#8220;<tt class="docutils literal"><span class="pre">Chorale</span></tt>,&#8221; &#8220;<tt class="docutils literal"><span class="pre">Couperin</span></tt>,&#8221; and
 &#8220;<tt class="docutils literal"><span class="pre">Cooper</span></tt>,&#8221; but not in &#8220;<tt class="docutils literal"><span class="pre">Chloe</span></tt>&#8221; or &#8220;<tt class="docutils literal"><span class="pre">Chant</span></tt>.&#8221;</p>
 <p>In summary, we&#8217;ve identified three metacharacters pertaining to the number of
@@ -524,35 +496,27 @@ they indicate the number of times an expression can occur in order to match.</p>
 pattern. You may want to match patterns in a more restricted context. One way
 of restricting regular expression pattern-matches is by using so-called
 <em>anchors.</em> There are two regular expression anchors. The caret (<tt class="docutils literal"><span class="pre">^</span></tt>)
-anchors the expression to the beginning of the line. The dollar sign (<a href="#id58"><span class="problematic" id="id59">``</span></a><a href="#id60"><span class="problematic" id="id61">`</span></a>)
+anchors the expression to the beginning of the line. The dollar sign (<a href="#id2"><span class="problematic" id="id3">``</span></a><a href="#id4"><span class="problematic" id="id5">`</span></a>)
 anchors the expression to the end of the line. For example,</p>
-<p><a href="#id62"><span class="problematic" id="id63">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; ^A</p>
-<p><a href="#id64"><span class="problematic" id="id65">``</span></a>`
-$</p>
+<p>$</p>
 <p>matches the upper-case letter <tt class="docutils literal"><span class="pre">A</span></tt>&#8216; only if it occurs at the beginning of a
 line. Conversely,</p>
-<p><a href="#id66"><span class="problematic" id="id67">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; A$</p>
-<p><a href="#id68"><span class="problematic" id="id69">``</span></a>`
-$</p>
+<p>$</p>
 <p>will match the upper-case letter <tt class="docutils literal"><span class="pre">A</span></tt>&#8216; only if it is the last character in
 a line. Both anchors may be used together, hence the following regular
 expression matches only those lines containing just the letter <tt class="docutils literal"><span class="pre">A</span></tt>&#8216;:</p>
-<p><a href="#id70"><span class="problematic" id="id71">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; ^A$</p>
-<p><a href="#id72"><span class="problematic" id="id73">``</span></a>`
-$</p>
+<p>$</p>
 <p>Of course anchors can be used in conjunction with the other regular
 expressions we have discussed. For example, the regular expression:</p>
-<p><a href="#id74"><span class="problematic" id="id75">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; ^a.*z$</p>
-<p><a href="#id76"><span class="problematic" id="id77">``</span></a>`
-$</p>
+<p>$</p>
 <p>matches any line that begins with <tt class="docutils literal"><span class="pre">a</span></tt>&#8216; and ends with <tt class="docutils literal"><span class="pre">z</span></tt>&#8216;.</p>
 </div>
 <div class="section" id="or-logical-operator">
@@ -561,26 +525,20 @@ $</p>
 operator, represented by the vertical bar (<tt class="docutils literal"><span class="pre">|</span></tt>). For example, the following
 regular expression matches either the letter <tt class="docutils literal"><span class="pre">x</span></tt>&#8216; or the letter <tt class="docutils literal"><span class="pre">y</span></tt>&#8216; or
 the letter <tt class="docutils literal"><span class="pre">z</span></tt>&#8216;:</p>
-<p><a href="#id78"><span class="problematic" id="id79">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; x|y|z</p>
-<p><a href="#id80"><span class="problematic" id="id81">``</span></a>`
-$</p>
+<p>$</p>
 <p>Expressions may consist of multiple characters, as in the following
 expression which matches the string <tt class="docutils literal"><span class="pre">sharp</span></tt>&#8216; or <tt class="docutils literal"><span class="pre">flat</span></tt>&#8216; or
 <tt class="docutils literal"><span class="pre">natural</span></tt>&#8216;.</p>
-<p><a href="#id82"><span class="problematic" id="id83">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; sharp|flat|natural</p>
-<p><a href="#id84"><span class="problematic" id="id85">``</span></a>`
-$</p>
+<p>$</p>
 <p>More complicated expressions may be created by using parentheses. For
 example, the regular expression:</p>
-<p><a href="#id86"><span class="problematic" id="id87">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; (simple|compound) (duple|triple|quadruple|irregular) meter</p>
-<p><a href="#id88"><span class="problematic" id="id89">``</span></a>`
-$</p>
+<p>$</p>
 <p>will match eight different strings, including <tt class="docutils literal"><span class="pre">simple</span> <span class="pre">triple</span> <span class="pre">meter</span></tt> and
 <tt class="docutils literal"><span class="pre">compound</span> <span class="pre">quadruple</span> <span class="pre">meter</span></tt>.</p>
 </div>
@@ -589,72 +547,56 @@ $</p>
 <p>In the case of single characters, a convenient way of identifying or listing
 a set of possibilities is to use the <em>character class.</em> For example, rather
 than writing the expression:</p>
-<p><a href="#id90"><span class="problematic" id="id91">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; a|b|c|d|e|f|g</p>
-<p><a href="#id92"><span class="problematic" id="id93">``</span></a>`
-$</p>
+<p>$</p>
 <p>the expression may be simplified to:</p>
-<p><a href="#id94"><span class="problematic" id="id95">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; [abcdefg]</p>
-<p><a href="#id96"><span class="problematic" id="id97">``</span></a>`
-$</p>
+<p>$</p>
 <p>Any character within the square brackets (a &#8220;character class&#8221;) will match.
 Spaces, tabs, and other characters can be included within the class. When
 metacharacters like the period (<tt class="docutils literal"><span class="pre">.</span></tt>), the asterisk (<tt class="docutils literal"><span class="pre">*</span></tt>), the plus sign
-(<tt class="docutils literal"><span class="pre">+</span></tt>), and the dollar sign (<a href="#id98"><span class="problematic" id="id99">``</span></a><a href="#id100"><span class="problematic" id="id101">`</span></a>) appear within a character class, they
+(<tt class="docutils literal"><span class="pre">+</span></tt>), and the dollar sign (<a href="#id6"><span class="problematic" id="id7">``</span></a><a href="#id8"><span class="problematic" id="id9">`</span></a>) appear within a character class, they
 lose their special meaning, and become simple literals. Thus the regular
 expression:</p>
-<p><a href="#id102"><span class="problematic" id="id103">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; [xyz.+*$]</p>
-<p><a href="#id104"><span class="problematic" id="id105">``</span></a>`
-$</p>
+<p>$</p>
 <p>matches any one of the characters <tt class="docutils literal"><span class="pre">x</span></tt>,&#8217; <tt class="docutils literal"><span class="pre">y</span></tt>,&#8217; <tt class="docutils literal"><span class="pre">z</span></tt>,&#8217; the period, plus
 sign, asterisk, or the dollar sign.</p>
 <p>Some other characters take on special meanings within character classes. One
 of these is the dash (<tt class="docutils literal"><span class="pre">-</span></tt>). The dash acts as a <em>range</em> operator. For
 example,</p>
-<p><a href="#id106"><span class="problematic" id="id107">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; [A-Z]</p>
-<p><a href="#id108"><span class="problematic" id="id109">``</span></a>`
-$</p>
+<p>$</p>
 <p>represents the class of all upper-case letters from A to Z. Similarly,</p>
-<p><a href="#id110"><span class="problematic" id="id111">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; [0-9]</p>
-<p><a href="#id112"><span class="problematic" id="id113">``</span></a>`
-$</p>
+<p>$</p>
 <p>represents the class of digits from zero to nine. The expression given
 earlier &#8211; <tt class="docutils literal"><span class="pre">[abcdefg]</span></tt> &#8211; can be simplified further to: <tt class="docutils literal"><span class="pre">[a-g]</span></tt>. Several
 ranges can be mixed within a single character class:</p>
-<p><a href="#id114"><span class="problematic" id="id115">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; [a-gA-G0-9#]</p>
-<p><a href="#id116"><span class="problematic" id="id117">``</span></a>`
-$</p>
+<p>$</p>
 <p>This regular expression matches any one of the lower- or upper-case
 characters from A to G, or any digit, or the octothorpe (<tt class="docutils literal"><span class="pre">#</span></tt>). If the dash
 appears at the beginning or end of the character class, it loses its special
 meaning and becomes a literal dash, as in:</p>
-<p><a href="#id118"><span class="problematic" id="id119">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; [a-gA-G0-9#-]</p>
-<p><a href="#id120"><span class="problematic" id="id121">``</span></a>`
-$</p>
+<p>$</p>
 <p>This regular expression adds the dash character to the list of possible
 matching characters.</p>
 <p>Another useful metacharacter within character classes is the caret (<tt class="docutils literal"><span class="pre">^</span></tt>).
 When the caret appears at the beginning of a character-class list, it
 signifies a <em>complementary character class.</em> That is, only those characters
 <em>not</em> in the list are matched. For example,</p>
-<p><a href="#id122"><span class="problematic" id="id123">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; [^0-9]</p>
-<p><a href="#id124"><span class="problematic" id="id125">``</span></a>`
-$</p>
+<p>$</p>
 <p>matches any character other than a digit. If the caret appears in any
 position other than at the beginning of the character class, it loses its
 special meaning and is treated as a literal. Note that if a character-class
@@ -666,25 +608,25 @@ error.</p>
 <h2>Examples of Regular Expressions<a class="headerlink" href="#examples-of-regular-expressions" title="Permalink to this headline">¶</a></h2>
 <p>The following table lists some examples of regular expressions and provides a
 summary description of the effect of each expression:</p>
-<p>&gt; Amatch letter <a href="#id126"><span class="problematic" id="id127">`</span></a>A&#8217;
-&gt; ^Amatch letter <a href="#id128"><span class="problematic" id="id129">`</span></a>A&#8217; at the beginning of a line
-&gt; A$match letter <a href="#id130"><span class="problematic" id="id131">`</span></a>A&#8217; at the end of a line
+<p>&gt; Amatch letter <a href="#id10"><span class="problematic" id="id11">`</span></a>A&#8217;
+&gt; ^Amatch letter <a href="#id12"><span class="problematic" id="id13">`</span></a>A&#8217; at the beginning of a line
+&gt; A$match letter <a href="#id14"><span class="problematic" id="id15">`</span></a>A&#8217; at the end of a line
 &gt; .match any character (including space or tab)
-&gt; A+match one or more instances of letter <a href="#id132"><span class="problematic" id="id133">`</span></a>A&#8217;
-&gt; A?match a single instance of <a href="#id134"><span class="problematic" id="id135">`</span></a>A&#8217; or the null string
-&gt; A*match one or more instances of <a href="#id136"><span class="problematic" id="id137">`</span></a>A&#8217; or the null string
+&gt; A+match one or more instances of letter <a href="#id16"><span class="problematic" id="id17">`</span></a>A&#8217;
+&gt; A?match a single instance of <a href="#id18"><span class="problematic" id="id19">`</span></a>A&#8217; or the null string
+&gt; A*match one or more instances of <a href="#id20"><span class="problematic" id="id21">`</span></a>A&#8217; or the null string
 &gt; .*match any string, including the null string
-&gt; A.*Bmatch any string starting with <a href="#id138"><span class="problematic" id="id139">`</span></a>A&#8217; up to and including <a href="#id140"><span class="problematic" id="id141">`</span></a>B&#8217;
-&gt; A|Bmatch <a href="#id142"><span class="problematic" id="id143">`</span></a>A&#8217; or <a href="#id144"><span class="problematic" id="id145">`</span></a>B&#8217;
-&gt; (A)|(B)match <a href="#id146"><span class="problematic" id="id147">`</span></a>A&#8217; or <a href="#id148"><span class="problematic" id="id149">`</span></a>B&#8217;
-&gt; [AB]match <a href="#id150"><span class="problematic" id="id151">`</span></a>A&#8217; or <a href="#id152"><span class="problematic" id="id153">`</span></a>B&#8217;
-&gt; [^AB]match any character other than <a href="#id154"><span class="problematic" id="id155">`</span></a>A&#8217; or <a href="#id156"><span class="problematic" id="id157">`</span></a>B&#8217;
-&gt; ABmatch <a href="#id158"><span class="problematic" id="id159">`</span></a>A&#8217; followed by <a href="#id160"><span class="problematic" id="id161">`</span></a>B&#8217;
-&gt; AB+match <a href="#id162"><span class="problematic" id="id163">`</span></a>A&#8217; followed by one or more <a href="#id164"><span class="problematic" id="id165">`</span></a>B&#8217;s
-&gt; (AB)+match one or more instances of <a href="#id166"><span class="problematic" id="id167">`</span></a>AB&#8217;, e.g. ABAB
-&gt; (AB)|(BA)match <a href="#id168"><span class="problematic" id="id169">`</span></a>AB&#8217; or <a href="#id170"><span class="problematic" id="id171">`</span></a>BA&#8217;
-&gt; [^A]AA[^A]match two <a href="#id172"><span class="problematic" id="id173">`</span></a>A&#8217;s preceded and followed by characters other than
-<a href="#id174"><span class="problematic" id="id175">`</span></a>A&#8217;s
+&gt; A.*Bmatch any string starting with <a href="#id22"><span class="problematic" id="id23">`</span></a>A&#8217; up to and including <a href="#id24"><span class="problematic" id="id25">`</span></a>B&#8217;
+&gt; A|Bmatch <a href="#id26"><span class="problematic" id="id27">`</span></a>A&#8217; or <a href="#id28"><span class="problematic" id="id29">`</span></a>B&#8217;
+&gt; (A)|(B)match <a href="#id30"><span class="problematic" id="id31">`</span></a>A&#8217; or <a href="#id32"><span class="problematic" id="id33">`</span></a>B&#8217;
+&gt; [AB]match <a href="#id34"><span class="problematic" id="id35">`</span></a>A&#8217; or <a href="#id36"><span class="problematic" id="id37">`</span></a>B&#8217;
+&gt; [^AB]match any character other than <a href="#id38"><span class="problematic" id="id39">`</span></a>A&#8217; or <a href="#id40"><span class="problematic" id="id41">`</span></a>B&#8217;
+&gt; ABmatch <a href="#id42"><span class="problematic" id="id43">`</span></a>A&#8217; followed by <a href="#id44"><span class="problematic" id="id45">`</span></a>B&#8217;
+&gt; AB+match <a href="#id46"><span class="problematic" id="id47">`</span></a>A&#8217; followed by one or more <a href="#id48"><span class="problematic" id="id49">`</span></a>B&#8217;s
+&gt; (AB)+match one or more instances of <a href="#id50"><span class="problematic" id="id51">`</span></a>AB&#8217;, e.g. ABAB
+&gt; (AB)|(BA)match <a href="#id52"><span class="problematic" id="id53">`</span></a>AB&#8217; or <a href="#id54"><span class="problematic" id="id55">`</span></a>BA&#8217;
+&gt; [^A]AA[^A]match two <a href="#id56"><span class="problematic" id="id57">`</span></a>A&#8217;s preceded and followed by characters other than
+<a href="#id58"><span class="problematic" id="id59">`</span></a>A&#8217;s
 &gt; ^[^^]match any character at the beginning of a record except the caret</p>
 <p><em>Examples of regular expressions.</em></p>
 </div>
@@ -693,9 +635,9 @@ summary description of the effect of each expression:</p>
 <p>The following table provides some examples of regular expressions pertinent
 to Humdrum-format inputs:</p>
 <p>&gt; ^!!match any global comment
-&gt; ^!!.*Beethovenmatch any global comment containing <a href="#id176"><span class="problematic" id="id177">`</span></a>Beethoven&#8217;
+&gt; ^!!.*Beethovenmatch any global comment containing <a href="#id60"><span class="problematic" id="id61">`</span></a>Beethoven&#8217;
 &gt; ^!!.*[Rr]ecapitulationmatch any global comment containing the word
-&gt; <a href="#id178"><span class="problematic" id="id179">`</span></a>Recapitulation&#8217; or <a href="#id180"><span class="problematic" id="id181">`</span></a>recapitulation&#8217;
+&gt; <a href="#id62"><span class="problematic" id="id63">`</span></a>Recapitulation&#8217; or <a href="#id64"><span class="problematic" id="id65">`</span></a>recapitulation&#8217;
 &gt; ^!($|[^!])match only local comments
 &gt; ^** match any exclusive interpretation
 &gt; ^*[^*] match only tandem interpretations
@@ -722,9 +664,9 @@ appropriate for processing <a class="reference external" href="../../rep/kern">*
 &gt; [A-Ga-g]+match any diatonic pitch letter-name
 &gt; [0-9]+/. match <a class="reference external" href="../../rep/kern">**kern</a> dotted durations
 &gt; [0-9]+/./.[^.] match only doubly-dotted durations
-&gt; [Gg]+[^#-]match any <a class="reference external" href="../../rep/kern">**kern</a> pitch <a href="#id182"><span class="problematic" id="id183">`</span></a>G&#8217; that does not have a sharp
+&gt; [Gg]+[^#-]match any <a class="reference external" href="../../rep/kern">**kern</a> pitch <a href="#id66"><span class="problematic" id="id67">`</span></a>G&#8217; that does not have a sharp
 &gt; or flat
-&gt; (^|[^g])gg($|[^g#-])match only the pitch <a href="#id184"><span class="problematic" id="id185">`</span></a>gg&#8217; (G5)
+&gt; (^|[^g])gg($|[^g#-])match only the pitch <a href="#id68"><span class="problematic" id="id69">`</span></a>gg&#8217; (G5)
 &gt; {.*r|r.*{match all phrases that start with a rest
 &gt; ^4[^0-9.]|[^0-9]4([^0-9.]|$)match <a class="reference external" href="../../rep/kern">**kern</a> quarter durations
 &gt; ^(8|16)[^0-9.]|[^0-9](8|16)[^0-9.]match eighth and sixteenth durations only
@@ -734,18 +676,13 @@ appropriate for processing <a class="reference external" href="../../rep/kern">*
 interpretations are not processed in the input. The processing of just data
 records can be assured by embedding each of the regular expressions given
 above in the expression</p>
-<p><a href="#id186"><span class="problematic" id="id187">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; (^[^*!].**regexp*)|(^*regexp*)</p>
-<p><a href="#id188"><span class="problematic" id="id189">``</span></a>`
-$</p>
+<p>$</p>
 <p>For example, the following regular expression can be used to match
 <a class="reference external" href="../../rep/kern">**kern</a>trills without possibly mistaking comments or interpretations:</p>
-<p><a href="#id190"><span class="problematic" id="id191">``</span></a>`
-$</p>
+<p>$</p>
 <p>&gt; (^[^*!].*[Tt])|(^[Tt])</p>
-<p><a href="#id192"><span class="problematic" id="id193">``</span></a>`
-$</p>
 <p>For Humdrum commands such as <a class="reference external" href="../../man/humsed">humsed</a>, <a class="reference external" href="../../man/rend">rend</a>, <a class="reference external" href="../../man/yank">yank</a>,
 <a class="reference external" href="../../man/xdelta">xdelta</a>, and <a class="reference external" href="../../man/ydelta">ydelta</a>, regular expressions are applied only to
 data records so there is no need to use the more complex expressions. In many
@@ -764,7 +701,7 @@ single-character wild-card (<tt class="docutils literal"><span class="pre">.</sp
 <span class="pre">classes</span> <span class="pre">(``[...]</span></tt>), or complementary character classes (<tt class="docutils literal"><span class="pre">[^...]</span></tt>).
 Parenthesis grouping is supported in basic regular expressions, but the
 parentheses must be used in conjunction with the backslash to <em>enable</em> this
-function (i.e.`` ( ) <a href="#id194"><span class="problematic" id="id195">``</span></a>). In <a class="reference external" href="../ch03">Chapter 3</a> we introduced the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>
+function (i.e.`` ( ) <a href="#id70"><span class="problematic" id="id71">``</span></a>). In <a class="reference external" href="../ch03">Chapter 3</a> we introduced the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>
 command; <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> supports only basic regular expressions.</p>
 <p>&#8220;Extended&#8221; regular expressions include the following: the single-character
 wild-card (<tt class="docutils literal"><span class="pre">.</span></tt>), the repetition operators (<tt class="docutils literal"><span class="pre">***),</span> <span class="pre">(**?**)</span></tt> and <tt class="docutils literal"><span class="pre">(+)</span></tt>,
@@ -774,7 +711,7 @@ parenthesis grouping. Extended regular expressions are supported by the
 <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a> command; <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a> operates in the same manner as <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>, only
 the search patterns are interpreted according to extended regular expression
 syntax.</p>
-<p>The Humdrum <a href="#id204"><span class="problematic" id="id205">|pattern|_</span></a> command further extends regular expression syntax by
+<p>The Humdrum <a href="#id80"><span class="problematic" id="id81">|pattern|_</span></a> command further extends regular expression syntax by
 providing multi-record repetition operators that prove very useful in musical
 applications. These Humdrum extensions will be discussed in <a class="reference external" href="../ch21">Chapter 21</a>.</p>
 </div>

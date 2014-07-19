@@ -68,12 +68,10 @@ Literals
 The simplest regular expressions are merely literal sequences of characters
 forming a character **string,** as in the pattern:
 
-```
 $ 
 
 > car
 
-```
 $ 
 
 This pattern will match any data string containing the sequence of letters
@@ -100,12 +98,10 @@ metacharacter is the period (``.``). The period matches *any single
 character* -- including spaces, tabs, and other ASCII characters. For
 example, the pattern:
 
-```
 $ 
 
 > c.u
 
-```
 $ 
 
 will match any input string containing three characters, the first of which
@@ -126,12 +122,10 @@ The backslash is said to be an *escape* character since it is used to release
 the metacharacter from its special function. For example, the regular
 expression
 
-```
 $ 
 
 > \.
 
-```
 $ 
 
 will match the period character. The backslash itself may be escaped by
@@ -144,12 +138,10 @@ Repetition Operators
 Another metacharacter is the plus sign (``+``). The plus sign means "one or
 more consecutive instances of the previous expression." For example,
 
-```
 $ 
 
 > fo+
 
-```
 $ 
 
 specifies any character string beginning with a lower-case ``f``' followed
@@ -167,12 +159,10 @@ are metacharacters that can be used to bind several characters into a single
 unit or sub-expression. Consider, by way of example, the following regular
 expression:
 
-```
 $ 
 
 > (fo)+
 
-```
 $ 
 
 The parentheses now bind the letters ``f``' and ``o``' into a single two-
@@ -183,12 +173,10 @@ instances of the string ``fo``'." This pattern is present in strings like
 
 Of course we can mix metacharacters together. The expression:
 
-```
 $ 
 
 > (.o)+
 
-```
 $ 
 
 will match strings such as "``polo``" and the first four letters of
@@ -198,12 +186,10 @@ Several sub-expressions may occur within a single regular expression. For
 example, the following regular expression means "one or more instances of the
 letter ``a``', followed by one or more instances of the string ``go``'."
 
-```
 $ 
 
 > (a)+(go)+
 
-```
 $ 
 
 This would match character strings in inputs such as "``ago``" and
@@ -212,12 +198,10 @@ leading ``a``'). Note that the parentheses around the letter ``a``' can be
 omitted without changing the sense of the expression. The following
 expression mixes the ``+`` repetition operator with the wild-card (``.``):
 
-```
 $ 
 
 > c+.m+
 
-```
 $ 
 
 This pattern is present in strings such as "``accompany``,"
@@ -228,12 +212,10 @@ period metacharacter.
 A second repetition operator is the asterisk (``*``). The asterisk means
 "zero or more consecutive instances of the previous expression." For example,
 
-```
 $ 
 
 > Do*r
 
-```
 $ 
 
 specifies any character string beginning with an upper-case ``D``' followed
@@ -245,12 +227,10 @@ asterisk modifies only the preceding expression -- in this case the letter
 repetition operator by placing the expression in parentheses. Thus, the
 regular expression:
 
-```
 $ 
 
 > ba(na)*
 
-```
 $ 
 
 will match strings such as "``ba``," "``bana``," "``banana``,"
@@ -265,12 +245,10 @@ A frequent construction used in regular expressions joins the wild-card
 (``.``) with the asterisk repetition character (``*``). The regular
 expression:
 
-```
 $ 
 
 > .*
 
-```
 $ 
 
 means "zero or more instances of any characters." (Notice the plural
@@ -280,12 +258,10 @@ character.) This expression will match *any string*, including nothing at all
 it proves invaluable in combination with other expressions. For example, the
 expression:
 
-```
 $ 
 
 > {.*}
 
-```
 $ 
 
 will match any string beginning with a left curly brace and ending with a
@@ -298,12 +274,10 @@ or one instance of the preceding expression." This metacharacter is
 frequently useful when you want to specify the presence or absence of a
 single expression. For example, the pattern:
 
-```
 $ 
 
 > Ch?o
 
-```
 $ 
 
 is present in such strings as "``Chopin``" and "``Corelli``" but not
@@ -312,12 +286,10 @@ is present in such strings as "``Chopin``" and "``Corelli``" but not
 Once again, parentheses can be used to specify more complex expressions. The
 pattern:
 
-```
 $ 
 
 > Ch?(o)+
 
-```
 $ 
 
 is present in such strings as "``Chorale``," "``Couperin``," and
@@ -340,46 +312,38 @@ of restricting regular expression pattern-matches is by using so-called
 anchors the expression to the beginning of the line. The dollar sign (```)
 anchors the expression to the end of the line. For example,
 
-```
 $ 
 
 > ^A
 
-```
 $ 
 
 matches the upper-case letter ``A``' only if it occurs at the beginning of a
 line. Conversely,
 
-```
 $ 
 
 > A$
 
-```
 $ 
 
 will match the upper-case letter ``A``' only if it is the last character in
 a line. Both anchors may be used together, hence the following regular
 expression matches only those lines containing just the letter ``A``':
 
-```
 $ 
 
 > ^A$
 
-```
 $ 
 
 Of course anchors can be used in conjunction with the other regular
 expressions we have discussed. For example, the regular expression:
 
-```
 $ 
 
 > ^a.*z$
 
-```
 $ 
 
 matches any line that begins with ``a``' and ends with ``z``'.
@@ -393,35 +357,29 @@ operator, represented by the vertical bar (``|``). For example, the following
 regular expression matches either the letter ``x``' or the letter ``y``' or
 the letter ``z``':
 
-```
 $ 
 
 > x|y|z
 
-```
 $ 
 
 Expressions may consist of multiple characters, as in the following
 expression which matches the string ``sharp``' or ``flat``' or
 ``natural``'.
 
-```
 $ 
 
 > sharp|flat|natural
 
-```
 $ 
 
 More complicated expressions may be created by using parentheses. For
 example, the regular expression:
 
-```
 $ 
 
 > (simple|compound) (duple|triple|quadruple|irregular) meter
 
-```
 $ 
 
 will match eight different strings, including ``simple triple meter`` and
@@ -435,22 +393,18 @@ In the case of single characters, a convenient way of identifying or listing
 a set of possibilities is to use the *character class.* For example, rather
 than writing the expression:
 
-```
 $ 
 
 > a|b|c|d|e|f|g
 
-```
 $ 
 
 the expression may be simplified to:
 
-```
 $ 
 
 > [abcdefg]
 
-```
 $ 
 
 Any character within the square brackets (a "character class") will match.
@@ -460,12 +414,10 @@ metacharacters like the period (``.``), the asterisk (``*``), the plus sign
 lose their special meaning, and become simple literals. Thus the regular
 expression:
 
-```
 $ 
 
 > [xyz.+*$]
 
-```
 $ 
 
 matches any one of the characters ``x``,' ``y``,' ``z``,' the period, plus
@@ -475,34 +427,28 @@ Some other characters take on special meanings within character classes. One
 of these is the dash (``-``). The dash acts as a *range* operator. For
 example,
 
-```
 $ 
 
 > [A-Z]
 
-```
 $ 
 
 represents the class of all upper-case letters from A to Z. Similarly,
 
-```
 $ 
 
 > [0-9]
 
-```
 $ 
 
 represents the class of digits from zero to nine. The expression given
 earlier -- ``[abcdefg]`` -- can be simplified further to: ``[a-g]``. Several
 ranges can be mixed within a single character class:
 
-```
 $ 
 
 > [a-gA-G0-9#]
 
-```
 $ 
 
 This regular expression matches any one of the lower- or upper-case
@@ -510,12 +456,10 @@ characters from A to G, or any digit, or the octothorpe (``#``). If the dash
 appears at the beginning or end of the character class, it loses its special
 meaning and becomes a literal dash, as in:
 
-```
 $ 
 
 > [a-gA-G0-9#-]
 
-```
 $ 
 
 This regular expression adds the dash character to the list of possible
@@ -526,12 +470,10 @@ When the caret appears at the beginning of a character-class list, it
 signifies a *complementary character class.* That is, only those characters
 *not* in the list are matched. For example,
 
-```
 $ 
 
 > [^0-9]
 
-```
 $ 
 
 matches any character other than a digit. If the caret appears in any
@@ -632,24 +574,19 @@ interpretations are not processed in the input. The processing of just data
 records can be assured by embedding each of the regular expressions given
 above in the expression
 
-```
 $ 
 
 > (^[^*!].**regexp*)|(^*regexp*)
 
-```
 $ 
 
 For example, the following regular expression can be used to match
 |**kern|_\ trills without possibly mistaking comments or interpretations:
 
-```
 $ 
 
 > (^[^*!].*[Tt])|(^[Tt])
 
-```
-$ 
 
 For Humdrum commands such as |humsed|_\ , |rend|_\ , |yank|_\ ,
 |xdelta|_\ , and |ydelta|_\ , regular expressions are applied only to
