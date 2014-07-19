@@ -608,69 +608,244 @@ error.</p>
 <h2>Examples of Regular Expressions<a class="headerlink" href="#examples-of-regular-expressions" title="Permalink to this headline">¶</a></h2>
 <p>The following table lists some examples of regular expressions and provides a
 summary description of the effect of each expression:</p>
-<p>&gt; Amatch letter <a href="#id10"><span class="problematic" id="id11">`</span></a>A&#8217;
-&gt; ^Amatch letter <a href="#id12"><span class="problematic" id="id13">`</span></a>A&#8217; at the beginning of a line
-&gt; A$match letter <a href="#id14"><span class="problematic" id="id15">`</span></a>A&#8217; at the end of a line
-&gt; .match any character (including space or tab)
-&gt; A+match one or more instances of letter <a href="#id16"><span class="problematic" id="id17">`</span></a>A&#8217;
-&gt; A?match a single instance of <a href="#id18"><span class="problematic" id="id19">`</span></a>A&#8217; or the null string
-&gt; A*match one or more instances of <a href="#id20"><span class="problematic" id="id21">`</span></a>A&#8217; or the null string
-&gt; .*match any string, including the null string
-&gt; A.*Bmatch any string starting with <a href="#id22"><span class="problematic" id="id23">`</span></a>A&#8217; up to and including <a href="#id24"><span class="problematic" id="id25">`</span></a>B&#8217;
-&gt; A|Bmatch <a href="#id26"><span class="problematic" id="id27">`</span></a>A&#8217; or <a href="#id28"><span class="problematic" id="id29">`</span></a>B&#8217;
-&gt; (A)|(B)match <a href="#id30"><span class="problematic" id="id31">`</span></a>A&#8217; or <a href="#id32"><span class="problematic" id="id33">`</span></a>B&#8217;
-&gt; [AB]match <a href="#id34"><span class="problematic" id="id35">`</span></a>A&#8217; or <a href="#id36"><span class="problematic" id="id37">`</span></a>B&#8217;
-&gt; [^AB]match any character other than <a href="#id38"><span class="problematic" id="id39">`</span></a>A&#8217; or <a href="#id40"><span class="problematic" id="id41">`</span></a>B&#8217;
-&gt; ABmatch <a href="#id42"><span class="problematic" id="id43">`</span></a>A&#8217; followed by <a href="#id44"><span class="problematic" id="id45">`</span></a>B&#8217;
-&gt; AB+match <a href="#id46"><span class="problematic" id="id47">`</span></a>A&#8217; followed by one or more <a href="#id48"><span class="problematic" id="id49">`</span></a>B&#8217;s
-&gt; (AB)+match one or more instances of <a href="#id50"><span class="problematic" id="id51">`</span></a>AB&#8217;, e.g. ABAB
-&gt; (AB)|(BA)match <a href="#id52"><span class="problematic" id="id53">`</span></a>AB&#8217; or <a href="#id54"><span class="problematic" id="id55">`</span></a>BA&#8217;
-&gt; [^A]AA[^A]match two <a href="#id56"><span class="problematic" id="id57">`</span></a>A&#8217;s preceded and followed by characters other than
-<a href="#id58"><span class="problematic" id="id59">`</span></a>A&#8217;s
-&gt; ^[^^]match any character at the beginning of a record except the caret</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>A</td>
+<td>match letter <a href="#id10"><span class="problematic" id="id11">`</span></a>A&#8217;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>A</td>
+<td>match letter <a href="#id12"><span class="problematic" id="id13">`</span></a>A&#8217; at the beginning of a line</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>A$</td>
+<td>match letter <a href="#id14"><span class="problematic" id="id15">`</span></a>A&#8217; at the end of a line</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>.</td>
+<td>match any character (including space or tab)</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>A+</td>
+<td>match one or more instances of letter <a href="#id16"><span class="problematic" id="id17">`</span></a>A&#8217;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>A?</td>
+<td>match a single instance of <a href="#id18"><span class="problematic" id="id19">`</span></a>A&#8217; or the null string</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>A*</td>
+<td>match one or more instances of <a href="#id20"><span class="problematic" id="id21">`</span></a>A&#8217; or the null string</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>.*</td>
+<td>match any string</td>
+<td>including the null string</td>
+</tr>
+<tr class="row-odd"><td>A.*B</td>
+<td>match any string starting with <a href="#id22"><span class="problematic" id="id23">`</span></a>A&#8217; up to and including <a href="#id24"><span class="problematic" id="id25">`</span></a>B&#8217;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>A|B</td>
+<td>match <a href="#id26"><span class="problematic" id="id27">`</span></a>A&#8217; or <a href="#id28"><span class="problematic" id="id29">`</span></a>B&#8217;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>(A)|(B)</td>
+<td>match <a href="#id30"><span class="problematic" id="id31">`</span></a>A&#8217; or <a href="#id32"><span class="problematic" id="id33">`</span></a>B&#8217;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>[AB]</td>
+<td>match <a href="#id34"><span class="problematic" id="id35">`</span></a>A&#8217; or <a href="#id36"><span class="problematic" id="id37">`</span></a>B&#8217;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>[^AB]</td>
+<td>match any character other than <a href="#id38"><span class="problematic" id="id39">`</span></a>A&#8217; or <a href="#id40"><span class="problematic" id="id41">`</span></a>B&#8217;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>AB</td>
+<td>match <a href="#id42"><span class="problematic" id="id43">`</span></a>A&#8217; followed by <a href="#id44"><span class="problematic" id="id45">`</span></a>B&#8217;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>AB+</td>
+<td>match <a href="#id46"><span class="problematic" id="id47">`</span></a>A&#8217; followed by one or more <a href="#id48"><span class="problematic" id="id49">`</span></a>B&#8217;s</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>(AB)+</td>
+<td>match one or more instances of <a href="#id50"><span class="problematic" id="id51">`</span></a>AB&#8217;</td>
+<td>e.g. ABAB</td>
+</tr>
+<tr class="row-odd"><td>(AB)|(BA)</td>
+<td>match <a href="#id52"><span class="problematic" id="id53">`</span></a>AB&#8217; or <a href="#id54"><span class="problematic" id="id55">`</span></a>BA&#8217;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>[^A]AA[^A]</td>
+<td>match two <a href="#id56"><span class="problematic" id="id57">`</span></a>A&#8217;s preceded and followed by characters other than <a href="#id58"><span class="problematic" id="id59">`</span></a>A&#8217;s</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>^[^^]</td>
+<td>match any character at the beginning of a record except the caret</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
 <p><em>Examples of regular expressions.</em></p>
 </div>
 <div class="section" id="examples-of-regular-expressions-in-humdrum">
 <h2>Examples of Regular Expressions in Humdrum<a class="headerlink" href="#examples-of-regular-expressions-in-humdrum" title="Permalink to this headline">¶</a></h2>
 <p>The following table provides some examples of regular expressions pertinent
 to Humdrum-format inputs:</p>
-<p>&gt; ^!!match any global comment
-&gt; ^!!.*Beethovenmatch any global comment containing <a href="#id60"><span class="problematic" id="id61">`</span></a>Beethoven&#8217;
-&gt; ^!!.*[Rr]ecapitulationmatch any global comment containing the word
-&gt; <a href="#id62"><span class="problematic" id="id63">`</span></a>Recapitulation&#8217; or <a href="#id64"><span class="problematic" id="id65">`</span></a>recapitulation&#8217;
-&gt; ^!($|[^!])match only local comments
-&gt; ^** match any exclusive interpretation
-&gt; ^*[^*] match only tandem interpretations
-&gt; ^*[-+vx^]$ match spine-path indicators
-&gt; ^[^*!] match only data records
-&gt; ^[^*!].*$match entire data records
-&gt; ^(.&lt;<em>tab&gt;</em>)*/.$ match records containing only null tokens (** means a tab)
-&gt; ^*f#: match key interpretation indicating F# minor</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>^!!</td>
+<td>match any global comment</td>
+</tr>
+<tr class="row-even"><td>^!!.*Beethoven</td>
+<td>match any global comment containing <a href="#id60"><span class="problematic" id="id61">`</span></a>Beethoven&#8217;</td>
+</tr>
+<tr class="row-odd"><td>^!!.*[Rr]ecapitulation</td>
+<td>match any global comment containing the word <a href="#id62"><span class="problematic" id="id63">`</span></a>Recapitulation&#8217; or <a href="#id64"><span class="problematic" id="id65">`</span></a>recapitulation&#8217;</td>
+</tr>
+<tr class="row-even"><td>^!($|[^!])</td>
+<td>match only local comments</td>
+</tr>
+<tr class="row-odd"><td>^**</td>
+<td>match any exclusive interpretation</td>
+</tr>
+<tr class="row-even"><td>^*[^*]</td>
+<td>match only tandem interpretations</td>
+</tr>
+<tr class="row-odd"><td>^*[-+vx^]$</td>
+<td>match spine-path indicators</td>
+</tr>
+<tr class="row-even"><td>^[^*!]</td>
+<td>match only data records</td>
+</tr>
+<tr class="row-odd"><td>^[^*!].*$</td>
+<td>match entire data records</td>
+</tr>
+<tr class="row-even"><td>^(.&lt;<em>tab&gt;</em>)*/.$</td>
+<td>match records containing only null tokens (** means a tab)</td>
+</tr>
+<tr class="row-odd"><td>^*f#:</td>
+<td>match key interpretation indicating F# minor</td>
+</tr>
+</tbody>
+</table>
 <p><em>Regular expressions suitable for all Humdrum inputs.</em></p>
 <p>By way of illustration, the next table shows examples of regular expressions
 appropriate for processing <a class="reference external" href="../../rep/kern">**kern</a>representations.</p>
-<p>&gt; ^=match any <a class="reference external" href="../../rep/kern">**kern</a> barline or double barline
-&gt; ^=[^=]match <a class="reference external" href="../../rep/kern">**kern</a> single barlines but not double barlines
-&gt; ^[^=]match any token other than a barline or double barline
-&gt; ;match any <a class="reference external" href="../../rep/kern">**kern</a> note or barline containing a pause
-&gt; Tmatch any <a class="reference external" href="../../rep/kern">**kern</a> note containing a whole-tone trill
-&gt; [Tt]match any <a class="reference external" href="../../rep/kern">**kern</a> note containing a whole-tone or
-&gt; half-tone trill
-&gt; -match any <a class="reference external" href="../../rep/kern">**kern</a> note containing at least one flat
-&gt; [#]match any <a class="reference external" href="../../rep/kern">**kern</a> note containing a sharp, double-
-&gt; sharp, etc.
-&gt; [#n-;]match any <a class="reference external" href="../../rep/kern">**kern</a> note containing an accidental,
-&gt; including a natural
-&gt; [A-Ga-g]+match any diatonic pitch letter-name
-&gt; [0-9]+/. match <a class="reference external" href="../../rep/kern">**kern</a> dotted durations
-&gt; [0-9]+/./.[^.] match only doubly-dotted durations
-&gt; [Gg]+[^#-]match any <a class="reference external" href="../../rep/kern">**kern</a> pitch <a href="#id66"><span class="problematic" id="id67">`</span></a>G&#8217; that does not have a sharp
-&gt; or flat
-&gt; (^|[^g])gg($|[^g#-])match only the pitch <a href="#id68"><span class="problematic" id="id69">`</span></a>gg&#8217; (G5)
-&gt; {.*r|r.*{match all phrases that start with a rest
-&gt; ^4[^0-9.]|[^0-9]4([^0-9.]|$)match <a class="reference external" href="../../rep/kern">**kern</a> quarter durations
-&gt; ^(8|16)[^0-9.]|[^0-9](8|16)[^0-9.]match eighth and sixteenth durations only
-&gt; (([Ee]+-)|([Gg]+-)|([Bb]+-))($|[^-])match any note from E-flat minor chord</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>^=</td>
+<td>match any <a class="reference external" href="../../rep/kern">**kern</a> barline or double barline</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>^=[^=]</td>
+<td>match <a class="reference external" href="../../rep/kern">**kern</a> single barlines but not double barlines</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>^[^=]</td>
+<td>match any token other than a barline or double barline</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>;</td>
+<td>match any <a class="reference external" href="../../rep/kern">**kern</a> note or barline containing a pause</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>T</td>
+<td>match any <a class="reference external" href="../../rep/kern">**kern</a> note containing a whole-tone trill</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>[Tt]</td>
+<td>match any <a class="reference external" href="../../rep/kern">**kern</a> note containing a whole-tone or half-tone trill</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>match any <a class="reference external" href="../../rep/kern">**kern</a> note containing at least one flat</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>[#]</td>
+<td>match any <a class="reference external" href="../../rep/kern">**kern</a> note containing a sharp</td>
+<td>double-sharp</td>
+<td>etc.</td>
+</tr>
+<tr class="row-odd"><td>[#n-;]</td>
+<td>match any <a class="reference external" href="../../rep/kern">**kern</a> note containing an accidental</td>
+<td>including a natural</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>[A-Ga-g]+</td>
+<td>match any diatonic pitch letter-name</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>[0-9]+/.</td>
+<td>match <a class="reference external" href="../../rep/kern">**kern</a> dotted durations</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>[0-9]+/./.[^.]</td>
+<td>match only doubly-dotted durations</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>[Gg]+[^#-]</td>
+<td>match any <a class="reference external" href="../../rep/kern">**kern</a> pitch <a href="#id66"><span class="problematic" id="id67">`</span></a>G&#8217; that does not have a sharp or flat</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>(^|[^g])gg($|[^g#-])</td>
+<td>match only the pitch <a href="#id68"><span class="problematic" id="id69">`</span></a>gg&#8217; (G5)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>{.*r|r.*{</td>
+<td>match all phrases that start with a rest</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>^4[^0-9.]|[^0-9]4([^0-9.]|$)</td>
+<td>match <a class="reference external" href="../../rep/kern">**kern</a> quarter durations</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>^(8|16)[^0-9.]|[^0-9](8|16)[^0-9.]</td>
+<td>match eighth and sixteenth durations only</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>(([Ee]+-)|([Gg]+-)|([Bb]+-))($|[^-])</td>
+<td>match any note from E-flat minor chord</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
 <p><em>Regular expressions suitable for **kern data records.</em></p>
 <p>Note that the above regular expressions assume that comments and
 interpretations are not processed in the input. The processing of just data
