@@ -1,0 +1,882 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapter 11: Melodic Intervals &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../"/>
+        <link rel="up" title="The Humdrum User Guide" href="../"/>
+        <link rel="next" title="Chapter 12: Selecting Musical Parts and Passages" href="../ch12/"/>
+        <link rel="prev" title="Chapter 10: Musical Uses of Regular Expressions" href="../ch10/"/>
+   <link rel="stylesheet" type"text/css" href="../../_static/humdrum.css">
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">Humdrum Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../install/github/">Installing Humdrum Tools from GitHub</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../">The Humdrum User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ch01/">1. Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern(I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch03/">3. Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch04/">4. Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch05/">5. The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern(II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch07/">7. MIDI Output Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch08/">8. The Shell (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch09/">9. Searching with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch10/">10. Musical Uses of Regular Expressions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Chapter 11: Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch12/">12. Selecting Musical Parts and Passages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch13/">13. Assembling Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch14/">14. Stream Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch15/">15. Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch16/">16. The Shell (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch17/">17. Creating Inventories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch18/">18. Fingers, Footsteps and Frets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch19/">19. Musical Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch20/">20. Strophes, Verses, and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch21/">21. Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch22/">22. Classifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch23/">23. Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch24/">24. The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch25/">25. Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch26/">26. Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch27/">27. Text and Lyrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch28/">28. Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch29/">29. Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch30/">30.MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch31/">31. Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch32/">32. The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch33/">33. Word Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch34/">34. Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch35/">35. Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch36/">33. Sound and Spectra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch37/">37. Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch38/">38. Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch39/">39. Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch40/">40. Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bibliography/">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample.problems/">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">2. Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody and Pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/searching/">Music Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/midi/">MIDI Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/notation/">Graphical Musical Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/other/">Other Useful Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/programming/">Programming Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cookbook/">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cookbook/vimHighlighting/">Syntax Coloring in Vim</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../man/">Humdrum Command Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../man/assemble/">Command: assemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/barks/">Command: barks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/cbr/">Command: cbr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/census/">Command: census</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/cents/">Command: cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/cleave/">Command: cleave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/cocho/">Command: cocho</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/context/">Command: context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/correl/">Command: correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/deg/">Command: deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/degree/">Command: degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/diss/">Command: diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/ditto/">Command: ditto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/dur/">Command: dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/ekern/">Command: ekern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/encode/">Command: encode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/extract/">Command: extract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/fade/">Command: fade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/fields/">Command: fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/freq/">Command: freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/hint/">Command: hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/humdrum/">Command: humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/humsed/">Command: humsed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/humver/">Command: humver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/infot/">Command: infot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/iv/">Command: iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/kern/">Command: kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/key/">Command: key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/melac/">Command: melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/melvel/">Command: melvel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/metpos/">Command: metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/midi/">Command: midi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/midreset/">Command: midreset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/mint/">Command: mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/ms/">Command: ms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/nf/">Command: nf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/num/">Command: num</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/patt/">Command: patt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/pattern/">Command: pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/pc/">Command: pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/pcset/">Command: pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/perform/">Command: perform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/pf/">Command: pf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/pitch/">Command: pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/proof/">Command: proof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/recode/">Command: recode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/record/">Command: record</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/regexp/">Command: regexp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/reihe/">Command: reihe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/rend/">Command: rend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/rid/">Command: rid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/scramble/">Command: scramble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/semits/">Command: semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/simil/">Command: simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/smf/">Command: smf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/solfa/">Command: solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/solfg/">Command: solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/specc/">Command: specc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/spect/">Command: spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/strophe/">Command: strophe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/synco/">Command: synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/tacet/">Command: tacet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/text/">Command: text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/themefinder/">Command: thmea</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/thru/">Command: thru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/timebase/">Command: timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/tonh/">Command: tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/trans/">Command: trans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/urrhythm/">Command: urrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/veritas/">Command: veritas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/vox/">Command: vox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/xdelta/">Command: xdelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/yank/">Command: yank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/ydelta/">Command: ydelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/#commands">Commands</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../rep/">Humdrum Data Representations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/barlines/">Representation: barlines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/IPA/">Representation: **IPA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/MIDI/">Representation: **MIDI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/Tonh/">Representation: **Tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/URrhythm/">Representation: **URrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/Zeit/">Representation: **Zeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/bhatk/">Representation: **bhatk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/cents/">Representation: **cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/correl/">Representation: **correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/dB/">Representation: **dB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/date/">Representation: **date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/deg/">Representation: **deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/degree/">Representation: **degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/diss/">Representation: **diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/dur/">Representation: **dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/embel/">Representation: **embel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/freq/">Representation: **freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/fret/">Representation: **fret</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/harm/">Representation: **harm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/hildegard/">Representation: **hildegard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/hint/">Representation: **hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/iv/">Representation: **iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/kern/">Representation: **kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/melac/">Representation: **melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/metpos/">Representation: **metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/mint/">Representation: **mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/ordo/">Representation: **ordo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/pc/">Representation: **pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/pcset/">Representation: **pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/pitch/">Representation: **pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/recip/">Representation: **recip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/semits/">Representation: **semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/silbe/">Representation: **silbe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/simil/">Representation: **simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/solfa/">Representation: **solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/solfg/">Representation: **solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/specC/">Representation: **specC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/spect/">Representation: **spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/synco/">Representation: **synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/takt/">Representation: **takt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/text/">Representation: **text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/time/">Representation: **time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/timebase/">Representation: **timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/vox/">Representation: **vox#</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../">Docs</a> &raquo;</li>
+      
+          <li><a href="../">The Humdrum User Guide</a> &raquo;</li>
+      
+    <li>Chapter 11: Melodic Intervals</li>
+      <li class="wy-breadcrumbs-aside">
+        
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="chapter-11-melodic-intervals">
+<h1>Chapter 11: Melodic Intervals<a class="headerlink" href="#chapter-11-melodic-intervals" title="Permalink to this headline">¶</a></h1>
+<p>A musical interval is the distance between two pitches. When the pitches are
+consecutive the distance is referred to as a <em>melodic interval;</em> when the
+pitches are concurrent the distance is referred to as a <em>harmonic interval.</em></p>
+<p>The simplicity of these definitions is deceptive. In real music, the
+determination of pitch intervals can be surprisingly complicated. In this
+chapter we will discuss Humdrum tools related to melodic pitch intervals &#8211;
+specifically the <a class="reference external" href="../../man/mint">mint</a>(melodic interval) and <a class="reference external" href="../../man/xdelta">xdelta</a> commands.
+Discussion of harmonic intervals will be delayed until <a class="reference external" href="../ch15">Chapter 15</a>.</p>
+<div class="section" id="types-of-melodic-intervals">
+<h2>Types of Melodic Intervals<a class="headerlink" href="#types-of-melodic-intervals" title="Permalink to this headline">¶</a></h2>
+<p>Example 11.1 provides a contrived illustration of seven different types of
+melodic intervals. (The corresponding <a class="reference external" href="../../rep/kern">**kern</a> representation is given on
+the following page.) The simplest melodic interval is calculated between
+successive pitches within the same voice or part. We might call this a
+<em>voiced melodic interval.</em> Examples of voiced melodic intervals are the
+descending perfect fourth between the first two notes of the upper part, and
+the rising semitone at the beginning of the lower part.</p>
+<p><strong>Example 11.1</strong> Types of melodic intervals.</p>
+<div align="center" class="align-center"><img src="../../_images/ex11-1.svg" width="100%" /></div>
+<p>Even within a monophonic score, successive pitches may have one or more rests
+interposed between them. Depending on the research task, the interval
+spanning across the rest(s) may or may not be considered important. We might
+call such intervals <em>interrupted melodic intervals.</em> An example of an
+interrupted melodic interval is the ascending perfect fourth in the upper
+voice between the last note of the first measure (A4) and the first note of
+the last measure (D5).</p>
+<p><strong>Example 11.1 continued.</strong></p>
+<div class="highlight-humdrum"><pre>**kern  **kern
+*staff1 *staff1
+*M4/4   *M4/4
+=1-     =1-
+4.e     2cc
+8f      .
+4.e     4g
+.       8a
+[8f     8r
+=2      =2
+2f]     2dd
+4d 4g   4b 4ff
+4c 4e 4g        4cc 4ee
+*-      *-</pre>
+</div>
+<p>In some cases, implied melodic intervals may arise by the interaction of two
+or more parts. For example, Example 11.2 shows a plausible reinterpretation
+of the voicings for the first measure. Here the quarter-note G is presumed to
+continue from the preceding eighth-note F rather than from the half-note C.
+In the context of the original <a class="reference external" href="../../rep/kern">**kern</a> encoding above, we might call such
+intervals <em>cross-voice melodic intervals.</em></p>
+<p><strong>Example 11.2</strong> Possible re-interpretation of opening measure for Example
+11.1.</p>
+<div align="center" class="align-center"><img src="../../_images/ex11-2.svg" width="100%" /></div>
+<p>In the second measure, both parts are encoded using multiple stops. In the
+upper part, two successive double stops are encoded. In the case of multiple-
+stops, it is common to perceive the outer-most notes as connected. Hence, the
+B would resolve to the C and the F would resolve to the E. We might call such
+intervals <em>unvoiced outer intervals.</em> We may call them <em>unvoiced</em> because
+they aren&#8217;t encoded using separate spines. The voicings are implied,
+principally because the notes form an <a href="#id2"><span class="problematic" id="id3">`</span></a>upper&#8217; or <a href="#id4"><span class="problematic" id="id5">`</span></a>lower&#8217; part.</p>
+<p>The multiple-stops in the lower voice illustrate even more possibilities.
+Apart from the unvoiced outer intervals (D-&gt;C and G-&gt;G), there are other
+possible melodic intervals. These include D-&gt;E and G-&gt;E. We might refer to
+such intervals as <em>unvoiced inner intervals.</em></p>
+<p>In many research tasks (such as identifying melodic variations), important
+interval relationships may stretch across several intervening notes. In
+Example 11.1, for example, the two half-notes in the upper voice might be
+viewed as forming an ascending major second interval (i.e. C-&gt;D). We might
+call such intervals <em>distance intervals.</em></p>
+<p>Finally, although in most situations tied notes should be treated as a single
+note, in some circumstances there is merit to considering each notehead as
+independent.</p>
+<p>By way of summary, we have distinguished no less than seven different types
+of melodic intervals: voiced melodic intervals, interrupted melodic
+intervals, cross-voice melodic intervals, unvoiced outer intervals, unvoiced
+inner intervals, distance intervals, and tied note intervals.</p>
+<p>Humdrum commands related to melodic intervals provide users with several
+alternative ways of interpreting melodic intervals. Users are typically
+interested in only certain types of intervals and so it is useful to restrict
+the outputs to specified interval classes.</p>
+<p>Apart from the question of types of melodic intervals, melodic intervals can
+be calculated according to a variety of <em>units</em>. Depending on the
+circumstance, the user may wish to calculate diatonic intervals, semitones,
+cents, frequency differences, or even differences in cochlear coordinates.</p>
+</div>
+<div class="section" id="melodic-intervals-using-the-mint-command">
+<h2>Melodic Intervals Using the <em>mint</em> Command<a class="headerlink" href="#melodic-intervals-using-the-mint-command" title="Permalink to this headline">¶</a></h2>
+<p>The Humdrum <a class="reference external" href="../../man/mint">mint</a> command calculates melodic intervals for pitch-
+related representations such as <a class="reference external" href="../../rep/kern">**kern</a>, <a class="reference external" href="../../rep/pitch">**pitch</a>, <a class="reference external" href="../../rep/solfg">**solfg</a>
+and <a class="reference external" href="../../rep/Tonh">**Tonh</a>. Output intervals are expressed using the traditional
+diatonic terms where both interval quality and interval size are specified.
+Interval qualities include perfect (<tt class="docutils literal"><span class="pre">P</span></tt>), major (<tt class="docutils literal"><span class="pre">M</span></tt>), minor (<tt class="docutils literal"><span class="pre">m</span></tt>),
+augmented (<tt class="docutils literal"><span class="pre">A</span></tt>) and diminished (<tt class="docutils literal"><span class="pre">d</span></tt>). Interval qualities may also be
+doubly augmented (<tt class="docutils literal"><span class="pre">AA</span></tt>), triply diminished (<tt class="docutils literal"><span class="pre">ddd</span></tt>) and so on. Diatonic
+interval sizes are indicated by numbers (1=unison, 2=second, ... 8=octave,
+9=ninth, etc.). Ascending and descending intervals are distinguished by a
+leading plus sign (+) or minus sign (-) respectively.</p>
+<p>In the default operation, <a class="reference external" href="../../man/mint">mint</a> outputs three of the seven types of
+melodic intervals. These are <em>voiced melodic intervals,</em> <em>unvoiced outer
+intervals</em> and <em>interrupted melodic intervals;</em> By way of illustration,
+Example 11.3 shows the output from the <a class="reference external" href="../../man/mint">mint</a> command for the input shown
+in Example 11.1.</p>
+<p><strong>Example 11.3</strong> Default interval outputs from the <a class="reference external" href="../../man/mint">mint</a> command
+corresponding to Example 11.1.</p>
+<div class="highlight-humdrum"><pre>**mint  **mint
+*M4/4   *M4/4
+=1-     =1-
+.       .
++m2     .
+-m2     -P4
+.       +M2
++m2     r
+=2      =2
+.       +P4
+-m3 +M2 -m3 +m3
+-M2 P1  +m2 -m2
+*-      *-</pre>
+</div>
+<p>Notice that the <em>interrupted interval</em> (spanning the rest) has been
+calculated, and that no unison has appeared for the tied note in the lower
+voice.</p>
+<p>If desired, the unison intervals between successive tied notes can be output
+via the <tt class="docutils literal"><span class="pre">-t</span></tt> option for <strong>mint.</strong></p>
+<p>Sometimes it is useful to maintain the initial starting pitches in the
+output. The presence of these &#8220;offset&#8221; pitch values can prove useful in later
+reconstructing the original pitches from the <a class="reference external" href="../../rep/mint">**mint</a> interval data.
+When the <tt class="docutils literal"><span class="pre">-o</span></tt> option is invoked, <a class="reference external" href="../../man/mint">mint</a> outputs the initial starting
+pitches (placed in square brackets) from which the subsequent melodic
+intervals have been calculated.</p>
+<p>In order to avoid outputting interrupted intervals, the <tt class="docutils literal"><span class="pre">-b</span></tt> (break) option
+can be used. This option requires a subsequent regular expression that
+defines the contexts where the interval calculation should be suspended and
+restarted. A common invocation would identify <a class="reference external" href="../../rep/kern">**kern</a> rests (<tt class="docutils literal"><span class="pre">r</span></tt>) as a
+suitable place to break melodic interval calculations. For example,</p>
+<div class="highlight-bash"><div class="highlight"><pre>mint -b r inputfile
+</pre></div>
+</div>
+<p>would produce the following output when applied to Example 11.1:</p>
+<div class="highlight-humdrum"><pre>**mint  **mint
+*M4/4   *M4/4
+=1-     =1-
+.       .
++m2     .
+-m2     -P4
+.       +M2
++m2     r
+=2      =2
+P1      .
+-m3 +M2 -m3 +m3
+-M2 P1  +m2 -m2
+*-      *-</pre>
+</div>
+<p>Notice that the perfect fourth (+P4) has been replaced by a null token at the
+beginning of measure 2. In addition, the rest token <tt class="docutils literal"><span class="pre">`r</span></tt>&#8216; has been echoed
+just prior to the barline.</p>
+<p>Depending on the regular expression given, the <tt class="docutils literal"><span class="pre">-b</span></tt> option can used for a
+variety of specialized intervals. For example, suppose that we wanted to
+avoid calculating intervals between the last note of a phrase and the first
+note of the next phrase. In the <a class="reference external" href="../../rep/kern">**kern</a> representation, the open and
+closed curly braces are used to indicate the beginnings and ends of phrases.
+We need to tell <a class="reference external" href="../../man/mint">mint</a> to break interval calculations each time an end-of-
+phrase signifier is encountered:</p>
+<div class="highlight-bash"><div class="highlight"><pre>mint -b <span class="s1">&#39;}&#39;</span> inputfile
+</pre></div>
+</div>
+<p>Similarly, the <a class="reference external" href="../../rep/kern">**kern</a> representation uses the semicolon (<tt class="docutils literal"><span class="pre">;</span></tt>) to
+represent pauses. We might instruct <a class="reference external" href="../../man/mint">mint</a> to avoid calculating intervals
+between notes having pauses and the subsequent note:</p>
+<div class="highlight-bash"><div class="highlight"><pre>mint -b <span class="s1">&#39;;&#39;</span> inputfile
+</pre></div>
+</div>
+<p>Since the <tt class="docutils literal"><span class="pre">-b</span></tt> option accepts regular expressions, we can combine patterns.
+For example, the following command instructs <a class="reference external" href="../../man/mint">mint</a> to calculate melodic
+intervals, not including intervals spanning phrase boundaries, and not
+following notes with pauses:</p>
+<div class="highlight-bash"><div class="highlight"><pre>mint -b <span class="s1">&#39;[;}]&#39;</span> inputfile
+</pre></div>
+</div>
+</div>
+<div class="section" id="unvoiced-inner-intervals">
+<h2>Unvoiced Inner Intervals<a class="headerlink" href="#unvoiced-inner-intervals" title="Permalink to this headline">¶</a></h2>
+<p>Unvoiced inner intervals can be included in the output by using the <tt class="docutils literal"><span class="pre">-i</span></tt> or
+<tt class="docutils literal"><span class="pre">-I</span></tt> options. With the <tt class="docutils literal"><span class="pre">-I</span></tt> option, unvoiced inner intervals appear in
+the output in parentheses. For example, the following output is generated for
+Example 1.1 with the <tt class="docutils literal"><span class="pre">-I</span></tt> option. Notice the addition of <tt class="docutils literal"><span class="pre">(+M2)</span></tt> and
+`` (-2)``. The rising major second arises from the pitches D4 and E4; the
+falling minor third arises from the pitches G4 and E4.</p>
+<div class="highlight-humdrum"><pre>**mint  **mint
+*M4/4   *M4/4
+=1-     =1-
+.       .
++m2     .
+-m2     -P4
+.       +M2
++m2     r
+=2      =2
+P1      .
+-m3 +M2 -m3 +m3
+-M2 (+M2) (-m3) P1      +m2 -m2
+*-*-</pre>
+</div>
+<p>With the <tt class="docutils literal"><span class="pre">-i</span></tt> option, the parentheses surrounding the unvoiced inner
+intervals would be omitted.</p>
+</div>
+<div class="section" id="calculating-distance-intervals-using-the-mint-s-command">
+<h2>Calculating Distance Intervals Using the <em>mint -s</em> Command<a class="headerlink" href="#calculating-distance-intervals-using-the-mint-s-command" title="Permalink to this headline">¶</a></h2>
+<p>Another option provided by <a class="reference external" href="../../man/mint">mint</a> is the <tt class="docutils literal"><span class="pre">-s</span></tt> or skip option. Like the
+<tt class="docutils literal"><span class="pre">-b</span></tt> option, this option requires a subsequent regular expression. Any
+token matching this expression is transformed to a null data token and is
+ignored when processing. One possible use for this option is to help
+calculate <em>distance intervals.</em> Consider Example 11.4 where all of the
+durations are either sixteenth notes or eighth notes. Suppose we wanted to
+calculate the intervals only between the eighth notes.</p>
+<p><strong>Example 11.4</strong></p>
+<div align="center" class="align-center"><img src="../../_images/ex11-4a.svg" width="100%" /></div>
+<div class="highlight-humdrum"><pre>**kern
+*M4/4
+=1-
+8cc
+16b
+16cc
+8g
+16f#
+16g
+=2
+8e
+16d#
+16e
+8c
+8r
+*-</pre>
+</div>
+<p>We can use the skip option to instruct <a class="reference external" href="../../man/mint">mint</a> to ignore any note token
+matching the string <tt class="docutils literal"><span class="pre">`16</span></tt>&#8216;:</p>
+<div class="highlight-bash"><div class="highlight"><pre>mint -s 16 inputfile
+</pre></div>
+</div>
+<p>This command would produce an output that highlights the descending
+arpeggiated major chord &#8211; from C5 to G4 (down a P4), to E4 (down a m3) to C4
+(down a M3).</p>
+<div align="center" class="align-center"><img src="../../_images/ex11-4b.svg" width="100%" /></div>
+<div class="highlight-humdrum"><pre>**mint
+*M4/4
+=1-
+.
+.
+.
+-P4
+.
+.
+=2
+-m3
+.
+.
+-M3
+*-</pre>
+</div>
+<p>Using duration information is a somewhat limited technique for calculating
+distance intervals. Typically, users will want to define much more refined
+ways of identifying structural tones. More sophisticated methods for
+calculating distance intervals are discussed in <a class="reference external" href="../ch35">Chapter 35</a> on &#8220;Layers.&#8221;</p>
+<p>Cross-voice melodic intervals can be calculated by amalgamating several
+spines into a single spine. In <a class="reference external" href="../ch26">Chapter 26</a> we will learn more about the
+<a class="reference external" href="../../man/cleave">cleave</a> command. But here is a typical use:</p>
+<div class="highlight-bash"><div class="highlight"><pre>cleave -d <span class="s1">&#39; &#39;</span> -i <span class="s1">&#39;**kern&#39;</span> -o <span class="s1">&#39;**kern&#39;</span> example11a
+</pre></div>
+</div>
+<p>With the <a class="reference external" href="../../rep/kern">**kern</a> encoding for Example 11.1 as input, the corresponding
+output would be:</p>
+<div class="highlight-humdrum"><pre>**kern
+*M4/4
+=1- =1-
+4.e 2cc
+8f
+4.e 4g
+8a
+[8f 8r
+=2 =2
+2f] 2dd
+4d 4g 4b 4ff
+4c 4e 4g 4cc 4ee
+*-</pre>
+</div>
+<p>Note that this output doesn&#8217;t quite conform to the <a class="reference external" href="../../rep/kern">**kern</a> syntax: the
+barlines have been duplicated as double-stops, and the durations aren&#8217;t right
+for multiple-stops. We can clean up the output using <a href="#id14"><span class="problematic" id="id15">`**humsed,**`_</span></a> but the
+incoherent durations won&#8217;t cause problems if our intention is to calculate
+pitch intervals.</p>
+<p>If we pipe the above output through the <a class="reference external" href="../../man/mint">mint</a> command, the appropriate
+command pipeline becomes:</p>
+<p>`` cleave -d &#8216; &#8216; -i &#8216;<a href="#id6"><span class="problematic" id="id7">**</span></a>kern&#8217; -o &#8216;<a href="#id8"><span class="problematic" id="id9">**</span></a>kern&#8217; example11a &gt;
+&gt;&gt; | humsed &#8216;s/ =.*//&#8217; | mint -I``</p>
+<p>The corresponding melodic interval output is:</p>
+<div class="highlight-humdrum"><pre>**mint
+*M4/4
+=1-
+.
++m2 -P5
+-m2 +M2
++P4 +M2
+-M3 r
+=2
++P4
+-m3 (+M2) (-P5) (+A4) (-m3) +m3
+-M2 (-m3) (-P5) (P1) (-M3) (+P4) (+m2) -m2
+*-</pre>
+</div>
+</div>
+<div class="section" id="simple-and-compound-melodic-intervals">
+<h2>Simple and Compound Melodic Intervals<a class="headerlink" href="#simple-and-compound-melodic-intervals" title="Permalink to this headline">¶</a></h2>
+<p>Of course, some melodic variants alter the octave placement of pitches. The
+<strong>mint -c</strong> option outputs compound intervals (i.e. intervals of an octave or
+greater) as non-compound equivalents. For example, the interval of a major
+tenth (<tt class="docutils literal"><span class="pre">M10</span></tt>) will be output as a major third (<tt class="docutils literal"><span class="pre">M3</span></tt>).</p>
+</div>
+<div class="section" id="diatonic-intervals-absolute-intervals-and-contour">
+<h2>Diatonic Intervals, Absolute Intervals and Contour<a class="headerlink" href="#diatonic-intervals-absolute-intervals-and-contour" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="../../man/mint">mint</a> command provides three further options of interest. The
+<tt class="docutils literal"><span class="pre">-d</span></tt> option causes <a class="reference external" href="../../man/mint">mint</a> to output only the diatonic interval size
+without the interval quality information. The <tt class="docutils literal"><span class="pre">-a</span></tt> option causes <a class="reference external" href="../../man/mint">mint</a> to output absolute pitch intervals without distinguishing ascending intervals
+from descending intervals. That is, the leading plus (+) and minus (-) signs
+are discarded.</p>
+<p>Finally, the <tt class="docutils literal"><span class="pre">-A</span></tt> option causes <a class="reference external" href="../../man/mint">mint</a> to output just one of three
+states: a plus sign (+) indicating a rising interval, the minus sign (-)
+indicating a falling interval, and the number zero (0) indicating no pitch
+movement (i.e., unison). In short, the <tt class="docutils literal"><span class="pre">-A</span></tt> option outputs only gross
+contour. The <tt class="docutils literal"><span class="pre">-a</span></tt> and <tt class="docutils literal"><span class="pre">-A</span></tt> options are complementary.</p>
+</div>
+<div class="section" id="using-the-mint-command">
+<h2>Using the <em>mint</em> Command<a class="headerlink" href="#using-the-mint-command" title="Permalink to this headline">¶</a></h2>
+<p>Consider some of the following uses of the <a class="reference external" href="../../man/mint">mint</a> command.</p>
+<p>Are there any major or minor ninth melodic intervals in the file <tt class="docutils literal"><span class="pre">Sinatra</span></tt>?</p>
+<div class="highlight-bash"><div class="highlight"><pre>mint Sinatra | grep <span class="s1">&#39;[Mm][9]&#39;</span>
+</pre></div>
+</div>
+<p>Are there any compound melodic intervals in the file <tt class="docutils literal"><span class="pre">Piaf</span></tt>?</p>
+<div class="highlight-bash"><pre>mint Piaf | egrep '([Mm][9])|([MmPAd][1-9][0-9]''</pre>
+</div>
+<p>Are descending seconds more common than ascending seconds in melodies by
+Maurice Chevalier?</p>
+<div class="highlight-bash"><div class="highlight"><pre>mint Chevalier* | grep -c <span class="s1">&#39;+[Mm]2&#39;</span>
+mint Chevalier* | grep -c <span class="s1">&#39;-[Mm]2&#39;</span>
+</pre></div>
+</div>
+<p>An alternative way of achieving the same goal might simplify the regular
+expression to <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> and use the <tt class="docutils literal"><span class="pre">-d</span></tt> (diatonic) option for <a class="reference external" href="../../man/mint">mint</a> :</p>
+<div class="highlight-bash"><div class="highlight"><pre>mint -d Chevalier* | grep -c <span class="s1">&#39;+2&#39;</span>
+mint -d Chevalier* | grep -c <span class="s1">&#39;-2&#39;</span>
+</pre></div>
+</div>
+<p>Identify whether there are any tritone melodic intervals in any of the vocal
+parts of a score:</p>
+<div class="highlight-bash"><div class="highlight"><pre>extract -i <span class="s1">&#39;*Ivox&#39;</span> Platters | mint -c | egrep <span class="s1">&#39;(A4)|(d5)&#39;</span>
+</pre></div>
+</div>
+<p>Here we have used the extended regular expression capabilities of <a class="reference external" href="http://en.wikipedia.org/wiki/Egrep#Variations">egrep</a>
+to specify an either/or pattern.</p>
+<p>Suppose we had a directory containing only files encoding melodies using the
+`` <a href="#id16"><span class="problematic" id="id17">`**mint```_</span></a> representation. Does any melody in the current directory
+contain both an ascending major sixth and a descending major sixth?</p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -l <span class="s1">&#39;+M6&#39;</span> * | xargs grep <span class="s1">&#39;-M6&#39;</span>
+</pre></div>
+</div>
+<p>Do the vocal lines of Louis Jourdain contain successive ascending major
+thirds (such as forming an augmented triad)?</p>
+<div class="highlight-bash"><div class="highlight"><pre>mint Jourdain | grep -v <span class="o">=</span> | uniq -d | grep <span class="s1">&#39;+M3&#39;</span>
+</pre></div>
+</div>
+<p>What is the longest run of rising intervals in the vocal lines of Marlene
+Dietrich?</p>
+<div class="highlight-bash"><div class="highlight"><pre>mint -A Dietrich | grep -v <span class="o">=</span> | uniq -cd | grep <span class="s1">&#39;+&#39;</span> | sort -n
+</pre></div>
+</div>
+</div>
+<div class="section" id="calculating-melodic-intervals-using-the-xdelta-command">
+<h2>Calculating Melodic Intervals Using the <em>xdelta</em> Command<a class="headerlink" href="#calculating-melodic-intervals-using-the-xdelta-command" title="Permalink to this headline">¶</a></h2>
+<p>Often it is useful to calculate melodic intervals in purely numerical values,
+such as the number semitones or the number of cents. The <a class="reference external" href="../../man/xdelta">xdelta</a>
+command provides a general tool for calculating numerical differences between
+successive values within individual spines. In order to use <a class="reference external" href="../../man/xdelta">xdelta</a> to
+calculate semitone differences, we first need to transform our representation
+to <a class="reference external" href="../../rep/semits">**semits</a>(discussed in <a class="reference external" href="../ch04">Chapter 4</a>). Recall that in the
+`` <a href="#id10"><span class="problematic" id="id11">**</span></a>semits`` representation, middle C is designated by the value zero, and
+all other pitches are represented by their (positive or negative) semitone
+distance. A C-major scale would appear as follows:</p>
+<div class="highlight-humdrum"><pre>**semits
+0
+2
+4
+5
+7
+9
+11
+12
+*-</pre>
+</div>
+<p>We can transform this representation to semitone intervals as follows:</p>
+<p>`` xdelta`` <em>inputfile</em></p>
+<p>For the above scale, the output would be:</p>
+<div class="highlight-humdrum"><pre>**Xsemits
+.
+2
+2
+1
+2
+2
+2
+1
+*-</pre>
+</div>
+<p>Notice that the initial numerical value has been replaced by a null token,
+and all subsequent values represent the numerical <em>difference</em> between
+successive values. If the scale had been descending in pitch, then the
+difference values would be negative.</p>
+<p>Notice also that the input interpretation ( <a class="reference external" href="../../rep/semits">**semits</a>) has been modified to
+`` <a href="#id12"><span class="problematic" id="id13">**</span></a>Xsemits``). The input representation for <a class="reference external" href="../../man/xdelta">xdelta</a> does not matter. The
+output is always modified so the letter X is prepended to the representation.
+This means that <a class="reference external" href="../../man/xdelta">xdelta</a> could as easily be used to calculate differences
+in cents (<tt class="docutils literal"><span class="pre">Xcents</span></tt>), frequency (<tt class="docutils literal"><span class="pre">Xfreq</span></tt>) or any other representation
+that contains numbers.</p>
+<p>When <a class="reference external" href="../../man/xdelta">xdelta</a> encounters multiple-stops, it behaves in a manner similar to
+the <a class="reference external" href="../../man/mint">mint</a> command by calculating the numerical equivalent of unvoiced
+inner intervals. Consider the following example:</p>
+<div class="highlight-humdrum"><pre>**semits
+3
+2 5
+-1 7 14
+12
+*-</pre>
+</div>
+<p>The <a class="reference external" href="../../man/xdelta">xdelta</a> command produces the following output:</p>
+<div class="highlight-humdrum"><pre>**Xsemits
+.
+-1 2
+-3 (5) (2) 9
+13 5 -2
+*-</pre>
+</div>
+<p>Once again, the interpretation has been modified to <tt class="docutils literal"><span class="pre">Xsemits</span></tt> and the
+leading value has been changed to a null token. In going from the value 3 to
+the values 2 and 5, the output differences are -1 and +2 respectively. In
+going from the values 2 and 5 to the values -1, 7 and 14, we see the outer
+differences (-1 - 2 = -3) and (14 - 5 = 9). The inner differences are output
+in parentheses: (7 - 2 = 5) and (7 - 5 = 2).</p>
+<p>Like the <a class="reference external" href="../../man/mint">mint</a> command, <a class="reference external" href="../../man/xdelta">xdelta</a> provides a <tt class="docutils literal"><span class="pre">-b</span></tt> option to break
+calculations of numerical differences and a <tt class="docutils literal"><span class="pre">-s</span></tt> option to skip or
+completely ignore certain data tokens when processing. An important use of
+the <tt class="docutils literal"><span class="pre">-s</span></tt> option is to ignore barlines. Consider the following example:</p>
+<div class="highlight-humdrum"><pre>**cents
+100
+400
+800
+=2
+600
+*-</pre>
+</div>
+<p>The proper way to calculate differences in cents is to ensure that measure
+numbers are ignored:</p>
+<div class="highlight-bash"><div class="highlight"><pre>xdelta -s ^<span class="o">=</span> inputfile
+</pre></div>
+</div>
+<p>Failure to skip the barline will cause a difference to be calculated between
+800 and =2 (i.e., -798) and between =2 and 600 (i.e., 598).</p>
+<p>Outputs from <a class="reference external" href="../../man/xdelta">xdelta</a> can be processed again using <a class="reference external" href="../../man/xdelta">xdelta</a> in order to
+calculate the differences of the differences. For example, we can calculate
+the second derivative of successive cents by using a pipeline containing two <a class="reference external" href="../../man/xdelta">xdelta</a> commands:</p>
+<div class="highlight-bash"><div class="highlight"><pre>xdelta -s ^<span class="o">=</span> *inputfile*
+| xdelta -s ^<span class="o">=</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="reprise">
+<h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
+<p>Intervals come in a mind-boggling range of types and sizes. Interval sizes
+can be measured in a variety of ways. They can be characterized as diatonic
+qualities such as minor sevenths or augmented sixths. They can be measured in
+terms of semitone distance &#8211; or even in cents or hertz (frequency
+difference). Only the diatonic size may be of interest (e.g., &#8220;a fifth&#8221;), and
+compound intervals (e.g., major tenth) can be expressed by their non-compound
+equivalents (major third).</p>
+<p>Melodic intervals can be described as ascending or descending, or as absolute
+distances without regard for direction. Types of melodic intervals can be
+distinguished according to how successive notes are voiced, and according to
+spans across rests or across less important pitches. We defined seven
+different types of melodic intervals including <em>voiced melodic intervals</em>,
+<em>interrupted melodic intervals</em>, <em>cross-voice melodic intervals</em>, <em>unvoiced
+outer intervals</em>, <em>unvoiced inner intervals</em>, <em>distance intervals</em>, and <em>tied
+note intervals</em>.</p>
+<p>In this chapter we have seen how to use the <a class="reference external" href="../../man/mint">mint</a> command to calculate
+these various kinds of intervals. Specifically, we have illustrated how to
+calculate voiced intervals, interrupted intervals, unvoiced outer intervals
+and unvoiced inner intervals. In <a class="reference external" href="../ch26">Chapter 26</a> we will show how to calculate
+cross-voice intervals, and in <a class="reference external" href="../ch35">Chapter 35</a>(&#8220;Layers&#8221;) we will consider how
+to calculate distance intervals.</p>
+<p>We have also seen how <a class="reference external" href="../../man/xdelta">xdelta</a> can be used to measure purely numerical
+distances between successive values. As we will see, <a class="reference external" href="../../man/xdelta">xdelta</a> will prove
+useful in many other applications apart from calculating pitch distances.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  <hr/>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <center><a href="../ch12/" class="btn btn-neutral float-right" title="Chapter 12: Selecting Musical Parts and Passages">Next <span class="fa fa-arrow-circle-right"></span></a></center>
+      
+      
+        <a href="../ch10/" class="btn btn-neutral" title="Chapter 10: Musical Uses of Regular Expressions"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+      
+             <center><a href="../../_sources/guide/ch11.txt" rel="nofollow"> View page source</a></center>
+      
+    </div>
+  
+
+
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+   
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-52162357-1', 'humdrum.org');
+  ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>

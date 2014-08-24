@@ -1,0 +1,22 @@
+
+
+.humDiv        { font-size: 12px; font-family: Incosolata,Consolata,Monaco,monospace; width:100%; padding:10px; background:#ffffff; align:center; border: 1px solid #e1e4e5; }
+.humTable      { padding:0; border-spacing:0; }
+.humSubtable   { padding:0; border-spacing:0; }
+.humLine:hover { background:#d0d0ff; }
+.humNull       { color:#aaaaaa; }
+.humKernToken  { color:#aaaaaa; }
+.humKernPitch  { color:#000000; }
+.humKernRhythm { color:#000000; }
+.humTrackpad   { padding-right:30px; }
+.humSubtrackpad{ padding-right:20px; }
+.humBar        { color:#555555; background-color:#eeeeee; }
+.humExinterp   { color:magenta; }
+.humManip      { color:#f62217; }
+.humInterp     { color:#9f000f; }
+.humRef        { color:#007700; }
+.humGcom       { color:#1100aa; }
+.humLcom       { color:#7d1b7e; }
+
+
+

@@ -1,0 +1,993 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapter 13: Assembling Scores &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../"/>
+        <link rel="up" title="The Humdrum User Guide" href="../"/>
+        <link rel="next" title="Chapter 14: Stream Editing" href="../ch14/"/>
+        <link rel="prev" title="Chapter 12: Selecting Musical Parts and Passages" href="../ch12/"/>
+   <link rel="stylesheet" type"text/css" href="../../_static/humdrum.css">
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">Humdrum Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../install/github/">Installing Humdrum Tools from GitHub</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../">The Humdrum User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ch01/">1. Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern(I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch03/">3. Some Initial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch04/">4. Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch05/">5. The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern(II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch07/">7. MIDI Output Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch08/">8. The Shell (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch09/">9. Searching with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch10/">10. Musical Uses of Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch11/">11. Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch12/">12. Selecting Musical Parts and Passages</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Chapter 13: Assembling Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch14/">14. Stream Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch15/">15. Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch16/">16. The Shell (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch17/">17. Creating Inventories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch18/">18. Fingers, Footsteps and Frets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch19/">19. Musical Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch20/">20. Strophes, Verses, and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch21/">21. Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch22/">22. Classifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch23/">23. Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch24/">24. The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch25/">25. Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch26/">26. Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch27/">27. Text and Lyrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch28/">28. Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch29/">29. Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch30/">30.MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch31/">31. Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch32/">32. The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch33/">33. Word Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch34/">34. Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch35/">35. Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch36/">33. Sound and Spectra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch37/">37. Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch38/">38. Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch39/">39. Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch40/">40. Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bibliography/">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample.problems/">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">2. Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody and Pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/searching/">Music Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/midi/">MIDI Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/notation/">Graphical Musical Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/other/">Other Useful Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/programming/">Programming Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cookbook/">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cookbook/vimHighlighting/">Syntax Coloring in Vim</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../man/">Humdrum Command Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../man/assemble/">Command: assemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/barks/">Command: barks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/cbr/">Command: cbr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/census/">Command: census</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/cents/">Command: cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/cleave/">Command: cleave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/cocho/">Command: cocho</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/context/">Command: context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/correl/">Command: correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/deg/">Command: deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/degree/">Command: degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/diss/">Command: diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/ditto/">Command: ditto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/dur/">Command: dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/ekern/">Command: ekern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/encode/">Command: encode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/extract/">Command: extract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/fade/">Command: fade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/fields/">Command: fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/freq/">Command: freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/hint/">Command: hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/humdrum/">Command: humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/humsed/">Command: humsed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/humver/">Command: humver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/infot/">Command: infot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/iv/">Command: iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/kern/">Command: kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/key/">Command: key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/melac/">Command: melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/melvel/">Command: melvel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/metpos/">Command: metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/midi/">Command: midi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/midreset/">Command: midreset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/mint/">Command: mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/ms/">Command: ms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/nf/">Command: nf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/num/">Command: num</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/patt/">Command: patt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/pattern/">Command: pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/pc/">Command: pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/pcset/">Command: pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/perform/">Command: perform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/pf/">Command: pf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/pitch/">Command: pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/proof/">Command: proof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/recode/">Command: recode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/record/">Command: record</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/regexp/">Command: regexp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/reihe/">Command: reihe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/rend/">Command: rend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/rid/">Command: rid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/scramble/">Command: scramble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/semits/">Command: semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/simil/">Command: simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/smf/">Command: smf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/solfa/">Command: solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/solfg/">Command: solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/specc/">Command: specc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/spect/">Command: spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/strophe/">Command: strophe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/synco/">Command: synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/tacet/">Command: tacet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/text/">Command: text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/themefinder/">Command: thmea</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/thru/">Command: thru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/timebase/">Command: timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/tonh/">Command: tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/trans/">Command: trans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/urrhythm/">Command: urrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/veritas/">Command: veritas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/vox/">Command: vox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/xdelta/">Command: xdelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/yank/">Command: yank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/ydelta/">Command: ydelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/#commands">Commands</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../rep/">Humdrum Data Representations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/barlines/">Representation: barlines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/IPA/">Representation: **IPA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/MIDI/">Representation: **MIDI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/Tonh/">Representation: **Tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/URrhythm/">Representation: **URrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/Zeit/">Representation: **Zeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/bhatk/">Representation: **bhatk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/cents/">Representation: **cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/correl/">Representation: **correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/dB/">Representation: **dB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/date/">Representation: **date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/deg/">Representation: **deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/degree/">Representation: **degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/diss/">Representation: **diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/dur/">Representation: **dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/embel/">Representation: **embel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/freq/">Representation: **freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/fret/">Representation: **fret</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/harm/">Representation: **harm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/hildegard/">Representation: **hildegard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/hint/">Representation: **hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/iv/">Representation: **iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/kern/">Representation: **kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/melac/">Representation: **melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/metpos/">Representation: **metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/mint/">Representation: **mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/ordo/">Representation: **ordo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/pc/">Representation: **pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/pcset/">Representation: **pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/pitch/">Representation: **pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/recip/">Representation: **recip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/semits/">Representation: **semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/silbe/">Representation: **silbe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/simil/">Representation: **simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/solfa/">Representation: **solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/solfg/">Representation: **solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/specC/">Representation: **specC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/spect/">Representation: **spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/synco/">Representation: **synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/takt/">Representation: **takt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/text/">Representation: **text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/time/">Representation: **time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/timebase/">Representation: **timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/vox/">Representation: **vox#</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../">Docs</a> &raquo;</li>
+      
+          <li><a href="../">The Humdrum User Guide</a> &raquo;</li>
+      
+    <li>Chapter 13: Assembling Scores</li>
+      <li class="wy-breadcrumbs-aside">
+        
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="chapter-13-assembling-scores">
+<h1>Chapter 13: Assembling Scores<a class="headerlink" href="#chapter-13-assembling-scores" title="Permalink to this headline">¶</a></h1>
+<p>In the previous chapter we learned how to extract parts and passages from
+Humdrum files. In this chapter we discuss the reverse procedures: how to
+assemble and coordinate larger documents from individual segments and parts.
+We will discuss four tools: the UNIX <a class="reference external" href="http://en.wikipedia.org/wiki/Cat_(Unix)">cat</a> command, and the Humdrum
+<a class="reference external" href="../../man/assemble">assemble</a>, <a class="reference external" href="../../man/timebase">timebase</a> and <a class="reference external" href="../../man/rid">rid</a> commands.</p>
+<div class="section" id="the-cat-command">
+<h2>The <em>cat</em> Command<a class="headerlink" href="#the-cat-command" title="Permalink to this headline">¶</a></h2>
+<p>The UNIX <a class="reference external" href="http://en.wikipedia.org/wiki/Cat_(Unix)">cat</a> command allows two or more inputs to be concatenated
+together. If we concatenate two files, the output will consist of the
+contents of the first file, followed immediately by the contents of the
+second file. For example, the following command will concatenate together the
+files <tt class="docutils literal"><span class="pre">mov.1</span></tt>, <tt class="docutils literal"><span class="pre">mov.2</span></tt> and <tt class="docutils literal"><span class="pre">mov.3</span></tt> and place the result in the file
+`` complete``. The order of concatenation is the same as the order of file
+names given on the command line:</p>
+<div class="highlight-bash"><div class="highlight"><pre>cat mov.1 mov.2 mov.3 &gt; <span class="nb">complete</span>
+</pre></div>
+</div>
+<p>If each of the concatenated files conforms to the Humdrum syntax, then the
+resulting combined file is guaranteed to conform to the Humdrum syntax.
+However, in many cases, there may be redundant information present in the
+concatenated output. Suppose we had three files, each of which encoded a
+single measure of music. Concatenating them together might result in an
+output such as the following:</p>
+<div class="highlight-humdrum"><pre>!! File 1
+**kern  **kern  **kern  **kern
+*M4/4   *M4/4   *M4/4   *M4/4
+*G:     *G:     *G:     *G:
+*k[f#]  *k[f#]  *k[f#]  *k[f#]
+4GG     4B      4d      4g
+=1      =1      =1      =1
+4GG     4d      4g      4b
+4FF#    4d      [4a     4dd
+8GG     4d      8a]     4b
+8BB     .       [8g     .
+4D      4d      8g]     4a
+.       .       8f#     .
+*-      *-      *-      *-
+!! File 2
+**kern  **kern  **kern  **kern
+*M4/4   *M4/4   *M4/4   *M4/4
+*k[f#]  *k[f#]  *k[f#]  *k[f#]
+=2      =2      =2      =2
+8G      4d      4g      4b
+8F#     .       .       .
+4E      4e      4g      4cc#
+4D;     4A;     4f#;    4dd;
+8A      4cn     4a      4ee
+8G      .       .       .
+*-      *-      *-      *-
+!! File 3
+**kern  **kern  **kern  **kern
+*M4/4   *M4/4   *M4/4   *M4/4
+*k[f#]  *k[f#]  *k[f#]  *k[f#]
+*k[f#]  *k[f#]  *k[f#]  *k[f#]
+=3      =3      =3      =3
+4F#     4d      [4a     8dd
+.       .       .       8cc
+4G      4d      8a]     4b
+.       .       [8g     .
+8C#     8e      8g]     4a
+8D#     4B      8f#     .
+8E      .       8e      8g
+8F#     8A      8d      8a
+*-      *-      *-      *-</pre>
+</div>
+<p>Notice that each complete measure ends with spine-path terminators and that
+the <a class="reference external" href="../../rep/kern">**kern</a> exclusive interpretations are repeated. This organization
+has a number of repercussions for various Humdrum tools. For example, the
+<a class="reference external" href="../../man/mint">mint</a> command calculates melodic intervals between successive notes
+within a spine. However, <a class="reference external" href="../../man/mint">mint</a> will not calculate intervals between
+pitches that are separated by a spine-path terminator. In other words, in the
+above output, <a class="reference external" href="../../man/mint">mint</a> will fail to calculate the melodic intervals between
+notes in successive measures.</p>
+</div>
+<div class="section" id="the-rid-command">
+<h2>The <em>rid</em> Command<a class="headerlink" href="#the-rid-command" title="Permalink to this headline">¶</a></h2>
+<p>This problem can be resolved by using the Humdrum <a class="reference external" href="../../man/rid">rid</a> command. The <a class="reference external" href="../../man/rid">rid</a> command can be used to eliminate various kinds of records. Each
+option for <a class="reference external" href="../../man/rid">rid</a> eliminates a different class of records. Here are the
+record classes with their associated options:</p>
+<p>&gt; -Geliminate all global comments
+&gt; -geliminate only global comments that are empty
+&gt; -Leliminate all local comments
+&gt; -leliminate only local comments that are empty
+&gt; -Ieliminate all interpretations
+&gt; -ieliminate only null interpretations
+&gt; -Deliminate all data records
+&gt; -deliminate only null data records
+&gt; -Teliminate all tandem interpretations
+&gt; -teliminate duplicate (repeated) tandem interpretations
+&gt; -Ueliminate unnecessary exclusive interpretations (see below)
+&gt; -usame as -U</p>
+<p>Null records are devoid of content. For example, null interpretations consist
+of a single asterisk in each spine; null data record consists of just null
+data tokens (.) in each spine; null local comments consist of a single
+exclamation mark in each spine. Null global comments contain just two
+exclamation marks at the beginning of a record.</p>
+<p>Upper- and lower-case options are used to distinguish <em>all</em> records of a
+certain class (upper-case) from <em>empty</em>, <em>null</em> or <em>repeated</em> records of a
+certain class (lower-case).</p>
+<p>By way of example, the following command will eliminate all global comments
+(including reference records) from the input:</p>
+<div class="highlight-bash"><div class="highlight"><pre>rid -G Saint-Saens
+</pre></div>
+</div>
+<p>Similarly, the following command will eliminate all tandem interpretations
+from an input:</p>
+<div class="highlight-bash"><div class="highlight"><pre>rid -T Vaughan-Williams
+</pre></div>
+</div>
+<p>Options can be combined. The following command eliminates all global and
+local comments, interpretations, and null data records:</p>
+<div class="highlight-bash"><div class="highlight"><pre>rid -GLId
+</pre></div>
+</div>
+<p>The option combination <tt class="docutils literal"><span class="pre">-GLId</span></tt> is very common with <a class="reference external" href="../../man/rid">rid</a> since only non-
+null data records are retained in the output.</p>
+<p>With the <tt class="docutils literal"><span class="pre">-u</span></tt> option, <a class="reference external" href="../../man/rid">rid</a> will remove &#8220;unnecessary&#8221; exclusive
+interpretations. Exclusive interpretations are deemed unnecessary if they
+don&#8217;t change the current status of the data. In the following example, the
+second <tt class="docutils literal"><span class="pre">psaltery</span></tt> interpretation is redundant. The <strong>rid -u</strong> command
+would remove the first spine-path terminator and the second exclusive
+interpretation &#8211; leaving a continuous data spine.</p>
+<div class="highlight-humdrum"><pre>**psaltery
+.
+.
+.
+*-
+**psaltery
+.
+*-</pre>
+</div>
+<p>In addition, <a class="reference external" href="../../man/rid">rid</a> provides a <tt class="docutils literal"><span class="pre">-t</span></tt> option which removes &#8220;duplicate&#8221; or
+repeated tandem interpretations. In the above example there is no need to
+repeat the meter signature and key signature in each measure.  The following
+command will concatenate each of the three measures together, and then
+eliminate the unwanted interpretations:</p>
+<div class="highlight-bash"><div class="highlight"><pre>cat bar1 bar2 bar3 | rid -ut
+</pre></div>
+</div>
+<p>The resulting output is given below:</p>
+<div class="highlight-humdrum"><pre>!! File 1
+**kern  **kern  **kern  **kern
+*M4/4   *M4/4   *M4/4   *M4/4
+*k[f#]  *k[f#]  *k[f#]  *k[f#]
+4GG     4B      4d      4g
+=1      =1      =1      =1
+4GG     4d      4g      4b
+4FF#    4d      [4a     4dd
+8GG     4d      8a]     4b
+8BB     .       [8g     .
+4D      4d      8g]     4a
+.       .       8f#     .
+!! File 2
+=2      =2      =2      =2
+8G      4d      4g      4b
+8F#     .       .       .
+4E      4e      4g      4cc#
+4D;     4A;     4f#;    4dd;
+8A      4cn     4a      4ee
+8G      .       .       .
+!! File 3
+=3      =3      =3      =3
+4F#     4d      [4a     8dd
+.       .       .       8cc
+4G      4d      8a]     4b
+.       .       [8g     .
+8C#     8e      8g]     4a
+8D#     4B      8f#     .
+8E      .       8e      8g
+8F#     8A      8d      8a
+*-      *-      *-      *-</pre>
+</div>
+<p>Of course care should be exercised when concatenating inputs together.
+Although an output may conform to the Humdrum syntax, the result can
+nevertheless violate conventions for a specific representation such as
+`` <a href="#id4"><span class="problematic" id="id5">**</span></a>kern``. For example, if we were to concatenate measure 85 to measure 87,
+it is possible that tied-notes won&#8217;t match up, or that phrases will begin
+without ending, etc. These anomalies may cause problems with subsequent
+processing.</p>
+</div>
+<div class="section" id="assembling-parts-using-the-assemble-command">
+<h2>Assembling Parts Using the <em>assemble</em> Command<a class="headerlink" href="#assembling-parts-using-the-assemble-command" title="Permalink to this headline">¶</a></h2>
+<p>Assembling parts into a full score is slightly more challenging than
+concatenating together musical segments. The principle tool for joining
+spines together is the <a class="reference external" href="../../man/assemble">assemble</a> command. Consider the following two
+files:</p>
+<div class="highlight-humdrum"><pre>!! Assemble example
+!! File 1
+**Letters
+! A to E
+A
+B
+C
+D
+E
+*-</pre>
+</div>
+<div class="highlight-humdrum"><pre>!! Assemble example
+!! File 2
+**Numbers
+! 1 to 5
+1
+2
+3
+4
+5
+*-</pre>
+</div>
+<p>These two files can be aligned side by side using <a class="reference external" href="../../man/assemble">assemble</a> :</p>
+<div class="highlight-bash"><div class="highlight"><pre>assemble letters numbers
+</pre></div>
+</div>
+<p>The resulting output is:</p>
+<div class="highlight-humdrum"><pre>!! Assemble example
+!! File 1
+!! File 2
+**Letters       **Numbers
+! A to E        ! 1 to 5
+A       1
+B       2
+C       3
+D       4
+E       5
+*-      *-</pre>
+</div>
+<p>Note the following: (1) The spines are joined side by side from left to right
+in the same order as specified on the command line. (2) Local comments are
+preserved in their appropriate spines. (3) When identical global comments
+occur at the same location in both files, only a single instance of the
+comment is output. (4) Dissimilar global comments are output successively.</p>
+<p>The files joined by <a class="reference external" href="../../man/assemble">assemble</a> are not confined to a single spine. For
+example, one input file may contain 2 spines and a second file may contain 20
+spines. The resulting output will contain 22 spines. There is no limit to the
+number of files that can be assembled at one time.</p>
+<p>In many cases, the input files will have dissimilar lengths. The <a class="reference external" href="../../man/assemble">assemble</a> command will correctly terminate the appropriate spines. For example, in the
+above case, if the <tt class="docutils literal"><span class="pre">numbers</span></tt> file contained only the numbers 1 to 3, the
+assembled output would appear as follows:</p>
+<div class="highlight-humdrum"><pre>!! Assemble example
+!! File 1
+!! File 2**Letters**Numbers
+! A to E! 1 to 3
+A1
+B2
+C3
+**-
+D
+E
+*-</pre>
+</div>
+<p>If the order of the input files was reversed, <a class="reference external" href="../../man/assemble">assemble</a> would produce an
+output with the appropriate spine-path changes:</p>
+<div class="highlight-humdrum"><pre>!! Assemble example
+!! File 2
+!! File 1
+**Numbers       **Letters
+! 1 to 3        ! A to E
+1       A
+2       B
+3       C
+*       -*
+D
+E
+*-</pre>
+</div>
+<p>Note that if all of the input files conform to the Humdrum syntax, then
+<a class="reference external" href="../../man/assemble">assemble</a> guarantees that the assembled output will also conform to the
+Humdrum syntax.</p>
+</div>
+<div class="section" id="aligning-durations-using-the-timebase-command">
+<h2>Aligning Durations Using the <em>timebase</em> Command<a class="headerlink" href="#aligning-durations-using-the-timebase-command" title="Permalink to this headline">¶</a></h2>
+<p>Suppose now that we wanted to join two hypothetical files containing
+`` <a href="#id16"><span class="problematic" id="id17">`**kern```_</span></a> data. The first file contains two quarter notes, whereas the
+second file contains four eighth notes:</p>
+<div class="highlight-humdrum"><pre>!! File 1
+**kern
+4c
+4d
+*-</pre>
+</div>
+<div class="highlight-humdrum"><pre>!! File 2
+**kern
+8e
+8g
+8f
+8g
+*-</pre>
+</div>
+<p>Using <a class="reference external" href="../../man/assemble">assemble</a> to paste them together will clearly lead to an
+uncoordinated result. The two quarter notes in file 1 will be incorrectly
+matched with the first two eighth notes in file 2.</p>
+<p>The Humdrum <a class="reference external" href="../../man/timebase">timebase</a> command can be used to reformat either
+`` <a href="#id18"><span class="problematic" id="id19">`**kern```_</span></a> or <a class="reference external" href="../../rep/recip">**recip</a> inputs so that each output data record
+represents an equivalent slice (elapsed duration) of time. (Barlines are
+ignored by <a class="reference external" href="../../man/timebase">timebase</a> .) The <a class="reference external" href="../../man/timebase">timebase</a> command achieves this by padding
+an input with null data records. In the above case, we would preprocess file
+1 as follows:</p>
+<div class="highlight-bash"><div class="highlight"><pre>timebase -t 8 file1 &gt; file1.tb
+</pre></div>
+</div>
+<p>The new file would look like this:</p>
+<div class="highlight-humdrum"><pre>!! File 1
+**kern
+4c
+.
+4d
+.
+*-</pre>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">-t</span></tt> option is used to indicate the &#8220;time base&#8221; &#8211; in this case, an
+eighth duration. Since all non-barline data records in both files represent
+elapsed durations of an eighth-note, we can continue by using the <a class="reference external" href="../../man/assemble">assemble</a> command as before. The command:</p>
+<div class="highlight-bash"><div class="highlight"><pre>assemble file1.tb file2
+</pre></div>
+</div>
+<p>will result in the following two-part score:</p>
+<div class="highlight-humdrum"><pre>!! File 1
+!! File 2
+**kern  **kern
+4c      8e
+.       8g
+4d      8f
+.       8g
+*-      *-</pre>
+</div>
+<p>Suppose that <tt class="docutils literal"><span class="pre">file2</span></tt> also contained a quarter-note. For example, consider a
+revised <tt class="docutils literal"><span class="pre">file2</span></tt>:</p>
+<div class="highlight-humdrum"><pre>!! File 2
+**kern
+8e
+8g
+4f
+*-</pre>
+</div>
+<p>Before assembling the two parts, we would need to apply the <a class="reference external" href="../../man/timebase">timebase</a> command to this file (using the same 8th-note time-base value). Assembling
+the two &#8220;time-based&#8221; files would produce the following result:</p>
+<div class="highlight-humdrum"><pre>!! File 1
+!! File 2
+**kern  **kern
+4c      8e
+.       8g
+4d      4f
+.       .
+*-      *-</pre>
+</div>
+<p>Notice that we have a spurious null data record in the last line; both parts
+encode null tokens. For most processing, the presence of null data records is
+inconsequential. However, if we wish, these null data records can be
+eliminated using the <a class="reference external" href="../../man/rid">rid</a> command with the <tt class="docutils literal"><span class="pre">-d</span></tt> option. In fact it is
+common to follow an <a class="reference external" href="../../man/assemble">assemble</a> command with <strong>rid -d</strong> to strip away
+unnecessary null data records. The command:</p>
+<div class="highlight-bash"><div class="highlight"><pre>assemble file1.tb file2.tb | rid -d
+</pre></div>
+</div>
+<p>would result in the following output:</p>
+<div class="highlight-humdrum"><pre>!! File 1
+!! File 2
+**kern  **kern
+4c      8e
+.       8g
+4d      4f
+*-      *-</pre>
+</div>
+<p>The <a class="reference external" href="../../man/timebase">timebase</a> command can be applied to multi-spine inputs as well as
+single-spine inputs. Consider, the following input:</p>
+<div class="highlight-humdrum"><pre>**kern  **kern  **kern  **kern  **commentary
+4g      8.r     8.cc    16ee    2nd inversion
+.       .       .       8ff     .
+.       32b     16cc    16gg    clash
+.       32a     .       .       .
+8f      8cc     8dd     8ff     suspension
+*-      *-      *-      *-      *-</pre>
+</div>
+<p>The following command will cause the addition of null data records so that
+each data record represents an elapsed time of a 32nd duration. Incidentally,
+notice that any spine contain non-rhythmic data &#8211; such as the
+`` <a href="#id6"><span class="problematic" id="id7">**</span></a>commentary`` spine in the above example &#8211; is also transformed so that
+synchronous data is maintained.</p>
+<div class="highlight-bash"><div class="highlight"><pre>timebase -t 32 Corelli
+</pre></div>
+</div>
+<p>The corresponding output is as follows.</p>
+<div class="highlight-humdrum"><pre>**kern  **kern  **kern  **kern  **commentary
+*tb32   *tb32   *tb32   *tb32   *tb32
+4g      8.r     8.cc    16ee    2nd inversion
+.       .       .       .       .
+.       .       .       8ff     .
+.       .       .       .       .
+.       .       .       .       .
+.       .       .       .       .
+.       32b     16cc    16gg    clash
+.       32a     .       .       .
+8f      8cc     8dd     8ff     suspension
+.       .       .       .       .
+.       .       .       .       .
+.       .       .       .       .
+*-      *-      *-      *-      *-</pre>
+</div>
+<p>Notice that <a class="reference external" href="../../man/timebase">timebase</a> has added a tandem interpretation (<tt class="docutils literal"><span class="pre">*tb32</span></tt>). This
+indicates that the output has been processed so that each non-barline data
+record represents an elapsed duration equivalent to a thirty-second note.</p>
+</div>
+<div class="section" id="assembling-n-tuplets">
+<h2>Assembling N-tuplets<a class="headerlink" href="#assembling-n-tuplets" title="Permalink to this headline">¶</a></h2>
+<p>Typically, one can simply use the shortest duration present as a guide for a
+suitable time-base value. The shortest duration can be determined using the
+<a class="reference external" href="../../man/census">census</a>-k command described in <a class="reference external" href="../ch04">Chapter 4</a>. However, tuplets require
+a little more sophistication. Suppose we wanted to assemble two parts, one
+containing just eighth-notes and the other containing just quarter-note
+triplets. (The quarter-note triplets will be encoded as three notes in the
+time of a half-note, or &#8220;6th&#8221; notes.) We need to create an output whose
+rhythmic structure will appear as follows:</p>
+<div class="highlight-humdrum"><pre>**kern  **kern
+*M2/4   *M2/4
+=1      =1
+6       8
+.       8
+6       .
+.       8
+6       .
+.               8
+=2      =2
+6       8
+.       8
+6       .
+.       8
+6       .
+.       8
+=3      =3
+*-      *-</pre>
+</div>
+<p>In this case, choosing a time-base according to the shortest duration (8th)
+will not work since a 6th note is not an integral multiple of the eighth
+duration. We need to find a <em>common duration factor</em> for both values. The
+shortest common duration is a 24th note (there are three 24th notes in an 8th
+note, and four 24th notes in a 6th note). Applying the time-base value <a href="#id8"><span class="problematic" id="id9">`</span></a>24&#8217;
+to both files will allow us to coordinate them properly. Remember that <strong>rid
+-d</strong> can be used to eliminate unnecessary null data records once we have
+finished assembling the spines. In the worst case, you can determine a common
+duration factor by simply multiplying together the shortest notes in the
+files to be assembled. For example, 6 x 8 = 48; so a time-base of 48 will be
+guaranteed to work for both files.</p>
+</div>
+<div class="section" id="checking-an-assembled-score-using-proof">
+<h2>Checking an Assembled Score Using <em>proof</em><a class="headerlink" href="#checking-an-assembled-score-using-proof" title="Permalink to this headline">¶</a></h2>
+<p>In assembling any score from a set of parts, there is always the danger of
+using the wrong time-base value. When parts are miscoordinated, it is
+typically the consequence of one or more notes being discarded by <a class="reference external" href="../../man/timebase">timebase</a> . Fortunately, such miscoordinations are easily detected by
+applying the <a class="reference external" href="../../man/proof">proof</a> command to any assembled <a class="reference external" href="../../rep/kern">**kern</a> output. The <a class="reference external" href="../../man/proof">proof</a> utility checks <a class="reference external" href="../../rep/kern">**kern</a> representations for a wide variety of
+possible encoding errors or ambiguities:</p>
+<div class="highlight-bash"><div class="highlight"><pre>proof fullscore
+</pre></div>
+</div>
+<p>By way of summary, creating a full score from a set of <a class="reference external" href="../../rep/kern">**kern</a> parts
+involves the following five tasks: (1) Identify a common duration factor for
+all the parts. Use <a class="reference external" href="../../man/census">census</a> to determine the shortest duration; if any
+of the parts contains an N-tuplet, then the common duration factor may be
+smaller than the shortest note. (2) Use the <a class="reference external" href="../../man/timebase">timebase</a> command to expand
+each input file separately using the common duration factor. (3) Assemble the
+parts using <a class="reference external" href="../../man/assemble">assemble</a>. (4) If desired, eliminate unnecessary null data
+records usingi <a href="#id20"><span class="problematic" id="id21">`**rid -d**.`_</span></a> (5) Check the assembled score for rhythmic
+coherence using the <a class="reference external" href="../../man/proof">proof</a> command.</p>
+</div>
+<div class="section" id="other-uses-for-the-timebase-command">
+<h2>Other Uses for the <em>timebase</em> Command<a class="headerlink" href="#other-uses-for-the-timebase-command" title="Permalink to this headline">¶</a></h2>
+<p>The most common use of <a class="reference external" href="../../man/timebase">timebase</a> is as a way of expanding a file by
+padding it with null data records. However, <a class="reference external" href="../../man/timebase">timebase</a> can also be used to
+contract a file, giving us only those sonorities that lie a fixed duration
+apart. For example, specifying a time-base of <tt class="docutils literal"><span class="pre">-t</span> <span class="pre">2</span></tt> will cause only those
+sonorities that are separated by a half-note duration to be output. This sort
+of rhythmic reduction can be useful in certain circumstances. For example,
+suppose you suspect there may be a hemiola tendency in a given work by
+Brahms, where the duration separating hemiola notes is a dotted-quarter. The
+command:</p>
+<div class="highlight-bash"><div class="highlight"><pre>timebase -t 4. brahms
+</pre></div>
+</div>
+<p>can be used to extract only those sonorities that are separated by a dotted-
+quarter duration.</p>
+<p>Similarly, suppose we want to extract all sonorities falling on the third
+beat of a waltz written in 3/2 meter. First we would edit the input file so
+it begins on the third beat of some measure. Then we could use the following
+command:</p>
+<div class="highlight-bash"><div class="highlight"><pre>grep -v ^<span class="o">=</span> waltz | timebase -t 1. &gt; 3rd_beat
+</pre></div>
+</div>
+<p>Note that the use of <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> here is essential in order to eliminate
+barlines. The <a class="reference external" href="../../man/timebase">timebase</a> command resets itself with each barline, so time-
+base durations are calculated from the beginning of the bar. When barlines
+are eliminated, <a class="reference external" href="../../man/timebase">timebase</a> cannot synchronize to the beginning of each bar
+and so simply floats along at the fixed time-base.</p>
+</div>
+<div class="section" id="additional-uses-of-assemble-and-timebase">
+<h2>Additional Uses of <em>assemble</em> and <em>timebase</em><a class="headerlink" href="#additional-uses-of-assemble-and-timebase" title="Permalink to this headline">¶</a></h2>
+<p>Although we normally assemble parts together, sometimes it is useful to
+assemble entire scores together. Suppose we wanted to listen to a theme at
+the same time as one of its variations. We might first use <a class="reference external" href="../../man/yank">yank</a> to
+extract the appropriate sections. At the same time we might determine a
+common duration factor and expand them using <a class="reference external" href="../../man/timebase">timebase</a> .</p>
+<div class="highlight-bash"><div class="highlight"><pre>yank -s Theme -r 1 blacksmith | timebase -t 32 &gt; temp1
+yank -s <span class="s1">&#39;Variation 1&#39;</span> -r 1 blacksmith | timebase -t 32 &gt; temp2
+</pre></div>
+</div>
+<p>Then we assemble the two sections together, translate to the <a class="reference external" href="../../rep/MIDI">**MIDI</a>
+representation and use <a class="reference external" href="../../man/perform">perform</a> to listen to both sections at the same
+time:</p>
+<div class="highlight-bash"><div class="highlight"><pre>assemble temp1 temp2 | midi | perform
+</pre></div>
+</div>
+<p>Similarly, suppose we would like to compare the bass lines for each variation
+in some set. We might extract each of the bass lines, assemble them into a
+single score, and then use the <a href="#id22"><span class="problematic" id="id23">|ms|_</span></a> and**ghostview**commands to allow us
+to see all of the bass lines for all of the variations concurrently.</p>
+<div class="highlight-bash"><div class="highlight"><pre>yank -s <span class="s1">&#39;Variation 1&#39;</span> -r 1 goldberg | timebase -t 16 &gt; temp1
+yank -s <span class="s1">&#39;Variation 2&#39;</span> -r 1 goldberg | timebase -t 16 &gt; temp2
+</pre></div>
+</div>
+<p>etc. ...</p>
+<div class="highlight-bash"><div class="highlight"><pre>assemble temp1 temp2 temp3 ... | rid -d | ms &gt; basslines.ps
+ghostview basslines.ps
+</pre></div>
+</div>
+<p>The most common use of <a class="reference external" href="../../man/assemble">assemble</a> is not to assemble parts, but to assemble
+different types of concurrent information. Suppose we would like to determine
+whether descending minor seconds are more likely to be <em>fa-mi</em> rather than
+<em>do-ti</em>. We can use the <a class="reference external" href="../../man/mint">mint</a> command to characterize melodic
+intervals, and the <a class="reference external" href="../../man/solfa">solfa</a> command to characterize scale degrees. Assume
+that our input is monophonic:</p>
+<div class="highlight-bash"><div class="highlight"><pre>mint melodies &gt; temp1
+solfa melodies &gt; temp2
+</pre></div>
+</div>
+<p>The files <tt class="docutils literal"><span class="pre">temp1</span></tt> and <tt class="docutils literal"><span class="pre">temp2</span></tt> will have the same length, so we can
+assemble them together. This will generate an output consisting of two
+spines, <a class="reference external" href="../../rep/mint">**mint</a> and <a class="reference external" href="../../rep/solfa">**solfa</a>. In effect, the <a class="reference external" href="../../rep/mint">**mint</a> spine
+data will tell us the interval used to approach the scale degree encoded in
+the <a class="reference external" href="../../rep/solfa">**solfa</a> spine. We can use <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to search for the appropriate
+combinations of interval and scale degree and count the number of
+occurrences:</p>
+<div class="highlight-bash"><div class="highlight"><pre>assemble temp1 temp2 | grep -c <span class="s1">&#39;-m2.*mi&#39;</span>
+assemble temp1 temp2 | grep -c <span class="s1">&#39;-m2.*ti&#39;</span>
+</pre></div>
+</div>
+<p>This same approach can be used to address (innumerable) questions pertaining
+to concurrent patterns. For example, suppose we have a <a class="reference external" href="../../rep/harm">**harm</a> spine
+that identifies the <cite>Roman numeral&#8217; functional harmony for some choral work.
+We can identify complex situations such as the following: for the soprano
+voice, count how many subdominant pitches are approached by an interval of a
+rising third or a rising sixth and coincide with a dominant seventh chord.
+First, let&#8217;s extract the soprano line and create a corresponding scale degree
+representation using |deg|_ . We can use the `</cite>-a`` option to avoid
+outputting the melodic direction signifiers (<tt class="docutils literal"><span class="pre">^</span></tt> and <tt class="docutils literal"><span class="pre">v</span></tt>):</p>
+<div class="highlight-bash"><div class="highlight"><pre>extract -i <span class="s1">&#39;*Isopran&#39;</span> howells | deg -a &gt; temp1
+</pre></div>
+</div>
+<p>Next, let&#8217;s again extract the soprano voice and create a corresponding
+melodic interval representation using <a class="reference external" href="../../man/mint">mint</a> . Since we are not interested
+in interval qualities we can invoke the <tt class="docutils literal"><span class="pre">-d</span></tt> option to output only diatonic
+interval sizes.</p>
+<div class="highlight-bash"><div class="highlight"><pre>extract -i <span class="s1">&#39;*Isopran&#39;</span> howells | mint -d &gt; temp2
+extract -i <span class="s1">&#39;**harm&#39;</span> howells &gt; temp3
+</pre></div>
+</div>
+<p>We have also extracted the <a class="reference external" href="../../rep/harm">**harm</a> spine and placed it in the file
+`` temp3``. If we assemble together our three temporary files, the result will
+have three spines: <a class="reference external" href="../../rep/deg">**deg</a>, <a class="reference external" href="../../rep/mint">**mint</a> and <a class="reference external" href="../../rep/harm">**harm</a>. We can now use
+<a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to search and count all instances of subdominant pitches that are
+approached by ascending thirds/sixths and that coincide with dominant seventh
+chords (in the <a class="reference external" href="../../rep/kern">**kern</a> representation: <tt class="docutils literal"><span class="pre">`V7</span></tt>&#8216;):</p>
+<div class="highlight-bash"><pre>assemble temp1 temp2 temp3 | grep -c '^4``**``+[36]``**``V7</pre>
+</div>
+<p>The <a class="reference external" href="../../man/timebase">timebase</a> command can also be used for tasks other than assembling
+parts together. Suppose we would like to determine whether secondary dominant
+chords are more likely to appear on the third beat than other beats in a
+triple meter work. The <a class="reference external" href="../../man/timebase">timebase</a> command can be used to reformat a score
+so that each measure occupies the same number of data records. For example,
+in a 3/4 meter, an eighth-note time-base will mean that each measure will
+contain six data records, and the fifth data record will correspond to the
+onset of the third beat. Recall from <a class="reference external" href="../ch12">Chapter 12</a> that the <strong>yank -m</strong>
+command allows us to extract particular data records following a specified
+marker. In the following command, we have defined the marker as a barline
+(<tt class="docutils literal"><span class="pre">-m</span> <span class="pre">^=</span></tt>) and instructed <a class="reference external" href="../../man/yank">yank</a> to fetch the fifth line following each
+occurrence of the marker (<tt class="docutils literal"><span class="pre">-r</span> <span class="pre">5</span></tt>). In our example, the <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> command is
+being used to count V/V chords occurring on third beats:</p>
+<p>`` timebase -t 8 strauss | solfa | yank -m = -r 5 | grep re &gt;
+&gt;&gt; | grep fe | grep -c la``</p>
+<p>We can repeat this command for beats one and two by changing the <tt class="docutils literal"><span class="pre">-r</span></tt>
+parameter to 1 and 3 respectively.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="reprise">
+<h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
+<p>In this chapter we have learned how to concatenate musical passages together
+using the <a class="reference external" href="http://en.wikipedia.org/wiki/Cat_(Unix)">cat</a> command. We also learned how to eliminate redundant
+exclusive and tandem interpretations from concatenated outputs using the
+<tt class="docutils literal"><span class="pre">-u</span></tt> and <tt class="docutils literal"><span class="pre">-t</span></tt> options for <a class="reference external" href="../../man/rid">rid</a>. In addition, we learned how to
+assemble two or more spines into a single output file using <a class="reference external" href="../../man/assemble">assemble</a>.
+In the case of <a class="reference external" href="../../rep/kern">**kern</a> and <a class="reference external" href="../../rep/recip">**recip</a> representations, we learned
+how to use the <a class="reference external" href="../../man/timebase">timebase</a> command to preprocess each constituent file so
+that all data records represent equivalent elapsed durations. Having
+assembled a full score from parts, <a class="reference external" href="../../man/rid">rid</a> <tt class="docutils literal"><span class="pre">-d</span></tt> can be used to eliminate
+any residual or unnecessary null data records. The <a class="reference external" href="../../man/proof">proof</a> command can
+be used to ensure that any assembled <a class="reference external" href="../../rep/kern">**kern</a> data is correctly aligned.</p>
+<p>Finally, we learned that the <a class="reference external" href="../../man/timebase">timebase</a> command can be used for other
+analytic purposes. Specifically, it can be used to reduce a score
+rhythmically so only particular onset points or beats are retained. In
+<a class="reference external" href="../ch23">Chapter 23</a> we will see additional uses of <a class="reference external" href="../../man/timebase">timebase</a> for a variety of
+types of rhythmic tasks.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  <hr/>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <center><a href="../ch14/" class="btn btn-neutral float-right" title="Chapter 14: Stream Editing">Next <span class="fa fa-arrow-circle-right"></span></a></center>
+      
+      
+        <a href="../ch12/" class="btn btn-neutral" title="Chapter 12: Selecting Musical Parts and Passages"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+      
+             <center><a href="../../_sources/guide/ch13.txt" rel="nofollow"> View page source</a></center>
+      
+    </div>
+  
+
+
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+   
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-52162357-1', 'humdrum.org');
+  ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>

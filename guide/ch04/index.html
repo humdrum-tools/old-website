@@ -1,0 +1,943 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapter 4: Basic Pitch Translations &mdash; humdrum-tools 1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="humdrum-tools 1 documentation" href="../../"/>
+        <link rel="up" title="The Humdrum User Guide" href="../"/>
+        <link rel="next" title="Chapter 5: The Humdrum Syntax" href="../ch05/"/>
+        <link rel="prev" title="Chapter 3: Some Initial Processing" href="../ch03/"/>
+   <link rel="stylesheet" type"text/css" href="../../_static/humdrum.css">
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../" class="fa fa-home"> humdrum-tools</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">Humdrum Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../install/github/">Installing Humdrum Tools from GitHub</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../">The Humdrum User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ch01/">1. Humdrum: A Brief Tour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/">2. Representing Music Using **kern(I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch03/">3. Some Initial Processing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Chapter 4: Basic Pitch Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch05/">5. The Humdrum Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/">6. Representing Music Using **kern(II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch07/">7. MIDI Output Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch08/">8. The Shell (I)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch09/">9. Searching with Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch10/">10. Musical Uses of Regular Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch11/">11. Melodic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch12/">12. Selecting Musical Parts and Passages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch13/">13. Assembling Scores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch14/">14. Stream Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch15/">15. Harmonic Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch16/">16. The Shell (II)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch17/">17. Creating Inventories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch18/">18. Fingers, Footsteps and Frets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch19/">19. Musical Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch20/">20. Strophes, Verses, and Repeats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch21/">21. Searching for Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch22/">22. Classifying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch23/">23. Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch24/">24. The Shell (III)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch25/">25. Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch26/">26. Moving Signifiers Between Spines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch27/">27. Text and Lyrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch28/">28. Dynamic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch29/">29. Differences and Commonalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch30/">30.MIDI Input Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch31/">31. Repertories and Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch32/">32. The Shell (IV)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch33/">33. Word Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch34/">34. Serial Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch35/">35. Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch36/">33. Sound and Spectra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch37/">37. Electronic Music Editing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch38/">38. Systematic Musicology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch39/">39. Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch40/">40. Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bibliography/">The Humdrum Toolkit: A Bibliography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample.problems/">Sample Problems Using the Humdrum Toolkit</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../humextra/">Humdrum Extras</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/intro/">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/rhythm/">2. Rhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/melody/">Melody and Pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/harmony/">Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/data/">Data Entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/searching/">Music Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/midi/">MIDI Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/notation/">Graphical Musical Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/other/">Other Useful Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../humextra/programming/">Programming Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cookbook/">The Humdrum Cookbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cookbook/vimHighlighting/">Syntax Coloring in Vim</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../man/">Humdrum Command Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../man/assemble/">Command: assemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/barks/">Command: barks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/cbr/">Command: cbr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/census/">Command: census</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/cents/">Command: cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/cleave/">Command: cleave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/cocho/">Command: cocho</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/context/">Command: context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/correl/">Command: correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/deg/">Command: deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/degree/">Command: degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/diss/">Command: diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/ditto/">Command: ditto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/dur/">Command: dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/ekern/">Command: ekern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/encode/">Command: encode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/extract/">Command: extract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/fade/">Command: fade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/fields/">Command: fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/freq/">Command: freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/hint/">Command: hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/humdrum/">Command: humdrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/humsed/">Command: humsed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/humver/">Command: humver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/infot/">Command: infot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/iv/">Command: iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/kern/">Command: kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/key/">Command: key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/melac/">Command: melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/melvel/">Command: melvel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/metpos/">Command: metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/midi/">Command: midi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/midreset/">Command: midreset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/mint/">Command: mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/ms/">Command: ms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/nf/">Command: nf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/num/">Command: num</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/patt/">Command: patt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/pattern/">Command: pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/pc/">Command: pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/pcset/">Command: pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/perform/">Command: perform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/pf/">Command: pf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/pitch/">Command: pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/proof/">Command: proof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/recode/">Command: recode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/record/">Command: record</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/regexp/">Command: regexp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/reihe/">Command: reihe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/rend/">Command: rend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/rid/">Command: rid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/scramble/">Command: scramble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/semits/">Command: semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/simil/">Command: simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/smf/">Command: smf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/solfa/">Command: solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/solfg/">Command: solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/specc/">Command: specc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/spect/">Command: spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/strophe/">Command: strophe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/synco/">Command: synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/tacet/">Command: tacet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/text/">Command: text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/themefinder/">Command: thmea</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/thru/">Command: thru</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/timebase/">Command: timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/tonh/">Command: tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/trans/">Command: trans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/urrhythm/">Command: urrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/veritas/">Command: veritas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/vox/">Command: vox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/xdelta/">Command: xdelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/yank/">Command: yank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/ydelta/">Command: ydelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../man/#commands">Commands</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../rep/">Humdrum Data Representations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/barlines/">Representation: barlines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/IPA/">Representation: **IPA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/MIDI/">Representation: **MIDI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/Tonh/">Representation: **Tonh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/URrhythm/">Representation: **URrhythm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/Zeit/">Representation: **Zeit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/bhatk/">Representation: **bhatk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/cents/">Representation: **cents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/correl/">Representation: **correl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/dB/">Representation: **dB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/date/">Representation: **date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/deg/">Representation: **deg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/degree/">Representation: **degree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/diss/">Representation: **diss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/dur/">Representation: **dur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/embel/">Representation: **embel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/freq/">Representation: **freq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/fret/">Representation: **fret</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/harm/">Representation: **harm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/hildegard/">Representation: **hildegard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/hint/">Representation: **hint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/iv/">Representation: **iv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/kern/">Representation: **kern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/melac/">Representation: **melac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/metpos/">Representation: **metpos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/mint/">Representation: **mint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/ordo/">Representation: **ordo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/pc/">Representation: **pc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/pcset/">Representation: **pcset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/pitch/">Representation: **pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/recip/">Representation: **recip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/semits/">Representation: **semits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/silbe/">Representation: **silbe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/simil/">Representation: **simil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/solfa/">Representation: **solfa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/solfg/">Representation: **solfg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/specC/">Representation: **specC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/spect/">Representation: **spect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/synco/">Representation: **synco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/takt/">Representation: **takt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/text/">Representation: **text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/time/">Representation: **time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/timebase/">Representation: **timebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rep/vox/">Representation: **vox#</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../">humdrum-tools</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../">Docs</a> &raquo;</li>
+      
+          <li><a href="../">The Humdrum User Guide</a> &raquo;</li>
+      
+    <li>Chapter 4: Basic Pitch Translations</li>
+      <li class="wy-breadcrumbs-aside">
+        
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="chapter-4-basic-pitch-translations">
+<h1>Chapter 4: Basic Pitch Translations<a class="headerlink" href="#chapter-4-basic-pitch-translations" title="Permalink to this headline">¶</a></h1>
+<p>Many musical processes entail some sort of data translation in which one form
+of representation is transformed into another form of representation. There
+are innumerable examples of such musical &#8220;translations.&#8221; For example, we
+might rewrite guitar tablatures as notated pitches. Pitches might be
+translated to tonic-solfa syllables. Scale-degrees might be analyzed as
+Roman-numeral harmonies. Figured bass notations might be &#8220;realized&#8221; as
+pitches. Successive pitches might be characterized as melodic intervals.
+Intervals might be rewritten as semitone distances. Pitch-class sets might be
+transformed to interval-class vectors.</p>
+<p>In this chapter we introduce some basic musical translations. We will limit
+this initial discussion to translating between various representations
+related to pitch. These will include French, German, and international pitch
+designations, frequency, semitones, cents, solfege, scale-degree and MIDI
+pitch representations. In later chapters we will describe additional types of
+translations.</p>
+<div class="section" id="iso-pitch-representation">
+<h2>ISO Pitch Representation<a class="headerlink" href="#iso-pitch-representation" title="Permalink to this headline">¶</a></h2>
+<p>The best-known system for representing equally-tempered pitches is the
+International Standards Organization (ISO) format consisting of a letter
+(A-G) followed by an optional sharp or flat, followed by an octave number.
+According to the ISO representation middle C is designated C4. Octave numbers
+change between B and C so that the B a semitone below C4 is B3. Humdrum
+provides a predefined ISO-like representation called <a class="reference external" href="../../man/pitch">pitch</a> illustrated below. Here we see an ascending chromatic scale in the left
+spine, with a concurrent descending chromatic scale in the right spine:</p>
+<div class="highlight-kern"><div class="highlight"><pre><span class="-KernExclusive">**pitch</span><span class="w">  </span><span class="-KernExclusive">**pitch</span>
+<span class="err">C4</span><span class="w">      </span><span class="err">C5</span>
+<span class="err">C#4</span><span class="w">     </span><span class="err">B4</span>
+<span class="err">D4</span><span class="w">      </span><span class="err">Bb4</span>
+<span class="err">D#4</span><span class="w">     </span><span class="err">A4</span>
+<span class="-KernBar">=       =</span>
+<span class="err">E4</span><span class="w">      </span><span class="err">Ab4</span>
+<span class="err">F4</span><span class="w">      </span><span class="err">G4</span>
+<span class="err">F#4</span><span class="w">     </span><span class="err">Gb4</span>
+<span class="err">G4</span><span class="w">      </span><span class="err">F4</span>
+<span class="-KernBar">=       =</span>
+<span class="err">G#4</span><span class="w">     </span><span class="err">E4</span>
+<span class="err">A4</span><span class="w">      </span><span class="err">Eb4</span>
+<span class="err">A#4</span><span class="w">     </span><span class="err">D4</span>
+<span class="err">B4</span><span class="w">      </span><span class="err">Db4</span>
+<span class="-KernBar">=       =</span>
+<span class="err">C1</span><span class="w">      </span><span class="err">C1</span>
+<span class="-KernExclusive">*-</span><span class="w">      </span><span class="-KernExclusive">*-</span>
+</pre></div>
+</div>
+<p>Notice that only upper-case letters are used for pitch-name and that the flat
+is represented by the lower-case letter <tt class="docutils literal"><span class="pre">b</span></tt>&#8216;. The small letter <tt class="docutils literal"><span class="pre">x</span></tt>&#8216; can
+be used to indicate double-sharps and the double-flat is represented by two
+small successive letters <tt class="docutils literal"><span class="pre">bb</span></tt>&#8216;. If a given pitch deviates from equal
+temperament, cents deviation can be indicated by trailing integers preceded
+by either a plus sign (tuned sharp) or a minus sign (tuned flat). The unit of
+the <em>cent</em> is one one-hundredth of a semitone, so the distance between C4 and
+C#4 is 100 cents. For example, the pitch corresponding to a tuning of A-435
+Hz is 19 cents flat compared with the standard A-440, hence it is represented
+in <a class="reference external" href="../../rep/pitch">**pitch</a> as:</p>
+<p><tt class="docutils literal"><span class="pre">A4-19</span></tt></p>
+<p>Other pitch representations (such as <a class="reference external" href="../../rep/kern">**kern</a>) can be translated to the
+ISO-inspired <a class="reference external" href="../../rep/pitch">**pitch</a> representation by invoking the <a class="reference external" href="../../man/pitch">pitch</a> command.
+For example, consider the following <a class="reference external" href="../../rep/kern">**kern</a> input:</p>
+<div class="highlight-kern"><div class="highlight"><pre><span class="-KernExclusive">**kern</span>
+<span class="-KernBar">=1</span>
+<span class="-KernNotes">4g</span>
+<span class="-KernNotes">4g#</span>
+<span class="-KernNotes">4a</span>
+<span class="-KernNotes">4cc</span>
+<span class="-KernBar">=2</span>
+<span class="-KernExclusive">*-</span>
+</pre></div>
+</div>
+<p>It can be translated to this <a class="reference external" href="../../rep/pitch">**pitch</a> output:</p>
+<div class="highlight-kern"><div class="highlight"><pre><span class="-KernExclusive">**pitch</span>
+<span class="-KernBar">=1</span>
+<span class="err">G4</span>
+<span class="err">G#4</span>
+<span class="err">A4</span>
+<span class="err">C5</span>
+<span class="-KernBar">=2</span>
+<span class="-KernExclusive">*-</span>
+</pre></div>
+</div>
+<p>using the following command:</p>
+<div class="highlight-bash"><div class="highlight"><pre>pitch filename
+</pre></div>
+</div>
+<p>Notice that the <a class="reference external" href="../../rep/pitch">**pitch</a> representation uses the same system for
+representing barlines as <a class="reference external" href="../../rep/kern">**kern</a>. In fact, all of the pitch-related
+representations described in this chapter make use of the so-called <a href="#id8"><span class="problematic" id="id9">`</span></a>common
+system&#8217; for representing barlines.</p>
+<p>German Tonhohe
+&#8211;</p>
+<p>The German system of pitch designations (<em>Tonhohe</em>) is available in the
+Humdrum <a href="#id67"><span class="problematic" id="id68">|**Tonh|_</span></a> representation. The German system is similar to the ISO
+system with the following exceptions. The pitch letter names include
+A,B,C,D,E,F,G,H and S. Sharps and flats are indicated by suffixes: <tt class="docutils literal"><span class="pre">is</span></tt>&#8216;
+for sharps and <tt class="docutils literal"><span class="pre">es</span></tt>&#8216; for flats, hence <tt class="docutils literal"><span class="pre">Cis</span></tt>&#8216; for C-sharp and <tt class="docutils literal"><span class="pre">Ges</span></tt>&#8216;
+for G-flat. Suffixes are repeated for double and triple sharps and flats.
+Special exceptions include the following: <tt class="docutils literal"><span class="pre">B</span></tt>&#8216; for B-flat, <tt class="docutils literal"><span class="pre">H</span></tt>&#8216; for
+B-natural, <tt class="docutils literal"><span class="pre">Heses</span></tt>&#8216; for B double-flat (rather than <tt class="docutils literal"><span class="pre">Bes</span></tt>&#8216;), and
+<tt class="docutils literal"><span class="pre">As</span></tt>&#8216; and <tt class="docutils literal"><span class="pre">Es</span></tt>&#8216; rather than <tt class="docutils literal"><span class="pre">Aes</span></tt>&#8216; or <tt class="docutils literal"><span class="pre">Ees</span></tt>&#8216;. <tt class="docutils literal"><span class="pre">S</span></tt>&#8216; is a short-
+hand for <tt class="docutils literal"><span class="pre">Es</span></tt>&#8216; (E-flat). As in the ISO pitch system, octaves are indicated
+by integer numbers with middle C represented as C4.</p>
+<p>Although modern German practice has gravitated toward the ISO system, the
+traditional German system for representing pitches remains important in
+historically related studies, such as searching for <a href="#id10"><span class="problematic" id="id11">`</span></a>B-A-C-H&#8217; and the pitch
+signature used by Dmitri Shostakovich (<a href="#id12"><span class="problematic" id="id13">`</span></a>D-S-C-H&#8217;).</p>
+<p>Data in the <a class="reference external" href="../../rep/pitch">**pitch</a> or <a class="reference external" href="../../rep/kern">**kern</a>representations can be translated
+to <a href="#id69"><span class="problematic" id="id70">|**Tonh|_</span></a> via the <a class="reference external" href="../../man/tonh">tonh</a> command:</p>
+<div class="highlight-bash"><div class="highlight"><pre>tonh filename
+</pre></div>
+</div>
+<p>French Solfege
+&#8211;</p>
+<p>The common French system for pitch naming uses a so-called &#8220;fixed-do&#8221; method
+of diatonic pitch designations: <em>do, re, mi, fa, sol, la</em> and <em>si</em> (rather
+than <em>ti</em>), where <em>do</em> corresponds to the English/German <cite>C&#8217;. In the Humdrum
+|**solfg|_ representation, solfege pitch names are used. Flats (*bemol*)
+and sharps (*diese*) are abbreviated *b* and *d* respectively. When
+accidentals are encoded, the tilde character (``~`</cite>) is encoded following the
+solfege syllable and before the accidental. Double and triple sharps and
+flats are encoded via repetition. Hence, <cite>do diese&#8217; (``do~d`</cite>) for C-sharp,
+<cite>la bemol&#8217; (``la~b`</cite>) for A-flat, <cite>sol double-diese&#8217; (``sol~dd`</cite>) for G
+double-sharp, <cite>si double-bemol&#8217; (``si~bb`</cite>) for B double-flat, and so on. As
+with the German and ISO pitch representations, octave is designated by
+integers with <tt class="docutils literal"><span class="pre">do4</span></tt> representing middle C.</p>
+</div>
+<div class="section" id="frequency">
+<h2>Frequency<a class="headerlink" href="#frequency" title="Permalink to this headline">¶</a></h2>
+<p>For acoustic-related applications it may be helpful to translate to
+frequency. The Humdrum <a class="reference external" href="../../rep/freq">**freq</a> representation can be used to represent
+frequencies for either pure or complex tones. Frequencies are encoded in
+<em>hertz</em> (abbreviated <em>Hz</em>) where 440 Hz means 440 cycles per second. In the
+<a class="reference external" href="../../rep/freq">**freq</a> representation frequencies may be specified as integer or real
+values (with a decimal point).</p>
+</div>
+<div class="section" id="id14">
+<h2>Cents<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="../../rep/cents">**cents</a> representation provides a means for representing pitches
+in absolute units with respect to middle C (= 0 cents). In the <a class="reference external" href="../../rep/cents">**cents</a>
+representation, all pitches are represented with respect to this reference.
+Thus C#4 is represented by the number 100, A4 is represented by 900, and A3
+is represented by -300. As in the case of <a class="reference external" href="../../rep/freq">**freq</a>, cents may be specified
+as integer numbers or as real values (with a decimal point).</p>
+</div>
+<div class="section" id="semitones">
+<h2>Semitones<a class="headerlink" href="#semitones" title="Permalink to this headline">¶</a></h2>
+<p>A related pitch representation is <a class="reference external" href="../../rep/semits">**semits</a>. In this case, all pitches
+are represented in numerical semitones with respect to middle C (= 0 semits).
+An ascending chromatic scale beginning on C4 would be represented by the
+ascending integers from 0 to 12. Pitches below middle C are represented by
+negative values. Fractional values can be represented using decimal points.</p>
+</div>
+<div class="section" id="id15">
+<h2>MIDI<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<p>Another way of representing pitch is provided by the Humdrum <a class="reference external" href="../../rep/MIDI">**MIDI</a>
+representation. This representation closely mimics the commercial MIDI
+specification. The <a class="reference external" href="../../rep/MIDI">**MIDI</a> representation allows MIDI inputs and outputs
+to be exported or imported by various Humdrum tools. A complete description
+of <a class="reference external" href="../../rep/MIDI">**MIDI</a> will be given in <a class="reference external" href="../ch07">Chapter 7</a>.</p>
+</div>
+<div class="section" id="scale-degree-solfa-and-deg">
+<h2>Scale Degree &#8211; **solfa and **deg<a class="headerlink" href="#scale-degree-solfa-and-deg" title="Permalink to this headline">¶</a></h2>
+<p>Two different Humdrum representations are provided to describe scale-degree
+related information: <a class="reference external" href="../../rep/deg">**deg</a> and <a class="reference external" href="../../rep/solfa">**solfa</a>. Both of these
+representations emphasize slightly different aspects of scale-degree
+information. Both representations assume some established or pre-defined
+tonal center or tonic pitch.</p>
+<p>The <a class="reference external" href="../../rep/solfa">**solfa</a> representation represents pitch according to tonic solfa
+syllables. Pitches are designated by the syllables <em>do, re, mi, fa, so, la</em>
+and <em>ti</em> or their chromatic alterations as indicated in the following table:</p>
+<div class="highlight-kern"><div class="highlight"><pre><span class="err">basic</span><span class="w">       </span><span class="err">raised</span><span class="w">          </span><span class="err">lowered</span>
+<span class="err">do</span><span class="w"> </span><span class="err">(</span><span class="-KernExclusive">*doe*)</span><span class="w">  </span><span class="err">di</span><span class="w"> </span><span class="err">(</span><span class="-KernExclusive">*dee*)</span><span class="w">      </span><span class="err">de</span><span class="w"> </span><span class="err">(</span><span class="-KernExclusive">*day*)</span>
+<span class="err">re</span><span class="w"> </span><span class="err">(</span><span class="-KernExclusive">*ray*)</span><span class="w">  </span><span class="err">ri</span><span class="w"> </span><span class="err">(</span><span class="-KernExclusive">*ree*)</span><span class="w">      </span><span class="err">ra</span><span class="w"> </span><span class="err">(</span><span class="-KernExclusive">*raw*)</span>
+<span class="err">mi</span><span class="w"> </span><span class="err">(</span><span class="-KernExclusive">*me*)</span><span class="w">   </span><span class="err">my</span><span class="w"> </span><span class="err">(</span><span class="-KernExclusive">*my*)</span><span class="w">       </span><span class="err">me</span><span class="w"> </span><span class="err">(</span><span class="-KernExclusive">*may*)</span>
+<span class="err">fa</span><span class="w"> </span><span class="err">(</span><span class="-KernExclusive">*fah*)</span><span class="w">  </span><span class="err">fi</span><span class="w"> </span><span class="err">(</span><span class="-KernExclusive">*fee*)</span><span class="w">      </span><span class="err">fe</span><span class="w"> </span><span class="err">(</span><span class="-KernExclusive">*fay*)</span>
+<span class="err">so</span><span class="w"> </span><span class="err">(</span><span class="-KernExclusive">*so*)</span><span class="w">   </span><span class="err">si</span><span class="w"> </span><span class="err">(</span><span class="-KernExclusive">*see*)</span><span class="w">      </span><span class="err">se</span><span class="w"> </span><span class="err">(</span><span class="-KernExclusive">*say*)</span>
+<span class="err">la</span><span class="w"> </span><span class="err">(</span><span class="-KernExclusive">*la*)</span><span class="w">   </span><span class="err">li</span><span class="w"> </span><span class="err">(</span><span class="-KernExclusive">*lee*)</span><span class="w">      </span><span class="err">le</span><span class="w"> </span><span class="err">(</span><span class="-KernExclusive">*lay*)</span>
+<span class="err">ti</span><span class="w"> </span><span class="err">(</span><span class="-KernExclusive">*tee*)</span><span class="w">  </span><span class="err">ty</span><span class="w"> </span><span class="err">(</span><span class="-KernExclusive">*tie*)</span><span class="w">      </span><span class="err">te</span><span class="w"> </span><span class="err">(</span><span class="-KernExclusive">*tay*)</span>
+</pre></div>
+</div>
+<p><em>Summary of |solfa|_ Signifiers</em></p>
+<p>The <a class="reference external" href="../../rep/deg">**deg</a> representation identifies scale-degrees by the numbers 1
+(tonic) to 7 (leading-tone). These values may be chromatically altered by
+raising (+) or lowering (-). The <em>amount</em> of chromatic alteration is not
+indicated; for example, both a raised supertonic and a doubly-raised
+supertonic are represented as <tt class="docutils literal"><span class="pre">2+</span></tt>. A lowered dominant is represented as
+<tt class="docutils literal"><span class="pre">5-</span></tt>.</p>
+<p>The <a class="reference external" href="../../rep/solfa">**solfa</a> representation differs from <a class="reference external" href="../../rep/deg">**deg</a> in that pitches
+are represented without regard to major or minor <em>mode.</em> For example, in the
+key of C major, <a class="reference external" href="../../rep/deg">**deg</a> will characterize A-flat as a lowered sixth scale
+degree (<tt class="docutils literal"><span class="pre">6-</span></tt>), whereas the same pitch will be a normal (unaltered) sixth
+scale degree in the key of C minor (<tt class="docutils literal"><span class="pre">6</span></tt>). In the case of <a class="reference external" href="../../rep/solfa">**solfa</a>, the
+A-flat will be represented as <tt class="docutils literal"><span class="pre">le</span></tt> &#8211; whether or not the key is C major or
+C minor. Like <a class="reference external" href="../../rep/deg">**deg</a>, the amount of chromatic alteration is not
+represented in <a class="reference external" href="../../rep/solfa">**solfa</a>. Once a pitch is raised, raising it further will
+not change the representation. For example, if the tonic is B-flat, then both
+B-natural and B-sharp will be represented by <tt class="docutils literal"><span class="pre">di</span></tt> in the <a class="reference external" href="../../rep/solfa">**solfa</a>
+representation.</p>
+<p>In the case of the minor mode, <a class="reference external" href="../../rep/deg">**deg</a> characterizes scale degrees with
+respect to the <em>harmonic minor</em> scale only.</p>
+<p>Another difference between <a class="reference external" href="../../rep/solfa">**solfa</a> and <a class="reference external" href="../../rep/deg">**deg</a> is that the
+<a class="reference external" href="../../rep/deg">**deg</a> representation provides a way for encoding <em>melodic approach.</em> The
+caret (<tt class="docutils literal"><span class="pre">^</span></tt>) denotes an ascending melodic approach to the current note,
+whereas the lower-case letter <tt class="docutils literal"><span class="pre">v</span></tt> denotes a descending melodic approach.
+Repeated pitches carry no melodic approach signifier.</p>
+<p>Some of the differences between the <a class="reference external" href="../../rep/solfa">**solfa</a> and <a class="reference external" href="../../rep/deg">**deg</a> representations
+are illustrated in Example 4.1. (The corresponding <a class="reference external" href="../../rep/kern">**kern</a>_
+representation is given in the first spine.) Notice that <a class="reference external" href="../../rep/solfa">**solfa</a> does not
+encode any octave information. The <a class="reference external" href="../../rep/deg">**deg</a> representation does not encode
+the octave of the starting pitch, but it does indicate contour information
+using the caret (<tt class="docutils literal"><span class="pre">^</span></tt>) for ascending and the lower-case <tt class="docutils literal"><span class="pre">v</span></tt> for descending
+pitches. Notice also the different ways of characterizing accidentals.</p>
+<p><strong>Example 4.1</strong></p>
+<div class="highlight-humdrum"><pre>!! Comparisonof pitch-relatedrepresentations. |kern|_ solfa**deg
+*M2/4*M2/4*M2/4
+*c:*c:*c:
+8.ccdo1
+16ddre^2
+=1=1=1
+8.ee-me^3
+16ddrev2
+4eenmi^3+
+=2=2=2
+8rrr
+8b-tev7-
+8anlav6+
+8ccdo^1
+=3=3=3
+2bntiv7
+======
+*-*-*-</pre>
+</div>
+</div>
+<div class="section" id="pitch-translations">
+<h2>Pitch Translations<a class="headerlink" href="#pitch-translations" title="Permalink to this headline">¶</a></h2>
+<p>Humdrum provides a number of commands for translating between the various
+pitch-related representations described above. Typically, the command name is
+the same as the name of the output representation. For example, translating
+to the <a class="reference external" href="../../rep/solfg">**solfg</a> representation can be accomplished with:</p>
+<div class="highlight-bash"><div class="highlight"><pre>solfg inputfile &gt; outputfile
+</pre></div>
+</div>
+<p>Translating to the German <a href="#id71"><span class="problematic" id="id72">|**Tonh|_</span></a> representation:</p>
+<div class="highlight-bash"><div class="highlight"><pre>tonh inputfile &gt; outputfile
+</pre></div>
+</div>
+<p>Translating to ISO <a class="reference external" href="../../rep/pitch">**pitch</a>:</p>
+<div class="highlight-bash"><div class="highlight"><pre>pitch inputfile &gt; outputfile
+</pre></div>
+</div>
+<p>Similarly, the <a class="reference external" href="../../man/freq">freq</a> command translates pitch-related inputs to the
+<a class="reference external" href="../../rep/freq">**freq</a> representation, the <a class="reference external" href="../../man/cents">cents</a> command translates appropriate
+inputs to the <a class="reference external" href="../../rep/cents">**cents</a> representation, and so on.</p>
+<p>In a few cases, the command names are slightly modified. All Humdrum command
+names employ lower-case letters only, so <a class="reference external" href="../../rep/MIDI">**MIDI</a> output is generated by
+the <a class="reference external" href="../../man/midi">midi</a> command (rather than the <a class="reference external" href="../../man/midi">midi</a> command), and <a href="#id73"><span class="problematic" id="id74">|**Tonh|_</span></a>
+output is generated by the <a class="reference external" href="../../man/tonh">tonh</a> command.</p>
+<p>Examples 4.2 and 4.3 compare several parallel representations of the same
+pitch-related information. In both examples, the pitch information has been
+derived from the <a class="reference external" href="../../rep/kern">**kern</a> data shown in the left-most spine. The duration
+information in the <a class="reference external" href="../../rep/kern">**kern</a> data is not available in the other
+representations. However, the <a href="#id16"><span class="problematic" id="id17">`</span></a>common system&#8217; for barlines is used
+throughout.</p>
+<p>Example 4.2 shows four pitch naming systems: ISO pitch, German Tonhohe,
+French solfege, as well as <a class="reference external" href="../../rep/kern">**kern</a>. Notice the different ways of treating
+accidentals such as the D-sharp and B-flat. Also note the German use of H for
+B-natural.</p>
+<p><strong>Example 4.2</strong></p>
+<div class="highlight-humdrum"><pre>!! Comparisonof pitch-relatedrepresentations. |kern|_ pitch |Tonh|_ solfg
+*M2/4*M2/4*M2/4*M2/4
+*C:*C:*C:*C:
+8.ccC5C5do5
+16ddD5D5re5
+=1=1=1=1
+8.eeE5E5mi5
+16dd#D#5Dis5re~d5
+4eeE5E5mi5
+=2=2=2=2
+8rrrr
+8b-Bb4B4si~b4
+8aA4A4la4
+8cC4C4do4
+=3=3=3=3
+2bnB4H4si4
+========
+*-*-*-*-</pre>
+</div>
+<p>In Example 4.3 four of the more technical representations are illustrated,
+including frequency and cents. Notice that the <a class="reference external" href="../../rep/MIDI">**MIDI</a> representation
+uses key-numbers to represent pitch: key-on events are indicated by positive
+integers (between two slashes) and key-off events are indicated by negative
+integers. More detail concerning <a class="reference external" href="../../rep/MIDI">**MIDI</a> is given in <a class="reference external" href="../ch07">Chapter 7</a>.</p>
+<p><strong>Example 4.3</strong></p>
+<div class="highlight-humdrum"><pre>!! Comparisonof pitch-relatedrepresentations(continued). |kern|_ semits |cents|_ MIDI**freq
+*M2/4*M2/4*M2/4*Ch1*M2/4
+*C:*C:*C:*M2/4*C:
+****C:*
+8.cc121200/72/523.25
+16dd141400/-72/ /74/587.33
+=1=1=1=1=1
+8.ee161600/-74/ /76/659.26
+16dd#151500/-76/ /75/622.25
+4ee161600/-75/ /76/659.26
+=2=2=2=2=2
+8rrr/-76/r
+8b-101000/70/466.16
+8a9900/-70/ /69/440.00
+8c00/-69/ /60/261.63
+=3=3=3=3=3
+2bn111100/-60/ /71/493.88
+==========
+.../-71/.
+*-*-*-*-*-</pre>
+</div>
+<p>Not all of the above pitch-related representations can be translated directly
+from one to another. Table 4.1 shows the possible translations supported by
+Humdrum Release 2.0 commands. The input representations are listed from right
+to left. Under each column, those commands that will translate <em>from</em> the
+given format are identified. For example, the <a class="reference external" href="../../rep/cents">**cents</a> representation
+can be translated to <a class="reference external" href="../../rep/freq">**freq</a>, <a class="reference external" href="../../rep/kern">**kern</a>, <a class="reference external" href="../../rep/pitch">**pitch</a>, <a class="reference external" href="../../rep/semits">**semits</a>,
+<a class="reference external" href="../../rep/solfg">**solfg</a>, and <a href="#id75"><span class="problematic" id="id76">|**tonh|_</span></a>. Notice that <a class="reference external" href="../../rep/deg">**deg</a> data cannot be translated
+to any other format since <a class="reference external" href="../../rep/deg">**deg</a> representations do not encode absolute
+pitch height. Note also that when translating to the <a class="reference external" href="../../rep/kern">**kern</a>
+representation, only pitch-related information is translated: duration,
+articulation marks, and other <a class="reference external" href="../../rep/kern">**kern</a> signifiers are not magically
+generated.</p>
+<p><strong>Table 4.1</strong></p>
+<p><strong>Input Representation</strong></p>
+<p>&gt; <a class="reference external" href="../../man/cents">cents</a> deg <a class="reference external" href="../../man/freq">freq</a> kern <a class="reference external" href="../../man/midi">midi</a> pitch <a href="#id77"><span class="problematic" id="id78">|semits|_</span></a> solfa <a href="#id79"><span class="problematic" id="id80">|solfg|_</span></a> Tonh
+&gt; cents??????
+&gt; cocho?
+&gt; deg????
+&gt; freq???????
+&gt; kern????????
+&gt; midi?
+&gt; pitch????????
+&gt; semits???????
+&gt; solfa????
+&gt; solfg???????
+&gt; tonh????????</p>
+</div>
+<div class="section" id="transposition-using-the-trans-command">
+<h2>Transposition Using the <em>trans</em> Command<a class="headerlink" href="#transposition-using-the-trans-command" title="Permalink to this headline">¶</a></h2>
+<p>A common pitch-related manipulation is transposition. The <a class="reference external" href="../../man/trans">trans</a>
+command has the user specify a <em>diatonic offset</em> and a <em>chromatic offset</em>.
+The diatonic offset affects the pitch-letter name used to spell a note. The
+chromatic offset affects the number of semitones shifted from the original
+pitch height. The two types of offset are completely independent of each
+other. For common transpositions, both the diatonic and chromatic offsets
+will need to be specified. For example, in transposing up a minor third (e.g.
+C to E-flat), the diatonic offset is <a href="#id18"><span class="problematic" id="id19">`</span></a>up two pitch-letter names,&#8217; and the
+chromatic offset is <a href="#id20"><span class="problematic" id="id21">`</span></a>up three semitones.&#8217; The appropriate command invocation
+is:</p>
+<div class="highlight-bash"><div class="highlight"><pre>trans -d +2 -c +3 input &gt; output
+</pre></div>
+</div>
+<p>The diatonic offset can be a little confusing because traditional terminology
+labels perfect unisons by the number 1 (e.g. P1) rather than zero. So
+transposing up a perfect fifth involves a diatonic offset of +4 letter names,
+and a chromatic offset of +7 semitones:</p>
+<div class="highlight-bash"><div class="highlight"><pre>trans -d +4 -c +7 input &gt; output
+</pre></div>
+</div>
+<p>We can transpose without changing the diatonic pitch names. For example, the
+following command will transpose down an augmented unison (e.g. C# to C):</p>
+<div class="highlight-bash"><div class="highlight"><pre>trans -d 0 -c -1 input &gt; output
+</pre></div>
+</div>
+<p>Conversely, we can respell the diatonic pitches without changing the overall
+pitch height. For example, the following transposition will transpose &#8220;up&#8221; a
+diminished second (e.g. from F-sharp to G-flat):</p>
+<div class="highlight-bash"><div class="highlight"><pre>trans -d +1 -c 0 input &gt; output
+</pre></div>
+</div>
+<p>Modal transpositions are also possible by omitting the chromatic offset
+option. Consider, for example, the following C major scale:</p>
+<div class="highlight-humdrum"><pre>**kern
+d
+e
+f
+g
+a
+b
+cc
+*-</pre>
+</div>
+<p>We can transform this using the following diatonic transposition:</p>
+<div class="highlight-bash"><div class="highlight"><pre>trans -d +1
+</pre></div>
+</div>
+<p>The resulting output is the Dorian mode:</p>
+<div class="highlight-humdrum"><pre>**kern
+*Trd1
+d
+e
+f
+g
+a
+b
+cc
+dd
+*-</pre>
+</div>
+<p>When using the <tt class="docutils literal"><span class="pre">-d</span></tt> option alone, <a class="reference external" href="../../man/trans">trans</a> eliminates all accidentals in
+the input. This can be potentially confusing, but it is often useful. Suppose
+you have a passage in the key of E major which you would like to translate to
+E Dorian. First transpose so the tonic is D using only the <tt class="docutils literal"><span class="pre">-d</span></tt> option;
+then transpose exactly so the tonic is E again:</p>
+<div class="highlight-bash"><div class="highlight"><pre>trans -d -1 Emajor | trans -d +1 -c +2 &gt; Edorian
+</pre></div>
+</div>
+<p>For some changes of mode (such as melodic to harmonic minor), you may need to
+use the <a class="reference external" href="../../man/humsed">humsed</a> command described in <a class="reference external" href="../ch14">Chapter 14</a> to modify
+accidentals for specific scale degrees.</p>
+<p>Notice the addition of a &#8220;tandem interpretation&#8221; to the above example
+(<tt class="docutils literal"><span class="pre">*Trd1</span></tt>). Whenever <a class="reference external" href="../../man/trans">trans</a> is invoked, it adds a record indicating that
+the encoding is no longer at the original pitch. <em>Transposition tandem
+interpretations</em> are similar in syntax to the <a class="reference external" href="../../man/trans">trans</a> command itself. In
+the above example, <tt class="docutils literal"><span class="pre">*Trd1</span></tt> indicates a diatonic shift up one letter name.
+The tandem interpretation <tt class="docutils literal"><span class="pre">*Trd-1c-2</span></tt> would indicate that a score has been
+transposed down a major second. The <a class="reference external" href="../../man/trans">trans</a> command also provides a <tt class="docutils literal"><span class="pre">-k</span></tt>
+option that allows the user to specify a replacement key signature for the
+output.</p>
+<p>The <a class="reference external" href="../../man/trans">trans</a> command can be used in conjunction with any of the appropriate
+pitch-related representations, such as <a class="reference external" href="../../rep/pitch">**pitch</a>, <a class="reference external" href="../../rep/kern">**kern</a>, <a href="#id81"><span class="problematic" id="id82">|**Tonh|_</span></a>,
+and <a class="reference external" href="../../rep/solfg">**solfg</a>.</p>
+</div>
+<div class="section" id="key-interpretations">
+<h2>Key Interpretations<a class="headerlink" href="#key-interpretations" title="Permalink to this headline">¶</a></h2>
+<p>In order for the <a href="#id83"><span class="problematic" id="id84">|solfa|_</span></a> or <a href="#id85"><span class="problematic" id="id86">|deg|_</span></a> commands to translate from other pitch
+representations, the encoded music must contain an explicit key indication.
+Keys are explicitly represented by a single asterisk, followed by an upper-
+or lower-case letter, followed by an optional accidental, followed by a
+colon. The octothorpe (<tt class="docutils literal"><span class="pre">#</span></tt>) indicates a sharp and the hyphen (<tt class="docutils literal"><span class="pre">-</span></tt>)
+indicates a flat.</p>
+<p>Upper-case letters indicate major keys; lower-case letters indicate minor
+keys. By way of illustration, the following key interpretations indicate the
+keys of C major, C minor, B-flat major, and F-sharp minor:</p>
+<p>&gt; <a href="#id22"><span class="problematic" id="id23">``</span></a><a href="#id24"><span class="problematic" id="id25">*</span></a>C:
+&gt; <a href="#id26"><span class="problematic" id="id27">*</span></a>c:
+&gt; <a href="#id28"><span class="problematic" id="id29">*</span></a>B-:
+&gt; <a href="#id30"><span class="problematic" id="id31">*</span></a>f#:</p>
+<p>Key interpretations usually appear near the beginning of a representation,
+and key interpretations can be redefined at any place in a score.</p>
+</div>
+<div class="section" id="pitch-processing">
+<h2>Pitch Processing<a class="headerlink" href="#pitch-processing" title="Permalink to this headline">¶</a></h2>
+<p>Apart from transposition, translating from one representation to another
+provides opportunities for different sorts of processing. Suppose, for
+example, we wanted to know whether the subdominant pitch occurs more
+frequently in one vocal repertory than in another repertory. We can use <a href="#id87"><span class="problematic" id="id88">|solfa|_</span></a> in conjunction with <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a>&#8216;s <tt class="docutils literal"><span class="pre">-c</span></tt> option to count the number of
+occurrences. (For the following examples, we will assume that the inputs
+consist of only a single spine, that barlines are absent, and that
+appropriate interpretations are provided indicating the key of each work.)
+First we need to count the total number of notes in each repertory.</p>
+<div class="highlight-bash"><div class="highlight"><pre>census -k repertory1.krn
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>census -k repertory2.krn
+</pre></div>
+</div>
+<p>Next we translate the scores to the <a href="#id89"><span class="problematic" id="id90">|solfa|_</span></a> representation and use <strong>grep
+-c</strong> to count the number of occurrences of the number <a href="#id32"><span class="problematic" id="id33">`</span></a>fa&#8217;:</p>
+<div class="highlight-bash"><div class="highlight"><pre>solfa repertory1.krn | grep -c fa
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre>solfa repertory2.krn | grep -c fa
+</pre></div>
+</div>
+<p>The proportion of subdominant pitches can be calculated by simply comparing
+the resulting pattern count with the number of notes identified by
+<a class="reference external" href="../../man/census">census</a>.</p>
+<p>Recall that one of the differences between the <a class="reference external" href="../../rep/solfa">**solfa</a> and
+<a class="reference external" href="../../rep/deg">**deg</a> representations is that the <a class="reference external" href="../../rep/deg">**deg</a> output contains an
+indication of the direction of melodic approach. The caret (<strong>^</strong>) indicates
+approach from below, whereas the lower-case**v**indicates approach from
+above. Suppose we wanted to determine whether the dominant pitch is more
+commonly approached from above or from below. Assuming a monophonic input, we
+can once again use <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to answer this question. First let&#8217;s count how
+many dominant pitches (<a href="#id35"><span class="problematic" id="id36">`</span></a>5&#8217;) are approached from above (<a href="#id37"><span class="problematic" id="id38">`</span></a>v&#8217;):</p>
+<div class="highlight-bash"><div class="highlight"><pre>deg repertory.krn | grep -c v5
+</pre></div>
+</div>
+<p>The caret has a special meaning for <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> which will be discussed in
+<a class="reference external" href="../ch09">Chapter 9</a>. We can escape the special meaning by preceding the caret by a
+backslash. In order to count the number of dominant pitches approached from
+below we can use the following:</p>
+<div class="highlight-bash"><div class="highlight"><pre>deg repertory.krn | grep -c <span class="se">\^</span>5
+</pre></div>
+</div>
+<p>Recall that some scale tones are spelled differently depending on whether the
+mode is major or minor. For example, in A major the mediant pitch is C sharp;
+but in A minor the mediant pitch is C natural. The <a href="#id91"><span class="problematic" id="id92">|deg|_</span></a> and <a href="#id93"><span class="problematic" id="id94">|solfa|_</span></a> commands produce subtly contrasting outputs that make one or the other
+command better suited depending on the user&#8217;s goal. The <a href="#id95"><span class="problematic" id="id96">|deg|_</span></a> command would
+represent C sharp in A major, and C natural in A minor by the same scale
+degree &#8211; <tt class="docutils literal"><span class="pre">3</span></tt>. In the key of A major, C natural would be characterized as a
+lowered mediant (<tt class="docutils literal"><span class="pre">3-</span></tt>) and in A minor, C sharp would be characterized as a
+raised mediant (<tt class="docutils literal"><span class="pre">3+</span></tt>). By contrast, the <a href="#id97"><span class="problematic" id="id98">|solfa|_</span></a> command characterizes
+pitches with respect to the tonic alone and ignores the mode. Hence, <a href="#id99"><span class="problematic" id="id100">|solfa|_</span></a> would designate C sharp as <tt class="docutils literal"><span class="pre">mi</span></tt>&#8216; whether the key was A major or
+A minor. Similarly, C natural would be designated <tt class="docutils literal"><span class="pre">me</span></tt>&#8216; in both A major
+and A minor. The differences between <a href="#id101"><span class="problematic" id="id102">|deg|_</span></a> and <a href="#id103"><span class="problematic" id="id104">|solfa|_</span></a> allow users to
+distinguish chromatically altered scale tones in a manner appropriate to the
+task.</p>
+</div>
+<div class="section" id="uses-for-pitch-translations">
+<h2>Uses for Pitch Translations<a class="headerlink" href="#uses-for-pitch-translations" title="Permalink to this headline">¶</a></h2>
+<p>Occasionally it is useful to process a given representation to the <em>same</em>
+representation. The <a class="reference external" href="../../man/kern">kern</a> command translates various pitch-related
+representations to the <a class="reference external" href="../../rep/kern">**kern</a> format. The <tt class="docutils literal"><span class="pre">-x</span></tt> option eliminates any
+input data that do not pertain to pitch. When applied to a <a class="reference external" href="../../rep/kern">**kern</a> input,
+this option allows us to filter out durations, articulation marks, phrasing,
+and other non-pitch data. Suppose, for example, that we wanted to determine
+the proportion of successively repeated notes in a vocal melody: how often is
+a pitch followed immediately by the same pitch? We might begin by first
+determining the total number of notes in the melody using <a class="reference external" href="../../man/census">census</a> with the
+<tt class="docutils literal"><span class="pre">-k</span></tt> option.</p>
+<div class="highlight-bash"><div class="highlight"><pre>census -k melody.krn
+</pre></div>
+</div>
+<p>We can use the <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> command to eliminate successive repeated pitches &#8211;
+but only if the note tokens are identical. First we can use <a href="#id105"><span class="problematic" id="id106">`**kern -x**`_</span></a> to
+translate &#8220;from <a class="reference external" href="../../rep/kern">**kern</a> to <a class="reference external" href="../../rep/kern">**kern</a>&#8221; while eliminating non-pitch-related
+data. Then we need to remove barlines so they don&#8217;t interfere with pitches
+that are repeated across the measure. Using <a class="reference external" href="http://en.wikipedia.org/wiki/Uniq">uniq</a> will then eliminate all
+of the successively duplicated records, so a sequence of six G&#8217;s will be
+reduced to a single G. Finally, we pipe the output to <strong>census -k</strong> to count
+the total number of notes.</p>
+<div class="highlight-bash"><div class="highlight"><pre>kern -x melody.krn | uniq | census -k
+</pre></div>
+</div>
+<p>A variation on this approach would entail translating to a representation
+that does not distinguish enharmonic pitches. For example, translating our
+melody to <a class="reference external" href="../../rep/semits">**semits</a> and then back to <a class="reference external" href="../../rep/kern">**kern</a>will standarize all
+of the enharmonic spellings. If our melody contains a G-sharp that undergoes
+an enharmonic shift to A-flat, then the pitches will be deemed identical. The
+following command carries out the same task as above, but ignores possible
+enharmonic spellings:</p>
+<div class="highlight-bash"><div class="highlight"><pre>semits melody.krn | kern | uniq | census -k
+</pre></div>
+</div>
+<p>Incidentally, given <a class="reference external" href="../../rep/semits">**semits</a> input, the <a class="reference external" href="../../man/kern">kern</a> command will spell
+pitches according to any key or key signatures it encounters. For example, if
+the key signature contains sharps, then G-sharp will be output; if the key or
+key signature contains flats, then A-flat will be output.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="reprise">
+<h2>Reprise<a class="headerlink" href="#reprise" title="Permalink to this headline">¶</a></h2>
+<p>In this chapter we have introduced a number of pre-defined pitch-related
+representations. Simple commands can be used to translate from one
+representation to another. Which representation is most appropriate depends
+on the user&#8217;s goal.</p>
+<p>There is a wealth of other representation formats related to pitch distances,
+tablatures, timing, and other types of musical information. These
+representations will be explored in later chapters. In addition, we&#8217;ll
+describe how to design your own representations &#8211; representations that may
+be better tailored to a specific application. However, before we continue
+discussing further representations, this is an appropriate point to present a
+more formal description of the general Humdrum representation syntax.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  <hr/>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <center><a href="../ch05/" class="btn btn-neutral float-right" title="Chapter 5: The Humdrum Syntax">Next <span class="fa fa-arrow-circle-right"></span></a></center>
+      
+      
+        <a href="../ch03/" class="btn btn-neutral" title="Chapter 3: Some Initial Processing"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+      
+             <center><a href="../../_sources/guide/ch04.txt" rel="nofollow"> View page source</a></center>
+      
+    </div>
+  
+
+
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+   
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-52162357-1', 'humdrum.org');
+  ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>
