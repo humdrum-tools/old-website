@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -321,7 +320,7 @@ convenient ways of parsing the harmonies.</p>
 <p><strong>Example 35.1</strong> Aaron Copland, <em>El Salon Mexico</em>.</p>
 <p>&gt; .. image:: guide.figures/ch35.4.gif</p>
 <p>A <a class="reference external" href="../../rep/kern">**kern</a>encoding of the passage is given below:</p>
-<div class="highlight-humdrum"><pre>!!!COM: Copland, A.
+<div class="highlight-humdrum"><div class="highlight"><pre>!!!COM: Copland, A.
 !!!OTL: El Salon Mexico
 **kern
 *Itromp
@@ -368,7 +367,8 @@ convenient ways of parsing the harmonies.</p>
 4r
 2r;
 =
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>We can collapse the arpeggiated chords using the <a href="#id11"><span class="problematic" id="id12">|context|_</span></a> command:</p>
 <div class="highlight-bash"><div class="highlight"><pre>context -b <span class="o">=</span> -o <span class="o">=</span> copland
@@ -380,7 +380,7 @@ representation described in <a class="reference external" href="../ch34">Chapter
 </pre></div>
 </div>
 <p>The corresponding output is:</p>
-<div class="highlight-humdrum"><pre>!!!COM: Copland, A.
+<div class="highlight-humdrum"><div class="highlight"><pre>!!!COM: Copland, A.
 !!!OTL: El Salon Mexico
 **pc
 *Itromp
@@ -391,7 +391,8 @@ representation described in <a class="reference external" href="../ch34">Chapter
 0 9 9 2 6 9
 0 9 6 2 2 2
 6 r r r
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>In order to identify these as G major and D dominant chords it would be
 convenient to reduce the sets to (2,7,B) and (0,2,6,9) respectively. For this
@@ -421,8 +422,9 @@ or compound melodic tendency. A passage from Bach&#8217;s &#8220;Gigue&#8221; fr
 &#8216;cello *Suite No. 3</em> is shown in Example 35.1.</p>
 <p><a href="#id3"><span class="problematic" id="id4">**</span></a>Example 35.1* J.S. Bach, &#8220;Gigue&#8221; from <em>Suite No. 3</em> for solo &#8216;cello
 (excerpt).</p>
-<div align="center" class="align-center"><img src="../../_images/ex35-1.svg" width="100%" /></div>
-<div class="highlight-humdrum"><pre>**kern
+<a class="reference internal image-reference" href="../../_images/ex35-1.svg"><div align="center" class="align-center"><img src="../../_images/ex35-1.svg" width="100%" /></div>
+</a>
+<div class="highlight-humdrum"><div class="highlight"><pre>**kern
 *M3/8
 =88
 (16F#
@@ -447,10 +449,13 @@ or compound melodic tendency. A passage from Bach&#8217;s &#8220;Gigue&#8221; fr
 16D)
 =91
 (16B
-16D)</pre>
+16D)
+</pre></div>
 </div>
-<div align="center" class="align-center"><img src="../../_images/ex35-2.svg" width="100%" /></div>
-<div align="center" class="align-center"><img src="../../_images/ex35-3.svg" width="100%" /></div>
+<a class="reference internal image-reference" href="../../_images/ex35-2.svg"><div align="center" class="align-center"><img src="../../_images/ex35-2.svg" width="100%" /></div>
+</a>
+<a class="reference internal image-reference" href="../../_images/ex35-3.svg"><div align="center" class="align-center"><img src="../../_images/ex35-3.svg" width="100%" /></div>
+</a>
 </div>
 </div>
 

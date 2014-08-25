@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -324,12 +323,13 @@ to represent many other musically pertinent signifiers such as pitch spelling
 In addition, MIDI does not represent rests.</p>
 <p>A simple <a class="reference external" href="../../rep/MIDI">**MIDI</a> example is given below. It consists just a single note
 (middle C):</p>
-<div class="highlight-humdrum"><pre>!! A single MIDI note.
+<div class="highlight-humdrum"><div class="highlight"><pre>!! A single MIDI note.
 **MIDI
 *Ch1
 54/60/64
 80/-60/64
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>Notice that there are two <a class="reference external" href="../../rep/MIDI">**MIDI</a> data tokens: one to specify note-on and
 one to specify note-off events. Each <a class="reference external" href="../../rep/MIDI">**MIDI</a> data token consists of three
@@ -356,12 +356,13 @@ two data tokens for each note. The following example shows a three note
 C-major triad. The <a class="reference external" href="../../rep/kern">**kern</a> data is shown in the left spine with the
 corresponding <a class="reference external" href="../../rep/MIDI">**MIDI</a> data in the right spine. Notice that each data token
 consists of three subtokens, one for each note:</p>
-<div class="highlight-humdrum"><pre>!! A C-major triad.
+<div class="highlight-humdrum"><div class="highlight"><pre>!! A C-major triad.
 **kern          **MIDI
 *               *Ch1
 2c 2e 2g        72/60/64 72/64/64 72/67/64
 .               144/-60/64 144/-64/64 144/-67/64
-*-              *-</pre>
+*-              *-
+</pre></div>
 </div>
 <p>Middle C corresponds to MIDI key 60; The pitches E4 and G4 correspond to MIDI
 keys 64 and 67 respectively. The half-note durations result in a delay of 144
@@ -371,13 +372,14 @@ events occur simultaneously.</p>
 begins at the same time that the C major triad ends. This results in five
 subtokens in the corresponding <a class="reference external" href="../../rep/MIDI">**MIDI</a> data record. Three key-off events
 are synchronous with two key-on events:</p>
-<div class="highlight-humdrum"><pre>!! Two chords.
+<div class="highlight-humdrum"><div class="highlight"><pre>!! Two chords.
 **kern          **MIDI
 *               *Ch1
 2c 2e 2g        72/60/64 72/64/64 72/67/64
 4d 4f           144/-60/64 144/-64/64 144/-67/64 144/62/64 144/65/64
 .               72/-62/64 72/-65/64
-*-              *-</pre>
+*-              *-
+</pre></div>
 </div>
 <p>Notice that the difference in duration between the half-notes and quarter-
 notes is reflected when the notes are turned <em>off</em> rather than when the notes
@@ -385,8 +387,9 @@ are turned <em>on</em>.</p>
 <p>Example 7.1 illustrates a slightly more complex excerpt from the beginning of
 Darius Milhaud&#8217;s <em>Touches Blanches</em>.</p>
 <p><strong>Example 7.1</strong> Excerpt from Darius Milhaud&#8217;s <em>Touches Blanches</em></p>
-<div align="center" class="align-center"><img src="../../_images/ex7-1.svg" width="100%" /></div>
-<div class="highlight-humdrum"><pre>!!!: Milhaud, D.
+<a class="reference internal image-reference" href="../../_images/ex7-1.svg"><div align="center" class="align-center"><img src="../../_images/ex7-1.svg" width="100%" /></div>
+</a>
+<div class="highlight-humdrum"><div class="highlight"><pre>!!!: Milhaud, D.
 !!!OTL: TouchesBlanches
 **kern  **kern  **MIDI  **MIDI
 *staff2 *staff1 *Ch1    *Ch1
@@ -412,7 +415,8 @@ Darius Milhaud&#8217;s <em>Touches Blanches</em>.</p>
 4d      2g)     36/-65/64 36/62/64      36/-71/64 36/67/64
 4G      .       72/-62/64 72/55/64      .
 .       .       72/-55/64       72/-67/64
-*-      *-      *-      *-</pre>
+*-      *-      *-      *-
+</pre></div>
 </div>
 <p>The <a class="reference external" href="../../rep/MIDI">**MIDI</a> representation always expects a tandem interpretation
 indicating the MIDI channel assignment. In Example 7.1 both parts have been

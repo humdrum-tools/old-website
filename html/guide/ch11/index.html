@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -318,7 +317,8 @@ successive pitches within the same voice or part. We might call this a
 descending perfect fourth between the first two notes of the upper part, and
 the rising semitone at the beginning of the lower part.</p>
 <p><strong>Example 11.1</strong> Types of melodic intervals.</p>
-<div align="center" class="align-center"><img src="../../_images/ex11-1.svg" width="100%" /></div>
+<a class="reference internal image-reference" href="../../_images/ex11-1.svg"><div align="center" class="align-center"><img src="../../_images/ex11-1.svg" width="100%" /></div>
+</a>
 <p>Even within a monophonic score, successive pitches may have one or more rests
 interposed between them. Depending on the research task, the interval
 spanning across the rest(s) may or may not be considered important. We might
@@ -327,7 +327,7 @@ interrupted melodic interval is the ascending perfect fourth in the upper
 voice between the last note of the first measure (A4) and the first note of
 the last measure (D5).</p>
 <p><strong>Example 11.1 continued.</strong></p>
-<div class="highlight-humdrum"><pre>**kern  **kern
+<div class="highlight-humdrum"><div class="highlight"><pre>**kern  **kern
 *staff1 *staff1
 *M4/4   *M4/4
 =1-     =1-
@@ -340,7 +340,8 @@ the last measure (D5).</p>
 2f]     2dd
 4d 4g   4b 4ff
 4c 4e 4g        4cc 4ee
-*-      *-</pre>
+*-      *-
+</pre></div>
 </div>
 <p>In some cases, implied melodic intervals may arise by the interaction of two
 or more parts. For example, Example 11.2 shows a plausible reinterpretation
@@ -350,7 +351,8 @@ In the context of the original <a class="reference external" href="../../rep/ker
 intervals <em>cross-voice melodic intervals.</em></p>
 <p><strong>Example 11.2</strong> Possible re-interpretation of opening measure for Example
 11.1.</p>
-<div align="center" class="align-center"><img src="../../_images/ex11-2.svg" width="100%" /></div>
+<a class="reference internal image-reference" href="../../_images/ex11-2.svg"><div align="center" class="align-center"><img src="../../_images/ex11-2.svg" width="100%" /></div>
+</a>
 <p>In the second measure, both parts are encoded using multiple stops. In the
 upper part, two successive double stops are encoded. In the case of multiple-
 stops, it is common to perceive the outer-most notes as connected. Hence, the
@@ -402,7 +404,7 @@ Example 11.3 shows the output from the <a class="reference external" href="../..
 in Example 11.1.</p>
 <p><strong>Example 11.3</strong> Default interval outputs from the <a class="reference external" href="../../man/mint">mint</a> command
 corresponding to Example 11.1.</p>
-<div class="highlight-humdrum"><pre>**mint  **mint
+<div class="highlight-humdrum"><div class="highlight"><pre>**mint  **mint
 *M4/4   *M4/4
 =1-     =1-
 .       .
@@ -414,7 +416,8 @@ corresponding to Example 11.1.</p>
 .       +P4
 -m3 +M2 -m3 +m3
 -M2 P1  +m2 -m2
-*-      *-</pre>
+*-      *-
+</pre></div>
 </div>
 <p>Notice that the <em>interrupted interval</em> (spanning the rest) has been
 calculated, and that no unison has appeared for the tied note in the lower
@@ -436,7 +439,7 @@ suitable place to break melodic interval calculations. For example,</p>
 </pre></div>
 </div>
 <p>would produce the following output when applied to Example 11.1:</p>
-<div class="highlight-humdrum"><pre>**mint  **mint
+<div class="highlight-humdrum"><div class="highlight"><pre>**mint  **mint
 *M4/4   *M4/4
 =1-     =1-
 .       .
@@ -448,7 +451,8 @@ suitable place to break melodic interval calculations. For example,</p>
 P1      .
 -m3 +M2 -m3 +m3
 -M2 P1  +m2 -m2
-*-      *-</pre>
+*-      *-
+</pre></div>
 </div>
 <p>Notice that the perfect fourth (+P4) has been replaced by a null token at the
 beginning of measure 2. In addition, the rest token <tt class="docutils literal"><span class="pre">`r</span></tt>&#8216; has been echoed
@@ -485,7 +489,7 @@ the output in parentheses. For example, the following output is generated for
 Example 1.1 with the <tt class="docutils literal"><span class="pre">-I</span></tt> option. Notice the addition of <tt class="docutils literal"><span class="pre">(+M2)</span></tt> and
 `` (-2)``. The rising major second arises from the pitches D4 and E4; the
 falling minor third arises from the pitches G4 and E4.</p>
-<div class="highlight-humdrum"><pre>**mint  **mint
+<div class="highlight-humdrum"><div class="highlight"><pre>**mint  **mint
 *M4/4   *M4/4
 =1-     =1-
 .       .
@@ -497,7 +501,8 @@ falling minor third arises from the pitches G4 and E4.</p>
 P1      .
 -m3 +M2 -m3 +m3
 -M2 (+M2) (-m3) P1      +m2 -m2
-*-*-</pre>
+*-*-
+</pre></div>
 </div>
 <p>With the <tt class="docutils literal"><span class="pre">-i</span></tt> option, the parentheses surrounding the unvoiced inner
 intervals would be omitted.</p>
@@ -512,8 +517,9 @@ calculate <em>distance intervals.</em> Consider Example 11.4 where all of the
 durations are either sixteenth notes or eighth notes. Suppose we wanted to
 calculate the intervals only between the eighth notes.</p>
 <p><strong>Example 11.4</strong></p>
-<div align="center" class="align-center"><img src="../../_images/ex11-4a.svg" width="100%" /></div>
-<div class="highlight-humdrum"><pre>**kern
+<a class="reference internal image-reference" href="../../_images/ex11-4a.svg"><div align="center" class="align-center"><img src="../../_images/ex11-4a.svg" width="100%" /></div>
+</a>
+<div class="highlight-humdrum"><div class="highlight"><pre>**kern
 *M4/4
 =1-
 8cc
@@ -528,7 +534,8 @@ calculate the intervals only between the eighth notes.</p>
 16e
 8c
 8r
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>We can use the skip option to instruct <a class="reference external" href="../../man/mint">mint</a> to ignore any note token
 matching the string <tt class="docutils literal"><span class="pre">`16</span></tt>&#8216;:</p>
@@ -538,8 +545,9 @@ matching the string <tt class="docutils literal"><span class="pre">`16</span></t
 <p>This command would produce an output that highlights the descending
 arpeggiated major chord &#8211; from C5 to G4 (down a P4), to E4 (down a m3) to C4
 (down a M3).</p>
-<div align="center" class="align-center"><img src="../../_images/ex11-4b.svg" width="100%" /></div>
-<div class="highlight-humdrum"><pre>**mint
+<a class="reference internal image-reference" href="../../_images/ex11-4b.svg"><div align="center" class="align-center"><img src="../../_images/ex11-4b.svg" width="100%" /></div>
+</a>
+<div class="highlight-humdrum"><div class="highlight"><pre>**mint
 *M4/4
 =1-
 .
@@ -553,7 +561,8 @@ arpeggiated major chord &#8211; from C5 to G4 (down a P4), to E4 (down a m3) to 
 .
 .
 -M3
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>Using duration information is a somewhat limited technique for calculating
 distance intervals. Typically, users will want to define much more refined
@@ -567,7 +576,7 @@ spines into a single spine. In <a class="reference external" href="../ch26">Chap
 </div>
 <p>With the <a class="reference external" href="../../rep/kern">**kern</a> encoding for Example 11.1 as input, the corresponding
 output would be:</p>
-<div class="highlight-humdrum"><pre>**kern
+<div class="highlight-humdrum"><div class="highlight"><pre>**kern
 *M4/4
 =1- =1-
 4.e 2cc
@@ -579,7 +588,8 @@ output would be:</p>
 2f] 2dd
 4d 4g 4b 4ff
 4c 4e 4g 4cc 4ee
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>Note that this output doesn&#8217;t quite conform to the <a class="reference external" href="../../rep/kern">**kern</a> syntax: the
 barlines have been duplicated as double-stops, and the durations aren&#8217;t right
@@ -591,7 +601,7 @@ command pipeline becomes:</p>
 <p>`` cleave -d &#8216; &#8216; -i &#8216;<a href="#id6"><span class="problematic" id="id7">**</span></a>kern&#8217; -o &#8216;<a href="#id8"><span class="problematic" id="id9">**</span></a>kern&#8217; example11a &gt;
 &gt;&gt; | humsed &#8216;s/ =.*//&#8217; | mint -I``</p>
 <p>The corresponding melodic interval output is:</p>
-<div class="highlight-humdrum"><pre>**mint
+<div class="highlight-humdrum"><div class="highlight"><pre>**mint
 *M4/4
 =1-
 .
@@ -603,7 +613,8 @@ command pipeline becomes:</p>
 +P4
 -m3 (+M2) (-P5) (+A4) (-m3) +m3
 -M2 (-m3) (-P5) (P1) (-M3) (+P4) (+m2) -m2
-*-</pre>
+*-
+</pre></div>
 </div>
 </div>
 <div class="section" id="simple-and-compound-melodic-intervals">
@@ -634,7 +645,8 @@ contour. The <tt class="docutils literal"><span class="pre">-a</span></tt> and <
 </pre></div>
 </div>
 <p>Are there any compound melodic intervals in the file <tt class="docutils literal"><span class="pre">Piaf</span></tt>?</p>
-<div class="highlight-bash"><pre>mint Piaf | egrep '([Mm][9])|([MmPAd][1-9][0-9]''</pre>
+<div class="highlight-bash"><div class="highlight"><pre>mint Piaf | egrep &#39;([Mm][9])|([MmPAd][1-9][0-9]&#39;&#39;
+</pre></div>
 </div>
 <p>Are descending seconds more common than ascending seconds in melodies by
 Maurice Chevalier?</p>
@@ -683,7 +695,7 @@ to <a class="reference external" href="../../rep/semits">**semits</a>(discussed 
 `` <a href="#id10"><span class="problematic" id="id11">**</span></a>semits`` representation, middle C is designated by the value zero, and
 all other pitches are represented by their (positive or negative) semitone
 distance. A C-major scale would appear as follows:</p>
-<div class="highlight-humdrum"><pre>**semits
+<div class="highlight-humdrum"><div class="highlight"><pre>**semits
 0
 2
 4
@@ -692,12 +704,13 @@ distance. A C-major scale would appear as follows:</p>
 9
 11
 12
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>We can transform this representation to semitone intervals as follows:</p>
 <p>`` xdelta`` <em>inputfile</em></p>
 <p>For the above scale, the output would be:</p>
-<div class="highlight-humdrum"><pre>**Xsemits
+<div class="highlight-humdrum"><div class="highlight"><pre>**Xsemits
 .
 2
 2
@@ -706,7 +719,8 @@ distance. A C-major scale would appear as follows:</p>
 2
 2
 1
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>Notice that the initial numerical value has been replaced by a null token,
 and all subsequent values represent the numerical <em>difference</em> between
@@ -721,20 +735,22 @@ that contains numbers.</p>
 <p>When <a class="reference external" href="../../man/xdelta">xdelta</a> encounters multiple-stops, it behaves in a manner similar to
 the <a class="reference external" href="../../man/mint">mint</a> command by calculating the numerical equivalent of unvoiced
 inner intervals. Consider the following example:</p>
-<div class="highlight-humdrum"><pre>**semits
+<div class="highlight-humdrum"><div class="highlight"><pre>**semits
 3
 2 5
 -1 7 14
 12
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>The <a class="reference external" href="../../man/xdelta">xdelta</a> command produces the following output:</p>
-<div class="highlight-humdrum"><pre>**Xsemits
+<div class="highlight-humdrum"><div class="highlight"><pre>**Xsemits
 .
 -1 2
 -3 (5) (2) 9
 13 5 -2
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>Once again, the interpretation has been modified to <tt class="docutils literal"><span class="pre">Xsemits</span></tt> and the
 leading value has been changed to a null token. In going from the value 3 to
@@ -746,13 +762,14 @@ in parentheses: (7 - 2 = 5) and (7 - 5 = 2).</p>
 calculations of numerical differences and a <tt class="docutils literal"><span class="pre">-s</span></tt> option to skip or
 completely ignore certain data tokens when processing. An important use of
 the <tt class="docutils literal"><span class="pre">-s</span></tt> option is to ignore barlines. Consider the following example:</p>
-<div class="highlight-humdrum"><pre>**cents
+<div class="highlight-humdrum"><div class="highlight"><pre>**cents
 100
 400
 800
 =2
 600
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>The proper way to calculate differences in cents is to ensure that measure
 numbers are ignored:</p>

@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -323,7 +322,7 @@ However, in many cases, there may be redundant information present in the
 concatenated output. Suppose we had three files, each of which encoded a
 single measure of music. Concatenating them together might result in an
 output such as the following:</p>
-<div class="highlight-humdrum"><pre>!! File 1
+<div class="highlight-humdrum"><div class="highlight"><pre>!! File 1
 **kern  **kern  **kern  **kern
 *M4/4   *M4/4   *M4/4   *M4/4
 *G:     *G:     *G:     *G:
@@ -363,7 +362,8 @@ output such as the following:</p>
 8D#     4B      8f#     .
 8E      .       8e      8g
 8F#     8A      8d      8a
-*-      *-      *-      *-</pre>
+*-      *-      *-      *-
+</pre></div>
 </div>
 <p>Notice that each complete measure ends with spine-path terminators and that
 the <a class="reference external" href="../../rep/kern">**kern</a> exclusive interpretations are repeated. This organization
@@ -422,14 +422,15 @@ don&#8217;t change the current status of the data. In the following example, the
 second <tt class="docutils literal"><span class="pre">psaltery</span></tt> interpretation is redundant. The <strong>rid -u</strong> command
 would remove the first spine-path terminator and the second exclusive
 interpretation &#8211; leaving a continuous data spine.</p>
-<div class="highlight-humdrum"><pre>**psaltery
+<div class="highlight-humdrum"><div class="highlight"><pre>**psaltery
 .
 .
 .
 *-
 **psaltery
 .
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>In addition, <a class="reference external" href="../../man/rid">rid</a> provides a <tt class="docutils literal"><span class="pre">-t</span></tt> option which removes &#8220;duplicate&#8221; or
 repeated tandem interpretations. In the above example there is no need to
@@ -440,7 +441,7 @@ eliminate the unwanted interpretations:</p>
 </pre></div>
 </div>
 <p>The resulting output is given below:</p>
-<div class="highlight-humdrum"><pre>!! File 1
+<div class="highlight-humdrum"><div class="highlight"><pre>!! File 1
 **kern  **kern  **kern  **kern
 *M4/4   *M4/4   *M4/4   *M4/4
 *k[f#]  *k[f#]  *k[f#]  *k[f#]
@@ -470,7 +471,8 @@ eliminate the unwanted interpretations:</p>
 8D#     4B      8f#     .
 8E      .       8e      8g
 8F#     8A      8d      8a
-*-      *-      *-      *-</pre>
+*-      *-      *-      *-
+</pre></div>
 </div>
 <p>Of course care should be exercised when concatenating inputs together.
 Although an output may conform to the Humdrum syntax, the result can
@@ -486,7 +488,7 @@ processing.</p>
 concatenating together musical segments. The principle tool for joining
 spines together is the <a class="reference external" href="../../man/assemble">assemble</a> command. Consider the following two
 files:</p>
-<div class="highlight-humdrum"><pre>!! Assemble example
+<div class="highlight-humdrum"><div class="highlight"><pre>!! Assemble example
 !! File 1
 **Letters
 ! A to E
@@ -495,9 +497,10 @@ B
 C
 D
 E
-*-</pre>
+*-
+</pre></div>
 </div>
-<div class="highlight-humdrum"><pre>!! Assemble example
+<div class="highlight-humdrum"><div class="highlight"><pre>!! Assemble example
 !! File 2
 **Numbers
 ! 1 to 5
@@ -506,14 +509,15 @@ E
 3
 4
 5
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>These two files can be aligned side by side using <a class="reference external" href="../../man/assemble">assemble</a> :</p>
 <div class="highlight-bash"><div class="highlight"><pre>assemble letters numbers
 </pre></div>
 </div>
 <p>The resulting output is:</p>
-<div class="highlight-humdrum"><pre>!! Assemble example
+<div class="highlight-humdrum"><div class="highlight"><pre>!! Assemble example
 !! File 1
 !! File 2
 **Letters       **Numbers
@@ -523,7 +527,8 @@ B       2
 C       3
 D       4
 E       5
-*-      *-</pre>
+*-      *-
+</pre></div>
 </div>
 <p>Note the following: (1) The spines are joined side by side from left to right
 in the same order as specified on the command line. (2) Local comments are
@@ -537,7 +542,7 @@ number of files that can be assembled at one time.</p>
 <p>In many cases, the input files will have dissimilar lengths. The <a class="reference external" href="../../man/assemble">assemble</a> command will correctly terminate the appropriate spines. For example, in the
 above case, if the <tt class="docutils literal"><span class="pre">numbers</span></tt> file contained only the numbers 1 to 3, the
 assembled output would appear as follows:</p>
-<div class="highlight-humdrum"><pre>!! Assemble example
+<div class="highlight-humdrum"><div class="highlight"><pre>!! Assemble example
 !! File 1
 !! File 2**Letters**Numbers
 ! A to E! 1 to 3
@@ -547,11 +552,12 @@ C3
 **-
 D
 E
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>If the order of the input files was reversed, <a class="reference external" href="../../man/assemble">assemble</a> would produce an
 output with the appropriate spine-path changes:</p>
-<div class="highlight-humdrum"><pre>!! Assemble example
+<div class="highlight-humdrum"><div class="highlight"><pre>!! Assemble example
 !! File 2
 !! File 1
 **Numbers       **Letters
@@ -562,7 +568,8 @@ output with the appropriate spine-path changes:</p>
 *       -*
 D
 E
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>Note that if all of the input files conform to the Humdrum syntax, then
 <a class="reference external" href="../../man/assemble">assemble</a> guarantees that the assembled output will also conform to the
@@ -573,19 +580,21 @@ Humdrum syntax.</p>
 <p>Suppose now that we wanted to join two hypothetical files containing
 `` <a href="#id16"><span class="problematic" id="id17">`**kern```_</span></a> data. The first file contains two quarter notes, whereas the
 second file contains four eighth notes:</p>
-<div class="highlight-humdrum"><pre>!! File 1
+<div class="highlight-humdrum"><div class="highlight"><pre>!! File 1
 **kern
 4c
 4d
-*-</pre>
+*-
+</pre></div>
 </div>
-<div class="highlight-humdrum"><pre>!! File 2
+<div class="highlight-humdrum"><div class="highlight"><pre>!! File 2
 **kern
 8e
 8g
 8f
 8g
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>Using <a class="reference external" href="../../man/assemble">assemble</a> to paste them together will clearly lead to an
 uncoordinated result. The two quarter notes in file 1 will be incorrectly
@@ -600,13 +609,14 @@ an input with null data records. In the above case, we would preprocess file
 </pre></div>
 </div>
 <p>The new file would look like this:</p>
-<div class="highlight-humdrum"><pre>!! File 1
+<div class="highlight-humdrum"><div class="highlight"><pre>!! File 1
 **kern
 4c
 .
 4d
 .
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>The <tt class="docutils literal"><span class="pre">-t</span></tt> option is used to indicate the &#8220;time base&#8221; &#8211; in this case, an
 eighth duration. Since all non-barline data records in both files represent
@@ -615,34 +625,37 @@ elapsed durations of an eighth-note, we can continue by using the <a class="refe
 </pre></div>
 </div>
 <p>will result in the following two-part score:</p>
-<div class="highlight-humdrum"><pre>!! File 1
+<div class="highlight-humdrum"><div class="highlight"><pre>!! File 1
 !! File 2
 **kern  **kern
 4c      8e
 .       8g
 4d      8f
 .       8g
-*-      *-</pre>
+*-      *-
+</pre></div>
 </div>
 <p>Suppose that <tt class="docutils literal"><span class="pre">file2</span></tt> also contained a quarter-note. For example, consider a
 revised <tt class="docutils literal"><span class="pre">file2</span></tt>:</p>
-<div class="highlight-humdrum"><pre>!! File 2
+<div class="highlight-humdrum"><div class="highlight"><pre>!! File 2
 **kern
 8e
 8g
 4f
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>Before assembling the two parts, we would need to apply the <a class="reference external" href="../../man/timebase">timebase</a> command to this file (using the same 8th-note time-base value). Assembling
 the two &#8220;time-based&#8221; files would produce the following result:</p>
-<div class="highlight-humdrum"><pre>!! File 1
+<div class="highlight-humdrum"><div class="highlight"><pre>!! File 1
 !! File 2
 **kern  **kern
 4c      8e
 .       8g
 4d      4f
 .       .
-*-      *-</pre>
+*-      *-
+</pre></div>
 </div>
 <p>Notice that we have a spurious null data record in the last line; both parts
 encode null tokens. For most processing, the presence of null data records is
@@ -654,23 +667,25 @@ unnecessary null data records. The command:</p>
 </pre></div>
 </div>
 <p>would result in the following output:</p>
-<div class="highlight-humdrum"><pre>!! File 1
+<div class="highlight-humdrum"><div class="highlight"><pre>!! File 1
 !! File 2
 **kern  **kern
 4c      8e
 .       8g
 4d      4f
-*-      *-</pre>
+*-      *-
+</pre></div>
 </div>
 <p>The <a class="reference external" href="../../man/timebase">timebase</a> command can be applied to multi-spine inputs as well as
 single-spine inputs. Consider, the following input:</p>
-<div class="highlight-humdrum"><pre>**kern  **kern  **kern  **kern  **commentary
+<div class="highlight-humdrum"><div class="highlight"><pre>**kern  **kern  **kern  **kern  **commentary
 4g      8.r     8.cc    16ee    2nd inversion
 .       .       .       8ff     .
 .       32b     16cc    16gg    clash
 .       32a     .       .       .
 8f      8cc     8dd     8ff     suspension
-*-      *-      *-      *-      *-</pre>
+*-      *-      *-      *-      *-
+</pre></div>
 </div>
 <p>The following command will cause the addition of null data records so that
 each data record represents an elapsed time of a 32nd duration. Incidentally,
@@ -681,7 +696,7 @@ synchronous data is maintained.</p>
 </pre></div>
 </div>
 <p>The corresponding output is as follows.</p>
-<div class="highlight-humdrum"><pre>**kern  **kern  **kern  **kern  **commentary
+<div class="highlight-humdrum"><div class="highlight"><pre>**kern  **kern  **kern  **kern  **commentary
 *tb32   *tb32   *tb32   *tb32   *tb32
 4g      8.r     8.cc    16ee    2nd inversion
 .       .       .       .       .
@@ -695,7 +710,8 @@ synchronous data is maintained.</p>
 .       .       .       .       .
 .       .       .       .       .
 .       .       .       .       .
-*-      *-      *-      *-      *-</pre>
+*-      *-      *-      *-      *-
+</pre></div>
 </div>
 <p>Notice that <a class="reference external" href="../../man/timebase">timebase</a> has added a tandem interpretation (<tt class="docutils literal"><span class="pre">*tb32</span></tt>). This
 indicates that the output has been processed so that each non-barline data
@@ -711,7 +727,7 @@ containing just eighth-notes and the other containing just quarter-note
 triplets. (The quarter-note triplets will be encoded as three notes in the
 time of a half-note, or &#8220;6th&#8221; notes.) We need to create an output whose
 rhythmic structure will appear as follows:</p>
-<div class="highlight-humdrum"><pre>**kern  **kern
+<div class="highlight-humdrum"><div class="highlight"><pre>**kern  **kern
 *M2/4   *M2/4
 =1      =1
 6       8
@@ -728,7 +744,8 @@ rhythmic structure will appear as follows:</p>
 6       .
 .       8
 =3      =3
-*-      *-</pre>
+*-      *-
+</pre></div>
 </div>
 <p>In this case, choosing a time-base according to the shortest duration (8th)
 will not work since a 6th note is not an integral multiple of the eighth
@@ -868,7 +885,8 @@ have three spines: <a class="reference external" href="../../rep/deg">**deg</a>,
 <a class="reference external" href="http://en.wikipedia.org/wiki/Grep">grep</a> to search and count all instances of subdominant pitches that are
 approached by ascending thirds/sixths and that coincide with dominant seventh
 chords (in the <a class="reference external" href="../../rep/kern">**kern</a> representation: <tt class="docutils literal"><span class="pre">`V7</span></tt>&#8216;):</p>
-<div class="highlight-bash"><pre>assemble temp1 temp2 temp3 | grep -c '^4``**``+[36]``**``V7</pre>
+<div class="highlight-bash"><div class="highlight"><pre>assemble temp1 temp2 temp3 | grep -c &#39;^4``**``+[36]``**``V7
+</pre></div>
 </div>
 <p>The <a class="reference external" href="../../man/timebase">timebase</a> command can also be used for tasks other than assembling
 parts together. Suppose we would like to determine whether secondary dominant

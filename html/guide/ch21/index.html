@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -329,12 +328,13 @@ Bach to spell his name (B=B-flat; H=B-natural). Less well-known is the fact
 that Dmitri Shostakovich also used the German pitch system to create motives
 based on his name: D-S-C-H (S=Es=E-flat). (The German transliteration of the
 cyrillic is Schostakowitsch.)</p>
-<div class="highlight-humdrum"><pre>**Tonh
+<div class="highlight-humdrum"><div class="highlight"><pre>**Tonh
 D4
 Es4
 C4
 H3
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>Suppose we were looking for possible instances of D-S-C-H. The <a class="reference external" href="../../man/patt">patt</a> command requires a template file that contains one or more successive regular
 expressions. A suitable template file (named <tt class="docutils literal"><span class="pre">dmitri</span></tt>) would be as follows:</p>
@@ -350,7 +350,8 @@ template file used in the search.</p>
 identifying the location of any matching segments. One global comment is
 output for each matching pattern. In the above case, the output would be as
 follows:</p>
-<div class="highlight-humdrum"><pre>!! Pattern found at line 2 of file Tonh</pre>
+<div class="highlight-humdrum"><div class="highlight"><pre>!! Pattern found at line 2 of file Tonh
+</pre></div>
 </div>
 <p>The <a class="reference external" href="../../man/patt">patt</a> command will also identify any overlapping patterns. For
 example, suppose we had an input containing an ostinato figure in minor
@@ -374,8 +375,9 @@ thirds:</p>
 &gt;``==``</p>
 <p>If we applied the above <a class="reference external" href="../../man/patt">patt</a> command to this <tt class="docutils literal"><span class="pre">ostinato</span></tt> file, we would
 get the following output:</p>
-<div class="highlight-humdrum"><pre>!! Pattern found at line 8 of file ostinato``
-!! Pattern found at line 11 of file ostinato</pre>
+<div class="highlight-humdrum"><div class="highlight"><pre>!! Pattern found at line 8 of file ostinato``
+!! Pattern found at line 11 of file ostinato
+</pre></div>
 </div>
 <p>We can instruct <a class="reference external" href="../../man/patt">patt</a> to output specific instances of the pattern using
 the <tt class="docutils literal"><span class="pre">-e</span></tt> (echo) option. Consider the following command:</p>
@@ -383,7 +385,7 @@ the <tt class="docutils literal"><span class="pre">-e</span></tt> (echo) option.
 </pre></div>
 </div>
 <p>The resulting output would be:</p>
-<div class="highlight-humdrum"><pre>!! Pattern found at line 4 of file ostinato
+<div class="highlight-humdrum"><div class="highlight"><pre>!! Pattern found at line 4 of file ostinato
 **Tonh  **Tonh
 H3      D4
 C4      Es4
@@ -396,7 +398,8 @@ H3      D4
 C4      Es4
 C4      Es4
 H3      D4
-*-      *-</pre>
+*-      *-
+</pre></div>
 </div>
 <p>Notice that each instance of the found pattern is output as a stand-alone
 humdrum &#8220;mini-encoding,&#8221; complete with initial exclusive interpretations and
@@ -523,7 +526,7 @@ to help identify this distinctive cadential formula.</p>
 corresponding <a class="reference external" href="../../rep/hint">**hint</a> and <a class="reference external" href="../../rep/deg">**deg</a> spines. The <a href="#id14"><span class="problematic" id="id15">**</span></a>hint spine was
 generated using <a class="reference external" href="../../man/hint">hint</a><tt class="docutils literal"><span class="pre">-l</span></tt> in order to generate intervals with
 respect to the lowest pitch.</p>
-<div class="highlight-humdrum"><pre>!!!COM: Landini, Francesco
+<div class="highlight-humdrum"><div class="highlight"><pre>!!!COM: Landini, Francesco
 **kern  **kern  **kern  **hint  **deg   **deg   **deg
 *clefF4``*clefG2``*clefG2``*``*``*``*
 *M3/4``*M3/4``*M3/4``*M3/4``*M3/4``*M3/4``*M3/4
@@ -537,13 +540,14 @@ respect to the lowest pitch.</p>
 =``=``=``=``=``=``=
 2.G``2.d``2.g``P5 P8``v1``^5``^1
 ==``==``==``========
-*-``*-``*-``*-*-*-*-</pre>
+*-``*-``*-``*-*-*-*-
+</pre></div>
 </div>
 <p>Notice that <a class="reference external" href="../../man/hint">hint</a> has failed to generate the passing interval forming the
 perfect fifth between the E and the A. This can be remedied by using <a class="reference external" href="../../man/ditto">ditto</a> to duplicate all of the pitches. This will cause <a class="reference external" href="../../man/hint">hint</a> to
 generate all of the passing harmonic intervals. The revised <a href="#id16"><span class="problematic" id="id17">**</span></a>hint spine is
 given below.</p>
-<div class="highlight-humdrum"><pre>!!!COM: Landini, Francesco |kern|_ kern |kern|_ hint |deg|_ deg**deg
+<div class="highlight-humdrum"><div class="highlight"><pre>!!!COM: Landini, Francesco |kern|_ kern |kern|_ hint |deg|_ deg**deg
 *clefF4*clefG2*clefG2****
 *M3/4*M3/4*M3/4*M3/4*M3/4*M3/4*M3/4
 =======
@@ -556,7 +560,8 @@ given below.</p>
 =======
 2.G2.d2.gP5 P8v1^5^1
 ==============
-*-*-*-*-*-*-*-</pre>
+*-*-*-*-*-*-*-
+</pre></div>
 </div>
 <p>One way to identify Landini cadences is to use the following harmonic-
 interval template file (dubbed <tt class="docutils literal"><span class="pre">LandCadence</span></tt>):</p>
@@ -616,7 +621,7 @@ along with the <tt class="docutils literal"><span class="pre">-t</span></tt> opt
 <div class="highlight-bash"><div class="highlight"><pre>extract -i <span class="s1">&#39;**harm&#39;</span> bwv269.krn | patt -f template -t deceptive
 </pre></div>
 </div>
-<div class="highlight-humdrum"><pre>       **harm  **patt
+<div class="highlight-humdrum"><div class="highlight"><pre>       **harm  **patt
        I       .
        I       .
        ii7     .
@@ -631,12 +636,13 @@ along with the <tt class="docutils literal"><span class="pre">-t</span></tt> opt
        etc.
 
 In |Chapter 26|_ we will learn how to collapse several spines into a single
-spine. This will allow us to assemble the results from several "passes"
+spine. This will allow us to assemble the results from several &quot;passes&quot;
 using |patt|_ -- one pass for each type of cadence. For example, we could
 collapse several tagged outputs to produce a single spine that identifies
-all of the various types of cadences:</pre>
+all of the various types of cadences:
+</pre></div>
 </div>
-<div class="highlight-humdrum"><pre>       **harm  **cadences
+<div class="highlight-humdrum"><div class="highlight"><pre>       **harm  **cadences
        I       .
        I       .
        ii7     .
@@ -656,7 +662,8 @@ quotations or allusions, stylistic cliches, etc. In |Chapter 35|_ we will
 use the ``-t`` option to label different set forms for statements of a
 twelve-tone row, such as primes, inversions, retrogrades, and retrograde
 inversions. We will use suitable tags to identify the specific
-transpositions: P0, I7, R11, RI8, etc.</pre>
+transpositions: P0, I7, R11, RI8, etc.
+</pre></div>
 </div>
 </div>
 <div class="section" id="matching-multiple-records-using-the-patt-command">
@@ -688,7 +695,7 @@ measures 28-30.</p>
 <blockquote>
 <div>Due to the diads, however, the corresponding pitch-class representation for
 the above Krenek passage would be:</div></blockquote>
-<div class="highlight-humdrum"><pre>       **pc
+<div class="highlight-humdrum"><div class="highlight"><pre>       **pc
        2
        6
        5 1
@@ -703,13 +710,14 @@ the above Krenek passage would be:</div></blockquote>
        etc.
        *-
 
-The ``-m`` option for |patt|_ invokes a "multi-record matching" mode.
+The ``-m`` option for |patt|_ invokes a &quot;multi-record matching&quot; mode.
 In this mode, |patt|_ attempts to match as many successive regular
 expressions in the template file as possible for a given input record,
 before continuing with the next input and template records. In this way,
 several records in the template file may possibly match a single input
 record. In the above case, the tone-row template will be matched and the
-`P0' tag issued if the following command is issued:</pre>
+`P0&#39; tag issued if the following command is issued:
+</pre></div>
 </div>
 <div class="highlight-bash"><div class="highlight"><pre>patt -f tonerow -t P0 -m Krenek
 </pre></div>

@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -331,8 +330,8 @@ option, the user may specify a given data column (spine) or &#8220;field&#8221; 
 extract. Consider the opening of Bach&#8217;s second Brandenburg Concerto shown in
 Example 12.1.</p>
 <p><strong>Example 12.1.</strong> J.S. Bach <em>Brandenburg Concerto No. 2</em>, mov. 1.</p>
-<div class="highlight-humdrum"><pre>!!!COM: Bach, Johann Sebastian
-!!!OPR: Six Concerts Avec plusieurs ... le prince regnant d'Anhalt-Coethen
+<div class="highlight-humdrum"><div class="highlight"><pre>!!!COM: Bach, Johann Sebastian
+!!!OPR: Six Concerts Avec plusieurs ... le prince regnant d&#39;Anhalt-Coethen
 !!!OTL: Brandenburgische Konzerte F
 !!!XEN: Brandenburg Concerto No. 2 in F major.
 !!!OMV: Movement 1.
@@ -342,7 +341,7 @@ Example 12.1.</p>
 *Icemba*Icello*Icbass*Iviola*Ivioln*Ivioln*Ivioln*Ioboe*Ifltds*Itromp
 *IGcont*IGcont********
 *IGripn*IGripn*IGripn*IGripn*IGripn*IGripn*IGconc*IGconc*IGconc*IGconc
-!cembal!'cello!Bd'rip!Vd'rip!v'lin2!v'lin1!v'lino!oboe!flauto!tromba
+!cembal!&#39;cello!Bd&#39;rip!Vd&#39;rip!v&#39;lin2!v&#39;lin1!v&#39;lino!oboe!flauto!tromba
 *k[b-]*k[b-]*k[b-]*k[b-]*k[b-]*k[b-]*k[b-]*k[b-]*k[b-]*k[]
 *F:*F:*F:*F:*F:*F:*F:*F:*F:*F:
 *M2/2*M2/2*M2/2*M2/2*M2/2*M2/2*M2/2*M2/2*M2/2*M2/2
@@ -367,7 +366,8 @@ Example 12.1.</p>
 16A\16A\16AA\8c\J8cc/J8ff\J8ff\J8ff\J8ff\J8cc/J
 16G\JJ16G\JJ16GG\JJ.......
 =2=2=2=2=2=2=2=2=2=2
-*-*-*-*-*-*-*-*-*-*-</pre>
+*-*-*-*-*-*-*-*-*-*-
+</pre></div>
 </div>
 <p>Suppose we wanted to extract the &#8216;cello part. In the above encoding, the
 &#8216;cello occupies the second spine (second field) from the left, hence:</p>
@@ -375,8 +375,8 @@ Example 12.1.</p>
 </pre></div>
 </div>
 <p>The resulting output would begin as follows:</p>
-<div class="highlight-humdrum"><pre>!!!COM: Bach, Johann Sebastian
-!!!OPR: Six Concerts Avec plusieurs ... le prince regnant d'Anhalt-Coethen
+<div class="highlight-humdrum"><div class="highlight"><pre>!!!COM: Bach, Johann Sebastian
+!!!OPR: Six Concerts Avec plusieurs ... le prince regnant d&#39;Anhalt-Coethen
 !!!OTL: Brandenburgische Konzerte F
 !!!XEN: Brandenburg Concerto No. 2 in F major.
 !!!OMV: Movement 1.
@@ -387,7 +387,7 @@ Example 12.1.</p>
 *Icello
 *IGcont
 *IGripn
-!'cello
+!&#39;cello
 *k[b-]
 *F:
 *M2/2
@@ -397,7 +397,8 @@ Example 12.1.</p>
 =1
 16F\LL
 16G
-etc.</pre>
+etc.
+</pre></div>
 </div>
 <p>Notice that the <a class="reference external" href="../../man/extract">extract</a> command outputs all global comments. In the case
 of local comments, <a class="reference external" href="../../man/extract">extract</a> outputs only those local comments that belong
@@ -494,39 +495,42 @@ parts from a score:</p>
 versus exclusive interpretations. Remember that exclusive interpretations are
 mutually exclusive, whereas tandem interpretations are not. Consider the
 following Humdrum representation:</p>
-<div class="highlight-humdrum"><pre>**foo
+<div class="highlight-humdrum"><div class="highlight"><pre>**foo
 a
 b
 **bar
 x
 y
 z
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>The command</p>
 <div class="highlight-bash"><div class="highlight"><pre>extract -i <span class="s1">&#39;**foo&#39;</span>
 </pre></div>
 </div>
 <p>will result in the output:</p>
-<div class="highlight-humdrum"><pre>**foo
+<div class="highlight-humdrum"><div class="highlight"><pre>**foo
 a
 b
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>Whereas the command</p>
 <div class="highlight-bash"><div class="highlight"><pre>extract -i <span class="s1">&#39;**bar&#39;</span>
 </pre></div>
 </div>
 <p>will result in the output:</p>
-<div class="highlight-humdrum"><pre>**bar
+<div class="highlight-humdrum"><div class="highlight"><pre>**bar
 x
 y
 z
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>The <tt class="docutils literal"><span class="pre">foo</span></tt> and <tt class="docutils literal"><span class="pre">bar</span></tt> data are mutually exclusive. Now consider an
 input file where <tt class="docutils literal"><span class="pre">foo</span></tt> and <tt class="docutils literal"><span class="pre">bar</span></tt> are tandem interpretations:</p>
-<div class="highlight-humdrum"><pre>**foobar
+<div class="highlight-humdrum"><div class="highlight"><pre>**foobar
 *foo
 a
 b
@@ -534,34 +538,37 @@ b
 x
 y
 z
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>The command</p>
 <div class="highlight-bash"><div class="highlight"><pre>extract -i <span class="s1">&#39;*foo&#39;</span>
 </pre></div>
 </div>
 <p>will result in the output:</p>
-<div class="highlight-humdrum"><pre>**foobar
+<div class="highlight-humdrum"><div class="highlight"><pre>**foobar
 *foo
 a
 b
 *bar
 x
 y
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>Whereas the command</p>
 <div class="highlight-bash"><div class="highlight"><pre>extract -i <span class="s1">&#39;*bar&#39;</span>
 </pre></div>
 </div>
 <p>will result in the output:</p>
-<div class="highlight-humdrum"><pre>**foobar
+<div class="highlight-humdrum"><div class="highlight"><pre>**foobar
 *foo
 *bar
 x
 y
 z
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>When searching for a particular exclusive interpretation, <a class="reference external" href="../../man/extract">extract</a> resets
 each time a new exclusive interpretation is encountered. By contrast, when <a class="reference external" href="../../man/extract">extract</a> finds a target tandem interpretation, it begins outputting and
@@ -615,14 +622,15 @@ by fields (the <tt class="docutils literal"><span class="pre">-f</span></tt> opt
 terminate. With the <tt class="docutils literal"><span class="pre">-i</span></tt> option, <a class="reference external" href="../../man/extract">extract</a> will follow the material
 throughout the input.</p>
 <p>Consider the following input:</p>
-<div class="highlight-humdrum"><pre>**mip   **dip   **dip   **blip
+<div class="highlight-humdrum"><div class="highlight"><pre>**mip   **dip   **dip   **blip
 A       a       b       x
 A       a       b       x
 *       *^      *       *
 A       a1      a2      b       x
 A       a1      a2      b       x
 A       a1      a2      b       x
-*-      *-      *-      *-      *-</pre>
+*-      *-      *-      *-      *-
+</pre></div>
 </div>
 <p>Suppose we want to extract the second spine (the first <tt class="docutils literal"><span class="pre">dip</span></tt>) spine.
 Using the field option (<tt class="docutils literal"><span class="pre">-f</span></tt>) will generate an error message since this
@@ -633,14 +641,15 @@ spine <em>paths.</em> Like the <tt class="docutils literal"><span class="pre">-f
 numbers indicating the <em>beginning</em> field position for the spine. The command</p>
 <p><a href="#id12"><span class="problematic" id="id13">``</span></a>extract -p 2 <a href="#id14"><span class="problematic" id="id15">``</span></a>...</p>
 <p>will generate the following output:</p>
-<div class="highlight-humdrum"><pre>**dip
+<div class="highlight-humdrum"><div class="highlight"><pre>**dip
 a
 a
 *^
 a1a2
 a1a2
 a1a2
-*-*-</pre>
+*-*-
+</pre></div>
 </div>
 <p>In <em>spine-path mode,</em> the <a href="#id16"><span class="problematic" id="id17">**</span></a>extract&#8221; ** command follows a given spine
 starting at the beginning of the file, and traces the course of that spine
@@ -946,7 +955,7 @@ several concurrent parts. Example 12.2 shows a passage that has overlapping
 phrases. When trying to extract a particular phrase for a particular part,
 the outputs will differ significantly depending on whether the <a class="reference external" href="../../man/yank">yank</a> command is invoked <em>before</em> or <em>after</em> the <a class="reference external" href="../../man/extract">extract</a> command.</p>
 <p><strong>Example 12.2.</strong> A Passage Containing Unsynchronized Phrases.</p>
-<div class="highlight-humdrum"><pre>**kern  **kern
+<div class="highlight-humdrum"><div class="highlight"><pre>**kern  **kern
 =1-     =1-
 2r      8r
 .       {8g
@@ -962,7 +971,8 @@ the outputs will differ significantly depending on whether the <a class="referen
 8e      .
 4d}     4ff
 =4      =4
-*-      *-</pre>
+*-      *-
+</pre></div>
 </div>
 <p>The order of execution for some commands may cause some subtle differences.
 Suppose we wanted to identify the melodic intervals present in measures 8-32

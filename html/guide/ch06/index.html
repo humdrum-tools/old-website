@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -338,7 +337,8 @@ Elert&#8217;s <em>Caprices</em> Op. 107, No. 23 for solo flute. The work is in 3
 The last beat of the first measure has 9 notes in the time of a quarter
 duration. The reciprocal encoding is 9 x 4 or 36th notes.</p>
 <p><strong>Example 6.1.</strong> Karg-Elert, <em>Caprices</em> Op. 107, No. 23.</p>
-<div align="center" class="align-center"><img src="../../_images/ex6-1.svg" width="100%" /></div>
+<a class="reference internal image-reference" href="../../_images/ex6-1.svg"><div align="center" class="align-center"><img src="../../_images/ex6-1.svg" width="100%" /></div>
+</a>
 <div class="highlight-kern"><div class="highlight"><pre><span class="-KernExclusive">**kern</span>
 <span class="-KernExclusive">*clefG2</span>
 <span class="-KernExclusive">*k[f#c#g#d#]</span>
@@ -444,7 +444,7 @@ The best representation will depend on the editorial or processing goal.</p>
 multiple stop when two or more subtokens are present, separated by single
 spaces. By way of illustration, the following <a class="reference external" href="../../rep/kern">**kern</a> data represents a
 scale played in ascending thirds:</p>
-<div class="highlight-humdrum"><pre>**kern
+<div class="highlight-humdrum"><div class="highlight"><pre>**kern
 4c 4e
 8d 8f
 8e 8g
@@ -453,7 +453,8 @@ scale played in ascending thirds:</p>
 8a 8cc
 8b 8dd
 4cc 4ee
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>An important restriction for multiple stops in the <a class="reference external" href="../../rep/kern">**kern</a> representation
 is that they must encode notes of the same duration. In the above example,
@@ -466,7 +467,7 @@ there are no tabs present).</p>
 <p>Multiple stops may occur at any point in a <a class="reference external" href="../../rep/kern">**kern</a> spine. For example, the
 following <a class="reference external" href="../../rep/kern">**kern</a> data represents a scale that begins and ends with
 chords:</p>
-<div class="highlight-humdrum"><pre>**kern
+<div class="highlight-humdrum"><div class="highlight"><pre>**kern
 4c 4e 4g
 8d
 8e
@@ -475,7 +476,8 @@ chords:</p>
 8a
 8b
 4cc 4ee 4gg 4ccc
-*-</pre>
+*-
+</pre></div>
 </div>
 <p>The first chord has been encoded as a triple stop, whereas the last chord has
 been encoded as a quadruple stop. Notice once again that all of the notes
@@ -488,7 +490,8 @@ is almost entirely in two parts with only occasional chords. Since the chords
 always contain notes of equal duration, they can be encoded as double stops
 within a single part.</p>
 <p><strong>Example 6.2.</strong> Telemann, <em>Kleine Fantasien fur Klavier</em> No. 7.</p>
-<div align="center" class="align-center"><img src="../../_images/ex6-2.svg" width="100%" /></div>
+<a class="reference internal image-reference" href="../../_images/ex6-2.svg"><div align="center" class="align-center"><img src="../../_images/ex6-2.svg" width="100%" /></div>
+</a>
 <div class="highlight-kern"><div class="highlight"><pre><span class="-KernExclusive">**kern</span><span class="-KernTab">	</span><span class="-KernExclusive">**kern</span>
 <span class="-KernExclusive">*clefF4</span><span class="-KernTab">	</span><span class="-KernExclusive">*clefG2</span>
 <span class="-KernExclusive">*k[f#c#g#]</span><span class="-KernTab">	</span><span class="-KernExclusive">*k[f#c#g#]</span>
@@ -547,7 +550,8 @@ once. However, the staccato markings have been encoded for both notes in each
 of the double stops. Similarly, separate ties have been encoded for both
 notes in the double stop.</p>
 <p><strong>Example 6.3.</strong> Attribute encoding for <a class="reference external" href="../../rep/kern">**kern</a> multiple stops (chords).</p>
-<div align="center" class="align-center"><img src="../../_images/ex6-3.svg" width="60%" /></div>
+<a class="reference internal image-reference" href="../../_images/ex6-3.svg"><div align="center" class="align-center"><img src="../../_images/ex6-3.svg" width="60%" /></div>
+</a>
 <div class="highlight-kern"><div class="highlight"><pre><span class="-KernExclusive">**kern</span>
 <span class="err">{</span><span class="-KernNotes">4c</span><span class="w"> </span><span class="-KernNotes">4e</span>
 <span class="-KernNotes">8d</span><span class="err">L</span><span class="w"> </span><span class="-KernNotes">8f</span>
@@ -595,7 +599,8 @@ same duration.</p>
 been interleaved with the concurrent eighth-note figures so that the onsets
 are ordered in the correct temporal sequence.</p>
 <p><strong>Example 6.4.</strong> Chopin, <em>Etude</em> Op. 25, No. 7.</p>
-<div align="center" class="align-center"><img src="../../_images/ex6-4.svg" width="100%" /></div>
+<a class="reference internal image-reference" href="../../_images/ex6-4.svg"><div align="center" class="align-center"><img src="../../_images/ex6-4.svg" width="100%" /></div>
+</a>
 <div class="highlight-kern"><div class="highlight"><pre><span class="-KernGlobalComment">!! Lento</span>
 <span class="-KernExclusive">**kern</span><span class="-KernTab">	</span><span class="-KernExclusive">**kern</span><span class="-KernTab">	</span><span class="-KernExclusive">**kern</span>
 <span class="-KernExclusive">*staff2</span><span class="-KernTab">	</span><span class="-KernExclusive">*staff1</span><span class="-KernTab">	</span><span class="-KernExclusive">*staff1</span>
