@@ -73,7 +73,7 @@ Chapter 4: Basic Pitch Translations
 =====================================
 
 
-Many musical processes entail some sort of data translation in which one form
+THISMany musical processes entail some sort of data translation in which one form
 of representation is transformed into another form of representation. There
 are innumerable examples of such musical "translations." For example, we
 might rewrite guitar tablatures as notated pitches. Pitches might be
