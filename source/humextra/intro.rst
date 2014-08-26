@@ -1,17 +1,1 @@
-=======================
-Introduction
-=======================
-
-
-Options
-=======
-
-
-
-Data URIs
-=========
-
-
-
-
-
+intro.rstd/index.rst
