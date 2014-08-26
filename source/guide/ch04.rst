@@ -72,8 +72,7 @@
 Chapter 4: Basic Pitch Translations
 =====================================
 
-
-Craig was here. 
+Craig was here.
 
 Many musical processes entail some sort of data translation in which one form
 of representation is transformed into another form of representation. There
