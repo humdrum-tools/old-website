@@ -481,19 +481,21 @@ generated.
 
 
 ..csv-table:: 
-	:header: "",cents,deg,,freq,kern,MIDI,pitch,semits,solfa,solfg,Tonh,
+	   :header: "",cents, deg, freq, kern, MIDI, pitch, semits, solfa, solfg, Tonh
 	   
-	cents,,,,X,X,,,X,X,,X,X,
-	cocho,,,,X,,,,,,,
-	deg, ,,,,,X,,,X,X,X,
-	freq,X,,,,X,X,X,X,,X,X,
-	kern,X,,,X,,,X,X,X,X,X,X,
-	MIDI,,,,,,X,,,,,,
-	pitch,X,,,X,X,X,,,X,X,X,X,
-	semits,X,,,X,X,X,X,X,X,
-	solfa,,,,,X,,,X,X,X,
-	solfg,X,,,X,X,X,X,X,,X,,,
-	tonh,X,,,X,X,X,X,X,X,X,,,
+	   ,cents,deg,,freq,kern,MIDI,pitch,semits,solfa,solfg,Tonh,
+	   cents,,,,X,X,,,X,X,,X,X,
+	   cocho,,,,X,,,,,,,
+	   deg, ,,,,,X,,,X,X,X,
+	   freq,X,,,,X,X,X,X,,X,X,
+	   kern,X,,,X,,,X,X,X,X,X,X,
+	   MIDI,,,,,,X,,,,,,
+	   pitch,X,,,X,X,X,,,X,X,X,X,
+	   semits,X,,,X,X,X,X,X,X,
+	   solfa,,,,,X,,,X,X,X,
+	   solfg,X,,,X,X,X,X,X,,X,,,
+	   tonh,X,,,X,X,X,X,X,X,X,,,
+
 	
 
 Transposition Using the *trans* Command
