@@ -316,7 +316,8 @@ pitches. Notice also the different ways of characterizing accidentals.
 
 .. code-block:: humdrum
 
-	!! Comparison of pitch-relatedrepresentations. |kern|_ solfa**deg
+	!! Comparison of pitch-related representations. 
+	**kern	**solfa	**deg
 	*M2/4	*M2/4	*M2/4
 	*c:	*c:	*c:
 	8.cc	do	1
