@@ -386,14 +386,14 @@ B-natural.
 .. code-block:: humdrum
 
 	!! Comparison of pitch-related representations. 
-	**kern		**pitch	**Tonh	**solfg
-	*M2/4		*M2/4	*M2/4	*M2/4
+	**kern		**pitch	**Tonh		**solfg
+	*M2/4		*M2/4	*M2/4		*M2/4
 	*C:		*C:		*C:	*C:
 	8.cc		C5	C5		do5
 	16dd		D5	D5		re5
 	=1		=1	=1		=1
 	8.ee		E5	E5		mi5
-	16dd#		D#5	Dis5	re~d5
+	16dd#		D#5	Dis5		re~d5
 	4ee		E5	E5		mi5
 	=2		=2	=2		=2
 	8		r	r		r
@@ -418,24 +418,24 @@ integers. More detail concerning |**MIDI|_ is given in |Chapter 7|_\ .
 	!! Comparison of pitch-related representations (continued). 
 	**kern		**semits	**cents		**MIDI		**freq
 	*M2/4		*M2/4		*M2/4		*Ch1		*M2/4
-	*C:		*C:		*C:			*M2/4		*C:
-	*		*		*			*			C:*
-	8.cc		12		1200		/72/		523.25
-	16dd		14		1400		/-72/ /74/	587.33
+	*C:		*C:		*C:		*M2/4		*C:
+	*		*		*		*			C:*
+	8.cc		12		1200	/72/		523.25
+	16dd		14		1400	/-72/ /74/	587.33
 	=1		=1		=1			=1			=1
-	8.ee		16		1600		/-74/ /76/	659.26
-	16dd#		15		1500		/-76/ /75/	622.25
-	4ee		16		1600		/-75/ /76/	659.26
+	8.ee		16		1600	/-74/ /76/	659.26
+	16dd#		15		1500	/-76/ /75/	622.25
+	4ee		16		1600	/-75/ /76/	659.26
 	=2		=2		=2			=2			=2
-	8		r		r			/-76/		r
+	8		r		r		/-76/		r
 	8b-		10		1000		/70/		466.16
-	8a		9		900			/-70/ /69/	440.00
-	8c		0		0			/-69/ /60	/261.63
-	=3		=3		=3			=3			=3
+	8a		9		900		/-70/ /69/	440.00
+	8c		0		0		/-69/ /60	/261.63
+	=3		=3		=3		=3			=3
 	2bn		11		1100		/-60/ /71/	493.88
-	==		==		==			==			==
-	.		.		.			/-71/		.
-	*-		*-		*-			*-			*-
+	==		==		==		==			==
+	.		.		.		/-71/		.
+	*-		*-		*-		*-			*-
 
 Not all of the above pitch-related representations can be translated directly
 from one to another. Table 4.1 shows the possible translations supported by
