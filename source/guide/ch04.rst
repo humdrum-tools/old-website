@@ -317,23 +317,23 @@ pitches. Notice also the different ways of characterizing accidentals.
 .. code-block:: humdrum
 
 	!! Comparison of pitch-relatedrepresentations. |kern|_ solfa**deg
-	*M2/4*M2/4*M2/4
-	*c:*c:*c:
-	8.ccdo1
-	16ddre^2
-	=1=1=1
-	8.ee-me^3
-	16ddrev2
-	4eenmi^3+
-	=2=2=2
-	8rrr
-	8b-tev7-
-	8anlav6+
-	8ccdo^1
-	=3=3=3
-	2bntiv7
-	======
-	*-*-*-
+	*M2/4	*M2/4	*M2/4
+	*c:	*c:	*c:
+	8.cc	do	1
+	16dd	re	^2
+	=1	=1	=1
+	8.ee-	me	^3
+	16dd	re	v2
+	4een	mi	^3+
+	=2	=2	=2
+	8r	r	r
+	8b-	te	v7-
+	8an	la	v6+
+	8cc	do	^1
+	=3	=3	=3
+	2bn	ti	v7
+	==	==	==
+	*-	*-	*-
 
 
 Pitch Translations
@@ -388,7 +388,7 @@ B-natural.
 	!! Comparison of pitch-related representations. 
 	**kern		**pitch	**Tonh		**solfg
 	*M2/4		*M2/4	*M2/4		*M2/4
-	*C:		*C:		*C:	*C:
+	*C:		*C:	*C:		*C:
 	8.cc		C5	C5		do5
 	16dd		D5	D5		re5
 	=1		=1	=1		=1
@@ -419,13 +419,13 @@ integers. More detail concerning |**MIDI|_ is given in |Chapter 7|_\ .
 	**kern		**semits	**cents		**MIDI		**freq
 	*M2/4		*M2/4		*M2/4		*Ch1		*M2/4
 	*C:		*C:		*C:		*M2/4		*C:
-	*		*		*		*			C:*
-	8.cc		12		1200	/72/		523.25
-	16dd		14		1400	/-72/ /74/	587.33
+	*		*		*		*		C:*
+	8.cc		12		1200		/72/		523.25
+	16dd		14		1400		/-72/ /74/	587.33
 	=1		=1		=1			=1			=1
-	8.ee		16		1600	/-74/ /76/	659.26
-	16dd#		15		1500	/-76/ /75/	622.25
-	4ee		16		1600	/-75/ /76/	659.26
+	8.ee		16		1600		/-74/ /76/	659.26
+	16dd#		15		1500		/-76/ /75/	622.25
+	4ee		16		1600		/-75/ /76/	659.26
 	=2		=2		=2			=2			=2
 	8		r		r		/-76/		r
 	8b-		10		1000		/70/		466.16
