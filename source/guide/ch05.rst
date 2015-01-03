@@ -151,10 +151,11 @@ tokens. In Humdrum, there are two possible types of tokens:
 
 Consider, for example, the following file: ``
 
-| X.X
-| XXX
-| .XX
-| X.X
+.. csv-table::
+   X,.,X
+   X,X,X
+   .,X,X
+   X,.,X
 
 `` This file consists of three vertical spines and four horizontal records.
 The first and third spines begin with data tokens, while the second spine
@@ -162,13 +163,15 @@ begins with a null token. Without the presence of interpretations, the
 meaning of this file is indeterminate. The file below contains two spines
 that have been labelled using Humdrum interpretations: ``
 
->**left**right
-| X.
-| .X
-| X.
-| .X
-| X.
-| *-*-
+
+.. code-block:: humdrum
+	**left	**right
+	X		.
+	.		X
+	X		.
+	.		X
+	X		.
+	*-		*-
 
 `` The user has defined two interpretations: "left" and "right." The
 intention is to represent the footfalls of a person's left and right feet.
@@ -190,14 +193,17 @@ Interpretations can be cascaded so that a single spine has more than one
 interpretation associated with it. This is done through the addition of
 tandem interpretations. Consider the following example: ``
 
->**foot**foot**arm**arm
-| *left*right*left*right
-| X..X
-| .XX.
-| X..X
-| .XX.
-| X..X
-| *-*-*-*-
+
+.. code-block:: humdrum
+   **foot	**foot	**arm	**arm
+   **left	**right	**left	**right
+   X		.		.		X
+   .		X		X		.
+   X		.		.		X
+   .		X		X		.
+   X		.		.		X
+   *-		*-		*-		*-
+
 
 `` In this case the categories "left" and "right" have been transformed to
 tandem interpretations. The first spine is interpreted both as "left" and as
@@ -265,12 +271,13 @@ vary the number of spines. However, files with varying numbers of spines can
 pose significant questions of interpretation. Consider, for example, the
 following sequence of Humdrum-like data records: ``
 
-| 123
-| 123
-| 123
-| AB
-| AB
-| AB
+.. csv-table::
+   1,2,3
+   1,2,3
+   1,2,3
+   A,B,,
+   A,B,,
+   A,B,,
 
 `` At the point where three spines are reduced to two spines the continuity
 is ambiguous: Has spine `3' been discontinued? Or is spine `B' a continuation

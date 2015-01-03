@@ -407,24 +407,11 @@ tokens. In Humdrum, there are two possible types of tokens:</p>
 <li><em>null</em> tokens (.).</li>
 </ul>
 <p>Consider, for example, the following file: ``</p>
-<div class="line-block">
-<div class="line">X.X</div>
-<div class="line">XXX</div>
-<div class="line">.XX</div>
-<div class="line">X.X</div>
-</div>
 <p>`` This file consists of three vertical spines and four horizontal records.
 The first and third spines begin with data tokens, while the second spine
 begins with a null token. Without the presence of interpretations, the
 meaning of this file is indeterminate. The file below contains two spines
 that have been labelled using Humdrum interpretations: ``</p>
-<p>&gt;**left**right
-| X.
-| .X
-| X.
-| .X
-| X.
-| <em>-</em>-</p>
 <p>`` The user has defined two interpretations: &#8220;left&#8221; and &#8220;right.&#8221; The
 intention is to represent the footfalls of a person&#8217;s left and right feet.
 The representation simply encodes that the left and right feet have
@@ -443,14 +430,6 @@ sign.</p>
 <p>Interpretations can be cascaded so that a single spine has more than one
 interpretation associated with it. This is done through the addition of
 tandem interpretations. Consider the following example: ``</p>
-<p>&gt;**foot**foot**arm**arm
-| <em>left*right*left*right
-| X..X
-| .XX.
-| X..X
-| .XX.
-| X..X
-| *-</em>-<em>-</em>-</p>
 <p>`` In this case the categories &#8220;left&#8221; and &#8220;right&#8221; have been transformed to
 tandem interpretations. The first spine is interpreted both as &#8220;left&#8221; and as
 &#8220;foot.&#8221; The exclusive interpretation (double asterisks) takes conceptual
@@ -507,14 +486,6 @@ voices; spines are used for many other purposes as well.</p>
 vary the number of spines. However, files with varying numbers of spines can
 pose significant questions of interpretation. Consider, for example, the
 following sequence of Humdrum-like data records: ``</p>
-<div class="line-block">
-<div class="line">123</div>
-<div class="line">123</div>
-<div class="line">123</div>
-<div class="line">AB</div>
-<div class="line">AB</div>
-<div class="line">AB</div>
-</div>
 <p>`` At the point where three spines are reduced to two spines the continuity
 is ambiguous: Has spine <a href="#id5"><span class="problematic" id="id6">`</span></a>3&#8217; been discontinued? Or is spine <a href="#id7"><span class="problematic" id="id8">`</span></a>B&#8217; a continuation
 of spine <a href="#id9"><span class="problematic" id="id10">`</span></a>3&#8217; with spine <a href="#id11"><span class="problematic" id="id12">`</span></a>A&#8217; a continuation of spine <a href="#id13"><span class="problematic" id="id14">`</span></a>1&#8217; or <a href="#id15"><span class="problematic" id="id16">`</span></a>2&#8217;? For some
