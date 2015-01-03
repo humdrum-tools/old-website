@@ -409,38 +409,26 @@ tokens. In Humdrum, there are two possible types of tokens:</p>
 <p>Consider, for example, the following file: ``</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">&nbsp;</th>
-<th class="head">&nbsp;</th>
-<th class="head">&nbsp;</th>
-<th class="head">&nbsp;</th>
-</tr>
-</thead>
 <tbody valign="top">
+<tr class="row-odd"><td>X</td>
+<td>.</td>
+<td>X</td>
+</tr>
+<tr class="row-even"><td>X</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr class="row-odd"><td>.</td>
+<td>X</td>
+<td>X</td>
+</tr>
 <tr class="row-even"><td>X</td>
 <td>.</td>
 <td>X</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>X</td>
-<td>X</td>
-<td>X</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>.</td>
-<td>X</td>
-<td>X</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>X</td>
-<td>.</td>
-<td>X</td>
-<td>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -449,15 +437,6 @@ The first and third spines begin with data tokens, while the second spine
 begins with a null token. Without the presence of interpretations, the
 meaning of this file is indeterminate. The file below contains two spines
 that have been labelled using Humdrum interpretations:</p>
-<div class="highlight-humdrum"><div class="highlight"><pre>**left       **right
-     X               .
-     .               X
-     X               .
-     .               X
-     X               .
-     *-              *-
-</pre></div>
-</div>
 <p>`` The user has defined two interpretations: &#8220;left&#8221; and &#8220;right.&#8221; The
 intention is to represent the footfalls of a person&#8217;s left and right feet.
 The representation simply encodes that the left and right feet have

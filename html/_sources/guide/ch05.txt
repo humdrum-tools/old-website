@@ -152,7 +152,6 @@ tokens. In Humdrum, there are two possible types of tokens:
 Consider, for example, the following file: ``
 
 .. csv-table::
-   :header: " "," "," ",
    
    X,.,X
    X,X,X
@@ -167,7 +166,6 @@ that have been labelled using Humdrum interpretations:
 
 
 .. code-block:: humdrum
-   
    **left	**right
 	X		.
 	.		X
