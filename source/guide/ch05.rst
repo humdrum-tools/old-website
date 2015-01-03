@@ -19,7 +19,7 @@ Chapter 5: The Humdrum Syntax
 ================================
 
 In the previous chapters we have seen several examples of pre-defined Humdrum
-representations, such as |**kern|_\ _, |**solfa|_ and |**MIDI|_\ .
+representations, such as |**kern|_, |**solfa|_ and |**MIDI|_\ .
 These representations exhibit a number of common properties, including the
 manner in which the data are organized in spines. In this chapter, we provide
 a complete description of the Humdrum representation syntax. This chapter
@@ -40,6 +40,8 @@ paper. *Successions* of events proceed vertically down the page, whereas
 occupy the same horizontal line represent concurrent (or overlapping) events.
 The basic organization of Humdrum files may be schematically illustrated as
 follows:
+
+.. image:: figures/ch05_events.png
 
 | successive events
 | concurrent events -> AJVetc.
@@ -75,7 +77,7 @@ most position); subsequent characters up to and including the occurrence of a
 carriage return or newline character constitute the comment record. Recall
 that global comments are denoted by two exclamation marks (!!) at the
 beginning of the record. Global comments may contain any sequence of
-printable characters, including `blank space' such as tabs and spaces. Local
+printable characters, including "blank space" such as tabs and spaces. Local
 comments may contain any sequence of printable ASCII characters, with the
 important exception of the tab character which is used to separate spines.
 Comments may be used to insert free-format commentaries in Humdrum encodings.
@@ -108,7 +110,7 @@ necessarily mutually exclusive.
 
 
 Data Records
-------------
+-------------
 
 Lines that do not contain either an exclamation mark or an asterisk in the
 first column are *data records.* Blank lines (i.e., lines which are either

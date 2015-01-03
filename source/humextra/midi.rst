@@ -1,1 +1,3 @@
-midi.rstd/index.rst
+=======================
+MIDI Rendering
+=======================
