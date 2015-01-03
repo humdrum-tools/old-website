@@ -166,6 +166,7 @@ that have been labelled using Humdrum interpretations:
 
 
 .. code-block:: humdrum
+   
    **left	**right
 	X		.
 	.		X
