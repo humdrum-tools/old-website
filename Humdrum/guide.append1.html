@@ -128,7 +128,8 @@ The principal reference code indicating title is
 (see below).
 Following the OTL reference code, the language of encoding
 can be indicated by appending an "at" sign (@),
-followed by the 3-letter ISO language code.
+followed by the 2-letter <a target="_blank" href="https://www.loc.gov/standards/iso639-2/php/code_list.php">ISO 639-1</a> language code, or
+a 3-letter <a target=_blank" href="https://www.loc.gov/standards/iso639-2/php/code_list.php">ISO 639-2</a> language code for languages without a two-letter code.
 Here the title is rendered in three languages:
 <blockquote>
 <code><big>
@@ -140,17 +141,16 @@ Here the title is rendered in three languages:
 </code></big>
 </blockquote>
 Notice the use of the double "at" sign (i.e., "@@").
-This convention is used to indicate that Friuli is
-the primary reference language.
-The title can also be encoded without any language
-designation:
+This convention is used to indicate that the language used
+in the record is Friuli, at it is the original language for the entry.
+The title can also be encoded without any language designation:
 <blockquote>
 <code><big>
 !!!OTL: Ai preit la biele stele
 </code></big>
 </blockquote>
-This implies that the title is already rendered in the <i>primary</i>
-reference language.
+This may implies that the title is already rendered in the original language, or
+that it uses the preferred language of the encoder.
 </P>
 <P>
 </P>
@@ -493,32 +493,34 @@ e.g.
 <P>
 <b>!!!XEN:</b>
 <i>Translated title (in English)</i>.
-(Note that reference codes are also available for translations to
-languages other than English, French, German, or Japanese.)
+Note that reference codes are also available for translations to
+languages other than English, French, German, or Japanese, by adding
+the ISO 639-1 language code after the "X",  But
+preference should be given to the @ system described above which allows
+multiple languages for any reference record instead of only the work title.
+So another way of encoding the title is <b>!!!OTL@EN:</b>, or to indicate
+that the original language is English: <b>!!!OTL@@EN:</b>.
 </P>
 <A NAME="French translation">
 <A NAME="XFR">
 <P>
 <b>!!!XFR:</b>
 <i>Translated title (in French)</i>.
-(Note that reference codes are also available for translations to
-languages other than English, French, German, or Japanese.)
+
 </P>
 <A NAME="German translation">
 <A NAME="XDE">
 <P>
 <b>!!!XDE:</b>
 <i>Translated title (in German)</i>.
-(Note that reference codes are also available for translations to
-languages other than English, French, German, or Japanese.)
+
 </P>
 <A NAME="Japanese translation">
 <A NAME="XNI">
 <P>
 <b>!!!XNI:</b>
 <i>Translated title (in Japanese)</i>.
-(Note that reference codes are also available for translations to
-languages other than English, French, German, or Japanese.)
+
 </P>
 <A NAME="popular title">
 <A NAME="OTP">
@@ -528,6 +530,7 @@ languages other than English, French, German, or Japanese.)
 This reference record encodes well-known or alias titles
 such as "Pathetique Sonata".
 </P>
+
 <A NAME="alternative title">
 <A NAME="OTA">
 <P>
@@ -535,6 +538,7 @@ such as "Pathetique Sonata".
 <i>Alternative title</i>.
 This reference record encodes earlier or alternate titles.
 </P>
+
 <A NAME="parent work">
 <A NAME="OPR">
 <P>
@@ -544,6 +548,7 @@ For example, "Gute Nacht" (OTL) from
 <i>Winterreise</i>
 (OPR).
 </P>
+
 <A NAME="act number">
 <A NAME="OAC">
 <P>
@@ -553,6 +558,7 @@ For operas and musicals, this reference record encodes the
 act number as an Arabic (rather than Roman) numeral.
 The number may be preceded by the word "Act" as in <code><big>Act 3</big></code>.
 </P>
+
 <A NAME="scene number">
 <A NAME="OSC">
 <P>
@@ -562,6 +568,7 @@ For operas and musicals, this reference record encodes the
 scene number as an Arabic (rather than Roman) numeral.
 The number may be preceded by the word "Scene" as in <code><big>Scene 3</big></code>.
 </P>
+
 <A NAME="movement number">
 <A NAME="OMV">
 <P>
@@ -573,6 +580,7 @@ an Arabic (rather than Roman) numeral.
 The number may be preceded by the word "Movement" or "mov."
 etc., as in <code><big>mov. 3</big></code>.
 </P>
+
 <A NAME="movement name">
 <A NAME="OMD">
 <P>
@@ -583,6 +591,7 @@ Typically movements may be named according to the tempo
 or form (e.g. "Fugue"), or according to a programmatic title
 (e.g. "In Full Flower").
 </P>
+
 <A NAME="opus number">
 <A NAME="OPS">
 <P>
@@ -591,6 +600,7 @@ or form (e.g. "Fugue"), or according to a programmatic title
 The number may be preceded by the word "Opus" as in <code><big>Opus 23</big></code>.
 Once again, Arabic numerals are used.
 </P>
+
 <A NAME="(work) number">
 <A NAME="ONM">
 <P>
@@ -599,6 +609,7 @@ Once again, Arabic numerals are used.
 The number may be preceded by the abbreviations "No." or "Nr."
 as in <code><big>No. 4</big></code>.
 </P>
+
 <A NAME="(work) volume">
 <A NAME="OVM">
 <P>
@@ -608,6 +619,7 @@ The volume number may be preceded by the abbreviation "Vol."
 as in <code><big>Vol. 2</big></code>.
 Arabic numbers are used.
 </P>
+
 <A NAME="ODE">
 <A NAME="dedication">
 <P>
@@ -618,6 +630,7 @@ If the work was dedicated to more than one person,
 then each dedicatee's name should appear on a separate <b>!!!ODE:</b> record
 with a number designation prior to the colon.
 </P>
+
 <A NAME="commission">
 <A NAME="OCO">
 <P>
@@ -628,6 +641,7 @@ If the work was commissioned by more than one person,
 then each commissioner's name should appear on a separate <b>!!!OCO:</b> record
 with a number designation prior to the colon.
 </P>
+
 <A NAME="collector">
 <A NAME="OCL">
 <P>
@@ -638,6 +652,7 @@ If the work was collected by more than one person,
 then each collector's name should appear on a separate <b>!!!OCL:</b> record
 with a number designation prior to the colon.
 </P>
+
 <A NAME="nota bene">
 <A NAME="ONB">
 <P>
@@ -648,6 +663,7 @@ If more than one such note is encoded,
 each should appear on a separate <b>!!!ONB:</b> record
 with a number designation prior to the colon.
 </P>
+
 <A NAME="date of composition">
 <A NAME="ODT">
 <P>
@@ -665,6 +681,7 @@ The <code><big>**date</big></code> and <code><big>**Zeit</big></code> formats pr
 representation, including methods for representing uncertainty, approximation,
 and boundary dates (e.g. prior to ..., after ...).
 </P>
+
 <A NAME="OCY">
 <A NAME="country of composition">
 <P>
@@ -672,6 +689,7 @@ and boundary dates (e.g. prior to ..., after ...).
 <i>Country of composition</i>.
 Local names should be used, such as `Espana'.
 </P>
+
 <A NAME="OPC">
 <A NAME="city of composition">
 <P>
@@ -679,8 +697,10 @@ Local names should be used, such as `Espana'.
 <i>City, town or village of composition</i>.
 Local names should be used, such as `Den Haag.'
 </P>
+
 <A NAME="Group_Information">
 <H2>Group Information</H2>
+
 <A NAME="GTL">
 <A NAME="group">
 <P>
@@ -691,6 +711,7 @@ such as the "London Symphonies" by Haydn,
 or the four concertos by Vivaldi
 forming "The Seasons".
 </P>
+
 <A NAME="associated work">
 <A NAME="GAW">
 <P>
@@ -703,12 +724,14 @@ This reference allows associated works to be explicitly identified
 by author and title.
 E.g. 
 </P>
+
 <P>
 <blockquote>
 <code><big>
 !!!GAW: St&#233;phane Mallarm&#233;, L'Apr&#232;s-midi d'un faune; [The Afternoon of a Faun].
 </code></big>
 </blockquote>
+
 <A NAME="GCO">
 <A NAME="group">
 <P>
@@ -719,6 +742,7 @@ a collection of pieces,
 such as works appearing in a compendium or anthology.
 E.g. Norton Scores, Smithsonian Collection, Burkhart Anthology.
 </P>
+
 <A NAME="Imprint_Information">
 <H2>Imprint Information</H2>
 </P>
