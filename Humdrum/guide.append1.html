@@ -731,13 +731,25 @@ This reference record identifies whether the document has ever been "published".
 One of the following English terms may appear: <code><big>published</big></code>
 or <code><big>unpublished</big></code>.
 </P>
+
 <A NAME="first publisher">
 <A NAME="PPR">
 <P>
 <b>!!!PPR:</b>
 <i>First publisher</i>.
-Name of the first publisher of the work.
+Name of the first publisher of the work, or the name of the publisher if a
+specific edition is being encoded.
 </P>
+
+<A NAME="publication title">
+<A NAME="PTL">
+<P>
+<b>!!!PTL:</b>
+<i>Publication title</i>.
+Title of the publication (volume) from which the work is encoded.  To encode
+linebreaks in the title, use the pipe character (|).
+</P>
+
 <A NAME="PDT">
 <A NAME="date of first publication">
 <P>
@@ -749,13 +761,14 @@ The date of publication should be encoded using the
 format described in the
 <i>Humdrum Reference Manual</i>.
 </P>
+
 <A NAME="place of first publication">
 <A NAME="PPP">
 <P>
 <b>!!!PPP:</b>
-<i>Place first published</i>.
-(Local language should be used.)
+<i>Place first published</i>, or the place where the specific edition being encoded was published.
 </P>
+
 <A NAME="publisher's catalogue number">
 <A NAME="PC#">
 <P>
@@ -764,6 +777,7 @@ format described in the
 This should not be confused with better known scholarly catalogues,
 such as those of K&#246chel, Hoboken, etc.
 </P>
+
 <A NAME="SCT">
 <A NAME="scholarly catalogue abbreviation and number">
 <P>
@@ -771,6 +785,7 @@ such as those of K&#246chel, Hoboken, etc.
 <i>Scholarly catalogue abbreviation and number</i>.
 E.g. BWV 551
 </P>
+
 <A NAME="scholarly catalogue (unabbreviated) name">
 <A NAME="SCA">
 <P>
@@ -778,6 +793,7 @@ E.g. BWV 551
 <i>Scholarly catalogue (unabbreviated) name</i>.
 E.g.<code><big>Koechel 117</big></code>.
 </P>
+
 <A NAME="manuscript source">
 <A NAME="SMS">
 <P>
@@ -785,6 +801,7 @@ E.g.<code><big>Koechel 117</big></code>.
 <i>Manuscript source name</i>.
 For unpublished sources, the manuscript source name.
 </P>
+
 <A NAME="manuscript location">
 <A NAME="SML">
 <P>
@@ -792,6 +809,7 @@ For unpublished sources, the manuscript source name.
 <i>Manuscript location</i>.
 For unpublished sources, the location of the manuscript source.
 </P>
+
 <A NAME="SMA">
 <A NAME="acknowledgement of manuscript access">
 <P>
@@ -801,9 +819,11 @@ This reference information may be used to encode a free format
 acknowledgement or note of thanks to a given manuscript owner for
 scholarly or other access.
 </P>
+
 <A NAME="Copyright_Information">
 <H2>Copyright Information</H2>
 </P>
+
 <A NAME="YEP">
 <A NAME="publisher of electronic edition">
 <P>
@@ -811,6 +831,7 @@ scholarly or other access.
 <i>Publisher of electronic edition</i>.
 This reference identifies the publisher of the electronic document.
 </P>
+
 <A NAME="YEC">
 <A NAME="date and owner of electronic copyright">
 <P>
@@ -819,12 +840,14 @@ This reference identifies the publisher of the electronic document.
 This reference identifies the year and owner of the copyright for the
 electronic document.
 </P>
+
 <A NAME="YER">
 <A NAME="date electronic edition released">
 <P>
 <b>!!!YER:</b>
 Date electronic edition released.
 </P>
+
 <A NAME="YEM">
 <A NAME="copyright message">
 <P>
@@ -835,6 +858,7 @@ It might convey a simple warning (e.g. "All rights reserved."),
 convey registration or licensing information,
 or indicate that the document is shareware.
 </P>
+
 <A NAME="YEN">
 <A NAME="country of copyright">
 <P>
@@ -845,6 +869,7 @@ was created, or where the copyright was established.
 In effect, it identifies the country under whose laws the
 copyright declaration is to be interpreted.
 </P>
+
 <A NAME="YOR">
 <A NAME="original document">
 <P>
@@ -857,6 +882,7 @@ and that permission may be required in order to create an electronic
 derivative document.
 Original documents may also have lapsed copyrights.
 </P>
+
 <A NAME="original document owner">
 <A NAME="YOO">
 <P>
@@ -869,6 +895,7 @@ Note that unless the electronic and original documents have the same owner,
 some licensing agreement or other legal arrangement is necessary
 in order to create an electronic derivative document.
 </P>
+
 <A NAME="original copyright year">
 <A NAME="YOY">
 <P>
@@ -880,6 +907,7 @@ original document.
 Note that some licensing agreement or other legal arrangement
 is necessary in order to create an electronic derivative document.
 </P>
+
 <A NAME="original editor">
 <A NAME="YOE">
 <P>
@@ -890,6 +918,7 @@ document from which the electronic edition was prepared.
 Note that some licensing agreement or other legal arrangement
 may be necessary in order to create an electronic derivative document.
 </P>
+
 <A NAME="EED">
 <A NAME="electronic editor">
 <P>
@@ -898,8 +927,10 @@ may be necessary in order to create an electronic derivative document.
 Name of the editor of the electronic document.
 If more than one editor was involved in the work,
 then each editor's name should appear on a separate <b>!!!EED:</b> record
-with a number designation prior to the colon.
+with a number designation prior to the colon, such as <b>!!!EED2:</b> for the
+second editor.
 </P>
+
 <A NAME="ENC">
 <A NAME="encoder of electronic document">
 <P>
@@ -910,8 +941,21 @@ the electronic document.
 (Not to be confused with the electronic editor.)
 If more than one encoder was involved in the work,
 then each encoder's name should appear on a separate <b>!!!ENC:</b> record
-with a number designation prior to the colon.
+with a number designation prior to the colon, such as <b>!!!ENC2:</b> for
+the second encoder.
 </P>
+
+<A NAME="END">
+<A NAME="encoding date of electronic document">
+<P>
+<b>!!!END:</b>
+<i>Encoding date of the electronic document</i>.
+This reference gives the date on which the person or persons who
+encoded the electronic document (see ENC), or the date on which it was
+substantially encoded.  Similar to the EEV, but does not
+change as the document is ammended.
+</P>
+
 <A NAME="document modification description">
 <A NAME="EMD">
 <P>
@@ -925,13 +969,14 @@ description of the type of modification made.
 For each successive modification, a separate <b>!!!EMD:</b> record should appear
 with a number designation prior to the colon.
 </P>
+
 <A NAME="EEV">
 <A NAME="electronic edition version">
 <P>
 <b>!!!EEV:</b>
 <i>Electronic edition version</i>.
 This reference identifies the specific editorial version of the work.
-e.g. Version 1.3g
+e.g. Version 1.3g, or the version date in **date format.
 Only a single <b>!!!EEV:</b> record can appear in a given electronic document.
 </P>
 <A NAME="EFL">
