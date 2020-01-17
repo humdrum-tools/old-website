@@ -440,6 +440,7 @@ If the representation encodes a given performance
 (such as a MIDI performance),
 then the following reference records may be pertinent.
 </P>
+
 <A NAME="performer">
 <A NAME="MPN">
 <P>
@@ -447,8 +448,12 @@ then the following reference records may be pertinent.
 <i>Performer's name</i>.
 If more than one performer was involved in the work,
 then each performer's name should appear on a separate <b>!!!MPN:</b> record
-with a number designation prior to the colon.
+with a number designation prior to the colon.  Note that this record
+can be used for soloists, and <b>!!!MGN:</b> is used for the name of 
+a group, such as the <i>Chicago Symphony Orchestra</a>, and <b>!!!MCN:</b>
+is for the conductor of the group.
 </P>
+
 <A NAME="suspected performer">
 <A NAME="MPS">
 <P>
@@ -458,6 +463,14 @@ If more than one performer is suspected, each name should appear
 on a separate <b>!!!MPS:</b> record with a number designation
 prior to the colon.
 </P>
+
+<A NAME="ensemble">
+<A NAME="MGN">
+<P>
+<b>!!!MGN:</b>
+<i>Name of the performance group (ensemble)</i>, such as the <i>Juilliard String Quartet</i>.
+</P>
+
 <A NAME="date of performer">
 <A NAME="MRD">
 <P>
@@ -469,6 +482,7 @@ The performance date should be encoded using the
 format described in the
 <i>Humdrum Reference Manual</i>.
 </P>
+
 <A NAME="place of performer">
 <A NAME="MLC">
 <P>
@@ -476,12 +490,14 @@ format described in the
 <i>Place of performance</i>.
 (Local language should be used.)
 </P>
+
 <A NAME="conductor">
 <A NAME="MCN">
 <P>
 <b>!!!MCN:</b>
 <i>Name of the conductor of the performance</i>.
 </P>
+
 <A NAME="date of first performance">
 <A NAME="MPD">
 <P>
